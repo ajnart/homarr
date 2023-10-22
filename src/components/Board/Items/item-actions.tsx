@@ -62,12 +62,16 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
         );
 
         // If item is in the same section (on initial loading) don't do anything
-        if (!currentSection || currentSection.id === sectionId) {
+        if (!currentSection) {
           return prev;
         }
 
-        let currentItem = currentSection?.items.find((item) => item.id === itemId);
+        let currentItem = currentSection.items.find((item) => item.id === itemId);
         if (!currentItem) {
+          return prev;
+        }
+
+        if (currentSection.id === sectionId && currentItem.x) {
           return prev;
         }
 
@@ -84,10 +88,12 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
             // Return section and add item to it
             return {
               ...section,
-              items: section.items.concat({
-                ...currentItem!,
-                ...positionProps,
-              }),
+              items: section.items
+                .filter((item) => item.id !== itemId)
+                .concat({
+                  ...currentItem!,
+                  ...positionProps,
+                }),
             };
           }),
         };

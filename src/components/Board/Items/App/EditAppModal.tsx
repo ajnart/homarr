@@ -16,6 +16,7 @@ import { appNamePositions, appNameStyles } from '~/server/db/items';
 import { objectKeys } from '~/tools/object';
 import { RouterOutputs } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
+import { appFormSchema } from '~/validations/app';
 
 import { DebouncedImage } from '../../../IconSelector/DebouncedImage';
 import { AppItem } from '../../context';
@@ -24,12 +25,6 @@ import { BehaviourTab } from './Edit/BehaviourTab';
 import { GeneralTab } from './Edit/GeneralTab';
 import { NetworkTab } from './Edit/NetworkTab';
 import { useAppActions } from './app-actions';
-
-const appUrlRegex =
-  '(https?://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|https?://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
-
-const appUrlWithAnyProtocolRegex =
-  '([A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\]?.[^\\s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^\\s]{2,}|[A-z]+://(?:www.|(?!www))\\[?[a-zA-Z0-9]+\\]?.[^\\s]{2,}|www.[a-zA-Z0-9]+.[^\\s]{2,})';
 
 export type EditAppModalInnerProps = {
   app: AppItem;
@@ -187,23 +182,6 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
 };
 
 export type EditAppModalTab = 'general' | 'behaviour' | 'network' | 'appereance';
-
-export const appFormSchema = z.object({
-  id: z.string().nonempty(),
-  type: z.literal('app'),
-  name: z.string().min(2).max(64),
-  internalUrl: z.string().regex(new RegExp(appUrlRegex)),
-  externalUrl: z.string().regex(new RegExp(appUrlWithAnyProtocolRegex)).nullable(),
-  iconUrl: z.string().nonempty(),
-  nameStyle: z.enum(appNameStyles),
-  namePosition: z.enum(appNamePositions),
-  nameLineClamp: z.number().min(0).max(10),
-  fontSize: z.number().min(5).max(64),
-  isPingEnabled: z.boolean(),
-  statusCodes: z.array(z.number().min(100).max(999)),
-  openInNewTab: z.boolean(),
-  description: z.string().nonempty().max(512).nullable(),
-});
 
 type FormType = z.infer<typeof appFormSchema>;
 export type AppForm = UseFormReturnType<FormType, (values: FormType) => FormType>;

@@ -16,6 +16,7 @@ import { DashboardSidebar } from './Sections/Sidebar/SidebarSection';
 import { useGridstackStore } from './gridstack/store';
 
 export const BoardView = () => {
+  const board = useRequiredBoard();
   const boardName = useRequiredBoard().name;
   const stackedSections = useStackedSections();
   const sidebarsVisible = useSidebarVisibility();
@@ -25,7 +26,7 @@ export const BoardView = () => {
   const [toggledCategories, setToggledCategories] = useLocalStorage({
     key: `${boardName}-category-section-toggled`,
     // This is a bit of a hack to toggle the categories on the first load, return a string[] of the categories
-    defaultValue: stackedSections.filter((s) => s.type === 'category').map((s) => s.id),
+    defaultValue: stackedSections.filter((s) => s.kind === 'category').map((s) => s.id),
   });
   const toggleCategory = useCallback((categoryId: string) => {
     setToggledCategories((current) => {
@@ -56,7 +57,7 @@ export const BoardView = () => {
 
         <Stack ref={mainAreaRef} mx={-10} style={{ flexGrow: 1 }}>
           {stackedSections.map((item) =>
-            item.type === 'category' ? (
+            item.kind === 'category' ? (
               <BoardCategorySection
                 key={item.id}
                 section={item}
@@ -73,6 +74,7 @@ export const BoardView = () => {
           <DashboardSidebar section={rightSidebarSection} />
         ) : null}
       </Group>
+      <pre>{JSON.stringify(board, null, 4)}</pre>
     </Box>
   );
 };
@@ -110,13 +112,13 @@ const useSidebarVisibility = () => {
 const useStackedSections = () => {
   const board = useRequiredBoard();
   return board.sections
-    .filter((s): s is CategorySection | EmptySection => s.type === 'category' || s.type === 'empty')
+    .filter((s): s is CategorySection | EmptySection => s.kind === 'category' || s.kind === 'empty')
     .sort((a, b) => a.position - b.position);
 };
 
 const useSidebarSection = (position: 'left' | 'right') => {
   const board = useRequiredBoard();
   return board.sections.find(
-    (s): s is SidebarSection => s.type === 'sidebar' && s.position === position
+    (s): s is SidebarSection => s.kind === 'sidebar' && s.position === position
   );
 };

@@ -11,7 +11,7 @@ export const notebookRouter = createTRPCRouter({
     .input(z.object({ widgetId: z.string(), content: z.string(), boardName: z.string() }))
     .mutation(async ({ input }) => {
       const item = await db.query.items.findFirst({
-        where: and(eq(items.id, input.widgetId), eq(items.type, 'widget')),
+        where: and(eq(items.id, input.widgetId), eq(items.kind, 'widget')),
         with: {
           widget: {
             with: {

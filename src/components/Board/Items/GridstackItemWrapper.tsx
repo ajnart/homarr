@@ -5,7 +5,7 @@ import { GridItemProvider } from '~/components/Board/Items/context';
 
 interface GridstackItemWrapperProps {
   id: string;
-  type: 'app' | 'widget';
+  kind: 'app' | 'widget';
   x?: number;
   y?: number;
   width?: number;
@@ -20,7 +20,7 @@ interface GridstackItemWrapperProps {
 
 export const GridstackItemWrapper = ({
   id,
-  type,
+  kind,
   x,
   y,
   width,
@@ -40,7 +40,7 @@ export const GridstackItemWrapper = ({
     <GridItemProvider itemRef={itemRef}>
       <div
         className="grid-stack-item"
-        data-type={type}
+        data-type={kind}
         data-id={id}
         {...locationProperties}
         gs-w={normalizedWidth}

@@ -40,24 +40,24 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
           sections: [
             // Ignore sidebar and hidden sections
             ...prev.sections.filter(
-              (section) => section.type === 'sidebar' || section.type === 'hidden'
+              (section) => section.kind === 'sidebar' || section.kind === 'hidden'
             ),
             // Place sections before the new category
             ...prev.sections.filter(
               (section) =>
-                (section.type === 'category' || section.type === 'empty') &&
+                (section.kind === 'category' || section.kind === 'empty') &&
                 section.position < position
             ),
             {
               id: v4(),
               name,
-              type: 'category',
+              kind: 'category',
               position,
               items: [],
             },
             {
               id: v4(),
-              type: 'empty',
+              kind: 'empty',
               position: position + 1,
               items: [],
             },
@@ -65,7 +65,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
             ...prev.sections
               .filter(
                 (section): section is CategorySection | EmptySection =>
-                  (section.type === 'category' || section.type === 'empty') &&
+                  (section.kind === 'category' || section.kind === 'empty') &&
                   section.position >= position
               )
               .map((section) => ({
@@ -86,7 +86,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         return {
           ...prev,
           sections: prev.sections.map((section) => {
-            if (section.type !== 'category') return section;
+            if (section.kind !== 'category') return section;
             if (section.id !== categoryId) return section;
             return {
               ...section,
@@ -105,7 +105,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(
-          (section): section is CategorySection => section.type === 'category' && section.id === id
+          (section): section is CategorySection => section.kind === 'category' && section.id === id
         );
         if (!currentCategory) return prev;
         if (currentCategory?.position === 1 && direction === 'up') return prev;
@@ -115,7 +115,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         return {
           ...prev,
           sections: prev.sections.map((section) => {
-            if (section.type !== 'category' && section.type !== 'empty') return section;
+            if (section.kind !== 'category' && section.kind !== 'empty') return section;
             const offset = direction === 'up' ? -2 : 2;
             // Move category and empty section
             if (
@@ -165,7 +165,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
 
         const currentCategory = prev.sections.find(
           (section): section is CategorySection =>
-            section.type === 'category' && section.id === categoryId
+            section.kind === 'category' && section.id === categoryId
         );
         if (!currentCategory) return prev;
 
@@ -173,17 +173,17 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
           ...prev,
           sections: [
             ...prev.sections.filter(
-              (section) => section.type === 'sidebar' || section.type === 'hidden'
+              (section) => section.kind === 'sidebar' || section.kind === 'hidden'
             ),
             ...prev.sections.filter(
               (section) =>
-                (section.type === 'category' || section.type === 'empty') &&
+                (section.kind === 'category' || section.kind === 'empty') &&
                 section.position < currentCategory.position
             ),
             ...prev.sections
               .filter(
                 (section): section is CategorySection | EmptySection =>
-                  (section.type === 'category' || section.type === 'empty') &&
+                  (section.kind === 'category' || section.kind === 'empty') &&
                   section.position >= currentCategory.position + 2
               )
               .map((section) => ({

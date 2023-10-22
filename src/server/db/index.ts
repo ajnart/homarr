@@ -7,3 +7,5 @@ import * as schema from './schema';
 const sqlite = new Database(env.DATABASE_URL?.replace('file:', ''));
 
 export const db = drizzle(sqlite, { schema });
+
+export type SchemaTransaction = Parameters<Parameters<typeof db.transaction>[0]>[0];

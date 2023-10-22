@@ -68,8 +68,6 @@ const ManagementPage = () => {
         </Group>
       </Box>
 
-      <AddBoardCard />
-
       <Text weight="bold" mb="md">
         {t('quickActions.title')}
       </Text>
@@ -162,34 +160,3 @@ const useStyles = createStyles((theme) => ({
     },
   },
 }));
-
-const AddBoardCard = () => {
-  const { mutate } = api.boards.exampleBoard.useMutation();
-  const [value, setValue] = useState('');
-
-  const handleClick = () => {
-    if (!value) return;
-    mutate(
-      { boardName: value },
-      {
-        onSuccess: () => {
-          setValue('');
-        },
-      }
-    );
-  };
-
-  return (
-    <Card withBorder w="100%">
-      <Group w="100%" noWrap>
-        <TextInput
-          w="100%"
-          value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
-          placeholder="Boardname"
-        />
-        <Button onClick={handleClick}>Create test board</Button>
-      </Group>
-    </Card>
-  );
-};

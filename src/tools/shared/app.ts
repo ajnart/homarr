@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 import { z } from 'zod';
-import { appFormSchema } from '~/components/Board/Items/App/EditAppModal';
 import { AppType } from '~/types/app';
+import { appFormSchema } from '~/validations/app';
 
 export const generateDefaultApp2 = (): z.infer<typeof appFormSchema> => {
   const appId = uuidv4();
   return {
     id: appId,
-    type: 'app',
+    kind: 'app',
     name: 'Your app',
     internalUrl: 'https://homarr.dev',
     externalUrl: 'https://homarr.dev',

@@ -23,7 +23,7 @@ export const layoutsRouter = createTRPCRouter({
 
     await db.insert(sections).values({
       id: randomUUID(),
-      type: 'empty',
+      kind: 'empty',
       layoutId: id,
       position: 0,
     });
@@ -40,11 +40,11 @@ export const layoutsRouter = createTRPCRouter({
   }),
 });
 
-const addSidebarSection = async (layoutId: string, type: 'left' | 'right') => {
+const addSidebarSection = async (layoutId: string, position: 'left' | 'right') => {
   await db.insert(sections).values({
     id: randomUUID(),
-    type: 'sidebar',
+    kind: 'sidebar',
     layoutId,
-    position: type === 'right' ? 0 : 1,
+    position: position === 'right' ? 0 : 1,
   });
 };

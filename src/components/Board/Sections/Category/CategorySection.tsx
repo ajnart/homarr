@@ -37,9 +37,7 @@ export const BoardCategorySection = ({ section, isOpened, toggle }: DashboardCat
       <Accordion.Item value={section.id}>
         <Group noWrap align="center">
           <Accordion.Control>
-            <Title order={3}>
-              {section.name} {section.position}
-            </Title>
+            <Title order={3}>{section.name}</Title>
           </Accordion.Control>
           <CategoryMenu category={section} />
         </Group>

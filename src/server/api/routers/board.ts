@@ -1,29 +1,49 @@
 import { TRPCError } from '@trpc/server';
 import { randomUUID } from 'crypto';
-import { eq, inArray } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import fs from 'fs';
 import { z } from 'zod';
 import { db } from '~/server/db';
-import { LayoutKind, WidgetSort } from '~/server/db/items';
+import { WidgetSort } from '~/server/db/items';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import {
-  appItems,
+  appStatusCodes,
   apps,
   boards,
   items,
   layoutItems,
   layouts,
   sections,
+  widgetOptions,
   widgets,
 } from '~/server/db/schema';
 import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { generateDefaultApp } from '~/tools/shared/app';
+import { appSchema } from '~/validations/app';
 import { boardCustomizationSchema, createBoardSchema } from '~/validations/boards';
 import { isMobileUserAgent } from '~/validations/mobile';
+import { sectionSchema } from '~/validations/section';
+import { widgetSchema } from '~/validations/widget';
 
 import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import { createBoardSaveDbChanges } from './board/db';
+import {
+  applyCreateAppChanges,
+  applyUpdateAppChanges,
+  getAppsForSectionsAsync,
+} from './board/db/app';
+import { getFullBoardWithLayoutSectionsAsync } from './board/db/board';
+import { addLayoutAsync } from './board/db/layout';
+import {
+  applyCreateWidgetChanges,
+  applyUpdateWidgetChanges,
+  getWidgetsForSectionsAsync,
+} from './board/db/widget';
+import { mapApp } from './board/mapping/app';
+import { mapSection } from './board/mapping/section';
+import { mapWidget } from './board/mapping/widget';
 import { configNameSchema } from './config';
 
 export const boardRouter = createTRPCRouter({
@@ -61,8 +81,8 @@ export const boardRouter = createTRPCRouter({
     return result.concat(
       dbBoards.map((x) => ({
         name: x.name,
-        countApps: x.items.filter((x) => x.type === 'app').length,
-        countWidgets: x.items.filter((x) => x.type === 'widget').length,
+        countApps: x.items.filter((x) => x.kind === 'app').length,
+        countWidgets: x.items.filter((x) => x.kind === 'widget').length,
         countCategories: 0, // TODO: Is different depending on layout
         isDefaultForUser: x.name === defaultBoard,
         type: 'db',
@@ -121,7 +141,13 @@ export const boardRouter = createTRPCRouter({
   byName: publicProcedure
     .input(z.object({ boardName: configNameSchema, layoutId: z.string().optional() }))
     .query(async ({ input }) => {
-      const board = await getFullBoardWithLayoutSectionsAsync(input.boardName, input.layoutId);
+      const board = await getFullBoardWithLayoutSectionsAsync(
+        {
+          key: 'name',
+          value: input.boardName,
+        },
+        input.layoutId
+      );
 
       if (!board) {
         throw new TRPCError({
@@ -157,6 +183,7 @@ export const boardRouter = createTRPCRouter({
       return {
         ...withoutLayouts,
         layoutName: layout.name,
+        layoutId: layout.id,
         showRightSidebar: layout.showRightSidebar,
         showLeftSidebar: layout.showLeftSidebar,
         sections: preparedSections,
@@ -211,120 +238,6 @@ export const boardRouter = createTRPCRouter({
 
       return dbBoard;
     }),
-  exampleBoard: protectedProcedure
-    .input(z.object({ boardName: configNameSchema }))
-    .mutation(async ({ input, ctx }) => {
-      const boardId = randomUUID();
-      const layoutId = randomUUID();
-      const sectionId = randomUUID();
-      await db.insert(boards).values({
-        id: boardId,
-        name: input.boardName,
-        ownerId: ctx.session.user.id,
-      });
-
-      await db.insert(layouts).values({
-        id: layoutId,
-        name: 'default',
-        boardId,
-        kind: 'desktop',
-      });
-
-      await db.insert(sections).values({
-        id: sectionId,
-        layoutId,
-        type: 'empty',
-        position: 0,
-      });
-
-      await addApp({
-        boardId,
-        sectionId,
-        name: 'Contribute',
-        internalUrl: 'https://github.com/ajnart/homarr',
-        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png',
-        width: 2,
-        height: 1,
-        x: 2,
-        y: 0,
-      });
-
-      await addApp({
-        boardId,
-        sectionId,
-        name: 'Discord',
-        internalUrl: 'https://discord.com/invite/aCsmEV5RgA',
-        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/discord.png',
-        width: 2,
-        height: 1,
-        x: 4,
-        y: 0,
-      });
-
-      await addApp({
-        boardId,
-        sectionId,
-        name: 'Donate',
-        internalUrl: 'https://ko-fi.com/ajnart',
-        iconUrl: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/ko-fi.png',
-        width: 2,
-        height: 1,
-        x: 6,
-        y: 0,
-      });
-
-      await addApp({
-        boardId,
-        sectionId,
-        name: 'Documentation',
-        internalUrl: 'https://homarr.dev',
-        iconUrl: '/imgs/logo/logo.png',
-        width: 2,
-        height: 2,
-        x: 6,
-        y: 1,
-      });
-
-      await addWidget({
-        boardId,
-        sectionId,
-        type: 'weather',
-        width: 2,
-        height: 1,
-        x: 0,
-        y: 0,
-      });
-
-      await addWidget({
-        boardId,
-        sectionId,
-        type: 'date',
-        width: 2,
-        height: 1,
-        x: 8,
-        y: 0,
-      });
-
-      await addWidget({
-        boardId,
-        sectionId,
-        type: 'date',
-        width: 2,
-        height: 1,
-        x: 8,
-        y: 1,
-      });
-
-      await addWidget({
-        boardId,
-        sectionId,
-        type: 'notebook',
-        width: 6,
-        height: 3,
-        x: 0,
-        y: 1,
-      });
-    }),
   create: adminProcedure.input(createBoardSchema).mutation(async ({ ctx, input }) => {
     const existingBoard = await db.query.boards.findFirst({
       where: eq(boards.name, input.boardName),
@@ -373,299 +286,220 @@ export const boardRouter = createTRPCRouter({
 
       return !board;
     }),
-});
-
-type AddLayoutProps = {
-  boardId: string;
-  name: string;
-  kind: LayoutKind;
-};
-const addLayoutAsync = async (props: AddLayoutProps) => {
-  const layout = {
-    id: randomUUID(),
-    ...props,
-  };
-  await db.insert(layouts).values(layout);
-  await db.insert(sections).values({
-    id: randomUUID(),
-    layoutId: layout.id,
-    type: 'empty',
-    position: 0,
-  });
-  return layout;
-};
-
-type AddWidgetProps = {
-  boardId: string;
-  sectionId: string;
-  type: WidgetSort;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-};
-
-const addWidget = async ({ boardId, sectionId, type, ...positionProps }: AddWidgetProps) => {
-  const itemId = randomUUID();
-  await db.insert(items).values({
-    id: itemId,
-    type: 'widget',
-    boardId,
-  });
-
-  const widgetId = randomUUID();
-  await db.insert(widgets).values({
-    id: widgetId,
-    type,
-    itemId,
-  });
-
-  const layoutItemId = randomUUID();
-  await db.insert(layoutItems).values({
-    id: layoutItemId,
-    itemId,
-    sectionId,
-    ...positionProps,
-  });
-};
-
-type AddAppProps = {
-  boardId: string;
-  sectionId: string;
-  name: string;
-  internalUrl: string;
-  iconUrl: string;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-};
-
-const addApp = async ({
-  boardId,
-  sectionId,
-  iconUrl,
-  internalUrl,
-  name,
-  ...positionProps
-}: AddAppProps) => {
-  const itemId = randomUUID();
-  await db.insert(items).values({
-    id: itemId,
-    type: 'app',
-    boardId,
-  });
-
-  const appId = randomUUID();
-  await db.insert(apps).values({
-    id: appId,
-    name,
-    internalUrl,
-    iconUrl,
-  });
-
-  await db.insert(appItems).values({
-    appId: appId,
-    itemId: itemId,
-  });
-
-  const layoutItemId = randomUUID();
-  await db.insert(layoutItems).values({
-    id: layoutItemId,
-    itemId,
-    sectionId,
-    ...positionProps,
-  });
-};
-
-const getAppsForSectionsAsync = async (sectionIds: string[]) => {
-  if (sectionIds.length === 0) return [];
-
-  return await db.query.appItems.findMany({
-    with: {
-      app: {
+  save: adminProcedure
+    .input(
+      z.object({
+        boardId: z.string(),
+        layoutId: z.string(),
+        sections: z.array(sectionSchema),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const boardWithSections = await db.query.boards.findFirst({
+        where: eq(boards.id, input.boardId),
         with: {
-          statusCodes: {
-            columns: {
-              code: true,
+          layouts: {
+            where: eq(layouts.id, input.layoutId),
+            with: {
+              sections: true,
             },
           },
         },
-      },
-      item: {
+      });
+
+      if (!boardWithSections) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'Board not found',
+        });
+      }
+
+      const layout = boardWithSections.layouts.at(0);
+      if (!layout) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'Layout not found',
+        });
+      }
+
+      const changes = createBoardSaveDbChanges();
+
+      const dbSections = layout.sections;
+      const dbSectionIds = dbSections.map((x) => x.id);
+
+      // Insert new sections
+      const newSections = input.sections
+        .filter((s) => dbSections.every((x) => x.id !== s.id))
+        .map((section) => ({
+          id: section.id,
+          layoutId: layout.id,
+          kind: section.kind,
+          position: parseSectionPosition(section.position),
+          name: section.kind === 'category' ? section.name : null,
+        }));
+      changes.sections.create.push(...newSections);
+
+      // Update existing sections
+      const updatedSections = input.sections
+        .filter((s) =>
+          dbSections.some(
+            (x) =>
+              x.id === s.id &&
+              (x.position !== s.position || (s.kind === 'category' && x.name !== s.name))
+          )
+        )
+        .map((section) => ({
+          position: parseSectionPosition(section.position),
+          name: section.kind === 'category' ? section.name : null,
+          _where: section.id,
+        }));
+      changes.sections.update.push(...updatedSections);
+
+      const dbItemsApps = await db.query.items.findMany({
+        where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'app')),
         with: {
           layouts: {
-            where: inArray(layoutItems.sectionId, sectionIds),
+            where:
+              dbSectionIds.length >= 1 ? inArray(layoutItems.sectionId, dbSectionIds) : undefined,
+          },
+          app: {
+            with: {
+              statusCodes: {
+                columns: {
+                  code: true,
+                },
+              },
+            },
           },
         },
-      },
-    },
-  });
-};
+      });
+      const inputApps = input.sections.flatMap((s) =>
+        s.items
+          .filter((i): i is z.infer<typeof appSchema> => i.kind === 'app')
+          .map((i) => ({ ...i, sectionId: s.id }))
+      );
 
-const getFullBoardWithLayoutSectionsAsync = async (
-  boardName: string,
-  layoutId: string | undefined
-) => {
-  return await db.query.boards.findFirst({
-    columns: {
-      ownerId: false,
-    },
-    with: {
-      owner: {
-        columns: {
-          id: true,
-          name: true,
-        },
-      },
-      layouts: {
-        columns: {
-          name: true,
-          showLeftSidebar: true,
-          showRightSidebar: true,
-        },
-        with: {
-          sections: {
-            orderBy: sections.position,
-          },
-        },
-        where: layoutId ? eq(layouts.id, layoutId) : undefined,
-      },
-    },
-    where: eq(boards.name, boardName),
-  });
-};
+      const newApps = inputApps.filter((x) => dbItemsApps.every((y) => y.id !== x.id));
+      newApps.forEach(({ sectionId, ...app }) =>
+        applyCreateAppChanges(changes, app, input.boardId, sectionId)
+      );
 
-const getWidgetsForSectionsAsync = async (sectionIds: string[]) => {
-  if (sectionIds.length === 0) return [];
-  return await db.query.widgets.findMany({
-    with: {
-      options: true,
-      item: {
+      const updatedApps = inputApps.filter((s) => dbItemsApps.some((x) => x.id === s.id));
+      updatedApps.forEach(({ sectionId, ...app }) =>
+        applyUpdateAppChanges(
+          changes,
+          app,
+          dbItemsApps.find((a) => a.id === app.id)?.app?.statusCodes.map((x) => x.code) ?? [],
+          sectionId
+        )
+      );
+
+      const removedAppIds = dbItemsApps
+        .filter((app) => inputApps.every((x) => x.id !== app.id))
+        .map((a) => a.id);
+      changes.items.delete.push(...removedAppIds);
+
+      const dbItemsWidgets = await db.query.items.findMany({
+        where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'widget')),
         with: {
           layouts: {
-            where: inArray(layoutItems.sectionId, sectionIds),
+            where:
+              dbSectionIds.length >= 1 ? inArray(layoutItems.sectionId, dbSectionIds) : undefined,
+          },
+          widget: {
+            with: {
+              options: true,
+            },
           },
         },
-      },
-    },
-  });
-};
+      });
+      const inputWidgets = input.sections.flatMap((s) =>
+        s.items
+          .filter((i): i is z.infer<typeof widgetSchema> => i.kind === 'widget')
+          .map((i) => ({ ...i, sectionId: s.id }))
+      );
 
-type FullBoardWithLayout = Exclude<
-  Awaited<ReturnType<typeof getFullBoardWithLayoutSectionsAsync>>,
-  undefined
->;
+      const newWidgets = inputWidgets.filter((x) => dbItemsWidgets.every((y) => y.id !== x.id));
+      newWidgets.forEach(({ sectionId, ...widget }) =>
+        applyCreateWidgetChanges(changes, widget, input.boardId, sectionId)
+      );
 
-type MapSection = FullBoardWithLayout['layouts'][number]['sections'][number];
-type MapApp = Awaited<ReturnType<typeof getAppsForSectionsAsync>>[number];
-type MapWidget = Awaited<ReturnType<typeof getWidgetsForSectionsAsync>>[number];
-type MapOption = MapWidget['options'][number];
+      const updatedWidgets = inputWidgets.filter((s) => dbItemsWidgets.some((x) => x.id === s.id));
+      updatedWidgets.forEach(({ sectionId, ...widget }) =>
+        applyUpdateWidgetChanges(
+          changes,
+          widget,
+          dbItemsWidgets.find((a) => a.id === widget.id)?.widget?.options ?? [],
+          sectionId
+        )
+      );
 
-const mapSection = (
-  section: Omit<MapSection, 'items'>,
-  items: (ReturnType<typeof mapWidget> | ReturnType<typeof mapApp>)[]
-) => {
-  const { layoutId, ...withoutLayoutId } = section;
-  if (withoutLayoutId.type === 'empty') {
-    const { name, position, type, ...sectionProps } = withoutLayoutId;
-    return {
-      ...sectionProps,
-      type,
-      position: section.position!,
-      items,
-    };
-  }
-  if (withoutLayoutId.type === 'hidden') {
-    const { name, position, type, ...sectionProps } = withoutLayoutId;
-    return {
-      ...sectionProps,
-      type,
-      position: null,
-      items,
-    };
-  }
-  if (withoutLayoutId.type === 'category') {
-    const { name, position, type, ...sectionProps } = withoutLayoutId;
-    return {
-      ...sectionProps,
-      type,
-      name: name!,
-      position: section.position!,
-      items,
-    };
-  }
+      const removedWidgetIds = dbItemsWidgets
+        .filter((widget) => inputWidgets.every((x) => x.id !== widget.id))
+        .map((w) => w.id);
+      changes.items.delete.push(...removedWidgetIds);
 
-  const { name, position, type, ...sectionProps } = withoutLayoutId;
+      await db.transaction(async (tx) => {
+        // Insert
+        if (changes.sections.create.length > 0) {
+          await tx.insert(sections).values(changes.sections.create);
+        }
+        if (changes.items.create.length > 0) {
+          await tx.insert(items).values(changes.items.create);
+        }
+        if (changes.layoutItems.create.length > 0) {
+          await tx.insert(layoutItems).values(changes.layoutItems.create);
+        }
+        if (changes.apps.create.length > 0) {
+          await tx.insert(apps).values(changes.apps.create);
+        }
+        console.log('before appStatusCodes');
+        if (changes.appStatusCodes.create.length > 0) {
+          await tx.insert(appStatusCodes).values(changes.appStatusCodes.create);
+        }
+        if (changes.widgets.create.length > 0) {
+          await tx.insert(widgets).values(changes.widgets.create);
+        }
+        if (changes.widgetOptions.create.length > 0) {
+          await tx.insert(widgetOptions).values(changes.widgetOptions.create);
+        }
+        // Update
+        for (const { _where, ...section } of changes.sections.update) {
+          await tx.update(sections).set(section).where(eq(sections.id, _where));
+        }
+        for (const { _where, ...item } of changes.items.update) {
+          await tx.update(items).set(item).where(eq(items.id, _where));
+        }
+        for (const { _where, ...layoutItem } of changes.layoutItems.update) {
+          await tx.update(layoutItems).set(layoutItem).where(eq(layoutItems.itemId, _where));
+        }
+        for (const { _where, ...app } of changes.apps.update) {
+          await tx.update(apps).set(app).where(eq(apps.itemId, _where));
+        }
+        for (const { _where, ...widget } of changes.widgets.update) {
+          await tx.update(widgets).set(widget).where(eq(widgets.itemId, _where));
+        }
+        for (const { _where, ...widgetOption } of changes.widgetOptions.update) {
+          await tx.update(widgetOptions).set(widgetOption).where(eq(widgetOptions.path, _where));
+        }
+        // Delete
+        if (changes.items.delete.length > 0) {
+          await tx.delete(items).where(inArray(items.id, changes.items.delete));
+        }
+        for (const { code, appId } of changes.appStatusCodes.delete) {
+          await tx
+            .delete(appStatusCodes)
+            .where(and(eq(appStatusCodes.appId, appId), eq(appStatusCodes.code, code)));
+        }
+        if (changes.sections.delete.length > 0) {
+          await tx.delete(sections).where(inArray(sections.id, changes.sections.delete));
+        }
+      });
+    }),
+});
 
-  return {
-    ...sectionProps,
-    type,
-    position: position === 0 ? ('right' as const) : ('left' as const),
-    items,
-  };
-};
-
-const mapWidget = (widgetItem: MapWidget) => {
-  const { sectionId, itemId, id, ...commonLayoutItem } = widgetItem.item.layouts.at(0)!;
-  const common = { ...commonLayoutItem, id: itemId };
-  const { id: _id, itemId: _itemId, type, item, ...widget } = widgetItem;
-  return {
-    ...common,
-    ...widget,
-    type: 'widget' as const,
-    sort: type,
-    options: mapOptions(widget.options),
-  };
-};
-
-const mapApp = (appItem: MapApp) => {
-  const { sectionId, itemId, id, ...commonLayoutItem } = appItem.item.layouts.at(0)!;
-  const common = { ...commonLayoutItem, id: itemId };
-  const { app: innerApp, appId, itemId: _itemId, item, ...otherAppItem } = appItem;
-  const { id: _id, statusCodes, ...app } = appItem.app!;
-  return {
-    ...common,
-    ...otherAppItem,
-    ...app,
-    type: 'app' as const,
-    statusCodes: statusCodes.map((x) => x.code),
-  };
-};
-
-const mapOptions = (options: MapOption[]) => {
-  const result = {} as Record<string, unknown>;
-  const sorted = options.sort((a, b) => a.path.localeCompare(b.path));
-  sorted.forEach((item) => {
-    addAtPath(result, item);
-  });
-  return result;
-};
-
-const addAtPath = (outerObj: Record<string, unknown>, item: MapOption) => {
-  const { path, value } = item;
-  const pathArray = path.split('.');
-  const lastKey = pathArray.pop()!;
-  let current: any = outerObj;
-  pathArray.forEach((key) => {
-    if (Array.isArray(current)) {
-      current = current[parseInt(key, 10)];
-    } else if (typeof current === 'object') {
-      current = current[key];
-    }
-  });
-
-  if (item.type === 'array') {
-    current[lastKey] = [];
-  } else if (item.type === 'object') {
-    current[lastKey] = {};
-  } else if (item.type === 'number' && value) {
-    current[lastKey] = value.includes('.') ? parseFloat(value) : parseInt(value, 10);
-  } else if (item.type === 'boolean') {
-    current[lastKey] = value === 'true';
-  } else if (item.type === 'string') {
-    current[lastKey] = value;
-  } else if (item.type === 'null') {
-    current[lastKey] = null;
-  }
+const parseSectionPosition = (position: z.infer<typeof sectionSchema>['position']) => {
+  if (position === 'left') return 0;
+  if (position === 'right') return 1;
+  return position;
 };

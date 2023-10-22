@@ -32,7 +32,7 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
               ...section,
               items: section.items.map((item) => {
                 // Return same item if item is not the one we're moving
-                if (item.id !== itemId || item.type !== 'widget') return item;
+                if (item.id !== itemId || item.kind !== 'widget') return item;
                 return {
                   ...item,
                   options: newOptions,
@@ -52,12 +52,12 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
         if (!prev) return prev;
 
         let lastSection = prev.sections
-          .filter((s): s is EmptySection => s.type === 'empty')
+          .filter((s): s is EmptySection => s.kind === 'empty')
           .sort((a, b) => a.position - b.position)[0];
 
         const widget = {
           id: v4(),
-          type: 'widget',
+          kind: 'widget',
           sort,
           options: Object.entries(definition.options).reduce(
             (prev, [k, v]) => {

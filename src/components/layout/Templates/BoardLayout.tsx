@@ -25,6 +25,7 @@ import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
+import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
 
@@ -140,10 +141,10 @@ const beforeUnloadEventText = 'Exit the edit mode to save your changes';
 const editModeNotificationId = 'toggle-edit-mode';
 
 const ToggleEditModeButton = () => {
+  const utils = api.useContext();
   const { enabled, toggleEditMode } = useEditModeStore();
   const board = useRequiredBoard();
   const { name } = board;
-  //const { mutateAsync: saveConfig } = api.config.save.useMutation();
   const namedWrapperColumnCount = useNamedWrapperColumnCount();
   const { t } = useTranslation(['layout/header/actions/toggle-edit-mode', 'common']);
   const translatedSize =
@@ -163,10 +164,13 @@ const ToggleEditModeButton = () => {
     return undefined;
   });
 
+  const { mutateAsync: saveBoardAsync } = api.boards.save.useMutation();
+
   const save = async () => {
     toggleEditMode();
     if (!board || !name) return;
-    //await saveConfig({ name, config: {} as any });
+    await saveBoardAsync({ boardId: board.id, sections: board.sections, layoutId: board.layoutId });
+    utils.boards.byName.invalidate({ boardName: name, layoutId: board.layoutId });
     Consola.log('Saved config to server', name);
     hideNotification(editModeNotificationId);
   };

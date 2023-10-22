@@ -18,10 +18,10 @@ export const MobileRibbons = () => {
   }
 
   const leftSection = board.sections.find(
-    (x): x is SidebarSection => x.type === 'sidebar' && x.position === 'left'
+    (x): x is SidebarSection => x.kind === 'sidebar' && x.position === 'left'
   )!;
   const rightSection = board.sections.find(
-    (x): x is SidebarSection => x.type === 'sidebar' && x.position === 'right'
+    (x): x is SidebarSection => x.kind === 'sidebar' && x.position === 'right'
   )!;
 
   return (

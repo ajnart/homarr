@@ -14,6 +14,7 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useCallback, useMemo } from 'react';
+import React from 'react';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
 
 import { AppItem, CategorySection } from '../../context';
@@ -41,17 +42,16 @@ export const CategoryMenu = ({ category }: CategoryMenuProps) => {
       </Menu.Target>
       <Menu.Dropdown>
         {actions.map((action) => (
-          <>
-            {action.group && <Menu.Label key={action.group}>{t(action.group)}</Menu.Label>}
+          <React.Fragment key={action.label}>
+            {action.group && <Menu.Label>{t(action.group)}</Menu.Label>}
             <Menu.Item
-              key={action.label}
               icon={<action.icon size="1rem" />}
               onClick={action.onClick}
               color={action.color}
             >
               {t(action.label)}
             </Menu.Item>
-          </>
+          </React.Fragment>
         ))}
       </Menu.Dropdown>
     </Menu>
@@ -102,7 +102,7 @@ const useEditModeActions = (category: CategorySection): ActionDefinition[] => {
 const useNonEditModeActions = (category: CategorySection): ActionDefinition[] => {
   const openAllApps = useOpenAllApps();
   const apps = useMemo(
-    () => category.items.filter((x): x is AppItem => x.type === 'app'),
+    () => category.items.filter((x): x is AppItem => x.kind === 'app'),
     [category.items.length]
   );
 

@@ -58,7 +58,7 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
   }
 
   useEffect(() => {
-    if (section.type === 'sidebar' || !mainAreaWidth) return;
+    if (section.kind === 'sidebar' || !mainAreaWidth) return;
     const widgetWidth = mainAreaWidth / sectionColumnCount;
     // widget width is used to define sizes of gridstack items within global.scss
     root?.style.setProperty('--gridstack-widget-width', widgetWidth.toString());
@@ -114,9 +114,7 @@ export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnT
     // Add listener for moving items in config from one wrapper to another
     gridRef.current?.on('added', (_, el) => {
       const nodes = el as GridStackNode[];
-      const firstNode = nodes.at(0);
-      if (!firstNode) return;
-      onAdd(firstNode);
+      nodes.forEach((n) => onAdd(n));
     });
 
     return () => {

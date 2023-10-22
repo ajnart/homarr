@@ -30,7 +30,7 @@ export const AvailableElementTypes = ({
   const { t } = useTranslation('layout/element-selector/selector');
   const { addCategory } = useCategoryActions({ boardName: board.name });
   const lastSection = board.sections
-    .filter((x): x is CategorySection | EmptySection => x.type === 'empty' || x.type === 'category')
+    .filter((x): x is CategorySection | EmptySection => x.kind === 'empty' || x.kind === 'category')
     .sort((a, b) => b.position - a.position)
     .at(0);
 

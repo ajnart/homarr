@@ -45,7 +45,7 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
       (engine) =>
         engine.sort !== 'movie' ||
         board?.sections.some((section) =>
-          section.items.some((x) => x.type === 'app' && x.integration?.type === engine.value)
+          section.items.some((x) => x.kind === 'app' && x.integration?.type === engine.value)
         )
     )
     .map((engine) => ({
@@ -148,9 +148,9 @@ const useBoardApps = (search: string) => {
     if (search.trim().length === 0) return [];
     if (!board) return [];
     const apps = board.sections
-      .flatMap((section) => section.items.filter((item) => item.type === 'app'))
+      .flatMap((section) => section.items.filter((item) => item.kind === 'app'))
       .filter(
-        (x): x is AppItem => x.type === 'app' && x.name.toLowerCase().includes(search.toLowerCase())
+        (x): x is AppItem => x.kind === 'app' && x.name.toLowerCase().includes(search.toLowerCase())
       );
 
     return apps.map((app) => ({

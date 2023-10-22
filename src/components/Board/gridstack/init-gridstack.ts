@@ -21,15 +21,15 @@ export const initializeGridstack = ({
 }: InitializeGridstackProps) => {
   if (!refs.wrapper.current) return;
   // calculates the currently available count of columns
-  const columnCount = section.type === 'sidebar' ? 2 : sectionColumnCount;
+  const columnCount = section.kind === 'sidebar' ? 2 : sectionColumnCount;
   const minRow =
-    section.type !== 'sidebar' ? 1 : Math.floor(refs.wrapper.current.offsetHeight / 128);
+    section.kind !== 'sidebar' ? 1 : Math.floor(refs.wrapper.current.offsetHeight / 128);
   // initialize gridstack
   const newGrid = refs.gridstack;
   newGrid.current = GridStack.init(
     {
       column: columnCount,
-      margin: section.type === 'sidebar' ? 5 : 10,
+      margin: section.kind === 'sidebar' ? 5 : 10,
       cellHeight: 128,
       float: true,
       alwaysShowResizeHandle: 'mobile',
@@ -40,7 +40,7 @@ export const initializeGridstack = ({
       animate: false,
     },
     // selector of the gridstack item (it's eather category or wrapper)
-    `.grid-stack-${section.type}[data-${section.type}='${section.id}']`
+    `.grid-stack-${section.kind}[data-${section.kind}='${section.id}']`
   );
   const grid = newGrid.current;
   if (!grid) return;
@@ -54,13 +54,4 @@ export const initializeGridstack = ({
     ref && grid.makeWidget(ref);
   });
   grid.batchUpdate(false);
-};
-
-export type ItemWithUnknownLocation = {
-  x?: number;
-  y?: number;
-  w?: number;
-  h?: number;
-  type: 'app' | 'widget';
-  id: string;
 };

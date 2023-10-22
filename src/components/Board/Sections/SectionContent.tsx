@@ -16,15 +16,15 @@ interface SectionContentProps {
 }
 
 export function SectionContent({ items, refs }: SectionContentProps) {
-  const apps = useMemo(() => items.filter((x): x is AppItem => x.type === 'app'), [items]);
-  const widgets = useMemo(() => items.filter((x): x is WidgetItem => x.type === 'widget'), [items]);
+  const apps = useMemo(() => items.filter((x): x is AppItem => x.kind === 'app'), [items]);
+  const widgets = useMemo(() => items.filter((x): x is WidgetItem => x.kind === 'widget'), [items]);
 
   return (
     <>
       {apps?.map((app) => (
         <GridstackItemWrapper
           id={app.id}
-          type="app"
+          kind="app"
           key={app.id}
           itemRef={refs.items.current[app.id]}
           maxHeight={12}
@@ -45,7 +45,7 @@ export function SectionContent({ items, refs }: SectionContentProps) {
 
         return (
           <GridstackItemWrapper
-            type="widget"
+            kind="widget"
             key={widget.id}
             itemRef={refs.items.current[widget.id]}
             id={widget.id}

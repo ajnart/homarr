@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import { z } from 'zod';
 import { api } from '~/utils/api';
+import { appFormSchema } from '~/validations/app';
 
 import { AppItem, EmptySection } from '../../context';
-import { appFormSchema } from './EditAppModal';
 
 type CreateOrUpdateApp = {
   app: z.infer<typeof appFormSchema>;
@@ -22,7 +22,7 @@ export const useAppActions = ({ boardName }: { boardName: string }) => {
 
         if (!sectionId) {
           sectionId = prev.sections
-            .filter((section): section is EmptySection => section.type === 'empty')
+            .filter((section): section is EmptySection => section.kind === 'empty')
             .sort((a, b) => a.position - b.position)[0].id;
         }
 

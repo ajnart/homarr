@@ -141,7 +141,7 @@ export const boards = sqliteTable('board', {
 
 export const integrations = sqliteTable('integration', {
   id: text('id').notNull().primaryKey(),
-  type: text('type').$type<IntegrationType>().notNull(),
+  sort: text('sort').$type<IntegrationType>().notNull(),
 });
 
 export const integrationSecrets = sqliteTable(
@@ -161,7 +161,7 @@ export const integrationSecrets = sqliteTable(
 
 export const widgets = sqliteTable('widget', {
   id: text('id').notNull().primaryKey(),
-  type: text('type').$type<WidgetSort>().notNull(),
+  sort: text('sort').$type<WidgetSort>().notNull(),
   itemId: text('item_id')
     .notNull()
     .references(() => items.id, { onDelete: 'cascade' }),
@@ -184,7 +184,7 @@ export const widgetOptions = sqliteTable(
 
 export const items = sqliteTable('item', {
   id: text('id').notNull().primaryKey(),
-  type: text('type').$type<'app' | 'widget'>().notNull(),
+  kind: text('kind').$type<'app' | 'widget'>().notNull(),
   boardId: text('board_id')
     .notNull()
     .references(() => boards.id, { onDelete: 'cascade' }),
@@ -197,18 +197,12 @@ export const apps = sqliteTable('app', {
   internalUrl: text('internal_url').notNull(),
   externalUrl: text('external_url'),
   iconUrl: text('icon_url').notNull(),
-});
-
-export const appItems = sqliteTable('app_item', {
   openInNewTab: int('open_in_new_tab', { mode: 'boolean' }).notNull().default(false),
   isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).notNull().default(false),
   fontSize: int('font_size').notNull().default(16),
   namePosition: text('name_position').$type<AppNamePosition>().notNull().default('top'),
   nameStyle: text('name_style').$type<AppNameStyle>().notNull().default('normal'),
   nameLineClamp: int('name_line_clamp').notNull().default(1),
-  appId: text('app_id')
-    .notNull()
-    .references(() => apps.id, { onDelete: 'cascade' }),
   itemId: text('item_id')
     .notNull()
     .references(() => items.id, { onDelete: 'cascade' }),
@@ -262,7 +256,7 @@ export const layouts = sqliteTable('layout', {
 
 export const sections = sqliteTable('section', {
   id: text('id').notNull().primaryKey(),
-  type: text('type').$type<SectionType>().notNull(),
+  kind: text('kind').$type<SectionType>().notNull(),
   position: int('position'), // number, right = 0, left = 1
   name: text('name'),
   layoutId: text('layout_id')
@@ -333,7 +327,7 @@ export const itemRelations = relations(items, ({ one, many }) => ({
     references: [boards.id],
   }),
   widget: one(widgets),
-  app: one(appItems),
+  app: one(apps),
   layouts: many(layoutItems),
 }));
 
@@ -341,18 +335,10 @@ export const integrationRelations = relations(integrations, ({ many }) => ({
   secrets: many(integrationSecrets),
 }));
 
-export const appRelations = relations(apps, ({ many }) => ({
+export const appRelations = relations(apps, ({ many, one }) => ({
   statusCodes: many(appStatusCodes),
-  items: many(appItems),
-}));
-
-export const appItemRelations = relations(appItems, ({ one }) => ({
-  app: one(apps, {
-    fields: [appItems.appId],
-    references: [apps.id],
-  }),
   item: one(items, {
-    fields: [appItems.itemId],
+    fields: [apps.itemId],
     references: [items.id],
   }),
 }));

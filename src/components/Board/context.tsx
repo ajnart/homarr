@@ -51,16 +51,16 @@ export const useOptionalBoard = () => {
 export type Section = RouterOutputs['boards']['byName']['sections'][number];
 type SectionOfType<
   TSection extends Section,
-  TSectionType extends Section['type'],
-> = TSection extends { type: TSectionType } ? TSection : never;
+  TSectionType extends Section['kind'],
+> = TSection extends { kind: TSectionType } ? TSection : never;
 export type CategorySection = SectionOfType<Section, 'category'>;
 export type EmptySection = SectionOfType<Section, 'empty'>;
 export type SidebarSection = SectionOfType<Section, 'sidebar'>;
 export type HiddenSection = SectionOfType<Section, 'hidden'>;
 
 export type Item = Section['items'][number];
-type ItemOfType<TItem extends Item, TItemType extends Item['type']> = TItem extends {
-  type: TItemType;
+type ItemOfType<TItem extends Item, TItemType extends Item['kind']> = TItem extends {
+  kind: TItemType;
 }
   ? TItem
   : never;
