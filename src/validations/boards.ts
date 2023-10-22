@@ -7,7 +7,7 @@ export const createBoardSchemaValidation = z.object({
 
 export const boardCustomizationSchema = z.object({
   access: z.object({
-    allowGuests: z.boolean()
+    allowGuests: z.boolean(),
   }),
   layout: z.object({
     leftSidebarEnabled: z.boolean(),
@@ -20,7 +20,7 @@ export const boardCustomizationSchema = z.object({
     lg: z.number().min(5).max(20),
   }),
   pageMetadata: z.object({
-    pageTitle: z.string().min(1),
+    pageTitle: z.string(),
     metaTitle: z.string(),
     logoSrc: z.string(),
     faviconSrc: z.string(),

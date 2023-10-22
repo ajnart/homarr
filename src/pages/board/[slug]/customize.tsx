@@ -130,6 +130,7 @@ export default function CustomizationPage({
             color: 'green',
             icon: <IconCheck />,
           });
+          form.resetDirty();
         },
         onError() {
           updateNotification({
@@ -193,12 +194,12 @@ export default function CustomizationPage({
                   <Button
                     onClick={() => {
                       if (!form.isValid()) {
+                        form.validate();
                         return;
                       }
 
                       handleSubmit(form.values);
                     }}
-                    disabled={!form.isValid()}
                     loading={isLoading}
                     color="green"
                   >
