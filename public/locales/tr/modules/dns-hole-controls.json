@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "DNS hole kontrolleri",
+    "name": "DNS çözümleyici kontrolleri",
     "description": "Kontrol panelinizden PiHole veya AdGuard'ı kontrol edin",
     "settings": {
-      "title": "DNS hole kontrol ayarları",
+      "title": "DNS çözümleyici kontrol ayarları",
       "showToggleAllButtons": {
         "label": "'Tümünü Etkinleştir/Devre Dışı Bırak' Butonlarını Göster"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "DNS çözümleyici bulunamadı",
+        "text": "DNS Çözümleyici(leri)nize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyon(ları)nızı kontrol edin."
       }
     }
   }
