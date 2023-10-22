@@ -18,17 +18,19 @@ import {
   IconChartCandle,
   IconCheck,
   IconDragDrop,
-  IconLayout, IconLock,
+  IconLayout,
+  IconLock,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import { z } from 'zod';
+import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
 import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
@@ -46,21 +48,30 @@ import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { boardCustomizationSchema } from '~/validations/boards';
-import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 
 const notificationId = 'board-customization-notification';
 
-export default function CustomizationPage() {
-  const query = useRouter().query as { slug: string };
+export default function CustomizationPage({
+  initialConfig,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const query = useRouter().query as {
+    slug: string;
+  };
   const utils = api.useContext();
-  const { data: config } = api.config.byName.useQuery({ name: query.slug });
+  const { data: config } = api.config.byName.useQuery(
+    { name: query.slug },
+    {
+      initialData: initialConfig,
+      refetchOnMount: false,
+    }
+  );
   const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
     initialValues: {
       access: {
-        allowGuests: config?.settings.access.allowGuests ?? false
+        allowGuests: config?.settings.access.allowGuests ?? false,
       },
       layout: {
         leftSidebarEnabled: config?.settings.customization.layout.enabledLeftSidebar ?? false,
@@ -143,6 +154,7 @@ export default function CustomizationPage() {
         <Button
           component={Link}
           passHref
+          color={config?.settings.customization.colors.primary ?? 'red'}
           href={backToBoardHref}
           variant="light"
           leftIcon={<IconArrowLeft size={16} />}
@@ -290,7 +302,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
       'settings/customization/shade-selector',
       'settings/customization/opacity-selector',
       'settings/customization/gridstack',
-      'settings/customization/access'
+      'settings/customization/access',
     ],
     locale,
     req,
@@ -299,6 +311,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
 
   return {
     props: {
+      initialConfig: config,
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,
