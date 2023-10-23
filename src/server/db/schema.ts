@@ -210,7 +210,6 @@ export const apps = sqliteTable('app', {
 
 export const statusCodes = sqliteTable('status_code', {
   code: int('code').notNull().primaryKey(),
-  group: text('group').$type<StatusCodeType>().notNull(),
 });
 
 export const appStatusCodes = sqliteTable(

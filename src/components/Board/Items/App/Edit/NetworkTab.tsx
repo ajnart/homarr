@@ -1,6 +1,6 @@
 import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { StatusCodes } from '~/tools/acceptableStatusCodes';
+import { statusCodeData } from '~/tools/acceptableStatusCodes';
 
 import { AppForm } from '../EditAppModal';
 
@@ -10,7 +10,7 @@ interface NetworkTabProps {
 
 export const NetworkTab = ({ form }: NetworkTabProps) => {
   const { t } = useTranslation('layout/modals/add-app');
-  const acceptableStatusCodes = (form.values.statusCodes ?? [200]).map((x) => x.toString());
+  const statusCodes = (form.values.statusCodes ?? [200]).map((x) => x.toString());
   return (
     <Tabs.Panel value="network" pt="lg">
       <Stack spacing="xs">
@@ -26,10 +26,10 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
             required
             label={t('network.statusCodes.label')}
             description={t('network.statusCodes.description')}
-            data={StatusCodes}
+            data={statusCodeData}
             clearable
             searchable
-            defaultValue={acceptableStatusCodes}
+            defaultValue={statusCodes}
             variant="default"
             {...form.getInputProps('statusCodes')}
             value={form.getInputProps('statusCodes').value.map((x: number) => x.toString())}

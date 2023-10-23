@@ -1,8 +1,8 @@
 import { randomUUID } from 'crypto';
-import { eq, inArray } from 'drizzle-orm';
+import { inArray } from 'drizzle-orm';
 import { z } from 'zod';
-import { SchemaTransaction, db } from '~/server/db';
-import { appStatusCodes, apps, items, layoutItems } from '~/server/db/schema';
+import { db } from '~/server/db';
+import { layoutItems } from '~/server/db/schema';
 import { appSchema } from '~/validations/app';
 
 import { BoardSaveDbChanges } from '.';
@@ -57,12 +57,12 @@ export const applyCreateAppChanges = (
     openInNewTab: app.openInNewTab,
   });
 
-  /*changes.appStatusCodes.create.push(
+  changes.appStatusCodes.create.push(
     ...app.statusCodes.map((code) => ({
       appId,
       code,
     }))
-  );*/
+  );
 
   changes.layoutItems.create.push({
     id: randomUUID(),
@@ -78,6 +78,7 @@ export const applyCreateAppChanges = (
 export const applyUpdateAppChanges = async (
   changes: BoardSaveDbChanges,
   app: z.infer<typeof appSchema>,
+  dbAppId: string,
   dbStatusCodes: number[],
   sectionId: string
 ) => {
@@ -97,20 +98,20 @@ export const applyUpdateAppChanges = async (
   });
 
   // Update status codes
-  /*const newStatusCodes = app.statusCodes.filter((code) => !dbStatusCodes.includes(code));
+  const newStatusCodes = app.statusCodes.filter((code) => !dbStatusCodes.includes(code));
   changes.appStatusCodes.create.push(
     ...newStatusCodes.map((code) => ({
-      appId: app.id,
+      appId: dbAppId,
       code,
     }))
   );
   const deletedStatusCodes = dbStatusCodes.filter((code) => !app.statusCodes.includes(code));
   changes.appStatusCodes.delete.push(
     ...deletedStatusCodes.map((code) => ({
-      appId: app.id,
+      appId: dbAppId,
       code,
     }))
-  );*/
+  );
 
   changes.layoutItems.update.push({
     sectionId,

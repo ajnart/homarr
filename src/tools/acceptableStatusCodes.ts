@@ -1,6 +1,6 @@
 import { SelectItem } from '@mantine/core';
 
-export const StatusCodes: SelectItem[] = [
+export const statusCodeData: SelectItem[] = [
   { value: '200', label: '200 - OK', group: 'Sucessful responses' },
   { value: '204', label: '204 - No Content', group: 'Sucessful responses' },
   { value: '301', label: '301 - Moved Permanently', group: 'Redirection responses' },

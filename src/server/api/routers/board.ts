@@ -14,6 +14,7 @@ import {
   layoutItems,
   layouts,
   sections,
+  statusCodes,
   widgetOptions,
   widgets,
 } from '~/server/db/schema';
@@ -322,6 +323,8 @@ export const boardRouter = createTRPCRouter({
         });
       }
 
+      const dbStatusCodes = await db.query.statusCodes.findMany();
+
       const changes = createBoardSaveDbChanges();
 
       const dbSections = layout.sections;
@@ -385,19 +388,26 @@ export const boardRouter = createTRPCRouter({
       );
 
       const updatedApps = inputApps.filter((s) => dbItemsApps.some((x) => x.id === s.id));
-      updatedApps.forEach(({ sectionId, ...app }) =>
+      updatedApps.forEach(({ sectionId, ...app }) => {
+        const dbApp = dbItemsApps.find((a) => a.id === app.id)!;
         applyUpdateAppChanges(
           changes,
           app,
-          dbItemsApps.find((a) => a.id === app.id)?.app?.statusCodes.map((x) => x.code) ?? [],
+          dbApp.app!.id,
+          dbApp.app?.statusCodes.map((x) => x.code) ?? [],
           sectionId
-        )
-      );
+        );
+      });
 
       const removedAppIds = dbItemsApps
         .filter((app) => inputApps.every((x) => x.id !== app.id))
         .map((a) => a.id);
       changes.items.delete.push(...removedAppIds);
+
+      const inputStatusCodes = new Set(inputApps.flatMap((x) => x.statusCodes));
+      const newStatusCodes = Array.from(inputStatusCodes).filter((sc) =>
+        dbStatusCodes.every((dsc) => dsc.code !== sc)
+      );
 
       const dbWidgets = await db.query.items.findMany({
         where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'widget')),
@@ -443,6 +453,9 @@ export const boardRouter = createTRPCRouter({
 
       await db.transaction(async (tx) => {
         // Insert
+        if (newStatusCodes.length > 0) {
+          await tx.insert(statusCodes).values(newStatusCodes.map((sc) => ({ code: sc })));
+        }
         if (changes.sections.create.length > 0) {
           await tx.insert(sections).values(changes.sections.create);
         }
