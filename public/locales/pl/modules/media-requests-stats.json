@@ -1,27 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statystyki zapytań o media",
+    "description": "Statystyki Twoich zapytań o media",
     "settings": {
-      "title": "",
+      "title": "Statystyki zapytań o media",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Zastąp linki zewnętrznym hostem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otwieraj linki w nowej karcie"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Statystyki mediów",
+    "pending": "Oczekujące na zatwierdzenie",
+    "tvRequests": "Zapytania o seriale",
+    "movieRequests": "Zaptrania o filmy",
+    "approved": "Zatwierdzone",
+    "totalRequests": "Razem"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Najaktywniejsi użytkownicy",
+    "requests": "Zapytania: {{number}}"
   }
 }

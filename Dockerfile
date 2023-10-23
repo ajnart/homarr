@@ -25,10 +25,11 @@ COPY ./src/migrate.ts ./src/migrate.ts
 RUN apt-get update -y && apt-get install -y openssl
 
 # Required for migration
-RUN cp -r node_modules node_modules_cache
-RUN rm -rf node_modules
+RUN mv node_modules _node_modules
 RUN rm package.json
 RUN yarn add typescript ts-node dotenv drizzle-orm@0.28.6 better-sqlite3@8.6.0 @types/better-sqlite3
+RUN mv node_modules node_modules_migrate
+RUN mv _node_modules node_modules
 
 # Expose the default application port
 EXPOSE $PORT

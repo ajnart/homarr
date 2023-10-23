@@ -22,8 +22,8 @@
       "description": "Homarr konfigurēšana lietotājiem ar invaliditāti un/vai ar īpašām vajadzībām"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Piekļuve",
+      "description": "Konfigurējiet, kam ir piekļuve jūsu dēlim"
     }
   }
 }
