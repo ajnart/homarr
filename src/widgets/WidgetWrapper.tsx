@@ -16,11 +16,11 @@ interface WidgetWrapperProps {
 const useWidgetWithDefaultOptionValues = <T extends WidgetItem>(widget: T): T => {
   const definition = Widgets[widget.sort];
 
-  const newProps = { ...widget.options };
+  const newProps: Record<string, unknown> = {};
 
   Object.entries(definition.options).forEach(([key, option]) => {
     if (newProps[key] == null) {
-      newProps[key] = option.defaultValue;
+      newProps[key] = widget.options[key] ?? option.defaultValue;
     }
   });
 

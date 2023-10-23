@@ -399,7 +399,7 @@ export const boardRouter = createTRPCRouter({
         .map((a) => a.id);
       changes.items.delete.push(...removedAppIds);
 
-      const dbItemsWidgets = await db.query.items.findMany({
+      const dbWidgets = await db.query.items.findMany({
         where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'widget')),
         with: {
           layouts: {
@@ -419,22 +419,24 @@ export const boardRouter = createTRPCRouter({
           .map((i) => ({ ...i, sectionId: s.id }))
       );
 
-      const newWidgets = inputWidgets.filter((x) => dbItemsWidgets.every((y) => y.id !== x.id));
+      const newWidgets = inputWidgets.filter((x) => dbWidgets.every((y) => y.id !== x.id));
       newWidgets.forEach(({ sectionId, ...widget }) =>
         applyCreateWidgetChanges(changes, widget, input.boardId, sectionId)
       );
 
-      const updatedWidgets = inputWidgets.filter((s) => dbItemsWidgets.some((x) => x.id === s.id));
-      updatedWidgets.forEach(({ sectionId, ...widget }) =>
+      const updatedWidgets = inputWidgets.filter((s) => dbWidgets.some((x) => x.id === s.id));
+      updatedWidgets.forEach(({ sectionId, ...widget }) => {
+        const dbWidget = dbWidgets.find((a) => a.id === widget.id)!;
         applyUpdateWidgetChanges(
           changes,
           widget,
-          dbItemsWidgets.find((a) => a.id === widget.id)?.widget?.options ?? [],
+          dbWidget.widget!.id,
+          dbWidget.widget!.options,
           sectionId
-        )
-      );
+        );
+      });
 
-      const removedWidgetIds = dbItemsWidgets
+      const removedWidgetIds = dbWidgets
         .filter((widget) => inputWidgets.every((x) => x.id !== widget.id))
         .map((w) => w.id);
       changes.items.delete.push(...removedWidgetIds);
@@ -480,7 +482,13 @@ export const boardRouter = createTRPCRouter({
           await tx.update(widgets).set(widget).where(eq(widgets.itemId, _where));
         }
         for (const { _where, ...widgetOption } of changes.widgetOptions.update) {
-          await tx.update(widgetOptions).set(widgetOption).where(eq(widgetOptions.path, _where));
+          console.log('update widgetOptions', _where, widgetOption);
+          await tx
+            .update(widgetOptions)
+            .set(widgetOption)
+            .where(
+              and(eq(widgetOptions.path, _where.path), eq(widgetOptions.widgetId, _where.widgetId))
+            );
         }
         // Delete
         if (changes.items.delete.length > 0) {
@@ -493,6 +501,11 @@ export const boardRouter = createTRPCRouter({
         }
         if (changes.sections.delete.length > 0) {
           await tx.delete(sections).where(inArray(sections.id, changes.sections.delete));
+        }
+        for (const { path, widgetId } of changes.widgetOptions.delete) {
+          await tx
+            .delete(widgetOptions)
+            .where(and(eq(widgetOptions.widgetId, widgetId), eq(widgetOptions.path, path)));
         }
       });
     }),

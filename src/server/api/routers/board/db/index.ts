@@ -10,9 +10,9 @@ import {
   widgets,
 } from '~/server/db/schema';
 
-type DbChanges<TSqliteTable extends SQLiteTableWithColumns<any>, TId = string> = {
+type DbChanges<TSqliteTable extends SQLiteTableWithColumns<any>, TId = string, TWhere = string> = {
   create: InferSelectModel<TSqliteTable>[];
-  update: (Partial<InferSelectModel<TSqliteTable>> & { _where: string })[];
+  update: (Partial<InferSelectModel<TSqliteTable>> & { _where: TWhere })[];
   delete: TId[];
 };
 
@@ -22,7 +22,11 @@ export type BoardSaveDbChanges = {
   items: DbChanges<typeof items>;
   layoutItems: DbChanges<typeof layoutItems>;
   widgets: DbChanges<typeof widgets>;
-  widgetOptions: DbChanges<typeof widgetOptions>;
+  widgetOptions: DbChanges<
+    typeof widgetOptions,
+    { path: string; widgetId: string },
+    { path: string; widgetId: string }
+  >;
   sections: DbChanges<typeof sections>;
 };
 

@@ -6,6 +6,7 @@ import { layoutItems, widgetOptions } from '~/server/db/schema';
 import { widgetSchema } from '~/validations/widget';
 
 import { BoardSaveDbChanges } from '.';
+import { prepareWidgetOptionsForDb } from '../mapping/options';
 
 export const getWidgetsForSectionsAsync = async (sectionIds: string[]) => {
   if (sectionIds.length === 0) return [];
@@ -42,17 +43,7 @@ export const applyCreateWidgetChanges = (
     itemId: widget.id,
   });
 
-  // TODO: Create widget options
-  /*
-  changes.widgetOptions.create.push(
-    ...widget.options.map((option) => ({
-      id: randomUUID(),
-      widgetId,
-      path: option.path,
-      type: option.type,
-      value: option.value,
-    }))
-  );*/
+  changes.widgetOptions.create.push(...prepareWidgetOptionsForDb(widget.options, widgetId));
 
   changes.layoutItems.create.push({
     id: randomUUID(),
@@ -68,10 +59,43 @@ export const applyCreateWidgetChanges = (
 export const applyUpdateWidgetChanges = (
   changes: BoardSaveDbChanges,
   widget: z.infer<typeof widgetSchema>,
+  dbWidgetId: string,
   dbOptions: InferSelectModel<typeof widgetOptions>[],
   sectionId: string
 ) => {
-  // TODO: Update widget options
+  const inputOptions = prepareWidgetOptionsForDb(widget.options, dbWidgetId);
+  const newOptions = inputOptions.filter((input) => {
+    return dbOptions.every((dbOption) => {
+      return dbOption.path !== input.path;
+    });
+  });
+  const updatedOptions = inputOptions.filter((input) => {
+    return dbOptions.some((dbOption) => {
+      return dbOption.path === input.path && dbOption.value !== input.value;
+    });
+  });
+  const deletedOptions = dbOptions.filter((dbOption) => {
+    return inputOptions.every((input) => {
+      return dbOption.path !== input.path;
+    });
+  });
+
+  changes.widgetOptions.create.push(...newOptions);
+  changes.widgetOptions.update.push(
+    ...updatedOptions.map((option) => ({
+      value: option.value,
+      _where: {
+        path: option.path,
+        widgetId: option.widgetId,
+      },
+    }))
+  );
+  changes.widgetOptions.delete.push(
+    ...deletedOptions.map((option) => ({
+      path: option.path,
+      widgetId: option.widgetId,
+    }))
+  );
 
   changes.layoutItems.update.push({
     sectionId,

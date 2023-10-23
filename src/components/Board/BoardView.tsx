@@ -74,7 +74,6 @@ export const BoardView = () => {
           <DashboardSidebar section={rightSidebarSection} />
         ) : null}
       </Group>
-      <pre>{JSON.stringify(board, null, 4)}</pre>
     </Box>
   );
 };
