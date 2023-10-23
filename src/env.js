@@ -51,6 +51,7 @@ const env = createEnv({
     ...(authProviders.includes('oidc')
       ? {
           AUTH_OIDC_CLIENT_ID: z.string(),
+          AUTH_OIDC_CLIENT_SECRET: z.string(),
           AUTH_OIDC_URI: z.string().url(),
           // Custom Display name, defaults to OIDC
           AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
@@ -106,6 +107,7 @@ const env = createEnv({
     AUTH_LDAP_ADMIN_GROUP: process.env.AUTH_LDAP_ADMIN_GROUP,
     AUTH_LDAP_OWNER_GROUP: process.env.AUTH_LDAP_OWNER_GROUP,
     AUTH_OIDC_CLIENT_ID: process.env.AUTH_OIDC_CLIENT_ID,
+    AUTH_OIDC_CLIENT_SECRET: process.env.AUTH_OIDC_CLIENT_SECRET,
     AUTH_OIDC_URI: process.env.AUTH_OIDC_URI,
     AUTH_OIDC_CLIENT_NAME: process.env.AUTH_OIDC_CLIENT_NAME,
     AUTH_OIDC_GROUP_CLAIM: process.env.AUTH_OIDC_GROUP_CLAIM,

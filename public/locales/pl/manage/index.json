@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Zarządzaj",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Witaj z powrotem, {{username}}",
+        "fallbackUsername": "Anonimowy",
+        "subtitle": "Witamy w centrum aplikacji. Organizuj, Optymalizuj i Zwyciężaj!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Szybkie działania",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Twoje tablice",
+            "subtitle": "Twórz i zarządzaj swoimi tablicami"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Zaproś nowego użytkownika",
+            "subtitle": "Utwórz i wyślij zaproszenie do rejestracji"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Zarządzaj użytkownikami",
+            "subtitle": "Usuń i zarządzaj użytkownikami"
         }
     }
 }

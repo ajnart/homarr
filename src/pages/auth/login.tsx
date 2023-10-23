@@ -1,8 +1,8 @@
 import {
-  ActionIcon,
   Alert,
   Button,
   Card,
+  Divider,
   Flex,
   PasswordInput,
   Stack,
@@ -33,12 +33,15 @@ const signInSchemaWithProvider = signInSchema.extend({ provider: z.string() });
 export default function LoginPage({
   redirectAfterLogin,
   providers,
+  oidcProviderName,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
   const { i18nZodResolver } = useI18nZodResolver();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const hasCredentialsInput = providers.includes('credentials') || providers.includes('ldap');
 
   const form = useForm<z.infer<typeof signInSchemaWithProvider>>({
     validateInputOnChange: true,
@@ -65,8 +68,6 @@ export default function LoginPage({
   };
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
-
-  console.log(providers)
 
   return (
     <>
@@ -106,62 +107,71 @@ export default function LoginPage({
                 {t('alert')}
               </Alert>
             )}
+            {hasCredentialsInput && (
+              <form onSubmit={form.onSubmit(handleSubmit)}>
+                <Stack>
+                  <TextInput
+                    variant="filled"
+                    label={t('form.fields.username.label')}
+                    autoComplete="homarr-username"
+                    withAsterisk
+                    {...form.getInputProps('name')}
+                  />
 
-            <form onSubmit={form.onSubmit(handleSubmit)}>
-              <Stack>
-                <TextInput
-                  variant="filled"
-                  label={t('form.fields.username.label')}
-                  autoComplete="homarr-username"
-                  withAsterisk
-                  {...form.getInputProps('name')}
-                />
+                  <PasswordInput
+                    variant="filled"
+                    label={t('form.fields.password.label')}
+                    autoComplete="homarr-password"
+                    withAsterisk
+                    {...form.getInputProps('password')}
+                  />
 
-                <PasswordInput
-                  variant="filled"
-                  label={t('form.fields.password.label')}
-                  autoComplete="homarr-password"
-                  withAsterisk
-                  {...form.getInputProps('password')}
-                />
+                  {providers.includes('credentials') && (
+                    <Button
+                      mt="xs"
+                      variant="light"
+                      fullWidth
+                      type="submit"
+                      disabled={isLoading && form.values.provider != 'credentials'}
+                      loading={isLoading && form.values.provider == 'credentials'}
+                      name="credentials"
+                      onClick={() => form.setFieldValue('provider', 'credentials')}
+                    >
+                      {t('form.buttons.submit')}
+                    </Button>
+                  )}
 
-                {providers.includes('credentials') && (
-                  <Button
-                    mt="xs"
-                    variant="light"
-                    fullWidth
-                    type="submit"
-                    disabled={isLoading && form.values.provider != 'credentials'}
-                    loading={isLoading && form.values.provider == 'credentials'}
-                    name="credentials"
-                    onClick={() => form.setFieldValue('provider', 'credentials')}
-                  >
-                    {t('form.buttons.submit')}
-                  </Button>
-                )}
+                  {providers.includes('ldap') && (
+                    <Button
+                      mt="xs"
+                      variant="light"
+                      fullWidth
+                      type="submit"
+                      disabled={isLoading && form.values.provider != 'ldap'}
+                      loading={isLoading && form.values.provider == 'ldap'}
+                      name="ldap"
+                      onClick={() => form.setFieldValue('provider', 'ldap')}
+                    >
+                      {t('form.buttons.submit')} - LDAP
+                    </Button>
+                  )}
 
-                {providers.includes('ldap') && (
-                <Button
-                  mt="xs"
-                  variant="light"
-                  fullWidth
-                  type="submit"
-                  disabled={isLoading && form.values.provider != 'ldap'}
-                  loading={isLoading && form.values.provider == 'ldap'}
-                  name="ldap"
-                  onClick={() => form.setFieldValue('provider', 'ldap')}
-                >
-                  {t('form.buttons.submit')} - LDAP
-                </Button>
-                )}
-                
-                {redirectAfterLogin && (
-                  <Text color="dimmed" align="center" size="xs">
-                    {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
-                  </Text>
-                )}
-              </Stack>
-            </form>
+                  {redirectAfterLogin && (
+                    <Text color="dimmed" align="center" size="xs">
+                      {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
+                    </Text>
+                  )}
+                </Stack>
+              </form>
+            )}
+            {hasCredentialsInput && providers.includes('oidc') && (
+              <Divider label="OIDC" labelPosition="center" mt="xl" mb="md" />
+            )}
+            {providers.includes('oidc') && (
+              <Button mt="xs" variant="light" fullWidth onClick={() => signIn('oidc')}>
+                {t('form.buttons.submit')} - {oidcProviderName}
+              </Button>
+            )}
           </Card>
         </Stack>
       </Flex>
@@ -198,6 +208,7 @@ export const getServerSideProps = async ({
       ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
       redirectAfterLogin,
       providers: env.AUTH_PROVIDER,
+      oidcProviderName: env.AUTH_OIDC_CLIENT_NAME,
     },
   };
 };

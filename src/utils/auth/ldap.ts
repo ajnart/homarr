@@ -1,13 +1,10 @@
 import Consola from 'consola';
-import { randomUUID } from 'crypto';
-import { eq } from 'drizzle-orm';
 import ldap from 'ldapjs';
 import Credentials from 'next-auth/providers/credentials';
-import { colorSchemeParser, signInSchema } from '~/validations/user';
+import { signInSchema } from '~/validations/user';
 
 import { env } from '~/env';
-import { db } from '../../server/db';
-import { userSettings, users } from '../../server/db/schema';
+import adapter from './adapter';
 
 
 // Helper types for infering properties of returned search type
@@ -112,64 +109,34 @@ export default Credentials({
       
       Consola.log(`user ${data.name} successfully authorized`);
 
-      let user = await db.query.users.findFirst({
-        with: {
-          settings: {
-            columns: {
-              colorScheme: true,
-              language: true,
-              autoFocusSearch: true,
-            },
-          },
-        },
-        where: eq(users.id, ldapUser.dn),
-      });
+      let user = await adapter.getUserByEmail!(ldapUser.mail);
+      const isAdmin = userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP)
+      const isOwner = userGroups.includes(env.AUTH_LDAP_OWNER_GROUP)
 
       if (!user) {
-          Consola.log(`user ${data.name} does not exist in database, creating user`);
-        // Create user from LDAP if it doesn't exist
-          const newUser = (await db.insert(users).values({
-          id: ldapUser.dn,
+        // CreateUser will create settings in event 
+        user = await adapter.createUser!({
           name: ldapUser.uid,
           email: ldapUser.mail,
-          isAdmin: userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP),
-          isOwner: userGroups.includes(env.AUTH_LDAP_OWNER_GROUP),
-        }).returning())[0];
-
-        const newSettings = (await db.insert(userSettings).values({
-          id: randomUUID(),
-          userId: ldapUser.dn,
-        }).returning({
-          colorScheme: userSettings.colorScheme,
-          language: userSettings.language,
-          autoFocusSearch: userSettings.autoFocusSearch
-        }))[0];
-
-        user = {...newUser, settings: newSettings}
-
-        Consola.log(`user ${data.name} created`);
-      } else {
-        const isAdmin = userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP)
-        const isOwner = userGroups.includes(env.AUTH_LDAP_OWNER_GROUP)
-        // check for role update
-        if (user.isAdmin != isAdmin || user.isOwner != isOwner) {
-          Consola.log(`updating roles of user ${data.name}`);
-          await db.update(users).set({
-            isAdmin,
-            isOwner
-          }).where(eq(users.id, user.id))
-          user.isAdmin = isAdmin
-          user.isOwner = isOwner
-        }
+          emailVerified: new Date(), // assume ldap email is verified
+          isAdmin: isAdmin,
+          isOwner: isOwner,
+        })
+      } else if (user.isAdmin != isAdmin || user.isOwner != isOwner) {
+        // Update roles if changed in LDAP
+        Consola.log(`updating roles of user ${user.name}`);
+        adapter.updateUser!({
+          ...user,
+          isAdmin,
+          isOwner
+        })
       }
 
       return {
-        id: user.id,
-        name: user.name,
-        isAdmin: false,
-        colorScheme: colorSchemeParser.parse(user.settings?.colorScheme),
-        language: user.settings?.language ?? 'en',
-        autoFocusSearch: user.settings?.autoFocusSearch ?? false,
+        id: user?.id || ldapUser.dn,
+        name: user?.name || ldapUser.uid,
+        isAdmin: isAdmin,
+        isOwner: isOwner,
       };
     } catch (e) {
       Consola.error(e);

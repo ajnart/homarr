@@ -1,54 +1,18 @@
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import Cookies from 'cookies';
 import { eq } from 'drizzle-orm';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
-import { type DefaultSession, type NextAuthOptions, getServerSession } from 'next-auth';
+import { type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser } from '~/validations/user';
-import providers from '~/utils/auth-providers';
+import { providers, adapter } from '~/utils/auth';
 
 import { db } from './db';
-import { users } from './db/schema';
-/**
- * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
- * object and keep type safety.
- *
- * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
- */
-declare module 'next-auth' {
-  interface Session extends DefaultSession {
-    user: DefaultSession['user'] & {
-      id: string;
-      isAdmin: boolean;
-      colorScheme: 'light' | 'dark' | 'environment';
-      autoFocusSearch: boolean;
-      language: string;
-      // ...other properties
-      // role: UserRole;
-    };
-  }
+import { userSettings, users } from './db/schema';
+import { randomUUID } from 'crypto';
 
-  interface User {
-    isAdmin: boolean;
-    colorScheme: 'light' | 'dark' | 'environment';
-    autoFocusSearch: boolean;
-    language: string;
-    // ...other properties
-    // role: UserRole;
-  }
-}
-
-declare module 'next-auth/jwt' {
-  interface JWT {
-    id: string;
-    isAdmin: boolean;
-  }
-}
-
-const adapter = DrizzleAdapter(db);
 const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
 
 /**
@@ -60,6 +24,14 @@ export const constructAuthOptions = (
   req: NextApiRequest,
   res: NextApiResponse
 ): NextAuthOptions => ({
+  events: {
+    async createUser({user}) {
+      await db.insert(userSettings).values({
+        id: randomUUID(),
+        userId: user.id,
+      });
+    },
+  },
   callbacks: {
     async session({ session, user }) {
       if (session.user) {
@@ -159,7 +131,7 @@ const isCredentialsRequest = (req: NextApiRequest): boolean => {
   const nextAuthQueryParams = req.query.nextauth as string[];
   return (
     nextAuthQueryParams.includes('callback') &&
-    (nextAuthQueryParams.includes('credentials') || nextAuthQueryParams.includes('ldap')) &&
+    (nextAuthQueryParams.includes('credentials') || nextAuthQueryParams.includes('ldap') || nextAuthQueryParams.includes('oidc')) &&
     req.method === 'POST'
   );
 };

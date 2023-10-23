@@ -1,0 +1,56 @@
+import { DefaultSession } from 'next-auth';
+import { CredentialsConfig, OAuthConfig } from 'next-auth/providers';
+import { env } from '~/env';
+export { default as adapter } from './adapter';
+
+/**
+ * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
+ * object and keep type safety.
+ *
+ * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
+ */
+declare module 'next-auth' {
+  interface Session extends DefaultSession {
+    user: DefaultSession['user'] & {
+      id: string;
+      isAdmin: boolean;
+      colorScheme: 'light' | 'dark' | 'environment';
+      autoFocusSearch: boolean;
+      language: string;
+      // ...other properties
+      // role: UserRole;
+    };
+  }
+
+  interface User {
+    isAdmin: boolean;
+    isOwner?: boolean;
+    // ...other properties
+    // role: UserRole;
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    id: string;
+    isAdmin: boolean;
+  }
+}
+
+export const providers: (CredentialsConfig | OAuthConfig<any>)[] = []
+
+if (env.AUTH_PROVIDER.includes('ldap')) providers.push((await import("./ldap")).default)
+if (env.AUTH_PROVIDER.includes('credentials')) providers.push((await import("./credentials")).default)
+if (env.AUTH_PROVIDER.includes('oidc')) providers.push((await import("./oidc")).default)
+
+// Not working with dynamic import name - webpack doesn't pack the modules
+
+// const availableProviders = {
+//     credentials: "./credentials",
+//     ldap: "./ldap"
+// }
+//
+// for (let provider of env.AUTH_PROVIDER) {
+//     if (!availableProviders[provider]) Consola.error(new Error(`Unknown auth provider: ${provider}`))
+//     enabledProviders.push((await import(availableProviders[provider])).default)
+// }

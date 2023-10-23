@@ -27,7 +27,6 @@
     "db:migrate": "ts-node src/migrate.ts"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^0.3.2",
     "@ctrl/deluge": "^4.1.0",
     "@ctrl/qbittorrent": "^6.0.0",
     "@ctrl/shared-torrent": "^4.1.1",

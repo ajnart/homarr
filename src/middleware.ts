@@ -13,6 +13,7 @@ const skippedUrls = [
   '/favicon.ico',
   '/404',
   '/pages/_app',
+  '/auth/login',
   '/imgs/',
 ];
 

@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "无法找到 DNS 漏洞",
+        "text": "到DNS漏洞的连接有问题。请验证您的配置/集成设置。"
       }
     }
   }

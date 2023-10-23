@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Notatnik",
+		"description": "Interaktywny widżet oparty na markdown do zapisywania notatek!",
 		"settings": {
-			"title": "",
+			"title": "Ustawienia widżetu notatnika",
 			"showToolbar": {
-				"label": ""
+				"label": "Pokaż pasek narzędzi ułatwiający pisanie w markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "Zawartość notatnika"
 			}
 		}
 	}

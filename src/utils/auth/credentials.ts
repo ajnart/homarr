@@ -50,9 +50,7 @@ export default Credentials({
         id: user.id,
         name: user.name,
         isAdmin: false,
-        colorScheme: colorSchemeParser.parse(user.settings?.colorScheme),
-        language: user.settings?.language ?? 'en',
-        autoFocusSearch: user.settings?.autoFocusSearch ?? false,
+        isOwner: false,
       };
     },
   })

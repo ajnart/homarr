@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Przełącz tryb edycji",
+    "enable": "Przełącz tryb edycji",
+    "disable": "Wyłącz tryb edycji"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Zmień hasło",
+    "message": "Aby przełączyć tryb edycji, należy wprowadzić hasło wprowadzone w zmiennej środowiskowej o nazwie <Code>EDIT_MODE_PASSWORD</Code> . Jeśli nie jest ono ustawione, nie można włączać i wyłączać trybu edycji.",
     "submit": "Zgłoś"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Sukces",
+      "message": "Pomyślnie przełączono tryb edycji, przeładowuję stronę..."
     },
     "error": {
       "title": "Błąd",
-      "message": ""
+      "message": "Nie udało się przełączyć trybu edycji, spróbuj ponownie."
     }
   }
 }

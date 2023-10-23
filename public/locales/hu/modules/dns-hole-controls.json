@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nem található DNS blokkoló",
+        "text": "Probléma adódott a DNS-blokkoló(k)hoz való csatlakozással. Kérjük, ellenőrizze a konfigurációt/integráció(ka)t."
       }
     }
   }

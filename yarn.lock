@@ -29,34 +29,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/core@npm:0.12.0":
-  version: 0.12.0
-  resolution: "@auth/core@npm:0.12.0"
-  dependencies:
-    "@panva/hkdf": ^1.0.4
-    cookie: 0.5.0
-    jose: ^4.11.1
-    oauth4webapi: ^2.0.6
-    preact: 10.11.3
-    preact-render-to-string: 5.2.3
-  peerDependencies:
-    nodemailer: ^6.8.0
-  peerDependenciesMeta:
-    nodemailer:
-      optional: true
-  checksum: 21933df18b691d2b0cca0de86fbed256ed01543733b33a7cfa948a993653ede13992eb0fca6bf693dd03ecd52faff3cf25edcc043ab8976e009e98a629751ba5
-  languageName: node
-  linkType: hard
-
-"@auth/drizzle-adapter@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "@auth/drizzle-adapter@npm:0.3.2"
-  dependencies:
-    "@auth/core": 0.12.0
-  checksum: bb294a86e492d53d8fe7151eca80edcd5a20b533236e36ba5b537c811fd8310e6c11b1ed7337c5be451f0ca60f3bfae7419a2758a7fe90aa82dcba41d716519b
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.16.7, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.8.3":
   version: 7.22.13
   resolution: "@babel/code-frame@npm:7.22.13"
@@ -1299,12 +1271,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^13.0.0":
-  version: 13.5.3
-  resolution: "@next/bundle-analyzer@npm:13.5.3"
+"@next/bundle-analyzer@npm:^13.5.6":
+  version: 13.5.6
+  resolution: "@next/bundle-analyzer@npm:13.5.6"
   dependencies:
     webpack-bundle-analyzer: 4.7.0
-  checksum: c576c0b4a63c9ef9c1bc293219658cc6ab2640e0438e32e440606499f97fbecb7eb1c7acbfe9ba59f5360cd8cecdebe85a37be914d8cb349720bb319222dfb8a
+  checksum: 4308abc7f6ad35e3f3687af998313ca57749c08215bb1f2f0f2af1551badb8427800b462da408ef8d3dc60a51d547b9d175e7eacf297a5f8f7383441a926d453
   languageName: node
   linkType: hard
 
@@ -1592,7 +1564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@panva/hkdf@npm:^1.0.2, @panva/hkdf@npm:^1.0.4":
+"@panva/hkdf@npm:^1.0.2":
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: f0dd12903751d8792420353f809ed3c7de860cf506399759fff5f59f7acfef8a77e2b64012898cee7e5b047708fa0bd91dff5ef55a502bf8ea11aad9842160da
@@ -5093,17 +5065,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie@npm:0.5.0, cookie@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "cookie@npm:0.5.0"
-  checksum: 1f4bd2ca5765f8c9689a7e8954183f5332139eb72b6ff783d8947032ec1fdf43109852c178e21a953a30c0dd42257828185be01b49d1eb1a67fd054ca588a180
-  languageName: node
-  linkType: hard
-
 "cookie@npm:^0.4.0":
   version: 0.4.2
   resolution: "cookie@npm:0.4.2"
   checksum: a00833c998bedf8e787b4c342defe5fa419abd96b32f4464f718b91022586b8f1bafbddd499288e75c037642493c83083da426c6a9080d309e3bd90fd11baa9b
+  languageName: node
+  linkType: hard
+
+"cookie@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "cookie@npm:0.5.0"
+  checksum: 1f4bd2ca5765f8c9689a7e8954183f5332139eb72b6ff783d8947032ec1fdf43109852c178e21a953a30c0dd42257828185be01b49d1eb1a67fd054ca588a180
   languageName: node
   linkType: hard
 
@@ -7693,7 +7665,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "homarr@workspace:."
   dependencies:
-    "@auth/drizzle-adapter": ^0.3.2
     "@ctrl/deluge": ^4.1.0
     "@ctrl/qbittorrent": ^6.0.0
     "@ctrl/shared-torrent": ^4.1.1
@@ -7711,7 +7682,7 @@ __metadata:
     "@mantine/notifications": ^6.0.0
     "@mantine/prism": ^6.0.19
     "@mantine/tiptap": ^6.0.17
-    "@next/bundle-analyzer": ^13.0.0
+    "@next/bundle-analyzer": ^13.5.6
     "@next/eslint-plugin-next": ^13.4.5
     "@nivo/core": ^0.83.0
     "@nivo/line": ^0.83.0
@@ -8745,7 +8716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^4.11.1, jose@npm:^4.11.4, jose@npm:^4.14.4":
+"jose@npm:^4.11.4, jose@npm:^4.14.4":
   version: 4.14.6
   resolution: "jose@npm:4.14.6"
   checksum: eae81a234e7bf1446b1bd80722b3462b014e3835b155c3a7799c1c5043163a53a0dc28d347004151b031e6b7b863403aabf8814d9cc217ce21f8c2f3ebd4b335
@@ -10122,13 +10093,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oauth4webapi@npm:^2.0.6":
-  version: 2.3.0
-  resolution: "oauth4webapi@npm:2.3.0"
-  checksum: abe1aa9997f8cd779b661ca60b378d50de039b624f89c0a72574c65141432bca6a319116362cae49197f687b6e08d01d76476f74545f074071cbb63303d86fab
-  languageName: node
-  linkType: hard
-
 "oauth@npm:^0.9.15":
   version: 0.9.15
   resolution: "oauth@npm:0.9.15"
@@ -10656,17 +10620,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact-render-to-string@npm:5.2.3":
-  version: 5.2.3
-  resolution: "preact-render-to-string@npm:5.2.3"
-  dependencies:
-    pretty-format: ^3.8.0
-  peerDependencies:
-    preact: ">=10"
-  checksum: 6e46288d8956adde35b9fe3a21aecd9dea29751b40f0f155dea62f3896f27cb8614d457b32f48d33909d2da81135afcca6c55077520feacd7d15164d1371fb44
-  languageName: node
-  linkType: hard
-
 "preact-render-to-string@npm:^5.1.19":
   version: 5.2.6
   resolution: "preact-render-to-string@npm:5.2.6"
@@ -10675,13 +10628,6 @@ __metadata:
   peerDependencies:
     preact: ">=10"
   checksum: be8d5d8fb502d422c503e68af7bcccb6facd942f3ae9a4d093ebe3f1d4f0b15c540624bdac434d53a2a8e8fb7afa4606383414e937c40933ca43445470a026ff
-  languageName: node
-  linkType: hard
-
-"preact@npm:10.11.3":
-  version: 10.11.3
-  resolution: "preact@npm:10.11.3"
-  checksum: 9387115aa0581e8226309e6456e9856f17dfc0e3d3e63f774de80f3d462a882ba7c60914c05942cb51d51e23e120dcfe904b8d392d46f29ad15802941fe7a367
   languageName: node
   linkType: hard
 
