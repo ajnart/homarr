@@ -2326,6 +2326,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/extension-table-cell@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "@tiptap/extension-table-cell@npm:2.1.12"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: 774cbab703275dde1bfa9dcce55f2379cf2c8e143aad8c8c824df5dc251f559c60dbe5ec2a4593859070b8bb7c828d6d49af956cad479bf8e26ebef3ea2db6da
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-table-header@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "@tiptap/extension-table-header@npm:2.1.12"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: 8e534492ca47b1f238aaab44573347f2add13adcb8adc420638a1b38748ed61dd94b00fe971d577b3c3dddf903de2ea9e88d6382070dd0a7f64d15f1914c4966
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-table-row@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "@tiptap/extension-table-row@npm:2.1.12"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: bd442523adf4a3f74a414db9cc26a76f69a4b562d53027b596523c76eb91760be505a9310d294c9bd33a1dcc1c44fec05bd823de43a8ea70893f36c41dcf9330
+  languageName: node
+  linkType: hard
+
+"@tiptap/extension-table@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "@tiptap/extension-table@npm:2.1.12"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+    "@tiptap/pm": ^2.0.0
+  checksum: d196eda10a5700570af8ab957814099ebc6bb949f1eec829868c6e6f8dcf6b971a8f01b2b4425162e74edcd55f4a54023e82442467b0f04d26e116c34cf2580b
+  languageName: node
+  linkType: hard
+
 "@tiptap/extension-task-item@npm:^2.1.12":
   version: 2.1.12
   resolution: "@tiptap/extension-task-item@npm:2.1.12"
@@ -7659,6 +7696,10 @@ __metadata:
     "@tiptap/extension-highlight": ^2.1.12
     "@tiptap/extension-image": ^2.1.12
     "@tiptap/extension-link": ^2.1.12
+    "@tiptap/extension-table": ^2.1.12
+    "@tiptap/extension-table-cell": ^2.1.12
+    "@tiptap/extension-table-header": ^2.1.12
+    "@tiptap/extension-table-row": ^2.1.12
     "@tiptap/extension-task-item": ^2.1.12
     "@tiptap/extension-task-list": ^2.1.12
     "@tiptap/extension-text-align": ^2.1.12

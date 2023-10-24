@@ -4,6 +4,7 @@ import {
   ColorPicker,
   ColorSwatch,
   Group,
+  NumberInput,
   Popover,
   ScrollArea,
   Stack,
@@ -15,26 +16,39 @@ import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap'
 import {
   IconCheck,
   IconCircleOff,
+  IconColumnInsertLeft,
+  IconColumnInsertRight,
+  IconColumnRemove,
   IconDeviceFloppy,
   IconEdit,
   IconHighlight,
   IconIndentDecrease,
   IconIndentIncrease,
+  IconLayoutGrid,
   IconLetterA,
   IconListCheck,
   IconPhoto,
+  IconRowInsertBottom,
+  IconRowInsertTop,
+  IconRowRemove,
+  IconTableOff,
+  IconTablePlus,
   IconX,
 } from '@tabler/icons-react';
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
 import Image from '@tiptap/extension-image';
+import Table from '@tiptap/extension-table';
+import TableCell from '@tiptap/extension-table-cell';
+import TableHeader from '@tiptap/extension-table-header';
+import TableRow from '@tiptap/extension-table-row';
 import TaskItem from '@tiptap/extension-task-item';
 import TaskList from '@tiptap/extension-task-list';
 import TextAlign from '@tiptap/extension-text-align';
 import TextStyle from '@tiptap/extension-text-style';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
@@ -52,63 +66,73 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { primaryColor } = useMantineTheme();
+  const { colors, primaryColor } = useMantineTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
-  const CustomImage = Image.extend({
-    addAttributes() {
-      return {
-        ...this.parent?.(),
-        width: { default: null },
-      };
-    },
-  });
-
-  const editor = useEditor({
-    extensions: [
-      Color,
-      Highlight.configure({ multicolor: true }),
-      CustomImage.configure({ inline: true }),
-      Link.configure({
-        openOnClick: true,
-        validate(url) {
-          return /^https?:\/\//.test(url);
-        },
-      }),
-      StarterKit.configure({
-        horizontalRule: {
-          HTMLAttributes: {
-            style: 'border-top-style: double;',
+  const editor = useEditor(
+    {
+      extensions: [
+        Color,
+        Highlight.configure({ multicolor: true }),
+        Image.extend({
+          addAttributes() {
+            return {
+              ...this.parent?.(),
+              width: { default: null },
+            };
           },
-        },
-      }),
-      TaskItem.configure({
-        nested: true,
-        onReadOnlyChecked: (node, checked) => {
-          const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
-          dispatchEvent(event);
-          return widget.properties.allowReadOnlyCheck;
-        },
-        HTMLAttributes: {
-          style: 'list-style-type: none; display: flex; gap: 8px;',
-        },
-      }),
-      TaskList.configure({
-        itemTypeName: 'taskItem',
-        HTMLAttributes: {
-          style: 'padding-left: 17px;',
-        },
-      }),
-      TextAlign.configure({ types: ['heading', 'paragraph'] }),
-      TextStyle,
-    ],
-    content,
-    editable: false,
-    onUpdate: (e) => {
-      setContent(e.editor.getHTML());
+        }).configure({ inline: true }),
+        Link.configure({
+          openOnClick: true,
+          validate(url) {
+            return /^https?:\/\//.test(url);
+          },
+        }),
+        StarterKit,
+        Table.configure({
+          resizable: true, //Not working yet
+        }),
+        TableCell.extend({
+          addAttributes() {
+            return {
+              ...this.parent?.(),
+              backgroundColor: {
+                default: undefined,
+                renderHTML: (attributes) => ({
+                  style: attributes.backgroundColor
+                    ? `background-color: ${attributes.backgroundColor}`
+                    : undefined,
+                }),
+                parseHTML: (element) => element.style.backgroundColor || undefined,
+              },
+            };
+          },
+        }),
+        TableHeader,
+        TableRow,
+        TaskItem.configure({
+          nested: true,
+          onReadOnlyChecked: (node, checked) => {
+            if (widget.properties.allowReadOnlyCheck) {
+              const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
+              dispatchEvent(event);
+            }
+            return widget.properties.allowReadOnlyCheck;
+          },
+        }),
+        TaskList.configure({ itemTypeName: 'taskItem' }),
+        TextAlign.configure({ types: ['heading', 'paragraph'] }),
+        TextStyle,
+      ],
+      content,
+      editable: false,
+      onUpdate: (e) => {
+        setContent(e.editor.getHTML());
+      },
     },
-  },[toSaveContent]);
+    [toSaveContent]
+  );
 
   const handleOnReadOnlyCheck = (event: CustomEventInit) => {
     if (widget.properties.allowReadOnlyCheck && !!editor) {
@@ -146,7 +170,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     editor.commands.setContent(toSaveContent);
 
     return false;
-  }
+  };
 
   const handleConfigUpdate = (contentUpdate: string) => {
     setToSaveContent(contentUpdate);
@@ -226,10 +250,10 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.H4 />
           </RichTextEditor.ControlsGroup>
 
-          <RichTextEditor.ControlsGroup> {/* active not available yet, manually setting bg has conflicts with hover, maybe will be done auto by mantine in the future*/}
-            <RichTextEditor.AlignLeft /> {/*active={editor?.getAttributes('paragraph').textAlign === 'left'}*/}
-            <RichTextEditor.AlignCenter /> {/*active={editor?.getAttributes('paragraph').textAlign === 'center'}*/}
-            <RichTextEditor.AlignRight /> {/*active={editor?.getAttributes('paragraph').textAlign === 'right'}*/}
+          <RichTextEditor.ControlsGroup>
+            <RichTextEditor.AlignLeft />
+            <RichTextEditor.AlignCenter />
+            <RichTextEditor.AlignRight />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
@@ -256,6 +280,22 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Unlink />
             <EmbedImage />
           </RichTextEditor.ControlsGroup>
+
+          <RichTextEditor.ControlsGroup>
+            <TableToggle />
+            {editor?.isActive('table') && (
+              <>
+                <ColoredCell />
+                <TableToggleMerge />
+                <TableAddColumnBefore />
+                <TableAddColumnAfter />
+                <TableRemoveColumn />
+                <TableAddRowBefore />
+                <TableAddRowAfter />
+                <TableRemoveRow />
+              </>
+            )}
+          </RichTextEditor.ControlsGroup>
         </RichTextEditor.Toolbar>
         {editor && (
           <BubbleMenu editor={editor}>
@@ -267,14 +307,14 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </BubbleMenu>
         )}
 
-        <ScrollArea mih="4rem">
+        <ScrollArea mih="4rem" offsetScrollbars pl={12} pt={12}>
           <RichTextEditor.Content />
         </ScrollArea>
       </RichTextEditor>
       {!enabled && (
         <>
           <ActionIcon
-            title={isEditing ? "Save" : "Edit"}
+            title={isEditing ? 'Save' : 'Edit'}
             style={{
               zIndex: 1,
             }}
@@ -322,12 +362,18 @@ function ColoredHighlight() {
     <ColoredControl
       color={color}
       setColor={setColor}
-      defaultColor={defaultColor}
-      attribute="highlight"
       hoverText="Colored highlight text"
       icon={<IconHighlight stroke={1.5} size="1rem" />}
-      onSaveHandle={() => editor.chain().focus().setHighlight({ color: color }).run()}
-      onUnsetHandle={() => editor.chain().focus().unsetHighlight().run()}
+      selectionUpdate={() => {
+        setColor(editor.getAttributes('highlight').color ?? defaultColor);
+      }}
+      onSaveHandle={() => {
+        editor.chain().focus().setHighlight({ color: color }).run();
+      }}
+      onUnsetHandle={() => {
+        editor.chain().focus().unsetHighlight().run();
+        setColor(defaultColor);
+      }}
     />
   );
 }
@@ -342,12 +388,43 @@ function ColoredText() {
     <ColoredControl
       color={color}
       setColor={setColor}
-      defaultColor={defaultColor}
-      attribute="textStyle"
       hoverText="Color text"
       icon={<IconLetterA stroke={1.5} size="1rem" />}
-      onSaveHandle={() => editor.chain().focus().setColor(color).run()}
-      onUnsetHandle={() => editor.chain().focus().unsetColor().run()}
+      selectionUpdate={() => {
+        setColor(editor.getAttributes('textStyle').color ?? defaultColor);
+      }}
+      onSaveHandle={() => {
+        editor.chain().focus().setColor(color).run();
+      }}
+      onUnsetHandle={() => {
+        editor.chain().focus().unsetColor().run();
+        setColor(defaultColor);
+      }}
+    />
+  );
+}
+
+function ColoredCell() {
+  const { editor } = useRichTextEditorContext();
+  const defaultColor = 'transparent';
+  const [color, setColor] = useState<string>(defaultColor);
+
+  return (
+    <ColoredControl
+      color={color}
+      setColor={setColor}
+      hoverText="Colored cell"
+      icon={<IconLayoutGrid stroke={1.5} size="1rem" />}
+      selectionUpdate={() => {
+        setColor(editor.getAttributes('tableCell').backgroundColor ?? defaultColor);
+      }}
+      onSaveHandle={() => {
+        editor.chain().focus().setCellAttribute('backgroundColor', color).run();
+      }}
+      onUnsetHandle={() => {
+        editor.chain().focus().setCellAttribute('backgroundColor', undefined).run();
+        setColor(defaultColor);
+      }}
     />
   );
 }
@@ -355,21 +432,19 @@ function ColoredText() {
 interface ColoredControlProps {
   color: string;
   setColor: Dispatch<SetStateAction<string>>;
-  defaultColor: string;
-  attribute: string;
   hoverText: string;
-  icon: ReactNode;
-  onSaveHandle: () => {};
-  onUnsetHandle: () => {};
+  icon: JSX.Element;
+  selectionUpdate: () => any;
+  onSaveHandle: () => any;
+  onUnsetHandle: () => any;
 }
 
 function ColoredControl({
   color,
   setColor,
-  defaultColor,
-  attribute,
   hoverText,
   icon,
+  selectionUpdate,
   onSaveHandle,
   onUnsetHandle,
 }: ColoredControlProps) {
@@ -378,12 +453,12 @@ function ColoredControl({
   const [opened, { close, toggle }] = useDisclosure(false);
 
   const palette = [
-    'rgb(0, 0, 0)',
+    '#000000',
     colors.dark[9],
     colors.dark[6],
     colors.dark[3],
     colors.dark[0],
-    'rgb(255, 255, 255)',
+    '#FFFFFF',
     colors.red[9],
     colors.pink[7],
     colors.grape[8],
@@ -391,16 +466,14 @@ function ColoredControl({
     colors.indigo[9],
     colors.blue[5],
     colors.green[6],
-    'rgb(9, 214, 48)',
+    '#09D630',
     colors.lime[5],
     colors.yellow[5],
-    'rgb(235, 132, 21)',
+    '#EB8415',
     colors.orange[9],
   ];
 
-  editor?.on('selectionUpdate', ({ editor }) => {
-    setColor(editor.getAttributes(attribute).color ?? defaultColor);
-  });
+  editor?.on('selectionUpdate', selectionUpdate);
 
   return (
     <Popover
@@ -425,7 +498,7 @@ function ColoredControl({
           <ColorPicker
             value={color}
             onChange={setColor}
-            format="rgba"
+            format="hexa"
             swatches={palette}
             swatchesPerRow={6}
           />
@@ -595,5 +668,196 @@ function ListIndentDecrease() {
     >
       <IconIndentDecrease stroke={1.5} size="1rem" />
     </RichTextEditor.Control>
+  );
+}
+
+function TableAddColumnBefore() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control
+      title="Add Column before"
+      onClick={() => editor?.commands.addColumnBefore()}
+    >
+      <IconColumnInsertLeft stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableAddColumnAfter() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control
+      title="Add Column After"
+      onClick={() => editor?.commands.addColumnAfter()}
+    >
+      <IconColumnInsertRight stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableRemoveColumn() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control title="Remove Column" onClick={() => editor?.commands.deleteColumn()}>
+      <IconColumnRemove stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableAddRowBefore() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control title="Add Row Before" onClick={() => editor?.commands.addRowBefore()}>
+      <IconRowInsertTop stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableAddRowAfter() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control title="Add Row After" onClick={() => editor?.commands.addRowAfter()}>
+      <IconRowInsertBottom stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableRemoveRow() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control title="Remove Row" onClick={() => editor?.commands.deleteRow()}>
+      <IconRowRemove stroke={1.5} size="1rem" />
+    </RichTextEditor.Control>
+  );
+}
+
+function TableToggleMerge() {
+  const { editor } = useRichTextEditorContext();
+
+  return (
+    <RichTextEditor.Control
+      title="Toggle Cell Merging"
+      onClick={() => editor?.commands.mergeOrSplit()}
+      active={editor?.getAttributes('tableCell').colspan > 1}
+    >
+      <svg
+        height="1rem"
+        width="1rem"
+        strokeWidth="0.25"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* No existing icon from tabler, taken from https://icon-sets.iconify.design/fluent/table-cells-merge-24-regular/ */}
+        <path
+          fill="currentColor"
+          d="M15.58 11.25H8.42l.89-1.002a.75.75 0 0 0-1.12-.996l-2 2.25a.75.75 0 0 0 0 .996l2 2.25a.75.75 0 1 0 1.12-.996l-.89-1.002h7.16l-.89 1.002a.75.75 0 0 0 1.12.996l2-2.25l.011-.012a.746.746 0 0 0-.013-.987l-1.997-2.247a.75.75 0 0 0-1.121.996l.89 1.002ZM6.25 3A3.25 3.25 0 0 0 3 6.25v11.5A3.25 3.25 0 0 0 6.25 21h11.5A3.25 3.25 0 0 0 21 17.75V6.25A3.25 3.25 0 0 0 17.75 3H6.25ZM4.5 6.25c0-.966.784-1.75 1.75-1.75h11.5c.966 0 1.75.784 1.75 1.75v.25h-15v-.25ZM4.5 8h15v8h-15V8Zm15 9.5v.25a1.75 1.75 0 0 1-1.75 1.75H6.25a1.75 1.75 0 0 1-1.75-1.75v-.25h15Z"
+        />
+      </svg>
+    </RichTextEditor.Control>
+  );
+}
+
+function TableToggle() {
+  const { editor } = useRichTextEditorContext();
+  const isActive = editor?.isActive('table');
+
+  const { colors, colorScheme, white } = useMantineTheme();
+
+  const [opened, { open, close, toggle }] = useDisclosure(false);
+
+  const defaultCols = 3;
+  const [cols, setCols] = useState<number>(defaultCols);
+  const defaultRows = 3;
+  const [rows, setRows] = useState<number>(defaultRows);
+
+  function InsertTable(cols: number, rows: number) {
+    editor?.commands.insertTable({ rows, cols, withHeaderRow: false });
+    close();
+  }
+
+  return (
+    <Popover
+      opened={opened}
+      onOpen={() => {
+        open();
+        setCols(defaultCols);
+        setRows(defaultRows);
+      }}
+      onClose={close}
+      styles={{
+        dropdown: {
+          backgroundColor: colorScheme === 'dark' ? colors.dark[7] : white,
+        },
+      }}
+      trapFocus
+    >
+      <Popover.Target>
+        <RichTextEditor.Control
+          title={isActive ? 'Delete Table' : 'Add Table'}
+          active={isActive}
+          onClick={isActive ? () => editor.commands.deleteTable() : () => toggle()}
+        >
+          {isActive ? (
+            <IconTableOff stroke={1.5} size="1rem" />
+          ) : (
+            <IconTablePlus stroke={1.5} size="1rem" />
+          )}
+        </RichTextEditor.Control>
+      </Popover.Target>
+      <Popover.Dropdown>
+        <Stack spacing={5}>
+          <NumberInput
+            label="Columns"
+            min={1}
+            value={cols}
+            onChange={(e) => {
+              if (e !== '') {
+                setCols(e);
+              } else {
+                setCols(0);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                InsertTable(cols, rows);
+              }
+            }}
+          />
+          <NumberInput
+            label="Rows"
+            min={1}
+            value={rows}
+            onChange={(e) => {
+              if (e !== '') {
+                setRows(e);
+              } else {
+                setRows(0);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                InsertTable(cols, rows);
+              }
+            }}
+          />
+          <Button
+            children="Insert"
+            variant="default"
+            mt={10}
+            mb={5}
+            onClick={() => InsertTable(cols, rows)}
+          />
+        </Stack>
+      </Popover.Dropdown>
+    </Popover>
   );
 }
