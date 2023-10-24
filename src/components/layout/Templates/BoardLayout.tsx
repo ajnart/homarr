@@ -107,7 +107,7 @@ const ToggleEditModeButton = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && env.NODE_ENV === 'production') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
