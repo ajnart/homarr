@@ -23,6 +23,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
+import { env } from 'process';
 
 type BoardLayoutProps = {
   dockerEnabled: boolean;
