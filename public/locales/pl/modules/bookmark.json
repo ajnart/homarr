@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Zakładka",
+    "description": "Wyświetla statyczną listę linków lub tekst",
     "settings": {
-      "title": "",
+      "title": "Ustawienia zakładki",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Tytuł widżetu",
+        "info": "Pozostaw puste, aby ukryć tytuł."
       },
       "items": {
-        "label": ""
+        "label": "Zawartość"
       },
       "layout": {
         "label": "Układ",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Siatka",
+          "horizontal": "Poziomy",
+          "vertical": "Pionowy"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Lista zakładek jest pusta",
+      "text": "Dodaj nowe elementy do tej listy w trybie edycji"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Długość nazwy wynosić pomiędzy {{shortest}} a {{longest}} znaków",
+      "invalidLink": "Nieprawidłowy link",
+      "errorMsg": "Nie zapisano z powodu błędnych danych. Proszę zmienić swoje dane wejściowe"
     },
     "name": "Nazwa",
-    "url": "",
+    "url": "URL",
     "newTab": "Otwórz w nowej karcie",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Ukryj nazwę hosta",
+    "hideIcon": "Ukryj ikonę",
     "delete": "Usuń"
   }
 }

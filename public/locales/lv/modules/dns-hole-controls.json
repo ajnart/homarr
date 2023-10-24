@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nevar atrast DNS caurumu",
+        "text": "Radās problēma, savienojoties ar jūsu DNS caurumu(-iem). Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
       }
     }
   }
