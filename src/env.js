@@ -36,7 +36,7 @@ const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
-    NEXT_PUBLIC_DISABLE_ANALYTICS: z.string(),
+    NEXT_PUBLIC_DISABLE_ANALYTICS: z.string().optional(),
     NEXT_PUBLIC_PORT: portSchema,
     NEXT_PUBLIC_NODE_ENV: envSchema,
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: z
