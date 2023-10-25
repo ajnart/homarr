@@ -129,7 +129,7 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
     const { primaryColor } = useMantineTheme();
     if (!user) return <Avatar ref={ref} {...others} />;
 
-    if (!newVersionAvailable)
+    if (newVersionAvailable)
       return (
         <Indicator withBorder offset={2} color="blue" processing size={15}>
           <Avatar ref={ref} color={primaryColor} {...others}>
