@@ -70,7 +70,7 @@ export const rssRouter = createTRPCRouter({
       }
 
       if (input.feedUrls.length === 0) {
-        return []
+        return [];
       }
 
       const result = await Promise.all(

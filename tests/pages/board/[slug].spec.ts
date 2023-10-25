@@ -1,19 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
 import { SSRConfig } from 'next-i18next';
-
 import { ParsedUrlQuery } from 'querystring';
-
 import { describe, expect, it, vitest } from 'vitest';
+import * as serverAuthModule from '~/server/auth';
+import { ConfigType } from '~/types/config';
 
 import { getServerSideProps } from '../../../src/pages/board/[slug]';
-
 import * as configExistsModule from '../../../src/tools/config/configExists';
 import * as getFrontendConfigModule from '../../../src/tools/config/getFrontendConfig';
 import * as getServerSideTranslationsModule from '../../../src/tools/server/getServerSideTranslations';
-
-import * as serverAuthModule from '~/server/auth';
-import { ConfigType } from '~/types/config';
 
 vitest.mock('./../../server/auth.ts', () => ({
   getServerAuthSession: () => null,
@@ -159,8 +154,8 @@ describe('[slug] page', () => {
     // assert
     expect(response).toEqual({
       redirect: {
-        destination: "/auth/login?redirectAfterLogin=/board/my-authentication-board",
-        permanent: false
+        destination: '/auth/login?redirectAfterLogin=/board/my-authentication-board',
+        permanent: false,
       },
       props: {},
     });

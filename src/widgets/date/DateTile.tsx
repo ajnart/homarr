@@ -6,10 +6,10 @@ import timezones from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { useSession } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
+import { useSetSafeInterval } from '~/hooks/useSetSafeInterval';
 import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
 
-import { useSetSafeInterval } from '~/hooks/useSetSafeInterval';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
@@ -108,8 +108,8 @@ function DateTile({ widget }: DateTileProps) {
   );
 }
 
-const useStyles = createStyles(()=>({
-  wrapper:{
+const useStyles = createStyles(() => ({
+  wrapper: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
@@ -117,17 +117,17 @@ const useStyles = createStyles(()=>({
     height: '100%',
     gap: 0,
   },
-  clock:{
+  clock: {
     lineHeight: '1',
     whiteSpace: 'nowrap',
     fontWeight: 700,
     fontSize: '2.125rem',
   },
-  extras:{
+  extras: {
     lineHeight: '1',
     whiteSpace: 'nowrap',
-  }
-}))
+  },
+}));
 
 /**
  * State which updates when the minute is changing
@@ -142,7 +142,7 @@ const useDateState = (location?: { latitude: number; longitude: number }) => {
   const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
     enabled: !!sessionData?.user,
   });
-  const userLanguage =  userWithSettings?.settings.language;
+  const userLanguage = userWithSettings?.settings.language;
   const [date, setDate] = useState(getNewDate(timezone));
   const setSafeInterval = useSetSafeInterval();
   const timeoutRef = useRef<NodeJS.Timeout>(); // reference for initial timeout until first minute change

@@ -4,10 +4,9 @@ import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { RouterOutputs, api } from '~/utils/api';
-
 import { useConfigContext } from '~/config/provider';
 import { AppType } from '~/types/app';
+import { RouterOutputs, api } from '~/utils/api';
 
 interface AppPingProps {
   app: AppType;

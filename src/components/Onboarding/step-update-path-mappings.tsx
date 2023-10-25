@@ -39,7 +39,7 @@ services:
 const added = { color: 'green', label: '+' };
 
 export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
-  const [selectedTab, setSelectedTab] = useState<TabsValue>("standard_docker");
+  const [selectedTab, setSelectedTab] = useState<TabsValue>('standard_docker');
   return (
     <OnboardingStepWrapper>
       <Title order={2} align="center" mb="md">
@@ -140,7 +140,9 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
                 {dockerComposeCommand}
               </Prism>
             </List.Item>
-            <List.Item>Run <Code>docker compose up</Code>.</List.Item>
+            <List.Item>
+              Run <Code>docker compose up</Code>.
+            </List.Item>
             <List.Item>Refresh this page and click on "continue"</List.Item>
           </List>
         </Tabs.Panel>

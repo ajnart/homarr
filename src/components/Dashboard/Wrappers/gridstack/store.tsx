@@ -1,5 +1,4 @@
 import { createWithEqualityFn } from 'zustand/traditional';
-
 import { useConfigContext } from '~/config/provider';
 import { GridstackBreakpoints } from '~/constants/gridstack-breakpoints';
 

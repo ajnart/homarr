@@ -6,12 +6,12 @@ import {
   IconCloudRain,
   IconMapPin,
 } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
-import { useTranslation } from 'react-i18next';
 
 const definition = defineWidget({
   id: 'weather',
