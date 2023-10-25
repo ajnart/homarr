@@ -66,7 +66,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { config, name: configName } = useConfigContext();
   const updateConfig = useConfigStore((x) => x.updateConfig);
-  const { colors, primaryColor } = useMantineTheme();
+  const { primaryColor } = useMantineTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
@@ -91,7 +91,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         }),
         StarterKit,
         Table.configure({
-          resizable: true, //Not working yet
+          resizable: true,
+          lastColumnResizable: false,
         }),
         TableCell.extend({
           addAttributes() {
@@ -126,10 +127,14 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         TextStyle,
       ],
       content,
-      editable: false,
       onUpdate: (e) => {
         setContent(e.editor.getHTML());
       },
+      onCreate: (e) => {
+        e.editor.setEditable(false);
+        //Set table resizable to current here
+      },
+      editable: true, //Remove when resize is fixed
     },
     [toSaveContent]
   );
@@ -157,6 +162,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     const current = !previous;
     if (!editor) return current;
     editor.setEditable(current);
+    //Set table resizable to current here
 
     handleConfigUpdate(content);
 
@@ -167,6 +173,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     if (!editor) return false;
     editor.setEditable(false);
 
+    setContent(toSaveContent);
     editor.commands.setContent(toSaveContent);
 
     return false;
@@ -414,7 +421,7 @@ function ColoredCell() {
       color={color}
       setColor={setColor}
       hoverText="Colored cell"
-      icon={<IconLayoutGrid stroke={1.5} size="1rem" />}
+      icon={<IconLayoutGrid stroke={1.5} size="1.25rem" />}
       selectionUpdate={() => {
         setColor(editor.getAttributes('tableCell').backgroundColor ?? defaultColor);
       }}
@@ -679,7 +686,7 @@ function TableAddColumnBefore() {
       title="Add Column before"
       onClick={() => editor?.commands.addColumnBefore()}
     >
-      <IconColumnInsertLeft stroke={1.5} size="1rem" />
+      <IconColumnInsertLeft stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -692,7 +699,7 @@ function TableAddColumnAfter() {
       title="Add Column After"
       onClick={() => editor?.commands.addColumnAfter()}
     >
-      <IconColumnInsertRight stroke={1.5} size="1rem" />
+      <IconColumnInsertRight stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -702,7 +709,7 @@ function TableRemoveColumn() {
 
   return (
     <RichTextEditor.Control title="Remove Column" onClick={() => editor?.commands.deleteColumn()}>
-      <IconColumnRemove stroke={1.5} size="1rem" />
+      <IconColumnRemove stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -712,7 +719,7 @@ function TableAddRowBefore() {
 
   return (
     <RichTextEditor.Control title="Add Row Before" onClick={() => editor?.commands.addRowBefore()}>
-      <IconRowInsertTop stroke={1.5} size="1rem" />
+      <IconRowInsertTop stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -722,7 +729,7 @@ function TableAddRowAfter() {
 
   return (
     <RichTextEditor.Control title="Add Row After" onClick={() => editor?.commands.addRowAfter()}>
-      <IconRowInsertBottom stroke={1.5} size="1rem" />
+      <IconRowInsertBottom stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -732,7 +739,7 @@ function TableRemoveRow() {
 
   return (
     <RichTextEditor.Control title="Remove Row" onClick={() => editor?.commands.deleteRow()}>
-      <IconRowRemove stroke={1.5} size="1rem" />
+      <IconRowRemove stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
 }
@@ -747,9 +754,9 @@ function TableToggleMerge() {
       active={editor?.getAttributes('tableCell').colspan > 1}
     >
       <svg
-        height="1rem"
-        width="1rem"
-        strokeWidth="0.25"
+        height="1.25rem"
+        width="1.25rem"
+        strokeWidth="0.1"
         stroke="currentColor"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
