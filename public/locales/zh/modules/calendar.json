@@ -8,7 +8,7 @@
         "label": "使用Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "使用Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Radarr发布类型",
