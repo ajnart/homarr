@@ -39,7 +39,7 @@ export const AvatarMenu = () => {
         <Menu width={256}>
           <Menu.Target>
             <CurrentUserAvatar
-              newVersionAvailable={newVersionAvailable}
+              newVersionAvailable={newVersionAvailable !== undefined}
               user={sessionData?.user ?? null}
             />
           </Menu.Target>
