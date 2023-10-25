@@ -8,7 +8,7 @@
         "label": "Sonarr v4 API'sini kullan"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Radarr v5 API'sini Kullan"
       },
       "radarrReleaseType": {
         "label": "Radarr yayın türü",
