@@ -112,7 +112,13 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           {children}
         </Paper>
       </AppShell>
-      <Drawer opened={burgerMenuOpen} onClose={closeBurgerMenu}>
+      <Drawer
+        opened={burgerMenuOpen}
+        onClose={closeBurgerMenu}
+        transitionProps={{
+          transition: 'slide-right',
+        }}
+      >
         {navigationLinkComponents}
       </Drawer>
     </>
