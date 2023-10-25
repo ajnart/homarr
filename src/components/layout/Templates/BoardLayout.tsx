@@ -219,7 +219,7 @@ const BackgroundImage = () => {
   return (
     <Global
       styles={{
-        body: {
+        '.mantine-AppShell-root': {
           minHeight: '100vh',
           backgroundImage: `url('${config?.settings.customization.backgroundImageUrl}')`,
           backgroundPosition: 'center center',

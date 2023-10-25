@@ -21,6 +21,7 @@ import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
 import {
@@ -91,6 +92,11 @@ function App(
       setPrimaryShade(6);
     };
   }, [props.pageProps]);
+
+  const { setInitialPackageAttributes } = usePackageAttributesStore();
+  useEffect(() => {
+    setInitialPackageAttributes(props.pageProps.packageAttributes);
+  }, []);
 
   return (
     <>
