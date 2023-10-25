@@ -7,6 +7,9 @@
       "useSonarrv4": {
         "label": "Uporaba vmesnika API Sonarr v4"
       },
+      "useRadarrv5": {
+        "label": ""
+      },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr",
         "data": {
