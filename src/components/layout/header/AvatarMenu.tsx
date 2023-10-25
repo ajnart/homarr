@@ -39,7 +39,7 @@ export const AvatarMenu = () => {
         <Menu width={256}>
           <Menu.Target>
             <CurrentUserAvatar
-              newVersionAvailable={newVersionAvailable !== undefined}
+              newVersionAvailable={newVersionAvailable ? true : false}
               user={sessionData?.user ?? null}
             />
           </Menu.Target>
@@ -128,12 +128,20 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
   ({ user, newVersionAvailable, ...others }, ref) => {
     const { primaryColor } = useMantineTheme();
     if (!user) return <Avatar ref={ref} {...others} />;
+
+    if (!newVersionAvailable)
+      return (
+        <Indicator withBorder offset={2} color="blue" processing size={15}>
+          <Avatar ref={ref} color={primaryColor} {...others}>
+            {user.name?.slice(0, 2).toUpperCase()}
+          </Avatar>
+        </Indicator>
+      );
+
     return (
-      <Indicator color="blue" processing size={10} hidden={!newVersionAvailable}>
-        <Avatar ref={ref} color={primaryColor} {...others}>
-          {user.name?.slice(0, 2).toUpperCase()}
-        </Avatar>
-      </Indicator>
+      <Avatar ref={ref} color={primaryColor} {...others}>
+        {user.name?.slice(0, 2).toUpperCase()}
+      </Avatar>
     );
   }
 );

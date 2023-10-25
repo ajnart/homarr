@@ -27,6 +27,9 @@ export default function Custom404() {
         <Button component={Link} variant="light" href="/b">
           {t('button')}
         </Button>
+        <Button component={Link} variant="light" href="/auth/login">
+          Login
+        </Button>
       </Stack>
     </Center>
   );
