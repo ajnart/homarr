@@ -8,7 +8,7 @@
         "label": "Brug Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Brug Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Radarr udgivelsestype",
