@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "未找到请求。请确保您已正确配置您的应用。",
-  "pending": "有 {{countPendingApproval}} 个请求等待批准。",
-  "nonePending": "目前没有待批准的项目。静待媒体更新!",
   "state": {
     "approved": "已批准",
     "pendingApproval": "待批准",
