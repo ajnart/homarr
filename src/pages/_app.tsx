@@ -46,6 +46,7 @@ function App(
     environmentColorScheme: MantineColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
+    analyticsEnabled: boolean;
     config?: ConfigType;
     primaryColor?: MantineTheme['primaryColor'];
     secondaryColor?: MantineTheme['primaryColor'];
@@ -56,6 +57,7 @@ function App(
   }>
 ) {
   const { Component, pageProps } = props;
+  const analyticsEnabled = pageProps.analyticsEnabled ?? true;
   // TODO: make mapping from our locales to moment locales
   const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
   require(`dayjs/locale/${language.locale}.js`);
@@ -93,12 +95,12 @@ function App(
   return (
     <>
       <CommonHead />
-      {env.NEXT_PUBLIC_DISABLE_ANALYTICS !== 'true' && (
+      {analyticsEnabled === true && (
         <Script
-          src="https://umami.homarr.dev/script.js"
-          data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
-          strategy="lazyOnload"
-        />
+        src="https://umami.homarr.dev/script.js"
+        data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
+        strategy="lazyOnload"
+      />
       )}
       <SessionProvider session={pageProps.session}>
         <ColorSchemeProvider {...pageProps}>
@@ -152,6 +154,8 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     );
   }
 
+  const analyticsEnabled = env.NEXT_PUBLIC_DISABLE_ANALYTICS !== 'true';
+
   const session = await getSession(ctx);
 
   // Set the cookie language to the user language if it is not set correctly
@@ -164,6 +168,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     pageProps: {
       ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
+      analyticsEnabled,
       session,
       locale: ctx.locale ?? 'en',
     },
