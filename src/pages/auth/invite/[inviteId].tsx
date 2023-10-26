@@ -136,10 +136,6 @@ export default function AuthInvitePage() {
                 {...form.getInputProps('password')}
               />
               <Card
-                withBorder
-                style={{
-                  display: form.isValid('password') ? 'none' : 'block',
-                }}
               >
                 <PasswordRequirements value={form.values.password} />
               </Card>
