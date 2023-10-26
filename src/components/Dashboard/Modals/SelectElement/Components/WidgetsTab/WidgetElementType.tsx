@@ -97,6 +97,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
       icon: <IconChecks stroke={1.5} />,
       color: 'teal',
     });
+    umami.track('Add widget', { id: widget.id });
   };
 
   return (
@@ -104,6 +105,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
       name={t('descriptor.name')}
       description={t('descriptor.description') ?? undefined}
       image={image}
+      id={widget.id}
       disabled={disabled}
       handleAddition={handleAddition}
     />

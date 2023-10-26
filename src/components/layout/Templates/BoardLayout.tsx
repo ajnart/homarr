@@ -23,6 +23,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
+import { env } from 'process';
 
 type BoardLayoutProps = {
   dockerEnabled: boolean;
@@ -107,7 +108,7 @@ const ToggleEditModeButton = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && env.NODE_ENV === 'production') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
