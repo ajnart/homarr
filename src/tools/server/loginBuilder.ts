@@ -4,7 +4,9 @@ import {
   GetServerSidePropsResult,
   PreviewData,
 } from 'next';
+
 import { Session } from 'next-auth';
+
 import { ParsedUrlQuery } from 'querystring';
 
 export const checkForSessionOrAskForLogin = (
@@ -13,7 +15,6 @@ export const checkForSessionOrAskForLogin = (
   accessCallback: () => boolean
 ): GetServerSidePropsResult<any> | undefined => {
   if (!session?.user) {
-    console.log('detected logged out user!');
     return {
       props: {},
       redirect: {
@@ -26,7 +27,10 @@ export const checkForSessionOrAskForLogin = (
   if (!accessCallback()) {
     return {
       props: {},
-      notFound: true,
+      redirect: {
+        destination: '/401',
+        permanent: false
+      }
     };
   }
 
