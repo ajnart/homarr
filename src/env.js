@@ -26,6 +26,7 @@ const env = createEnv({
     ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
+    DEMO_MODE: z.string().optional(),
     HOSTNAME: z.string().optional(),
   },
 
@@ -63,6 +64,7 @@ const env = createEnv({
     NEXT_PUBLIC_PORT: process.env.PORT,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
     HOSTNAME: process.env.HOSTNAME,
+    DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

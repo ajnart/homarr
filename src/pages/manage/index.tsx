@@ -2,11 +2,11 @@ import {
   Box,
   Card,
   Group,
+  Image,
   SimpleGrid,
   Stack,
   Text,
   Title,
-  Image,
   UnstyledButton,
   createStyles,
 } from '@mantine/core';

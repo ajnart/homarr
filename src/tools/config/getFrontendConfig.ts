@@ -2,8 +2,8 @@ import Consola from 'consola';
 import fs from 'fs';
 import { fetchCity } from '~/server/api/routers/weather';
 import { IntegrationField } from '~/types/app';
-
 import { BackendConfigType, ConfigType } from '~/types/config';
+
 import { getConfig } from './getConfig';
 
 export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
@@ -139,11 +139,11 @@ const migrateAppConfigs = (config: BackendConfigType) => {
       ...app,
       appearance: {
         ...app.appearance,
-        appNameStatus: app.appearance.appNameStatus?? 'normal',
-        positionAppName: app.appearance.positionAppName?? 'column',
-        appNameFontSize: app.appearance.appNameFontSize?? 16,
-        lineClampAppName: app.appearance.lineClampAppName?? 1,
-      }
-    }))
-  }
-}
+        appNameStatus: app.appearance.appNameStatus ?? 'normal',
+        positionAppName: app.appearance.positionAppName ?? 'column',
+        appNameFontSize: app.appearance.appNameFontSize ?? 16,
+        lineClampAppName: app.appearance.lineClampAppName ?? 1,
+      },
+    })),
+  };
+};

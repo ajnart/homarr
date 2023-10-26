@@ -22,6 +22,7 @@ import { useState } from 'react';
 import { z } from 'zod';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
+import { env } from '~/env';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -29,6 +30,7 @@ import { signInSchema } from '~/validations/user';
 
 export default function LoginPage({
   redirectAfterLogin,
+  isDemo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
   const { i18nZodResolver } = useI18nZodResolver();
@@ -86,6 +88,12 @@ export default function LoginPage({
               Homarr
             </Text>
           </Stack>
+          {isDemo && (
+            <Alert title="Demo credentials">
+              For demo purposes, you can login with the login <b>demo</b> and password :{' '}
+              <b>demodemo</b>
+            </Alert>
+          )}
           <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
             <Title style={{ whiteSpace: 'nowrap' }} align="center" weight={900}>
               {t('title')}
@@ -156,10 +164,13 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res,
     };
   }
 
+  const isDemo = env.DEMO_MODE === 'true';
+
   return {
     props: {
       ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
       redirectAfterLogin,
+      isDemo,
     },
   };
 };

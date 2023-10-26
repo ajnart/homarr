@@ -1,5 +1,5 @@
 import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
-import { Property } from 'csstype'
+import { Property } from 'csstype';
 
 import { TileBaseType } from './tile';
 
@@ -34,7 +34,7 @@ interface AppNetworkType {
 
 interface AppAppearanceType {
   iconUrl: string;
-  appNameStatus: "normal"|"hover"|"hidden";
+  appNameStatus: 'normal' | 'hover' | 'hidden';
   positionAppName: Property.FlexDirection;
   appNameFontSize: number;
   lineClampAppName: number;

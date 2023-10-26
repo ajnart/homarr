@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
-import { firstUpperCase } from '~/tools/shared/strings';
-
 import { useConfigContext } from '~/config/provider';
+import { firstUpperCase } from '~/tools/shared/strings';
 
 export const BoardHeadOverride = () => {
   const { config, name } = useConfigContext();
