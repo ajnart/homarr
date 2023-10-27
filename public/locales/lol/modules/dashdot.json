@@ -61,7 +61,7 @@
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
             "label": ""
           },
@@ -108,7 +108,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"
