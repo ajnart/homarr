@@ -8,7 +8,7 @@
     },
     "table": {
         "header": {
-            "id": "",
+            "id": "ID",
             "creator": "",
             "expires": "",
             "action": ""
@@ -32,7 +32,7 @@
             "description": "",
             "invitationLink": "",
             "details": {
-                "id": "",
+                "id": "ID",
                 "token": ""
             },
             "button": {
