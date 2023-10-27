@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
-  "title": "",
-  "text": "",
+  "metaTitle": "로그인",
+  "title": "돌아온 것을 환영합니다!",
+  "text": "자격 증명을 입력하세요.",
   "form": {
     "fields": {
       "username": {
@@ -12,9 +12,9 @@
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "로그인"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "로그인 후 {{url}}으로 리디렉션됩니다."
   },
-  "alert": ""
+  "alert": "자격 증명이 잘못되었거나 이 계정이 존재하지 않습니다. 다시 시도해 주세요."
 }
