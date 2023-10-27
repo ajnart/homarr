@@ -1,5 +1,5 @@
 {
-    "metaTitle": "Управлять",
+    "metaTitle": "Управление",
     "hero": {
         "title": "Добро пожаловать, {{username}}",
         "fallbackUsername": "Аноним",
