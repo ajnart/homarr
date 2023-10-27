@@ -7,30 +7,30 @@
   },
   "modal": {
     "copy": {
-      "title": "",
+      "title": "Chooz teh naym ov ur nu config",
       "form": {
         "configName": {
-          "label": "",
+          "label": "Config naym",
           "validation": {
-            "required": "",
+            "required": "Config Naym Iz Requird",
             "notUnique": ""
           },
-          "placeholder": ""
+          "placeholder": "Ur nu config naym"
         },
-        "submitButton": ""
+        "submitButton": "Confirm"
       },
       "events": {
         "configSaved": {
-          "title": "",
-          "message": ""
+          "title": "Config saved",
+          "message": "Config saved as {{configName}}"
         },
         "configCopied": {
-          "title": "",
-          "message": ""
+          "title": "Config Copid",
+          "message": "Config Copied az {{configName}}"
         },
         "configNotCopied": {
-          "title": "",
-          "message": ""
+          "title": "Unable 2 Copy Config",
+          "message": "Ur Config Wuz Not Copid As {{configName}}"
         }
       }
     },
