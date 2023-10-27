@@ -22,8 +22,8 @@
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Ni mogoče pridobiti vira RSS",
+          "text": "Prišlo je do težave z doseganjem vira RSS. Prepričajte se, da ste pravilno konfigurirali vir RSS z veljavnim naslovom URL. URL-ji morajo ustrezati uradni specifikaciji. Po posodobitvi vira boste morda morali osvežiti nadzorno ploščo."
         }
       }
     }
