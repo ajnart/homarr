@@ -8,30 +8,30 @@
         "label": "Utilizar Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Usar a API Radarr v5"
       },
       "radarrReleaseType": {
         "label": "Tipo de libertação de Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Nos cinemas",
+          "physicalRelease": "Físico",
+          "digitalRelease": "Digital"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Ocultar dias da semana"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Mostrar itens não monitorados"
       },
       "fontSize": {
-        "label": "",
+        "label": "Tamanho da fonte",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Extra pequeno",
+          "sm": "Pequeno",
+          "md": "Médio",
+          "lg": "Grande",
+          "xl": "Extragrande"
         }
       }
     }
