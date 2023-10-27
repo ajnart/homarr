@@ -9,7 +9,7 @@
   "edit": "Edit",
   "next": "",
   "previous": "",
-  "confirm": "",
+  "confirm": "Confirm",
   "enabled": "",
   "disabled": "",
   "enableAll": "",
@@ -17,14 +17,14 @@
   "version": "Vershun",
   "changePosition": "Change Posishun",
   "remove": "Remoev",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "R U Sure Dat U Wants 2 Remoov {{item}}?",
+  "createItem": "+ makz {{item}}",
   "sections": {
     "settings": "Settingz",
     "dangerZone": "Dangr zoen"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "API key",
     "username": "Usernaem",
     "password": "Password"
   },
