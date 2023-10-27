@@ -8,7 +8,7 @@
         "label": "Використовувати Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Використання API Radarr v5"
       },
       "radarrReleaseType": {
         "label": "Radarr - тип релізів",
