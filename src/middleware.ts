@@ -52,7 +52,7 @@ const shouldRedirectToOnboard = async (): Promise<boolean> => {
   const cacheAndGetUserCount = async () => {
     cachedUserCount = await client.user.count.query();
     return cachedUserCount === 0;
-  }
+  };
 
   if (!env.DATABASE_URL?.startsWith('file:')) {
     return await cacheAndGetUserCount();

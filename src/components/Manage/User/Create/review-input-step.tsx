@@ -23,7 +23,12 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
   const { t } = useTranslation('manage/users/create');
 
   const utils = api.useContext();
-  const { mutateAsync: createAsync, isLoading, isError, error } = api.user.create.useMutation({
+  const {
+    mutateAsync: createAsync,
+    isLoading,
+    isError,
+    error,
+  } = api.user.create.useMutation({
     onSettled: () => {
       void utils.user.all.invalidate();
     },
@@ -106,6 +111,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
               password: values.security.password,
               email: values.account.eMail === '' ? undefined : values.account.eMail,
             });
+            umami.track('Create user', { username: values.account.username});
           }}
           loading={isLoading}
           rightIcon={<IconCheck size="1rem" />}

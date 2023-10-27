@@ -16,9 +16,9 @@ import { useElementSize } from '@mantine/hooks';
 import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import { useConfigContext } from '~/config/provider';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -84,15 +84,19 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   }
 
   if (data.status.length === 0) {
-    return(
+    return (
       <Center h="100%">
         <Stack align="center">
-          <IconDeviceGamepad size={40} strokeWidth={1}/>
-          <Title align="center" order={6}>{t('modules/dns-hole-controls:descriptor.errors.general.title')}</Title>
-          <Text align="center">{t('modules/dns-hole-controls:descriptor.errors.general.text')}</Text>
+          <IconDeviceGamepad size={40} strokeWidth={1} />
+          <Title align="center" order={6}>
+            {t('modules/dns-hole-controls:descriptor.errors.general.title')}
+          </Title>
+          <Text align="center">
+            {t('modules/dns-hole-controls:descriptor.errors.general.text')}
+          </Text>
         </Stack>
       </Center>
-    )
+    );
   }
 
   console.log(data);
@@ -136,15 +140,18 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         >
           <Button
             onClick={async () => {
-              await mutateAsync({
-                action: 'enable',
-                configName,
-                appsToChange: getDnsStatus()?.disabled,
-              },{
-                onSettled: () => {
-                  reFetchSummaryDns();
+              await mutateAsync(
+                {
+                  action: 'enable',
+                  configName,
+                  appsToChange: getDnsStatus()?.disabled,
+                },
+                {
+                  onSettled: () => {
+                    reFetchSummaryDns();
+                  },
                 }
-              });
+              );
             }}
             disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerPlay size={20} />}
@@ -156,15 +163,18 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           </Button>
           <Button
             onClick={async () => {
-              await mutateAsync({
-                action: 'disable',
-                configName,
-                appsToChange: getDnsStatus()?.enabled,
-              },{
-                onSettled: () => {
-                  reFetchSummaryDns();
+              await mutateAsync(
+                {
+                  action: 'disable',
+                  configName,
+                  appsToChange: getDnsStatus()?.enabled,
+                },
+                {
+                  onSettled: () => {
+                    reFetchSummaryDns();
+                  },
                 }
-              });
+              );
             }}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerStop size={20} />}

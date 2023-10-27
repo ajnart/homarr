@@ -11,7 +11,7 @@ export const generateDefaultApp = (wrapperId: string): AppType =>
       appNameStatus: 'normal',
       positionAppName: 'column',
       lineClampAppName: 1,
-      appNameFontSize: 16
+      appNameFontSize: 16,
     },
     network: {
       enabledStatusChecker: true,

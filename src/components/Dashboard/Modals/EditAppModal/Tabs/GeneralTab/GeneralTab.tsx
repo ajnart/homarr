@@ -2,8 +2,8 @@ import { Stack, Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-
 import { AppType } from '~/types/app';
+
 import { EditAppModalTab } from '../type';
 
 interface GeneralTabProps {
@@ -51,7 +51,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
             <Text color="red" mt="sm" size="sm">
               {t('behaviour.customProtocolWarning')}
             </Text>
-        )}
+          )}
       </Stack>
     </Tabs.Panel>
   );

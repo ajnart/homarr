@@ -6,11 +6,9 @@ import {
   IconQuestionMark,
   IconVideo,
 } from '@tabler/icons-react';
-
 import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 
 export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) => {
-
   if (!session.currentlyPlaying) {
     return null;
   }

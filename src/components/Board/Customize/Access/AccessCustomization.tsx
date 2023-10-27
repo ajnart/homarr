@@ -7,7 +7,11 @@ export const AccessCustomization = () => {
   const form = useBoardCustomizationFormContext();
   return (
     <Stack>
-      <Switch label={t('allowGuests.label')} description={t('allowGuests.description')} {...form.getInputProps('access.allowGuests', { type: 'checkbox' })} />
+      <Switch
+        label={t('allowGuests.label')}
+        description={t('allowGuests.description')}
+        {...form.getInputProps('access.allowGuests', { type: 'checkbox' })}
+      />
     </Stack>
-  )
-}
+  );
+};

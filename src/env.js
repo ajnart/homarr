@@ -28,6 +28,7 @@ const env = createEnv({
     ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
+    DEMO_MODE: z.string().optional(),
     HOSTNAME: z.string().optional(),
 
     // Authentication
@@ -69,6 +70,7 @@ const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_DISABLE_ANALYTICS: z.string().optional(),
     NEXT_PUBLIC_PORT: portSchema,
     NEXT_PUBLIC_NODE_ENV: envSchema,
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: z
@@ -79,7 +81,6 @@ const env = createEnv({
       .default('light'),
     NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
   },
-
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
    * middlewares) or client-side so we need to destruct manually.
@@ -88,6 +89,7 @@ const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXT_PUBLIC_DISABLE_ANALYTICS: process.env.DISABLE_ANALYTICS,
     DOCKER_HOST: process.env.DOCKER_HOST,
     DOCKER_PORT: process.env.DOCKER_PORT,
     VERCEL_URL: process.env.VERCEL_URL,
@@ -113,6 +115,7 @@ const env = createEnv({
     AUTH_OIDC_GROUP_CLAIM: process.env.AUTH_OIDC_GROUP_CLAIM,
     AUTH_OIDC_ADMIN_GROUP: process.env.AUTH_OIDC_ADMIN_GROUP,
     AUTH_OIDC_OWNER_GROUP: process.env.AUTH_OIDC_OWNER_GROUP,
+    DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

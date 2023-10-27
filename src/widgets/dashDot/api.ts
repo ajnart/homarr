@@ -1,6 +1,13 @@
 import { useConfigContext } from '~/config/provider';
 import { RouterInputs, api } from '~/utils/api';
-import { UsenetHistoryRequestParams, UsenetInfoRequestParams, UsenetPauseRequestParams, UsenetQueueRequestParams, UsenetResumeRequestParams } from '../useNet/types';
+
+import {
+  UsenetHistoryRequestParams,
+  UsenetInfoRequestParams,
+  UsenetPauseRequestParams,
+  UsenetQueueRequestParams,
+  UsenetResumeRequestParams,
+} from '../useNet/types';
 
 const POLLING_INTERVAL = 2000;
 

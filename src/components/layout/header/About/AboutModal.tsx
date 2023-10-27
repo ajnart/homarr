@@ -7,8 +7,8 @@ import {
   Grid,
   Group,
   HoverCard,
-  Kbd,
   Image,
+  Kbd,
   Modal,
   Table,
   Text,
@@ -31,11 +31,11 @@ import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
 import { Trans, i18n, useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
-
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '~/tools/color';
+
 import { usePrimaryGradient } from '../../Common/useGradient';
 import Credits from './Credits';
 import Tip from './Tip';
@@ -75,13 +75,7 @@ export const AboutModal = ({ opened, closeModal, newVersionAvailable }: AboutMod
       opened={opened}
       title={
         <Group spacing="sm">
-          <Image
-            alt="Homarr logo"
-            src="/imgs/logo/logo.png"
-            width={30}
-            height={30}
-            fit="contain"
-          />
+          <Image alt="Homarr logo" src="/imgs/logo/logo.png" width={30} height={30} fit="contain" />
           <Title order={3} variant="gradient" gradient={colorGradiant}>
             {t('about')} Homarr
           </Title>
@@ -271,13 +265,17 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                   transition={{ duration: 0.8, ease: 'easeInOut' }}
                 >
                   <Badge color="green" variant="filled">
-                    {t('version.new',{ newVersion: newVersionAvailable})}
+                    {t('version.new', { newVersion: newVersionAvailable })}
                   </Badge>
                 </motion.div>
               </HoverCard.Target>
               <HoverCard.Dropdown>
                 <Text>
-                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[0]}
+                  {
+                    t('version.dropdown', { currentVersion: attributes.packageVersion }).split(
+                      '{{newVersion}}'
+                    )[0]
+                  }
                   <b>
                     <Anchor
                       target="_blank"
@@ -286,7 +284,11 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
                       {newVersionAvailable}
                     </Anchor>
                   </b>
-                  {t('version.dropdown', {currentVersion: attributes.packageVersion}).split('{{newVersion}}')[1]}
+                  {
+                    t('version.dropdown', { currentVersion: attributes.packageVersion }).split(
+                      '{{newVersion}}'
+                    )[1]
+                  }
                 </Text>
               </HoverCard.Dropdown>
             </HoverCard>

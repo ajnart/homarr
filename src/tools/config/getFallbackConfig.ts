@@ -1,4 +1,5 @@
 import { ConfigType } from '~/types/config';
+
 import defaultConfig from '../../../data/configs/default.json';
 
 export const getFallbackConfig = (name?: string) => ({
@@ -11,7 +12,7 @@ export const getFallbackConfig = (name?: string) => ({
 export const getStaticFallbackConfig = (name: string): ConfigType => ({
   schemaVersion: 1,
   configProperties: {
-    name: name
+    name: name,
   },
   categories: [
     {
@@ -55,7 +56,7 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
       },
       accessibility: {
         disablePingPulse: false,
-        replacePingDotsWithIcons: false
+        replacePingDotsWithIcons: false,
       },
       pageTitle: 'Homarr ⭐️',
       logoImageUrl: '/imgs/logo/logo.png',

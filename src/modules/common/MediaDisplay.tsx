@@ -2,9 +2,9 @@ import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-
 import { useConfigContext } from '~/config/provider';
 import { useColorTheme } from '~/tools/color';
+
 import { RequestModal } from '../overseerr/RequestModal';
 import { Result } from '../overseerr/SearchResult';
 
@@ -134,7 +134,12 @@ export function LidarrMediaDisplay(props: any) {
 
 export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
+  const { config } = useConfigContext();
+  const calendar = config?.widgets.find((w) => w.type === 'calendar');
+  const useRadarrv5 = calendar?.properties.useRadarrv5 ?? false;
+
   // Find a poster CoverType
+  const poster = media.images.find((image: any) => image.coverType === 'poster');
   return (
     <MediaDisplay
       media={{
@@ -142,7 +147,7 @@ export function RadarrMediaDisplay(props: any) {
         title: media.title ?? media.originalTitle,
         overview: media.overview ?? '',
         genres: media.genres ?? [],
-        poster: media.images.find((image: any) => image.coverType === 'poster')?.url,
+        poster: useRadarrv5 ? poster.remoteUrl : poster.url,
         voteAverage: media.ratings.tmdb.value.toString(),
         imdbId: media.imdbId,
         type: 'movie',
