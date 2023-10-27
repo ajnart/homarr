@@ -32,7 +32,7 @@
     },
     "searchEngine": {
         "title": "検索エンジン",
-        "custom": "",
+        "custom": "カスタム",
         "newTab": {
             "label": ""
         },
