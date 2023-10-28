@@ -1,6 +1,6 @@
 {
-    "metaTitle": "Доски",
-    "pageTitle": "Доски",
+    "metaTitle": "Панели",
+    "pageTitle": "Панели",
     "cards": {
         "statistics": {
             "apps": "Приложения",
@@ -8,7 +8,7 @@
             "categories": "Категории"
         },
         "buttons": {
-            "view": "Просмотр доски"
+            "view": "Просмотр панели"
         },
         "menu": {
             "setAsDefault": "Установить в качестве доски по умолчанию",
