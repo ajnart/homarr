@@ -8,12 +8,12 @@
         "label": "Использовать Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Использовать Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr",
         "data": {
-          "inCinemas": "В кинотеатрах",
+          "inCinemas": "В кино",
           "physicalRelease": "Физический носитель",
           "digitalRelease": "Цифровой релиз"
         }
@@ -22,7 +22,7 @@
         "label": "Скрыть дни недели"
       },
       "showUnmonitored": {
-        "label": "Показать неконтролируемые элементы"
+        "label": "Показать не отслеживаемые элементы"
       },
       "fontSize": {
         "label": "Размер шрифта",
