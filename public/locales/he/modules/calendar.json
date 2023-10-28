@@ -8,7 +8,7 @@
         "label": "השתמש בAPI גרסא 4 של סונאר (Sonarr)"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "השתמש בAPI גרסא 5 של Radarr"
       },
       "radarrReleaseType": {
         "label": "סוג שחרור של Radarr",
