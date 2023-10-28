@@ -1,6 +1,6 @@
 {
-    "metaTitle": "Настройка доски {{name}}",
-    "pageTitle": "Настройка для доски {{name}}",
+    "metaTitle": "Настройка панели {{name}}",
+    "pageTitle": "Настройка для панели {{name}}",
     "backToBoard": "Вернуться к доске",
     "settings": {
         "appearance": {
