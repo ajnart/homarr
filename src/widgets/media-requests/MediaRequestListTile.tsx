@@ -139,11 +139,6 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   return (
     <ScrollArea h="100%">
       <Stack>
-        {countPendingApproval > 0 ? (
-          <Text>{t('pending', { countPendingApproval })}</Text>
-        ) : (
-          <Text>{t('nonePending')}</Text>
-        )}
         {sortedData.map((item, index) => (
           <Card radius="md" withBorder key={index}>
             <Flex wrap="wrap" justify="space-between" gap="md">

@@ -5,9 +5,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import pageNotFoundImage from '~/images/undraw_page_not_found_re_e9o6.svg';
-import { pageNotFoundNamespaces } from '~/tools/server/translation-namespaces';
-
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { pageNotFoundNamespaces } from '~/tools/server/translation-namespaces';
 
 export default function Custom404() {
   const { classes } = useStyles();
@@ -26,6 +25,9 @@ export default function Custom404() {
 
         <Button component={Link} variant="light" href="/b">
           {t('button')}
+        </Button>
+        <Button component={Link} variant="light" href="/auth/login">
+          Login
         </Button>
       </Stack>
     </Center>

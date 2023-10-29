@@ -2,8 +2,8 @@ import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
 import { AppType } from '~/types/app';
+
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
@@ -111,7 +111,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     overflow: 'visible',
     flexGrow: 5,
   },
-  appImage:{
+  appImage: {
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'auto',

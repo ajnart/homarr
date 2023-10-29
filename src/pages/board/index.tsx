@@ -11,6 +11,7 @@ import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { userSettings } from '~/server/db/schema';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
 
@@ -45,15 +46,9 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   );
   const config = await getFrontendConfig(boardName);
 
-  if (!config?.settings?.access?.allowGuests && !session?.user) {
-    return {
-      notFound: true,
-      props: {
-        primaryColor: config.settings.customization.colors.primary,
-        secondaryColor: config.settings.customization.colors.secondary,
-        primaryShade: config.settings.customization.colors.shade,
-      },
-    };
+  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  if (result) {
+    return result;
   }
 
   return {

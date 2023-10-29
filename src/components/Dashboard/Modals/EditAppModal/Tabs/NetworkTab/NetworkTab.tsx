@@ -1,7 +1,6 @@
 import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-
 import { StatusCodes } from '~/tools/acceptableStatusCodes';
 import { AppType } from '~/types/app';
 
@@ -20,7 +19,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
         <Switch
           label={t('network.statusChecker.label')}
           description={t('network.statusChecker.description')}
-          styles={{ label: { fontWeight: 500, }, description: { marginTop: 0, }, }}
+          styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
           defaultChecked={form.values.network.enabledStatusChecker}
           {...form.getInputProps('network.enabledStatusChecker')}
         />

@@ -1,7 +1,6 @@
 import { Button, Flex, Grid, NumberInput, Select, SelectItem } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-
 import { useConfigContext } from '~/config/provider';
 
 interface ChangePositionModalProps {

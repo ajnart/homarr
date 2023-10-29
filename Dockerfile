@@ -22,7 +22,7 @@ RUN mkdir database
 COPY ./src/migrate.ts ./src/migrate.ts
 
 # Install dependencies
-RUN apt-get update -y && apt-get install -y openssl
+RUN apt-get update -y && apt-get install -y openssl wget
 
 # Required for migration
 RUN mv node_modules _node_modules
