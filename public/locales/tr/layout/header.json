@@ -13,7 +13,7 @@
     },
     "actions": {
         "avatar": {
-            "switchTheme": "Tema seç",
+            "switchTheme": "Temayı değiştir",
             "preferences": "Kullanıcı Tercihleri",
             "defaultBoard": "Varsayılan Panel",
             "manage": "Yönet",
