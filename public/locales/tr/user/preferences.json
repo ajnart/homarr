@@ -14,7 +14,7 @@
         },
         "replaceIconsWithDots": {
             "label": "Ping noktalarını ikon ile değiştirin",
-            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, göstergeleri simgelerle değiştirecektir"
+            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, panelde ki renkli noktaları simgeler ile değiştirecektir"
         }
     },
     "localization": {
@@ -38,7 +38,7 @@
         },
         "autoFocus": {
             "label": "Sayfa yüklendiğinde arama çubuğuna odaklanın.",
-            "description": "Sayfa yüklendiğindei imleç arama çubuğunu otomatik olarak odaklayacaktır. Yalnızca masaüstü cihazlarda çalışacaktır."
+            "description": "Sayfa yüklendiğinde imleç arama çubuğuna otomatik olarak odaklanacaktır. Yalnızca masaüstü cihazlarda çalışır."
         },
         "template": {
             "label": "Sorgu URL’si",
