@@ -48,6 +48,7 @@ import TextAlign from '@tiptap/extension-text-align';
 import TextStyle from '@tiptap/extension-text-style';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
@@ -69,6 +70,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const { primaryColor } = useMantineTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
+
+  const { t } = useTranslation(['modules/notebook']);
 
   const editor = useEditor(
     {
@@ -132,9 +135,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       },
       onCreate: (e) => {
         e.editor.setEditable(false);
-        //Set table resizable to current here
+        //Set table resizable to false here
       },
-      editable: true, //Remove when resize is fixed
+      editable: false, //Remove when table resize is fixed
     },
     [toSaveContent]
   );
@@ -241,36 +244,42 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           }}
         >
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Bold />
-            <RichTextEditor.Italic />
-            <RichTextEditor.Strikethrough />
+            <RichTextEditor.Bold title={t('card.controls.bold')!} />
+            <RichTextEditor.Italic title={t('card.controls.italic')!} />
+            <RichTextEditor.Strikethrough title={t('card.controls.strikethrough')!} />
             <ColoredText />
             <ColoredHighlight />
-            <RichTextEditor.Code />
-            <RichTextEditor.ClearFormatting />
+            <RichTextEditor.Code title={t('card.controls.code')!} />
+            <RichTextEditor.ClearFormatting title={t('card.controls.clear')!} />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.H1 />
-            <RichTextEditor.H2 />
-            <RichTextEditor.H3 />
-            <RichTextEditor.H4 />
+            <RichTextEditor.H1 title={t('card.controls.heading', { level: '1' })!} />
+            <RichTextEditor.H2 title={t('card.controls.heading', { level: '2' })!} />
+            <RichTextEditor.H3 title={t('card.controls.heading', { level: '3' })!} />
+            <RichTextEditor.H4 title={t('card.controls.heading', { level: '4' })!} />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.AlignLeft />
-            <RichTextEditor.AlignCenter />
-            <RichTextEditor.AlignRight />
+            <RichTextEditor.AlignLeft
+              title={t('card.controls.align', { position: t('card.controls.left') })!}
+            />
+            <RichTextEditor.AlignCenter
+              title={t('card.controls.align', { position: t('card.controls.center') })!}
+            />
+            <RichTextEditor.AlignRight
+              title={t('card.controls.align', { position: t('card.controls.right') })!}
+            />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Blockquote />
-            <RichTextEditor.Hr />
+            <RichTextEditor.Blockquote title={t('card.controls.blockquote')!} />
+            <RichTextEditor.Hr title={t('card.controls.horizontalLine')!} />
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.BulletList />
-            <RichTextEditor.OrderedList />
+            <RichTextEditor.BulletList title={t('card.controls.bulletList')!} />
+            <RichTextEditor.OrderedList title={t('card.controls.orderedList')!} />
             <TaskListToggle />
             {(editor?.isActive('taskList') ||
               editor?.isActive('bulletList') ||
@@ -283,8 +292,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </RichTextEditor.ControlsGroup>
 
           <RichTextEditor.ControlsGroup>
-            <RichTextEditor.Link />
-            <RichTextEditor.Unlink />
+            <RichTextEditor.Link title={t('card.controls.link')!} />
+            <RichTextEditor.Unlink title={t('card.controls.unlink')!} />
             <EmbedImage />
           </RichTextEditor.ControlsGroup>
 
@@ -307,9 +316,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         {editor && (
           <BubbleMenu editor={editor}>
             <RichTextEditor.ControlsGroup>
-              <RichTextEditor.Bold />
-              <RichTextEditor.Italic />
-              <RichTextEditor.Link />
+              <RichTextEditor.Bold title={t('card.controls.bold')!} />
+              <RichTextEditor.Italic title={t('card.controls.italic')!} />
+              <RichTextEditor.Link title={t('card.controls.link')!} />
             </RichTextEditor.ControlsGroup>
           </BubbleMenu>
         )}
@@ -321,7 +330,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       {!enabled && (
         <>
           <ActionIcon
-            title={isEditing ? 'Save' : 'Edit'}
+            title={isEditing ? t('card.save') : t('card.edit')}
             style={{
               zIndex: 1,
             }}
@@ -338,7 +347,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </ActionIcon>
           {isEditing && (
             <ActionIcon
-              title="Cancel Edit"
+              title={t('card.cancel')}
               style={{
                 zIndex: 1,
               }}
@@ -365,11 +374,13 @@ function ColoredHighlight() {
   const defaultColor = 'transparent';
   const [color, setColor] = useState<string>(defaultColor);
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <ColoredControl
       color={color}
       setColor={setColor}
-      hoverText="Colored highlight text"
+      hoverText={t('card.controls.colorHighlight')}
       icon={<IconHighlight stroke={1.5} size="1rem" />}
       selectionUpdate={() => {
         setColor(editor.getAttributes('highlight').color ?? defaultColor);
@@ -391,11 +402,13 @@ function ColoredText() {
   const defaultColor = colorScheme === 'dark' ? colors.dark[0] : black;
   const [color, setColor] = useState<string>(defaultColor);
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <ColoredControl
       color={color}
       setColor={setColor}
-      hoverText="Color text"
+      hoverText={t('card.controls.colorText')}
       icon={<IconLetterA stroke={1.5} size="1rem" />}
       selectionUpdate={() => {
         setColor(editor.getAttributes('textStyle').color ?? defaultColor);
@@ -416,11 +429,13 @@ function ColoredCell() {
   const defaultColor = 'transparent';
   const [color, setColor] = useState<string>(defaultColor);
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <ColoredControl
       color={color}
       setColor={setColor}
-      hoverText="Colored cell"
+      hoverText={t('card.controls.colorCell')}
       icon={<IconLayoutGrid stroke={1.5} size="1.25rem" />}
       selectionUpdate={() => {
         setColor(editor.getAttributes('tableCell').backgroundColor ?? defaultColor);
@@ -458,6 +473,8 @@ function ColoredControl({
   const { editor } = useRichTextEditorContext();
   const { colors, colorScheme, white } = useMantineTheme();
   const [opened, { close, toggle }] = useDisclosure(false);
+
+  const { t } = useTranslation(['modules/notebook']);
 
   const palette = [
     '#000000',
@@ -510,11 +527,11 @@ function ColoredControl({
             swatchesPerRow={6}
           />
           <Group position="right" spacing={8}>
-            <ActionIcon title="Cancel" variant="default" onClick={close}>
+            <ActionIcon title={t('card.cancel')} variant="default" onClick={close}>
               <IconX stroke={1.5} size="1rem" />
             </ActionIcon>
             <ActionIcon
-              title="Apply"
+              title={t('card.modals.apply')}
               variant="default"
               onClick={() => {
                 onSaveHandle();
@@ -524,7 +541,7 @@ function ColoredControl({
               <IconCheck stroke={1.5} size="1rem" />
             </ActionIcon>
             <ActionIcon
-              title="Clear color"
+              title={t('card.modals.clearColor')}
               variant="default"
               onClick={() => {
                 onUnsetHandle();
@@ -546,6 +563,8 @@ function EmbedImage() {
   const [opened, { open, close, toggle }] = useDisclosure(false);
   const [src, setSrc] = useInputState<string>('');
   const [width, setWidth] = useInputState<string>('');
+
+  const { t } = useTranslation(['modules/notebook']);
 
   function setImage() {
     editor.commands.insertContent({
@@ -587,7 +606,7 @@ function EmbedImage() {
       <Popover.Target>
         <RichTextEditor.Control
           onClick={toggle}
-          title="Embed Image"
+          title={t('card.controls.image')!}
           active={editor?.isActive('image')}
         >
           <IconPhoto stroke={1.5} size="1rem" />
@@ -596,7 +615,7 @@ function EmbedImage() {
       <Popover.Dropdown>
         <Stack spacing={5}>
           <TextInput
-            label="Source"
+            label={t('card.modals.source')}
             value={src || ''}
             onChange={setSrc}
             onKeyDown={(e) => {
@@ -608,7 +627,7 @@ function EmbedImage() {
             placeholder="https://example.com/"
           />
           <TextInput
-            label="Width"
+            label={t('card.modals.width')}
             value={width || ''}
             onChange={setWidth}
             onKeyDown={(e) => {
@@ -617,9 +636,9 @@ function EmbedImage() {
                 setImage();
               }
             }}
-            placeholder="Value in % or pixels"
+            placeholder={t('card.modals.widthPlaceholder')!}
           />
-          <Button children="Save" variant="default" mt={10} mb={5} onClick={setImage} />
+          <Button children={t('card.save')} variant="default" mt={10} mb={5} onClick={setImage} />
         </Stack>
       </Popover.Dropdown>
     </Popover>
@@ -629,9 +648,11 @@ function EmbedImage() {
 function TaskListToggle() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <RichTextEditor.Control
-      title="Toggle task list item"
+      title={t('card.controls.checkList')!}
       onClick={() => editor.chain().focus().toggleTaskList().run()}
       active={editor?.isActive('taskList')}
     >
@@ -644,13 +665,15 @@ function ListIndentIncrease() {
   const { editor } = useRichTextEditorContext();
   const [itemType, setItemType] = useState('listItem');
 
+  const { t } = useTranslation(['modules/notebook']);
+
   editor?.on('selectionUpdate', ({ editor }) => {
     setItemType(editor?.isActive('taskItem') ? 'taskItem' : 'listItem');
   });
 
   return (
     <RichTextEditor.Control
-      title="Increase indent"
+      title={t('card.controls.increaseIndent')!}
       onClick={() => editor.chain().focus().sinkListItem(itemType).run()}
       interactive={editor.can().sinkListItem(itemType)}
     >
@@ -663,13 +686,15 @@ function ListIndentDecrease() {
   const { editor } = useRichTextEditorContext();
   const [itemType, setItemType] = useState('listItem');
 
+  const { t } = useTranslation(['modules/notebook']);
+
   editor?.on('selectionUpdate', ({ editor }) => {
     setItemType(editor?.isActive('taskItem') ? 'taskItem' : 'listItem');
   });
 
   return (
     <RichTextEditor.Control
-      title="Decrease indent"
+      title={t('card.controls.decreaseIndent')!}
       onClick={() => editor.chain().focus().liftListItem(itemType).run()}
       interactive={editor.can().liftListItem(itemType)}
     >
@@ -681,9 +706,11 @@ function ListIndentDecrease() {
 function TableAddColumnBefore() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <RichTextEditor.Control
-      title="Add Column before"
+      title={t('card.controls.addColumnLeft')!}
       onClick={() => editor?.commands.addColumnBefore()}
     >
       <IconColumnInsertLeft stroke={1.5} size="1.25rem" />
@@ -694,9 +721,11 @@ function TableAddColumnBefore() {
 function TableAddColumnAfter() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <RichTextEditor.Control
-      title="Add Column After"
+      title={t('card.controls.addColumnRight')!}
       onClick={() => editor?.commands.addColumnAfter()}
     >
       <IconColumnInsertRight stroke={1.5} size="1.25rem" />
@@ -707,8 +736,13 @@ function TableAddColumnAfter() {
 function TableRemoveColumn() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
-    <RichTextEditor.Control title="Remove Column" onClick={() => editor?.commands.deleteColumn()}>
+    <RichTextEditor.Control
+      title={t('card.controls.deleteColumn')!}
+      onClick={() => editor?.commands.deleteColumn()}
+    >
       <IconColumnRemove stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
@@ -717,8 +751,13 @@ function TableRemoveColumn() {
 function TableAddRowBefore() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
-    <RichTextEditor.Control title="Add Row Before" onClick={() => editor?.commands.addRowBefore()}>
+    <RichTextEditor.Control
+      title={t('card.controls.addRowTop')!}
+      onClick={() => editor?.commands.addRowBefore()}
+    >
       <IconRowInsertTop stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
@@ -727,8 +766,13 @@ function TableAddRowBefore() {
 function TableAddRowAfter() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
-    <RichTextEditor.Control title="Add Row After" onClick={() => editor?.commands.addRowAfter()}>
+    <RichTextEditor.Control
+      title={t('card.controls.addRowBelow')!}
+      onClick={() => editor?.commands.addRowAfter()}
+    >
       <IconRowInsertBottom stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
@@ -737,8 +781,13 @@ function TableAddRowAfter() {
 function TableRemoveRow() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
-    <RichTextEditor.Control title="Remove Row" onClick={() => editor?.commands.deleteRow()}>
+    <RichTextEditor.Control
+      title={t('card.controls.deleteRow')!}
+      onClick={() => editor?.commands.deleteRow()}
+    >
       <IconRowRemove stroke={1.5} size="1.25rem" />
     </RichTextEditor.Control>
   );
@@ -747,9 +796,11 @@ function TableRemoveRow() {
 function TableToggleMerge() {
   const { editor } = useRichTextEditorContext();
 
+  const { t } = useTranslation(['modules/notebook']);
+
   return (
     <RichTextEditor.Control
-      title="Toggle Cell Merging"
+      title={t('card.controls.mergeCell')!}
       onClick={() => editor?.commands.mergeOrSplit()}
       active={editor?.getAttributes('tableCell').colspan > 1}
     >
@@ -784,6 +835,8 @@ function TableToggle() {
   const defaultRows = 3;
   const [rows, setRows] = useState<number>(defaultRows);
 
+  const { t } = useTranslation(['modules/notebook']);
+
   function InsertTable(cols: number, rows: number) {
     editor?.commands.insertTable({ rows, cols, withHeaderRow: false });
     close();
@@ -807,7 +860,7 @@ function TableToggle() {
     >
       <Popover.Target>
         <RichTextEditor.Control
-          title={isActive ? 'Delete Table' : 'Add Table'}
+          title={t(`card.controls.${isActive ? 'deleteTable' : 'addTable'}`)!}
           active={isActive}
           onClick={isActive ? () => editor.commands.deleteTable() : () => toggle()}
         >
@@ -821,7 +874,7 @@ function TableToggle() {
       <Popover.Dropdown>
         <Stack spacing={5}>
           <NumberInput
-            label="Columns"
+            label={t('card.modals.columns')}
             min={1}
             value={cols}
             onChange={(e) => {
@@ -839,7 +892,7 @@ function TableToggle() {
             }}
           />
           <NumberInput
-            label="Rows"
+            label={t('card.modals.rows')}
             min={1}
             value={rows}
             onChange={(e) => {
@@ -857,7 +910,7 @@ function TableToggle() {
             }}
           />
           <Button
-            children="Insert"
+            children={t('card.modals.insert')}
             variant="default"
             mt={10}
             mb={5}

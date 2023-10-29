@@ -7,9 +7,61 @@
 			"showToolbar": {
 				"label": "Show the toolbar to help you write markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Allow check in read only mode"
+			},
 			"content": {
 				"label": "The content of the notebook"
 			}
 		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Bold",
+			"italic": "Italic",
+			"strikethrough": "Strikethrough",
+			"colorText": "Color text",
+			"colorHighlight": "Colored highlight text",
+			"code": "Code",
+			"clear": "Clear formatting",
+			"heading": "Heading {{level}}",
+			"align": "Align text: {{position}}",
+			"left": "Left",
+			"center": "Center",
+			"right": "Right",
+			"blockquote": "Blockquote",
+			"horizontalLine": "Horizontal line",
+			"bulletList": "Bullet list",
+			"orderedList": "Ordered list",
+			"checkList": "Check list",
+			"increaseIndent": "Increase Indent",
+			"decreaseIndent": "Decrease Indent",
+			"link": "Link",
+			"unlink": "Remove link",
+			"image": "Embed Image",
+			"addTable": "Add table",
+			"deleteTable": "Delete Table",
+			"colorCell": "Color Cell",
+			"mergeCell": "Toggle cell merging",
+			"addColumnLeft": "Add column before",
+			"addColumnRight": "Add column after",
+			"deleteColumn": "Delete column",
+			"addRowTop": "Add row before",
+			"addRowBelow": "Add row after",
+			"deleteRow": "Delete row"
+		},
+		"modals": {
+			"apply": "Apply",
+			"clearColor": "Clear color",
+			"source": "Source",
+			"width": "Width",
+			"widthPlaceholder": "Value in % or pixels",
+			"columns": "Columns",
+			"rows": "Rows",
+			"insert": "Insert"
+		},
+		"edit": "Edit",
+		"cancel": "Cancel",
+		"save": "Save"
 	}
 }
