@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "No se encontraron solicitudes. Por favor, asegúrate de haber configurado tus aplicaciones correctamente.",
-  "pending": "Hay {{countPendingApproval}} solicitudes pendientes de aprobación.",
-  "nonePending": "Actualmente no hay aprobaciones pendientes. ¡Listo!",
   "state": {
     "approved": "Aprobada",
     "pendingApproval": "Pendiente de aprobación",
