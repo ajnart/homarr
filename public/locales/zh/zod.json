@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "该字段无效",
-        "required": "此字段为必填",
+        "default": "該字段無效",
+        "required": "此字段為必填",
         "string": {
-            "startsWith": "该字段必须以 {{startsWith}} 开头",
-            "endsWith": "该字段必须以 {{endsWith}} 结尾",
-            "includes": "该字段必须包含 {{includes}}"
+            "startsWith": "該字段必須以 {{startsWith}} 開頭",
+            "endsWith": "該字段必須以 {{endsWith}} 結尾",
+            "includes": "該字段必須以 {{includes}}"
         },
         "tooSmall": {
-            "string": "该字段的长度必须至少为 {{minimum}} 个字符",
-            "number": "该字段必须大于或等于 {{minimum}}"
+            "string": "該字段長度必須至少為 {{minimum}} 個字符",
+            "number": "該字段必須大於或等於 {{minimum}}"
         },
         "tooBig": {
-            "string": "该字段的长度不得超过 {{maximum}} 个字符",
-            "number": "该字段必须小于或等于 {{maximum}}"
+            "string": "該字段長度不得超過 {{maximum}} 個字符",
+            "number": "該字段必須小於或等於 {{maximum}}"
         },
         "custom": {
-            "passwordMatch": "两次输入的密码必须一致"
+            "passwordMatch": "再次輸入的密碼必須一致"
         }
     }
 }
