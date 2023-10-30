@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "crwdns1520:0crwdne1520:0",
+    "description": "crwdns2363:0crwdne2363:0"
+  },
+  "input": {
+    "placeholder": "crwdns1524:0crwdne1524:0"
+  },
+  "switched-to": "crwdns1927:0crwdne1927:0",
+  "searchEngines": {
+    "search": {
+      "name": "crwdns1929:0crwdne1929:0",
+      "description": "crwdns2365:0crwdne2365:0"
+    },
+    "youtube": {
+      "name": "crwdns1933:0crwdne1933:0",
+      "description": "crwdns1935:0crwdne1935:0"
+    },
+    "torrents": {
+      "name": "crwdns1937:0crwdne1937:0",
+      "description": "crwdns1939:0crwdne1939:0"
+    },
+    "overseerr": {
+      "name": "crwdns1941:0crwdne1941:0",
+      "description": "crwdns2367:0crwdne2367:0"
+    }
+  },
+  "tip": "crwdns1945:0crwdne1945:0",
+  "switchedSearchEngine": "crwdns1947:0{{searchEngine}}crwdne1947:0"
+}
