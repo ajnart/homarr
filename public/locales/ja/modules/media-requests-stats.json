@@ -14,9 +14,9 @@
   },
   "mediaStats": {
     "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
+    "pending": "承認待ち",
+    "tvRequests": "テレビのリクエスト",
+    "movieRequests": "映画のリクエスト",
     "approved": "",
     "totalRequests": ""
   },
