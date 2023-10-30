@@ -1,0 +1,35 @@
+{
+    "metaTitle": "創建帳號",
+    "title": "創建帳號",
+    "text": "請在下方定義您的憑證",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "帳號"
+            },
+            "password": {
+                "label": "密碼"
+            },
+            "passwordConfirmation": {
+                "label": "確認密碼"
+            }
+        },
+        "buttons": {
+            "submit": "創建帳號"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "創建帳號中...",
+            "text": "請稍後"
+        },
+        "success": {
+            "title": "帳號已創建",
+            "text": "您的帳號已創建成功"
+        },
+        "error": {
+            "title": "錯誤",
+            "text": "出錯，出現以下錯誤：{{error}}"
+        }
+    }
+}
