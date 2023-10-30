@@ -1,25 +1,25 @@
 {
     "navigation": {
         "home": {
-            "title": "首页"
+            "title": "首頁"
         },
         "boards": {
             "title": "面板"
         },
         "users": {
-            "title": "用户",
+            "title": "使用者",
             "items": {
                 "manage": "管理",
-                "invites": "邀请"
+                "invites": "邀請"
             }
         },
         "help": {
-            "title": "帮助",
+            "title": "幫助",
             "items": {
-                "documentation": "文档",
-                "report": "报告问题 / bug",
-                "discord": "Discord 社区",
-                "contribute": "贡献"
+                "documentation": "文件",
+                "report": "回報問題",
+                "discord": "Discord 社群",
+                "contribute": "貢獻"
             }
         },
         "tools": {
