@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": "這是 Homarr 的一項實現性功能。請在 <gh>Github</gh> 或 <dc>Discord</dc>上回報任何問題。"
+        "label": "这是 Homarr 的一项实验性功能。请在 <gh>GitHub</gh> 或 <dc>Discord</dc>上报告任何问题。"
     },
     "search": {
-        "label": "搜尋",
+        "label": "搜索",
         "engines": {
-            "web": "在搜尋引擎中搜尋 {{query}}",
-            "youtube": "在 Youtube 中搜尋 {{query}}",
-            "torrent": "搜尋 {{query}} Torrents",
-            "movie": "在 {{app}} 中搜尋 {{query}}"
+            "web": "在网上搜索 {{query}}",
+            "youtube": "在 YouTube 上搜索 {{query}}",
+            "torrent": "搜索 {{query}} Torrents",
+            "movie": "在 {{app}} 上搜索 {{query}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "切換主題",
-            "preferences": "使用者設定",
-            "defaultBoard": "預設儀錶板",
+            "switchTheme": "切换主题",
+            "preferences": "用户首选项",
+            "defaultBoard": "默认仪表盘",
             "manage": "管理",
             "about": {
-                "label": "關於",
+                "label": "关于",
                 "new": "新"
             },
-            "logout": "登出 {{username}}",
-            "login": "登入"
+            "logout": "注销 {{username}}",
+            "login": "登录"
         }
     },
     "modals": {
         "movie": {
-            "title": "空",
-            "topResults": "上方 {{count}} 結果為 <b>{{search}}</b>。"
+            "title": "",
+            "topResults": "最高 {{count}} 结果为 <b>{{search}}</b>。"
         }
     }
 }
