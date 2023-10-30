@@ -1,37 +1,37 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "日曆",
+    "description": "在日曆中顯示來自支持集成中的即將發布版本。",
     "settings": {
-      "title": "",
+      "title": "日曆組件設定",
       "useSonarrv4": {
-        "label": ""
+        "label": "使用 Sonarr V4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "使用 Radarr V5 API"
       },
       "radarrReleaseType": {
-        "label": "",
+        "label": "Radarr 發布類型",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "電影模式放映",
+          "physicalRelease": "實體",
+          "digitalRelease": "數位"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "隱藏星期"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "顯示未監視項目"
       },
       "fontSize": {
-        "label": "",
+        "label": "字體大小",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "超小號",
+          "sm": "小",
+          "md": "中等",
+          "lg": "大號",
+          "xl": "超級大"
         }
       }
     }
