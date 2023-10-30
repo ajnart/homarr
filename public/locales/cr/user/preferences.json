@@ -1,0 +1,48 @@
+{
+    "metaTitle": "crwdns3379:0crwdne3379:0",
+    "pageTitle": "crwdns3381:0crwdne3381:0",
+    "boards": {
+        "defaultBoard": {
+            "label": "crwdns3383:0crwdne3383:0"
+        }
+    },
+    "accessibility": {
+        "title": "crwdns3385:0crwdne3385:0",
+        "disablePulse": {
+            "label": "crwdns3387:0crwdne3387:0",
+            "description": "crwdns3389:0crwdne3389:0"
+        },
+        "replaceIconsWithDots": {
+            "label": "crwdns3391:0crwdne3391:0",
+            "description": "crwdns3393:0crwdne3393:0"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "crwdns3395:0crwdne3395:0"
+        },
+        "firstDayOfWeek": {
+            "label": "crwdns3397:0crwdne3397:0",
+            "options": {
+                "monday": "crwdns3399:0crwdne3399:0",
+                "saturday": "crwdns3401:0crwdne3401:0",
+                "sunday": "crwdns3403:0crwdne3403:0"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "crwdns3405:0crwdne3405:0",
+        "custom": "crwdns3407:0crwdne3407:0",
+        "newTab": {
+            "label": "crwdns3409:0crwdne3409:0"
+        },
+        "autoFocus": {
+            "label": "crwdns3411:0crwdne3411:0",
+            "description": "crwdns3413:0crwdne3413:0"
+        },
+        "template": {
+            "label": "crwdns3415:0crwdne3415:0",
+            "description": "crwdns3417:0%scrwdne3417:0"
+        }
+    }
+}
