@@ -1,37 +1,37 @@
 {
   "descriptor": {
-    "name": "日历",
-    "description": "在日历中显示来自支持集成中的即将发布的版本。",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "日历组件设置",
+      "title": "",
       "useSonarrv4": {
-        "label": "使用Sonarr v4 API"
+        "label": ""
       },
       "useRadarrv5": {
-        "label": "使用Radarr v5 API"
+        "label": ""
       },
       "radarrReleaseType": {
-        "label": "Radarr发布类型",
+        "label": "",
         "data": {
-          "inCinemas": "影院放映",
-          "physicalRelease": "实体",
-          "digitalRelease": "数字"
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
         }
       },
       "hideWeekDays": {
-        "label": "隐藏星期"
+        "label": ""
       },
       "showUnmonitored": {
-        "label": "显示未监视项目"
+        "label": ""
       },
       "fontSize": {
-        "label": "字体大小",
+        "label": "",
         "data": {
-          "xs": "超小号",
-          "sm": "小号",
-          "md": "中号",
-          "lg": "大号",
-          "xl": "超大号"
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
         }
       }
     }
