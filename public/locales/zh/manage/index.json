@@ -1,23 +1,23 @@
 {
     "metaTitle": "管理",
     "hero": {
-        "title": "歡迎回來，{{username}}",
+        "title": "欢迎回来，{{username}}！",
         "fallbackUsername": "匿名",
-        "subtitle": "歡迎來到您的應用程續中心。規劃、優化和享用！"
+        "subtitle": "欢迎来到您的应用程序中心。组织、优化和征服!"
     },
     "quickActions": {
-        "title": "快捷動作",
+        "title": "快捷操作",
         "boards": {
             "title": "您的面板",
-            "subtitle": "創建和管理面板"
+            "subtitle": "创建和管理您的面板"
         },
         "inviteUsers": {
-            "title": "邀請新使用者",
-            "subtitle": "創建並傳送註冊邀請"
+            "title": "邀请新用户",
+            "subtitle": "创建并发送注册邀请"
         },
         "manageUsers": {
-            "title": "管理使用者",
-            "subtitle": "刪除和管理使用者"
+            "title": "管理用户",
+            "subtitle": "删除和管理您的用户"
         }
     }
 }
