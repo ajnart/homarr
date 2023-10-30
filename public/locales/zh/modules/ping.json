@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Ping",
-    "description": "根据设定的URL的HTTP响应代码，显示一个状态指示器。"
+    "description": "根據設定的網址的 HTTP 回應待碼，顯示一個狀態顯示器"
   },
   "states": {
-    "online": "在线 {{response}}",
-    "offline": "离线 {{response}}",
-    "loading": "正在加载..."
+    "online": "在線 {{response}}",
+    "offline": "離線 {{response}}",
+    "loading": "正在載入..."
   }
 }
