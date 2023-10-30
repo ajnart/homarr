@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "视频流",
-    "description": "嵌入来自相机或网站的视频流或视频",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "视频流组件设置",
+      "title": "",
       "FeedUrl": {
-        "label": "订阅网址"
+        "label": ""
       },
       "autoPlay": {
-        "label": "自动播放"
+        "label": ""
       },
       "muted": {
-        "label": "静音"
+        "label": ""
       },
       "controls": {
-        "label": "视频播放控件"
+        "label": ""
       }
     }
   },
   "errors": {
-    "invalidStream": "无效数据流"
+    "invalidStream": ""
   }
 }
