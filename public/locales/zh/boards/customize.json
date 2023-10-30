@@ -1,29 +1,29 @@
 {
-    "metaTitle": "自定義 {{name}} 面板",
-    "pageTitle": "{{name}} 面板自定義中",
+    "metaTitle": "自定义 {{name}} 面板",
+    "pageTitle": "{{name}} 面板自定义中",
     "backToBoard": "返回面板",
     "settings": {
         "appearance": {
-            "primaryColor": "主體顏色",
-            "secondaryColor": "輔助顏色"
+            "primaryColor": "主体色",
+            "secondaryColor": "辅助色"
         }
     },
     "save": {
-        "button": "儲存設定",
-        "note": "注意，您有未儲存的設定！"
+        "button": "保存更改",
+        "note": "小心，您有未保存的更改!"
     },
     "notifications": {
         "pending": {
-            "title": "自定義儲存中",
-            "message": "請稍後，我們正在儲存您的自定義"
+            "title": "自定义保存中",
+            "message": "请稍候，我们正在保存您的自定义"
         },
         "success": {
-            "title": "已儲存自定義",
-            "message": "您的自定義已儲存成功"
+            "title": "已保存自定义",
+            "message": "您的自定义已成功保存"
         },
         "error": {
-            "title": "錯誤",
-            "message": "無法儲存設定"
+            "title": "错误",
+            "message": "无法保存更改"
         }
     }
 }
