@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "DNS blokkolók ellenőrzése",
-    "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról"
+    "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról",
+    "settings": {
+      "title": "DNS blokkolók vezérlő beállítások",
+      "showToggleAllButtons": {
+        "label": "'Minden engedélyezés/letiltás gombok megjelenítése"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nem található DNS blokkoló",
+        "text": "Probléma adódott a DNS-blokkoló(k)hoz való csatlakozással. Kérjük, ellenőrizze a konfigurációt/integráció(ka)t."
+      }
+    }
   }
 }

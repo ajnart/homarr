@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Vytvoriť užívateľa",
+    "steps": {
+        "account": {
+            "title": "Prvý krok",
+            "text": "Vytvoriť účet",
+            "username": {
+                "label": "Používateľské meno"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Druhý krok",
+            "text": "Heslo",
+            "password": {
+                "label": "Heslo"
+            }
+        },
+        "finish": {
+            "title": "Potvrdenie",
+            "text": "Uložiť do databázy",
+            "card": {
+                "title": "Preskúmajte svoje vstupy",
+                "text": "Po odoslaní údajov do databázy sa používateľ bude môcť prihlásiť. Ste si istí, že chcete tohto používateľa uložiť do databázy a aktivovať prihlásenie?"
+            },
+            "table": {
+                "header": {
+                    "property": "Vlastnosti",
+                    "value": "Hodnota",
+                    "username": "Používateľské meno",
+                    "email": "E-mail",
+                    "password": "Heslo"
+                },
+                "notSet": "Nenastavené",
+                "valid": "Platné"
+            },
+            "failed": "Vytvorenie používateľa sa nepodarilo: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Používateľ bol vytvorený",
+                "text": "Používateľ bol vytvorený v databáze. Teraz sa môže prihlásiť."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generovať náhodné",
+        "createAnother": "Vytvorenie ďalšieho"
+    }
+}

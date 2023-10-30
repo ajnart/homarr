@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "To pole jest nieprawidłowe",
+        "required": "To pole jest wymagane",
+        "string": {
+            "startsWith": "To pole musi zaczynać się od {{startsWith}}",
+            "endsWith": "To pole musi kończyć się na {{endsWith}}",
+            "includes": "Pole to musi zawierać {{includes}}"
+        },
+        "tooSmall": {
+            "string": "To pole musi mieć co najmniej {{minimum}} znaków",
+            "number": "Wartość tego pola musi być większa lub równa {{minimum}}"
+        },
+        "tooBig": {
+            "string": "To pole może zawierać maksymalnie {{maximum}} znaków",
+            "number": "Wartość tego pola musi być mniejsza lub równa {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "Hasła muszą być takie same"
+        }
+    }
+}

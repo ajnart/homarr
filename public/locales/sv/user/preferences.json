@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Tillgänglighet",
+        "disablePulse": {
+            "label": "Inaktivera ping-puls",
+            "description": "Som standard kommer ping-indikatorerna i Homarr att pulsera. Detta kan vara irriterande. Det här reglaget avaktiverar animeringen"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ersätt ping-prickar med ikoner",
+            "description": "För färgblinda användare kan ping-punkter vara oigenkännliga. Detta kommer att ersätta indikatorer med ikoner"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Språk"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Sökmotor",
+        "custom": "Anpassad",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL för förfrågan",
+            "description": ""
+        }
+    }
+}

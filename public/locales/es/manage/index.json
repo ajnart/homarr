@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Administrar",
+    "hero": {
+        "title": "Bienvenido/a de nuevo, {{username}}",
+        "fallbackUsername": "Anónimo",
+        "subtitle": "Bienvenido/a a tu centro de aplicaciones. ¡Organiza, optimiza y conquista!"
+    },
+    "quickActions": {
+        "title": "Acciones rápidas",
+        "boards": {
+            "title": "Tus tableros",
+            "subtitle": "Crea y administra tus tableros"
+        },
+        "inviteUsers": {
+            "title": "Invitar a un nuevo usuario",
+            "subtitle": "Crear y enviar una invitación para registrarse"
+        },
+        "manageUsers": {
+            "title": "Administrar usuarios",
+            "subtitle": "Elimina y administra tus usuarios"
+        }
+    }
+}

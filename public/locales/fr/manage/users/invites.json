@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Invitations des utilisateurs",
+    "pageTitle": "Gérer les invitations des utilisateurs",
+    "description": "Avec les invitations, vous pouvez convier des utilisateurs sur votre instance Homarr. Une invitation ne sera valide que pendant un certain temps et ne peut être utilisée qu'une fois. L'expiration doit être définie entre 5 minutes et 12 mois.",
+    "button": {
+        "createInvite": "Créer une invitation",
+        "deleteInvite": "Supprimer une invitation"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Créé par",
+            "expires": "Date d'expiration",
+            "action": "Actions"
+        },
+        "data": {
+            "expiresAt": "a expiré à {{at}}",
+            "expiresIn": "à {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Créer une invitation",
+            "description": "Après expiration, une invitation ne sera plus valide et le destinataire de cette invitation ne pourra pas créer un compte.",
+            "form": {
+                "expires": "Date d'expiration",
+                "submit": "Créer"
+            }
+        },
+        "copy": {
+            "title": "Copier l'invitation",
+            "description": "Votre invitation a été générée. Après avoir fermé cette fenêtre, <b>vous ne pourrez plus copier ce lien</b>. Si vous ne souhaitez plus inviter cette personne, vous pouvez supprimer l'invitation à tout moment.",
+            "invitationLink": "Lien d'invitation",
+            "details": {
+                "id": "ID",
+                "token": "Jeton"
+            },
+            "button": {
+                "close": "Copier et fermer"
+            }
+        },
+        "delete": {
+            "title": "Supprimer une invitation",
+            "description": "Êtes-vous sûr de vouloir supprimer cette invitation ? Les utilisateurs avec ce lien ne pourront plus créer un compte avec ce dernier."
+        }
+    },
+    "noInvites": "Il n'y a pas encore d'invitations."
+}

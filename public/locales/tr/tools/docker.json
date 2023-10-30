@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Homarr örneğinizde Docker yapılandırılmış değil veya konteynırları getirmede başarısız oldu. Lütfen entegrasyonun nasıl kurulacağına ilişkin belgeleri kontrol edin."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Bir panel seç",
+            "text": "Seçilen Docker konteynır uygulamalarını eklemek istediğiniz paneli seçin.",
+            "form": {
+                "board": {
+                    "label": "Panel"
+                },
+                "submit": "Uygulama Ekle"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Uygulamalar panele eklendi",
+                "message": "Seçilen Docker konteynırlarına ilişkin uygulamalar panelinize eklendi."
+            },
+            "error": {
+                "title": "Uygulamalar panele eklenemedi",
+                "message": "Seçilen Docker konteynırlarına ilişkin uygulamalar panelinize eklenemedi."
+            }
+        }
+    }
+}

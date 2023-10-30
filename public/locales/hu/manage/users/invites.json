@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Meghívók",
+    "pageTitle": "Felhasználói meghívók kezelése",
+    "description": "A meghívók segítségével meghívhat felhasználókat a Homarr-példányába. Egy meghívó csak egy bizonyos ideig érvényes, és csak egyszer használható fel. A lejárati időnek a létrehozáskor 5 perc és 12 hónap között kell lennie.",
+    "button": {
+        "createInvite": "Meghívó létrehozása",
+        "deleteInvite": "Meghívó törlése"
+    },
+    "table": {
+        "header": {
+            "id": "Azonosító",
+            "creator": "Létrehozó",
+            "expires": "Lejárat",
+            "action": "Műveletek"
+        },
+        "data": {
+            "expiresAt": "lejárt {{at}}",
+            "expiresIn": "ekkor{{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Meghívó létrehozása",
+            "description": "A lejárat után a meghívó már nem lesz érvényes, és a meghívó címzettje nem tud fiókot létrehozni.",
+            "form": {
+                "expires": "Lejárati idő",
+                "submit": "Létrehozás"
+            }
+        },
+        "copy": {
+            "title": "Meghívó másolása",
+            "description": "Az Ön meghívója elkészült. Miután ez a modal bezárul, <b>nem tudja többé másolni ezt a linket</b>. Ha már nem kívánja meghívni az említett személyt, bármikor törölheti ezt a meghívót.",
+            "invitationLink": "Meghívó link",
+            "details": {
+                "id": "Azonosító",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Másolás és bezárás"
+            }
+        },
+        "delete": {
+            "title": "Meghívó törlése",
+            "description": "Biztos, hogy törölni szeretné ezt a meghívót? Az ezzel a linkkel rendelkező felhasználók többé nem tudnak fiókot létrehozni a link használatával."
+        }
+    },
+    "noInvites": "Még nincsenek meghívók."
+}

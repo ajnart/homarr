@@ -1,0 +1,52 @@
+{
+    "metaTitle": "",
+    "steps": {
+        "account": {
+            "title": "",
+            "text": "",
+            "username": {
+                "label": "ユーザー名"
+            },
+            "email": {
+                "label": ""
+            }
+        },
+        "security": {
+            "title": "",
+            "text": "パスワード",
+            "password": {
+                "label": "パスワード"
+            }
+        },
+        "finish": {
+            "title": "",
+            "text": "",
+            "card": {
+                "title": "",
+                "text": ""
+            },
+            "table": {
+                "header": {
+                    "property": "",
+                    "value": "",
+                    "username": "ユーザー名",
+                    "email": "",
+                    "password": "パスワード"
+                },
+                "notSet": "",
+                "valid": ""
+            },
+            "failed": ""
+        },
+        "completed": {
+            "alert": {
+                "title": "",
+                "text": ""
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "",
+        "createAnother": ""
+    }
+}

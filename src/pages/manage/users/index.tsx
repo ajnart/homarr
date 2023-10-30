@@ -26,6 +26,7 @@ import { openDeleteUserModal } from '~/components/Manage/User/delete-user.modal'
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
@@ -148,7 +149,7 @@ const ManageUsersPage = () => {
                 </tr>
               ))}
 
-              {debouncedSearch && debouncedSearch.length > 0 && (
+              {debouncedSearch && debouncedSearch.length > 0 && data.countPages === 0 && (
                 <tr>
                   <td colSpan={1}>
                     <Box p={15}>
@@ -180,11 +181,9 @@ const ManageUsersPage = () => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getServerAuthSession(ctx);
-
-  if (!session?.user.isAdmin) {
-    return {
-      notFound: true,
-    };
+  const result = checkForSessionOrAskForLogin(ctx, session, () => session?.user.isAdmin == true);
+  if (result) {
+    return result;
   }
 
   const translations = await getServerSideTranslations(

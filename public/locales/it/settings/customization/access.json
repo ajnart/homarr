@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Consenti anonimo",
+    "description": "Consenti agli utenti che non hanno effettuato l'accesso di visualizzare la tua board"
+  }
+}

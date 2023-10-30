@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Dēļi",
+    "pageTitle": "Dēļi",
+    "cards": {
+        "statistics": {
+            "apps": "Lietotnes",
+            "widgets": "Logrīki",
+            "categories": "Kategorijas"
+        },
+        "buttons": {
+            "view": ""
+        },
+        "menu": {
+            "setAsDefault": "",
+            "delete": {
+                "label": "",
+                "disabled": ""
+            }
+        },
+        "badges": {
+            "fileSystem": "",
+            "default": ""
+        }
+    },
+    "buttons": {
+        "create": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "create": {
+            "title": "",
+            "text": "",
+            "form": {
+                "name": {
+                    "label": "Nosaukums"
+                },
+                "submit": ""
+            }
+        }
+    }
+}

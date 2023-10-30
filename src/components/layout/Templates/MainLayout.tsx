@@ -6,9 +6,16 @@ type MainLayoutProps = {
   headerActions?: React.ReactNode;
   contentComponents?: React.ReactNode;
   children: React.ReactNode;
+  autoFocusSearch?: boolean;
 };
 
-export const MainLayout = ({ showExperimental, headerActions, contentComponents, children }: MainLayoutProps) => {
+export const MainLayout = ({
+  showExperimental,
+  headerActions,
+  contentComponents,
+  children,
+  autoFocusSearch,
+}: MainLayoutProps) => {
   const theme = useMantineTheme();
 
   return (
@@ -18,7 +25,14 @@ export const MainLayout = ({ showExperimental, headerActions, contentComponents,
           background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
         },
       }}
-      header={<MainHeader headerActions={headerActions} contentComponents={contentComponents} showExperimental={showExperimental} />}
+      header={
+        <MainHeader
+          autoFocusSearch={autoFocusSearch}
+          headerActions={headerActions}
+          contentComponents={contentComponents}
+          showExperimental={showExperimental}
+        />
+      }
       className="dashboard-app-shell"
     >
       {children}

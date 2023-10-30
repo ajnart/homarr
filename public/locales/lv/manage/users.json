@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Lietotāji",
+    "pageTitle": "Pārvaldīt lietotājus",
+    "text": "",
+    "buttons": {
+        "create": ""
+    },
+    "table": {
+        "header": {
+            "user": "Lietotājs"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "",
+        "demoteAdmin": "",
+        "promoteToAdmin": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "change-role": {
+            "promote": {
+                "title": "",
+                "text": ""
+            },
+            "demote": {
+                "title": "",
+                "text": ""
+            },
+            "confirm": "Apstipriniet"
+        }
+    },
+    "searchDoesntMatch": ""
+}

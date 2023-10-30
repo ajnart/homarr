@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Toto pole je neplatné",
+        "required": "Toto pole je povinné",
+        "string": {
+            "startsWith": "Toto pole musí začínať na {{startsWith}}",
+            "endsWith": "Toto pole musí končiť na {{endsWith}}",
+            "includes": "Toto pole musí obsahovať {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Toto pole musí byť dlhé aspoň {{minimum}} znakov",
+            "number": "Toto pole musí byť väčšie alebo rovné {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Toto pole musí mať najviac {{maximum}} znakov",
+            "number": "Toto pole musí byť menšie alebo rovné {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "Heslá sa musia zhodovať"
+        }
+    }
+}

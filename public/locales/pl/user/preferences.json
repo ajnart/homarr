@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Preferencje",
+    "pageTitle": "Twoje preferencje",
+    "boards": {
+        "defaultBoard": {
+            "label": "Domyślna tablica"
+        }
+    },
+    "accessibility": {
+        "title": "Ułatwienia dostępu",
+        "disablePulse": {
+            "label": "Wyłącz wskaźniki aktywności",
+            "description": "Domyślnie wskaźniki aktywności w Homarr będą pulsować. Może to być irytujące. Ten suwak wyłączy animację"
+        },
+        "replaceIconsWithDots": {
+            "label": "Zastąp wskaźniki aktywności ikonami",
+            "description": "Dla użytkowników niewidzących kolorów, wskaźniki aktywności mogą być niewidoczne. Wskaźniki zostaną zastąpione ikonami"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Język"
+        },
+        "firstDayOfWeek": {
+            "label": "Pierwszy dzień tygodnia",
+            "options": {
+                "monday": "Poniedziałek",
+                "saturday": "Sobota",
+                "sunday": "Niedziela"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Silnik wyszukiwania",
+        "custom": "Własny",
+        "newTab": {
+            "label": "Otwórz wyniki wyszukiwania w nowej karcie"
+        },
+        "autoFocus": {
+            "label": "Zacznij pisać w pasku wyszukiwania od razu po załadowaniu strony.",
+            "description": "Spowoduje to automatyczne zaznaczenie paska wyszukiwania, gdy przejdziesz do strony działu. Działa tylko na urządzeniach desktop."
+        },
+        "template": {
+            "label": "Adres URL zapytania",
+            "description": "Użyj %s jako placeholdera dla zapytania"
+        }
+    }
+}

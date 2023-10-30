@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Crear cuenta",
+    "title": "Crear cuenta",
+    "text": "Por favor, define tus credenciales a continuación",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Nombre de usuario"
+            },
+            "password": {
+                "label": "Contraseña"
+            },
+            "passwordConfirmation": {
+                "label": "Confirmar contraseña"
+            }
+        },
+        "buttons": {
+            "submit": "Crear cuenta"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Creando cuenta",
+            "text": "Por favor, espera"
+        },
+        "success": {
+            "title": "Cuenta creada",
+            "text": "Tu cuenta ha sido creada con éxito"
+        },
+        "error": {
+            "title": "Error",
+            "text": "Algo salió mal, se encontró el siguiente error: {{error}}"
+        }
+    }
+}

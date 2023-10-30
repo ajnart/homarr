@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Dùng Sonarr v4 API"
       },
-      "sundayStart": {
-        "label": "Đặt đầu tuần là Chủ Nhật"
-      },
       "radarrReleaseType": {
         "label": "Loại phát hành Radarr",
         "data": {

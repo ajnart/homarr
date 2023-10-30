@@ -3,7 +3,6 @@ import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
-
 import {
   AppIntegrationPropertyType,
   AppIntegrationType,

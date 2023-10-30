@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Anonimowy dostęp",
+    "description": "Zezwalaj użytkownikom, którzy nie są zalogowani, na przeglądanie Twojej tablicy"
+  }
+}

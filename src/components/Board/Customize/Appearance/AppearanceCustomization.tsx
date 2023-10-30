@@ -15,7 +15,6 @@ import {
 import { useTranslation } from 'next-i18next';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
-import { useColorScheme } from '~/hooks/use-colorscheme';
 import { useColorTheme } from '~/tools/color';
 
 import { useBoardCustomizationFormContext } from '../form';

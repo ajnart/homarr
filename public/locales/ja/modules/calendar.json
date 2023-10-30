@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "Sonarr v4 API を使用"
       },
-      "sundayStart": {
-        "label": "週の始まりは日曜日"
-      },
       "radarrReleaseType": {
         "label": "ラダーリリースタイプ",
         "data": {

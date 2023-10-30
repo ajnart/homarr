@@ -1,6 +1,18 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Sterowanie pułapką DNS",
+    "description": "Kontroluj PiHole lub AdGuard ze swojego pulpitu",
+    "settings": {
+      "title": "Ustawienia sterowania pułapką DNS",
+      "showToggleAllButtons": {
+        "label": "Pokaż przyciski 'Włącz/Wyłącz wszystkie'"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nie można znaleźć pułapki DNS",
+        "text": "Wystąpił problem z połączeniem się z pułapką DNS. Sprawdź konfigurację/integrację."
+      }
+    }
   }
 }

@@ -18,7 +18,7 @@
   "menu": {
     "moveUp": "Virzīt augšup",
     "moveDown": "Virzīt lejup",
-    "addCategory": "",
+    "addCategory": "Pievienot kategoriju {{location}}",
     "addAbove": "virs",
     "addBelow": "zem"
   }

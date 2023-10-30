@@ -3,11 +3,11 @@ import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';
 
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '~/config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -30,25 +30,19 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
+    useRadarrv5: {
+      type: 'switch',
+      defaultValue: false,
+    },
     radarrReleaseType: {
       type: 'select',
       defaultValue: 'inCinemas',
-      data: [
-        { value: 'inCinemas' },
-        { value: 'physicalRelease' },
-        { value: 'digitalRelease' },
-      ],
+      data: [{ value: 'inCinemas' }, { value: 'physicalRelease' }, { value: 'digitalRelease' }],
     },
     fontSize: {
       type: 'select',
       defaultValue: 'xs',
-      data: [
-        { value: 'xs' },
-        { value: 'sm' },
-        { value: 'md' },
-        { value: 'lg' },
-        { value: 'xl' },
-      ],
+      data: [{ value: 'xs' }, { value: 'sm' }, { value: 'md' }, { value: 'lg' }, { value: 'xl' }],
     },
   },
   gridstack: {
@@ -83,7 +77,10 @@ function CalendarTile({ widget }: CalendarTileProps) {
       configName: configName!,
       month: month.getMonth() + 1,
       year: month.getFullYear(),
-      options: { useSonarrv4: widget.properties.useSonarrv4, showUnmonitored: widget.properties.showUnmonitored },
+      options: {
+        useSonarrv4: widget.properties.useSonarrv4,
+        showUnmonitored: widget.properties.showUnmonitored,
+      },
     },
     {
       staleTime: 1000 * 60 * 60 * 5,
@@ -105,7 +102,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
       style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
-      hasNextLevel={false}
       styles={{
         calendarHeader: {
           maxWidth: 'inherit',

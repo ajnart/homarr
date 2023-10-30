@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Kullanıcı ekle",
+    "steps": {
+        "account": {
+            "title": "İlk adım",
+            "text": "Hesap oluştur",
+            "username": {
+                "label": "Kullanıcı adı"
+            },
+            "email": {
+                "label": "E-Posta"
+            }
+        },
+        "security": {
+            "title": "İkinci adım",
+            "text": "Şifre",
+            "password": {
+                "label": "Şifre"
+            }
+        },
+        "finish": {
+            "title": "Onayla",
+            "text": "Veritabanına Kaydet",
+            "card": {
+                "title": "Girdilerinizi gözden geçirin",
+                "text": "Verilerinizi veritabanına gönderdikten sonra kullanıcı giriş yapabilecektir. Bu kullanıcıyı veritabanına kaydedip giriş işlemini aktif hale getirmek istediğinizden emin misiniz?"
+            },
+            "table": {
+                "header": {
+                    "property": "Sahiplik",
+                    "value": "Değer",
+                    "username": "Kullanıcı adı",
+                    "email": "E-Posta",
+                    "password": "Şifre"
+                },
+                "notSet": "Ayarlanmamış",
+                "valid": "Geçerli"
+            },
+            "failed": "Kullanıcı oluşturma başarısız oldu: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Kullanıcı oluşturuldu",
+                "text": "Kullanıcı veritabanında oluşturuldu. Artık oturum açabilirler."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Rastgele oluştur",
+        "createAnother": "Başka bir tane oluştur"
+    }
+}

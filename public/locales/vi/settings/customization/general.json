@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Trợ năng",
       "description": "Thiết lập Homarr cho người dùng khuyết tật"
+    },
+    "access": {
+      "name": "",
+      "description": ""
     }
   }
 }

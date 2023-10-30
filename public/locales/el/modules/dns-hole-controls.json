@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "Στοιχεία ελέγχου DNS hole",
-    "description": "Ελέγξτε το PiHole ή το AdGuard από το dashboard σας"
+    "description": "Ελέγξτε το PiHole ή το AdGuard από το dashboard σας",
+    "settings": {
+      "title": "Ρυθμίσεις ελέγχου DNS hole",
+      "showToggleAllButtons": {
+        "label": "Εμφάνιση Κουμπιών 'Ενεργοποίηση/Απενεργοποίηση Όλων'"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Αδυναμία εύρεσης DNS hole",
+        "text": "Υπήρξε ένα πρόβλημα κατά τη σύνδεση στο/α DNS Hole(s) σας. Παρακαλώ επαληθεύστε τις ρυθμίσεις / ενσωμάτωση."
+      }
+    }
   }
 }

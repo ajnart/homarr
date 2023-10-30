@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "בקרות DNS",
-    "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך"
+    "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך",
+    "settings": {
+      "title": "הגדרות מערכת שמות המתחם",
+      "showToggleAllButtons": {
+        "label": "הצג את לחצני 'הפעל/השבת הכל'"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "שרת שמות דומיין לא נמצא",
+        "text": "לא הייתה אפשרות להתחבר לשרת שמות דומיין. נא לבדוק את הגדרות האינטגרציה."
+      }
+    }
   }
 }

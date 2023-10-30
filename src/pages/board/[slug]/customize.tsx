@@ -19,16 +19,18 @@ import {
   IconCheck,
   IconDragDrop,
   IconLayout,
+  IconLock,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import { z } from 'zod';
+import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
 import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
@@ -42,6 +44,7 @@ import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -49,15 +52,28 @@ import { boardCustomizationSchema } from '~/validations/boards';
 
 const notificationId = 'board-customization-notification';
 
-export default function CustomizationPage() {
-  const query = useRouter().query as { slug: string };
+export default function CustomizationPage({
+  initialConfig,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const query = useRouter().query as {
+    slug: string;
+  };
   const utils = api.useContext();
-  const { data: config } = api.config.byName.useQuery({ name: query.slug });
+  const { data: config } = api.config.byName.useQuery(
+    { name: query.slug },
+    {
+      initialData: initialConfig,
+      refetchOnMount: false,
+    }
+  );
   const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
     initialValues: {
+      access: {
+        allowGuests: config?.settings.access.allowGuests ?? false,
+      },
       layout: {
         leftSidebarEnabled: config?.settings.customization.layout.enabledLeftSidebar ?? false,
         rightSidebarEnabled: config?.settings.customization.layout.enabledRightSidebar ?? false,
@@ -115,6 +131,7 @@ export default function CustomizationPage() {
             color: 'green',
             icon: <IconCheck />,
           });
+          form.resetDirty();
         },
         onError() {
           updateNotification({
@@ -139,6 +156,7 @@ export default function CustomizationPage() {
         <Button
           component={Link}
           passHref
+          color={config?.settings.customization.colors.primary ?? 'red'}
           href={backToBoardHref}
           variant="light"
           leftIcon={<IconArrowLeft size={16} />}
@@ -177,12 +195,12 @@ export default function CustomizationPage() {
                   <Button
                     onClick={() => {
                       if (!form.isValid()) {
+                        form.validate();
                         return;
                       }
 
                       handleSubmit(form.values);
                     }}
-                    disabled={!form.isValid()}
                     loading={isLoading}
                     color="green"
                   >
@@ -211,6 +229,10 @@ export default function CustomizationPage() {
                   <LayoutCustomization />
                 </Stack>
                 <Stack spacing="xs">
+                  <SectionTitle type="access" icon={IconLock} />
+                  <AccessCustomization />
+                </Stack>
+                <Stack spacing="xs">
                   <SectionTitle type="gridstack" icon={IconDragDrop} />
                   <GridstackCustomization />
                 </Stack>
@@ -232,7 +254,7 @@ export default function CustomizationPage() {
 }
 
 type SectionTitleProps = {
-  type: 'layout' | 'gridstack' | 'pageMetadata' | 'appereance';
+  type: 'layout' | 'gridstack' | 'pageMetadata' | 'appereance' | 'access';
   icon: (props: TablerIconsProps) => ReactNode;
 };
 
@@ -254,22 +276,22 @@ const routeParamsSchema = z.object({
   slug: z.string(),
 });
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res, locale, params }) => {
-  const routeParams = routeParamsSchema.safeParse(params);
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const routeParams = routeParamsSchema.safeParse(context.params);
   if (!routeParams.success) {
     return {
       notFound: true,
     };
   }
 
-  const session = await getServerAuthSession({ req, res });
-  if (!session?.user.isAdmin) {
-    return {
-      notFound: true,
-    };
+  const session = await getServerAuthSession({ req: context.req, res: context.res });
+  
+  const result = checkForSessionOrAskForLogin(context, session, () => session?.user.isAdmin == true);
+  if (result) {
+    return result;
   }
 
-  const helpers = await createTrpcServersideHelpers({ req, res });
+  const helpers = await createTrpcServersideHelpers({ req: context.req, res: context.res });
 
   const config = await helpers.config.byName.fetch({ name: routeParams.data.slug });
 
@@ -282,14 +304,16 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res, locale,
       'settings/customization/shade-selector',
       'settings/customization/opacity-selector',
       'settings/customization/gridstack',
+      'settings/customization/access',
     ],
-    locale,
-    req,
-    res
+    context.locale,
+    context.req,
+    context.res
   );
 
   return {
     props: {
+      initialConfig: config,
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,

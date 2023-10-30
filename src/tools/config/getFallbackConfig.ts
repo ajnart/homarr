@@ -1,4 +1,5 @@
 import { ConfigType } from '~/types/config';
+
 import defaultConfig from '../../../data/configs/default.json';
 
 export const getFallbackConfig = (name?: string) => ({
@@ -33,6 +34,9 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
   apps: [],
   widgets: [],
   settings: {
+    access: {
+      allowGuests: false,
+    },
     common: {
       searchEngine: {
         type: 'google',
@@ -52,7 +56,7 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
       },
       accessibility: {
         disablePingPulse: false,
-        replacePingDotsWithIcons: false
+        replacePingDotsWithIcons: false,
       },
       pageTitle: 'Homarr ⭐️',
       logoImageUrl: '/imgs/logo/logo.png',

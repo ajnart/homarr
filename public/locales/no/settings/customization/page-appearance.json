@@ -23,8 +23,5 @@
     "description": "Videre kan du tilpasse dashbordet ved hjelp av CSS, dette er bare anbefalt for erfarne brukere",
     "placeholder": "Egendefinert CSS vil bli brukt sist",
     "applying": "Tar i bruk CSS..."
-  },
-  "buttons": {
-    "submit": "Legg til"
   }
 }

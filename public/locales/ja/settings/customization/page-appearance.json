@@ -23,8 +23,5 @@
     "description": "さらに、CSS を使用してダッシュボードをカスタマイズします。経験豊富なユーザーにのみお勧めします。",
     "placeholder": "カスタムCSSは最後に適用されます",
     "applying": "CSSを適用中..."
-  },
-  "buttons": {
-    "submit": "送信"
   }
 }

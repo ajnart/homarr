@@ -1,0 +1,44 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "cards": {
+        "statistics": {
+            "apps": "Додатки",
+            "widgets": "Віджети",
+            "categories": "Категорії"
+        },
+        "buttons": {
+            "view": ""
+        },
+        "menu": {
+            "setAsDefault": "",
+            "delete": {
+                "label": "",
+                "disabled": ""
+            }
+        },
+        "badges": {
+            "fileSystem": "",
+            "default": ""
+        }
+    },
+    "buttons": {
+        "create": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "create": {
+            "title": "",
+            "text": "",
+            "form": {
+                "name": {
+                    "label": "Ім’я"
+                },
+                "submit": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "L'istanza di Homarr non è configurata per Docker o non è riuscita a recuperare i container. Consultare la documentazione su come impostare l'integrazione."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Scegli una board",
+            "text": "Scegliere la board in cui aggiungere le applicazioni per i Docker container selezionati.",
+            "form": {
+                "board": {
+                    "label": "Board"
+                },
+                "submit": "Aggiungi applicazioni"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Aggiunte app a board",
+                "message": "Le applicazioni per i Docker container selezionati sono state aggiunte alla board."
+            },
+            "error": {
+                "title": "Impossibile aggiungere le app alla board",
+                "message": "Non è stato possibile aggiungere alla board le applicazioni per i Docker container selezionati."
+            }
+        }
+    }
+}

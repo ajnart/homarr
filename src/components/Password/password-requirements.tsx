@@ -23,7 +23,6 @@ function getStrength(password: string) {
     score += 1;
   }
   return (score / goal) * 100;
-
 }
 
 export const PasswordRequirements = ({ value }: { value: string }) => {

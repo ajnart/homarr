@@ -5,9 +5,9 @@ import Consola from 'consola';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
+import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useColorTheme } from '~/tools/color';
 import { MovieResult } from './Movie.d';
 import { Result } from './SearchResult';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';

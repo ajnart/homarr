@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "Controles de agujeros DNS",
-    "description": "Controla Pihole o AdGuard desde tu panel"
+    "description": "Controla Pihole o AdGuard desde tu panel",
+    "settings": {
+      "title": "Ajustes del widget Agujero DNS",
+      "showToggleAllButtons": {
+        "label": "Mostrar botones 'Activar/Desactivar todos'"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "No se puede encontrar un agujero DNS",
+        "text": "Hubo un problema al conectarse a tus agujeros DNS. Verifica tu configuración/integración(es)."
+      }
+    }
   }
 }

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "",
+    "steps": {
+        "account": {
+            "title": "",
+            "text": "",
+            "username": {
+                "label": "Brukernavn"
+            },
+            "email": {
+                "label": ""
+            }
+        },
+        "security": {
+            "title": "",
+            "text": "Passord",
+            "password": {
+                "label": "Passord"
+            }
+        },
+        "finish": {
+            "title": "",
+            "text": "",
+            "card": {
+                "title": "",
+                "text": ""
+            },
+            "table": {
+                "header": {
+                    "property": "",
+                    "value": "",
+                    "username": "Brukernavn",
+                    "email": "",
+                    "password": "Passord"
+                },
+                "notSet": "",
+                "valid": ""
+            },
+            "failed": ""
+        },
+        "completed": {
+            "alert": {
+                "title": "",
+                "text": ""
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "",
+        "createAnother": ""
+    }
+}

@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Chào mừng quay trở lại!",
-  "text": "Vui lòng nhập mật khẩu",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Tên người dùng"
+      },
       "password": {
-        "label": "Mật khẩu",
-        "placeholder": "Mật khẩu của bạn"
+        "label": "Mật khẩu"
       }
     },
     "buttons": {
       "submit": "Đăng nhập"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Đang kiểm tra mật khẩu",
-      "message": "Mật khẩu của bạn đang được kiểm tra..."
-    },
-    "correct": {
-      "title": "Đăng nhập thành công, đang chuyển hướng..."
-    },
-    "wrong": {
-      "title": "Mật khẩu vừa nhập không đúng, xin vui lòng thử lại."
-    }
-  }
+  "alert": ""
 }

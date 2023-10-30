@@ -1,3 +1,4 @@
+import { eq } from 'drizzle-orm';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
@@ -5,9 +6,12 @@ import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
 import { env } from '~/env';
 import { getServerAuthSession } from '~/server/auth';
-import { prisma } from '~/server/db';
+import { db } from '~/server/db';
+import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
+import { userSettings } from '~/server/db/schema';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { ConfigType } from '~/types/config';
 
@@ -32,11 +36,7 @@ type BoardGetServerSideProps = {
 
 export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = async (ctx) => {
   const session = await getServerAuthSession(ctx);
-  const currentUserSettings = await prisma.userSettings.findFirst({
-    where: {
-      userId: session?.user?.id,
-    },
-  });
+  const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
 
   const translations = await getServerSideTranslations(
     boardNamespaces,
@@ -44,8 +44,12 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
     ctx.req,
     ctx.res
   );
-  const boardName = currentUserSettings?.defaultBoard ?? 'default';
   const config = await getFrontendConfig(boardName);
+
+  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  if (result) {
+    return result;
+  }
 
   return {
     props: {

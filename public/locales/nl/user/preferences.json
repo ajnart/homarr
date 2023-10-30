@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "",
+        "disablePulse": {
+            "label": "",
+            "description": ""
+        },
+        "replaceIconsWithDots": {
+            "label": "",
+            "description": ""
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Taal"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Zoekmachine",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "Query URL",
+            "description": ""
+        }
+    }
+}

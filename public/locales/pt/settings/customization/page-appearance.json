@@ -23,8 +23,5 @@
     "description": "",
     "placeholder": "O CSS personalizado será aplicado por último",
     "applying": "Aplicando CSS..."
-  },
-  "buttons": {
-    "submit": "Enviar"
   }
 }

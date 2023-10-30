@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Vytvoriť účet",
+    "title": "Vytvoriť účet",
+    "text": "Nižšie uveďte svoje poverenia",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Používateľské meno"
+            },
+            "password": {
+                "label": "Heslo"
+            },
+            "passwordConfirmation": {
+                "label": "Potvrdenie hesla"
+            }
+        },
+        "buttons": {
+            "submit": "Vytvoriť účet"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Vytvára sa účet",
+            "text": "Čakajte, prosím"
+        },
+        "success": {
+            "title": "Účet bol Vytvorený",
+            "text": "Vaše konto bolo úspešne vytvorené"
+        },
+        "error": {
+            "title": "Chyba",
+            "text": "Niečo sa pokazilo, mám nasledujúcu chybu: {{error}}"
+        }
+    }
+}

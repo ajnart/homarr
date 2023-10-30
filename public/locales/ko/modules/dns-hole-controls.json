@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "",
-    "description": ""
+    "description": "",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
+    }
   }
 }

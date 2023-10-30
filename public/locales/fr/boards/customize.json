@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Personnaliser le tableau de bord {{name}}",
+    "pageTitle": "Personnalisation du tableau de bord {{name}}",
+    "backToBoard": "Retour au tableau de bord",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Couleur primaire",
+            "secondaryColor": "Couleur secondaire"
+        }
+    },
+    "save": {
+        "button": "Sauvegarder les modifications",
+        "note": "Attention, vous avez des modifications non enregistrées !"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Enregistrement de la personnalisation",
+            "message": "Veuillez patienter pendant que nous enregistrons votre personnalisation"
+        },
+        "success": {
+            "title": "Personnalisation sauvegardée",
+            "message": "Votre personnalisation a bien été sauvegardée"
+        },
+        "error": {
+            "title": "Erreur",
+            "message": "Impossible d’enregistrer les modifications"
+        }
+    }
+}

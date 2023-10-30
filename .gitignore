@@ -58,8 +58,9 @@ public/locales/*
 !public/locales/en
 
 #database
-prisma/db.sqlite
+sqlite.db
 database/*.sqlite
+WILL_BE_OVERWRITTEN.sqlite
 
 # IDE
 .idea/*

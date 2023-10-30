@@ -1,7 +1,11 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
-const portSchema = z.string().regex(/\d*/).transform((value) => value === undefined ? undefined : Number(value)).optional();
+const portSchema = z
+  .string()
+  .regex(/\d*/)
+  .transform((value) => (value === undefined ? undefined : Number(value)))
+  .optional();
 const envSchema = z.enum(['development', 'test', 'production']);
 
 const env = createEnv({
@@ -22,7 +26,8 @@ const env = createEnv({
     ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
-    HOSTNAME: z.string().optional()
+    DEMO_MODE: z.string().optional(),
+    HOSTNAME: z.string().optional(),
   },
 
   /**
@@ -32,6 +37,7 @@ const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
+    NEXT_PUBLIC_DISABLE_ANALYTICS: z.string().optional(),
     NEXT_PUBLIC_PORT: portSchema,
     NEXT_PUBLIC_NODE_ENV: envSchema,
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: z
@@ -42,7 +48,6 @@ const env = createEnv({
       .default('light'),
     NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
   },
-
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
    * middlewares) or client-side so we need to destruct manually.
@@ -51,14 +56,17 @@ const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXT_PUBLIC_DISABLE_ANALYTICS: process.env.DISABLE_ANALYTICS,
     DOCKER_HOST: process.env.DOCKER_HOST,
     DOCKER_PORT: process.env.DOCKER_PORT,
     VERCEL_URL: process.env.VERCEL_URL,
     NEXT_PUBLIC_DEFAULT_COLOR_SCHEME: process.env.DEFAULT_COLOR_SCHEME,
     NEXT_PUBLIC_PORT: process.env.PORT,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-    HOSTNAME: process.env.HOSTNAME
+    HOSTNAME: process.env.HOSTNAME,
+    DEMO_MODE: process.env.DEMO_MODE,
   },
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });
 
 module.exports = {

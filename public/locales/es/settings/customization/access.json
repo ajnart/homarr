@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Permitir anónimos",
+    "description": "Permitir que los usuarios que no han iniciado sesión vean tu tablero"
+  }
+}

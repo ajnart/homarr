@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Utilisateurs",
+    "pageTitle": "Gérer les utilisateurs",
+    "text": "En utilisant des utilisateurs, vous pouvez configurer qui peut éditer vos tableaux de bord. Les prochaines versions de Homarr auront un contrôle plus fin quant aux permissions et les tableaux de bord.",
+    "buttons": {
+        "create": "Créer"
+    },
+    "table": {
+        "header": {
+            "user": "Utilisateur"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Supprimer l’utilisateur",
+        "demoteAdmin": "Rétrograder l'administrateur",
+        "promoteToAdmin": "Promouvoir en tant qu'administrateur"
+    },
+    "modals": {
+        "delete": {
+            "title": "Supprimer l'utilisateur {{name}}",
+            "text": "Voulez-vous vraiment supprimer l'utilisateur {{name}} ? Cela supprimera les données associées au compte mais pas les tableaux de bord créés par celui-ci."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promouvoir l'utilisateur {{name}} en tant qu'administrateur",
+                "text": "Voulez-vous vraiment promouvoir l'utilisateur {{name}} en tant qu'administrateur ? Ceci donnera à celui-ci l'accès à toutes les ressources de votre instance Homarr."
+            },
+            "demote": {
+                "title": "Rétrograder l'utilisateur {{name}} en tant qu'utilisateur",
+                "text": "Voulez-vous vraiment rétrograder l'utilisateur {{name}} en tant qu'administrateur ? Ceci supprimera l'accès à l'utilisateur à toutes les ressources de votre instance Homarr."
+            },
+            "confirm": "Confirmer"
+        }
+    },
+    "searchDoesntMatch": "Votre recherche ne correspond à aucune entrée. Veuillez ajuster votre filtre."
+}

@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "שדה זה אינו חוקי",
+        "required": "זהו שדה חובה",
+        "string": {
+            "startsWith": "שדה זה חייב להתחיל עם {{startsWith}}",
+            "endsWith": "שדה זה חייב להסתיים עם {{endsWith}}",
+            "includes": "שדה זה חייב להכיל {{includes}}"
+        },
+        "tooSmall": {
+            "string": "שדה זה חייב להיות באורך של {{minimum}} תווים לפחות",
+            "number": "שדה זה חייב להיות גדול או שווה ל {{minimum}}"
+        },
+        "tooBig": {
+            "string": "שדה זה חייב להיות באורך של {{maximum}} תווים לכל היותר",
+            "number": "שדה זה חייב להיות קטן או שווה ל {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "הסיסמאות חייבות להיות תואמות"
+        }
+    }
+}

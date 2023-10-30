@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Auf Ihrer Homarr-Instanz ist Docker nicht konfiguriert oder es ist nicht möglich, Container zu erkennen. Bitte lesen Sie in der Dokumentation nach, wie Sie diese Integration einrichten können."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Board auswählen",
+            "text": "Wählen Sie das Board, dem Sie die Anwendungen für die ausgewählten Docker-Container hinzufügen möchten.",
+            "form": {
+                "board": {
+                    "label": "Board"
+                },
+                "submit": "Apps hinzufügen"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Anwendungen zum Board hinzugefügt",
+                "message": "Die Anwendungen für die ausgewählten Docker-Container wurden dem Board hinzugefügt."
+            },
+            "error": {
+                "title": "Anwendungen konnten nicht zum Board hinzugefügt werden",
+                "message": "Die Anwendungen für die ausgewählten Docker-Container konnten dem Board nicht hinzugefügt werden."
+            }
+        }
+    }
+}

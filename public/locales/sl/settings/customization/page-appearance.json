@@ -23,8 +23,5 @@
     "description": "Dadatno prilagodite pogled s CSS. Priporočljivo le za izkušene uporabnike",
     "placeholder": "Prilagojeni CSS bo uporabljen kot zadnji",
     "applying": "Uporaba CSS..."
-  },
-  "buttons": {
-    "submit": "Pošlji"
   }
 }

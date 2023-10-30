@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "",
+        "disablePulse": {
+            "label": "",
+            "description": ""
+        },
+        "replaceIconsWithDots": {
+            "label": "",
+            "description": ""
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "언어"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "검색 엔진",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "쿼리 URL",
+            "description": ""
+        }
+    }
+}

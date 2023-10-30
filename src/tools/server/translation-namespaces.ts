@@ -51,3 +51,5 @@ export const manageNamespaces = [
 export const loginNamespaces = ['authentication/login'];
 
 export const pageNotFoundNamespaces = ['layout/errors/not-found'];
+
+export const pageAccessDeniedNamespaces = ['layout/errors/access-denied'];

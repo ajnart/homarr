@@ -11,9 +11,11 @@ import {
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
+import { changeLanguage } from 'i18next';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { forwardRef } from 'react';
 import { z } from 'zod';
 import { AccessibilitySettings } from '~/components/User/Preferences/AccessibilitySettings';
@@ -76,9 +78,10 @@ const SettingsComponent = ({
     country: language.country,
   }));
 
-  const { t } = useTranslation(['user/preferences', 'common']);
+  const { t, i18n } = useTranslation(['user/preferences', 'common']);
 
   const { i18nZodResolver } = useI18nZodResolver();
+  const { pathname, query, asPath, push } = useRouter();
 
   const form = useForm({
     initialValues: {
@@ -89,6 +92,7 @@ const SettingsComponent = ({
       replaceDotsWithIcons: settings.replacePingWithIcons,
       searchTemplate: settings.searchTemplate,
       openSearchInNewTab: settings.openSearchInNewTab,
+      autoFocusSearch: settings.autoFocusSearch,
     },
     validate: i18nZodResolver(updateSettingsValidationSchema),
     validateInputOnBlur: true,
@@ -104,7 +108,22 @@ const SettingsComponent = ({
   });
 
   const handleSubmit = (values: z.infer<typeof updateSettingsValidationSchema>) => {
-    mutate(values);
+    mutate(values, {
+      onSuccess: () => {
+        if (values.language !== settings.language) {
+          i18n.changeLanguage(values.language).then(() => {
+            push(
+              {
+                pathname,
+                query,
+              },
+              asPath,
+              { locale: values.language }
+            );
+          });
+        }
+      },
+    });
   };
 
   return (

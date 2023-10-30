@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Préférences",
+    "pageTitle": "Vos préférences",
+    "boards": {
+        "defaultBoard": {
+            "label": "Tableau de bord par défaut"
+        }
+    },
+    "accessibility": {
+        "title": "Accessibilité",
+        "disablePulse": {
+            "label": "Désactiver la pulsation du ping",
+            "description": "Par défaut, les indicateurs de ping dans Homarr clignotent. Cela peut être irritant. Cette case désactivera l'animation"
+        },
+        "replaceIconsWithDots": {
+            "label": "Remplacer les points de ping par des icônes",
+            "description": "Pour les daltoniens, les points de ping peuvent être difficilement différenciables. Ceci remplacera les indicateurs par des icônes"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Langue"
+        },
+        "firstDayOfWeek": {
+            "label": "Premier jour de la semaine",
+            "options": {
+                "monday": "Lundi",
+                "saturday": "Samedi",
+                "sunday": "Dimanche"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Moteur de recherche",
+        "custom": "Personnalisé",
+        "newTab": {
+            "label": "Ouvrir les résultats de la recherche dans un nouvel onglet"
+        },
+        "autoFocus": {
+            "label": "Se placer sur la barre de recherche au chargement de la page.",
+            "description": "Ceci permet de placer automatiquement le curseur sur la barre de recherche lorsque vous naviguez sur les pages de tableau de bord. Ne fonctionnera que sur les PC."
+        },
+        "template": {
+            "label": "URL de la requête",
+            "description": "Utilisez %s comme substitut pour la requête"
+        }
+    }
+}

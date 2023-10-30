@@ -8,20 +8,20 @@
         "label": "Aizstāt saites ar ārējo saimnieku"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Atvērt saites jaunā cilnē"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
+    "title": "Mediju statistika",
+    "pending": "Nepabeigtie apstiprinājumi",
+    "tvRequests": "TV pieprasījumi",
+    "movieRequests": "Filmu pieprasījumi",
+    "approved": "Jau apstiprināts",
     "totalRequests": "Kopā"
   },
   "userStats": {
     "title": "Top Lietotāji",
-    "requests": ""
+    "requests": "Pieprasījumi: {{number}}"
   }
 }

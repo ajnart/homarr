@@ -1,27 +1,20 @@
 {
+  "metaTitle": "",
   "title": "Welcom Bak!",
-  "text": "Plz Entr Ur Pasword",
+  "text": "",
   "form": {
     "fields": {
+      "username": {
+        "label": "Usernaem"
+      },
       "password": {
-        "label": "Password",
-        "placeholder": "Ur Pasword"
+        "label": "Password"
       }
     },
     "buttons": {
       "submit": "Sign In"
-    }
+    },
+    "afterLoginRedirection": ""
   },
-  "notifications": {
-    "checking": {
-      "title": "Checkin Ur Pasword",
-      "message": "Ur Pasword Iz Bean Checkd..."
-    },
-    "correct": {
-      "title": "Sign In Succesful, Redirectin..."
-    },
-    "wrong": {
-      "title": "Teh Pasword U Enterd Iz Incorrect, Plz Try Again."
-    }
-  }
+  "alert": ""
 }

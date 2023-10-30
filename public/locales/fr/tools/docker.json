@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Docker n'est pas configuré sur votre instance Homarr ou a échoué à trouver les conteneurs. Veuillez vérifier la documentation pour savoir comment configurer cette intégration."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Choisir un tableau de bord",
+            "text": "Choisissez le tableau sur lequel vous souhaiyez ajouter les applications pour les conteneurs Docker sélectionnés.",
+            "form": {
+                "board": {
+                    "label": "Tableau de bord"
+                },
+                "submit": "Ajouter des applications"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Applications ajoutées au tableau de bord",
+                "message": "Les applications pour les conteneurs Docker sélectionnés ont bien été ajoutées au tableau de bord."
+            },
+            "error": {
+                "title": "Impossible d'ajouter des applications au tableau de bord",
+                "message": "Les applications pour les conteneurs Docker sélectionnés n'ont pas pu être ajoutées au tableau de bord."
+            }
+        }
+    }
+}

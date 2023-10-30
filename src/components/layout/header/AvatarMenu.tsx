@@ -1,4 +1,4 @@
-import { Avatar, Badge, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
+import { Avatar, Badge, Indicator, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
   IconDashboard,
@@ -38,10 +38,17 @@ export const AvatarMenu = () => {
       <UnstyledButton>
         <Menu width={256}>
           <Menu.Target>
-            <CurrentUserAvatar user={sessionData?.user ?? null} />
+            <CurrentUserAvatar
+              newVersionAvailable={newVersionAvailable ? true : false}
+              user={sessionData?.user ?? null}
+            />
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Item closeMenuOnClick={false} icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
+            <Menu.Item
+              closeMenuOnClick={false}
+              icon={<Icon size="1rem" />}
+              onClick={toggleColorScheme}
+            >
               {t('actions.avatar.switchTheme')}
             </Menu.Item>
             {sessionData?.user && (
@@ -113,13 +120,24 @@ export const AvatarMenu = () => {
 };
 
 type CurrentUserAvatarProps = {
+  newVersionAvailable: boolean;
   user: User | null;
 };
 
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
-  ({ user, ...others }, ref) => {
+  ({ user, newVersionAvailable, ...others }, ref) => {
     const { primaryColor } = useMantineTheme();
     if (!user) return <Avatar ref={ref} {...others} />;
+
+    if (newVersionAvailable)
+      return (
+        <Indicator withBorder offset={2} color="blue" processing size={15}>
+          <Avatar ref={ref} color={primaryColor} {...others}>
+            {user.name?.slice(0, 2).toUpperCase()}
+          </Avatar>
+        </Indicator>
+      );
+
     return (
       <Avatar ref={ref} color={primaryColor} {...others}>
         {user.name?.slice(0, 2).toUpperCase()}

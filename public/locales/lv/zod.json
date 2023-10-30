@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "",
+        "required": "Šis lauks ir obligāts",
+        "string": {
+            "startsWith": "",
+            "endsWith": "",
+            "includes": ""
+        },
+        "tooSmall": {
+            "string": "",
+            "number": ""
+        },
+        "tooBig": {
+            "string": "",
+            "number": ""
+        },
+        "custom": {
+            "passwordMatch": ""
+        }
+    }
+}

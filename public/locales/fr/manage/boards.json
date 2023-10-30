@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Tableaux de bord",
+    "pageTitle": "Tableaux de bord",
+    "cards": {
+        "statistics": {
+            "apps": "Applications",
+            "widgets": "Widgets",
+            "categories": "Catégories"
+        },
+        "buttons": {
+            "view": "Voir le tableau de bord"
+        },
+        "menu": {
+            "setAsDefault": "Définir comme votre tableau de bord par défaut",
+            "delete": {
+                "label": "Supprimer définitivement",
+                "disabled": "Suppression désactivée car certains anciens composants Homarr ne permettent pas la suppression de la configuration par défaut. La suppression sera possible dans le futur."
+            }
+        },
+        "badges": {
+            "fileSystem": "Système de fichiers",
+            "default": "Par défaut"
+        }
+    },
+    "buttons": {
+        "create": "Créer un nouveau tableau de bord"
+    },
+    "modals": {
+        "delete": {
+            "title": "Supprimer le tableau de bord",
+            "text": "Êtes-vous sûr de vouloir supprimer ce tableau de bord ? Cette action ne peut être annulée et toutes vos données seront définitivement supprimées."
+        },
+        "create": {
+            "title": "Créer un tableau de bord",
+            "text": "Le nom du tableau de bord ne pourra pas être changé une fois créé.",
+            "form": {
+                "name": {
+                    "label": "Nom"
+                },
+                "submit": "Créer"
+            }
+        }
+    }
+}

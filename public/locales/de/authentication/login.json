@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Anmelden",
   "title": "Willkommen zurück!",
-  "text": "Bitte geben Sie Ihr Kennwort ein",
+  "text": "Bitte geben Sie Ihre Anmeldedaten ein",
   "form": {
     "fields": {
+      "username": {
+        "label": "Benutzername"
+      },
       "password": {
-        "label": "Passwort",
-        "placeholder": "Ihr Passwort"
+        "label": "Passwort"
       }
     },
     "buttons": {
       "submit": "Anmelden"
-    }
+    },
+    "afterLoginRedirection": "Nach der Anmeldung werden Sie zu {{url}} weitergeleitet"
   },
-  "notifications": {
-    "checking": {
-      "title": "Ihr Passwort wird überprüft",
-      "message": "Ihr Passwort wird geprüft..."
-    },
-    "correct": {
-      "title": "Anmeldung erfolgreich, Weiterleitung..."
-    },
-    "wrong": {
-      "title": "Das von dir eingegebene Passwort ist nicht korrekt. Bitte versuche es noch mal."
-    }
-  }
+  "alert": "Ihre Anmeldedaten sind falsch oder dieses Konto existiert nicht. Bitte versuchen Sie es erneut."
 }

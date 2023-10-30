@@ -1,4 +1,5 @@
 import { IWidget } from '~/widgets/widgets';
+
 import { AppType, ConfigAppType } from './app';
 import { CategoryType } from './category';
 import { SettingsType } from './settings';

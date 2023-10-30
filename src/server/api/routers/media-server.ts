@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { PlexClient } from '~/tools/server/sdk/plex/plexClient';
+import { trimStringEnding } from '~/tools/shared/strings';
 import { GenericMediaServer } from '~/types/api/media-server/media-server';
 import { MediaServersResponseType } from '~/types/api/media-server/response';
 import { GenericCurrentlyPlaying, GenericSessionInfo } from '~/types/api/media-server/session-info';
@@ -104,7 +105,13 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       return {
         type: 'jellyfin',
         appId: app.id,
-        serverAddress: app.url,
+        serverAddress: trimStringEnding(app.url, [
+          '/web/index.html#!/home.html',
+          '/web',
+          '/web/index.html',
+          '/web/',
+          '/web/index.html#',
+        ]),
         version: infoApi.data.Version ?? undefined,
         sessions: sessions
           .filter((session) => session.NowPlayingItem)
@@ -176,7 +183,13 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
 
       if (!apiKey) {
         return {
-          serverAddress: app.url,
+          serverAddress: trimStringEnding(app.url, [
+            '/web',
+            '/web/index.html',
+            '/web/index.html#!',
+            '/web/index.html#!/settings/web/general',
+            '/web/',
+          ]),
           sessions: [],
           type: 'plex',
           appId: app.id,

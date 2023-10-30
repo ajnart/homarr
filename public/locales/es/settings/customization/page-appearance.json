@@ -23,8 +23,5 @@
     "description": "Además, personaliza tu panel usando CSS, solo recomendado para usuarios avanzados",
     "placeholder": "El CSS personalizado se aplicará en último lugar",
     "applying": "Aplicando CSS..."
-  },
-  "buttons": {
-    "submit": "Aplicar"
   }
 }

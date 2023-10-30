@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Accesibilidad",
       "description": "Configura Homarr para usuarios con discapacidad y minusvalía"
+    },
+    "access": {
+      "name": "Acceso",
+      "description": "Configura quién tiene acceso a tu tablero"
     }
   }
 }

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Dodaj użytkownika",
+    "steps": {
+        "account": {
+            "title": "Krok pierwszy",
+            "text": "Utwórz konto",
+            "username": {
+                "label": "Nazwa użytkownika"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Krok drugi",
+            "text": "Hasło",
+            "password": {
+                "label": "Hasło"
+            }
+        },
+        "finish": {
+            "title": "Potwierdzenie",
+            "text": "Zapisz w bazie danych",
+            "card": {
+                "title": "Sprawdź przekazane dane",
+                "text": "Po przesłaniu danych do bazy danych użytkownik będzie mógł się zalogować. Czy na pewno chcesz zapisać tego użytkownika w bazie danych i umożliwić logowanie?"
+            },
+            "table": {
+                "header": {
+                    "property": "Właściwość",
+                    "value": "Wartość",
+                    "username": "Nazwa użytkownika",
+                    "email": "E-mail",
+                    "password": "Hasło"
+                },
+                "notSet": "Nie ustawiono",
+                "valid": "Poprawny"
+            },
+            "failed": "Tworzenie użytkownika nie powiodło się: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Użytkownik został utworzony",
+                "text": "Użytkownik został zapisany w bazie danych. Może się teraz zalogować."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generuj losowo",
+        "createAnother": "Dodaj kolejnego użytkownika"
+    }
+}

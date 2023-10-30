@@ -89,7 +89,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
             </Navbar.Section>
           </Navbar>
         }
-        header={<MainHeader showExperimental logoHref="/manage" leftIcon={burgerMenu} />}
+        header={<MainHeader showExperimental logoHref="/b/" leftIcon={burgerMenu} />}
         footer={
           <Footer height={25}>
             <Group position="apart" px="md">
@@ -112,7 +112,13 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           {children}
         </Paper>
       </AppShell>
-      <Drawer opened={burgerMenuOpen} onClose={closeBurgerMenu}>
+      <Drawer
+        opened={burgerMenuOpen}
+        onClose={closeBurgerMenu}
+        transitionProps={{
+          transition: 'slide-right',
+        }}
+      >
         {navigationLinkComponents}
       </Drawer>
     </>

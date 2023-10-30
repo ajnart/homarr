@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "השתמש בAPI גרסא 4 של סונאר (Sonarr)"
       },
-      "sundayStart": {
-        "label": "התחל את השבוע ביום ראשון"
-      },
       "radarrReleaseType": {
         "label": "סוג שחרור של Radarr",
         "data": {

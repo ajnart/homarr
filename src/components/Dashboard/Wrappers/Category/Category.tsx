@@ -13,9 +13,9 @@ import { useLocalStorage } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
 import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-
 import { useConfigContext } from '~/config/provider';
 import { CategoryType } from '~/types/category';
+
 import { useCardStyles } from '../../../layout/Common/useCardStyles';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { WrapperContent } from '../WrapperContent';

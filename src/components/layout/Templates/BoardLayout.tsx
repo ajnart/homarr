@@ -19,9 +19,11 @@ import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/grid
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
+import { env } from 'process';
 
 type BoardLayoutProps = {
   dockerEnabled: boolean;
@@ -30,9 +32,13 @@ type BoardLayoutProps = {
 
 export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
   const { config } = useConfigContext();
+  const { data: session } = useSession();
 
   return (
-    <MainLayout headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}>
+    <MainLayout
+      autoFocusSearch={session?.user.autoFocusSearch}
+      headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}
+    >
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -102,7 +108,7 @@ const ToggleEditModeButton = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && env.NODE_ENV === 'production') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
@@ -213,7 +219,7 @@ const BackgroundImage = () => {
   return (
     <Global
       styles={{
-        body: {
+        '.mantine-AppShell-root': {
           minHeight: '100vh',
           backgroundImage: `url('${config?.settings.customization.backgroundImageUrl}')`,
           backgroundPosition: 'center center',

@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "DNS cauruma kontrole",
-    "description": "Vadiet PiHole vai AdGuard no sava informācijas paneļa"
+    "description": "Vadiet PiHole vai AdGuard no sava informācijas paneļa",
+    "settings": {
+      "title": "DNS cauruma kontroles iestatījumi",
+      "showToggleAllButtons": {
+        "label": "Rādīt 'Ieslēgt/Izslēgt Visus' Pogas"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nevar atrast DNS caurumu",
+        "text": "Radās problēma, savienojoties ar jūsu DNS caurumu(-iem). Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
+      }
+    }
   }
 }

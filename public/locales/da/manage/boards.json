@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Boards",
+    "pageTitle": "Boards",
+    "cards": {
+        "statistics": {
+            "apps": "Apps",
+            "widgets": "Widgets",
+            "categories": "Kategorier"
+        },
+        "buttons": {
+            "view": "Se board"
+        },
+        "menu": {
+            "setAsDefault": "Indstil som din standardboard",
+            "delete": {
+                "label": "Slet permanent",
+                "disabled": "Sletning deaktiveret, fordi ældre Homarr-komponenter ikke tillader sletning af standardkonfigurationen. Sletning vil være mulig i fremtiden."
+            }
+        },
+        "badges": {
+            "fileSystem": "Filsystem",
+            "default": "Standard"
+        }
+    },
+    "buttons": {
+        "create": "Opret nyt board"
+    },
+    "modals": {
+        "delete": {
+            "title": "Slet board",
+            "text": "Er du sikker på, at du vil slette dette board? Denne handling kan ikke fortrydes, og dine data vil gå tabt permanent."
+        },
+        "create": {
+            "title": "Opret et board",
+            "text": "Navnet kan ikke ændres, efter at et board er blevet oprettet.",
+            "form": {
+                "name": {
+                    "label": "Navn"
+                },
+                "submit": "Opret"
+            }
+        }
+    }
+}

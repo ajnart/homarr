@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "boards": {
+        "defaultBoard": {
+            "label": ""
+        }
+    },
+    "accessibility": {
+        "title": "Trợ năng",
+        "disablePulse": {
+            "label": "Tắt nhịp thở chấm ping",
+            "description": "Mặc địch, chấm ping trong Homarr sẽ có một nhịp co giãn. Nếu điều này gây khó chịu, tranh trượt này sẽ giúp bạn tắt chuyển động đó"
+        },
+        "replaceIconsWithDots": {
+            "label": "Thay thế chấm ping bằng biểu tượng",
+            "description": "Với người dùng mù màu, chấm ping có thể khó nhận diện. Lựa chọn này sẽ thay thế các chấm bằng biểu tượng"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Ngôn ngữ"
+        },
+        "firstDayOfWeek": {
+            "label": "",
+            "options": {
+                "monday": "",
+                "saturday": "",
+                "sunday": ""
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Công cụ tìm kiếm",
+        "custom": "",
+        "newTab": {
+            "label": ""
+        },
+        "autoFocus": {
+            "label": "",
+            "description": ""
+        },
+        "template": {
+            "label": "URL truy vấn",
+            "description": ""
+        }
+    }
+}

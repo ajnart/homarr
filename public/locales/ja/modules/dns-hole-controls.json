@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "DNSホールコントロール",
-    "description": "ダッシュボードからPiHoleまたはAdGuardをコントロールする"
+    "description": "ダッシュボードからPiHoleまたはAdGuardをコントロールする",
+    "settings": {
+      "title": "",
+      "showToggleAllButtons": {
+        "label": ""
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
+    }
   }
 }
