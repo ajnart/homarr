@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "crwdns3255:0crwdne3255:0",
+    "enable": "crwdns3257:0crwdne3257:0",
+    "disable": "crwdns3259:0crwdne3259:0"
+  },
+  "form": {
+    "label": "crwdns3261:0crwdne3261:0",
+    "message": "crwdns3263:0crwdne3263:0",
+    "submit": "crwdns3265:0crwdne3265:0"
+  },
+  "notification": {
+    "success": {
+      "title": "crwdns3267:0crwdne3267:0",
+      "message": "crwdns3269:0crwdne3269:0"
+    },
+    "error": {
+      "title": "crwdns3271:0crwdne3271:0",
+      "message": "crwdns3273:0crwdne3273:0"
+    }
+  }
+}
