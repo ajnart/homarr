@@ -24,24 +24,24 @@
   },
   "card": {
     "footer": {
-      "error": "",
+      "error": "錯誤",
       "lastUpdated": "最後更新於 {{time}} 前"
     },
     "table": {
       "header": {
         "name": "名稱",
-        "size": "",
+        "size": "大小",
         "download": "下載",
         "upload": "上傳",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "剩餘時間",
+        "progress": "進度"
       },
       "item": {
-        "text": ""
+        "text": "由 {{appName}},{{ratio}} 管理的比率"
       },
       "body": {
         "nothingFound": "無種子",
-        "filterHidingItems": ""
+        "filterHidingItems": "您的過濾器隱藏了 {{count}} 個紀錄"
       }
     },
     "lineChart": {
@@ -54,27 +54,27 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "沒有找到支援的 Torrent 客戶端",
+        "text": "新增一個支援的 Torrent 客戶端來檢視目前的下載狀況"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "發生一個意外的錯誤",
+        "text": "無法與您的 Torrent 客戶端交互，請檢查您的設定"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "載入中",
+      "description": "建立連接中"
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "管理方：",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "隊列位置 - {{position}}",
+        "progress": "進度 - {{progress}}%",
+        "totalSelectedSize": "共計 - {{totalSize}}",
+        "state": "狀態 - {{state}}",
+        "ratio": "比率 -",
+        "completed": "已完成"
       }
     }
   }
