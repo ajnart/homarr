@@ -1,0 +1,27 @@
+{
+  "descriptor": {
+    "name": "crwdns2771:0crwdne2771:0",
+    "description": "crwdns2773:0crwdne2773:0",
+    "settings": {
+      "title": "crwdns2775:0crwdne2775:0",
+      "replaceLinksWithExternalHost": {
+        "label": "crwdns3315:0crwdne3315:0"
+      },
+      "openInNewTab": {
+        "label": "crwdns3317:0crwdne3317:0"
+      }
+    }
+  },
+  "mediaStats": {
+    "title": "crwdns3319:0crwdne3319:0",
+    "pending": "crwdns3321:0crwdne3321:0",
+    "tvRequests": "crwdns3323:0crwdne3323:0",
+    "movieRequests": "crwdns3325:0crwdne3325:0",
+    "approved": "crwdns3327:0crwdne3327:0",
+    "totalRequests": "crwdns3329:0crwdne3329:0"
+  },
+  "userStats": {
+    "title": "crwdns3331:0crwdne3331:0",
+    "requests": "crwdns3333:0{{number}}crwdne3333:0"
+  }
+}
