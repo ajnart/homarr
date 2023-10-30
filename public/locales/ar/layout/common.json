@@ -1,0 +1,25 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "crwdns2997:0crwdne2997:0",
+      "text": "crwdns2999:0crwdne2999:0",
+      "list": {
+        "browserPermission": "crwdns3001:0crwdne3001:0",
+        "adBlockers": "crwdns3003:0crwdne3003:0",
+        "otherBrowser": "crwdns3005:0crwdne3005:0"
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": "crwdns3007:0crwdne3007:0"
+    }
+  },
+  "menu": {
+    "moveUp": "crwdns3213:0crwdne3213:0",
+    "moveDown": "crwdns3215:0crwdne3215:0",
+    "addCategory": "crwdns3251:0{{location}}crwdne3251:0",
+    "addAbove": "crwdns3219:0crwdne3219:0",
+    "addBelow": "crwdns3221:0crwdne3221:0"
+  }
+}
