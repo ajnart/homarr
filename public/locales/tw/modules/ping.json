@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "根據設定的網址的 HTTP 回應待碼，顯示一個狀態顯示器"
+  },
+  "states": {
+    "online": "在線 {{response}}",
+    "offline": "離線 {{response}}",
+    "loading": "正在載入..."
+  }
+}
