@@ -1,6 +1,7 @@
 import { JsdelivrIconsRepository } from '~/tools/server/images/jsdelivr-icons-repository';
 import { LocalIconsRepository } from '~/tools/server/images/local-icons-repository';
 import { UnpkgIconsRepository } from '~/tools/server/images/unpkg-icons-repository';
+import { GitHubIconsRepository } from '~/tools/server/images/github-icons-repository';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -8,8 +9,8 @@ export const iconRouter = createTRPCRouter({
   all: publicProcedure.query(async () => {
     const respositories = [
       new LocalIconsRepository(),
-      new JsdelivrIconsRepository(
-        JsdelivrIconsRepository.tablerRepository,
+      new GitHubIconsRepository(
+        GitHubIconsRepository.walkxcode,
         'Walkxcode Dashboard Icons',
         'Walkxcode on Github'
       ),
