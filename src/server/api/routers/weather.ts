@@ -36,20 +36,6 @@ export const weatherRouter = createTRPCRouter({
       })
     )
     .query(async ({ input }) => fetchCity(input.query)),
-  at: publicProcedure
-    .input(
-      z.object({
-        longitude: z.number(),
-        latitude: z.number(),
-      })
-    )
-    .output(weatherSchema)
-    .query(async ({ input }) => {
-      const res = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${input.latitude}&longitude=${input.longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`
-      );
-      return res.json();
-    }),
 });
 
 export type City = z.infer<typeof citySchema>;
