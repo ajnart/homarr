@@ -5,10 +5,10 @@
     "search": {
         "label": "Ara",
         "engines": {
-            "web": "Web'de {{query}} için arama yapın",
-            "youtube": "YouTube'da {{query}} için arama yapın",
-            "torrent": "Torrent'te {{query}} için arama yapın",
-            "movie": "{{app}} üzerinde {{query}} için arama yapın"
+            "web": "Web'de \"{{query}}\" için arama yapın",
+            "youtube": "YouTube'da \"{{query}}\" için arama yapın",
+            "torrent": "Torrent'te \"{{query}}\" için arama yapın",
+            "movie": "{{app}} üzerinde \"{{query}}\" için arama yapın"
         }
     },
     "actions": {
