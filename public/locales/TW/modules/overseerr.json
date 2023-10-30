@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "允許您從 Overseerr 或 JellySeerr 搜尋或新增媒體"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "請求 {{title}}",
+        "cancel": "取消",
+        "request": "請求"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "使用 API Key",
+          "text": "此請求被自動准許"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "勾選您想要下載的季",
+      "table": {
+        "header": {
+          "season": "季",
+          "numberOfEpisodes": "集數"
+        }
+      }
+    }
+  }
+}
