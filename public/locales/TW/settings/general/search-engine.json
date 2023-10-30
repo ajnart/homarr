@@ -1,0 +1,20 @@
+{
+  "title": "搜尋引擎",
+  "configurationName": "搜尋引擎設定",
+  "custom": "自定義",
+  "tips": {
+    "generalTip": "您可以使用多種前綴！將這些新增到您的查詢前將過濾結果。(WEB、Torrents、Youtube、Media)",
+    "placeholderTip": "%s 可以做為查詢的佔位符"
+  },
+  "customEngine": {
+    "title": "自定義搜尋引擎",
+    "label": "查詢網址",
+    "placeholder": "自定義查詢網址"
+  },
+  "searchNewTab": {
+    "label": "在新分頁中開啟搜尋結果"
+  },
+  "searchEnabled": {
+    "label": "啟用搜尋"
+  }
+}
