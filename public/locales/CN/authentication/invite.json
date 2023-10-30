@@ -1,0 +1,35 @@
+{
+    "metaTitle": "创建账号",
+    "title": "创建账号",
+    "text": "请在下面定义您的凭据",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "用户名"
+            },
+            "password": {
+                "label": "密码"
+            },
+            "passwordConfirmation": {
+                "label": "确认密码"
+            }
+        },
+        "buttons": {
+            "submit": "创建账号"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "正在创建账号...",
+            "text": "请稍等"
+        },
+        "success": {
+            "title": "账号已创建",
+            "text": "您的账号创建成功"
+        },
+        "error": {
+            "title": "错误",
+            "text": "出错了，出现以下错误： {{error}}"
+        }
+    }
+}
