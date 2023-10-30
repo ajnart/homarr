@@ -1,38 +1,38 @@
 {
-  "title": "设置",
-  "tooltip": "设置",
+  "title": "設定",
+  "tooltip": "設定",
   "tabs": {
-    "common": "常规",
-    "customizations": "个性化"
+    "common": "常規",
+    "customizations": "個性化"
   },
   "tips": {
-    "configTip": "将配置文件拖放到页面上即可上传！"
+    "configTip": "將設定文件托放到頁放上即可上傳！"
   },
   "credits": {
-    "madeWithLove": "用❤️创造 来自",
-    "thirdPartyContent": "查看第三方内容",
+    "madeWithLove": "Made with ❤️ by @",
+    "thirdPartyContent": "查看第三方內容",
     "thirdPartyContentTable": {
-      "dependencyName": "依赖",
+      "dependencyName": "依賴",
       "dependencyVersion": "版本"
     }
   },
-  "grow": "放大网格 (占用所有空间)",
+  "grow": "放大網格 (占用所有空間)",
   "layout": {
     "preview": {
-      "title": "预览",
-      "subtitle": "更改会自动保存"
+      "title": "預覽",
+      "subtitle": "更改會自動保存"
     },
-    "divider": "布局选项",
+    "divider": "布局選項",
     "main": "主要",
-    "sidebar": "侧边栏",
-    "cannotturnoff": "无法关闭",
+    "sidebar": "側邊欄",
+    "cannotturnoff": "無法關閉",
     "dashboardlayout": "面板布局",
-    "enablersidebar": "启用右侧栏",
-    "enablelsidebar": "启用左侧栏",
-    "enablesearchbar": "启用搜索栏",
-    "enabledocker": "启用 docker 集成",
-    "enableping": "启用 Ping 功能",
-    "enablelsidebardesc": "可选项。只能用于应用和集成使用",
-    "enablersidebardesc": "可选项。只能用于应用和集成使用"
+    "enablersidebar": "啟用右邊欄",
+    "enablelsidebar": "啟用左側欄",
+    "enablesearchbar": "啟用搜尋欄",
+    "enabledocker": "啟用 Docker 集成",
+    "enableping": "啟用 Ping 功能",
+    "enablelsidebardesc": "可選項，只能用於應用和集成使用",
+    "enablersidebardesc": "可選項，只能用於應用和集成使用"
   }
 }
