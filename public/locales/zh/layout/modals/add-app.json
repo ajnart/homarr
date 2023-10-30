@@ -109,6 +109,6 @@
 		"invalidUrl": "非有效的網址",
 		"noIconUrl": "此字段為必填",
 		"noExternalUri": "外部網址為必填選項",
-		"invalidExternalUri": ""
+		"invalidExternalUri": "無效的外部網址"
 	}
 }
