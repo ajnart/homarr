@@ -17,12 +17,11 @@ import { ConfigType } from '~/types/config';
 
 export default function BoardPage({
   config: initialConfig,
-  dockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
 
   return (
-    <BoardLayout dockerEnabled={dockerEnabled}>
+    <BoardLayout>
       <Dashboard />
     </BoardLayout>
   );
@@ -57,7 +56,6 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,
-      dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
       ...translations,
     },
   };
