@@ -6,8 +6,8 @@ import {
   IconCloudRain,
   IconMapPin,
 } from '@tabler/icons-react';
+import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
-import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -50,7 +50,23 @@ interface WeatherTileProps {
 }
 
 function WeatherTile({ widget }: WeatherTileProps) {
-  const { data: weather, isLoading, isError } = api.weather.at.useQuery(widget.properties.location);
+  const {
+    data: weather,
+    isLoading,
+    isError,
+  } = useQuery(
+    ['weather', widget.properties.location],
+    async () =>
+      await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${widget.properties.location.latitude}&longitude=${widget.properties.location.longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`,
+        {
+          // 15 minutes of cache
+          cache: 'force-cache',
+          headers: { 'Cache-Control': 'max-age=900' },
+        }
+      ).then((res) => res.json()),
+    {}
+  );
   const { width, ref } = useElementSize();
   const { t } = useTranslation('modules/weather');
 
