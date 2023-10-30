@@ -1,7 +1,7 @@
 {
   "save": "",
   "about": "",
-  "cancel": "",
+  "cancel": "取消",
   "close": "",
   "back": "",
   "delete": "",
@@ -16,11 +16,11 @@
   "disableAll": "",
   "version": "",
   "changePosition": "",
-  "remove": "",
+  "remove": "刪除",
   "removeConfirm": "",
   "createItem": "",
   "sections": {
-    "settings": "",
+    "settings": "設定",
     "dangerZone": ""
   },
   "secrets": {
@@ -34,7 +34,7 @@
     "minutes": "",
     "hours": ""
   },
-  "loading": "",
+  "loading": "正在載入...",
   "breakPoints": {
     "small": "",
     "medium": "",
