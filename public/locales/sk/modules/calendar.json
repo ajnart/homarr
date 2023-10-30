@@ -7,6 +7,9 @@
       "useSonarrv4": {
         "label": "Použi Sonarr v4 API"
       },
+      "useRadarrv5": {
+        "label": ""
+      },
       "radarrReleaseType": {
         "label": "Typ Radarr releasu",
         "data": {
