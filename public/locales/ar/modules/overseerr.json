@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "crwdns1490:0crwdne1490:0",
+    "description": "crwdns2357:0crwdne2357:0"
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "crwdns1494:0{{title}}crwdne1494:0",
+        "cancel": "crwdns1496:0crwdne1496:0",
+        "request": "crwdns1498:0crwdne1498:0"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "crwdns1500:0crwdne1500:0",
+          "text": "crwdns1502:0crwdne1502:0"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "crwdns2359:0crwdne2359:0",
+      "table": {
+        "header": {
+          "season": "crwdns1506:0crwdne1506:0",
+          "numberOfEpisodes": "crwdns1508:0crwdne1508:0"
+        }
+      }
+    }
+  }
+}
