@@ -38,7 +38,7 @@
         },
         "autoFocus": {
             "label": "Sayfa yüklendiğinde arama çubuğuna odaklanın.",
-            "description": "Sayfa yüklendiğinde imleç arama çubuğuna otomatik olarak odaklanacaktır. Yalnızca masaüstü cihazlarda çalışır."
+            "description": "Sayfa yüklendiğindei imleç arama çubuğunu otomatik olarak odaklayacaktır. Yalnızca masaüstü cihazlarda çalışacaktır."
         },
         "template": {
             "label": "Sorgu URL’si",
