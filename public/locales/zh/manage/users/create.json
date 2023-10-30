@@ -1,52 +1,52 @@
 {
-    "metaTitle": "创建用户",
+    "metaTitle": "創建使用者",
     "steps": {
         "account": {
             "title": "第一步",
-            "text": "创建账号",
+            "text": "創建帳號",
             "username": {
-                "label": "用户名"
+                "label": "使用者"
             },
             "email": {
-                "label": "邮箱"
+                "label": "E-mail"
             }
         },
         "security": {
             "title": "第二步",
-            "text": "密码",
+            "text": "密碼",
             "password": {
-                "label": "密码"
+                "label": "密碼"
             }
         },
         "finish": {
-            "title": "确认",
-            "text": "保存到数据库",
+            "title": "確認",
+            "text": "儲存到數據庫",
             "card": {
-                "title": "检查您的输入",
-                "text": "将数据提交到数据库后，用户就可以登录了。您确定要将该用户存储在数据库中并激活登录吗?"
+                "title": "檢查您的輸入",
+                "text": "將數據提交到數據庫後，使用者就可以登入了，您確定要將該使用者存入數據庫中並啟用登入權限嗎？"
             },
             "table": {
                 "header": {
-                    "property": "属性",
-                    "value": "参数值",
-                    "username": "用户名",
-                    "email": "邮箱",
-                    "password": "密码"
+                    "property": "屬性",
+                    "value": "參數值",
+                    "username": "使用者",
+                    "email": "E-mail",
+                    "password": "密碼"
                 },
-                "notSet": "未设置",
+                "notSet": "未設定",
                 "valid": "有效"
             },
-            "failed": "用户创建失败： {{error}}"
+            "failed": "使用者創建失敗：{{error}}"
         },
         "completed": {
             "alert": {
-                "title": "用户已创建",
-                "text": "用户已在数据库中创建。他现在可以登录了。"
+                "title": "使用者已創建",
+                "text": "使用者已存在數據庫中。他可以登入了"
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "随机生成",
-        "createAnother": "创建另一个"
+        "generateRandomPassword": "隨機生成",
+        "createAnother": "創建另一個"
     }
 }
