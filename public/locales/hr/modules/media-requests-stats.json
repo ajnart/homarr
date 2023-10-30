@@ -14,9 +14,9 @@
   },
   "mediaStats": {
     "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
+    "pending": "Odobrenjea na čekanju",
+    "tvRequests": "TV zahtjevi",
+    "movieRequests": "Zahtjevi za Filmovima",
     "approved": "",
     "totalRequests": ""
   },
