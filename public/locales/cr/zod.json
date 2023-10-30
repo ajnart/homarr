@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "crwdns3351:0crwdne3351:0",
+        "required": "crwdns3353:0crwdne3353:0",
+        "string": {
+            "startsWith": "crwdns3355:0{{startsWith}}crwdne3355:0",
+            "endsWith": "crwdns3357:0{{endsWith}}crwdne3357:0",
+            "includes": "crwdns3359:0{{includes}}crwdne3359:0"
+        },
+        "tooSmall": {
+            "string": "crwdns3361:0{{minimum}}crwdne3361:0",
+            "number": "crwdns3363:0{{minimum}}crwdne3363:0"
+        },
+        "tooBig": {
+            "string": "crwdns3365:0{{maximum}}crwdne3365:0",
+            "number": "crwdns3367:0{{maximum}}crwdne3367:0"
+        },
+        "custom": {
+            "passwordMatch": "crwdns3369:0crwdne3369:0"
+        }
+    }
+}
