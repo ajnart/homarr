@@ -1,27 +1,27 @@
 {
   "pageTitle": {
     "label": "페이지 제목",
-    "description": ""
+    "description": "왼쪽 상단의 대시보드 제목"
   },
   "metaTitle": {
-    "label": "",
-    "description": ""
+    "label": "메타 제목",
+    "description": "브라우저 탭에 표시되는 제목"
   },
   "logo": {
     "label": "로고",
-    "description": ""
+    "description": "왼쪽 상단에 표시되는 로고"
   },
   "favicon": {
     "label": "파비콘",
-    "description": ""
+    "description": "브라우저 탭에 표시되는 아이콘"
   },
   "background": {
     "label": "배경"
   },
   "customCSS": {
     "label": "커스텀 CSS",
-    "description": "",
-    "placeholder": "",
-    "applying": ""
+    "description": "또한 숙련된 사용자에게만 권장되는 CSS를 사용하여 대시보드를 사용자 지정할 수 있습니다.",
+    "placeholder": "사용자 정의 CSS는 마지막에 적용됩니다.",
+    "applying": "CSS 적용하기..."
   }
 }
