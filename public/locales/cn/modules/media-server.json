@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "媒体服务",
+    "description": "与您的 Jellyfin 或 Plex 媒体服务交互",
+    "settings": {
+      "title": "媒体服务组件设置"
+    }
+  },
+  "loading": "正在载入流",
+  "card": {
+    "table": {
+      "header": {
+        "session": "会话",
+        "user": "用户",
+        "currentlyPlaying": "正在播放"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "无法加载内容",
+        "text": "无法从服务器检索信息。请检查日志获取更多详细信息"
+      }
+    }
+  }
+}
