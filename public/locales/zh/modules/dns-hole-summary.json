@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "DNS漏洞统计",
-    "description": "显示来自 PiHole 或 AdGuard 的重要数据",
+    "name": "DNS 漏洞統計",
+    "description": "顯示來自 PiHole 或 AdGuard 的重要數據",
     "settings": {
-      "title": "DNS漏洞统计设置",
+      "title": "DNS 漏洞統計設定",
       "usePiHoleColors": {
-        "label": "使用 PiHole 的颜色"
+        "label": "使用 PiHole 的顏色"
       },
       "layout": {
-        "label": "显示布局",
+        "label": "顯示布局",
         "data": {
           "grid": "2 x 2",
-          "row": "横向",
+          "row": "橫向",
           "column": "垂直"
         }
       }
@@ -19,10 +19,10 @@
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "广告列表中的域名",
-      "queriesToday": "今日查询",
-      "queriesBlockedTodayPercentage": "今日屏蔽",
-      "queriesBlockedToday": "今日屏蔽"
+      "domainsOnAdlist": "廣告列表中的域名",
+      "queriesToday": "今日查詢",
+      "queriesBlockedTodayPercentage": "今日封鎖",
+      "queriesBlockedToday": "今日封鎖"
     }
   }
 }
