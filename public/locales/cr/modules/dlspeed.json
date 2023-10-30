@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "crwdns1432:0crwdne1432:0",
+    "description": "crwdns2345:0crwdne2345:0"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "crwdns1804:0crwdne1804:0",
+        "size": "crwdns1806:0crwdne1806:0",
+        "download": "crwdns1808:0crwdne1808:0",
+        "upload": "crwdns1810:0crwdne1810:0",
+        "estimatedTimeOfArrival": "crwdns1812:0crwdne1812:0",
+        "progress": "crwdns1814:0crwdne1814:0"
+      },
+      "body": {
+        "nothingFound": "crwdns1816:0crwdne1816:0"
+      }
+    },
+    "lineChart": {
+      "title": "crwdns1818:0crwdne1818:0",
+      "download": "crwdns1820:0{{download}}crwdne1820:0",
+      "upload": "crwdns1822:0{{upload}}crwdne1822:0",
+      "timeSpan": "crwdns1824:0{{seconds}}crwdne1824:0",
+      "totalDownload": "crwdns1826:0{{download}}crwdne1826:0",
+      "totalUpload": "crwdns1828:0{{upload}}crwdne1828:0"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "crwdns1830:0crwdne1830:0",
+        "text": "crwdns1832:0crwdne1832:0"
+      }
+    }
+  }
+}
