@@ -1,38 +1,38 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrent",
+    "description": "顯示支援的 Torrents 客戶端的 Torrents 列表。",
     "settings": {
-      "title": "",
+      "title": "Torrent 組件設定",
       "refreshInterval": {
-        "label": ""
+        "label": "更新時間 (秒)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "顯示已完成 Torrents"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "顯示過期 Torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "標籤列表是白名單 (而不是黑名單)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "標籤列表",
+        "description": "當選中 \"白名單\" 時，將成為白名單，如不選中，則為黑名單，為空時則不會做任何事情。"
       }
     }
   },
   "card": {
     "footer": {
       "error": "",
-      "lastUpdated": ""
+      "lastUpdated": "最後更新於 {{time}} 前"
     },
     "table": {
       "header": {
-        "name": "",
+        "name": "名稱",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "下載",
+        "upload": "上傳",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
@@ -40,17 +40,17 @@
         "text": ""
       },
       "body": {
-        "nothingFound": "",
+        "nothingFound": "無種子",
         "filterHidingItems": ""
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "目前下載速度",
+      "download": "下載：{{download}}",
+      "upload": "上傳：{{upload}}",
+      "timeSpan": "{{seconds}}/秒",
+      "totalDownload": "下載：{{download}}/秒",
+      "totalUpload": "上傳：{{upload}}/秒"
     },
     "errors": {
       "noDownloadClients": {
