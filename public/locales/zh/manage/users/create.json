@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "",
-            "text": "",
+            "text": "創建帳號",
             "username": {
                 "label": ""
             },
