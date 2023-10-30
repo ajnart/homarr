@@ -181,7 +181,7 @@ export const languages = [
   },
   // Chinese (Simplified)
   {
-    shortName: 'zh',
+    shortName: 'cn',
     originalName: '中文',
     translatedName: 'Chinese (Simplified)',
     emoji: '🇨🇳',
@@ -190,7 +190,7 @@ export const languages = [
   },
   // Chinese (Traditional)
   {
-    shortName: 'zh-tw',
+    shortName: 'zh',
     originalName: '中文(台灣)',
     translatedName: 'Chinese (Traditional)',
     emoji: '🇹🇼',
