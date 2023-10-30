@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "视频流",
-    "description": "嵌入来自相机或网站的视频流或视频",
+    "name": "影片串流",
+    "description": "崁入來自攝影機或網站的影片串流",
     "settings": {
-      "title": "视频流组件设置",
+      "title": "影片串流組件設定",
       "FeedUrl": {
-        "label": "订阅网址"
+        "label": "訂閱網址"
       },
       "autoPlay": {
-        "label": "自动播放"
+        "label": "自動播放"
       },
       "muted": {
-        "label": "静音"
+        "label": "靜音"
       },
       "controls": {
-        "label": "视频播放控件"
+        "label": "控制影片播放"
       }
     }
   },
   "errors": {
-    "invalidStream": "无效数据流"
+    "invalidStream": "無效數據串流"
   }
 }
