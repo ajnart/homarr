@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "iFrame",
-    "description": "嵌入互联网上的任何内容。某些网站可能限制访问。",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "iFrame设置",
+      "title": "",
       "embedUrl": {
-        "label": "嵌入地址"
+        "label": ""
       },
       "allowFullScreen": {
-        "label": "允许全屏"
+        "label": ""
       },
       "allowTransparency": {
-        "label": "允许透明"
+        "label": ""
       },
       "allowScrolling": {
-        "label": "允许滚动"
+        "label": ""
       },
       "allowPayment": {
-        "label": "允许支付"
+        "label": ""
       },
       "allowAutoPlay": {
-        "label": "允许自动播放"
+        "label": ""
       },
       "allowMicrophone": {
-        "label": "允许麦克风"
+        "label": ""
       },
       "allowCamera": {
-        "label": "允许摄像头"
+        "label": ""
       },
       "allowGeolocation": {
-        "label": "允许地理位置"
+        "label": ""
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "无效链接",
-        "text": "确保您在组件配置中输入了一个有效的地址"
+        "title": "",
+        "text": ""
       },
-      "browserSupport": "您的浏览器不支持 iframe。请更新您的浏览器。"
+      "browserSupport": ""
     }
   }
 }
