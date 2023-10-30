@@ -106,7 +106,7 @@
 		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications",
 		"name": "Un nom est requis",
 		"noUrl": "Un lien est requis",
-		"invalidUrl": "Ce lien n'est pas un URL valide",
+		"invalidUrl": "La valeur n'est pas une url valide",
 		"noIconUrl": "Ce champ est requis",
 		"noExternalUri": "Un URI externe est requis",
 		"invalidExternalUri": "Cet URI externe n'est pas un URI valide"
