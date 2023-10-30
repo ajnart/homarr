@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "",
+    "description": "Med rss-widgetten kan du vise RSS-feeds på dit dashboard.",
     "settings": {
       "title": "Indstillinger for RSS-widget",
       "rssFeedUrl": {
