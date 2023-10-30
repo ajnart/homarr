@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Nenašli sa žiadne požiadavky. Skontrolujte, či ste správne nakonfigurovali svoje aplikácie.",
-  "pending": "Na schválenie čaká {{countPendingApproval}} žiadostí.",
-  "nonePending": "V súčasnosti nie sú k dispozícii žiadne schválenia. Môžete začať!",
   "state": {
     "approved": "Schválené",
     "pendingApproval": "Čaká sa na schválenie",
