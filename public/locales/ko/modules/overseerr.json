@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": ""
+    "description": "오버서 또는 젤리서에서 미디어를 검색하고 추가할 수 있습니다."
   },
   "popup": {
     "item": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "다운로드할 시즌을 선택하세요.",
       "table": {
         "header": {
           "season": "시즌",
