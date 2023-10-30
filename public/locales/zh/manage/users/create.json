@@ -13,9 +13,9 @@
         },
         "security": {
             "title": "",
-            "text": "",
+            "text": "密碼",
             "password": {
-                "label": ""
+                "label": "密碼"
             }
         },
         "finish": {
@@ -31,7 +31,7 @@
                     "value": "",
                     "username": "",
                     "email": "",
-                    "password": ""
+                    "password": "密碼"
                 },
                 "notSet": "",
                 "valid": ""
