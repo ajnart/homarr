@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "日期和时间",
-    "description": "显示当前的日期和时间。",
+    "name": "日期與時間",
+    "description": "顯示目前的日期與時間",
     "settings": {
-      "title": "日期和时间组件设置",
+      "title": "設定日期與時間組件",
       "display24HourFormat": {
-        "label": "全时显示（24 小时）"
+        "label": "顯示 24 小時制"
       },
       "dateFormat": {
         "label": "日期格式",
         "data": {
-          "hide": "隐藏日期"
+          "hide": "隱藏日期"
         }
       },
       "enableTimezone": {
-        "label": "显示自定义时区"
+        "label": "顯示自定義時區"
       },
       "timezoneLocation": {
-        "label": "时区位置"
+        "label": "時區位置"
       },
       "titleState": {
-        "label": "城市名称",
-        "info": "如果激活时区选项，则可显示城市名称和时区代码。<br/>您也可以只显示城市，甚至不显示。",
+        "label": "城市名稱",
+        "info": "如果啟用時區選項，則可顯示城市名稱的時區代碼，<br/>您也可以只顯示城市名稱，甚至都不顯示",
         "data": {
-          "both": "城市和时区",
-          "city": "仅城市",
-          "none": "无"
+          "both": "城市與時區",
+          "city": "僅城市名稱",
+          "none": "無"
         }
       }
     }
