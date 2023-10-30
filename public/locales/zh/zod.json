@@ -1,7 +1,7 @@
 {
     "errors": {
         "default": "",
-        "required": "",
+        "required": "此字段為必填",
         "string": {
             "startsWith": "",
             "endsWith": "",
