@@ -1,12 +1,12 @@
 {
     "metaTitle": "",
     "hero": {
-        "title": "",
+        "title": "おかえりなさい、 {{username}}",
         "fallbackUsername": "",
-        "subtitle": ""
+        "subtitle": "アプリケーションハブへようこそ。整理、最適化、そして征服！"
     },
     "quickActions": {
-        "title": "",
+        "title": "クイック操作",
         "boards": {
             "title": "",
             "subtitle": ""
