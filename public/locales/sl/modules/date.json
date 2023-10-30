@@ -8,24 +8,24 @@
         "label": "Prikaz polnega časa (24-urni)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Oblikovanje datuma",
         "data": {
-          "hide": ""
+          "hide": "Skrij datum"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Prikaz časovnega območja po meri"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Časovni pas Lokacija"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Naziv mesta",
+        "info": "Če aktivirate možnost Časovni pas, lahko prikažete ime mesta in kodo časovnega pasu.<br/>Prikažete lahko tudi samo mesto ali pa ne prikažete ničesar.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Mesto in časovno območje",
+          "city": "Samo mesto",
+          "none": "Ni"
         }
       }
     }
