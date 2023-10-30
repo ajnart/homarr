@@ -14,9 +14,9 @@
   },
   "mediaStats": {
     "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
+    "pending": "Wachtende goedkeuringen",
+    "tvRequests": "TV verzoeken",
+    "movieRequests": "Film verzoeken",
     "approved": "",
     "totalRequests": ""
   },
