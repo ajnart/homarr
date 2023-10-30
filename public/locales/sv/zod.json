@@ -4,19 +4,19 @@
         "required": "Detta fält är obligatoriskt",
         "string": {
             "startsWith": "Det här fältet måste börja med {{startsWith}}",
-            "endsWith": "",
-            "includes": ""
+            "endsWith": "Detta fält måste sluta med {{endsWith}}",
+            "includes": "Detta fält måste innehålla {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Detta fält måste vara minst {{minimum}} tecken långt",
+            "number": "Detta fält måste vara större än eller lika med {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Detta fält får vara högst {{maximum}} tecken långt",
+            "number": "Detta fält måste vara mindre än eller lika med {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Lösenorden måste matcha"
         }
     }
 }
