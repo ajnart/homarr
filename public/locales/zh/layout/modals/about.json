@@ -1,29 +1,29 @@
 {
-	"description": "Homarr是一个 <strong>顺滑</strong> <strong>现代化</strong> 的面板，它能将您所有的应用和服务汇于指尖。有了 Homarr，您可以在一个页面中访问和控制一切。Homarr 与您添加的应用无缝交互，为您提供有价值的信息并由您完全控制。安装 Homarr 轻松简单，并且 Homarr 支持多种部署方式。",
-	"contact": "遇到困难或问题？请与我们联系!",
-	"addToDashboard": "添加至面板",
-	"tip": "Mod 指的是您的修饰键，它是 Ctrl 或 Command/Super/Windows 键",
-	"key": "快捷键",
-	"action": "操作",
-	"keybinds": "热键绑定",
-	"documentation": "文档",
+	"description": "Homarr是一個 <strong>流暢</strong><strong>現代化</strong>的面板，能夠將您所有的應用與服務彙總一起。有了 Homarr，您可以在一個頁面中訪問和控制一切。Homarr 與您新增的應用程式互動流暢，為您提供最全面的訊息並由您控制。安裝 Homarr 輕鬆簡單，並且 Homarr 之於多種部屬方式",
+	"contact": "遇到問題嗎？請與我們聯繫！",
+	"addToDashboard": "新增至面板",
+	"tip": "Mod 是指您的自定義快捷鍵，它可以是 Ctrl、Super/Windows 按鍵",
+	"key": "快捷鍵",
+	"action": "動作",
+	"keybinds": "按鍵綁定",
+	"documentation": "文件",
 	"actions": {
-		"toggleTheme": "切换 白天/夜晚 模式",
-		"focusSearchBar": "前往搜索栏",
-		"openDocker": "打开 docker 组件",
-		"toggleEdit": "切换编辑模式"
+		"toggleTheme": "切換 白色/黑色 主題模式",
+		"focusSearchBar": "前往搜尋欄",
+		"openDocker": "開啟 Docker 組件",
+		"toggleEdit": "切換編輯模式"
 	},
 	"metrics": {
-		"configurationSchemaVersion": "配置模式版本",
-		"configurationsCount": "可用配置文件",
+		"configurationSchemaVersion": "設定模式版本",
+		"configurationsCount": "可用設定文件",
 		"version": "版本",
-		"nodeEnvironment": "节点环境",
-		"i18n": "I18n 翻译空间已加载",
-		"locales": "I18n 本地语言已配置",
-		"experimental_disableEditMode": "<b>实验性</b>: 关闭编辑模式"
+		"nodeEnvironment": "節點環境",
+		"i18n": "I18n 翻譯空間已加載",
+		"locales": "I18n 本地語言已設定",
+		"experimental_disableEditMode": "<b>實驗性</b>：退出編輯模式"
 	},
 	"version": {
 		"new": "新： {{newVersion}}",
-		"dropdown": "版本 {{newVersion}} 可用！当前版本为 {{currentVersion}}"
+		"dropdown": "版本 {{newVersion}} 可用！目前版本： {{currentVersion}}"
 	}
 }
