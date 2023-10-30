@@ -2,6 +2,7 @@ import { Stack, Text, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
 import timezones from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { useSession } from 'next-auth/react';
@@ -13,6 +14,7 @@ import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
+dayjs.extend(advancedFormat);
 dayjs.extend(utc);
 dayjs.extend(timezones);
 
