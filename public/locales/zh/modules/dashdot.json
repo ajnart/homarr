@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "Dash.",
-    "description": "在 Homarr 中显示一个外部 Dash. 的图表。",
+    "name": "",
+    "description": "",
     "settings": {
-      "title": "Dash. 组件设置",
+      "title": "",
       "dashName": {
-        "label": "Dash. 名称"
+        "label": ""
       },
       "url": {
-        "label": "Dash. 网址"
+        "label": ""
       },
       "usePercentages": {
-        "label": "显示百分比"
+        "label": ""
       },
       "columns": {
-        "label": "显示的列"
+        "label": ""
       },
       "graphHeight": {
-        "label": "图表高度"
+        "label": ""
       },
       "graphsOrder": {
-        "label": "图表（顺序）",
+        "label": "",
         "storage": {
-          "label": "存储",
+          "label": "",
           "enabled": {
-            "label": "在组件中显示"
+            "label": ""
           },
           "span": {
-            "label": "列宽度"
+            "label": ""
           },
           "compactView": {
-            "label": "显示为文本（紧凑型）"
+            "label": ""
           },
           "multiView": {
-            "label": "显示为多驱动视图"
+            "label": ""
           }
         },
         "network": {
-          "label": "网络",
+          "label": "",
           "enabled": {
-            "label": "在组件中显示"
+            "label": ""
           },
           "span": {
-            "label": "列宽度"
+            "label": ""
           },
           "compactView": {
-            "label": "显示为文本（紧凑型）"
+            "label": ""
           }
         },
         "cpu": {
-          "label": "CPU",
+          "label": "",
           "enabled": {
-            "label": "在组件中显示"
+            "label": ""
           },
           "span": {
-            "label": "列宽度"
+            "label": ""
           },
           "multiView": {
-            "label": "显示为多核心视图"
+            "label": ""
           }
         },
         "ram": {
-          "label": "内存",
+          "label": "",
           "enabled": {
-            "label": "在组件中显示"
+            "label": ""
           },
           "span": {
-            "label": "列宽度"
+            "label": ""
           }
         },
         "gpu": {
-          "label": "GPU",
+          "label": "",
           "enabled": {
-            "label": "在组件中显示"
+            "label": ""
           },
           "span": {
-            "label": "列宽度"
+            "label": ""
           }
         }
       }
     }
   },
   "card": {
-    "title": "Dash.",
+    "title": "",
     "errors": {
-      "noService": "未找到 Dash. 服务。请在集成中将其添加到您的 Homarr 面板或在模块选项中设置 Dash. 网址",
-      "noInformation": "无法从 Dash. 获取信息。- 你运行的是最新版本吗？",
+      "noService": "",
+      "noInformation": "",
       "protocolDowngrade": {
-        "title": "检测到协议降级",
-        "text": "与 Dash. 实例的连接使用的是HTTP。这是一个安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保 Dash. 使用的是HTTPS，或者将Homarr降级为HTTP(不推荐)。"
+        "title": "",
+        "text": ""
       }
     },
     "graphs": {
       "storage": {
-        "title": "存储",
-        "label": "存储："
+        "title": "",
+        "label": ""
       },
       "network": {
-        "title": "网络",
-        "label": "网络：",
+        "title": "",
+        "label": "",
         "metrics": {
-          "download": "下载",
-          "upload": "上传"
+          "download": "",
+          "upload": ""
         }
       },
       "cpu": {
-        "title": "CPU"
+        "title": ""
       },
       "ram": {
-        "title": "内存"
+        "title": ""
       },
       "gpu": {
-        "title": "GPU"
+        "title": ""
       }
     }
   }
