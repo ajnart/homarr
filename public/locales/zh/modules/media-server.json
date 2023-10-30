@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "媒體服務",
+    "description": "與您的 Jellyfin 或 Plex 媒體服務交互",
     "settings": {
-      "title": ""
+      "title": "媒體服務組件設定"
     }
   },
-  "loading": "",
+  "loading": "正在載入媒體",
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "會話",
+        "user": "使用者",
+        "currentlyPlaying": "正在播放"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "無法載入內容",
+        "text": "無法從伺服器檢測數據，請查看日誌獲取更多詳細訊息。"
       }
     }
   }
