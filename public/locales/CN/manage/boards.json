@@ -1,0 +1,44 @@
+{
+    "metaTitle": "面板",
+    "pageTitle": "面板",
+    "cards": {
+        "statistics": {
+            "apps": "应用",
+            "widgets": "组件",
+            "categories": "分类"
+        },
+        "buttons": {
+            "view": "查看面板"
+        },
+        "menu": {
+            "setAsDefault": "设置为默认",
+            "delete": {
+                "label": "永久删除",
+                "disabled": "删除功能被禁用，因为较旧的 Homarr 组件不允许删除默认配置。将来可能会删除。"
+            }
+        },
+        "badges": {
+            "fileSystem": "文件系统",
+            "default": "默认"
+        }
+    },
+    "buttons": {
+        "create": "创建新面板"
+    },
+    "modals": {
+        "delete": {
+            "title": "删除面板",
+            "text": "你确定要删除这个面板吗? 此操作无法撤消，您的数据将永久丢失。"
+        },
+        "create": {
+            "title": "创建面板",
+            "text": "面板创建成功后，不能修改名称。",
+            "form": {
+                "name": {
+                    "label": "名称"
+                },
+                "submit": "创建"
+            }
+        }
+    }
+}
