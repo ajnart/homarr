@@ -1,7 +1,7 @@
 import { Anchor, Button, Card, Collapse, Group, Stack, Tabs, Text, TextInput } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
-import { IconAlertCircle, IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
+import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { AppType } from '~/types/app';
 
@@ -21,6 +21,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
     t('general.internalAddress.troubleshoot.lines.nothingAfterPort'),
     t('general.internalAddress.troubleshoot.lines.protocolCheck'),
     t('general.internalAddress.troubleshoot.lines.preferIP'),
+    t('general.internalAddress.troubleshoot.lines.enablePings'),
     t('general.internalAddress.troubleshoot.lines.wget'),
     t('general.internalAddress.troubleshoot.lines.iframe'),
     t('general.internalAddress.troubleshoot.lines.clearCache'),
@@ -59,12 +60,6 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
           {...form.getInputProps('behaviour.externalUrl')}
         />
 
-        <Group position="right" mt={22}>
-          <Button rightIcon={<IconAlertCircle />} onClick={toggle}>
-            {t('general.internalAddress.troubleshoot.label')}
-          </Button>
-        </Group>
-
         <Collapse in={opened}>
           <Card withBorder>
             <Text>{t('general.internalAddress.troubleshoot.header')}</Text>
@@ -93,6 +88,10 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
             </Text>
           )}
       </Stack>
+
+      <Button onClick={toggle} bottom={-68} left={0} color="yellow.7" variant="light">
+        {t('general.internalAddress.troubleshoot.label')}
+      </Button>
     </Tabs.Panel>
   );
 };
