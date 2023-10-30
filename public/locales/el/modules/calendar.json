@@ -8,7 +8,7 @@
         "label": "Χρήση του API Sonarr v4"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Χρήση του Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Τύπος κυκλοφορίας Radarr",
