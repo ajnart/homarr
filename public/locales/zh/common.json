@@ -26,7 +26,7 @@
   "secrets": {
     "apiKey": "",
     "username": "",
-    "password": ""
+    "password": "密碼"
   },
   "tip": "",
   "time": {
