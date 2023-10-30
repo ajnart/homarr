@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "搜索栏",
-    "description": "一个搜索栏，允许你搜索你的自定义搜索引擎、YouTube和支持的集成。"
+    "name": "",
+    "description": ""
   },
   "input": {
-    "placeholder": "在网上搜索..."
+    "placeholder": ""
   },
-  "switched-to": "切换到",
+  "switched-to": "",
   "searchEngines": {
     "search": {
-      "name": "网页",
-      "description": "搜索..."
+      "name": "",
+      "description": ""
     },
     "youtube": {
-      "name": "Youtube",
-      "description": "在 Youtube 上搜索"
+      "name": "",
+      "description": ""
     },
     "torrents": {
-      "name": "Torrents",
-      "description": "搜索 Torrents"
+      "name": "",
+      "description": ""
     },
     "overseerr": {
-      "name": "Overseerr",
-      "description": "在 Overseer 上搜索电影和电视剧。"
+      "name": "",
+      "description": ""
     }
   },
-  "tip": "您可以使用以下快捷键选择搜索栏 ",
-  "switchedSearchEngine": "改用 {{searchEngine}} 进行搜索"
+  "tip": "",
+  "switchedSearchEngine": ""
 }
