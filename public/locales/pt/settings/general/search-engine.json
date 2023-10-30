@@ -1,9 +1,9 @@
 {
   "title": "Motor de busca",
   "configurationName": "Configuração do motor de busca",
-  "custom": "",
+  "custom": "Personalizado",
   "tips": {
-    "generalTip": "",
+    "generalTip": "Há vários prefixos que você pode usar! Adicioná-los na frente de sua consulta filtrará os resultados. !s (Web), !t (Torrents), !y (YouTube) e !m (Mídia).",
     "placeholderTip": "%s pode ser utilizado como um local para a consulta."
   },
   "customEngine": {
