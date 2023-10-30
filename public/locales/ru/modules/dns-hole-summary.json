@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Сводка по DNS",
+    "name": "Сводка по фильтрующим DNS",
     "description": "Отображает важные данные из PiHole или AdGuard",
     "settings": {
-      "title": "Настройки сводки DNS Hole",
+      "title": "Настройки для сводки фильтрующих DNS",
       "usePiHoleColors": {
         "label": "Использовать цвета из PiHole"
       },
