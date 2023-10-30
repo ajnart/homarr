@@ -1,78 +1,78 @@
 {
   "descriptor": {
     "name": "Torrent",
-    "description": "顯示支援的 Torrents 客戶端的 Torrents 列表。",
+    "description": "显示支持的 Torrent 客户端的 Torrent 列表。",
     "settings": {
-      "title": "Torrent 組件設定",
+      "title": "Torrent 组件设置",
       "refreshInterval": {
-        "label": "更新時間 (秒)"
+        "label": "刷新间隔（秒）"
       },
       "displayCompletedTorrents": {
-        "label": "顯示已完成 Torrents"
+        "label": "显示已完成 torrents"
       },
       "displayStaleTorrents": {
-        "label": "顯示過期 Torrents"
+        "label": "显示过期 torrents"
       },
       "labelFilterIsWhitelist": {
-        "label": "標籤列表是白名單 (而不是黑名單)"
+        "label": "标签列表是白名单 (而不是黑名单)"
       },
       "labelFilter": {
-        "label": "標籤列表",
-        "description": "當選中 \"白名單\" 時，將成為白名單，如不選中，則為黑名單，為空時則不會做任何事情。"
+        "label": "标签列表",
+        "description": "当选中 “白名单” 时，这将成为白名单。如果不选中，则是黑名单。为空时不会做任何事情。"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "錯誤",
-      "lastUpdated": "最後更新於 {{time}} 前"
+      "error": "错误",
+      "lastUpdated": "最后更新于 {{time}} 前"
     },
     "table": {
       "header": {
-        "name": "名稱",
+        "name": "名称",
         "size": "大小",
-        "download": "下載",
-        "upload": "上傳",
-        "estimatedTimeOfArrival": "剩餘時間",
-        "progress": "進度"
+        "download": "下载",
+        "upload": "上传",
+        "estimatedTimeOfArrival": "剩余时间",
+        "progress": "进度"
       },
       "item": {
-        "text": "由 {{appName}},{{ratio}} 管理的比率"
+        "text": "由 {{appName}}, {{ratio}} 管理的比率"
       },
       "body": {
-        "nothingFound": "無種子",
-        "filterHidingItems": "您的過濾器隱藏了 {{count}} 個紀錄"
+        "nothingFound": "没有找到种子",
+        "filterHidingItems": "您的过滤器隐藏了 {{count}} 条记录"
       }
     },
     "lineChart": {
-      "title": "目前下載速度",
-      "download": "下載：{{download}}",
-      "upload": "上傳：{{upload}}",
-      "timeSpan": "{{seconds}}/秒",
-      "totalDownload": "下載：{{download}}/秒",
-      "totalUpload": "上傳：{{upload}}/秒"
+      "title": "当前下载速度",
+      "download": "下载：{{download}}",
+      "upload": "上传： {{upload}}",
+      "timeSpan": "{{seconds}} 秒前",
+      "totalDownload": "下载： {{download}}/秒",
+      "totalUpload": "上传： {{upload}}/秒"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "沒有找到支援的 Torrent 客戶端",
-        "text": "新增一個支援的 Torrent 客戶端來檢視目前的下載狀況"
+        "title": "没有找到支持的Torrent客户端!",
+        "text": "添加一个支持的 Torrent 客户端来查看您当前的下载情况"
       },
       "generic": {
-        "title": "發生一個意外的錯誤",
-        "text": "無法與您的 Torrent 客戶端交互，請檢查您的設定"
+        "title": "发生了一个意外的错误",
+        "text": "无法与您的 Torrent 客户端通信。请检查您的配置"
       }
     },
     "loading": {
-      "title": "載入中",
-      "description": "建立連接中"
+      "title": "加载中",
+      "description": "建立连接中"
     },
     "popover": {
       "introductionPrefix": "管理方：",
       "metrics": {
-        "queuePosition": "隊列位置 - {{position}}",
-        "progress": "進度 - {{progress}}%",
-        "totalSelectedSize": "共計 - {{totalSize}}",
-        "state": "狀態 - {{state}}",
+        "queuePosition": "队列位置 - {{position}}",
+        "progress": "进度 - {{progress}}%",
+        "totalSelectedSize": "共计 - {{totalSize}}",
+        "state": "状态 - {{state}}",
         "ratio": "比率 -",
         "completed": "已完成"
       }
