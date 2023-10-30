@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "crwdns2753:0crwdne2753:0",
+    "description": "crwdns2755:0crwdne2755:0",
+    "settings": {
+      "title": "crwdns2757:0crwdne2757:0",
+      "replaceLinksWithExternalHost": {
+        "label": "crwdns2897:0crwdne2897:0"
+      },
+      "openInNewTab": {
+        "label": "crwdns3313:0crwdne3313:0"
+      }
+    }
+  },
+  "noRequests": "crwdns2759:0crwdne2759:0",
+  "state": {
+    "approved": "crwdns2765:0crwdne2765:0",
+    "pendingApproval": "crwdns2767:0crwdne2767:0",
+    "declined": "crwdns2769:0crwdne2769:0"
+  },
+  "tooltips": {
+    "approve": "crwdns2893:0crwdne2893:0",
+    "decline": "crwdns2895:0crwdne2895:0",
+    "approving": "crwdns3141:0crwdne3141:0"
+  },
+  "mutation": {
+    "approving": "crwdns3143:0crwdne3143:0",
+    "declining": "crwdns3145:0crwdne3145:0",
+    "request": "crwdns3147:0crwdne3147:0",
+    "approved": "crwdns3149:0crwdne3149:0",
+    "declined": "crwdns3151:0crwdne3151:0"
+  }
+}
