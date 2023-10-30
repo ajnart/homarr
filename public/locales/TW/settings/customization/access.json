@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "准許匿名使用者",
+    "description": "准許未登入的使用者查看您的面板"
+  }
+}
