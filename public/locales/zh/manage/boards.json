@@ -3,9 +3,9 @@
     "pageTitle": "",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "應用",
+            "widgets": "組件",
+            "categories": "類別"
         },
         "buttons": {
             "view": ""
