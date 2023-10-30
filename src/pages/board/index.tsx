@@ -1,14 +1,10 @@
-import { eq } from 'drizzle-orm';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
-import { env } from '~/env';
 import { getServerAuthSession } from '~/server/auth';
-import { db } from '~/server/db';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
-import { userSettings } from '~/server/db/schema';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
