@@ -11,7 +11,7 @@
 <a href="https://github.com/ajnart/homarr/actions/workflows/docker.yml">
   <img title="Docker CI Status" src="https://github.com/ajnart/homarr/actions/workflows/docker.yml/badge.svg" alt="CI Status">
 </a>
-<a href=https://crowdin.com/project/homarr>
+<a href=https://translate.homarr.dev/>
 <img title="Translations" src="https://badges.crowdin.net/homarr/localized.svg" />
 </a>
 <a href="https://discord.gg/aCsmEV5RgA">
@@ -28,7 +28,7 @@
   <a href="https://homarr.dev/docs/introduction/installation">
     <strong>Install 💻</strong>
   </a> •
-  <a href="https://crowdin.com/project/homarr">
+  <a href="https://translate.homarr.dev/">
     <strong>Translations 🈺</strong>
   </a> •
   <a href="https://discord.com/invite/aCsmEV5RgA">
