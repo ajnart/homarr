@@ -164,7 +164,6 @@ export const languages = [
     shortName: 'tw',
     originalName: '中文(台灣)',
     translatedName: 'Chinese (Traditional)',
-    emoji: '🇹🇼',
     country: 'TW',
     locale: 'zh-tw',
   },
