@@ -41,7 +41,7 @@
       },
       "body": {
         "nothingFound": "Ingen torrenter funnet",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} oppføringer er skjult av filtre"
       }
     },
     "lineChart": {
