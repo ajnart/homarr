@@ -38,11 +38,11 @@
         },
         "autoFocus": {
             "label": "Fokusera sökfältet när sidan laddas.",
-            "description": ""
+            "description": "Detta kommer automatiskt att fokusera sökfältet när du navigerar till tavlans sidor. Det fungerar endast på stationära enheter."
         },
         "template": {
             "label": "URL för förfrågan",
-            "description": ""
+            "description": "Använd %s som platshållare för frågan"
         }
     }
 }
