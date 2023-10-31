@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "",
+    "enable": "",
+    "disable": ""
+  },
+  "form": {
+    "label": "",
+    "message": "",
+    "submit": ""
+  },
+  "notification": {
+    "success": {
+      "title": "",
+      "message": ""
+    },
+    "error": {
+      "title": "",
+      "message": ""
+    }
+  }
+}
