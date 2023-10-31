@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "内部アドレス",
-			"description": "アプリの内部IP-address。"
+			"description": "アプリの内部IP-address。",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "外部アドレス",
