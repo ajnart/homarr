@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "内部地址",
-			"description": "应用的内部IP地址。"
+			"description": "应用的内部IP地址。",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "外部地址",
