@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "다운로드 속도",
-    "description": ""
+    "description": "지원되는 통합의 다운로드 및 업로드 속도를 표시합니다."
   },
   "card": {
     "table": {

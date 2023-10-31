@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Nie znaleziono żadnych zapytań. Upewnij się, że poprawnie skonfigurowałeś swoje aplikacje.",
-  "pending": "Na zatwierdzenie czeka {{countPendingApproval}} zapytań.",
-  "nonePending": "Obecnie nie ma żadnych oczekujących zatwierdzeń!",
   "state": {
     "approved": "Zatwierdzono",
     "pendingApproval": "Oczekujące na zatwierdzenie",

@@ -61,7 +61,7 @@ function App(
   const analyticsEnabled = pageProps.analyticsEnabled ?? true;
   // TODO: make mapping from our locales to moment locales
   const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
-  require(`dayjs/locale/${language.locale}.js`);
+  if (language.locale !== 'cr') require(`dayjs/locale/${language.locale}.js`);
   dayjs.locale(language.locale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
@@ -101,12 +101,18 @@ function App(
   return (
     <>
       <CommonHead />
+      {pageProps.session && pageProps.session.user.language === 'cr' && (
+        <>
+          <Script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js" />
+          <Script type="text/javascript">var _jipt = []; _jipt.push(['project', 'homarr']);</Script>
+        </>
+      )}
       {analyticsEnabled === true && (
         <Script
-        src="https://umami.homarr.dev/script.js"
-        data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
-        strategy="lazyOnload"
-      />
+          src="https://umami.homarr.dev/script.js"
+          data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
+          strategy="lazyOnload"
+        />
       )}
       <SessionProvider session={pageProps.session}>
         <ColorSchemeProvider {...pageProps}>

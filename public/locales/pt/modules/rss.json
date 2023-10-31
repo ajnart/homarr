@@ -22,7 +22,7 @@
     "card": {
       "errors": {
         "general": {
-          "title": "",
+          "title": "Não foi possível recuperar o feed RSS",
           "text": ""
         }
       }

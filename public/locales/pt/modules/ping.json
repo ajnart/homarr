@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Latência",
-    "description": ""
+    "description": "Exibe um indicador de status dependendo do código de resposta HTTP de um determinado URL."
   },
   "states": {
     "online": "Online {{response}}",

@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "לא נמצאו בקשות. אנא ודא שהגדרת את האפליקציות שלך כנדרש.",
-  "pending": "יש {{countPendingApproval}} בקשות הממתינות לאישור.",
-  "nonePending": "אין כרגע אישורים ממתינים. ניתן להמשיך!",
   "state": {
     "approved": "אושר",
     "pendingApproval": "ממתין לאישור",

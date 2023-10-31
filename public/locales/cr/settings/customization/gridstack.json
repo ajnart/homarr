@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "crwdns2511:0{{size}}crwdne2511:0",
+    "descriptionPreset": "crwdns2513:0{{pixels}}crwdne2513:0",
+    "descriptionExceedsPreset": "crwdns2515:0{{pixels}}crwdne2515:0"
+  },
+  "unsavedChanges": "crwdns2517:0crwdne2517:0",
+  "applyChanges": "crwdns2519:0crwdne2519:0",
+  "defaultValues": "crwdns2521:0crwdne2521:0"
+}

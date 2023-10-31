@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Jūsu Homarr instancē nav konfigurēts Docker vai arī tai nav izdevies iegūtu konteinerus. Lūdzu, pārbaudiet dokumentāciju par to, kā iestatīt integrāciju."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Izvēlieties dēli",
+            "text": "Izvēlieties dēli, uz kura vēlaties pievienot atlasīto Docker konteineru aplikācijas.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Dēlis"
                 },
-                "submit": ""
+                "submit": "Pievienot lietotnes"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Uz dēļa pievienotās lietotnes",
+                "message": "Izvēlētajiem Docker konteineriem paredzētās aplikācijas ir pievienotas pie dēļa."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Neizdevās pievienot aplikācijas pie dēļa",
+                "message": "Izvēlētajiem Docker konteineriem paredzētās aplikācijas nevarēja pievienot pie dēļa."
             }
         }
     }

@@ -1,0 +1,48 @@
+{
+    "metaTitle": "用户邀请",
+    "pageTitle": "管理用户邀请",
+    "description": "使用邀请功能，可以邀请用户访问 Homarr 实例。邀请只在一定的时间范围内有效，并且只能使用一次。过期时间必须在创建后5分钟到12个月之间。",
+    "button": {
+        "createInvite": "创建邀请",
+        "deleteInvite": "删除邀请"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "创建者",
+            "expires": "有效期",
+            "action": "操作"
+        },
+        "data": {
+            "expiresAt": "过期 {{at}}",
+            "expiresIn": "在 {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "创建邀请",
+            "description": "过期后，邀请会失效，被邀请的收件人将无法创建账号。",
+            "form": {
+                "expires": "过期时间",
+                "submit": "创建"
+            }
+        },
+        "copy": {
+            "title": "复制邀请信息",
+            "description": "您的邀请已生成。在此模式关闭后，<b>您将无法再复制此链接</b>。如果你不想再邀请这个人，你可以随时删除这个邀请。",
+            "invitationLink": "邀请链接",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "复制并关闭"
+            }
+        },
+        "delete": {
+            "title": "删除邀请",
+            "description": "你确定要删除这个邀请吗? 使用此链接的用户将不能再使用该链接创建账号。"
+        }
+    },
+    "noInvites": "还没有邀请。"
+}

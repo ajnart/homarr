@@ -6,6 +6,7 @@ module.exports = {
     defaultLocale: 'en',
     locales: [
       'en',
+      'cr',
       'da',
       'he',
       'de',
@@ -24,6 +25,7 @@ module.exports = {
       'vi',
       'uk',
       'zh',
+      'zh-tw',
       'el',
       'sk',
       'no',
@@ -33,7 +35,7 @@ module.exports = {
       'hu'
     ],
 
-    localeDetection: true,
+    localeDetection: false,
   },
   returnEmptyString: false,
   appendNamespaceToCIMode: true,
