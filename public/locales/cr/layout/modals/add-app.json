@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "crwdns2063:0crwdne2063:0",
-			"description": "crwdns2307:0crwdne2307:0"
+			"description": "crwdns2307:0crwdne2307:0",
+			"troubleshoot": {
+				"label": "crwdns3874:0crwdne3874:0",
+				"header": "crwdns3876:0crwdne3876:0",
+				"lines": {
+					"nothingAfterPort": "crwdns3878:0crwdne3878:0",
+					"protocolCheck": "crwdns3880:0crwdne3880:0",
+					"preferIP": "crwdns3882:0crwdne3882:0",
+					"enablePings": "crwdns3884:0crwdne3884:0",
+					"wget": "crwdns3886:0crwdne3886:0",
+					"iframe": "crwdns3888:0crwdne3888:0",
+					"clearCache": "crwdns3890:0crwdne3890:0"
+				},
+				"footer": "crwdns3892:0{{discord}}crwdne3892:0"
+			}
 		},
 		"externalAddress": {
 			"label": "crwdns2067:0crwdne2067:0",
