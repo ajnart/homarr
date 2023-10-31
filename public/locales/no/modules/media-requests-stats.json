@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
+    "title": "Media statistikk",
     "pending": "Venter på godkjenning",
     "tvRequests": "TV forespørsler",
     "movieRequests": "Film forespørsler",
-    "approved": "",
-    "totalRequests": ""
+    "approved": "Allerede godkjent",
+    "totalRequests": "Totalt"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Topp brukere",
+    "requests": "Forespørsler: {{number}}"
   }
 }
