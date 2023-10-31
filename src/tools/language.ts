@@ -179,13 +179,23 @@ export const languages = [
     country: 'VN',
     locale: 'vi',
   },
+  // Chinese (Simplified)
   {
-    shortName: 'zh',
+    shortName: 'cn',
     originalName: '中文',
-    translatedName: 'Chinese',
+    translatedName: 'Chinese (Simplified)',
     emoji: '🇨🇳',
     country: 'CN',
     locale: 'zh-cn',
+  },
+  // Chinese (Traditional)
+  {
+    shortName: 'tw',
+    originalName: '中文(台灣)',
+    translatedName: 'Chinese (Traditional)',
+    emoji: '🇹🇼',
+    country: 'TW',
+    locale: 'zh-tw',
   },
   {
     originalName: 'Ελληνικά',
