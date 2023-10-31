@@ -11,6 +11,7 @@ import {
   IconPlug,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
@@ -89,6 +90,8 @@ export const EditAppModal = ({
     if (!configName) {
       return;
     }
+
+    values.url = removeTrailingSlash(values.url);
 
     updateConfig(
       configName,
