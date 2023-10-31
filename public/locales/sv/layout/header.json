@@ -1,22 +1,22 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Detta är en experimentell funktion i Homarr. Vänligen rapportera eventuella problem på <gh>GitHub</gh> eller <dc>Discord</dc>."
     },
     "search": {
-        "label": "",
+        "label": "Sök",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Sök efter {{query}} på webben",
+            "youtube": "Sök efter {{query}} på YouTube",
+            "torrent": "Sök efter {{query}} torrents",
+            "movie": "Sök efter {{query}} på {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Byt tema",
+            "preferences": "Användarinställningar",
+            "defaultBoard": "Standard instrumentpanel",
+            "manage": "Hantera",
             "about": {
                 "label": "Om",
                 "new": ""
