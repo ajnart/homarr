@@ -190,7 +190,7 @@ export const languages = [
   },
   // Chinese (Traditional)
   {
-    shortName: 'zh',
+    shortName: 'tw',
     originalName: '中文(台灣)',
     translatedName: 'Chinese (Traditional)',
     emoji: '🇹🇼',
