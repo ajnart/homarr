@@ -1,0 +1,29 @@
+{
+	"description": "",
+	"contact": "",
+	"addToDashboard": "",
+	"tip": "",
+	"key": "",
+	"action": "",
+	"keybinds": "",
+	"documentation": "",
+	"actions": {
+		"toggleTheme": "",
+		"focusSearchBar": "",
+		"openDocker": "",
+		"toggleEdit": ""
+	},
+	"metrics": {
+		"configurationSchemaVersion": "",
+		"configurationsCount": "",
+		"version": "",
+		"nodeEnvironment": "",
+		"i18n": "",
+		"locales": "",
+		"experimental_disableEditMode": ""
+	},
+	"version": {
+		"new": "",
+		"dropdown": ""
+	}
+}
