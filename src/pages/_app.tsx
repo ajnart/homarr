@@ -101,7 +101,7 @@ function App(
   return (
     <>
       <CommonHead />
-      {pageProps.session.user.language === 'cr' && (
+      {pageProps.session && pageProps.session.user.language === 'cr' && (
         <>
           <Script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js" />
           <Script type="text/javascript">var _jipt = []; _jipt.push(['project', 'homarr']);</Script>
