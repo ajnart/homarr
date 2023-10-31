@@ -22,8 +22,8 @@
       "description": ""
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Tilgang",
+      "description": "Konfigurer hvem som har tilgang til din tavle"
     }
   }
 }
