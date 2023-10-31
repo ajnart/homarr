@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Endereço interno",
-			"description": "Endereço interno de IP da aplicação."
+			"description": "Endereço interno de IP da aplicação.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Endereço externo",
