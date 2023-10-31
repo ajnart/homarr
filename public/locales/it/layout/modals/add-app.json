@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Indirizzo interno",
-			"description": "IP interno dell'app."
+			"description": "IP interno dell'app.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Indirizzo esterno",
