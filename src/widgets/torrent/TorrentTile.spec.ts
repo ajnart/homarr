@@ -252,6 +252,6 @@ const constructTorrent = (
   totalSize: 839539535,
   totalSelected: 0,
   totalUploaded: 378535535,
-  uploadSpeed: 8349,
+  uploadSpeed,
   label,
 });
