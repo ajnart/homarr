@@ -1,0 +1,29 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "backToBoard": "",
+    "settings": {
+        "appearance": {
+            "primaryColor": "",
+            "secondaryColor": ""
+        }
+    },
+    "save": {
+        "button": "",
+        "note": ""
+    },
+    "notifications": {
+        "pending": {
+            "title": "",
+            "message": ""
+        },
+        "success": {
+            "title": "",
+            "message": ""
+        },
+        "error": {
+            "title": "",
+            "message": ""
+        }
+    }
+}
