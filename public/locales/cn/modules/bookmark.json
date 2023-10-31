@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "书签",
+    "description": "显示字符或链接的静态列表",
+    "settings": {
+      "title": "书签设置",
+      "name": {
+        "label": "组件标题",
+        "info": "留空以隐藏标题。"
+      },
+      "items": {
+        "label": "项目"
+      },
+      "layout": {
+        "label": "显示布局",
+        "data": {
+          "autoGrid": "自动网格",
+          "horizontal": "横向",
+          "vertical": "垂直"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "书签列表为空",
+      "text": "在编辑模式下为该列表添加新项目"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "长度必须在 {{shortest}} 和 {{longest}} 之间",
+      "invalidLink": "无效链接",
+      "errorMsg": "由于存在验证错误，未保存。请调整您的输入"
+    },
+    "name": "名称",
+    "url": "网址",
+    "newTab": "在新标签页中打开",
+    "hideHostname": "隐藏域名",
+    "hideIcon": "隐藏图标",
+    "delete": "删除"
+  }
+}

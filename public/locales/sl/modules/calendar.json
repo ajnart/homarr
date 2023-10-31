@@ -7,28 +7,31 @@
       "useSonarrv4": {
         "label": "Uporaba vmesnika API Sonarr v4"
       },
+      "useRadarrv5": {
+        "label": "Uporaba vmesnika API Radarr v5"
+      },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "V kinematografih",
+          "physicalRelease": "Fizični",
+          "digitalRelease": "Digitalni"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skrij delovne dni"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Prikaži nenadzorovane elemente"
       },
       "fontSize": {
-        "label": "",
+        "label": "Velikost pisave",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Zelo majhen",
+          "sm": "Majhna",
+          "md": "Srednja",
+          "lg": "Velika",
+          "xl": "Zelo velik"
         }
       }
     }

@@ -8,7 +8,7 @@
         "label": "Prikaz v Fahrenheitu"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Prikaži ime mesta"
       },
       "location": {
         "label": "Lokacija vremena"
@@ -33,5 +33,5 @@
       "unknown": "Neznano"
     }
   },
-  "error": ""
+  "error": "Zgodila se je napaka"
 }

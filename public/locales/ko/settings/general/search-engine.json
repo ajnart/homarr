@@ -1,20 +1,20 @@
 {
   "title": "검색 엔진",
-  "configurationName": "",
-  "custom": "",
+  "configurationName": "검색 엔진 구성",
+  "custom": "사용자 지정",
   "tips": {
-    "generalTip": "",
+    "generalTip": "사용할 수 있는 접두사는 여러 가지가 있습니다! 쿼리 앞에 이러한 접두사를 추가하면 결과가 필터링됩니다. !.s(웹), !.t(토렌트), !.y(유튜브), !.m(미디어) 등이 있습니다.",
     "placeholderTip": "%s는 쿼리의 자리 표시자로 사용할 수 있습니다."
   },
   "customEngine": {
-    "title": "",
+    "title": "사용자 지정 검색 엔진",
     "label": "쿼리 URL",
     "placeholder": "커스텀 쿼리 URL"
   },
   "searchNewTab": {
-    "label": ""
+    "label": "새 탭에서 검색 결과 열기"
   },
   "searchEnabled": {
-    "label": ""
+    "label": "검색 사용"
   }
 }

@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
+        "default": "Šis lauks nav derīgs",
         "required": "Šis lauks ir obligāts",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Šim laukam jāsākas ar {{startsWith}}",
+            "endsWith": "Šim laukam jābeidzas ar {{endsWith}}",
+            "includes": "Šajā laukā jāiekļauj {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Šim laukam jābūt vismaz {{minimum}} rakstzīmju garam",
+            "number": "Šim laukam jābūt lielākam vai vienādam ar {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Šim laukam jābūt ne garākam par {{maximum}} rakstzīmēm",
+            "number": "Šim laukam jābūt mazākam vai vienādam ar {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Parolēm jāsakrīt"
         }
     }
 }

@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Inställningar",
+    "pageTitle": "Dina Inställningar",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Förvald tavla"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Språk"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Första veckodagen",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Måndag",
+                "saturday": "Lördag",
+                "sunday": "Söndag"
             }
         }
     },
@@ -34,10 +34,10 @@
         "title": "Sökmotor",
         "custom": "Anpassad",
         "newTab": {
-            "label": ""
+            "label": "Öppna sökresultat i en ny flik"
         },
         "autoFocus": {
-            "label": "",
+            "label": "Fokusera sökfältet när sidan laddas.",
             "description": ""
         },
         "template": {

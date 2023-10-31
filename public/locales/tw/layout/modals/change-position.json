@@ -1,0 +1,8 @@
+{
+	"xPosition": "X 軸位置",
+	"width": "寬度",
+	"height": "高度",
+	"yPosition": "Y 軸位置",
+	"zeroOrHigher": "0 或更高",
+	"betweenXandY": "在 {{min}} 和 {{max}} 之間"
+}

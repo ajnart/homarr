@@ -1,0 +1,86 @@
+{
+  "configSelect": {
+    "label": "設定更改",
+    "description": "{{configCount}} 個可用的設定",
+    "loadingNew": "正載載入您的設定...",
+    "pleaseWait": "請稍等您的新設定載入完成！"
+  },
+  "modal": {
+    "copy": {
+      "title": "選擇新設定的名稱",
+      "form": {
+        "configName": {
+          "label": "設定名稱",
+          "validation": {
+            "required": "設定名稱為必填",
+            "notUnique": "設定名稱已被使用"
+          },
+          "placeholder": "您的新設定名稱"
+        },
+        "submitButton": "確認"
+      },
+      "events": {
+        "configSaved": {
+          "title": "設定已保存",
+          "message": "設定儲存為 {{configName}}"
+        },
+        "configCopied": {
+          "title": "設定已複製",
+          "message": "設定複製為 {{configName}}"
+        },
+        "configNotCopied": {
+          "title": "無法複製設定",
+          "message": "您的設定沒有被複製為 {{configName}}"
+        }
+      }
+    },
+    "confirmDeletion": {
+      "title": "確認刪除您的設定",
+      "warningText": "您將刪除 '<b>{{configName}}</b>'",
+      "text": "請注意：刪除是不可逆的，您的數據將永久失去，點擊此按鈕後，該文件將從您的硬碟中永久刪除，請確保已為您的設定創建一個合適的備份",
+      "buttons": {
+        "confirm": "是的，刪除 '<b>{{configName}}</b>'"
+      }
+    }
+  },
+  "buttons": {
+    "download": "下載設定",
+    "delete": {
+      "text": "刪除設定",
+      "notifications": {
+        "deleted": {
+          "title": "設定已刪除",
+          "message": "設定已刪除"
+        },
+        "deleteFailed": {
+          "title": "設定刪除失敗",
+          "message": "設定刪除失敗"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "預設設定不能被刪除",
+          "message": "設定沒有從文件系統中刪除"
+        }
+      }
+    },
+    "saveCopy": "儲存副本"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "無法載入設定",
+        "message": "無法載入您的設定，無項的 JSON 格式。"
+      },
+      "loadedSuccessfully": {
+        "title": "設定 {{configName}} 載入成功"
+      }
+    },
+    "accept": {
+      "title": "上傳設定",
+      "text": "將文件拖曳至這裡上船設定，僅支援 JSON 格式"
+    },
+    "reject": {
+      "title": "拖放上船被拒絕",
+      "text": "此文件格式不支援，僅支援 JSON 格式文件"
+    }
+  }
+}

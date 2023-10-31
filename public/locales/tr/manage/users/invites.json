@@ -15,7 +15,7 @@
         },
         "data": {
             "expiresAt": "süresi doldu {{at}}",
-            "expiresIn": "içinde {{in}}"
+            "expiresIn": "{{in}} içerisinde"
         }
     },
     "modals": {
@@ -36,7 +36,7 @@
                 "token": "Erişim Anahtarı"
             },
             "button": {
-                "close": "Kopyala & Reddet"
+                "close": "Kopyala & Kapat"
             }
         },
         "delete": {

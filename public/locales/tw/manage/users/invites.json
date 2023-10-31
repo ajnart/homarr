@@ -1,0 +1,48 @@
+{
+    "metaTitle": "使用者邀請",
+    "pageTitle": "管理使用者邀請",
+    "description": "使用邀請功能，可以邀請使用者訪問 Homarr 實例，邀請只在一定的時間內有效，並且只能使用一次，過期時間範圍必須在創建後5分鐘到12個月之間",
+    "button": {
+        "createInvite": "創建邀請",
+        "deleteInvite": "刪除邀請"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "創建者",
+            "expires": "有效期",
+            "action": "動作"
+        },
+        "data": {
+            "expiresAt": "已過期 {{at}}",
+            "expiresIn": "在 {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "創建邀請",
+            "description": "過期後，邀請會失效，被邀請者將無法創建帳號",
+            "form": {
+                "expires": "過期期間",
+                "submit": "創建"
+            }
+        },
+        "copy": {
+            "title": "複製邀請內容",
+            "description": "您的邀請已生成，在此模式關閉後，<b>您將無法再次複製此連結</b>，如果您不想再邀請此人，您隨時可以刪除這個邀請",
+            "invitationLink": "邀請連結",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "複製並關閉"
+            }
+        },
+        "delete": {
+            "title": "刪除邀請",
+            "description": "您確定要刪除此邀請？使用此連結的使用者將無法再次使用此連結創建帳號"
+        }
+    },
+    "noInvites": "尚未邀請"
+}

@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "允许您查看和管理您的 Usenet 实例。"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "没有找到支持的下载客户端！",
+        "text": "添加支持的 Usenet 下载客户端来查看当前下载情况"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "队列",
+    "history": "历史"
+  },
+  "info": {
+    "sizeLeft": "左侧大小",
+    "paused": "已暂停"
+  },
+  "queue": {
+    "header": {
+      "name": "名称",
+      "size": "大小",
+      "eta": "剩余时间",
+      "progress": "进度"
+    },
+    "empty": "空",
+    "error": {
+      "title": "错误",
+      "message": "出错了"
+    },
+    "paused": "已暂停"
+  },
+  "history": {
+    "header": {
+      "name": "名称",
+      "size": "大小",
+      "duration": "持续时间"
+    },
+    "empty": "空",
+    "error": {
+      "title": "错误",
+      "message": "加载历史记录时出错"
+    },
+    "paused": "已暂停"
+  }
+}

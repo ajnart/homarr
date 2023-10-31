@@ -1,10 +1,10 @@
 {
     "modal": {
-        "title": "",
+        "title": "새 타일 추가",
         "text": ""
     },
     "widgetDescription": "",
-    "goBack": "",
+    "goBack": "이전 단계로 돌아가기",
     "actionIcon": {
         "tooltip": ""
     },

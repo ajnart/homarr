@@ -1,0 +1,44 @@
+{
+    "metaTitle": "面板",
+    "pageTitle": "面板",
+    "cards": {
+        "statistics": {
+            "apps": "應用",
+            "widgets": "組件",
+            "categories": "類別"
+        },
+        "buttons": {
+            "view": "查看面板"
+        },
+        "menu": {
+            "setAsDefault": "設定為預設",
+            "delete": {
+                "label": "永久刪除",
+                "disabled": "刪除功能被禁用，因為較舊的 Homarr 組件不允許刪除預設的設定，將來可能會刪除"
+            }
+        },
+        "badges": {
+            "fileSystem": "檔案系統",
+            "default": "預設"
+        }
+    },
+    "buttons": {
+        "create": "創建新面板"
+    },
+    "modals": {
+        "delete": {
+            "title": "刪除面板",
+            "text": "您確定要刪除此面板？此動作無法回復，您的數據將永久消失"
+        },
+        "create": {
+            "title": "創建面板",
+            "text": "面板創建成功後，不能更改名稱",
+            "form": {
+                "name": {
+                    "label": "名稱"
+                },
+                "submit": "創建"
+            }
+        }
+    }
+}

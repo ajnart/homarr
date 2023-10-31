@@ -1,0 +1,45 @@
+{
+  "descriptor": {
+    "name": "iFrame",
+    "description": "崁入網路上的內容，某些網站可能會限制訪問",
+    "settings": {
+      "title": "iFrame 設定",
+      "embedUrl": {
+        "label": "崁入網址"
+      },
+      "allowFullScreen": {
+        "label": "允許全螢幕"
+      },
+      "allowTransparency": {
+        "label": "允許透明化"
+      },
+      "allowScrolling": {
+        "label": "允許滾動"
+      },
+      "allowPayment": {
+        "label": "允許付款"
+      },
+      "allowAutoPlay": {
+        "label": "允許自動播放"
+      },
+      "allowMicrophone": {
+        "label": "允許麥克風"
+      },
+      "allowCamera": {
+        "label": "允許攝影機"
+      },
+      "allowGeolocation": {
+        "label": "允許地理位置"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "無效連結",
+        "text": "確認您在組件中輸入一個有效的網址"
+      },
+      "browserSupport": "您的瀏覽器不支援iFrame，請更新您的瀏覽器"
+    }
+  }
+}

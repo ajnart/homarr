@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "下载速度",
+    "description": "显示集成中支持的下载和上传速度。"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "名称",
+        "size": "大小",
+        "download": "下载",
+        "upload": "上传",
+        "estimatedTimeOfArrival": "剩余时间",
+        "progress": "进度"
+      },
+      "body": {
+        "nothingFound": "没有找到种子"
+      }
+    },
+    "lineChart": {
+      "title": "当前下载速度",
+      "download": "下载：{{download}}",
+      "upload": "上传： {{upload}}",
+      "timeSpan": "{{seconds}} 秒前",
+      "totalDownload": "下载： {{download}}/秒",
+      "totalUpload": "上传： {{upload}}/秒"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "没有找到支持的下载客户端！",
+        "text": "添加下载服务以查看您当前的下载情况"
+      }
+    }
+  }
+}

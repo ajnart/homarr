@@ -6,33 +6,33 @@
     "customizations": "커스터마이징"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "설정 파일을 페이지에 끌어다 놓아 업로드하세요!"
   },
   "credits": {
     "madeWithLove": "Made with ❤️ by @",
-    "thirdPartyContent": "",
+    "thirdPartyContent": "타사 콘텐츠 보기",
     "thirdPartyContentTable": {
-      "dependencyName": "",
-      "dependencyVersion": ""
+      "dependencyName": "종속성",
+      "dependencyVersion": "버전"
     }
   },
-  "grow": "",
+  "grow": "그리드 성장(모든 공간 차지)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "미리보기",
+      "subtitle": "변경 사항이 자동으로 저장됩니다."
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "레이아웃 옵션",
+    "main": "메인",
+    "sidebar": "사이드바",
+    "cannotturnoff": "끌 수 없음",
+    "dashboardlayout": "대시보드 레이아웃",
+    "enablersidebar": "오른쪽 사이드바 활성화",
+    "enablelsidebar": "왼쪽 사이드바 활성화",
+    "enablesearchbar": "검색 창 활성화",
+    "enabledocker": "도커 통합 사용",
+    "enableping": "핑 사용",
+    "enablelsidebardesc": "선택 사항입니다. 앱 및 통합에만 사용 가능",
+    "enablersidebardesc": "선택 사항입니다. 앱 및 통합에만 사용 가능"
   }
 }

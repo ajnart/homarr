@@ -1,0 +1,20 @@
+{
+  "metaTitle": "crwdns3341:0crwdne3341:0",
+  "title": "crwdns1868:0crwdne1868:0",
+  "text": "crwdns3343:0crwdne3343:0",
+  "form": {
+    "fields": {
+      "username": {
+        "label": "crwdns3345:0crwdne3345:0"
+      },
+      "password": {
+        "label": "crwdns1872:0crwdne1872:0"
+      }
+    },
+    "buttons": {
+      "submit": "crwdns1876:0crwdne1876:0"
+    },
+    "afterLoginRedirection": "crwdns3347:0{{url}}crwdne3347:0"
+  },
+  "alert": "crwdns3349:0crwdne3349:0"
+}
