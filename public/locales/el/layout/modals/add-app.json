@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Εσωτερική διεύθυνση",
-			"description": "Η εσωτερική διεύθυνση IP της εφαρμογής."
+			"description": "Η εσωτερική διεύθυνση IP της εφαρμογής.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Εξωτερική διεύθυνση",
