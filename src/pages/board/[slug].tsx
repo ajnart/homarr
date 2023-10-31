@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   const result = checkForSessionOrAskForLogin(
     ctx,
     session,
-    () => config.settings.access.allowGuests || !!session?.user
+    () => config.settings.access.allowGuests || session?.user != undefined
   );
   if (result) {
     return result;
