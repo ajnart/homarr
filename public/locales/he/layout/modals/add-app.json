@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "כתובת פנימית",
-			"description": "כתובת פנימית של האפליקציה."
+			"description": "כתובת פנימית של האפליקציה.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "כתובת חיצונית",
