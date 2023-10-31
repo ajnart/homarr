@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "crwdns2833:0crwdne2833:0",
+    "description": "crwdns2835:0crwdne2835:0",
+    "settings": {
+      "title": "crwdns3337:0crwdne3337:0",
+      "showToggleAllButtons": {
+        "label": "crwdns3339:0crwdne3339:0"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "crwdns3860:0crwdne3860:0",
+        "text": "crwdns3862:0crwdne3862:0"
+      }
+    }
+  }
+}
