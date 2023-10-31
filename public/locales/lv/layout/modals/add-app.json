@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Iekšējā adrese",
-			"description": "Lietotnes iekšējā IP adrese."
+			"description": "Lietotnes iekšējā IP adrese.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Ārējā adrese",
