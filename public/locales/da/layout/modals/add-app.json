@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Intern adresse",
-			"description": "Appens interne IP."
+			"description": "Appens interne IP.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Ekstern adresse",
