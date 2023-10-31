@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS 组件",
-    "description": "",
+    "description": "RSS 组件允许您在面板上显示 RSS 源。",
     "settings": {
       "title": "RSS 组件设置",
       "rssFeedUrl": {
