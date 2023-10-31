@@ -18,7 +18,7 @@
             }
         },
         "badges": {
-            "fileSystem": "文件系統",
+            "fileSystem": "檔案系統",
             "default": "預設"
         }
     },
