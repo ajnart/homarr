@@ -1,11 +1,11 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Tilpass {{name}} tavle",
+    "pageTitle": "Tilpasning til {{name}} tavle",
+    "backToBoard": "Tilbake til tavlen",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Primærfarge",
+            "secondaryColor": "Sekundærfarge"
         }
     },
     "save": {
