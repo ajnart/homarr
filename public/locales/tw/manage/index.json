@@ -3,7 +3,7 @@
     "hero": {
         "title": "歡迎回來，{{username}}",
         "fallbackUsername": "匿名",
-        "subtitle": "歡迎來到您的應用程續中心。規劃、優化和享用！"
+        "subtitle": "歡迎來到您的應用程式中心。規劃、優化和享用！"
     },
     "quickActions": {
         "title": "快捷動作",
