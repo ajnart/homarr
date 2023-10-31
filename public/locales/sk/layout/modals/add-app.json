@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Interná adresa",
-			"description": "Interná IP adresa aplikácie."
+			"description": "Interná IP adresa aplikácie.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Externá adresa",
