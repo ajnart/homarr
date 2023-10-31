@@ -10,6 +10,9 @@
       "displayCompletedTorrents": {
         "label": "Cacher les torrents terminés"
       },
+      "displayActiveTorrents": {
+        "label": "Afficher les torrents actifs quand les torrents terminés sont masqués"
+      },
       "displayStaleTorrents": {
         "label": "Afficher les torrents périmés"
       },

@@ -20,13 +20,14 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
         displayStaleTorrents: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -55,13 +56,14 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -74,7 +76,7 @@ describe('TorrentTile', () => {
     expect(filtered.includes(torrents[2])).toBe(true);
   });
 
-  it('filter when completed', () => {
+  it('filter when completed without active torrent', () => {
     // arrange
     const widget: ITorrent = {
       id: 'abc',
@@ -90,13 +92,14 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
+        displayActiveTorrents: false,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 672),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -107,6 +110,44 @@ describe('TorrentTile', () => {
     expect(filtered.at(0)).toBe(torrents[0]);
     expect(filtered.includes(torrents[1])).toBe(false);
     expect(filtered.at(1)).toBe(torrents[2]);
+  });
+
+  it('filter when completed with active torrent', () => {
+    // arrange
+    const widget: ITorrent = {
+      id: 'abc',
+      area: {
+        type: 'sidebar',
+        properties: {
+          location: 'left',
+        },
+      },
+      shape: {},
+      type: 'torrents-status',
+      properties: {
+        labelFilter: [],
+        labelFilterIsWhitelist: false,
+        displayCompletedTorrents: false,
+        displayActiveTorrents: true,
+        displayStaleTorrents: true,
+      },
+    };
+    const torrents: NormalizedTorrent[] = [
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed and uploading', true, 0, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
+    ];
+
+    // act
+    const filtered = filterTorrents(widget, torrents);
+
+    // assert
+    expect(filtered.length).toBe(3);
+    expect(filtered.at(0)).toBe(torrents[0]);
+    expect(filtered.at(1)).toBe(torrents[1]);
+    expect(filtered.includes(torrents[2])).toBe(false);
+    expect(filtered.at(2)).toBe(torrents[3]);
   });
 
   it('filter by label when whitelist', () => {
@@ -125,13 +166,14 @@ describe('TorrentTile', () => {
         labelFilter: ['music', 'movie'],
         labelFilterIsWhitelist: true,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('1', 'A sick drop', false, 672, 'music'),
-      constructTorrent('2', 'I cried', true, 0, 'movie'),
-      constructTorrent('3', 'Great Animations', false, 0, 'anime'),
+      constructTorrent('1', 'A sick drop', false, 672, 672, 'music'),
+      constructTorrent('2', 'I cried', true, 0, 0, 'movie'),
+      constructTorrent('3', 'Great Animations', false, 0, 0, 'anime'),
     ];
 
     // act
@@ -160,13 +202,14 @@ describe('TorrentTile', () => {
         labelFilter: ['music', 'movie'],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
+        displayActiveTorrents: false,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672, 'anime'),
-      constructTorrent('HH', 'I am completed', true, 0, 'movie'),
-      constructTorrent('HH', 'I am stale', false, 0, 'tv'),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672, 'anime'),
+      constructTorrent('HH', 'I am completed', true, 0, 0, 'movie'),
+      constructTorrent('HH', 'I am stale', false, 0, 0, 'tv'),
     ];
 
     // act
@@ -185,6 +228,7 @@ const constructTorrent = (
   name: string,
   isCompleted: boolean,
   downloadSpeed: number,
+  uploadSpeed: number,
   label?: string
 ): NormalizedTorrent => ({
   id,

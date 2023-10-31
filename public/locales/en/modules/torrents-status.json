@@ -10,6 +10,9 @@
       "displayCompletedTorrents": {
         "label": "Display completed torrents"
       },
+      "displayActiveTorrents": {
+        "label": "Show active torrents when completed torrents are hidden"
+      },
       "displayStaleTorrents": {
         "label": "Display stale torrents"
       },
