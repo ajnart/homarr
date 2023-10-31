@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Intern adresse",
-			"description": "Intern IP-adresse til appen."
+			"description": "Intern IP-adresse til appen.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Ekstern adresse",
