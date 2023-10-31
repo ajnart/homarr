@@ -21,6 +21,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: false,
       },
     };
@@ -57,6 +58,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -93,6 +95,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: false,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -129,12 +132,14 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: true,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
       constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
-      constructTorrent('HH', 'I am completed and uploading', true, 0, 672),
+      constructTorrent('HH', 'I am completed and uploading less than 10 ko/s (81919 = 9.99ko/s)', true, 0, 81919),
+      constructTorrent('HH', 'I am completed and uploading more than 10 ko/s (81921 = 10.01ko/s)', true, 0, 81921),
       constructTorrent('HH', 'I am completed', true, 0, 0),
       constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
@@ -145,9 +150,10 @@ describe('TorrentTile', () => {
     // assert
     expect(filtered.length).toBe(3);
     expect(filtered.at(0)).toBe(torrents[0]);
-    expect(filtered.at(1)).toBe(torrents[1]);
-    expect(filtered.includes(torrents[2])).toBe(false);
-    expect(filtered.at(2)).toBe(torrents[3]);
+    expect(filtered.includes(torrents[1])).toBe(false);
+    expect(filtered.at(1)).toBe(torrents[2]);
+    expect(filtered.includes(torrents[3])).toBe(false);
+    expect(filtered.at(2)).toBe(torrents[4]);
   });
 
   it('filter by label when whitelist', () => {
@@ -167,6 +173,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: true,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -203,6 +210,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: false,
+        SpeedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };

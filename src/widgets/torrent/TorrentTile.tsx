@@ -44,6 +44,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    SpeedLimitOfActiveTorrents: { // Unit : ko/s
+      type: 'number',
+      defaultValue: 10,
+    },
     displayStaleTorrents: {
       type: 'switch',
       defaultValue: true,
@@ -198,7 +202,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
   let result = torrents;
   if (!widget.properties.displayCompletedTorrents) {
-    result = result.filter((torrent) => !torrent.isCompleted || (widget.properties.displayActiveTorrents && torrent.uploadSpeed > 0));
+    result = result.filter((torrent) => !torrent.isCompleted || (widget.properties.displayActiveTorrents && torrent.uploadSpeed > widget.properties.SpeedLimitOfActiveTorrents * 1024 * 8));
   }
 
   if (widget.properties.labelFilter.length > 0) {

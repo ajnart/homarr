@@ -13,6 +13,9 @@
       "displayActiveTorrents": {
         "label": "Afficher les torrents actifs quand les torrents terminés sont masqués"
       },
+      "SpeedLimitOfActiveTorrents": {
+        "label": "Débit d'upload pour considérer un torrent comme actif (ko/s)"
+      },
       "displayStaleTorrents": {
         "label": "Afficher les torrents périmés"
       },

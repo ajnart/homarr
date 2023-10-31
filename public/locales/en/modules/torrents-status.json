@@ -13,6 +13,9 @@
       "displayActiveTorrents": {
         "label": "Show active torrents when completed torrents are hidden"
       },
+      "SpeedLimitOfActiveTorrents": {
+        "label": "Upload speed to consider a torrent as active (ko/s)"
+      },
       "displayStaleTorrents": {
         "label": "Display stale torrents"
       },
