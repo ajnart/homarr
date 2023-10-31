@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Belső cím",
-			"description": "Az alkalmazás belső IP-címe."
+			"description": "Az alkalmazás belső IP-címe.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Külső cím",
