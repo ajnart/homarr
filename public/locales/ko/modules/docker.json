@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "모든 Docker 컨테이너를 쉽게 확인하고 관리할 수 있습니다."
   },
   "search": {
     "placeholder": "컨테이너 또는 이미지 이름으로 검색"
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "앱 추가",
+      "message": "Homarr에 앱 추가"
     },
     "restart": {
       "title": "재시작"
@@ -49,32 +49,32 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "시작",
+      "end": "시작됨"
     },
     "stop": {
-      "start": "",
+      "start": "중지",
       "end": "중지됨"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "다시 시작",
+      "end": "재시작"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "제거",
+      "end": "제거됨"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Docker 통합 실패",
-      "message": ""
+      "message": "도커 소켓을 장착하는 것을 잊으셨나요?"
     },
     "unknownError": {
       "title": "오류가 발생했습니다"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "한 번에 하나의 앱 또는 서비스만 추가하세요!"
     }
   },
   "actionIcon": {

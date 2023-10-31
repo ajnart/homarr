@@ -1,0 +1,15 @@
+{
+	"descriptor": {
+		"name": "筆記本",
+		"description": "一個基於 Markdown 的交互式組件，供您紀錄！",
+		"settings": {
+			"title": "筆記本組件設定",
+			"showToolbar": {
+				"label": "顯示幫助您紀錄 Markdown 的工具欄"
+			},
+			"content": {
+				"label": "筆記本的內容"
+			}
+		}
+	}
+}

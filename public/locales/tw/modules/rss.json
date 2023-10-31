@@ -1,0 +1,31 @@
+{
+  "descriptor": {
+    "name": "RSS 組件",
+    "description": "RSS 組件允許您顯示 RSS 訂閱在面板中",
+    "settings": {
+      "title": "設定 RSS 組件",
+      "rssFeedUrl": {
+        "label": "RSS 訂閱網址",
+        "description": "設定想要顯示的 RSS 訂閱網址"
+      },
+      "refreshInterval": {
+        "label": "更新間隔 (分鐘)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "允許 HTML 格式化 (危險)",
+        "info": "允許從外部進行 HTML 格式化 (可能存在危險)，<br/>請確認訂閱來自信任的來源"
+      },
+      "textLinesClamp": {
+        "label": "文字線條"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "無法獲取 RSS 訂閱",
+          "text": "在獲取 RSS 訂閱時出現錯誤，確認使用有效的網址，並正確的設定 RSS 訂閱，更新 RSS 訂閱後，您可能需要重新整理瀏覽器 (F5)"
+        }
+      }
+    }
+  }
+}

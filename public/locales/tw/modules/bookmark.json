@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "書籤",
+    "description": "顯示字符或連結的靜態列表",
+    "settings": {
+      "title": " 書籤設定",
+      "name": {
+        "label": "組件標題",
+        "info": "留空以隱藏標題。"
+      },
+      "items": {
+        "label": "項目"
+      },
+      "layout": {
+        "label": "顯示布局",
+        "data": {
+          "autoGrid": "自訂網格",
+          "horizontal": "橫向",
+          "vertical": "垂直"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "書籤列表為空",
+      "text": "在編輯模式下為該列表新增新項目"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "長度必須在 {{shortest}} 和 {{longest}} 之間",
+      "invalidLink": "無效連結",
+      "errorMsg": "由於存在驗證錯誤，未儲存，請調整您的輸入"
+    },
+    "name": "名稱",
+    "url": "網址",
+    "newTab": "在新分頁中開啟",
+    "hideHostname": "隱藏域名",
+    "hideIcon": "隱藏圖標",
+    "delete": "刪除"
+  }
+}

@@ -25,6 +25,7 @@ module.exports = {
       'vi',
       'uk',
       'zh',
+      'zh-tw',
       'el',
       'sk',
       'no',

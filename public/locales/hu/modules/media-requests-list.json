@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Nem találtunk kéréseket. Kérjük, győződjön meg róla, hogy megfelelően konfigurálta az alkalmazásokat.",
-  "pending": "A {{countPendingApproval}} oldalon jóváhagyásra váró kérelmek vannak.",
-  "nonePending": "Jelenleg nincs folyamatban lévő jóváhagyás. Mehetsz!",
   "state": {
     "approved": "Jóváhagyva",
     "pendingApproval": "Várakozás jóváhagyásra",

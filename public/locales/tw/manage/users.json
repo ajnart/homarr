@@ -1,0 +1,36 @@
+{
+    "metaTitle": "使用者",
+    "pageTitle": "管理使用者",
+    "text": "通過使用者，您可以設定誰可以編輯您的面板，Homarr 的未來版本將對權限和面板進行更精細的控制",
+    "buttons": {
+        "create": "創建"
+    },
+    "table": {
+        "header": {
+            "user": "使用者"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "刪除使用者",
+        "demoteAdmin": "撤銷管理員",
+        "promoteToAdmin": "提升為管理員"
+    },
+    "modals": {
+        "delete": {
+            "title": "刪除使用者 {{name}}",
+            "text": "您確定要刪除該使用者 {{name}}？這將刪除該使用者的相關數據，但不會刪除該使用者的任何儀表板"
+        },
+        "change-role": {
+            "promote": {
+                "title": "將使用者 {{name}}，提升為管理員",
+                "text": "您確定要將該使用者 {{name}}，提升為管理員？，這將允許該使用者訪問 Homarr 實例上的所有數據"
+            },
+            "demote": {
+                "title": "將使用者 {{name}}，降為一般使用者",
+                "text": "您確定要將該使用者 {{name}}，降為一般使用者？這將刪除該使用者對 Homarr 實例上所有數據的訪問權限"
+            },
+            "confirm": "確認"
+        }
+    },
+    "searchDoesntMatch": "您的搜尋與任何條目不匹配，請調整您的過濾器"
+}

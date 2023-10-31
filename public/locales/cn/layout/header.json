@@ -1,0 +1,34 @@
+{
+    "experimentalNote": {
+        "label": "这是 Homarr 的一项实验性功能。请在 <gh>GitHub</gh> 或 <dc>Discord</dc>上报告任何问题。"
+    },
+    "search": {
+        "label": "搜索",
+        "engines": {
+            "web": "在网上搜索 {{query}}",
+            "youtube": "在 YouTube 上搜索 {{query}}",
+            "torrent": "搜索 {{query}} Torrents",
+            "movie": "在 {{app}} 上搜索 {{query}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "切换主题",
+            "preferences": "用户首选项",
+            "defaultBoard": "默认仪表盘",
+            "manage": "管理",
+            "about": {
+                "label": "关于",
+                "new": "新"
+            },
+            "logout": "注销 {{username}}",
+            "login": "登录"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "最高 {{count}} 结果为 <b>{{search}}</b>。"
+        }
+    }
+}

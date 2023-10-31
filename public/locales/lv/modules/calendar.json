@@ -7,6 +7,9 @@
       "useSonarrv4": {
         "label": "Izmantot Sonarr v4 API"
       },
+      "useRadarrv5": {
+        "label": "Izmantot Sonarr v5 API"
+      },
       "radarrReleaseType": {
         "label": "Radarr laiduma tips",
         "data": {

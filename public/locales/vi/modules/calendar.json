@@ -7,6 +7,9 @@
       "useSonarrv4": {
         "label": "Dùng Sonarr v4 API"
       },
+      "useRadarrv5": {
+        "label": ""
+      },
       "radarrReleaseType": {
         "label": "Loại phát hành Radarr",
         "data": {

@@ -14,9 +14,9 @@
   },
   "mediaStats": {
     "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
+    "pending": "Очікує схвалення",
+    "tvRequests": "Запити на ТБ",
+    "movieRequests": "Запити на фільми",
     "approved": "",
     "totalRequests": ""
   },

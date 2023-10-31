@@ -1,7 +1,7 @@
 {
   "title": "検索エンジン",
   "configurationName": "検索エンジンの設定",
-  "custom": "",
+  "custom": "カスタム",
   "tips": {
     "generalTip": "使用できる複数のプレフィックスがあります! クエリの前にこれらを追加すると、結果が絞り込まれます。 !s (Web), !t (Torrents), !y (YouTube), そして !m (Media).",
     "placeholderTip": "%s は、クエリのプレースホルダとして使用することができます。"
