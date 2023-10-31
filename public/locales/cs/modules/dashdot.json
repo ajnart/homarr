@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "dashName": {
+        "label": ""
+      },
+      "url": {
+        "label": ""
+      },
+      "usePercentages": {
+        "label": ""
+      },
+      "columns": {
+        "label": ""
+      },
+      "graphHeight": {
+        "label": ""
+      },
+      "graphsOrder": {
+        "label": "",
+        "storage": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "network": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "compactView": {
+            "label": ""
+          }
+        },
+        "cpu": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          },
+          "multiView": {
+            "label": ""
+          }
+        },
+        "ram": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        },
+        "gpu": {
+          "label": "",
+          "enabled": {
+            "label": ""
+          },
+          "span": {
+            "label": ""
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "",
+    "errors": {
+      "noService": "",
+      "noInformation": "",
+      "protocolDowngrade": {
+        "title": "",
+        "text": ""
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "",
+        "label": ""
+      },
+      "network": {
+        "title": "",
+        "label": "",
+        "metrics": {
+          "download": "",
+          "upload": ""
+        }
+      },
+      "cpu": {
+        "title": ""
+      },
+      "ram": {
+        "title": ""
+      },
+      "gpu": {
+        "title": ""
+      }
+    }
+  }
+}
