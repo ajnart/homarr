@@ -26,7 +26,7 @@
         "label": "允許麥克風"
       },
       "allowCamera": {
-        "label": "允取攝像機"
+        "label": "允許攝影機"
       },
       "allowGeolocation": {
         "label": "允許地理位置"
