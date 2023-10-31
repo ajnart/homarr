@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Внутрішня адреса",
-			"description": "Внутрішній IP додатку."
+			"description": "Внутрішній IP додатку.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Зовнішня адреса",
