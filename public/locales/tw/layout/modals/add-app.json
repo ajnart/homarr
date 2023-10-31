@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "內部網址",
-			"description": "應用的內部IP網址"
+			"description": "應用的內部IP網址",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "外部網址",
