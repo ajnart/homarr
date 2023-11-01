@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Došlo je do neočekivane pogreške",
-        "text": ""
+        "text": "Nije moguće komunicirati s vašim Torrent klijentima. Provjerite svoju konfiguraciju"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Učitavam",
+      "description": "Uspostavljanje veze"
     },
     "popover": {
       "introductionPrefix": "Upravlja s",
