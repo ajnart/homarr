@@ -1,8 +1,8 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "Sloupce ve velikosti {{size}}",
+    "descriptionPreset": "Počet sloupců, pokud je obrazovka užší než {{pixels}} pixelů",
+    "descriptionExceedsPreset": "Počet sloupců, pokud je obrazovka širší než {{pixels}} pixelů"
   },
   "unsavedChanges": "",
   "applyChanges": "",
