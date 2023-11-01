@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "팝업 차단",
+      "text": "브라우저가 Homarr의 API 액세스를 차단했습니다. 이는 대부분 애드블로커 또는 거부된 권한으로 인해 발생합니다. Homarr는 자동으로 권한을 요청할 수 없습니다.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "URL 옆에 있는 아이콘을 클릭하고 권한을 확인합니다. 팝업 및 창 허용",
+        "adBlockers": "브라우저에서 광고 차단기 및 보안 도구 비활성화하기",
+        "otherBrowser": "다른 브라우저를 사용해 보세요."
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "새 탭에서 모두 열기"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "위로 이동",
+    "moveDown": "아래로 이동",
+    "addCategory": "카테고리 추가 {{location}}",
+    "addAbove": "위",
+    "addBelow": "아래"
   }
 }
