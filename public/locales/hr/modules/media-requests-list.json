@@ -8,7 +8,7 @@
         "label": "Zamijeni veze s vanjskim poslužiteljem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otvori veze u novoj kartici"
       }
     }
   },
@@ -21,13 +21,13 @@
   "tooltips": {
     "approve": "Odobri zahtjeve",
     "decline": "Odbij zahtjeve",
-    "approving": ""
+    "approving": "Odobravanje zahtjeva..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Odobravanje",
+    "declining": "Opadanje",
+    "request": "zahtjev...",
+    "approved": "Zahtjev je odobren!",
+    "declined": "Zahtjev je odbijen!"
   }
 }
