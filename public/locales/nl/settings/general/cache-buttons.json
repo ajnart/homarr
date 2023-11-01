@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Cache opschonen",
   "selector": {
-    "label": "",
+    "label": "Selecteer de cache(s) om te wissen",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping-query's",
+      "repositoryIcons": "Verafgelegen/Lokaal pictogrammen",
+      "calendar&medias": "Media uit de kalender",
+      "weather": "Weergegevens"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Cache gewist",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Alle cache wissen",
+      "notificationMessage": "Alle cache is gewist"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Verwijder geselecteerde zoekopdrachten",
+      "notificationMessageSingle": "Cache voor {{value}} is gewist",
+      "notificationMessageMulti": "Cache voor {{values}} is gewist"
     }
   }
 }
