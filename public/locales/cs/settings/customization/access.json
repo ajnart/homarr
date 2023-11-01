@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Povolit anonymní uživatele",
+    "description": "Povolte nepřihlášeným uživatelům zobrazovat vaši plochu"
   }
 }
