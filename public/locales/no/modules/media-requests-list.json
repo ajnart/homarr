@@ -5,10 +5,10 @@
     "settings": {
       "title": "Liste over media forespørsler",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Erstatt lenker med ekstern vert"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Åpne lenker i ny fane"
       }
     }
   },
@@ -19,15 +19,15 @@
     "declined": "Avvist"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Godkjenne forespørsler",
+    "decline": "Avslå forespørsler",
+    "approving": "Godkjenner forespørselen..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Godkjenner",
+    "declining": "Avslående",
+    "request": "be om...",
+    "approved": "Forespørselen ble godkjent!",
+    "declined": "Forespørselen ble avvist!"
   }
 }
