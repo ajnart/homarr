@@ -3,9 +3,9 @@
     "pageTitle": "",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Aplikace",
+            "widgets": "Widgety",
+            "categories": "Kategorie"
         },
         "buttons": {
             "view": ""
