@@ -71,7 +71,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
-  const { t } = useTranslation(['modules/notebook']);
+  const { t } = useTranslation(['modules/notebook','common']);
 
   const editor = useEditor(
     {
@@ -259,13 +259,13 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
           <RichTextEditor.ControlsGroup>
             <RichTextEditor.AlignLeft
-              title={t('card.controls.align', { position: t('card.controls.left') })!}
+              title={t('card.controls.align', { position: t('common:position.left') })!}
             />
             <RichTextEditor.AlignCenter
-              title={t('card.controls.align', { position: t('card.controls.center') })!}
+              title={t('card.controls.align', { position: t('common:position.center') })!}
             />
             <RichTextEditor.AlignRight
-              title={t('card.controls.align', { position: t('card.controls.right') })!}
+              title={t('card.controls.align', { position: t('common:position.right') })!}
             />
           </RichTextEditor.ControlsGroup>
 
@@ -327,7 +327,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       {!enabled && (
         <>
           <ActionIcon
-            title={isEditing ? t('card.save') : t('card.edit')}
+            title={isEditing ? t('common:save') : t('common:edit')}
             style={{
               zIndex: 1,
             }}
@@ -344,7 +344,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           </ActionIcon>
           {isEditing && (
             <ActionIcon
-              title={t('card.cancel')}
+              title={t('common:cancel')}
               style={{
                 zIndex: 1,
               }}
@@ -524,11 +524,11 @@ function ColoredControl({
             swatchesPerRow={6}
           />
           <Group position="right" spacing={8}>
-            <ActionIcon title={t('card.cancel')} variant="default" onClick={close}>
+            <ActionIcon title={t('common:cancel')} variant="default" onClick={close}>
               <IconX stroke={1.5} size="1rem" />
             </ActionIcon>
             <ActionIcon
-              title={t('card.modals.apply')}
+              title={t('common:apply')}
               variant="default"
               onClick={() => {
                 onSaveHandle();
@@ -624,7 +624,7 @@ function EmbedImage() {
             placeholder="https://example.com/"
           />
           <TextInput
-            label={t('card.modals.width')}
+            label={t('common:attributes.width')}
             value={width || ''}
             onChange={setWidth}
             onKeyDown={(e) => {
@@ -635,7 +635,7 @@ function EmbedImage() {
             }}
             placeholder={t('card.modals.widthPlaceholder')!}
           />
-          <Button children={t('card.save')} variant="default" mt={10} mb={5} onClick={setImage} />
+          <Button children={t('common:save')} variant="default" mt={10} mb={5} onClick={setImage} />
         </Stack>
       </Popover.Dropdown>
     </Popover>
@@ -907,7 +907,7 @@ function TableToggle() {
             }}
           />
           <Button
-            children={t('card.modals.insert')}
+            children={t('common:insert')}
             variant="default"
             mt={10}
             mb={5}

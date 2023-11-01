@@ -1,5 +1,7 @@
 {
   "save": "Save",
+  "apply": "Apply",
+  "insert": "Insert",
   "about": "About",
   "cancel": "Cancel",
   "close": "Close",
@@ -40,5 +42,14 @@
     "medium": "medium",
     "large": "large"
   },
-  "seeMore": "See more..."
+  "seeMore": "See more...",
+  "position": {
+		"left": "Left",
+		"center": "Center",
+		"right": "Right"
+  },
+  "attributes": {
+    "width": "Width",
+    "height": "Height"
+  }
 }

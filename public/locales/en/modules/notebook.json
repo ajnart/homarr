@@ -26,9 +26,6 @@
 			"clear": "Clear formatting",
 			"heading": "Heading {{level}}",
 			"align": "Align text: {{position}}",
-			"left": "Left",
-			"center": "Center",
-			"right": "Right",
 			"blockquote": "Blockquote",
 			"horizontalLine": "Horizontal line",
 			"bulletList": "Bullet list",
@@ -51,17 +48,11 @@
 			"deleteRow": "Delete row"
 		},
 		"modals": {
-			"apply": "Apply",
 			"clearColor": "Clear color",
 			"source": "Source",
-			"width": "Width",
 			"widthPlaceholder": "Value in % or pixels",
 			"columns": "Columns",
-			"rows": "Rows",
-			"insert": "Insert"
-		},
-		"edit": "Edit",
-		"cancel": "Cancel",
-		"save": "Save"
+			"rows": "Rows"
+		}
 	}
 }
