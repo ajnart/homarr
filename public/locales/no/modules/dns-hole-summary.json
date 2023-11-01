@@ -1,18 +1,18 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Oppsummering av DNS-hull",
+    "description": "Viser viktige data fra PiHole eller AdGuard",
     "settings": {
-      "title": "",
+      "title": "Innstillinger for DNS-hullsammendrag",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Bruk farger fra PiHole"
       },
       "layout": {
         "label": "Oppsett",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 og 2",
+          "row": "Horisontal",
+          "column": "Vertikal"
         }
       }
     }
