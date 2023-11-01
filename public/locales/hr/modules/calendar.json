@@ -8,30 +8,30 @@
         "label": "Koristi Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Koristite Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Vrsta izdanja u Radarr-u",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "U kinima",
+          "physicalRelease": "Fizički",
+          "digitalRelease": "Digitalni"
         }
       },
       "hideWeekDays": {
         "label": "Sakri dane u tjednu"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Prikaži nenadzirane stavke"
       },
       "fontSize": {
         "label": "Veličina fonta",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra malo",
+          "sm": "Mali",
+          "md": "Srednji",
+          "lg": "velika",
+          "xl": "Jako veliko"
         }
       }
     }
