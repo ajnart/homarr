@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Alternar o modo de edição",
+    "enable": "Ativar o modo de edição",
+    "disable": "Desativar o modo de edição"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Editar senha",
+    "message": "Para ativar o modo de edição, você precisa digitar a senha que inseriu na variável de ambiente chamada <Code>EDIT_MODE_PASSWORD</Code> . Se ela não estiver definida, você não poderá ativar e desativar o modo de edição.",
     "submit": "Enviar"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Sucesso",
+      "message": "Alternou com sucesso o modo de edição, recarregando a página..."
     },
     "error": {
       "title": "Erro",
-      "message": ""
+      "message": "Falha ao alternar o modo de edição, tente novamente."
     }
   }
 }
