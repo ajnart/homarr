@@ -10,9 +10,9 @@
       "layout": {
         "label": "Raspored",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 po 2",
+          "row": "Horizontalno",
+          "column": "Okomito"
         }
       }
     }
