@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "Ops, houve um erro!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "Detalhes",
+      "tryAgain": "Tente novamente"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Seu erro",
+    "reportButton": "Reportar este erro"
   }
 }
