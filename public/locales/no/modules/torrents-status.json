@@ -14,11 +14,11 @@
         "label": "Vis gamle torrenter"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Etikettliste er en hviteliste (i stedet for svarteliste)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Etikettliste",
+        "description": "Når \"er hviteliste\" er merket, vil dette fungere som en hviteliste. Hvis ikke krysset av, er dette en svarteliste. Vil ikke gjøre noe når den er tom"
       }
     }
   },
@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "En uventet feil har oppstått",
-        "text": ""
+        "text": "Kan ikke kommunisere med Torrent-klientene dine. Vennligst sjekk konfigurasjonen din"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Laster",
+      "description": "Etablere en forbindelse"
     },
     "popover": {
       "introductionPrefix": "Administrert av",
