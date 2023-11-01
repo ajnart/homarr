@@ -26,7 +26,7 @@
 					"iframe": "使用 iFrame 時，必須使用 http/https",
 					"clearCache": "有些訊息是在緩存中創建，因此除非您在 Homarr 的一般選項中清除緩存，否則即成可能無法運行"
 				},
-				"footer": ""
+				"footer": "更問解決辦法，請聯繫我們的 {{discord}}"
 			}
 		},
 		"externalAddress": {
