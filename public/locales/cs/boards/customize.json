@@ -1,11 +1,11 @@
 {
     "metaTitle": "",
     "pageTitle": "Přizpůsobení {{name}} plochy",
-    "backToBoard": "",
+    "backToBoard": "Zpět na plochu",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Primární barva",
+            "secondaryColor": "Doplňková barva"
         }
     },
     "save": {
