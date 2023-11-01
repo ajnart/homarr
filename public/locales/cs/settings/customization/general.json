@@ -6,16 +6,16 @@
       "description": "Povolte a zakažte prvky v záhlaví a na dlaždicích plochy"
     },
     "gridstack": {
-      "name": "",
-      "description": ""
+      "name": "GridStack",
+      "description": "Upravte chování a sloupce v oblasti plochy"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metadata stránky",
+      "description": "Upravte názvy, logo a PWA"
     },
     "appereance": {
       "name": "",
-      "description": ""
+      "description": "Přizpůsobte pozadí, barvy a zobrazení aplikací"
     },
     "accessibility": {
       "name": "",
