@@ -135,9 +135,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
       },
       onCreate: (e) => {
         e.editor.setEditable(false);
-        //Set table resizable to false here
       },
-      editable: false, //Remove when table resize is fixed
     },
     [toSaveContent]
   );
@@ -165,7 +163,6 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     const current = !previous;
     if (!editor) return current;
     editor.setEditable(current);
-    //Set table resizable to current here
 
     handleConfigUpdate(content);
 

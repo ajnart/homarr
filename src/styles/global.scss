@@ -161,28 +161,21 @@
       z-index: 2;
     }
 
-    .column-resize-handle {
-      background-color: #adf;
-      bottom: -2px;
-      position: absolute;
-      right: -2px;
-      pointer-events: none;
-      top: 0;
-      width: 4px;
-    }
-
     p {
       margin: 0;
     }
+  }
+
+  &[contenteditable="true"].resize-cursor {
+    cursor: ew-resize;
+  }
+
+  &[contenteditable="false"].resize-cursor {
+    pointer-events: none;
   }
 }
 
 .tableWrapper {
   padding: 1rem 0;
   overflow-x: auto;
-}
-
-.resize-cursor {
-  cursor: ew-resize;
-  cursor: col-resize;
 }
