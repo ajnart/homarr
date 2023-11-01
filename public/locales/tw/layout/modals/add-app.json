@@ -15,16 +15,16 @@
 			"label": "內部網址",
 			"description": "應用的內部IP網址",
 			"troubleshoot": {
-				"label": "",
-				"header": "",
+				"label": "遇到問題嗎？",
+				"header": "下方是常見的問題和解決辦法：",
 				"lines": {
-					"nothingAfterPort": "",
-					"protocolCheck": "",
-					"preferIP": "",
-					"enablePings": "",
-					"wget": "",
-					"iframe": "",
-					"clearCache": ""
+					"nothingAfterPort": "在大多情況中，不應該在端口後方輸入任何路徑",
+					"protocolCheck": "請確保 URL 前方是 http 或 https，並確認使用正確的 URL",
+					"preferIP": "建議使用要與之通訊的設備或容器的直接 IP 地址",
+					"enablePings": "透過啟用 Ping 檢查 IP 是否正確。自定義面板 -> 顯示布局 -> 啟用 Ping\n應用磁貼上會出現一個小紅色或綠色的點點，屬標懸停後就會顯示相應代碼\n大多情況下都是綠色點點，代碼200",
+					"wget": "為了確保 Homarr 可以與其它應用通訊，請使用 wget/curl/ping 應用的 IP:Port",
+					"iframe": "使用 iFrame 時，必須使用 http/https",
+					"clearCache": "有些訊息是在緩存中創建，因此除非您在 Homarr 的一般選項中清除緩存，否則即成可能無法運行"
 				},
 				"footer": ""
 			}
