@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Er is een onverwachte fout opgetreden",
-        "text": ""
+        "text": "Kan niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Laden",
+      "description": "Verbinding maken"
     },
     "popover": {
       "introductionPrefix": "Beheerd door",
