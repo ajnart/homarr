@@ -10,9 +10,9 @@
       "layout": {
         "label": "Bố cục",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 x 2",
+          "row": "Nằm ngang",
+          "column": "Thẳng đứng"
         }
       }
     }
