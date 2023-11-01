@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Opprett bruker",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Første skritt",
+            "text": "Opprett konto",
             "username": {
                 "label": "Brukernavn"
             },
             "email": {
-                "label": ""
+                "label": "E-post"
             }
         },
         "security": {
-            "title": "",
+            "title": "Andre trinn",
             "text": "Passord",
             "password": {
                 "label": "Passord"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Bekreftelse",
+            "text": "Lagre til database",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Gjennomgå innspillene dine",
+                "text": "Etter at du har sendt inn dataene dine til databasen, vil brukeren kunne logge inn. Er du sikker på at du vil lagre denne brukeren i databasen og aktivere påloggingen?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Eiendom",
+                    "value": "Verdi",
                     "username": "Brukernavn",
-                    "email": "",
+                    "email": "E-post",
                     "password": "Passord"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Ikke satt",
+                "valid": "Gyldig"
             },
-            "failed": ""
+            "failed": "Brukeropprettelsen mislyktes: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Bruker ble opprettet",
+                "text": "Brukeren ble opprettet i databasen. De kan nå logge inn."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generer tilfeldig",
+        "createAnother": "Lag en annen"
     }
 }
