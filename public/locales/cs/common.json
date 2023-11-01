@@ -36,9 +36,9 @@
   },
   "loading": "",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "malý",
+    "medium": "střední",
+    "large": "velký"
   },
   "seeMore": ""
 }
