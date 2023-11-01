@@ -27,12 +27,12 @@
     "sidebar": "",
     "cannotturnoff": "",
     "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
+    "enablersidebar": "Povolit pravý postranní panel",
+    "enablelsidebar": "Povolit levý postranní panel",
     "enablesearchbar": "",
     "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "enableping": "Povolit pingy",
+    "enablelsidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace",
+    "enablersidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace"
   }
 }
