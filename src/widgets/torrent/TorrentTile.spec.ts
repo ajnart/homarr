@@ -138,8 +138,8 @@ describe('TorrentTile', () => {
     };
     const torrents: NormalizedTorrent[] = [
       constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
-      constructTorrent('HH', 'I am completed and uploading less than 10 ko/s (81919 = 9.99ko/s)', true, 0, 81919),
-      constructTorrent('HH', 'I am completed and uploading more than 10 ko/s (81921 = 10.01ko/s)', true, 0, 81921),
+      constructTorrent('HH', 'I am completed and uploading less than 10 ko/s (10239 ≈ 9.99ko/s)', true, 0, 10239),
+      constructTorrent('HH', 'I am completed and uploading more than 10 ko/s (10241 ≈ 10.01ko/s)', true, 0, 10241),
       constructTorrent('HH', 'I am completed', true, 0, 0),
       constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
@@ -235,8 +235,8 @@ const constructTorrent = (
   id: string,
   name: string,
   isCompleted: boolean,
-  downloadSpeed: number,
-  uploadSpeed: number,
+  downloadSpeed: number, // Bytes per second in @ctrl/shared-torrent
+  uploadSpeed: number, // Bytes per second in @ctrl/shared-torrent
   label?: string
 ): NormalizedTorrent => ({
   id,
