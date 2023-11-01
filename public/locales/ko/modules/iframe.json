@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "인터넷에서 콘텐츠를 퍼옵니다. 일부 웹사이트는 액세스를 제한할 수 있습니다.",
     "settings": {
-      "title": "",
+      "title": "아이프레임 설정",
       "embedUrl": {
-        "label": ""
+        "label": "임베드 URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "전체 화면 허용"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "투명성 허용"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "스크롤 허용"
       },
       "allowPayment": {
-        "label": ""
+        "label": "결제 허용"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "자동 재생 허용"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "마이크 허용"
       },
       "allowCamera": {
-        "label": ""
+        "label": "카메라 허용"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "지리적 위치 허용"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "잘못된 URL",
+        "text": "위젯 구성에 유효한 주소를 입력했는지 확인합니다."
       },
-      "browserSupport": ""
+      "browserSupport": "브라우저가 iframe을 지원하지 않습니다. 브라우저를 업데이트하세요."
     }
   }
 }
