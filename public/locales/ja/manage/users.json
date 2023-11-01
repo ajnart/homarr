@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "ユーザー",
+    "pageTitle": "ユーザー管理",
+    "text": "ユーザーを使用して、ダッシュボードを編集できるユーザーを設定できます。Homarrの将来のバージョンでは、権限とボードをさらに細かく制御できるようになります。",
     "buttons": {
-        "create": ""
+        "create": "作成"
     },
     "table": {
         "header": {
@@ -11,26 +11,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "ユーザー削除",
+        "demoteAdmin": "管理者の解任",
+        "promoteToAdmin": "管理者への昇格"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "ユーザー削除 {{name}}",
+            "text": "本当にユーザー {{name}}を削除しますか？これにより、このアカウントに関連付けられたデータは削除されますが、このユーザが作成したダッシュボードは削除されません。"
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "ユーザー {{name}} を管理者に昇格させる",
+                "text": "本当にユーザー {{name}} を管理者に昇格させたいですか？これにより、そのユーザーはHomarrインスタンス上のすべてのリソースにアクセスできるようになります。"
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "{{name}} ユーザーを降格させる",
+                "text": "{{name}} のユーザーを user に降格させますか？これにより、Homarrインスタンス上のすべてのリソースへのユーザーのアクセス権が削除されます。"
             },
             "confirm": "確認"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "検索条件に一致する項目がありません。フィルタを調整してください。"
 }
