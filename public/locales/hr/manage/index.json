@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Upravljati",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Dobrodošao nazad, {{username}}",
+        "fallbackUsername": "Anonimno",
+        "subtitle": "Dobro došli u Vaš Application Hub. Organizirajte, optimizirajte i osvojite!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Brze akcije",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Vaše ploče",
+            "subtitle": "Stvorite svoje ploče i upravljajte njima"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Pozovite novog korisnika",
+            "subtitle": "Izradite i pošaljite pozivnicu za registraciju"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Upravljanje korisnicima",
+            "subtitle": "Izbrišite svoje korisnike i upravljajte njima"
         }
     }
 }
