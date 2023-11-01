@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Chuyển đổi chế độ chỉnh sửa",
+    "enable": "Bật chế độ chỉnh sửa",
+    "disable": "Tắt chế độ chỉnh sửa"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Chỉnh sửa mật khẩu",
+    "message": "Để chuyển đổi chế độ chỉnh sửa, bạn cần nhập mật khẩu bạn đã nhập vào biến môi trường có tên <Code>EDIT_MODE_PASSWORD</Code> . Nếu nó không được đặt, bạn không thể bật và tắt chế độ chỉnh sửa.",
     "submit": "Gửi"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Thành công",
+      "message": "Đã chuyển thành công chế độ chỉnh sửa, tải lại trang..."
     },
     "error": {
       "title": "Lỗi",
-      "message": ""
+      "message": "Không chuyển đổi được chế độ chỉnh sửa, vui lòng thử lại."
     }
   }
 }
