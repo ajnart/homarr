@@ -4,6 +4,7 @@ import {
   Anchor,
   Badge,
   Button,
+  Divider,
   Grid,
   Group,
   HoverCard,
@@ -28,12 +29,14 @@ import {
   IconVocabulary,
   IconWorldWww,
 } from '@tabler/icons-react';
+import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
 import { GetStaticPropsContext } from 'next';
 import { Trans, i18n, useTranslation } from 'next-i18next';
-import { ReactNode } from 'react';
-import { ContributorsTable } from '~/components/layout/header/About/Contributors';
+import { ReactElement, ReactNode } from 'react';
+import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
+import { Contributors, ContributorsTable } from '~/components/layout/header/About/Contributors';
 import Credits from '~/components/layout/header/About/Credits';
 import Tip from '~/components/layout/header/About/Tip';
 import { TranslatorsTable } from '~/components/layout/header/About/Translators';
@@ -43,6 +46,8 @@ import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAtt
 import { useColorTheme } from '~/tools/color';
 import { queryClient } from '~/tools/server/configurations/tanstack/queryClient.tool';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+
+import { REPO_URL } from '../../../data/constants';
 
 interface InformationTableItem {
   icon: ReactNode;
@@ -60,7 +65,6 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   const { t } = useTranslation(['layout/modals/about']);
 
   const { configVersion } = useConfigContext();
-  const { configs } = useConfigStore();
 
   let items: InformationTableItem[] = [];
 
@@ -102,15 +106,6 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       ),
     },
     {
-      icon: <IconFile size={20} />,
-      label: 'configurationsCount',
-      content: (
-        <Badge variant="light" color={primaryColor}>
-          {configs.length}
-        </Badge>
-      ),
-    },
-    {
       icon: <IconVersions size={20} />,
       label: 'version',
       content: (
@@ -121,18 +116,9 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
           {newVersionAvailable && (
             <HoverCard shadow="md" position="top" withArrow>
               <HoverCard.Target>
-                <motion.div
-                  initial={{ scale: 1.2 }}
-                  animate={{
-                    scale: [0.8, 1.1, 1],
-                    rotate: [0, 10, 0],
-                  }}
-                  transition={{ duration: 0.8, ease: 'easeInOut' }}
-                >
-                  <Badge color="green" variant="filled">
-                    {t('version.new', { newVersion: newVersionAvailable })}
-                  </Badge>
-                </motion.div>
+                <Badge color="teal" variant="light">
+                  {t('version.new', { newVersion: newVersionAvailable })}
+                </Badge>
               </HoverCard.Target>
               <HoverCard.Dropdown>
                 <Text>
@@ -185,10 +171,26 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-const AboutPage = () => {
-  const newVersionAvailable = queryClient.getQueryData<string>(['github/latest']);
+export const Page = ({ contributors }: { contributors: Contributors[] }) => {
+  const { data } = useQuery({
+    queryKey: ['github/latest'],
+    cacheTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 60 * 60 * 5,
+    queryFn: () =>
+      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`, {
+        cache: 'force-cache',
+      }).then((res) => res.json()),
+  });
+  const { attributes } = usePackageAttributesStore();
+  if (!i18n) {
+    return;
+  }
+  const initOptions = i18n.options as ExtendedInitOptions;
+
+  const newVersionAvailable =
+    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
   const informations = useInformationTableItems(newVersionAvailable);
-	const { t } = useTranslation(['layout/modals/about']);
+  const { t } = useTranslation(['layout/modals/about']);
   const { classes } = useStyles();
 
   const keybinds = [
@@ -209,109 +211,78 @@ const AboutPage = () => {
   ));
 
   return (
-    <Stack>
-      <Text mb="lg">
-        <Trans i18nKey="layout/modals/about:description" />
-      </Text>
+    <ManageLayout>
+      <Stack>
+        <Text>
+          <Trans i18nKey="layout/modals/about:description" />
+        </Text>
 
-      <Table mb="lg" highlightOnHover withBorder>
-        <tbody>
-          {informations.map((item, index) => (
-            <tr key={index}>
-              <td>
-                <Group spacing="xs">
-                  <ActionIcon className={classes.informationIcon} variant="default">
-                    {item.icon}
-                  </ActionIcon>
-                  <Text>
-                    <Trans
-                      i18nKey={`layout/modals/about:metrics.${item.label}`}
-                      components={{ b: <b /> }}
-                    />
-                  </Text>
-                </Group>
-              </td>
-              <td className={classes.informationTableColumn} style={{ maxWidth: 200 }}>
-                {item.content}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-      <Accordion mb={5} variant="contained" radius="md">
-        <Accordion.Item value="keybinds">
-          <Accordion.Control icon={<IconKey size={20} />}>
-            {t('layout/modals/about:keybinds')}
-          </Accordion.Control>
-          <Accordion.Panel>
-            <Table mb={5}>
-              <thead>
-                <tr>
-                  <th>{t('layout/modals/about:key')}</th>
-                  <th>{t('layout/modals/about:action')}</th>
-                </tr>
-              </thead>
-              <tbody>{rows}</tbody>
-            </Table>
-            <Tip>{t('layout/modals/about:tip')}</Tip>
-          </Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
+        <Table withBorder>
+          <tbody>
+            {informations.map((item, index) => (
+              <tr key={index}>
+                <td>
+                  <Group spacing="xs">
+                    <ActionIcon className={classes.informationIcon} variant="default">
+                      {item.icon}
+                    </ActionIcon>
+                    <Text>
+                      <Trans
+                        i18nKey={`layout/modals/about:metrics.${item.label}`}
+                        components={{ b: <b /> }}
+                      />
+                    </Text>
+                  </Group>
+                </td>
+                <td className={classes.informationTableColumn} style={{ maxWidth: 200 }}>
+                  {item.content}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <Accordion mb={5} variant="contained" radius="md">
+          <Accordion.Item value="keybinds">
+            <Accordion.Control icon={<IconKey size={20} />}>
+              {t('layout/modals/about:keybinds')}
+            </Accordion.Control>
+            <Accordion.Panel>
+              <Table mb={5}>
+                <thead>
+                  <tr>
+                    <th>{t('layout/modals/about:key')}</th>
+                    <th>{t('layout/modals/about:action')}</th>
+                  </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+              </Table>
+              <Tip>{t('layout/modals/about:tip')}</Tip>
+            </Accordion.Panel>
+          </Accordion.Item>
+        </Accordion>
 
-      <Title order={6} mb="xs" align="center">
-        {t('layout/modals/about:contact')}
-      </Title>
-
-      <Grid grow>
-        <Grid.Col md={4} xs={12}>
-          <Button
-            component="a"
-            href="https://github.com/ajnart/homarr"
-            target="_blank"
-            leftIcon={<IconBrandGithub size={20} />}
-            variant="default"
-            fullWidth
-          >
-            GitHub
-          </Button>
-        </Grid.Col>
-        <Grid.Col md={4} xs={12}>
-          <Button
-            component="a"
-            href="https://homarr.dev/"
-            target="_blank"
-            leftIcon={<IconWorldWww size={20} />}
-            variant="default"
-            fullWidth
-          >
-            {t('layout/modals/about:documentation')}
-          </Button>
-        </Grid.Col>
-
-        <Grid.Col md={4} xs={12}>
-          <Button
-            component="a"
-            href="https://discord.gg/aCsmEV5RgA"
-            target="_blank"
-            leftIcon={<IconBrandDiscord size={20} />}
-            variant="default"
-            fullWidth
-          >
-            Discord
-          </Button>
-        </Grid.Col>
-      </Grid>
-      <Credits />
-      <TranslatorsTable />
-      <ContributorsTable />
-    </Stack>
+        <TranslatorsTable loadedLanguages={initOptions.locales.length} />
+        <Divider />
+        <ContributorsTable contributors={contributors} />
+        <Credits />
+      </Stack>
+    </ManageLayout>
   );
 };
 
-async function getStaticProps({ locale }: GetStaticPropsContext) {
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const contributors = (await fetch(
+    `https://api.github.com/repos/${REPO_URL}/contributors?per_page=100`,
+    {
+      cache: 'force-cache',
+    }
+  ).then((res) => res.json())) as Contributors[];
   return {
-		...(await getServerSideTranslations(['authentication/login'], locale)),
-	};
+    props: {
+      contributors,
+      ...(await getServerSideTranslations(['layout/manage', 'manage/index'], locale)),
+    },
+  };
 }
 
-export default AboutPage;
+export default Page;

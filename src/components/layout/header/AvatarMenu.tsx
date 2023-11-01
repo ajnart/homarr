@@ -1,34 +1,26 @@
-import { Avatar, Badge, Indicator, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { Avatar, Menu, UnstyledButton, useMantineTheme } from '@mantine/core';
 import {
   IconDashboard,
   IconHomeShare,
-  IconInfoCircle,
   IconLogin,
   IconLogout,
   IconMoonStars,
   IconSun,
   IconUserCog,
 } from '@tabler/icons-react';
-import { useQuery } from '@tanstack/react-query';
 import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { forwardRef } from 'react';
-import { AboutModal } from '~/components/layout/header/About/AboutModal';
 import { useColorScheme } from '~/hooks/use-colorscheme';
-import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
-import { REPO_URL } from '../../../../data/constants';
 import { useBoardLink } from '../Templates/BoardLayout';
 
 export const AvatarMenu = () => {
   const { t } = useTranslation('layout/header');
-  const [aboutModalOpened, aboutModal] = useDisclosure(false);
   const { data: sessionData } = useSession();
   const { colorScheme, toggleColorScheme } = useColorScheme();
-  const newVersionAvailable = useNewVersionAvailable();
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
   const defaultBoardHref = useBoardLink('/board');
@@ -38,10 +30,7 @@ export const AvatarMenu = () => {
       <UnstyledButton>
         <Menu width={256}>
           <Menu.Target>
-            <CurrentUserAvatar
-              newVersionAvailable={newVersionAvailable ? true : false}
-              user={sessionData?.user ?? null}
-            />
+            <CurrentUserAvatar user={sessionData?.user ?? null} />
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item
@@ -74,19 +63,6 @@ export const AvatarMenu = () => {
                 <Menu.Divider />
               </>
             )}
-            <Menu.Item
-              icon={<IconInfoCircle size="1rem" />}
-              rightSection={
-                newVersionAvailable && (
-                  <Badge variant="light" color="blue">
-                    {t('actions.avatar.about.new')}
-                  </Badge>
-                )
-              }
-              onClick={() => aboutModal.open()}
-            >
-              {t('actions.avatar.about.label')}
-            </Menu.Item>
             {sessionData?.user ? (
               <Menu.Item
                 icon={<IconLogout size="1rem" />}
@@ -109,35 +85,18 @@ export const AvatarMenu = () => {
           </Menu.Dropdown>
         </Menu>
       </UnstyledButton>
-
-      <AboutModal
-        opened={aboutModalOpened}
-        closeModal={aboutModal.close}
-        newVersionAvailable={newVersionAvailable}
-      />
     </>
   );
 };
 
 type CurrentUserAvatarProps = {
-  newVersionAvailable: boolean;
   user: User | null;
 };
 
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
-  ({ user, newVersionAvailable, ...others }, ref) => {
+  ({ user, ...others }, ref) => {
     const { primaryColor } = useMantineTheme();
     if (!user) return <Avatar ref={ref} {...others} />;
-
-    if (newVersionAvailable)
-      return (
-        <Indicator withBorder offset={2} color="blue" processing size={15}>
-          <Avatar ref={ref} color={primaryColor} {...others}>
-            {user.name?.slice(0, 2).toUpperCase()}
-          </Avatar>
-        </Indicator>
-      );
-
     return (
       <Avatar ref={ref} color={primaryColor} {...others}>
         {user.name?.slice(0, 2).toUpperCase()}
@@ -145,15 +104,3 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
     );
   }
 );
-
-const useNewVersionAvailable = () => {
-  const { attributes } = usePackageAttributesStore();
-  const { data } = useQuery({
-    queryKey: ['github/latest'],
-    cacheTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * 60 * 60 * 5,
-    queryFn: () =>
-      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
-  });
-  return data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
-};

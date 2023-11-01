@@ -1,60 +1,123 @@
-import { Anchor, Avatar, Group, ScrollArea, Stack, Table, Text, createStyles } from '@mantine/core';
-import cx from 'clsx';
-import Link from 'next/link';
-import { useState } from 'react';
+import {
+  Anchor,
+  Avatar,
+  Group,
+  Pagination,
+  Stack,
+  Table,
+  Text,
+  Title,
+} from '@mantine/core';
+import { usePagination } from '@mantine/hooks';
+import { Trans, useTranslation } from 'next-i18next';
 
 import CrowdinReport from '../../../../../data/crowdin-report.json';
 
-export function TranslatorsTable() {
-  // Only the first 30 translators are shown
-  const translators = CrowdinReport.data.slice(0, 30);
+const PAGINATION_ITEMS = 20;
 
-  const rows = translators.map((translator) => (
-    <tr key={translator.user.id}>
-      <td>
-        <Anchor href={`https://crowdin.com/profile/${translator.user.username}`} target="_blank">
-          <Group noWrap>
-            <Avatar
-              size={25}
-              radius="lg"
-              src={translator.user.avatarUrl}
-              alt={translator.user.username}
-            />
-            {translator.user.username}
-          </Group>
-        </Anchor>
-      </td>
-      <td>{translator.translated}</td>
-      <td>{translator.approved}</td>
-      <td>{translator.target}</td>
-      <td>
-        <Text lineClamp={1}>
-          {translator.languages.map((language) => (
-            <span key={language.id}>{language.name}, </span>
-          ))}
-        </Text>
-      </td>
-    </tr>
-  ));
+export function TranslatorsTable({ loadedLanguages }: { loadedLanguages: number }) {
+  const { t } = useTranslation(['layout/modals/about']);
+  const translators = CrowdinReport.data;
+  const pagination = usePagination({
+    total: translators.length / PAGINATION_ITEMS,
+    initialPage: 1,
+  });
+
+  const rows = translators
+    .slice(
+      (pagination.active - 1) * PAGINATION_ITEMS,
+      (pagination.active - 1) * PAGINATION_ITEMS + PAGINATION_ITEMS
+    )
+    .map((translator) => (
+      <tr key={translator.user.id}>
+        <td
+          style={{
+            width: 400,
+          }}
+        >
+          <Anchor href={`https://crowdin.com/profile/${translator.user.username}`} target="_blank">
+            <Group noWrap>
+              <Avatar
+                size={25}
+                radius="lg"
+                src={translator.user.avatarUrl}
+                alt={translator.user.username}
+              />
+              {translator.user.fullName}
+            </Group>
+          </Anchor>
+        </td>
+        <td
+          style={{
+            width: 400,
+          }}
+        >
+          {translator.translated}
+        </td>
+        <td
+          style={{
+            width: 400,
+          }}
+        >
+          {translator.approved}
+        </td>
+        <td
+          style={{
+            width: 400,
+          }}
+        >
+          {translator.target}
+        </td>
+        <td
+          style={{
+            width: 400,
+          }}
+        >
+          <Text lineClamp={1}>
+            {translator.languages.map((language) => (
+              <span key={language.id}>{language.name}, </span>
+            ))}
+          </Text>
+        </td>
+      </tr>
+    ));
 
   return (
     <Stack>
-      <h5>Credits to our amazing translators</h5>
-
-      <ScrollArea h={800}>
-        <Table miw={700}>
-          <thead>
-            <tr>
-              <th>Translator</th>
-              <th>Translated</th>
-              <th>Approved</th>
-              <th>Target</th>
-              <th>Languages</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </Table>
-      </ScrollArea>
+      <Title order={3}>{t('translators', { count: translators.length })}</Title>
+      <Text>
+        <Trans
+          i18nKey="layout/modals/about:translatorsDescription"
+          values={{
+            languages: loadedLanguages,
+          }}
+          components={{
+            a: <Anchor href="https://homarr.dev/docs/community/translations" target="_blank" />,
+          }}
+        />
+      </Text>
+      <Table withBorder>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Translated</th>
+            <th>Approved</th>
+            <th>Target</th>
+            <th>Languages</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </Table>
+      <Pagination
+        style={{
+          justifyContent: 'center',
+        }}
+        total={translators.length / PAGINATION_ITEMS}
+        value={pagination.active}
+        onNextPage={() => pagination.next()}
+        onPreviousPage={() => pagination.previous()}
+        onChange={(targetPage) => pagination.setPage(targetPage)}
+      />
     </Stack>
   );
 }
