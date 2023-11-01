@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "キャッシュ・クリーニング",
   "selector": {
-    "label": "",
+    "label": "クリアするキャッシュを選択する",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Pingクエリ",
+      "repositoryIcons": "リモート/ローカル・アイコン",
+      "calendar&medias": "カレンダーからのメディア",
+      "weather": "気象データ"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "キャッシュ・クリア",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "すべてのキャッシュを消去する",
+      "notificationMessage": "すべてのキャッシュがクリアされました"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "選択したクエリを消去する",
+      "notificationMessageSingle": "{{value}} のキャッシュがクリアされました。",
+      "notificationMessageMulti": "{{values}} のキャッシュがクリアされた。"
     }
   }
 }
