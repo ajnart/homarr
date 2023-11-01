@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
-        "required": "",
+        "default": "Dit veld is ongeldig",
+        "required": "Dit veld is verplicht",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Dit veld moet beginnen met {{startsWith}}",
+            "endsWith": "Dit veld moet eindigen op {{endsWith}}",
+            "includes": "Dit veld moet {{includes}}bevatten."
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Dit veld moet minstens {{minimum}} tekens lang zijn",
+            "number": "Dit veld moet groter of gelijk zijn aan {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Dit veld mag maximaal {{maximum}} tekens lang zijn",
+            "number": "Dit veld moet kleiner of gelijk zijn aan {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Wachtwoorden moeten overeenkomen"
         }
     }
 }
