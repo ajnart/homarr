@@ -6,12 +6,12 @@
 	"key": "Hurtigtast",
 	"action": "Handling",
 	"keybinds": "Hurtigtaster",
-	"documentation": "",
+	"documentation": "Dokumentasjon",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Veksle mellom lys/mørke modus",
+		"focusSearchBar": "Fokuser på søkefeltet",
+		"openDocker": "Åpne docker-widget",
+		"toggleEdit": "Veksle redigeringsmodus"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurasjonsskjema versjon",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Deaktivere redigeringsmodus"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nytt: {{newVersion}}",
+		"dropdown": "Versjon {{newVersion}} er tilgjengelig! Gjeldende versjon er {{currentVersion}}"
 	}
 }
