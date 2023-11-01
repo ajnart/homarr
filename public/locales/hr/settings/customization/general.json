@@ -22,8 +22,8 @@
       "description": "Konfigurišite Homarr za osobe sa invaliditetom"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Pristup",
+      "description": "Konfigurirajte tko ima pristup vašoj ploči"
     }
   }
 }
