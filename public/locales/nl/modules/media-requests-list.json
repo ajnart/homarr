@@ -5,10 +5,10 @@
     "settings": {
       "title": "Lijst met mediaverzoeken",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Links vervangen door externe host"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Links in nieuw tabblad openen"
       }
     }
   },
@@ -19,15 +19,15 @@
     "declined": "Afgewezen"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Verzoeken goedkeuren",
+    "decline": "Verzoeken weigeren",
+    "approving": "Verzoek goedkeuren..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Goedkeuring",
+    "declining": "Afnemend",
+    "request": "verzoek...",
+    "approved": "Aanvraag goedgekeurd!",
+    "declined": "Verzoek afgewezen!"
   }
 }
