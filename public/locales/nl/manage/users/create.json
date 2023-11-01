@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Gebruiker aanmaken",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Eerste stap",
+            "text": "Account aanmaken",
             "username": {
                 "label": "Gebruikersnaam"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Tweede stap",
             "text": "Wachtwoord",
             "password": {
                 "label": "Wachtwoord"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Bevestiging",
+            "text": "Opslaan in database",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Uw invoer controleren",
+                "text": "Nadat je je gegevens naar de database hebt gestuurd, kan de gebruiker inloggen. Weet je zeker dat je deze gebruiker wilt opslaan in de database en de aanmelding wilt activeren?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Eigendom",
+                    "value": "Waarde",
                     "username": "Gebruikersnaam",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Wachtwoord"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Niet ingesteld",
+                "valid": "Geldig"
             },
-            "failed": ""
+            "failed": "Het aanmaken van een gebruiker is mislukt: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Gebruiker is aangemaakt",
+                "text": "De gebruiker is aangemaakt in de database. Ze kunnen nu inloggen."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Willekeurig genereren",
+        "createAnother": "Maak een andere"
     }
 }
