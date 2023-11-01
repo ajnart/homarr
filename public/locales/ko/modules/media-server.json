@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "미디어 서버",
+    "description": "Jellyfin 또는 Plex 미디어 서버와 상호 작용하기",
     "settings": {
-      "title": ""
+      "title": "미디어 서버 위젯 설정"
     }
   },
-  "loading": "",
+  "loading": "스트림 로드",
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "세션",
+        "user": "사용자",
+        "currentlyPlaying": "현재 재생 중"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "콘텐츠를 로드할 수 없습니다.",
+        "text": "서버에서 정보를 검색할 수 없습니다. 자세한 내용은 로그를 확인하세요."
       }
     }
   }
