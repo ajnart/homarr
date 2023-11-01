@@ -1,6 +1,8 @@
 {
+	"xPosition": "Posição do eixo X",
 	"width": "Largura",
 	"height": "Altura",
+	"yPosition": "Posição do eixo Y",
 	"zeroOrHigher": "0 ou superior",
 	"betweenXandY": "Entre {{min}} e {{max}}"
 }
