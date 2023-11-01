@@ -9,21 +9,21 @@
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Lagre endringer",
+        "note": "Forsiktig, du har ulagrede endringer!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Lagrer tilpasning",
+            "message": "Vennligst vent mens vi lagrer tilpasningen din"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Tilpasningen er lagret",
+            "message": "Tilpasningen din er lagret"
         },
         "error": {
             "title": "Feil",
-            "message": ""
+            "message": "Kan ikke lagre endringer"
         }
     }
 }
