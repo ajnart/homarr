@@ -1,19 +1,19 @@
 {
     "modal": {
-        "title": "",
-        "text": ""
+        "title": "Přidat novou dlaždici",
+        "text": "Dlaždice jsou hlavním prvkem Homarru. Slouží k zobrazení Vašich aplikací a dalších informací. Můžete přidat libovolný počet dlaždic."
     },
     "widgetDescription": "",
     "goBack": "",
     "actionIcon": {
         "tooltip": ""
     },
-    "apps": "",
+    "apps": "Aplikace",
     "app": {
         "defaultName": ""
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgety",
+    "categories": "Kategorie",
     "category": {
         "newName": "",
         "defaultName": "",
