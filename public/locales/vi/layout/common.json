@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Cửa sổ bật lên bị chặn",
+      "text": "Trình duyệt của bạn đã chặn Homarr truy cập API của nó. Điều này thường xảy ra nhất do AdBlockers hoặc quyền bị từ chối. Homarr không thể tự động yêu cầu quyền.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Nhấp vào biểu tượng bên cạnh URL và kiểm tra quyền. Cho phép cửa sổ bật lên và cửa sổ",
+        "adBlockers": "Tắt trình chặn quảng cáo và công cụ bảo mật khỏi trình duyệt của bạn",
+        "otherBrowser": "Hãy thử một trình duyệt khác"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Mở tất cả trong tab mới"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Đi lên",
+    "moveDown": "Đi xuống",
+    "addCategory": "Thêm danh mục {{location}}",
+    "addAbove": "bên trên",
+    "addBelow": "dưới"
   }
 }
