@@ -8,30 +8,30 @@
         "label": "Gebruik Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Radarr v5 API gebruiken"
       },
       "radarrReleaseType": {
         "label": "Radarr release type",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "In de bioscoop",
+          "physicalRelease": "Fysiek",
+          "digitalRelease": "Digitaal"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Verberg weekdagen"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Toon niet-bewaakte items"
       },
       "fontSize": {
-        "label": "",
+        "label": "Lettergrootte",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Extra Klein",
+          "sm": "Klein",
+          "md": "Medium",
+          "lg": "Groot",
+          "xl": "Extra Groot"
         }
       }
     }
