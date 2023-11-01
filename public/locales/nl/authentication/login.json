@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Inloggen",
   "title": "Welkom terug!",
-  "text": "",
+  "text": "Voer uw referenties in",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Inloggen"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Na het inloggen wordt u doorgestuurd naar {{url}}"
   },
-  "alert": ""
+  "alert": "Je gegevens zijn onjuist of deze account bestaat niet. Probeer het opnieuw."
 }
