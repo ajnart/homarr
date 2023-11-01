@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Marcador",
+    "description": "Exibe uma lista estática de cadeias de caracteres ou links",
     "settings": {
-      "title": "",
+      "title": "Configurações de marcadores",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Título do widget",
+        "info": "Deixe em branco para manter o título oculto."
       },
       "items": {
-        "label": ""
+        "label": "Itens"
       },
       "layout": {
         "label": "Layout",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Grade automática",
+          "horizontal": "Horizontal",
+          "vertical": "Vertical"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Lista de favoritos vazia",
+      "text": "Adicionar novos itens a essa lista no modo de edição"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "O comprimento deve estar entre {{shortest}} e {{longest}}",
+      "invalidLink": "Não é um link válido",
+      "errorMsg": "Não foi salvo, pois houve erros de validação. Por favor, ajuste suas entradas"
     },
     "name": "Nome",
-    "url": "",
+    "url": "URL",
     "newTab": "Abrir em novo separador",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Ocultar nome do host",
+    "hideIcon": "Ocultar ícone",
     "delete": "Apagar"
   }
 }
