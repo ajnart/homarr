@@ -3,7 +3,7 @@
         "label": ""
     },
     "search": {
-        "label": "",
+        "label": "Vyhledat",
         "engines": {
             "web": "",
             "youtube": "",
@@ -13,15 +13,15 @@
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Změnit motiv",
+            "preferences": "Uživatelská nastavení",
+            "defaultBoard": "Výchozí plocha",
+            "manage": "Spravovat",
             "about": {
                 "label": "",
                 "new": ""
             },
-            "logout": "",
+            "logout": "Odhlásit z {{username}}",
             "login": ""
         }
     },
