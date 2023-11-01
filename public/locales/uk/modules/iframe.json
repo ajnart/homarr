@@ -11,35 +11,35 @@
         "label": "Дозволити повноекранний режим"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Забезпечити прозорість"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Дозволити прокрутку"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Дозволити платіж"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Увімкнути автоматичне відтворення"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Увімкнути мікрофон"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Увімкнути камеру"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Дозволити геолокацію"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Неправильна URL-адреса",
         "text": "Переконайтеся, що Ви ввели правильну адресу в налаштуваннях вашого віджета"
       },
-      "browserSupport": ""
+      "browserSupport": "Ваш браузер не підтримує iframe. Будь ласка, оновіть свій браузер."
     }
   }
 }
