@@ -5,8 +5,8 @@
     "settings": {
       "title": "Cài đặt dấu trang",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Tên tiện ích",
+        "info": "Để trống để giữ tiêu đề ẩn."
       },
       "items": {
         "label": "Mục"
@@ -14,9 +14,9 @@
       "layout": {
         "label": "Bố cục",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Lưới tự động",
+          "horizontal": "Nằm ngang",
+          "vertical": "Thẳng đứng"
         }
       }
     }
@@ -29,15 +29,15 @@
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Độ dài phải nằm trong khoảng từ {{shortest}} đến {{longest}}",
+      "invalidLink": "Không phải là một liên kết hợp lệ",
+      "errorMsg": "Không lưu được vì có lỗi xác thực. Vui lòng điều chỉnh đầu vào của bạn"
     },
     "name": "Tên",
-    "url": "",
+    "url": "URL",
     "newTab": "Mở trong tab mới",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Ẩn tên máy chủ",
+    "hideIcon": "Ẩn biểu tượng",
     "delete": "Xóa"
   }
 }
