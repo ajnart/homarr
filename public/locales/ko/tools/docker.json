@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Homarr 인스턴스에 Docker가 구성되어 있지 않거나 컨테이너 가져오기에 실패했습니다. 연동 설정 방법에 대한 설명서를 확인하세요."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "보드 선택",
+            "text": "선택한 Docker 컨테이너에 대한 앱을 추가할 보드를 선택합니다.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "보드"
                 },
-                "submit": ""
+                "submit": "앱 추가"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "보드에 앱 추가",
+                "message": "선택한 Docker 컨테이너용 앱이 보드에 추가되었습니다."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "보드에 앱을 추가하지 못했습니다.",
+                "message": "선택한 Docker 컨테이너용 앱을 보드에 추가할 수 없습니다."
             }
         }
     }
