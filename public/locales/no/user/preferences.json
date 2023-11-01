@@ -1,5 +1,5 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Preferanser",
     "pageTitle": "Dine innstillinger",
     "boards": {
         "defaultBoard": {
@@ -32,7 +32,7 @@
     },
     "searchEngine": {
         "title": "Søkemotor",
-        "custom": "",
+        "custom": "Tilpasset",
         "newTab": {
             "label": "Åpne søkeresultater i ny fane"
         },
