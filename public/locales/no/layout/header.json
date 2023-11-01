@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Dette er et eksperimentelt trekk ved Homarr. Vennligst rapporter eventuelle problemer på <gh>GitHub</gh> eller <dc>Discord</dc>."
     },
     "search": {
         "label": "Søk",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Søk etter {{query}} på nettet",
+            "youtube": "Søk etter {{query}} på YouTube",
+            "torrent": "Søk etter {{query}} torrenter",
+            "movie": "Søk etter {{query}} på {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Bytt tema",
+            "preferences": "Brukerpreferanser",
+            "defaultBoard": "Standard dashbord",
+            "manage": "Få til",
             "about": {
                 "label": "Info",
-                "new": ""
+                "new": "Ny"
             },
-            "logout": "",
-            "login": ""
+            "logout": "Logg ut fra {{username}}",
+            "login": "Logg Inn"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Topp {{count}} resultater for <b>{{search}}</b>."
         }
     }
 }
