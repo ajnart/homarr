@@ -2,8 +2,8 @@
   "text": "",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Rozložení",
+      "description": "Povolte a zakažte prvky v záhlaví a na dlaždicích plochy"
     },
     "gridstack": {
       "name": "",
@@ -22,8 +22,8 @@
       "description": ""
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Přístup",
+      "description": "Nastavte, kdo má přístup k Vaší ploše"
     }
   }
 }
