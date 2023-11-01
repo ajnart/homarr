@@ -5,10 +5,10 @@
     "settings": {
       "title": "Statistikk for mediaforespørsler",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Erstatt lenker med ekstern vert"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Åpne lenker i ny fane"
       }
     }
   },
