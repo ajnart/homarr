@@ -203,6 +203,14 @@ export const languages = [
     country: 'HU',
     locale: 'hu',
   },
+  // Cezch
+  {
+    shortName: 'cs',
+    originalName: 'Čeština',
+    translatedName: 'Czech',
+    country: 'CZ',
+    locale: 'cs',
+  },
   // Crowdin Live translate
   {
     shortName: 'cr',
