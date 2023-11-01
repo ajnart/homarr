@@ -8,24 +8,24 @@
         "label": "Prikaži full-time oblik (24-satni)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Oblikovanje datuma",
         "data": {
-          "hide": ""
+          "hide": "Sakrij datum"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Prikaz prilagođene vremenske zone"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Lokacija vremenske zone"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Naslov grada",
+        "info": "U slučaju da aktivirate opciju Vremenska zona, može se prikazati ime grada i šifra vremenske zone.<br/>Također možete prikazati grad sam ili ga čak ne prikazati.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Grad i vremenska zona",
+          "city": "Samo grad",
+          "none": "Nijedan"
         }
       }
     }
