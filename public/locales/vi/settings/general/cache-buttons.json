@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Làm sạch bộ đệm",
   "selector": {
-    "label": "",
+    "label": "Chọn (các) bộ đệm để xóa",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Truy vấn Ping",
+      "repositoryIcons": "Biểu tượng từ xa/cục bộ",
+      "calendar&medias": "Phương tiện từ Lịch",
+      "weather": "Dữ liệu thời tiết"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Đã xóa bộ nhớ đệm",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Xóa tất cả bộ nhớ đệm",
+      "notificationMessage": "Tất cả bộ nhớ đệm đã bị xóa"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Xóa truy vấn đã chọn",
+      "notificationMessageSingle": "Bộ nhớ đệm cho {{value}} đã bị xóa",
+      "notificationMessageMulti": "Bộ nhớ đệm cho {{values}} đã bị xóa"
     }
   }
 }
