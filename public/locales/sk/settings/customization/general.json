@@ -22,7 +22,7 @@
       "description": "Konfigurácia aplikácie Homarr pre zdravotne postihnutých a hendikepovaných používateľov"
     },
     "access": {
-      "name": "Prístup",
+      "name": "",
       "description": "Konfigurácia osôb, ktoré majú prístup k vašej nástenke"
     }
   }
