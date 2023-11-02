@@ -22,7 +22,7 @@
       "description": "Thiết lập Homarr cho người dùng khuyết tật"
     },
     "access": {
-      "name": "truy cập",
+      "name": "",
       "description": "Định cấu hình ai có quyền truy cập vào bảng của bạn"
     }
   }
