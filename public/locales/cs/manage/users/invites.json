@@ -1,21 +1,21 @@
 {
     "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "pageTitle": "Správa pozvánek uživatelů",
+    "description": "Pomocí pozvánek můžete pozvat uživatele do instance služby Homarr. Pozvánka je platná pouze po určitou dobu a lze ji použít pouze jednou. Platnost musí být v rozmezí od 5 minut do 12 měsíců od vytvoření.",
     "button": {
-        "createInvite": "",
+        "createInvite": "Vytvořit pozvánku",
         "deleteInvite": ""
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Vytvořil",
+            "expires": "Expiruje",
+            "action": "Akce"
         },
         "data": {
             "expiresAt": "",
-            "expiresIn": ""
+            "expiresIn": "za {{in}}"
         }
     },
     "modals": {
@@ -32,7 +32,7 @@
             "description": "",
             "invitationLink": "",
             "details": {
-                "id": "",
+                "id": "ID",
                 "token": ""
             },
             "button": {
