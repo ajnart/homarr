@@ -22,7 +22,7 @@
       "description": "Homarr configureren voor gehandicapte gebruikers"
     },
     "access": {
-      "name": "Toegang",
+      "name": "",
       "description": "Configureren wie toegang heeft tot je board"
     }
   }
