@@ -14,17 +14,10 @@ export const checkForSessionOrAskForLogin = (
   session: Session | null,
   accessCallback: () => boolean
 ): GetServerSidePropsResult<any> | undefined => {
-  if (!session?.user) {
-    return {
-      props: {},
-      redirect: {
-        destination: `/auth/login?redirectAfterLogin=${context.resolvedUrl}`,
-        permanent: false,
-      },
-    };
-  }
+  const permitted = accessCallback();
 
-  if (!accessCallback()) {
+  // user is logged in but does not have the required access
+  if (session?.user && !permitted) {
     return {
       props: {},
       redirect: {
@@ -34,5 +27,17 @@ export const checkForSessionOrAskForLogin = (
     };
   }
 
-  return undefined;
+  // user *may* be logged in and permitted
+  if (permitted) {
+    return undefined;
+  }
+
+  // user is logged out and needs to sign in
+  return {
+    props: {},
+    redirect: {
+      destination: `/auth/login?redirectAfterLogin=${context.resolvedUrl}`,
+      permanent: false,
+    },
+  };
 };

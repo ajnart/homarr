@@ -13,7 +13,7 @@ export const timezoneRouter = createTRPCRouter({
       })
     )
     .query(async ({ input }) => {
-      const timezone = GeoTz.find(input.latitude, input.longitude);
+      const timezone = await GeoTz.find(input.latitude, input.longitude);
       return Array.isArray(timezone) ? timezone[0] : timezone;
     }),
 });

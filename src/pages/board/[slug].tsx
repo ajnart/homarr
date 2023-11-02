@@ -15,12 +15,11 @@ import { ConfigType } from '~/types/config';
 
 export default function BoardPage({
   config: initialConfig,
-  dockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
 
   return (
-    <BoardLayout dockerEnabled={dockerEnabled}>
+    <BoardLayout>
       <Dashboard />
     </BoardLayout>
   );
@@ -28,7 +27,6 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   config: ConfigType;
-  dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
 
@@ -64,7 +62,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   const result = checkForSessionOrAskForLogin(
     ctx,
     session,
-    () => config.settings.access.allowGuests || !!session?.user
+    () => config.settings.access.allowGuests || session?.user != undefined
   );
   if (result) {
     return result;
@@ -76,7 +74,6 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,
-      dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
       ...translations,
     },
   };

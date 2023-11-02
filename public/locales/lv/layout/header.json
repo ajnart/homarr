@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Šī ir eksperimentāla Homarr funkcija. Lūdzu, ziņojiet par jebkādām problēmām <gh>GitHub</gh> vai <dc>Discord</dc>."
     },
     "search": {
-        "label": "",
+        "label": "Meklēt",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Meklēt {{query}} tīmeklī",
+            "youtube": "Meklēt {{query}} pakalpojumā YouTube",
+            "torrent": "Meklēt {{query}} torrent failus",
+            "movie": "Meklēt {{query}} vietnē {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Mainīt tēmu",
+            "preferences": "Lietotāja iestatījumi",
+            "defaultBoard": "Noklusējuma darbvirsma",
+            "manage": "Pārvaldīt",
             "about": {
                 "label": "Par Programmu",
-                "new": ""
+                "new": "Jauns"
             },
-            "logout": "",
-            "login": ""
+            "logout": "Izrakstīšanās no {{username}}",
+            "login": "Pieslēgties"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Top {{count}} rezultāti <b>{{search}}</b>."
         }
     }
 }

@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "媒體請求",
+    "description": "查看 Overseerr 或 Jellyseer 實例中的所有媒體請求列表",
+    "settings": {
+      "title": "媒體請求列表",
+      "replaceLinksWithExternalHost": {
+        "label": "使用外部網址替換連結"
+      },
+      "openInNewTab": {
+        "label": "在新分頁中開啟連結"
+      }
+    }
+  },
+  "noRequests": "未找到請求，請確認您已正確設定您的應用",
+  "state": {
+    "approved": "已准許",
+    "pendingApproval": "待准許",
+    "declined": "已拒絕"
+  },
+  "tooltips": {
+    "approve": "准許請求",
+    "decline": "拒絕請求",
+    "approving": "正在准許請求..."
+  },
+  "mutation": {
+    "approving": "正在准許",
+    "declining": "拒絕中",
+    "request": "請求...",
+    "approved": "請求已批准！",
+    "declined": "請求被拒絕！"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "crwdns1436:0crwdne1436:0",
+    "description": "crwdns2347:0crwdne2347:0"
+  },
+  "search": {
+    "placeholder": "crwdns1440:0crwdne1440:0"
+  },
+  "table": {
+    "header": {
+      "name": "crwdns1442:0crwdne1442:0",
+      "image": "crwdns1444:0crwdne1444:0",
+      "ports": "crwdns1446:0crwdne1446:0",
+      "state": "crwdns1448:0crwdne1448:0"
+    },
+    "body": {
+      "portCollapse": "crwdns1450:0{{ports}}crwdne1450:0"
+    },
+    "states": {
+      "running": "crwdns1452:0crwdne1452:0",
+      "created": "crwdns1454:0crwdne1454:0",
+      "stopped": "crwdns1456:0crwdne1456:0",
+      "unknown": "crwdns1458:0crwdne1458:0"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "crwdns2349:0crwdne2349:0",
+      "message": "crwdns2451:0crwdne2451:0"
+    },
+    "restart": {
+      "title": "crwdns1464:0crwdne1464:0"
+    },
+    "stop": {
+      "title": "crwdns1466:0crwdne1466:0"
+    },
+    "start": {
+      "title": "crwdns1468:0crwdne1468:0"
+    },
+    "refreshData": {
+      "title": "crwdns1866:0crwdne1866:0"
+    },
+    "remove": {
+      "title": "crwdns1474:0crwdne1474:0"
+    },
+    "addToHomarr": {
+      "title": "crwdns1472:0crwdne1472:0"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "crwdns1886:0crwdne1886:0",
+      "end": "crwdns1888:0crwdne1888:0"
+    },
+    "stop": {
+      "start": "crwdns1890:0crwdne1890:0",
+      "end": "crwdns1892:0crwdne1892:0"
+    },
+    "restart": {
+      "start": "crwdns1894:0crwdne1894:0",
+      "end": "crwdns1896:0crwdne1896:0"
+    },
+    "remove": {
+      "start": "crwdns1898:0crwdne1898:0",
+      "end": "crwdns1900:0crwdne1900:0"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "crwdns1480:0crwdne1480:0",
+      "message": "crwdns2453:0crwdne2453:0"
+    },
+    "unknownError": {
+      "title": "crwdns1484:0crwdne1484:0"
+    },
+    "oneServiceAtATime": {
+      "title": "crwdns2355:0crwdne2355:0"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "crwdns1488:0crwdne1488:0"
+  }
+}

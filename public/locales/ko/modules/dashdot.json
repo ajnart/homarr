@@ -1,81 +1,81 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "",
+    "description": "외부 대시의 그래프를 표시합니다. Homarr 내부의 인스턴스입니다.",
     "settings": {
-      "title": "",
+      "title": "대시 설정 위젯",
       "dashName": {
-        "label": ""
+        "label": "Dash. 이름"
       },
       "url": {
         "label": "Dash. 주소"
       },
       "usePercentages": {
-        "label": ""
+        "label": "백분율 표시"
       },
       "columns": {
-        "label": ""
+        "label": "열 표시"
       },
       "graphHeight": {
-        "label": ""
+        "label": "그래프 높이"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "그래프(순서)",
         "storage": {
           "label": "저장소",
           "enabled": {
-            "label": ""
+            "label": "위젯에 표시"
           },
           "span": {
-            "label": ""
+            "label": "열 스팬"
           },
           "compactView": {
-            "label": ""
+            "label": "텍스트로 표시(압축)"
           },
           "multiView": {
-            "label": ""
+            "label": "멀티 드라이브 보기로 표시"
           }
         },
         "network": {
           "label": "네트워크",
           "enabled": {
-            "label": ""
+            "label": "위젯에 표시"
           },
           "span": {
-            "label": ""
+            "label": "열 스팬"
           },
           "compactView": {
-            "label": ""
+            "label": "텍스트로 표시(압축)"
           }
         },
         "cpu": {
           "label": "CPU",
           "enabled": {
-            "label": ""
+            "label": "위젯에 표시"
           },
           "span": {
-            "label": ""
+            "label": "열 스팬"
           },
           "multiView": {
-            "label": ""
+            "label": "멀티코어 보기로 표시"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "위젯에 표시"
           },
           "span": {
-            "label": ""
+            "label": "열 스팬"
           }
         },
         "gpu": {
           "label": "GPU",
           "enabled": {
-            "label": ""
+            "label": "위젯에 표시"
           },
           "span": {
-            "label": ""
+            "label": "열 스팬"
           }
         }
       }
@@ -87,8 +87,8 @@
       "noService": "Dash. 서비스를 찾을 수 없습니다. Homarr 대시보드에 추가하거나 모듈 옵션에서 Dash. URL을 설정해 주세요.",
       "noInformation": "Dash. 에서 정보를 얻을 수 없습니다. 최신 버전을 사용 중인가요?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "프로토콜 다운그레이드 감지",
+        "text": "대시 인스턴스에 대한 연결이 HTTP를 사용하고 있습니다. 이는 보안상 위험합니다. HTTP는 암호화되지 않으며 공격자가 이 연결을 악용할 수 있기 때문입니다. 대시가 HTTPS를 사용하고 있는지 확인하거나 Homarr를 HTTP로 다운그레이드하세요(권장하지 않음)."
       }
     },
     "graphs": {
@@ -108,7 +108,7 @@
         "title": "CPU"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
         "title": "GPU"

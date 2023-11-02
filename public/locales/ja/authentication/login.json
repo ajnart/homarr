@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "ログイン",
   "title": "お帰りなさい",
-  "text": "",
+  "text": "認証情報を入力してください。",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "サインイン"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "ログイン後、 {{url}}にリダイレクトされます。"
   },
-  "alert": ""
+  "alert": "認証情報が間違っているか、このアカウントが存在しません。もう一度お試しください。"
 }

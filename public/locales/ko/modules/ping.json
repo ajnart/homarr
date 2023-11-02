@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "핑",
-    "description": ""
+    "description": "지정된 URL의 HTTP 응답 코드에 따라 상태 표시기를 표시합니다."
   },
   "states": {
     "online": "온라인 {{response}}",

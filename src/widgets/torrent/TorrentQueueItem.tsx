@@ -81,14 +81,14 @@ export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPro
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}
+                {downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} MB/s` : '-'}
               </Text>
             </td>
           )}
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}
+                {uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} MB/s` : '-'}
               </Text>
             </td>
           )}

@@ -1,0 +1,44 @@
+{
+    "metaTitle": "crwdns3529:0crwdne3529:0",
+    "pageTitle": "crwdns3531:0crwdne3531:0",
+    "cards": {
+        "statistics": {
+            "apps": "crwdns3533:0crwdne3533:0",
+            "widgets": "crwdns3535:0crwdne3535:0",
+            "categories": "crwdns3537:0crwdne3537:0"
+        },
+        "buttons": {
+            "view": "crwdns3539:0crwdne3539:0"
+        },
+        "menu": {
+            "setAsDefault": "crwdns3541:0crwdne3541:0",
+            "delete": {
+                "label": "crwdns3543:0crwdne3543:0",
+                "disabled": "crwdns3545:0crwdne3545:0"
+            }
+        },
+        "badges": {
+            "fileSystem": "crwdns3547:0crwdne3547:0",
+            "default": "crwdns3549:0crwdne3549:0"
+        }
+    },
+    "buttons": {
+        "create": "crwdns3551:0crwdne3551:0"
+    },
+    "modals": {
+        "delete": {
+            "title": "crwdns3553:0crwdne3553:0",
+            "text": "crwdns3555:0crwdne3555:0"
+        },
+        "create": {
+            "title": "crwdns3557:0crwdne3557:0",
+            "text": "crwdns3559:0crwdne3559:0",
+            "form": {
+                "name": {
+                    "label": "crwdns3561:0crwdne3561:0"
+                },
+                "submit": "crwdns3563:0crwdne3563:0"
+            }
+        }
+    }
+}

@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "iFrame",
     "description": "Incorporar qualquer conteúdo da internet. Alguns sites podem restringir o acesso.",
     "settings": {
-      "title": "",
+      "title": "configurações do IFrame",
       "embedUrl": {
         "label": "Incorporar URL"
       },

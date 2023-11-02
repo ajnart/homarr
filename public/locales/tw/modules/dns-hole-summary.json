@@ -1,0 +1,28 @@
+{
+  "descriptor": {
+    "name": "DNS 漏洞統計",
+    "description": "顯示來自 PiHole 或 AdGuard 的重要數據",
+    "settings": {
+      "title": "DNS 漏洞統計設定",
+      "usePiHoleColors": {
+        "label": "使用 PiHole 的顏色"
+      },
+      "layout": {
+        "label": "顯示布局",
+        "data": {
+          "grid": "2 x 2",
+          "row": "橫向",
+          "column": "垂直"
+        }
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "廣告列表中的域名",
+      "queriesToday": "今日查詢",
+      "queriesBlockedTodayPercentage": "今日封鎖",
+      "queriesBlockedToday": "今日封鎖"
+    }
+  }
+}

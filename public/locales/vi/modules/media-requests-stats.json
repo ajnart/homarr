@@ -14,9 +14,9 @@
   },
   "mediaStats": {
     "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
+    "pending": "Chờ duyệt",
+    "tvRequests": "Yêu cầu TV",
+    "movieRequests": "Yêu cầu phim",
     "approved": "",
     "totalRequests": ""
   },

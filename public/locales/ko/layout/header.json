@@ -18,11 +18,11 @@
             "defaultBoard": "",
             "manage": "",
             "about": {
-                "label": "",
+                "label": "정보",
                 "new": ""
             },
             "logout": "",
-            "login": ""
+            "login": "로그인"
         }
     },
     "modals": {

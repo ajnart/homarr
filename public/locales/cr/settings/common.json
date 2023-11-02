@@ -1,0 +1,38 @@
+{
+  "title": "crwdns1598:0crwdne1598:0",
+  "tooltip": "crwdns1600:0crwdne1600:0",
+  "tabs": {
+    "common": "crwdns1602:0crwdne1602:0",
+    "customizations": "crwdns1604:0crwdne1604:0"
+  },
+  "tips": {
+    "configTip": "crwdns2387:0crwdne2387:0"
+  },
+  "credits": {
+    "madeWithLove": "crwdns1608:0crwdne1608:0",
+    "thirdPartyContent": "crwdns2485:0crwdne2485:0",
+    "thirdPartyContentTable": {
+      "dependencyName": "crwdns2487:0crwdne2487:0",
+      "dependencyVersion": "crwdns2489:0crwdne2489:0"
+    }
+  },
+  "grow": "crwdns1949:0crwdne1949:0",
+  "layout": {
+    "preview": {
+      "title": "crwdns2543:0crwdne2543:0",
+      "subtitle": "crwdns2545:0crwdne2545:0"
+    },
+    "divider": "crwdns2547:0crwdne2547:0",
+    "main": "crwdns2117:0crwdne2117:0",
+    "sidebar": "crwdns2119:0crwdne2119:0",
+    "cannotturnoff": "crwdns2121:0crwdne2121:0",
+    "dashboardlayout": "crwdns2123:0crwdne2123:0",
+    "enablersidebar": "crwdns2125:0crwdne2125:0",
+    "enablelsidebar": "crwdns2127:0crwdne2127:0",
+    "enablesearchbar": "crwdns2129:0crwdne2129:0",
+    "enabledocker": "crwdns2131:0crwdne2131:0",
+    "enableping": "crwdns2133:0crwdne2133:0",
+    "enablelsidebardesc": "crwdns2135:0crwdne2135:0",
+    "enablersidebardesc": "crwdns2137:0crwdne2137:0"
+  }
+}

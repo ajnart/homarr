@@ -1,0 +1,31 @@
+{
+  "descriptor": {
+    "name": "crwdns2583:0crwdne2583:0",
+    "description": "crwdns3872:0crwdne3872:0",
+    "settings": {
+      "title": "crwdns2587:0crwdne2587:0",
+      "rssFeedUrl": {
+        "label": "crwdns2819:0crwdne2819:0",
+        "description": "crwdns2821:0crwdne2821:0"
+      },
+      "refreshInterval": {
+        "label": "crwdns2787:0crwdne2787:0"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "crwdns3189:0crwdne3189:0",
+        "info": "crwdns3191:0crwdne3191:0"
+      },
+      "textLinesClamp": {
+        "label": "crwdns2933:0crwdne2933:0"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "crwdns2789:0crwdne2789:0",
+          "text": "crwdns2791:0crwdne2791:0"
+        }
+      }
+    }
+  }
+}

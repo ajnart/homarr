@@ -26,18 +26,17 @@ import { MainLayout } from './MainLayout';
 import { env } from 'process';
 
 type BoardLayoutProps = {
-  dockerEnabled: boolean;
   children: React.ReactNode;
 };
 
-export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
+export const BoardLayout = ({ children }: BoardLayoutProps) => {
   const { config } = useConfigContext();
   const { data: session } = useSession();
 
   return (
     <MainLayout
       autoFocusSearch={session?.user.autoFocusSearch}
-      headerActions={<HeaderActions dockerEnabled={dockerEnabled} />}
+      headerActions={<HeaderActions />}
     >
       <BoardHeadOverride />
       <BackgroundImage />
@@ -47,33 +46,16 @@ export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
   );
 };
 
-type HeaderActionProps = {
-  dockerEnabled: boolean;
-};
-
-export const HeaderActions = ({ dockerEnabled }: HeaderActionProps) => {
+export const HeaderActions = () => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
 
   return (
     <>
-      {dockerEnabled && <DockerButton />}
       <ToggleEditModeButton />
       <CustomizeBoardButton />
     </>
-  );
-};
-
-const DockerButton = () => {
-  const { t } = useTranslation('modules/docker');
-
-  return (
-    <Tooltip label={t('actionIcon.tooltip')}>
-      <HeaderActionButton component={Link} href="/manage/tools/docker">
-        <IconBrandDocker size={20} stroke={1.5} />
-      </HeaderActionButton>
-    </Tooltip>
   );
 };
 
