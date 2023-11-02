@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domeinen op adlists",
       "queriesToday": "Vragen vandaag",
-      "queriesBlockedTodayPercentage": "vandaag geblokkeerd",
-      "queriesBlockedToday": "vandaag geblokkeerd"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
