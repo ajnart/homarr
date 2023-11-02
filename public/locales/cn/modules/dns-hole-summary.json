@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "广告列表中的域名",
       "queriesToday": "今日查询",
-      "queriesBlockedTodayPercentage": "今日屏蔽",
-      "queriesBlockedToday": "今日屏蔽"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
