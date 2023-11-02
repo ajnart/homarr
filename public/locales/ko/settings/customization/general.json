@@ -22,7 +22,7 @@
       "description": "장애인 및 장애가 있는 사용자를 위한 Homarr 구성하기"
     },
     "access": {
-      "name": "액세스",
+      "name": "",
       "description": "보드에 액세스할 수 있는 사람 구성"
     }
   }
