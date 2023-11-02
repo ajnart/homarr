@@ -22,7 +22,7 @@
       "description": "Konfigurer Homarr for deaktiverede og handicappede brugere"
     },
     "access": {
-      "name": "",
+      "name": "Adgang",
       "description": "Konfigurer, hvem der har adgang til dit board"
     }
   }
