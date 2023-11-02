@@ -22,7 +22,7 @@
       "description": "Configura Homarr para usuarios con discapacidad y minusvalía"
     },
     "access": {
-      "name": "",
+      "name": "Acceder",
       "description": "Configura quién tiene acceso a tu tablero"
     }
   }
