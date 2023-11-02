@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "애드리스트에 있는 도메인",
       "queriesToday": "오늘 쿼리",
-      "queriesBlockedTodayPercentage": "오늘 차단됨",
-      "queriesBlockedToday": "오늘 차단됨"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
