@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domenae na popisu blokiranih",
       "queriesToday": "Upiti danas",
-      "queriesBlockedTodayPercentage": "blokirano danas",
-      "queriesBlockedToday": "blokirano danas"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
