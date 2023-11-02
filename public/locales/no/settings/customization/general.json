@@ -22,7 +22,7 @@
       "description": "Konfigurer Homarr for funksjonshemmede og funksjonshemmede brukere"
     },
     "access": {
-      "name": "Tilgang",
+      "name": "",
       "description": "Konfigurer hvem som har tilgang til din tavle"
     }
   }
