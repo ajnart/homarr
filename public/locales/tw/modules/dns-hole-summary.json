@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "廣告列表中的域名",
       "queriesToday": "今日查詢",
-      "queriesBlockedTodayPercentage": "今日封鎖",
-      "queriesBlockedToday": "今日封鎖"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
