@@ -22,7 +22,7 @@
       "description": "Skonfiguruj Homarr dla użytkowników z niepełnosprawnością"
     },
     "access": {
-      "name": "Dostęp",
+      "name": "",
       "description": "Skonfiguruj kto ma dostęp do Twojej tablicy"
     }
   }
