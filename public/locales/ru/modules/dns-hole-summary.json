@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "доменов в списке блокировок",
       "queriesToday": "запросов сегодня",
-      "queriesBlockedTodayPercentage": "заблокировано сегодня",
-      "queriesBlockedToday": "заблокировано сегодня"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
