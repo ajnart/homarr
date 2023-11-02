@@ -24,7 +24,7 @@
 					"enablePings": "Vérifiez que l'IP est correcte en activant les \"pings\". Personnaliser le tableau de bord -> Mise en page -> Activer les \"pings\". Une petite bulle rouge ou verte apparaîtra sur les tuiles de vos applications et en la survolant, vous verrez le code de réponse (une bulle verte avec le code 200 est attendue dans la plupart des cas).",
 					"wget": "Pour s'assurer que homarr peut communiquer avec les autres applications, assurez-vous de wget/curl/ping le combo \"IP:port\" de l'application.",
 					"iframe": "En ce qui concerne les iframes, ceux-ci devraient toujours utiliser le même protocole (http/s) que Homarr.",
-					"clearCache": ""
+					"clearCache": "Certaines informations sont enregistrées dans le cache, donc une intégration peut ne pas fonctionner à moins que vous ne vidiez le cache dans les options générales de Homarr."
 				},
 				"footer": "Pour plus d'aide, contactez nous sûr {{discord}}."
 			}
