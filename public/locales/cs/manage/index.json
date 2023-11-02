@@ -13,11 +13,11 @@
         },
         "inviteUsers": {
             "title": "Pozvěte nového uživatele",
-            "subtitle": ""
+            "subtitle": "Vytvářejte a posílejte pozvánky k registraci"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Správa uživatelů",
+            "subtitle": "Odstraňujte a spravujte Vaše uživatele"
         }
     }
 }
