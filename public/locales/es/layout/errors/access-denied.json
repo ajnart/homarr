@@ -1,1 +1,5 @@
-{}
+{
+  "title": "Acceso denegado",
+  "text": "No tienes suficientes permisos para acceder a esta página. Si crees que esto no es intencional, por favor, contacta a tu administrador.",
+  "switchAccount": "Cambiar a una cuenta diferente"
+}
