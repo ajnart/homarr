@@ -1,5 +1,7 @@
 {
   "save": "Guardar",
+  "apply": "",
+  "insert": "",
   "about": "Acerca de",
   "cancel": "Cancelar",
   "close": "Cerrar",
@@ -40,5 +42,14 @@
     "medium": "medio",
     "large": "grande"
   },
-  "seeMore": "Ver más..."
+  "seeMore": "Ver más...",
+  "position": {
+    "left": "Izquierda",
+    "center": "",
+    "right": "Derecha"
+  },
+  "attributes": {
+    "width": "Ancho",
+    "height": "Alto"
+  }
 }
