@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "마크다운 작성에 도움이 되는 도구 모음 표시"
 			},
+			"allowReadOnlyCheck": {
+				"label": ""
+			},
 			"content": {
 				"label": "노트북의 콘텐츠"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }
