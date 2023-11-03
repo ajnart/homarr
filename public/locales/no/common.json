@@ -1,5 +1,7 @@
 {
   "save": "Lagre",
+  "apply": "",
+  "insert": "",
   "about": "Info",
   "cancel": "Avbryt",
   "close": "Lukk",
@@ -40,5 +42,14 @@
     "medium": "middels",
     "large": "stor"
   },
-  "seeMore": "Se mer..."
+  "seeMore": "Se mer...",
+  "position": {
+    "left": "Venstre",
+    "center": "",
+    "right": "Ikke sant"
+  },
+  "attributes": {
+    "width": "Bredde",
+    "height": "Høyde"
+  }
 }
