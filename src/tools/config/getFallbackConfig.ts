@@ -1,9 +1,8 @@
 import { ConfigType } from '~/types/config';
-
-import defaultConfig from '../../../data/configs/default.json';
+import { defaultBoard } from '~/defaults/default-board';
 
 export const getFallbackConfig = (name?: string) => ({
-  ...defaultConfig,
+  ...defaultBoard,
   configProperties: {
     name: name ?? 'default',
   },

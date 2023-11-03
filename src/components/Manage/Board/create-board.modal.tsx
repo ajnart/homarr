@@ -2,7 +2,7 @@ import { Button, Group, Stack, Text, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
-import { getStaticFallbackConfig } from '~/tools/config/getFallbackConfig';
+import { defaultBoard } from '~/defaults/default-board';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { createBoardSchemaValidation } from '~/validations/boards';
@@ -27,10 +27,9 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
   });
 
   const handleSubmit = () => {
-    const fallbackConfig = getStaticFallbackConfig(form.values.name);
     mutate({
       name: form.values.name,
-      config: fallbackConfig,
+      config: defaultBoard
     });
   };
 
