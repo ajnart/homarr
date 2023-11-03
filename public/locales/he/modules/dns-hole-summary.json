@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "דומיינים ברשימות מודעות",
       "queriesToday": "שאילתות היום",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "נחסמו היום",
+      "queriesBlockedToday": "נחסמו היום"
     }
   }
 }
