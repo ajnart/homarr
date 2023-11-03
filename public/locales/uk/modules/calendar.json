@@ -4,12 +4,6 @@
     "description": "Показує календар з майбутніми випусками з підтримуваних інтеграцій.",
     "settings": {
       "title": "Налаштування віджету календаря",
-      "useSonarrv4": {
-        "label": "Використовувати Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Використання API Radarr v5"
-      },
       "radarrReleaseType": {
         "label": "Radarr - тип релізів",
         "data": {
