@@ -4,12 +4,6 @@
     "description": "Desteklenen entegrasyonlarda, yaklaşan içeriklerin takvimlerini görüntüler.",
     "settings": {
       "title": "Takvim widget'ı için ayarlar",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API'sini kullan"
-      },
-      "useRadarrv5": {
-        "label": "Radarr v5 API'sini Kullan"
-      },
       "radarrReleaseType": {
         "label": "Radarr yayın türü",
         "data": {
