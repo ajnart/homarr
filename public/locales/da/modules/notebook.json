@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Vis værktøjslinjen, der hjælper dig med at skrive markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": ""
+			},
 			"content": {
 				"label": "Indholdet af notesbogen"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }
