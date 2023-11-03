@@ -13,7 +13,7 @@
       "displayActiveTorrents": {
         "label": "Display active torrents"
       },
-      "SpeedLimitOfActiveTorrents": {
+      "speedLimitOfActiveTorrents": {
         "label": "Upload speed to consider a torrent as active (kB/s)"
       },
       "displayStaleTorrents": {

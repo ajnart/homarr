@@ -21,7 +21,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: false,
       },
     };
@@ -58,7 +58,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -95,7 +95,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: false,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -132,7 +132,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: true,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -173,7 +173,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: true,
         displayCompletedTorrents: true,
         displayActiveTorrents: true,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
@@ -210,7 +210,7 @@ describe('TorrentTile', () => {
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
         displayActiveTorrents: false,
-        SpeedLimitOfActiveTorrents: 10,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
