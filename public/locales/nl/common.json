@@ -1,5 +1,7 @@
 {
   "save": "Opslaan",
+  "apply": "",
+  "insert": "",
   "about": "Over",
   "cancel": "Annuleer",
   "close": "Sluiten",
@@ -40,5 +42,14 @@
     "medium": "gemiddeld",
     "large": "groot"
   },
-  "seeMore": "Zie meer..."
+  "seeMore": "Zie meer...",
+  "position": {
+    "left": "Links",
+    "center": "",
+    "right": "Rechts"
+  },
+  "attributes": {
+    "width": "Breedte",
+    "height": "Hoogte"
+  }
 }
