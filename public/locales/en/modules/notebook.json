@@ -20,6 +20,7 @@
 			"bold": "Bold",
 			"italic": "Italic",
 			"strikethrough": "Strikethrough",
+			"underline": "Underline",
 			"colorText": "Color text",
 			"colorHighlight": "Colored highlight text",
 			"code": "Code",

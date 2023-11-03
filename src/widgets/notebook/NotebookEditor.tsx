@@ -46,6 +46,7 @@ import TaskItem from '@tiptap/extension-task-item';
 import TaskList from '@tiptap/extension-task-list';
 import TextAlign from '@tiptap/extension-text-align';
 import TextStyle from '@tiptap/extension-text-style';
+import Underline from '@tiptap/extension-underline';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useTranslation } from 'next-i18next';
@@ -71,7 +72,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
 
   const { mutateAsync } = api.notebook.update.useMutation();
 
-  const { t } = useTranslation(['modules/notebook','common']);
+  const { t } = useTranslation(['modules/notebook', 'common']);
 
   const editor = useEditor(
     {
@@ -128,6 +129,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         TaskList.configure({ itemTypeName: 'taskItem' }),
         TextAlign.configure({ types: ['heading', 'paragraph'] }),
         TextStyle,
+        Underline,
       ],
       content,
       onUpdate: (e) => {
@@ -244,6 +246,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             <RichTextEditor.Bold title={t('card.controls.bold')!} />
             <RichTextEditor.Italic title={t('card.controls.italic')!} />
             <RichTextEditor.Strikethrough title={t('card.controls.strikethrough')!} />
+            <RichTextEditor.Underline title={t('card.controls.underline')!} />
             <ColoredText />
             <ColoredHighlight />
             <RichTextEditor.Code title={t('card.controls.code')!} />

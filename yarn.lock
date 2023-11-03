@@ -2415,6 +2415,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tiptap/extension-underline@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "@tiptap/extension-underline@npm:2.1.12"
+  peerDependencies:
+    "@tiptap/core": ^2.0.0
+  checksum: 652b5903b1033d979dc4de673b1445e400bfe61a8be0d4fd4fd81e74b5c44d6324cc3e8421b14ada1e2ac3891173a9c21a85c0867977f83a9c386b43087d416d
+  languageName: node
+  linkType: hard
+
 "@tiptap/pm@npm:^2.1.12":
   version: 2.1.12
   resolution: "@tiptap/pm@npm:2.1.12"
@@ -7717,6 +7726,7 @@ __metadata:
     "@tiptap/extension-task-list": ^2.1.12
     "@tiptap/extension-text-align": ^2.1.12
     "@tiptap/extension-text-style": ^2.1.12
+    "@tiptap/extension-underline": ^2.1.12
     "@tiptap/pm": ^2.1.12
     "@tiptap/react": ^2.1.12
     "@tiptap/starter-kit": ^2.1.12
