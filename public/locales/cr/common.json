@@ -1,5 +1,7 @@
 {
   "save": "crwdns2009:0crwdne2009:0",
+  "apply": "crwdns3900:0crwdne3900:0",
+  "insert": "crwdns3902:0crwdne3902:0",
   "about": "crwdns2011:0crwdne2011:0",
   "cancel": "crwdns2013:0crwdne2013:0",
   "close": "crwdns2015:0crwdne2015:0",
@@ -40,5 +42,14 @@
     "medium": "crwdns2527:0crwdne2527:0",
     "large": "crwdns2529:0crwdne2529:0"
   },
-  "seeMore": "crwdns3019:0crwdne3019:0"
+  "seeMore": "crwdns3019:0crwdne3019:0",
+  "position": {
+    "left": "crwdns3904:0crwdne3904:0",
+    "center": "crwdns3906:0crwdne3906:0",
+    "right": "crwdns3908:0crwdne3908:0"
+  },
+  "attributes": {
+    "width": "crwdns3910:0crwdne3910:0",
+    "height": "crwdns3912:0crwdne3912:0"
+  }
 }
