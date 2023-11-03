@@ -4,12 +4,6 @@
     "description": "crwdns2331:0crwdne2331:0",
     "settings": {
       "title": "crwdns2333:0crwdne2333:0",
-      "useSonarrv4": {
-        "label": "crwdns2491:0crwdne2491:0"
-      },
-      "useRadarrv5": {
-        "label": "crwdns3864:0crwdne3864:0"
-      },
       "radarrReleaseType": {
         "label": "crwdns2269:0crwdne2269:0",
         "data": {
