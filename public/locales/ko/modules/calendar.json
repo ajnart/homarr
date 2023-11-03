@@ -4,12 +4,6 @@
     "description": "지원되는 통합에서 예정된 릴리스가 포함된 캘린더를 표시합니다.",
     "settings": {
       "title": "캘린더 위젯 설정",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API 사용"
-      },
-      "useRadarrv5": {
-        "label": "Radarr v5 API 사용"
-      },
       "radarrReleaseType": {
         "label": "레이더 릴리스 유형",
         "data": {
