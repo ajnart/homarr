@@ -1,5 +1,7 @@
 {
   "save": "",
+  "apply": "",
+  "insert": "",
   "about": "",
   "cancel": "",
   "close": "",
@@ -40,5 +42,14 @@
     "medium": "střední",
     "large": "velký"
   },
-  "seeMore": ""
+  "seeMore": "",
+  "position": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "attributes": {
+    "width": "",
+    "height": ""
+  }
 }
