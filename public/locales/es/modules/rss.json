@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS",
-    "description": "El widget rss te permite mostrar las fuentes RSS en tu tablero.",
+    "description": "El widget RSS te permite mostrar las fuentes RSS en tu panel.",
     "settings": {
       "title": "Ajustes del widget RSS",
       "rssFeedUrl": {
