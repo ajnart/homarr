@@ -10,7 +10,7 @@
       "displayCompletedTorrents": {
         "label": "Display completed torrents"
       },
-      "displayActiveTorrents": {
+      "DisplayActiveTorrents": {
         "label": "Display active torrents"
       },
       "SpeedLimitOfActiveTorrents": {
