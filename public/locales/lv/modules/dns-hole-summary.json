@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domēni reklāmu sarakstos",
       "queriesToday": "Pieprasījumi šodien",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "Šodien bloķēti",
+      "queriesBlockedToday": "Šodien bloķēti"
     }
   }
 }
