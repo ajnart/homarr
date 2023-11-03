@@ -4,12 +4,6 @@
     "description": "Отображает календарь с предстоящими релизами из поддерживаемых интеграций.",
     "settings": {
       "title": "Настройки для виджета календаря",
-      "useSonarrv4": {
-        "label": "Использовать Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Использовать Radarr v5 API"
-      },
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr",
         "data": {
