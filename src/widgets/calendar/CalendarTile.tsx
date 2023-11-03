@@ -26,14 +26,6 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
-    useSonarrv4: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    useRadarrv5: {
-      type: 'switch',
-      defaultValue: false,
-    },
     radarrReleaseType: {
       type: 'select',
       defaultValue: 'inCinemas',
@@ -78,7 +70,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
       month: month.getMonth() + 1,
       year: month.getFullYear(),
       options: {
-        useSonarrv4: widget.properties.useSonarrv4,
         showUnmonitored: widget.properties.showUnmonitored,
       },
     },
