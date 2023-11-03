@@ -1,5 +1,7 @@
 {
   "save": "Gem",
+  "apply": "",
+  "insert": "",
   "about": "Om",
   "cancel": "Annuller",
   "close": "Luk",
@@ -40,5 +42,14 @@
     "medium": "mellem",
     "large": "stor"
   },
-  "seeMore": "Se mere..."
+  "seeMore": "Se mere...",
+  "position": {
+    "left": "Venstre",
+    "center": "",
+    "right": "Højre"
+  },
+  "attributes": {
+    "width": "Bredde",
+    "height": "Højde"
+  }
 }
