@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Керувати",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Ласкаво просимо назад, {{username}}",
+        "fallbackUsername": "Анонім",
+        "subtitle": "Ласкаво просимо до Центру подачі заявок. Організовуй, оптимізуй та перемагай!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Швидкі дії",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Твої дошки",
+            "subtitle": "Створюйте та керуйте своїми дошками"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Запросити нового користувача",
+            "subtitle": "Створіть та надішліть запрошення для реєстрації"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Керування користувачами",
+            "subtitle": "Видаляйте користувачів та керуйте ними"
         }
     }
 }

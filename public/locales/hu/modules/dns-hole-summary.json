@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domainek a blokkolólistákon",
       "queriesToday": "Mai lekérdezések",
-      "queriesBlockedTodayPercentage": "mai blokkolások",
-      "queriesBlockedToday": "mai blokkolások"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }

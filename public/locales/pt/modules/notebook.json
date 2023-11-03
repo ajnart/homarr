@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Caderno de anotações",
+		"description": "Um widget interativo baseado em markdown para você fazer suas anotações!",
 		"settings": {
-			"title": "",
+			"title": "Configurações do widget do notebook",
 			"showToolbar": {
-				"label": ""
+				"label": "Mostrar a barra de ferramentas para ajudá-lo a escrever markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "O conteúdo do notebook"
 			}
 		}
 	}

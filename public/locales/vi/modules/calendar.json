@@ -8,30 +8,30 @@
         "label": "Dùng Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Sử dụng API Radarr v5"
       },
       "radarrReleaseType": {
         "label": "Loại phát hành Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "trong rạp chiếu phim",
+          "physicalRelease": "Thuộc vật chất",
+          "digitalRelease": "Điện tử"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Ẩn ngày trong tuần"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Hiển thị các mục không được giám sát"
       },
       "fontSize": {
-        "label": "",
+        "label": "Cỡ chữ",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Rất nhỏ",
+          "sm": "Bé nhỏ",
+          "md": "Trung bình",
+          "lg": "Lớn",
+          "xl": "Cực lớn"
         }
       }
     }

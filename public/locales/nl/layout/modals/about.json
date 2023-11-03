@@ -6,12 +6,12 @@
 	"key": "Sneltoets",
 	"action": "Actie",
 	"keybinds": "Sneltoetsen",
-	"documentation": "",
+	"documentation": "Documentatie",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Schakelen tussen licht en donker",
+		"focusSearchBar": "Focus op zoekbalk",
+		"openDocker": "Open Docker Widget",
+		"toggleEdit": "De bewerkingsmodus schakelen"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuratieschema versie",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTEEL</b>: Bewerkingsmodus uitschakelen"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nieuw: {{newVersion}}",
+		"dropdown": "Versie {{newVersion}} is beschikbaar! De huidige versie is {{currentVersion}}"
 	}
 }

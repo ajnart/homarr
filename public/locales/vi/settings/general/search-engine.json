@@ -1,7 +1,7 @@
 {
   "title": "Công cụ tìm kiếm",
   "configurationName": "Thiết lập công cụ tìm kiếm",
-  "custom": "",
+  "custom": "Phong tục",
   "tips": {
     "generalTip": "Có nhiều tiền tố để bạn sử dụng đó! Thêm chúng vào trước truy vấn của bạn để lọc kết quả. !s (Web), !t (torrent), !y (YouTube), !m (đa phương tiện).",
     "placeholderTip": "%s có thể được sử dụng làm phần giữ chỗ cho truy vấn."

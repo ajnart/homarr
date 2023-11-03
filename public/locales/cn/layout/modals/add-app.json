@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "内部地址",
-			"description": "应用的内部IP地址。"
+			"description": "应用的内部IP地址。",
+			"troubleshoot": {
+				"label": "遇到问题了？",
+				"header": "下面是一些常见的错误和解决方法：",
+				"lines": {
+					"nothingAfterPort": "在大多数情况下（不是所有情况），您不应该在端口之后输入任何路径。(即使是 pihole 的 '/admin' 或 plex 的 '/web')",
+					"protocolCheck": "一定要确保URL前面是http或https，并确保你使用的是正确的URL。",
+					"preferIP": "建议使用要与之通信的机器或容器的直接 Ip 地址。",
+					"enablePings": "通过开启ping检查IP是否正确。 自定义面板 -> 布局 -> 启用 ping。应用磁贴上会出现一个红色或绿色的小泡泡，鼠标悬停在此就会显示相应代码（在大多数的情况下，绿色泡泡的代码为200）。",
+					"wget": "为了确保homarr可以与其他应用程序通信，请使用wget/curl/ping应用程序的IP:port。",
+					"iframe": "在使用 iframe 时，应始终使用与 Homarr 相同的协议 (http/s)。",
+					"clearCache": "有些信息是在缓存中注册的，因此除非您在Homarr的一般选项中清除缓存，否则集成可能无法工作。"
+				},
+				"footer": "更多故障排除，请联系我们的{{discord}}。"
+			}
 		},
 		"externalAddress": {
 			"label": "外部地址",

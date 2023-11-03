@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Bilježnica",
+		"description": "Interaktivni widget koji se temelji na markdownu za pisanje bilješki!",
 		"settings": {
-			"title": "",
+			"title": "Postavke za widget bilježnice",
 			"showToolbar": {
-				"label": ""
+				"label": "Prikažite alatnu traku koja će vam pomoći u pisanju oznake"
 			},
 			"content": {
-				"label": ""
+				"label": "Sadržaj bilježnice"
 			}
 		}
 	}

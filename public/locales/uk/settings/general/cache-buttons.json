@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Очищення кешу",
   "selector": {
-    "label": "",
+    "label": "Виберіть кеш(и) для очищення",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Пінг-запити",
+      "repositoryIcons": "Піктограми віддаленого/локального доступу",
+      "calendar&medias": "Медіа з календаря",
+      "weather": "Дані про погоду"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Кеш очищено.",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Очистити весь кеш",
+      "notificationMessage": "Весь кеш очищено"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Очистити вибрані запити",
+      "notificationMessageSingle": "Очищено кеш для {{value}}",
+      "notificationMessageMulti": "Очищено кеш для {{values}}"
     }
   }
 }

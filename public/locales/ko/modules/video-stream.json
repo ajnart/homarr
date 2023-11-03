@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "비디오 스트림",
+    "description": "카메라 또는 웹사이트의 비디오 스트림 또는 비디오 임베드하기",
     "settings": {
-      "title": "",
+      "title": "동영상 스트림 위젯 설정",
       "FeedUrl": {
-        "label": ""
+        "label": "피드 URL"
       },
       "autoPlay": {
-        "label": ""
+        "label": "자동 재생"
       },
       "muted": {
-        "label": ""
+        "label": "음소거된 오디오"
       },
       "controls": {
-        "label": ""
+        "label": "비디오 플레이어 컨트롤"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "잘못된 스트림"
   }
 }

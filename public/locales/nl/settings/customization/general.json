@@ -18,12 +18,12 @@
       "description": "Pas de achtergrond, kleuren en het uiterlijk van de app aan"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Toegankelijkheid",
+      "description": "Homarr configureren voor gehandicapte gebruikers"
     },
     "access": {
       "name": "",
-      "description": ""
+      "description": "Configureren wie toegang heeft tot je board"
     }
   }
 }

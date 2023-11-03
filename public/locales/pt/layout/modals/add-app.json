@@ -1,7 +1,7 @@
 {
 	"tabs": {
 		"general": "Geral",
-		"behaviour": "",
+		"behaviour": "Comportamento",
 		"network": "Rede",
 		"appearance": "Aparência",
 		"integration": "Integração"
@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Endereço interno",
-			"description": "Endereço interno de IP da aplicação."
+			"description": "Endereço interno de IP da aplicação.",
+			"troubleshoot": {
+				"label": "Está tendo problemas?",
+				"header": "Aqui está uma lista dos erros mais comuns e da solução de problemas:",
+				"lines": {
+					"nothingAfterPort": "Você não deve, na maioria dos casos, se não em todos, inserir nenhum caminho após a porta. (Mesmo o '/admin' para pihole ou '/web' para plex)",
+					"protocolCheck": "Certifique-se sempre de que o URL seja precedido por http ou https e de que esteja usando o URL correto.",
+					"preferIP": "Recomenda-se usar o ip direto da máquina ou do contêiner com o qual você está tentando se comunicar.",
+					"enablePings": "Verifique se o IP está correto ativando os pings. Personalize o quadro -> Layout -> Ativar pings. Um pequeno balão vermelho ou verde aparecerá nos blocos do aplicativo e, ao passar o mouse sobre ele, você verá o código de resposta (um balão verde com o código 200 é esperado na maioria dos casos).",
+					"wget": "Para garantir que o homarr possa se comunicar com os outros aplicativos, certifique-se de usar o wget/curl/ping no IP:porta do aplicativo.",
+					"iframe": "Quando se trata de iframes, eles devem sempre usar o mesmo protocolo (http/s) que o Homarr.",
+					"clearCache": "Algumas informações são registradas no cache, portanto, uma integração pode não funcionar a menos que você limpe o cache nas opções gerais do Homarr."
+				},
+				"footer": "Para obter mais soluções de problemas, entre em contato pelo e-mail {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Endereço externo",
@@ -26,10 +40,10 @@
 			"description": "Abrir a aplicação num novo separador em vez do actual."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Descrição do aplicativo",
+			"description": "O texto que você inserir aparecerá ao passar o mouse sobre o aplicativo.\r\nUse-o para fornecer aos usuários mais detalhes sobre seu aplicativo ou deixe-o vazio para não ter nada."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Usar um protocolo não padrão. Isso pode exigir aplicativos pré-instalados e pode introduzir riscos à segurança. Certifique-se de que seu endereço seja seguro e confiável."
 	},
 	"network": {
 		"statusChecker": {
@@ -44,7 +58,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ícone de aplicação",
-			"description": "",
+			"description": "Comece a digitar para encontrar um ícone. Você também pode colar o URL de uma imagem para usar um ícone personalizado.",
 			"autocomplete": {
 				"title": "Nenhum resultado encontrado",
 				"text": "Tente usar um termo de pesquisa mais específico. Se não conseguir encontrar o ícone desejado, cole a URL da imagem acima para obter um ícone personalizado"
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Tamanho da fonte do nome do aplicativo",
+			"description": "Defina o tamanho da fonte para quando o nome do aplicativo for mostrado no bloco."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Nome do aplicativo Status",
+			"description": "Escolha onde você deseja que o título seja exibido, se for o caso.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Mostrar título somente no bloco",
+				"hover": "Mostrar título somente ao passar o mouse sobre a dica de ferramenta",
+				"hidden": "Não mostrar nada"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Nome do aplicativo Posição",
+			"description": "Posição do nome do aplicativo em relação ao ícone.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Topo",
+				"right": "Certo",
+				"bottom": "Parte inferior",
+				"left": "Esquerda"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Nome do aplicativo Grampo de linha",
+			"description": "Define em quantas linhas seu título deve caber, no máximo. Defina 0 para ilimitado."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "O seu formulário contém dados inválidos. Por conseguinte, não pode ser guardado. Por favor resolva todos os problemas e clique novamente neste botão para guardar as suas alterações.",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "O nome é obrigatório",
+		"noUrl": "O URL é obrigatório",
+		"invalidUrl": "O valor não é uma url válida",
+		"noIconUrl": "Este campo é obrigatório",
+		"noExternalUri": "É necessário um URI externo",
+		"invalidExternalUri": "O URI externo não é um URI válido"
 	}
 }

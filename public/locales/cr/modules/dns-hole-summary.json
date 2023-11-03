@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "crwdns2853:0crwdne2853:0",
       "queriesToday": "crwdns2855:0crwdne2855:0",
-      "queriesBlockedTodayPercentage": "crwdns2859:0crwdne2859:0",
-      "queriesBlockedToday": "crwdns2861:0crwdne2861:0"
+      "queriesBlockedTodayPercentage": "crwdns3894:0crwdne3894:0",
+      "queriesBlockedToday": "crwdns3896:0crwdne3896:0"
     }
   }
 }

@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Dahili adres",
-			"description": "Uygulamanın dahili IP adresi."
+			"description": "Uygulamanın dahili IP adresi.",
+			"troubleshoot": {
+				"label": "Sorun mu yaşıyorsunuz?",
+				"header": "Yaygın olarak yapılan hataların ve sorun giderme yöntemlerinin bir listesi:",
+				"lines": {
+					"nothingAfterPort": "Her durumda olmasa da çoğu durumda porttan sonra herhangi bir yol girmemelisiniz. (pihole için '/admin' veya plex için '/web' gibi)",
+					"protocolCheck": "Her zaman URL'nin önünde http veya https olduğundan ve doğru adresi kullandığınızdan emin olun.",
+					"preferIP": "İletişim kurmaya çalıştığınız makine veya konteynerin doğrudan ip adresini kullanmanız önerilir.",
+					"enablePings": "Pingleri etkinleştirerek IP'nin doğru olup olmadığını kontrol edin. Paneli Özelleştir -> Düzen -> Pingleri etkinleştir. Uygulama kutucuklarınızda küçük kırmızı veya yeşil bir baloncuk görünecek ve üzerine geldiğinizde size yanıt kodunu verecektir (Çoğu durumda 200 kodlu yeşil bir baloncuk beklenir).",
+					"wget": "Homarr'ın diğer uygulamalarla iletişim kurabildiğinden emin olmak için, uygulamanın IP:portuna wget, curl yada ping kontrolü yaptığınızdan emin olun.",
+					"iframe": "Iframe'ler söz konusu olduğunda, bunlar her zaman Homarr ile aynı protokolü (http/s) kullanmalıdır.",
+					"clearCache": "Bazı bilgiler önbelleğe kayıtlı olduğundan, Homarr'ın genel seçeneklerinde önbelleği temizlemediğiniz sürece entegrasyon çalışmayabilir."
+				},
+				"footer": "Daha fazla sorun giderme için {{discord}} üzerinden bize ulaşabilirsiniz."
+			}
 		},
 		"externalAddress": {
 			"label": "Harici adres",

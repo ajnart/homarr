@@ -3,7 +3,7 @@
     "pageTitle": "Jūsu iestatījumi",
     "boards": {
         "defaultBoard": {
-            "label": "Noklusējuma dēlis"
+            "label": "Noklusējamais dēlis"
         }
     },
     "accessibility": {

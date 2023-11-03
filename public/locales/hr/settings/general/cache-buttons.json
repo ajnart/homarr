@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Čišćenje predmemorije",
   "selector": {
-    "label": "",
+    "label": "Odaberite predmemoriju(e) za brisanje",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping upiti",
+      "repositoryIcons": "Udaljene/lokalne ikone",
+      "calendar&medias": "Mediji iz kalendara",
+      "weather": "Podaci o vremenu"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Predmemorija očišćena",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Izbriši svu predmemoriju",
+      "notificationMessage": "Sva predmemorija je izbrisana"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Brisanje odabranih upita",
+      "notificationMessageSingle": "Predmemorija za {{value}} je očišćena",
+      "notificationMessageMulti": "Predmemorija za {{values}} je očišćena"
     }
   }
 }

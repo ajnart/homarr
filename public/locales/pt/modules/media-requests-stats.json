@@ -1,27 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Estatísticas de solicitação de mídia",
+    "description": "Estatísticas sobre suas solicitações de mídia",
     "settings": {
-      "title": "",
+      "title": "Estatísticas de solicitações de mídia",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Substituir links por um host externo"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Abrir links em uma nova guia"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Estatísticas de mídia",
+    "pending": "Aprovações pendentes",
+    "tvRequests": "Solicitações de TV",
+    "movieRequests": "Solicitações de filmes",
+    "approved": "Já aprovado",
+    "totalRequests": "Total"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Principais usuários",
+    "requests": "Solicitações: {{number}}"
   }
 }

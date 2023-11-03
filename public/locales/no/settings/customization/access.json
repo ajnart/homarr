@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Tillat anonyme",
+    "description": "Tillat brukere som ikke er logget inn til å se din tavle"
   }
 }

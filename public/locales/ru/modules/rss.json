@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Виджет RSS",
-    "description": "",
+    "description": "Виджет RSS позволяет отображать RSS-каналы на вашей панели.",
     "settings": {
       "title": "Настройки виджета RSS",
       "rssFeedUrl": {

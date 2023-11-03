@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Tiện ích RSS",
-    "description": "",
+    "description": "Tiện ích rss cho phép bạn hiển thị nguồn cấp dữ liệu RSS trên trang tổng quan của mình.",
     "settings": {
       "title": "Cài đặt cho tiện ích RSS",
       "rssFeedUrl": {
@@ -12,8 +12,8 @@
         "label": "Khoảng thời gian làm mới (bằng phút)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Cho phép định dạng HTML (Nguy hiểm)",
+        "info": "Cho phép định dạng HTML từ bên ngoài có thể nguy hiểm.<br/>Hãy đảm bảo rằng nguồn cấp dữ liệu đến từ một nguồn đáng tin cậy."
       },
       "textLinesClamp": {
         "label": "Ngắt dòng"

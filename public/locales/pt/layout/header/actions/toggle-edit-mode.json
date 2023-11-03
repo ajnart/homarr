@@ -8,5 +8,5 @@
         "title": "O modo de edição está activado para  <1>{{size}}</1> tamanho",
         "text": "Pode agora ajustar e configurar as suas aplicações. As alterações são <strong>não guardadas</strong> até sair do modo de edição"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Saia do modo de edição para salvar suas alterações"
 }

@@ -8,24 +8,24 @@
         "label": "Dùng thời gian 24 giờ"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Định dạng ngày",
         "data": {
-          "hide": ""
+          "hide": "Ẩn ngày"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Hiển thị múi giờ tùy chỉnh"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Vị trí múi giờ"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Tiêu đề thành phố",
+        "info": "Trong trường hợp bạn kích hoạt tùy chọn Múi giờ, tên thành phố và mã múi giờ có thể được hiển thị.<br/>Bạn cũng có thể chỉ hiển thị thành phố hoặc thậm chí không hiển thị thành phố nào.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Thành phố và múi giờ",
+          "city": "Chỉ thành phố",
+          "none": "Không có"
         }
       }
     }

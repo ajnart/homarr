@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Permitir anônimos",
+    "description": "Permitir que usuários que não estejam conectados visualizem seu quadro"
   }
 }

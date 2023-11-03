@@ -6,12 +6,12 @@
 	"key": "Tipka prečaca",
 	"action": "Radnja",
 	"keybinds": "Namještanje tipki",
-	"documentation": "",
+	"documentation": "Dokumentacija",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Prebacivanje svijetlog/tamnog načina rada",
+		"focusSearchBar": "Fokus na traku za pretraživanje",
+		"openDocker": "Otvori docker widget",
+		"toggleEdit": "Uključi/isključi način uređivanja"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfiguracija verzije sheme",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTALNO</b>: Onemogući način uređivanja"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Novo: {{newVersion}}",
+		"dropdown": "Dostupna je verzija {{newVersion}} ! Trenutna verzija je {{currentVersion}}"
 	}
 }

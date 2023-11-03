@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "HomarrインスタンスにDockerが設定されていないか、コンテナの取得に失敗しています。統合の設定方法についてはドキュメントを確認してください。"
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "ボードを選ぶ",
+            "text": "選択したDockerコンテナ用のアプリを追加するボードを選択する。",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "ボード"
                 },
-                "submit": ""
+                "submit": "アプリの追加"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "ボードにアプリを追加",
+                "message": "選択したDockerコンテナ用のアプリがボードに追加された。"
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "ボードへのアプリの追加に失敗",
+                "message": "選択したDockerコンテナ用のアプリをボードに追加できませんでした。"
             }
         }
     }

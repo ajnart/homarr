@@ -1,27 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "미디어 요청 통계",
+    "description": "미디어 요청에 대한 통계",
     "settings": {
-      "title": "",
+      "title": "미디어 요청 통계",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "외부 호스트로 링크 교체"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "새 탭에서 링크 열기"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "미디어 통계",
+    "pending": "승인 대기 중",
+    "tvRequests": "TV 요청",
+    "movieRequests": "영화 요청",
+    "approved": "이미 승인됨",
+    "totalRequests": "합계"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "상위 사용자",
+    "requests": "요청: {{number}}"
   }
 }

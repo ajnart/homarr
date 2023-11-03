@@ -2,24 +2,24 @@
   "modals": {
     "blockedPopups": {
       "title": "Skočni prozor blokiran",
-      "text": "",
+      "text": "Vaš preglednik je blokirao pristup Homarru svom API-ju. To je najčešće uzrokovano AdBlockerima ili uskraćenim dopuštenjima. Homarr ne može automatski zatražiti dopuštenja.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Kliknite na ikonu pored URL-a i provjerite dopuštenja. Dopusti skočne prozore i prozore",
+        "adBlockers": "Onemogućite blokatore oglasa i sigurnosne alate u pregledniku",
+        "otherBrowser": "Pokušajte s drugim preglednikom"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Otvori sve u novoj kartici"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Pomakni se gore",
+    "moveDown": "Pomicati prema dolje",
+    "addCategory": "Dodajte kategoriju {{location}}",
+    "addAbove": "iznad",
+    "addBelow": "ispod"
   }
 }

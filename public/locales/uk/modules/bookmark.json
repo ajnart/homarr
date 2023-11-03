@@ -5,8 +5,8 @@
     "settings": {
       "title": "Налаштування обраного",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Назва віджету",
+        "info": "Залиште порожнім, щоб не показувати назву."
       },
       "items": {
         "label": "Елементи"
@@ -14,9 +14,9 @@
       "layout": {
         "label": "Макет",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Автоматична сітка",
+          "horizontal": "Горизонтальний",
+          "vertical": "Вертикальний"
         }
       }
     }
@@ -29,15 +29,15 @@
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Довжина повинна бути між {{shortest}} та {{longest}}",
+      "invalidLink": "Недійсне посилання",
+      "errorMsg": "Не збереглося, тому що виникли помилки при валідації. Будь ласка, виправте ваші дані"
     },
     "name": "Ім’я",
-    "url": "",
+    "url": "URL",
     "newTab": "Відкрити в новій вкладці",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Приховати ім'я хоста",
+    "hideIcon": "Приховати іконку",
     "delete": "Видалити"
   }
 }

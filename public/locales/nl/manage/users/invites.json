@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Gebruiker nodigt uit",
+    "pageTitle": "Uitnodigingen voor gebruikers beheren",
+    "description": "Met behulp van uitnodigingen kun je gebruikers uitnodigen voor je Homarr instance. Een uitnodiging is slechts een bepaalde tijd geldig en kan eenmalig gebruikt worden. De geldigheidsduur moet bij het aanmaken tussen 5 minuten en 12 maanden liggen.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Uitnodiging maken",
+        "deleteInvite": "Uitnodiging verwijderen"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Schepper",
+            "expires": "Verloopt op",
+            "action": "Acties"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "verlopen {{at}}",
+            "expiresIn": "in {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Uitnodiging maken",
+            "description": "Na de vervaldatum is een uitnodiging niet langer geldig en kan de ontvanger van de uitnodiging geen account meer aanmaken.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Vervaldatum",
+                "submit": "Maak"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Uitnodiging kopiëren",
+            "description": "Je uitnodiging is gegenereerd. Nadat deze modal is gesloten, <b>kun je deze link niet meer kopiëren</b>. Als je deze persoon niet langer wilt uitnodigen, kun je deze uitnodiging op elk gewenst moment verwijderen.",
+            "invitationLink": "Uitnodiging link",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Penning"
             },
             "button": {
-                "close": ""
+                "close": "Kopiëren en verwijderen"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Uitnodiging verwijderen",
+            "description": "Weet je zeker dat je deze uitnodiging wilt verwijderen? Gebruikers met deze link kunnen niet langer een account aanmaken met deze link."
         }
     },
-    "noInvites": ""
+    "noInvites": "Er zijn nog geen uitnodigingen."
 }

@@ -59,12 +59,12 @@
       },
       "generic": {
         "title": "Đã xảy ra lỗi không mong muốn",
-        "text": ""
+        "text": "Không thể liên lạc với khách hàng Torrent của bạn. Vui lòng kiểm tra cấu hình của bạn"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Đang tải",
+      "description": "Thiết lập kết nối"
     },
     "popover": {
       "introductionPrefix": "Quản lý bởi",

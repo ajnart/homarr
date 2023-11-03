@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "DNS-hullkontroller",
+    "description": "Kontroller PiHole eller AdGuard fra dashbordet",
     "settings": {
-      "title": "",
+      "title": "DNS-hull kontrollerer innstillingene",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Vis 'Aktiver/deaktiver alle'-knapper"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Kan ikke finne et DNS-hull",
+        "text": "Det oppsto et problem med å koble til DNS-hullet ditt. Vennligst bekreft konfigurasjonen/integrasjonen(e)."
       }
     }
   }

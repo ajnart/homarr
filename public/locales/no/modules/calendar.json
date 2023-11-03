@@ -8,30 +8,30 @@
         "label": "Bruk Sonarr v4 API"
       },
       "useRadarrv5": {
-        "label": ""
+        "label": "Bruk Radarr v5 API"
       },
       "radarrReleaseType": {
         "label": "Radarr utgivelsestype",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "På kino",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digital"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skjul ukedager"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Vis uovervåkede elementer"
       },
       "fontSize": {
-        "label": "",
+        "label": "Skriftstørrelse",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra liten",
+          "sm": "Liten",
+          "md": "Medium",
+          "lg": "Stor",
+          "xl": "Ekstra stor"
         }
       }
     }

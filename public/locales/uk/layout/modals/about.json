@@ -6,12 +6,12 @@
 	"key": "Гарячі клавіши",
 	"action": "Дії",
 	"keybinds": "Сполучення клавіш",
-	"documentation": "",
+	"documentation": "Документація",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Перемикання світлого/темного режиму",
+		"focusSearchBar": "Зосередьтеся на рядку пошуку",
+		"openDocker": "Відкрити віджет докера",
+		"toggleEdit": "Переключити режим редагування"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Версія схеми конфігурації",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>ЕКСПЕРИМЕНТАЛЬНО</b>: Вимкнути режим редагування"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Нове: {{newVersion}}",
+		"dropdown": "Доступна версія {{newVersion}} ! Поточна версія {{currentVersion}}"
 	}
 }

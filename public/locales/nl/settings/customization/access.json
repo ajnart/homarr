@@ -1,6 +1,6 @@
 {
   "allowGuests": {
-    "label": "",
-    "description": ""
+    "label": "Anoniem toestaan",
+    "description": "Niet-ingelogde gebruikers je forum laten bekijken"
   }
 }

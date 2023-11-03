@@ -8,7 +8,7 @@
         "label": "Замініть посилання на зовнішній хост"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Відкрийте посилання в новій вкладці"
       }
     }
   },
@@ -21,13 +21,13 @@
   "tooltips": {
     "approve": "Запити на підтвердження",
     "decline": "Відхиляти запити",
-    "approving": ""
+    "approving": "Затверджую запит..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Затверджую",
+    "declining": "Занепад",
+    "request": "прохання...",
+    "approved": "Запит схвалено!",
+    "declined": "Запит відхилено!"
   }
 }

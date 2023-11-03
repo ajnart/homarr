@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Uključi/isključi način uređivanja",
+    "enable": "Omogući način uređivanja",
+    "disable": "Onemogući način uređivanja"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Uredi lozinku",
+    "message": "Kako biste prebacili način uređivanja, trebate unijeti lozinku koju ste unijeli u varijablu okruženja pod nazivom <Code>EDIT_MODE_PASSWORD</Code> . Ako nije postavljeno, ne možete uključivati i isključivati način uređivanja.",
     "submit": "Pošalji"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Uspjeh",
+      "message": "Uspješno uključen način uređivanja, ponovno učitavanje stranice..."
     },
     "error": {
       "title": "Pogreška",
-      "message": ""
+      "message": "Promjena načina uređivanja nije uspjela, pokušajte ponovno."
     }
   }
 }

@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Interná adresa",
-			"description": "Interná IP adresa aplikácie."
+			"description": "Interná IP adresa aplikácie.",
+			"troubleshoot": {
+				"label": "Máte problémy?",
+				"header": "Tu je zoznam bežných chýb a riešení problémov:",
+				"lines": {
+					"nothingAfterPort": "Vo väčšine, ak nie vo všetkých prípadoch, by ste za portom nemali zadávať žiadnu cestu. (Dokonca aj '/admin' pre pihole alebo '/web' pre plex)",
+					"protocolCheck": "Vždy sa uistite, že pred adresou URL je http alebo https, a uistite sa, že používate tú správnu.",
+					"preferIP": "Odporúča sa použiť priamu adresu IP zariadenia alebo kontajnera, s ktorým sa pokúšate komunikovať.",
+					"enablePings": "Skontrolujte, či je IP správna, povolením pingov. Prispôsobiť tabuľu -> Rozloženie -> Povoliť pingy. Na dlaždiciach vašej aplikácie sa objaví malá červená alebo zelená bublina a po jej umiestnení získate kód odpovede (vo väčšine prípadov sa očakáva zelená bublina s kódom 200).",
+					"wget": "Aby ste sa uistili, že homarr môže komunikovať s ostatnými aplikáciami, uistite sa, že ste zadali wget/curl/ping na IP:port aplikácie.",
+					"iframe": "Pokiaľ ide o prvky iframe, mali by vždy používať rovnaký protokol (http/s) ako Homarr.",
+					"clearCache": "Niektoré informácie sú registrované vo vyrovnávacej pamäti, takže integrácia nemusí fungovať, pokiaľ nevymažete vyrovnávaciu pamäť vo všeobecných možnostiach Homarra."
+				},
+				"footer": "Ak potrebujete ďalšie riešenie problémov, obráťte sa na našu {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Externá adresa",

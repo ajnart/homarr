@@ -1,14 +1,14 @@
 {
   "card": {
-    "title": "",
+    "title": "죄송합니다, 오류가 발생했습니다!",
     "buttons": {
-      "details": "",
-      "tryAgain": ""
+      "details": "세부 정보",
+      "tryAgain": "다시 시도"
     }
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "오류",
+    "reportButton": "이 오류 신고하기"
   }
 }

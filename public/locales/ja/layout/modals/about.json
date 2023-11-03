@@ -6,7 +6,7 @@
 	"key": "ショートカットキー",
 	"action": "アクション",
 	"keybinds": "キー設定",
-	"documentation": "",
+	"documentation": "ドキュメンテーション",
 	"actions": {
 		"toggleTheme": "ライト/ダークモードに変更する",
 		"focusSearchBar": "検索バーにフォーカス",
@@ -23,7 +23,7 @@
 		"experimental_disableEditMode": "<b>実験的</b>: 編集モードを無効にする"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "{{newVersion}}",
+		"dropdown": "バージョンは {{newVersion}} です！現在のバージョンは {{currentVersion}}です。"
 	}
 }

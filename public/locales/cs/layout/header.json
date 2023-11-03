@@ -1,0 +1,34 @@
+{
+    "experimentalNote": {
+        "label": ""
+    },
+    "search": {
+        "label": "Vyhledat",
+        "engines": {
+            "web": "",
+            "youtube": "",
+            "torrent": "",
+            "movie": ""
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Změnit motiv",
+            "preferences": "Uživatelská nastavení",
+            "defaultBoard": "Výchozí plocha",
+            "manage": "Spravovat",
+            "about": {
+                "label": "",
+                "new": ""
+            },
+            "logout": "Odhlásit z {{username}}",
+            "login": ""
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": ""
+        }
+    }
+}

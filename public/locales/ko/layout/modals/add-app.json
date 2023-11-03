@@ -1,114 +1,128 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "일반",
+		"behaviour": "행동",
 		"network": "네트워크",
-		"appearance": "",
-		"integration": ""
+		"appearance": "모양",
+		"integration": "통합"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "앱 이름",
+			"description": "대시보드에 앱을 표시하는 데 사용됩니다."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": ""
+			"label": "내부 주소",
+			"description": "앱의 내부 IP 주소입니다.",
+			"troubleshoot": {
+				"label": "문제가 있으신가요?",
+				"header": "다음은 자주 발생하는 실수 및 문제 해결 목록입니다:",
+				"lines": {
+					"nothingAfterPort": "모든 경우는 아니더라도 대부분의 경우 포트 뒤에 경로를 입력하지 않아야 합니다. (피홀의 경우 '/admin', 플렉스의 경우 '/web'도 마찬가지입니다.)",
+					"protocolCheck": "항상 URL 앞에 http 또는 https가 오는지 확인하고 올바른 URL을 사용하고 있는지 확인하세요.",
+					"preferIP": "통신하려는 머신이나 컨테이너의 직접 IP를 사용하는 것이 좋습니다.",
+					"enablePings": "핑을 활성화하여 IP가 올바른지 확인합니다. 보드 사용자 지정 -> 레이아웃 -> 핑 활성화로 이동합니다. 앱 타일에 작은 빨간색 또는 녹색 말풍선이 나타나고 마우스 커서를 가져가면 응답 코드가 표시됩니다(대부분의 경우 코드 200이 포함된 녹색 말풍선이 예상됩니다).",
+					"wget": "homarr가 다른 앱과 통신할 수 있는지 확인하려면 앱의 IP:포트에 wget/curl/ping을 수행하세요.",
+					"iframe": "아이프레임의 경우, 항상 Homarr와 동일한 프로토콜(http/s)을 사용해야 합니다.",
+					"clearCache": "일부 정보는 캐시에 등록되어 있으므로 Homarr의 일반 옵션에서 캐시를 지우지 않으면 통합이 작동하지 않을 수 있습니다."
+				},
+				"footer": "자세한 문제 해결 방법은 {{discord}}으로 문의하세요."
+			}
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "외부 주소",
+			"description": "앱을 클릭할 때 열리는 URL입니다."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "새 탭에서 열기",
+			"description": "현재 탭이 아닌 새 탭에서 앱을 엽니다."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "애플리케이션 설명",
+			"description": "입력한 텍스트는 앱 위로 마우스를 가져가면 표시됩니다.\r\n이 텍스트를 사용하여 사용자에게 앱에 대한 자세한 정보를 제공하거나 아무것도 입력하지 않도록 비워둘 수 있습니다."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "비표준 프로토콜 사용. 이 경우 사전 설치된 애플리케이션이 필요할 수 있으며 보안 위험이 발생할 수 있습니다. 주소가 안전하고 신뢰할 수 있는지 확인하세요."
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "상태 확인기",
+			"description": "간단한 HTTP(S) 요청을 사용하여 앱이 온라인 상태인지 확인합니다."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "HTTP 상태 코드",
+			"description": "온라인 상태인 것으로 간주되는 HTTP 상태 코드입니다."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": "",
+			"label": "앱 아이콘",
+			"description": "입력을 시작하여 아이콘을 찾습니다. 이미지 URL을 붙여넣어 사용자 지정 아이콘을 사용할 수도 있습니다.",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "결과를 찾을 수 없습니다.",
+				"text": "좀 더 구체적인 검색어를 사용해 보세요. 원하는 아이콘을 찾을 수 없는 경우 위의 이미지 URL을 붙여넣어 사용자 지정 아이콘을 만듭니다."
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "외부 아이콘 로드",
+				"text": "몇 초 정도 걸릴 수 있습니다."
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "앱 이름 글꼴 크기",
+			"description": "타일에 앱 이름이 표시될 때의 글꼴 크기를 설정합니다."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "앱 이름 상태",
+			"description": "제목을 표시할 위치를 선택할 수 있습니다.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "타일에만 제목 표시",
+				"hover": "툴팁 마우스오버 시 제목만 표시",
+				"hidden": "전혀 표시하지 않음"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "앱 이름 위치",
+			"description": "아이콘을 기준으로 한 앱 이름의 위치입니다.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Top",
+				"right": "오른쪽",
+				"bottom": "하단",
+				"left": "왼쪽"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "앱 이름 라인 클램프",
+			"description": "제목이 최대로 들어갈 수 있는 줄 수를 정의합니다. 무제한으로 설정하려면 0으로 설정합니다."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "통합 구성",
+			"description": "앱에 연결하는 데 사용되는 통합 구성입니다.",
+			"placeholder": "통합 선택",
+			"defined": "정의됨",
+			"undefined": "정의되지 않음",
+			"public": "공개",
+			"private": "비공개",
+			"explanationPrivate": "개인 비밀은 한 번만 서버로 전송됩니다. 브라우저에서 페이지를 새로고침하면 다시는 전송되지 않습니다.",
+			"explanationPublic": "공개 비밀은 항상 클라이언트에 전송되며 API를 통해 액세스할 수 있습니다. 사용자 이름, 비밀번호, 토큰, 인증서 등과 같은 기밀 값을 포함해서는 안 됩니다!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "비밀번호를 업데이트하려면 값을 입력하고 저장 버튼을 클릭합니다. 비밀번호를 제거하려면 지우기 버튼을 사용합니다.",
+			"warning": "<strong>자격 증명은 통합을 위한 액세스 권한으로 사용되며, 다른 사람과 절대</strong> 공유해서는 안 됩니다. Homarr 팀은 절대로 자격 증명을 요구하지 않습니다. <strong>비밀을 안전하게 저장하고 관리하세요</strong>.",
+			"clear": "비밀 지우기",
+			"save": "비밀 저장",
+			"update": "비밀 업데이트"
 		}
 	},
 	"validation": {
-		"popover": "",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"popover": "양식에 잘못된 데이터가 포함되어 있습니다. 따라서 저장할 수 없습니다. 모든 문제를 해결한 후 이 버튼을 다시 클릭하여 변경 사항을 저장하세요.",
+		"name": "이름은 필수 입력 사항입니다.",
+		"noUrl": "URL은 필수입니다.",
+		"invalidUrl": "값이 유효한 URL이 아닙니다.",
+		"noIconUrl": "이 필드는 필수 입력 사항입니다.",
+		"noExternalUri": "외부 URI가 필요합니다.",
+		"invalidExternalUri": "외부 URI가 유효한 URI가 아닙니다."
 	}
 }

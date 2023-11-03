@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Dirección interna",
-			"description": "Dirección IP interna de la aplicación."
+			"description": "Dirección IP interna de la aplicación.",
+			"troubleshoot": {
+				"label": "¿Tienes problemas?",
+				"header": "Aquí hay una lista de errores comunes y solución de problemas:",
+				"lines": {
+					"nothingAfterPort": "En la mayoría de los casos, si no en todos, no debes ingresar ninguna ruta después del puerto. (Incluso '/admin' para pihole o '/web' para plex)",
+					"protocolCheck": "Asegúrate siempre de que la URL esté precedida por http o https, y de estar utilizando la correcta.",
+					"preferIP": "Se recomienda utilizar la ip directa de la máquina o contenedor con el que intentas comunicar.",
+					"enablePings": "Comprueba que la IP es correcta habilitando los pings. Personalizar tablero -> Diseño -> Habilitar pings. Aparecerá una pequeña burbuja roja o verde en los mosaicos de su aplicación y, al pasar sobre ella, obtendrá su código de respuesta (en la mayoría de los casos se espera una burbuja verde con el código 200).",
+					"wget": "Para asegurarte de que Homarr pueda comunicarse con las otras aplicaciones, asegúrate de hacer wget/curl/ping a la 'ip:puerto' de la aplicación.",
+					"iframe": "Cuando se trata de iframes, siempre deben usar el mismo protocolo (http/s) que Homarr.",
+					"clearCache": "Algunos datos se registran en caché, por lo que es posible que una integración no funcione a menos que borres la caché en las opciones generales de Homarr."
+				},
+				"footer": "Para obtener más información sobre la solución de problemas, ponte en contacto con nosotros en {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Dirección externa",

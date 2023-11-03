@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Tạo người dùng",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Bước đầu tiên",
+            "text": "Tạo tài khoản",
             "username": {
                 "label": "Tên người dùng"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Bước thứ hai",
             "text": "Mật khẩu",
             "password": {
                 "label": "Mật khẩu"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Xác nhận",
+            "text": "Lưu vào cơ sở dữ liệu",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Xem lại thông tin đầu vào của bạn",
+                "text": "Sau khi bạn gửi dữ liệu của mình đến cơ sở dữ liệu, người dùng sẽ có thể đăng nhập. Bạn có chắc chắn muốn lưu trữ người dùng này trong cơ sở dữ liệu và kích hoạt đăng nhập không?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Tài sản",
+                    "value": "Giá trị",
                     "username": "Tên người dùng",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Mật khẩu"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Không được thiết lập",
+                "valid": "Có hiệu lực"
             },
-            "failed": ""
+            "failed": "Tạo người dùng không thành công: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Người dùng đã được tạo",
+                "text": "Người dùng đã được tạo trong cơ sở dữ liệu. Bây giờ họ có thể đăng nhập."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Tạo ngẫu nhiên",
+        "createAnother": "Tạo ra một cái khác"
     }
 }

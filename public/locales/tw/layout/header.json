@@ -27,7 +27,7 @@
     },
     "modals": {
         "movie": {
-            "title": "空",
+            "title": "",
             "topResults": "上方 {{count}} 結果為 <b>{{search}}</b>"
         }
     }

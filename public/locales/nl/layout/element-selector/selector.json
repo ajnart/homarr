@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Tegel toevoegen"
     },
-    "apps": "",
+    "apps": "Apps",
     "app": {
-        "defaultName": ""
+        "defaultName": "Uw app"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Categorieën",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Naam van nieuwe categorie",
+        "defaultName": "Nieuwe categorie",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Categorie gemaakt",
+            "message": "De categorie \"{{name}}\" is aangemaakt"
         }
     }
 }

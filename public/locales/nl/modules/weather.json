@@ -8,7 +8,7 @@
         "label": "Weergeven in Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Plaatsnaam weergeven"
       },
       "location": {
         "label": "Weerslocatie"
@@ -33,5 +33,5 @@
       "unknown": "Onbekend"
     }
   },
-  "error": ""
+  "error": "Er is een fout opgetreden"
 }

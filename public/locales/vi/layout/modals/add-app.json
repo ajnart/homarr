@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Địa chỉ nội bộ",
-			"description": "Địa chỉ IP nội bộ của ứng dụng."
+			"description": "Địa chỉ IP nội bộ của ứng dụng.",
+			"troubleshoot": {
+				"label": "Có vấn đề?",
+				"header": "Dưới đây là danh sách các lỗi thường gặp và cách khắc phục:",
+				"lines": {
+					"nothingAfterPort": "Trong hầu hết nếu không phải tất cả các trường hợp, bạn không nên nhập bất kỳ đường dẫn nào sau cổng. (Ngay cả '/admin' cho pihole hoặc '/web' cho plex)",
+					"protocolCheck": "Luôn đảm bảo rằng URL được bắt đầu bằng http hoặc https và đảm bảo bạn đang sử dụng đúng URL.",
+					"preferIP": "Bạn nên sử dụng ip trực tiếp của máy hoặc vùng chứa mà bạn đang cố gắng liên lạc.",
+					"enablePings": "Kiểm tra xem IP có đúng không bằng cách bật ping. Tùy chỉnh Bảng -> Bố cục -> Bật ping. Một bong bóng nhỏ màu đỏ hoặc xanh lục sẽ xuất hiện trên ô ứng dụng của bạn và di chuột vào nó sẽ cung cấp cho bạn mã phản hồi (trong hầu hết các trường hợp, bong bóng màu xanh lá cây có mã 200 được mong đợi).",
+					"wget": "Để đảm bảo rằng homarr có thể giao tiếp với các ứng dụng khác, hãy đảm bảo wget/curl/ping IP:port của ứng dụng.",
+					"iframe": "Khi nói đến iframe, những iframe đó phải luôn sử dụng cùng một giao thức (http/s) như Homarr.",
+					"clearCache": "Một số thông tin được đăng ký trong bộ đệm, do đó quá trình tích hợp có thể không hoạt động trừ khi bạn xóa bộ đệm trong các tùy chọn chung của Homarr."
+				},
+				"footer": "Để biết thêm cách khắc phục sự cố, hãy liên hệ với {{discord}}của chúng tôi."
+			}
 		},
 		"externalAddress": {
 			"label": "Địa chỉ bên ngoài",
@@ -26,10 +40,10 @@
 			"description": "Mở ứng dụng trong tab mới thay vì tab hiện tại."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Mô tả ứng dụng",
+			"description": "Văn bản bạn nhập sẽ xuất hiện khi di chuột qua ứng dụng của bạn.\r\nSử dụng mục này để cung cấp cho người dùng thêm thông tin chi tiết về ứng dụng của bạn hoặc để trống nếu không có gì."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Sử dụng một giao thức không chuẩn. Điều này có thể yêu cầu các ứng dụng được cài đặt sẵn và có thể gây ra rủi ro bảo mật. Đảm bảo rằng địa chỉ của bạn được an toàn và đáng tin cậy."
 	},
 	"network": {
 		"statusChecker": {
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Tên ứng dụng Kích thước phông chữ",
+			"description": "Đặt kích thước phông chữ khi tên ứng dụng được hiển thị trên ô."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Trạng thái tên ứng dụng",
+			"description": "Chọn nơi bạn muốn tiêu đề hiển thị, nếu có.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Chỉ hiển thị tiêu đề trên ô",
+				"hover": "Chỉ hiển thị tiêu đề trên chú giải công cụ khi di chuột",
+				"hidden": "Không hiển thị chút nào"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Tên ứng dụng Vị trí",
+			"description": "Vị trí của tên ứng dụng so với biểu tượng.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Đứng đầu",
+				"right": "Phải",
+				"bottom": "Đáy",
+				"left": "Bên trái"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Tên ứng dụng Kẹp dòng",
+			"description": "Xác định số dòng mà tiêu đề của bạn phải phù hợp tối đa. Đặt 0 cho không giới hạn."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "Biểu mẫu của bạn chứa dữ liệu không hợp lệ, vì vậy không thể lưu nó. Vui lòng khắc phục mọi vấn đề và nhấp lại vào nút này để lưu các thay đổi của bạn",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Tên là bắt buộc",
+		"noUrl": "Url là bắt buộc",
+		"invalidUrl": "Giá trị không phải là url hợp lệ",
+		"noIconUrl": "Trường này là bắt buộc",
+		"noExternalUri": "URI bên ngoài là bắt buộc",
+		"invalidExternalUri": "URI bên ngoài không phải là uri hợp lệ"
 	}
 }

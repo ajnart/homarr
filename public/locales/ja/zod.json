@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
+        "default": "このフィールドは無効です。",
         "required": "このフィールドは必須です",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "このフィールドは {{startsWith}}で始まらなければならない。",
+            "endsWith": "このフィールドの末尾は {{endsWith}}でなければならない。",
+            "includes": "このフィールドには {{includes}}を含めなければならない。"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "このフィールドは {{minimum}} 文字以上で入力してください。",
+            "number": "このフィールドは {{minimum}}以上でなければならない。"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "このフィールドは {{maximum}} 文字以内で入力してください。",
+            "number": "このフィールドは {{maximum}}以下でなければならない。"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "パスワードは一致しなければならない"
         }
     }
 }

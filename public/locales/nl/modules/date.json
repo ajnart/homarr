@@ -8,24 +8,24 @@
         "label": "Volledige tijd weergeven (24-uur)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datumopmaak",
         "data": {
-          "hide": ""
+          "hide": "Datum verbergen"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Een aangepaste tijdzone weergeven"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Tijdzone Locatie"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Titel",
+        "info": "Als je de optie Tijdzone activeert, kun je de naam van de stad en de code van de tijdzone laten zien.<br/>Je kunt ook alleen de stad of zelfs geen stad weergeven.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Stad en tijdzone",
+          "city": "Alleen stad",
+          "none": "Geen"
         }
       }
     }

@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Plochy",
+    "pageTitle": "Plochy",
+    "cards": {
+        "statistics": {
+            "apps": "Aplikace",
+            "widgets": "Widgety",
+            "categories": "Kategorie"
+        },
+        "buttons": {
+            "view": ""
+        },
+        "menu": {
+            "setAsDefault": "",
+            "delete": {
+                "label": "",
+                "disabled": ""
+            }
+        },
+        "badges": {
+            "fileSystem": "",
+            "default": ""
+        }
+    },
+    "buttons": {
+        "create": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "create": {
+            "title": "",
+            "text": "",
+            "form": {
+                "name": {
+                    "label": ""
+                },
+                "submit": ""
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Tạo tài khoản",
+    "title": "Tạo tài khoản",
+    "text": "Vui lòng xác định thông tin xác thực của bạn bên dưới",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Mật khẩu"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Xác nhận mật khẩu"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Tạo tài khoản"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Tạo tài khoản",
+            "text": "Vui lòng chờ"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Tài khoản đã được tạo",
+            "text": "Tài khoản của bạn đã được tạo thành công"
         },
         "error": {
             "title": "Lỗi",
-            "text": ""
+            "text": "Đã xảy ra lỗi, gặp lỗi sau: {{error}}"
         }
     }
 }

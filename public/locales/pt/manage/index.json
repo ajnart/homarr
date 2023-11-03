@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Gerenciar",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Bem-vindo de volta, {{username}}",
+        "fallbackUsername": "Anônimo",
+        "subtitle": "Bem-vindo ao seu Application Hub. Organize, otimize e conquiste!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Ações rápidas",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Suas placas",
+            "subtitle": "Crie e gerencie seus quadros"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Convidar um novo usuário",
+            "subtitle": "Criar e enviar um convite para registro"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Gerenciar usuários",
+            "subtitle": "Excluir e gerenciar seus usuários"
         }
     }
 }

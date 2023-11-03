@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Belső cím",
-			"description": "Az alkalmazás belső IP-címe."
+			"description": "Az alkalmazás belső IP-címe.",
+			"troubleshoot": {
+				"label": "Hibát talált?",
+				"header": "Íme egy lista a gyakran előforduló hibákról és a hibaelhárításról:",
+				"lines": {
+					"nothingAfterPort": "A legtöbb, ha nem minden esetben nem szabad a port után semmilyen útvonalat beírni. (Még a '/admin' a pihole vagy a '/web' a plex esetében sem)",
+					"protocolCheck": "Mindig győződjön meg arról, hogy az URL-cím előtt http vagy https szerepel, és győződjön meg arról, hogy a megfelelőt használja.",
+					"preferIP": "Ajánlott a kommunikálni kívánt gép vagy konténer közvetlen ip címét használni.",
+					"enablePings": "Ellenőrizze, hogy az IP helyes-e a pingelés engedélyezésével. Testreszabás -> Elrendezés -> Pingek engedélyezése. Egy kis piros vagy zöld buborék fog megjelenni az alkalmazás csempéin, és ha lebegteted, akkor a válaszkódot fogod látni (a legtöbb esetben egy zöld buborék 200-as kóddal várható).",
+					"wget": "Hogy megbizonyosodjunk arról, hogy a homarr tud kommunikálni a többi alkalmazással, győződjünk meg róla, hogy a wget/curl/ping parancsokat az alkalmazás IP:portjára adja ki.",
+					"iframe": "Az iframe-ek esetében mindig ugyanazt a protokollt (http/s) kell használni, mint a Homarr.",
+					"clearCache": "Egyes információk a gyorsítótárban vannak regisztrálva, ezért előfordulhat, hogy az integráció nem működik, hacsak nem törli a gyorsítótárat a Homarr általános beállításaiban."
+				},
+				"footer": "További hibaelhárításért forduljon hozzánk a {{discord}} címen."
+			}
 		},
 		"externalAddress": {
 			"label": "Külső cím",

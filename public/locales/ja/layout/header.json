@@ -3,32 +3,32 @@
         "label": "これはHomarrの実験的な機能です。問題があれば <gh>GitHub</gh> または <dc>Discord</dc>に報告してください。"
     },
     "search": {
-        "label": "",
+        "label": "検索",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "{{query}} をウェブで検索",
+            "youtube": "YouTubeで {{query}} を検索",
+            "torrent": "{{query}} のトレントを検索",
+            "movie": "{{app}}で {{query}} を検索"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "スイッチテーマ",
+            "preferences": "ユーザー設定",
+            "defaultBoard": "デフォルトのダッシュボード",
+            "manage": "管理",
             "about": {
                 "label": "About",
-                "new": ""
+                "new": "新しい"
             },
-            "logout": "",
+            "logout": "{{username}}からログアウト",
             "login": "ログイン"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "トップ {{count}} の検索結果 <b>{{search}}</b>."
         }
     }
 }

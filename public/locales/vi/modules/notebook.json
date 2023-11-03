@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Sổ tay",
+		"description": "Tiện ích tương tác dựa trên đánh dấu để bạn viết ra ghi chú của mình!",
 		"settings": {
-			"title": "",
+			"title": "Cài đặt cho tiện ích sổ ghi chép",
 			"showToolbar": {
-				"label": ""
+				"label": "Hiển thị thanh công cụ giúp bạn viết markdown"
 			},
 			"content": {
-				"label": ""
+				"label": "Nội dung của sổ ghi chép"
 			}
 		}
 	}

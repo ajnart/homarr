@@ -8,5 +8,5 @@
         "title": "Chế độ chỉnh sửa đã được kích hoạt cho kích thước <1>{{size}}</1>",
         "text": "Bạn giờ có thể chỉnh sửa và thiết lập các ứng dụng. Các thay đổi sẽ <strong>không được lưu</strong> cho tới khi bạn thoát chế độ chỉnh sửa"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Thoát chế độ chỉnh sửa để lưu các thay đổi của bạn"
 }

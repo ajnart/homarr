@@ -1,26 +1,26 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "DNS-gat samenvatting",
+    "description": "Toont belangrijke gegevens van PiHole of AdGuard",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor DNS-gatenoverzicht",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Gebruik kleuren van PiHole"
       },
       "layout": {
         "label": "Indeling",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 bij 2",
+          "row": "Horizontaal",
+          "column": "Verticaal"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
+      "domainsOnAdlist": "Domeinen op adlists",
+      "queriesToday": "Vragen vandaag",
       "queriesBlockedTodayPercentage": "",
       "queriesBlockedToday": ""
     }

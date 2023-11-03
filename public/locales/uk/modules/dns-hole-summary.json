@@ -10,9 +10,9 @@
       "layout": {
         "label": "Макет",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 на 2",
+          "row": "Горизонтальний",
+          "column": "Вертикальний"
         }
       }
     }
@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Домени в списках реклами",
       "queriesToday": "Запити за сьогодні",
-      "queriesBlockedTodayPercentage": "заблоковано сьогодні",
-      "queriesBlockedToday": "заблоковано сьогодні"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }
