@@ -69,7 +69,7 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "应用名称字体大小",
+			"label": "应用名称大小",
 			"description": "设置应用名称在磁贴上显示时的字体大小。"
 		},
 		"appNameStatus": {
