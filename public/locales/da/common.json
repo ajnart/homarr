@@ -1,7 +1,7 @@
 {
   "save": "Gem",
-  "apply": "",
-  "insert": "",
+  "apply": "Anvend",
+  "insert": "Indsæt",
   "about": "Om",
   "cancel": "Annuller",
   "close": "Luk",
@@ -45,7 +45,7 @@
   "seeMore": "Se mere...",
   "position": {
     "left": "Venstre",
-    "center": "",
+    "center": "Centrer",
     "right": "Højre"
   },
   "attributes": {
