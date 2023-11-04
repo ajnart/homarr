@@ -20,7 +20,7 @@
   },
   "customCSS": {
     "label": "自定义 CSS",
-    "description": "此外，只推荐有经验的用户使用 CSS 自定义面板",
+    "description": "只推荐有经验的用户使用 CSS 自定义面板",
     "placeholder": "自定义 CSS 将在最后应用",
     "applying": "应用CSS中..."
   }
