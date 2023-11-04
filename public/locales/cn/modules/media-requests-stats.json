@@ -14,11 +14,11 @@
   },
   "mediaStats": {
     "title": "媒体统计",
-    "pending": "待批准",
+    "pending": "等待批准",
     "tvRequests": "电视请求",
     "movieRequests": "电影请求",
-    "approved": "已批准",
-    "totalRequests": "总计"
+    "approved": "已经批准",
+    "totalRequests": "请求总计"
   },
   "userStats": {
     "title": "用户排行",
