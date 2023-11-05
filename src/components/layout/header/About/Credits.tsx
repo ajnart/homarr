@@ -41,7 +41,6 @@ const DependencyTable = () => {
       variant="light"
       mx="auto"
       size="xs"
-      opacity={0.3}
       onClick={() =>
         modals.open({
           title: t('credits.thirdPartyContent'),
