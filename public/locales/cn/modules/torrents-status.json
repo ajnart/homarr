@@ -8,16 +8,16 @@
         "label": "刷新间隔（秒）"
       },
       "displayCompletedTorrents": {
-        "label": "显示已完成 torrents"
+        "label": "显示已完成的种子"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "显示正活跃的种子"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "将torrent视为活动的上传速度(kB/s)"
       },
       "displayStaleTorrents": {
-        "label": "显示过期 torrents"
+        "label": "显示已过期的种子"
       },
       "labelFilterIsWhitelist": {
         "label": "标签列表是白名单 (而不是黑名单)"
