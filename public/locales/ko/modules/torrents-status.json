@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "완료된 토렌트 표시"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "오래된 토렌트 표시"
       },
