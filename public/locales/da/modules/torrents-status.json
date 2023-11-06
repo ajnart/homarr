@@ -11,10 +11,10 @@
         "label": "Vis fuldførte torrents"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Vis aktive torrents"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Uploadhastighed for at betragte en torrent som aktiv (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Vis torrents uden aktivitet"
