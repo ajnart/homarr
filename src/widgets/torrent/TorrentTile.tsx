@@ -245,7 +245,7 @@ const getRatio = (
 
   if(applyAllFilter) {
     torrents = filterTorrents(widget,torrents)
-  } else {
+  } else if (widget.properties.labelFilter.length > 0) {
     torrents = filterTorrentsByLabels(torrents, widget.properties.labelFilter,widget.properties.labelFilterIsWhitelist)
   }
 
