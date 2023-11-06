@@ -11,10 +11,10 @@
         "label": "Mostra torrent completati"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Visualizza i torrent attivi"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Velocità di upload per considerare un torrent come attivo (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Mostra torrent in stallo"
