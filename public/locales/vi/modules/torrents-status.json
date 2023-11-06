@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Hiển thị torrent hoàn thành"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Hiển thị torrent hết hạn"
       },
