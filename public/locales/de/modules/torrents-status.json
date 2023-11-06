@@ -11,10 +11,10 @@
         "label": "Abgeschlossene Torrents anzeigen"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Aktive Torrents anzeigen"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Upload-Geschwindigkeit, um einen Torrent als aktiv zu betrachten (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Angehaltene Torrents anzeigen"
