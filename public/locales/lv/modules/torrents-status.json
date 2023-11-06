@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Rādīt pabeigtos torrentus"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Rādīt novecojušus torrentus"
       },
