@@ -8,7 +8,7 @@
 				"label": "A markdown írást segítő eszköztár megjelenítése"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Csak olvasási módban történő ellenőrzés engedélyezése"
 			},
 			"content": {
 				"label": "A jegyzetfüzet tartalma"
@@ -17,43 +17,43 @@
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
-			"bulletList": "",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
-			"link": "",
-			"unlink": "",
-			"image": "",
-			"addTable": "",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"bold": "Félkövér",
+			"italic": "Dőlt",
+			"strikethrough": "Áthúzott",
+			"underline": "Aláhúzott",
+			"colorText": "Szövegszín",
+			"colorHighlight": "Színesen kiemelt szöveg",
+			"code": "Kód",
+			"clear": "Formázás törlése",
+			"heading": "Címsor {{level}}",
+			"align": "Szöveg igazítása: {{position}}",
+			"blockquote": "Idézet",
+			"horizontalLine": "Vízszintes vonal",
+			"bulletList": "Lista",
+			"orderedList": "Sorkizárt",
+			"checkList": "Jelölőnégyzetes lista",
+			"increaseIndent": "Behúzás növelése",
+			"decreaseIndent": "Behúzás csökkentése",
+			"link": "Hivatkozás",
+			"unlink": "Hivatkozás eltávolítása",
+			"image": "Kép beágyazása",
+			"addTable": "Táblázat hozzáadása",
+			"deleteTable": "Táblázat törlése",
+			"colorCell": "Színes cella",
+			"mergeCell": "Cellák összevonása",
+			"addColumnLeft": "Oszlop hozzáadása előtte",
+			"addColumnRight": "Oszlop hozzáadása utána",
+			"deleteColumn": "Oszlop törlése",
+			"addRowTop": "Sor hozzáadása előtte",
+			"addRowBelow": "Sor hozzáadása utána",
+			"deleteRow": "Sor törlése"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Szín törlése",
+			"source": "Forrás",
+			"widthPlaceholder": "Érték %-ban vagy képpontban",
+			"columns": "Oszlopok",
+			"rows": "Sorok"
 		}
 	}
 }
