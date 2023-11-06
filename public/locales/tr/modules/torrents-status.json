@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Tamamlanan torrentleri görüntüle"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Durdurulmuş torrentleri görüntüle"
       },
