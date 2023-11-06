@@ -144,8 +144,8 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
 
-  const ratioGlobal = getRatio(widget, torrents, false);
-  const ratioWithFilter = getRatio(widget, torrents, true);
+  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
@@ -237,7 +237,7 @@ const filterTorrentsByLabels = (
   return torrents.filter((torrent) => !labels.includes(torrent.label as string));
 };
 
-const getRatio = (
+const getTorrentsRatio = (
   widget: ITorrent,
   torrents: NormalizedTorrent[],
   applyAllFilter:boolean
