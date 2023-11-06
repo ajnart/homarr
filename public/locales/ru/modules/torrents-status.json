@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Отображение завершенных торрентов"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Отображение устаревших торрентов"
       },
