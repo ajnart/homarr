@@ -11,10 +11,10 @@
         "label": "顯示已完成 Torrents"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "顯示活耀的種子"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "將 Torrent 視為活耀的上傳速度 (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "顯示過期 Torrents"
