@@ -19,13 +19,19 @@
       "labelFilter": {
         "label": "Label list",
         "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
+      },
+      "displayRatioWithFilter": {
+        "label": "View filtered torrent list ratio",
+        "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Last updated {{time}} ago"
+      "lastUpdated": "Last updated {{time}} ago",
+      "ratioGlobal": "Global ratio",
+      "ratioWithFilter": "Ratio with filter"
     },
     "table": {
       "header": {
