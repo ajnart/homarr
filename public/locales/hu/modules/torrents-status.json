@@ -11,10 +11,10 @@
         "label": "Befejezett torrentek megjelenítése"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Aktív torrentek megjelenítése"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Feltöltési sebesség, amellyel egy torrent aktívnak tekinthető (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Elavult torrentek megjelenítése"
