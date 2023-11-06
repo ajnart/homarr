@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Display completed torrents"
       },
+      "displayActiveTorrents": {
+        "label": "Display active torrents"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Upload speed to consider a torrent as active (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Display stale torrents"
       },

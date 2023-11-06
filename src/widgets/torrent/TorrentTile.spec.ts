@@ -20,13 +20,15 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -55,13 +57,15 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -74,7 +78,7 @@ describe('TorrentTile', () => {
     expect(filtered.includes(torrents[2])).toBe(true);
   });
 
-  it('filter when completed', () => {
+  it('filter when completed without active torrent', () => {
     // arrange
     const widget: ITorrent = {
       id: 'abc',
@@ -90,13 +94,15 @@ describe('TorrentTile', () => {
         labelFilter: [],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
+        displayActiveTorrents: false,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672),
-      constructTorrent('HH', 'I am completed', true, 0),
-      constructTorrent('HH', 'I am stale', false, 0),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed', true, 0, 672),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
 
     // act
@@ -107,6 +113,47 @@ describe('TorrentTile', () => {
     expect(filtered.at(0)).toBe(torrents[0]);
     expect(filtered.includes(torrents[1])).toBe(false);
     expect(filtered.at(1)).toBe(torrents[2]);
+  });
+
+  it('filter when completed with active torrent', () => {
+    // arrange
+    const widget: ITorrent = {
+      id: 'abc',
+      area: {
+        type: 'sidebar',
+        properties: {
+          location: 'left',
+        },
+      },
+      shape: {},
+      type: 'torrents-status',
+      properties: {
+        labelFilter: [],
+        labelFilterIsWhitelist: false,
+        displayCompletedTorrents: false,
+        displayActiveTorrents: true,
+        speedLimitOfActiveTorrents: 10,
+        displayStaleTorrents: true,
+      },
+    };
+    const torrents: NormalizedTorrent[] = [
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
+      constructTorrent('HH', 'I am completed and uploading less than 10 ko/s (10239 ≈ 9.99ko/s)', true, 0, 10239),
+      constructTorrent('HH', 'I am completed and uploading more than 10 ko/s (10241 ≈ 10.01ko/s)', true, 0, 10241),
+      constructTorrent('HH', 'I am completed', true, 0, 0),
+      constructTorrent('HH', 'I am stale', false, 0, 0),
+    ];
+
+    // act
+    const filtered = filterTorrents(widget, torrents);
+
+    // assert
+    expect(filtered.length).toBe(3);
+    expect(filtered.at(0)).toBe(torrents[0]);
+    expect(filtered.includes(torrents[1])).toBe(false);
+    expect(filtered.at(1)).toBe(torrents[2]);
+    expect(filtered.includes(torrents[3])).toBe(false);
+    expect(filtered.at(2)).toBe(torrents[4]);
   });
 
   it('filter by label when whitelist', () => {
@@ -125,13 +172,15 @@ describe('TorrentTile', () => {
         labelFilter: ['music', 'movie'],
         labelFilterIsWhitelist: true,
         displayCompletedTorrents: true,
+        displayActiveTorrents: true,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('1', 'A sick drop', false, 672, 'music'),
-      constructTorrent('2', 'I cried', true, 0, 'movie'),
-      constructTorrent('3', 'Great Animations', false, 0, 'anime'),
+      constructTorrent('1', 'A sick drop', false, 672, 672, 'music'),
+      constructTorrent('2', 'I cried', true, 0, 0, 'movie'),
+      constructTorrent('3', 'Great Animations', false, 0, 0, 'anime'),
     ];
 
     // act
@@ -160,13 +209,15 @@ describe('TorrentTile', () => {
         labelFilter: ['music', 'movie'],
         labelFilterIsWhitelist: false,
         displayCompletedTorrents: false,
+        displayActiveTorrents: false,
+        speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
       },
     };
     const torrents: NormalizedTorrent[] = [
-      constructTorrent('ABC', 'Nice Torrent', false, 672, 'anime'),
-      constructTorrent('HH', 'I am completed', true, 0, 'movie'),
-      constructTorrent('HH', 'I am stale', false, 0, 'tv'),
+      constructTorrent('ABC', 'Nice Torrent', false, 672, 672, 'anime'),
+      constructTorrent('HH', 'I am completed', true, 0, 0, 'movie'),
+      constructTorrent('HH', 'I am stale', false, 0, 0, 'tv'),
     ];
 
     // act
@@ -184,7 +235,8 @@ const constructTorrent = (
   id: string,
   name: string,
   isCompleted: boolean,
-  downloadSpeed: number,
+  downloadSpeed: number, // Bytes per second in @ctrl/shared-torrent
+  uploadSpeed: number, // Bytes per second in @ctrl/shared-torrent
   label?: string
 ): NormalizedTorrent => ({
   id,
@@ -208,6 +260,6 @@ const constructTorrent = (
   totalSize: 839539535,
   totalSelected: 0,
   totalUploaded: 378535535,
-  uploadSpeed: 8349,
+  uploadSpeed,
   label,
 });
