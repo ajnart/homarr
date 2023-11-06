@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "crwdns2221:0crwdne2221:0"
       },
+      "displayActiveTorrents": {
+        "label": "crwdns3986:0crwdne3986:0"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "crwdns3988:0crwdne3988:0"
+      },
       "displayStaleTorrents": {
         "label": "crwdns2223:0crwdne2223:0"
       },
