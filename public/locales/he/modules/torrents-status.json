@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "הצג טורנטים שהושלמו"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "הצג טורנטים שהושלמו"
       },
