@@ -1,7 +1,7 @@
 {
   "save": "Guardar",
-  "apply": "",
-  "insert": "",
+  "apply": "Aplicar",
+  "insert": "Insertar",
   "about": "Acerca de",
   "cancel": "Cancelar",
   "close": "Cerrar",
@@ -45,7 +45,7 @@
   "seeMore": "Ver más...",
   "position": {
     "left": "Izquierda",
-    "center": "",
+    "center": "Centrar",
     "right": "Derecha"
   },
   "attributes": {
