@@ -21,8 +21,8 @@
         "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
       },
       "displayRatioWithFilter": {
-        "label": "View filtered torrent list ratio",
-        "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
+        "label": "Display filtered torrents list ratio",
+        "description": "If disable, only global ratio will be display. Global ratio still use labels if set"
       }
     }
   },
