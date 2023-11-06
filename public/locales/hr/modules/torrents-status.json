@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Prikaži završene torrente"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Prikaži neaktivne torrente"
       },
