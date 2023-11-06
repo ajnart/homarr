@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "完了したトレントを表示する"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "古くなったトレントを表示する"
       },
