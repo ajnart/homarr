@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Afgeronde torrents weergeven"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Toon verouderde torrents"
       },
