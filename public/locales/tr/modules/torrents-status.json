@@ -11,10 +11,10 @@
         "label": "Tamamlanan torrentleri görüntüle"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Aktif torrentleri görüntüle"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Bir torrenti aktif olarak kabul etmek için yükleme hızı (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Durdurulmuş torrentleri görüntüle"
