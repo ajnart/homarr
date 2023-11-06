@@ -237,7 +237,7 @@ const filterTorrentsByLabels = (
   return torrents.filter((torrent) => !labels.includes(torrent.label as string));
 };
 
-const getTorrentsRatio = (
+export const getTorrentsRatio = (
   widget: ITorrent,
   torrents: NormalizedTorrent[],
   applyAllFilter:boolean
