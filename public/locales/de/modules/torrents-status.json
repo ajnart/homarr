@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Abgeschlossene Torrents anzeigen"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Angehaltene Torrents anzeigen"
       },
