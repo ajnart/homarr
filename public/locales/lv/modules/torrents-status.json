@@ -11,10 +11,10 @@
         "label": "Rādīt pabeigtos torrentus"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Rādīt aktīvos torrentus"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Augšupielādes ātrums, lai torrentu uzskatītu par aktīvu (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Rādīt novecojušus torrentus"
