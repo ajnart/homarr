@@ -1,7 +1,7 @@
 {
   "save": "Saglabāt",
-  "apply": "",
-  "insert": "",
+  "apply": "Lietot",
+  "insert": "Ievietot",
   "about": "Par Programmu",
   "cancel": "Atcelt",
   "close": "Aizvērt",
@@ -45,7 +45,7 @@
   "seeMore": "Skatīt vairāk...",
   "position": {
     "left": "Pa kreisi",
-    "center": "",
+    "center": "Centrā",
     "right": "Pa labi"
   },
   "attributes": {
