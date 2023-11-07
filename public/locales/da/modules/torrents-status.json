@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Etiket liste",
         "description": "Når \"er whitelist\" er markeret, fungerer dette som en whitelist. Hvis det ikke er markeret, er det en blackliste. Gør ikke noget, hvis den er tom"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Fejl",
-      "lastUpdated": "Sidst opdateret {{time}} siden"
+      "lastUpdated": "Sidst opdateret {{time}} siden",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
