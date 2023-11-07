@@ -1966,7 +1966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:^8.7.0":
+"@tanstack/match-sorter-utils@npm:8.8.4, @tanstack/match-sorter-utils@npm:^8.7.0":
   version: 8.8.4
   resolution: "@tanstack/match-sorter-utils@npm:8.8.4"
   dependencies:
@@ -2051,6 +2051,43 @@ __metadata:
     react-native:
       optional: true
   checksum: 4d7e4e6a8466095848d2924fdbcd2d22a36b53e2d0f79a7dec121c8d7af36ff857b1bae5a7b802f3a399922c9c9f38f2a06372b1fc7b1d5de960e78fa1d3d722
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-table@npm:8.10.6":
+  version: 8.10.6
+  resolution: "@tanstack/react-table@npm:8.10.6"
+  dependencies:
+    "@tanstack/table-core": 8.10.6
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 4b920fa36c70ed2de356c8c0e99f497f6ee8ab5bc74bc57f1f9aa8cc5d580ea3eb4a7743a03ad149fc43629efb157c592aba620141fb230d5529646dd6c7c002
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-virtual@npm:3.0.0-beta.63":
+  version: 3.0.0-beta.63
+  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.63"
+  dependencies:
+    "@tanstack/virtual-core": 3.0.0-beta.63
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: b0b9f4e1bfa8d5d0b732e404df342f69e7c4092787e6f827808ac3df746f54c8e8b776af689dcf97ce5c99627893f40298c53643b25f721ff138c3a565234e28
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.10.6":
+  version: 8.10.6
+  resolution: "@tanstack/table-core@npm:8.10.6"
+  checksum: 05e7f15171f02053d1a9e552a7877e878a827635d3d4ed50387fa3d0e4ede9eb325eae758a4faa921dc2dd552302f4b49bb3b540e3511bff16b6a2b92d450429
+  languageName: node
+  linkType: hard
+
+"@tanstack/virtual-core@npm:3.0.0-beta.63":
+  version: 3.0.0-beta.63
+  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.63"
+  checksum: 2c16aee993c2ef4a9e2c758427b640fabf450e670d7d599657fdaa596fb5d3c3d3c7808bd41acb7173082d1eaadeba098edde67245a68ea90813b3c7f2767b40
   languageName: node
   linkType: hard
 
@@ -7781,6 +7818,7 @@ __metadata:
     i18next: ^22.5.1
     immer: ^10.0.2
     js-file-download: ^0.4.12
+    mantine-react-table: ^1.3.4
     moment: ^2.29.4
     moment-timezone: ^0.5.43
     next: 13.4.12
@@ -9294,6 +9332,25 @@ __metadata:
     socks-proxy-agent: ^7.0.0
     ssri: ^10.0.0
   checksum: 7268bf274a0f6dcf0343829489a4506603ff34bd0649c12058753900b0eb29191dce5dba12680719a5d0a983d3e57810f594a12f3c18494e93a1fbc6348a4540
+  languageName: node
+  linkType: hard
+
+"mantine-react-table@npm:^1.3.4":
+  version: 1.3.4
+  resolution: "mantine-react-table@npm:1.3.4"
+  dependencies:
+    "@tanstack/match-sorter-utils": 8.8.4
+    "@tanstack/react-table": 8.10.6
+    "@tanstack/react-virtual": 3.0.0-beta.63
+  peerDependencies:
+    "@emotion/react": ">=11"
+    "@mantine/core": ^6.0
+    "@mantine/dates": ^6.0
+    "@mantine/hooks": ^6.0
+    "@tabler/icons-react": ">=2.23"
+    react: ">=18.0"
+    react-dom: ">=18.0"
+  checksum: 21165735d0963cd63f7d301ad382708d5d9334ffdb02050b04af34caffad8d76c5c494407f3f09b92a90130cb3581f02e58927edd2fa965ba67f199295cd6033
   languageName: node
   linkType: hard
 
