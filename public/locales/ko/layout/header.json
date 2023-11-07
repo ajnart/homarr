@@ -17,10 +17,6 @@
             "preferences": "사용자 기본 설정",
             "defaultBoard": "기본 대시보드",
             "manage": "관리",
-            "about": {
-                "label": "정보",
-                "new": "신규"
-            },
             "logout": "{{username}}에서 로그아웃",
             "login": "로그인"
         }
