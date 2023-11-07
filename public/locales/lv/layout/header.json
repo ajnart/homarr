@@ -17,10 +17,6 @@
             "preferences": "Lietotāja iestatījumi",
             "defaultBoard": "Noklusējuma darbvirsma",
             "manage": "Pārvaldīt",
-            "about": {
-                "label": "Par Programmu",
-                "new": "Jauns"
-            },
             "logout": "Izrakstīšanās no {{username}}",
             "login": "Pieslēgties"
         }
