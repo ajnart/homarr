@@ -17,10 +17,6 @@
             "preferences": "Användarinställningar",
             "defaultBoard": "Standard instrumentpanel",
             "manage": "Hantera",
-            "about": {
-                "label": "Om",
-                "new": ""
-            },
             "logout": "",
             "login": "Logga in"
         }
