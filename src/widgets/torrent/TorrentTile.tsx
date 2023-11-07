@@ -130,7 +130,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       header: t('card.table.header.dateAdded'),
       sortDescFirst: true,
       enableMultiSort: true,
-      Cell: ({ cell }) => convertToLocalDate(cell.getValue()),
+      Cell: ({ cell }) => new Date(String(cell.getValue())).toLocaleString(),
     },
     {
       accessorKey: 'name',
@@ -141,7 +141,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'totalSize',
       header: t('card.table.header.size'),
-      Cell: ({ cell }) => formatSize(cell.getValue()),
+      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -149,7 +149,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'uploadSpeed',
       header: t('card.table.header.upload'),
-      Cell: ({ cell }) => formatSpeed(cell.getValue()),
+      Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -157,7 +157,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'downloadSpeed',
       header: t('card.table.header.download'),
-      Cell: ({ cell }) => formatSpeed(cell.getValue()),
+      Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -165,7 +165,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'eta',
       header: t('card.table.header.estimatedTimeOfArrival'),
-      Cell: ({ cell }) => formatETA(cell.getValue()),
+      Cell: ({ cell }) => formatETA(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -173,7 +173,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'progress',
       header: t('card.table.header.progress'),
-      Cell: ({ cell }) => (100 * cell.getValue()).toFixed(0) + "%",
+      Cell: ({ cell }) => (100 * Number(cell.getValue())).toFixed(0) + "%",
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -181,7 +181,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'totalUploaded',
       header: t('card.table.header.totalUploaded'),
-      Cell: ({ cell }) => formatSize(cell.getValue()),
+      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -189,7 +189,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'totalDownloaded',
       header: t('card.table.header.totalDownloaded'),
-      Cell: ({ cell }) => formatSize(cell.getValue()),
+      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -197,7 +197,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'ratio',
       header: t('card.table.header.ratio'),
-      Cell: ({ cell }) => cell.getValue().toFixed(2),
+      Cell: ({ cell }) => Number(cell.getValue()).toFixed(2),
       sortDescFirst: true,
       enableMultiSort: true,
       enableColumnFilter: false,
@@ -270,6 +270,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     mantineSearchTextInputProps: {
       placeholder: 'Search Torrents',
     },
+    enableStickyHeader: true,
     // ... Others options if necessary
   });
 
@@ -324,11 +325,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
-        <MantineReactTable table={torrentsTable}>
-          <MRT_GlobalFilterTextInput />
-        </MantineReactTable>
-      </ScrollArea>
+      <MantineReactTable table={torrentsTable} />
 
       <Group spacing="sm">
         {data.apps.some((x) => !x.success) && (
@@ -501,10 +498,5 @@ const formatSpeed = (speedInBytesPerSecond: number) => {
 const formatETA = (seconds: number) => {
   return calculateETA(seconds);
 };
-
-function convertToLocalDate(isoDateString: ISODateString) {
-  const date = new Date(isoDateString);
-  return date.toLocaleString();
-}
 
 export default definition;
