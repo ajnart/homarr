@@ -27,8 +27,8 @@
         "description": "Når \"er whitelist\" er markeret, fungerer dette som en whitelist. Hvis det ikke er markeret, er det en blackliste. Gør ikke noget, hvis den er tom"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Vis filtrerede torrents liste ratio",
+        "info": "Hvis deaktiveret, vil kun den globale ratio blive vist. Den globale ratio vil stadig bruge etiketter hvis sat"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Fejl",
       "lastUpdated": "Sidst opdateret {{time}} siden",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Global ratio",
+      "ratioWithFilter": "Ratio med filter"
     },
     "table": {
       "header": {
