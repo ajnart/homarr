@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "标签列表",
         "description": "当选中 “白名单” 时，这将成为白名单。如果不选中，则是黑名单。为空时不会做任何事情。"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "错误",
-      "lastUpdated": "最后更新于 {{time}} 前"
+      "lastUpdated": "最后更新于 {{time}} 前",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
