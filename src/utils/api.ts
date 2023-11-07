@@ -42,7 +42,6 @@ const getTrpcConfiguration = () => ({
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
   if (env.HOSTNAME) {
-    console.log('Constructing internal hostname address using', env.HOSTNAME, env.NEXT_PUBLIC_PORT);
     return `http://${env.HOSTNAME}:${env.NEXT_PUBLIC_PORT}`;
   }
   return `http://localhost:${env.NEXT_PUBLIC_PORT ?? 3000}`; // dev SSR should use localhost
