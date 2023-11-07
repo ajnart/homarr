@@ -1,12 +1,14 @@
 {
 	"description": "Homarr je <strong>elegantna</strong>, <strong>sodobna</strong> nadzorna plošča, s katero so vse vaše aplikacije in storitve na dosegu roke. Z aplikacijo Homarr lahko do vsega dostopate in nadzorujete na enem priročnem mestu. Homarr se brez težav poveže z aplikacijami, ki ste jih dodali, in vam zagotavlja dragocene informacije ter popoln nadzor. Namestitev je preprosta, Homarr pa podpira širok nabor načinov namestitve.",
-	"contact": "Imate težave ali vprašanja? Povežite se z nami!",
 	"addToDashboard": "Dodajanje v nadzorno ploščo",
 	"tip": "Mod se nanaša na modifikacijsko tipko, to so tipke Ctrl in Command/Super/Windows",
 	"key": "Bližnjična tipka",
 	"action": "Dejanje",
 	"keybinds": "Vezave tipk",
-	"documentation": "",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Različica konfiguracijske sheme",
-		"configurationsCount": "Razpoložljive konfiguracije",
 		"version": "Različica",
 		"nodeEnvironment": "Okolje vozlišča",
 		"i18n": "Nalaganje imenskih prostorov za prevod I18n",
