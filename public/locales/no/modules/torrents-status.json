@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Etikettliste",
         "description": "Når \"er hviteliste\" er merket, vil dette fungere som en hviteliste. Hvis ikke krysset av, er dette en svarteliste. Vil ikke gjøre noe når den er tom"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Feil",
-      "lastUpdated": "Sist oppdatert for {{time}} siden"
+      "lastUpdated": "Sist oppdatert for {{time}} siden",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
