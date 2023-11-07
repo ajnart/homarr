@@ -141,7 +141,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
       <Stack>
         {sortedData.map((item, index) => (
           <Card radius="md" withBorder key={index}>
-            <Flex wrap="wrap" justify="space-between" gap="md">
+            <Flex wrap="nowrap" justify="space-between" gap="md">
               <Flex gap="md">
                 <Image
                   src={item.posterPath}
@@ -161,7 +161,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     target={widget.properties.openInNewTab ? '_blank' : '_self'}
                     c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
-                    {item.name}
+                    <Text lineClamp={1}>{item.name}</Text>
                   </Anchor>
                 </Stack>
               </Flex>
