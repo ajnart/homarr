@@ -1,12 +1,14 @@
 {
 	"description": "",
-	"contact": "",
 	"addToDashboard": "",
 	"tip": "",
 	"key": "",
 	"action": "",
 	"keybinds": "",
-	"documentation": "",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "",
 		"focusSearchBar": "",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "",
-		"configurationsCount": "",
 		"version": "",
 		"nodeEnvironment": "",
 		"i18n": "",
