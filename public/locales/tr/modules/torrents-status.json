@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Kategpori Listesi",
         "description": "Beyaz liste' aktif edildiğinde, listeye eklediğiniz torrent kategorileri dışında kalan torrentler filtrelenerek görüntülenmez. İşaretlenmez ise listede olan kategori filtrelenerek görüntülnmez. Liste boş olduğunda filtre uygulanmaz. (Listeye ekleyeceğiniz kategoriler torrent istemcinizden ayarlanmalıdır.)"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Hata",
-      "lastUpdated": "Son Güncelleme {{time}} önce"
+      "lastUpdated": "Son Güncelleme {{time}} önce",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
