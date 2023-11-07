@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Iezīmju saraksts",
         "description": "Ja ir atzīmēts 'ir baltais saraksts', tas darbosies kā baltais saraksts. Ja nav atzīmēts, šis ir melnais saraksts. Ja ir tukšs, tas neko nedarīs"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Kļūda",
-      "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}"
+      "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
