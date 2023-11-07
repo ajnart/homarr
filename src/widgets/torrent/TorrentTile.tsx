@@ -55,6 +55,7 @@ const definition = defineWidget({
     displayRatioWithFilter: {
       type: 'switch',
       defaultValue: true,
+      info: true,
     },
   },
   gridstack: {

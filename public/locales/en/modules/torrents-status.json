@@ -22,7 +22,7 @@
       },
       "displayRatioWithFilter": {
         "label": "Display filtered torrents list ratio",
-        "description": "If disabled, only the global ratio will be display. The global ratio will still use the labels if set"
+        "info": "If disabled, only the global ratio will be display. The global ratio will still use the labels if set"
       }
     }
   },
