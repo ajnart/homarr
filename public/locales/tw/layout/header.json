@@ -17,10 +17,6 @@
             "preferences": "使用者設定",
             "defaultBoard": "預設儀錶板",
             "manage": "管理",
-            "about": {
-                "label": "關於",
-                "new": "新"
-            },
             "logout": "登出 {{username}}",
             "login": "登入"
         }
