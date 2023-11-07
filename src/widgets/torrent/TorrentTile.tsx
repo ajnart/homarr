@@ -191,7 +191,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
         )}
 
         <Text color="dimmed" size="xs">
-        {t('card.footer.lastUpdated', { time: humanizedDuration })} - {t('card.footer.ratioGlobal')} : {ratioGlobal === -1 ? "∞" : ratioGlobal.toFixed(2)} {widget.properties.displayRatioWithFilter && ` - ${t('card.footer.ratioWithFilter')} : ${ratioWithFilter === -1 ? "∞" : ratioWithFilter.toFixed(2)}`}
+        {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {` - ${t('card.footer.ratioGlobal')} : ${
+            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
+          }`}
+          {widget.properties.displayRatioWithFilter &&
+            ` - ${t('card.footer.ratioWithFilter')} : ${
+              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
+            }`}
         </Text>
       </Group>
     </Flex>
