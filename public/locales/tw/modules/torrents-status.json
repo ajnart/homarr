@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "標籤列表",
         "description": "當選中 \"白名單\" 時，將成為白名單，如不選中，則為黑名單，為空時則不會做任何事情"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "錯誤",
-      "lastUpdated": "最後更新於 {{time}} 前"
+      "lastUpdated": "最後更新於 {{time}} 前",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
