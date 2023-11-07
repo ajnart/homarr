@@ -1,3 +1,10 @@
+import {
+  MantineReactTable,
+  useMantineReactTable,
+  MRT_ColumnDef,
+  MRT_GlobalFilterTextInput,
+} from 'mantine-react-table';
+
 import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
 import {
   Badge,
@@ -7,7 +14,6 @@ import {
   Loader,
   ScrollArea,
   Stack,
-  Table,
   Text,
   Title,
 } from '@mantine/core';
@@ -17,16 +23,19 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '~/types/app';
+import { calculateETA } from '~/tools/client/calculateEta';
+import { humanFileSize } from '~/tools/humanFileSize';
 
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { BitTorrentQueueItem } from './TorrentQueueItem';
+import { ISODateString } from 'next-auth';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -84,10 +93,6 @@ interface TorrentTileProps {
 }
 
 function TorrentTile({ widget }: TorrentTileProps) {
-  const [sortConfig, setSortConfig] = useState<{
-    key: keyof NormalizedTorrent;
-    direction: 'ascending' | 'descending';
-  }>({ key: 'dateAdded', direction: 'descending' });
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
   const { classes } = useCardStyles(true);
@@ -103,6 +108,171 @@ function TorrentTile({ widget }: TorrentTileProps) {
     isInitialLoading: boolean;
     dataUpdatedAt: number;
   } = useGetDownloadClientsQueue();
+
+  let torrents: NormalizedTorrent[] = [];
+  if(!(isError || !data || data.apps.length === 0 || Object.values(data.apps).length < 1)) { 
+    torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []))
+  }
+
+  const filteredTorrents = filterTorrents(widget, torrents);
+
+  const difference = new Date().getTime() - dataUpdatedAt;
+  const duration = dayjs.duration(difference, 'ms');
+  const humanizedDuration = duration.humanize();
+
+  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
+
+  const columns = useMemo<MRT_ColumnDef<NormalizedTorrent>[]>(() => [
+    {
+      id: "dateAdded",
+      accessorFn: (row) => new Date(row.dateAdded),
+      header: t('card.table.header.dateAdded'),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      Cell: ({ cell }) => convertToLocalDate(cell.getValue()),
+    },
+    {
+      accessorKey: 'name',
+      header: t('card.table.header.name'),
+      sortDescFirst: true,
+      enableMultiSort: true,
+    },
+    {
+      accessorKey: 'totalSize',
+      header: t('card.table.header.size'),
+      Cell: ({ cell }) => formatSize(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'uploadSpeed',
+      header: t('card.table.header.upload'),
+      Cell: ({ cell }) => formatSpeed(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'downloadSpeed',
+      header: t('card.table.header.download'),
+      Cell: ({ cell }) => formatSpeed(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'eta',
+      header: t('card.table.header.estimatedTimeOfArrival'),
+      Cell: ({ cell }) => formatETA(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'progress',
+      header: t('card.table.header.progress'),
+      Cell: ({ cell }) => (100 * cell.getValue()).toFixed(0) + "%",
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'totalUploaded',
+      header: t('card.table.header.totalUploaded'),
+      Cell: ({ cell }) => formatSize(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'totalDownloaded',
+      header: t('card.table.header.totalDownloaded'),
+      Cell: ({ cell }) => formatSize(cell.getValue()),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'ratio',
+      header: t('card.table.header.ratio'),
+      Cell: ({ cell }) => cell.getValue().toFixed(2),
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorFn: (row) => `${row.totalSeeds} (${row.connectedSeeds})`,
+      header: t('card.table.header.seeds'),
+      id: "seeds",
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorFn: (row) => `${row.totalPeers} (${row.connectedPeers})`,
+      header: t('card.table.header.peers'),
+      id: "peers",
+      sortDescFirst: true,
+      enableMultiSort: true,
+      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'label',
+      header: t('card.table.header.label'),
+      sortDescFirst: true,
+      enableMultiSort: true,
+    },
+    {
+      accessorKey: 'state',
+      header: t('card.table.header.state'),
+      sortDescFirst: true,
+      enableMultiSort: true,
+    },
+    {
+      accessorKey: 'stateMessage',
+      header: t('card.table.header.stateMessage'),
+      sortDescFirst: true,
+      enableMultiSort: true,
+    },
+  ], []);
+
+
+  const torrentsTable = useMantineReactTable({
+    columns,
+    data: filteredTorrents,
+    enablePagination: false,
+    enableBottomToolbar: false,
+    enableColumnFilterModes: true,
+    enableColumnOrdering: true,
+    enableFacetedValues: true,
+    enableGrouping: true,
+    enablePinning: true,
+    initialState: {
+      showColumnFilters: false,
+      showGlobalFilter: false,
+      density: 'xs',
+      sorting: [{ id: 'dateAdded', desc: true }],
+      columnVisibility: {
+        dateAdded: false,
+        totalUploaded: false,
+        totalDownloaded: false,
+        ratio: false,
+        seeds: false,
+        peers: false,
+        label: false,
+        state: false,
+        stateMessage: false,
+      },
+    },
+    positionToolbarAlertBanner: 'bottom',
+    mantineSearchTextInputProps: {
+      placeholder: 'Search Torrents',
+    },
+    // ... Others options if necessary
+  });
+
 
   if (isError) {
     return (
@@ -152,38 +322,35 @@ function TorrentTile({ widget }: TorrentTileProps) {
     );
   }
 
-  const torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
-  const filteredTorrents = filterTorrents(widget, torrents);
+  return (
+    <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
+      <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
+        <MantineReactTable table={torrentsTable}>
+          <MRT_GlobalFilterTextInput />
+        </MantineReactTable>
+      </ScrollArea>
 
-  const difference = new Date().getTime() - dataUpdatedAt;
-  const duration = dayjs.duration(difference, 'ms');
-  const humanizedDuration = duration.humanize();
+      <Group spacing="sm">
+        {data.apps.some((x) => !x.success) && (
+          <Badge variant="dot" color="red">
+            {t('card.footer.error')}
+          </Badge>
+        )}
 
-  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
-  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
-
-  const requestSort = (key: keyof NormalizedTorrent) => {
-    let direction: 'ascending' | 'descending' = 'descending';
-    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'descending') {
-      direction = 'ascending';
-    }
-    setSortConfig({ key, direction });
-  };
-
-  filteredTorrents.sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? -1 : 1;
-    }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'ascending' ? 1 : -1;
-    }
-    // Add a secondary sorting on 'dateAdded'
-    if (a[sortConfig.key] === b[sortConfig.key]) {
-      return a.dateAdded < b.dateAdded ? 1 : -1;
-    }
-    return 0;
-  });
-
+        <Text color="dimmed" size="xs">
+          {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {` - ${t('card.footer.ratioGlobal')} : ${
+            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
+          }`}
+          {widget.properties.displayRatioWithFilter &&
+            ` - ${t('card.footer.ratioWithFilter')} : ${
+              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
+            }`}
+        </Text>
+      </Group>
+    </Flex>
+  );
+  /* // OldTable
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
@@ -250,6 +417,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       </Group>
     </Flex>
   );
+  */
 }
 
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
@@ -321,5 +489,22 @@ export const getTorrentsRatio = (
         totalDownloadedSum
     : -1;
 };
+
+const formatSize = (sizeInBytes: number) => {
+  return humanFileSize(sizeInBytes, false);
+};
+
+const formatSpeed = (speedInBytesPerSecond: number) => {
+  return `${humanFileSize(speedInBytesPerSecond, false)}/s`;
+};
+
+const formatETA = (seconds: number) => {
+  return calculateETA(seconds);
+};
+
+function convertToLocalDate(isoDateString: ISODateString) {
+  const date = new Date(isoDateString);
+  return date.toLocaleString();
+}
 
 export default definition;
