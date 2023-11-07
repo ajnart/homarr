@@ -17,6 +17,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+import React, { useState } from 'react';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
@@ -44,7 +45,8 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
-    speedLimitOfActiveTorrents: { // Unit : kB/s
+    speedLimitOfActiveTorrents: {
+      // Unit : kB/s
       type: 'number',
       defaultValue: 10,
     },
@@ -82,6 +84,10 @@ interface TorrentTileProps {
 }
 
 function TorrentTile({ widget }: TorrentTileProps) {
+  const [sortConfig, setSortConfig] = useState<{
+    key: keyof NormalizedTorrent;
+    direction: 'ascending' | 'descending';
+  }>({ key: 'dateAdded', direction: 'descending' });
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
   const { classes } = useCardStyles(true);
@@ -156,18 +162,50 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const ratioGlobal = getTorrentsRatio(widget, torrents, false);
   const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
+  const requestSort = (key: keyof NormalizedTorrent) => {
+    let direction: 'ascending' | 'descending' = 'descending';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'descending') {
+      direction = 'ascending';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  filteredTorrents.sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? 1 : -1;
+    }
+    // Add a secondary sorting on 'dateAdded'
+    if (a[sortConfig.key] === b[sortConfig.key]) {
+      return a.dateAdded < b.dateAdded ? 1 : -1;
+    }
+    return 0;
+  });
+
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
         <Table striped highlightOnHover p="sm">
           <thead>
             <tr>
-              <th>{t('card.table.header.name')}</th>
-              <th>{t('card.table.header.size')}</th>
-              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.download')}</th>}
-              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.upload')}</th>}
-              {width > MIN_WIDTH_MOBILE && <th>{t('card.table.header.estimatedTimeOfArrival')}</th>}
-              <th>{t('card.table.header.progress')}</th>
+              <th style={{cursor: "pointer"}} onClick={() => requestSort('name')}>{t('card.table.header.name')}</th>
+              <th style={{cursor: "pointer"}} onClick={() => requestSort('totalSize')}>{t('card.table.header.size')}</th>
+              {width > MIN_WIDTH_MOBILE && (
+                <th style={{cursor: "pointer"}} onClick={() => requestSort('downloadSpeed')}>
+                  {t('card.table.header.download')}
+                </th>
+              )}
+              {width > MIN_WIDTH_MOBILE && (
+                <th style={{cursor: "pointer"}} onClick={() => requestSort('uploadSpeed')}>{t('card.table.header.upload')}</th>
+              )}
+              {width > MIN_WIDTH_MOBILE && (
+                <th style={{cursor: "pointer"}} onClick={() => requestSort('eta')}>
+                  {t('card.table.header.estimatedTimeOfArrival')}
+                </th>
+              )}
+              <th style={{cursor: "pointer"}} onClick={() => requestSort('progress')}>{t('card.table.header.progress')}</th>
             </tr>
           </thead>
           <tbody>
@@ -200,7 +238,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
         )}
 
         <Text color="dimmed" size="xs">
-        {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {t('card.footer.lastUpdated', { time: humanizedDuration })}
           {` - ${t('card.footer.ratioGlobal')} : ${
             ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
           }`}
@@ -217,7 +255,12 @@ function TorrentTile({ widget }: TorrentTileProps) {
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
   let result = torrents;
   if (!widget.properties.displayCompletedTorrents) {
-    result = result.filter((torrent) => !torrent.isCompleted || (widget.properties.displayActiveTorrents && torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024));
+    result = result.filter(
+      (torrent) =>
+        !torrent.isCompleted ||
+        (widget.properties.displayActiveTorrents &&
+          torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024)
+    );
   }
 
   if (widget.properties.labelFilter.length > 0) {
