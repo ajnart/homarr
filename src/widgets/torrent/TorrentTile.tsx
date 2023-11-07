@@ -60,6 +60,11 @@ const definition = defineWidget({
       type: 'multiple-text',
       defaultValue: [] as string[],
     },
+    displayRatioWithFilter: {
+      type: 'switch',
+      defaultValue: true,
+      info: true,
+    },
   },
   gridstack: {
     minWidth: 2,
@@ -148,6 +153,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
 
+  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
+
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
@@ -192,7 +200,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
         )}
 
         <Text color="dimmed" size="xs">
-          {t('card.footer.lastUpdated', { time: humanizedDuration })}
+        {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {` - ${t('card.footer.ratioGlobal')} : ${
+            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
+          }`}
+          {widget.properties.displayRatioWithFilter &&
+            ` - ${t('card.footer.ratioWithFilter')} : ${
+              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
+            }`}
         </Text>
       </Group>
     </Flex>
@@ -236,6 +251,32 @@ const filterTorrentsByLabels = (
   }
 
   return torrents.filter((torrent) => !labels.includes(torrent.label as string));
+};
+
+export const getTorrentsRatio = (
+  widget: ITorrent,
+  torrents: NormalizedTorrent[],
+  applyAllFilter: boolean
+) => {
+  if (applyAllFilter) {
+    torrents = filterTorrents(widget, torrents);
+  } else if (widget.properties.labelFilter.length > 0) {
+    torrents = filterTorrentsByLabels(
+      torrents,
+      widget.properties.labelFilter,
+      widget.properties.labelFilterIsWhitelist
+    );
+  }
+
+  let totalDownloadedSum = torrents.reduce(
+    (sum, torrent) => sum + torrent.totalDownloaded,
+    0
+  );
+
+  return totalDownloadedSum > 0
+    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) /
+        totalDownloadedSum
+    : -1;
 };
 
 export default definition;

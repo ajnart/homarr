@@ -1,7 +1,7 @@
 import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
 import { describe, expect, it } from 'vitest';
 
-import { ITorrent, filterTorrents } from './TorrentTile';
+import { ITorrent, filterTorrents, getTorrentsRatio } from './TorrentTile';
 
 describe('TorrentTile', () => {
   it('filter torrents when stale', () => {
@@ -228,6 +228,43 @@ describe('TorrentTile', () => {
     expect(filtered.at(0)).toBe(torrents[0]);
     expect(filtered.includes(torrents[1])).toBe(false);
     expect(filtered.at(1)).toBe(torrents[2]);
+  });
+  
+  it('calcul ratio', () => {
+    // arrange
+    const widget: ITorrent = {
+      id: 'abc',
+      area: {
+        type: 'sidebar',
+        properties: {
+          location: 'left',
+        },
+      },
+      shape: {},
+      type: 'torrents-status',
+      properties: {
+        labelFilter: [],
+        labelFilterIsWhitelist: false,
+        displayCompletedTorrents: false,
+        displayActiveTorrents: false,
+        speedLimitOfActiveTorrents: 10,
+        displayStaleTorrents: true,
+      },
+    };
+    const torrents: NormalizedTorrent[] = [
+      constructTorrent('HH', 'I am completed', true, 0),
+    ];
+
+    // act
+    const filtered = filterTorrents(widget, torrents);
+    const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+    const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
+
+    // assert
+    expect(filtered.length).toBe(0);
+    expect(filtered.includes(torrents[1])).toBe(false);
+    expect(ratioGlobal).toBe(378535535/23024335);
+    expect(ratioWithFilter).toBe(-1); //infinite ratio
   });
 });
 
