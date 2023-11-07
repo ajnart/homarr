@@ -17,10 +17,6 @@
             "preferences": "Brukerpreferanser",
             "defaultBoard": "Standard dashbord",
             "manage": "Få til",
-            "about": {
-                "label": "Info",
-                "new": "Ny"
-            },
             "logout": "Logg ut fra {{username}}",
             "login": "Logg Inn"
         }
