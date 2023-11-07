@@ -17,10 +17,6 @@
             "preferences": "Kullanıcı Tercihleri",
             "defaultBoard": "Varsayılan Panel",
             "manage": "Yönet",
-            "about": {
-                "label": "Hakkında",
-                "new": "Yeni"
-            },
             "logout": "{{username}} kullanıcısından çıkış yapın",
             "login": "Giriş"
         }
