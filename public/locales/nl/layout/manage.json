@@ -27,6 +27,9 @@
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Over"
         }
     }
 }
