@@ -17,10 +17,6 @@
             "preferences": "Brugerindstillinger",
             "defaultBoard": "Standard dashboard",
             "manage": "Administrer",
-            "about": {
-                "label": "Om",
-                "new": "Ny"
-            },
             "logout": "Log {{username}} ud",
             "login": "Log ind"
         }
