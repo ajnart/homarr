@@ -1,12 +1,14 @@
 {
 	"description": "Homarr is a <strong>sleek</strong>, <strong>modern</strong> dashboard that puts all of your apps and services at your fingertips. With Homarr, you can access and control everything in one convenient location. Homarr seamlessly integrates with the apps you've added, providing you with valuable information and giving you complete control. Installation is a breeze, and Homarr supports a wide range of deployment methods.",
-	"contact": "Having trouble or questions? Connect with us!",
 	"addToDashboard": "Add to Dashboard",
 	"tip": "Mod refers to your modifier key, it is Ctrl and Command/Super/Windows key",
 	"key": "Shortcut key",
 	"action": "Action",
 	"keybinds": "Keybinds",
-	"documentation": "Documentation",
+	"translators": "Translators ({{count}})",
+	"translatorsDescription": "Thanks to these people, Homarr is available in {{languages}} languages! Want to help translate Homarr into your language? Read how to do so <a>here</a>.",
+	"contributors": "Contributors ({{count}})",
+	"contributorsDescription": "These people have built the code that makes homarr work! Want to help build Homarr? Read how to do so <a>here</a>",
 	"actions": {
 		"toggleTheme": "Toggle light/dark mode",
 		"focusSearchBar": "Focus on search bar",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuration schema version",
-		"configurationsCount": "Available configurations",
 		"version": "Version",
 		"nodeEnvironment": "Node environment",
 		"i18n": "Loaded I18n translation namespaces",

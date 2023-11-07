@@ -17,10 +17,6 @@
             "preferences": "User preferences",
             "defaultBoard": "Default dashboard",
             "manage": "Manage",
-            "about": {
-                "label": "About",
-                "new": "New"
-            },
             "logout": "Logout from {{username}}",
             "login": "Login"
         }
