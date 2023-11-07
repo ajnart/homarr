@@ -27,8 +27,8 @@
         "description": "Ja ir atzīmēts 'ir baltais saraksts', tas darbosies kā baltais saraksts. Ja nav atzīmēts, šis ir melnais saraksts. Ja ir tukšs, tas neko nedarīs"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Rādīt filtrēto torentu saraksta attiecību",
+        "info": "Ja ir atspējots, tiks parādīta tikai globālā attiecība. Globālā attiecība joprojām izmantos etiķetes, ja tā būs iestatītas"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Kļūda",
       "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globālā attiecība",
+      "ratioWithFilter": "Attiecība ar filtru"
     },
     "table": {
       "header": {
