@@ -11,10 +11,10 @@
         "label": "Cacher les torrents terminés"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Afficher les torrents actifs"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Vitesse de téléversement pour considérer un torrent comme actif (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Afficher les torrents obsolètes"
