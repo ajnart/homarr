@@ -166,25 +166,6 @@
     "minimumChangeThreshold": 0,
     "showDetails": true
   },
-  "renovate": {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "config:base"
-    ],
-    "commitMessagePrefix": "⬆️",
-    "lockFileMaintenance": {
-      "automerge": true
-    },
-    "minor": {
-      "automerge": true
-    },
-    "patch": {
-      "automerge": true
-    },
-    "pin": {
-      "automerge": true
-    }
-  },
   "prettier": {
     "printWidth": 100,
     "tabWidth": 2,

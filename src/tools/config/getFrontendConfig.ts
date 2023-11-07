@@ -41,8 +41,6 @@ export const getFrontendConfig = async (name: string): Promise<ConfigType> => {
     );
   }
 
-  Consola.info(`Requested frontend content of configuration '${name}'`);
-  // If not, return the config
   const someAppsWithoutProps = config.apps.filter(
     (app) =>
       app.integration?.properties.some(
