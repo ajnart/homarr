@@ -17,10 +17,6 @@
             "preferences": "ユーザー設定",
             "defaultBoard": "デフォルトのダッシュボード",
             "manage": "管理",
-            "about": {
-                "label": "About",
-                "new": "新しい"
-            },
             "logout": "{{username}}からログアウト",
             "login": "ログイン"
         }
