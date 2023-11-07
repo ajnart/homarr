@@ -3,48 +3,37 @@ import {
   ActionIcon,
   Anchor,
   Badge,
-  Button,
   Divider,
-  Grid,
   Group,
   HoverCard,
-  Image,
   Kbd,
-  Modal,
   Stack,
   Table,
   Text,
-  Title,
-  createStyles,
+  createStyles
 } from '@mantine/core';
 import {
   IconAnchor,
-  IconBrandDiscord,
-  IconBrandGithub,
-  IconFile,
   IconKey,
   IconLanguage,
   IconSchema,
   IconVersions,
-  IconVocabulary,
-  IconWorldWww,
+  IconVocabulary
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
-import { motion } from 'framer-motion';
 import { InitOptions } from 'i18next';
-import { GetStaticPropsContext } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import { Trans, i18n, useTranslation } from 'next-i18next';
-import { ReactElement, ReactNode } from 'react';
+import Head from 'next/head';
+import { ReactNode } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { Contributors, ContributorsTable } from '~/components/layout/header/About/Contributors';
 import Credits from '~/components/layout/header/About/Credits';
 import Tip from '~/components/layout/header/About/Tip';
 import { TranslatorsTable } from '~/components/layout/header/About/Translators';
 import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '~/tools/color';
-import { queryClient } from '~/tools/server/configurations/tanstack/queryClient.tool';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
 import { REPO_URL } from '../../../data/constants';
@@ -212,6 +201,9 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
 
   return (
     <ManageLayout>
+      <Head>
+        <title>About • Homarr</title>
+      </Head>
       <Stack>
         <Text>
           <Trans i18nKey="layout/modals/about:description" />
@@ -270,7 +262,7 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
   );
 };
 
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
+export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   const contributors = (await fetch(
     `https://api.github.com/repos/${REPO_URL}/contributors?per_page=100`,
     {
