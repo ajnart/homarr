@@ -17,10 +17,6 @@
             "preferences": "Beállítások",
             "defaultBoard": "Alapértelmezett vezérlőpult",
             "manage": "Kezelés",
-            "about": {
-                "label": "Névjegy",
-                "new": "Új"
-            },
             "logout": "{{username}} kijelentkezése",
             "login": "Bejelentkezés"
         }
