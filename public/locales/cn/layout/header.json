@@ -17,10 +17,6 @@
             "preferences": "用户首选项",
             "defaultBoard": "默认仪表盘",
             "manage": "管理",
-            "about": {
-                "label": "关于",
-                "new": "新"
-            },
             "logout": "注销 {{username}}",
             "login": "登录"
         }
