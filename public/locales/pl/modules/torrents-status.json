@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Lista etykiet",
         "description": "Po zaznaczeniu opcji \"jest białą listą\" będzie ona działać jako biała lista. Jeśli nie jest zaznaczone, jest to czarna lista. Nie zrobi nic, gdy jest pusta"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Błąd",
-      "lastUpdated": "Ostatnia aktualizacja {{time}} temu"
+      "lastUpdated": "Ostatnia aktualizacja {{time}} temu",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
