@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "Labelliste",
         "description": "Wenn \"ist Whitelist\" ausgewählt ist, handel es sich um eine Whitelist. Ist \"ist Whitelist\" nicht ausgewählt, handelt es sich um eine Blacklist. Wenn die Auswahl leer ist, wird nicht passieren"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Fehler",
-      "lastUpdated": "Zuletzt aktualisiert vor {{time}}"
+      "lastUpdated": "Zuletzt aktualisiert vor {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
