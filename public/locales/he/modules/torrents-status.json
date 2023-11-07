@@ -25,13 +25,19 @@
       "labelFilter": {
         "label": "רשימת תוויות",
         "description": "כאשר 'רשימת היתרים' מסומנת, זה יפעל כרשימה הלבנה. אם לא מסומן, זוהי רשימה שחורה. לא יעשה כלום כשהוא ריק"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "שגיאה",
-      "lastUpdated": "עודכן לאחרונה לפני {{time}}"
+      "lastUpdated": "עודכן לאחרונה לפני {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
