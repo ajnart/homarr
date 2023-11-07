@@ -36,8 +36,8 @@
     "footer": {
       "error": "Hata",
       "lastUpdated": "Son Güncelleme {{time}} önce",
-      "ratioGlobal": "Genel ratio",
-      "ratioWithFilter": "Filtreli ratio"
+      "ratioGlobal": "Genel oran",
+      "ratioWithFilter": "Filtrelenen ratio"
     },
     "table": {
       "header": {
@@ -85,7 +85,7 @@
         "progress": "İlerleme - %{{progress}}",
         "totalSelectedSize": "Toplam - {{totalSize}}",
         "state": "Durum - {{state}}",
-        "ratio": "Oran -",
+        "ratio": "Ratio -",
         "completed": "Tamamlanan"
       }
     }
