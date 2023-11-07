@@ -8,7 +8,7 @@
 				"label": "Afficher la barre d'outils pour vous aider à écrire du markdown"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Autoriser la coche des cases en mode lecture"
 			},
 			"content": {
 				"label": "Le contenu du bloc-notes"
@@ -17,43 +17,43 @@
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
-			"bulletList": "",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
-			"link": "",
-			"unlink": "",
-			"image": "",
-			"addTable": "",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"bold": "Gras",
+			"italic": "Italique",
+			"strikethrough": "Barrer",
+			"underline": "Souligner",
+			"colorText": "Colorer le texte",
+			"colorHighlight": "Surligner en couleur",
+			"code": "Code",
+			"clear": "Effacer la mise en forme",
+			"heading": "Titre {{level}}",
+			"align": "Aligner le texte : {{position}}",
+			"blockquote": "Citation",
+			"horizontalLine": "Ligne horizontale",
+			"bulletList": "Liste à puces",
+			"orderedList": "Liste numérotée",
+			"checkList": "Liste à coche",
+			"increaseIndent": "Augmenter l'Indentation",
+			"decreaseIndent": "Diminuer l'indentation",
+			"link": "Lien",
+			"unlink": "Supprimer le lien",
+			"image": "Intégrer une image",
+			"addTable": "Ajouter un tableau",
+			"deleteTable": "Supprimer le tableau",
+			"colorCell": "Colorer la case",
+			"mergeCell": "Activer/désactiver la fusion des cases",
+			"addColumnLeft": "Ajouter une colonne avant",
+			"addColumnRight": "Ajouter une colonne après",
+			"deleteColumn": "Supprimer la colonne",
+			"addRowTop": "Ajouter une ligne avant",
+			"addRowBelow": "Ajouter une ligne après",
+			"deleteRow": "Supprimer la ligne"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Enlever la couleur",
+			"source": "Source",
+			"widthPlaceholder": "Valeur en % ou en pixels",
+			"columns": "Colonnes",
+			"rows": "Lignes"
 		}
 	}
 }
