@@ -247,18 +247,27 @@ const filterTorrentsByLabels = (
 export const getTorrentsRatio = (
   widget: ITorrent,
   torrents: NormalizedTorrent[],
-  applyAllFilter:boolean
+  applyAllFilter: boolean
 ) => {
-
-  if(applyAllFilter) {
-    torrents = filterTorrents(widget,torrents)
+  if (applyAllFilter) {
+    torrents = filterTorrents(widget, torrents);
   } else if (widget.properties.labelFilter.length > 0) {
-    torrents = filterTorrentsByLabels(torrents, widget.properties.labelFilter,widget.properties.labelFilterIsWhitelist)
+    torrents = filterTorrentsByLabels(
+      torrents,
+      widget.properties.labelFilter,
+      widget.properties.labelFilterIsWhitelist
+    );
   }
 
-  let totalDownloadedSum = torrents.reduce((sum, torrent) => sum + torrent.totalDownloaded, 0);
+  let totalDownloadedSum = torrents.reduce(
+    (sum, torrent) => sum + torrent.totalDownloaded,
+    0
+  );
 
-  return totalDownloadedSum > 0 ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) / totalDownloadedSum : -1;
-}
+  return totalDownloadedSum > 0
+    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) /
+        totalDownloadedSum
+    : -1;
+};
 
 export default definition;
