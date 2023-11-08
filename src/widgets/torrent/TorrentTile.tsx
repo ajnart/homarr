@@ -276,7 +276,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
     },
   ], []);
 
-
   const torrentsTable = useMantineReactTable({
     columns,
     data: filteredTorrents,
@@ -295,6 +294,12 @@ function TorrentTile({ widget }: TorrentTileProps) {
       columnVisibility: {
         isCompleted: false,
         dateAdded: false,
+        name: true,
+        totalSize: true,
+        uploadSpeed: width > MIN_WIDTH_MOBILE,
+        downloadSpeed: width > MIN_WIDTH_MOBILE,
+        eta: width > MIN_WIDTH_MOBILE,
+        progress: true,
         totalUploaded: false,
         totalDownloaded: false,
         ratio: false,
