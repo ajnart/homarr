@@ -41,6 +41,7 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Downloading",
         "name": "Name",
         "dateAdded": "Added On",
         "size": "Size",

@@ -2,7 +2,6 @@ import {
   MantineReactTable,
   useMantineReactTable,
   MRT_ColumnDef,
-  MRT_GlobalFilterTextInput,
 } from 'mantine-react-table';
 
 import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
@@ -12,7 +11,6 @@ import {
   Flex,
   Group,
   Loader,
-  ScrollArea,
   Stack,
   Text,
   Title,
@@ -35,7 +33,6 @@ import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { BitTorrentQueueItem } from './TorrentQueueItem';
-import { ISODateString } from 'next-auth';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -125,12 +122,22 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   const columns = useMemo<MRT_ColumnDef<NormalizedTorrent>[]>(() => [
     {
+      accessorFn: (row) => (row.isCompleted ? 'true' : 'false'), //must be strings
+      id: 'isCompleted',
+      header: t('card.table.header.isCompleted'),
+      filterVariant: 'checkbox',
+      Cell: ({ cell }) =>
+        cell.getValue() === 'true' ? 'Completed' : 'Incomplete',
+      size: 220,
+    },
+    {
       id: "dateAdded",
       accessorFn: (row) => new Date(row.dateAdded),
       header: t('card.table.header.dateAdded'),
       sortDescFirst: true,
       enableMultiSort: true,
       Cell: ({ cell }) => new Date(String(cell.getValue())).toLocaleString(),
+      filterVariant: 'date-range',
     },
     {
       accessorKey: 'name',
@@ -144,7 +151,13 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterVariant: 'range-slider',
+      filterFn: 'betweenInclusive',
+      mantineFilterRangeSliderProps: {
+        step: 1024,
+        label: (value: number) => formatSize(value),
+      }
+
     },
     {
       accessorKey: 'uploadSpeed',
@@ -152,7 +165,13 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterVariant: 'range-slider',
+      filterFn: 'betweenInclusive',
+      mantineFilterRangeSliderProps: {
+        max: 100 * 1024 * 1024, //100MiB/s
+        min: 0,
+        label: (value: number) => formatSpeed(value),
+      }
     },
     {
       accessorKey: 'downloadSpeed',
@@ -160,7 +179,13 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterVariant: 'range-slider',
+      filterFn: 'betweenInclusive',
+      mantineFilterRangeSliderProps: {
+        max: 100 * 1024 * 1024, //100MiB/s
+        min: 0,
+        label: (value: number) => formatSpeed(value),
+      }
     },
     {
       accessorKey: 'eta',
@@ -184,7 +209,13 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterVariant: 'range-slider',
+      filterFn: 'betweenInclusive',
+      mantineFilterRangeSliderProps: {
+        max: 100 * 1024 * 1024, //100MiB/s
+        min: 0,
+        label: (value: number) => formatSpeed(value),
+      }
     },
     {
       accessorKey: 'totalDownloaded',
@@ -192,15 +223,22 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterVariant: 'range-slider',
+      filterFn: 'betweenInclusive',
+      mantineFilterRangeSliderProps: {
+        step: 1024,
+        max: 100 * 1024 * 1024, //100MiB/s
+        min: 0,
+        label: (value: number) => formatSpeed(value),
+      }
     },
     {
-      accessorKey: 'ratio',
+      accessorKey: "ratio",
       header: t('card.table.header.ratio'),
       Cell: ({ cell }) => Number(cell.getValue()).toFixed(2),
       sortDescFirst: true,
       enableMultiSort: true,
-      enableColumnFilter: false,
+      filterFn: 'betweenInclusive',
     },
     {
       accessorFn: (row) => `${row.totalSeeds} (${row.connectedSeeds})`,
@@ -255,6 +293,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       density: 'xs',
       sorting: [{ id: 'dateAdded', desc: true }],
       columnVisibility: {
+        isCompleted: false,
         dateAdded: false,
         totalUploaded: false,
         totalDownloaded: false,
