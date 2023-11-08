@@ -1,7 +1,6 @@
 import Consola from 'consola';
 import fs from 'fs/promises';
 import { NextRequest, NextResponse } from 'next/server';
-import { env } from 'process';
 
 import { getUrl } from './tools/server/url';
 import { client } from './utils/api';
@@ -27,7 +26,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // Do not redirect if we are on Vercel
-  if (env.VERCEL) {
+  if (process.env.VERCEL) {
     return NextResponse.next();
   }
 
@@ -50,11 +49,11 @@ const shouldRedirectToOnboard = async (): Promise<boolean> => {
     return cachedUserCount === 0;
   };
 
-  if (!env.DATABASE_URL?.startsWith('file:')) {
+  if (!process.env.DATABASE_URL?.startsWith('file:')) {
     return await cacheAndGetUserCount();
   }
 
-  const fileUri = env.DATABASE_URL.substring(4);
+  const fileUri = process.env.DATABASE_URL.substring(4);
   try {
     await fs.access(fileUri, fs.constants.W_OK);
     return await cacheAndGetUserCount();
