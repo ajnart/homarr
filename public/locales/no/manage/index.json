@@ -1,14 +1,14 @@
 {
-    "metaTitle": "Få til",
+    "metaTitle": "Endre",
     "hero": {
         "title": "Velkommen tilbake, {{username}}",
         "fallbackUsername": "Anonym",
-        "subtitle": "Velkommen til Application Hub. Organiser, optimaliser og erobre!"
+        "subtitle": "Velkommen til Applikasjon Hub. Organiser, optimaliser og erobre!"
     },
     "quickActions": {
         "title": "Raske handlinger",
         "boards": {
-            "title": "Dine brett",
+            "title": "Dine tavler",
             "subtitle": "Lag og administrer tavlene dine"
         },
         "inviteUsers": {
