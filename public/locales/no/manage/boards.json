@@ -1,6 +1,6 @@
 {
-    "metaTitle": "Styrer",
-    "pageTitle": "Styrer",
+    "metaTitle": "Tavler",
+    "pageTitle": "Tavler",
     "cards": {
         "statistics": {
             "apps": "Apper",
@@ -19,11 +19,11 @@
         },
         "badges": {
             "fileSystem": "Filsystem",
-            "default": "Misligholde"
+            "default": "Standard"
         }
     },
     "buttons": {
-        "create": "Lag et nytt styre"
+        "create": "Lag en ny tavle"
     },
     "modals": {
         "delete": {
@@ -31,13 +31,13 @@
             "text": "Er du sikker på at du vil slette denne tavlen? Denne handlingen kan ikke angres og dataene dine går tapt permanent."
         },
         "create": {
-            "title": "Lag tavle",
-            "text": "Navnet kan ikke endres etter at et styre er opprettet.",
+            "title": "Opprett tavle",
+            "text": "Navnet kan ikke endres etter at en tavle er opprettet.",
             "form": {
                 "name": {
                     "label": "Navn"
                 },
-                "submit": "Skape"
+                "submit": "Opprett"
             }
         }
     }
