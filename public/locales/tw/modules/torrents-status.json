@@ -27,8 +27,8 @@
         "description": "當選中 \"白名單\" 時，將成為白名單，如不選中，則為黑名單，為空時則不會做任何事情"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "顯示過濾後的 Torrents 列表比例",
+        "info": "如果禁用，則只會顯示全局比率，而全局比率仍將使用標籤"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "錯誤",
       "lastUpdated": "最後更新於 {{time}} 前",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "全局比率",
+      "ratioWithFilter": "含過濾後的比率"
     },
     "table": {
       "header": {
