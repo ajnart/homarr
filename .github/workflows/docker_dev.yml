@@ -36,46 +36,43 @@ permissions:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  yarn_install_and_build_dev:
+  install-build:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-      pull-requests: write
+
     steps:
-
-      - name: Setup
-        uses: actions/setup-node@v3
-
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - uses: actions/cache@v3
-        id: yarn-cache
+        name: Setup pnpm cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-pnpm-store-
 
-      - name: Restore next build
-        uses: actions/cache@v3
-        id: restore-build-cache
-        env:
-          cache-name: cache-next-build
-        with:
-          path: .next/cache
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
+      - name: Install dependencies
+        run: pnpm install
 
-      - run: yarn install --immutable
+      - run: pnpm turbo build
 
-      - run: yarn turbo build
-
-      - run: yarn test:coverage
+      - run: pnpm test:coverage
 
       - name: Report coverage
         if: always()

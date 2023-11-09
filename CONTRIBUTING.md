@@ -61,7 +61,7 @@ A good bug report shouldn't leave others needing to chase you up for more inform
 - Collect information about the bug:
   - Stack trace (Traceback)
   - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-  - Version of yarn, nodejs, docker, npm, next, depending on what seems relevant.
+  - Version of pnpm, nodejs, docker, npm, next, depending on what seems relevant.
   - Possibly your input and the output
   - Can you reliably reproduce the issue? And can you also reproduce it with older versions?
 

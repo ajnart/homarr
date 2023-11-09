@@ -11,7 +11,7 @@ ENV NODE_OPTIONS '--no-experimental-fetch'
 COPY next.config.js ./
 COPY public ./public
 COPY package.json ./temp_package.json
-COPY yarn.lock ./temp_yarn.lock
+COPY pnpm-lock.yaml ./temp_pnpm-lock.yaml
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY .next/standalone ./
@@ -27,7 +27,7 @@ RUN apt-get update -y && apt-get install -y openssl wget
 # Required for migration
 RUN mv node_modules _node_modules
 RUN rm package.json
-RUN yarn add typescript ts-node dotenv drizzle-orm@0.28.6 better-sqlite3@8.6.0 @types/better-sqlite3
+RUN pnpm add typescript ts-node dotenv drizzle-orm@0.28.6 better-sqlite3@8.6.0 @types/better-sqlite3
 RUN mv node_modules node_modules_migrate
 RUN mv _node_modules node_modules
 

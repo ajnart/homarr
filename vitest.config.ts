@@ -11,7 +11,7 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['html', 'json-summary', 'json'],
       all: true,
-      exclude: ['.next/', '.yarn/', 'data/'],
+      exclude: ['.next/', 'data/'],
     },
     setupFiles: ['./tests/setupVitest.ts'],
     exclude: [...configDefaults.exclude, '.next'],
