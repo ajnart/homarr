@@ -2,7 +2,7 @@
   "modals": {
     "blockedPopups": {
       "title": "Popup-vinduer blokkert",
-      "text": "Nettleseren din har blokkert Homarr fra å få tilgang til sitt API. Dette er oftest forårsaket av AdBlockers eller nektet tillatelser. Homarr kan ikke be om tillatelser automatisk.",
+      "text": "Nettleseren din har blokkert Homarr fra å få tilgang til sitt API. Dette er oftest forårsaket av AdBlockere eller nektet tillatelser. Homarr kan ikke be om tillatelser automatisk.",
       "list": {
         "browserPermission": "Klikk på ikonet ved siden av URL-en og kontroller tillatelsene. Tillat popup-vinduer og vinduer",
         "adBlockers": "Deaktiver annonseblokkere og sikkerhetsverktøy fra nettleseren din",
@@ -19,7 +19,7 @@
     "moveUp": "Flytte opp",
     "moveDown": "Flytt ned",
     "addCategory": "Legg til kategori {{location}}",
-    "addAbove": "ovenfor",
+    "addAbove": "over",
     "addBelow": "under"
   }
 }
