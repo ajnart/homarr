@@ -4998,13 +4998,13 @@ __metadata:
   linkType: hard
 
 "deep-equal@npm:^2.0.5":
-  version: 2.2.2
-  resolution: "deep-equal@npm:2.2.2"
+  version: 2.2.3
+  resolution: "deep-equal@npm:2.2.3"
   dependencies:
     array-buffer-byte-length: ^1.0.0
-    call-bind: ^1.0.2
+    call-bind: ^1.0.5
     es-get-iterator: ^1.1.3
-    get-intrinsic: ^1.2.1
+    get-intrinsic: ^1.2.2
     is-arguments: ^1.1.1
     is-array-buffer: ^3.0.2
     is-date-object: ^1.0.5
@@ -5014,12 +5014,12 @@ __metadata:
     object-is: ^1.1.5
     object-keys: ^1.1.1
     object.assign: ^4.1.4
-    regexp.prototype.flags: ^1.5.0
+    regexp.prototype.flags: ^1.5.1
     side-channel: ^1.0.4
     which-boxed-primitive: ^1.0.2
     which-collection: ^1.0.1
-    which-typed-array: ^1.1.9
-  checksum: eb61c35157b6ecb96a5359b507b083fbff8ddb4c86a78a781ee38485f77a667465e45d63ee2ebd8a00e86d94c80e499906900cd82c2debb400237e1662cd5397
+    which-typed-array: ^1.1.13
+  checksum: ee8852f23e4d20a5626c13b02f415ba443a1b30b4b3d39eaf366d59c4a85e6545d7ec917db44d476a85ae5a86064f7e5f7af7479f38f113995ba869f3a1ddc53
   languageName: node
   linkType: hard
 
