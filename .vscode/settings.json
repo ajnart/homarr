@@ -10,5 +10,12 @@
 		"modules.**",
 		"layout.manage.navigation.**",
 	],
-	// "i18n-ally.defaultNamespace": "translation"
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"explorer.fileNesting.patterns": {
+		"package.json": "pnpm-lock.yaml, yarn.lock, package-lock.json",
+		"*.tsx": "${capture}.module.css"
+	},
 }
