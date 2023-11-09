@@ -1,9 +1,9 @@
 {
     "metaTitle": "Brukere",
     "pageTitle": "Administrer brukere",
-    "text": "Ved å bruke brukere kan du konfigurere hvem som kan redigere dashbordene dine. Fremtidige versjoner av Homarr vil ha enda mer detaljert kontroll over tillatelser og brett.",
+    "text": "Ved å bruke brukere kan du konfigurere hvem som kan redigere tavlene dine. Fremtidige versjoner av Homarr vil ha enda mer detaljert kontroll over tillatelser og tavler.",
     "buttons": {
-        "create": "Skape"
+        "create": "Opprett"
     },
     "table": {
         "header": {
@@ -18,12 +18,12 @@
     "modals": {
         "delete": {
             "title": "Slett bruker {{name}}",
-            "text": "Er du sikker på at du vil slette brukeren {{name}}? Dette vil slette data knyttet til denne kontoen, men ikke eventuelle dashboards som er opprettet av denne brukeren."
+            "text": "Er du sikker på at du vil slette brukeren {{name}}? Dette vil slette data knyttet til denne kontoen, men ikke eventuelle tavler som er opprettet av denne brukeren."
         },
         "change-role": {
             "promote": {
-                "title": "Promoter bruker {{name}} til admin",
-                "text": "Er du sikker på at du vil promotere brukeren {{name}} til admin? Dette vil gi brukeren tilgang til alle ressurser på Homarr-forekomsten."
+                "title": "Promoter bruker {{name}} til administrator",
+                "text": "Er du sikker på at du vil promotere brukeren {{name}} til administrator? Dette vil gi brukeren tilgang til alle ressurser på Homarr-forekomsten."
             },
             "demote": {
                 "title": "Degrader bruker {{name}} til bruker",
