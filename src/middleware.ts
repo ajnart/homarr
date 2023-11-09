@@ -1,5 +1,3 @@
-import Consola from 'consola';
-import fs from 'fs/promises';
 import { NextRequest, NextResponse } from 'next/server';
 
 import { getUrl } from './tools/server/url';
@@ -54,13 +52,6 @@ const shouldRedirectToOnboard = async (): Promise<boolean> => {
   }
 
   const fileUri = process.env.DATABASE_URL.substring(4);
-  try {
-    await fs.access(fileUri, fs.constants.W_OK);
-    return await cacheAndGetUserCount();
-  } catch {
-    Consola.warn(
-      `detected that the path ${fileUri} was not readable. Showing onboarding page for setup...`
-    );
-    return true;
-  }
+  return await cacheAndGetUserCount();
+  // TODO: Show an error page if the database file is read-only
 };
