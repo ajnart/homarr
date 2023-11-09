@@ -63,7 +63,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-      - run: yarn install --immutable
+      - run: yarn install
 
       - run: yarn turbo build
 
