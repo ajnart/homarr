@@ -1,7 +1,7 @@
 {
   "save": "Lagre",
-  "apply": "",
-  "insert": "",
+  "apply": "Bruk",
+  "insert": "Sett inn",
   "about": "Info",
   "cancel": "Avbryt",
   "close": "Lukk",
@@ -13,9 +13,9 @@
   "previous": "Tidligere",
   "confirm": "Bekreft",
   "enabled": "Aktivert",
-  "disabled": "Funksjonshemmet",
+  "disabled": "Deaktivert",
   "enableAll": "Aktiver alle",
-  "disableAll": "Deaktivere alle",
+  "disableAll": "Deaktiver alle",
   "version": "Versjon",
   "changePosition": "Endre posisjon",
   "remove": "Fjern",
@@ -45,8 +45,8 @@
   "seeMore": "Se mer...",
   "position": {
     "left": "Venstre",
-    "center": "",
-    "right": "Ikke sant"
+    "center": "Midtstilt",
+    "right": "Høyre"
   },
   "attributes": {
     "width": "Bredde",
