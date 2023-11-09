@@ -11,10 +11,10 @@
         "label": "Vis fullførte torrenter"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Vis aktive torrenter"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Opplastingshastighet for å betrakte en torrent som aktiv (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Vis gamle torrenter"
@@ -27,8 +27,8 @@
         "description": "Når \"er hviteliste\" er merket, vil dette fungere som en hviteliste. Hvis ikke krysset av, er dette en svarteliste. Vil ikke gjøre noe når den er tom"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Vis filtrerte torrents listeforhold",
+        "info": "Hvis deaktivert, vil bare det globale forholdet vises. Det globale forholdet vil fortsatt bruke etikettene hvis angitt"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Feil",
       "lastUpdated": "Sist oppdatert for {{time}} siden",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globalt forhold",
+      "ratioWithFilter": "Forhold med filter"
     },
     "table": {
       "header": {
