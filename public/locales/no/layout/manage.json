@@ -4,21 +4,21 @@
             "title": "Hjem"
         },
         "boards": {
-            "title": "Styrer"
+            "title": "Tavler"
         },
         "users": {
             "title": "Brukere",
             "items": {
-                "manage": "Få til",
-                "invites": "Inviterer"
+                "manage": "Endre",
+                "invites": "Invitasjoner"
             }
         },
         "help": {
             "title": "Hjelp",
             "items": {
                 "documentation": "Dokumentasjon",
-                "report": "Rapporter et problem/feil",
-                "discord": "Samfunnssplid",
+                "report": "Rapporter problem/feil",
+                "discord": "Discord",
                 "contribute": "Bidra"
             }
         },
