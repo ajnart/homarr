@@ -5,12 +5,12 @@
 	"key": "Hurtigtast",
 	"action": "Handling",
 	"keybinds": "Hurtigtaster",
-	"translators": "",
-	"translatorsDescription": "",
-	"contributors": "",
-	"contributorsDescription": "",
+	"translators": "Oversettere ({{count}})",
+	"translatorsDescription": "Takket være disse menneskene er Homarr tilgjengelig på {{languages}} språk! Vil du hjelpe med å oversette Homarr til ditt språk? Les hvordan du kan bidra <a>her</a>.",
+	"contributors": "Bidragsytere ({{count}})",
+	"contributorsDescription": "Disse menneskene har bygget koden som får homarr til å fungere! Vil du være med å bygge Homarr? Les hvordan du kan bidra <a>her</a>",
 	"actions": {
-		"toggleTheme": "Veksle mellom lys/mørke modus",
+		"toggleTheme": "Veksle mellom lys/mørk modus",
 		"focusSearchBar": "Fokuser på søkefeltet",
 		"openDocker": "Åpne docker-widget",
 		"toggleEdit": "Veksle redigeringsmodus"
