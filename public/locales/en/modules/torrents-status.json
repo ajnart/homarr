@@ -54,7 +54,7 @@
         "ratio": "Ratio",
         "seeds": "Seeds (Connected)",
         "peers": "Peers (Connected)",
-        "label": "label",
+        "label": "Label",
         "state": "State",
         "stateMessage": "State Message"
       },

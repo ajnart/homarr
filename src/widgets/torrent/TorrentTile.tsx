@@ -1,7 +1,7 @@
 import {
-  MantineReactTable,
+  MRT_Table,
+  type MRT_ColumnDef,
   useMantineReactTable,
-  MRT_ColumnDef,
 } from 'mantine-react-table';
 
 import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
@@ -11,6 +11,7 @@ import {
   Flex,
   Group,
   Loader,
+  ScrollArea,
   Stack,
   Text,
   Title,
@@ -195,85 +196,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
       enableMultiSort: true,
       enableColumnFilter: false,
     },
-    {
-      accessorKey: 'progress',
-      header: t('card.table.header.progress'),
-      Cell: ({ cell }) => (100 * Number(cell.getValue())).toFixed(0) + "%",
-      sortDescFirst: true,
-      enableMultiSort: true,
-      enableColumnFilter: false,
-    },
-    {
-      accessorKey: 'totalUploaded',
-      header: t('card.table.header.totalUploaded'),
-      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
-      sortDescFirst: true,
-      enableMultiSort: true,
-      filterVariant: 'range-slider',
-      filterFn: 'betweenInclusive',
-      mantineFilterRangeSliderProps: {
-        max: 100 * 1024 * 1024, //100MiB/s
-        min: 0,
-        label: (value: number) => formatSpeed(value),
-      }
-    },
-    {
-      accessorKey: 'totalDownloaded',
-      header: t('card.table.header.totalDownloaded'),
-      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
-      sortDescFirst: true,
-      enableMultiSort: true,
-      filterVariant: 'range-slider',
-      filterFn: 'betweenInclusive',
-      mantineFilterRangeSliderProps: {
-        step: 1024,
-        max: 100 * 1024 * 1024, //100MiB/s
-        min: 0,
-        label: (value: number) => formatSpeed(value),
-      }
-    },
-    {
-      accessorKey: "ratio",
-      header: t('card.table.header.ratio'),
-      Cell: ({ cell }) => Number(cell.getValue()).toFixed(2),
-      sortDescFirst: true,
-      enableMultiSort: true,
-      filterFn: 'betweenInclusive',
-    },
-    {
-      accessorFn: (row) => `${row.totalSeeds} (${row.connectedSeeds})`,
-      header: t('card.table.header.seeds'),
-      id: "seeds",
-      sortDescFirst: true,
-      enableMultiSort: true,
-      enableColumnFilter: false,
-    },
-    {
-      accessorFn: (row) => `${row.totalPeers} (${row.connectedPeers})`,
-      header: t('card.table.header.peers'),
-      id: "peers",
-      sortDescFirst: true,
-      enableMultiSort: true,
-      enableColumnFilter: false,
-    },
-    {
-      accessorKey: 'label',
-      header: t('card.table.header.label'),
-      sortDescFirst: true,
-      enableMultiSort: true,
-    },
-    {
-      accessorKey: 'state',
-      header: t('card.table.header.state'),
-      sortDescFirst: true,
-      enableMultiSort: true,
-    },
-    {
-      accessorKey: 'stateMessage',
-      header: t('card.table.header.stateMessage'),
-      sortDescFirst: true,
-      enableMultiSort: true,
-    },
   ], []);
 
   const torrentsTable = useMantineReactTable({
@@ -281,11 +203,10 @@ function TorrentTile({ widget }: TorrentTileProps) {
     data: filteredTorrents,
     enablePagination: false,
     enableBottomToolbar: false,
-    enableColumnFilterModes: true,
-    enableColumnOrdering: true,
-    enableFacetedValues: true,
-    enableGrouping: true,
-    enablePinning: true,
+    enableMultiSort: true,
+    enableColumnActions: false,
+    enableColumnFilters: false,
+    enableSorting: true,
     initialState: {
       showColumnFilters: false,
       showGlobalFilter: false,
@@ -296,25 +217,11 @@ function TorrentTile({ widget }: TorrentTileProps) {
         dateAdded: false,
         name: true,
         totalSize: true,
-        uploadSpeed: width > MIN_WIDTH_MOBILE,
-        downloadSpeed: width > MIN_WIDTH_MOBILE,
-        eta: width > MIN_WIDTH_MOBILE,
-        progress: true,
-        totalUploaded: false,
-        totalDownloaded: false,
-        ratio: false,
-        seeds: false,
-        peers: false,
-        label: false,
-        state: false,
-        stateMessage: false,
+        // uploadSpeed: width > MIN_WIDTH_MOBILE,
+        // downloadSpeed: width > MIN_WIDTH_MOBILE,
+        // eta: width > MIN_WIDTH_MOBILE,
       },
     },
-    positionToolbarAlertBanner: 'bottom',
-    mantineSearchTextInputProps: {
-      placeholder: 'Search Torrents',
-    },
-    enableStickyHeader: true,
     // ... Others options if necessary
   });
 
@@ -369,8 +276,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <MantineReactTable table={torrentsTable} />
-
+      <ScrollArea>
+        <MRT_Table table={torrentsTable} />
+      </ScrollArea>
       <Group spacing="sm">
         {data.apps.some((x) => !x.success) && (
           <Badge variant="dot" color="red">
