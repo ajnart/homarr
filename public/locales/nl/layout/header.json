@@ -17,10 +17,6 @@
             "preferences": "Gebruikersvoorkeuren",
             "defaultBoard": "Standaard dashboard",
             "manage": "Beheer",
-            "about": {
-                "label": "Over",
-                "new": "Nieuw"
-            },
             "logout": "Afmelden bij {{username}}",
             "login": "Inloggen"
         }

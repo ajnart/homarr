@@ -1,5 +1,7 @@
 {
   "save": "Shrani",
+  "apply": "",
+  "insert": "",
   "about": "O programu",
   "cancel": "Prekliči",
   "close": "Zapri",
@@ -40,5 +42,14 @@
     "medium": "srednja",
     "large": "velika"
   },
-  "seeMore": "Oglejte si več..."
+  "seeMore": "Oglejte si več...",
+  "position": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "attributes": {
+    "width": "Širina",
+    "height": "Višina"
+  }
 }

@@ -15,13 +15,13 @@
 			"label": "Intern adresse",
 			"description": "Intern IP-adresse til appen.",
 			"troubleshoot": {
-				"label": "Har du problemer?",
+				"label": "Opplever du problemer?",
 				"header": "Her er en liste over vanlige feil og feilsøking:",
 				"lines": {
-					"nothingAfterPort": "Du bør, i de fleste om ikke alle tilfeller, ikke legge inn noen bane etter porten. (Selv '/admin' for pihole eller '/web' for plex)",
+					"nothingAfterPort": "Du bør, i de fleste om ikke alle tilfeller, ikke legge inn noen bane etter porten. (Til og med '/admin' for pihole eller '/web' for plex)",
 					"protocolCheck": "Sørg alltid for at URL-en er innledet med http eller https, og forsikre deg om at du bruker den riktige.",
-					"preferIP": "Det anbefales å bruke den direkte ip-en til maskinen eller beholderen du prøver å kommunisere med.",
-					"enablePings": "Sjekk at IP-en er riktig ved å aktivere ping. Tilpass brett -> Layout -> Aktiver ping. En liten rød eller grønn boble vil dukke opp på app-flisene dine, og ved å sveve den vil du få svarkoden (en grønn boble med kode 200 forventes i de fleste tilfeller).",
+					"preferIP": "Det anbefales å bruke den direkte ip-en til maskinen eller containeren du prøver å kommunisere med.",
+					"enablePings": "Sjekk at IP-en er riktig ved å aktivere ping. Tilpass Tavle -> Layout -> Aktiver ping. En liten rød eller grønn boble vil dukke opp på app-flisene dine, og ved å sveve den vil du få svarkoden (en grønn boble med kode 200 forventes i de fleste tilfeller).",
 					"wget": "For å være sikker på at homarr kan kommunisere med de andre appene, sørg for å wget/curl/pinge appens IP:port.",
 					"iframe": "Når det gjelder iframes, bør de alltid bruke samme protokoll (http/s) som Homarr.",
 					"clearCache": "Noe informasjon er registrert i cache, så en integrasjon vil kanskje ikke fungere med mindre du tømmer cachen i Homarrs generelle alternativer."
@@ -40,10 +40,10 @@
 			"description": "Åpne appen i en ny fane i stedet for denne."
 		},
 		"tooltipDescription": {
-			"label": "Søknadsbeskrivelse",
+			"label": "Applikasjonsbeskrivelse",
 			"description": "Teksten du skriver inn vises når du holder musepekeren over appen din.\r\nBruk dette for å gi brukerne flere detaljer om appen din eller la stå tomt for å ikke ha noe."
 		},
-		"customProtocolWarning": "Bruker en ikke-standard protokoll. Dette kan kreve forhåndsinstallerte programmer og kan introdusere sikkerhetsrisikoer. Sørg for at adressen din er sikker og pålitelig."
+		"customProtocolWarning": "Å bruke en ikke-standard protokoll. Dette kan kreve forhåndsinstallerte programmer og kan introdusere sikkerhetsrisikoer. Sørg for at adressen din er sikker og pålitelig."
 	},
 	"network": {
 		"statusChecker": {
@@ -74,10 +74,10 @@
 		},
 		"appNameStatus": {
 			"label": "Appnavnstatus",
-			"description": "Velg hvor du vil at tittelen skal vises, hvis i det hele tatt.",
+			"description": "Velg hvor du vil at tittelen skal vises, eller ikke i det hele tatt.",
 			"dropdown": {
 				"normal": "Vis kun tittel på flis",
-				"hover": "Vis tittel kun ved verktøytips",
+				"hover": "Vis tittel kun når du holder musepekeren over",
 				"hidden": "Ikke vis i det hele tatt"
 			}
 		},
@@ -86,14 +86,14 @@
 			"description": "Plassering av appens navn i forhold til ikonet.",
 			"dropdown": {
 				"top": "Topp",
-				"right": "Ikke sant",
+				"right": "Høyre",
 				"bottom": "Bunn",
 				"left": "Venstre"
 			}
 		},
 		"lineClampAppName": {
 			"label": "App navnelinjeklemme",
-			"description": "Definerer hvor mange linjer tittelen din skal passe på maksimalt. Sett 0 for ubegrenset."
+			"description": "Definerer hvor mange linjer tittelen din skal ha plass til maksimalt. Sett 0 for ubegrenset."
 		}
 	},
 	"integration": {
@@ -119,10 +119,10 @@
 	"validation": {
 		"popover": "Skjemaet inneholder ugyldig data. Derfor kan den ikke lagres. Vennligst løs alle problemer og klikk på denne knappen igjen for å lagre endringene dine",
 		"name": "Navn er påkrevd",
-		"noUrl": "URL er obligatorisk",
+		"noUrl": "URL er påkrevd",
 		"invalidUrl": "Verdien er ikke en gyldig nettadresse",
 		"noIconUrl": "Dette feltet er obligatorisk",
-		"noExternalUri": "Ekstern URI kreves",
+		"noExternalUri": "Ekstern URI er obligatorisk",
 		"invalidExternalUri": "Ekstern URI er ikke en gyldig URI"
 	}
 }

@@ -17,10 +17,6 @@
             "preferences": "Benutzereinstellungen",
             "defaultBoard": "Standard-Dashboard",
             "manage": "Verwalten",
-            "about": {
-                "label": "Über",
-                "new": "Neu"
-            },
             "logout": "{{username}} abmelden",
             "login": "Anmelden"
         }

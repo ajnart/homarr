@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "crwdns2221:0crwdne2221:0"
       },
+      "displayActiveTorrents": {
+        "label": "crwdns3986:0crwdne3986:0"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "crwdns3988:0crwdne3988:0"
+      },
       "displayStaleTorrents": {
         "label": "crwdns2223:0crwdne2223:0"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "crwdns2827:0crwdne2827:0",
         "description": "crwdns2829:0crwdne2829:0"
+      },
+      "displayRatioWithFilter": {
+        "label": "crwdns4000:0crwdne4000:0",
+        "info": "crwdns4002:0crwdne4002:0"
       }
     }
   },
   "card": {
     "footer": {
       "error": "crwdns2457:0crwdne2457:0",
-      "lastUpdated": "crwdns2459:0{{time}}crwdne2459:0"
+      "lastUpdated": "crwdns2459:0{{time}}crwdne2459:0",
+      "ratioGlobal": "crwdns4004:0crwdne4004:0",
+      "ratioWithFilter": "crwdns4006:0crwdne4006:0"
     },
     "table": {
       "header": {

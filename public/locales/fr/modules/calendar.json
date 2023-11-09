@@ -4,12 +4,6 @@
     "description": "Affiche un calendrier avec les prochaines sorties, à partir des intégrations prises en charge.",
     "settings": {
       "title": "Paramètres du widget Calendrier",
-      "useSonarrv4": {
-        "label": "Utiliser l'API de Sonarr v4"
-      },
-      "useRadarrv5": {
-        "label": "Utiliser l'API de Radarr v5"
-      },
       "radarrReleaseType": {
         "label": "Type de sortie Radarr",
         "data": {

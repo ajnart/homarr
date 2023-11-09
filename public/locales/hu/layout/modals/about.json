@@ -1,12 +1,14 @@
 {
 	"description": "A Homarr egy <strong>elegáns</strong>, <strong>modern</strong> kezelőfelület, amely az összes alkalmazást és szolgáltatást az Ön keze ügyébe helyezi. A Homarr segítségével mindent egyetlen kényelmes helyen érhet el és irányíthat. A Homarr zökkenőmentesen integrálódik az Ön által hozzáadott alkalmazásokkal, értékes információkat biztosítva Önnek, és teljes körű ellenőrzést biztosítva. A telepítés gyerekjáték, és a Homarr a telepítési módszerek széles skáláját támogatja.",
-	"contact": "Problémája vagy kérdése van? Lépjen kapcsolatba velünk!",
 	"addToDashboard": "Hozzáadás a kezelőfelülethez",
 	"tip": "A Mod a módosító billentyűre utal, ez a Ctrl és a Command/Super/Windows billentyű",
 	"key": "Gyorsbillentyűk",
 	"action": "Esemény",
 	"keybinds": "Billentyűkombinációk",
-	"documentation": "Dokumentáció",
+	"translators": "Fordítók ({{count}})",
+	"translatorsDescription": "Ezeknek az embereknek köszönhetően a Homarr elérhető a {{languages}} nyelven! Szeretnél segíteni a Homarr lefordításában a te nyelvedre? Itt olvashatod el, hogyan teheted meg <a>itt</a>.",
+	"contributors": "Hozzájárulók ({{count}})",
+	"contributorsDescription": "Ezek az emberek írták a kódot, ami a homarr-t működőképessé teszi! Szeretnél segíteni a Homarr készítésében? Olvasd el, hogyan teheted ezt meg <a>itt</a>",
 	"actions": {
 		"toggleTheme": "Világos/sötét üzemmód váltása",
 		"focusSearchBar": "Fókusz a Keresősoron",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurációs séma verziója",
-		"configurationsCount": "Elérhető konfigurációk",
 		"version": "Verzió",
 		"nodeEnvironment": "Kiadási váltrozat",
 		"i18n": "Betöltött I18n fordítási névterek",

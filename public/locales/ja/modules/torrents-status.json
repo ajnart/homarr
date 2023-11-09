@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "完了したトレントを表示する"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "古くなったトレントを表示する"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "ラベル一覧",
         "description": "「ホワイトリスト」にチェックされている場合、これはホワイトリストとして機能する。チェックされていない場合、これはブラックリストとなる。空の場合は何もしません。"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "エラー",
-      "lastUpdated": "最終更新 {{time}} 前"
+      "lastUpdated": "最終更新 {{time}} 前",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

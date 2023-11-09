@@ -12,7 +12,7 @@
     "app": {
         "defaultName": "Din app"
     },
-    "widgets": "Widgets",
+    "widgets": "Widgetter",
     "categories": "Kategorier",
     "category": {
         "newName": "Navn på ny kategori",

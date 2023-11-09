@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Tamamlanan torrentleri görüntüle"
       },
+      "displayActiveTorrents": {
+        "label": "Aktif torrentleri görüntüle"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Bir torrenti aktif olarak kabul etmek için yükleme hızı (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Durdurulmuş torrentleri görüntüle"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Kategpori Listesi",
         "description": "Beyaz liste' aktif edildiğinde, listeye eklediğiniz torrent kategorileri dışında kalan torrentler filtrelenerek görüntülenmez. İşaretlenmez ise listede olan kategori filtrelenerek görüntülnmez. Liste boş olduğunda filtre uygulanmaz. (Listeye ekleyeceğiniz kategoriler torrent istemcinizden ayarlanmalıdır.)"
+      },
+      "displayRatioWithFilter": {
+        "label": "Filtrelenmiş torrent listesi ratio oranını görüntüle",
+        "info": "Devre dışı bırakılırsa, yalnızca genel ratio görüntülenir. Genel ratio, ayarlanmışsa etiketleri kullanmaya devam edecektir"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Hata",
-      "lastUpdated": "Son Güncelleme {{time}} önce"
+      "lastUpdated": "Son Güncelleme {{time}} önce",
+      "ratioGlobal": "Genel oran",
+      "ratioWithFilter": "Filtrelenen ratio"
     },
     "table": {
       "header": {
@@ -73,7 +85,7 @@
         "progress": "İlerleme - %{{progress}}",
         "totalSelectedSize": "Toplam - {{totalSize}}",
         "state": "Durum - {{state}}",
-        "ratio": "Oran -",
+        "ratio": "Ratio -",
         "completed": "Tamamlanan"
       }
     }

@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Rādīt pabeigtos torrentus"
       },
+      "displayActiveTorrents": {
+        "label": "Rādīt aktīvos torrentus"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Augšupielādes ātrums, lai torrentu uzskatītu par aktīvu (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Rādīt novecojušus torrentus"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Iezīmju saraksts",
         "description": "Ja ir atzīmēts 'ir baltais saraksts', tas darbosies kā baltais saraksts. Ja nav atzīmēts, šis ir melnais saraksts. Ja ir tukšs, tas neko nedarīs"
+      },
+      "displayRatioWithFilter": {
+        "label": "Rādīt filtrēto torentu saraksta attiecību",
+        "info": "Ja ir atspējots, tiks parādīta tikai globālā attiecība. Globālā attiecība joprojām izmantos etiķetes, ja tā būs iestatītas"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Kļūda",
-      "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}"
+      "lastUpdated": "Pēdējo reizi atjaunināts pirms {{time}}",
+      "ratioGlobal": "Globālā attiecība",
+      "ratioWithFilter": "Attiecība ar filtru"
     },
     "table": {
       "header": {

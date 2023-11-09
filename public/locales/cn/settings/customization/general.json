@@ -22,7 +22,7 @@
       "description": "为残疾和残障人士配置 Homarr"
     },
     "access": {
-      "name": "",
+      "name": "访问权限",
       "description": "配置谁有权访问您的面板"
     }
   }

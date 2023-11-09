@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Cacher les torrents terminés"
       },
+      "displayActiveTorrents": {
+        "label": "Afficher les torrents actifs"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Vitesse de téléversement pour considérer un torrent comme actif (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Afficher les torrents obsolètes"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Liste des libellés",
         "description": "Si la case \"La liste des libellés est une liste blanche\" est cochée, elle sera appliquée comme une liste blanche. Si la case n'est pas cochée, elle s'appliquera comme une liste noire. Rien ne se passera si elle est vide"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Erreur",
-      "lastUpdated": "Dernière mise à jour : {{time}}"
+      "lastUpdated": "Dernière mise à jour : {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

@@ -17,10 +17,6 @@
             "preferences": "Impostazioni utente",
             "defaultBoard": "Dashboard predefinita",
             "manage": "Gestisci",
-            "about": {
-                "label": "Info",
-                "new": "Nuovo"
-            },
             "logout": "Esci da {{username}}",
             "login": "Accedi"
         }

@@ -17,10 +17,6 @@
             "preferences": "Preferencias de usuario",
             "defaultBoard": "Panel predeterminado",
             "manage": "Administrar",
-            "about": {
-                "label": "Acerca de",
-                "new": "Nuevo"
-            },
             "logout": "Cerrar sesión de {{username}}",
             "login": "Iniciar sesión"
         }

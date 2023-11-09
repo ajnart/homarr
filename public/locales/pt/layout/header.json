@@ -17,10 +17,6 @@
             "preferences": "Preferências do usuário",
             "defaultBoard": "Painel de controle padrão",
             "manage": "Gerenciar",
-            "about": {
-                "label": "Sobre",
-                "new": "Novo"
-            },
             "logout": "Sair do site {{username}}",
             "login": "Login"
         }

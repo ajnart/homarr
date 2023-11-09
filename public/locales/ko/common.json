@@ -1,5 +1,7 @@
 {
   "save": "저장",
+  "apply": "",
+  "insert": "",
   "about": "정보",
   "cancel": "취소",
   "close": "닫기",
@@ -40,5 +42,14 @@
     "medium": "medium",
     "large": "큰"
   },
-  "seeMore": "더 보기..."
+  "seeMore": "더 보기...",
+  "position": {
+    "left": "왼쪽",
+    "center": "",
+    "right": "오른쪽"
+  },
+  "attributes": {
+    "width": "너비",
+    "height": "높이"
+  }
 }

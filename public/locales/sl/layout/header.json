@@ -17,10 +17,6 @@
             "preferences": "",
             "defaultBoard": "",
             "manage": "",
-            "about": {
-                "label": "O programu",
-                "new": ""
-            },
             "logout": "",
             "login": "Prijava"
         }

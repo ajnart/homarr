@@ -17,10 +17,6 @@
             "preferences": "Uživatelská nastavení",
             "defaultBoard": "Výchozí plocha",
             "manage": "Spravovat",
-            "about": {
-                "label": "",
-                "new": ""
-            },
             "logout": "Odhlásit z {{username}}",
             "login": ""
         }

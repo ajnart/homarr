@@ -4,12 +4,6 @@
     "description": "Hiển thị lịch cùng các phát hành sắp tới, từ các tích hợp được hỗ trợ.",
     "settings": {
       "title": "Cài đặt cho tiện ích lịch",
-      "useSonarrv4": {
-        "label": "Dùng Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Sử dụng API Radarr v5"
-      },
       "radarrReleaseType": {
         "label": "Loại phát hành Radarr",
         "data": {

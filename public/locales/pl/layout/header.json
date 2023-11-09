@@ -17,10 +17,6 @@
             "preferences": "Preferencje",
             "defaultBoard": "Domyślna tablica",
             "manage": "Zarządzaj",
-            "about": {
-                "label": "O programie",
-                "new": "Nowy"
-            },
             "logout": "Wyloguj z {{username}}",
             "login": "Zaloguj się"
         }

@@ -4,12 +4,6 @@
     "description": "Prikaže koledar s prihajajočimi izdajami iz podprtih integracij.",
     "settings": {
       "title": "Nastavitve za gradnik Koledar",
-      "useSonarrv4": {
-        "label": "Uporaba vmesnika API Sonarr v4"
-      },
-      "useRadarrv5": {
-        "label": "Uporaba vmesnika API Radarr v5"
-      },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr",
         "data": {

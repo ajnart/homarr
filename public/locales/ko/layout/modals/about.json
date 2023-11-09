@@ -1,12 +1,14 @@
 {
 	"description": "Homarr는 <strong>세련된</strong>, <strong>모던한</strong> 대시보드로 모든 앱과 서비스를 손끝에서 관리할 수 있습니다. Homarr를 사용하면 모든 것을 한 곳에서 편리하게 액세스하고 제어할 수 있습니다. Homarr는 추가한 앱과 원활하게 통합되어 귀중한 정보를 제공하고 완벽한 제어 기능을 제공합니다. 설치는 매우 간단하며 Homarr는 다양한 배포 방법을 지원합니다.",
-	"contact": "문제나 질문이 있으신가요? 문의해 주세요!",
 	"addToDashboard": "대시보드에 추가",
 	"tip": "Mod는 수정자 키를 의미하며, Ctrl 및 Command/Super/Windows 키입니다.",
 	"key": "바로 가기 키",
 	"action": "액션",
 	"keybinds": "키 바인드",
-	"documentation": "문서",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "라이트/어둠 모드 전환",
 		"focusSearchBar": "검색창에 집중",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "구성 스키마 버전",
-		"configurationsCount": "사용 가능한 구성",
 		"version": "버전",
 		"nodeEnvironment": "노드 환경",
 		"i18n": "로드된 I18n 번역 네임스페이스",

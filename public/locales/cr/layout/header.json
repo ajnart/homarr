@@ -17,10 +17,6 @@
             "preferences": "crwdns3459:0crwdne3459:0",
             "defaultBoard": "crwdns3461:0crwdne3461:0",
             "manage": "crwdns3463:0crwdne3463:0",
-            "about": {
-                "label": "crwdns3465:0crwdne3465:0",
-                "new": "crwdns3467:0crwdne3467:0"
-            },
             "logout": "crwdns3469:0{{username}}crwdne3469:0",
             "login": "crwdns3471:0crwdne3471:0"
         }

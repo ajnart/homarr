@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Befejezett torrentek megjelenítése"
       },
+      "displayActiveTorrents": {
+        "label": "Aktív torrentek megjelenítése"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Feltöltési sebesség, amellyel egy torrent aktívnak tekinthető (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Elavult torrentek megjelenítése"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Címkelista",
         "description": "Ha az 'is whitelist' jelölőnégyzet be van jelölve, akkor ez fehérlistaként fog működni. Ha nincs bejelölve, akkor ez egy feketelista. Üres állapotban nem csinál semmit"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Hiba",
-      "lastUpdated": "Utolsó frissítés {{time}} óta"
+      "lastUpdated": "Utolsó frissítés {{time}} óta",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

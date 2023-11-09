@@ -4,12 +4,6 @@
     "description": "Wyświetla kalendarz z nadchodzącymi wydaniami, z obsługiwanych integracji.",
     "settings": {
       "title": "Ustawienia dla widżetu Kalendarz",
-      "useSonarrv4": {
-        "label": "Użyj API Sonarr v4"
-      },
-      "useRadarrv5": {
-        "label": "Użyj API Radarr v5"
-      },
       "radarrReleaseType": {
         "label": "Rodzaj premiery w Radarr",
         "data": {

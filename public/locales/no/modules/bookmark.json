@@ -9,12 +9,12 @@
         "info": "La stå tomt for å holde tittelen skjult."
       },
       "items": {
-        "label": "Varer"
+        "label": "Elementer"
       },
       "layout": {
         "label": "Oppsett",
         "data": {
-          "autoGrid": "Auto Grid",
+          "autoGrid": "Automatisk tabell",
           "horizontal": "Horisontal",
           "vertical": "Vertikal"
         }
@@ -31,7 +31,7 @@
     "validation": {
       "length": "Lengden må være mellom {{shortest}} og {{longest}}",
       "invalidLink": "Ikke en gyldig link",
-      "errorMsg": "Lagret ikke fordi det var valideringsfeil. Tilpass innspillene dine"
+      "errorMsg": "Lagret ikke fordi det var valideringsfeil. Tilpass verdiene"
     },
     "name": "Navn",
     "url": "URL",

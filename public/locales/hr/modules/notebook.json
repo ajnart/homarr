@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Prikažite alatnu traku koja će vam pomoći u pisanju oznake"
 			},
+			"allowReadOnlyCheck": {
+				"label": ""
+			},
 			"content": {
 				"label": "Sadržaj bilježnice"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }

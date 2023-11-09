@@ -1,12 +1,14 @@
 {
 	"description": "Homarr, tüm uygulamalarınızı ve hizmetlerinizi parmaklarınızın ucuna getiren <strong>şık</strong>, <strong>modern</strong> bir kontrol panelidir. Homarr ile her şeye tek bir yerden erişebilir ve kontrol edebilirsiniz. Homarr eklediğiniz uygulamalarla bütünleşerek size değerli bilgiler sunar ve tam kontrol sağlar. Kurulum çok kolaydır ve Homarr çok çeşitli kurulum yöntemlerini destekler.",
-	"contact": "Sorun mu yaşıyorsunuz veya sorularınız mı var? Bizimle iletişime geçin!",
 	"addToDashboard": "Panele Ekle",
 	"tip": "Mod, değiştirici anahtarınızı ifade eder, bu Ctrl ve Alt/Super/Windows tuşudur",
 	"key": "Kısayol tuşu",
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
-	"documentation": "Dokümantasyon",
+	"translators": "Çevirmenler ({{count}})",
+	"translatorsDescription": "Bu kişiler sayesinde Homarr {{languages}} dillerinde mevcut! Homarr'ın kendi dilinize çevrilmesine yardımcı olmak ister misiniz? Detaylar için <a>burayı</a> okuyun.",
+	"contributors": "Katkıda Bulunanlar ({{count}})",
+	"contributorsDescription": "Bu kişiler homarr'ın çalışmasını sağlayan kodları oluşturdular! Homarr'ın inşasına yardım etmek ister misiniz? Detaylar için <a>burayı</a> okuyun",
 	"actions": {
 		"toggleTheme": "Aydınlık/karanlık mod",
 		"focusSearchBar": "Arama çubuğuna odaklan",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Yapılandırma şeması sürümü",
-		"configurationsCount": "Mevcut konfigürasyonlar",
 		"version": "Versiyon",
 		"nodeEnvironment": "Node ortamı",
 		"i18n": "Yüklenen I18n çeviri ad alanları",

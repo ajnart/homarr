@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "완료된 토렌트 표시"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "오래된 토렌트 표시"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "레이블 목록",
         "description": "'화이트리스트'를 선택하면 화이트리스트 역할을 합니다. 체크하지 않으면 블랙리스트가 됩니다. 비어 있으면 아무 작업도 수행하지 않습니다."
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "오류",
-      "lastUpdated": "마지막 업데이트 {{time}} 전"
+      "lastUpdated": "마지막 업데이트 {{time}} 전",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

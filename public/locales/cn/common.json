@@ -1,5 +1,7 @@
 {
   "save": "保存",
+  "apply": "应用",
+  "insert": "插入",
   "about": "关于",
   "cancel": "取消",
   "close": "关闭",
@@ -40,5 +42,14 @@
     "medium": "中",
     "large": "大"
   },
-  "seeMore": "查看更多..."
+  "seeMore": "查看更多...",
+  "position": {
+    "left": "左边",
+    "center": "居中",
+    "right": "右边"
+  },
+  "attributes": {
+    "width": "宽度",
+    "height": "高度"
+  }
 }

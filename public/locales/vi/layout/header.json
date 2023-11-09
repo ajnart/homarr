@@ -17,10 +17,6 @@
             "preferences": "Sở thích của người sử dụng",
             "defaultBoard": "Trang tổng quan mặc định",
             "manage": "Quản lý",
-            "about": {
-                "label": "Về chúng tôi",
-                "new": "Mới"
-            },
             "logout": "Đăng xuất từ {{username}}",
             "login": "Đăng nhập"
         }

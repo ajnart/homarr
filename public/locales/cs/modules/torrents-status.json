@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": ""
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": ""
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "",
         "description": ""
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "",
-      "lastUpdated": ""
+      "lastUpdated": "",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

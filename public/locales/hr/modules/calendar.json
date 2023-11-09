@@ -4,12 +4,6 @@
     "description": "Prikazuje kalendar s nadolazećim izdanjima iz podržanih integracija.",
     "settings": {
       "title": "Postavke za widget kalendara",
-      "useSonarrv4": {
-        "label": "Koristi Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Koristite Radarr v5 API"
-      },
       "radarrReleaseType": {
         "label": "Vrsta izdanja u Radarr-u",
         "data": {

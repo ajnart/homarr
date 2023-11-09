@@ -4,18 +4,12 @@
     "description": "Viser en kalender med kommende utgivelser, fra støttede integrasjoner.",
     "settings": {
       "title": "Innstillinger for Kalender widget",
-      "useSonarrv4": {
-        "label": "Bruk Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Bruk Radarr v5 API"
-      },
       "radarrReleaseType": {
         "label": "Radarr utgivelsestype",
         "data": {
           "inCinemas": "På kino",
           "physicalRelease": "Fysisk",
-          "digitalRelease": "Digital"
+          "digitalRelease": "Digitalt"
         }
       },
       "hideWeekDays": {

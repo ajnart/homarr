@@ -15,7 +15,7 @@
         },
         "data": {
             "expiresAt": "过期 {{at}}",
-            "expiresIn": "在 {{in}}"
+            "expiresIn": "{{in}}"
         }
     },
     "modals": {

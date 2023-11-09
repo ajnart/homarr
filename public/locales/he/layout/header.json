@@ -17,10 +17,6 @@
             "preferences": "העדפות המשתמש",
             "defaultBoard": "לוח ברירת מחדל",
             "manage": "ניהול",
-            "about": {
-                "label": "אודות",
-                "new": "חדש"
-            },
             "logout": "התנתקות מ-{{username}}",
             "login": "התחבר/י"
         }

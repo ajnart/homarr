@@ -17,10 +17,6 @@
             "preferences": "Préférences utilisateur",
             "defaultBoard": "Tableau de bord par défaut",
             "manage": "Gérer",
-            "about": {
-                "label": "À propos",
-                "new": "Nouveau"
-            },
             "logout": "Se déconnecter de {{username}}",
             "login": "Connexion"
         }
