@@ -1,16 +1,16 @@
 {
   "descriptor": {
-    "name": "Oppsummering av DNS-hull",
+    "name": "Oppsummering av DNS-hole",
     "description": "Viser viktige data fra PiHole eller AdGuard",
     "settings": {
-      "title": "Innstillinger for DNS-hullsammendrag",
+      "title": "Innstillinger for DNS-hole sammendrag",
       "usePiHoleColors": {
         "label": "Bruk farger fra PiHole"
       },
       "layout": {
         "label": "Oppsett",
         "data": {
-          "grid": "2 og 2",
+          "grid": "2 gange 2",
           "row": "Horisontal",
           "column": "Vertikal"
         }
@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domener på adlister",
       "queriesToday": "Spørringer i dag",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "Blokkert i dag",
+      "queriesBlockedToday": "Blokkert i dag"
     }
   }
 }
