@@ -2,7 +2,7 @@
     "metaTitle": "Opprett bruker",
     "steps": {
         "account": {
-            "title": "Første skritt",
+            "title": "Steg en",
             "text": "Opprett konto",
             "username": {
                 "label": "Brukernavn"
@@ -12,7 +12,7 @@
             }
         },
         "security": {
-            "title": "Andre trinn",
+            "title": "Steg to",
             "text": "Passord",
             "password": {
                 "label": "Passord"
@@ -22,12 +22,12 @@
             "title": "Bekreftelse",
             "text": "Lagre til database",
             "card": {
-                "title": "Gjennomgå innspillene dine",
+                "title": "Gjennomgå inndata",
                 "text": "Etter at du har sendt inn dataene dine til databasen, vil brukeren kunne logge inn. Er du sikker på at du vil lagre denne brukeren i databasen og aktivere påloggingen?"
             },
             "table": {
                 "header": {
-                    "property": "Eiendom",
+                    "property": "Egenskap",
                     "value": "Verdi",
                     "username": "Brukernavn",
                     "email": "E-post",
@@ -47,6 +47,6 @@
     },
     "buttons": {
         "generateRandomPassword": "Generer tilfeldig",
-        "createAnother": "Lag en annen"
+        "createAnother": "Lag en til"
     }
 }
