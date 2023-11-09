@@ -43,6 +43,7 @@
     "@mantine/next": "^6.0.0",
     "@mantine/notifications": "^6.0.0",
     "@mantine/prism": "^6.0.19",
+    "@mantine/styles": "^6.0.21",
     "@mantine/tiptap": "^6.0.17",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",

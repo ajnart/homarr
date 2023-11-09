@@ -53,6 +53,9 @@ dependencies:
   '@mantine/prism':
     specifier: ^6.0.19
     version: 6.0.21(@mantine/core@6.0.21)(@mantine/hooks@6.0.21)(react-dom@18.2.0)(react@18.2.0)
+  '@mantine/styles':
+    specifier: ^6.0.21
+    version: 6.0.21(@emotion/react@11.11.1)(react-dom@18.2.0)(react@18.2.0)
   '@mantine/tiptap':
     specifier: ^6.0.17
     version: 6.0.21(@mantine/core@6.0.21)(@mantine/hooks@6.0.21)(@tabler/icons-react@2.40.0)(@tiptap/extension-link@2.1.12)(@tiptap/react@2.1.12)(react@18.2.0)
