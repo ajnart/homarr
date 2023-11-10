@@ -45,7 +45,6 @@ export const MainHeader = ({
 
   return (
     <Header height={headerHeight} pb="sm" pt={0}>
-      <ExperimentalHeaderNote visible={showExperimental} height={experimentalHeaderNoteHeight} />
       <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
         <Group noWrap style={{ flex: 1 }}>
           {leftIcon}
