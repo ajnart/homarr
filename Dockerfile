@@ -18,7 +18,7 @@ COPY .next/standalone ./
 COPY .next/static ./.next/static
 COPY ./scripts/run.sh ./scripts/run.sh
 COPY ./drizzle ./drizzle
-RUN mkdir database
+RUN mkdir /data
 COPY ./src/migrate.ts ./src/migrate.ts
 
 # Install dependencies
