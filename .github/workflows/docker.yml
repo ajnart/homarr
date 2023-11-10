@@ -6,9 +6,6 @@ name: Master CI
 on:
   push:
     branches: [master]
-    paths-ignore:
-      - '.github/**'
-      - '**.md'
     tags:
       - v*
     
