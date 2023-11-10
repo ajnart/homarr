@@ -16,7 +16,7 @@ const dockerRunCommand = `docker run  \\
 --restart unless-stopped \\
 -p 7575:7575 \\
 -v your-path/homarr/configs:/app/data/configs \\
--v your-path/homarr/data:/app/database \\
+-v your-path/homarr/data:/data \\
 -v your-path/homarr/icons:/app/public/icons \\
 -d ghcr.io/ajnart/homarr:latest`;
 
@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./homarr/configs:/app/data/configs
-      - ./homarr/data:/app/database
+      - ./homarr/data:/data
       - ./homarr/icons:/app/public/icons
     ports:
       - '7575:7575'`;
@@ -165,7 +165,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
               After the new modal has opened, make sure that "Path" has been selected at the top
             </List.Item>
             <List.Item>
-              In the container path, enter <Code>/app/database</Code>
+              In the container path, enter <Code>/data</Code>
             </List.Item>
             <List.Item>
               In the host path, enter a new path on your host system. Choose a similar path, but the
@@ -182,7 +182,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
             We are sadly not able to include upgrade guides for all kind of systems. If your system
             was not listed, you should mount this new mounting point in your container:
           </Text>
-          <Code>/app/database</Code>
+          <Code>/data</Code>
         </Tabs.Panel>
       </Tabs>
 
