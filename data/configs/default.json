@@ -271,52 +271,6 @@
   ],
   "widgets": [
     {
-      "id": "86b1921f-efa7-410f-92dd-79553bf3264d",
-      "type": "notebook",
-      "properties": {
-        "showToolbar": true,
-        "content": "<h2><strong>Homarr's</strong> notebook</h2><p>Use it as your Todo list, ideas to think about, as a \"getting-started\" guide for your users or even as your secret journal to confess your crushes, it stays private on your <strong>Homarr</strong> instance.</p><p>The <code>notebook</code> widget focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. It is based on <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://tiptap.dev/\">Tiptap.dev</a> and supports all of its features:</p><ul><li><p>General text formatting: <strong>bold</strong>, <em>italic</em>, underline, <s>strike-through</s></p></li><li><p>Headings (h1-h6)</p></li><li><p>Sub and super scripts (&lt;sup /&gt; and &lt;sub /&gt; tags)</p></li><li><p>Ordered and bullet lists</p></li><li><p>Text align</p></li></ul>"
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 2
-          }
-        },
-        "md": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 3,
-            "height": 4
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 6,
-            "height": 3
-          }
-        }
-      }
-    },
-    {
       "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
       "type": "weather",
       "properties": {
@@ -472,6 +426,52 @@
           }
         }
       }
+    },
+    {
+      "id": "86b1921f-efa7-410f-92dd-79553bf3264d",
+      "type": "notebook",
+      "properties": {
+        "showToolbar": true,
+        "content": "<h2><strong>Welcome to Homarr 🚀👋</strong></h2><p>We're glad that you're here! Homarr is a <em>modern </em>and <em>easy to use</em> dashboard that helps you to <strong>organize and manage</strong> your home network from one place. Control is <strong>at your fingertips</strong>.</p><p><span style=\"color: #5c5f66\">We recommend you to read the</span> <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://homarr.dev/docs/introduction/after-the-installation\">getting started guide</a> <span style=\"color: #5c5f66\">first. To edit this board you must enter the edit mode - only administrators can do this. Adding an app is the first step you should take. You can do this by clicking the </span><code>Add tile</code><span style=\"color: #5c5f66\"> button at the top right and select </span><code>App</code><span style=\"color: #5c5f66\">. After you provided an internal URL, external URL and selected an icon you can drag it around when holding down the left mouse button. Make it bigger or smaller using the drag icon at the bottom right. When you're happy with it's position, you </span><strong><span style=\"color: #5c5f66\">must exit edit mode to save your board</span></strong><span style=\"color: #5c5f66\">. Adding widgets works the same way but may require additional configuration - read the documentation for more information.</span></p><p><span style=\"color: #5c5f66\">To remove this widget, you must log in to your administrator account and click on the menu to delete it.</span></p><p><strong><span style=\"color: #000000\"><u>Your TODO list:</u></span></strong></p><ul data-type=\"taskList\"><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Read the <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://homarr.dev\">documentation</a></p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Add your <em>first app</em></p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p><em>Resize </em>and <em>drag</em> your app to a different position</p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Add the <em>clock widget</em> to your dashboard</p></div></li><li data-checked=\"false\" data-type=\"taskItem\"><label><input type=\"checkbox\"><span></span></label><div><p>Create a <em>new user</em></p></div></li></ul>"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 4
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 6,
+            "height": 3
+          }
+        }
+      }
     }
   ],
   "settings": {
@@ -505,6 +505,9 @@
         "columnCountMedium": 6,
         "columnCountLarge": 10
       }
+    },
+    "access": {
+      "allowGuests": false
     }
   }
 }
