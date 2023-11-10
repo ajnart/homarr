@@ -14,7 +14,7 @@
         "label": "Afficher les torrents actifs"
       },
       "speedLimitOfActiveTorrents": {
-        "label": "Vitesse de téléversement pour considérer un torrent comme actif (kB/s)"
+        "label": "Vitesse d'envoi pour considérer un torrent comme actif (Ko/s)"
       },
       "displayStaleTorrents": {
         "label": "Afficher les torrents obsolètes"

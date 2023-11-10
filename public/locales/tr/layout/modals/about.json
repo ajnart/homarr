@@ -6,9 +6,9 @@
 	"action": "Eylem",
 	"keybinds": "Tuş atamaları",
 	"translators": "Çevirmenler ({{count}})",
-	"translatorsDescription": "Bu kişiler sayesinde Homarr {{languages}} dillerinde mevcut! Homarr'ın kendi dilinize çevrilmesine yardımcı olmak ister misiniz? Detaylar için <a>burayı</a> okuyun.",
+	"translatorsDescription": "Bu kişiler sayesinde Homarr {{languages}} dilde mevcut! Homarr'ın kendi dilinize çevrilmesine yardımcı olmak ister misiniz? Detaylar için <a>burayı</a> okuyun.",
 	"contributors": "Katkıda Bulunanlar ({{count}})",
-	"contributorsDescription": "Bu kişiler homarr'ın çalışmasını sağlayan kodları oluşturdular! Homarr'ın inşasına yardım etmek ister misiniz? Detaylar için <a>burayı</a> okuyun",
+	"contributorsDescription": "Bu kişiler homarr'ın çalışmasını sağlayan kodları oluşturdular! Homarr'ı geliştirmeye yardım etmek ister misiniz? Detaylar için <a>burayı</a> okuyun",
 	"actions": {
 		"toggleTheme": "Aydınlık/karanlık mod",
 		"focusSearchBar": "Arama çubuğuna odaklan",

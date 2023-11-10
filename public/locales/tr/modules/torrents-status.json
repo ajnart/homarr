@@ -36,7 +36,7 @@
     "footer": {
       "error": "Hata",
       "lastUpdated": "Son Güncelleme {{time}} önce",
-      "ratioGlobal": "Genel oran",
+      "ratioGlobal": "Genel Ratio",
       "ratioWithFilter": "Filtrelenen ratio"
     },
     "table": {
