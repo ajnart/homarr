@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Pozivnice korisnika",
+    "pageTitle": "Upravljanje pozivnicama korisnika",
+    "description": "Koristeći pozivnice, možete pozvati korisnike na svoju Homarr instancu. Pozivnica će vrijediti samo određeno vremensko razdoblje i može se koristiti jednom. Istek mora biti između 5 minuta i 12 mjeseci nakon izrade.",
+    "button": {
+        "createInvite": "Izradite pozivnicu",
+        "deleteInvite": "Izbriši pozivnicu"
+    },
+    "table": {
+        "header": {
+            "id": "iskaznica",
+            "creator": "Stvoritelj",
+            "expires": "ističe",
+            "action": "Radnje"
+        },
+        "data": {
+            "expiresAt": "istekao {{at}}",
+            "expiresIn": "u {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Izradite pozivnicu",
+            "description": "Nakon isteka, pozivnica više neće biti valjana i primatelj pozivnice neće moći kreirati račun.",
+            "form": {
+                "expires": "Datum isteka roka trajanja",
+                "submit": "Stvoriti"
+            }
+        },
+        "copy": {
+            "title": "Kopiraj pozivnicu",
+            "description": "Vaša pozivnica je generirana. Nakon što se ovaj modal zatvori, <b>više nećete moći kopirati ovu vezu</b>. Ako više ne želite pozivati navedenu osobu, u bilo kojem trenutku možete izbrisati ovu pozivnicu.",
+            "invitationLink": "Link pozivnice",
+            "details": {
+                "id": "iskaznica",
+                "token": "Znak"
+            },
+            "button": {
+                "close": "Kopiraj i odbaci"
+            }
+        },
+        "delete": {
+            "title": "Izbriši pozivnicu",
+            "description": "Jeste li sigurni da želite izbrisati ovu pozivnicu? Korisnici s ovom vezom više neće moći stvoriti račun pomoću te veze."
+        }
+    },
+    "noInvites": "Još nema pozivnica."
+}

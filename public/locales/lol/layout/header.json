@@ -1,0 +1,34 @@
+{
+    "experimentalNote": {
+        "label": ""
+    },
+    "search": {
+        "label": "",
+        "engines": {
+            "web": "",
+            "youtube": "",
+            "torrent": "",
+            "movie": ""
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "",
+            "preferences": "",
+            "defaultBoard": "",
+            "manage": "",
+            "about": {
+                "label": "'bout",
+                "new": ""
+            },
+            "logout": "",
+            "login": ""
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": ""
+        }
+    }
+}

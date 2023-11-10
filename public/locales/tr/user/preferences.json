@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Tercihler",
+    "pageTitle": "Tercihleriniz",
+    "boards": {
+        "defaultBoard": {
+            "label": "Varsayılan panel"
+        }
+    },
+    "accessibility": {
+        "title": "Erişilebilirlik",
+        "disablePulse": {
+            "label": "Ping animasyonunu devre dışı bırak",
+            "description": "Varsayılan olarak, Homarr'daki ping animasyonu aktiftir. Bu rahatsız edici olabilir. Bu animasyonu devre dışı bırakacaktır"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping noktalarını ikon ile değiştirin",
+            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, panelde ki renkli noktaları simgeler ile değiştirecektir"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Dil"
+        },
+        "firstDayOfWeek": {
+            "label": "Haftanın ilk günü",
+            "options": {
+                "monday": "Pazartesi",
+                "saturday": "Cumartesi",
+                "sunday": "Pazar"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Arama motoru",
+        "custom": "Kişisel",
+        "newTab": {
+            "label": "Arama sonuçlarını yeni sekmede aç"
+        },
+        "autoFocus": {
+            "label": "Sayfa yüklendiğinde arama çubuğuna odaklanın.",
+            "description": "Sayfa yüklendiğindei imleç arama çubuğunu otomatik olarak odaklayacaktır. Yalnızca masaüstü cihazlarda çalışacaktır."
+        },
+        "template": {
+            "label": "Sorgu URL’si",
+            "description": "Sorgu için yer tutucu olarak %s kullanın"
+        }
+    }
+}

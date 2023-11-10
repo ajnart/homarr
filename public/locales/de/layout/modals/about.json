@@ -1,12 +1,14 @@
 {
 	"description": "Homarr ist ein <strong>schlankes</strong> und <strong>modernes</strong> Dashboard, das alle Ihre Apps und Dienste auf Knopfdruck zur Verfügung stellt. Mittels Homarr können Sie von einem einzigen Ort aus auf alles zugreifen und steuern. Es lässt sich nahtlos in die von Ihnen bevorzugten Apps integrieren und versorgt Sie mit wertvollen Informationen und der vollständige Kontrolle. Die Installation ist ein Kinderspiel, und es werden eine breite Palette von Konfigurations unterstützt.",
-	"contact": "Haben Sie Probleme oder Fragen? Nehmen Sie Kontakt mit uns auf!",
 	"addToDashboard": "Zum Dashboard hinzufügen",
 	"tip": "Mod bezieht sich auf die Modifikator Taste, d. h. Strg und Befehl/Super/Windows-Taste",
 	"key": "Kurzbefehl Taste",
 	"action": "Aktion",
 	"keybinds": "Tastenbelegung",
-	"documentation": "Dokumentation",
+	"translators": "Übersetzer ({{count}})",
+	"translatorsDescription": "Dank dieser Leute ist Homarr in {{languages}} Sprachen verfügbar! Möchten Sie helfen, Homarr in Ihre Sprache zu übersetzen? Lesen Sie <a>hier</a>, wie das geht.",
+	"contributors": "Mitwirkende ({{count}})",
+	"contributorsDescription": "Diese Leute haben den Code erstellt, der Homarr zum Laufen bringt! Möchten Sie beim Aufbau von Homarr helfen? Lesen Sie <a>hier</a>wie das geht",
 	"actions": {
 		"toggleTheme": "Umschalten zwischen Hell- und Dunkelmodus",
 		"focusSearchBar": "Suchleiste fokussieren",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Version des Konfigurationsschemas",
-		"configurationsCount": "Verfügbare Konfigurationen",
 		"version": "Version",
 		"nodeEnvironment": "Node-Umgebung",
 		"i18n": "Geladene I18n Übersetzungs Namensräume",

@@ -1,29 +1,30 @@
 {
 	"description": "Homarr to <strong>elegancka</strong>, <strong>nowoczesna</strong> deska rozdzielcza, dzięki której wszystkie Twoje aplikacje i usługi są na wyciągnięcie ręki. Dzięki Homarr możesz mieć dostęp i kontrolę nad wszystkim w jednym wygodnym miejscu. Homarr płynnie integruje się z dodanymi przez Ciebie aplikacjami, dostarczając Ci cennych informacji i dając Ci pełną kontrolę. Instalacja jest łatwa, a Homarr obsługuje wiele metod wdrażania.",
-	"contact": "Masz problemy lub pytania? Skontaktuj się z nami!",
 	"addToDashboard": "Dodaj do pulpitu nawigacyjnego",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
-	"documentation": "",
+	"tip": "Mod oznacza Twój klawisz modyfikujący, czyli Ctrl i Command/Super/Windows",
+	"key": "Klawisz skrótu",
+	"action": "Akcja",
+	"keybinds": "Skróty klawiszowe",
+	"translators": "Tłumacze ({{count}})",
+	"translatorsDescription": "Dzięki tym ludziom Homarr jest dostępny w {{languages}} językach! Chcesz pomóc w tłumaczeniu Homarra na swój język? Przeczytaj, jak to zrobić <a>tutaj</a>.",
+	"contributors": "Współtwórcy ({{count}})",
+	"contributorsDescription": "Ci ludzie stworzyli kod, który sprawia, że homarr działa! Chcesz pomóc w tworzeniu Homarr? Przeczytaj, jak to zrobić <a>tutaj</a>",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Przełącz motyw jasny / ciemny",
+		"focusSearchBar": "Aktywuj pole wyszukiwania",
+		"openDocker": "Otwórz widżet dockera",
+		"toggleEdit": "Przełącz tryb edycji"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Wersja schematu konfiguracji",
-		"configurationsCount": "Dostępne konfiguracje",
 		"version": "Wersja",
 		"nodeEnvironment": "Środowisko węzła",
 		"i18n": "Załadowane nazwy tłumaczeń I18n",
 		"locales": "Skonfigurowane lokalizacje I18n",
-		"experimental_disableEditMode": "<b>EKSPERIMENTAL</b>: Wyłącz tryb edycji"
+		"experimental_disableEditMode": "<b>EKSPERYMENT</b>: Wyłącz tryb edycji"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nowy: {{newVersion}}",
+		"dropdown": "Wersja {{newVersion}} jest już dostępna! Aktualna wersja to {{currentVersion}}"
 	}
 }

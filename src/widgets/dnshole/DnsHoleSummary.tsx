@@ -10,9 +10,9 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
+import { formatNumber, formatPercentage } from '~/tools/client/math';
 import { RouterOutputs, api } from '~/utils/api';
 
-import { formatNumber, formatPercentage } from '../../tools/client/math';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';

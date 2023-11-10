@@ -1,0 +1,23 @@
+{
+    "metaTitle": "ניהול",
+    "hero": {
+        "title": "ברוך שובך, {{username}}",
+        "fallbackUsername": "אנונימי",
+        "subtitle": "ברוכים הבאים למרכז היישומים שלך. ארגן, ייעל וכבוש!"
+    },
+    "quickActions": {
+        "title": "פעולות מהירות",
+        "boards": {
+            "title": "הלוחות שלך",
+            "subtitle": "צור ונהל את הלוחות שלך"
+        },
+        "inviteUsers": {
+            "title": "הזמנת משתמש חדש",
+            "subtitle": "צור ושלח הזמנה להרשמה"
+        },
+        "manageUsers": {
+            "title": "ניהול משתמשים",
+            "subtitle": "צור ונהל את המשתמשים שלך"
+        }
+    }
+}

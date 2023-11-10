@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Log ind",
   "title": "Velkommen tilbage!",
-  "text": "Indtast venligst din adgangskode",
+  "text": "Indtast venligst dine legitimationsoplysninger",
   "form": {
     "fields": {
+      "username": {
+        "label": "Brugernavn"
+      },
       "password": {
-        "label": "Adgangskode",
-        "placeholder": "Din adgangskode"
+        "label": "Adgangskode"
       }
     },
     "buttons": {
       "submit": "Log ind"
-    }
+    },
+    "afterLoginRedirection": "Når du er logget ind, bliver du omdirigeret til {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Tjekker din adgangskode",
-      "message": "Din adgangskode er ved at blive tjekket..."
-    },
-    "correct": {
-      "title": "Log ind vellykket, omdirigerer..."
-    },
-    "wrong": {
-      "title": "Kodeordet du tastede ind, var forkert. Prøv venligst igen."
-    }
-  }
+  "alert": "Dine legitimationsoplysninger er forkerte, eller denne konto findes ikke. Prøv venligst igen."
 }

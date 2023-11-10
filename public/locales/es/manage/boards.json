@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Tableros",
+    "pageTitle": "Tableros",
+    "cards": {
+        "statistics": {
+            "apps": "Aplicaciones",
+            "widgets": "Widgets",
+            "categories": "Categorías"
+        },
+        "buttons": {
+            "view": "Ver tablero"
+        },
+        "menu": {
+            "setAsDefault": "Establecer como tu tablero predeterminado",
+            "delete": {
+                "label": "Eliminar permanentemente",
+                "disabled": "Eliminación deshabilitada, porque los componentes más antiguos de Homarr no permiten la eliminación de la configuración predeterminada. La eliminación será posible en el futuro."
+            }
+        },
+        "badges": {
+            "fileSystem": "Sistema de archivos",
+            "default": "Por defecto"
+        }
+    },
+    "buttons": {
+        "create": "Crear nuevo tablero"
+    },
+    "modals": {
+        "delete": {
+            "title": "Eliminar tablero",
+            "text": "¿Estás seguro de que deseas eliminar este tablero? Esta acción no se puede deshacer y tus datos se perderán permanentemente."
+        },
+        "create": {
+            "title": "Crear tablero",
+            "text": "El nombre no se puede cambiar una vez creado el tablero.",
+            "form": {
+                "name": {
+                    "label": "Nombre"
+                },
+                "submit": "Crear"
+            }
+        }
+    }
+}

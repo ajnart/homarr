@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": "使用Sonarr v4 API"
       },
-      "sundayStart": {
-        "label": "使用周日作为一周的开始"
-      },
       "radarrReleaseType": {
         "label": "Radarr发布类型",
         "data": {

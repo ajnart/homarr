@@ -1,0 +1,52 @@
+{
+    "metaTitle": "ユーザー作成",
+    "steps": {
+        "account": {
+            "title": "最初のステップ",
+            "text": "アカウント作成",
+            "username": {
+                "label": "ユーザー名"
+            },
+            "email": {
+                "label": "Eメール"
+            }
+        },
+        "security": {
+            "title": "第2ステップ",
+            "text": "パスワード",
+            "password": {
+                "label": "パスワード"
+            }
+        },
+        "finish": {
+            "title": "確認",
+            "text": "データベースに保存",
+            "card": {
+                "title": "インプットを見直す",
+                "text": "データベースにデータを送信すると、ユーザーはログインできるようになります。このユーザーをデータベースに保存し、ログインを有効化してもよろしいですか？"
+            },
+            "table": {
+                "header": {
+                    "property": "プロパティ",
+                    "value": "価値",
+                    "username": "ユーザー名",
+                    "email": "Eメール",
+                    "password": "パスワード"
+                },
+                "notSet": "未設定",
+                "valid": "有効"
+            },
+            "failed": "ユーザー作成に失敗しました: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "ユーザーが作成された",
+                "text": "ユーザーがデータベースに作成されました。これでログインできるようになりました。"
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "ランダム生成",
+        "createAnother": "別のものを作る"
+    }
+}

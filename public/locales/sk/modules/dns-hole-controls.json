@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "Kontrola diery DNS",
-    "description": "Ovládajte PiHole alebo AdGuard z ovládacieho panela"
+    "description": "Ovládajte PiHole alebo AdGuard z ovládacieho panela",
+    "settings": {
+      "title": "Nastavenia ovládania otvoru DNS",
+      "showToggleAllButtons": {
+        "label": "Zobrazenie tlačidiel \"Povoliť/Zakázať všetko"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nie je možné nájsť dieru DNS",
+        "text": "Vyskytol sa problém s pripojením k vašim dieram DNS. Skontrolujte prosím svoju konfiguráciu/integráciu."
+      }
+    }
   }
 }

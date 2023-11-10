@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Usuários",
+    "pageTitle": "Gerenciar usuários",
+    "text": "Usando usuários, você pode configurar quem pode editar seus painéis. As versões futuras do Homarr terão um controle ainda mais granular sobre as permissões e os painéis.",
+    "buttons": {
+        "create": "Criar"
+    },
+    "table": {
+        "header": {
+            "user": "Usuário"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Excluir usuário",
+        "demoteAdmin": "Rebaixar o administrador",
+        "promoteToAdmin": "Promover para administrador"
+    },
+    "modals": {
+        "delete": {
+            "title": "Excluir o usuário {{name}}",
+            "text": "Tem certeza de que deseja excluir o usuário {{name}}? Isso excluirá os dados associados a essa conta, mas não os painéis criados por esse usuário."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promover o usuário {{name}} a administrador",
+                "text": "Tem certeza de que deseja promover o usuário {{name}} a administrador? Isso dará ao usuário acesso a todos os recursos da sua instância Homarr."
+            },
+            "demote": {
+                "title": "Rebaixar o usuário {{name}} para o usuário",
+                "text": "Tem certeza de que deseja rebaixar o usuário {{name}} para usuário? Isso removerá o acesso do usuário a todos os recursos da sua instância Homarr."
+            },
+            "confirm": "Confirme"
+        }
+    },
+    "searchDoesntMatch": "Sua pesquisa não corresponde a nenhuma entrada. Ajuste seu filtro."
+}

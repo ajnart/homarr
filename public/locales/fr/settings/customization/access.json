@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Autoriser l'anonymat",
+    "description": "Autoriser les utilisateurs non connectés à voir le tableau de bord"
+  }
+}

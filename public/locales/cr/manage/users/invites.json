@@ -1,0 +1,48 @@
+{
+    "metaTitle": "crwdns3587:0crwdne3587:0",
+    "pageTitle": "crwdns3589:0crwdne3589:0",
+    "description": "crwdns3591:0crwdne3591:0",
+    "button": {
+        "createInvite": "crwdns3593:0crwdne3593:0",
+        "deleteInvite": "crwdns3595:0crwdne3595:0"
+    },
+    "table": {
+        "header": {
+            "id": "crwdns3597:0crwdne3597:0",
+            "creator": "crwdns3599:0crwdne3599:0",
+            "expires": "crwdns3601:0crwdne3601:0",
+            "action": "crwdns3603:0crwdne3603:0"
+        },
+        "data": {
+            "expiresAt": "crwdns3605:0{{at}}crwdne3605:0",
+            "expiresIn": "crwdns3607:0{{in}}crwdne3607:0"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "crwdns3609:0crwdne3609:0",
+            "description": "crwdns3611:0crwdne3611:0",
+            "form": {
+                "expires": "crwdns3613:0crwdne3613:0",
+                "submit": "crwdns3615:0crwdne3615:0"
+            }
+        },
+        "copy": {
+            "title": "crwdns3617:0crwdne3617:0",
+            "description": "crwdns3619:0crwdne3619:0",
+            "invitationLink": "crwdns3621:0crwdne3621:0",
+            "details": {
+                "id": "crwdns3623:0crwdne3623:0",
+                "token": "crwdns3625:0crwdne3625:0"
+            },
+            "button": {
+                "close": "crwdns3627:0crwdne3627:0"
+            }
+        },
+        "delete": {
+            "title": "crwdns3629:0crwdne3629:0",
+            "description": "crwdns3631:0crwdne3631:0"
+        }
+    },
+    "noInvites": "crwdns3633:0crwdne3633:0"
+}

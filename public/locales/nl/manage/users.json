@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Gebruikers",
+    "pageTitle": "Gebruikers beheren",
+    "text": "Met behulp van gebruikers kun je instellen wie je dashboards mag bewerken. Toekomstige versies van Homarr zullen nog meer granulaire controle hebben over rechten en borden.",
+    "buttons": {
+        "create": "Maak"
+    },
+    "table": {
+        "header": {
+            "user": "Gebruiker"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Gebruiker verwijderen",
+        "demoteAdmin": "Beheerder degraderen",
+        "promoteToAdmin": "Promoveren tot beheerder"
+    },
+    "modals": {
+        "delete": {
+            "title": "Gebruiker verwijderen {{name}}",
+            "text": "Weet je zeker dat je de gebruiker {{name}}wilt verwijderen? Dit zal de gegevens van deze account verwijderen, maar niet de dashboards die door deze gebruiker zijn gemaakt."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promoveer gebruiker {{name}} tot admin",
+                "text": "Weet je zeker dat je de gebruiker {{name}} wilt promoveren tot admin? Dit geeft de gebruiker toegang tot alle bronnen op je Homarr-instantie."
+            },
+            "demote": {
+                "title": "Degradeer gebruiker {{name}} naar gebruiker",
+                "text": "Weet je zeker dat je de gebruiker {{name}} wilt degraderen naar gebruiker? Dit zal de toegang van de gebruiker tot alle bronnen op je Homarr-instantie verwijderen."
+            },
+            "confirm": "Bevestig"
+        }
+    },
+    "searchDoesntMatch": "Je zoekopdracht komt niet overeen met items. Pas uw filter aan."
+}

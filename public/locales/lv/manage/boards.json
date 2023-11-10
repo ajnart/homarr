@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Dēļi",
+    "pageTitle": "Dēļi",
+    "cards": {
+        "statistics": {
+            "apps": "Lietotnes",
+            "widgets": "Logrīki",
+            "categories": "Kategorijas"
+        },
+        "buttons": {
+            "view": "Apskatīt dēli"
+        },
+        "menu": {
+            "setAsDefault": "Iestatiet kā noklusējuma dēli",
+            "delete": {
+                "label": "Neatgriezeniski dzēst",
+                "disabled": "Dzēšana atspējota, jo vecāki Homarr komponenti neļauj dzēst noklusējuma konfigurāciju. Dzēšana būs iespējama nākotnē."
+            }
+        },
+        "badges": {
+            "fileSystem": "Failu sistēma",
+            "default": "Noklusējuma"
+        }
+    },
+    "buttons": {
+        "create": "Izveidot jaunu dēli"
+    },
+    "modals": {
+        "delete": {
+            "title": "Dzēst dēli",
+            "text": "Vai esat pārliecināts, ka vēlaties izdzēst šo dēli? Šo darbību nevar atcelt, un jūsu dati tiks neatgriezeniski zaudēti."
+        },
+        "create": {
+            "title": "Izveidot dēli",
+            "text": "Nosaukumu nevar mainīt pēc tam, kad ir izveidots dēlis.",
+            "form": {
+                "name": {
+                    "label": "Nosaukums"
+                },
+                "submit": "Izveidot"
+            }
+        }
+    }
+}

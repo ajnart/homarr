@@ -3,7 +3,6 @@ import { Group, Image, Select, SelectItem, Text } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
-
 import {
   AppIntegrationPropertyType,
   AppIntegrationType,
@@ -11,7 +10,7 @@ import {
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-} from '../../../../../../../../types/app';
+} from '~/types/app';
 
 interface IntegrationSelectorProps {
   form: UseFormReturnType<AppType, (item: AppType) => AppType>;
@@ -20,83 +19,9 @@ interface IntegrationSelectorProps {
 export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
   const { t } = useTranslation('layout/modals/add-app');
 
-  const data: SelectItem[] = [
-    {
-      value: 'sabnzbd',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sabnzbd.png',
-      label: 'SABnzbd',
-    },
-    {
-      value: 'nzbGet',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/nzbget.png',
-      label: 'NZBGet',
-    },
-    {
-      value: 'deluge',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/deluge.png',
-      label: 'Deluge',
-    },
-    {
-      value: 'transmission',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/transmission.png',
-      label: 'Transmission',
-    },
-    {
-      value: 'qBittorrent',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/qbittorrent.png',
-      label: 'qBittorrent',
-    },
-    {
-      value: 'jellyseerr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyseerr.png',
-      label: 'Jellyseerr',
-    },
-    {
-      value: 'overseerr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/overseerr.png',
-      label: 'Overseerr',
-    },
-    {
-      value: 'sonarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sonarr.png',
-      label: 'Sonarr',
-    },
-    {
-      value: 'radarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/radarr.png',
-      label: 'Radarr',
-    },
-    {
-      value: 'lidarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/lidarr.png',
-      label: 'Lidarr',
-    },
-    {
-      value: 'readarr',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/readarr.png',
-      label: 'Readarr',
-    },
-    {
-      value: 'jellyfin',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
-      label: 'Jellyfin',
-    },
-    {
-      value: 'plex',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/plex.png',
-      label: 'Plex',
-    },
-    {
-      value: 'pihole',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/pi-hole.png',
-      label: 'PiHole',
-    },
-    {
-      value: 'adGuardHome',
-      image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/adguard-home.png',
-      label: 'AdGuard Home',
-    },
-  ].filter((x) => Object.keys(integrationFieldProperties).includes(x.value));
+  const data = availableIntegrations.filter((x) =>
+    Object.keys(integrationFieldProperties).includes(x.value)
+  );
 
   const getNewProperties = (value: string | null): AppIntegrationPropertyType[] => {
     if (!value) return [];
@@ -181,3 +106,81 @@ const SelectItemComponent = forwardRef<HTMLDivElement, ItemProps>(
     </div>
   )
 );
+
+export const availableIntegrations = [
+  {
+    value: 'sabnzbd',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sabnzbd.png',
+    label: 'SABnzbd',
+  },
+  {
+    value: 'nzbGet',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/nzbget.png',
+    label: 'NZBGet',
+  },
+  {
+    value: 'deluge',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/deluge.png',
+    label: 'Deluge',
+  },
+  {
+    value: 'transmission',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/transmission.png',
+    label: 'Transmission',
+  },
+  {
+    value: 'qBittorrent',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/qbittorrent.png',
+    label: 'qBittorrent',
+  },
+  {
+    value: 'jellyseerr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyseerr.png',
+    label: 'Jellyseerr',
+  },
+  {
+    value: 'overseerr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/overseerr.png',
+    label: 'Overseerr',
+  },
+  {
+    value: 'sonarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/sonarr.png',
+    label: 'Sonarr',
+  },
+  {
+    value: 'radarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/radarr.png',
+    label: 'Radarr',
+  },
+  {
+    value: 'lidarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/lidarr.png',
+    label: 'Lidarr',
+  },
+  {
+    value: 'readarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/readarr.png',
+    label: 'Readarr',
+  },
+  {
+    value: 'jellyfin',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
+    label: 'Jellyfin',
+  },
+  {
+    value: 'plex',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/plex.png',
+    label: 'Plex',
+  },
+  {
+    value: 'pihole',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/pi-hole.png',
+    label: 'PiHole',
+  },
+  {
+    value: 'adGuardHome',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/adguard-home.png',
+    label: 'AdGuard Home',
+  },
+] as const satisfies Readonly<SelectItem[]>;

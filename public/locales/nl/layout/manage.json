@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Home"
+        },
+        "boards": {
+            "title": "Borden"
+        },
+        "users": {
+            "title": "Gebruikers",
+            "items": {
+                "manage": "Beheer",
+                "invites": "Nodigt  uit"
+            }
+        },
+        "help": {
+            "title": "Help",
+            "items": {
+                "documentation": "Documentatie",
+                "report": "Een probleem / bug melden",
+                "discord": "Community Discord",
+                "contribute": "Draag bij"
+            }
+        },
+        "tools": {
+            "title": "Gereedschap",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Over"
+        }
+    }
+}

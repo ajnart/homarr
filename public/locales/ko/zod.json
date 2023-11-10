@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "이 필드는 유효하지 않습니다.",
+        "required": "이 필드는 필수 입력 사항입니다.",
+        "string": {
+            "startsWith": "이 필드는 {{startsWith}}로 시작해야 합니다.",
+            "endsWith": "이 필드는 {{endsWith}}으로 끝나야 합니다.",
+            "includes": "이 필드에는 {{includes}}"
+        },
+        "tooSmall": {
+            "string": "이 필드는 {{minimum}} 자 이상이어야 합니다.",
+            "number": "이 필드는 {{minimum}}이상이어야 합니다."
+        },
+        "tooBig": {
+            "string": "이 필드는 최대 {{maximum}} 자까지만 입력할 수 있습니다.",
+            "number": "이 필드는 {{maximum}}보다 작거나 같아야 합니다."
+        },
+        "custom": {
+            "passwordMatch": "비밀번호가 일치해야 합니다."
+        }
+    }
+}

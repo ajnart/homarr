@@ -19,7 +19,7 @@
     "moveUp": "Yukarı taşı",
     "moveDown": "Aşağı taşı",
     "addCategory": "Kategori ekle {{location}}",
-    "addAbove": "yukarıda",
-    "addBelow": "aşağıda"
+    "addAbove": "yukarı",
+    "addBelow": "aşağı"
   }
 }

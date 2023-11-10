@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Boards",
+    "pageTitle": "Boards",
+    "cards": {
+        "statistics": {
+            "apps": "Apps",
+            "widgets": "Widgets",
+            "categories": "Categories"
+        },
+        "buttons": {
+            "view": "View board"
+        },
+        "menu": {
+            "setAsDefault": "Set as your default board",
+            "delete": {
+                "label": "Delete permanently",
+                "disabled": "Deletion disabled, because older Homarr components do not allow the deletion of the default config. Deletion will be possible in the future."
+            }
+        },
+        "badges": {
+            "fileSystem": "File system",
+            "default": "Default"
+        }
+    },
+    "buttons": {
+        "create": "Create new board"
+    },
+    "modals": {
+        "delete": {
+            "title": "Delete board",
+            "text": "Are you sure, that you want to delete this board? This action cannot be undone and your data will be lost permanently."
+        },
+        "create": {
+            "title": "Create board",
+            "text": "The name cannot be changed after a board has been created.",
+            "form": {
+                "name": {
+                    "label": "Name"
+                },
+                "submit": "Create"
+            }
+        }
+    }
+}

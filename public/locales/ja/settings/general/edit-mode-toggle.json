@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "編集モードの切り替え",
+    "enable": "編集モードを有効にする",
+    "disable": "編集モードを無効にする"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "パスワードの編集",
+    "message": "編集モードを切り替えるには、 <Code>EDIT_MODE_PASSWORD</Code> という環境変数に入力したパスワードを入力する必要があります。これが設定されていない場合、編集モードのオンとオフを切り替えることはできません。",
     "submit": "送信"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "成功",
+      "message": "編集モードの切り替えに成功。"
     },
     "error": {
       "title": "エラー",
-      "message": ""
+      "message": "編集モードの切り替えに失敗しました。"
     }
   }
 }

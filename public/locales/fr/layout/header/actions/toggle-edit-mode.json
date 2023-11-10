@@ -8,5 +8,5 @@
         "title": "Le mode d'édition est activé pour la taille de <1>{{size}}</1>",
         "text": "Vous pouvez désormais ajuster et configurer vos applications. Les modifications ne sont <strong>pas enregistrées</strong> jusqu'à ce que vous quittiez le mode édition"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Quittez le mode d'édition pour enregistrer vos modifications"
 }

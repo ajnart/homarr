@@ -27,6 +27,10 @@
       },
       "population": {
         "fallback": "Unknown"
+      },
+      "nothingFound": {
+        "title": "Nothing found",
+        "description": "Please try another search term"
       }
     }
   }

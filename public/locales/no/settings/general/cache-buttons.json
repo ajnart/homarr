@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Cache rensing",
   "selector": {
-    "label": "",
+    "label": "Velg cachen(e) som skal tømmes",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping-spørsmål",
+      "repositoryIcons": "Ekstern/lokale ikoner",
+      "calendar&medias": "Medier fra kalenderen",
+      "weather": "Værdata"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Buffer tømt",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Tøm all buffer",
+      "notificationMessage": "All cache er tømt"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Fjern valgte søk",
+      "notificationMessageSingle": "Buffer for {{value}} er tømt",
+      "notificationMessageMulti": "Buffer for {{values}} er tømt"
     }
   }
 }

@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Pārslēgt rediģēšanas režīmu",
+    "enable": "Iespējot rediģēšanas režīmu",
+    "disable": "Atspējot rediģēšanas režīmu"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Rediģēt paroli",
+    "message": "Lai pārslēgtu rediģēšanas režīmu, ir jāievada parole, kas ievadīta environment variable ar nosaukumu <Code>EDIT_MODE_PASSWORD</Code> . Ja tas nav iestatīts, jūs nevarat ieslēgt un izslēgt rediģēšanas režīmu.",
     "submit": "Iesniegt"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Izdevās",
+      "message": "Veiksmīgi pārslēgts rediģēšanas režīms, notiek lapas pārlāde..."
     },
     "error": {
       "title": "Kļūda",
-      "message": ""
+      "message": "Neizdevās pārslēgt rediģēšanas režīmu, lūdzu, mēģiniet vēlreiz."
     }
   }
 }

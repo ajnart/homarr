@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Opprett konto",
+    "title": "Opprett konto",
+    "text": "Vennligst angi innloggingsinformasjonen under",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Brukernavn"
+            },
+            "password": {
+                "label": "Passord"
+            },
+            "passwordConfirmation": {
+                "label": "Bekreft passord"
+            }
+        },
+        "buttons": {
+            "submit": "Opprett konto"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Oppretter konto",
+            "text": "Vennligst vent"
+        },
+        "success": {
+            "title": "Konto opprettet",
+            "text": "Kontoen din er opprettet"
+        },
+        "error": {
+            "title": "Feil",
+            "text": "Noe gikk galt, fikk følgende feil: {{error}}"
+        }
+    }
+}

@@ -8,24 +8,24 @@
         "label": "Vis 24 timers formatering"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datoformatering",
         "data": {
-          "hide": ""
+          "hide": "Skjul dato"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Vis en egendefinert tidssone"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Tidssone plassering"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Bytittel",
+        "info": "Hvis du aktiverer Tidssone-alternativet, kan navnet på byen og tidssonekoden vises.<br/>Du kan også vise byen alene eller ikke vise noen.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "By og tidssone",
+          "city": "Kun by",
+          "none": "Ingen"
         }
       }
     }

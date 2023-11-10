@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Internal address",
-			"description": "Internal IP-address of the app."
+			"description": "Internal IP-address of the app.",
+			"troubleshoot": {
+				"label": "Having issues?",
+				"header": "Here is a list of commonly made mistake and troubleshooting:",
+				"lines": {
+					"nothingAfterPort": "You should, in most if not all cases, not input any path after the port. (Even the '/admin' for pihole or '/web' for plex)",
+					"protocolCheck": "Always make sure that the URL is preceded by http or https, and to make sure you are using the right one.",
+					"preferIP": "It is recommended to use the direct ip of the machine or container you are trying to communicate with.",
+					"enablePings": "Check that the IP is right by enabling pings. Customize Board -> Layout -> Enable pings. A little red or green bubble will appear on your app tiles and hovering it will give you it's response code (A green bubble with code 200 is expected in most cases).",
+					"wget": "To make sure that homarr can communicate with the other apps, make sure to wget/curl/ping the app's IP:port.",
+					"iframe": "When it comes to iframes, those should always be using the same protocol (http/s) as Homarr.",
+					"clearCache": "Some informations are registered in cache, so an integration might not work unless you clear the cache in Homarr's general options."
+				},
+				"footer": "For more troubleshooting, reach out on our {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "External address",

@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Voorkeuren",
+    "pageTitle": "Uw voorkeuren",
+    "boards": {
+        "defaultBoard": {
+            "label": "Standaardkaart"
+        }
+    },
+    "accessibility": {
+        "title": "Toegankelijkheid",
+        "disablePulse": {
+            "label": "Ping-puls uitschakelen",
+            "description": "Standaard pingen de ping-indicatoren in Homarr. Dit kan irritant zijn. Deze schuifknop deactiveert de animatie"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping-punten vervangen door pictogrammen",
+            "description": "Voor kleurenblinde gebruikers kunnen ping-punten onherkenbaar zijn. Dit vervangt indicatoren door pictogrammen"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Taal"
+        },
+        "firstDayOfWeek": {
+            "label": "Eerste dag van de week",
+            "options": {
+                "monday": "Maandag",
+                "saturday": "Zaterdag",
+                "sunday": "Zondag"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Zoekmachine",
+        "custom": "Aangepast",
+        "newTab": {
+            "label": "Open zoekresultaten in een nieuw tabblad"
+        },
+        "autoFocus": {
+            "label": "Focus zoekbalk bij het laden van de pagina.",
+            "description": "Hierdoor wordt de zoekbalk automatisch scherpgesteld wanneer je naar de pagina's van het forum navigeert. Het werkt alleen op desktopapparaten."
+        },
+        "template": {
+            "label": "Query URL",
+            "description": "Gebruik %s als plaatshouder voor de query"
+        }
+    }
+}

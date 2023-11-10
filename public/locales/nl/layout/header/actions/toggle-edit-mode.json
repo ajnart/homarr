@@ -8,5 +8,5 @@
         "title": "Bewerkingsmodus is ingeschakeld voor de <1>{{size}}</1> grootte",
         "text": "U kunt uw apps nu aanpassen en configureren. Wijzigingen zijn <strong>niet opgeslagen</strong> totdat u de bewerkingsmodus verlaat"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Sluit de bewerkingsmodus af om uw wijzigingen op te slaan"
 }

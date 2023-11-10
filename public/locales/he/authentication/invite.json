@@ -1,0 +1,35 @@
+{
+    "metaTitle": "צור חשבון",
+    "title": "צור חשבון",
+    "text": "אנא הגדר את פרטי החשבון שלך למטה",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "שם משתמש"
+            },
+            "password": {
+                "label": "סיסמה"
+            },
+            "passwordConfirmation": {
+                "label": "אימות סיסמא"
+            }
+        },
+        "buttons": {
+            "submit": "צור חשבון"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "יוצר חשבון...",
+            "text": "אנא המתן"
+        },
+        "success": {
+            "title": "החשבון נוצר",
+            "text": "החשבון שלך נוצר בהצלחה"
+        },
+        "error": {
+            "title": "שגיאה",
+            "text": "משהו השתבש, התקבלה השגיאה הבאה: {{error}}"
+        }
+    }
+}

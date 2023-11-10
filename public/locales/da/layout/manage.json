@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Hjem"
+        },
+        "boards": {
+            "title": "Boards"
+        },
+        "users": {
+            "title": "Brugere",
+            "items": {
+                "manage": "Administrer",
+                "invites": "Invitationer"
+            }
+        },
+        "help": {
+            "title": "Hjælp",
+            "items": {
+                "documentation": "Dokumentation",
+                "report": "Rapporter et problem / en fejl",
+                "discord": "Discordfællesskab",
+                "contribute": "Bidrag!"
+            }
+        },
+        "tools": {
+            "title": "Værktøjer",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Om"
+        }
+    }
+}

@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "无障碍服务",
       "description": "为残疾和残障人士配置 Homarr"
+    },
+    "access": {
+      "name": "访问",
+      "description": "配置谁有权访问您的面板"
     }
   }
 }

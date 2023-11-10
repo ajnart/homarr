@@ -1,319 +1,216 @@
+import { Autocomplete, Group, Text, useMantineTheme } from '@mantine/core';
+import { useDisclosure, useHotkeys } from '@mantine/hooks';
 import {
-  ActionIcon,
-  Autocomplete,
-  Box,
-  Divider,
-  Kbd,
-  Menu,
-  Popover,
-  ScrollArea,
-  Tooltip,
-  createStyles,
-} from '@mantine/core';
-import { useDebouncedValue, useHotkeys } from '@mantine/hooks';
-import { showNotification } from '@mantine/notifications';
-import { IconBrandYoutube, IconDownload, IconMovie, IconSearch } from '@tabler/icons-react';
+  IconBrandYoutube,
+  IconDownload,
+  IconMovie,
+  IconSearch,
+  IconWorld,
+  TablerIconsProps,
+} from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
+import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import { useConfigContext } from '../../../config/provider';
-import { IModule } from '../../../modules/ModuleTypes';
-import { OverseerrMediaDisplay } from '../../../modules/common';
-import { ConfigType } from '../../../types/config';
-import { searchUrls } from '../../Settings/Common/SearchEngine/SearchEngineSelector';
-import Tip from '../Tip';
-import { useCardStyles } from '../useCardStyles';
-import SmallAppItem from './SmallAppItem';
+import { MovieModal } from './Search/MovieModal';
 
-export const SearchModule: IModule = {
-  title: 'Search',
-  icon: IconSearch,
-  component: Search,
-  id: 'search',
+type SearchProps = {
+  isMobile?: boolean;
+  autoFocus?: boolean;
 };
 
-interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
-  label: string;
-  disabled: boolean;
-  value: string;
-  description: string;
-  icon: React.ReactNode;
-  url: string;
-  shortcut: string;
-}
-
-const useStyles = createStyles((theme) => ({
-  item: {
-    '&[data-hovered]': {
-      backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
-      color: theme.white,
-    },
-  },
-}));
-
-export function Search() {
-  const { t } = useTranslation('modules/search');
+export const Search = ({ isMobile, autoFocus }: SearchProps) => {
+  const { t } = useTranslation('layout/header');
+  const [search, setSearch] = useState('');
+  const ref = useRef<HTMLInputElement>(null);
+  useHotkeys([['mod+K', () => ref.current?.focus()]]);
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
   const { config } = useConfigContext();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [debounced] = useDebouncedValue(searchQuery, 250);
-  const { classes: cardClasses, cx } = useCardStyles(true);
+  const { colors } = useMantineTheme();
+  const router = useRouter();
+  const [showMovieModal, movieModal] = useDisclosure(router.query.movie === 'true');
 
-  const isOverseerrEnabled = config?.apps.some(
-    (x) => x.integration.type === 'overseerr' || x.integration.type === 'jellyseerr'
-  );
-  const overseerrApp = config?.apps.find(
-    (app) => app.integration?.type === 'overseerr' || app.integration?.type === 'jellyseerr'
-  );
-  const searchEngineSettings = config?.settings.common.searchEngine;
-  const searchEngineUrl = !searchEngineSettings
-    ? searchUrls.google
-    : searchEngineSettings.type === 'custom'
-    ? searchEngineSettings.properties.template
-    : searchUrls[searchEngineSettings.type];
-
-  const searchEnginesList: ItemProps[] = [
-    {
-      icon: <IconSearch />,
-      disabled: false,
-      label: t('searchEngines.search.name'),
-      value: 'search',
-      description: t('searchEngines.search.description'),
-      url: searchEngineUrl,
-      shortcut: 's',
-    },
-    {
-      icon: <IconDownload />,
-      disabled: false,
-      label: t('searchEngines.torrents.name'),
-      value: 'torrents',
-      description: t('searchEngines.torrents.description'),
-      url: 'https://www.torrentdownloads.me/search/?search=',
-      shortcut: 't',
-    },
-    {
-      icon: <IconBrandYoutube />,
-      disabled: false,
-      label: t('searchEngines.youtube.name'),
-      value: 'youtube',
-      description: t('searchEngines.youtube.description'),
-      url: 'https://www.youtube.com/results?search_query=',
-      shortcut: 'y',
-    },
-    {
-      icon: <IconMovie />,
-      disabled: !(isOverseerrEnabled && overseerrApp),
-      label: t('searchEngines.overseerr.name'),
-      value: 'overseerr',
-      description: t('searchEngines.overseerr.description'),
-      //RegExp -> char ('/' slash) + target ($ = end of string) => remove trailing slash if there's one
-      url: `${overseerrApp?.url.replace(new RegExp('/' + "$"), '')}/search?query=`,
-      shortcut: 'm',
-    },
-  ];
-  const [selectedSearchEngine, setSearchEngine] = useState<ItemProps>(searchEnginesList[0]);
-  const matchingApps =
-    config?.apps.filter((app) => {
-      if (searchQuery === '' || searchQuery === undefined) {
-        return false;
-      }
-      return app.name.toLowerCase().includes(searchQuery.toLowerCase());
-    }) ?? [];
-  const autocompleteData = matchingApps.map((app) => ({
-    label: app.name,
-    value: app.name,
-    icon: app.appearance.iconUrl,
-    url: app.behaviour.externalUrl ?? app.url,
-  }));
-  const AutoCompleteItem = forwardRef<HTMLDivElement, any>(
-    ({ label, value, icon, url, ...others }: any, ref) => (
-      <div ref={ref} {...others}>
-        <SmallAppItem app={{ label, value, icon, url }} />
-      </div>
+  const apps = useConfigApps(search);
+  const engines = generateEngines(
+    search,
+    userWithSettings?.settings.searchTemplate ?? 'https://www.google.com/search?q=%s'
+  )
+    .filter(
+      (engine) =>
+        engine.sort !== 'movie' || config?.apps.some((app) => app.integration.type === engine.value)
     )
-  );
-  useEffect(() => {
-    // Refresh the default search engine every time the config for it changes #521
-    setSearchEngine(searchEnginesList[0]);
-  }, [searchEngineUrl]);
-  const textInput = useRef<HTMLInputElement>(null);
-  useHotkeys([['mod+K', () => textInput.current?.focus()]]);
-  const { classes } = useStyles();
-  const openTarget = getOpenTarget(config);
-  const [opened, setOpened] = useState(false);
+    .map((engine) => ({
+      ...engine,
+      label: t(`search.engines.${engine.sort}`, {
+        app: engine.value,
+        query: search,
+      }),
+    }));
+  const data = [...apps, ...engines];
 
-  const isOverseerrSearchEnabled =
-    isOverseerrEnabled === true &&
-    selectedSearchEngine.value === 'overseerr' &&
-    debounced.length > 3;
-
-  const { results: overseerrResults } = useOverseerrSearchQuery(debounced, isOverseerrSearchEnabled).data?? [];
-
-  const isModuleEnabled = config?.settings.customization.layout.enabledSearchbar;
-  if (!isModuleEnabled) {
-    return null;
-  }
-
-  //TODO: Fix the bug where clicking anything inside the Modal to ask for a movie
-  // will close it (Because it closes the underlying Popover)
   return (
-    <Box style={{ width: '100%', maxWidth: 400 }}>
-      <Popover
-        opened={
-          (overseerrResults && overseerrResults.length > 0 && opened && searchQuery.length > 3) ??
-          false
-        }
-        position="bottom"
-        withinPortal
-        shadow="md"
-        radius="md"
-        zIndex={100}
-      >
-        <Popover.Target>
-          <Autocomplete
-            ref={textInput}
-            onFocusCapture={() => setOpened(true)}
-            autoFocus={typeof window !== 'undefined' && window.innerWidth > 768}
-            rightSection={<SearchModuleMenu />}
-            placeholder={t(`searchEngines.${selectedSearchEngine.value}.description`) ?? undefined}
-            value={searchQuery}
-            onChange={(currentString) => tryMatchSearchEngine(currentString, setSearchQuery)}
-            itemComponent={AutoCompleteItem}
-            data={autocompleteData}
-            onItemSubmit={(item) => {
-              setOpened(false);
-              if (item.url) {
-                setSearchQuery('');
-                window.open(item.openedUrl ? item.openedUrl : item.url, openTarget);
-              }
-            }}
-            // Replace %s if it is in selectedSearchEngine.url with searchQuery, otherwise append searchQuery at the end of it
-            onKeyDown={(event) => {
-              if (
-                event.key === 'Enter' &&
-                searchQuery.length > 0 &&
-                autocompleteData.length === 0
-              ) {
-                if (selectedSearchEngine.url.includes('%s')) {
-                  window.open(selectedSearchEngine.url.replace('%s', searchQuery), openTarget);
-                } else {
-                  window.open(selectedSearchEngine.url + searchQuery, openTarget);
-                }
-              }
-            }}
-            classNames={{
-              input: cx(cardClasses.card, 'dashboard-header-search-input'),
-              root: 'dashboard-header-search-root',
-            }}
-            radius="lg"
-            size="md"
+    <>
+      <Autocomplete
+        ref={ref}
+        radius="xl"
+        w={isMobile ? '100%' : 400}
+        variant="filled"
+        placeholder={`${t('search.label')}...`}
+        hoverOnSearchChange
+        autoFocus={autoFocus}
+        rightSection={
+          <IconSearch
+            onClick={() => ref.current?.focus()}
+            color={colors.gray[5]}
+            size={16}
+            stroke={1.5}
           />
-        </Popover.Target>
-        <Popover.Dropdown>
-          <ScrollArea style={{ height: '80vh', maxWidth: '90vw' }} offsetScrollbars>
-            {overseerrResults &&
-              overseerrResults.length > 0 &&
-              searchQuery.length > 3 &&
-              overseerrResults.slice(0, 4).map((result: any, index: number) => (
-                <React.Fragment key={index}>
-                  <OverseerrMediaDisplay key={result.id} media={result} />
-                  {index < overseerrResults.length - 1 && index < 3 && (
-                    <Divider variant="dashed" my="xs" />
-                  )}
-                </React.Fragment>
-              ))}
-          </ScrollArea>
-        </Popover.Dropdown>
-      </Popover>
-    </Box>
+        }
+        limit={8}
+        value={search}
+        onChange={setSearch}
+        data={data}
+        itemComponent={SearchItemComponent}
+        filter={(value, item: SearchAutoCompleteItem) =>
+          engines.some((engine) => engine.sort === item.sort) ||
+          item.value.toLowerCase().includes(value.trim().toLowerCase())
+        }
+        classNames={{
+          input: 'dashboard-header-search-input',
+          root: 'dashboard-header-search-root',
+        }}
+        onItemSubmit={(item: SearchAutoCompleteItem) => {
+          setSearch('');
+          if (item.sort === 'movie') {
+            const url = new URL(`${window.location.origin}${router.asPath}`);
+            url.searchParams.set('movie', 'true');
+            url.searchParams.set('search', search);
+            url.searchParams.set('type', item.value);
+            router.push(url, undefined, { shallow: true });
+            movieModal.open();
+            return;
+          }
+          const target = userWithSettings?.settings.openSearchInNewTab ? '_blank' : '_self';
+          window.open(item.metaData.url, target);
+        }}
+        aria-label={t('search.label') as string}
+      />
+      <MovieModal
+        opened={showMovieModal}
+        closeModal={() => {
+          movieModal.close();
+          const url = new URL(`${window.location.origin}${router.asPath}`);
+          url.searchParams.delete('movie');
+          url.searchParams.delete('search');
+          url.searchParams.delete('type');
+          router.push(url, undefined, { shallow: true });
+        }}
+      />
+    </>
   );
+};
 
-  function tryMatchSearchEngine(query: string, setSearchQuery: (value: string) => void) {
-    const foundSearchEngine = searchEnginesList.find(
-      (engine) => query.includes(`!${engine.shortcut}`) && !engine.disabled
-    );
-    if (foundSearchEngine) {
-      setSearchQuery(query.replace(`!${foundSearchEngine.shortcut}`, ''));
-      changeSearchEngine(foundSearchEngine);
-    } else {
-      setSearchQuery(query);
-    }
-  }
+const SearchItemComponent = forwardRef<HTMLDivElement, SearchAutoCompleteItem & { label: string }>(
+  ({ icon, label, value, sort, ...others }, ref) => {
+    let Icon = getItemComponent(icon);
 
-  function SearchModuleMenu() {
     return (
-      <Menu shadow="md" width={200} withinPortal classNames={classes}>
-        <Menu.Target>
-          <ActionIcon>{selectedSearchEngine.icon}</ActionIcon>
-        </Menu.Target>
-
-        <Menu.Dropdown>
-          {searchEnginesList.map((item) => (
-            <Tooltip
-              multiline
-              label={item.description}
-              withinPortal
-              width={200}
-              position="left"
-              key={item.value}
-            >
-              <Menu.Item
-                key={item.value}
-                icon={item.icon}
-                rightSection={<Kbd>!{item.shortcut}</Kbd>}
-                disabled={item.disabled}
-                onClick={() => {
-                  changeSearchEngine(item);
-                }}
-              >
-                {item.label}
-              </Menu.Item>
-            </Tooltip>
-          ))}
-          <Menu.Divider />
-          <Menu.Label>
-            <Tip>
-              {t('tip')} <Kbd>mod+k</Kbd>{' '}
-            </Tip>
-          </Menu.Label>
-        </Menu.Dropdown>
-      </Menu>
+      <Group ref={ref} noWrap {...others}>
+        <Icon size={20} />
+        <Text>{label}</Text>
+      </Group>
     );
   }
+);
 
-  function changeSearchEngine(item: ItemProps) {
-    setSearchEngine(item);
-    showNotification({
-      radius: 'lg',
-      withCloseButton: false,
-      id: 'spotlight',
-      autoClose: 1000,
-      icon: <ActionIcon size="sm">{item.icon}</ActionIcon>,
-      message: t('switchedSearchEngine', { searchEngine: t(`searchEngines.${item.value}.name`) }),
-    });
-  }
-}
-
-const getOpenTarget = (config: ConfigType | undefined): '_blank' | '_self' => {
-  if (!config || config.settings.common.searchEngine.properties.openInNewTab === undefined) {
-    return '_blank';
+const getItemComponent = (icon: SearchAutoCompleteItem['icon']) => {
+  if (typeof icon !== 'string') {
+    return icon;
   }
 
-  return config.settings.common.searchEngine.properties.openInNewTab ? '_blank' : '_self';
-};
-
-const useOverseerrSearchQuery = (query: string, isEnabled: boolean) => {
-  const { name: configName } = useConfigContext();
-  return api.overseerr.all.useQuery(
-    {
-      query,
-      configName: configName!,
-    },
-    {
-      enabled: isEnabled,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-      refetchInterval: false,
-    }
+  return (props: TablerIconsProps) => (
+    <img src={icon} height={props.size} width={props.size} style={{ objectFit: 'contain' }} />
   );
 };
+
+const useConfigApps = (search: string) => {
+  const { config } = useConfigContext();
+  return useMemo(() => {
+    if (search.trim().length === 0) return [];
+    const apps = config?.apps.filter((app) =>
+      app.name.toLowerCase().includes(search.toLowerCase())
+    );
+    return (
+      apps?.map((app) => ({
+        icon: app.appearance.iconUrl,
+        label: app.name,
+        value: app.name,
+        sort: 'app',
+        metaData: {
+          url: app.behaviour.externalUrl,
+        },
+      })) ?? []
+    );
+  }, [search, config]);
+};
+
+type SearchAutoCompleteItem = {
+  icon: ((props: TablerIconsProps) => ReactNode) | string;
+  value: string;
+} & (
+  | {
+      sort: 'web' | 'torrent' | 'youtube' | 'app';
+      metaData: {
+        url: string;
+      };
+    }
+  | {
+      sort: 'movie';
+    }
+);
+const movieApps = ['overseerr', 'jellyseerr'] as const;
+const generateEngines = (searchValue: string, webTemplate: string) =>
+  searchValue.trim().length > 0
+    ? ([
+        {
+          icon: IconWorld,
+          value: `web`,
+          sort: 'web',
+          metaData: {
+            url: webTemplate.includes('%s')
+              ? webTemplate.replace('%s', searchValue)
+              : webTemplate + searchValue,
+          },
+        },
+        {
+          icon: IconDownload,
+          value: `torrent`,
+          sort: 'torrent',
+          metaData: {
+            url: `https://www.torrentdownloads.me/search/?search=${searchValue}`,
+          },
+        },
+        {
+          icon: IconBrandYoutube,
+          value: 'youtube',
+          sort: 'youtube',
+          metaData: {
+            url: `https://www.youtube.com/results?search_query=${searchValue}`,
+          },
+        },
+        ...movieApps.map(
+          (name) =>
+            ({
+              icon: IconMovie,
+              value: name,
+              sort: 'movie',
+            }) as const
+        ),
+      ] as const satisfies Readonly<SearchAutoCompleteItem[]>)
+    : [];

@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Zobraz dokončené torrenty"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Zobraz zastarané torrenty"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Zoznam štítkov",
         "description": "Ak je začiarknuté políčko 'is whitelist', bude sa toto políčko správať ako biela listina. Ak nie je začiarknuté, ide o čiernu listinu. Ak je prázdny, nerobí nič"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Chyba",
-      "lastUpdated": "Naposledy aktualizované pred {{time}}"
+      "lastUpdated": "Naposledy aktualizované pred {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Login",
   "title": "Welcome back!",
-  "text": "Please enter your password",
+  "text": "Please enter your credentials",
   "form": {
     "fields": {
+      "username": {
+        "label": "Username"
+      },
       "password": {
-        "label": "Password",
-        "placeholder": "Your password"
+        "label": "Password"
       }
     },
     "buttons": {
       "submit": "Sign in"
-    }
+    },
+    "afterLoginRedirection": "After login, you'll be redirected to {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Checking your password",
-      "message": "Your password is being checked..."
-    },
-    "correct": {
-      "title": "Sign in successful, redirecting..."
-    },
-    "wrong": {
-      "title": "The password you entered is incorrect, please try again."
-    }
-  }
+  "alert": "Your credentials are incorrect or this account doesn't exist. Please try again."
 }

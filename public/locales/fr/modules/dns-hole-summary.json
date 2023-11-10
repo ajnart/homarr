@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "Résumé du DNS hole",
-    "description": "Affiche les données importantes de PiHole ou AdGuard",
+    "name": "Indicateurs clés d'un DNS hole",
+    "description": "Affiche les données clés de PiHole ou d'AdGuard",
     "settings": {
-      "title": "Paramètres du résumé du DNS hole",
+      "title": "Paramètres du tableau de bord d'un DNS Hole",
       "usePiHoleColors": {
-        "label": "Utiliser les couleurs de PiHole"
+        "label": "Utiliser la palette de couleur de PiHole"
       },
       "layout": {
         "label": "Mise en page",
         "data": {
           "grid": "2 par 2",
-          "row": "Horizontal",
-          "column": "Vertical"
+          "row": "Horizontale",
+          "column": "Verticale"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "Domaines sur les adlists",
+      "domainsOnAdlist": "Domaines sur les listes de blocage",
       "queriesToday": "Requêtes aujourd'hui",
-      "queriesBlockedTodayPercentage": "bloqué aujourd'hui",
-      "queriesBlockedToday": "bloqué aujourd'hui"
+      "queriesBlockedTodayPercentage": "Bloqué aujourd'hui",
+      "queriesBlockedToday": "Bloqué aujourd'hui"
     }
   }
 }

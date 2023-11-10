@@ -1,0 +1,35 @@
+{
+    "metaTitle": "アカウント作成",
+    "title": "アカウント作成",
+    "text": "あなたのクレデンシャルを以下に定義してください。",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "ユーザー名"
+            },
+            "password": {
+                "label": "パスワード"
+            },
+            "passwordConfirmation": {
+                "label": "パスワードの確認"
+            }
+        },
+        "buttons": {
+            "submit": "アカウント作成"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "アカウントの作成",
+            "text": "お待ちください"
+        },
+        "success": {
+            "title": "アカウント作成",
+            "text": "アカウントが正常に作成されました"
+        },
+        "error": {
+            "title": "エラー",
+            "text": "何かが間違っていたようで、次のようなエラーが出た： {{error}}"
+        }
+    }
+}

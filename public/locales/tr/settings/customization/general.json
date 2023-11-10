@@ -3,7 +3,7 @@
   "accordeon": {
     "layout": {
       "name": "Düzen",
-      "description": "Üstbilgi ve gösterge paneli kutucuklarınızdaki öğeleri etkinleştirin ve devre dışı bırakın"
+      "description": "Üstbilgi ve panelinizde bulunan öğeleri etkinleştirin ve devre dışı bırakın"
     },
     "gridstack": {
       "name": "Izgara Dizilimi",
@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Erişilebilirlik",
       "description": "Homarr'ı engelli kullanıcılar için yapılandırma"
+    },
+    "access": {
+      "name": "Erişim",
+      "description": "Panelinize kimlerin erişebileceğini yapılandırın"
     }
   }
 }

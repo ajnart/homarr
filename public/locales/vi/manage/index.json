@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Quản lý",
+    "hero": {
+        "title": "Chào mừng trở lại, {{username}}",
+        "fallbackUsername": "Vô danh",
+        "subtitle": "Chào mừng bạn đến với Trung tâm ứng dụng của bạn. Tổ chức, tối ưu hóa và chinh phục!"
+    },
+    "quickActions": {
+        "title": "Hành động nhanh",
+        "boards": {
+            "title": "Bảng của bạn",
+            "subtitle": "Tạo và quản lý bảng của bạn"
+        },
+        "inviteUsers": {
+            "title": "Mời người dùng mới",
+            "subtitle": "Tạo và gửi lời mời đăng ký"
+        },
+        "manageUsers": {
+            "title": "Quản lý người dùng",
+            "subtitle": "Xóa và quản lý người dùng của bạn"
+        }
+    }
+}

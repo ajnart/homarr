@@ -1,10 +1,10 @@
 import { GridStack } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
+import { AppType } from '~/types/app';
+import { WidgetWrapper } from '~/widgets/WidgetWrapper';
+import { IWidget, IWidgetDefinition } from '~/widgets/widgets';
 
-import { AppType } from '../../../types/app';
 import Widgets from '../../../widgets';
-import { WidgetWrapper } from '../../../widgets/WidgetWrapper';
-import { IWidget, IWidgetDefinition } from '../../../widgets/widgets';
 import { appTileDefinition } from '../Tiles/Apps/AppTile';
 import { GridstackTileWrapper } from '../Tiles/TileWrapper';
 import { useGridstackStore } from './gridstack/store';

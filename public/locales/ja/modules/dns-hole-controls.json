@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "DNSホールコントロール",
-    "description": "ダッシュボードからPiHoleまたはAdGuardをコントロールする"
+    "description": "ダッシュボードからPiHoleまたはAdGuardをコントロールする",
+    "settings": {
+      "title": "DNSホールコントロールの設定",
+      "showToggleAllButtons": {
+        "label": "すべての有効/無効」ボタンを表示する"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "DNSホールが見つからない",
+        "text": "DNSホールへの接続に問題が発生しました。設定/統合を確認してください。"
+      }
+    }
   }
 }

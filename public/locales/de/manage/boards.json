@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Boards",
+    "pageTitle": "Boards",
+    "cards": {
+        "statistics": {
+            "apps": "Apps",
+            "widgets": "Widgets",
+            "categories": "Kategorien"
+        },
+        "buttons": {
+            "view": "Board anzeigen"
+        },
+        "menu": {
+            "setAsDefault": "Als Standard-Board festlegen",
+            "delete": {
+                "label": "Dauerhaft löschen",
+                "disabled": "Ein Löschen wurde deaktiviert, da ältere Homarr-Komponenten das Löschen der Standardkonfiguration nicht erlauben. Die Löschung wird in Zukunft möglich sein."
+            }
+        },
+        "badges": {
+            "fileSystem": "Dateisystem",
+            "default": "Standard"
+        }
+    },
+    "buttons": {
+        "create": "Neues Board erstellen"
+    },
+    "modals": {
+        "delete": {
+            "title": "Board löschen",
+            "text": "Sind Sie sicher, dass Sie dieses Board löschen wollen? Diese Aktion kann nicht rückgängig gemacht werden und Ihre Daten gehen dauerhaft verloren."
+        },
+        "create": {
+            "title": "Board erstellen",
+            "text": "Der Name kann nicht mehr geändert werden, nachdem ein Board erstellt wurde.",
+            "form": {
+                "name": {
+                    "label": "Name"
+                },
+                "submit": "Erstellen"
+            }
+        }
+    }
+}

@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Tillgänglighet",
       "description": "Konfigurera Homarr för funktionshindrade användare"
+    },
+    "access": {
+      "name": "",
+      "description": "Konfigurera vem som har tillgång till din tavla"
     }
   }
 }

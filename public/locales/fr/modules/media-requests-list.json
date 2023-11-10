@@ -8,13 +8,11 @@
         "label": "Remplacer les liens par des hôtes externes"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Ouvrir les liens dans un nouvel onglet"
       }
     }
   },
   "noRequests": "Aucune demande n'a été trouvée. Veuillez vous assurer que vous avez configuré vos applications correctement.",
-  "pending": "Il y a {{countPendingApproval}} demandes en attente d'approbation.",
-  "nonePending": "Il n'y a actuellement aucune approbation en cours. Vous êtes à jour !",
   "state": {
     "approved": "Validée",
     "pendingApproval": "En attente de validation",

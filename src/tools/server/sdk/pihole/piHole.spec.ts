@@ -171,7 +171,7 @@ describe('PiHole API client', () => {
         });
       }
 
-      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         countTriedRequests += 1;
         return JSON.stringify({
           status: 'enabled',
@@ -213,9 +213,9 @@ describe('PiHole API client', () => {
         });
       }
 
-      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         countTriedRequests += 1;
-        if(countTriedRequests < 10) {
+        if (countTriedRequests < 10) {
           return JSON.stringify({
             status: 'disabled',
           });
@@ -261,7 +261,7 @@ describe('PiHole API client', () => {
         });
       }
 
-      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         countTriedRequests += 1;
         return JSON.stringify({
           status: 'disabled',
@@ -303,9 +303,9 @@ describe('PiHole API client', () => {
         });
       }
 
-      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         countTriedRequests += 1;
-        if(countTriedRequests < 10) {
+        if (countTriedRequests < 10) {
           return JSON.stringify({
             status: 'enabled',
           });
@@ -351,7 +351,7 @@ describe('PiHole API client', () => {
         });
       }
 
-      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice'){
+      if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         countTriedRequests += 1;
         return JSON.stringify({
           status: 'disabled',

@@ -1,0 +1,37 @@
+{
+  "descriptor": {
+    "name": "天氣",
+    "description": "顯示指定位置的目前天氣狀況",
+    "settings": {
+      "title": "天氣組件設定",
+      "displayInFahrenheit": {
+        "label": "顯示為華氏度"
+      },
+      "displayCityName": {
+        "label": "顯示城市名稱"
+      },
+      "location": {
+        "label": "天氣位置"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "晴朗",
+      "mainlyClear": "晴時多雲",
+      "fog": "起霧",
+      "drizzle": "小雨",
+      "freezingDrizzle": "毛毛雨",
+      "rain": "下雨",
+      "freezingRain": "凍雨",
+      "snowFall": "下雪",
+      "snowGrains": "下霜",
+      "rainShowers": "陣雨",
+      "snowShowers": "陣雪",
+      "thunderstorm": "雷雨",
+      "thunderstormWithHail": "雷雨夾冰雹",
+      "unknown": "未知"
+    }
+  },
+  "error": "出現錯誤"
+}

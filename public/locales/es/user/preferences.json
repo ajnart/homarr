@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Preferencias",
+    "pageTitle": "Tus preferencias",
+    "boards": {
+        "defaultBoard": {
+            "label": "Tablero predeterminado"
+        }
+    },
+    "accessibility": {
+        "title": "Accesibilidad",
+        "disablePulse": {
+            "label": "Desactivar pulso de ping",
+            "description": "Por defecto, los indicadores de ping en Homarr parpadean. Esto puede resultar irritante. Este deslizador desactivará la animación"
+        },
+        "replaceIconsWithDots": {
+            "label": "Reemplazar los puntos de ping por iconos",
+            "description": "Para los usuarios daltónicos, los puntos de ping pueden ser irreconocibles. Esto reemplazará los indicadores por iconos"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Idioma"
+        },
+        "firstDayOfWeek": {
+            "label": "Primer día de la semana",
+            "options": {
+                "monday": "Lunes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motor de búsqueda",
+        "custom": "Personalizado",
+        "newTab": {
+            "label": "Abrir resultados de búsqueda en una nueva pestaña"
+        },
+        "autoFocus": {
+            "label": "Enfocar en la barra de búsqueda al cargar la página.",
+            "description": "Esto enfocará automáticamente la barra de búsqueda cuando navegue a las páginas del tablero. Sólo funcionará en dispositivos de escritorio."
+        },
+        "template": {
+            "label": "URL de consulta",
+            "description": "Usar \"%s\" como marcador de posición de la consulta"
+        }
+    }
+}

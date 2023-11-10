@@ -11,11 +11,12 @@ import {
   IconPlug,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 import { useState } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { AppType } from '~/types/app';
 
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { AppType } from '../../../../types/app';
 import { DebouncedImage } from '../../../IconSelector/DebouncedImage';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { AppearanceTab } from './Tabs/AppereanceTab/AppereanceTab';
@@ -90,6 +91,8 @@ export const EditAppModal = ({
       return;
     }
 
+    values.url = removeTrailingSlash(values.url);
+
     updateConfig(
       configName,
       (previousConfig) => ({
@@ -107,6 +110,7 @@ export const EditAppModal = ({
 
     // also close the parent modal
     context.closeAll();
+    umami.track('Add app', { name:  values.name });
   };
 
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');

@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Hesap Oluştur",
+    "title": "Hesap Oluştur",
+    "text": "Lütfen kimlik bilgilerinizi aşağıda tanımlayın",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Kullanıcı adı"
+            },
+            "password": {
+                "label": "Şifre"
+            },
+            "passwordConfirmation": {
+                "label": "Şifreyi onayla"
+            }
+        },
+        "buttons": {
+            "submit": "Hesap oluştur"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Hesap oluşturuluyor",
+            "text": "Lütfen bekleyin"
+        },
+        "success": {
+            "title": "Hesap oluşturuldu",
+            "text": "Hesabınız başarıyla oluşturuldu"
+        },
+        "error": {
+            "title": "Hata",
+            "text": "Bir hata oluştu, oluşan hata: {{error}}"
+        }
+    }
+}

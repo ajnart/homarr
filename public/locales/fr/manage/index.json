@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Gérer",
+    "hero": {
+        "title": "Content de te revoir, {{username}}",
+        "fallbackUsername": "Anonyme",
+        "subtitle": "Bienvenue sur votre hub d'applications. Organisez, optimisez et conquérez !"
+    },
+    "quickActions": {
+        "title": "Actions rapides",
+        "boards": {
+            "title": "Vos tableaux de bord",
+            "subtitle": "Créer et gérer vos tableaux de bord"
+        },
+        "inviteUsers": {
+            "title": "Inviter un nouvel utilisateur",
+            "subtitle": "Créer et envoyer une invitation pour inscription"
+        },
+        "manageUsers": {
+            "title": "Gérer les utilisateurs",
+            "subtitle": "Supprimer et gérer vos utilisateurs"
+        }
+    }
+}

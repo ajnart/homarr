@@ -1,11 +1,17 @@
 {
   "save": "Uložiť",
+  "apply": "",
+  "insert": "",
   "about": "O aplikácii",
   "cancel": "Zrušiť",
   "close": "Zavrieť",
+  "back": "Späť",
   "delete": "Vymazať",
   "ok": "OK",
   "edit": "Upraviť",
+  "next": "Ďalej",
+  "previous": "Predchádzajúci",
+  "confirm": "Potvrďte",
   "enabled": "Povolené",
   "disabled": "Zakázané",
   "enableAll": "Povoliť všetko",
@@ -36,5 +42,14 @@
     "medium": "stredný",
     "large": "veľký"
   },
-  "seeMore": "Viac informácií..."
+  "seeMore": "Viac informácií...",
+  "position": {
+    "left": "Vľavo",
+    "center": "",
+    "right": "Vpravo"
+  },
+  "attributes": {
+    "width": "Šírka",
+    "height": "Výška"
+  }
 }

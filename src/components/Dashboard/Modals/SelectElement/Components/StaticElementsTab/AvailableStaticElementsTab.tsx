@@ -1,4 +1,4 @@
-import { Grid, Text } from '@mantine/core';
+import { Container, Grid, Text } from '@mantine/core';
 import { IconCursorText } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
@@ -21,12 +21,13 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
       </Text>
 
       <Grid grow>
+        {/*
         <GenericAvailableElementType
           name="Static Text"
           description="Display a fixed string on your dashboard"
           image={IconCursorText}
-          handleAddition={/* TODO: add something? */ async () => {}}
-        />
+          handleAddition={async () => {}}
+        /> */}
       </Grid>
     </>
   );

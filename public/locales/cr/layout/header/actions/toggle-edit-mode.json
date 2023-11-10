@@ -1,0 +1,12 @@
+{
+    "description": "crwdns2297:0crwdne2297:0",
+    "button": {
+        "disabled": "crwdns2001:0crwdne2001:0",
+        "enabled": "crwdns2003:0crwdne2003:0"
+    },
+    "popover": {
+        "title": "crwdns2403:0{{size}}crwdne2403:0",
+        "text": "crwdns2405:0crwdne2405:0"
+    },
+    "unloadEvent": "crwdns3275:0crwdne3275:0"
+}

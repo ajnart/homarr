@@ -7,9 +7,6 @@
       "useSonarrv4": {
         "label": ""
       },
-      "sundayStart": {
-        "label": "Start teh week on Sunday"
-      },
       "radarrReleaseType": {
         "label": "Radarr Release Type",
         "data": {

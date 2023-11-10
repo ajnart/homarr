@@ -1,12 +1,14 @@
 {
 	"description": "Homarr es un panel <strong>elegante</strong> y <strong>moderno</strong> que pone todas tus aplicaciones y servicios al alcance de su mano. Con Homarr, puedes acceder y controlar todo desde una sola ubicación. Homarr se integra a la perfección con las aplicaciones que hayas añadido, proporcionándote información valiosa y dándote control total. La instalación es muy sencilla, y Homarr soporta una amplia gama de métodos de implementación.",
-	"contact": "¿Tienes problemas o preguntas? ¡Conéctate con nosotros!",
 	"addToDashboard": "Añadir al Panel",
 	"tip": "Mod se refiere a tu tecla modificadora, es Ctrl y tecla Command/Super/Windows",
 	"key": "Tecla de acceso directo",
 	"action": "Acción",
 	"keybinds": "Combinaciones de teclas",
-	"documentation": "Documentación",
+	"translators": "Traductores ({{count}})",
+	"translatorsDescription": "Gracias a estas personas, ¡Homarr está disponible en {{languages}} idiomas! ¿Quieres ayudar a traducir Homarr en tu idioma? Lee cómo hacerlo <a>aquí</a>.",
+	"contributors": "Contribuidores ({{count}})",
+	"contributorsDescription": "¡Estas personas han creado el código que hace que Homarr funcione! ¿Quieres ayudar a construir Homarr? Lee cómo hacerlo <a>aquí</a>",
 	"actions": {
 		"toggleTheme": "Alternar modo claro/oscuro",
 		"focusSearchBar": "Centrarse en la barra de búsqueda",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versión del esquema de configuración",
-		"configurationsCount": "Configuraciones disponibles",
 		"version": "Versión",
 		"nodeEnvironment": "Entorno del nodo",
 		"i18n": "Espacios de nombres de traducción cargados",

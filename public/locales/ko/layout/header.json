@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "이 기능은 Homarr의 실험적인 기능입니다. 문제가 있으면 <gh>GitHub</gh> 또는 <dc>Discord</dc>으로 신고해 주세요."
+    },
+    "search": {
+        "label": "검색",
+        "engines": {
+            "web": "웹에서 {{query}} 검색",
+            "youtube": "YouTube에서 {{query}} 검색",
+            "torrent": "{{query}} 토렌트 검색",
+            "movie": "{{app}}에서 {{query}} 검색"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "테마 전환",
+            "preferences": "사용자 기본 설정",
+            "defaultBoard": "기본 대시보드",
+            "manage": "관리",
+            "logout": "{{username}}에서 로그아웃",
+            "login": "로그인"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "<b>{{search}}</b>에 대한 상위 {{count}} 결과"
+        }
+    }
+}

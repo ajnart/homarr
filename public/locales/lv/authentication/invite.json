@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Izveidot kontu",
+    "title": "Izveidot kontu",
+    "text": "Lūdzu, tālāk norādiet savus lietotāja datus",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Lietotājvārds"
+            },
+            "password": {
+                "label": "Parole"
+            },
+            "passwordConfirmation": {
+                "label": "Apstipriniet paroli"
+            }
+        },
+        "buttons": {
+            "submit": "Izveidot kontu"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Izveido kontu",
+            "text": "Lūdzu, uzgaidiet"
+        },
+        "success": {
+            "title": "Konts izveidots",
+            "text": "Jūsu konts ir veiksmīgi izveidots"
+        },
+        "error": {
+            "title": "Kļūda",
+            "text": "Kaut kas aizgāja greizi, saņēmu šādu kļūdu: {{error}}"
+        }
+    }
+}

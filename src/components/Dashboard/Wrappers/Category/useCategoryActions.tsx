@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigStore } from '~/config/store';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
+import { AppType } from '~/types/app';
+import { CategoryType } from '~/types/category';
+import { WrapperType } from '~/types/wrapper';
+import { IWidget } from '~/widgets/widgets';
 
-import { useConfigStore } from '../../../../config/store';
-import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../../../types/app';
-import { CategoryType } from '../../../../types/category';
-import { WrapperType } from '../../../../types/wrapper';
-import { IWidget } from '../../../../widgets/widgets';
 import { CategoryEditModalInnerProps } from './CategoryEditModal';
 
 export const useCategoryActions = (configName: string | undefined, category: CategoryType) => {

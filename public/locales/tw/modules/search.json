@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "搜尋欄",
+    "description": "允許您搜尋自定義的搜尋引擎、Youtube 和支援的集成"
+  },
+  "input": {
+    "placeholder": "在網路上搜尋..."
+  },
+  "switched-to": "切換至",
+  "searchEngines": {
+    "search": {
+      "name": "網頁",
+      "description": "搜尋..."
+    },
+    "youtube": {
+      "name": "Youtube",
+      "description": "在 Youtube 上搜尋"
+    },
+    "torrents": {
+      "name": "Torrents",
+      "description": "搜尋 Torrents"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "在 Overseerr 上搜尋電影或電視劇"
+    }
+  },
+  "tip": "您可以使用以下快捷鍵選擇搜尋欄",
+  "switchedSearchEngine": "切換 {{searchEngine}} 進行搜尋"
+}

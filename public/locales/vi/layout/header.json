@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Đây là một tính năng thử nghiệm của Homarr. Vui lòng báo cáo mọi vấn đề trên <gh>GitHub</gh> hoặc <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "Tìm kiếm",
+        "engines": {
+            "web": "Tìm kiếm {{query}} trên mạng",
+            "youtube": "Tìm kiếm {{query}} trên YouTube",
+            "torrent": "Tìm kiếm {{query}} torrent",
+            "movie": "Tìm kiếm {{query}} trên {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Chuyển chủ đề",
+            "preferences": "Sở thích của người sử dụng",
+            "defaultBoard": "Trang tổng quan mặc định",
+            "manage": "Quản lý",
+            "logout": "Đăng xuất từ {{username}}",
+            "login": "Đăng nhập"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "{{count}} kết quả hàng đầu cho <b>{{search}}</b>."
+        }
+    }
+}

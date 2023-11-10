@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Pārvaldīt",
+    "hero": {
+        "title": "Laipni lūdzam atpakaļ, {{username}}",
+        "fallbackUsername": "Anonīms",
+        "subtitle": "Laipni lūgti Jūsu Pieteikumu Centrā. Organizējiet, Optimizējiet un Iekarojiet!"
+    },
+    "quickActions": {
+        "title": "Ātrās darbības",
+        "boards": {
+            "title": "Jūsu dēļi",
+            "subtitle": "Izveidojiet un pārvaldiet savus dēļus"
+        },
+        "inviteUsers": {
+            "title": "Uzaicināt jaunu lietotâju",
+            "subtitle": "Izveidojiet un nosūtiet ielūgumu reģistrācijai"
+        },
+        "manageUsers": {
+            "title": "Pārvaldīt lietotājus",
+            "subtitle": "Izveidojiet un pārvaldiet savus lietotājus"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Testreszabás {{name}} Board",
+    "pageTitle": "Testreszabás a {{name}} Board számára",
+    "backToBoard": "Vissza a táblához",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Elsődleges szín",
+            "secondaryColor": "Másodlagos szín"
+        }
+    },
+    "save": {
+        "button": "Változások mentése",
+        "note": "Vigyázz, mert vannak mentetlen változtatásai!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Testreszabás mentése",
+            "message": "Kérjük, várjon, amíg elmentjük a testreszabását"
+        },
+        "success": {
+            "title": "Testreszabás mentve",
+            "message": "A testreszabása sikeresen el lett mentve"
+        },
+        "error": {
+            "title": "Hiba",
+            "message": "A módosítások mentése nem lehetséges"
+        }
+    }
+}

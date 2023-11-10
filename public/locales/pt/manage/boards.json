@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Placas",
+    "pageTitle": "Placas",
+    "cards": {
+        "statistics": {
+            "apps": "Aplicativos",
+            "widgets": "Widgets",
+            "categories": "Categorias"
+        },
+        "buttons": {
+            "view": "Exibir quadro"
+        },
+        "menu": {
+            "setAsDefault": "Definir como seu quadro padrão",
+            "delete": {
+                "label": "Excluir permanentemente",
+                "disabled": "Exclusão desativada, pois os componentes Homarr mais antigos não permitem a exclusão da configuração padrão. A exclusão será possível no futuro."
+            }
+        },
+        "badges": {
+            "fileSystem": "Sistema de arquivos",
+            "default": "Padrão"
+        }
+    },
+    "buttons": {
+        "create": "Criar novo quadro"
+    },
+    "modals": {
+        "delete": {
+            "title": "Excluir quadro",
+            "text": "Tem certeza de que deseja excluir este quadro? Essa ação não pode ser desfeita e seus dados serão perdidos permanentemente."
+        },
+        "create": {
+            "title": "Criar quadro",
+            "text": "O nome não pode ser alterado após a criação de um quadro.",
+            "form": {
+                "name": {
+                    "label": "Nome"
+                },
+                "submit": "Criar"
+            }
+        }
+    }
+}

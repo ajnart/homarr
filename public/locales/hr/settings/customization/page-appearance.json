@@ -23,8 +23,5 @@
     "description": "Dodatno, prilagodite svoju nadzornu ploču koristeći CSS, što se preporučuje samo iskusnim korisnicima",
     "placeholder": "Prilagođeni CSS će se primijeniti posljednji",
     "applying": "Primjena CSS-a..."
-  },
-  "buttons": {
-    "submit": "Pošalji"
   }
 }

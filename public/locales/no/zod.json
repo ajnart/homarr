@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Dette feltet er ugyldig",
+        "required": "Dette feltet er obligatorisk",
+        "string": {
+            "startsWith": "Dette feltet må starte med {{startsWith}}",
+            "endsWith": "Dette feltet må slutte med {{endsWith}}",
+            "includes": "Dette feltet må inneholde {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Dette feltet må være på minst {{minimum}} tegn",
+            "number": "Dette feltet må være større enn eller lik {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Dette feltet må være på maksimalt {{maximum}} tegn",
+            "number": "Dette feltet må være mindre enn eller lik {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "Passordene må være like"
+        }
+    }
+}

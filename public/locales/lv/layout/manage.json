@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Sākums"
+        },
+        "boards": {
+            "title": "Dēļi"
+        },
+        "users": {
+            "title": "Lietotāji",
+            "items": {
+                "manage": "Pārvaldīt",
+                "invites": "Uzaicinājumi"
+            }
+        },
+        "help": {
+            "title": "Palīdzība",
+            "items": {
+                "documentation": "Dokumentācija",
+                "report": "Ziņot par problēmu / kļūdu",
+                "discord": "Kopienas Discord",
+                "contribute": "Atbalstīt"
+            }
+        },
+        "tools": {
+            "title": "Rīki",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Par Programmu"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Vaša Homarr instanca nema konfiguriran Docker ili nije uspjela dohvatiti spremnike. Provjerite dokumentaciju o tome kako postaviti integraciju."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Odaberite ploču",
+            "text": "Odaberite ploču na koju želite dodati aplikacije za odabrane Docker spremnike.",
+            "form": {
+                "board": {
+                    "label": "Odbor"
+                },
+                "submit": "Dodajte aplikacije"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Dodane aplikacije na ploču",
+                "message": "Aplikacije za odabrane Docker spremnike dodane su na ploču."
+            },
+            "error": {
+                "title": "Dodavanje aplikacija na ploču nije uspjelo",
+                "message": "Aplikacije za odabrane Docker spremnike ne mogu se dodati na ploču."
+            }
+        }
+    }
+}

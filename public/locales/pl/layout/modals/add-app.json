@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Adres wewnętrzny",
-			"description": "Wewnętrzny adres IP aplikacji."
+			"description": "Wewnętrzny adres IP aplikacji.",
+			"troubleshoot": {
+				"label": "Masz problemy?",
+				"header": "Oto lista najczęściej popełnianych błędów i sposobów ich rozwiązywania:",
+				"lines": {
+					"nothingAfterPort": "W większości, jeśli nie we wszystkich przypadkach, nie należy wprowadzać żadnej ścieżki po porcie. (Nawet '/admin' dla pihole lub '/web' dla plex)",
+					"protocolCheck": "Zawsze upewnij się, że adres URL jest poprzedzony przez http lub https, i upewnij się, że używasz odpowiedniego adresu.",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": "Aby uzyskać więcej informacji na temat rozwiązywania problemów, skontaktuj się z nami na naszym {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Adres zewnętrzny",
@@ -26,10 +40,10 @@
 			"description": "Otwórz aplikację w nowej karcie zamiast w bieżącej."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Opis aplikacji",
+			"description": "Wprowadzony tekst pojawi się po najechaniu kursorem na aplikację.\nUżyj go, aby podać użytkownikom więcej szczegółów na temat aplikacji lub pozostaw pusty, aby nic nie wyświetlać."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Wykorzystuje niestandardowy protokół. Może wymagać instalacji innych aplikacji i powodować zagrożenia bezpieczeństwa. Upewnij się, że podany adres jest bezpieczny i zaufany."
 	},
 	"network": {
 		"statusChecker": {
@@ -44,7 +58,7 @@
 	"appearance": {
 		"icon": {
 			"label": "Ikona aplikacji",
-			"description": "",
+			"description": "Zacznij pisać, aby znaleźć ikonę. Możesz również wkleić adres URL obrazu, aby użyć ikony niestandardowej.",
 			"autocomplete": {
 				"title": "Nie znaleziono żadnych wyników",
 				"text": "Spróbuj użyć bardziej konkretnego hasła wyszukiwania. Jeśli nie możesz znaleźć żądanej ikony, wklej adres URL obrazu powyżej, aby wyszukać niestandardową ikonę"
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Rozmiar czcionki nazwy aplikacji",
+			"description": "Ustaw rozmiar czcionki, nazwy aplikacji wyświetlanej na kafelku."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Status nazwy aplikacji",
+			"description": "Wybierz czy i gdzie ma być wyświetlany tytuł aplikacji.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Pokaż tytuł tylko na kafelku",
+				"hover": "Pokaż tytuł tylko po najechaniu na etykietę narzędzia",
+				"hidden": "Nie pokazuj w ogóle"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Pozycja nazwy aplikacji",
+			"description": "Pozycja nazwy aplikacji względem ikony.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Góra",
+				"right": "Prawo",
+				"bottom": "Dół",
+				"left": "Lewo"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Maksymalna ilość wierszy nazwy",
+			"description": "Określa, w ilu liniach maksymalnie powinien zmieścić się tytuł. Ustaw 0 dla nieograniczonej liczby."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "Twój formularz zawiera nieprawidłowe dane. Dlatego nie można go zapisać. Proszę rozwiązać wszystkie problemy i kliknąć ten przycisk ponownie, aby zapisać zmiany.",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Nazwa jest wymagana",
+		"noUrl": "Adres URL jest wymagany",
+		"invalidUrl": "Wartość nie jest poprawnym adresem URL",
+		"noIconUrl": "To pole jest wymagane",
+		"noExternalUri": "Zewnętrzny URI jest wymagany",
+		"invalidExternalUri": "Zewnętrzny URI nie jest prawidłowym uri"
 	}
 }

@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Bejelentkezés",
   "title": "Köszöntjük ismét!",
-  "text": "Kérjük, adja meg jelszavát",
+  "text": "Kérjük, adja meg hitelesítő adatait",
   "form": {
     "fields": {
+      "username": {
+        "label": "Felhasználónév"
+      },
       "password": {
-        "label": "Jelszó",
-        "placeholder": "Az Ön jelszava"
+        "label": "Jelszó"
       }
     },
     "buttons": {
       "submit": "Bejelentkezés"
-    }
+    },
+    "afterLoginRedirection": "A bejelentkezés után a {{url}} oldalra kerül átirányításra"
   },
-  "notifications": {
-    "checking": {
-      "title": "Jelszó ellenőrzése",
-      "message": "A jelszavadat ellenőrizzük..."
-    },
-    "correct": {
-      "title": "Bejelentkezés sikeres, átirányítás..."
-    },
-    "wrong": {
-      "title": "A megadott jelszó helytelen, kérjük, próbálja meg újra."
-    }
-  }
+  "alert": "A hitelesítő adatok helytelenek, vagy ez a fiók nem létezik. Kérjük, próbálja meg újra."
 }

@@ -1,11 +1,17 @@
 {
   "save": "Mentés",
+  "apply": "",
+  "insert": "",
   "about": "Névjegy",
   "cancel": "Mégse",
   "close": "Bezár",
+  "back": "Vissza",
   "delete": "Törlés",
   "ok": "OK",
   "edit": "Szerkesztés",
+  "next": "Következő",
+  "previous": "Előző",
+  "confirm": "Megerősít",
   "enabled": "Engedélyezve",
   "disabled": "Letiltva",
   "enableAll": "Összes engedélyezése",
@@ -36,5 +42,14 @@
     "medium": "közepes",
     "large": "nagy"
   },
-  "seeMore": "Lásd még..."
+  "seeMore": "Lásd még...",
+  "position": {
+    "left": "Bal",
+    "center": "",
+    "right": "Jobb"
+  },
+  "attributes": {
+    "width": "Szélesség",
+    "height": "Magasság"
+  }
 }

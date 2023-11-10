@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Logg Inn",
   "title": "Velkommen tilbake!",
-  "text": "Skriv inn passord",
+  "text": "Vennligst skriv inn påloggingsinformasjonen din",
   "form": {
     "fields": {
+      "username": {
+        "label": "Brukernavn"
+      },
       "password": {
-        "label": "Passord",
-        "placeholder": "Ditt passord"
+        "label": "Passord"
       }
     },
     "buttons": {
       "submit": "Logg inn"
-    }
+    },
+    "afterLoginRedirection": "Etter pålogging blir du omdirigert til {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Sjekker passordet ditt",
-      "message": "Ditt passord blir sjekket..."
-    },
-    "correct": {
-      "title": "Innlogging vellykket, omdirigerer..."
-    },
-    "wrong": {
-      "title": "Passordet du skrev inn er feil, prøv igjen."
-    }
-  }
+  "alert": "Påloggingsinformasjonen din er feil eller denne kontoen eksisterer ikke. Vennligst prøv på nytt."
 }

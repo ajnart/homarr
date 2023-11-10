@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Ana sayfa"
+        },
+        "boards": {
+            "title": "Paneller"
+        },
+        "users": {
+            "title": "Kullanıcılar",
+            "items": {
+                "manage": "Yönet",
+                "invites": "Davetler"
+            }
+        },
+        "help": {
+            "title": "Yardım",
+            "items": {
+                "documentation": "Dokümantasyon",
+                "report": "Sorun / hata bildirin",
+                "discord": "Discord Topluluğu",
+                "contribute": "Katkıda bulunun"
+            }
+        },
+        "tools": {
+            "title": "Araçlar",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Hakkında"
+        }
+    }
+}

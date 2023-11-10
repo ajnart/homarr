@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Lời mời của người dùng",
+    "pageTitle": "Quản lý lời mời của người dùng",
+    "description": "Bằng cách sử dụng lời mời, bạn có thể mời người dùng tham gia phiên bản Homarr của mình. Lời mời sẽ chỉ có hiệu lực trong một khoảng thời gian nhất định và chỉ có thể được sử dụng một lần. Thời hạn hết hạn phải từ 5 phút đến 12 tháng sau khi tạo.",
+    "button": {
+        "createInvite": "Tạo lời mời",
+        "deleteInvite": "Xóa lời mời"
+    },
+    "table": {
+        "header": {
+            "id": "NHẬN DẠNG",
+            "creator": "Người sáng tạo",
+            "expires": "Hết hạn",
+            "action": "hành động"
+        },
+        "data": {
+            "expiresAt": "hết hạn {{at}}",
+            "expiresIn": "trong {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Tạo lời mời",
+            "description": "Sau khi hết hạn, lời mời sẽ không còn hiệu lực và người nhận lời mời sẽ không thể tạo tài khoản.",
+            "form": {
+                "expires": "Ngày hết hạn",
+                "submit": "Tạo nên"
+            }
+        },
+        "copy": {
+            "title": "Sao chép lời mời",
+            "description": "Lời mời của bạn đã được tạo. Sau khi phương thức này đóng, <b>bạn sẽ không thể sao chép liên kết này nữa</b>. Nếu bạn không muốn mời người đã nói nữa, bạn có thể xóa lời mời này bất cứ lúc nào.",
+            "invitationLink": "Liên kết lời mời",
+            "details": {
+                "id": "NHẬN DẠNG",
+                "token": "Mã thông báo"
+            },
+            "button": {
+                "close": "Sao chép & Loại bỏ"
+            }
+        },
+        "delete": {
+            "title": "Xóa lời mời",
+            "description": "Bạn có chắc chắn muốn xóa lời mời này không? Người dùng có liên kết này sẽ không thể tạo tài khoản bằng liên kết đó nữa."
+        }
+    },
+    "noInvites": "Chưa có lời mời nào."
+}

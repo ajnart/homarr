@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Invitaciones de usuario",
+    "pageTitle": "Administrar invitaciones de usuario",
+    "description": "Mediante invitaciones, puedes invitar usuarios a tu instancia de Homarr. Una invitación solo será válida por un período de tiempo determinado y podrá usarse una vez. La caducidad debe ser entre 5 minutos y 12 meses desde su creación.",
+    "button": {
+        "createInvite": "Crear invitación",
+        "deleteInvite": "Eliminar invitación"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Creador",
+            "expires": "Caduca",
+            "action": "Acciones"
+        },
+        "data": {
+            "expiresAt": "Caducado {{at}}",
+            "expiresIn": "en {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Crear invitación",
+            "description": "Después de la caducidad, una invitación ya no será válida y el destinatario de la invitación no podrá crear una cuenta.",
+            "form": {
+                "expires": "Fecha de caducidad",
+                "submit": "Crear"
+            }
+        },
+        "copy": {
+            "title": "Copiar invitación",
+            "description": "Tu invitación ha sido generada. Después de que se cierre esta ventana, <b>ya no podrás copiar este enlace</b>. Si ya no deseas invitar a dicha persona, puedes eliminar esta invitación en cualquier momento.",
+            "invitationLink": "Link de invitación",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Copiar y Descartar"
+            }
+        },
+        "delete": {
+            "title": "Eliminar invitación",
+            "description": "¿Estás seguro de que deseas eliminar esta invitación? Los usuarios con este enlace ya no podrán crear una cuenta usando ese enlace."
+        }
+    },
+    "noInvites": "Aún no hay invitaciones."
+}

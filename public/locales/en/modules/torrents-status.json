@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Display completed torrents"
       },
+      "displayActiveTorrents": {
+        "label": "Display active torrents"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Upload speed to consider a torrent as active (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Display stale torrents"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Label list",
         "description": "When 'is whitelist' checked, this will act as a whitelist. If not checked, this is a blacklist. Will not do anything when empty"
+      },
+      "displayRatioWithFilter": {
+        "label": "Display filtered torrents list ratio",
+        "info": "If disabled, only the global ratio will be display. The global ratio will still use the labels if set"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Last updated {{time}} ago"
+      "lastUpdated": "Last updated {{time}} ago",
+      "ratioGlobal": "Global ratio",
+      "ratioWithFilter": "Ratio with filter"
     },
     "table": {
       "header": {

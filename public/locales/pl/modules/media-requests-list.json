@@ -1,35 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Zapytania o media",
+    "description": "Zobacz listę wszystkich zapytań o media z Twoich instancji Overseerr lub Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Lista zapytań o media",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Zastąp linki zewnętrznym hostem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otwieraj linki w nowej karcie"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Nie znaleziono żadnych zapytań. Upewnij się, że poprawnie skonfigurowałeś swoje aplikacje.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Zatwierdzono",
+    "pendingApproval": "Oczekujące na zatwierdzenie",
+    "declined": "Odrzucono"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Zatwierdź zapytania",
+    "decline": "Odrzuć zapytania",
+    "approving": "Zatwierdzanie zapytania..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Zatwierdzanie",
+    "declining": "Odrzucanie",
+    "request": "zapytanie...",
+    "approved": "Zapytanie zostało zaakceptowane!",
+    "declined": "Zapytanie zostało odrzucone!"
   }
 }

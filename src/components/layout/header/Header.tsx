@@ -1,68 +1,94 @@
-import { Box, Group, Indicator, Header as MantineHeader, createStyles } from '@mantine/core';
-import { useQuery } from '@tanstack/react-query';
+import {
+  Anchor,
+  Box,
+  Center,
+  Flex,
+  Group,
+  Header,
+  Text,
+  Title,
+  UnstyledButton,
+  useMantineTheme,
+} from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import { IconAlertTriangle } from '@tabler/icons-react';
+import { Trans, useTranslation } from 'next-i18next';
 
-import { REPO_URL } from '../../../../data/constants';
-import { useEditModeInformationStore } from '../../../hooks/useEditModeInformation';
-import DockerMenuButton from '../../../modules/Docker/DockerModule';
-import { usePackageAttributesStore } from '../../../tools/client/zustands/usePackageAttributesStore';
-import { Logo } from '../Logo';
-import { useCardStyles } from '../useCardStyles';
-import { ToggleEditModeAction } from './Actions/ToggleEditMode/ToggleEditMode';
+import { Logo } from '../Common/Logo';
+import { AvatarMenu } from './AvatarMenu';
 import { Search } from './Search';
-import { SettingsMenu } from './SettingsMenu';
 
-export const HeaderHeight = 64;
+type MainHeaderProps = {
+  logoHref?: string;
+  showExperimental?: boolean;
+  headerActions?: React.ReactNode;
+  contentComponents?: React.ReactNode;
+  leftIcon?: React.ReactNode;
+  autoFocusSearch?: boolean;
+};
 
-export function Header(props: any) {
-  const { classes } = useStyles();
-  const { classes: cardClasses, cx } = useCardStyles(false);
-  const { attributes } = usePackageAttributesStore();
-  const { editModeEnabled } = useEditModeInformationStore();
-
-  const { data } = useQuery({
-    queryKey: ['github/latest'],
-    cacheTime: 1000 * 60 * 60 * 24,
-    staleTime: 1000 * 60 * 60 * 5,
-    queryFn: () =>
-      fetch(`https://api.github.com/repos/${REPO_URL}/releases/latest`).then((res) => res.json()),
-  });
-  const newVersionAvailable =
-    data?.tag_name > `v${attributes.packageVersion}` ? data?.tag_name : undefined;
+export const MainHeader = ({
+  showExperimental = false,
+  logoHref = '/',
+  headerActions,
+  leftIcon,
+  contentComponents,
+  autoFocusSearch,
+}: MainHeaderProps) => {
+  const { breakpoints } = useMantineTheme();
+  const isSmallerThanMd = useMediaQuery(`(max-width: ${breakpoints.sm})`);
+  const experimentalHeaderNoteHeight = isSmallerThanMd ? 60 : 30;
+  const headerBaseHeight = isSmallerThanMd ? 60 + 46 : 60;
+  const headerHeight = showExperimental
+    ? headerBaseHeight + experimentalHeaderNoteHeight
+    : headerBaseHeight;
 
   return (
-    <MantineHeader height="auto" className={cx(cardClasses.card, 'dashboard-header')}>
-      <Group p="xs" noWrap grow>
-        <Box className={cx(classes.hide, 'dashboard-header-logo-root')}>
-          <Logo />
-        </Box>
-        <Group
-          className="dashboard-header-group-right"
-          position="right"
-          style={{ maxWidth: 'none' }}
-          noWrap
-        >
-          <Search />
-          {editModeEnabled && <ToggleEditModeAction />}
-          <DockerMenuButton />
-          <Indicator
-            size={15}
-            color="blue"
-            withBorder
-            processing
-            disabled={newVersionAvailable === undefined}
-          >
-            <SettingsMenu newVersionAvailable={newVersionAvailable} />
-          </Indicator>
+    <Header height={headerHeight} pb="sm" pt={0}>
+      <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
+        <Group noWrap style={{ flex: 1 }}>
+          {leftIcon}
+          <UnstyledButton component="a" href={logoHref}>
+            <Logo />
+          </UnstyledButton>
+        </Group>
+
+        {!isSmallerThanMd && <Search autoFocus={autoFocusSearch} />}
+
+        <Group noWrap style={{ flex: 1 }} position="right">
+          <Group noWrap spacing={8}>
+            {contentComponents}
+            {headerActions}
+          </Group>
+          <AvatarMenu />
         </Group>
       </Group>
-    </MantineHeader>
-  );
-}
 
-const useStyles = createStyles((theme) => ({
-  hide: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-}));
+      {isSmallerThanMd && (
+        <Center mt="xs" px="md">
+          <Search isMobile />
+        </Center>
+      )}
+    </Header>
+  );
+};
+
+type ExperimentalHeaderNoteProps = {
+  height?: 30 | 60;
+  visible?: boolean;
+};
+const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHeaderNoteProps) => {
+  const { t } = useTranslation('layout/header');
+  if (!visible) return null;
+
+  return (
+    <Box bg="red" h={height} p={3} px={6} style={{ overflow: 'hidden' }}>
+      <Flex h="100%" align="center" columnGap={7}>
+        <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
+        <Text color="white" lineClamp={height === 30 ? 1 : 2}>
+          <Title>Make an announcement here</Title>
+        </Text>
+      </Flex>
+    </Box>
+  );
+};

@@ -18,8 +18,12 @@
       "description": "Dostosuj tło, kolory i wygląd aplikacji"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Ułatwienia dostępu",
+      "description": "Skonfiguruj Homarr dla użytkowników z niepełnosprawnością"
+    },
+    "access": {
+      "name": "Dostęp",
+      "description": "Skonfiguruj kto ma dostęp do Twojej tablicy"
     }
   }
 }

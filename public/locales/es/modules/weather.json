@@ -18,7 +18,7 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Despejado",
-      "mainlyClear": "Mayormente Despejado",
+      "mainlyClear": "Mayormente despejado",
       "fog": "Niebla",
       "drizzle": "Llovizna",
       "freezingDrizzle": "Llovizna helada",
@@ -26,10 +26,10 @@
       "freezingRain": "Lluvia helada",
       "snowFall": "Nevada",
       "snowGrains": "Granos de nieve",
-      "rainShowers": "Lluvia ligera",
-      "snowShowers": "Nevada Ligera",
+      "rainShowers": "Chubascos",
+      "snowShowers": "Chubascos de nieve",
       "thunderstorm": "Tormenta eléctrica",
-      "thunderstormWithHail": "Tormenta con Granizo",
+      "thunderstormWithHail": "Tormenta con granizo",
       "unknown": "Desconocido"
     }
   },

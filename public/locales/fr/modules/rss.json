@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Widget RSS",
-    "description": "",
+    "description": "Le widget RSS vous permet d'afficher des flux RSS sur votre tableau de bord.",
     "settings": {
       "title": "Paramètres du widget RSS",
       "rssFeedUrl": {

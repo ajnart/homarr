@@ -1,25 +1,25 @@
 {
     "modal": {
-        "title": "Dodaj nową płytkę",
+        "title": "Dodaj nowy kafelek",
         "text": "Kafelki są głównym elementem Homarr. Służą one do wyświetlania Twoich aplikacji i innych informacji. Możesz dodać tyle kafelków, ile chcesz."
     },
     "widgetDescription": "Widżety wchodzą w interakcję z Twoimi aplikacjami, aby zapewnić Ci większą kontrolę nad Twoimi aplikacjami. Zazwyczaj wymagają one dodatkowej konfiguracji przed użyciem.",
     "goBack": "Wróć do poprzedniego kroku",
     "actionIcon": {
-        "tooltip": "Dodaj dachówkę"
+        "tooltip": "Dodaj kafelek"
     },
-    "apps": "",
+    "apps": "Aplikacje",
     "app": {
-        "defaultName": ""
+        "defaultName": "Twoja aplikacja"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widżety",
+    "categories": "Kategorie",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nazwa nowej kategorii",
+        "defaultName": "Nowa kategoria",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Utworzono nową kategorię",
+            "message": "Kategoria \"{{name}}\" została utworzona"
         }
     }
 }

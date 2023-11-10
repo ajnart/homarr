@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Nettoyage du cache",
   "selector": {
-    "label": "",
+    "label": "Sélectionner le(s) cache(s) à effacer",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Requêtes ping",
+      "repositoryIcons": "Icônes distantes/locales",
+      "calendar&medias": "Médias du calendrier",
+      "weather": "Données météo"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Cache effacé",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Effacer tout le cache",
+      "notificationMessage": "Tous les caches ont été vidés"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Effacer les requêtes sélectionnées",
+      "notificationMessageSingle": "Le cache pour {{value}} a été effacé",
+      "notificationMessageMulti": "Le cache pour {{values}} a été effacé"
     }
   }
 }

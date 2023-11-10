@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Tillad anonym",
+    "description": "Tillad brugere, der ikke er logget ind, at se dit board"
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Izveidot lietotāju",
+    "steps": {
+        "account": {
+            "title": "Pirmais solis",
+            "text": "Izveidot kontu",
+            "username": {
+                "label": "Lietotājvārds"
+            },
+            "email": {
+                "label": "E-pasts"
+            }
+        },
+        "security": {
+            "title": "Otrais solis",
+            "text": "Parole",
+            "password": {
+                "label": "Parole"
+            }
+        },
+        "finish": {
+            "title": "Apstiprinājums",
+            "text": "Saglabāt datubāzē",
+            "card": {
+                "title": "Pārskatiet savus ievades datus",
+                "text": "Pēc datu nosūtīšanas datubāzei lietotājs varēs pieslēgties. Vai esat pārliecināts, ka vēlaties saglabāt šo lietotāju datubāzē un aktivizēt pieslēgšanos?"
+            },
+            "table": {
+                "header": {
+                    "property": "Īpašība",
+                    "value": "Vērtība",
+                    "username": "Lietotājvārds",
+                    "email": "E-pasts",
+                    "password": "Parole"
+                },
+                "notSet": "Nav iestatīts",
+                "valid": "Derīgs"
+            },
+            "failed": "Lietotāja izveide neizdevās: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Lietotājs tika izveidots",
+                "text": "Datubāzē tika izveidots lietotājs. Tagad lietotājs var pieslēgties."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Ģenerēt nejaušu",
+        "createAnother": "Izveidot vēl vienu"
+    }
+}

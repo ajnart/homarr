@@ -5,23 +5,23 @@
     "settings": {
       "title": "Statistikk for mediaforespørsler",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Erstatt lenker med ekstern vert"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Åpne lenker i ny fane"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Media statistikk",
+    "pending": "Venter på godkjenning",
+    "tvRequests": "TV forespørsler",
+    "movieRequests": "Film forespørsler",
+    "approved": "Allerede godkjent",
+    "totalRequests": "Totalt"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Topp brukere",
+    "requests": "Forespørsler: {{number}}"
   }
 }

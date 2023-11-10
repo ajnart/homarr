@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "crwdns1510:0crwdne1510:0",
+    "description": "crwdns2703:0crwdne2703:0"
+  },
+  "states": {
+    "online": "crwdns1514:0{{response}}crwdne1514:0",
+    "offline": "crwdns1516:0{{response}}crwdne1516:0",
+    "loading": "crwdns1518:0crwdne1518:0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "זוהי תכונה ניסיונית של Homarr. אנא דווח על בעיות ב-<gh>GitHub</gh> או <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "חיפוש",
+        "engines": {
+            "web": "חפש את {{query}} באינטרנט",
+            "youtube": "חפש את {{query}} ב-YouTube",
+            "torrent": "חפש את {{query}} בטורנטים",
+            "movie": "חפש את {{query}} ב-{{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "החלפת ערכת נושא",
+            "preferences": "העדפות המשתמש",
+            "defaultBoard": "לוח ברירת מחדל",
+            "manage": "ניהול",
+            "logout": "התנתקות מ-{{username}}",
+            "login": "התחבר/י"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "{{count}} תוצאות מובילות עבור <b>{{search}}</b>."
+        }
+    }
+}

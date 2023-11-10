@@ -4,12 +4,6 @@
     "description": "Viser en kalender med kommende udgivelser fra understøttede integrationer.",
     "settings": {
       "title": "Indstillinger for kalender widget",
-      "useSonarrv4": {
-        "label": "Brug Sonarr v4 API"
-      },
-      "sundayStart": {
-        "label": "Søndag første ugedag"
-      },
       "radarrReleaseType": {
         "label": "Radarr udgivelsestype",
         "data": {

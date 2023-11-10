@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Prilagodite ploču {{name}}",
+    "pageTitle": "Prilagodba za {{name}} ploču",
+    "backToBoard": "Povratak na ploču",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primarna boja",
+            "secondaryColor": "Sekundarna boja"
+        }
+    },
+    "save": {
+        "button": "Spremi promjene",
+        "note": "Pažljivo, imate nespremljene promjene!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Spremanje prilagodbe",
+            "message": "Pričekajte dok ne spremimo vašu prilagodbu"
+        },
+        "success": {
+            "title": "Prilagodba spremljena",
+            "message": "Vaša prilagodba je uspješno spremljena"
+        },
+        "error": {
+            "title": "Pogreška",
+            "message": "Nije moguće spremiti promjene"
+        }
+    }
+}

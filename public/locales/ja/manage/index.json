@@ -1,0 +1,23 @@
+{
+    "metaTitle": "管理",
+    "hero": {
+        "title": "おかえりなさい、 {{username}}",
+        "fallbackUsername": "匿名",
+        "subtitle": "アプリケーションハブへようこそ。整理、最適化、そして征服！"
+    },
+    "quickActions": {
+        "title": "クイック操作",
+        "boards": {
+            "title": "ボード",
+            "subtitle": "ボードの作成と管理"
+        },
+        "inviteUsers": {
+            "title": "新規ユーザーを招待する",
+            "subtitle": "登録のための招待状を作成し、送信する"
+        },
+        "manageUsers": {
+            "title": "ユーザー管理",
+            "subtitle": "ユーザーの削除と管理"
+        }
+    }
+}

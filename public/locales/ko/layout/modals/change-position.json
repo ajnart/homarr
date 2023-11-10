@@ -1,1 +1,8 @@
-{}
+{
+	"xPosition": "X축 위치",
+	"width": "너비",
+	"height": "높이",
+	"yPosition": "Y축 위치",
+	"zeroOrHigher": "0 이상",
+	"betweenXandY": "{{min}} ~ {{max}}사이"
+}

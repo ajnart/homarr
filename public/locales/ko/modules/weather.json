@@ -1,14 +1,14 @@
 {
   "descriptor": {
     "name": "날씨",
-    "description": "",
+    "description": "설정한 위치의 현재 날씨 정보를 표시합니다.",
     "settings": {
-      "title": "",
+      "title": "날씨 위젯 설정",
       "displayInFahrenheit": {
         "label": "화씨로 표시"
       },
       "displayCityName": {
-        "label": ""
+        "label": "도시 이름 표시"
       },
       "location": {
         "label": "날씨 위치"
@@ -33,5 +33,5 @@
       "unknown": "알 수 없음"
     }
   },
-  "error": ""
+  "error": "오류가 발생했습니다."
 }

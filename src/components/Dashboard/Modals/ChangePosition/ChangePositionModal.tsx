@@ -1,8 +1,7 @@
 import { Button, Flex, Grid, NumberInput, Select, SelectItem } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
-
-import { useConfigContext } from '../../../../config/provider';
+import { useConfigContext } from '~/config/provider';
 
 interface ChangePositionModalProps {
   initialX?: number;
@@ -90,11 +89,12 @@ export const ChangePositionModal = ({
             data={widthData}
             max={24}
             min={1}
-            label={t('layout/modals/change-position:width')}
+            label={t('common:attributes.width')}
             description={t('layout/modals/change-position:betweenXandY', {
               min: widthData.at(0)?.label,
               max: widthData.at(-1)?.label,
             })}
+            withinPortal
             {...form.getInputProps('width')}
           />
         </Grid.Col>
@@ -104,11 +104,12 @@ export const ChangePositionModal = ({
             data={heightData}
             max={24}
             min={1}
-            label={t('layout/modals/change-position:height')}
+            label={t('common:attributes.height')}
             description={t('layout/modals/change-position:betweenXandY', {
               min: heightData.at(0)?.label,
               max: heightData.at(-1)?.label,
             })}
+            withinPortal
             {...form.getInputProps('height')}
           />
         </Grid.Col>

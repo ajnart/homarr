@@ -1,14 +1,14 @@
 import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconKey } from '@tabler/icons-react';
-
 import {
   AppIntegrationPropertyType,
   AppType,
   IntegrationField,
   integrationFieldDefinitions,
   integrationFieldProperties,
-} from '../../../../../../../../types/app';
+} from '~/types/app';
+
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
 
 interface IntegrationOptionsRendererProps {

@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Dopusti anonimno",
+    "description": "Dopustite korisnicima koji nisu prijavljeni da vide vašu ploču"
+  }
+}

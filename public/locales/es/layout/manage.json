@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Inicio"
+        },
+        "boards": {
+            "title": "Tableros"
+        },
+        "users": {
+            "title": "Usuarios",
+            "items": {
+                "manage": "Administrar",
+                "invites": "Invitaciones"
+            }
+        },
+        "help": {
+            "title": "Ayuda",
+            "items": {
+                "documentation": "Documentación",
+                "report": "Reportar un problema / error",
+                "discord": "Comunidad Discord",
+                "contribute": "Contribuir"
+            }
+        },
+        "tools": {
+            "title": "Herramientas",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Acerca de"
+        }
+    }
+}

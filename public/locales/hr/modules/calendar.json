@@ -4,34 +4,28 @@
     "description": "Prikazuje kalendar s nadolazećim izdanjima iz podržanih integracija.",
     "settings": {
       "title": "Postavke za widget kalendara",
-      "useSonarrv4": {
-        "label": "Koristi Sonarr v4 API"
-      },
-      "sundayStart": {
-        "label": "Započni tjedan u Nedjelju"
-      },
       "radarrReleaseType": {
         "label": "Vrsta izdanja u Radarr-u",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "U kinima",
+          "physicalRelease": "Fizički",
+          "digitalRelease": "Digitalni"
         }
       },
       "hideWeekDays": {
         "label": "Sakri dane u tjednu"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Prikaži nenadzirane stavke"
       },
       "fontSize": {
         "label": "Veličina fonta",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra malo",
+          "sm": "Mali",
+          "md": "Srednji",
+          "lg": "velika",
+          "xl": "Jako veliko"
         }
       }
     }

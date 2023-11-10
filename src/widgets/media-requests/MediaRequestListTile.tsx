@@ -1,5 +1,6 @@
 import {
-  ActionIcon, Anchor,
+  ActionIcon,
+  Anchor,
   Badge,
   Card,
   Center,
@@ -9,10 +10,12 @@ import {
   ScrollArea,
   Stack,
   Text,
-  Tooltip, useMantineTheme,
+  Tooltip,
+  useMantineTheme,
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
@@ -102,6 +105,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   const { data, isLoading } = useMediaRequestQuery(widget);
   // Use mutation to approve or deny a pending request
   const decideAsync = useMediaRequestDecisionMutation();
+  const { data: sessionData } = useSession();
 
   const mantineTheme = useMantineTheme();
 
@@ -135,14 +139,9 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   return (
     <ScrollArea h="100%">
       <Stack>
-        {countPendingApproval > 0 ? (
-          <Text>{t('pending', { countPendingApproval })}</Text>
-        ) : (
-          <Text>{t('nonePending')}</Text>
-        )}
-        {sortedData.map((item) => (
-          <Card radius="md" withBorder>
-            <Flex wrap="wrap" justify="space-between" gap="md">
+        {sortedData.map((item, index) => (
+          <Card radius="md" withBorder key={index}>
+            <Flex wrap="nowrap" justify="space-between" gap="md">
               <Flex gap="md">
                 <Image
                   src={item.posterPath}
@@ -159,10 +158,10 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   </Group>
                   <Anchor
                     href={item.href}
-                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    target={widget.properties.openInNewTab ? '_blank' : '_self'}
                     c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
-                    >
-                    {item.name}
+                  >
+                    <Text lineClamp={1}>{item.name}</Text>
                   </Anchor>
                 </Stack>
               </Flex>
@@ -178,53 +177,54 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   />
                   <Anchor
                     href={item.userLink}
-                    target={widget.properties.openInNewTab ? "_blank" : "_self"}
+                    target={widget.properties.openInNewTab ? '_blank' : '_self'}
                     c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
                     {item.userName}
                   </Anchor>
                 </Flex>
 
-                {item.status === MediaRequestStatus.PendingApproval && (
-                  <Group>
-                    <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
-                      <ActionIcon
-                        variant="light"
-                        color="green"
-                        onClick={async () => {
-                          notifications.show({
-                            id: `approve ${item.id}`,
-                            color: 'yellow',
-                            title: t('tooltips.approving'),
-                            message: undefined,
-                            loading: true,
-                          });
+                {item.status === MediaRequestStatus.PendingApproval &&
+                  sessionData?.user?.isAdmin && (
+                    <Group>
+                      <Tooltip label={t('tooltips.approve')} withArrow withinPortal>
+                        <ActionIcon
+                          variant="light"
+                          color="green"
+                          onClick={async () => {
+                            notifications.show({
+                              id: `approve ${item.id}`,
+                              color: 'yellow',
+                              title: t('tooltips.approving'),
+                              message: undefined,
+                              loading: true,
+                            });
 
-                          await decideAsync({
-                            request: item,
-                            isApproved: true,
-                          });
-                        }}
-                      >
-                        <IconThumbUp />
-                      </ActionIcon>
-                    </Tooltip>
-                    <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
-                      <ActionIcon
-                        variant="light"
-                        color="red"
-                        onClick={async () => {
-                          await decideAsync({
-                            request: item,
-                            isApproved: false,
-                          });
-                        }}
-                      >
-                        <IconThumbDown />
-                      </ActionIcon>
-                    </Tooltip>
-                  </Group>
-                )}
+                            await decideAsync({
+                              request: item,
+                              isApproved: true,
+                            });
+                          }}
+                        >
+                          <IconThumbUp />
+                        </ActionIcon>
+                      </Tooltip>
+                      <Tooltip label={t('tooltips.decline')} withArrow withinPortal>
+                        <ActionIcon
+                          variant="light"
+                          color="red"
+                          onClick={async () => {
+                            await decideAsync({
+                              request: item,
+                              isApproved: false,
+                            });
+                          }}
+                        >
+                          <IconThumbDown />
+                        </ActionIcon>
+                      </Tooltip>
+                    </Group>
+                  )}
               </Stack>
             </Flex>
 

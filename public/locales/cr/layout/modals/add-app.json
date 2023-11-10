@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "crwdns2049:0crwdne2049:0",
+		"behaviour": "crwdns2687:0crwdne2687:0",
+		"network": "crwdns2053:0crwdne2053:0",
+		"appearance": "crwdns2055:0crwdne2055:0",
+		"integration": "crwdns2057:0crwdne2057:0"
+	},
+	"general": {
+		"appname": {
+			"label": "crwdns2059:0crwdne2059:0",
+			"description": "crwdns2305:0crwdne2305:0"
+		},
+		"internalAddress": {
+			"label": "crwdns2063:0crwdne2063:0",
+			"description": "crwdns2307:0crwdne2307:0",
+			"troubleshoot": {
+				"label": "crwdns3874:0crwdne3874:0",
+				"header": "crwdns3876:0crwdne3876:0",
+				"lines": {
+					"nothingAfterPort": "crwdns3878:0crwdne3878:0",
+					"protocolCheck": "crwdns3880:0crwdne3880:0",
+					"preferIP": "crwdns3882:0crwdne3882:0",
+					"enablePings": "crwdns3884:0crwdne3884:0",
+					"wget": "crwdns3886:0crwdne3886:0",
+					"iframe": "crwdns3888:0crwdne3888:0",
+					"clearCache": "crwdns3890:0crwdne3890:0"
+				},
+				"footer": "crwdns3892:0{{discord}}crwdne3892:0"
+			}
+		},
+		"externalAddress": {
+			"label": "crwdns2067:0crwdne2067:0",
+			"description": "crwdns2309:0crwdne2309:0"
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "crwdns2071:0crwdne2071:0",
+			"description": "crwdns2311:0crwdne2311:0"
+		},
+		"tooltipDescription": {
+			"label": "crwdns3021:0crwdne3021:0",
+			"description": "crwdns3023:0crwdne3023:0"
+		},
+		"customProtocolWarning": "crwdns3009:0crwdne3009:0"
+	},
+	"network": {
+		"statusChecker": {
+			"label": "crwdns2075:0crwdne2075:0",
+			"description": "crwdns2313:0crwdne2313:0"
+		},
+		"statusCodes": {
+			"label": "crwdns2079:0crwdne2079:0",
+			"description": "crwdns2315:0crwdne2315:0"
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "crwdns2083:0crwdne2083:0",
+			"description": "crwdns2891:0crwdne2891:0",
+			"autocomplete": {
+				"title": "crwdns2673:0crwdne2673:0",
+				"text": "crwdns2675:0crwdne2675:0"
+			},
+			"noItems": {
+				"title": "crwdns2677:0crwdne2677:0",
+				"text": "crwdns2679:0crwdne2679:0"
+			}
+		},
+		"appNameFontSize": {
+			"label": "crwdns3309:0crwdne3309:0",
+			"description": "crwdns3311:0crwdne3311:0"
+		},
+		"appNameStatus": {
+			"label": "crwdns3025:0crwdne3025:0",
+			"description": "crwdns3027:0crwdne3027:0",
+			"dropdown": {
+				"normal": "crwdns3029:0crwdne3029:0",
+				"hover": "crwdns3031:0crwdne3031:0",
+				"hidden": "crwdns3033:0crwdne3033:0"
+			}
+		},
+		"positionAppName": {
+			"label": "crwdns3035:0crwdne3035:0",
+			"description": "crwdns3037:0crwdne3037:0",
+			"dropdown": {
+				"top": "crwdns3039:0crwdne3039:0",
+				"right": "crwdns3041:0crwdne3041:0",
+				"bottom": "crwdns3043:0crwdne3043:0",
+				"left": "crwdns3045:0crwdne3045:0"
+			}
+		},
+		"lineClampAppName": {
+			"label": "crwdns3073:0crwdne3073:0",
+			"description": "crwdns3075:0crwdne3075:0"
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "crwdns2087:0crwdne2087:0",
+			"description": "crwdns2319:0crwdne2319:0",
+			"placeholder": "crwdns2091:0crwdne2091:0",
+			"defined": "crwdns2093:0crwdne2093:0",
+			"undefined": "crwdns2095:0crwdne2095:0",
+			"public": "crwdns2097:0crwdne2097:0",
+			"private": "crwdns2099:0crwdne2099:0",
+			"explanationPrivate": "crwdns2321:0crwdne2321:0",
+			"explanationPublic": "crwdns2323:0crwdne2323:0"
+		},
+		"secrets": {
+			"description": "crwdns2105:0crwdne2105:0",
+			"warning": "crwdns2325:0crwdne2325:0",
+			"clear": "crwdns2109:0crwdne2109:0",
+			"save": "crwdns2111:0crwdne2111:0",
+			"update": "crwdns2113:0crwdne2113:0"
+		}
+	},
+	"validation": {
+		"popover": "crwdns2267:0crwdne2267:0",
+		"name": "crwdns3201:0crwdne3201:0",
+		"noUrl": "crwdns3203:0crwdne3203:0",
+		"invalidUrl": "crwdns3205:0crwdne3205:0",
+		"noIconUrl": "crwdns3207:0crwdne3207:0",
+		"noExternalUri": "crwdns3209:0crwdne3209:0",
+		"invalidExternalUri": "crwdns3211:0crwdne3211:0"
+	}
+}

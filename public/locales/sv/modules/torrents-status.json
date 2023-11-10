@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Visa slutförda torrents"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Visa inaktuella torrents"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Etikettlista",
         "description": "Om \"är vitlista\" är markerat kommer detta att fungera som en vitlista. Om detta inte är markerat är detta en svartlista. Kommer inte att göra något när den är tom"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Fel",
-      "lastUpdated": "Senast uppdaterad {{time}} ago"
+      "lastUpdated": "Senast uppdaterad {{time}} ago",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

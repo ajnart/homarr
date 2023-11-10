@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Twoja instancja Homarr nie ma skonfigurowanego Dockera lub nie była w stanie pobrać listę kontenerów. Sprawdź dokumentację, aby dowiedzieć się, jak skonfigurować integrację."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Wybierz tablicę",
+            "text": "Wybierz tablicę, do której chcesz dodać aplikacje z wybranych kontenerów Dockera.",
+            "form": {
+                "board": {
+                    "label": "Tablica"
+                },
+                "submit": "Dodaj aplikacje"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Aplikacje dodane do tablicy",
+                "message": "Aplikacje wybranych kontenerów Dockera zostały dodane do tablicy."
+            },
+            "error": {
+                "title": "Nie udało się dodać aplikacji do tablicy",
+                "message": "Aplikacje wybranych kontenerów Dockera nie mogły zostać dodane do tablicy."
+            }
+        }
+    }
+}

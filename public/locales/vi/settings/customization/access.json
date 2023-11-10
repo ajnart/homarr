@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Cho phép vô danh",
+    "description": "Cho phép người dùng chưa đăng nhập xem bảng của bạn"
+  }
+}

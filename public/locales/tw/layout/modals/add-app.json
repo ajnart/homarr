@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "一般",
+		"behaviour": "行為",
+		"network": "網路",
+		"appearance": "外觀",
+		"integration": "集成"
+	},
+	"general": {
+		"appname": {
+			"label": "應用程式名稱",
+			"description": "用於面板上顯示"
+		},
+		"internalAddress": {
+			"label": "內部網址",
+			"description": "應用的內部IP網址",
+			"troubleshoot": {
+				"label": "遇到問題嗎？",
+				"header": "下方是常見的問題和解決辦法：",
+				"lines": {
+					"nothingAfterPort": "在大多情況中，不應該在端口後方輸入任何路徑",
+					"protocolCheck": "請確保 URL 前方是 http 或 https，並確認使用正確的 URL",
+					"preferIP": "建議使用要與之通訊的設備或容器的直接 IP 地址",
+					"enablePings": "透過啟用 Ping 檢查 IP 是否正確。自定義面板 -> 顯示布局 -> 啟用 Ping\n應用磁貼上會出現一個小紅色或綠色的點點，屬標懸停後就會顯示相應代碼\n大多情況下都是綠色點點，代碼200",
+					"wget": "為了確保 Homarr 可以與其它應用通訊，請使用 wget/curl/ping 應用的 IP:Port",
+					"iframe": "使用 iFrame 時，必須使用 http/https",
+					"clearCache": "有些訊息是在緩存中創建，因此除非您在 Homarr 的一般選項中清除緩存，否則即成可能無法運行"
+				},
+				"footer": "更問解決辦法，請聯繫我們的 {{discord}}"
+			}
+		},
+		"externalAddress": {
+			"label": "外部網址",
+			"description": "點擊應用時開啟的網址"
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "在新分頁中開啟",
+			"description": "在新分頁中開啟應用，而不是當前分頁"
+		},
+		"tooltipDescription": {
+			"label": "應用概述",
+			"description": "將游標停在應用上時，將顯示您輸入的詳細內容。\n可以為使用者提供更多關於應用的詳細訊息，留空以隱藏"
+		},
+		"customProtocolWarning": "使用非標準協議，可能需要更多預先安裝應用程式，並可能帶來安全風險，請確保您的網址安全可靠"
+	},
+	"network": {
+		"statusChecker": {
+			"label": "狀態檢查",
+			"description": "使用 HTTP(S) 請求檢查您的應用是否在線"
+		},
+		"statusCodes": {
+			"label": "HTTP 狀態碼",
+			"description": "被視為在線的 HTTP 狀態碼"
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "應用圖標",
+			"description": "輸入以搜尋圖標，也可以貼上自定義的圖標網址",
+			"autocomplete": {
+				"title": "未找到結果",
+				"text": "嘗試使用一個更具體的搜尋詞彙，如果找不到您想要的圖標，可以在上方貼上圖標的網址，以獲得一個自定義的圖標"
+			},
+			"noItems": {
+				"title": "正在載入外部圖標",
+				"text": "這可能需要幾秒鐘"
+			}
+		},
+		"appNameFontSize": {
+			"label": "應用名稱的字體大小",
+			"description": "設定應用名稱在磁貼上顯示的字體大小"
+		},
+		"appNameStatus": {
+			"label": "應用名稱狀態",
+			"description": "如果您想要顯示標題，請選擇顯示的位置",
+			"dropdown": {
+				"normal": "僅在磁貼上顯示標題",
+				"hover": "僅在游標停留時顯示標題",
+				"hidden": "完全不顯示"
+			}
+		},
+		"positionAppName": {
+			"label": "應用名稱位置",
+			"description": "應用名稱相對於圖標的位置",
+			"dropdown": {
+				"top": "上方",
+				"right": "右方",
+				"bottom": "下方",
+				"left": "左方"
+			}
+		},
+		"lineClampAppName": {
+			"label": "應用名稱行數",
+			"description": "自定義標題最多能容納多少行。設定 0 為無限制"
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "集成設定",
+			"description": "集成設定用於連結您的應用",
+			"placeholder": "選擇一個集成",
+			"defined": "已定義",
+			"undefined": "未定義",
+			"public": "公開",
+			"private": "私有",
+			"explanationPrivate": "私有密鑰仍會被傳送到伺服器一次，一旦您的瀏覽器刷新了頁面，將不會再次傳送",
+			"explanationPublic": "公開密鑰將持續傳送給客戶端，並且可以透過 API 訪問，不該包含任何機密，如使用者名稱、密碼、證書等！"
+		},
+		"secrets": {
+			"description": "輸入值並點擊儲存以更新密鑰，使用清除按鈕以刪除密鑰",
+			"warning": "您的憑證作為集成的訪問權限，您應該<strong>永遠不</strong>和任何人分享該憑證。Homarr 團隊永遠不會索取憑證，確保<strong>安全的保存和管理您的密鑰</strong>。",
+			"clear": "刪除密鑰",
+			"save": "儲存密鑰",
+			"update": "更新密鑰"
+		}
+	},
+	"validation": {
+		"popover": "您的表單包含無效數據，因此無法儲存，請再次檢查後，點擊此按鈕儲存您的設定",
+		"name": "名稱為必填選項",
+		"noUrl": "網址為必填選項",
+		"invalidUrl": "非有效的網址",
+		"noIconUrl": "此字段為必填",
+		"noExternalUri": "外部網址為必填選項",
+		"invalidExternalUri": "無效的外部網址"
+	}
+}

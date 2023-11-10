@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Daske",
+    "pageTitle": "Daske",
+    "cards": {
+        "statistics": {
+            "apps": "aplikacije",
+            "widgets": "Widgeti",
+            "categories": "Kategorije"
+        },
+        "buttons": {
+            "view": "Prikaz ploče"
+        },
+        "menu": {
+            "setAsDefault": "Postavite kao zadanu ploču",
+            "delete": {
+                "label": "Izbriši trajno",
+                "disabled": "Brisanje je onemogućeno jer starije Homarr komponente ne dopuštaju brisanje zadane konfiguracije. Brisanje će biti moguće u budućnosti."
+            }
+        },
+        "badges": {
+            "fileSystem": "Sustav datoteka",
+            "default": "Zadano"
+        }
+    },
+    "buttons": {
+        "create": "Stvorite novu ploču"
+    },
+    "modals": {
+        "delete": {
+            "title": "Izbriši ploču",
+            "text": "Jeste li sigurni da želite obrisati ovu ploču? Ova se radnja ne može poništiti i vaši će podaci biti trajno izgubljeni."
+        },
+        "create": {
+            "title": "Napravi ploču",
+            "text": "Ime se ne može promijeniti nakon što je ploča stvorena.",
+            "form": {
+                "name": {
+                    "label": "Naziv"
+                },
+                "submit": "Stvoriti"
+            }
+        }
+    }
+}

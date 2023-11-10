@@ -1,0 +1,36 @@
+{
+    "metaTitle": "crwdns3789:0crwdne3789:0",
+    "pageTitle": "crwdns3791:0crwdne3791:0",
+    "text": "crwdns3793:0crwdne3793:0",
+    "buttons": {
+        "create": "crwdns3795:0crwdne3795:0"
+    },
+    "table": {
+        "header": {
+            "user": "crwdns3797:0crwdne3797:0"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "crwdns3799:0crwdne3799:0",
+        "demoteAdmin": "crwdns3801:0crwdne3801:0",
+        "promoteToAdmin": "crwdns3803:0crwdne3803:0"
+    },
+    "modals": {
+        "delete": {
+            "title": "crwdns3805:0{{name}}crwdne3805:0",
+            "text": "crwdns3807:0{{name}}crwdne3807:0"
+        },
+        "change-role": {
+            "promote": {
+                "title": "crwdns3809:0{{name}}crwdne3809:0",
+                "text": "crwdns3811:0{{name}}crwdne3811:0"
+            },
+            "demote": {
+                "title": "crwdns3813:0{{name}}crwdne3813:0",
+                "text": "crwdns3815:0{{name}}crwdne3815:0"
+            },
+            "confirm": "crwdns3817:0crwdne3817:0"
+        }
+    },
+    "searchDoesntMatch": "crwdns3819:0crwdne3819:0"
+}

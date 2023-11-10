@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "DNS-Hole Steuerung",
-    "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus"
+    "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus",
+    "settings": {
+      "title": "Einstellungen für DNS-Kontrollen",
+      "showToggleAllButtons": {
+        "label": "Schaltflächen \"Alle aktivieren/deaktivieren\" anzeigen"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Konnte kein DNS Hole finden",
+        "text": "Es gab ein Problem bei der Verbindung zu Ihrem DNS Hole(s). Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
+      }
+    }
   }
 }

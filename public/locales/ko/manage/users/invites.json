@@ -1,0 +1,48 @@
+{
+    "metaTitle": "사용자 초대",
+    "pageTitle": "사용자 초대 관리",
+    "description": "초대를 사용하여 사용자를 Homarr 인스턴스로 초대할 수 있습니다. 초대는 특정 기간 동안만 유효하며 한 번만 사용할 수 있습니다. 만료는 생성 시 5분에서 12개월 사이여야 합니다.",
+    "button": {
+        "createInvite": "초대 만들기",
+        "deleteInvite": "초대 삭제"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "크리에이터",
+            "expires": "만료",
+            "action": "작업"
+        },
+        "data": {
+            "expiresAt": "만료됨 {{at}}",
+            "expiresIn": "{{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "초대 만들기",
+            "description": "만료 후에는 초대가 더 이상 유효하지 않으며 초대를 받은 사람은 계정을 만들 수 없습니다.",
+            "form": {
+                "expires": "만료 날짜",
+                "submit": "만들기"
+            }
+        },
+        "copy": {
+            "title": "초대장 복사",
+            "description": "초대가 생성되었습니다. 이 모달이 닫히면 <b>이 링크를 더 이상 복사할 수 없습니다</b>. 해당 사람을 더 이상 초대하고 싶지 않다면 언제든지 이 초대를 삭제할 수 있습니다.",
+            "invitationLink": "초대 링크",
+            "details": {
+                "id": "ID",
+                "token": "토큰"
+            },
+            "button": {
+                "close": "복사 및 해제"
+            }
+        },
+        "delete": {
+            "title": "초대 삭제",
+            "description": "이 초대를 삭제하시겠습니까? 이 링크를 받은 사용자는 더 이상 해당 링크를 사용하여 계정을 만들 수 없습니다."
+        }
+    },
+    "noInvites": "아직 초대가 없습니다."
+}

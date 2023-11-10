@@ -1,11 +1,17 @@
 {
   "save": "Saglabāt",
+  "apply": "Lietot",
+  "insert": "Ievietot",
   "about": "Par Programmu",
   "cancel": "Atcelt",
   "close": "Aizvērt",
+  "back": "Atpakaļ",
   "delete": "Dzēst",
   "ok": "OK",
   "edit": "Rediģēt",
+  "next": "Nākamais",
+  "previous": "Iepriekšējais",
+  "confirm": "Apstipriniet",
   "enabled": "Iespējots",
   "disabled": "Atspējots",
   "enableAll": "Iespējot visu",
@@ -36,5 +42,14 @@
     "medium": "vidējs",
     "large": "liels"
   },
-  "seeMore": "Skatīt vairāk..."
+  "seeMore": "Skatīt vairāk...",
+  "position": {
+    "left": "Pa kreisi",
+    "center": "Centrā",
+    "right": "Pa labi"
+  },
+  "attributes": {
+    "width": "Platums",
+    "height": "Augstums"
+  }
 }

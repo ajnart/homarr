@@ -1,0 +1,52 @@
+{
+    "metaTitle": "사용자 만들기",
+    "steps": {
+        "account": {
+            "title": "첫 번째 단계",
+            "text": "계정 만들기",
+            "username": {
+                "label": "사용자 이름"
+            },
+            "email": {
+                "label": "이메일"
+            }
+        },
+        "security": {
+            "title": "두 번째 단계",
+            "text": "비밀번호",
+            "password": {
+                "label": "비밀번호"
+            }
+        },
+        "finish": {
+            "title": "확인",
+            "text": "데이터베이스에 저장",
+            "card": {
+                "title": "입력 내용 검토",
+                "text": "데이터를 데이터베이스에 제출하면 사용자가 로그인할 수 있습니다. 이 사용자를 데이터베이스에 저장하고 로그인을 활성화하시겠습니까?"
+            },
+            "table": {
+                "header": {
+                    "property": "속성",
+                    "value": "가치",
+                    "username": "사용자 이름",
+                    "email": "이메일",
+                    "password": "비밀번호"
+                },
+                "notSet": "설정되지 않음",
+                "valid": "유효"
+            },
+            "failed": "사용자 생성에 실패했습니다: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "사용자가 생성되었습니다.",
+                "text": "데이터베이스에 사용자가 생성되었습니다. 이제 로그인할 수 있습니다."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "무작위 생성",
+        "createAnother": "다른 만들기"
+    }
+}

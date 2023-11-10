@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Piekļūstamība",
       "description": "Homarr konfigurēšana lietotājiem ar invaliditāti un/vai ar īpašām vajadzībām"
+    },
+    "access": {
+      "name": "Piekļuve",
+      "description": "Konfigurējiet, kam ir piekļuve jūsu dēlim"
     }
   }
 }

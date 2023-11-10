@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Yönet",
+    "hero": {
+        "title": "Tekrar hoş geldin {{username}}!",
+        "fallbackUsername": "Anonim",
+        "subtitle": "Uygulama Merkezinize Hoş Geldiniz. Organize edin, Optimize edin ve Fethedin!"
+    },
+    "quickActions": {
+        "title": "Hızlı eylemler",
+        "boards": {
+            "title": "Panelleriniz",
+            "subtitle": "Panellerinizi oluşturun ve yönetin"
+        },
+        "inviteUsers": {
+            "title": "Yeni kullanıcı davet et",
+            "subtitle": "Kayıt için davetiye oluşturun ve gönderin"
+        },
+        "manageUsers": {
+            "title": "Kullanıcıları yönet",
+            "subtitle": "Kullanıcılarınızı silin ve yönetin"
+        }
+    }
+}

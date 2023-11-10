@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "媒体请求",
+    "description": "查看 Overr 或 Jellyseerr 实例中的所有媒体请求列表",
+    "settings": {
+      "title": "媒体请求列表",
+      "replaceLinksWithExternalHost": {
+        "label": "使用外部地址替换链接"
+      },
+      "openInNewTab": {
+        "label": "在新标签页中打开链接"
+      }
+    }
+  },
+  "noRequests": "未找到请求。请确保您已正确配置您的应用。",
+  "state": {
+    "approved": "已批准",
+    "pendingApproval": "待批准",
+    "declined": "已拒绝"
+  },
+  "tooltips": {
+    "approve": "批准请求",
+    "decline": "拒绝请求",
+    "approving": "正在批准请求..."
+  },
+  "mutation": {
+    "approving": "正在批准",
+    "declining": "拒绝中",
+    "request": "请求...",
+    "approved": "请求被批准！",
+    "declined": "请求被拒绝！"
+  }
+}

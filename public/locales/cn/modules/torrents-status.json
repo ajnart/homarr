@@ -1,0 +1,93 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "显示支持的 Torrent 客户端的 Torrent 列表。",
+    "settings": {
+      "title": "Torrent 组件设置",
+      "refreshInterval": {
+        "label": "刷新间隔（秒）"
+      },
+      "displayCompletedTorrents": {
+        "label": "显示已完成的种子"
+      },
+      "displayActiveTorrents": {
+        "label": "显示正活跃的种子"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "将torrent视为活动的上传速度(kB/s)"
+      },
+      "displayStaleTorrents": {
+        "label": "显示已过期的种子"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "标签列表是白名单 (而不是黑名单)"
+      },
+      "labelFilter": {
+        "label": "标签列表",
+        "description": "当选中 “白名单” 时，这将成为白名单。如果不选中，则是黑名单。为空时不会做任何事情。"
+      },
+      "displayRatioWithFilter": {
+        "label": "显示过滤后的 torrents 列表比例",
+        "info": "如果禁用，则只显示全局比率。如果设置为 \"禁用\"，全局比率仍将使用标签。"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "错误",
+      "lastUpdated": "最后更新于 {{time}} 前",
+      "ratioGlobal": "全局比率",
+      "ratioWithFilter": "含过滤后的比率"
+    },
+    "table": {
+      "header": {
+        "name": "名称",
+        "size": "大小",
+        "download": "下载",
+        "upload": "上传",
+        "estimatedTimeOfArrival": "剩余时间",
+        "progress": "进度"
+      },
+      "item": {
+        "text": "由 {{appName}}, {{ratio}} 管理的比率"
+      },
+      "body": {
+        "nothingFound": "没有找到种子",
+        "filterHidingItems": "您的过滤器隐藏了 {{count}} 条记录"
+      }
+    },
+    "lineChart": {
+      "title": "当前下载速度",
+      "download": "下载：{{download}}",
+      "upload": "上传： {{upload}}",
+      "timeSpan": "{{seconds}} 秒前",
+      "totalDownload": "下载： {{download}}/秒",
+      "totalUpload": "上传： {{upload}}/秒"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "没有找到支持的Torrent客户端!",
+        "text": "添加一个支持的 Torrent 客户端来查看您当前的下载情况"
+      },
+      "generic": {
+        "title": "发生了一个意外的错误",
+        "text": "无法与您的 Torrent 客户端通信。请检查您的配置"
+      }
+    },
+    "loading": {
+      "title": "加载中",
+      "description": "建立连接中"
+    },
+    "popover": {
+      "introductionPrefix": "管理方：",
+      "metrics": {
+        "queuePosition": "队列位置 - {{position}}",
+        "progress": "进度 - {{progress}}%",
+        "totalSelectedSize": "共计 - {{totalSize}}",
+        "state": "状态 - {{state}}",
+        "ratio": "比率 -",
+        "completed": "已完成"
+      }
+    }
+  }
+}

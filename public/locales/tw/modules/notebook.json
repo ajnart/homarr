@@ -1,0 +1,59 @@
+{
+	"descriptor": {
+		"name": "筆記本",
+		"description": "一個基於 Markdown 的交互式組件，供您紀錄！",
+		"settings": {
+			"title": "筆記本組件設定",
+			"showToolbar": {
+				"label": "顯示幫助您紀錄 Markdown 的工具欄"
+			},
+			"allowReadOnlyCheck": {
+				"label": "准許在唯讀模式中檢查"
+			},
+			"content": {
+				"label": "筆記本的內容"
+			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "粗體",
+			"italic": "斜體",
+			"strikethrough": "刪除線",
+			"underline": "下滑線",
+			"colorText": "文字顏色",
+			"colorHighlight": "高亮文字",
+			"code": "代碼",
+			"clear": "清除格式",
+			"heading": "標題 {{level}}",
+			"align": "對齊文字: {{position}}",
+			"blockquote": "引用",
+			"horizontalLine": "橫線",
+			"bulletList": "符號列表",
+			"orderedList": "順序列表",
+			"checkList": "檢查列表",
+			"increaseIndent": "增加縮進",
+			"decreaseIndent": "減小縮進",
+			"link": "連結",
+			"unlink": "刪除連結",
+			"image": "崁入圖片",
+			"addTable": "增加表格",
+			"deleteTable": "刪除表格",
+			"colorCell": "單元格顏色",
+			"mergeCell": "切換單元格合併",
+			"addColumnLeft": "在前方增加列",
+			"addColumnRight": "在後方增加列",
+			"deleteColumn": "刪除整列",
+			"addRowTop": "在前方增加行",
+			"addRowBelow": "在後方增加行",
+			"deleteRow": "刪除整行"
+		},
+		"modals": {
+			"clearColor": "清除顏色",
+			"source": "來源",
+			"widthPlaceholder": "百分比或像素值",
+			"columns": "列數",
+			"rows": "行數"
+		}
+	}
+}

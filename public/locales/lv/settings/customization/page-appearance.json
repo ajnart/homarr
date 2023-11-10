@@ -23,8 +23,5 @@
     "description": "Turklāt pielāgojiet paneli, izmantojot CSS, ieteicams tikai pieredzējušiem lietotājiem",
     "placeholder": "Pielāgotais CSS tiks piemērots pēdējais",
     "applying": "CSS piemērošana..."
-  },
-  "buttons": {
-    "submit": "Iesniegt"
   }
 }

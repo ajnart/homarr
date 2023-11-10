@@ -1,0 +1,32 @@
+{
+    "navigation": {
+        "home": {
+            "title": ""
+        },
+        "boards": {
+            "title": ""
+        },
+        "users": {
+            "title": "",
+            "items": {
+                "manage": "",
+                "invites": ""
+            }
+        },
+        "help": {
+            "title": "",
+            "items": {
+                "documentation": "",
+                "report": "",
+                "discord": "",
+                "contribute": ""
+            }
+        },
+        "tools": {
+            "title": "",
+            "items": {
+                "docker": "Dockah"
+            }
+        }
+    }
+}

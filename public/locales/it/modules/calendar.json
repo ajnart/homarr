@@ -4,12 +4,6 @@
     "description": "Mostra un calendario con le prossime versioni dalle integrazioni supportate.",
     "settings": {
       "title": "Impostazioni per il widget Calendario",
-      "useSonarrv4": {
-        "label": "Usa le API di Sonarr v4"
-      },
-      "sundayStart": {
-        "label": "Inizia la settimana di domenica"
-      },
       "radarrReleaseType": {
         "label": "Tipo di release Radarr",
         "data": {
@@ -22,7 +16,7 @@
         "label": "Nascondi giorni della settimana"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Mostra elementi non monitorati"
       },
       "fontSize": {
         "label": "Dimensioni carattere",

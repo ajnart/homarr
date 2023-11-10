@@ -41,6 +41,7 @@ jobs:
     permissions:
       packages: write
       contents: read
+      pull-requests: write
     steps:
 
       - name: Setup
@@ -70,11 +71,15 @@ jobs:
           path: .next/cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
-      - run: yarn install --immutable
+      - run: yarn install
 
       - run: yarn turbo build
 
-      - run: yarn test:run
+      - run: yarn test:coverage
+
+      - name: Report coverage
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
 
       - name: Docker meta
         if: github.event_name != 'pull_request'
@@ -114,3 +119,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          network: host

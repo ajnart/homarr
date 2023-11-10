@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Preferências",
+    "pageTitle": "Suas preferências",
+    "boards": {
+        "defaultBoard": {
+            "label": "Placa padrão"
+        }
+    },
+    "accessibility": {
+        "title": "Acessibilidade",
+        "disablePulse": {
+            "label": "Desativar pulso de ping",
+            "description": "Por padrão, os indicadores de ping no Homarr pulsam. Isso pode ser irritante. Esse controle deslizante desativará a animação"
+        },
+        "replaceIconsWithDots": {
+            "label": "Substitua os pontos de ping por ícones",
+            "description": "Para usuários daltônicos, os pontos de ping podem ser irreconhecíveis. Isso substituirá os indicadores por ícones"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Idioma"
+        },
+        "firstDayOfWeek": {
+            "label": "Primeiro dia da semana",
+            "options": {
+                "monday": "Segunda-feira",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motor de busca",
+        "custom": "Personalizado",
+        "newTab": {
+            "label": "Abrir os resultados da pesquisa em uma nova guia"
+        },
+        "autoFocus": {
+            "label": "Focar a barra de pesquisa no carregamento da página.",
+            "description": "Isso focalizará automaticamente a barra de pesquisa quando você navegar pelas páginas do fórum. Isso só funcionará em dispositivos desktop."
+        },
+        "template": {
+            "label": "Consulta URL",
+            "description": "Use %s como um espaço reservado para a consulta"
+        }
+    }
+}

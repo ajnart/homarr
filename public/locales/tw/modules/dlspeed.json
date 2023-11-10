@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "下載速度",
+    "description": "顯示集成中支援的下載和上傳速度"
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "名稱",
+        "size": "大小",
+        "download": "下載",
+        "upload": "上傳",
+        "estimatedTimeOfArrival": "剩餘時間",
+        "progress": "進度"
+      },
+      "body": {
+        "nothingFound": "無種子"
+      }
+    },
+    "lineChart": {
+      "title": "目前下載速度",
+      "download": "下載：{{download}}",
+      "upload": "上傳：{{upload}}",
+      "timeSpan": "{{seconds}}/秒",
+      "totalDownload": "下載：{{download}}/秒",
+      "totalUpload": "上傳：{{upload}}/秒"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "未找到支援的下載服務！",
+        "text": "新增下載服務已查看您目前的下載狀況"
+      }
+    }
+  }
+}

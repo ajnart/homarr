@@ -1,8 +1,6 @@
-import { Card, Divider, Flex, Grid, Group, Text } from '@mantine/core';
+import { Card, Divider, Flex, Group, Stack, Text } from '@mantine/core';
 import { IconDeviceMobile, IconId } from '@tabler/icons-react';
-import { useTranslation } from 'react-i18next';
-
-import { GenericSessionInfo } from '../../types/api/media-server/session-info';
+import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 
 export const DetailCollapseable = ({ session }: { session: GenericSessionInfo }) => {
   let details: { title: string; metrics: { name: string; value: string | undefined }[] }[] = [];
@@ -12,18 +10,18 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: "Video",
+          title: 'Video',
           metrics: [
             {
-              name: "Resolution",
+              name: 'Resolution',
               value: `${session.currentlyPlaying.metadata.video.width}x${session.currentlyPlaying.metadata.video.height}`,
             },
             {
-              name: "Framerate",
+              name: 'Framerate',
               value: session.currentlyPlaying.metadata.video.videoFrameRate,
             },
             {
-              name: "Video Codec",
+              name: 'Video Codec',
               value: session.currentlyPlaying.metadata.video.videoCodec,
             },
             {
@@ -40,14 +38,14 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: "Audio",
+          title: 'Audio',
           metrics: [
             {
-              name: "Audio Channels",
+              name: 'Audio Channels',
               value: `${session.currentlyPlaying.metadata.audio.audioChannels}`,
             },
             {
-              name: "Audio Codec",
+              name: 'Audio Codec',
               value: session.currentlyPlaying.metadata.audio.audioCodec,
             },
           ],
@@ -59,24 +57,24 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       details = [
         ...details,
         {
-          title: "Transcoding",
+          title: 'Transcoding',
           metrics: [
             {
-              name: "Resolution",
+              name: 'Resolution',
               value: `${session.currentlyPlaying.metadata.transcoding.width}x${session.currentlyPlaying.metadata.transcoding.height}`,
             },
             {
-              name: "Context",
+              name: 'Context',
               value: session.currentlyPlaying.metadata.transcoding.context,
             },
             {
-              name: "Hardware Encoding Requested",
+              name: 'Hardware Encoding Requested',
               value: session.currentlyPlaying.metadata.transcoding.transcodeHwRequested
                 ? 'yes'
                 : 'no',
             },
             {
-              name: "Source Codec",
+              name: 'Source Codec',
               value:
                 session.currentlyPlaying.metadata.transcoding.sourceAudioCodec ||
                 session.currentlyPlaying.metadata.transcoding.sourceVideoCodec
@@ -84,7 +82,7 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
                   : undefined,
             },
             {
-              name: "Target Codec",
+              name: 'Target Codec',
               value: `${session.currentlyPlaying.metadata.transcoding.videoCodec} ${session.currentlyPlaying.metadata.transcoding.audioCodec}`,
             },
           ],
@@ -110,23 +108,28 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
         <Text>{session.sessionName}</Text>
       </Flex>
       {details.length > 0 && (
-        <Divider label={"Stats for nerds"} labelPosition="center" mt="lg" mb="sm" />
+        <Divider label={'Stats for nerds'} labelPosition="center" mt="lg" mb="sm" />
       )}
-      <Grid>
+      <Group align="start">
         {details.map((detail, index) => (
-          <Grid.Col xs={12} sm={6} key={index}>
-            <Text weight="bold">{detail.title}</Text>
-            {detail.metrics
-              .filter((x) => x.value !== undefined)
-              .map((metric, index2) => (
-                <Group position="apart" key={index2}>
-                  <Text>{metric.name}</Text>
-                  <Text>{metric.value}</Text>
-                </Group>
-              ))}
-          </Grid.Col>
+          <>
+            <Stack spacing={0} key={index}>
+              <Text weight="bold">{detail.title}</Text>
+              {detail.metrics
+                .filter((x) => x.value !== undefined)
+                .map((metric, index2) => (
+                  <Group position="apart" key={index2}>
+                    <Text>{metric.name}</Text>
+                    <Text>{metric.value}</Text>
+                  </Group>
+                ))}
+            </Stack>
+            {index < details.length - 1 && (
+              <Divider key={'divider' + index} orientation="vertical" />
+            )}
+          </>
         ))}
-      </Grid>
+      </Group>
     </Card>
   );
 };

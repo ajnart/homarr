@@ -1,14 +1,16 @@
-import { create } from 'zustand';
+import { createWithEqualityFn } from 'zustand/traditional';
+import { useConfigContext } from '~/config/provider';
+import { GridstackBreakpoints } from '~/constants/gridstack-breakpoints';
 
-import { useConfigContext } from '../../../../config/provider';
-import { GridstackBreakpoints } from '../../../../constants/gridstack-breakpoints';
-
-export const useGridstackStore = create<GridstackStoreType>((set, get) => ({
-  mainAreaWidth: null,
-  currentShapeSize: null,
-  setMainAreaWidth: (w: number) =>
-    set((v) => ({ ...v, mainAreaWidth: w, currentShapeSize: getCurrentShapeSize(w) })),
-}));
+export const useGridstackStore = createWithEqualityFn<GridstackStoreType>(
+  (set, get) => ({
+    mainAreaWidth: null,
+    currentShapeSize: null,
+    setMainAreaWidth: (w: number) =>
+      set((v) => ({ ...v, mainAreaWidth: w, currentShapeSize: getCurrentShapeSize(w) })),
+  }),
+  Object.is
+);
 
 interface GridstackStoreType {
   mainAreaWidth: null | number;

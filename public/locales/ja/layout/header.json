@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "これはHomarrの実験的な機能です。問題があれば <gh>GitHub</gh> または <dc>Discord</dc>に報告してください。"
+    },
+    "search": {
+        "label": "検索",
+        "engines": {
+            "web": "{{query}} をウェブで検索",
+            "youtube": "YouTubeで {{query}} を検索",
+            "torrent": "{{query}} のトレントを検索",
+            "movie": "{{app}}で {{query}} を検索"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "スイッチテーマ",
+            "preferences": "ユーザー設定",
+            "defaultBoard": "デフォルトのダッシュボード",
+            "manage": "管理",
+            "logout": "{{username}}からログアウト",
+            "login": "ログイン"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "トップ {{count}} の検索結果 <b>{{search}}</b>."
+        }
+    }
+}

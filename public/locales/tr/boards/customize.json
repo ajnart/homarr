@@ -1,0 +1,29 @@
+{
+    "metaTitle": "{{name}} Panelini Özelleştir",
+    "pageTitle": "{{name}} Paneli için özelleştirme",
+    "backToBoard": "Panele dön",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Birincil renk",
+            "secondaryColor": "İkincil renk"
+        }
+    },
+    "save": {
+        "button": "Değişiklikleri kaydet",
+        "note": "Dikkatli olun, kaydedilmemiş değişiklikleriniz var!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Özelleştirmeyi Kaydet",
+            "message": "Özelleştirmeleriniz kaydedilirken lütfen bekleyin"
+        },
+        "success": {
+            "title": "Özelleştirmeleriniz kaydedildi",
+            "message": "Özelleştirmeleriniz başarıyla kaydedildi"
+        },
+        "error": {
+            "title": "Hata",
+            "message": "Değişiklikler kaydedilemiyor"
+        }
+    }
+}

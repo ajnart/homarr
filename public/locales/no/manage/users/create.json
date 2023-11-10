@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Opprett bruker",
+    "steps": {
+        "account": {
+            "title": "Steg en",
+            "text": "Opprett konto",
+            "username": {
+                "label": "Brukernavn"
+            },
+            "email": {
+                "label": "E-post"
+            }
+        },
+        "security": {
+            "title": "Steg to",
+            "text": "Passord",
+            "password": {
+                "label": "Passord"
+            }
+        },
+        "finish": {
+            "title": "Bekreftelse",
+            "text": "Lagre til database",
+            "card": {
+                "title": "Gjennomgå inndata",
+                "text": "Etter at du har sendt inn dataene dine til databasen, vil brukeren kunne logge inn. Er du sikker på at du vil lagre denne brukeren i databasen og aktivere påloggingen?"
+            },
+            "table": {
+                "header": {
+                    "property": "Egenskap",
+                    "value": "Verdi",
+                    "username": "Brukernavn",
+                    "email": "E-post",
+                    "password": "Passord"
+                },
+                "notSet": "Ikke satt",
+                "valid": "Gyldig"
+            },
+            "failed": "Brukeropprettelsen mislyktes: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Bruker ble opprettet",
+                "text": "Brukeren ble opprettet i databasen. De kan nå logge inn."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generer tilfeldig",
+        "createAnother": "Lag en til"
+    }
+}

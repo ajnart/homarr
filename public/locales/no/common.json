@@ -1,15 +1,21 @@
 {
   "save": "Lagre",
+  "apply": "Bruk",
+  "insert": "Sett inn",
   "about": "Info",
   "cancel": "Avbryt",
   "close": "Lukk",
+  "back": "Tilbake",
   "delete": "Slett",
   "ok": "OK",
   "edit": "Rediger",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "next": "Neste",
+  "previous": "Tidligere",
+  "confirm": "Bekreft",
+  "enabled": "Aktivert",
+  "disabled": "Deaktivert",
+  "enableAll": "Aktiver alle",
+  "disableAll": "Deaktiver alle",
   "version": "Versjon",
   "changePosition": "Endre posisjon",
   "remove": "Fjern",
@@ -36,5 +42,14 @@
     "medium": "middels",
     "large": "stor"
   },
-  "seeMore": ""
+  "seeMore": "Se mer...",
+  "position": {
+    "left": "Venstre",
+    "center": "Midtstilt",
+    "right": "Høyre"
+  },
+  "attributes": {
+    "width": "Bredde",
+    "height": "Høyde"
+  }
 }

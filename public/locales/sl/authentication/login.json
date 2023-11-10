@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Prijava",
   "title": "Dobrodošli nazaj!",
-  "text": "Prosimo, vnesite svoje geslo",
+  "text": "Vnesite svoje poverilnice",
   "form": {
     "fields": {
+      "username": {
+        "label": "Uporabniško ime"
+      },
       "password": {
-        "label": "Geslo",
-        "placeholder": "Vaše geslo"
+        "label": "Geslo"
       }
     },
     "buttons": {
       "submit": "Prijava"
-    }
+    },
+    "afterLoginRedirection": "Po prijavi boste preusmerjeni na spletno stran {{url}}."
   },
-  "notifications": {
-    "checking": {
-      "title": "Preverjanje gesla",
-      "message": "Preverjamo vaše geslo..."
-    },
-    "correct": {
-      "title": "Prijava uspešna, preusmeritev..."
-    },
-    "wrong": {
-      "title": "Vneseno geslo je napačno, poskusite znova."
-    }
-  }
+  "alert": "Vaše poverilnice so napačne ali pa ta račun ne obstaja. Poskusite znova."
 }

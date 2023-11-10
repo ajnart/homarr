@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Inloggen",
   "title": "Welkom terug!",
-  "text": "Voer uw wachtwoord in",
+  "text": "Voer uw referenties in",
   "form": {
     "fields": {
+      "username": {
+        "label": "Gebruikersnaam"
+      },
       "password": {
-        "label": "Wachtwoord",
-        "placeholder": "Uw wachtwoord"
+        "label": "Wachtwoord"
       }
     },
     "buttons": {
       "submit": "Inloggen"
-    }
+    },
+    "afterLoginRedirection": "Na het inloggen wordt u doorgestuurd naar {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Bezig met uw wachtwoord controleren",
-      "message": "Uw wachtwoord wordt gecontroleerd..."
-    },
-    "correct": {
-      "title": "Log in succesvol, redirect..."
-    },
-    "wrong": {
-      "title": "Het ingevoerde wachtwoord is onjuist, probeer het opnieuw."
-    }
-  }
+  "alert": "Je gegevens zijn onjuist of deze account bestaat niet. Probeer het opnieuw."
 }

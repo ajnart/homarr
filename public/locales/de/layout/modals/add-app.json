@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Interne Adresse",
-			"description": "Interne IP-Adresse der Anwendung."
+			"description": "Interne IP-Adresse der Anwendung.",
+			"troubleshoot": {
+				"label": "Haben Sie Probleme?",
+				"header": "Hier finden Sie eine Liste der am häufigsten gemachten Fehler und deren Behebung:",
+				"lines": {
+					"nothingAfterPort": "Sie sollten in den meisten Fällen keinen Pfad nach dem Port eingeben (z.b. auch '/admin' für Pihole oder '/web' für Plex)",
+					"protocolCheck": "Achten Sie immer darauf, dass der URL ein http oder https vorangestellt ist, und stellen Sie sicher, dass Sie die richtige URL verwenden.",
+					"preferIP": "Es wird empfohlen, die direkte IP-Adresse der Maschine oder des Containers zu verwenden, mit der/dem Sie kommunizieren möchten.",
+					"enablePings": "Prüfen Sie, ob die IP erreichbar ist, indem Sie Pings aktivieren. Passen Sie das Board an -> Layout -> Pings aktivieren. Eine kleine rote oder grüne Blase erscheint auf Ihren App-Kacheln und wenn Sie sie anklicken, wird der Antwortcode angezeigt (in den meisten Fällen wird eine grüne Blase mit dem Code 200 erwartet).",
+					"wget": "Um sicherzustellen, dass homarr mit den anderen Anwendungen kommunizieren kann, stellen Sie sicher, dass Sie mit wget/curl/ping die IP:Port der Anwendung ermitteln.",
+					"iframe": "Wenn es um iframes geht, sollten diese immer das gleiche Protokoll (http/s) wie Homarr verwenden.",
+					"clearCache": "Einige Informationen werden im Cache gespeichert, so dass eine Integration möglicherweise nicht funktioniert, bis Sie den Cache in den allgemeinen Optionen von Homarr löschen."
+				},
+				"footer": "Für weitere Fehlerbehebungen wenden Sie sich bitte an unseren {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Externe Adresse",

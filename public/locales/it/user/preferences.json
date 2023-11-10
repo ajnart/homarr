@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Impostazioni",
+    "pageTitle": "Le tue impostazioni",
+    "boards": {
+        "defaultBoard": {
+            "label": "Board predefinita"
+        }
+    },
+    "accessibility": {
+        "title": "Accessibilità",
+        "disablePulse": {
+            "label": "Disabilita impulso ping",
+            "description": "Come impostazione predefinita, gli indicatori di ping in Homarr pulsano. Ciò può essere irritante. Questo slider disattiverà l'animazione"
+        },
+        "replaceIconsWithDots": {
+            "label": "Sostituisci punti ping con icone",
+            "description": "Per gli utenti daltonici, i punti ping potrebbero essere irriconoscibili. Questo sostituirà gli indicatori con le icone"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Lingua"
+        },
+        "firstDayOfWeek": {
+            "label": "Primo giorno della settimana",
+            "options": {
+                "monday": "Lunedì",
+                "saturday": "Sabato",
+                "sunday": "Domenica"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motore di ricerca",
+        "custom": "Personalizzato",
+        "newTab": {
+            "label": "Apri i risultati di ricerca in una nuova scheda"
+        },
+        "autoFocus": {
+            "label": "Focalizza la barra di ricerca sul caricamento della pagina.",
+            "description": "Questo focalizzerà automaticamente la barra di ricerca, quando si passa alle pagine della board. Funzionerà solo su dispositivi desktop."
+        },
+        "template": {
+            "label": "URL di ricerca",
+            "description": "Usa %s come segnaposto per la query"
+        }
+    }
+}

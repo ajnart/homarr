@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Connexion",
   "title": "Bienvenue !",
-  "text": "Veuillez entrer votre mot de passe",
+  "text": "Veuillez saisir vos identifiants",
   "form": {
     "fields": {
+      "username": {
+        "label": "Nom d'utilisateur"
+      },
       "password": {
-        "label": "Mot de passe",
-        "placeholder": "Votre mot de passe"
+        "label": "Mot de passe"
       }
     },
     "buttons": {
       "submit": "Se connecter"
-    }
+    },
+    "afterLoginRedirection": "Après la connexion, vous serez redirigé vers {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Vérification de votre mot de passe",
-      "message": "Votre mot de passe est en cours de vérification..."
-    },
-    "correct": {
-      "title": "Inscription réussie, redirection..."
-    },
-    "wrong": {
-      "title": "Le mot de passe saisi est incorrect, veuillez réessayer."
-    }
-  }
+  "alert": "Vos identifiants sont incorrects ou ce compte n'existe pas. Veuillez réessayer."
 }

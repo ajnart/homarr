@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Người dùng",
+    "pageTitle": "Quản lý người dùng",
+    "text": "Bằng cách sử dụng người dùng, bạn có thể định cấu hình ai có thể chỉnh sửa trang tổng quan của mình. Các phiên bản tương lai của Homarr sẽ có quyền kiểm soát chi tiết hơn đối với các quyền và bảng.",
+    "buttons": {
+        "create": "Tạo nên"
+    },
+    "table": {
+        "header": {
+            "user": "Người dùng"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Xóa người dùng",
+        "demoteAdmin": "Giảm hạng quản trị viên",
+        "promoteToAdmin": "Thăng tiến lên quản trị viên"
+    },
+    "modals": {
+        "delete": {
+            "title": "Xóa người dùng {{name}}",
+            "text": "Bạn có chắc chắn muốn xóa người dùng {{name}}không? Thao tác này sẽ xóa dữ liệu được liên kết với tài khoản này chứ không phải bất kỳ trang tổng quan nào được người dùng này tạo."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Thăng cấp người dùng {{name}} lên quản trị viên",
+                "text": "Bạn có chắc chắn muốn thăng cấp người dùng {{name}} lên quản trị viên không? Điều này sẽ cấp cho người dùng quyền truy cập vào tất cả các tài nguyên trên phiên bản Homarr của bạn."
+            },
+            "demote": {
+                "title": "Hạ cấp người dùng {{name}} xuống người dùng",
+                "text": "Bạn có chắc chắn muốn hạ cấp người dùng {{name}} xuống người dùng không? Thao tác này sẽ xóa quyền truy cập của người dùng vào tất cả tài nguyên trên phiên bản Homarr của bạn."
+            },
+            "confirm": "Xác nhận"
+        }
+    },
+    "searchDoesntMatch": "Tìm kiếm của bạn không khớp với bất kỳ mục nào. Vui lòng điều chỉnh bộ lọc của bạn."
+}

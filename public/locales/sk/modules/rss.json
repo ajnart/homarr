@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS mini aplikácia",
-    "description": "",
+    "description": "Widget rss umožňuje zobrazovať kanály RSS na ovládacom paneli.",
     "settings": {
       "title": "Nastavenia mini aplikácie RSS",
       "rssFeedUrl": {

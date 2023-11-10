@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Docker is niet geconfigureerd in je Homarr instance of het is mislukt om containers op te halen. Raadpleeg de documentatie over het opzetten van de integratie."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Kies een bord",
+            "text": "Kies het bord waar je de apps voor de geselecteerde Docker-containers wilt toevoegen.",
+            "form": {
+                "board": {
+                    "label": "Raad van bestuur"
+                },
+                "submit": "Apps toevoegen"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Apps toegevoegd aan bord",
+                "message": "De apps voor de geselecteerde Docker-containers zijn toegevoegd aan het bord."
+            },
+            "error": {
+                "title": "Het is niet gelukt apps toe te voegen aan het bord",
+                "message": "De apps voor de geselecteerde Docker-containers konden niet worden toegevoegd aan het bord."
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Pielāgojiet {{name}} Dēli",
+    "pageTitle": "Pielāgošana priekš {{name}} Dēļa",
+    "backToBoard": "Atgriezties pie dēļa",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Pamatkrāsa",
+            "secondaryColor": "Sekundārā krāsa"
+        }
+    },
+    "save": {
+        "button": "Saglabāt izmaiņas",
+        "note": "Uzmanīgi, jums ir nesaglabātas izmaiņas!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Pielāgošanas saglabāšana",
+            "message": "Lūdzu, pagaidiet, kamēr mēs saglabāsim jūsu pielāgojumus"
+        },
+        "success": {
+            "title": "Pielāgošana saglabāta",
+            "message": "Jūsu pielāgojumi ir veiksmīgi saglabāti"
+        },
+        "error": {
+            "title": "Kļūda",
+            "message": "Neizdevās saglabāt izmaiņas"
+        }
+    }
+}

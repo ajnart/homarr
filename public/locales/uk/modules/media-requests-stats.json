@@ -8,20 +8,20 @@
         "label": "Замініть посилання на зовнішній хост"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Відкрийте посилання в новій вкладці"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Медіа-статистика",
+    "pending": "Очікує схвалення",
+    "tvRequests": "Запити на ТБ",
+    "movieRequests": "Запити на фільми",
+    "approved": "Вже затверджено",
+    "totalRequests": "Всього"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Найкращі користувачі",
+    "requests": "Запити: {{number}}"
   }
 }

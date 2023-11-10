@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Manage",
+    "hero": {
+        "title": "Welcome back, {{username}}",
+        "fallbackUsername": "Anonymous",
+        "subtitle": "Welcome to Your Application Hub. Organize, Optimize and Conquer!"
+    },
+    "quickActions": {
+        "title": "Quick actions",
+        "boards": {
+            "title": "Your boards",
+            "subtitle": "Create and manage your boards"
+        },
+        "inviteUsers": {
+            "title": "Invite a new user",
+            "subtitle": "Create and send an invitation for registration"
+        },
+        "manageUsers": {
+            "title": "Manage users",
+            "subtitle": "Delete and manage your users"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Crea utente",
+    "steps": {
+        "account": {
+            "title": "Primo passo",
+            "text": "Crea account",
+            "username": {
+                "label": "Nome utente"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Secondo passo",
+            "text": "Password",
+            "password": {
+                "label": "Password"
+            }
+        },
+        "finish": {
+            "title": "Conferma",
+            "text": "Salva nel database",
+            "card": {
+                "title": "Rivedi i tuoi input",
+                "text": "Dopo aver inviato i dati al database, l'utente potrà effettuare il login. Siete sicuri di voler memorizzare questo utente nel database e attivare il login?"
+            },
+            "table": {
+                "header": {
+                    "property": "Proprietà",
+                    "value": "Valore",
+                    "username": "Nome utente",
+                    "email": "E-mail",
+                    "password": "Password"
+                },
+                "notSet": "Non impostato",
+                "valid": "Valido"
+            },
+            "failed": "Creazione utente non riuscita: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Utente creato",
+                "text": "L'utente è stato creato nel database. Ora può effettuare il login."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Genera casualmente",
+        "createAnother": "Crea un altro"
+    }
+}

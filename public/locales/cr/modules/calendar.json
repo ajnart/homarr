@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "crwdns1366:0crwdne1366:0",
+    "description": "crwdns2331:0crwdne2331:0",
+    "settings": {
+      "title": "crwdns2333:0crwdne2333:0",
+      "radarrReleaseType": {
+        "label": "crwdns2269:0crwdne2269:0",
+        "data": {
+          "inCinemas": "crwdns3123:0crwdne3123:0",
+          "physicalRelease": "crwdns3125:0crwdne3125:0",
+          "digitalRelease": "crwdns3127:0crwdne3127:0"
+        }
+      },
+      "hideWeekDays": {
+        "label": "crwdns2993:0crwdne2993:0"
+      },
+      "showUnmonitored": {
+        "label": "crwdns3335:0crwdne3335:0"
+      },
+      "fontSize": {
+        "label": "crwdns2995:0crwdne2995:0",
+        "data": {
+          "xs": "crwdns3129:0crwdne3129:0",
+          "sm": "crwdns3131:0crwdne3131:0",
+          "md": "crwdns3133:0crwdne3133:0",
+          "lg": "crwdns3135:0crwdne3135:0",
+          "xl": "crwdns3137:0crwdne3137:0"
+        }
+      }
+    }
+  }
+}

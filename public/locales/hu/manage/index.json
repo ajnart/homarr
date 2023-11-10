@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Kezelés",
+    "hero": {
+        "title": "Üdvözöllek újra, {{username}}",
+        "fallbackUsername": "Névtelen",
+        "subtitle": "Üdvözöljük az Ön Application Hubjában. Szervezzen, optimalizáljon és hódítson!"
+    },
+    "quickActions": {
+        "title": "Gyors műveletek",
+        "boards": {
+            "title": "Az Ön táblái",
+            "subtitle": "Hozzon létre és kezelje tábláit"
+        },
+        "inviteUsers": {
+            "title": "Új felhasználó meghívása",
+            "subtitle": "Regisztrációs meghívó létrehozása és elküldése"
+        },
+        "manageUsers": {
+            "title": "Felhasználók kezelése",
+            "subtitle": "Felhasználók törlése és kezelése"
+        }
+    }
+}

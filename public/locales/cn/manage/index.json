@@ -1,0 +1,23 @@
+{
+    "metaTitle": "管理",
+    "hero": {
+        "title": "欢迎回来，{{username}}！",
+        "fallbackUsername": "匿名",
+        "subtitle": "欢迎来到您的应用程序中心。组织、优化和征服!"
+    },
+    "quickActions": {
+        "title": "快捷操作",
+        "boards": {
+            "title": "您的面板",
+            "subtitle": "创建和管理您的面板"
+        },
+        "inviteUsers": {
+            "title": "邀请新用户",
+            "subtitle": "创建并发送注册邀请"
+        },
+        "manageUsers": {
+            "title": "管理用户",
+            "subtitle": "删除和管理您的用户"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "description": "",
+    "button": {
+        "createInvite": "",
+        "deleteInvite": ""
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "",
+            "expires": "",
+            "action": ""
+        },
+        "data": {
+            "expiresAt": "",
+            "expiresIn": ""
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "",
+            "description": "",
+            "form": {
+                "expires": "",
+                "submit": ""
+            }
+        },
+        "copy": {
+            "title": "",
+            "description": "",
+            "invitationLink": "",
+            "details": {
+                "id": "ID",
+                "token": ""
+            },
+            "button": {
+                "close": ""
+            }
+        },
+        "delete": {
+            "title": "",
+            "description": ""
+        }
+    },
+    "noInvites": ""
+}

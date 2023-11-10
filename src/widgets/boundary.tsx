@@ -4,8 +4,8 @@ import { IconBrandGithub, IconBug, IconInfoCircle, IconRefresh } from '@tabler/i
 import Consola from 'consola';
 import { withTranslation } from 'next-i18next';
 import React, { ReactNode } from 'react';
+import { WidgetsMenu } from '~/components/Dashboard/Tiles/Widgets/WidgetsMenu';
 
-import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import { IWidget } from './widgets';
 
 type ErrorBoundaryState = {

@@ -1,0 +1,59 @@
+{
+	"descriptor": {
+		"name": "笔记本",
+		"description": "一个基于 Markdown 的交互式组件，供您写下笔记！",
+		"settings": {
+			"title": "笔记本组件设置",
+			"showToolbar": {
+				"label": "显示帮助您写下 Markdown 的工具栏"
+			},
+			"allowReadOnlyCheck": {
+				"label": "允许在只读模式中检查"
+			},
+			"content": {
+				"label": "笔记本的内容"
+			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "粗体",
+			"italic": "斜体",
+			"strikethrough": "删除线",
+			"underline": "下划线",
+			"colorText": "文字颜色",
+			"colorHighlight": "彩色高亮文本",
+			"code": "代码",
+			"clear": "清除格式",
+			"heading": "标题 {{level}}",
+			"align": "对齐文本： {{position}}",
+			"blockquote": "引用",
+			"horizontalLine": "横线",
+			"bulletList": "符号列表",
+			"orderedList": "顺序列表",
+			"checkList": "检查列表",
+			"increaseIndent": "增加缩进",
+			"decreaseIndent": "减小缩进",
+			"link": "链接",
+			"unlink": "删除链接",
+			"image": "嵌入图片",
+			"addTable": "添加表格",
+			"deleteTable": "删除表格",
+			"colorCell": "单元格颜色",
+			"mergeCell": "切换单元格合并",
+			"addColumnLeft": "在前面添加列",
+			"addColumnRight": "在后面添加列",
+			"deleteColumn": "删除整列",
+			"addRowTop": "在前面添加行",
+			"addRowBelow": "在后面添加行",
+			"deleteRow": "删除整行"
+		},
+		"modals": {
+			"clearColor": "清除颜色",
+			"source": "来源",
+			"widthPlaceholder": "百分比或像素值",
+			"columns": "列数",
+			"rows": "行数"
+		}
+	}
+}

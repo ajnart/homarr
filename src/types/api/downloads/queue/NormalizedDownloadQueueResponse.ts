@@ -1,6 +1,5 @@
 import { NormalizedTorrent } from '@ctrl/shared-torrent';
-
-import { UsenetQueueItem } from '../../../../widgets/useNet/types';
+import { UsenetQueueItem } from '~/widgets/useNet/types';
 
 export type NormalizedDownloadQueueResponse = {
   apps: NormalizedDownloadAppStat[];

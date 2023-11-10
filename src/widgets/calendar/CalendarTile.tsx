@@ -1,13 +1,13 @@
 import { useMantineTheme } from '@mantine/core';
 import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
+import { useConfigContext } from '~/config/provider';
 import { getLanguageByCode } from '~/tools/language';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
-import { useEditModeStore } from '../../components/Dashboard/Views/useEditModeStore';
-import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
@@ -26,33 +26,15 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: false,
     },
-    useSonarrv4: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    sundayStart: {
-      type: 'switch',
-      defaultValue: false,
-    },
     radarrReleaseType: {
       type: 'select',
       defaultValue: 'inCinemas',
-      data: [
-        { value: 'inCinemas' },
-        { value: 'physicalRelease' },
-        { value: 'digitalRelease' },
-      ],
+      data: [{ value: 'inCinemas' }, { value: 'physicalRelease' }, { value: 'digitalRelease' }],
     },
     fontSize: {
       type: 'select',
       defaultValue: 'xs',
-      data: [
-        { value: 'xs' },
-        { value: 'sm' },
-        { value: 'md' },
-        { value: 'lg' },
-        { value: 'xl' },
-      ],
+      data: [{ value: 'xs' }, { value: 'sm' }, { value: 'md' }, { value: 'lg' }, { value: 'xl' }],
     },
   },
   gridstack: {
@@ -71,27 +53,33 @@ interface CalendarTileProps {
 }
 
 function CalendarTile({ widget }: CalendarTileProps) {
-  const { locale } = useRouter();
   const { colorScheme, radius } = useMantineTheme();
   const { name: configName } = useConfigContext();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: !!sessionData?.user,
+  });
 
-  const language = getLanguageByCode(locale ?? 'en');
-  require(`dayjs/locale/${language.locale}.js`);
+  const language = getLanguageByCode(userWithSettings?.settings.language ?? 'en');
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
       configName: configName!,
       month: month.getMonth() + 1,
       year: month.getFullYear(),
-      options: { useSonarrv4: widget.properties.useSonarrv4, showUnmonitored: widget.properties.showUnmonitored },
+      options: {
+        showUnmonitored: widget.properties.showUnmonitored,
+      },
     },
     {
       staleTime: 1000 * 60 * 60 * 5,
       enabled: isEditMode === false,
     }
   );
+
+  const firstDayOfWeek = userWithSettings?.settings.firstDayOfWeek ?? 'monday';
 
   return (
     <Calendar
@@ -100,12 +88,11 @@ function CalendarTile({ widget }: CalendarTileProps) {
       onNextMonth={setMonth}
       size={widget.properties.fontSize}
       locale={language.locale}
-      firstDayOfWeek={widget.properties.sundayStart ? 0 : 1}
+      firstDayOfWeek={getFirstDayOfWeek(firstDayOfWeek)}
       hideWeekdays={widget.properties.hideWeekDays}
       style={{ position: 'relative' }}
       date={month}
       maxLevel="month"
-      hasNextLevel={false}
       styles={{
         calendarHeader: {
           maxWidth: 'inherit',
@@ -156,6 +143,13 @@ function CalendarTile({ widget }: CalendarTileProps) {
   );
 }
 
+const getFirstDayOfWeek = (
+  firstDayOfWeek: RouterOutputs['user']['withSettings']['settings']['firstDayOfWeek']
+) => {
+  if (firstDayOfWeek === 'sunday') return 0;
+  if (firstDayOfWeek === 'monday') return 1;
+  return 6;
+};
 const getReleasedMediasForDate = (
   medias: MediasType | undefined,
   date: Date,

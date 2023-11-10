@@ -1,0 +1,29 @@
+{
+    "metaTitle": "התאם אישית את לוח {{name}}",
+    "pageTitle": "התאמה אישית ללוח {{name}}",
+    "backToBoard": "חזרה ללוח",
+    "settings": {
+        "appearance": {
+            "primaryColor": "צבע ראשי",
+            "secondaryColor": "צבע משני"
+        }
+    },
+    "save": {
+        "button": "שמור שינויים",
+        "note": "הזהר - יש לך שינויים שאינם נשמרו!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "שמירת התאמה אישית",
+            "message": "אנא המתן בזמן שאנו שומרים את ההתאמה האישית שלך"
+        },
+        "success": {
+            "title": "ההתאמה האישית נשמרה",
+            "message": "ההתאמה האישית שלך נשמרה בהצלחה"
+        },
+        "error": {
+            "title": "שגיאה",
+            "message": "לא ניתן לשמור שינויים"
+        }
+    }
+}

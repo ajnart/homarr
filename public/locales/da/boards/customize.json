@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Tilpas {{name}} Board",
+    "pageTitle": "Tilpasning til {{name}} Board",
+    "backToBoard": "Tilbage til board",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primær farve",
+            "secondaryColor": "Sekundær farve"
+        }
+    },
+    "save": {
+        "button": "Gem ændringer",
+        "note": "Pas på, du har ændringer, der ikke er gemt!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Gemmer tilpasning",
+            "message": "Vent venligst, mens vi gemmer din tilpasning"
+        },
+        "success": {
+            "title": "Tilpasning gemt",
+            "message": "Din tilpasning er blevet gemt med succes"
+        },
+        "error": {
+            "title": "Fejl",
+            "message": "Kan ikke gemme ændringer"
+        }
+    }
+}

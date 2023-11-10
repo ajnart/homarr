@@ -1,0 +1,29 @@
+{
+    "metaTitle": "カスタマイズ {{name}} ボード",
+    "pageTitle": "{{name}} ボードのカスタマイズ",
+    "backToBoard": "ボードに戻る",
+    "settings": {
+        "appearance": {
+            "primaryColor": "原色",
+            "secondaryColor": "セカンダリーカラー"
+        }
+    },
+    "save": {
+        "button": "変更を保存する",
+        "note": "気をつけて！"
+    },
+    "notifications": {
+        "pending": {
+            "title": "カスタマイズの保存",
+            "message": "カスタマイズ内容を保存しますので、しばらくお待ちください。"
+        },
+        "success": {
+            "title": "カスタマイズの保存",
+            "message": "カスタマイズが正常に保存されました"
+        },
+        "error": {
+            "title": "エラー",
+            "message": "変更を保存できない"
+        }
+    }
+}

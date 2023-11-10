@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "該字段無效",
+        "required": "此字段為必填",
+        "string": {
+            "startsWith": "該字段必須以 {{startsWith}} 開頭",
+            "endsWith": "該字段必須以 {{endsWith}} 結尾",
+            "includes": "該字段必須以 {{includes}}"
+        },
+        "tooSmall": {
+            "string": "該字段長度必須至少為 {{minimum}} 個字符",
+            "number": "該字段必須大於或等於 {{minimum}}"
+        },
+        "tooBig": {
+            "string": "該字段長度不得超過 {{maximum}} 個字符",
+            "number": "該字段必須小於或等於 {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "再次輸入的密碼必須一致"
+        }
+    }
+}

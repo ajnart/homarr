@@ -1,7 +1,7 @@
 {
   "title": "Moteur de recherche",
   "configurationName": "Configuration du moteur de recherche",
-  "custom": "",
+  "custom": "Personnalisé",
   "tips": {
     "generalTip": "Vous pouvez utiliser plusieurs préfixes ! L'ajout de ces préfixes devant votre requête filtrera les résultats. !s (Web), !t (Torrents), !y (YouTube), et !m (Media).",
     "placeholderTip": "%s peut être utilisé en tant que placeholder pour la requête."

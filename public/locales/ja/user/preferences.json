@@ -1,0 +1,48 @@
+{
+    "metaTitle": "好み",
+    "pageTitle": "あなたの好み",
+    "boards": {
+        "defaultBoard": {
+            "label": "デフォルト・ボード"
+        }
+    },
+    "accessibility": {
+        "title": "アクセシビリティ",
+        "disablePulse": {
+            "label": "Pingパルスを無効にする",
+            "description": "デフォルトでは、HomarrのPingインジケータはパルスを発生させます。これは刺激的な可能性があります。このスライダーはアニメーションを無効にします"
+        },
+        "replaceIconsWithDots": {
+            "label": "Pingのドットをアイコンに置き換える",
+            "description": "色覚障害のユーザーの場合、ping点が認識できない可能性があります。これはインジケータをアイコンに置き換えます。"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "言語"
+        },
+        "firstDayOfWeek": {
+            "label": "週の初日",
+            "options": {
+                "monday": "月曜日",
+                "saturday": "土曜日",
+                "sunday": "日曜日"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "検索エンジン",
+        "custom": "カスタム",
+        "newTab": {
+            "label": "検索結果を新しいタブで開く"
+        },
+        "autoFocus": {
+            "label": "ページロード時に検索バーをフォーカスする。",
+            "description": "これにより、掲示板のページに移動すると、自動的に検索バーがフォーカスされます。デスクトップデバイスでのみ機能します。"
+        },
+        "template": {
+            "label": "クエリURL",
+            "description": "%s 、クエリーのプレースホルダーとして使用する。"
+        }
+    }
+}

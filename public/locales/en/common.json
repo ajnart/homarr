@@ -1,11 +1,17 @@
 {
   "save": "Save",
+  "apply": "Apply",
+  "insert": "Insert",
   "about": "About",
   "cancel": "Cancel",
   "close": "Close",
+  "back": "Back",
   "delete": "Delete",
   "ok": "OK",
   "edit": "Edit",
+  "next": "Next",
+  "previous": "Previous",
+  "confirm": "Confirm",
   "enabled": "Enabled",
   "disabled": "Disabled",
   "enableAll": "Enable all",
@@ -36,5 +42,14 @@
     "medium": "medium",
     "large": "large"
   },
-  "seeMore": "See more..."
+  "seeMore": "See more...",
+  "position": {
+		"left": "Left",
+		"center": "Center",
+		"right": "Right"
+  },
+  "attributes": {
+    "width": "Width",
+    "height": "Height"
+  }
 }

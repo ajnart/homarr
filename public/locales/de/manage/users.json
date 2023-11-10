@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Benutzer",
+    "pageTitle": "Verwaltung von Benutzern",
+    "text": "Mit Benutzern können Sie konfigurieren, wer Ihre Dashboards bearbeiten kann. Zukünftige Versionen von Homarr werden eine noch detailliertere Kontrolle über Berechtigungen und Boards haben.",
+    "buttons": {
+        "create": "Erstellen"
+    },
+    "table": {
+        "header": {
+            "user": "Benutzer"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Benutzer löschen",
+        "demoteAdmin": "Administrator degradieren",
+        "promoteToAdmin": "Zum Administrator befördern"
+    },
+    "modals": {
+        "delete": {
+            "title": "Benutzer \"{{name}}\" löschen",
+            "text": "Sind Sie sicher, dass Sie den Benutzer {{name}} löschen möchten? Dadurch werden die mit diesem Konto verbundenen Daten gelöscht, nicht aber die von diesem Benutzer erstellten Dashboards."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Benutzer {{name}} zum Administrator ernennen",
+                "text": "Sind Sie sicher, dass Sie den Benutzer {{name}} zum Admin befördern wollen? Dadurch erhält der Benutzer Zugriff auf alle Ressourcen in Ihrer Homarr-Instanz."
+            },
+            "demote": {
+                "title": "Benutzer {{name}} zum Benutzer degradieren",
+                "text": "Sind Sie sicher, dass Sie den Benutzer {{name}} zum Benutzer degradieren wollen? Dadurch wird dem Benutzer der Zugriff auf alle Ressourcen in Ihrer Homarr-Instanz entzogen."
+            },
+            "confirm": "Bestätigen"
+        }
+    },
+    "searchDoesntMatch": "Ihre Suche ergab keine Treffer. Bitte passen Sie Ihren Filter an."
+}

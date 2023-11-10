@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Zaloguj się",
   "title": "Witaj ponownie!",
-  "text": "Proszę podać hasło",
+  "text": "Wprowadź swoje dane logowania",
   "form": {
     "fields": {
+      "username": {
+        "label": "Nazwa użytkownika"
+      },
       "password": {
-        "label": "Hasło",
-        "placeholder": "Twoje hasło"
+        "label": "Hasło"
       }
     },
     "buttons": {
       "submit": "Zaloguj się"
-    }
+    },
+    "afterLoginRedirection": "Po zalogowaniu nastąpi przekierowanie na stronę {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Sprawdzanie hasła",
-      "message": "Twoje hasło jest sprawdzane..."
-    },
-    "correct": {
-      "title": "Logowanie zakończone sukcesem, przekierowanie..."
-    },
-    "wrong": {
-      "title": "Wprowadzone hasło jest nieprawidłowe, proszę spróbować ponownie."
-    }
-  }
+  "alert": "Twoje dane logowania są nieprawidłowe lub to konto nie istnieje. Spróbuj ponownie."
 }

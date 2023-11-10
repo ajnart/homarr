@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "",
+		"behaviour": "",
+		"network": "",
+		"appearance": "",
+		"integration": ""
+	},
+	"general": {
+		"appname": {
+			"label": "",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "",
+			"description": "",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
+		},
+		"externalAddress": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "",
+			"description": ""
+		},
+		"tooltipDescription": {
+			"label": "",
+			"description": ""
+		},
+		"customProtocolWarning": ""
+	},
+	"network": {
+		"statusChecker": {
+			"label": "",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "",
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
+		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "",
+			"description": "",
+			"placeholder": "",
+			"defined": "",
+			"undefined": "",
+			"public": "",
+			"private": "",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "",
+			"warning": "",
+			"clear": "",
+			"save": "",
+			"update": ""
+		}
+	},
+	"validation": {
+		"popover": "",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
+	}
+}

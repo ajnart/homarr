@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Dom"
+        },
+        "boards": {
+            "title": "Daske"
+        },
+        "users": {
+            "title": "Korisnici",
+            "items": {
+                "manage": "Upravljati",
+                "invites": "poziva"
+            }
+        },
+        "help": {
+            "title": "Pomozite",
+            "items": {
+                "documentation": "Dokumentacija",
+                "report": "Prijavite problem/bug",
+                "discord": "Nesloga u zajednici",
+                "contribute": "Doprinesite"
+            }
+        },
+        "tools": {
+            "title": "Alati",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "O aplikaciji"
+        }
+    }
+}

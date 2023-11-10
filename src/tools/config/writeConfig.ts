@@ -1,6 +1,6 @@
 import fs from 'fs';
+import { BackendConfigType } from '~/types/config';
 
-import { BackendConfigType } from '../../types/config';
 import { generateConfigPath } from './generateConfigPath';
 
 export function writeConfig(config: BackendConfigType) {

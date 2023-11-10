@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Brukerinvitasjoner",
+    "pageTitle": "Administrer brukerinvitasjoner",
+    "description": "Ved å bruke invitasjoner kan du invitere brukere til din Homarr-forekomst. En invitasjon vil kun være gyldig i et visst tidsrom og kan brukes én gang. Utløpet må være mellom 5 minutter og 12 måneder etter opprettelse.",
+    "button": {
+        "createInvite": "Lag invitasjon",
+        "deleteInvite": "Slett invitasjon"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Skaper",
+            "expires": "Utløper",
+            "action": "Handlinger"
+        },
+        "data": {
+            "expiresAt": "utløpt {{at}}",
+            "expiresIn": "om {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Lag invitasjon",
+            "description": "Etter utløpet vil en invitasjon ikke lenger være gyldig, og mottakeren av invitasjonen vil ikke kunne opprette en konto.",
+            "form": {
+                "expires": "Utløpsdato",
+                "submit": "Opprett"
+            }
+        },
+        "copy": {
+            "title": "Kopier invitasjonen",
+            "description": "Invitasjonen din er generert. Etter at denne modalen lukkes, <b>vil du ikke kunne kopiere denne lenken lenger</b>. Hvis du ikke lenger ønsker å invitere personen, kan du slette denne invitasjonen når som helst.",
+            "invitationLink": "Invitasjonslenke",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Kopier og lukk"
+            }
+        },
+        "delete": {
+            "title": "Slett invitasjon",
+            "description": "Er du sikker på at du vil slette denne invitasjonen? Brukere med denne koblingen vil ikke lenger kunne opprette en konto ved å bruke den linken."
+        }
+    },
+    "noInvites": "Det er ingen invitasjoner ennå."
+}

@@ -8,5 +8,5 @@
         "title": "Rediģēšanas režīms ir ieslēgts priekš  <1>{{size}}</1> izmēra",
         "text": "Tagad varat pielāgot un konfigurēt programmas. Izmaiņas <strong>netiek saglabātas</strong>, kamēr neesat izgājuši no rediģēšanas režīma"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Iziet no rediģēšanas režīma, lai saglabātu izmaiņas"
 }

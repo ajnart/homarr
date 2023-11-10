@@ -1,11 +1,17 @@
 {
   "save": "Gem",
+  "apply": "Anvend",
+  "insert": "Indsæt",
   "about": "Om",
   "cancel": "Annuller",
   "close": "Luk",
+  "back": "Tilbage",
   "delete": "Slet",
   "ok": "OK",
   "edit": "Rediger",
+  "next": "Næste",
+  "previous": "Forrige",
+  "confirm": "Bekræft",
   "enabled": "Aktiveret",
   "disabled": "Deaktiveret",
   "enableAll": "Aktiver alle",
@@ -36,5 +42,14 @@
     "medium": "mellem",
     "large": "stor"
   },
-  "seeMore": "Se mere..."
+  "seeMore": "Se mere...",
+  "position": {
+    "left": "Venstre",
+    "center": "Centrer",
+    "right": "Højre"
+  },
+  "attributes": {
+    "width": "Bredde",
+    "height": "Højde"
+  }
 }

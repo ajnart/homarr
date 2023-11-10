@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Home"
+        },
+        "boards": {
+            "title": "Boards"
+        },
+        "users": {
+            "title": "Users",
+            "items": {
+                "manage": "Manage",
+                "invites": "Invites"
+            }
+        },
+        "help": {
+            "title": "Help",
+            "items": {
+                "documentation": "Documentation",
+                "report": "Report an issue / bug",
+                "discord": "Community Discord",
+                "contribute": "Contribute"
+            }
+        },
+        "tools": {
+            "title": "Tools",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "About"
+        }
+    }
+}

@@ -1,11 +1,11 @@
 import { Group, Stack } from '@mantine/core';
 import { useEffect, useMemo, useRef } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { useResize } from '~/hooks/use-resize';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
+import { CategoryType } from '~/types/category';
+import { WrapperType } from '~/types/wrapper';
 
-import { useConfigContext } from '../../../config/provider';
-import { useResize } from '../../../hooks/use-resize';
-import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
-import { CategoryType } from '../../../types/category';
-import { WrapperType } from '../../../types/wrapper';
 import { DashboardCategory } from '../Wrappers/Category/Category';
 import { DashboardSidebar } from '../Wrappers/Sidebar/Sidebar';
 import { DashboardWrapper } from '../Wrappers/Wrapper/Wrapper';

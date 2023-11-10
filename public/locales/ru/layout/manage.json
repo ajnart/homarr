@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Главная"
+        },
+        "boards": {
+            "title": "Панели"
+        },
+        "users": {
+            "title": "Пользователи",
+            "items": {
+                "manage": "Управление",
+                "invites": "Приглашения"
+            }
+        },
+        "help": {
+            "title": "Помощь",
+            "items": {
+                "documentation": "Документация",
+                "report": "Сообщить о проблеме / ошибке",
+                "discord": "Сообщество Discord",
+                "contribute": "Внести вклад"
+            }
+        },
+        "tools": {
+            "title": "Инструменты",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "О программе"
+        }
+    }
+}

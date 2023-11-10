@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Fiók Létrehozása",
+    "title": "Fiók Létrehozása",
+    "text": "Kérjük, adja meg a hitelesítő adatokat",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Felhasználónév"
+            },
+            "password": {
+                "label": "Jelszó"
+            },
+            "passwordConfirmation": {
+                "label": "Jelszó megerősítése"
+            }
+        },
+        "buttons": {
+            "submit": "Fiók létrehozása"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Fiók készítése",
+            "text": "Kérem várjon"
+        },
+        "success": {
+            "title": "Fiók létrehozva",
+            "text": "A fiókod sikeresen létrehozva"
+        },
+        "error": {
+            "title": "Hiba",
+            "text": "Valami elromlott, a következő hibát kaptam: {{error}}"
+        }
+    }
+}

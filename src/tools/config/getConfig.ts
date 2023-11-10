@@ -1,7 +1,7 @@
 import Consola from 'consola';
 import { v4 as uuidv4 } from 'uuid';
+import { BackendConfigType, ConfigType } from '~/types/config';
 
-import { BackendConfigType, ConfigType } from '../../types/config';
 import { configExists } from './configExists';
 import { getFallbackConfig } from './getFallbackConfig';
 import { readConfig } from './readConfig';
@@ -34,6 +34,12 @@ export const getConfig = (name: string): BackendConfigType => {
     );
 
     writeConfig(backendConfig);
+  }
+
+  if (!backendConfig.settings.access) {
+    backendConfig.settings.access = {
+      allowGuests: false,
+    };
   }
 
   return backendConfig;

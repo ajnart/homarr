@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Це експериментальна функція Homarr. Будь ласка, повідомляйте про будь-які проблеми на <gh>GitHub</gh> або <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "Пошук",
+        "engines": {
+            "web": "Шукайте {{query}} в Інтернеті",
+            "youtube": "Шукайте {{query}} на YouTube",
+            "torrent": "Шукайте торренти на {{query}}",
+            "movie": "Шукайте {{query}} на {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Змінити тему",
+            "preferences": "Налаштування користувача",
+            "defaultBoard": "Інформаційна панель за замовчуванням",
+            "manage": "Керувати",
+            "logout": "Вийдіть з {{username}}",
+            "login": "Логін"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Найкращі {{count}} результати для <b>{{search}}</b>."
+        }
+    }
+}

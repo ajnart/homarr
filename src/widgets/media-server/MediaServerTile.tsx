@@ -11,9 +11,9 @@ import {
 } from '@mantine/core';
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { AppAvatar } from '~/components/AppAvatar';
+import { useConfigContext } from '~/config/provider';
 
-import { AppAvatar } from '../../components/AppAvatar';
-import { useConfigContext } from '../../config/provider';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { TableRow } from './TableRow';
@@ -100,7 +100,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
 
       <Group pos="absolute" bottom="15" right="15" mt="auto">
         <Avatar.Group>
-          {data?.servers.map((server) => {
+          {data?.servers.map((server, index) => {
             const app = config?.apps.find((x) => x.id === server.appId);
 
             if (!app) {
@@ -109,6 +109,7 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
 
             return (
               <AppAvatar
+                key={index}
                 iconUrl={app.appearance.iconUrl}
                 // If success, the color is undefined, otherwise it's red but if isFetching is true, it's yellow
                 color={server.success ? (isFetching ? 'yellow' : undefined) : 'red'}

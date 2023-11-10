@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Anonyme zulassen",
+    "description": "Benutzern die nicht eingeloggt sind, erlauben, Ihr Board anzusehen"
+  }
+}

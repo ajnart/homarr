@@ -1,37 +1,31 @@
 {
   "descriptor": {
     "name": "캘린더",
-    "description": "",
+    "description": "지원되는 통합에서 예정된 릴리스가 포함된 캘린더를 표시합니다.",
     "settings": {
-      "title": "",
-      "useSonarrv4": {
-        "label": ""
-      },
-      "sundayStart": {
-        "label": "한 주의 시작을 일요일로 설정"
-      },
+      "title": "캘린더 위젯 설정",
       "radarrReleaseType": {
-        "label": "",
+        "label": "레이더 릴리스 유형",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "영화관",
+          "physicalRelease": "물리적",
+          "digitalRelease": "디지털"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "요일 숨기기"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "모니터링되지 않는 항목 표시"
       },
       "fontSize": {
-        "label": "",
+        "label": "글꼴 크기",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "엑스트라 스몰",
+          "sm": "Small",
+          "md": "Medium",
+          "lg": "Large",
+          "xl": "엑스트라 라지"
         }
       }
     }

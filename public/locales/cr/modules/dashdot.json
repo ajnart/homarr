@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "crwdns1378:0crwdne1378:0",
+    "description": "crwdns2695:0crwdne2695:0",
+    "settings": {
+      "title": "crwdns2039:0crwdne2039:0",
+      "dashName": {
+        "label": "crwdns2823:0crwdne2823:0"
+      },
+      "url": {
+        "label": "crwdns1400:0crwdne1400:0"
+      },
+      "usePercentages": {
+        "label": "crwdns2483:0crwdne2483:0"
+      },
+      "columns": {
+        "label": "crwdns2625:0crwdne2625:0"
+      },
+      "graphHeight": {
+        "label": "crwdns2627:0crwdne2627:0"
+      },
+      "graphsOrder": {
+        "label": "crwdns2629:0crwdne2629:0",
+        "storage": {
+          "label": "crwdns2631:0crwdne2631:0",
+          "enabled": {
+            "label": "crwdns2633:0crwdne2633:0"
+          },
+          "span": {
+            "label": "crwdns2635:0crwdne2635:0"
+          },
+          "compactView": {
+            "label": "crwdns2637:0crwdne2637:0"
+          },
+          "multiView": {
+            "label": "crwdns2639:0crwdne2639:0"
+          }
+        },
+        "network": {
+          "label": "crwdns2641:0crwdne2641:0",
+          "enabled": {
+            "label": "crwdns2643:0crwdne2643:0"
+          },
+          "span": {
+            "label": "crwdns2645:0crwdne2645:0"
+          },
+          "compactView": {
+            "label": "crwdns2647:0crwdne2647:0"
+          }
+        },
+        "cpu": {
+          "label": "crwdns2649:0crwdne2649:0",
+          "enabled": {
+            "label": "crwdns2651:0crwdne2651:0"
+          },
+          "span": {
+            "label": "crwdns2653:0crwdne2653:0"
+          },
+          "multiView": {
+            "label": "crwdns2655:0crwdne2655:0"
+          }
+        },
+        "ram": {
+          "label": "crwdns2657:0crwdne2657:0",
+          "enabled": {
+            "label": "crwdns2659:0crwdne2659:0"
+          },
+          "span": {
+            "label": "crwdns2661:0crwdne2661:0"
+          }
+        },
+        "gpu": {
+          "label": "crwdns2663:0crwdne2663:0",
+          "enabled": {
+            "label": "crwdns2665:0crwdne2665:0"
+          },
+          "span": {
+            "label": "crwdns2667:0crwdne2667:0"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "crwdns1402:0crwdne1402:0",
+    "errors": {
+      "noService": "crwdns1694:0crwdne1694:0",
+      "noInformation": "crwdns1406:0crwdne1406:0",
+      "protocolDowngrade": {
+        "title": "crwdns2563:0crwdne2563:0",
+        "text": "crwdns2697:0crwdne2697:0"
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "crwdns1408:0crwdne1408:0",
+        "label": "crwdns1410:0crwdne1410:0"
+      },
+      "network": {
+        "title": "crwdns1412:0crwdne1412:0",
+        "label": "crwdns1414:0crwdne1414:0",
+        "metrics": {
+          "download": "crwdns1416:0crwdne1416:0",
+          "upload": "crwdns1418:0crwdne1418:0"
+        }
+      },
+      "cpu": {
+        "title": "crwdns1420:0crwdne1420:0"
+      },
+      "ram": {
+        "title": "crwdns2669:0crwdne2669:0"
+      },
+      "gpu": {
+        "title": "crwdns1424:0crwdne1424:0"
+      }
+    }
+  }
+}

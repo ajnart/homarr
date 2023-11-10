@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { shallow } from 'zustand/shallow';
+import { useColorTheme } from '~/tools/color';
+import { ConfigType } from '~/types/config';
 
-import { useColorTheme } from '../tools/color';
-import { ConfigType } from '../types/config';
 import { useConfigStore } from './store';
 
 export type ConfigContextType = {
@@ -24,18 +24,18 @@ const ConfigContext = createContext<ConfigContextType>({
 export const ConfigProvider = ({
   children,
   config: fallbackConfig,
-  configName: initialConfigName,
 }: {
   children: ReactNode;
   config?: ConfigType;
-  configName?: string;
 }) => {
-  const [configName, setConfigName] = useState<string>(initialConfigName || 'default');
+  const [configName, setConfigName] = useState<string>(
+    fallbackConfig?.configProperties.name || 'unknown'
+  );
   const [configVersion, setConfigVersion] = useState(0);
   const { configs } = useConfigStore((s) => ({ configs: s.configs }), shallow);
-  const { setPrimaryColor, setSecondaryColor, setPrimaryShade } = useColorTheme();
 
   const currentConfig = configs.find((c) => c.value.configProperties.name === configName)?.value;
+  const { setPrimaryColor, setSecondaryColor, setPrimaryShade } = useColorTheme();
 
   useEffect(() => {
     setPrimaryColor(currentConfig?.settings.customization.colors.primary || 'red');

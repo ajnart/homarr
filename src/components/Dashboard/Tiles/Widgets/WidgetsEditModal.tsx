@@ -18,13 +18,13 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { mapObject } from '~/tools/client/objects';
+import type { IDraggableListInputValue, IWidgetOptionValue } from '~/widgets/widgets';
+import { IWidget } from '~/widgets/widgets';
 
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { mapObject } from '../../../../tools/client/objects';
 import Widgets from '../../../../widgets';
-import type { IDraggableListInputValue, IWidgetOptionValue } from '../../../../widgets/widgets';
-import { IWidget } from '../../../../widgets/widgets';
 import { InfoCard } from '../../../InfoCard/InfoCard';
 import { DraggableList } from './Inputs/DraggableList';
 import { LocationSelection } from './Inputs/LocationSelection';

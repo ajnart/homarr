@@ -5,11 +5,11 @@ import Consola from 'consola';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
+import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
 
-import { useColorTheme } from '../../tools/color';
 import { MovieResult } from './Movie.d';
-import { Result } from './SearchResult.d';
+import { Result } from './SearchResult';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
 
 interface RequestModalProps {
@@ -70,7 +70,7 @@ export function MovieRequestModal({
       radius="lg"
       size="lg"
       trapFocus
-      zIndex={150}
+      zIndex={250}
       withinPortal
       opened={opened}
       title={
@@ -155,6 +155,7 @@ export function TvRequestModal({
       onClose={() => setOpened(false)}
       radius="lg"
       size="lg"
+      zIndex={250}
       opened={opened}
       title={
         <Group>

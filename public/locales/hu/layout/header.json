@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Ez a Homarr kísérleti funkciója. Kérjük, jelezz bármilyen problémát a <gh>GitHubon</gh> vagy a <dc>Discordon</dc>."
+    },
+    "search": {
+        "label": "Keresés",
+        "engines": {
+            "web": "Keresés a {{query}} oldalon a világhálón",
+            "youtube": "Keresés a {{query}} oldalon a YouTube-on",
+            "torrent": "Keresés a {{query}} torrentek után",
+            "movie": "Keresés a {{query}} oldalon: {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Téma váltása",
+            "preferences": "Beállítások",
+            "defaultBoard": "Alapértelmezett vezérlőpult",
+            "manage": "Kezelés",
+            "logout": "{{username}} kijelentkezése",
+            "login": "Bejelentkezés"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Top {{count}} eredmények a <b>{{search}}</b>számára."
+        }
+    }
+}

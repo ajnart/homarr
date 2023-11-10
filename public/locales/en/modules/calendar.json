@@ -4,12 +4,6 @@
     "description": "Displays a calendar with upcoming releases, from supported integrations.",
     "settings": {
       "title": "Settings for Calendar widget",
-      "useSonarrv4": {
-        "label": "Use Sonarr v4 API"
-      },
-      "sundayStart": {
-        "label": "Start the week on Sunday"
-      },
       "radarrReleaseType": {
         "label": "Radarr release type",
         "data":{

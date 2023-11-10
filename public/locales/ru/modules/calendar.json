@@ -4,16 +4,10 @@
     "description": "Отображает календарь с предстоящими релизами из поддерживаемых интеграций.",
     "settings": {
       "title": "Настройки для виджета календаря",
-      "useSonarrv4": {
-        "label": "Использовать Sonarr v4 API"
-      },
-      "sundayStart": {
-        "label": "Воскресенье — начало недели"
-      },
       "radarrReleaseType": {
         "label": "Тип релиза в Radarr",
         "data": {
-          "inCinemas": "В кинотеатрах",
+          "inCinemas": "В кино",
           "physicalRelease": "Физический носитель",
           "digitalRelease": "Цифровой релиз"
         }
@@ -22,7 +16,7 @@
         "label": "Скрыть дни недели"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Показать не отслеживаемые элементы"
       },
       "fontSize": {
         "label": "Размер шрифта",

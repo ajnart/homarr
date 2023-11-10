@@ -1,15 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Sổ tay",
+		"description": "Tiện ích tương tác dựa trên đánh dấu để bạn viết ra ghi chú của mình!",
 		"settings": {
-			"title": "",
+			"title": "Cài đặt cho tiện ích sổ ghi chép",
 			"showToolbar": {
+				"label": "Hiển thị thanh công cụ giúp bạn viết markdown"
+			},
+			"allowReadOnlyCheck": {
 				"label": ""
 			},
 			"content": {
-				"label": ""
+				"label": "Nội dung của sổ ghi chép"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }

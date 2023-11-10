@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Головна"
+        },
+        "boards": {
+            "title": "Дошки"
+        },
+        "users": {
+            "title": "Користувачі",
+            "items": {
+                "manage": "Керувати",
+                "invites": "Запрошує"
+            }
+        },
+        "help": {
+            "title": "Допоможіть!",
+            "items": {
+                "documentation": "Документація",
+                "report": "Повідомити про проблему / помилку",
+                "discord": "Розбрат у громаді",
+                "contribute": "Зробити внесок"
+            }
+        },
+        "tools": {
+            "title": "Інструменти",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Про програму"
+        }
+    }
+}

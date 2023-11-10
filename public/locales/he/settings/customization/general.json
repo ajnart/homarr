@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "נגישות",
       "description": "הגדר את Homarr עבור משתמשים מוגבלים ונכים"
+    },
+    "access": {
+      "name": "גישה",
+      "description": "הגדר למי יש גישה ללוח שלך"
     }
   }
 }

@@ -39,7 +39,7 @@
         "title": "Neispravan URL",
         "text": "Provjerite jeste li unijeli valjanu adresu u konfiguraciji svog widgeta"
       },
-      "browserSupport": ""
+      "browserSupport": "Vaš preglednik ne podržava iframeove. Ažurirajte svoj preglednik."
     }
   }
 }

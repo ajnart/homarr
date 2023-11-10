@@ -3,12 +3,12 @@
     "name": "Pogoda",
     "description": "Wyświetla aktualne informacje o pogodzie w ustawionej lokalizacji.",
     "settings": {
-      "title": "Ustawienia dla widgetu pogody",
+      "title": "Ustawienia widżetu pogody",
       "displayInFahrenheit": {
         "label": "Wyświetlaj w Fahrenheitach"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Wyświetlaj nazwę miasta"
       },
       "location": {
         "label": "Lokalizacja pogody"
@@ -33,5 +33,5 @@
       "unknown": "Nieznany"
     }
   },
-  "error": ""
+  "error": "Wystąpił błąd"
 }

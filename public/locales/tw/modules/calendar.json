@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "日曆",
+    "description": "在日曆中顯示來自支持集成中的即將發布版本",
+    "settings": {
+      "title": "日曆組件設定",
+      "radarrReleaseType": {
+        "label": "Radarr 發布類型",
+        "data": {
+          "inCinemas": "電影模式放映",
+          "physicalRelease": "實體",
+          "digitalRelease": "數位"
+        }
+      },
+      "hideWeekDays": {
+        "label": "隱藏星期"
+      },
+      "showUnmonitored": {
+        "label": "顯示未監視項目"
+      },
+      "fontSize": {
+        "label": "字體大小",
+        "data": {
+          "xs": "超小號",
+          "sm": "小",
+          "md": "中等",
+          "lg": "大號",
+          "xl": "超級大"
+        }
+      }
+    }
+  }
+}

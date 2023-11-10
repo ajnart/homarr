@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Czyszczenie pamięci podręcznej",
   "selector": {
-    "label": "",
+    "label": "Wybierz pamięć podręczną do wyczyszczenia",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Zapytania ping",
+      "repositoryIcons": "Ikony zdalne/lokalne",
+      "calendar&medias": "Media z kalendarza",
+      "weather": "Dane pogodowe"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Pamięć podręczna wyczyszczona",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Wyczyść całą pamięć podręczną",
+      "notificationMessage": "Pamięć podręczna została wyczyszczona"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Wyczyść wybrane zapytania",
+      "notificationMessageSingle": "Pamięć podręczna {{value}} została wyczyszczona",
+      "notificationMessageMulti": "Pamięci podręczne {{values}} zostały wyczyszczone"
     }
   }
 }

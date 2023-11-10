@@ -5,23 +5,23 @@
     "settings": {
       "title": "Mediaverzoeken statistieken",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Links vervangen door externe host"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Links in nieuw tabblad openen"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Media statistieken",
+    "pending": "Wachtende goedkeuringen",
+    "tvRequests": "TV verzoeken",
+    "movieRequests": "Film verzoeken",
+    "approved": "Reeds goedgekeurd",
+    "totalRequests": "Totaal"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Top gebruikers",
+    "requests": "Verzoeken: {{number}}"
   }
 }

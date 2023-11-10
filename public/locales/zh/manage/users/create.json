@@ -1,0 +1,52 @@
+{
+    "metaTitle": "创建用户",
+    "steps": {
+        "account": {
+            "title": "第一步",
+            "text": "创建账号",
+            "username": {
+                "label": "用户名"
+            },
+            "email": {
+                "label": "邮箱"
+            }
+        },
+        "security": {
+            "title": "第二步",
+            "text": "密码",
+            "password": {
+                "label": "密码"
+            }
+        },
+        "finish": {
+            "title": "确认",
+            "text": "保存到数据库",
+            "card": {
+                "title": "检查您的输入",
+                "text": "将数据提交到数据库后，用户就可以登录了。您确定要将该用户存储在数据库中并激活登录吗?"
+            },
+            "table": {
+                "header": {
+                    "property": "属性",
+                    "value": "参数值",
+                    "username": "用户名",
+                    "email": "邮箱",
+                    "password": "密码"
+                },
+                "notSet": "未设置",
+                "valid": "有效"
+            },
+            "failed": "用户创建失败： {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "用户已创建",
+                "text": "用户已在数据库中创建。他现在可以登录了。"
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "随机生成",
+        "createAnother": "创建另一个"
+    }
+}

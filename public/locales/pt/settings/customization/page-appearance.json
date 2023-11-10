@@ -5,26 +5,23 @@
   },
   "metaTitle": {
     "label": "Meta Título",
-    "description": ""
+    "description": "O título exibido na guia do navegador"
   },
   "logo": {
     "label": "Logo",
-    "description": ""
+    "description": "O logotipo exibido no canto superior esquerdo"
   },
   "favicon": {
     "label": "Favicon",
-    "description": ""
+    "description": "O ícone exibido na guia do navegador"
   },
   "background": {
     "label": "Antecedentes"
   },
   "customCSS": {
     "label": "CSS Personalizado",
-    "description": "",
+    "description": "Além disso, personalize seu painel usando CSS, recomendado apenas para usuários experientes",
     "placeholder": "O CSS personalizado será aplicado por último",
     "applying": "Aplicando CSS..."
-  },
-  "buttons": {
-    "submit": "Enviar"
   }
 }

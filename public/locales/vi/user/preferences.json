@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Sở thích",
+    "pageTitle": "sở thích của bạn",
+    "boards": {
+        "defaultBoard": {
+            "label": "Bảng mặc định"
+        }
+    },
+    "accessibility": {
+        "title": "Trợ năng",
+        "disablePulse": {
+            "label": "Tắt nhịp thở chấm ping",
+            "description": "Mặc địch, chấm ping trong Homarr sẽ có một nhịp co giãn. Nếu điều này gây khó chịu, tranh trượt này sẽ giúp bạn tắt chuyển động đó"
+        },
+        "replaceIconsWithDots": {
+            "label": "Thay thế chấm ping bằng biểu tượng",
+            "description": "Với người dùng mù màu, chấm ping có thể khó nhận diện. Lựa chọn này sẽ thay thế các chấm bằng biểu tượng"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Ngôn ngữ"
+        },
+        "firstDayOfWeek": {
+            "label": "Ngày đầu tiên trong tuần",
+            "options": {
+                "monday": "Thứ hai",
+                "saturday": "Thứ bảy",
+                "sunday": "Chủ nhật"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Công cụ tìm kiếm",
+        "custom": "Phong tục",
+        "newTab": {
+            "label": "Mở kết quả tìm kiếm trong tab mới"
+        },
+        "autoFocus": {
+            "label": "Thanh tìm kiếm tập trung vào tải trang.",
+            "description": "Điều này sẽ tự động tập trung vào thanh tìm kiếm khi bạn điều hướng đến các trang bảng. Nó sẽ chỉ hoạt động trên các thiết bị máy tính để bàn."
+        },
+        "template": {
+            "label": "URL truy vấn",
+            "description": "Sử dụng %s làm phần giữ chỗ cho truy vấn"
+        }
+    }
+}

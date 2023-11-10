@@ -1,7 +1,7 @@
 {
     "disablePulse": {
         "label": "Désactiver la pulsation du ping",
-        "description": "Par défaut, les indicateurs de ping dans Homarr pulsent. Cela peut être irritant. Ce curseur désactivera l'animation"
+        "description": "Par défaut, les indicateurs de ping dans Homarr clignotent. Cela peut être irritant. Cette case désactivera l'animation"
     },
     "replaceIconsWithDots": {
         "label": "Remplacer les points de ping par des icônes",

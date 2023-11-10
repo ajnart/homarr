@@ -4,12 +4,6 @@
     "description": "Desteklenen entegrasyonlarda, yaklaşan içeriklerin takvimlerini görüntüler.",
     "settings": {
       "title": "Takvim widget'ı için ayarlar",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API'sini kullan"
-      },
-      "sundayStart": {
-        "label": "Haftaya Pazar günü başlayın"
-      },
       "radarrReleaseType": {
         "label": "Radarr yayın türü",
         "data": {

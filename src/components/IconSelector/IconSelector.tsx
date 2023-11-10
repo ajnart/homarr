@@ -15,9 +15,9 @@ import {
 import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { forwardRef, useImperativeHandle, useState } from 'react';
+import { humanFileSize } from '~/tools/humanFileSize';
 import { api } from '~/utils/api';
 
-import { humanFileSize } from '../../tools/humanFileSize';
 import { DebouncedImage } from './DebouncedImage';
 
 export const IconSelector = forwardRef(
@@ -83,9 +83,7 @@ export const IconSelector = forwardRef(
           }
           icon={<DebouncedImage src={value ?? currentValue} width={20} height={20} />}
           rightSection={
-            (value ?? currentValue).length > 0 ? (
-              <CloseButton onClick={() => onChange("")} />
-            ) : null
+            (value ?? currentValue).length > 0 ? <CloseButton onClick={() => onChange('')} /> : null
           }
           itemComponent={AutoCompleteItem}
           className={classes.textInput}

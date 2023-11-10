@@ -1,8 +1,8 @@
 import { SelectItem } from '@mantine/core';
 import { ContextModalProps, closeModal } from '@mantine/modals';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
 
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
 import widgets from '../../../../widgets';
 import { WidgetChangePositionModalInnerProps } from '../../Tiles/Widgets/WidgetsMenu';
 import { useGridstackStore, useWrapperColumnCount } from '../../Wrappers/gridstack/store';

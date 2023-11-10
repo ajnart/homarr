@@ -1,6 +1,18 @@
 {
   "descriptor": {
     "name": "Kontrole DNS \"hole\"",
-    "description": "Upravljajte PiHole ili AdGuard iz svoje nadzorne ploče"
+    "description": "Upravljajte PiHole ili AdGuard iz svoje nadzorne ploče",
+    "settings": {
+      "title": "DNS rupa kontrolira postavke",
+      "showToggleAllButtons": {
+        "label": "Prikaži gumbe \"Omogući/onemogući sve\"."
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nije moguće pronaći DNS rupu",
+        "text": "Došlo je do problema pri povezivanju s vašim DNS rupama. Provjerite svoju konfiguraciju/integraciju(e)."
+      }
+    }
   }
 }

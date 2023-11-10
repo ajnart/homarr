@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Strona główna"
+        },
+        "boards": {
+            "title": "Tablice"
+        },
+        "users": {
+            "title": "Użytkownicy",
+            "items": {
+                "manage": "Zarządzaj",
+                "invites": "Zaproszenia"
+            }
+        },
+        "help": {
+            "title": "Pomoc",
+            "items": {
+                "documentation": "Dokumentacja",
+                "report": "Zgłoś problem/błąd",
+                "discord": "Discord społeczności",
+                "contribute": "Współtwórz"
+            }
+        },
+        "tools": {
+            "title": "Narzędzia",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "O programie"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Korisnici",
+    "pageTitle": "Upravljanje korisnicima",
+    "text": "Pomoću korisnika možete konfigurirati tko može uređivati vaše nadzorne ploče. Buduće verzije Homarra imat će još detaljniju kontrolu nad dozvolama i pločama.",
+    "buttons": {
+        "create": "Stvoriti"
+    },
+    "table": {
+        "header": {
+            "user": "Korisnik"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Izbriši korisnika",
+        "demoteAdmin": "Degradirajte administratora",
+        "promoteToAdmin": "Promakni u administratora"
+    },
+    "modals": {
+        "delete": {
+            "title": "Izbriši korisnika {{name}}",
+            "text": "Jeste li sigurni da želite obrisati korisnika {{name}}? Ovo će izbrisati podatke povezane s ovim računom, ali ne i sve nadzorne ploče koje je izradio ovaj korisnik."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promakni korisnika {{name}} u administratora",
+                "text": "Jeste li sigurni da želite unaprijediti korisnika {{name}} u administratora? Ovo će korisniku dati pristup svim resursima na vašoj Homarr instanci."
+            },
+            "demote": {
+                "title": "Degradiraj korisnika {{name}} na korisnika",
+                "text": "Jeste li sigurni da želite degradirati korisnika {{name}} u korisnika? Ovo će ukloniti korisnikov pristup svim resursima na vašoj Homarr instanci."
+            },
+            "confirm": "Potvrdi"
+        }
+    },
+    "searchDoesntMatch": "Vaše pretraživanje ne odgovara nijednom unosu. Molimo prilagodite svoj filtar."
+}

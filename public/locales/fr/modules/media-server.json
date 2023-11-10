@@ -12,7 +12,7 @@
       "header": {
         "session": "Session",
         "user": "Utilisateur",
-        "currentlyPlaying": "En cours de lecture"
+        "currentlyPlaying": "Regarde actuellement"
       }
     },
     "errors": {

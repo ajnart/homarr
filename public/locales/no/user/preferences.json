@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Innstillinger",
+    "pageTitle": "Dine innstillinger",
+    "boards": {
+        "defaultBoard": {
+            "label": "Standard tavle"
+        }
+    },
+    "accessibility": {
+        "title": "Hjelpemiddel",
+        "disablePulse": {
+            "label": "Deaktivere ping puls",
+            "description": "Som standard vil Ping indikatorene i Homarr pulsere, dette kan være irriterende. Denne glidebryteren deaktiverer animasjonen"
+        },
+        "replaceIconsWithDots": {
+            "label": "Erstatt ping prikker med ikoner",
+            "description": "For fargesblinde brukere kan det være ugjenkjennelig. Dette vil erstatte indikatorer med ikoner"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Språk"
+        },
+        "firstDayOfWeek": {
+            "label": "Første dag i uken",
+            "options": {
+                "monday": "Mandag",
+                "saturday": "Lørdag",
+                "sunday": "Søndag"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Søkemotor",
+        "custom": "Tilpasset",
+        "newTab": {
+            "label": "Åpne søkeresultater i ny fane"
+        },
+        "autoFocus": {
+            "label": "Fokuser på søkefeltet ved innlasting av siden.",
+            "description": "Dette vil automatisk fokusere søkefeltet når du navigerer til tavlene. Det vil bare fungere på stasjonære enheter."
+        },
+        "template": {
+            "label": "SpørringsURL",
+            "description": "%s kan brukes som plassholder for spørringen"
+        }
+    }
+}

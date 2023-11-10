@@ -1,0 +1,23 @@
+{
+    "metaTitle": "",
+    "hero": {
+        "title": "",
+        "fallbackUsername": "",
+        "subtitle": ""
+    },
+    "quickActions": {
+        "title": "",
+        "boards": {
+            "title": "",
+            "subtitle": ""
+        },
+        "inviteUsers": {
+            "title": "",
+            "subtitle": ""
+        },
+        "manageUsers": {
+            "title": "",
+            "subtitle": ""
+        }
+    }
+}

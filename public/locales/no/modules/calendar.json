@@ -4,34 +4,28 @@
     "description": "Viser en kalender med kommende utgivelser, fra støttede integrasjoner.",
     "settings": {
       "title": "Innstillinger for Kalender widget",
-      "useSonarrv4": {
-        "label": "Bruk Sonarr v4 API"
-      },
-      "sundayStart": {
-        "label": "Start uken på søndag"
-      },
       "radarrReleaseType": {
         "label": "Radarr utgivelsestype",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "På kino",
+          "physicalRelease": "Fysisk",
+          "digitalRelease": "Digitalt"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skjul ukedager"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Vis uovervåkede elementer"
       },
       "fontSize": {
-        "label": "",
+        "label": "Skriftstørrelse",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Ekstra liten",
+          "sm": "Liten",
+          "md": "Medium",
+          "lg": "Stor",
+          "xl": "Ekstra stor"
         }
       }
     }

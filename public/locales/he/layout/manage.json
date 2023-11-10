@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "מסך הבית"
+        },
+        "boards": {
+            "title": "לוחות"
+        },
+        "users": {
+            "title": "משתמשים",
+            "items": {
+                "manage": "ניהול",
+                "invites": "הזמנות"
+            }
+        },
+        "help": {
+            "title": "עזרה",
+            "items": {
+                "documentation": "תיעוד",
+                "report": "דווח על בעיה / תקלה",
+                "discord": "קהילת דיסקורד",
+                "contribute": "תרומה"
+            }
+        },
+        "tools": {
+            "title": "כלים",
+            "items": {
+                "docker": "דוקר"
+            }
+        },
+        "about": {
+            "title": "אודות"
+        }
+    }
+}

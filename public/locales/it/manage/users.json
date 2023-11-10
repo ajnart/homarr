@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Utenti",
+    "pageTitle": "Gestisci utenti",
+    "text": "Utilizzando gli utenti, è possibile configurare chi può modificare i dashboard. Le versioni future di Homarr offriranno un controllo ancora più granulare sulle autorizzazioni e sulle board.",
+    "buttons": {
+        "create": "Crea"
+    },
+    "table": {
+        "header": {
+            "user": "Utente"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Elimina utente",
+        "demoteAdmin": "Declassa amministratore",
+        "promoteToAdmin": "Promuovi ad amministratore"
+    },
+    "modals": {
+        "delete": {
+            "title": "Elimina l'utente {{name}}",
+            "text": "Si è sicuri di voler eliminare l'utente {{name}}? Questo eliminerà i dati associati a questo account, ma non le dashboard create da questo utente."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promuovi l'utente {{name}} ad amministratore",
+                "text": "Siete sicuri di voler promuovere l'utente {{name}} ad amministratore? In questo modo l'utente avrà accesso a tutte le risorse dell'istanza di Homarr."
+            },
+            "demote": {
+                "title": "Declassa l'utente {{name}} a utente",
+                "text": "Siete sicuri di voler declassare l'utente {{name}} a utente? Questo rimuoverà l'accesso dell'utente a tutte le risorse dell'istanza di Homarr."
+            },
+            "confirm": "Conferma"
+        }
+    },
+    "searchDoesntMatch": "La ricerca non corrisponde a nessuna voce. Si prega di modificare il filtro."
+}

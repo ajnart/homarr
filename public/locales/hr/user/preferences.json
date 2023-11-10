@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Postavke",
+    "pageTitle": "Vaše preferencije",
+    "boards": {
+        "defaultBoard": {
+            "label": "Zadana ploča"
+        }
+    },
+    "accessibility": {
+        "title": "Pristupačnost",
+        "disablePulse": {
+            "label": "Onemogući ping pulsiranje",
+            "description": "Prema zadanim postavkama, pokazatelji pinga u Homarru pulsiraju. To može biti iritantno. Ovim klizačem možete deaktivirati animaciju"
+        },
+        "replaceIconsWithDots": {
+            "label": "Zamijenite točke ping-a s ikonicom",
+            "description": "Za osobe s daltonizmom, točke za ping mogu biti teško prepoznatljive. Ovo će zamijeniti indikatore ikonama"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Jezik"
+        },
+        "firstDayOfWeek": {
+            "label": "Prvi dan u tjednu",
+            "options": {
+                "monday": "ponedjeljak",
+                "saturday": "subota",
+                "sunday": "nedjelja"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Pretraživač",
+        "custom": "Prilagođen",
+        "newTab": {
+            "label": "Otvori rezultate pretraživanja u novoj kartici"
+        },
+        "autoFocus": {
+            "label": "Fokusirajte traku za pretraživanje na učitavanje stranice.",
+            "description": "Ovo će automatski fokusirati traku za pretraživanje, kada idete na stranice ploče. Radit će samo na stolnim uređajima."
+        },
+        "template": {
+            "label": "URL upita",
+            "description": "Koristite %s kao rezervirano mjesto za upit"
+        }
+    }
+}

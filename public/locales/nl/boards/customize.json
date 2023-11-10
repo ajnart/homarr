@@ -1,0 +1,29 @@
+{
+    "metaTitle": "{{name}} bord aanpassen",
+    "pageTitle": "Aanpassing voor {{name}} Board",
+    "backToBoard": "Terug naar bestuur",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primaire kleur",
+            "secondaryColor": "Secundaire kleur"
+        }
+    },
+    "save": {
+        "button": "Wijzigingen opslaan",
+        "note": "Pas op, je hebt niet-opgeslagen veranderingen!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Aanpassingen opslaan",
+            "message": "Even geduld terwijl we je aanpassing opslaan"
+        },
+        "success": {
+            "title": "Opgeslagen aanpassingen",
+            "message": "Uw aanpassing is succesvol opgeslagen"
+        },
+        "error": {
+            "title": "Fout",
+            "message": "Kan wijzigingen niet opslaan"
+        }
+    }
+}

@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "Garumam jābūt no {{shortest}} līdz {{longest}}",
       "invalidLink": "Nederīga saite",
       "errorMsg": "Netika saglabāts, jo bija validācijas kļūdas. Lūdzu, pielāgojiet savus ievades datus"
     },

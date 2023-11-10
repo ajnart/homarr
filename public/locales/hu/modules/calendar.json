@@ -4,12 +4,6 @@
     "description": "Megjelenít egy naptárat a támogatott integrációk közelgő eseményeivel.",
     "settings": {
       "title": "A Naptár widget beállításai",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API használata"
-      },
-      "sundayStart": {
-        "label": "Vasárnap a hét kezdete"
-      },
       "radarrReleaseType": {
         "label": "Radarr kiadás típusa",
         "data": {
@@ -22,7 +16,7 @@
         "label": "Hétköznapok elrejtése"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Nem felügyelt elemek megjelenítése"
       },
       "fontSize": {
         "label": "Betűméret",

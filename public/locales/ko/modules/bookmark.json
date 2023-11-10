@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "북마크",
+    "description": "문자열 또는 링크의 정적 목록을 표시합니다.",
     "settings": {
-      "title": "",
+      "title": "북마크 설정",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "위젯 제목",
+        "info": "제목을 숨기려면 비워 두세요."
       },
       "items": {
-        "label": ""
+        "label": "항목"
       },
       "layout": {
-        "label": "",
+        "label": "레이아웃",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "자동 그리드",
+          "horizontal": "수평",
+          "vertical": "세로"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "북마크 목록 비어 있음",
+      "text": "편집 모드에서 이 목록에 새 항목을 추가합니다."
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "길이는 {{shortest}} ~ {{longest}}사이여야 합니다.",
+      "invalidLink": "유효한 링크가 아닙니다.",
+      "errorMsg": "유효성 검사 오류가 발생하여 저장하지 못했습니다. 입력을 수정하세요."
     },
     "name": "이름",
-    "url": "",
-    "newTab": "",
-    "hideHostname": "",
-    "hideIcon": "",
+    "url": "URL",
+    "newTab": "새 탭에서 열기",
+    "hideHostname": "호스트 이름 숨기기",
+    "hideIcon": "아이콘 숨기기",
     "delete": "삭제"
   }
 }

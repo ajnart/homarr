@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Pieslēgties",
   "title": "Sveicināti atpakaļ!",
-  "text": "Lūdzu, ievadiet savu paroli",
+  "text": "Lūdzu, ievadiet savus pieslēgšanās datus",
   "form": {
     "fields": {
+      "username": {
+        "label": "Lietotājvārds"
+      },
       "password": {
-        "label": "Parole",
-        "placeholder": "Jūsu parole"
+        "label": "Parole"
       }
     },
     "buttons": {
       "submit": "Pierakstīties"
-    }
+    },
+    "afterLoginRedirection": "Pēc pieslēgšanās tiksiet novirzīts uz {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Notiek Jūsu paroles pārbaude",
-      "message": "Jūsu parole tiek pārbaudīta..."
-    },
-    "correct": {
-      "title": "Pierakstīšanās veiksmīga, pāradresēšana..."
-    },
-    "wrong": {
-      "title": "Jūsu ievadītā parole ir nepareiza. Mēģiniet vēlreiz."
-    }
-  }
+  "alert": "Jūsu pieslēgšanās dati ir nepareizi vai šis konts nepastāv. Lūdzu, mēģiniet vēlreiz."
 }

@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Mostra la barra degli strumenti per aiutarti a scrivere in Markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Consenti il check in modalità di sola lettura"
+			},
 			"content": {
 				"label": "Contenuto del blocco note"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Grassetto",
+			"italic": "Corsivo",
+			"strikethrough": "Testo barrato",
+			"underline": "Sottolineato",
+			"colorText": "Testo a colori",
+			"colorHighlight": "Testo evidenziato colorato",
+			"code": "Codice",
+			"clear": "Rimuovi formattazione",
+			"heading": "Intestazione {{level}}",
+			"align": "Allinea testo: {{position}}",
+			"blockquote": "Citazione",
+			"horizontalLine": "Linea orizzontale",
+			"bulletList": "Elenco puntato",
+			"orderedList": "Elenco ordinato",
+			"checkList": "Elenco di controllo",
+			"increaseIndent": "Aumenta indentatura",
+			"decreaseIndent": "Diminuisci indentatura",
+			"link": "Link",
+			"unlink": "Elimina link",
+			"image": "Incorpora immagine",
+			"addTable": "Aggiungi tabella",
+			"deleteTable": "Elimina tabella",
+			"colorCell": "Colore cella",
+			"mergeCell": "Attiva/disattiva unione celle",
+			"addColumnLeft": "Aggiungi colonna prima",
+			"addColumnRight": "Aggiungi colonna dopo",
+			"deleteColumn": "Elimina colonna",
+			"addRowTop": "Aggiungi riga prima",
+			"addRowBelow": "Aggiungi riga dopo",
+			"deleteRow": "Elimina riga"
+		},
+		"modals": {
+			"clearColor": "Rimuovi colore",
+			"source": "Fonte",
+			"widthPlaceholder": "Valore in % o pixel",
+			"columns": "Colonne",
+			"rows": "Righe"
 		}
 	}
 }

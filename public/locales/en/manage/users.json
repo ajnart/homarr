@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Users",
+    "pageTitle": "Manage users",
+    "text": "Using users, you can configure who can edit your dashboards. Future versions of Homarr will have even more granular control over permissions and boards.",
+    "buttons": {
+        "create": "Create"
+    },
+    "table": {
+        "header": {
+            "user": "User"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Delete user",
+        "demoteAdmin": "Demote administrator",
+        "promoteToAdmin": "Promote to administrator"
+    },
+    "modals": {
+        "delete": {
+            "title": "Delete user {{name}}",
+            "text": "Are you sure, that you want to delete the user {{name}}? This will delete data associated with this account, but not any created dashboards by this user."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promote user {{name}} to admin",
+                "text": "Are you sure, that you want to promote the user {{name}} to admin? This will give the user access to all resources on your Homarr instance."
+            },
+            "demote": {
+                "title": "Demote user {{name}} to user",
+                "text": "Are you sure, that you want to demote the user {{name}} to user? This will remove the user's access to all resources on your Homarr instance."
+            },
+            "confirm": "Confirm"
+        }
+    },
+    "searchDoesntMatch": "Your search does not match any entries. Please adjust your filter."
+}

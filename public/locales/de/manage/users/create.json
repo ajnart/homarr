@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Benutzer erstellen",
+    "steps": {
+        "account": {
+            "title": "Erster Schritt",
+            "text": "Account erstellen",
+            "username": {
+                "label": "Benutzername"
+            },
+            "email": {
+                "label": "E-Mail"
+            }
+        },
+        "security": {
+            "title": "Zweiter Schritt",
+            "text": "Passwort",
+            "password": {
+                "label": "Passwort"
+            }
+        },
+        "finish": {
+            "title": "Bestätigung",
+            "text": "In Datenbank speichern",
+            "card": {
+                "title": "Überprüfen Sie Ihre Eingaben",
+                "text": "Nachdem Sie Ihre Daten an die Datenbank übermittelt haben, kann sich der Benutzer anmelden. Sind Sie sicher, dass Sie diesen Benutzer in der Datenbank speichern und die Anmeldung aktivieren wollen?"
+            },
+            "table": {
+                "header": {
+                    "property": "Eigenschaft",
+                    "value": "Wert",
+                    "username": "Benutzername",
+                    "email": "E-Mail",
+                    "password": "Passwort"
+                },
+                "notSet": "Nicht festgelegt",
+                "valid": "Gültig"
+            },
+            "failed": "Die Erstellung eines Benutzers ist fehlgeschlagen: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Benutzer wurde erstellt",
+                "text": "Der Benutzer wurde in der Datenbank angelegt. Er kann sich nun anmelden."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Zufällig generieren",
+        "createAnother": "Weiteren erstellen"
+    }
+}

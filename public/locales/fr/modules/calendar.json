@@ -4,34 +4,28 @@
     "description": "Affiche un calendrier avec les prochaines sorties, à partir des intégrations prises en charge.",
     "settings": {
       "title": "Paramètres du widget Calendrier",
-      "useSonarrv4": {
-        "label": "Utiliser l'API de Sonarr v4"
-      },
-      "sundayStart": {
-        "label": "Commencez la semaine par dimanche"
-      },
       "radarrReleaseType": {
         "label": "Type de sortie Radarr",
         "data": {
-          "inCinemas": "Au cinéma",
-          "physicalRelease": "Physique",
-          "digitalRelease": "Digitale"
+          "inCinemas": "Sorties en salle",
+          "physicalRelease": "Édition physique",
+          "digitalRelease": "Édition numérique"
         }
       },
       "hideWeekDays": {
         "label": "Masquer les jours de la semaine"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Afficher les éléments non surveillés"
       },
       "fontSize": {
         "label": "Taille de la police",
         "data": {
-          "xs": "Très Petite",
+          "xs": "Très petite",
           "sm": "Petite",
           "md": "Moyenne",
           "lg": "Grande",
-          "xl": "Très Grande"
+          "xl": "Très grande"
         }
       }
     }

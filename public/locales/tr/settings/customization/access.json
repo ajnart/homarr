@@ -1,0 +1,6 @@
+{
+  "allowGuests": {
+    "label": "Anonimliğe izin ver",
+    "description": "Oturum açmamış kullanıcıların panonuzu görüntülemesine izin verin"
+  }
+}

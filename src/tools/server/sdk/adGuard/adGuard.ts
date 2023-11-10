@@ -1,8 +1,8 @@
 import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
+import { trimStringEnding } from '~/tools/shared/strings';
 
-import { trimStringEnding } from '../../../shared/strings';
 import {
   adGuardApiFilteringStatusSchema,
   adGuardApiStatsResponseSchema,

@@ -1,0 +1,38 @@
+{
+  "title": "設定",
+  "tooltip": "設定",
+  "tabs": {
+    "common": "常規",
+    "customizations": "個性化"
+  },
+  "tips": {
+    "configTip": "將設定文件托放到頁放上即可上傳！"
+  },
+  "credits": {
+    "madeWithLove": "Made with ❤️ by @",
+    "thirdPartyContent": "查看第三方內容",
+    "thirdPartyContentTable": {
+      "dependencyName": "依賴",
+      "dependencyVersion": "版本"
+    }
+  },
+  "grow": "放大網格 (占用所有空間)",
+  "layout": {
+    "preview": {
+      "title": "預覽",
+      "subtitle": "更改會自動保存"
+    },
+    "divider": "布局選項",
+    "main": "主要",
+    "sidebar": "側邊欄",
+    "cannotturnoff": "無法關閉",
+    "dashboardlayout": "面板布局",
+    "enablersidebar": "啟用右邊欄",
+    "enablelsidebar": "啟用左側欄",
+    "enablesearchbar": "啟用搜尋欄",
+    "enabledocker": "啟用 Docker 集成",
+    "enableping": "啟用 Ping 功能",
+    "enablelsidebardesc": "可選項，只能用於應用和集成使用",
+    "enablersidebardesc": "可選項，只能用於應用和集成使用"
+  }
+}

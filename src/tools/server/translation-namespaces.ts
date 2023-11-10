@@ -1,28 +1,11 @@
-export const dashboardNamespaces = [
-  'common',
+export const boardNamespaces = [
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
-  'layout/modals/about',
   'layout/common',
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
-  'settings/general/cache-buttons',
-  'settings/general/config-changer',
-  'settings/general/edit-mode-toggle',
-  'settings/general/internationalization',
-  'settings/general/search-engine',
-  'settings/general/theme-selector',
-  'settings/general/widget-positions',
-  'settings/customization/accessibility',
-  'settings/customization/general',
-  'settings/customization/color-selector',
-  'settings/customization/page-appearance',
-  'settings/customization/shade-selector',
-  'settings/customization/app-width',
-  'settings/customization/opacity-selector',
-  'settings/customization/gridstack',
   'modules/common',
   'modules/date',
   'modules/calendar',
@@ -49,8 +32,18 @@ export const dashboardNamespaces = [
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',
+  'boards/common',
 ];
 
+export const manageNamespaces = [
+  'layout/manage',
+  'manage/boards',
+  'manage/users',
+  'manage/users/invites',
+  'manage/users/create',
+];
 export const loginNamespaces = ['authentication/login'];
 
 export const pageNotFoundNamespaces = ['layout/errors/not-found'];
+
+export const pageAccessDeniedNamespaces = ['layout/errors/access-denied'];

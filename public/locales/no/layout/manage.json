@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Hjem"
+        },
+        "boards": {
+            "title": "Tavler"
+        },
+        "users": {
+            "title": "Brukere",
+            "items": {
+                "manage": "Endre",
+                "invites": "Invitasjoner"
+            }
+        },
+        "help": {
+            "title": "Hjelp",
+            "items": {
+                "documentation": "Dokumentasjon",
+                "report": "Rapporter problem/feil",
+                "discord": "Discord",
+                "contribute": "Bidra"
+            }
+        },
+        "tools": {
+            "title": "Verktøy",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "Info"
+        }
+    }
+}

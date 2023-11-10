@@ -1,6 +1,6 @@
 {
   "card": {
-    "title": "Une erreur s’est produite!",
+    "title": "Oups, il y a eu une erreur !",
     "buttons": {
       "details": "Détails",
       "tryAgain": "Réessayer"

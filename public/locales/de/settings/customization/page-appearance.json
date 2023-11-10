@@ -23,8 +23,5 @@
     "description": "Außerdem können Sie Ihr Dashboard mittels CSS anpassen, dies wird nur für erfahrene Benutzer empfohlen",
     "placeholder": "Benutzerdefiniertes CSS wird zuletzt angewendet",
     "applying": "CSS wird übernommen..."
-  },
-  "buttons": {
-    "submit": "Absenden"
   }
 }

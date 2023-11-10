@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": "Din Homarr-forekomst har ikke Docker konfigurert eller den har mislyktes i å hente containere. Vennligst sjekk dokumentasjonen for hvordan du setter opp integrasjonen."
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "Velg en tavle",
+            "text": "Velg tavlen der du vil legge til appene for de valgte Docker-beholderne.",
+            "form": {
+                "board": {
+                    "label": "Tavle"
+                },
+                "submit": "Legg til apper"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "Lagt apper til tavle",
+                "message": "Appene for de valgte Docker-beholderne er lagt til tavlen."
+            },
+            "error": {
+                "title": "Kunne ikke legge til apper på tavlen",
+                "message": "Appene for de valgte Docker-beholderne kunne ikke legges til tavlen."
+            }
+        }
+    }
+}

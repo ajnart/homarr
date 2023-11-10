@@ -1,6 +1,5 @@
 import { ColorScheme, useMantineTheme } from '@mantine/core';
-
-import { isToday } from '../../tools/shared/time/date.tool';
+import { isToday } from '~/tools/shared/time/date.tool';
 
 export const getBgColorByDateAndTheme = (colorScheme: ColorScheme, date: Date) => {
   if (!isToday(date)) {

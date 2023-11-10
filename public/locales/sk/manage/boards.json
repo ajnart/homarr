@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Dosky",
+    "pageTitle": "Dosky",
+    "cards": {
+        "statistics": {
+            "apps": "Aplikácie",
+            "widgets": "Miniaplikácie",
+            "categories": "Kategórie"
+        },
+        "buttons": {
+            "view": "Zobraziť tabuľu"
+        },
+        "menu": {
+            "setAsDefault": "Nastavenie ako predvolenej dosky",
+            "delete": {
+                "label": "Odstrániť natrvalo",
+                "disabled": "Odstránenie zakázané, pretože staršie komponenty Homarr neumožňujú odstránenie predvoleného konfigurátora. Odstránenie bude možné v budúcnosti."
+            }
+        },
+        "badges": {
+            "fileSystem": "Súborový systém",
+            "default": "Predvolené"
+        }
+    },
+    "buttons": {
+        "create": "Vytvoriť novú tabuľu"
+    },
+    "modals": {
+        "delete": {
+            "title": "Odstrániť dosku",
+            "text": "Ste si istí, že chcete túto tabuľu vymazať? Tento krok sa nedá vrátiť späť a vaše údaje sa natrvalo stratia."
+        },
+        "create": {
+            "title": "Vytvoriť tabuľu",
+            "text": "Názov nie je možné zmeniť po vytvorení nástenky.",
+            "form": {
+                "name": {
+                    "label": "Názov"
+                },
+                "submit": "Vytvoriť"
+            }
+        }
+    }
+}

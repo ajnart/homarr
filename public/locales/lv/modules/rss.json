@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS logrīks",
-    "description": "",
+    "description": "RSS logrīks ļauj parādīt RSS plūsmas uz Jūsu vadības paneļa.",
     "settings": {
       "title": "RSS logrīka iestatījumi",
       "rssFeedUrl": {

@@ -3,10 +3,10 @@ import { showNotification } from '@mantine/notifications';
 import { Icon, IconChecks } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { v4 as uuidv4 } from 'uuid';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { IWidget, IWidgetDefinition } from '~/widgets/widgets';
 
-import { useConfigContext } from '../../../../../../config/provider';
-import { useConfigStore } from '../../../../../../config/store';
-import { IWidget, IWidgetDefinition } from '../../../../../../widgets/widgets';
 import { useEditModeStore } from '../../../../Views/useEditModeStore';
 import { GenericAvailableElementType } from '../Shared/GenericElementType';
 
@@ -97,6 +97,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
       icon: <IconChecks stroke={1.5} />,
       color: 'teal',
     });
+    umami.track('Add widget', { id: widget.id });
   };
 
   return (
@@ -104,6 +105,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
       name={t('descriptor.name')}
       description={t('descriptor.description') ?? undefined}
       image={image}
+      id={widget.id}
       disabled={disabled}
       handleAddition={handleAddition}
     />

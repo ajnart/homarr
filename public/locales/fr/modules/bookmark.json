@@ -6,7 +6,7 @@
       "title": "Paramètres des marque-pages",
       "name": {
         "label": "Nom du widget",
-        "info": "Laissez vide pour garder le titre caché."
+        "info": "Laissez vide pour masquer le titre."
       },
       "items": {
         "label": "Éléments"
@@ -15,8 +15,8 @@
         "label": "Mise en page",
         "data": {
           "autoGrid": "Grille automatique",
-          "horizontal": "Horizontal",
-          "vertical": "Vertical"
+          "horizontal": "Horizontale",
+          "vertical": "Verticale"
         }
       }
     }
@@ -29,9 +29,9 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "La longueur doit être comprise entre {{shortest}} et {{longest}}",
       "invalidLink": "Lien non valide",
-      "errorMsg": "Impossible d'enregistrer, car il y a eu des erreurs de validation. S'il vous plaît ajustez les données entrées."
+      "errorMsg": "Impossible d'enregistrer car il y a eu des erreurs de validation. Veuillez ajuster les données saisies"
     },
     "name": "Nom",
     "url": "URL (lien)",

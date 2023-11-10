@@ -22,7 +22,7 @@ interface WeatherIconProps {
  * @param code weather code from api
  * @returns weather tile component
  */
-export const WeatherIcon = ({ code, size=50 }: WeatherIconProps) => {
+export const WeatherIcon = ({ code, size = 50 }: WeatherIconProps) => {
   const { t } = useTranslation('modules/weather');
 
   const { icon: Icon, name } =

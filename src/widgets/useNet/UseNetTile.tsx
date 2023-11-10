@@ -3,18 +3,19 @@ import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload, IconPlayerPause, IconPlayerPlay } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { useConfigContext } from '~/config/provider';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
+import { humanFileSize } from '~/tools/humanFileSize';
+import { AppIntegrationType } from '~/types/app';
 
-import { useConfigContext } from '../../config/provider';
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
 import {
   useGetUsenetInfo,
   usePauseUsenetQueueMutation,
   useResumeUsenetQueueMutation,
 } from '../dashDot/api';
-import { humanFileSize } from '../../tools/humanFileSize';
-import { AppIntegrationType } from '../../types/app';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
@@ -49,7 +50,8 @@ function UseNetTile({ widget }: UseNetTileProps) {
   const downloadApps =
     config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
     [];
-  const { ref, width, height } = useElementSize();
+  const { ref, width } = useElementSize();
+  const { data: sessionData } = useSession();
 
   const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
   const { data } = useGetUsenetInfo({ appId: selectedAppId! });
@@ -106,30 +108,31 @@ function UseNetTile({ widget }: UseNetTileProps) {
       )}
       <Tabs.Panel value="queue">
         <UsenetQueueList appId={selectedAppId} />
-        {!data ? null : data.paused ? (
-          <Button
-            uppercase
-            onClick={async () => resumeAsync({ appId: selectedAppId })}
-            radius="xl"
-            size="xs"
-            fullWidth
-            mt="sm"
-          >
-            <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
-          </Button>
-        ) : (
-          <Button
-            uppercase
-            onClick={async () => pauseAsync({ appId: selectedAppId })}
-            radius="xl"
-            size="xs"
-            fullWidth
-            mt="sm"
-          >
-            <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
-            {dayjs.duration(data.eta, 's').format('HH:mm')}
-          </Button>
-        )}
+        {sessionData?.user?.isAdmin &&
+          (!data ? null : data.paused ? (
+            <Button
+              uppercase
+              onClick={async () => resumeAsync({ appId: selectedAppId })}
+              radius="xl"
+              size="xs"
+              fullWidth
+              mt="sm"
+            >
+              <IconPlayerPlay size={12} style={{ marginRight: 5 }} /> {t('info.paused')}
+            </Button>
+          ) : (
+            <Button
+              uppercase
+              onClick={async () => pauseAsync({ appId: selectedAppId })}
+              radius="xl"
+              size="xs"
+              fullWidth
+              mt="sm"
+            >
+              <IconPlayerPause size={12} style={{ marginRight: 5 }} />{' '}
+              {dayjs.duration(data.eta, 's').format('HH:mm')}
+            </Button>
+          ))}
       </Tabs.Panel>
       <Tabs.Panel value="history" style={{ display: 'flex', flexDirection: 'column' }}>
         <UsenetHistoryList appId={selectedAppId} />

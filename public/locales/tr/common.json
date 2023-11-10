@@ -1,11 +1,17 @@
 {
   "save": "Kaydet",
+  "apply": "Uygula",
+  "insert": "Ekle",
   "about": "Hakkında",
   "cancel": "Vazgeç",
   "close": "Kapat",
+  "back": "Geri",
   "delete": "Sil",
   "ok": "Tamam",
   "edit": "Düzenle",
+  "next": "İleri",
+  "previous": "Önceki",
+  "confirm": "Onayla",
   "enabled": "Etkin",
   "disabled": "Pasif",
   "enableAll": "Tümünü etkinleştir",
@@ -36,5 +42,14 @@
     "medium": "Orta",
     "large": "Büyük"
   },
-  "seeMore": "Daha fazla..."
+  "seeMore": "Daha fazla...",
+  "position": {
+    "left": "Sol",
+    "center": "Merkez",
+    "right": "Sağ"
+  },
+  "attributes": {
+    "width": "Genişlik",
+    "height": "Yükseklik"
+  }
 }

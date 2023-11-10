@@ -23,7 +23,9 @@ interface InfoCardProps {
 export const InfoCard = ({ bg, cardProp, message, link, hoverProp, position }: InfoCardProps) => {
   const { colorScheme } = useMantineTheme();
   const { t } = useTranslation('common');
-  const content = link? message + ` <a href=\"${link}\" target=\"_blank\">${t('seeMore')}</a>` : message;
+  const content = link
+    ? message + ` <a href=\"${link}\" target=\"_blank\">${t('seeMore')}</a>`
+    : message;
   const editor = useEditor({
     content,
     editable: false,

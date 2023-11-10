@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Endre",
+    "hero": {
+        "title": "Velkommen tilbake, {{username}}",
+        "fallbackUsername": "Anonym",
+        "subtitle": "Velkommen til Applikasjon Hub. Organiser, optimaliser og erobre!"
+    },
+    "quickActions": {
+        "title": "Raske handlinger",
+        "boards": {
+            "title": "Dine tavler",
+            "subtitle": "Lag og administrer tavlene dine"
+        },
+        "inviteUsers": {
+            "title": "Inviter en ny bruker",
+            "subtitle": "Opprett og send en invitasjon til registrering"
+        },
+        "manageUsers": {
+            "title": "Administrer brukere",
+            "subtitle": "Slett og administrer brukerne dine"
+        }
+    }
+}

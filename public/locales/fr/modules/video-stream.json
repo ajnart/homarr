@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Flux vidéo",
-    "description": "Intégrer un flux vidéo ou une vidéo provenant d'une caméra ou d'un site web",
+    "description": "Intégre un flux vidéo ou une vidéo provenant d'une caméra ou d'un site web",
     "settings": {
       "title": "Paramètres du widget de flux vidéo",
       "FeedUrl": {

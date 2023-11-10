@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Kullanıcı davetleri",
+    "pageTitle": "Kullanıcı davetlerini yönet",
+    "description": "Davetleri kullanarak kullanıcıları Homarr örneğinize davet edebilirsiniz. Davetiye yalnızca belirli bir süre için geçerli olacak ve bir kez kullanılabilir. Son kullanma tarihi, oluşturulduktan sonra 5 dakika ile 12 ay arasında olmalıdır.",
+    "button": {
+        "createInvite": "Davetiye oluştur",
+        "deleteInvite": "Daveti sil"
+    },
+    "table": {
+        "header": {
+            "id": "Kimlik",
+            "creator": "Oluşturan",
+            "expires": "Bitiş süresi",
+            "action": "Eylemler"
+        },
+        "data": {
+            "expiresAt": "süresi doldu {{at}}",
+            "expiresIn": "{{in}} içerisinde"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Davet oluştur",
+            "description": "Süre sona erdikten sonra davet artık geçerli olmayacak ve daveti alan kişi bir hesap oluşturamayacaktır.",
+            "form": {
+                "expires": "Son geçerlilik tarihi",
+                "submit": "Oluştur"
+            }
+        },
+        "copy": {
+            "title": "Daveti kopyala",
+            "description": "Davetiyeniz oluşturuldu. Bu modal kapandıktan sonra, <b>artık bu bağlantıyı kopyalayamayacaksınız</b>. Söz konusu kişiyi artık davet etmek istemiyorsanız, bu daveti istediğiniz zaman silebilirsiniz.",
+            "invitationLink": "Davet bağlantısı",
+            "details": {
+                "id": "Kimlik",
+                "token": "Erişim Anahtarı"
+            },
+            "button": {
+                "close": "Kopyala & Kapat"
+            }
+        },
+        "delete": {
+            "title": "Daveti sil",
+            "description": "Bu daveti silmek istediğinizden emin misiniz? Bu bağlantıya sahip kullanıcılar artık bu bağlantıyı kullanarak hesap oluşturamayacaktır."
+        }
+    },
+    "noInvites": "Henüz davetiye bağlantıları yok."
+}

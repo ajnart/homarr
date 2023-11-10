@@ -1,0 +1,24 @@
+{
+  "title": "清除暫存",
+  "selector": {
+    "label": "選擇要清除的暫存",
+    "data": {
+      "ping": "Ping 查詢",
+      "repositoryIcons": "遠端/本地圖標",
+      "calendar&medias": "日曆中的媒體",
+      "weather": "天氣數據"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "已清除暫存",
+    "clearAll": {
+      "text": "清除所有暫存",
+      "notificationMessage": "已清除所有暫存"
+    },
+    "clearSelect": {
+      "text": "清除所選暫存",
+      "notificationMessageSingle": "{{value}} 的暫存已清除",
+      "notificationMessageMulti": "{{values}} 的暫存已刪除"
+    }
+  }
+}

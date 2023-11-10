@@ -3,9 +3,9 @@
     "name": "iFrame",
     "description": "Intégrer n'importe quel contenu à partir d'Internet. Certains sites Web peuvent restreindre l'accès.",
     "settings": {
-      "title": "Paramètres d'iFrame",
+      "title": "Paramètres de l'iFrame",
       "embedUrl": {
-        "label": "Intégrer l'URL"
+        "label": "URL intégrée"
       },
       "allowFullScreen": {
         "label": "Permettre le plein écran"
@@ -39,7 +39,7 @@
         "title": "URL invalide",
         "text": "Assurez-vous que vous avez saisi une adresse valide dans la configuration de votre widget"
       },
-      "browserSupport": "Votre navigateur internet ne supporte pas les iframes. Veillez à le mettre à jour."
+      "browserSupport": "Votre navigateur internet ne prend pas en charge les iframes. Merci de le mettre à jour."
     }
   }
 }

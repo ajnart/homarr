@@ -1,12 +1,12 @@
 import { z } from 'zod';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 const citySchema = z.object({
   id: z.number(),
   name: z.string(),
-  country: z.string(),
-  country_code: z.string(),
+  country: z.string().optional(),
+  country_code: z.string().optional(),
   latitude: z.number(),
   longitude: z.number(),
   population: z.number().optional(),
@@ -24,7 +24,7 @@ const weatherSchema = z.object({
 });
 
 export const weatherRouter = createTRPCRouter({
-  findCity: publicProcedure
+  findCity: adminProcedure
     .input(
       z.object({
         query: z.string().min(2),

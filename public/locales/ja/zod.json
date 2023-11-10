@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "このフィールドは無効です。",
+        "required": "このフィールドは必須です",
+        "string": {
+            "startsWith": "このフィールドは {{startsWith}}で始まらなければならない。",
+            "endsWith": "このフィールドの末尾は {{endsWith}}でなければならない。",
+            "includes": "このフィールドには {{includes}}を含めなければならない。"
+        },
+        "tooSmall": {
+            "string": "このフィールドは {{minimum}} 文字以上で入力してください。",
+            "number": "このフィールドは {{minimum}}以上でなければならない。"
+        },
+        "tooBig": {
+            "string": "このフィールドは {{maximum}} 文字以内で入力してください。",
+            "number": "このフィールドは {{maximum}}以下でなければならない。"
+        },
+        "custom": {
+            "passwordMatch": "パスワードは一致しなければならない"
+        }
+    }
+}

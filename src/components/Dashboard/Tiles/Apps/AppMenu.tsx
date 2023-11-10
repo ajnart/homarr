@@ -1,7 +1,8 @@
-import { useConfigContext } from '../../../../config/provider';
-import { useConfigStore } from '../../../../config/store';
-import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
-import { AppType } from '../../../../types/app';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
+import { AppType } from '~/types/app';
+
 import { GenericTileMenu } from '../GenericTileMenu';
 
 interface TileMenuProps {

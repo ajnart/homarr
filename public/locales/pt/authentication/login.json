@@ -1,27 +1,20 @@
 {
+  "metaTitle": "Login",
   "title": "Bem-vindo de volta!",
-  "text": "Por favor introduza a sua palavra-passe",
+  "text": "Digite suas credenciais",
   "form": {
     "fields": {
+      "username": {
+        "label": "Usuário"
+      },
       "password": {
-        "label": "Senha",
-        "placeholder": "Sua senha"
+        "label": "Senha"
       }
     },
     "buttons": {
       "submit": "Iniciar sessão"
-    }
+    },
+    "afterLoginRedirection": "Após o login, você será redirecionado para {{url}}"
   },
-  "notifications": {
-    "checking": {
-      "title": "Conferindo sua senha",
-      "message": "Sua senha está sendo verificada..."
-    },
-    "correct": {
-      "title": "Entrar com sucesso, redireccionando..."
-    },
-    "wrong": {
-      "title": "A senha que introduziu está incorrecta, por favor tente novamente."
-    }
-  }
+  "alert": "Suas credenciais estão incorretas ou esta conta não existe. Tente novamente."
 }

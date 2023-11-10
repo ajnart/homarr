@@ -1,0 +1,23 @@
+{
+    "metaTitle": "관리",
+    "hero": {
+        "title": "환영합니다, {{username}}",
+        "fallbackUsername": "익명",
+        "subtitle": "애플리케이션 허브에 오신 것을 환영합니다. 정리, 최적화, 정복!"
+    },
+    "quickActions": {
+        "title": "빠른 작업",
+        "boards": {
+            "title": "보드",
+            "subtitle": "보드 만들기 및 관리"
+        },
+        "inviteUsers": {
+            "title": "새 사용자 초대하기",
+            "subtitle": "등록 초대장 생성 및 보내기"
+        },
+        "manageUsers": {
+            "title": "사용자 관리",
+            "subtitle": "사용자 삭제 및 관리"
+        }
+    }
+}

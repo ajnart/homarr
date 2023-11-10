@@ -1,6 +1,18 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Controles de falhas de DNS",
+    "description": "Controle o PiHole ou o AdGuard em seu painel de controle",
+    "settings": {
+      "title": "Configurações de controles de falhas de DNS",
+      "showToggleAllButtons": {
+        "label": "Mostrar botões \"Ativar/Desativar tudo"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Não é possível encontrar um buraco no DNS",
+        "text": "Houve um problema na conexão com seu(s) buraco(s) DNS. Verifique sua(s) configuração(ões)/integração(ões)."
+      }
+    }
   }
 }

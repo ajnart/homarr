@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Dette felt er ugyldigt",
+        "required": "Dette felt er påkrævet",
+        "string": {
+            "startsWith": "Dette felt skal starte med {{startsWith}}",
+            "endsWith": "Dette felt skal slutte med {{endsWith}}",
+            "includes": "Dette felt skal indeholde {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Dette felt skal være mindst {{minimum}} tegn langt",
+            "number": "Dette felt skal være større end eller lig med {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Dette felt må højst være på {{maximum}} tegn",
+            "number": "Dette felt skal være mindre end eller lig med {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "Adgangskoderne skal stemme overens"
+        }
+    }
+}

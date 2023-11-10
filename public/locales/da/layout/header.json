@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Dette er en eksperimentel funktion i Homarr. Rapporter venligst eventuelle problemer på <gh>GitHub</gh> eller <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "Søg",
+        "engines": {
+            "web": "Søg efter {{query}} på nettet",
+            "youtube": "Søg efter {{query}} på YouTube",
+            "torrent": "Søg efter {{query}} torrents",
+            "movie": "Søg efter {{query}} på {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Skift tema",
+            "preferences": "Brugerindstillinger",
+            "defaultBoard": "Standard dashboard",
+            "manage": "Administrer",
+            "logout": "Log {{username}} ud",
+            "login": "Log ind"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Top {{count}} resultater for <b>{{search}}</b>."
+        }
+    }
+}

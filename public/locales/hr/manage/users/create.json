@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Stvori korisnika",
+    "steps": {
+        "account": {
+            "title": "Prvi korak",
+            "text": "Napravi račun",
+            "username": {
+                "label": "Korisničko ime"
+            },
+            "email": {
+                "label": "E-pošta"
+            }
+        },
+        "security": {
+            "title": "Drugi korak",
+            "text": "Lozinka",
+            "password": {
+                "label": "Lozinka"
+            }
+        },
+        "finish": {
+            "title": "Potvrda",
+            "text": "Spremi u bazu podataka",
+            "card": {
+                "title": "Pregledajte svoje unose",
+                "text": "Nakon što pošaljete svoje podatke u bazu, korisnik će se moći prijaviti. Jeste li sigurni da želite pohraniti ovog korisnika u bazu i aktivirati prijavu?"
+            },
+            "table": {
+                "header": {
+                    "property": "Vlasništvo",
+                    "value": "Vrijednost",
+                    "username": "Korisničko ime",
+                    "email": "E-pošta",
+                    "password": "Lozinka"
+                },
+                "notSet": "Nespreman",
+                "valid": "Valjano"
+            },
+            "failed": "Stvaranje korisnika nije uspjelo: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Korisnik je stvoren",
+                "text": "Korisnik je kreiran u bazi podataka. Sada se mogu prijaviti."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generiraj nasumično",
+        "createAnother": "Stvorite drugu"
+    }
+}

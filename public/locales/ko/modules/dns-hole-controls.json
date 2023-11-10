@@ -1,6 +1,18 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "DNS 홀 제어",
+    "description": "대시보드에서 PiHole 또는 AdGuard를 제어하세요.",
+    "settings": {
+      "title": "DNS 홀 제어 설정",
+      "showToggleAllButtons": {
+        "label": "'모두 활성화/비활성화' 버튼 표시"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "DNS 구멍을 찾을 수 없습니다.",
+        "text": "DNS 홀에 연결하는 동안 문제가 발생했습니다. 구성/연동을 확인하세요."
+      }
+    }
   }
 }

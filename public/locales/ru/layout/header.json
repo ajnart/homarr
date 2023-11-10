@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Это экспериментальная функция Homarr. Пожалуйста, сообщайте о любых проблемах на <gh>GitHub</gh> или <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "Поиск",
+        "engines": {
+            "web": "Поиск {{query}} в интернете",
+            "youtube": "Поиск {{query}} на YouTube",
+            "torrent": "Поиск {{query}} по торрентам",
+            "movie": "Поиск {{query}} в приложении {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Переключить тему",
+            "preferences": "Пользовательские настройки",
+            "defaultBoard": "Панель по умолчанию",
+            "manage": "Управление",
+            "logout": "Выйти как {{username}}",
+            "login": "Вход в систему"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Топ {{count}} результатов для <b>{{search}}</b>."
+        }
+    }
+}

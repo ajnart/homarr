@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Opret bruger",
+    "steps": {
+        "account": {
+            "title": "Første trin",
+            "text": "Opret konto",
+            "username": {
+                "label": "Brugernavn"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Andet trin",
+            "text": "Adgangskode",
+            "password": {
+                "label": "Adgangskode"
+            }
+        },
+        "finish": {
+            "title": "Bekræftelse",
+            "text": "Gem i databasen",
+            "card": {
+                "title": "Gennemgå dine input",
+                "text": "Når du har sendt dine data til databasen, vil brugeren kunne logge ind. Er du sikker på, at du vil gemme denne bruger i databasen og aktivere login?"
+            },
+            "table": {
+                "header": {
+                    "property": "Egenskaber",
+                    "value": "Værdi",
+                    "username": "Brugernavn",
+                    "email": "E-mail",
+                    "password": "Adgangskode"
+                },
+                "notSet": "Ikke angivet",
+                "valid": "Gyldig"
+            },
+            "failed": "Brugeroprettelse er mislykkedes: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Brugeren blev oprettet",
+                "text": "Brugeren blev oprettet i databasen. De kan nu logge ind."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generer tilfældig",
+        "createAnother": "Opret en anden"
+    }
+}

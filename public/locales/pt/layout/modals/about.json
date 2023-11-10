@@ -1,21 +1,22 @@
 {
 	"description": "Homarr é um <strong>elegante</strong>, <strong>moderno</strong> painel de instrumentos que coloca todas as suas aplicações e serviços na ponta dos seus dedos. Com Homarr, pode aceder e controlar tudo num único local conveniente. Homarr integra-se perfeitamente com as aplicações que adicionou, fornecendo-lhe informações valiosas e dando-lhe um controlo completo. A instalação é tranquila, e Homarr suporta uma vasta gama de métodos de implantação.",
-	"contact": "Com problemas ou perguntas? Ligue-se a nós!",
 	"addToDashboard": "Adicionar ao Painel de instrumentos",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
-	"documentation": "",
+	"tip": "Mod refere-se à sua tecla modificadora, ou seja, Ctrl e Command/Super/Windows",
+	"key": "Tecla de atalho",
+	"action": "Ação",
+	"keybinds": "Ligações de teclas",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Alternar o modo claro/escuro",
+		"focusSearchBar": "Foco na barra de pesquisa",
+		"openDocker": "Abra o docker Widget",
+		"toggleEdit": "Alternar o modo de edição"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versão do esquema de configuração",
-		"configurationsCount": "Configurações disponíveis",
 		"version": "Versão",
 		"nodeEnvironment": "Ambiente do nó",
 		"i18n": "Espaços de tradução do I18n carregados",
@@ -23,7 +24,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Desativar o modo de edição"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Novo: {{newVersion}}",
+		"dropdown": "A versão {{newVersion}} está disponível! A versão atual é {{currentVersion}}"
 	}
 }

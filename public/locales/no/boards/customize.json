@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Tilpass {{name}} tavle",
+    "pageTitle": "Tilpasning til {{name}} tavle",
+    "backToBoard": "Tilbake til tavlen",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primærfarge",
+            "secondaryColor": "Sekundærfarge"
+        }
+    },
+    "save": {
+        "button": "Lagre endringer",
+        "note": "Forsiktig, du har ulagrede endringer!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Lagrer tilpasning",
+            "message": "Vennligst vent mens vi lagrer tilpasningen din"
+        },
+        "success": {
+            "title": "Tilpasningen er lagret",
+            "message": "Tilpasningen din er lagret"
+        },
+        "error": {
+            "title": "Feil",
+            "message": "Kan ikke lagre endringer"
+        }
+    }
+}

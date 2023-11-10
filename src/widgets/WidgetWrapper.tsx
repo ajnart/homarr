@@ -1,8 +1,8 @@
 import { ComponentType } from 'react';
+import { HomarrCardWrapper } from '~/components/Dashboard/Tiles/HomarrCardWrapper';
+import { WidgetsMenu } from '~/components/Dashboard/Tiles/Widgets/WidgetsMenu';
 
 import Widgets from '.';
-import { HomarrCardWrapper } from '../components/Dashboard/Tiles/HomarrCardWrapper';
-import { WidgetsMenu } from '../components/Dashboard/Tiles/Widgets/WidgetsMenu';
 import ErrorBoundary from './boundary';
 import { IWidget } from './widgets';
 

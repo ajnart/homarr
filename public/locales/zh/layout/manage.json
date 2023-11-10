@@ -1,0 +1,32 @@
+{
+    "navigation": {
+        "home": {
+            "title": "首页"
+        },
+        "boards": {
+            "title": "面板"
+        },
+        "users": {
+            "title": "用户",
+            "items": {
+                "manage": "管理",
+                "invites": "邀请"
+            }
+        },
+        "help": {
+            "title": "帮助",
+            "items": {
+                "documentation": "文档",
+                "report": "报告问题 / bug",
+                "discord": "Discord 社区",
+                "contribute": "贡献"
+            }
+        },
+        "tools": {
+            "title": "工具",
+            "items": {
+                "docker": "Docker"
+            }
+        }
+    }
+}

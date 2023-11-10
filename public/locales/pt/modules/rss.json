@@ -1,29 +1,29 @@
 {
   "descriptor": {
     "name": "Widget RSS",
-    "description": "",
+    "description": "O widget rss permite que você exiba feeds RSS em seu painel.",
     "settings": {
       "title": "Configurações para o widget RSS",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URLs de feeds RSS",
+        "description": "Os URLs dos feeds RSS que você deseja exibir."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Intervalo de atualização (em minutos)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Permitir formatação HTML (Perigoso)",
+        "info": "Permitir a formatação HTML de fora pode ser perigoso.<br/>Certifique-se de que o feed seja de uma fonte confiável."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Grampo de linhas de texto"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Não foi possível recuperar o feed RSS",
+          "text": "Houve um problema ao acessar o feed RSS. Certifique-se de que você configurou corretamente o feed RSS usando um URL válido. Os URLs devem corresponder à especificação oficial. Depois de atualizar o feed, talvez seja necessário atualizar o painel."
         }
       }
     }

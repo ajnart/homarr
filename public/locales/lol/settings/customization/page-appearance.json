@@ -23,8 +23,5 @@
     "description": "",
     "placeholder": "Custom CSS Will Be Applid Last",
     "applying": ""
-  },
-  "buttons": {
-    "submit": "Submit"
   }
 }

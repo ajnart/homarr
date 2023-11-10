@@ -3,11 +3,15 @@ import { MantineTheme } from '@mantine/core';
 export interface SettingsType {
   common: CommonSettingsType;
   customization: CustomizationSettingsType;
+  access: BoardAccessSettingsType;
+}
+
+export interface BoardAccessSettingsType {
+  allowGuests: boolean;
 }
 
 export interface CommonSettingsType {
   searchEngine: SearchEngineCommonSettingsType;
-  defaultConfig: string;
 }
 
 export type SearchEngineCommonSettingsType =

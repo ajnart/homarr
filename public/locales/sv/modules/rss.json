@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS-widget",
-    "description": "",
+    "description": "Med rss-widgeten kan du visa RSS-flöden på din instrumentpanel.",
     "settings": {
       "title": "Inställningar för RSS-widget",
       "rssFeedUrl": {

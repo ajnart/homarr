@@ -5,11 +5,55 @@
 		"settings": {
 			"title": "Not defteri widget'ı için ayarlar",
 			"showToolbar": {
-				"label": "Markdown yazmanıza yardımcı olacak araç çubuğunu gösterin"
+				"label": "Markdown'da yazarken size yardımcı olacak araç çubuğunu aktif edin"
+			},
+			"allowReadOnlyCheck": {
+				"label": "Salt okunur modda onay kutusu işaretlemeye izin ver"
 			},
 			"content": {
 				"label": "Not defterinin içeriği"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Kalın",
+			"italic": "İtalik",
+			"strikethrough": "Üstü Çizgili",
+			"underline": "Alt Çizgili",
+			"colorText": "Renkli metin",
+			"colorHighlight": "Renkli vurgulu metin",
+			"code": "Kod",
+			"clear": "Biçimlendirmeyi temizle",
+			"heading": "Başlık {{level}}",
+			"align": "Metin hizalama: {{position}}",
+			"blockquote": "Blok alıntı",
+			"horizontalLine": "Yatay çizgi",
+			"bulletList": "Maddeli liste",
+			"orderedList": "Sıralı liste",
+			"checkList": "Kontrol listesi",
+			"increaseIndent": "Girintiyi Artır",
+			"decreaseIndent": "Girintiyi Azalt",
+			"link": "Bağlantı",
+			"unlink": "Bağlantıyı kaldır",
+			"image": "Resim Göm",
+			"addTable": "Tablo ekle",
+			"deleteTable": "Tablo Sil",
+			"colorCell": "Renk Hücresi",
+			"mergeCell": "Hücre birleştirmeyi aç / kapat",
+			"addColumnLeft": "Öncesine sütun ekle",
+			"addColumnRight": "Sonrasına sütun ekle",
+			"deleteColumn": "Sütunu sil",
+			"addRowTop": "Öncesine satır ekle",
+			"addRowBelow": "Sonrasına satır ekle",
+			"deleteRow": "Satırı sil"
+		},
+		"modals": {
+			"clearColor": "Rengi temizle",
+			"source": "Kaynak",
+			"widthPlaceholder": "% veya piksel cinsinden değer",
+			"columns": "Sütunlar",
+			"rows": "Satırlar"
 		}
 	}
 }

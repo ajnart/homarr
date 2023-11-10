@@ -23,8 +23,5 @@
     "description": "Továbbá, testreszabhatja műszerfalát CSS segítségével, csak tapasztalt felhasználóknak ajánlott",
     "placeholder": "Az egyéni CSS utoljára kerül alkalmazásra",
     "applying": "CSS alkalmazása..."
-  },
-  "buttons": {
-    "submit": "Küldés"
   }
 }

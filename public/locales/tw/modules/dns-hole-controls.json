@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "DNS 漏洞控制",
+    "description": "從您的面板控制 PiHole 或 AdGuard",
+    "settings": {
+      "title": "DNS 漏洞控制設定",
+      "showToggleAllButtons": {
+        "label": "顯示 \"啟用/停用 全部\" 按鈕"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "無法找到 DNS 漏洞",
+        "text": "到 DNS 漏洞的聯結有問題，請驗證您的設定/集成配置"
+      }
+    }
+  }
+}

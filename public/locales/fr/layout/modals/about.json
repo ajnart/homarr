@@ -1,12 +1,14 @@
 {
 	"description": "Homarr est un tableau de bord <strong>élégant</strong>, <strong>moderne</strong> qui met toutes vos applications et services au bout de vos doigts. Avec Homarr, vous pouvez accéder et contrôler tout dans un seul endroit. Homarr s'intègre de façon transparente avec les applications que vous avez ajoutées, vous fournissant des informations précieuses et vous donnant un contrôle total. L'installation est un jeu d'enfant, et Homarr prend en charge un large éventail de méthodes de déploiement.",
-	"contact": "Vous avez des problèmes ou des questions ? Dites-le-nous !",
 	"addToDashboard": "Ajouter au tableau de bord",
 	"tip": "Mod fait référence à votre touche de modification, c'est-à-dire Ctrl et Commande/Super/Windows",
 	"key": "Raccourci clavier",
 	"action": "Action",
 	"keybinds": "Affectation des touches",
-	"documentation": "",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "Basculer entre mode clair/sombre",
 		"focusSearchBar": "Focus sur la barre de recherche",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Version de schéma de configuration",
-		"configurationsCount": "Configurations disponibles",
 		"version": "Version",
 		"nodeEnvironment": "Environnement Node",
 		"i18n": "Traductions I18n chargées",
@@ -23,7 +24,7 @@
 		"experimental_disableEditMode": "<b>EXPÉRIMENTAL</b> : désactiver le mode édition"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nouveau : {{newVersion}}",
+		"dropdown": "La version {{newVersion}} est disponible ! La version actuelle est {{currentVersion}}"
 	}
 }

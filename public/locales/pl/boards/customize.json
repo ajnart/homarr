@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Dostosuj tablicę {{name}}",
+    "pageTitle": "Dostosowywanie tablicy {{name}}",
+    "backToBoard": "Wróć do tablicy",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Kolor podstawowy",
+            "secondaryColor": "Kolor akcentowy"
+        }
+    },
+    "save": {
+        "button": "Zapisz zmiany",
+        "note": "Ostrożnie — masz niezapisane zmiany!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Zapisywanie ustawień",
+            "message": "Poczekaj, aż zapiszemy Twoje ustawienia"
+        },
+        "success": {
+            "title": "Zapisano zmiany",
+            "message": "Twoje zmiany zostały zapisane"
+        },
+        "error": {
+            "title": "Błąd",
+            "message": "Nie udało się zapisać zmian"
+        }
+    }
+}

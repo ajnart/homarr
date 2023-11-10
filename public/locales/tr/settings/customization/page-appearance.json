@@ -13,7 +13,7 @@
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Tarayıcı sekmenizde görüntülenen icon"
+    "description": "Tarayıcı sekmenizde görüntülenen ikon"
   },
   "background": {
     "label": "Arkaplan"
@@ -23,8 +23,5 @@
     "description": "Ayrıca, yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak kontrol panelinizi özelleştirin",
     "placeholder": "Özel CSS en son uygulanacaktır",
     "applying": "CSS uygulanıyor..."
-  },
-  "buttons": {
-    "submit": "Gönder"
   }
 }

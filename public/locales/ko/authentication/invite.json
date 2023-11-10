@@ -1,0 +1,35 @@
+{
+    "metaTitle": "계정 만들기",
+    "title": "계정 만들기",
+    "text": "아래에 자격 증명을 정의해 주세요.",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "사용자 이름"
+            },
+            "password": {
+                "label": "비밀번호"
+            },
+            "passwordConfirmation": {
+                "label": "비밀번호 확인"
+            }
+        },
+        "buttons": {
+            "submit": "계정 만들기"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "계정 만들기",
+            "text": "잠시만 기다려주세요."
+        },
+        "success": {
+            "title": "계정 생성",
+            "text": "계정이 성공적으로 생성되었습니다."
+        },
+        "error": {
+            "title": "오류",
+            "text": "문제가 발생하여 다음 오류가 발생했습니다: {{error}}"
+        }
+    }
+}

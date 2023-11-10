@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Kešatmiņas tīrīšana",
   "selector": {
-    "label": "",
+    "label": "Izvēlieties kešatmiņas(-u), kuras(-as) vēlaties dzēst",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Ping vaicājumi",
+      "repositoryIcons": "Attālinātās/vietējās ikonas",
+      "calendar&medias": "Mediji no Kalendāra",
+      "weather": "Laikapstākļu dati"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Kešatmiņa Iztīrīta",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Notīrīt visu kešatmiņu",
+      "notificationMessage": "Ir notīrīta visa kešatmiņa"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Atlasīto vaicājumu notīrīšana",
+      "notificationMessageSingle": "Kešatmiņa priekš {{value}} ir izdzēsta",
+      "notificationMessageMulti": "Kešatmiņa priekš {{values}} ir izdzēsta"
     }
   }
 }

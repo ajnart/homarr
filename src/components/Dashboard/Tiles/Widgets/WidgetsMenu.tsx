@@ -1,9 +1,9 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
+import { IWidget } from '~/widgets/widgets';
 
-import { openContextModalGeneric } from '../../../../tools/mantineModalManagerExtensions';
 import WidgetsDefinitions from '../../../../widgets';
-import { IWidget } from '../../../../widgets/widgets';
 import { useWrapperColumnCount } from '../../Wrappers/gridstack/store';
 import { GenericTileMenu } from '../GenericTileMenu';
 import { WidgetEditModalInnerProps } from './WidgetsEditModal';

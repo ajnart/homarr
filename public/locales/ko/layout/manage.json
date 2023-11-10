@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "홈"
+        },
+        "boards": {
+            "title": "보드"
+        },
+        "users": {
+            "title": "사용자",
+            "items": {
+                "manage": "관리",
+                "invites": "초대"
+            }
+        },
+        "help": {
+            "title": "도움말",
+            "items": {
+                "documentation": "문서",
+                "report": "문제/버그 신고",
+                "discord": "커뮤니티 불화",
+                "contribute": "기여하기"
+            }
+        },
+        "tools": {
+            "title": "도구",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "정보"
+        }
+    }
+}

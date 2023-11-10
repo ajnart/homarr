@@ -23,8 +23,5 @@
     "description": "Ngoài ra có thể tùy chỉnh bảng điều khiển của bạn bằng CSS, chỉ được đề xuất cho người dùng có kinh nghiệm",
     "placeholder": "CSS tùy chỉnh sẽ được áp dụng sau cùng",
     "applying": "Đang áp dụng CSS..."
-  },
-  "buttons": {
-    "submit": "Gửi"
   }
 }

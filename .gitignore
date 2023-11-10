@@ -56,3 +56,11 @@ data/configs
 #Languages other than 'en'
 public/locales/*
 !public/locales/en
+
+#database
+sqlite.db
+database/*.sqlite
+WILL_BE_OVERWRITTEN.sqlite
+
+# IDE
+.idea/*

@@ -1,0 +1,36 @@
+{
+    "metaTitle": "Użytkownicy",
+    "pageTitle": "Zarządzaj użytkownikami",
+    "text": "Używając użytkowników, możesz skonfigurować, kto może edytować twoje panele. Przyszłe wersje Homarr będą miały jeszcze większą kontrolę nad uprawnieniami i działami.",
+    "buttons": {
+        "create": "Utwórz"
+    },
+    "table": {
+        "header": {
+            "user": "Użytkownik"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Usuń użytkownika",
+        "demoteAdmin": "Zdegraduj administratora",
+        "promoteToAdmin": "Awansuj na administratora"
+    },
+    "modals": {
+        "delete": {
+            "title": "Usuń użytkownika {{name}}",
+            "text": "Czy na pewno chcesz usunąć użytkownika {{name}}? Spowoduje to usunięcie danych powiązanych z tym kontem, ale nie żadnych pulpitów nawigacyjnych utworzonych przez tego użytkownika."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Awansuj użytkownika {{name}} na administratora",
+                "text": "Czy na pewno chcesz awansować użytkownika {{name}} na administratora? Zapewni to użytkownikowi dostęp do wszystkich zasobów instancji Homarr."
+            },
+            "demote": {
+                "title": "Zdegraduj użytkownika {{name}} do użytkownika",
+                "text": "Czy na pewno chcesz zdegradować użytkownika {{name}} na użytkownika? Spowoduje to usunięcie dostępu użytkownika do wszystkich zasobów w twojej instancji Homarr."
+            },
+            "confirm": "Potwierdź"
+        }
+    },
+    "searchDoesntMatch": "Twoje wyszukiwanie nie pasuje do żadnych wpisów. Dostosuj swój filtr."
+}

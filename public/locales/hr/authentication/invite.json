@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Napravi račun",
+    "title": "Napravi račun",
+    "text": "Definirajte svoje vjerodajnice u nastavku",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Korisničko ime"
+            },
+            "password": {
+                "label": "Lozinka"
+            },
+            "passwordConfirmation": {
+                "label": "Potvrdi lozinku"
+            }
+        },
+        "buttons": {
+            "submit": "Napravi račun"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Izrada računa",
+            "text": "Molimo pričekajte"
+        },
+        "success": {
+            "title": "Račun kreiran",
+            "text": "Vaš račun je uspješno kreiran"
+        },
+        "error": {
+            "title": "Pogreška",
+            "text": "Nešto nije u redu, pojavila se sljedeća pogreška: {{error}}"
+        }
+    }
+}

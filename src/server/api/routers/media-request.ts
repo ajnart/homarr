@@ -1,13 +1,13 @@
 import Consola from 'consola';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 import { z } from 'zod';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { MediaRequestListWidget } from '~/widgets/media-requests/MediaRequestListTile';
+import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
 import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import { MediaRequestStatsWidget } from '~/widgets/media-requests/MediaRequestStatsTile';
-import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 
 export const mediaRequestsRouter = createTRPCRouter({
   allMedia: publicProcedure
@@ -33,9 +33,11 @@ export const mediaRequestsRouter = createTRPCRouter({
         })
           .then(async (response) => {
             const body = (await response.json()) as OverseerrResponse;
-            let appUrl = input.widget.properties.replaceLinksWithExternalHost && app.behaviour.externalUrl?.length > 0
-              ? app.behaviour.externalUrl
-              : app.url;
+            let appUrl =
+              input.widget.properties.replaceLinksWithExternalHost &&
+              app.behaviour.externalUrl?.length > 0
+                ? app.behaviour.externalUrl
+                : app.url;
 
             appUrl = removeTrailingSlash(appUrl);
 
@@ -163,7 +165,7 @@ const retrieveDetailsForItem = async (
       backdropPath: series.backdropPath,
       posterPath: series.backdropPath,
     };
-  };
+  }
 
   const movieResponse = await fetch(`${baseUrl}/api/v1/movie/${id}`, {
     headers,

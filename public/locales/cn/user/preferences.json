@@ -1,0 +1,48 @@
+{
+    "metaTitle": "首选项",
+    "pageTitle": "您的首选项",
+    "boards": {
+        "defaultBoard": {
+            "label": "默认面板"
+        }
+    },
+    "accessibility": {
+        "title": "无障碍服务",
+        "disablePulse": {
+            "label": "禁用 Ping",
+            "description": "默认情况下，Homarr 中的 Ping 指示器会一直工作。这可能会让人感到恼火。这个滑块将停用该动画。"
+        },
+        "replaceIconsWithDots": {
+            "label": "用图标替换 Ping 点",
+            "description": "对于色盲用户来说，Ping 点可能无法识别。 这将用图标替换指示器"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "语言"
+        },
+        "firstDayOfWeek": {
+            "label": "一周的第一天",
+            "options": {
+                "monday": "周一",
+                "saturday": "周六",
+                "sunday": "周日"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "搜索引擎",
+        "custom": "自定义",
+        "newTab": {
+            "label": "在新选项卡中打开搜索结果页"
+        },
+        "autoFocus": {
+            "label": "页面加载时聚焦搜索栏。",
+            "description": "当您导航到面板页面时，搜索栏会自动聚焦。该功能仅适用于桌面设备。"
+        },
+        "template": {
+            "label": "查询网址",
+            "description": "使用 %s 作为查询的占位符"
+        }
+    }
+}

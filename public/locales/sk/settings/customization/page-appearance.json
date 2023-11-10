@@ -23,8 +23,5 @@
     "description": "Ďalej si prispôsobte ovládací panel pomocou CSS, odporúča sa len pre skúsených používateľov",
     "placeholder": "Vlastné CSS sa použije ako posledné",
     "applying": "Aplikuje sa CSS..."
-  },
-  "buttons": {
-    "submit": "Odoslať"
   }
 }

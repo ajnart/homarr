@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Crea Account",
+    "title": "Crea Account",
+    "text": "Definisci le tue credenziali qui sotto",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Nome utente"
+            },
+            "password": {
+                "label": "Password"
+            },
+            "passwordConfirmation": {
+                "label": "Conferma password"
+            }
+        },
+        "buttons": {
+            "submit": "Crea account"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Creazione account in corso",
+            "text": "Attendere"
+        },
+        "success": {
+            "title": "Account creato",
+            "text": "Il tuo account è stato creato con successo"
+        },
+        "error": {
+            "title": "Errore",
+            "text": "Qualcosa è andato storto, riferirsi al seguente errore: {{error}}"
+        }
+    }
+}

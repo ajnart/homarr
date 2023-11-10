@@ -3,9 +3,8 @@ import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useRef } from 'react';
-
-import { AppType } from '../../../../../../types/app';
-import { IconSelector } from '../../../../../IconSelector/IconSelector';
+import { IconSelector } from '~/components/IconSelector/IconSelector';
+import { AppType } from '~/types/app';
 
 interface AppearanceTabProps {
   form: UseFormReturnType<AppType, (values: AppType) => AppType>;
@@ -83,7 +82,8 @@ export const AppearanceTab = ({
               data={[
                 {
                   value: 'column',
-                  label: t('appearance.positionAppName.dropdown.top') as string },
+                  label: t('appearance.positionAppName.dropdown.top') as string,
+                },
                 {
                   value: 'row-reverse',
                   label: t('appearance.positionAppName.dropdown.right') as string,
@@ -94,7 +94,8 @@ export const AppearanceTab = ({
                 },
                 {
                   value: 'row',
-                  label: t('appearance.positionAppName.dropdown.left') as string },
+                  label: t('appearance.positionAppName.dropdown.left') as string,
+                },
               ]}
               {...form.getInputProps('appearance.positionAppName')}
               onChange={(value) => {

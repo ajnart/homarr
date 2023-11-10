@@ -8,8 +8,8 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     coverage: {
-      provider: 'c8',
-      reporter: ['html'],
+      provider: 'v8',
+      reporter: ['html', 'json-summary', 'json'],
       all: true,
       exclude: ['.next/', '.yarn/', 'data/'],
     },

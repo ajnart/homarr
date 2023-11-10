@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Criar usuário",
+    "steps": {
+        "account": {
+            "title": "Primeira etapa",
+            "text": "Criar conta",
+            "username": {
+                "label": "Usuário"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Segunda etapa",
+            "text": "Senha",
+            "password": {
+                "label": "Senha"
+            }
+        },
+        "finish": {
+            "title": "Confirmação",
+            "text": "Salvar no banco de dados",
+            "card": {
+                "title": "Analise suas entradas",
+                "text": "Depois de enviar seus dados para o banco de dados, o usuário poderá fazer login. Tem certeza de que deseja armazenar esse usuário no banco de dados e ativar o login?"
+            },
+            "table": {
+                "header": {
+                    "property": "Propriedade",
+                    "value": "Valor",
+                    "username": "Usuário",
+                    "email": "E-mail",
+                    "password": "Senha"
+                },
+                "notSet": "Não definido",
+                "valid": "Válido"
+            },
+            "failed": "Falha na criação do usuário: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "O usuário foi criado",
+                "text": "O usuário foi criado no banco de dados. Agora ele pode fazer login."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Gerar aleatórios",
+        "createAnother": "Criar outro"
+    }
+}

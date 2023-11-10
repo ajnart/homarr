@@ -10,7 +10,7 @@
     },
     "apps": "Applications",
     "app": {
-        "defaultName": "Votre Application"
+        "defaultName": "Votre application"
     },
     "widgets": "Widgets",
     "categories": "Catégories",
@@ -19,7 +19,7 @@
         "defaultName": "Nouvelle catégorie",
         "created": {
             "title": "Catégorie créée",
-            "message": "La catégorie \"{{name}}\" a été créée"
+            "message": "La catégorie « {{name}} » a été créée"
         }
     }
 }

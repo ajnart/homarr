@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Ceci est une fonctionnalité expérimentale de Homarr. Veuilez signaler tout problème sur <gh>GitHub</gh> ou sur <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "Rechercher",
+        "engines": {
+            "web": "Rechercher {{query}} sur le web",
+            "youtube": "Rechercher {{query}} sur YouTube",
+            "torrent": "Rechercher {{query}} parmi les torrents",
+            "movie": "Rechercher {{query}} sur {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Changer de thème",
+            "preferences": "Préférences utilisateur",
+            "defaultBoard": "Tableau de bord par défaut",
+            "manage": "Gérer",
+            "logout": "Se déconnecter de {{username}}",
+            "login": "Connexion"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "{{count}} premiers résultats pour <b>{{search}}</b>."
+        }
+    }
+}

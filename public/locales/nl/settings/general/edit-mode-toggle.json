@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Bewerkingsmodus schakelen",
+    "enable": "Bewerkingsmodus inschakelen",
+    "disable": "Bewerkingsmodus uitschakelen"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Wachtwoord bewerken",
+    "message": "Om de bewerkingsmodus aan te zetten, moet u het wachtwoord invoeren dat u hebt ingevoerd in de omgevingsvariabele met de naam <Code>EDIT_MODE_PASSWORD</Code> . Als deze niet is ingesteld, kunt u de bewerkingsmodus niet in- en uitschakelen.",
     "submit": "Indienen"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Succes",
+      "message": "Bewerkingsmodus met succes ingeschakeld, pagina opnieuw geladen..."
     },
     "error": {
       "title": "Fout",
-      "message": ""
+      "message": "Het is niet gelukt om de bewerkingsmodus om te schakelen, probeer het opnieuw."
     }
   }
 }

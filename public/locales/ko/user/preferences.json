@@ -1,0 +1,48 @@
+{
+    "metaTitle": "기본 설정",
+    "pageTitle": "기본 설정",
+    "boards": {
+        "defaultBoard": {
+            "label": "기본 보드"
+        }
+    },
+    "accessibility": {
+        "title": "접근성",
+        "disablePulse": {
+            "label": "핑 펄스 비활성화",
+            "description": "기본적으로 Homarr의 핑 표시기는 펄싱됩니다. 이는 자극적일 수 있습니다. 이 슬라이더는 애니메이션을 비활성화합니다."
+        },
+        "replaceIconsWithDots": {
+            "label": "핑 도트를 아이콘으로 바꾸기",
+            "description": "색맹 사용자의 경우 핑 도트를 인식하지 못할 수 있습니다. 이렇게 하면 표시기가 아이콘으로 대체됩니다."
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "언어"
+        },
+        "firstDayOfWeek": {
+            "label": "요일별 요일",
+            "options": {
+                "monday": "월요일",
+                "saturday": "토요일",
+                "sunday": "일요일"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "검색 엔진",
+        "custom": "사용자 지정",
+        "newTab": {
+            "label": "새 탭에서 검색 결과 열기"
+        },
+        "autoFocus": {
+            "label": "페이지 로드 시 검색창에 초점을 맞춥니다.",
+            "description": "이렇게 하면 게시판 페이지로 이동할 때 검색창에 자동으로 초점이 맞춰집니다. 데스크톱 장치에서만 작동합니다."
+        },
+        "template": {
+            "label": "쿼리 URL",
+            "description": "쿼리의 자리 표시자로 %s 사용"
+        }
+    }
+}

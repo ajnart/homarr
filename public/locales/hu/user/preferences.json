@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Beállítások",
+    "pageTitle": "Saját preferenciák",
+    "boards": {
+        "defaultBoard": {
+            "label": "Alapértelmezett tábla"
+        }
+    },
+    "accessibility": {
+        "title": "Kisegítő lehetőségek",
+        "disablePulse": {
+            "label": "Ping letiltása",
+            "description": "Alapértelmezés szerint a Homarrban a pingjelzők pulzálni fognak. Ez irritáló lehet. Ez a csúszka kikapcsolja az animációt"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ping pontok ikonokkal való helyettesítése",
+            "description": "A színvak felhasználók számára a ping pöttyök felismerhetetlenek lehetnek. Ez a jelzőket ikonokkal helyettesíti"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Nyelv"
+        },
+        "firstDayOfWeek": {
+            "label": "A hét első napja",
+            "options": {
+                "monday": "Hétfő",
+                "saturday": "Szombat",
+                "sunday": "Vasárnap"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Keresőmotor",
+        "custom": "Egyéni",
+        "newTab": {
+            "label": "Keresési eredmények megnyitása új lapon"
+        },
+        "autoFocus": {
+            "label": "Keresősávon legyen a fókusz az oldal betöltésekor.",
+            "description": "Ez automatikusan keresősávba helyezi a kurzort, amikor a tábla oldalára navigál. Csak asztali eszközökön fog működni."
+        },
+        "template": {
+            "label": "URL lekérdezés",
+            "description": "Használja a %s címet a lekérdezés helyőrzőjeként"
+        }
+    }
+}

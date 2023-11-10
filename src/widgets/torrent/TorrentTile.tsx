@@ -17,11 +17,11 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
-import { useCardStyles } from '~/components/layout/useCardStyles';
+import { useCardStyles } from '~/components/layout/Common/useCardStyles';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
+import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { AppIntegrationType } from '~/types/app';
 
-import { MIN_WIDTH_MOBILE } from '../../constants/constants';
-import { NormalizedDownloadQueueResponse } from '../../types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '../../types/app';
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -40,6 +40,14 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    displayActiveTorrents: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    speedLimitOfActiveTorrents: { // Unit : kB/s
+      type: 'number',
+      defaultValue: 10,
+    },
     displayStaleTorrents: {
       type: 'switch',
       defaultValue: true,
@@ -51,6 +59,11 @@ const definition = defineWidget({
     labelFilter: {
       type: 'multiple-text',
       defaultValue: [] as string[],
+    },
+    displayRatioWithFilter: {
+      type: 'switch',
+      defaultValue: true,
+      info: true,
     },
   },
   gridstack: {
@@ -140,6 +153,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
 
+  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
+
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
@@ -184,7 +200,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
         )}
 
         <Text color="dimmed" size="xs">
-          {t('card.footer.lastUpdated', { time: humanizedDuration })}
+        {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {` - ${t('card.footer.ratioGlobal')} : ${
+            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
+          }`}
+          {widget.properties.displayRatioWithFilter &&
+            ` - ${t('card.footer.ratioWithFilter')} : ${
+              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
+            }`}
         </Text>
       </Group>
     </Flex>
@@ -194,7 +217,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
   let result = torrents;
   if (!widget.properties.displayCompletedTorrents) {
-    result = result.filter((torrent) => !torrent.isCompleted);
+    result = result.filter((torrent) => !torrent.isCompleted || (widget.properties.displayActiveTorrents && torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024));
   }
 
   if (widget.properties.labelFilter.length > 0) {
@@ -228,6 +251,32 @@ const filterTorrentsByLabels = (
   }
 
   return torrents.filter((torrent) => !labels.includes(torrent.label as string));
+};
+
+export const getTorrentsRatio = (
+  widget: ITorrent,
+  torrents: NormalizedTorrent[],
+  applyAllFilter: boolean
+) => {
+  if (applyAllFilter) {
+    torrents = filterTorrents(widget, torrents);
+  } else if (widget.properties.labelFilter.length > 0) {
+    torrents = filterTorrentsByLabels(
+      torrents,
+      widget.properties.labelFilter,
+      widget.properties.labelFilterIsWhitelist
+    );
+  }
+
+  let totalDownloadedSum = torrents.reduce(
+    (sum, torrent) => sum + torrent.totalDownloaded,
+    0
+  );
+
+  return totalDownloadedSum > 0
+    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) /
+        totalDownloadedSum
+    : -1;
 };
 
 export default definition;

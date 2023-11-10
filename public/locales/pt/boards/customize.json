@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Personalizar {{name}} Board",
+    "pageTitle": "Personalização para {{name}} Board",
+    "backToBoard": "Voltar ao quadro",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Cor primária",
+            "secondaryColor": "Cor secundária"
+        }
+    },
+    "save": {
+        "button": "Salvar alterações",
+        "note": "Cuidado, você tem alterações que não foram salvas!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Salvando a personalização",
+            "message": "Aguarde enquanto salvamos sua personalização"
+        },
+        "success": {
+            "title": "Personalização salva",
+            "message": "Sua personalização foi salva com sucesso"
+        },
+        "error": {
+            "title": "Erro",
+            "message": "Não é possível salvar as alterações"
+        }
+    }
+}

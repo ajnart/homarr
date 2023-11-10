@@ -8,20 +8,20 @@
         "label": "Remplacer les liens par des hôtes externes"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Ouvrir les liens dans un nouvel onglet"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Statistiques des médias",
+    "pending": "En attente de validation",
+    "tvRequests": "Demandes de séries TV",
+    "movieRequests": "Demandes de films",
+    "approved": "Déjà approuvé",
+    "totalRequests": "Total"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Principaux utilisateurs",
+    "requests": "Demandes : {{number}}"
   }
 }

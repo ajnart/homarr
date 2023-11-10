@@ -2,28 +2,31 @@ import { Box, Indicator, Tooltip } from '@mantine/core';
 import { IconCheck, IconLoader, IconX } from '@tabler/icons-react';
 import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { useConfigContext } from '~/config/provider';
+import { AppType } from '~/types/app';
 import { RouterOutputs, api } from '~/utils/api';
-
-import { useConfigContext } from '../../../../config/provider';
-import { AppType } from '../../../../types/app';
 
 interface AppPingProps {
   app: AppType;
 }
 
 export const AppPing = ({ app }: AppPingProps) => {
-  const { config } = useConfigContext();
+  const { data: sessionData } = useSession();
+  const { data: userWithSettings } = api.user.withSettings.useQuery(undefined, {
+    enabled: app.network.enabledStatusChecker && !!sessionData?.user,
+  });
 
   const { data, isFetching, isError, error, isActive } = usePing(app);
   const tooltipLabel = useTooltipLabel({ isFetching, isError, data, errorMessage: error?.message });
   const isOnline = isError ? false : data?.state === 'online';
-  const pulse = usePingPulse({ isOnline });
+
+  const pulse = usePingPulse({ isOnline, settings: userWithSettings?.settings });
 
   if (!isActive) return null;
 
-  const replaceDotWithIcon =
-    config?.settings.customization.accessibility?.replacePingDotsWithIcons ?? false;
+  const replaceDotWithIcon = userWithSettings?.settings.replacePingWithIcons ?? false;
 
   return (
     <motion.div
@@ -106,6 +109,7 @@ const usePing = (app: AppType) => {
     },
     {
       retry: false,
+      enabled: isActive,
       refetchOnWindowFocus: false,
       retryDelay(failureCount, error) {
         // TODO: Add logic to retry on timeout
@@ -115,7 +119,6 @@ const usePing = (app: AppType) => {
       cacheTime: 1000 * 60 * 5,
       staleTime: 1000 * 60 * 5,
       retryOnMount: true,
-      enabled: isActive,
 
       select: (data) => {
         const isOk = isStatusOk(app, data.status);
@@ -143,9 +146,13 @@ type PingPulse = {
   transition?: Transition;
 };
 
-const usePingPulse = ({ isOnline }: { isOnline: boolean }): PingPulse => {
-  const { config } = useConfigContext();
-  const disablePulse = config?.settings.customization.accessibility?.disablePingPulse ?? false;
+type UsePingPulseProps = {
+  isOnline: boolean;
+  settings?: RouterOutputs['user']['withSettings']['settings'];
+};
+
+const usePingPulse = ({ isOnline, settings }: UsePingPulseProps): PingPulse => {
+  const disablePulse = settings?.disablePingPulse ?? false;
 
   if (disablePulse) {
     return {};

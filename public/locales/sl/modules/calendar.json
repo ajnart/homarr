@@ -4,34 +4,28 @@
     "description": "Prikaže koledar s prihajajočimi izdajami iz podprtih integracij.",
     "settings": {
       "title": "Nastavitve za gradnik Koledar",
-      "useSonarrv4": {
-        "label": "Uporaba vmesnika API Sonarr v4"
-      },
-      "sundayStart": {
-        "label": "Začni teden z nedeljo"
-      },
       "radarrReleaseType": {
         "label": "Tip sprostitve Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "V kinematografih",
+          "physicalRelease": "Fizični",
+          "digitalRelease": "Digitalni"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skrij delovne dni"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Prikaži nenadzorovane elemente"
       },
       "fontSize": {
-        "label": "",
+        "label": "Velikost pisave",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Zelo majhen",
+          "sm": "Majhna",
+          "md": "Srednja",
+          "lg": "Velika",
+          "xl": "Zelo velik"
         }
       }
     }

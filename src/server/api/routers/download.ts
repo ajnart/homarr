@@ -156,7 +156,7 @@ const GetDataFromClient = async (
       const url = new URL(app.url);
       const options = {
         host: url.hostname,
-        port: url.port,
+        port: url.port || (url.protocol === 'https:' ? '443' : '80'),
         login: findAppProperty(app, 'username'),
         hash: findAppProperty(app, 'password'),
       };
@@ -206,7 +206,7 @@ const GetDataFromClient = async (
         appId: app.id,
         nzbs: nzbgetItems,
         success: true,
-        totalDownload: 0,
+        totalDownload: nzbgetStatus.DownloadRate,
       };
     }
     default:

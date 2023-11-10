@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Opret konto",
+    "title": "Opret konto",
+    "text": "Angiv venligst dine legitimationsoplysninger nedenfor",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Brugernavn"
+            },
+            "password": {
+                "label": "Adgangskode"
+            },
+            "passwordConfirmation": {
+                "label": "Bekræft kodeord"
+            }
+        },
+        "buttons": {
+            "submit": "Opret konto"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Opretter konto",
+            "text": "Vent venligst"
+        },
+        "success": {
+            "title": "Konto oprettet",
+            "text": "Din konto er blevet oprettet med succes"
+        },
+        "error": {
+            "title": "Fejl",
+            "text": "Noget gik galt, fik følgende fejl: {{error}}"
+        }
+    }
+}

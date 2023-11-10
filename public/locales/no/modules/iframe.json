@@ -11,35 +11,35 @@
         "label": "Tillat fullskjerm"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Tillat gjennomsiktighet"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Tillat skrolling"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Tillat betaling"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Tillat automatisk avspilling"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Tillat mikrofon"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Tillat kamera"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Tillat geolokalisering"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Ugyldig URL",
         "text": "Sørg for at du har angitt en gyldig adresse i konfigurasjonen av widgeten din"
       },
-      "browserSupport": ""
+      "browserSupport": "Nettleseren din støtter ikke iframes. Vennligst oppdater nettleseren din."
     }
   }
 }

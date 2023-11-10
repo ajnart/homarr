@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Lietotāju uzaicinājumi",
+    "pageTitle": "Lietotāju uzaicinājumu pārvaldīšana",
+    "description": "Izmantojot ielūgumus, varat uzaicināt lietotājus uz savu Homarr instanci. Ielūgums ir derīgs tikai noteiktu laiku, un to var izmantot vienu reizi. Veidojot ielūgumu, tā derīguma termiņam jābūt diapazonā no 5 minūtēm līdz 12 mēnešiem.",
+    "button": {
+        "createInvite": "Izveidot uzaicinājumu",
+        "deleteInvite": "Dzēst uzaicinājumu"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Izveidotājs",
+            "expires": "Termiņš",
+            "action": "Darbības"
+        },
+        "data": {
+            "expiresAt": "beidzās {{at}}",
+            "expiresIn": "pēc {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Izveidot uzaicinājumu",
+            "description": "Pēc derīguma termiņa beigām uzaicinājums vairs nebūs derīgs, un uzaicinājuma saņēmējs nevarēs izveidot kontu.",
+            "form": {
+                "expires": "Derīguma termiņš",
+                "submit": "Izveidot"
+            }
+        },
+        "copy": {
+            "title": "Kopēt uzaicinājumu",
+            "description": "Jūsu uzaicinājums ir izveidots. Pēc šī modal loga aizvēršanās <b>Jūs vairs nevarēsiet kopēt šo saiti</b>. Ja vairs nevēlaties uzaicināt minēto personu, jebkurā laikā varat dzēst šo uzaicinājumu.",
+            "invitationLink": "Uzaicinājuma saite",
+            "details": {
+                "id": "ID",
+                "token": "Atslēga"
+            },
+            "button": {
+                "close": "Kopēt un Aizvērt"
+            }
+        },
+        "delete": {
+            "title": "Dzēst uzaicinājumu",
+            "description": "Vai esat pārliecināts, ka vēlaties dzēst šo uzaicinājumu? Lietotāji ar vairs nevarēs izveidot kontu, izmantojot šo saiti."
+        }
+    },
+    "noInvites": "Vēl nav uzaicinājumu."
+}

@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Kisegítő lehetőségek",
       "description": "A Homarr konfigurálása fogyatékkal élő és fogyatékkal élő felhasználók számára"
+    },
+    "access": {
+      "name": "",
+      "description": "Annak beállítása, hogy ki férhet hozzá a táblához"
     }
   }
 }

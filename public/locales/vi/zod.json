@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Trường này không hợp lệ",
+        "required": "Trường này là bắt buộc",
+        "string": {
+            "startsWith": "Trường này phải bắt đầu bằng {{startsWith}}",
+            "endsWith": "Trường này phải kết thúc bằng {{endsWith}}",
+            "includes": "Trường này phải bao gồm {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Trường này phải dài ít nhất {{minimum}} ký tự",
+            "number": "Trường này phải lớn hơn hoặc bằng {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Trường này phải dài tối đa {{maximum}} ký tự",
+            "number": "Trường này phải nhỏ hơn hoặc bằng {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "mật khẩu phải trùng khớp"
+        }
+    }
+}

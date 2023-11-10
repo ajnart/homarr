@@ -1,11 +1,17 @@
 {
   "save": "Spara",
+  "apply": "",
+  "insert": "",
   "about": "Om",
   "cancel": "Avbryt",
   "close": "Stäng",
+  "back": "Bakåt",
   "delete": "Radera",
   "ok": "OK",
   "edit": "Redigera",
+  "next": "Nästa",
+  "previous": "Föregående",
+  "confirm": "Bekräfta",
   "enabled": "Aktiverad",
   "disabled": "Inaktiverad",
   "enableAll": "Aktivera alla",
@@ -36,5 +42,14 @@
     "medium": "mellan",
     "large": "stor"
   },
-  "seeMore": "Se mer..."
+  "seeMore": "Se mer...",
+  "position": {
+    "left": "Vänster",
+    "center": "",
+    "right": "Höger"
+  },
+  "attributes": {
+    "width": "Bredd",
+    "height": "Höjd"
+  }
 }

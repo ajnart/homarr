@@ -1,13 +1,12 @@
 import { Button, Center, Stack, Text, Title, createStyles } from '@mantine/core';
 import { GetServerSidePropsContext } from 'next';
+import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 import pageNotFoundImage from '~/images/undraw_page_not_found_re_e9o6.svg';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { pageNotFoundNamespaces } from '~/tools/server/translation-namespaces';
-
-import { getServerSideTranslations } from '../tools/server/getServerSideTranslations';
 
 export default function Custom404() {
   const { classes } = useStyles();
@@ -24,8 +23,11 @@ export default function Custom404() {
         <Title>{t('title')}</Title>
         <Text>{t('text')}</Text>
 
-        <Button component={Link} variant="light" href="/">
+        <Button component={Link} variant="light" href="/b">
           {t('button')}
+        </Button>
+        <Button component={Link} variant="light" href="/auth/login">
+          Login
         </Button>
       </Stack>
     </Center>

@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Paneller",
+    "pageTitle": "Paneller",
+    "cards": {
+        "statistics": {
+            "apps": "Uygulamalar",
+            "widgets": "Widget'lar",
+            "categories": "Kategoriler"
+        },
+        "buttons": {
+            "view": "Panelleri görüntüle"
+        },
+        "menu": {
+            "setAsDefault": "Varsayılan panel olarak ayarlayın",
+            "delete": {
+                "label": "Kalıcı olarak sil",
+                "disabled": "Silme devre dışı, çünkü eski Homarr bileşenleri varsayılan yapılandırmanın silinmesine izin vermiyor. Silme işlemi gelecekte mümkün olacaktır."
+            }
+        },
+        "badges": {
+            "fileSystem": "Dosya Sistemi",
+            "default": "Varsayılan"
+        }
+    },
+    "buttons": {
+        "create": "Yeni panel oluştur"
+    },
+    "modals": {
+        "delete": {
+            "title": "Paneli sil",
+            "text": "Bu paneli silmek istediğinizden emin misiniz? Bu işlem geri alınamaz ve verileriniz kalıcı olarak kaybolur."
+        },
+        "create": {
+            "title": "Panel oluştur",
+            "text": "Bir pano oluşturulduktan sonra isim değiştirilemez.",
+            "form": {
+                "name": {
+                    "label": "İsim"
+                },
+                "submit": "Oluştur"
+            }
+        }
+    }
+}

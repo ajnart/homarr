@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Convites de usuários",
+    "pageTitle": "Gerenciar convites de usuários",
+    "description": "Usando convites, você pode convidar usuários para sua instância Homarr. Um convite só será válido por um determinado período de tempo e poderá ser usado uma vez. O prazo de validade deve estar entre 5 minutos e 12 meses após a criação.",
+    "button": {
+        "createInvite": "Criar convite",
+        "deleteInvite": "Excluir convite"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Criador",
+            "expires": "Expirações",
+            "action": "Ações"
+        },
+        "data": {
+            "expiresAt": "expirou {{at}}",
+            "expiresIn": "em {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Criar convite",
+            "description": "Após a expiração, um convite não será mais válido e o destinatário do convite não poderá criar uma conta.",
+            "form": {
+                "expires": "Data de expiração",
+                "submit": "Criar"
+            }
+        },
+        "copy": {
+            "title": "Copiar convite",
+            "description": "Seu convite foi gerado. Após o fechamento deste modal, <b>você não poderá mais copiar este link</b>. Se não quiser mais convidar essa pessoa, você poderá excluir esse convite a qualquer momento.",
+            "invitationLink": "Link do convite",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Copiar e descartar"
+            }
+        },
+        "delete": {
+            "title": "Excluir convite",
+            "description": "Tem certeza de que deseja excluir este convite? Os usuários com esse link não poderão mais criar uma conta usando esse link."
+        }
+    },
+    "noInvites": "Ainda não há convites."
+}

@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "Domovská stránka"
+        },
+        "boards": {
+            "title": "Plochy"
+        },
+        "users": {
+            "title": "Uživatelé",
+            "items": {
+                "manage": "Spravovat",
+                "invites": "Pozvánky"
+            }
+        },
+        "help": {
+            "title": "Nápověda",
+            "items": {
+                "documentation": "",
+                "report": "Nahlášení problému/chyby",
+                "discord": "Komunitní Discord",
+                "contribute": "Zapojte se"
+            }
+        },
+        "tools": {
+            "title": "Nástroje",
+            "items": {
+                "docker": ""
+            }
+        },
+        "about": {
+            "title": ""
+        }
+    }
+}

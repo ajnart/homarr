@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Esse campo é inválido",
+        "required": "Este campo é obrigatório",
+        "string": {
+            "startsWith": "Esse campo deve começar com {{startsWith}}",
+            "endsWith": "Esse campo deve terminar com {{endsWith}}",
+            "includes": "Esse campo deve incluir {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Esse campo deve ter pelo menos {{minimum}} caracteres",
+            "number": "Esse campo deve ser maior ou igual a {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Esse campo deve ter no máximo {{maximum}} caracteres",
+            "number": "Esse campo deve ser menor ou igual a {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "As senhas devem corresponder"
+        }
+    }
+}

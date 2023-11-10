@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "",
+    "description": "Met de rss-widget kun je RSS-feeds weergeven op je dashboard.",
     "settings": {
       "title": "Instellingen voor RSS widget",
       "rssFeedUrl": {
@@ -12,11 +12,11 @@
         "label": "Verversingsinterval (in minuten)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "HTML-opmaak toestaan (Gevaarlijk)",
+        "info": "HTML-opmaak van buitenaf toestaan kan gevaarlijk zijn.<br/>Zorg ervoor dat de feed afkomstig is van een betrouwbare bron."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Tekstregels klem"
       }
     },
     "card": {

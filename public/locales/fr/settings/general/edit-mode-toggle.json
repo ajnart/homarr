@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Basculer vers le mode édition",
+    "enable": "Activer le mode édition",
+    "disable": "Désactiver le mode édition"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Modifier le mot de passe",
+    "message": "Pour activer le mode édition, vous devez saisir le mot de passe que vous avez entré dans la variable d'environnement appelée <Code>EDIT_MODE_PASSWORD</Code> . Si cette variable n'est pas définie, vous ne pourrez pas activer ou désactiver le mode édition.",
     "submit": "Soumettre"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Réussie",
+      "message": "Basculement vers le mode édition réussi, rechargement de la page..."
     },
     "error": {
       "title": "Erreur",
-      "message": ""
+      "message": "Impossible d'activer/désactiver le mode d'édition, veuillez réessayer."
     }
   }
 }

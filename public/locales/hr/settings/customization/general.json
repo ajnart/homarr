@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Pristupačnost",
       "description": "Konfigurišite Homarr za osobe sa invaliditetom"
+    },
+    "access": {
+      "name": "",
+      "description": "Konfigurirajte tko ima pristup vašoj ploči"
     }
   }
 }

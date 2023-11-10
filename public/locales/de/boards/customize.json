@@ -1,0 +1,29 @@
+{
+    "metaTitle": "{{name}} Board anpassen",
+    "pageTitle": "Anpassungen für {{name}} Board",
+    "backToBoard": "Zurück zum Board",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primärfarbe",
+            "secondaryColor": "Sekundärfarbe"
+        }
+    },
+    "save": {
+        "button": "Änderungen speichern",
+        "note": "Vorsicht, Sie haben ungespeicherte Änderungen!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Anpassungen werden gespeichert",
+            "message": "Bitte warten Sie, während wir Ihre Anpassungen speichern"
+        },
+        "success": {
+            "title": "Anpassungen gespeichert",
+            "message": "Ihre Anpassungen wurden erfolgreich gespeichert"
+        },
+        "error": {
+            "title": "Fehler",
+            "message": "Ihre Anpassungen konnten nicht gespeichert werden"
+        }
+    }
+}

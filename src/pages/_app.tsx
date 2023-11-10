@@ -1,45 +1,41 @@
-import { ColorScheme, ColorSchemeProvider, MantineProvider, MantineTheme } from '@mantine/core';
-import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
+import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import Consola from 'consola';
-import { getCookie } from 'cookies-next';
+import { getCookie, setCookie } from 'cookies-next';
 import dayjs from 'dayjs';
-import locale from 'dayjs/plugin/localeData'
-import utc from 'dayjs/plugin/utc'
+import locale from 'dayjs/plugin/localeData';
+import utc from 'dayjs/plugin/utc';
+import 'flag-icons/css/flag-icons.min.css';
 import { GetServerSidePropsContext } from 'next';
+import { Session } from 'next-auth';
+import { SessionProvider, getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { CommonHead } from '~/components/layout/Meta/CommonHead';
+import { ConfigProvider } from '~/config/provider';
+import { env } from '~/env.js';
+import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
+import { modals } from '~/modals';
+import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
+import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
-import { ConfigType } from '~/types/config';
-import { api } from '~/utils/api';
-
-import nextI18nextConfig from '../../next-i18next.config';
-import { ChangeAppPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeAppPositionModal';
-import { ChangeWidgetPositionModal } from '../components/Dashboard/Modals/ChangePosition/ChangeWidgetPositionModal';
-import { EditAppModal } from '../components/Dashboard/Modals/EditAppModal/EditAppModal';
-import { SelectElementModal } from '../components/Dashboard/Modals/SelectElement/SelectElementModal';
-import { WidgetsEditModal } from '../components/Dashboard/Tiles/Widgets/WidgetsEditModal';
-import { WidgetsRemoveModal } from '../components/Dashboard/Tiles/Widgets/WidgetsRemoveModal';
-import { CategoryEditModal } from '../components/Dashboard/Wrappers/Category/CategoryEditModal';
-import { ConfigProvider } from '../config/provider';
-import { useEditModeInformationStore } from '../hooks/useEditModeInformation';
-import '../styles/global.scss';
-import { usePackageAttributesStore } from '../tools/client/zustands/usePackageAttributesStore';
-import { ColorTheme } from '../tools/color';
-import { queryClient } from '../tools/server/configurations/tanstack/queryClient.tool';
 import {
   ServerSidePackageAttributesType,
   getServiceSidePackageAttributes,
-} from '../tools/server/getPackageVersion';
-import { theme } from '../tools/server/theme/theme';
+} from '~/tools/server/getPackageVersion';
+import { theme } from '~/tools/server/theme/theme';
+import { ConfigType } from '~/types/config';
+import { api } from '~/utils/api';
+import { colorSchemeParser } from '~/validations/user';
+
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
+import nextI18nextConfig from '../../next-i18next.config.js';
+import '../styles/global.scss';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
@@ -47,29 +43,35 @@ dayjs.extend(utc);
 function App(
   this: any,
   props: AppProps<{
-    colorScheme: ColorScheme;
+    activeColorScheme: MantineColorScheme;
+    environmentColorScheme: MantineColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
-    defaultColorScheme: ColorScheme;
+    analyticsEnabled: boolean;
     config?: ConfigType;
+    primaryColor?: MantineTheme['primaryColor'];
+    secondaryColor?: MantineTheme['primaryColor'];
+    primaryShade?: MantineTheme['primaryShade'];
+    session: Session;
     configName?: string;
     locale: string;
   }>
 ) {
   const { Component, pageProps } = props;
+  const analyticsEnabled = pageProps.analyticsEnabled ?? true;
   // TODO: make mapping from our locales to moment locales
-  const language = getLanguageByCode(pageProps.locale);
-  require(`dayjs/locale/${language.locale}.js`);
+  const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
+  if (language.locale !== 'cr') require(`dayjs/locale/${language.locale}.js`);
   dayjs.locale(language.locale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.config?.settings.customization.colors.primary || 'red'
+    props.pageProps.primaryColor ?? 'red'
   );
   const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.config?.settings.customization.colors.secondary || 'orange'
+    props.pageProps.secondaryColor ?? 'orange'
   );
   const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
-    props.pageProps.config?.settings.customization.colors.shade || 6
+    props.pageProps.primaryShade ?? 6
   );
   const colorTheme = {
     primaryColor,
@@ -80,113 +82,126 @@ function App(
     setPrimaryShade,
   };
 
-  // hook will return either 'dark' or 'light' on client
-  // and always 'light' during ssr as window.matchMedia is not available
-  const preferredColorScheme = useColorScheme(props.pageProps.defaultColorScheme);
-  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: preferredColorScheme,
-    getInitialValueInEffect: true,
-  });
+  useEffect(() => {
+    setPrimaryColor(props.pageProps.primaryColor ?? 'red');
+    setSecondaryColor(props.pageProps.secondaryColor ?? 'orange');
+    setPrimaryShade(props.pageProps.primaryShade ?? 6);
+    return () => {
+      setPrimaryColor('red');
+      setSecondaryColor('orange');
+      setPrimaryShade(6);
+    };
+  }, [props.pageProps]);
 
   const { setInitialPackageAttributes } = usePackageAttributesStore();
-  const { setEnabled } = useEditModeInformationStore();
-
   useEffect(() => {
     setInitialPackageAttributes(props.pageProps.packageAttributes);
-
-    if (props.pageProps.editModeEnabled) {
-      setEnabled();
-    }
   }, []);
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-  const asyncStoragePersister = createAsyncStoragePersister({
-    storage: AsyncStorage,
-  });
-
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      </Head>
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <ColorTheme.Provider value={colorTheme}>
-          <MantineProvider
-            theme={{
-              ...theme,
-              components: {
-                Checkbox: {
-                  styles: {
-                    input: { cursor: 'pointer' },
-                    label: { cursor: 'pointer' },
+      <CommonHead />
+      {pageProps.session && pageProps.session.user.language === 'cr' && (
+        <>
+          <Script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js" />
+          <Script type="text/javascript">var _jipt = []; _jipt.push(['project', 'homarr']);</Script>
+        </>
+      )}
+      {analyticsEnabled === true && (
+        <Script
+          src="https://umami.homarr.dev/script.js"
+          data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
+          strategy="lazyOnload"
+        />
+      )}
+      <SessionProvider session={pageProps.session}>
+        <ColorSchemeProvider {...pageProps}>
+          {(colorScheme) => (
+            <ColorTheme.Provider value={colorTheme}>
+              <MantineProvider
+                theme={{
+                  ...theme,
+                  components: {
+                    Checkbox: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
+                    },
+                    Switch: {
+                      styles: {
+                        input: { cursor: 'pointer' },
+                        label: { cursor: 'pointer' },
+                      },
+                    },
                   },
-                },
-                Switch: {
-                  styles: {
-                    input: { cursor: 'pointer' },
-                    label: { cursor: 'pointer' },
-                  },
-                },
-              },
-              primaryColor,
-              primaryShade,
-              colorScheme,
-            }}
-            withGlobalStyles
-            withNormalizeCSS
-          >
-            <ConfigProvider {...props.pageProps}>
-              <Notifications limit={4} position="bottom-left" />
-              <ModalsProvider
-                modals={{
-                  editApp: EditAppModal,
-                  selectElement: SelectElementModal,
-                  integrationOptions: WidgetsEditModal,
-                  integrationRemove: WidgetsRemoveModal,
-                  categoryEditModal: CategoryEditModal,
-                  changeAppPositionModal: ChangeAppPositionModal,
-                  changeIntegrationPositionModal: ChangeWidgetPositionModal,
+                  primaryColor,
+                  primaryShade,
+                  colorScheme,
                 }}
+                withGlobalStyles
+                withNormalizeCSS
+                withCSSVariables
               >
-                <Component {...pageProps} />
-              </ModalsProvider>
-            </ConfigProvider>
-          </MantineProvider>
-        </ColorTheme.Provider>
-      </ColorSchemeProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+                <ConfigProvider {...props.pageProps}>
+                  <Notifications limit={4} position="bottom-left" />
+                  <ModalsProvider modals={modals}>
+                    <Component {...pageProps} />
+                  </ModalsProvider>
+                </ConfigProvider>
+              </MantineProvider>
+            </ColorTheme.Provider>
+          )}
+        </ColorSchemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </SessionProvider>
     </>
   );
 }
 
-App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => {
-  const disableEditMode = process.env.DISABLE_EDIT_MODE?.toLowerCase() === 'true';
-  if (disableEditMode) {
-    Consola.warn(
-      'EXPERIMENTAL: You have disabled the edit mode. Modifications are no longer possible and any requests on the API will be dropped. If you want to disable this, unset the DISABLE_EDIT_MODE environment variable. This behaviour may be removed in future versions of Homarr'
+App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
+  if (env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME !== 'light') {
+    Consola.debug(
+      `Overriding the default color scheme with ${env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME}`
     );
   }
 
-  if (process.env.DEFAULT_COLOR_SCHEME !== undefined) {
-    Consola.debug(`Overriding the default color scheme with ${process.env.DEFAULT_COLOR_SCHEME}`);
-  }
+  const analyticsEnabled = env.NEXT_PUBLIC_DISABLE_ANALYTICS !== 'true';
 
-  const colorScheme: ColorScheme = (process.env.DEFAULT_COLOR_SCHEME as ColorScheme) ?? 'light';
+  const session = await getSession(ctx);
+
+  // Set the cookie language to the user language if it is not set correctly
+  const cookieLanguage = getCookie(COOKIE_LOCALE_KEY, ctx);
+  if (session?.user && session.user.language != cookieLanguage) {
+    setCookie(COOKIE_LOCALE_KEY, session.user.language, ctx);
+  }
 
   return {
     pageProps: {
-      colorScheme: getCookie('color-scheme', ctx) || 'light',
+      ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
-      editModeEnabled: !disableEditMode,
-      defaultColorScheme: colorScheme,
+      analyticsEnabled,
+      session,
       locale: ctx.locale ?? 'en',
     },
   };
 };
 
 export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as any);
+
+const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsContext) => {
+  const environmentColorScheme = env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME ?? 'light';
+  const cookieColorScheme = getCookie(COOKIE_COLOR_SCHEME_KEY, ctx);
+  const activeColorScheme = colorSchemeParser.parse(
+    session?.user?.colorScheme ?? cookieColorScheme ?? environmentColorScheme
+  );
+
+  if (cookieColorScheme !== activeColorScheme) {
+    setCookie(COOKIE_COLOR_SCHEME_KEY, activeColorScheme, ctx);
+  }
+
+  return {
+    activeColorScheme: activeColorScheme,
+    environmentColorScheme,
+  };
+};

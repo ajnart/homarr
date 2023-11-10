@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Iestatījumi",
+    "pageTitle": "Jūsu iestatījumi",
+    "boards": {
+        "defaultBoard": {
+            "label": "Noklusējamais dēlis"
+        }
+    },
+    "accessibility": {
+        "title": "Piekļūstamība",
+        "disablePulse": {
+            "label": "Atslēgt Ping pulsāciju",
+            "description": "Pēc noklusējuma Homarr Ping indikatori pulsē. Tas var būt kaitinoši. Šis slīdnis atslēgs animāciju"
+        },
+        "replaceIconsWithDots": {
+            "label": "Aizstāt Ping punktiņus ar ikonām",
+            "description": "Krāsu akliem lietotājiem Ping punktiņi var būt neatpazīstami. Tas aizstās indikatorus ar ikonām"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Valoda"
+        },
+        "firstDayOfWeek": {
+            "label": "Nedēļas pirmā diena",
+            "options": {
+                "monday": "Pirmdiena",
+                "saturday": "Sestdiena",
+                "sunday": "Svētdiena"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Meklētājdzinējs",
+        "custom": "Pielāgots",
+        "newTab": {
+            "label": "Atvērt meklēšanas rezultātus jaunā cilnē"
+        },
+        "autoFocus": {
+            "label": "Vietnes ielādes laikā fokusēt meklēšanas joslu.",
+            "description": "Tas automātiski fokusēs meklēšanas joslu, kad pārvietosieties uz dēļa vietnēm. Funkcija darbosies tikai darbvirsmas režīmā."
+        },
+        "template": {
+            "label": "Pieprasījuma URL",
+            "description": "Izmantojiet %s kā vietvārdu vaicājumam"
+        }
+    }
+}

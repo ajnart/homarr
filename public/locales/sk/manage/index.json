@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Spravovať",
+    "hero": {
+        "title": "Vitajte späť, {{username}}",
+        "fallbackUsername": "Anonymný",
+        "subtitle": "Vitajte vo vašom aplikačnom centre. Organizujte, optimalizujte a ovládnite!"
+    },
+    "quickActions": {
+        "title": "Rýchle akcie",
+        "boards": {
+            "title": "Vaše dosky",
+            "subtitle": "Vytváranie a správa tabúľ"
+        },
+        "inviteUsers": {
+            "title": "Pozvať nového užívateľa",
+            "subtitle": "Vytvorenie a odoslanie pozvánky na registráciu"
+        },
+        "manageUsers": {
+            "title": "Spravovať používateľov",
+            "subtitle": "Odstránenie a správa používateľov"
+        }
+    }
+}

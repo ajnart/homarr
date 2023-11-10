@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Administrer",
+    "hero": {
+        "title": "Velkommen tilbage, {{username}}",
+        "fallbackUsername": "Anonym",
+        "subtitle": "Velkommen til din applikationshub. Organiser, optimer og erobr!"
+    },
+    "quickActions": {
+        "title": "Hurtige handlinger",
+        "boards": {
+            "title": "Dine boards",
+            "subtitle": "Opret og administrer dine boards"
+        },
+        "inviteUsers": {
+            "title": "Inviter en ny bruger",
+            "subtitle": "Opret og send en invitation til registrering"
+        },
+        "manageUsers": {
+            "title": "Administrér brugere",
+            "subtitle": "Slet og administrer dine brugere"
+        }
+    }
+}

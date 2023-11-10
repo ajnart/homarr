@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Vis værktøjslinjen, der hjælper dig med at skrive markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Tillad tjek i skrivebeskyttet tilstand"
+			},
 			"content": {
 				"label": "Indholdet af notesbogen"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Fed",
+			"italic": "Kursiv",
+			"strikethrough": "Gennemstreget",
+			"underline": "Understreget",
+			"colorText": "Tekst i farver",
+			"colorHighlight": "Farvet fremhævning af tekst",
+			"code": "Kode",
+			"clear": "Ryd formatering",
+			"heading": "Overskrift {{level}}",
+			"align": "Juster tekst: {{position}}",
+			"blockquote": "Citatblok",
+			"horizontalLine": "Horisontal linje",
+			"bulletList": "Punktopstillet liste",
+			"orderedList": "Sorteret liste",
+			"checkList": "Tjekliste",
+			"increaseIndent": "Forøg indrykning",
+			"decreaseIndent": "Formindsk indrykning",
+			"link": "Link",
+			"unlink": "Fjern link",
+			"image": "Integrer billede",
+			"addTable": "Tilføj tabel",
+			"deleteTable": "Slet tabel",
+			"colorCell": "Farvecelle",
+			"mergeCell": "Slå cellefletning til/fra",
+			"addColumnLeft": "Tilføj kolonne før",
+			"addColumnRight": "Tilføj kolonne efter",
+			"deleteColumn": "Slet kolonne",
+			"addRowTop": "Tilføj række før",
+			"addRowBelow": "Tilføj række efter",
+			"deleteRow": "Slet række"
+		},
+		"modals": {
+			"clearColor": "Ryd farve",
+			"source": "Kilde",
+			"widthPlaceholder": "Værdi i % eller pixels",
+			"columns": "Kolonner",
+			"rows": "Rækker"
 		}
 	}
 }

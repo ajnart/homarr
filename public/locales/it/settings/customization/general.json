@@ -20,6 +20,10 @@
     "accessibility": {
       "name": "Accessibilità",
       "description": "Configura Homarr per utenti con disabilità"
+    },
+    "access": {
+      "name": "Accesso",
+      "description": "Configura chi ha accesso alla tua board"
     }
   }
 }

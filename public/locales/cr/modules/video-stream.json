@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "crwdns2567:0crwdne2567:0",
+    "description": "crwdns2569:0crwdne2569:0",
+    "settings": {
+      "title": "crwdns2571:0crwdne2571:0",
+      "FeedUrl": {
+        "label": "crwdns2709:0crwdne2709:0"
+      },
+      "autoPlay": {
+        "label": "crwdns2711:0crwdne2711:0"
+      },
+      "muted": {
+        "label": "crwdns2577:0crwdne2577:0"
+      },
+      "controls": {
+        "label": "crwdns2579:0crwdne2579:0"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "crwdns2581:0crwdne2581:0"
+  }
+}

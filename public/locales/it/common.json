@@ -1,11 +1,17 @@
 {
   "save": "Salva",
+  "apply": "Applica",
+  "insert": "Inserisci",
   "about": "Info",
   "cancel": "Annulla",
   "close": "Chiudi",
+  "back": "Indietro",
   "delete": "Elimina",
   "ok": "OK",
   "edit": "Modifica",
+  "next": "Successivo",
+  "previous": "Precedente",
+  "confirm": "Conferma",
   "enabled": "Abilitato",
   "disabled": "Disattivato",
   "enableAll": "Abilita tutto",
@@ -36,5 +42,14 @@
     "medium": "medio",
     "large": "grande"
   },
-  "seeMore": "Vedi di più..."
+  "seeMore": "Vedi di più...",
+  "position": {
+    "left": "Sinistra",
+    "center": "Centra",
+    "right": "Destra"
+  },
+  "attributes": {
+    "width": "Larghezza",
+    "height": "Altezza"
+  }
 }

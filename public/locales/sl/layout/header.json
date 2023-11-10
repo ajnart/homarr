@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": ""
+    },
+    "search": {
+        "label": "",
+        "engines": {
+            "web": "",
+            "youtube": "",
+            "torrent": "",
+            "movie": ""
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "",
+            "preferences": "",
+            "defaultBoard": "",
+            "manage": "",
+            "logout": "",
+            "login": "Prijava"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": ""
+        }
+    }
+}

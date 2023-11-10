@@ -8,7 +8,7 @@
         "label": "Mostrar em Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Exibir nome da cidade"
       },
       "location": {
         "label": "Localização do tempo"
@@ -33,5 +33,5 @@
       "unknown": "Desconhecido"
     }
   },
-  "error": ""
+  "error": "Ocorreu um erro"
 }

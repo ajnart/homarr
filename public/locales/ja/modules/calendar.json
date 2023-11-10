@@ -4,12 +4,6 @@
     "description": "サポートされている統合機能からリリース予定のカレンダーを表示します。",
     "settings": {
       "title": "カレンダーウィジェットの設定",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API を使用"
-      },
-      "sundayStart": {
-        "label": "週の始まりは日曜日"
-      },
       "radarrReleaseType": {
         "label": "ラダーリリースタイプ",
         "data": {
@@ -22,7 +16,7 @@
         "label": "平日を隠す"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "監視されていない項目を表示する"
       },
       "fontSize": {
         "label": "文字サイズ",

@@ -1,8 +1,8 @@
 import { ActionIcon, Button, Text, Tooltip } from '@mantine/core';
 import { IconEdit, IconEditOff } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
-import { useScreenLargerThan } from '../../../hooks/useScreenLargerThan';
 import { useEditModeStore } from './useEditModeStore';
 
 export const ViewToggleButton = () => {

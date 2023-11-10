@@ -2,8 +2,8 @@ import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { AppType } from '~/types/app';
 
-import { AppType } from '../../../../types/app';
 import { useEditModeStore } from '../../Views/useEditModeStore';
 import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
@@ -87,7 +87,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
       ) : (
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
-          component={Link}
+          component="a"
           href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
@@ -111,7 +111,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     overflow: 'visible',
     flexGrow: 5,
   },
-  appImage:{
+  appImage: {
     maxHeight: '100%',
     maxWidth: '100%',
     overflow: 'auto',

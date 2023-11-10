@@ -1,0 +1,27 @@
+{
+  "descriptor": {
+    "name": "媒體請求狀態",
+    "description": "您的媒體請求統計",
+    "settings": {
+      "title": "媒體請求狀態",
+      "replaceLinksWithExternalHost": {
+        "label": "使用外部網址替換連結"
+      },
+      "openInNewTab": {
+        "label": "在新分頁中開啟連結"
+      }
+    }
+  },
+  "mediaStats": {
+    "title": "媒體狀態",
+    "pending": "待准許",
+    "tvRequests": "電視劇請求",
+    "movieRequests": "電影請求",
+    "approved": "已准許",
+    "totalRequests": "總計"
+  },
+  "userStats": {
+    "title": "使用者排行",
+    "requests": "請求：{{number}}"
+  }
+}

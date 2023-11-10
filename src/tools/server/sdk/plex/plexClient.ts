@@ -1,9 +1,5 @@
 import { Element, xml2js } from 'xml-js';
-
-import {
-  GenericCurrentlyPlaying,
-  GenericSessionInfo,
-} from '../../../../types/api/media-server/session-info';
+import { GenericCurrentlyPlaying, GenericSessionInfo } from '~/types/api/media-server/session-info';
 
 export class PlexClient {
   constructor(
@@ -43,7 +39,6 @@ export class PlexClient {
 
         const { videoCodec, videoFrameRate, audioCodec, audioChannels, height, width, bitrate } =
           mediaElement;
-
 
         return {
           id: sessionElement?.id as string | undefined,

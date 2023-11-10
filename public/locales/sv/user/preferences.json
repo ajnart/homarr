@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Inställningar",
+    "pageTitle": "Dina Inställningar",
+    "boards": {
+        "defaultBoard": {
+            "label": "Förvald tavla"
+        }
+    },
+    "accessibility": {
+        "title": "Tillgänglighet",
+        "disablePulse": {
+            "label": "Inaktivera ping-puls",
+            "description": "Som standard kommer ping-indikatorerna i Homarr att pulsera. Detta kan vara irriterande. Det här reglaget avaktiverar animeringen"
+        },
+        "replaceIconsWithDots": {
+            "label": "Ersätt ping-prickar med ikoner",
+            "description": "För färgblinda användare kan ping-punkter vara oigenkännliga. Detta kommer att ersätta indikatorer med ikoner"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Språk"
+        },
+        "firstDayOfWeek": {
+            "label": "Första veckodagen",
+            "options": {
+                "monday": "Måndag",
+                "saturday": "Lördag",
+                "sunday": "Söndag"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Sökmotor",
+        "custom": "Anpassad",
+        "newTab": {
+            "label": "Öppna sökresultat i en ny flik"
+        },
+        "autoFocus": {
+            "label": "Fokusera sökfältet när sidan laddas.",
+            "description": "Detta kommer automatiskt att fokusera sökfältet när du navigerar till tavlans sidor. Det fungerar endast på stationära enheter."
+        },
+        "template": {
+            "label": "URL för förfrågan",
+            "description": "Använd %s som platshållare för frågan"
+        }
+    }
+}

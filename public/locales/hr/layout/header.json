@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Ovo je eksperimentalna značajka Homarra. Prijavite sve probleme na <gh>GitHub</gh> ili <dc>Discord</dc>."
+    },
+    "search": {
+        "label": "traži",
+        "engines": {
+            "web": "Potražite {{query}} na webu",
+            "youtube": "Potražite {{query}} na YouTubeu",
+            "torrent": "Traži {{query}} torrenta",
+            "movie": "Tražite {{query}} na {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Promijeni temu",
+            "preferences": "Korisničke postavke",
+            "defaultBoard": "Zadana nadzorna ploča",
+            "manage": "Upravljati",
+            "logout": "Odjava iz {{username}}",
+            "login": "Prijaviti se"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "{{count}} najboljih rezultata za <b>{{search}}</b>."
+        }
+    }
+}

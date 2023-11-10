@@ -15,11 +15,15 @@
     },
     "appereance": {
       "name": "Aparência",
-      "description": ""
+      "description": "Personalize o plano de fundo, as cores e a aparência dos aplicativos"
     },
     "accessibility": {
+      "name": "Acessibilidade",
+      "description": "Configure o Homarr para usuários com deficiência ou incapacitados"
+    },
+    "access": {
       "name": "",
-      "description": ""
+      "description": "Configure quem tem acesso ao seu quadro"
     }
   }
 }

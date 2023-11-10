@@ -23,8 +23,5 @@
     "description": "Inoltre, personalizza la dashboard utilizzando i CSS, consigliato solo agli utenti esperti",
     "placeholder": "I CSS personalizzati saranno applicati per ultimi",
     "applying": "Applicazione CSS..."
-  },
-  "buttons": {
-    "submit": "Invia"
   }
 }

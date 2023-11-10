@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Dieses Feld ist ungültig",
+        "required": "Dieses Feld ist erforderlich",
+        "string": {
+            "startsWith": "Dieses Feld muss mit {{startsWith}} beginnen",
+            "endsWith": "Dieses Feld muss mit {{endsWith}} enden",
+            "includes": "Dieses Feld muss {{includes}} beinhalten"
+        },
+        "tooSmall": {
+            "string": "Dieses Feld muss mindestens {{minimum}} Zeichen lang sein",
+            "number": "Dieses Feld muss größer oder gleich {{minimum}} sein"
+        },
+        "tooBig": {
+            "string": "Dieses Feld muss mindestens {{maximum}} Zeichen lang sein",
+            "number": "Dieses Feld muss größer oder gleich {{maximum}} sein"
+        },
+        "custom": {
+            "passwordMatch": "Die Passwörter müssen übereinstimmen"
+        }
+    }
+}

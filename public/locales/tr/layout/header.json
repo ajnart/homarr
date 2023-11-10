@@ -1,0 +1,30 @@
+{
+    "experimentalNote": {
+        "label": "Bu Homarr'ın deneysel bir özelliğidir. Lütfen herhangi bir sorunu <gh>GitHub</gh> veya <dc>Discord</dc>adresinden bildirin."
+    },
+    "search": {
+        "label": "Ara",
+        "engines": {
+            "web": "Web'de \"{{query}}\" için arama yapın",
+            "youtube": "YouTube'da \"{{query}}\" için arama yapın",
+            "torrent": "Torrent'te \"{{query}}\" için arama yapın",
+            "movie": "{{app}} üzerinde \"{{query}}\" için arama yapın"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Temayı değiştir",
+            "preferences": "Kullanıcı Tercihleri",
+            "defaultBoard": "Varsayılan Panel",
+            "manage": "Yönet",
+            "logout": "{{username}} kullanıcısından çıkış yapın",
+            "login": "Giriş"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "<b>{{search}}</b> için en iyi {{count}} sonuç."
+        }
+    }
+}
