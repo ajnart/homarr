@@ -6,6 +6,7 @@ import {
   Group,
   Header,
   Text,
+  Title,
   UnstyledButton,
   useMantineTheme,
 } from '@mantine/core';
@@ -86,28 +87,7 @@ const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHe
       <Flex h="100%" align="center" columnGap={7}>
         <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
         <Text color="white" lineClamp={height === 30 ? 1 : 2}>
-          <Trans
-            t={t}
-            i18nKey="experimentalNote.label"
-            components={{
-              gh: (
-                <Anchor
-                  color="inherit"
-                  style={{ textDecoration: 'underline' }}
-                  target="_blank"
-                  href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&projects=&template=bug.yml&title=[Authentication%20Beta]:%20%3Ctitle%3E&version=1.14-beta"
-                />
-              ),
-              dc: (
-                <Anchor
-                  color="inherit"
-                  style={{ textDecoration: 'underline' }}
-                  target="_blank"
-                  href="https://discord.com/invite/aCsmEV5RgA"
-                />
-              ),
-            }}
-          />
+          <Title>Make an announcement here</Title>
         </Text>
       </Flex>
     </Box>

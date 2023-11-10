@@ -257,7 +257,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
             </Navbar.Section>
           </Navbar>
         }
-        header={<MainHeader showExperimental logoHref="/b/" leftIcon={burgerMenu} />}
+        header={<MainHeader showExperimental={false} logoHref="/b/" leftIcon={burgerMenu} />}
         footer={
           <Footer height={25}>
             <Group position="apart" px="md">
