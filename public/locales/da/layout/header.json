@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Dette er en eksperimentel funktion i Homarr. Rapporter venligst eventuelle problemer på <gh>GitHub</gh> eller <dc>Discord</dc>."
-    },
     "search": {
         "label": "Søg",
         "engines": {
