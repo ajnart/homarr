@@ -4,9 +4,9 @@ import {
   Group,
   Input,
   MantineTheme,
+  Select,
   Slider,
   Stack,
-  Text,
   TextInput,
   createStyles,
   rem,
@@ -16,6 +16,7 @@ import { useTranslation } from 'next-i18next';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
 import { useColorTheme } from '~/tools/color';
+import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
 
 import { useBoardCustomizationFormContext } from '../form';
 
@@ -29,6 +30,32 @@ export const AppearanceCustomization = () => {
         label={t('background.label')}
         placeholder="/imgs/backgrounds/background.png"
         {...form.getInputProps('appearance.backgroundSrc')}
+      />
+      <Select
+        label={t('backgroundImageAttachment.label')}
+        data={BackgroundImageAttachment.map((attachment) => ({
+          value: attachment,
+          label: t(`backgroundImageAttachment.options.${attachment}`) as string,
+        }))}
+        {...form.getInputProps('appearance.backgroundImageAttachment')}
+      />
+
+      <Select
+        label={t('backgroundImageSize.label')}
+        data={BackgroundImageSize.map((size) => ({
+          value: size,
+          label: t(`backgroundImageSize.options.${size}`) as string,
+        }))}
+        {...form.getInputProps('appearance.backgroundImageSize')}
+      />
+
+      <Select
+        label={t('backgroundImageRepeat.label')}
+        data={BackgroundImageRepeat.map((repeat) => ({
+          value: repeat,
+          label: t(`backgroundImageRepeat.options.${repeat}`) as string,
+        }))}
+        {...form.getInputProps('appearance.backgroundImageRepeat')}
       />
       <ColorSelector type="primaryColor" />
       <ColorSelector type="secondaryColor" />
