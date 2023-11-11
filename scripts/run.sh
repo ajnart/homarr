@@ -2,8 +2,11 @@
 
 echo "Exporting hostname..."
 export NEXTAUTH_URL_INTERNAL="http://$HOSTNAME:7575"
+rm -rf _node_modules
 mv node_modules _node_modules
+rm -rf node_modules
 mv node_modules_migrate node_modules
+
 echo "Migrating database..."
 yarn ts-node src/migrate.ts & PID=$!
 # Wait for migration to finish
@@ -14,8 +17,11 @@ echo "Reverting to production node_modules..."
 cp /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/_node_modules/better-sqlite3/build/Release/better_sqlite3.node
 
 # Remove node_modules and copy cached node_modules
+rm -rf node_modules_migrate
 mv node_modules node_modules_migrate
-mv _node_modules node_modules 
+rm -rf node_modules
+mv _node_modules node_modules
+
 cp ./temp_package.json package.json 
 cp ./temp_yarn.lock yarn.lock
 
