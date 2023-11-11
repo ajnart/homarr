@@ -41,7 +41,11 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   );
   const config = await getFrontendConfig(boardName);
 
-  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  const result = checkForSessionOrAskForLogin(
+    ctx,
+    session,
+    () => config.settings.access.allowGuests || session?.user != undefined
+  );
   if (result) {
     return result;
   }
