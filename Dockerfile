@@ -31,7 +31,7 @@ RUN mkdir /data
 RUN chown -R homarr:homarr-group /data
 
 # Install dependencies
-RUN apt-get update -y && apt-get install -y openssl wget
+RUN apt update && apt install -y openssl wget
 
 # Move node_modules to temp location to avoid overwriting
 RUN mv node_modules _node_modules
@@ -61,5 +61,6 @@ ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
 
+VOLUME [ "/app/data/configs" ]
 VOLUME [ "/data" ]
 ENTRYPOINT ["sh", "./scripts/run.sh"]
