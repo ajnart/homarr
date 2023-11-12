@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Your Homarr instance does not have Docker configured or it has falied to fetch containers. Please check the documentation on how to set up the integration."
+            "text": "Your Homarr instance does not have Docker configured or it has failed to fetch containers. Please check the documentation on how to set up the integration."
         }
     },
     "modals": {
