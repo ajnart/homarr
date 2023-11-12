@@ -4754,7 +4754,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:
@@ -5346,7 +5346,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.3.1":
+"dotenv-cli@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "dotenv-cli@npm:7.3.0"
+  dependencies:
+    cross-spawn: ^7.0.3
+    dotenv: ^16.3.0
+    dotenv-expand: ^10.0.0
+    minimist: ^1.2.6
+  bin:
+    dotenv: cli.js
+  checksum: bc48e9872ed451aa7633cfde0079f5e4b40837d49dca4eab947682c80f524bd1e63ec31ff69b7cf955ff969185a05a343dd5d754dd5569e4ae31f8e9a790ab1b
+  languageName: node
+  linkType: hard
+
+"dotenv-expand@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv-expand@npm:10.0.0"
+  checksum: 2a38b470efe0abcb1ac8490421a55e1d764dc9440fd220942bce40965074f3fb00b585f4346020cb0f0f219966ee6b4ee5023458b3e2953fe5b3214de1b314ee
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.3.0, dotenv@npm:^16.3.1":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
   checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
@@ -7120,6 +7141,7 @@ __metadata:
     dayjs: ^1.11.7
     dockerode: ^3.3.2
     dotenv: ^16.3.1
+    dotenv-cli: ^7.3.0
     drizzle-kit: ^0.19.13
     drizzle-orm: ^0.28.6
     eslint: ^8.0.1
@@ -7152,7 +7174,7 @@ __metadata:
     rss-parser: ^3.12.0
     sabnzbd-api: ^1.5.0
     sass: ^1.56.1
-    ts-node: ^10.9.1
+    ts-node: latest
     turbo: ^1.10.12
     typescript: 5.1.6
     uuid: ^9.0.0
@@ -11590,7 +11612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:^10.9.1":
+"ts-node@npm:latest":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
   dependencies:
