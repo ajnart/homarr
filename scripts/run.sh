@@ -26,4 +26,6 @@ cp ./temp_package.json package.json
 cp ./temp_yarn.lock yarn.lock
 
 echo "Starting production server..."
-node /app/server.js
+node /app/server.js & PID=$!
+
+wait $PID
