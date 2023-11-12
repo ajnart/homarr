@@ -21,7 +21,7 @@ export const BoardHeadOverride = () => {
         <>
           <link rel="shortcut icon" href={faviconUrl} />
 
-          <link rel="apple-touch-icon" href={faviconUrl} />
+          <link rel="apple-touch-icon" href={pwaIcon} />
         </>
       )}
     </Head>
