@@ -59,6 +59,11 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   if (!board.allowGuests && !session?.user) {
     return {
       notFound: true,
+      props: {
+        primaryColor: board.primaryColor,
+        secondaryColor: board.secondaryColor,
+        primaryShade: board.primaryShade,
+      },
     };
   }
 

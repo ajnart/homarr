@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Gestisci",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Bentornati, {{username}}",
+        "fallbackUsername": "Anonimo",
+        "subtitle": "Benvenuti nel vostro Application Hub. Organizza, ottimizza e conquista!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Azioni rapide",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Le tue board",
+            "subtitle": "Crea e gestisci le tue board"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Invita un nuovo utente",
+            "subtitle": "Crea e invia un invito per la registrazione"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Gestisci utenti",
+            "subtitle": "Elimina e gestisci i tuoi utenti"
         }
     }
 }

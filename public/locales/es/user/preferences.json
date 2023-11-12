@@ -3,7 +3,7 @@
     "pageTitle": "Tus preferencias",
     "boards": {
         "defaultBoard": {
-            "label": "Tablero por defecto"
+            "label": "Tablero predeterminado"
         }
     },
     "accessibility": {
@@ -34,15 +34,15 @@
         "title": "Motor de búsqueda",
         "custom": "Personalizado",
         "newTab": {
-            "label": "Abrir resultados de búsqueda en nueva pestaña"
+            "label": "Abrir resultados de búsqueda en una nueva pestaña"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Enfocar en la barra de búsqueda al cargar la página.",
+            "description": "Esto enfocará automáticamente la barra de búsqueda cuando navegue a las páginas del tablero. Sólo funcionará en dispositivos de escritorio."
         },
         "template": {
             "label": "URL de consulta",
-            "description": "Usar %s como marcador de posición de la consulta"
+            "description": "Usar \"%s\" como marcador de posición de la consulta"
         }
     }
 }

@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Boards",
+    "pageTitle": "Boards",
     "cards": {
         "statistics": {
             "apps": "Applicazioni",
@@ -8,36 +8,36 @@
             "categories": "Categorie"
         },
         "buttons": {
-            "view": ""
+            "view": "Mostra board"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Imposta come board predefinita",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Elimina definitivamente",
+                "disabled": "Eliminazione disabilitata, perché i vecchi componenti di Homarr non consentono la cancellazione della configurazione predefinita. La cancellazione sarà possibile in futuro."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "File system",
+            "default": "Predefinito"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Crea nuova board"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Elimina board",
+            "text": "Siete sicuri di voler eliminare questa board? Questa azione non può essere annullata e i dati andranno persi definitivamente."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Crea board",
+            "text": "Il nome non può essere modificato dopo la creazione della board.",
             "form": {
                 "name": {
                     "label": "Nome"
                 },
-                "submit": ""
+                "submit": "Crea"
             }
         }
     }

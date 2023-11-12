@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "Acceso",
-      "description": "Configura quien tiene acceso a tu tablero"
+      "description": "Configura quién tiene acceso a tu tablero"
     }
   }
 }

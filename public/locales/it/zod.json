@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
+        "default": "Questo campo non è valido",
         "required": "Questo campo è obbligatorio",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Questo campo deve iniziare con {{startsWith}}",
+            "endsWith": "Questo campo deve terminare con {{endsWith}}",
+            "includes": "Questo campo deve includere {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Questo campo deve avere una lunghezza minima di {{minimum}} caratteri",
+            "number": "Questo campo deve essere maggiore o uguale a {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Questo campo deve avere una lunghezza massima di {{maximum}} caratteri",
+            "number": "Questo campo deve essere maggiore o uguale a {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Le password devono coincidere"
         }
     }
 }

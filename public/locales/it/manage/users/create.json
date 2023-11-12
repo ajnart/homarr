@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Crea utente",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Primo passo",
+            "text": "Crea account",
             "username": {
                 "label": "Nome utente"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Secondo passo",
             "text": "Password",
             "password": {
                 "label": "Password"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Conferma",
+            "text": "Salva nel database",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Rivedi i tuoi input",
+                "text": "Dopo aver inviato i dati al database, l'utente potrà effettuare il login. Siete sicuri di voler memorizzare questo utente nel database e attivare il login?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Proprietà",
+                    "value": "Valore",
                     "username": "Nome utente",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Password"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Non impostato",
+                "valid": "Valido"
             },
-            "failed": ""
+            "failed": "Creazione utente non riuscita: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Utente creato",
+                "text": "L'utente è stato creato nel database. Ora può effettuare il login."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Genera casualmente",
+        "createAnother": "Crea un altro"
     }
 }

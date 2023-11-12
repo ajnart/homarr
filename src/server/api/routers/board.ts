@@ -4,7 +4,6 @@ import { and, eq, inArray } from 'drizzle-orm';
 import fs from 'fs';
 import { z } from 'zod';
 import { db } from '~/server/db';
-import { WidgetSort } from '~/server/db/items';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import {
   appStatusCodes,

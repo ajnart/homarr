@@ -11,10 +11,10 @@
             "view": "Ver tablero"
         },
         "menu": {
-            "setAsDefault": "Establecer como tu tablero por defecto",
+            "setAsDefault": "Establecer como tu tablero predeterminado",
             "delete": {
                 "label": "Eliminar permanentemente",
-                "disabled": "Eliminación desactivida, porque versiones antiguas de los componentes de Homarr no permiten la eliminación de la configuración por defecto. La eliminación será posible en el futuro."
+                "disabled": "Eliminación deshabilitada, porque los componentes más antiguos de Homarr no permiten la eliminación de la configuración predeterminada. La eliminación será posible en el futuro."
             }
         },
         "badges": {
@@ -28,11 +28,11 @@
     "modals": {
         "delete": {
             "title": "Eliminar tablero",
-            "text": "¿Seguro que quieres eliminar este tablero? Esta acción no puede ser deshecha, y tus datos se perderán de manera permanente."
+            "text": "¿Estás seguro de que deseas eliminar este tablero? Esta acción no se puede deshacer y tus datos se perderán permanentemente."
         },
         "create": {
             "title": "Crear tablero",
-            "text": "El nombre no puede cambiarse después de que el tablero haya sido creado.",
+            "text": "El nombre no se puede cambiar una vez creado el tablero.",
             "form": {
                 "name": {
                     "label": "Nombre"

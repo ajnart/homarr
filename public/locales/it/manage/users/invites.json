@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Inviti utente",
+    "pageTitle": "Gestisci inviti utente",
+    "description": "Utilizzando gli inviti, è possibile invitare gli utenti alla propria istanza di Homarr. Un invito sarà valido solo per un certo periodo di tempo e potrà essere utilizzato una sola volta. La scadenza deve essere compresa tra 5 minuti e 12 mesi al momento della creazione.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Crea invito",
+        "deleteInvite": "Elimina invito"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Creatore",
+            "expires": "Scadenza",
+            "action": "Azioni"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "scaduto {{at}}",
+            "expiresIn": "nel {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Crea invito",
+            "description": "Dopo la scadenza, un invito non sarà più valido e il destinatario dell'invito non potrà creare un account.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Data di scadenza",
+                "submit": "Crea"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Copia invito",
+            "description": "Il tuo invito è stato generato. Dopo questa chiusura modale, <b>non sarai più in grado di copiare questo link</b>. Se non si desidera più invitare detta persona, è possibile eliminare questo invito in qualsiasi momento.",
+            "invitationLink": "Link d'invito",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Copia e rimuovi"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Elimina invito",
+            "description": "Siete sicuri di voler eliminare questo invito? Gli utenti con questo link non potranno più creare un account utilizzando tale link."
         }
     },
-    "noInvites": ""
+    "noInvites": "Non ci sono ancora inviti."
 }

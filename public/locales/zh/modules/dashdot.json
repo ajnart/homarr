@@ -33,7 +33,7 @@
             "label": "显示为文本（紧凑型）"
           },
           "multiView": {
-            "label": "显示为多核视图"
+            "label": "显示为多驱动视图"
           }
         },
         "network": {
@@ -57,7 +57,7 @@
             "label": "列宽度"
           },
           "multiView": {
-            "label": "显示为多核视图"
+            "label": "显示为多核心视图"
           }
         },
         "ram": {
@@ -88,7 +88,7 @@
       "noInformation": "无法从 Dash. 获取信息。- 你运行的是最新版本吗？",
       "protocolDowngrade": {
         "title": "检测到协议降级",
-        "text": "Dash 正在使用HTTP。这存在安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保 Dash 也在 HTTPS 上运行，或者将 Homarr 降级为 HTTP (不推荐)。"
+        "text": "与 Dash. 实例的连接使用的是HTTP。这是一个安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保 Dash. 使用的是HTTPS，或者将Homarr降级为HTTP(不推荐)。"
       }
     },
     "graphs": {

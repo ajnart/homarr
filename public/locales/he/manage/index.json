@@ -1,23 +1,23 @@
 {
     "metaTitle": "ניהול",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "ברוך שובך, {{username}}",
+        "fallbackUsername": "אנונימי",
+        "subtitle": "ברוכים הבאים למרכז היישומים שלך. ארגן, ייעל וכבוש!"
     },
     "quickActions": {
-        "title": "",
+        "title": "פעולות מהירות",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "הלוחות שלך",
+            "subtitle": "צור ונהל את הלוחות שלך"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "הזמנת משתמש חדש",
+            "subtitle": "צור ושלח הזמנה להרשמה"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "ניהול משתמשים",
+            "subtitle": "צור ונהל את המשתמשים שלך"
         }
     }
 }

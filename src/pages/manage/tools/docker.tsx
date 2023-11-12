@@ -62,6 +62,12 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, req, res 
     };
   }
 
+  const caller = dockerRouter.createCaller({
+    session: session,
+    cookies: req.cookies,
+    headers: req.headers,
+  });
+
   const translations = await getServerSideTranslations(
     [...boardNamespaces, 'layout/manage', 'tools/docker'],
     locale,

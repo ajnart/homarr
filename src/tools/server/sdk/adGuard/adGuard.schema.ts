@@ -32,7 +32,7 @@ export const adGuardApiStatusResponseSchema = z.object({
 export const adGuardApiFilteringStatusSchema = z.object({
   filters: z.array(
     z.object({
-      url: z.string().url(),
+      url: z.string(),
       name: z.string(),
       last_updated: z.string().optional(),
       id: z.number().nonnegative(),

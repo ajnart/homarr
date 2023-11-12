@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Логін",
   "title": "З поверненням!",
-  "text": "",
+  "text": "Будь ласка, введіть свої облікові дані",
   "form": {
     "fields": {
       "username": {

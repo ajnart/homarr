@@ -1,19 +1,19 @@
 {
     "errors": {
-        "default": "El campo no es válido",
+        "default": "Este campo no es válido",
         "required": "Este campo es obligatorio",
         "string": {
-            "startsWith": "El campo debe empezar con {{startsWith}}",
-            "endsWith": "El campo debe acabar en {{endsWith}}",
-            "includes": "El campo debe incluir {{includes}}"
+            "startsWith": "Este campo debe empezar con {{startsWith}}",
+            "endsWith": "Este campo debe terminar con {{endsWith}}",
+            "includes": "Este campo debe incluir {{includes}}"
         },
         "tooSmall": {
-            "string": "El campo debe ser de al menos {{minimum}} caracteres de largo",
-            "number": "El campo debe ser más grande, o igual a {{minimum}}"
+            "string": "Este campo debe tener al menos {{minimum}} caracteres",
+            "number": "Este campo debe ser mayor o igual a {{minimum}}"
         },
         "tooBig": {
-            "string": "El campo debe ser al menos {{maximum}} caracteres de largo",
-            "number": "El campo debe menor o igual a {{maximum}}"
+            "string": "Este campo debe tener como máximo {{maximum}} caracteres",
+            "number": "Este campo debe ser menor o igual a {{maximum}}"
         },
         "custom": {
             "passwordMatch": "Las contraseñas deben coincidir"

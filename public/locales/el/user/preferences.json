@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Ρυθμίσεις",
+    "pageTitle": "Οι ρυθμίσεις σας",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Προεπιλεγμένο ταμπλο"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Γλώσσα"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Πρώτη ημέρα της εβδομάδας",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Δευτέρα",
+                "saturday": "Σάββατο",
+                "sunday": "Κυριακή"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Μηχανή αναζήτησης",
         "custom": "Προσαρμοσμένη",
         "newTab": {
-            "label": ""
+            "label": "Άνοιγμα αποτελεσμάτων αναζήτησης σε νέα καρτέλα"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Εστίαση της γραμμής αναζήτησης κατά τη φόρτωση της σελίδας.",
+            "description": "Αυτό θα εστιάσει αυτόματα τη γραμμή αναζήτησης, όταν μεταβείτε στις σελίδες του πίνακα. Θα λειτουργήσει μόνο σε συσκευές γραφείου."
         },
         "template": {
             "label": "Ερώτημα URL",
-            "description": ""
+            "description": "Χρησιμοποιήστε το %s ως placeholder για το query"
         }
     }
 }

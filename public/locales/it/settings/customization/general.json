@@ -22,8 +22,8 @@
       "description": "Configura Homarr per utenti con disabilità"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Accesso",
+      "description": "Configura chi ha accesso alla tua board"
     }
   }
 }

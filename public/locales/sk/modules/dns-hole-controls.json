@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "Zobrazenie tlačidiel \"Povoliť/Zakázať všetko"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

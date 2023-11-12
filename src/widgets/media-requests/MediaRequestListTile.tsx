@@ -145,8 +145,8 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
         ) : (
           <Text>{t('nonePending')}</Text>
         )}
-        {sortedData.map((item) => (
-          <Card radius="md" withBorder>
+        {sortedData.map((item, index) => (
+          <Card radius="md" withBorder key={index}>
             <Flex wrap="wrap" justify="space-between" gap="md">
               <Flex gap="md">
                 <Image

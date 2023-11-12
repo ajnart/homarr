@@ -3,9 +3,15 @@
     "name": "Pilotage du DNS Hole",
     "description": "Contrôlez PiHole ou AdGuard depuis votre tableau de bord",
     "settings": {
-      "title": "",
+      "title": "Paramètres du DNS Hole",
       "showToggleAllButtons": {
         "label": "Afficher les boutons \"Activer/Désactiver tout\""
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
       }
     }
   }

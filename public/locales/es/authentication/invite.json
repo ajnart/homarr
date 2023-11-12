@@ -1,7 +1,7 @@
 {
-    "metaTitle": "Crear Cuenta",
-    "title": "Crear Cuenta",
-    "text": "Por favor, define tus credenciales abajo",
+    "metaTitle": "Crear cuenta",
+    "title": "Crear cuenta",
+    "text": "Por favor, define tus credenciales a continuación",
     "form": {
         "fields": {
             "username": {
@@ -25,11 +25,11 @@
         },
         "success": {
             "title": "Cuenta creada",
-            "text": "Tu cuenta ha sido creada correctamente"
+            "text": "Tu cuenta ha sido creada con éxito"
         },
         "error": {
             "title": "Error",
-            "text": "Algo salió mal, se obtuvo el siguiente error: {{error}}"
+            "text": "Algo salió mal, se encontró el siguiente error: {{error}}"
         }
     }
 }

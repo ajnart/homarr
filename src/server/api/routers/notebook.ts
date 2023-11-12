@@ -4,10 +4,10 @@ import { z } from 'zod';
 import { db } from '~/server/db';
 import { items, widgetOptions } from '~/server/db/schema';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const notebookRouter = createTRPCRouter({
-  update: publicProcedure
+  update: adminProcedure
     .input(z.object({ widgetId: z.string(), content: z.string(), boardName: z.string() }))
     .mutation(async ({ input }) => {
       const item = await db.query.items.findFirst({

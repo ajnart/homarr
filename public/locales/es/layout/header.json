@@ -7,7 +7,7 @@
         "engines": {
             "web": "Buscar {{query}} en la web",
             "youtube": "Buscar {{query}} en YouTube",
-            "torrent": "Buscar {{query}} torrents",
+            "torrent": "Buscar {{query}} en torrents",
             "movie": "Buscar {{query}} en {{app}}"
         }
     },
@@ -15,7 +15,7 @@
         "avatar": {
             "switchTheme": "Cambiar tema",
             "preferences": "Preferencias de usuario",
-            "defaultBoard": "Dashboard por defecto",
+            "defaultBoard": "Panel predeterminado",
             "manage": "Administrar",
             "about": {
                 "label": "Acerca de",

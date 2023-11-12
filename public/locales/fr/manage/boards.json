@@ -19,7 +19,7 @@
         },
         "badges": {
             "fileSystem": "Système de fichiers",
-            "default": ""
+            "default": "Par défaut"
         }
     },
     "buttons": {

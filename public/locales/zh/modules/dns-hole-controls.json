@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "显示 \"启用/禁用全部 \"按钮"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

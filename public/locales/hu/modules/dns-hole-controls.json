@@ -7,6 +7,12 @@
       "showToggleAllButtons": {
         "label": "'Minden engedélyezés/letiltás gombok megjelenítése"
       }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
     }
   }
 }

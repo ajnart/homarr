@@ -1,26 +1,26 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Δημιουργία χρήστη",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Πρώτο βήμα",
+            "text": "Δημιουργία λογαριασμού",
             "username": {
                 "label": "Όνομα Χρήστη"
             },
             "email": {
-                "label": ""
+                "label": "E-Mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Δεύτερο βήμα",
             "text": "Κωδικός",
             "password": {
                 "label": "Κωδικός"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Επιβεβαίωση",
+            "text": "Αποθήκευση στη βάση δεδομένων",
             "card": {
                 "title": "",
                 "text": ""
@@ -30,7 +30,7 @@
                     "property": "",
                     "value": "",
                     "username": "Όνομα Χρήστη",
-                    "email": "",
+                    "email": "E-Mail",
                     "password": "Κωδικός"
                 },
                 "notSet": "",

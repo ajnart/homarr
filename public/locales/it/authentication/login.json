@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Accedi",
   "title": "Bentornati!",
-  "text": "",
+  "text": "Inserisci le tue credenziali",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Accedi"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Dopo il login, verrete reindirizzati a {{url}}"
   },
-  "alert": ""
+  "alert": "Le credenziali non sono corrette o questo account non esiste. Si prega di riprovare."
 }

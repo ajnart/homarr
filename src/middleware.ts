@@ -1,3 +1,5 @@
+import Consola from 'consola';
+import fs from 'fs/promises';
 import { NextRequest, NextResponse } from 'next/server';
 import { env } from 'process';
 import { v4 } from 'uuid';
@@ -37,11 +39,8 @@ export async function middleware(req: NextRequest) {
     return HomarrResponse.next(deviceId);
   }
 
-  // is only called from when there were no users in the database in this session (Since the app started)
-  cachedUserCount = await client.user.count.query();
-
   // Do not redirect if there are users in the database
-  if (cachedUserCount > 0) {
+  if (!(await shouldRedirectToOnboard())) {
     return HomarrResponse.next(deviceId);
   }
 
@@ -62,4 +61,26 @@ const HomarrResponse = {
     }
     return response;
   },
+};
+
+const shouldRedirectToOnboard = async (): Promise<boolean> => {
+  const cacheAndGetUserCount = async () => {
+    cachedUserCount = await client.user.count.query();
+    return cachedUserCount === 0;
+  };
+
+  if (!env.DATABASE_URL?.startsWith('file:')) {
+    return await cacheAndGetUserCount();
+  }
+
+  const fileUri = env.DATABASE_URL.substring(4);
+  try {
+    await fs.access(fileUri, fs.constants.W_OK);
+    return await cacheAndGetUserCount();
+  } catch {
+    Consola.warn(
+      `detected that the path ${fileUri} was not readable. Showing onboarding page for setup...`
+    );
+    return true;
+  }
 };

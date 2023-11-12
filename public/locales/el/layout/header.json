@@ -1,34 +1,34 @@
 {
     "experimentalNote": {
-        "label": ""
+        "label": "Αυτή είναι μια πειραματική λειτουργία του Homarr. Αναφέρετε τυχόν προβλήματα στο <gh>GitHub</gh> ή στο <dc>Discord</dc>."
     },
     "search": {
-        "label": "",
+        "label": "Αναζήτηση",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Αναζήτηση για {{query}} στο διαδίκτυο",
+            "youtube": "Αναζήτηση για {{query}} στο YouTube",
+            "torrent": "Αναζήτηση για {{query}} torrents",
+            "movie": "Αναζήτηση για {{query}} στο {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
+            "switchTheme": "Αλλαγή θέματος",
+            "preferences": "Προτιμήσεις χρήστη",
+            "defaultBoard": "Προεπιλεγμένο ταμπλό",
+            "manage": "Διαχείριση",
             "about": {
                 "label": "Σχετικά",
-                "new": ""
+                "new": "Νέο"
             },
-            "logout": "",
-            "login": ""
+            "logout": "Αποσύνδεση από {{username}}",
+            "login": "Σύνδεση"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Κορυφαία αποτελέσματα {{count}} για <b>{{search}}</b>."
         }
     }
 }

@@ -9,7 +9,7 @@
         "users": {
             "title": "Utilisateurs",
             "items": {
-                "manage": "",
+                "manage": "Gérer",
                 "invites": "Invitations"
             }
         },

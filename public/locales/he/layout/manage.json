@@ -1,29 +1,29 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "מסך הבית"
         },
         "boards": {
-            "title": ""
+            "title": "לוחות"
         },
         "users": {
-            "title": "",
+            "title": "משתמשים",
             "items": {
                 "manage": "ניהול",
-                "invites": ""
+                "invites": "הזמנות"
             }
         },
         "help": {
-            "title": "",
+            "title": "עזרה",
             "items": {
                 "documentation": "תיעוד",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "דווח על בעיה / תקלה",
+                "discord": "קהילת דיסקורד",
+                "contribute": "תרומה"
             }
         },
         "tools": {
-            "title": "",
+            "title": "כלים",
             "items": {
                 "docker": "דוקר"
             }
