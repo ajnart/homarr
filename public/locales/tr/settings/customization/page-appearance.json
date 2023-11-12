@@ -18,6 +18,29 @@
   "background": {
     "label": "Arkaplan"
   },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
   "customCSS": {
     "label": "Özel CSS",
     "description": "Ayrıca, yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak kontrol panelinizi özelleştirin",
