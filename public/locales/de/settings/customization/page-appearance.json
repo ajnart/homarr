@@ -19,10 +19,10 @@
     "label": "Hintergrund"
   },
   "backgroundImageAttachment": {
-    "label": "Hintergrundbildanhang",
+    "label": "Anhang des Hintergrundbildes",
     "options": {
       "fixed": "Fixiert - Hintergrund bleibt in der gleichen Position (empfohlen)",
-      "scroll": "Scrollen - Hintergrund scrollt mit Maus"
+      "scroll": "Scrollen – Scrollt mit der Maus im Hintergrund"
     }
   },
   "backgroundImageSize": {
@@ -33,10 +33,10 @@
     }
   },
   "backgroundImageRepeat": {
-    "label": "Hintergrundbildanhang",
+    "label": "Anhang des Hintergrundbildes",
     "options": {
       "repeat": "Wiederholen - Das Bild wird so oft wiederholt, bis es den gesamten Bereich des Hintergrundbildes abdeckt.",
-      "no-repeat": "",
+      "no-repeat": "Keine Wiederholung – Das Bild wird nicht wiederholt und füllt möglicherweise nicht den gesamten Raum aus (empfohlen)",
       "repeat-x": "Wiederholen X – Wie „Wiederholen“, jedoch nur auf der horizontalen Achse.",
       "repeat-y": "Wiederholen Y – Wie „Wiederholen“, jedoch nur auf der vertikalen Achse."
     }
