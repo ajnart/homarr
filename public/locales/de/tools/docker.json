@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Auf Ihrer Homarr-Instanz ist Docker nicht konfiguriert oder es ist nicht möglich, Container zu erkennen. Bitte lesen Sie in der Dokumentation nach, wie Sie diese Integration einrichten können."
+            "text": "Auf Ihrer Homarr-Instanz ist Docker nicht konfiguriert oder es war nicht möglich, Container abzurufen. Bitte lesen Sie in der Dokumentation nach, wie Sie diese Integration einrichten können."
         }
     },
     "modals": {
