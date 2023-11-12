@@ -35,9 +35,9 @@
   "card": {
     "footer": {
       "error": "",
-      "lastUpdated": "",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "lastUpdated": "Naposledy aktualizováno před {{time}}",
+      "ratioGlobal": "Globální poměr",
+      "ratioWithFilter": "Filtrovaný poměr"
     },
     "table": {
       "header": {
@@ -57,7 +57,7 @@
       }
     },
     "lineChart": {
-      "title": "",
+      "title": "Aktuální rychlost stahování",
       "download": "",
       "upload": "",
       "timeSpan": "",

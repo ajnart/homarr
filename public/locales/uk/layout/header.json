@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Це експериментальна функція Homarr. Будь ласка, повідомляйте про будь-які проблеми на <gh>GitHub</gh> або <dc>Discord</dc>."
-    },
     "search": {
         "label": "Пошук",
         "engines": {

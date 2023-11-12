@@ -8,7 +8,7 @@
 				"label": "Εμφάνιση γραμμής εργαλείων για να σας βοηθήσει να γράψετε σημάνσεις"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Να επιτρέπεται η επιλογή σε λειτουργία μόνο ανάγνωσης"
 			},
 			"content": {
 				"label": "Το περιεχόμενο του σημειωματάριου"
@@ -17,43 +17,43 @@
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
-			"bulletList": "",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
-			"link": "",
-			"unlink": "",
-			"image": "",
-			"addTable": "",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"bold": "Έντονη γραφή",
+			"italic": "Πλάγια γραφή",
+			"strikethrough": "Διαγραμμισμένο Κείμενο",
+			"underline": "Υπογραμμισμένο Κείμενο",
+			"colorText": "Έγχρωμο κείμενο",
+			"colorHighlight": "Έγχρωμο κείμενο επισήμανσης",
+			"code": "Κωδικός",
+			"clear": "Εκκαθάριση μορφοποίησης",
+			"heading": "Επικεφαλίδα {{level}}",
+			"align": "Στοίχιση κειμένου: {{position}}",
+			"blockquote": "Μπλοκ κειμένου παράθεσης",
+			"horizontalLine": "Οριζόντια γραμμή",
+			"bulletList": "Λίστα με κουκκίδες",
+			"orderedList": "Ταξινομημένη λίστα",
+			"checkList": "Λίστα ελέγχου",
+			"increaseIndent": "Αύξηση εσοχής",
+			"decreaseIndent": "Μείωση εσοχής",
+			"link": "Σύνδεσμος",
+			"unlink": "Αφαίρεση συνδέσμου",
+			"image": "Ενσωμάτωση εικόνας",
+			"addTable": "Προσθήκη πίνακα",
+			"deleteTable": "Διαγραφή πίνακα",
+			"colorCell": "Χρώμα κελιού",
+			"mergeCell": "Εναλλαγή συγχώνευσης κελιού",
+			"addColumnLeft": "Προσθήκη στήλης πριν",
+			"addColumnRight": "Προσθήκη στήλης μετά",
+			"deleteColumn": "Διαγραφή στήλης",
+			"addRowTop": "Προσθήκη γραμμής πριν",
+			"addRowBelow": "Προσθήκη γραμμής μετά",
+			"deleteRow": "Διαγραφή γραμμής"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Καθαρισμός χρώματος",
+			"source": "Πηγή",
+			"widthPlaceholder": "Τιμή σε % ή εικονοστοιχεία",
+			"columns": "Στήλες",
+			"rows": "Γραμμές"
 		}
 	}
 }
