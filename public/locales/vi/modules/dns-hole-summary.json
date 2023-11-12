@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Tên miền trên danh sách quảng cáo",
       "queriesToday": "Truy vấn hôm nay",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "Đã chặn hôm nay",
+      "queriesBlockedToday": "Đã chặn hôm nay"
     }
   }
 }
