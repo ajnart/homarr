@@ -61,7 +61,7 @@ export const getStaticFallbackConfig = (name: string): ConfigType => ({
       pageTitle: 'Homarr ⭐️',
       logoImageUrl: '/imgs/logo/logo.png',
       faviconUrl: '/imgs/favicon/favicon-squared.png',
-      pwaIconUrl: '/imgs/pwa/apple-icon-180',
+      pwaIconUrl: '/imgs/pwa/apple-icon-180.png',
       backgroundImageUrl: '',
       customCss: '',
       colors: {
