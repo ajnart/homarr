@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Mostrar torrents completados"
       },
+      "displayActiveTorrents": {
+        "label": "Mostrar torrents activos"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Velocidad de subida para considerar un torrent como activo (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Mostrar torrents obsoletos"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Lista de etiquetas",
         "description": "Cuando se marca 'está en la lista blanca', actuará como una lista blanca. Si no se marca, esta es una lista negra. No hará nada cuando esté vacío"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Error",
-      "lastUpdated": "Última actualización hace {{time}}"
+      "lastUpdated": "Última actualización hace {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

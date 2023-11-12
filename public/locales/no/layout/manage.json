@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Hjem"
         },
         "boards": {
-            "title": ""
+            "title": "Tavler"
         },
         "users": {
-            "title": "",
+            "title": "Brukere",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Endre",
+                "invites": "Invitasjoner"
             }
         },
         "help": {
-            "title": "",
+            "title": "Hjelp",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Dokumentasjon",
+                "report": "Rapporter problem/feil",
+                "discord": "Discord",
+                "contribute": "Bidra"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Verktøy",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Info"
         }
     }
 }

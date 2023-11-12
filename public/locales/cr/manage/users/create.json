@@ -1,0 +1,52 @@
+{
+    "metaTitle": "crwdns3741:0crwdne3741:0",
+    "steps": {
+        "account": {
+            "title": "crwdns3743:0crwdne3743:0",
+            "text": "crwdns3745:0crwdne3745:0",
+            "username": {
+                "label": "crwdns3747:0crwdne3747:0"
+            },
+            "email": {
+                "label": "crwdns3749:0crwdne3749:0"
+            }
+        },
+        "security": {
+            "title": "crwdns3751:0crwdne3751:0",
+            "text": "crwdns3753:0crwdne3753:0",
+            "password": {
+                "label": "crwdns3755:0crwdne3755:0"
+            }
+        },
+        "finish": {
+            "title": "crwdns3757:0crwdne3757:0",
+            "text": "crwdns3759:0crwdne3759:0",
+            "card": {
+                "title": "crwdns3761:0crwdne3761:0",
+                "text": "crwdns3763:0crwdne3763:0"
+            },
+            "table": {
+                "header": {
+                    "property": "crwdns3765:0crwdne3765:0",
+                    "value": "crwdns3767:0crwdne3767:0",
+                    "username": "crwdns3769:0crwdne3769:0",
+                    "email": "crwdns3771:0crwdne3771:0",
+                    "password": "crwdns3773:0crwdne3773:0"
+                },
+                "notSet": "crwdns3775:0crwdne3775:0",
+                "valid": "crwdns3777:0crwdne3777:0"
+            },
+            "failed": "crwdns3779:0{{error}}crwdne3779:0"
+        },
+        "completed": {
+            "alert": {
+                "title": "crwdns3781:0crwdne3781:0",
+                "text": "crwdns3783:0crwdne3783:0"
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "crwdns3785:0crwdne3785:0",
+        "createAnother": "crwdns3787:0crwdne3787:0"
+    }
+}

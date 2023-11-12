@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Zeigt die Symbolleiste an, um Ihnen beim Schreiben der Markdown zu assistieren"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Prüfung im Nur-Lese-Modus zulassen"
+			},
 			"content": {
 				"label": "Der Inhalt des Notizbuchs"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Fett",
+			"italic": "Kursiv",
+			"strikethrough": "Durchgestrichen",
+			"underline": "Unterstrichen",
+			"colorText": "Farbiger Text",
+			"colorHighlight": "Farbig hervorgehobener Text",
+			"code": "Code",
+			"clear": "Formatierung entfernen",
+			"heading": "Überschrift {{level}}",
+			"align": "Text ausrichten: {{position}}",
+			"blockquote": "Blockzitat",
+			"horizontalLine": "Horizontale Linie",
+			"bulletList": "Aufzählung",
+			"orderedList": "Geordnete Liste",
+			"checkList": "Checkliste",
+			"increaseIndent": "Einzug vergrößern",
+			"decreaseIndent": "Einzug verkleinern",
+			"link": "Link",
+			"unlink": "Link entfernen",
+			"image": "Bild einbetten",
+			"addTable": "Tabelle hinzufügen",
+			"deleteTable": "Tabelle entfernen",
+			"colorCell": "Farbe der Tabellen Zelle",
+			"mergeCell": "Zellen-Zusammenführung umschalten",
+			"addColumnLeft": "Spalte davor hinzufügen",
+			"addColumnRight": "Spalte danach hinzufügen",
+			"deleteColumn": "Spalte löschen",
+			"addRowTop": "Zeile davor hinzufügen",
+			"addRowBelow": "Zeile danach hinzufügen",
+			"deleteRow": "Zeile löschen"
+		},
+		"modals": {
+			"clearColor": "Farbe entfernen",
+			"source": "Quelle",
+			"widthPlaceholder": "Wert in % oder Pixel",
+			"columns": "Spalten",
+			"rows": "Zeilen"
 		}
 	}
 }

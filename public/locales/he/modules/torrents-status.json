@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "הצג טורנטים שהושלמו"
       },
+      "displayActiveTorrents": {
+        "label": "הצג טורנטים פעילים"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "מהירות העלאה כדי להתייחס לטורנט כפעיל (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "הצג טורנטים שהושלמו"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "רשימת תוויות",
         "description": "כאשר 'רשימת היתרים' מסומנת, זה יפעל כרשימה הלבנה. אם לא מסומן, זוהי רשימה שחורה. לא יעשה כלום כשהוא ריק"
+      },
+      "displayRatioWithFilter": {
+        "label": "הצגת יחס רשימת טורנטים מסוננים",
+        "info": "אם מושבת, רק היחס הגלובלי יוצג. היחס הגלובלי עדיין ישתמש בתוויות אם מוגדר"
       }
     }
   },
   "card": {
     "footer": {
       "error": "שגיאה",
-      "lastUpdated": "עודכן לאחרונה לפני {{time}}"
+      "lastUpdated": "עודכן לאחרונה לפני {{time}}",
+      "ratioGlobal": "יחס גלובלי",
+      "ratioWithFilter": "יחס עם פילטר"
     },
     "table": {
       "header": {

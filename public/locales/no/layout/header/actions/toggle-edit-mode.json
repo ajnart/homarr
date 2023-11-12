@@ -8,5 +8,5 @@
         "title": "Redigeringsmodus er aktivert for <1>{{size}}</1> størrelse",
         "text": "Du kan justere og konfigurere appene nå. Endringer er <strong>ikke lagret</strong> før du avslutter redigeringsmodus"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Gå ut av redigeringsmodus for å lagre endringene"
 }

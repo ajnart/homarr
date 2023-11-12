@@ -1,43 +1,43 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tablice",
+    "pageTitle": "Tablice",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Aplikacje",
+            "widgets": "Widżety",
+            "categories": "Kategorie"
         },
         "buttons": {
-            "view": ""
+            "view": "Zobacz tablicę"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Ustaw tablicę jako domyślną",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Usuń trwale",
+                "disabled": "Usuwanie nie jest możliwe, ponieważ starsze komponenty Homarr nie pozwalają na usunięcie domyślnej konfiguracji. Usunięcie będzie możliwe w przyszłości."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "System plików",
+            "default": "Domyślnie"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Utwórz nową tablicę"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Usuń tablicę",
+            "text": "Czy na pewno chcesz usunąć tę tablicę? Tego działania nie można cofnąć, a dane zostaną trwale utracone."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Utwórz tablicę",
+            "text": "Nazwy nie można zmienić po utworzeniu tablicy.",
             "form": {
                 "name": {
                     "label": "Nazwa"
                 },
-                "submit": ""
+                "submit": "Utwórz"
             }
         }
     }

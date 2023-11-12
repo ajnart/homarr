@@ -1,20 +1,20 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Preferências",
+    "pageTitle": "Suas preferências",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Placa padrão"
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Acessibilidade",
         "disablePulse": {
-            "label": "",
-            "description": ""
+            "label": "Desativar pulso de ping",
+            "description": "Por padrão, os indicadores de ping no Homarr pulsam. Isso pode ser irritante. Esse controle deslizante desativará a animação"
         },
         "replaceIconsWithDots": {
-            "label": "",
-            "description": ""
+            "label": "Substitua os pontos de ping por ícones",
+            "description": "Para usuários daltônicos, os pontos de ping podem ser irreconhecíveis. Isso substituirá os indicadores por ícones"
         }
     },
     "localization": {
@@ -22,27 +22,27 @@
             "label": "Idioma"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Primeiro dia da semana",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Segunda-feira",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
             }
         }
     },
     "searchEngine": {
         "title": "Motor de busca",
-        "custom": "",
+        "custom": "Personalizado",
         "newTab": {
-            "label": ""
+            "label": "Abrir os resultados da pesquisa em uma nova guia"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Focar a barra de pesquisa no carregamento da página.",
+            "description": "Isso focalizará automaticamente a barra de pesquisa quando você navegar pelas páginas do fórum. Isso só funcionará em dispositivos desktop."
         },
         "template": {
             "label": "Consulta URL",
-            "description": ""
+            "description": "Use %s como um espaço reservado para a consulta"
         }
     }
 }

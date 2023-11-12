@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Dodaj użytkownika",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Krok pierwszy",
+            "text": "Utwórz konto",
             "username": {
                 "label": "Nazwa użytkownika"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Krok drugi",
             "text": "Hasło",
             "password": {
                 "label": "Hasło"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Potwierdzenie",
+            "text": "Zapisz w bazie danych",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Sprawdź przekazane dane",
+                "text": "Po przesłaniu danych do bazy danych użytkownik będzie mógł się zalogować. Czy na pewno chcesz zapisać tego użytkownika w bazie danych i umożliwić logowanie?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Właściwość",
+                    "value": "Wartość",
                     "username": "Nazwa użytkownika",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Hasło"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nie ustawiono",
+                "valid": "Poprawny"
             },
-            "failed": ""
+            "failed": "Tworzenie użytkownika nie powiodło się: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Użytkownik został utworzony",
+                "text": "Użytkownik został zapisany w bazie danych. Może się teraz zalogować."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generuj losowo",
+        "createAnother": "Dodaj kolejnego użytkownika"
     }
 }

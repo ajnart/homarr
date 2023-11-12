@@ -1,0 +1,23 @@
+{
+    "metaTitle": "crwdns3565:0crwdne3565:0",
+    "hero": {
+        "title": "crwdns3567:0{{username}}crwdne3567:0",
+        "fallbackUsername": "crwdns3569:0crwdne3569:0",
+        "subtitle": "crwdns3571:0crwdne3571:0"
+    },
+    "quickActions": {
+        "title": "crwdns3573:0crwdne3573:0",
+        "boards": {
+            "title": "crwdns3575:0crwdne3575:0",
+            "subtitle": "crwdns3577:0crwdne3577:0"
+        },
+        "inviteUsers": {
+            "title": "crwdns3579:0crwdne3579:0",
+            "subtitle": "crwdns3581:0crwdne3581:0"
+        },
+        "manageUsers": {
+            "title": "crwdns3583:0crwdne3583:0",
+            "subtitle": "crwdns3585:0crwdne3585:0"
+        }
+    }
+}

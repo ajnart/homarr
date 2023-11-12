@@ -1,0 +1,28 @@
+{
+  "descriptor": {
+    "name": "crwdns2845:0crwdne2845:0",
+    "description": "crwdns2847:0crwdne2847:0",
+    "settings": {
+      "title": "crwdns2849:0crwdne2849:0",
+      "usePiHoleColors": {
+        "label": "crwdns2851:0crwdne2851:0"
+      },
+      "layout": {
+        "label": "crwdns3077:0crwdne3077:0",
+        "data": {
+          "grid": "crwdns3079:0crwdne3079:0",
+          "row": "crwdns3081:0crwdne3081:0",
+          "column": "crwdns3083:0crwdne3083:0"
+        }
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "crwdns2853:0crwdne2853:0",
+      "queriesToday": "crwdns2855:0crwdne2855:0",
+      "queriesBlockedTodayPercentage": "crwdns3894:0crwdne3894:0",
+      "queriesBlockedToday": "crwdns3896:0crwdne3896:0"
+    }
+  }
+}

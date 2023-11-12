@@ -39,8 +39,6 @@ export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPro
   const { classes } = useStyles();
   const { t } = useTranslation('modules/torrents-status');
 
-  const downloadSpeed = torrent.downloadSpeed / 1024 / 1024;
-  const uploadSpeed = torrent.uploadSpeed / 1024 / 1024;
   const size = torrent.totalSelected;
   return (
     <Popover
@@ -81,14 +79,14 @@ export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPro
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {downloadSpeed > 0 ? `${downloadSpeed.toFixed(1)} Mb/s` : '-'}
+                {torrent.downloadSpeed > 0 ? `${humanFileSize(torrent.downloadSpeed,false)}/s` : '-'}
               </Text>
             </td>
           )}
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {uploadSpeed > 0 ? `${uploadSpeed.toFixed(1)} Mb/s` : '-'}
+                {torrent.uploadSpeed > 0 ? `${humanFileSize(torrent.uploadSpeed,false)}/s` : '-'}
               </Text>
             </td>
           )}

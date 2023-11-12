@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "",
+      "length": "長さは {{shortest}} から {{longest}}の間でなければならない。",
       "invalidLink": "有効ではないリンク",
       "errorMsg": "検証エラーがあったため、保存されませんでした。入力を認証してください。"
     },

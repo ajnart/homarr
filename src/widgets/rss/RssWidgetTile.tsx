@@ -30,7 +30,7 @@ const definition = defineWidget({
   options: {
     rssFeedUrl: {
       type: 'multiple-text',
-      defaultValue: [],
+      defaultValue: ['https://noted.lol/rss'],
     },
     refreshInterval: {
       type: 'slider',
@@ -93,7 +93,7 @@ function RssTile({ widget }: RssTileProps) {
     }
   }
 
-  if (!data || isLoading) {
+  if (isLoading) {
     return (
       <Center h="100%">
         <Loader />
@@ -101,12 +101,12 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  if (data.length < 1 || !data[0].feed || isError) {
+  if (!data || data.length < 1 || !data[0].feed || isError) {
     return (
       <Center h="100%">
         <Stack align="center">
-          <IconRss size={40} strokeWidth={1} />
-          <Title order={6}>{t('descriptor.card.errors.general.title')}</Title>
+          <IconRss size={25} strokeWidth={1} />
+          <Title order={5}>{t('descriptor.card.errors.general.title')}</Title>
           <Text align="center">{t('descriptor.card.errors.general.text')}</Text>
         </Stack>
         <RefetchButton refetch={refetch} isFetching={isFetching} />
@@ -247,7 +247,7 @@ const useStyles = createStyles(({ colorScheme, colors, radius, spacing }) => ({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    filter: colorScheme === 'dark' ? 'blur(30px)' : 'blur(15px)',
+    filter: colorScheme === 'dark' ? 'blur(5px)' : 'blur(5px)',
     transform: 'scaleX(-1)',
     opacity: colorScheme === 'dark' ? 0.3 : 0.2,
     transition: 'ease-in-out 0.2s',

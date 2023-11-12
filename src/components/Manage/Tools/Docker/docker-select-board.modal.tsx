@@ -26,7 +26,7 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
     await mutateAsync(
       {
         apps: innerProps.containers.map((container) => ({
-          name: container.Names.at(0) ?? 'App',
+          name: (container.Names.at(0) ?? 'App').replace('/', ''),
           port: container.Ports.at(0)?.PublicPort,
         })),
         boardName: values.board,
@@ -117,4 +117,5 @@ export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
     ),
     innerProps,
   });
+  umami.track('Add to homarr modal')
 };

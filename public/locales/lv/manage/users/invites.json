@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Lietotāju uzaicinājumi",
+    "pageTitle": "Lietotāju uzaicinājumu pārvaldīšana",
+    "description": "Izmantojot ielūgumus, varat uzaicināt lietotājus uz savu Homarr instanci. Ielūgums ir derīgs tikai noteiktu laiku, un to var izmantot vienu reizi. Veidojot ielūgumu, tā derīguma termiņam jābūt diapazonā no 5 minūtēm līdz 12 mēnešiem.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Izveidot uzaicinājumu",
+        "deleteInvite": "Dzēst uzaicinājumu"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Izveidotājs",
+            "expires": "Termiņš",
+            "action": "Darbības"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "beidzās {{at}}",
+            "expiresIn": "pēc {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Izveidot uzaicinājumu",
+            "description": "Pēc derīguma termiņa beigām uzaicinājums vairs nebūs derīgs, un uzaicinājuma saņēmējs nevarēs izveidot kontu.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Derīguma termiņš",
+                "submit": "Izveidot"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Kopēt uzaicinājumu",
+            "description": "Jūsu uzaicinājums ir izveidots. Pēc šī modal loga aizvēršanās <b>Jūs vairs nevarēsiet kopēt šo saiti</b>. Ja vairs nevēlaties uzaicināt minēto personu, jebkurā laikā varat dzēst šo uzaicinājumu.",
+            "invitationLink": "Uzaicinājuma saite",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Atslēga"
             },
             "button": {
-                "close": ""
+                "close": "Kopēt un Aizvērt"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Dzēst uzaicinājumu",
+            "description": "Vai esat pārliecināts, ka vēlaties dzēst šo uzaicinājumu? Lietotāji ar vairs nevarēs izveidot kontu, izmantojot šo saiti."
         }
     },
-    "noInvites": ""
+    "noInvites": "Vēl nav uzaicinājumu."
 }

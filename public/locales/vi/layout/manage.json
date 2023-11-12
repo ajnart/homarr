@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Trang chủ"
         },
         "boards": {
-            "title": ""
+            "title": "bảng"
         },
         "users": {
-            "title": "",
+            "title": "Người dùng",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Quản lý",
+                "invites": "Mời"
             }
         },
         "help": {
-            "title": "",
+            "title": "Giúp đỡ",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Tài liệu",
+                "report": "Báo cáo sự cố/lỗi",
+                "discord": "Bất hòa cộng đồng",
+                "contribute": "Đóng góp"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Công cụ",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Về chúng tôi"
         }
     }
 }

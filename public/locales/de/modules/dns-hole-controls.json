@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Konnte kein DNS Hole finden",
+        "text": "Es gab ein Problem bei der Verbindung zu Ihrem DNS Hole(s). Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
       }
     }
   }

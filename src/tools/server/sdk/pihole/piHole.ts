@@ -1,4 +1,5 @@
 import { trimStringEnding } from '~/tools/shared/strings';
+
 import { PiHoleApiStatusChangeResponse, PiHoleApiSummaryResponse } from './piHole.type';
 
 export class PiHoleClient {
@@ -62,18 +63,18 @@ export class PiHoleClient {
       );
     }
 
-    for(let loops = 0; loops < 10; loops++){
-      const summary = await this.getSummary()
-      if (summary.status === action + 'd'){
+    for (let loops = 0; loops < 10; loops++) {
+      const summary = await this.getSummary();
+      if (summary.status === action + 'd') {
         return { status: summary.status } as PiHoleApiStatusChangeResponse;
       }
-      await new Promise ((resolve) => { setTimeout(resolve, 50)});
+      await new Promise((resolve) => {
+        setTimeout(resolve, 50);
+      });
     }
 
     return Promise.reject(
-      new Error(
-        `Although PiHole received the command, it failed to update it's status: ${json}`
-      )
-    )
+      new Error(`Although PiHole received the command, it failed to update it's status: ${json}`)
+    );
   }
 }

@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statystyki pułapki DNS",
+    "description": "Wyświetla istotne informacje z PiHole lub AdGuard",
     "settings": {
-      "title": "",
+      "title": "Ustawienia statystyk pułapki DNS",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Użyj kolorów z PiHole"
       },
       "layout": {
         "label": "Układ",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 na 2",
+          "row": "Poziomy",
+          "column": "Pionowy"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domeny na adlistach",
+      "queriesToday": "Zapytania dzisiaj",
+      "queriesBlockedTodayPercentage": "Zablokowane dzisiaj",
+      "queriesBlockedToday": "Zablokowane dzisiaj"
     }
   }
 }

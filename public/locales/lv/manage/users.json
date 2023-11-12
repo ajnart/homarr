@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "Lietotāji",
+    "pageTitle": "Pārvaldīt lietotājus",
+    "text": "Izmantojot lietotājus, varat konfigurēt, kas var rediģēt paneļus. Nākamajās Homarr versijās būs pieejama vēl detalizētāka piekļuves tiesību un dēļu kontrole.",
     "buttons": {
-        "create": ""
+        "create": "Izveidot"
     },
     "table": {
         "header": {
@@ -11,26 +11,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Dzēst lietotāju",
+        "demoteAdmin": "Administratora amata pazemināšana",
+        "promoteToAdmin": "Paaugstināšana par administratoru"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Dzēst lietotāju {{name}}",
+            "text": "Vai esat pārliecināts, ka vēlaties dzēst lietotāju {{name}}? Tādējādi tiks dzēsti ar šo kontu saistītie dati, bet netiks dzēsti šā lietotāja izveidotie paneļi."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Paaugstināt lietotāju {{name}} par administratoru",
+                "text": "Vai esat pārliecināts, ka vēlaties lietotāju {{name}} paaugstināt par administratoru? Tas dos lietotājam piekļuvi visiem jūsu Homarr resursiem."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Pazemināt lietotāju {{name}} uz lietotāja statusu",
+                "text": "Vai esat pārliecināts, ka vēlaties pazemināt lietotāja {{name}} statusu uz lietotāju? Tas atņems lietotājam piekļuvi uz visiem jūsu Homarr resursiem."
             },
             "confirm": "Apstipriniet"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Jūsu meklēšanas vaicājums neatbilst nevienam ierakstam. Lūdzu, pielāgojiet savu meklēšanas filtru."
 }

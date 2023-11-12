@@ -1,0 +1,52 @@
+{
+    "metaTitle": "",
+    "steps": {
+        "account": {
+            "title": "",
+            "text": "",
+            "username": {
+                "label": ""
+            },
+            "email": {
+                "label": ""
+            }
+        },
+        "security": {
+            "title": "",
+            "text": "",
+            "password": {
+                "label": ""
+            }
+        },
+        "finish": {
+            "title": "",
+            "text": "",
+            "card": {
+                "title": "",
+                "text": ""
+            },
+            "table": {
+                "header": {
+                    "property": "",
+                    "value": "",
+                    "username": "",
+                    "email": "",
+                    "password": ""
+                },
+                "notSet": "",
+                "valid": ""
+            },
+            "failed": ""
+        },
+        "completed": {
+            "alert": {
+                "title": "",
+                "text": ""
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "",
+        "createAnother": ""
+    }
+}

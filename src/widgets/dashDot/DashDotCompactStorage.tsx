@@ -1,9 +1,9 @@
 import { Group, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
-import { api } from '~/utils/api';
-
 import { bytes } from '~/tools/bytesHelper';
 import { percentage } from '~/tools/shared/math/percentage.tool';
+import { api } from '~/utils/api';
+
 import { DashDotInfo } from './DashDotCompactNetwork';
 
 interface DashDotCompactStorageProps {

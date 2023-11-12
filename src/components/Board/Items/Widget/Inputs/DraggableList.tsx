@@ -3,7 +3,6 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
-
 import { IDraggableEditableListInputValue } from '~/widgets/widgets';
 
 interface DraggableListProps {

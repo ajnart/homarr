@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Pieslēgties",
   "title": "Sveicināti atpakaļ!",
-  "text": "",
+  "text": "Lūdzu, ievadiet savus pieslēgšanās datus",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Pierakstīties"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Pēc pieslēgšanās tiksiet novirzīts uz {{url}}"
   },
-  "alert": ""
+  "alert": "Jūsu pieslēgšanās dati ir nepareizi vai šis konts nepastāv. Lūdzu, mēģiniet vēlreiz."
 }

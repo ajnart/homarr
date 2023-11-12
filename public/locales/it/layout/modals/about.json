@@ -1,12 +1,14 @@
 {
 	"description": "Homarr è una <strong>elegante</strong> e <strong>moderna</strong> dashboard che mette tutte le vostre app e i vostri servizi a portata di mano. Con Homarr, potete controllare tutto in un'unica comoda posizione. Homarr si integra perfettamente con le app aggiunte, fornendo informazioni preziose e offrendo un controllo completo. L'installazione è semplice e Homarr supporta un'ampia gamma di metodi di deployment.",
-	"contact": "Problemi o domande? Contattaci!",
 	"addToDashboard": "Aggiungi alla dashboard",
 	"tip": "Mod si riferisce al tasto modificatore, cioè i tasti Ctrl e Command/Super/Windows",
 	"key": "Tasto di scelta rapida",
 	"action": "Azioni",
 	"keybinds": "Scorciatoie da tastiera",
-	"documentation": "Documentazione",
+	"translators": "Traduttori ({{count}})",
+	"translatorsDescription": "Grazie a queste persone, Homarr è disponibile in {{languages}} lingue! Vuoi aiutare a tradurre Homarr nella tua lingua? Leggi come farlo <a>qui</a>.",
+	"contributors": "Collaboratori ({{count}})",
+	"contributorsDescription": "Queste persone hanno creato il codice che fa funzionare homarr! Vuoi contribuire ad Homarr? Leggi come farlo <a>qui</a>",
 	"actions": {
 		"toggleTheme": "Attiva/Disattiva modalità chiaro/scuro",
 		"focusSearchBar": "Focalizza la barra di ricerca",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versione dello schema di configurazione",
-		"configurationsCount": "Configurazioni disponibili",
 		"version": "Versione",
 		"nodeEnvironment": "Ambiente Node",
 		"i18n": "Translation namespaces I18n caricati",

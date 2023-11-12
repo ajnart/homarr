@@ -9,7 +9,7 @@ import { dnsHoleRouter } from './routers/dns-hole/router';
 import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
-import { inviteRouter } from './routers/invite';
+import { inviteRouter } from './routers/invite/invite-router';
 import { layoutsRouter } from './routers/layout/layout.router';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';

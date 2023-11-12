@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": ""
+    }
+  },
+  "loading": "",
+  "card": {
+    "table": {
+      "header": {
+        "session": "Relace",
+        "user": "Uživatel",
+        "currentlyPlaying": "Právě přehráváno"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

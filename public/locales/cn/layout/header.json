@@ -1,0 +1,27 @@
+{
+    "search": {
+        "label": "搜索",
+        "engines": {
+            "web": "在网上搜索 {{query}}",
+            "youtube": "在 YouTube 上搜索 {{query}}",
+            "torrent": "搜索 {{query}} Torrents",
+            "movie": "在 {{app}} 上搜索 {{query}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "切换主题",
+            "preferences": "用户首选项",
+            "defaultBoard": "默认仪表盘",
+            "manage": "管理",
+            "logout": "注销 {{username}}",
+            "login": "登录"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "最高 {{count}} 结果为 <b>{{search}}</b>。"
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "save": "crwdns2009:0crwdne2009:0",
+  "apply": "crwdns3900:0crwdne3900:0",
+  "insert": "crwdns3902:0crwdne3902:0",
+  "about": "crwdns2011:0crwdne2011:0",
+  "cancel": "crwdns2013:0crwdne2013:0",
+  "close": "crwdns2015:0crwdne2015:0",
+  "back": "crwdns3371:0crwdne3371:0",
+  "delete": "crwdns2017:0crwdne2017:0",
+  "ok": "crwdns2019:0crwdne2019:0",
+  "edit": "crwdns2021:0crwdne2021:0",
+  "next": "crwdns3373:0crwdne3373:0",
+  "previous": "crwdns3375:0crwdne3375:0",
+  "confirm": "crwdns3377:0crwdne3377:0",
+  "enabled": "crwdns2883:0crwdne2883:0",
+  "disabled": "crwdns2885:0crwdne2885:0",
+  "enableAll": "crwdns2887:0crwdne2887:0",
+  "disableAll": "crwdns2889:0crwdne2889:0",
+  "version": "crwdns2023:0crwdne2023:0",
+  "changePosition": "crwdns2025:0crwdne2025:0",
+  "remove": "crwdns2027:0crwdne2027:0",
+  "removeConfirm": "crwdns2683:0{{item}}crwdne2683:0",
+  "createItem": "crwdns2793:0{{item}}crwdne2793:0",
+  "sections": {
+    "settings": "crwdns2029:0crwdne2029:0",
+    "dangerZone": "crwdns2031:0crwdne2031:0"
+  },
+  "secrets": {
+    "apiKey": "crwdns2685:0crwdne2685:0",
+    "username": "crwdns2035:0crwdne2035:0",
+    "password": "crwdns2037:0crwdne2037:0"
+  },
+  "tip": "crwdns1260:0crwdne1260:0",
+  "time": {
+    "seconds": "crwdns1860:0crwdne1860:0",
+    "minutes": "crwdns1862:0crwdne1862:0",
+    "hours": "crwdns1864:0crwdne1864:0"
+  },
+  "loading": "crwdns2523:0crwdne2523:0",
+  "breakPoints": {
+    "small": "crwdns2525:0crwdne2525:0",
+    "medium": "crwdns2527:0crwdne2527:0",
+    "large": "crwdns2529:0crwdne2529:0"
+  },
+  "seeMore": "crwdns3019:0crwdne3019:0",
+  "position": {
+    "left": "crwdns3904:0crwdne3904:0",
+    "center": "crwdns3906:0crwdne3906:0",
+    "right": "crwdns3908:0crwdne3908:0"
+  },
+  "attributes": {
+    "width": "crwdns3910:0crwdne3910:0",
+    "height": "crwdns3912:0crwdne3912:0"
+  }
+}

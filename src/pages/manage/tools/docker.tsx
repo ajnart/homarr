@@ -11,6 +11,7 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { dockerRouter } from '~/server/api/routers/docker/router';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api, client } from '~/utils/api';
 
@@ -54,25 +55,28 @@ export default function DockerPage({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, req, res }) => {
-  const session = await getServerAuthSession({ req, res });
-  if (!session?.user.isAdmin) {
-    return {
-      notFound: true,
-    };
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getServerAuthSession({ req: context.req, res: context.res });
+  const result = checkForSessionOrAskForLogin(
+    context,
+    session,
+    () => session?.user.isAdmin == true
+  );
+  if (result) {
+    return result;
   }
 
   const caller = dockerRouter.createCaller({
     session: session,
-    cookies: req.cookies,
-    headers: req.headers,
+    cookies: context.req.cookies,
+    headers: context.req.headers,
   });
 
   const translations = await getServerSideTranslations(
     [...boardNamespaces, 'layout/manage', 'tools/docker'],
-    locale,
-    req,
-    res
+    context.locale,
+    context.req,
+    context.res
   );
 
   let containers = [];

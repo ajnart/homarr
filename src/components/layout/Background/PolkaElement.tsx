@@ -17,7 +17,7 @@ export const PolkaElement = ({
     <Box
       style={{
         transform: `rotate(${rotation}deg)`,
-        pointerEvents: 'none'
+        pointerEvents: 'none',
       }}
       className="polka"
       pos="absolute"

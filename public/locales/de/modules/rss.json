@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS-Widget",
-    "description": "",
+    "description": "Mit dem RSS-Widget können Sie RSS-Feeds auf Ihrem Dashboard anzeigen.",
     "settings": {
       "title": "Einstellungen für das RSS-Widget",
       "rssFeedUrl": {

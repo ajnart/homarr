@@ -1,4 +1,4 @@
-import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
@@ -24,7 +24,7 @@ import { AppIntegrationType } from '~/types/app';
 
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
-import { IWidget, InferWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 import { BitTorrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
@@ -40,6 +40,15 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    displayActiveTorrents: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    speedLimitOfActiveTorrents: {
+      // Unit : kB/s
+      type: 'number',
+      defaultValue: 10,
+    },
     displayStaleTorrents: {
       type: 'switch',
       defaultValue: true,
@@ -51,6 +60,11 @@ const definition = defineWidget({
     labelFilter: {
       type: 'multiple-text',
       defaultValue: [] as string[],
+    },
+    displayRatioWithFilter: {
+      type: 'switch',
+      defaultValue: true,
+      info: true,
     },
   },
   gridstack: {
@@ -140,6 +154,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
 
+  const ratioGlobal = getTorrentsRatio(widget, torrents, false);
+  const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
+
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
       <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
@@ -185,6 +202,13 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
         <Text color="dimmed" size="xs">
           {t('card.footer.lastUpdated', { time: humanizedDuration })}
+          {` - ${t('card.footer.ratioGlobal')} : ${
+            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
+          }`}
+          {widget.options.displayRatioWithFilter &&
+            ` - ${t('card.footer.ratioWithFilter')} : ${
+              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
+            }`}
         </Text>
       </Group>
     </Flex>
@@ -194,7 +218,12 @@ function TorrentTile({ widget }: TorrentTileProps) {
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
   let result = torrents;
   if (!widget.options.displayCompletedTorrents) {
-    result = result.filter((torrent) => !torrent.isCompleted);
+    result = result.filter(
+      (torrent) =>
+        !torrent.isCompleted ||
+        (widget.options.displayActiveTorrents &&
+          torrent.uploadSpeed > widget.options.speedLimitOfActiveTorrents * 1024)
+    );
   }
 
   if (widget.options.labelFilter.length > 0) {
@@ -228,6 +257,28 @@ const filterTorrentsByLabels = (
   }
 
   return torrents.filter((torrent) => !labels.includes(torrent.label as string));
+};
+
+export const getTorrentsRatio = (
+  widget: ITorrent,
+  torrents: NormalizedTorrent[],
+  applyAllFilter: boolean
+) => {
+  if (applyAllFilter) {
+    torrents = filterTorrents(widget, torrents);
+  } else if (widget.options.labelFilter.length > 0) {
+    torrents = filterTorrentsByLabels(
+      torrents,
+      widget.options.labelFilter,
+      widget.options.labelFilterIsWhitelist
+    );
+  }
+
+  let totalDownloadedSum = torrents.reduce((sum, torrent) => sum + torrent.totalDownloaded, 0);
+
+  return totalDownloadedSum > 0
+    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) / totalDownloadedSum
+    : -1;
 };
 
 export default definition;

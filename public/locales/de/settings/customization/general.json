@@ -22,7 +22,7 @@
       "description": "Homarr für behinderte und gehandicapte Benutzer einrichten"
     },
     "access": {
-      "name": "Zugriff",
+      "name": "Zugang",
       "description": "Konfigurieren Sie, wer Zugriff auf Ihr Board hat"
     }
   }

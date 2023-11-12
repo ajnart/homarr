@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "允許您輕鬆查看和管理所有 Docker 容器"
+  },
+  "search": {
+    "placeholder": "依照容器或鏡像名稱搜尋"
+  },
+  "table": {
+    "header": {
+      "name": "名稱",
+      "image": "鏡像",
+      "ports": "Ports",
+      "state": "狀態"
+    },
+    "body": {
+      "portCollapse": "{{ports}} 更多"
+    },
+    "states": {
+      "running": "運行中",
+      "created": "已創建",
+      "stopped": "已停止",
+      "unknown": "未知"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "新增應用",
+      "message": "新增應用至 Homarr"
+    },
+    "restart": {
+      "title": "重啟"
+    },
+    "stop": {
+      "title": "停止"
+    },
+    "start": {
+      "title": "開始"
+    },
+    "refreshData": {
+      "title": "重新整理"
+    },
+    "remove": {
+      "title": "刪除"
+    },
+    "addToHomarr": {
+      "title": "新增至 Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "正在運行...",
+      "end": "已運行"
+    },
+    "stop": {
+      "start": "正在停止...",
+      "end": "已停止"
+    },
+    "restart": {
+      "start": "正在重啟...",
+      "end": "已重啟"
+    },
+    "remove": {
+      "start": "正在刪除...",
+      "end": "已刪除"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker 集成失敗",
+      "message": "您是否忘了掛載 Docker socket？"
+    },
+    "unknownError": {
+      "title": "出現一個錯誤"
+    },
+    "oneServiceAtATime": {
+      "title": "請每次只新增一個應用或服務！"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

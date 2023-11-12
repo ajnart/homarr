@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Wyskakujące okienko zablokowane",
+      "text": "Twoja przeglądarka nie pozwoliła Homarr dostać się do swojego API. Jest to najczęściej spowodowane przez AdBlockery lub odmowę uprawnień. Homarr nie jest w stanie automatycznie zażądać uprawnień.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Kliknij ikonę obok adresu URL i sprawdź uprawnienia. Zezwalaj na wyskakujące okienka i okna",
+        "adBlockers": "Wyłącz blokery reklam i narzędzia zabezpieczające w przeglądarce",
+        "otherBrowser": "Spróbuj użyć innej przeglądarki"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Otwórz wszystko w nowej karcie"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Przenieś w górę",
+    "moveDown": "Przenieś w dół",
+    "addCategory": "Dodaj kategorię {{location}}",
+    "addAbove": "powyżej",
+    "addBelow": "poniżej"
   }
 }

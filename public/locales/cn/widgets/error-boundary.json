@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "哎呀，出错了！",
+    "buttons": {
+      "details": "详情",
+      "tryAgain": "请再试一次"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "您的错误",
+    "reportButton": "报告该错误"
+  }
+}

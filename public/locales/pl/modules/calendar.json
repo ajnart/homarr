@@ -4,31 +4,28 @@
     "description": "Wyświetla kalendarz z nadchodzącymi wydaniami, z obsługiwanych integracji.",
     "settings": {
       "title": "Ustawienia dla widżetu Kalendarz",
-      "useSonarrv4": {
-        "label": "Użyj API Sonarr v4"
-      },
       "radarrReleaseType": {
-        "label": "Typ zwolnienia Radarr",
+        "label": "Rodzaj premiery w Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "W kinach",
+          "physicalRelease": "Na nośnikach fizycznych",
+          "digitalRelease": "Cyfrowo"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Ukryj dni tygodnia"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Pokaż niemonitorowane pozycje"
       },
       "fontSize": {
-        "label": "",
+        "label": "Rozmiar czcionki",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Bardzo Mały",
+          "sm": "Mały",
+          "md": "Średni",
+          "lg": "Duży",
+          "xl": "Bardzo duży"
         }
       }
     }

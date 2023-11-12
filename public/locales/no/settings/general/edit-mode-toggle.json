@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "Bytt redigeringsmodus",
+    "enable": "Aktiver redigeringsmodus",
+    "disable": "Deaktiver redigeringsmodus"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "Rediger passord",
+    "message": "For å bytte redigeringsmodus, må du skrive inn passordet du skrev inn i miljøvariabelen kalt <Code>EDIT_MODE_PASSWORD</Code> . Hvis det ikke er satt, kan du ikke slå redigeringsmodus av og på.",
     "submit": "Legg til"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "Suksess",
+      "message": "Byttet redigeringsmodus, laster inn siden på nytt..."
     },
     "error": {
       "title": "Feil",
-      "message": ""
+      "message": "Kunne ikke bytte redigeringsmodus. Prøv igjen."
     }
   }
 }

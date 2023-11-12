@@ -10,9 +10,9 @@ import {
   IconClick,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
 import { useState } from 'react';
 import { z } from 'zod';
-import { appNamePositions, appNameStyles } from '~/server/db/items';
 import { objectKeys } from '~/tools/object';
 import { RouterOutputs } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -55,9 +55,11 @@ export const EditAppModal = ({
   });
 
   const onSubmit = (values: FormType) => {
+    values.internalUrl = removeTrailingSlash(values.internalUrl);
     createOrUpdateApp({ app: values });
     // also close the parent modal
     context.closeAll();
+    umami.track('Add app', { name: values.name });
   };
 
   const closeModal = () => {

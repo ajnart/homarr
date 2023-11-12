@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "",
+    "description": "Το rss widget σας επιτρέπει να εμφανίζετε ροές RSS στο ταμπλό σας.",
     "settings": {
       "title": "Ρυθμίσεις για το widget RSS",
       "rssFeedUrl": {

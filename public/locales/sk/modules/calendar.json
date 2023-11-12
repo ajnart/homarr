@@ -4,9 +4,6 @@
     "description": "Zobraz kalendár s pripravovanými vydaniami z podporovaných integrácií.",
     "settings": {
       "title": "Nastavenia mini aplikácie Kalendár",
-      "useSonarrv4": {
-        "label": "Použi Sonarr v4 API"
-      },
       "radarrReleaseType": {
         "label": "Typ Radarr releasu",
         "data": {

@@ -1,0 +1,27 @@
+{
+    "search": {
+        "label": "搜尋",
+        "engines": {
+            "web": "在搜尋引擎中搜尋 {{query}}",
+            "youtube": "在 Youtube 中搜尋 {{query}}",
+            "torrent": "搜尋 {{query}} Torrents",
+            "movie": "在 {{app}} 中搜尋 {{query}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "切換主題",
+            "preferences": "使用者設定",
+            "defaultBoard": "預設儀錶板",
+            "manage": "管理",
+            "logout": "登出 {{username}}",
+            "login": "登入"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "上方 {{count}} 結果為 <b>{{search}}</b>"
+        }
+    }
+}

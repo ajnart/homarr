@@ -1,0 +1,27 @@
+{
+  "pageTitle": {
+    "label": "頁面標題",
+    "description": "面板中左上角的標題"
+  },
+  "metaTitle": {
+    "label": "無標題",
+    "description": "在您的瀏覽器分頁中顯示的標題"
+  },
+  "logo": {
+    "label": "LOGO",
+    "description": "顯示在左上方的LOGO"
+  },
+  "favicon": {
+    "label": "圖標",
+    "description": "在您的瀏覽器分頁中顯示的圖標"
+  },
+  "background": {
+    "label": "背景"
+  },
+  "customCSS": {
+    "label": "自定義 CSS",
+    "description": "此外，只推薦有經驗的使用者使用 CSS 自定義面板",
+    "placeholder": "自定義 CSS 將最後應用",
+    "applying": "應用 CSS 中..."
+  }
+}

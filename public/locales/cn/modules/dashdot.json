@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "在 Homarr 中显示一个外部 Dash. 的图表。",
+    "settings": {
+      "title": "Dash. 组件设置",
+      "dashName": {
+        "label": "Dash. 名称"
+      },
+      "url": {
+        "label": "Dash. 网址"
+      },
+      "usePercentages": {
+        "label": "显示百分比"
+      },
+      "columns": {
+        "label": "显示的列"
+      },
+      "graphHeight": {
+        "label": "图表高度"
+      },
+      "graphsOrder": {
+        "label": "图表（顺序）",
+        "storage": {
+          "label": "存储",
+          "enabled": {
+            "label": "在组件中显示"
+          },
+          "span": {
+            "label": "列宽度"
+          },
+          "compactView": {
+            "label": "显示为文本（紧凑型）"
+          },
+          "multiView": {
+            "label": "显示为多驱动视图"
+          }
+        },
+        "network": {
+          "label": "网络",
+          "enabled": {
+            "label": "在组件中显示"
+          },
+          "span": {
+            "label": "列宽度"
+          },
+          "compactView": {
+            "label": "显示为文本（紧凑型）"
+          }
+        },
+        "cpu": {
+          "label": "CPU",
+          "enabled": {
+            "label": "在组件中显示"
+          },
+          "span": {
+            "label": "列宽度"
+          },
+          "multiView": {
+            "label": "显示为多核心视图"
+          }
+        },
+        "ram": {
+          "label": "内存",
+          "enabled": {
+            "label": "在组件中显示"
+          },
+          "span": {
+            "label": "列宽度"
+          }
+        },
+        "gpu": {
+          "label": "GPU",
+          "enabled": {
+            "label": "在组件中显示"
+          },
+          "span": {
+            "label": "列宽度"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "未找到 Dash. 服务。请在集成中将其添加到您的 Homarr 面板或在模块选项中设置 Dash. 网址",
+      "noInformation": "无法从 Dash. 获取信息。- 你运行的是最新版本吗？",
+      "protocolDowngrade": {
+        "title": "检测到协议降级",
+        "text": "与 Dash. 实例的连接使用的是HTTP。这是一个安全风险，因为HTTP是未加密的，攻击者可能会滥用此连接。确保 Dash. 使用的是HTTPS，或者将Homarr降级为HTTP(不推荐)。"
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "存储",
+        "label": "存储："
+      },
+      "network": {
+        "title": "网络",
+        "label": "网络：",
+        "metrics": {
+          "download": "下载",
+          "upload": "上传"
+        }
+      },
+      "cpu": {
+        "title": "CPU"
+      },
+      "ram": {
+        "title": "内存"
+      },
+      "gpu": {
+        "title": "GPU"
+      }
+    }
+  }
+}

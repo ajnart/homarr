@@ -3,6 +3,8 @@
 :root {
   --gridstack-widget-width: 64;
   --gridstack-column-count: 12;
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter
+  scrollbar-gutter: stable;
 }
 
 .grid-stack-placeholder > .placeholder-content {
@@ -40,7 +42,7 @@
 }
 
 .grid-stack>.grid-stack-item {
-  min-width: calc(percentage(1) * #{var(--gridstack-widget-width)});
+  min-width: #{var(--gridstack-widget-width)};
 }
 
 // Styling for sidebar grid-stack elements
@@ -104,4 +106,78 @@
     transparent 6px
   );
   background-size: 60px 60px;
+}
+
+.tiptap {
+  hr {
+    border-top-style: double;
+  }
+
+  ul[data-type="taskList"] {
+    padding-left: 17px;
+    li {
+      list-style-type: none;
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    &.ProseMirror-selectednode {
+      outline: 3px solid rgba(0, 65, 198, 0.8);
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+
+    td {
+      border-color: var(--mantine-color-gray-5) !important;
+      border-width: 1px !important;
+      border-style: solid !important;
+      box-sizing: border-box;
+      min-width: 1em;
+      padding: 3px 5px;
+      position: relative;
+      vertical-align: top;
+
+      > * {
+        margin-bottom: 0;
+      }
+    }
+
+    .selectedCell:after {
+      background: rgba(200, 200, 200, 0.4);
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &[contenteditable="true"].resize-cursor {
+    cursor: ew-resize;
+  }
+
+  &[contenteditable="false"].resize-cursor {
+    pointer-events: none;
+  }
+}
+
+.tableWrapper {
+  padding: 1rem 0;
+  overflow-x: auto;
 }

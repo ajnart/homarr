@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Acrescentar um azulejo"
     },
-    "apps": "",
+    "apps": "Aplicativos",
     "app": {
-        "defaultName": ""
+        "defaultName": "Seu aplicativo"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgets",
+    "categories": "Categorias",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Nome da nova categoria",
+        "defaultName": "Nova categoria",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Categoria criada",
+            "message": "A categoria \"{{name}}\" foi criada"
         }
     }
 }

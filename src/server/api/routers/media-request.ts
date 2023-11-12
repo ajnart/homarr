@@ -3,14 +3,8 @@ import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-tr
 import { z } from 'zod';
 import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
-import {
-  MediaRequestListWidget,
-  MediaRequestListWidgetOptions,
-} from '~/widgets/media-requests/MediaRequestListTile';
-import {
-  MediaRequestStatsWidget,
-  MediaRequestStatsWidgetOptions,
-} from '~/widgets/media-requests/MediaRequestStatsTile';
+import { MediaRequestListWidgetOptions } from '~/widgets/media-requests/MediaRequestListTile';
+import { MediaRequestStatsWidgetOptions } from '~/widgets/media-requests/MediaRequestStatsTile';
 import { MediaRequest, Users } from '~/widgets/media-requests/media-request-types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';

@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Intern adresse",
-			"description": "Appens interne IP."
+			"description": "Appens interne IP.",
+			"troubleshoot": {
+				"label": "Har du problemer?",
+				"header": "Her er en liste over de mest almindelige fejl og fejlfindingen:",
+				"lines": {
+					"nothingAfterPort": "Du bør i de fleste, hvis ikke alle, tilfælde ikke indtaste nogen sti efter porten. (Selv '/admin' for pihole eller '/web' for plex)",
+					"protocolCheck": "Sørg altid for, at der står http eller https foran URL'en, og sørg for, at du bruger den rigtige.",
+					"preferIP": "Det anbefales at bruge den direkte ip på den maskine eller container, du forsøger at kommunikere med.",
+					"enablePings": "Tjek, at IP'en er korrekt ved at aktivere pings. Customize Board -> Layout -> Enable pings. En lille rød eller grøn boble vil dukke op på dine app-fliser, og hvis du holder musen over den, får du svarets kode (en grøn boble med kode 200 forventes i de fleste tilfælde).",
+					"wget": "For at sikre, at homarr kan kommunikere med de andre apps, skal du sørge for at wget/curl/ping appens IP:port.",
+					"iframe": "Når det gælder iframes, skal de altid bruge den samme protokol (http/s) som Homarr.",
+					"clearCache": "Nogle oplysninger er registreret i cachen, så en integration virker måske ikke, medmindre du rydder cachen i Homarrs generelle indstillinger."
+				},
+				"footer": "For yderligere fejlfinding, kontakt os på vores {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Ekstern adresse",

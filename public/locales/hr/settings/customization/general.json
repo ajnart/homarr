@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "",
-      "description": ""
+      "description": "Konfigurirajte tko ima pristup vašoj ploči"
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "阻止弹出窗口",
+      "text": "您的浏览器阻止了 Homarr 访问其 API。最常见的原因是广告拦截器或权限被拒绝。Homarr 无法自动请求权限。",
+      "list": {
+        "browserPermission": "点击链接旁的图标并检查权限，允许弹出窗口",
+        "adBlockers": "禁用浏览器中的广告拦截器和安全工具",
+        "otherBrowser": "尝试使用其它的浏览器"
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": "在新标签页中打开全部内容"
+    }
+  },
+  "menu": {
+    "moveUp": "上移",
+    "moveDown": "下移",
+    "addCategory": "{{location}}添加分类",
+    "addAbove": "在上方",
+    "addBelow": "在下方"
+  }
+}

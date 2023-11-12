@@ -1,14 +1,15 @@
-import { Anchor, Box, Collapse, Flex, Table, Text } from '@mantine/core';
+import { Anchor, Box, Button, Collapse, Container, Flex, Stack, Table, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { modals } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
-
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 
 export default function Credits() {
   const { t } = useTranslation('settings/common');
 
   return (
-    <Flex justify="center" direction="column" mt="xs">
+    <Stack>
+      <DependencyTable />
       <Text
         style={{
           fontSize: '0.90rem',
@@ -25,49 +26,47 @@ export default function Credits() {
         </Anchor>{' '}
         and you!
       </Text>
-      <DependencyTable />
-    </Flex>
+    </Stack>
   );
 }
 
 const DependencyTable = () => {
   const { t } = useTranslation('settings/common');
-  const [opened, { toggle }] = useDisclosure(false);
   const { attributes } = usePackageAttributesStore();
   return (
-    <>
-      <Text variant="link" mx="auto" size="xs" opacity={0.3} onClick={toggle}>
-        {t('credits.thirdPartyContent')}
-      </Text>
-
-      <Collapse in={opened}>
-        <Box
-          sx={(theme) => ({
-            backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-            padding: theme.spacing.xl,
-            borderRadius: theme.radius.md,
-          })}
-          mt="md"
-        >
-          <Table>
-            <thead>
-              <tr>
-                <th>{t('credits.thirdPartyContentTable.dependencyName')}</th>
-                <th>{t('credits.thirdPartyContentTable.dependencyVersion')}</th>
-              </tr>
-            </thead>
-            {Object.keys(attributes.dependencies).map((key, index) => (
-              <tbody key={`dependency-${index}`}>
+    <Button
+      style={{
+        justifyContent: 'start',
+      }}
+      variant="light"
+      mx="auto"
+      size="xs"
+      onClick={() =>
+        modals.open({
+          title: t('credits.thirdPartyContent'),
+          size: 'xl',
+          children: (
+            <Table>
+              <thead>
                 <tr>
-                  <td>{key}</td>
-                  <td>{attributes.dependencies[key]}</td>
+                  <th>{t('credits.thirdPartyContentTable.dependencyName')}</th>
+                  <th>{t('credits.thirdPartyContentTable.dependencyVersion')}</th>
                 </tr>
+              </thead>
+              <tbody>
+                {Object.keys(attributes.dependencies).map((key, index) => (
+                  <tr>
+                    <td>{key}</td>
+                    <td>{attributes.dependencies[key]}</td>
+                  </tr>
+                ))}
               </tbody>
-            ))}
-          </Table>
-        </Box>
-      </Collapse>
-    </>
+            </Table>
+          ),
+        })
+      }
+    >
+      {t('credits.thirdPartyContent')}
+    </Button>
   );
 };

@@ -1,23 +1,23 @@
 {
     "metaTitle": "Διαχείριση",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Καλώς ήρθατε, {{username}}",
+        "fallbackUsername": "Ανώνυμος",
+        "subtitle": "Καλώς ήρθατε στον κόμβο εφαρμογών σας. Οργανώστε, βελτιστοποιήστε και κατακτήστε!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Γρήγορες ενέργειες",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Οι πίνακές σας",
+            "subtitle": "Δημιουργήστε και διαχειριστείτε τους πίνακες σας"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Πρόσκληση νέου χρήστη",
+            "subtitle": "Δημιουργία και αποστολή πρόσκλησης για εγγραφή"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Διαχείριση χρηστών",
+            "subtitle": "Διαγραφή και διαχείριση των χρηστών σας"
         }
     }
 }

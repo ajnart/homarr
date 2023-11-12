@@ -5,27 +5,27 @@
     "settings": {
       "title": "Ustawienia dla widżetu Data i Czas",
       "display24HourFormat": {
-        "label": "Wyświetlaj pełną godzinę (24 godziny)"
+        "label": "Wyświetlaj pełną godzinę (format 24-godzinny)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Format daty",
         "data": {
-          "hide": ""
+          "hide": "Ukryj datę"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Wyświetl niestandardową strefę czasową"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Lokalizacja strefy czasowej"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Nazwa miasta",
+        "info": "W przypadku aktywowania opcji Strefa czasowa, wyświetlana może być nazwa miasta i kod strefy czasowej.<br/>Możesz także wyświetlić samo miasto lub nie wyświetlać żadnego.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Miasto i strefa czasowa",
+          "city": "Tylko miasto",
+          "none": "Żaden"
         }
       }
     }

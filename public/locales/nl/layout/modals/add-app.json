@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Intern adres",
-			"description": "Intern IP-adres van de app."
+			"description": "Intern IP-adres van de app.",
+			"troubleshoot": {
+				"label": "Heb je problemen?",
+				"header": "Hier is een lijst met veelgemaakte fouten en probleemoplossing:",
+				"lines": {
+					"nothingAfterPort": "In de meeste, zo niet alle gevallen, moet je geen pad invoeren na de poort. (Zelfs de '/admin' voor pihole of '/web' voor plex)",
+					"protocolCheck": "Controleer altijd of de URL wordt voorafgegaan door http of https en of je de juiste URL gebruikt.",
+					"preferIP": "Het wordt aanbevolen om het directe ip te gebruiken van de machine of container waarmee je probeert te communiceren.",
+					"enablePings": "Controleer of het IP correct is door pings in te schakelen. Pas bord aan -> Lay-out -> Pings inschakelen. Er verschijnt een rood of groen bubbeltje op de app-tegels en als je er met de muis overheen gaat, zie je de responscode (in de meeste gevallen wordt een groen bubbeltje met code 200 verwacht).",
+					"wget": "Om er zeker van te zijn dat homarr kan communiceren met de andere apps, moet je wget/curl/ping doen naar de IP:poort van de app.",
+					"iframe": "Iframes moeten altijd hetzelfde protocol (http/s) gebruiken als Homarr.",
+					"clearCache": "Sommige informatie wordt geregistreerd in de cache, dus een integratie werkt misschien niet tenzij je de cache leegmaakt in de algemene opties van Homarr."
+				},
+				"footer": "Neem voor meer probleemoplossing contact op met onze {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Extern adres",
@@ -26,10 +40,10 @@
 			"description": "Open de app in een nieuw tabblad in plaats van de huidige."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Toepassing Beschrijving",
+			"description": "De tekst die je invoert verschijnt wanneer je met de muis over je app beweegt.\r\nGebruik dit om gebruikers meer details over je app te geven of laat het leeg om niets te hebben."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Een niet-standaard protocol gebruiken. Dit kan vooraf geïnstalleerde toepassingen vereisen en veiligheidsrisico's met zich meebrengen. Zorg ervoor dat je adres veilig en vertrouwd is."
 	},
 	"network": {
 		"statusChecker": {
@@ -44,7 +58,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App icoon",
-			"description": "",
+			"description": "Begin te typen om een pictogram te vinden. Je kunt ook een URL van een afbeelding plakken om een aangepast pictogram te gebruiken.",
 			"autocomplete": {
 				"title": "Geen resultaten gevonden",
 				"text": "Probeer een specifiekere zoekterm te gebruiken. Als u het gewenste pictogram niet kunt vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast pictogram"
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Lettergrootte app naam",
+			"description": "Stel de lettergrootte in voor wanneer de app-naam wordt weergegeven op de tegel."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "App Naam Status",
+			"description": "Kies waar je de titel wilt weergeven, als dat al gebeurt.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Toon titel alleen op tegel",
+				"hover": "Titel alleen tonen bij zweven over tooltip",
+				"hidden": "Helemaal niet laten zien"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "App Naam Positie",
+			"description": "Positie van de naam van de app ten opzichte van het pictogram.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Top",
+				"right": "Rechts",
+				"bottom": "Bodem",
+				"left": "Links"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "App naam Lijnklem",
+			"description": "Bepaalt op hoeveel regels uw titel maximaal moet passen. Stel 0 in voor onbeperkt."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Naam is vereist",
+		"noUrl": "Url is vereist",
+		"invalidUrl": "Waarde is geen geldige url",
+		"noIconUrl": "Dit veld is verplicht",
+		"noExternalUri": "Externe URI is vereist",
+		"invalidExternalUri": "Externe URI is geen geldige uri"
 	}
 }

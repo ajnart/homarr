@@ -9,6 +9,7 @@ import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { RouterOutputs } from '~/utils/api';
 
@@ -34,14 +35,6 @@ type BoardGetServerSideProps = {
 export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = async (ctx) => {
   const session = await getServerAuthSession(ctx);
   const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
-
-  const translations = await getServerSideTranslations(
-    boardNamespaces,
-    ctx.locale,
-    ctx.req,
-    ctx.res
-  );
-
   const helpers = await createTrpcServersideHelpers(ctx);
   const board = await helpers.boards.byName.fetch({ boardName }).catch((err) => {
     if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
@@ -56,16 +49,21 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
     };
   }
 
-  if (!board.allowGuests && !session?.user) {
-    return {
-      notFound: true,
-      props: {
-        primaryColor: board.primaryColor,
-        secondaryColor: board.secondaryColor,
-        primaryShade: board.primaryShade,
-      },
-    };
+  const result = checkForSessionOrAskForLogin(
+    ctx,
+    session,
+    () => board.allowGuests || session?.user != undefined
+  );
+  if (result) {
+    return result;
   }
+
+  const translations = await getServerSideTranslations(
+    boardNamespaces,
+    ctx.locale,
+    ctx.req,
+    ctx.res
+  );
 
   return {
     props: {

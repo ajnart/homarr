@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nie je možné nájsť dieru DNS",
+        "text": "Vyskytol sa problém s pripojením k vašim dieram DNS. Skontrolujte prosím svoju konfiguráciu/integráciu."
       }
     }
   }

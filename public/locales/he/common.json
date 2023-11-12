@@ -1,5 +1,7 @@
 {
   "save": "שמור",
+  "apply": "החל",
+  "insert": "הוספה",
   "about": "אודות",
   "cancel": "בטל",
   "close": "סגור",
@@ -40,5 +42,14 @@
     "medium": "בינוני",
     "large": "גדול"
   },
-  "seeMore": "הצגת פריטים נוספים"
+  "seeMore": "הצגת פריטים נוספים",
+  "position": {
+    "left": "שמאל",
+    "center": "מרכז",
+    "right": "ימין"
+  },
+  "attributes": {
+    "width": "רוחב",
+    "height": "גובה"
+  }
 }

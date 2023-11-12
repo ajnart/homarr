@@ -1,21 +1,22 @@
 {
 	"description": "Homarr je <strong>elegantna</strong>, <strong>moderna</strong> nadzorna ploča koja vam omogućuje pristup svim vašim aplikacijama i uslugama na dohvat ruke. S Homarrom možete pristupiti i kontrolirati sve na jednom praktičnom mjestu. Homarr se besprijekorno integrira s dodanim aplikacijama, pružajući vam vrijedne informacije i potpunu kontrolu. Instalacija je jednostavna, a Homarr podržava širok raspon metoda implementacije.",
-	"contact": "Imate li problema ili pitanja? Povežite se s nama!",
 	"addToDashboard": "Dodaj na nadzornu ploču",
 	"tip": "Mod se odnosi na tipku modifikatora, to su Ctrl i Command/Super/Windows tipka",
 	"key": "Tipka prečaca",
 	"action": "Radnja",
 	"keybinds": "Namještanje tipki",
-	"documentation": "",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Prebacivanje svijetlog/tamnog načina rada",
+		"focusSearchBar": "Fokus na traku za pretraživanje",
+		"openDocker": "Otvori docker widget",
+		"toggleEdit": "Uključi/isključi način uređivanja"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfiguracija verzije sheme",
-		"configurationsCount": "Dostupna konfiguracija",
 		"version": "Verzija",
 		"nodeEnvironment": "Okruženje čvora",
 		"i18n": "Učitani I18n prostori za prijevod",
@@ -23,7 +24,7 @@
 		"experimental_disableEditMode": "<b>EXPERIMENTALNO</b>: Onemogući način uređivanja"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Novo: {{newVersion}}",
+		"dropdown": "Dostupna je verzija {{newVersion}} ! Trenutna verzija je {{currentVersion}}"
 	}
 }

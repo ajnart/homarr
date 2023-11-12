@@ -1,0 +1,35 @@
+{
+    "metaTitle": "",
+    "title": "",
+    "text": "",
+    "form": {
+        "fields": {
+            "username": {
+                "label": ""
+            },
+            "password": {
+                "label": ""
+            },
+            "passwordConfirmation": {
+                "label": ""
+            }
+        },
+        "buttons": {
+            "submit": ""
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "",
+            "text": ""
+        },
+        "success": {
+            "title": "",
+            "text": ""
+        },
+        "error": {
+            "title": "",
+            "text": ""
+        }
+    }
+}

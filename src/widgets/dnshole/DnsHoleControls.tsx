@@ -84,18 +84,20 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   }
 
   if (data.status.length === 0) {
-    return(
+    return (
       <Center h="100%">
         <Stack align="center">
-          <IconDeviceGamepad size={40} strokeWidth={1}/>
-          <Title align="center" order={6}>{t('modules/dns-hole-controls:descriptor.errors.general.title')}</Title>
-          <Text align="center">{t('modules/dns-hole-controls:descriptor.errors.general.text')}</Text>
+          <IconDeviceGamepad size={40} strokeWidth={1} />
+          <Title align="center" order={6}>
+            {t('modules/dns-hole-controls:descriptor.errors.general.title')}
+          </Title>
+          <Text align="center">
+            {t('modules/dns-hole-controls:descriptor.errors.general.text')}
+          </Text>
         </Stack>
       </Center>
-    )
+    );
   }
-
-  console.log(data);
 
   type getDnsStatusAcc = {
     enabled: string[];

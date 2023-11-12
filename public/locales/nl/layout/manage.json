@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Home"
         },
         "boards": {
-            "title": ""
+            "title": "Borden"
         },
         "users": {
-            "title": "",
+            "title": "Gebruikers",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Beheer",
+                "invites": "Nodigt  uit"
             }
         },
         "help": {
-            "title": "",
+            "title": "Help",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Documentatie",
+                "report": "Een probleem / bug melden",
+                "discord": "Community Discord",
+                "contribute": "Draag bij"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Gereedschap",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Over"
         }
     }
 }

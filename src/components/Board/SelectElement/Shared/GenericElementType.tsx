@@ -7,6 +7,7 @@ import { useStyles } from './styles';
 
 interface GenericAvailableElementTypeProps {
   name: string;
+  id: string;
   handleAddition: () => Promise<void>;
   description?: string;
   image: string | Icon;
@@ -15,6 +16,7 @@ interface GenericAvailableElementTypeProps {
 
 export const GenericAvailableElementType = ({
   name,
+  id,
   description,
   image,
   disabled,

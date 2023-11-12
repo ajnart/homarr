@@ -1,12 +1,14 @@
 {
 	"description": "Homarr הוא לוח מחוונים <strong>אלגנטי</strong>, <strong>מודרני</strong>, אשר שם את כל האפליקציות והשירותים בהישג יד. עם Homarr, ניתן לגשת לכל דבר ולשלוט בו במיקום נוח אחד. Homarr משתלב בצורה חלקה עם האפליקציות, מספק מידע רב ערך ונותן שליטה מלאה. ההתקנה היא קלה ותומכת במגוון רחב של שיטות פריסה.",
-	"contact": "נתקלת בבעיות או בשאלות? צור איתנו קשר!",
 	"addToDashboard": "הוספה ללוח מחוונים",
 	"tip": "מוד מתייחס למקש השינוי שלך, זהו מקש Ctrl ומקש Command/Super/Windows",
 	"key": "מקש קיצור",
 	"action": "פעולה",
 	"keybinds": "שילוב מקשים",
-	"documentation": "תיעוד",
+	"translators": "מתרגמים ({{count}})",
+	"translatorsDescription": "הודות לאנשים האלה, Homarr זמין ב {{languages}} שפות! רוצה לעזור לתרגם את Homarr לשפה שלך? קרא כיצד לעשות זאת <a>כאן</a>.",
+	"contributors": "תורמים ({{count}})",
+	"contributorsDescription": "האנשים האלה בנו את הקוד שגורם Homarr לעבוד! רוצה לעזור לבנות את Homarr? קרא כיצד לעשות זאת <a>כאן</a>",
 	"actions": {
 		"toggleTheme": "החלף מצב אור/חושך",
 		"focusSearchBar": "התמקד בסרגל החיפוש",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "גירסת סכימת תצורה",
-		"configurationsCount": "תצורות זמינות",
 		"version": "גרסה",
 		"nodeEnvironment": "סביבת Node",
 		"i18n": "מרחבי שמות של תרגום I18n טעונים",

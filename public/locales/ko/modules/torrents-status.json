@@ -1,31 +1,43 @@
 {
   "descriptor": {
     "name": "토렌트",
-    "description": "",
+    "description": "지원되는 토렌트 클라이언트의 토렌트 목록을 표시합니다.",
     "settings": {
-      "title": "",
+      "title": "토렌트 위젯 설정",
       "refreshInterval": {
-        "label": ""
+        "label": "새로 고침 간격(초)"
       },
       "displayCompletedTorrents": {
+        "label": "완료된 토렌트 표시"
+      },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
         "label": ""
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "오래된 토렌트 표시"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "라벨 목록은 화이트리스트(블랙리스트 대신)입니다."
       },
       "labelFilter": {
+        "label": "레이블 목록",
+        "description": "'화이트리스트'를 선택하면 화이트리스트 역할을 합니다. 체크하지 않으면 블랙리스트가 됩니다. 비어 있으면 아무 작업도 수행하지 않습니다."
+      },
+      "displayRatioWithFilter": {
         "label": "",
-        "description": ""
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "오류",
-      "lastUpdated": ""
+      "lastUpdated": "마지막 업데이트 {{time}} 전",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
@@ -37,11 +49,11 @@
         "progress": "진행률"
       },
       "item": {
-        "text": ""
+        "text": "관리: {{appName}}, {{ratio}} 비율"
       },
       "body": {
         "nothingFound": "토렌트 없음",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} 필터에 의해 항목이 숨겨집니다."
       }
     },
     "lineChart": {
@@ -54,27 +66,27 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "지원되는 토렌트 클라이언트를 찾을 수 없습니다!",
+        "text": "지원되는 토렌트 클라이언트를 추가하여 현재 다운로드를 확인하세요."
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "예기치 않은 오류가 발생했습니다.",
+        "text": "토렌트 클라이언트와 통신할 수 없습니다. 구성을 확인하세요."
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "로드 중",
+      "description": "연결 설정하기"
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "관리 주체",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "대기열 위치 - {{position}}",
+        "progress": "진행 상황 - {{progress}}%",
+        "totalSelectedSize": "합계 - {{totalSize}}",
+        "state": "주 - {{state}}",
+        "ratio": "비율 - 비율",
+        "completed": "완료됨"
       }
     }
   }

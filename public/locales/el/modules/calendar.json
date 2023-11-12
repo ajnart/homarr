@@ -4,9 +4,6 @@
     "description": "Εμφανίζει ένα ημερολόγιο με τις επερχόμενες κυκλοφορίες, από τις υποστηριζόμενες ενσωματώσεις.",
     "settings": {
       "title": "Ρυθμίσεις για το widget ημερολογίου",
-      "useSonarrv4": {
-        "label": "Χρήση του API Sonarr v4"
-      },
       "radarrReleaseType": {
         "label": "Τύπος κυκλοφορίας Radarr",
         "data": {

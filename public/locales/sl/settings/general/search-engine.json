@@ -1,7 +1,7 @@
 {
   "title": "Iskalnik",
   "configurationName": "Nastavitve iskalnika",
-  "custom": "",
+  "custom": "Po meri",
   "tips": {
     "generalTip": "Uporabite lahko več predpon! Če jih dodate pred poizvedbo, boste filtrirali rezultate. !s (splet), !t (torrenti), !y (YouTube) in !m (mediji).",
     "placeholderTip": "%s lahko uporabite kot nadomestno ime za poizvedbo."

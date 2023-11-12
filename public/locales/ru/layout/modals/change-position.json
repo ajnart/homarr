@@ -1,8 +1,8 @@
 {
-	"xPosition": "Положение оси X",
+	"xPosition": "Позиция по оси X",
 	"width": "Ширина",
 	"height": "Высота",
-	"yPosition": "Положение оси Y",
-	"zeroOrHigher": "0 или выше",
+	"yPosition": "Позиция по оси Y",
+	"zeroOrHigher": "0 или больше",
 	"betweenXandY": "Между {{min}} и {{max}}"
 }

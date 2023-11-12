@@ -8,5 +8,5 @@
         "title": "Način uređivanja je omogućen za veličinu <1>{{size}}</1>",
         "text": "Sada možete prilagoditi i konfigurirati svoje aplikacije. Promjene se <strong>neće spremiti</strong> sve dok ne izađete iz načina uređivanja"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Izađite iz načina uređivanja da biste spremili promjene"
 }

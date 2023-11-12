@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Beheer",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Welkom terug, {{username}}",
+        "fallbackUsername": "Anonieme",
+        "subtitle": "Welkom bij Your Application Hub. Organiseer, optimaliseer en overwin!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Snelle acties",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Uw borden",
+            "subtitle": "Uw borden maken en beheren"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Een nieuwe gebruiker uitnodigen",
+            "subtitle": "Een uitnodiging voor registratie maken en versturen"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Gebruikers beheren",
+            "subtitle": "Gebruikers verwijderen en beheren"
         }
     }
 }

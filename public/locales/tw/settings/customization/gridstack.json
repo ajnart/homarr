@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "列的大小為 {{size}}",
+    "descriptionPreset": "螢幕寬度小於 {{pixels}} 像素時的列數",
+    "descriptionExceedsPreset": "螢幕寬度超過 {{pixels}} 像素時的列數"
+  },
+  "unsavedChanges": "您有未儲存的設定，點擊下方的\"應用設定\"按紐並儲存",
+  "applyChanges": "應用設定",
+  "defaultValues": "預設"
+}

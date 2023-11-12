@@ -1,0 +1,27 @@
+{
+    "search": {
+        "label": "crwdns3447:0crwdne3447:0",
+        "engines": {
+            "web": "crwdns3449:0{{query}}crwdne3449:0",
+            "youtube": "crwdns3451:0{{query}}crwdne3451:0",
+            "torrent": "crwdns3453:0{{query}}crwdne3453:0",
+            "movie": "crwdns3455:0{{query}}crwdnd3455:0{{app}}crwdne3455:0"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "crwdns3457:0crwdne3457:0",
+            "preferences": "crwdns3459:0crwdne3459:0",
+            "defaultBoard": "crwdns3461:0crwdne3461:0",
+            "manage": "crwdns3463:0crwdne3463:0",
+            "logout": "crwdns3469:0{{username}}crwdne3469:0",
+            "login": "crwdns3471:0crwdne3471:0"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "crwdns3473:0crwdne3473:0",
+            "topResults": "crwdns3475:0{{count}}crwdnd3475:0{{search}}crwdne3475:0"
+        }
+    }
+}

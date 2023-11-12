@@ -1,13 +1,13 @@
 import { Divider, ScrollArea, createStyles } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 import React from 'react';
-
 import {
   LidarrMediaDisplay,
   RadarrMediaDisplay,
   ReadarrMediaDisplay,
   SonarrMediaDisplay,
 } from '~/modules/common';
+
 import { MediasType } from './type';
 
 interface MediaListProps {

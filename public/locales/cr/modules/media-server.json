@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "crwdns2595:0crwdne2595:0",
+    "description": "crwdns2597:0crwdne2597:0",
+    "settings": {
+      "title": "crwdns2599:0crwdne2599:0"
+    }
+  },
+  "loading": "crwdns3187:0crwdne3187:0",
+  "card": {
+    "table": {
+      "header": {
+        "session": "crwdns2601:0crwdne2601:0",
+        "user": "crwdns2603:0crwdne2603:0",
+        "currentlyPlaying": "crwdns2605:0crwdne2605:0"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "crwdns2607:0crwdne2607:0",
+        "text": "crwdns2609:0crwdne2609:0"
+      }
+    }
+  }
+}

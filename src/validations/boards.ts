@@ -1,5 +1,6 @@
 import { DEFAULT_THEME, MANTINE_COLORS, MantineColor } from '@mantine/core';
 import { z } from 'zod';
+import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
 
 export const createBoardSchemaValidation = z.object({
   name: z.string().min(2).max(25),
@@ -13,13 +14,16 @@ export const boardCustomizationSchema = z.object({
     pingsEnabled: z.boolean(),
   }),
   pageMetadata: z.object({
-    pageTitle: z.string().min(1),
+    pageTitle: z.string(),
     metaTitle: z.string(),
     logoSrc: z.string(),
     faviconSrc: z.string(),
   }),
   appearance: z.object({
     backgroundSrc: z.string(),
+    backgroundImageAttachment: z.enum(BackgroundImageAttachment),
+    backgroundImageSize: z.enum(BackgroundImageSize),
+    backgroundImageRepeat: z.enum(BackgroundImageRepeat),
     primaryColor: z.custom<MantineColor>(
       (value) => typeof value === 'string' && MANTINE_COLORS.includes(value)
     ),

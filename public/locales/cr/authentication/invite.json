@@ -1,0 +1,35 @@
+{
+    "metaTitle": "crwdns3635:0crwdne3635:0",
+    "title": "crwdns3637:0crwdne3637:0",
+    "text": "crwdns3639:0crwdne3639:0",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "crwdns3641:0crwdne3641:0"
+            },
+            "password": {
+                "label": "crwdns3643:0crwdne3643:0"
+            },
+            "passwordConfirmation": {
+                "label": "crwdns3645:0crwdne3645:0"
+            }
+        },
+        "buttons": {
+            "submit": "crwdns3647:0crwdne3647:0"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "crwdns3649:0crwdne3649:0",
+            "text": "crwdns3651:0crwdne3651:0"
+        },
+        "success": {
+            "title": "crwdns3653:0crwdne3653:0",
+            "text": "crwdns3655:0crwdne3655:0"
+        },
+        "error": {
+            "title": "crwdns3657:0crwdne3657:0",
+            "text": "crwdns3659:0{{error}}crwdne3659:0"
+        }
+    }
+}

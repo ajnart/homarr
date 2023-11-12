@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Intern adresse",
-			"description": "Intern IP-adresse til appen."
+			"description": "Intern IP-adresse til appen.",
+			"troubleshoot": {
+				"label": "Opplever du problemer?",
+				"header": "Her er en liste over vanlige feil og feilsøking:",
+				"lines": {
+					"nothingAfterPort": "Du bør, i de fleste om ikke alle tilfeller, ikke legge inn noen bane etter porten. (Til og med '/admin' for pihole eller '/web' for plex)",
+					"protocolCheck": "Sørg alltid for at URL-en er innledet med http eller https, og forsikre deg om at du bruker den riktige.",
+					"preferIP": "Det anbefales å bruke den direkte ip-en til maskinen eller containeren du prøver å kommunisere med.",
+					"enablePings": "Sjekk at IP-en er riktig ved å aktivere ping. Tilpass Tavle -> Layout -> Aktiver ping. En liten rød eller grønn boble vil dukke opp på app-flisene dine, og ved å sveve den vil du få svarkoden (en grønn boble med kode 200 forventes i de fleste tilfeller).",
+					"wget": "For å være sikker på at homarr kan kommunisere med de andre appene, sørg for å wget/curl/pinge appens IP:port.",
+					"iframe": "Når det gjelder iframes, bør de alltid bruke samme protokoll (http/s) som Homarr.",
+					"clearCache": "Noe informasjon er registrert i cache, så en integrasjon vil kanskje ikke fungere med mindre du tømmer cachen i Homarrs generelle alternativer."
+				},
+				"footer": "For mer feilsøking, kontakt vår {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Ekstern adresse",
@@ -26,10 +40,10 @@
 			"description": "Åpne appen i en ny fane i stedet for denne."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Applikasjonsbeskrivelse",
+			"description": "Teksten du skriver inn vises når du holder musepekeren over appen din.\r\nBruk dette for å gi brukerne flere detaljer om appen din eller la stå tomt for å ikke ha noe."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Å bruke en ikke-standard protokoll. Dette kan kreve forhåndsinstallerte programmer og kan introdusere sikkerhetsrisikoer. Sørg for at adressen din er sikker og pålitelig."
 	},
 	"network": {
 		"statusChecker": {
@@ -44,7 +58,7 @@
 	"appearance": {
 		"icon": {
 			"label": "App ikon",
-			"description": "",
+			"description": "Begynn å skrive for å finne et ikon. Du kan også lime inn en bilde-URL for å bruke et tilpasset ikon.",
 			"autocomplete": {
 				"title": "Ingen resultater funnet",
 				"text": "Prøv å bruke et mer spesifikt søkeord. Hvis du ikke finner det ønskede ikonet, lim inn URL adressen for et egendefinert ikon"
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Appnavn Skriftstørrelse",
+			"description": "Angi skriftstørrelsen for når appnavnet vises på flisen."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Appnavnstatus",
+			"description": "Velg hvor du vil at tittelen skal vises, eller ikke i det hele tatt.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Vis kun tittel på flis",
+				"hover": "Vis tittel kun når du holder musepekeren over",
+				"hidden": "Ikke vis i det hele tatt"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "App navn posisjon",
+			"description": "Plassering av appens navn i forhold til ikonet.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Topp",
+				"right": "Høyre",
+				"bottom": "Bunn",
+				"left": "Venstre"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "App navnelinjeklemme",
+			"description": "Definerer hvor mange linjer tittelen din skal ha plass til maksimalt. Sett 0 for ubegrenset."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "Skjemaet inneholder ugyldig data. Derfor kan den ikke lagres. Vennligst løs alle problemer og klikk på denne knappen igjen for å lagre endringene dine",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Navn er påkrevd",
+		"noUrl": "URL er påkrevd",
+		"invalidUrl": "Verdien er ikke en gyldig nettadresse",
+		"noIconUrl": "Dette feltet er obligatorisk",
+		"noExternalUri": "Ekstern URI er obligatorisk",
+		"invalidExternalUri": "Ekstern URI er ikke en gyldig URI"
 	}
 }

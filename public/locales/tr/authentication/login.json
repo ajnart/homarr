@@ -12,7 +12,7 @@
       }
     },
     "buttons": {
-      "submit": "Kayıt ol"
+      "submit": "Giriş"
     },
     "afterLoginRedirection": "Giriş yaptıktan sonra {{url}} adresine yönlendirileceksiniz"
   },

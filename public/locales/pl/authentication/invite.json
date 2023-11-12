@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Utwórz konto",
+    "title": "Utwórz konto",
+    "text": "Zdefiniuj swoje dane logowania poniżej",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Hasło"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Potwierdź hasło"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Utwórz konto"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Tworzenie konta",
+            "text": "Proszę czekać"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Utworzono konto",
+            "text": "Twoje konto zostało utworzone"
         },
         "error": {
             "title": "Błąd",
-            "text": ""
+            "text": "Coś poszło nie tak, otrzymano następujący błąd: {{error}}"
         }
     }
 }

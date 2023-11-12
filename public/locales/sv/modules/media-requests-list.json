@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Inga förfrågningar hittades. Kontrollera att du har konfigurerat dina appar korrekt.",
-  "pending": "Det finns {{countPendingApproval}} förfrågningar som väntar på godkännande.",
-  "nonePending": "Det finns för närvarande inga väntande godkännanden. Du är redo att köra!",
   "state": {
     "approved": "Godkänd",
     "pendingApproval": "Väntar på godkännande",

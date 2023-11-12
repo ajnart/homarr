@@ -1,6 +1,6 @@
 {
   "columnsCount": {
-    "labelPreset": "{{size}} boyutunda sütunlar",
+    "labelPreset": "{{size}} boyutta sütunlar",
     "descriptionPreset": "Ekran genişliği {{pixels}} pikselden az olduğunda sütun sayısı",
     "descriptionExceedsPreset": "Ekran genişliği {{pixels}} pikselden az olduğunda sütun sayısı"
   },

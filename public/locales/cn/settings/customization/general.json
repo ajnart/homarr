@@ -1,0 +1,29 @@
+{
+  "text": "个性化设置允许您根据自己的喜好配置和调整 Homarr 的使用体验。",
+  "accordeon": {
+    "layout": {
+      "name": "显示布局",
+      "description": "启用或禁用标题和面板上的元素"
+    },
+    "gridstack": {
+      "name": "网格堆栈",
+      "description": "自定义您的面板区域的行为和栏目"
+    },
+    "pageMetadata": {
+      "name": "页面元数据",
+      "description": "调整标题、Logo 和 PWA"
+    },
+    "appereance": {
+      "name": "外观",
+      "description": "自定义背景、颜色和应用的外观"
+    },
+    "accessibility": {
+      "name": "无障碍服务",
+      "description": "为残疾和残障人士配置 Homarr"
+    },
+    "access": {
+      "name": "访问权限",
+      "description": "配置谁有权访问您的面板"
+    }
+  }
+}

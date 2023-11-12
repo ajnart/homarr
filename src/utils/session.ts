@@ -1,4 +1,4 @@
-import { randomUUID } from "crypto";
+import { randomUUID } from 'crypto';
 
 export const fromDate = (seconds: number, date = Date.now()) => {
   return new Date(date + seconds * 1000);
@@ -8,4 +8,3 @@ export const fromDate = (seconds: number, date = Date.now()) => {
 export const generateSessionToken = () => {
   return randomUUID();
 };
-

@@ -41,8 +41,10 @@ import {
 import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
+import { boardRouter } from '~/server/api/routers/board';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { firstUpperCase } from '~/tools/shared/strings';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
@@ -55,10 +57,17 @@ export default function CustomizationPage({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const query = useRouter().query as { slug: string };
   const utils = api.useContext();
-  const { data: board } = api.boards.byNameSimple.useQuery(
+  const {
+    data: board,
+    isError,
+    error,
+  } = api.boards.byNameSimple.useQuery(
     { boardName: query.slug },
     {
       initialData: initialBoard,
+      refetchOnMount: false,
+      useErrorBoundary: false,
+      suspense: false,
     }
   );
   const { mutateAsync: updateCustomization, isLoading } =
@@ -80,6 +89,9 @@ export default function CustomizationPage({
         shade: board.primaryShade ?? 8,
         opacity: board.appOpacity ?? 50,
         customCss: board.customCss ?? '',
+        backgroundImageAttachment: board.backgroundImageAttachment ?? 'fixed',
+        backgroundImageRepeat: board.backgroundImageRepeat ?? 'no-repeat',
+        backgroundImageSize: board.backgroundImageSize ?? 'cover',
       },
       pageMetadata: {
         pageTitle: board.pageTitle ?? '',
@@ -120,6 +132,7 @@ export default function CustomizationPage({
             color: 'green',
             icon: <IconCheck />,
           });
+          form.resetDirty();
         },
         onError() {
           updateNotification({
@@ -138,12 +151,19 @@ export default function CustomizationPage({
     name: firstUpperCase(query.slug),
   })} • Homarr`;
 
+  if (isError || error) {
+    return {
+      notFound: true,
+    };
+  }
+
   return (
     <MainLayout
       contentComponents={
         <Button
           component={Link}
           passHref
+          color={board.primaryColor ?? 'red'}
           href={backToBoardHref}
           variant="light"
           leftIcon={<IconArrowLeft size={16} />}
@@ -182,12 +202,12 @@ export default function CustomizationPage({
                   <Button
                     onClick={() => {
                       if (!form.isValid()) {
+                        form.validate();
                         return;
                       }
 
                       handleSubmit(form.values);
                     }}
-                    disabled={!form.isValid()}
                     loading={isLoading}
                     color="green"
                   >
@@ -265,29 +285,33 @@ const routeParamsSchema = z.object({
   slug: z.string(),
 });
 
-export const getServerSideProps = async ({
-  req,
-  res,
-  locale,
-  params,
-}: GetServerSidePropsContext) => {
-  const routeParams = routeParamsSchema.safeParse(params);
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const routeParams = routeParamsSchema.safeParse(context.params);
   if (!routeParams.success) {
     return {
       notFound: true,
     };
   }
 
-  const session = await getServerAuthSession({ req, res });
-  if (!session?.user.isAdmin) {
-    return {
-      notFound: true,
-    };
+  const session = await getServerAuthSession(context);
+
+  const result = checkForSessionOrAskForLogin(
+    context,
+    session,
+    () => session?.user.isAdmin == true
+  );
+  if (result) {
+    return result;
   }
 
-  const helpers = await createTrpcServersideHelpers({ req, res });
+  const helpers = await createTrpcServersideHelpers({ req: context.req, res: context.res });
+  const caller = boardRouter.createCaller({
+    session: session,
+    cookies: context.req.cookies,
+    headers: context.req.headers,
+  });
 
-  const board = await helpers.boards.byNameSimple.fetch({ boardName: routeParams.data.slug });
+  const board = await caller.byNameSimple({ boardName: routeParams.data.slug });
   if (!board) {
     return {
       notFound: true,
@@ -305,9 +329,9 @@ export const getServerSideProps = async ({
       'settings/customization/gridstack',
       'settings/customization/access',
     ],
-    locale,
-    req,
-    res
+    context.locale,
+    context.req,
+    context.res
   );
 
   return {

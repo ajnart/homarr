@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "首頁"
+        },
+        "boards": {
+            "title": "面板"
+        },
+        "users": {
+            "title": "使用者",
+            "items": {
+                "manage": "管理",
+                "invites": "邀請"
+            }
+        },
+        "help": {
+            "title": "幫助",
+            "items": {
+                "documentation": "文件",
+                "report": "回報問題",
+                "discord": "Discord 社群",
+                "contribute": "貢獻"
+            }
+        },
+        "tools": {
+            "title": "工具",
+            "items": {
+                "docker": "Docker"
+            }
+        },
+        "about": {
+            "title": "關於"
+        }
+    }
+}

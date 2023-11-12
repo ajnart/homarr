@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Widget RSS",
-    "description": "",
+    "description": "Il widget rss ti consente di visualizzare i feed rss sulla tua dashboard.",
     "settings": {
       "title": "Impostazioni del widget RSS",
       "rssFeedUrl": {

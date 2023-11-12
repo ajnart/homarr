@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Αυτή είναι μια πειραματική λειτουργία του Homarr. Αναφέρετε τυχόν προβλήματα στο <gh>GitHub</gh> ή στο <dc>Discord</dc>."
-    },
     "search": {
         "label": "Αναζήτηση",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Προτιμήσεις χρήστη",
             "defaultBoard": "Προεπιλεγμένο ταμπλό",
             "manage": "Διαχείριση",
-            "about": {
-                "label": "Σχετικά",
-                "new": "Νέο"
-            },
             "logout": "Αποσύνδεση από {{username}}",
             "login": "Σύνδεση"
         }

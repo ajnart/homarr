@@ -27,6 +27,7 @@ import { OnlyKeysWithStructure } from '~/types/helpers';
 import { api } from '~/utils/api';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 
 const ManagementPage = () => {
   const { t } = useTranslation('manage/index');
@@ -122,10 +123,9 @@ const QuickActionCard = ({ type, href }: QuickActionCardProps) => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getServerAuthSession(ctx);
 
-  if (!session?.user) {
-    return {
-      notFound: true,
-    };
+  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  if (result) {
+    return result;
   }
 
   const translations = await getServerSideTranslations(

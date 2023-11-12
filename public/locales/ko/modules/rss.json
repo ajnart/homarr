@@ -1,29 +1,29 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "RSS 위젯",
+    "description": "RSS 위젯을 사용하면 대시보드에 RSS 피드를 표시할 수 있습니다.",
     "settings": {
-      "title": "",
+      "title": "RSS 위젯 설정",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS 피드 URL",
+        "description": "표시하려는 RSS 피드의 URL입니다."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "새로 고침 간격(분)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "HTML 서식 허용(위험)",
+        "info": "외부에서 HTML 서식을 허용하는 것은 위험할 수 있습니다.<br/>신뢰할 수 있는 출처의 피드인지 확인하세요."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "텍스트 줄 클램프"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "RSS 피드를 검색할 수 없습니다.",
+          "text": "RSS 피드에 연결하는 동안 문제가 발생했습니다. 유효한 URL을 사용하여 RSS 피드를 올바르게 구성했는지 확인하세요. URL은 공식 사양과 일치해야 합니다. 피드를 업데이트한 후 대시보드를 새로 고쳐야 할 수 있습니다."
         }
       }
     }

@@ -4,7 +4,6 @@ import Consola from 'consola';
 import https from 'https';
 import { z } from 'zod';
 import { getConfig } from '~/tools/config/getConfig';
-import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 

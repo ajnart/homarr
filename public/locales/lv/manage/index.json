@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Pārvaldīt",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Laipni lūdzam atpakaļ, {{username}}",
+        "fallbackUsername": "Anonīms",
+        "subtitle": "Laipni lūgti Jūsu Pieteikumu Centrā. Organizējiet, Optimizējiet un Iekarojiet!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Ātrās darbības",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Jūsu dēļi",
+            "subtitle": "Izveidojiet un pārvaldiet savus dēļus"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Uzaicināt jaunu lietotâju",
+            "subtitle": "Izveidojiet un nosūtiet ielūgumu reģistrācijai"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Pārvaldīt lietotājus",
+            "subtitle": "Izveidojiet un pārvaldiet savus lietotājus"
         }
     }
 }

@@ -27,14 +27,13 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
-import React from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { IconSelector } from '~/components/IconSelector/IconSelector';
 
 import { defineWidget } from '../helper';
-import { IDraggableEditableListInputValue, IWidget, InferWidget } from '../widgets';
+import { IDraggableEditableListInputValue, InferWidget } from '../widgets';
 
 interface BookmarkItem {
   id: string;

@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Bladwijzer",
+    "description": "Een statische lijst met strings of koppelingen weergeven",
     "settings": {
-      "title": "",
+      "title": "Bladwijzerinstellingen",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Widget Titel",
+        "info": "Laat leeg om de titel verborgen te houden."
       },
       "items": {
-        "label": ""
+        "label": "Items"
       },
       "layout": {
         "label": "Indeling",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Automatisch raster",
+          "horizontal": "Horizontaal",
+          "vertical": "Verticaal"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Bladwijzerlijst leeg",
+      "text": "Nieuwe items aan deze lijst toevoegen in de bewerkingsmodus"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "De lengte moet tussen {{shortest}} en {{longest}}liggen.",
+      "invalidLink": "Geen geldige link",
+      "errorMsg": "Niet opgeslagen omdat er validatiefouten waren. Herhaal uw invoer a.u.b."
     },
     "name": "Naam",
-    "url": "",
+    "url": "URL",
     "newTab": "Open in nieuw tabblad",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Hostnaam verbergen",
+    "hideIcon": "Pictogram verbergen",
     "delete": "Verwijder"
   }
 }

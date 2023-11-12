@@ -59,6 +59,7 @@ export const StepCreateAccount = ({
       <Text>
         Your administrator account <b>must be secure</b>, that's why we have so many rules surrounding it.
        <br/>Try not to make it adminadmin this time...
+       <br/>Note: these password requirements <b>are not forced</b>, they are just recommendations.
       </Text>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>

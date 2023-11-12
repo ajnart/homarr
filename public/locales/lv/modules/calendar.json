@@ -4,9 +4,6 @@
     "description": "Tiek parādīts kalendārs ar gaidāmajām pirmizrādēm no atbalstītajām integrācijām.",
     "settings": {
       "title": "Kalendāra logrīka iestatījumi",
-      "useSonarrv4": {
-        "label": "Izmantot Sonarr v4 API"
-      },
       "radarrReleaseType": {
         "label": "Radarr laiduma tips",
         "data": {

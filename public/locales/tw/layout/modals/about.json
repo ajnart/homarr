@@ -1,0 +1,30 @@
+{
+	"description": "Homarr是一個 <strong>流暢</strong><strong>現代化</strong>的面板，能夠將您所有的應用與服務彙總一起。有了 Homarr，您可以在一個頁面中訪問和控制一切。Homarr 與您新增的應用程式互動流暢，為您提供最全面的訊息並由您控制。安裝 Homarr 輕鬆簡單，並且 Homarr 之於多種部屬方式",
+	"addToDashboard": "新增至面板",
+	"tip": "Mod 是指您的自定義快捷鍵，它可以是 Ctrl、Super/Windows 按鍵",
+	"key": "快捷鍵",
+	"action": "動作",
+	"keybinds": "按鍵綁定",
+	"translators": "翻譯 ({{count}})",
+	"translatorsDescription": "感謝這些人，Homarr 現已支援 {{languages}} 種語言！想要幫助 Homarr 翻譯您使用的語言嗎？請閱讀<a>此處</a>",
+	"contributors": "貢獻者 ({{count}})",
+	"contributorsDescription": "這些人建構了 Homarr 的代碼！想幫助 Homarr 嗎？請閱讀<a>此處</a>了解如何操作",
+	"actions": {
+		"toggleTheme": "切換 白色/黑色 主題模式",
+		"focusSearchBar": "前往搜尋欄",
+		"openDocker": "開啟 Docker 組件",
+		"toggleEdit": "切換編輯模式"
+	},
+	"metrics": {
+		"configurationSchemaVersion": "設定模式版本",
+		"version": "版本",
+		"nodeEnvironment": "節點環境",
+		"i18n": "I18n 翻譯空間已加載",
+		"locales": "I18n 本地語言已設定",
+		"experimental_disableEditMode": "<b>實驗性</b>：退出編輯模式"
+	},
+	"version": {
+		"new": "新： {{newVersion}}",
+		"dropdown": "版本 {{newVersion}} 可用！目前版本： {{currentVersion}}"
+	}
+}

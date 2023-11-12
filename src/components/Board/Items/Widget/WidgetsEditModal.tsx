@@ -19,9 +19,6 @@ import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react'
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
 import { useWidgetActions } from '~/components/Board/Items/Widget/widget-actions';
-import { WidgetItem } from '~/components/Board/context';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
 import { mapObject } from '~/tools/client/objects';
 import { objectEntries } from '~/tools/object';
 import type {

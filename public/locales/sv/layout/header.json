@@ -1,26 +1,19 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Sök",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Sök efter {{query}} på webben",
+            "youtube": "Sök efter {{query}} på YouTube",
+            "torrent": "Sök efter {{query}} torrents",
+            "movie": "Sök efter {{query}} på {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Om",
-                "new": ""
-            },
+            "switchTheme": "Byt tema",
+            "preferences": "Användarinställningar",
+            "defaultBoard": "Standard instrumentpanel",
+            "manage": "Hantera",
             "logout": "",
             "login": "Logga in"
         }

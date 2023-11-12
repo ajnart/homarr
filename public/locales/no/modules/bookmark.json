@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Bokmerke",
+    "description": "Viser en statisk liste over strenger eller lenker",
     "settings": {
-      "title": "",
+      "title": "Bokmerkeinnstillinger",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Widget-tittel",
+        "info": "La stå tomt for å holde tittelen skjult."
       },
       "items": {
-        "label": ""
+        "label": "Elementer"
       },
       "layout": {
         "label": "Oppsett",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Automatisk tabell",
+          "horizontal": "Horisontal",
+          "vertical": "Vertikal"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Bokmerkelisten er tom",
+      "text": "Legg til nye elementer i denne listen i redigeringsmodus"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Lengden må være mellom {{shortest}} og {{longest}}",
+      "invalidLink": "Ikke en gyldig link",
+      "errorMsg": "Lagret ikke fordi det var valideringsfeil. Tilpass verdiene"
     },
     "name": "Navn",
-    "url": "",
+    "url": "URL",
     "newTab": "Åpne i ny fane",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Skjul vertsnavn",
+    "hideIcon": "Gjem ikon",
     "delete": "Slett"
   }
 }

@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Пошук",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Шукайте {{query}} в Інтернеті",
+            "youtube": "Шукайте {{query}} на YouTube",
+            "torrent": "Шукайте торренти на {{query}}",
+            "movie": "Шукайте {{query}} на {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Про програму",
-                "new": ""
-            },
-            "logout": "",
+            "switchTheme": "Змінити тему",
+            "preferences": "Налаштування користувача",
+            "defaultBoard": "Інформаційна панель за замовчуванням",
+            "manage": "Керувати",
+            "logout": "Вийдіть з {{username}}",
             "login": "Логін"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Найкращі {{count}} результати для <b>{{search}}</b>."
         }
     }
 }

@@ -11,35 +11,35 @@
         "label": "Volledig scherm toestaan"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Transparantie toestaan"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Scrollen toestaan"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Betaling toestaan"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Automatisch afspelen toestaan"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Microfoon toestaan"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Camera toestaan"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Geolocatie toestaan"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Ongeldige URL",
         "text": "Zorg ervoor dat je een geldig adres hebt ingevoerd in de configuratie van je widget"
       },
-      "browserSupport": ""
+      "browserSupport": "Uw browser ondersteunt geen iframes. Update uw browser."
     }
   }
 }

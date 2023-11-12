@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Keine Anfragen gefunden. Bitte stellen Sie sicher, dass Sie Ihre Anwendungen richtig konfiguriert haben.",
-  "pending": "{{countPendingApproval}} Anfragen warten auf eine Genehmigung.",
-  "nonePending": "Es sind derzeit keine Genehmigungen ausstehend. Sie sind startklar!",
   "state": {
     "approved": "Genehmigt",
     "pendingApproval": "Warten auf Freigabe",

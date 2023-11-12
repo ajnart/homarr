@@ -37,6 +37,7 @@ describe('login page', () => {
     expect(response).toStrictEqual({
       props: {
         redirectAfterLogin: null,
+        isDemo: false,
         _i18Next: 'hello',
       },
     });
@@ -73,6 +74,7 @@ describe('login page', () => {
     expect(response).toStrictEqual({
       props: {
         redirectAfterLogin: '/manage/users/create',
+        isDemo: false,
         _i18Next: 'hello',
       },
     });
@@ -109,6 +111,7 @@ describe('login page', () => {
     expect(response).toStrictEqual({
       props: {
         redirectAfterLogin: null,
+        isDemo: false,
         _i18Next: 'hello',
       },
     });

@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Login",
   "title": "Bem-vindo de volta!",
-  "text": "",
+  "text": "Digite suas credenciais",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Iniciar sessão"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Após o login, você será redirecionado para {{url}}"
   },
-  "alert": ""
+  "alert": "Suas credenciais estão incorretas ou esta conta não existe. Tente novamente."
 }

@@ -1,15 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "노트북",
+		"description": "메모를 적을 수 있는 마크다운 기반의 대화형 위젯!",
 		"settings": {
-			"title": "",
+			"title": "노트북 위젯 설정",
 			"showToolbar": {
+				"label": "마크다운 작성에 도움이 되는 도구 모음 표시"
+			},
+			"allowReadOnlyCheck": {
 				"label": ""
 			},
 			"content": {
-				"label": ""
+				"label": "노트북의 콘텐츠"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }

@@ -1,0 +1,29 @@
+{
+  "text": "自定義設定允許您根據自己的喜好設定和調整 Homarr 的使用體驗",
+  "accordeon": {
+    "layout": {
+      "name": "顯示布局",
+      "description": "啟用或禁用標題和面板上的元素"
+    },
+    "gridstack": {
+      "name": "網格堆疊",
+      "description": "自定義您的面板區域和行為與欄目"
+    },
+    "pageMetadata": {
+      "name": "頁面元數據",
+      "description": "調整標題、LOGO、PWA"
+    },
+    "appereance": {
+      "name": "外觀",
+      "description": "自定義背景、顏色、應用的外觀"
+    },
+    "accessibility": {
+      "name": "無障礙服務",
+      "description": "未殘疾與殘障人士設定 Homarr"
+    },
+    "access": {
+      "name": "訪問權限",
+      "description": "設定誰有權限訪問您的面板"
+    }
+  }
+}

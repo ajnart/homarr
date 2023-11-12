@@ -1,0 +1,31 @@
+{
+  "descriptor": {
+    "name": "RSS 组件",
+    "description": "RSS 组件允许您在面板上显示 RSS 源。",
+    "settings": {
+      "title": "RSS 组件设置",
+      "rssFeedUrl": {
+        "label": "RSS 订阅地址",
+        "description": "您想要显示的 RSS 订阅的地址。"
+      },
+      "refreshInterval": {
+        "label": "刷新间隔（分钟）"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "允许 HTML 格式化(危险)",
+        "info": "允许从外部进行HTML格式化可能是危险的。<br/>请确保订阅来自信任的来源。"
+      },
+      "textLinesClamp": {
+        "label": "文字线条"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "无法获取 RSS 订阅",
+          "text": "在获取 RSS 订阅时出现了问题。确保使用有效的 URL 正确配置了 RSS 订阅。URL 应与官方规范匹配。更新 RSS 订阅后，您可能需要刷新面板。"
+        }
+      }
+    }
+  }
+}

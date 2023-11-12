@@ -9,7 +9,7 @@ import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget, InferWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
 import { MediasType } from './type';
@@ -23,10 +23,6 @@ const definition = defineWidget({
       defaultValue: true,
     },
     showUnmonitored: {
-      type: 'switch',
-      defaultValue: false,
-    },
-    useSonarrv4: {
       type: 'switch',
       defaultValue: false,
     },
@@ -74,7 +70,6 @@ function CalendarTile({ widget }: CalendarTileProps) {
       month: month.getMonth() + 1,
       year: month.getFullYear(),
       options: {
-        useSonarrv4: widget.options.useSonarrv4,
         showUnmonitored: widget.options.showUnmonitored,
       },
     },

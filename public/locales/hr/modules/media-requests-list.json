@@ -8,13 +8,11 @@
         "label": "Zamijeni veze s vanjskim poslužiteljem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otvori veze u novoj kartici"
       }
     }
   },
   "noRequests": "Nema pronađenih zahtjeva. Provjerite jesu li vaše aplikacije ispravno konfigurirane.",
-  "pending": "Postoji {{countPendingApproval}} zahtjeva koji čekaju odobrenje.",
-  "nonePending": "Trenutno nema čekanja za odobrenje. Možete nastaviti!",
   "state": {
     "approved": "Odobreno",
     "pendingApproval": "Odobrenje na čekanju",
@@ -23,13 +21,13 @@
   "tooltips": {
     "approve": "Odobri zahtjeve",
     "decline": "Odbij zahtjeve",
-    "approving": ""
+    "approving": "Odobravanje zahtjeva..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Odobravanje",
+    "declining": "Opadanje",
+    "request": "zahtjev...",
+    "approved": "Zahtjev je odobren!",
+    "declined": "Zahtjev je odbijen!"
   }
 }

@@ -1,4 +1,3 @@
-import { MantineTheme } from '@mantine/core';
 import { TRPCError } from '@trpc/server';
 import Consola from 'consola';
 import fs from 'fs';
@@ -8,7 +7,6 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
-import { boardCustomizationSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';

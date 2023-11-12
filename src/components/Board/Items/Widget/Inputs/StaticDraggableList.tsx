@@ -3,7 +3,6 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, ReactNode, useEffect, useRef } from 'react';
-
 import { IDraggableListInputValue } from '~/widgets/widgets';
 
 const useStyles = createStyles((theme) => ({

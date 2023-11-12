@@ -1,35 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Solicitações de mídia",
+    "description": "Veja uma lista de todas as solicitações de mídia da sua instância do Overseerr ou Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Lista de solicitações de mídia",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Substituir links por um host externo"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Abrir links em uma nova guia"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "Nenhuma solicitação encontrada. Verifique se você configurou seus aplicativos corretamente.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Aprovado",
+    "pendingApproval": "Aprovação pendente",
+    "declined": "Recusado"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Aprovar solicitações",
+    "decline": "Recusar solicitações",
+    "approving": "Aprovação da solicitação..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Aprovação",
+    "declining": "Em declínio",
+    "request": "pedido...",
+    "approved": "A solicitação foi aprovada!",
+    "declined": "A solicitação foi recusada!"
   }
 }

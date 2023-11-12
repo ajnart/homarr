@@ -1,0 +1,27 @@
+{
+  "pageTitle": {
+    "label": "crwdns1616:0crwdne1616:0",
+    "description": "crwdns2551:0crwdne2551:0"
+  },
+  "metaTitle": {
+    "label": "crwdns1953:0crwdne1953:0",
+    "description": "crwdns2717:0crwdne2717:0"
+  },
+  "logo": {
+    "label": "crwdns1620:0crwdne1620:0",
+    "description": "crwdns2719:0crwdne2719:0"
+  },
+  "favicon": {
+    "label": "crwdns1624:0crwdne1624:0",
+    "description": "crwdns2721:0crwdne2721:0"
+  },
+  "background": {
+    "label": "crwdns1628:0crwdne1628:0"
+  },
+  "customCSS": {
+    "label": "crwdns1702:0crwdne1702:0",
+    "description": "crwdns2723:0crwdne2723:0",
+    "placeholder": "crwdns2389:0crwdne2389:0",
+    "applying": "crwdns2561:0crwdne2561:0"
+  }
+}

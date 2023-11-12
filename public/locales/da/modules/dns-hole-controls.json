@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Kan ikke finde et DNS-hul",
+        "text": "Der opstod et problem med at oprette forbindelse til dit/dine DNS-hul(ler). Bekræft venligst din(e) konfiguration(er)/integration(er)."
       }
     }
   }

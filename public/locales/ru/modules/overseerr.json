@@ -12,17 +12,17 @@
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Использование ключа API",
+          "title": "Используемый API-ключ",
           "text": "Этот запрос будет автоматически одобрен"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Отметьте сезоны, которые вы хотите загрузить",
+      "caption": "Выберите сезоны, которые хотите скачать",
       "table": {
         "header": {
           "season": "Сезон",
-          "numberOfEpisodes": "Количество серий"
+          "numberOfEpisodes": "Количество эпизодов"
         }
       }
     }

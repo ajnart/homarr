@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Налаштувати {{name}} Дошку",
+    "pageTitle": "Кастомізація для {{name}} Board",
+    "backToBoard": "Повернутися на сайт",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Основний колір",
+            "secondaryColor": "Вторинний колір"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Зберегти зміни",
+        "note": "Обережно, у вас є незбережені зміни!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Збереження налаштувань",
+            "message": "Будь ласка, зачекайте, поки ми збережемо ваші налаштування"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Налаштування збережено",
+            "message": "Ваше налаштування успішно збережено"
         },
         "error": {
             "title": "Помилка",
-            "message": ""
+            "message": "Неможливо зберегти зміни"
         }
     }
 }

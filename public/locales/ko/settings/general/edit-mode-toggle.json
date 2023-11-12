@@ -1,22 +1,22 @@
 {
   "menu": {
-    "toggle": "",
-    "enable": "",
-    "disable": ""
+    "toggle": "편집 모드 전환",
+    "enable": "편집 모드 사용",
+    "disable": "편집 모드 비활성화"
   },
   "form": {
-    "label": "",
-    "message": "",
+    "label": "비밀번호 수정",
+    "message": "편집 모드를 전환하려면 <Code>EDIT_MODE_PASSWORD</Code> 라는 환경 변수에 입력한 비밀번호를 입력해야 합니다. 설정하지 않으면 편집 모드를 켜고 끌 수 없습니다.",
     "submit": "적용"
   },
   "notification": {
     "success": {
-      "title": "",
-      "message": ""
+      "title": "성공",
+      "message": "편집 모드를 성공적으로 전환하여 페이지를 다시 로드했습니다..."
     },
     "error": {
       "title": "오류",
-      "message": ""
+      "message": "편집 모드를 전환하지 못했습니다. 다시 시도하세요."
     }
   }
 }

@@ -1,14 +1,16 @@
 {
   "save": "Сохранить",
+  "apply": "Применить",
+  "insert": "Вставить",
   "about": "О программе",
   "cancel": "Отмена",
   "close": "Закрыть",
-  "back": "",
+  "back": "Назад",
   "delete": "Удалить",
   "ok": "ОК",
   "edit": "Изменить",
-  "next": "",
-  "previous": "",
+  "next": "Далее",
+  "previous": "Предыдущий",
   "confirm": "Подтвердить",
   "enabled": "Включено",
   "disabled": "Отключено",
@@ -17,15 +19,15 @@
   "version": "Версия",
   "changePosition": "Изменить положение",
   "remove": "Удалить",
-  "removeConfirm": "Вы действительно хотите удалить {{item}}?",
+  "removeConfirm": "Вы уверены, что хотите удалить {{item}}?",
   "createItem": "+ создать {{item}}",
   "sections": {
     "settings": "Настройки",
-    "dangerZone": "Опасная зона"
+    "dangerZone": "Зона опасности"
   },
   "secrets": {
-    "apiKey": "API ключ",
-    "username": "Логин",
+    "apiKey": "API-ключ",
+    "username": "Имя пользователя",
     "password": "Пароль"
   },
   "tip": "Совет: ",
@@ -40,5 +42,14 @@
     "medium": "среднего",
     "large": "большого"
   },
-  "seeMore": "Показать больше..."
+  "seeMore": "Узнать больше...",
+  "position": {
+    "left": "Слева",
+    "center": "По центру",
+    "right": "Справа"
+  },
+  "attributes": {
+    "width": "Ширина",
+    "height": "Высота"
+  }
 }

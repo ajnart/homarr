@@ -157,7 +157,16 @@ export const userRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       await db
         .update(userSettings)
-        .set(input)
+        .set({
+          autoFocusSearch: input.autoFocusSearch,
+          defaultBoard: input.defaultBoard,
+          disablePingPulse: input.disablePingPulse,
+          firstDayOfWeek: input.firstDayOfWeek,
+          language: input.language,
+          openSearchInNewTab: input.openSearchInNewTab,
+          replacePingWithIcons: input.replaceDotsWithIcons,
+          searchTemplate: input.searchTemplate,
+        })
         .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
 

@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Abgeschlossene Torrents anzeigen"
       },
+      "displayActiveTorrents": {
+        "label": "Aktive Torrents anzeigen"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Upload-Geschwindigkeit, um einen Torrent als aktiv zu betrachten (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Angehaltene Torrents anzeigen"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Labelliste",
         "description": "Wenn \"ist Whitelist\" ausgewählt ist, handel es sich um eine Whitelist. Ist \"ist Whitelist\" nicht ausgewählt, handelt es sich um eine Blacklist. Wenn die Auswahl leer ist, wird nicht passieren"
+      },
+      "displayRatioWithFilter": {
+        "label": "Verhältnis der gefilterten Torrents-Liste anzeigen",
+        "info": "Ist diese Option deaktiviert, wird nur das globale Verhältnis angezeigt. Für das globale Verhältnis werden weiterhin die Beschriftungen verwendet, wenn diese eingestellt sind"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Fehler",
-      "lastUpdated": "Zuletzt aktualisiert vor {{time}}"
+      "lastUpdated": "Zuletzt aktualisiert vor {{time}}",
+      "ratioGlobal": "Globales Verhältnis",
+      "ratioWithFilter": "Verhältnis mit Filter"
     },
     "table": {
       "header": {

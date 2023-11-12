@@ -1,15 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Notisbok",
+		"description": "En markdown-basert interaktiv widget for deg å skrive ned notatene dine!",
 		"settings": {
-			"title": "",
+			"title": "Innstillinger for notisbokwidgeten",
 			"showToolbar": {
-				"label": ""
+				"label": "Vis verktøylinjen for å hjelpe deg med å skrive markdown"
+			},
+			"allowReadOnlyCheck": {
+				"label": "Tillat sjekk i skrivebeskyttet modus"
 			},
 			"content": {
-				"label": ""
+				"label": "Innholdet i notatboken"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Fet",
+			"italic": "Kursiv",
+			"strikethrough": "Gjennomstrek",
+			"underline": "Understrek",
+			"colorText": "Fargetekst",
+			"colorHighlight": "Farget uthevet tekst",
+			"code": "Kode",
+			"clear": "Fjern formatering",
+			"heading": "Overskrift {{level}}",
+			"align": "Juster tekst: {{position}}",
+			"blockquote": "Blokksitat",
+			"horizontalLine": "Horisontal linje",
+			"bulletList": "Punktliste",
+			"orderedList": "Sortert liste",
+			"checkList": "Sjekkliste",
+			"increaseIndent": "Øk innrykk",
+			"decreaseIndent": "Reduser innrykk",
+			"link": "Link",
+			"unlink": "Fjern lenke",
+			"image": "Bygg inn bilde",
+			"addTable": "Legg til tabell",
+			"deleteTable": "Slett tabell",
+			"colorCell": "Fargecelle",
+			"mergeCell": "Slå cellesammenslåing av/på",
+			"addColumnLeft": "Legg til kolonne før",
+			"addColumnRight": "Legg til kolonne etter",
+			"deleteColumn": "Slett kolonne",
+			"addRowTop": "Legg til rad før",
+			"addRowBelow": "Legg til rad etter",
+			"deleteRow": "Slett rad"
+		},
+		"modals": {
+			"clearColor": "Fjern farge",
+			"source": "Kilde",
+			"widthPlaceholder": "Verdi i % eller piksler",
+			"columns": "Kolonner",
+			"rows": "Rader"
 		}
 	}
 }

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "創建使用者",
+    "steps": {
+        "account": {
+            "title": "第一步",
+            "text": "創建帳號",
+            "username": {
+                "label": "使用者"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "第二步",
+            "text": "密碼",
+            "password": {
+                "label": "密碼"
+            }
+        },
+        "finish": {
+            "title": "確認",
+            "text": "儲存到數據庫",
+            "card": {
+                "title": "檢查您的輸入",
+                "text": "將數據提交到數據庫後，使用者就可以登入了，您確定要將該使用者存入數據庫中並啟用登入權限嗎？"
+            },
+            "table": {
+                "header": {
+                    "property": "屬性",
+                    "value": "參數值",
+                    "username": "使用者",
+                    "email": "E-mail",
+                    "password": "密碼"
+                },
+                "notSet": "未設定",
+                "valid": "有效"
+            },
+            "failed": "使用者創建失敗：{{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "使用者已創建",
+                "text": "使用者已存在數據庫中。他可以登入了"
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "隨機生成",
+        "createAnother": "創建另一個"
+    }
+}

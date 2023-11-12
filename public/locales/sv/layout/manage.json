@@ -9,7 +9,7 @@
         "users": {
             "title": "",
             "items": {
-                "manage": "",
+                "manage": "Hantera",
                 "invites": ""
             }
         },
@@ -27,6 +27,9 @@
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Om"
         }
     }
 }

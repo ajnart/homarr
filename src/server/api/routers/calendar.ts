@@ -15,7 +15,6 @@ export const calendarRouter = createTRPCRouter({
         month: z.number().min(1).max(12),
         year: z.number().min(1900).max(2300),
         options: z.object({
-          useSonarrv4: z.boolean().optional().default(false),
           showUnmonitored: z.boolean().optional().default(false),
         }),
       })
@@ -35,7 +34,7 @@ export const calendarRouter = createTRPCRouter({
       );
 
       const integrationTypeEndpointMap = new Map<AppIntegrationType['type'], string>([
-        ['sonarr', input.options.useSonarrv4 ? '/api/v3/calendar' : '/api/calendar'],
+        ['sonarr', '/api/v3/calendar'],
         ['radarr', '/api/v3/calendar'],
         ['lidarr', '/api/v1/calendar'],
         ['readarr', '/api/v1/calendar'],

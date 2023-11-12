@@ -1,0 +1,29 @@
+{
+    "metaTitle": "crwdns3479:0{{name}}crwdne3479:0",
+    "pageTitle": "crwdns3481:0{{name}}crwdne3481:0",
+    "backToBoard": "crwdns3483:0crwdne3483:0",
+    "settings": {
+        "appearance": {
+            "primaryColor": "crwdns3485:0crwdne3485:0",
+            "secondaryColor": "crwdns3487:0crwdne3487:0"
+        }
+    },
+    "save": {
+        "button": "crwdns3489:0crwdne3489:0",
+        "note": "crwdns3491:0crwdne3491:0"
+    },
+    "notifications": {
+        "pending": {
+            "title": "crwdns3493:0crwdne3493:0",
+            "message": "crwdns3495:0crwdne3495:0"
+        },
+        "success": {
+            "title": "crwdns3497:0crwdne3497:0",
+            "message": "crwdns3499:0crwdne3499:0"
+        },
+        "error": {
+            "title": "crwdns3501:0crwdne3501:0",
+            "message": "crwdns3503:0crwdne3503:0"
+        }
+    }
+}

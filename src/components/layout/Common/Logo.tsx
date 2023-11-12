@@ -29,6 +29,12 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
       <Image
         width={size === 'md' ? 50 : 12}
         src={board?.logoImageUrl || '/imgs/logo/logo-color.svg'}
+        height={size === 'md' ? 50 : 12}
+        styles={{
+          image: {
+            objectFit: 'contain !important' as 'contain',
+          },
+        }}
         alt="Homarr Logo"
         className="dashboard-header-logo-image"
       />
@@ -46,6 +52,3 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
     </Group>
   );
 }
-
-// TODO: Mantine gradient didn't work
-//

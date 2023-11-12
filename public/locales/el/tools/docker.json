@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Η Homarr εγκατάσταση σας δεν έχει το Docker εγκατεστημένο ή απέτυχε να ανακτήσει τα containers. Ελέγξτε την τεκμηρίωση για το πώς να ρυθμίσετε την ενσωμάτωση."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Επιλέξτε έναν πίνακα",
+            "text": "Επιλέξτε τον πίνακα όπου θέλετε να προσθέσετε τις εφαρμογές για τα επιλεγμένα Docker containers.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Πίνακας"
                 },
-                "submit": ""
+                "submit": "Προσθήκη εφαρμογών"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Προστέθηκαν εφαρμογές στον πίνακα",
+                "message": "Οι εφαρμογές για τα επιλεγμένα Docker containers έχουν προστεθεί στον πίνακα."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Αποτυχία προσθήκης εφαρμογών στον πίνακα",
+                "message": "Οι εφαρμογές για τα επιλεγμένα Docker containers δεν μπόρεσαν να προστεθούν στον πίνακα."
             }
         }
     }

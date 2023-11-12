@@ -58,7 +58,9 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
           </Button>
           <Button
             type="submit"
-            onClick={async () => {}}
+            onClick={async () => {
+              umami.track('Create new board')
+            }}
             disabled={isLoading}
             variant="light"
             color="green"

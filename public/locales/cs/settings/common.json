@@ -1,0 +1,38 @@
+{
+  "title": "",
+  "tooltip": "",
+  "tabs": {
+    "common": "",
+    "customizations": ""
+  },
+  "tips": {
+    "configTip": ""
+  },
+  "credits": {
+    "madeWithLove": "",
+    "thirdPartyContent": "",
+    "thirdPartyContentTable": {
+      "dependencyName": "",
+      "dependencyVersion": ""
+    }
+  },
+  "grow": "",
+  "layout": {
+    "preview": {
+      "title": "",
+      "subtitle": ""
+    },
+    "divider": "",
+    "main": "",
+    "sidebar": "",
+    "cannotturnoff": "",
+    "dashboardlayout": "",
+    "enablersidebar": "Povolit pravý postranní panel",
+    "enablelsidebar": "Povolit levý postranní panel",
+    "enablesearchbar": "",
+    "enabledocker": "",
+    "enableping": "Povolit pingy",
+    "enablelsidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace",
+    "enablersidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace"
+  }
+}

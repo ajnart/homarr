@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "הצג את סרגל הכלים לסיוע כתיבת סימון"
 			},
+			"allowReadOnlyCheck": {
+				"label": "אפשר בדיקה במצב קריאה בלבד"
+			},
 			"content": {
 				"label": "תוכן פנקס הרשימות"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "מודגש",
+			"italic": "נטוי",
+			"strikethrough": "קו חוצה",
+			"underline": "קו תחתון",
+			"colorText": "טקסט צבעוני",
+			"colorHighlight": "טקסט סימון צבעוני",
+			"code": "קוד",
+			"clear": "נקה עיצוב",
+			"heading": "כותרת {{level}}",
+			"align": "יישור טקסט: {{position}}",
+			"blockquote": "ציטוט",
+			"horizontalLine": "קו אופקי",
+			"bulletList": "רשימת תבליט",
+			"orderedList": "רשימה מסודרת",
+			"checkList": "צ'ק ליסט",
+			"increaseIndent": "הגדלת הזחה",
+			"decreaseIndent": "הקטנת הזחה",
+			"link": "קישור",
+			"unlink": "הסרת קישור",
+			"image": "הטמעת תמונה",
+			"addTable": "הוספת טבלה",
+			"deleteTable": "מחיקת טבלה",
+			"colorCell": "טקסט צבעוני",
+			"mergeCell": "החלפת מיזוג התא",
+			"addColumnLeft": "הוספת עמודה לפני",
+			"addColumnRight": "הוספת עמודה אחרי",
+			"deleteColumn": "מחיקת עמודה",
+			"addRowTop": "הוספת שורה לפני",
+			"addRowBelow": "הוספת שורה אחרי",
+			"deleteRow": "מחיקת שורה"
+		},
+		"modals": {
+			"clearColor": "ניקוי צבע",
+			"source": "מקור",
+			"widthPlaceholder": "ערך באחוזים או בפיקסלים",
+			"columns": "עמודות",
+			"rows": "שורות"
 		}
 	}
 }

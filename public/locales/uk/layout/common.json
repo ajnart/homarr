@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Спливаючі вікна заблоковані",
+      "text": "Ваш браузер заблокував доступ Homarr до його API. Найчастіше це пов'язано з блокуванням AdBlocker або відмовою в дозволах. Homarr не може запитувати дозволи автоматично.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Натисніть на іконку поруч з URL-адресою і перевірте дозволи. Дозволити спливаючі вікна та вікна",
+        "adBlockers": "Вимкніть блокувальники реклами та інструменти безпеки у вашому браузері",
+        "otherBrowser": "Спробуйте інший браузер"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Відкрити все в новій вкладці"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Рухайся.",
+    "moveDown": "Вниз.",
+    "addCategory": "Додати категорію {{location}}",
+    "addAbove": "вище",
+    "addBelow": "нижче"
   }
 }

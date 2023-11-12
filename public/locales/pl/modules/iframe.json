@@ -11,35 +11,35 @@
         "label": "Pozwól na pełny ekran"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Zezwól na użycie przeźroczystości"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Zezwól na przewijanie"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Zezwalaj na płatności"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Zezwalaj na automatyczne odtwarzanie"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Zezwól na używanie mikrofonu"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Zezwól na używanie kamery"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Zezwalaj na geolokalizację"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Nieprawidłowy URL",
         "text": "Upewnij się, że wprowadziłeś poprawny adres w konfiguracji swojego widgetu"
       },
-      "browserSupport": ""
+      "browserSupport": "Twoja przeglądarka nie obsługuje ramek iframe. Zaktualizuj przeglądarkę."
     }
   }
 }

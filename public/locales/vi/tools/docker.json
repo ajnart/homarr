@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Phiên bản Homarr của bạn không được định cấu hình Docker hoặc không thể tìm nạp vùng chứa. Vui lòng kiểm tra tài liệu về cách thiết lập tích hợp."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Chọn một bảng",
+            "text": "Chọn bảng nơi bạn muốn thêm ứng dụng cho vùng chứa Docker đã chọn.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Bảng"
                 },
-                "submit": ""
+                "submit": "Thêm ứng dụng"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Đã thêm ứng dụng vào bảng",
+                "message": "Các ứng dụng cho vùng chứa Docker đã chọn đã được thêm vào bảng."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Không thêm được ứng dụng vào bảng",
+                "message": "Không thể thêm ứng dụng cho vùng chứa Docker đã chọn vào bảng."
             }
         }
     }

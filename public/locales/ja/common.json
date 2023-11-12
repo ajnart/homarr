@@ -1,14 +1,16 @@
 {
   "save": "保存",
+  "apply": "",
+  "insert": "",
   "about": "About",
   "cancel": "キャンセル",
   "close": "閉じる",
-  "back": "",
+  "back": "バック",
   "delete": "削除",
   "ok": "よっしゃー",
   "edit": "編集",
-  "next": "",
-  "previous": "",
+  "next": "次のページ",
+  "previous": "前へ",
   "confirm": "確認",
   "enabled": "有効",
   "disabled": "無効",
@@ -40,5 +42,14 @@
     "medium": "中",
     "large": "大"
   },
-  "seeMore": "もっと見る..."
+  "seeMore": "もっと見る...",
+  "position": {
+    "left": "左",
+    "center": "",
+    "right": "右"
+  },
+  "attributes": {
+    "width": "幅",
+    "height": "高さ"
+  }
 }

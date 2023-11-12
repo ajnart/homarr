@@ -2,9 +2,9 @@ import { Badge, Button, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-
 import { useConfigContext } from '~/config/provider';
 import { useColorTheme } from '~/tools/color';
+
 import { RequestModal } from '../overseerr/RequestModal';
 import { Result } from '../overseerr/SearchResult';
 
@@ -18,6 +18,7 @@ export interface IMedia {
   episodetitle?: string;
   voteAverage?: string;
   poster?: string;
+  altPoster?: string;
   genres: string[];
   seasonNumber?: number;
   plexUrl?: string;
@@ -134,7 +135,11 @@ export function LidarrMediaDisplay(props: any) {
 
 export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
+  const { config } = useConfigContext();
+  const calendar = config?.widgets.find((w) => w.type === 'calendar');
+
   // Find a poster CoverType
+  const poster = media.images.find((image: any) => image.coverType === 'poster');
   return (
     <MediaDisplay
       media={{
@@ -142,7 +147,8 @@ export function RadarrMediaDisplay(props: any) {
         title: media.title ?? media.originalTitle,
         overview: media.overview ?? '',
         genres: media.genres ?? [],
-        poster: media.images.find((image: any) => image.coverType === 'poster')?.url,
+        poster: poster.url,
+        altPoster: poster.remoteUrl,
         voteAverage: media.ratings.tmdb.value.toString(),
         imdbId: media.imdbId,
         type: 'movie',
@@ -155,7 +161,6 @@ export function SonarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfigContext();
   const calendar = config?.widgets.find((w) => w.type === 'calendar');
-  const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
   // Find a poster CoverType
   const poster = media.series.images.find((image: any) => image.coverType === 'poster');
@@ -167,7 +172,8 @@ export function SonarrMediaDisplay(props: any) {
         genres: media.series.genres ?? [],
         overview: media.overview ?? media.series.overview ?? '',
         title: media.series.title,
-        poster: useSonarrv4 ? poster.remoteUrl : poster.url,
+        poster: poster.url,
+        altPoster: poster.remoteUrl,
         episodeNumber: media.episodeNumber,
         seasonNumber: media.seasonNumber,
         episodetitle: media.title,
@@ -186,7 +192,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
 
   return (
     <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
-      <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
+      <Image src={media.poster?? media.altPoster} height={200} width={150} radius="md" fit="cover" withPlaceholder/>
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>

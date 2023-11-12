@@ -10,8 +10,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "No se puede encontrar un agujero DNS",
+        "text": "Hubo un problema al conectarse a tus agujeros DNS. Verifica tu configuración/integración(es)."
       }
     }
   }

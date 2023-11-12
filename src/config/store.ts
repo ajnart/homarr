@@ -1,7 +1,6 @@
 import { createWithEqualityFn } from 'zustand/traditional';
-import { trcpProxyClient } from '~/utils/api';
-
 import { ConfigType } from '~/types/config';
+import { trcpProxyClient } from '~/utils/api';
 
 export const useConfigStore = createWithEqualityFn<UseConfigStoreType>(
   (set, get) => ({

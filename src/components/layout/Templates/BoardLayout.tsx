@@ -4,7 +4,6 @@ import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import {
   IconApps,
-  IconBox,
   IconBrandDocker,
   IconEditCircle,
   IconEditCircleOff,
@@ -19,6 +18,7 @@ import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { env } from 'process';
 import { useRequiredBoard } from '~/components/Board/context';
 import { useNamedWrapperColumnCount } from '~/components/Board/gridstack/store';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
@@ -30,11 +30,11 @@ import { api } from '~/utils/api';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
-  dockerEnabled: boolean;
   children: React.ReactNode;
+  dockerEnabled?: boolean;
 };
 
-export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
+export const BoardLayout = ({ children, dockerEnabled = false }: BoardLayoutProps) => {
   const board = useRequiredBoard();
   const { data: session } = useSession();
 
@@ -51,11 +51,7 @@ export const BoardLayout = ({ children, dockerEnabled }: BoardLayoutProps) => {
   );
 };
 
-type HeaderActionProps = {
-  dockerEnabled: boolean;
-};
-
-export const HeaderActions = ({ dockerEnabled }: HeaderActionProps) => {
+export const HeaderActions = ({ dockerEnabled }: { dockerEnabled: boolean }) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
@@ -155,7 +151,7 @@ const ToggleEditModeButton = () => {
   useHotkeys([['mod+E', toggleEditMode]]);
 
   useWindowEvent('beforeunload', (event: BeforeUnloadEvent) => {
-    if (enabled) {
+    if (enabled && env.NODE_ENV === 'production') {
       // eslint-disable-next-line no-param-reassign
       event.returnValue = beforeUnloadEventText;
       return beforeUnloadEventText;
@@ -272,12 +268,13 @@ const BackgroundImage = () => {
   return (
     <Global
       styles={{
-        body: {
+        '.mantine-AppShell-root': {
           minHeight: '100vh',
           backgroundImage: `url('${board.backgroundImageUrl}')`,
           backgroundPosition: 'center center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: board.backgroundImageSize ?? 'cover',
+          backgroundRepeat: board.backgroundImageRepeat ?? 'no-repeat',
+          backgroundAttachment: board.backgroundImageAttachment ?? 'fixed',
         },
       }}
     />

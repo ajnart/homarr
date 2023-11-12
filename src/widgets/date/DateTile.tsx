@@ -2,6 +2,7 @@ import { Stack, Text, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
 import timezones from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { useSession } from 'next-auth/react';
@@ -13,6 +14,7 @@ import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { InferWidget } from '../widgets';
 
+dayjs.extend(advancedFormat);
 dayjs.extend(utc);
 dayjs.extend(timezones);
 
@@ -80,6 +82,10 @@ function DateTile({ widget }: DateTileProps) {
   const formatString = widget.options.display24HourFormat ? 'HH:mm' : 'h:mm A';
   const { ref, width } = useElementSize();
   const { cx, classes } = useStyles();
+  const { data: sessionData } = useSession();
+
+  const language = getLanguageByCode(sessionData?.user.language ?? 'en');
+  dayjs.locale(language.locale);
 
   return (
     <Stack ref={ref} className={cx(classes.wrapper, 'dashboard-tile-clock-wrapper')}>

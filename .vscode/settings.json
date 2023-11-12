@@ -1,0 +1,21 @@
+{
+	"i18n-ally.localesPaths": "public/locales",
+	"i18n-ally.enabledFrameworks": [
+		"react-i18next"
+	],
+	"i18n-ally.namespace": true,
+	"i18n-ally.pathMatcher": "{locale}/{namespaces}.json",
+	"i18n-ally.keystyle": "nested",
+	"i18n-ally.keysInUse": [
+		"modules.**",
+		"layout.manage.navigation.**",
+	],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"explorer.fileNesting.patterns": {
+		"package.json": "pnpm-lock.yaml, yarn.lock, package-lock.json",
+		"*.tsx": "${capture}.module.css"
+	},
+}

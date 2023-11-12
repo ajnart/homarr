@@ -1,30 +1,32 @@
 {
   "save": "Salvar",
+  "apply": "",
+  "insert": "",
   "about": "Sobre",
   "cancel": "Cancelar",
   "close": "Fechar",
-  "back": "",
+  "back": "Voltar",
   "delete": "Apagar",
   "ok": "OK",
   "edit": "Editar",
-  "next": "",
-  "previous": "",
+  "next": "Próximo",
+  "previous": "Anterior",
   "confirm": "Confirme",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "Ativado",
+  "disabled": "Desativado",
+  "enableAll": "Habilitar tudo",
+  "disableAll": "Desativar tudo",
   "version": "Versão",
   "changePosition": "Mudar de posição",
   "remove": "Excluir",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Tem certeza de que deseja remover o site {{item}}?",
+  "createItem": "+ criar {{item}}",
   "sections": {
     "settings": "Configurações",
     "dangerZone": "Zona de risco"
   },
   "secrets": {
-    "apiKey": "",
+    "apiKey": "Chave da API",
     "username": "Usuário",
     "password": "Senha"
   },
@@ -40,5 +42,14 @@
     "medium": "médio",
     "large": "grande"
   },
-  "seeMore": ""
+  "seeMore": "Veja mais...",
+  "position": {
+    "left": "Esquerda",
+    "center": "",
+    "right": "Certo"
+  },
+  "attributes": {
+    "width": "Largura",
+    "height": "Altura"
+  }
 }

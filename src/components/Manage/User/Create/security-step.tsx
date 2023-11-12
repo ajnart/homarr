@@ -66,6 +66,7 @@ export const CreateAccountSecurityStep = ({
                 onClick={async () => {
                   const randomPassword = await mutateAsync();
                   form.setFieldValue('password', randomPassword);
+                  umami.track('Generate random password');
                 }}
                 loading={isLoading}
                 variant="default"

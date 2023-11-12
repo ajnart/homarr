@@ -4,7 +4,7 @@ import { env } from '~/env';
 
 import * as schema from './schema';
 
-const sqlite = new Database(env.DATABASE_URL?.replace('file:', ''));
+export const sqlite = new Database(env.DATABASE_URL?.replace('file:', ''));
 
 export const db = drizzle(sqlite, { schema });
 

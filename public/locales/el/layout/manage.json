@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Αρχική"
         },
         "boards": {
-            "title": ""
+            "title": "Πίνακες"
         },
         "users": {
-            "title": "",
+            "title": "Χρήστες",
             "items": {
                 "manage": "Διαχείριση",
-                "invites": ""
+                "invites": "Προσκλήσεις"
             }
         },
         "help": {
-            "title": "",
+            "title": "Βοήθεια",
             "items": {
                 "documentation": "Τεκμηρίωση",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "report": "Αναφορά προβλήματος / σφάλματος",
+                "discord": "Κοινότητα Discord",
+                "contribute": "Συνεισφέρετε"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Εργαλεία",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Σχετικά"
         }
     }
 }

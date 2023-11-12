@@ -29,7 +29,7 @@ export const DeleteInviteModal = ({ id, innerProps }: ContextModalProps<{ tokenI
         <Button
           onClick={async () => {
             await deleteAsync({
-              tokenId: innerProps.tokenId,
+              id: innerProps.tokenId,
             });
           }}
           disabled={isLoading}

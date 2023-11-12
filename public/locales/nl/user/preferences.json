@@ -1,20 +1,20 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Voorkeuren",
+    "pageTitle": "Uw voorkeuren",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Standaardkaart"
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Toegankelijkheid",
         "disablePulse": {
-            "label": "",
-            "description": ""
+            "label": "Ping-puls uitschakelen",
+            "description": "Standaard pingen de ping-indicatoren in Homarr. Dit kan irritant zijn. Deze schuifknop deactiveert de animatie"
         },
         "replaceIconsWithDots": {
-            "label": "",
-            "description": ""
+            "label": "Ping-punten vervangen door pictogrammen",
+            "description": "Voor kleurenblinde gebruikers kunnen ping-punten onherkenbaar zijn. Dit vervangt indicatoren door pictogrammen"
         }
     },
     "localization": {
@@ -22,27 +22,27 @@
             "label": "Taal"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Eerste dag van de week",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Maandag",
+                "saturday": "Zaterdag",
+                "sunday": "Zondag"
             }
         }
     },
     "searchEngine": {
         "title": "Zoekmachine",
-        "custom": "",
+        "custom": "Aangepast",
         "newTab": {
-            "label": ""
+            "label": "Open zoekresultaten in een nieuw tabblad"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Focus zoekbalk bij het laden van de pagina.",
+            "description": "Hierdoor wordt de zoekbalk automatisch scherpgesteld wanneer je naar de pagina's van het forum navigeert. Het werkt alleen op desktopapparaten."
         },
         "template": {
             "label": "Query URL",
-            "description": ""
+            "description": "Gebruik %s als plaatshouder voor de query"
         }
     }
 }

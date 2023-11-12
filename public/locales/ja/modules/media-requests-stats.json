@@ -8,20 +8,20 @@
         "label": "リンクを外部ホストに置き換える"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "リンクを新しいタブで開く"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "メディア統計",
+    "pending": "承認待ち",
+    "tvRequests": "テレビのリクエスト",
+    "movieRequests": "映画のリクエスト",
+    "approved": "すでに承認済み",
+    "totalRequests": "合計"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "トップユーザー",
+    "requests": "リクエスト： {{number}}"
   }
 }

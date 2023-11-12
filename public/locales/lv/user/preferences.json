@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Iestatījumi",
+    "pageTitle": "Jūsu iestatījumi",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Noklusējamais dēlis"
         }
     },
     "accessibility": {
@@ -22,11 +22,11 @@
             "label": "Valoda"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Nedēļas pirmā diena",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Pirmdiena",
+                "saturday": "Sestdiena",
+                "sunday": "Svētdiena"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Meklētājdzinējs",
         "custom": "Pielāgots",
         "newTab": {
-            "label": ""
+            "label": "Atvērt meklēšanas rezultātus jaunā cilnē"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Vietnes ielādes laikā fokusēt meklēšanas joslu.",
+            "description": "Tas automātiski fokusēs meklēšanas joslu, kad pārvietosieties uz dēļa vietnēm. Funkcija darbosies tikai darbvirsmas režīmā."
         },
         "template": {
             "label": "Pieprasījuma URL",
-            "description": ""
+            "description": "Izmantojiet %s kā vietvārdu vaicājumam"
         }
     }
 }

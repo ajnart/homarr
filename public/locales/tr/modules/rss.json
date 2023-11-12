@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget'ı",
-    "description": "",
+    "description": "Rss widget'ı, RSS beslemelerini kontrol panelinizde görüntülemenizi sağlar.",
     "settings": {
       "title": "RSS widget'ı için ayarlar",
       "rssFeedUrl": {

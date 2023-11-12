@@ -1,24 +1,26 @@
 {
   "save": "Zapisz",
+  "apply": "Zastosuj",
+  "insert": "",
   "about": "O programie",
   "cancel": "Anuluj",
   "close": "Zamknij",
-  "back": "",
+  "back": "Wstecz",
   "delete": "Usuń",
   "ok": "OK",
   "edit": "Edytuj",
-  "next": "",
-  "previous": "",
+  "next": "Dalej",
+  "previous": "Poprzedni",
   "confirm": "Potwierdź",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "Włączony",
+  "disabled": "Wyłączony",
+  "enableAll": "Włącz wszystkie",
+  "disableAll": "Wyłącz wszystkie",
   "version": "Wersja",
   "changePosition": "Zmiana pozycji",
   "remove": "Usuń",
   "removeConfirm": "Czy na pewno chcesz usunąć {{item}}?",
-  "createItem": "",
+  "createItem": "+ utwórz {{item}}",
   "sections": {
     "settings": "Ustawienia",
     "dangerZone": "Strefa zagrożenia"
@@ -40,5 +42,14 @@
     "medium": "średnia",
     "large": "duża"
   },
-  "seeMore": ""
+  "seeMore": "Zobacz więcej...",
+  "position": {
+    "left": "Lewo",
+    "center": "",
+    "right": "Prawo"
+  },
+  "attributes": {
+    "width": "Szerokość",
+    "height": "Wysokość"
+  }
 }

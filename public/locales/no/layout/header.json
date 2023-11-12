@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Søk",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Søk etter {{query}} på nettet",
+            "youtube": "Søk etter {{query}} på YouTube",
+            "torrent": "Søk etter {{query}} torrenter",
+            "movie": "Søk etter {{query}} på {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Info",
-                "new": ""
-            },
-            "logout": "",
-            "login": ""
+            "switchTheme": "Bytt tema",
+            "preferences": "Brukerinnstillinger",
+            "defaultBoard": "Standard dashbord",
+            "manage": "Endre",
+            "logout": "Logg ut fra {{username}}",
+            "login": "Logg Inn"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Topp {{count}} resultater for <b>{{search}}</b>."
         }
     }
 }

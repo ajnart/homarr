@@ -1,0 +1,20 @@
+{
+  "title": "crwdns1680:0crwdne1680:0",
+  "configurationName": "crwdns2265:0crwdne2265:0",
+  "custom": "crwdns3307:0crwdne3307:0",
+  "tips": {
+    "generalTip": "crwdns2731:0crwdne2731:0",
+    "placeholderTip": "crwdns1684:0%scrwdne1684:0"
+  },
+  "customEngine": {
+    "title": "crwdns1977:0crwdne1977:0",
+    "label": "crwdns1686:0crwdne1686:0",
+    "placeholder": "crwdns1688:0crwdne1688:0"
+  },
+  "searchNewTab": {
+    "label": "crwdns1908:0crwdne1908:0"
+  },
+  "searchEnabled": {
+    "label": "crwdns1979:0crwdne1979:0"
+  }
+}

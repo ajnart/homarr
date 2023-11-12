@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Meklēt",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Meklēt {{query}} tīmeklī",
+            "youtube": "Meklēt {{query}} pakalpojumā YouTube",
+            "torrent": "Meklēt {{query}} torrent failus",
+            "movie": "Meklēt {{query}} vietnē {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Par Programmu",
-                "new": ""
-            },
-            "logout": "",
-            "login": ""
+            "switchTheme": "Mainīt tēmu",
+            "preferences": "Lietotāja iestatījumi",
+            "defaultBoard": "Noklusējuma darbvirsma",
+            "manage": "Pārvaldīt",
+            "logout": "Izrakstīšanās no {{username}}",
+            "login": "Pieslēgties"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Top {{count}} rezultāti <b>{{search}}</b>."
         }
     }
 }

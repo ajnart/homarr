@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "캐시 정리",
   "selector": {
-    "label": "",
+    "label": "지울 캐시를 선택합니다.",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "핑 쿼리",
+      "repositoryIcons": "원격/로컬 아이콘",
+      "calendar&medias": "캘린더의 미디어",
+      "weather": "날씨 데이터"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "캐시 지워짐",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "모든 캐시 지우기",
+      "notificationMessage": "모든 캐시가 지워졌습니다."
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "선택한 쿼리 지우기",
+      "notificationMessageSingle": "{{value}} 캐시가 지워졌습니다.",
+      "notificationMessageMulti": "{{values}} 캐시가 지워졌습니다."
     }
   }
 }

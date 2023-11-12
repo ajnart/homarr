@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "crwdns2863:0crwdne2863:0",
+    "description": "crwdns2865:0crwdne2865:0",
+    "settings": {
+      "title": "crwdns2867:0crwdne2867:0",
+      "name": {
+        "label": "crwdns3011:0crwdne3011:0",
+        "info": "crwdns3017:0crwdne3017:0"
+      },
+      "items": {
+        "label": "crwdns2869:0crwdne2869:0"
+      },
+      "layout": {
+        "label": "crwdns2871:0crwdne2871:0",
+        "data": {
+          "autoGrid": "crwdns3095:0crwdne3095:0",
+          "horizontal": "crwdns3097:0crwdne3097:0",
+          "vertical": "crwdns3099:0crwdne3099:0"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "crwdns2873:0crwdne2873:0",
+      "text": "crwdns2875:0crwdne2875:0"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "crwdns3253:0{{shortest}}crwdnd3253:0{{longest}}crwdne3253:0",
+      "invalidLink": "crwdns3107:0crwdne3107:0",
+      "errorMsg": "crwdns3109:0crwdne3109:0"
+    },
+    "name": "crwdns3111:0crwdne3111:0",
+    "url": "crwdns3113:0crwdne3113:0",
+    "newTab": "crwdns3115:0crwdne3115:0",
+    "hideHostname": "crwdns3117:0crwdne3117:0",
+    "hideIcon": "crwdns3119:0crwdne3119:0",
+    "delete": "crwdns3121:0crwdne3121:0"
+  }
+}

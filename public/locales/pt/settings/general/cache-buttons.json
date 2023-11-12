@@ -1,24 +1,24 @@
 {
-  "title": "",
+  "title": "Limpeza do cache",
   "selector": {
-    "label": "",
+    "label": "Selecione o(s) cache(s) a ser(em) limpo(s)",
     "data": {
-      "ping": "",
-      "repositoryIcons": "",
-      "calendar&medias": "",
-      "weather": ""
+      "ping": "Consultas de ping",
+      "repositoryIcons": "Ícones remotos/locais",
+      "calendar&medias": "Mídias do calendário",
+      "weather": "Dados meteorológicos"
     }
   },
   "buttons": {
-    "notificationTitle": "",
+    "notificationTitle": "Cache limpo",
     "clearAll": {
-      "text": "",
-      "notificationMessage": ""
+      "text": "Limpar todo o cache",
+      "notificationMessage": "Todo o cache foi limpo"
     },
     "clearSelect": {
-      "text": "",
-      "notificationMessageSingle": "",
-      "notificationMessageMulti": ""
+      "text": "Limpar as consultas selecionadas",
+      "notificationMessageSingle": "O cache do site {{value}} foi limpo",
+      "notificationMessageMulti": "O cache do site {{values}} foi limpo"
     }
   }
 }

@@ -1,12 +1,14 @@
 {
 	"description": "Homarr är en <strong>stilren</strong>, <strong>modern</strong> instrumentpanel som ger dig tillgång till alla dina appar och tjänster. Med Homarr kan du få tillgång till och kontrollera allt på ett bekvämt ställe. Homarr integreras sömlöst med de appar du har lagt till, vilket ger dig värdefull information och ger dig fullständig kontroll. Installationen är enkel och Homarr stöder ett stort antal installationsmetoder.",
-	"contact": "Har du problem eller frågor? Kontakta oss!",
 	"addToDashboard": "Lägg till på instrumentpanel",
 	"tip": "Mod är din modifiertangent, det är Ctrl och kommando/Super/Windows-tangenten",
 	"key": "Genvägstangent",
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
-	"documentation": "Dokumentation",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "Växla mellan ljus- och mörkerläge",
 		"focusSearchBar": "Fokusera på sökruta",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Version av konfigurationsschemat",
-		"configurationsCount": "Tillgängliga konfigurationer",
 		"version": "Version",
 		"nodeEnvironment": "Nod miljö",
 		"i18n": "Laddade namnområden för I18n-översättningar",

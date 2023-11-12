@@ -71,7 +71,7 @@ jobs:
           path: .next/cache
           key: ${{ runner.os }}-build-${{ env.cache-name }}
 
-      - run: yarn install --immutable
+      - run: yarn install
 
       - run: yarn turbo build
 

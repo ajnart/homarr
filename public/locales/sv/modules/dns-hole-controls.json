@@ -3,15 +3,15 @@
     "name": "Kontroller av DNS hole",
     "description": "Styr PiHole eller AdGuard från din instrumentpanel",
     "settings": {
-      "title": "",
+      "title": "Inställningar för DNS-hål",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Visa 'Aktivera/inaktivera alla' knappar"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Kan inte hitta ett DNS-hål",
+        "text": "Det gick inte att ansluta till ditt(dina) DNS-hål. Vänligen verifiera dina konfiguration/integration(er)."
       }
     }
   }

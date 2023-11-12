@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Início"
         },
         "boards": {
-            "title": ""
+            "title": "Placas"
         },
         "users": {
-            "title": "",
+            "title": "Usuários",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Gerenciar",
+                "invites": "Convites"
             }
         },
         "help": {
-            "title": "",
+            "title": "Ajuda",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Documentação",
+                "report": "Relatar um problema / bug",
+                "discord": "Discórdia da comunidade",
+                "contribute": "Contribuir"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Ferramentas",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Sobre"
         }
     }
 }

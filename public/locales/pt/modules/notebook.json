@@ -1,15 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Caderno de anotações",
+		"description": "Um widget interativo baseado em markdown para você fazer suas anotações!",
 		"settings": {
-			"title": "",
+			"title": "Configurações do widget do notebook",
 			"showToolbar": {
+				"label": "Mostrar a barra de ferramentas para ajudá-lo a escrever markdown"
+			},
+			"allowReadOnlyCheck": {
 				"label": ""
 			},
 			"content": {
-				"label": ""
+				"label": "O conteúdo do notebook"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "",
+			"italic": "",
+			"strikethrough": "",
+			"underline": "",
+			"colorText": "",
+			"colorHighlight": "",
+			"code": "",
+			"clear": "",
+			"heading": "",
+			"align": "",
+			"blockquote": "",
+			"horizontalLine": "",
+			"bulletList": "",
+			"orderedList": "",
+			"checkList": "",
+			"increaseIndent": "",
+			"decreaseIndent": "",
+			"link": "",
+			"unlink": "",
+			"image": "",
+			"addTable": "",
+			"deleteTable": "",
+			"colorCell": "",
+			"mergeCell": "",
+			"addColumnLeft": "",
+			"addColumnRight": "",
+			"deleteColumn": "",
+			"addRowTop": "",
+			"addRowBelow": "",
+			"deleteRow": ""
+		},
+		"modals": {
+			"clearColor": "",
+			"source": "",
+			"widthPlaceholder": "",
+			"columns": "",
+			"rows": ""
 		}
 	}
 }
