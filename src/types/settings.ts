@@ -44,6 +44,7 @@ export interface CustomizationSettingsType {
   metaTitle?: string;
   logoImageUrl?: string;
   faviconUrl?: string;
+  pwaIcon?: string;
   backgroundImageUrl?: string;
   backgroundImageAttachment?: typeof BackgroundImageAttachment[number];
   backgroundImageSize?: typeof BackgroundImageSize[number];
