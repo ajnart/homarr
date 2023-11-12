@@ -7152,7 +7152,7 @@ __metadata:
     rss-parser: ^3.12.0
     sabnzbd-api: ^1.5.0
     sass: ^1.56.1
-    ts-node: latest
+    ts-node: ^10.9.1
     turbo: ^1.10.12
     typescript: 5.1.6
     uuid: ^9.0.0
@@ -11590,7 +11590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:latest":
+"ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
   dependencies:

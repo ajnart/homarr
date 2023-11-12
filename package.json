@@ -24,7 +24,7 @@
     "test:coverage": "SKIP_ENV_VALIDATION=1 vitest run --coverage",
     "docker:build": "turbo build && docker build . -t homarr:local-dev",
     "docker:start": "docker run -p 7575:7575 --name homarr-development homarr:local-dev",
-    "db:migrate": "ts-node src/migrate.ts"
+    "db:migrate": "ts-node drizzle/migrate/migrate.ts"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^0.3.2",
