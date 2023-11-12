@@ -64,5 +64,3 @@ HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
 USER homarr
 
 CMD ["sh", "./scripts/run.sh"]
-
-# TEMPORARY: "db:migrate": "ts-node ./migrate.ts ../drizzle"
