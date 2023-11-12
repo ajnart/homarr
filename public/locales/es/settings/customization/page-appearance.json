@@ -22,23 +22,23 @@
     "label": "Imágen adjunta de fondo",
     "options": {
       "fixed": "Fijo - El la imágen de fondo se mantiene en la misma posición (recomendado)",
-      "scroll": ""
+      "scroll": "Desplazamiento: el fondo se desplaza con el ratón"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Tamaño de imagen de fondo",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Cubrir - Escala la imagen lo más pequeño posible para cubrir toda la ventana recortando el espacio excesivo. (recomendado)",
+      "contain": "Contener - Escala la imagen lo más grande posible dentro de su contenedor sin recortarla ni estirarla."
     }
   },
   "backgroundImageRepeat": {
     "label": "Imágen adjunta de fondo",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Repetir - La imagen se repite tanto como sea necesario para cubrir toda el área de pintura de la imagen de fondo.",
+      "no-repeat": "Sin repetición - La imagen no se repite y puede no ocupar todo el espacio (recomendado)",
+      "repeat-x": "Repetir X - Igual que 'Repetir' pero sólo en el eje horizontal.",
+      "repeat-y": "Repetir Y: igual que 'Repetir' pero solo en el eje vertical."
     }
   },
   "customCSS": {
