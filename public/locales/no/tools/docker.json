@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Din Homarr-forekomst har ikke Docker konfigurert eller den har mislyktes i å hente containere. Vennligst sjekk dokumentasjonen for hvordan du setter opp integrasjonen."
+            "text": ""
         }
     },
     "modals": {
