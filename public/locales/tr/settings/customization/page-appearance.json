@@ -19,26 +19,26 @@
     "label": "Arkaplan"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Arkaplan resim ekle",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Düzeltildi - Arka plan aynı konumda kalıyor (tavsiye edilen)",
+      "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Arkaplan resim boyutu",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Kapak - Fazla alanı kırparak tüm pencereyi kaplamak için görüntüyü mümkün olduğunca küçük ölçeklendirir. (tavsiye edilen)",
+      "contain": "Kapsam - Görüntüyü kırpmadan veya genişletmeden, kapsayıcısı içinde mümkün olduğu kadar büyük ölçeklendirir."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Arkaplan resim ekle",
     "options": {
-      "repeat": "",
+      "repeat": "Tekrarla - Resim, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
       "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat-x": "Tekrarla X - 'Tekrarla' ile aynıdır ancak yalnızca yatay eksende.",
+      "repeat-y": "Tekrar Y - 'Tekrarla' ile aynıdır, ancak yalnızca dikey eksende."
     }
   },
   "customCSS": {
