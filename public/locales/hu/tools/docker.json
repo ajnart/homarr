@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "A Homarr-példányodon nincs beállítva a Docker, vagy nem tudta lekérni a konténereket. Kérjük, olvassa el a dokumentációt az integráció beállításáról."
+            "text": ""
         }
     },
     "modals": {
