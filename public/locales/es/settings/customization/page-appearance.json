@@ -18,6 +18,29 @@
   "background": {
     "label": "Fondo"
   },
+  "backgroundImageAttachment": {
+    "label": "Imágen adjunta de fondo",
+    "options": {
+      "fixed": "Fijo - El la imágen de fondo se mantiene en la misma posición (recomendado)",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Imágen adjunta de fondo",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
   "customCSS": {
     "label": "CSS Personalizado",
     "description": "Además, personaliza tu panel usando CSS, solo recomendado para usuarios avanzados",
