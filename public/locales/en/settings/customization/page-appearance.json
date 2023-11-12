@@ -36,7 +36,7 @@
     "label": "Background image attachment",
     "options": {
       "repeat": "Repeat - The image is repeated as much as needed to cover the whole background image painting area.",
-      "no-repeat": "No repeat - The image is not repeated any may not fill the entire space (recommended)",
+      "no-repeat": "No repeat - The image is not repeated and may not fill the entire space (recommended)",
       "repeat-x": "Repeat X - Same as 'Repeat' but only on horizontal axis.",
       "repeat-y": "Repeat Y - Same as 'Repeat' but only on vertical axis."
     }
