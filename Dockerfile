@@ -1,11 +1,6 @@
 FROM node:20.5-slim
 WORKDIR /app
 
-ARG UID=1001
-ARG GID=1001
-RUN groupadd -g $GID homarr-group
-RUN useradd -r -u $UID -g $GID homarr
-
 # Define node.js environment variables
 ARG PORT=7575
 
@@ -28,7 +23,6 @@ COPY ./drizzle/migrate ./migrate
 COPY ./tsconfig.json ./migrate/tsconfig.json
 
 RUN mkdir /data
-RUN chown -R homarr:homarr-group /data
 
 # Install dependencies
 RUN apt update && apt install -y openssl wget
@@ -60,8 +54,6 @@ ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
-
-USER homarr
 
 VOLUME [ "/app/data/configs" ]
 VOLUME [ "/data" ]
