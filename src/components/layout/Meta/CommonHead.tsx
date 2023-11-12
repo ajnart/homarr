@@ -12,7 +12,7 @@ export const CommonHead = () => {
       <link crossOrigin="use-credentials" rel="manifest" href="/site.webmanifest" />
 
       {/* configure apple splash screen & touch icon */}
-      <link rel="apple-touch-icon" href="/imgs/favicon/favicon.svg" />
+      <link rel="apple-touch-icon" href="/imgs/pwa/apple-icon-180.png" />
       <meta name="apple-mobile-web-app-title" content="Homarr" />
 
       <meta name="apple-mobile-web-app-capable" content="yes" />
