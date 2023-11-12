@@ -4,10 +4,9 @@ import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
 import {
   IconApps,
-  IconBrandDocker,
   IconEditCircle,
   IconEditCircleOff,
-  IconSettings,
+  IconSettings
 } from '@tabler/icons-react';
 import Consola from 'consola';
 import { useSession } from 'next-auth/react';
@@ -19,11 +18,10 @@ import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/grid
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
-import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
-import { MainLayout } from './MainLayout';
 import { env } from 'process';
+import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
   children: React.ReactNode;
@@ -205,8 +203,9 @@ const BackgroundImage = () => {
           minHeight: '100vh',
           backgroundImage: `url('${config?.settings.customization.backgroundImageUrl}')`,
           backgroundPosition: 'center center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: config?.settings.customization.backgroundImageSize ?? 'cover',
+          backgroundRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
+          backgroundAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed'
         },
       }}
     />
