@@ -27,8 +27,8 @@
         "description": "Cuando se marca 'está en la lista blanca', actuará como una lista blanca. Si no se marca, esta es una lista negra. No hará nada cuando esté vacío"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Mostrar la proporción de la lista filtrada de torrents",
+        "info": "Si se desactiva, sólo se mostrará la proporción global. La proporción global seguirá usando las etiquetas si están establecidas"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Error",
       "lastUpdated": "Última actualización hace {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Proporción global",
+      "ratioWithFilter": "Proporción con filtro"
     },
     "table": {
       "header": {
