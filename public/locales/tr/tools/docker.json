@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Homarr örneğinizde Docker yapılandırılmış değil veya konteynırları getirmede başarısız oldu. Lütfen entegrasyonun nasıl kurulacağına ilişkin belgeleri kontrol edin."
+            "text": ""
         }
     },
     "modals": {
