@@ -18,6 +18,29 @@
   "background": {
     "label": "Pozadí"
   },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
   "customCSS": {
     "label": "Vlastní CSS",
     "description": "Dále si můžete přizpůsobit ovládací panel pomocí CSS, doporučujeme pouze zkušeným uživatelům",
