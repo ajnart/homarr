@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Homarr 인스턴스에 Docker가 구성되어 있지 않거나 컨테이너 가져오기에 실패했습니다. 연동 설정 방법에 대한 설명서를 확인하세요."
+            "text": ""
         }
     },
     "modals": {
