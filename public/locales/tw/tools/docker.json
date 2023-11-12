@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "您的 Homarr 實例未設定 Docker，或無法獲取容器，請查看文檔了解如設定集成"
+            "text": ""
         }
     },
     "modals": {
