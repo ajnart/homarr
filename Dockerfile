@@ -61,6 +61,8 @@ ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
 
+USER homarr
+
 VOLUME [ "/app/data/configs" ]
 VOLUME [ "/data" ]
 ENTRYPOINT ["sh", "./scripts/run.sh"]
