@@ -1032,7 +1032,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
 "@mantine/dropzone@npm:^6.0.21":
   version: 6.0.21
   resolution: "@mantine/dropzone@npm:6.0.21"
@@ -1049,9 +1048,6 @@ __metadata:
   linkType: hard
 
 "@mantine/form@npm:^6.0.21":
-=======
-"@mantine/form@npm:^6.0.0":
->>>>>>> dev
   version: 6.0.21
   resolution: "@mantine/form@npm:6.0.21"
   dependencies:
@@ -3742,6 +3738,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"attr-accept@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "attr-accept@npm:2.2.2"
+  checksum: 496f7249354ab53e522510c1dc8f67a1887382187adde4dc205507d2f014836a247073b05e9d9ea51e2e9c7f71b0d2aa21730af80efa9af2d68303e5f0565c4d
+  languageName: node
+  linkType: hard
+
 "available-typed-arrays@npm:^1.0.5":
   version: 1.0.5
   resolution: "available-typed-arrays@npm:1.0.5"
@@ -6362,6 +6365,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-selector@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "file-selector@npm:0.6.0"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 7d051b6e5d793f3c6e2ab287ba5e7c2c6a0971bccc9d56e044c8047ba483e18f60fc0b5771c951dc707c0d15f4f36ccb4f1f1aaf385d21ec8f7700dadf8325ba
+  languageName: node
+  linkType: hard
+
 "file-source@npm:0.6":
   version: 0.6.1
   resolution: "file-source@npm:0.6.1"
@@ -7095,7 +7107,6 @@ __metadata:
     "@emotion/react": ^11.10.6
     "@emotion/server": ^11.10.0
     "@jellyfin/sdk": ^0.8.0
-<<<<<<< HEAD
     "@mantine/core": ^6.0.21
     "@mantine/dates": ^6.0.21
     "@mantine/dropzone": ^6.0.21
@@ -7106,17 +7117,6 @@ __metadata:
     "@mantine/notifications": ^6.0.21
     "@mantine/prism": ^6.0.21
     "@mantine/tiptap": ^6.0.21
-=======
-    "@mantine/core": ^6.0.0
-    "@mantine/dates": ^6.0.0
-    "@mantine/form": ^6.0.0
-    "@mantine/hooks": ^6.0.0
-    "@mantine/modals": ^6.0.0
-    "@mantine/next": ^6.0.0
-    "@mantine/notifications": ^6.0.0
-    "@mantine/prism": ^6.0.19
-    "@mantine/tiptap": ^6.0.17
->>>>>>> dev
     "@next/bundle-analyzer": ^13.0.0
     "@next/eslint-plugin-next": ^13.4.5
     "@nivo/core": ^0.83.0
@@ -10214,6 +10214,19 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-dropzone@npm:14.2.3":
+  version: 14.2.3
+  resolution: "react-dropzone@npm:14.2.3"
+  dependencies:
+    attr-accept: ^2.2.2
+    file-selector: ^0.6.0
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ">= 16.8 || 18.0.0"
+  checksum: 174b744d5ca898cf3d84ec1aeb6cef5211c446697e45dc8ece8287a03d291f8d07253206d5a1247ef156fd385d65e7de666d4d5c2986020b8543b8f2434e8b40
   languageName: node
   linkType: hard
 
