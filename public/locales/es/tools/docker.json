@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Tu instancia de Homarr no tiene Docker configurado o no pudo recuperar contenedores. Por favor, consulta la documentación sobre cómo configurar la integración."
+            "text": "Tu instalación de Homarr no tiene Docker configurado o ha fallado al obtener contenedores. Consulta la documentación para ver como configurar la integración."
         }
     },
     "modals": {
