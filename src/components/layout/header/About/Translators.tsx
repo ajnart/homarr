@@ -74,8 +74,8 @@ export function TranslatorsTable({ loadedLanguages }: { loadedLanguages: number 
           }}
         >
           <Text lineClamp={1}>
-            {translator.languages.map((language) => (
-              <span key={language.id}>{language.name}, </span>
+            {translator.languages.map((language, index) => (
+              <span key={language.id}>{language.name}{(index < translator.languages.length - 1 ? ", " : "")}</span>
             ))}
           </Text>
         </td>
