@@ -66,7 +66,7 @@ export default function CustomizationPage({
       refetchOnMount: false,
     }
   );
-  const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
+  const { mutateAsync: saveCustomization, isLoading } = api.config.saveCustomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
@@ -86,6 +86,9 @@ export default function CustomizationPage({
         shade: (config?.settings.customization.colors.shade as number | undefined) ?? 8,
         opacity: config?.settings.customization.appOpacity ?? 50,
         customCss: config?.settings.customization.customCss ?? '',
+        backgroundImageAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed',
+        backgroundImageRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
+        backgroundImageSize: config?.settings.customization.backgroundImageSize ?? 'cover',
       },
       gridstack: {
         sm: config?.settings.customization.gridstack?.columnCountSmall ?? 3,
@@ -114,7 +117,7 @@ export default function CustomizationPage({
       message: t('notifications.pending.message'),
       loading: true,
     });
-    await saveCusomization(
+    await saveCustomization(
       {
         name: query.slug,
         ...values,
