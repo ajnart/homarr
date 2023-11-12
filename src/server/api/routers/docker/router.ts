@@ -10,7 +10,7 @@ const dockerActionSchema = z.enum(['remove', 'start', 'stop', 'restart']);
 export const dockerRouter = createTRPCRouter({
   containers: adminProcedure.query(async () => {
     try {
-      const docker = DockerSingleton.getInstance();
+      const docker = new Dockerode({});
       const containers = await docker.listContainers({ all: true });
       return containers;
     } catch (err) {
