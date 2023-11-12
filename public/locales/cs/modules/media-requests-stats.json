@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Statistiky médií",
+    "pending": "Čeká na schválení",
+    "tvRequests": "Požadavky seriálů",
+    "movieRequests": "Požadavky filmů",
+    "approved": "Již schváleno",
+    "totalRequests": "Celkem"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Top uživatelé",
+    "requests": "Požadavků: {{number}}"
   }
 }
