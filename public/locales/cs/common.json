@@ -1,5 +1,5 @@
 {
-  "save": "",
+  "save": "Uložit",
   "apply": "",
   "insert": "",
   "about": "",
@@ -17,13 +17,13 @@
   "enableAll": "",
   "disableAll": "",
   "version": "",
-  "changePosition": "",
+  "changePosition": "Změnit pozici",
   "remove": "",
   "removeConfirm": "",
   "createItem": "",
   "sections": {
     "settings": "",
-    "dangerZone": ""
+    "dangerZone": "Nebezpečná zóna"
   },
   "secrets": {
     "apiKey": "",
