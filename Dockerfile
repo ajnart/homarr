@@ -1,4 +1,4 @@
-FROM node:20.5-slim
+FROM node:20.2.0-slim
 WORKDIR /app
 
 # Define node.js environment variables
