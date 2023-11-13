@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Vaša inštancia Homarr nemá nakonfigurovaný Docker alebo sa jej nepodarilo načítať kontajnery. Pozrite si dokumentáciu o tom, ako nastaviť integráciu."
         }
     },
     "modals": {
