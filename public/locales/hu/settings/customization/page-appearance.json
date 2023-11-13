@@ -19,26 +19,26 @@
     "label": "Háttér"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Háttérkép csatolása",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Rögzített – a háttér ugyanabban a helyzetben marad (ajánlott)",
+      "scroll": "Görgetés - A háttér gördül az egérrel"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Háttér kép mérete",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Cover - A képet a lehető legkisebbre méretezi, hogy a felesleges terület levágásával a teljes ablakot lefedje. (ajánlott)",
+      "contain": "Tartalom - A képet a lehető legnagyobb méretre méretezi a tárolón belül anélkül, hogy a képet levágná vagy megnyújtaná."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Háttérkép csatolása",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Ismétlés – A kép annyiszor ismétlődik, amennyire szükséges, hogy a teljes háttérkép festési területet lefedje.",
+      "no-repeat": "Nincs ismétlés - A kép nem ismétlődik, és nem tölti ki a teljes helyet (ajánlott)",
+      "repeat-x": "Ismétlés X - Ugyanaz, mint az 'Ismétlés', de csak a vízszintes tengelyen.",
+      "repeat-y": "Ismétlés Y - Ugyanaz, mint az 'Ismétlés', de csak a függőleges tengelyen."
     }
   },
   "customCSS": {
