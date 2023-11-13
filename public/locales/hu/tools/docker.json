@@ -2,12 +2,12 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "A Homarr-példányodon nincs beállítva a Docker, vagy nem tudta lekérni a konténereket. Kérjük, olvassa el a dokumentációt az integráció beállításáról."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "Válasszon egy táblát",
+            "title": "Válasszon vezérlőt",
             "text": "Válassza ki azt a táblát, ahová a kiválasztott Docker-konténerekhez tartozó alkalmazásokat szeretné hozzáadni.",
             "form": {
                 "board": {
