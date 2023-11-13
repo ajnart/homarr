@@ -25,7 +25,6 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   config: ConfigType;
-  dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
 
