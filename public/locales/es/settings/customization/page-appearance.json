@@ -21,7 +21,7 @@
   "backgroundImageAttachment": {
     "label": "Adjuntar imagen de fondo",
     "options": {
-      "fixed": "Fijo - El la imágen de fondo se mantiene en la misma posición (recomendado)",
+      "fixed": "Fijo - El fondo permanece en la misma posición (recomendado)",
       "scroll": "Desplazamiento: el fondo se desplaza con el ratón"
     }
   },
