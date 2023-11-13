@@ -1,11 +1,6 @@
 FROM node:20.5-slim
 WORKDIR /app
 
-ARG UID=1001
-ARG GID=1001
-RUN groupadd -g $GID homarr-group
-RUN useradd -r -u $UID -g $GID homarr
-
 # Define node.js environment variables
 ARG PORT=7575
 
@@ -28,10 +23,9 @@ COPY ./drizzle/migrate ./migrate
 COPY ./tsconfig.json ./migrate/tsconfig.json
 
 RUN mkdir /data
-RUN chown -R homarr:homarr-group /data
 
 # Install dependencies
-RUN apt-get update -y && apt-get install -y openssl wget
+RUN apt update && apt install -y openssl wget
 
 # Move node_modules to temp location to avoid overwriting
 RUN mv node_modules _node_modules
@@ -54,13 +48,13 @@ EXPOSE $PORT
 ENV PORT=${PORT}
 
 ENV DATABASE_URL "file:/data/db.sqlite"
-ENV NEXTAUTH_URL "http://localhost:3000"
+ENV NEXTAUTH_URL "http://localhost:7575"
 ENV PORT 7575
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
 
-USER homarr
-
-CMD ["sh", "./scripts/run.sh"]
+VOLUME [ "/app/data/configs" ]
+VOLUME [ "/data" ]
+ENTRYPOINT ["sh", "./scripts/run.sh"]

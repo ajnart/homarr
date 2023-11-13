@@ -9,4 +9,6 @@ cd ./migrate; yarn db:migrate & PID=$!
 wait $PID
 
 echo "Starting production server..."
-node /app/server.js
+node /app/server.js & PID=$!
+
+wait $PID
