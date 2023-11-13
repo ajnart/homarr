@@ -19,7 +19,7 @@
     "label": "Fondo"
   },
   "backgroundImageAttachment": {
-    "label": "Imágen adjunta de fondo",
+    "label": "Adjuntar imagen de fondo",
     "options": {
       "fixed": "Fijo - El la imágen de fondo se mantiene en la misma posición (recomendado)",
       "scroll": "Desplazamiento: el fondo se desplaza con el ratón"
@@ -33,7 +33,7 @@
     }
   },
   "backgroundImageRepeat": {
-    "label": "Imágen adjunta de fondo",
+    "label": "Adjuntar imagen de fondo",
     "options": {
       "repeat": "Repetir - La imagen se repite tanto como sea necesario para cubrir toda el área de pintura de la imagen de fondo.",
       "no-repeat": "Sin repetición - La imagen no se repite y puede no ocupar todo el espacio (recomendado)",
