@@ -119,8 +119,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         },
       };
     }
-
-    Consola.info(`Database at '${rawDatabaseUrl}' is writeable and mounted`);
+    Consola.info('Database is writeable');
   }
 
   return {
