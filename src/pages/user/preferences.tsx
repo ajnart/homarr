@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
-import { changeLanguage } from 'i18next';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -74,6 +73,7 @@ const SettingsComponent = ({
     label: language.originalName,
     description: language.translatedName,
     value: language.shortName,
+    country: language.country,
   }));
 
   const { t, i18n } = useTranslation(['user/preferences', 'common']);
