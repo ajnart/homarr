@@ -27,8 +27,8 @@
         "description": "Si la case \"La liste des libellés est une liste blanche\" est cochée, elle sera appliquée comme une liste blanche. Si la case n'est pas cochée, elle s'appliquera comme une liste noire. Rien ne se passera si elle est vide"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Afficher le ratio de la liste des torrents filtrés",
+        "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Erreur",
       "lastUpdated": "Dernière mise à jour : {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Ratio global",
+      "ratioWithFilter": "Ratio avec filtre"
     },
     "table": {
       "header": {

@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "HomarrインスタンスにDockerが設定されていないか、コンテナの取得に失敗しています。統合の設定方法についてはドキュメントを確認してください。"
+            "text": ""
         }
     },
     "modals": {

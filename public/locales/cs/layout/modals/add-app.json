@@ -1,21 +1,21 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "Obecné",
+		"behaviour": "Chování",
 		"network": "",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Vzhled",
+		"integration": "Integrace"
 	},
 	"general": {
 		"appname": {
-			"label": "",
+			"label": "Název aplikace",
 			"description": ""
 		},
 		"internalAddress": {
 			"label": "",
 			"description": "",
 			"troubleshoot": {
-				"label": "",
+				"label": "Narazili jste na problém?",
 				"header": "",
 				"lines": {
 					"nothingAfterPort": "",
@@ -36,11 +36,11 @@
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Otevřít na nové kartě",
+			"description": "Otevřete aplikaci na nové kartě místo aktuální."
 		},
 		"tooltipDescription": {
-			"label": "",
+			"label": "Popis aplikace",
 			"description": ""
 		},
 		"customProtocolWarning": ""
