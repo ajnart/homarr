@@ -15,9 +15,6 @@ import { getTotalUserCountAsync } from '~/server/db/queries/user';
 import { getConfig } from '~/tools/config/getConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-
 export default function OnboardPage({
   configSchemaVersions,
   databaseNotWriteable,
