@@ -19,26 +19,26 @@
     "label": "Sfondo"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Allegato immagine di sfondo",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fisso - Lo sfondo rimane nella stessa posizione (consigliato)",
+      "scroll": "Scorrimento - Lo sfondo scorre con il mouse"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Dimensioni dell'immagine di sfondo",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Copertura - Ridimensiona l'immagine il più possibile per coprire l'intera finestra ritagliando lo spazio eccessivo. (consigliato)",
+      "contain": "Contieni - ridimensiona l'immagine il più grande possibile all'interno del suo container senza ritagliare o allungare l'immagine."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Allegato immagine di sfondo",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Ripeti - l'immagine viene ripetuta quanto necessario per coprire l'intera area di disegno dell'immagine di sfondo.",
+      "no-repeat": "Nessuna ripetizione - l'immagine non viene ripetuta e potrebbe non riempire l'intero spazio (consigliato)",
+      "repeat-x": "Ripeti X - Come 'Ripeti' ma solo sull'asse orizzontale.",
+      "repeat-y": "Ripeti Y - Come 'Ripeti' ma solo sull'asse verticale."
     }
   },
   "customCSS": {
