@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Ovo je eksperimentalna značajka Homarra. Prijavite sve probleme na <gh>GitHub</gh> ili <dc>Discord</dc>."
-    },
     "search": {
         "label": "traži",
         "engines": {

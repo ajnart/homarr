@@ -44,12 +44,14 @@
   },
   "seeMore": "See more...",
   "position": {
-		"left": "Left",
-		"center": "Center",
-		"right": "Right"
+    "left": "Left",
+    "center": "Center",
+    "right": "Right"
   },
   "attributes": {
     "width": "Width",
     "height": "Height"
-  }
+  },
+  "public": "Public",
+  "restricted": "Restricted"
 }

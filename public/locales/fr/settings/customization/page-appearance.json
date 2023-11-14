@@ -18,6 +18,29 @@
   "background": {
     "label": "Fond"
   },
+  "backgroundImageAttachment": {
+    "label": "Pièce jointe de l'image d'arrière-plan",
+    "options": {
+      "fixed": "Fixe - L'arrière-plan reste dans la même position (recommandé)",
+      "scroll": "Défilement - L'arrière-plan défile avec la souris"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Taille de l'image d'arrière-plan",
+    "options": {
+      "cover": "Couverture - Mise à l'échelle de l'image aussi petite que possible pour couvrir la fenêtre entière en recadrant l'espace excessif. (recommandé)",
+      "contain": "Contient - Mise à l'échelle de l'image aussi grande que possible dans son conteneur sans recadrer ou étirer l'image."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Pièce jointe de l'image d'arrière-plan",
+    "options": {
+      "repeat": "Répéter - L'image est répétée autant que nécessaire pour couvrir toute la surface d'arrière-plan.",
+      "no-repeat": "Pas de répétition - L'image n'est pas répétée et peut ne pas remplir tout l'espace (recommandé)",
+      "repeat-x": "Répéter X - Identique à 'Répéter' mais uniquement sur l'axe horizontal.",
+      "repeat-y": "Répéter Y - Identique à 'Répéter' mais uniquement sur l'axe vertical."
+    }
+  },
   "customCSS": {
     "label": "CSS personnalisé",
     "description": "En outre, vous pouvez personnaliser votre tableau de bord à l'aide de CSS. Réservé aux utilisateurs expérimentés.",

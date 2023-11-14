@@ -42,7 +42,7 @@
 }
 
 .grid-stack>.grid-stack-item {
-  min-width: calc(percentage(1) * #{var(--gridstack-widget-width)});
+  min-width: #{var(--gridstack-widget-width)};
 }
 
 // Styling for sidebar grid-stack elements

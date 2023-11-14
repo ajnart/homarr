@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Ide o experimentálnu funkciu systému Homarr. Akékoľvek problémy nahláste na <gh>GitHub</gh> alebo <dc>Discord</dc>."
-    },
     "search": {
         "label": "Hladať",
         "engines": {

@@ -157,7 +157,6 @@ describe('[slug] page', () => {
         destination: '/auth/login?redirectAfterLogin=/board/my-authentication-board',
         permanent: false,
       },
-      props: {},
     });
     expect(serverAuthModule.getServerAuthSession).toHaveBeenCalledOnce();
     expect(configExistsModule.configExists).toHaveBeenCalledOnce();

@@ -2,7 +2,6 @@ import {
   Button,
   Card,
   Center,
-  Divider,
   Grid,
   Group,
   Loader,
@@ -134,8 +133,11 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
 
   const service = config.apps.find((service) => service.integration.type === type);
   const mediaUrl = movie.mediaInfo?.plexUrl ?? movie.mediaInfo?.mediaUrl;
-  const serviceUrl = service?.behaviour.externalUrl ? service.behaviour.externalUrl : service?.url;
-  const externalUrl = movie.mediaInfo?.serviceUrl;
+  const serviceUrl = service?.behaviour.externalUrl ?? service?.url;
+  const externalUrl = new URL(
+    `${movie.mediaType}/${movie.id}`,
+    serviceUrl ?? 'https://www.themoviedb.org'
+  );
 
   return (
     <Card withBorder>
@@ -192,16 +194,16 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
                 {t('buttons.play')}
               </Button>
             )}
-            {serviceUrl && (
+            {externalUrl && (
               <Button
                 component="a"
                 target="_blank"
-                href={externalUrl}
+                href={externalUrl.href}
                 variant="outline"
                 size="sm"
                 rightIcon={<IconExternalLink size={15} />}
               >
-                {type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr'}
+                {serviceUrl ? (type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr') : 'TMDB'}
               </Button>
             )}
           </Group>

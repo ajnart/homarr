@@ -1,6 +1,6 @@
 import { ConfigType } from '~/types/config';
 
-import defaultConfig from '../../../data/configs/default.json';
+import defaultConfig from '../../../data/default.json';
 
 export const getFallbackConfig = (name?: string) => ({
   ...defaultConfig,

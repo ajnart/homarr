@@ -1,9 +1,9 @@
 {
 	"descriptor": {
-		"name": "Sổ tay",
+		"name": "Ghi chú",
 		"description": "Tiện ích tương tác dựa trên đánh dấu để bạn viết ra ghi chú của mình!",
 		"settings": {
-			"title": "Cài đặt cho tiện ích sổ ghi chép",
+			"title": "Cài đặt cho tiện ích ghi chú",
 			"showToolbar": {
 				"label": "Hiển thị thanh công cụ giúp bạn viết markdown"
 			},
@@ -11,7 +11,7 @@
 				"label": ""
 			},
 			"content": {
-				"label": "Nội dung của sổ ghi chép"
+				"label": "Nội dung của ghi chú"
 			}
 		}
 	},
@@ -51,9 +51,9 @@
 		"modals": {
 			"clearColor": "",
 			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"widthPlaceholder": "Giá trị tính bằng % hoặc pixel",
+			"columns": "Cột",
+			"rows": "Dòng"
 		}
 	}
 }

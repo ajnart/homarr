@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Questa è una caratteristica sperimentale di Homarr. Si prega di segnalare qualsiasi problema su <gh>GitHub</gh> o <dc>Discord</dc>."
-    },
     "search": {
         "label": "Cerca",
         "engines": {

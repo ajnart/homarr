@@ -18,6 +18,29 @@
   "background": {
     "label": "Baggrund"
   },
+  "backgroundImageAttachment": {
+    "label": "Vedhæftning af baggrundsbillede",
+    "options": {
+      "fixed": "Fast - Baggrunden forbliver i samme position (anbefales)",
+      "scroll": "Scroll - Baggrunden scroller med musen"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Baggrundsbilledets størrelse",
+    "options": {
+      "cover": "Cover - Skalerer billedet så lille som muligt for at dække hele vinduet ved at beskære for overskydende materiale. (anbefalede)",
+      "contain": "Indehold - Skalerer billedet så stort som muligt i dets ramme uden at beskære eller strække billedet."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Vedhæftning af baggrundsbillede",
+    "options": {
+      "repeat": "Gentag - Billedet gentages så meget som nødvendigt for at dække hele baggrundsbilledets maleområde.",
+      "no-repeat": "Ingen gentagelse - Billedet gentages ikke og fylder muligvis ikke hele rummet (anbefales)",
+      "repeat-x": "Gentag X - Samme som 'Gentag' men kun på vandret akse.",
+      "repeat-y": "Gentag Y - Samme som 'Gentag' men kun på lodret akse."
+    }
+  },
   "customCSS": {
     "label": "Tilpasset CSS",
     "description": "Yderligere, tilpasse dit dashboard ved hjælp af CSS, anbefales kun til erfarne brugere",

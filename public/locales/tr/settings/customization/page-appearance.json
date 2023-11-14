@@ -18,6 +18,29 @@
   "background": {
     "label": "Arkaplan"
   },
+  "backgroundImageAttachment": {
+    "label": "Arkaplan resim ekle",
+    "options": {
+      "fixed": "Düzeltildi - Arka plan aynı konumda kalıyor (tavsiye edilen)",
+      "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Arkaplan resim boyutu",
+    "options": {
+      "cover": "Kapak - Fazla alanı kırparak tüm pencereyi kaplamak için görüntüyü mümkün olduğunca küçük ölçeklendirir. (tavsiye edilen)",
+      "contain": "Kapsam - Görüntüyü kırpmadan veya genişletmeden, kapsayıcısı içinde mümkün olduğu kadar büyük ölçeklendirir."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Arkaplan resim ekle",
+    "options": {
+      "repeat": "Tekrarla - Resim, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
+      "no-repeat": "",
+      "repeat-x": "Tekrarla X - 'Tekrarla' ile aynıdır ancak yalnızca yatay eksende.",
+      "repeat-y": "Tekrar Y - 'Tekrarla' ile aynıdır, ancak yalnızca dikey eksende."
+    }
+  },
   "customCSS": {
     "label": "Özel CSS",
     "description": "Ayrıca, yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak kontrol panelinizi özelleştirin",

@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
         "label": "Vyhledat",
         "engines": {
@@ -17,7 +14,7 @@
             "preferences": "Uživatelská nastavení",
             "defaultBoard": "Výchozí plocha",
             "manage": "Spravovat",
-            "logout": "Odhlásit z {{username}}",
+            "logout": "Odhlásit {{username}}",
             "login": ""
         }
     },

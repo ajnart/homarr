@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domains σε λίστες διαφημίσεων",
       "queriesToday": "Σημερινά queries",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "Σημερινοί αποκλεισμοί",
+      "queriesBlockedToday": "Σημερινοί αποκλεισμοί"
     }
   }
 }

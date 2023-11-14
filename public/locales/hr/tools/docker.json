@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Vaša Homarr instanca nema konfiguriran Docker ili nije uspjela dohvatiti spremnike. Provjerite dokumentaciju o tome kako postaviti integraciju."
+            "text": ""
         }
     },
     "modals": {

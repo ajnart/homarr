@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "這是 Homarr 的一項實現性功能。請在 <gh>Github</gh> 或 <dc>Discord</dc>上回報任何問題"
-    },
     "search": {
         "label": "搜尋",
         "engines": {

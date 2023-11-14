@@ -14,7 +14,7 @@
       "description": "Upravte názvy, logo a PWA"
     },
     "appereance": {
-      "name": "",
+      "name": "Vzhled",
       "description": "Přizpůsobte pozadí, barvy a zobrazení aplikací"
     },
     "accessibility": {
@@ -22,7 +22,7 @@
       "description": ""
     },
     "access": {
-      "name": "",
+      "name": "Oprávnění",
       "description": "Nastavte, kdo má přístup k Vaší ploše"
     }
   }

@@ -177,7 +177,7 @@ export const configRouter = createTRPCRouter({
 
       return await getFrontendConfig(input.name);
     }),
-  saveCusomization: adminProcedure
+  saveCustomization: adminProcedure
     .input(boardCustomizationSchema.and(z.object({ name: configNameSchema })))
     .mutation(async ({ input }) => {
       const previousConfig = getConfig(input.name);
@@ -193,6 +193,9 @@ export const configRouter = createTRPCRouter({
             ...previousConfig.settings.customization,
             appOpacity: input.appearance.opacity,
             backgroundImageUrl: input.appearance.backgroundSrc,
+            backgroundImageAttachment: input.appearance.backgroundImageAttachment,
+            backgroundImageRepeat: input.appearance.backgroundImageRepeat,
+            backgroundImageSize: input.appearance.backgroundImageSize,
             colors: {
               primary: input.appearance.primaryColor,
               secondary: input.appearance.secondaryColor,

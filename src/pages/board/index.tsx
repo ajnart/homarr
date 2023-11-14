@@ -25,7 +25,6 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   config: ConfigType;
-  dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
 
@@ -41,7 +40,11 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   );
   const config = await getFrontendConfig(boardName);
 
-  const result = checkForSessionOrAskForLogin(ctx, session, () => true);
+  const result = checkForSessionOrAskForLogin(
+    ctx,
+    session,
+    () => config.settings.access.allowGuests || session?.user != undefined
+  );
   if (result) {
     return result;
   }
