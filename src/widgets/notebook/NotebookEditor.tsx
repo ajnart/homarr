@@ -49,9 +49,9 @@ import TextStyle from '@tiptap/extension-text-style';
 import Underline from '@tiptap/extension-underline';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
-import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { api } from '~/utils/api';
@@ -63,7 +63,8 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const [content, setContent] = useState(widget.properties.content);
   const [toSaveContent, setToSaveContent] = useState(content);
 
-  const { enabled } = useEditModeStore();
+  const { data: sessionData } = useSession();
+  const enabled = !!sessionData?.user.isAdmin;
   const [isEditing, setIsEditing] = useState(false);
 
   const { config, name: configName } = useConfigContext();
@@ -327,7 +328,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           <RichTextEditor.Content />
         </ScrollArea>
       </RichTextEditor>
-      {!enabled && (
+      {enabled && (
         <>
           <ActionIcon
             title={isEditing ? t('common:save') : t('common:edit')}
