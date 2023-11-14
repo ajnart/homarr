@@ -1,8 +1,8 @@
 import {
-  GetServerSideProps,
   GetServerSidePropsContext,
   GetServerSidePropsResult,
   PreviewData,
+  Redirect
 } from 'next';
 
 import { Session } from 'next-auth';
@@ -13,13 +13,12 @@ export const checkForSessionOrAskForLogin = (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>,
   session: Session | null,
   accessCallback: () => boolean
-): GetServerSidePropsResult<any> | undefined => {
+): GetServerSidePropsResult<never> | undefined => {
   const permitted = accessCallback();
 
   // user is logged in but does not have the required access
   if (session?.user && !permitted) {
     return {
-      props: {},
       redirect: {
         destination: '/401',
         permanent: false
@@ -34,7 +33,6 @@ export const checkForSessionOrAskForLogin = (
 
   // user is logged out and needs to sign in
   return {
-    props: {},
     redirect: {
       destination: `/auth/login?redirectAfterLogin=${context.resolvedUrl}`,
       permanent: false,
