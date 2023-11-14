@@ -120,11 +120,12 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         TaskItem.configure({
           nested: true,
           onReadOnlyChecked: (node, checked) => {
-            if (widget.properties.allowReadOnlyCheck) {
+            if (widget.properties.allowReadOnlyCheck && enabled) {
               const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
               dispatchEvent(event);
+              return true;
             }
-            return widget.properties.allowReadOnlyCheck;
+            return false;
           },
         }),
         TaskList.configure({ itemTypeName: 'taskItem' }),
