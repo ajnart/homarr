@@ -124,7 +124,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
     Consola.info('Database is writeable');
 
-    if (process.platform !== 'win32') {
+    if (process.platform !== 'win32' || env.NEXT_PUBLIC_NODE_ENV === 'development') {
       try {
         const { stdout, stderr } = await exec("mount | grep '/data'");
 
