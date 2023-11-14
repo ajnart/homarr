@@ -51,5 +51,7 @@
   "attributes": {
     "width": "宽度",
     "height": "高度"
-  }
+  },
+  "public": "公开",
+  "restricted": ""
 }
