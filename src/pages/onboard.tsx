@@ -122,42 +122,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         },
       };
     }
-    Consola.info('Database is writeable');
-
-    if (process.platform !== 'win32' && env.NEXT_PUBLIC_NODE_ENV === 'production') {
-      try {
-        const { stdout, stderr } = await exec("mount | grep '/data'");
-
-        if (stderr.split('\n').length > 1 || stdout.split('\n').length <= 1) {
-          Consola.error(
-            `Database at '${rawDatabaseUrl}' has not been mounted: ${stdout.replace(
-              '\n',
-              '\\n'
-            )} ${stderr.replace('\n', '\\n')}`
-          );
-          return {
-            props: {
-              ...translations,
-              configSchemaVersions: configSchemaVersions,
-              databaseNotWriteable: true,
-              errorMessage: `Database at '${rawDatabaseUrl}' is not mounted:\n${stdout}`,
-            },
-          };
-        }
-      } catch (error) {
-        const errorMessage = `Database at '${rawDatabaseUrl}' has not been mounted: ${error}`;
-        Consola.error(errorMessage);
-        return {
-          props: {
-            ...translations,
-            configSchemaVersions: configSchemaVersions,
-            databaseNotWriteable: true,
-            stringifiedError: JSON.stringify(error),
-            errorMessage: errorMessage,
-          },
-        };
-      }
-    }
 
     Consola.info(`Database at '${rawDatabaseUrl}' is writeable and mounted`);
   }
