@@ -1,7 +1,13 @@
 import { Center, Code, List, Stack, Text, Title } from '@mantine/core';
 import Head from 'next/head';
 
-export const DatabaseNotWriteable = ({ error, errorMessage }: { error: any | unknown, errorMessage: string | undefined }) => {
+export const DatabaseNotWriteable = ({
+  stringifiedError,
+  errorMessage,
+}: {
+  stringifiedError: string | undefined;
+  errorMessage: string | undefined;
+}) => {
   return (
     <>
       <Head>
@@ -30,11 +36,9 @@ export const DatabaseNotWriteable = ({ error, errorMessage }: { error: any | unk
               </a>
             </List.Item>
           </List>
-          <Code block>{error && JSON.stringify(error)}</Code>
+          <Code block>{stringifiedError}</Code>
 
-          {errorMessage && (
-            <Code block>{errorMessage}</Code>
-          )}
+          {errorMessage && <Code block>{errorMessage}</Code>}
         </Stack>
       </Center>
     </>

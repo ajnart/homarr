@@ -21,8 +21,8 @@ const exec = util.promisify(require('child_process').exec);
 export default function OnboardPage({
   configSchemaVersions,
   databaseNotWriteable,
-  error,
-  errorMessage
+  stringifiedError,
+  errorMessage,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { fn, colors, colorScheme } = useMantineTheme();
   const background = colorScheme === 'dark' ? 'dark.6' : 'gray.1';
@@ -49,7 +49,7 @@ export default function OnboardPage({
         </Center>
 
         {databaseNotWriteable == true ? (
-          <DatabaseNotWriteable error={error} errorMessage={errorMessage} />
+          <DatabaseNotWriteable stringifiedError={stringifiedError} errorMessage={errorMessage} />
         ) : (
           <>
             {onboardingSteps ? (
@@ -117,7 +117,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
           ...translations,
           configSchemaVersions: configSchemaVersions,
           databaseNotWriteable: true,
-          error: error,
+          errorMessage: 'Database is not writeable',
+          stringifiedError: JSON.stringify(error),
         },
       };
     }
@@ -128,13 +129,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         const { stdout, stderr } = await exec("mount | grep '/data'");
 
         if (stderr.split('\n').length > 1 || stdout.split('\n').length <= 1) {
-          Consola.error(`Database at '${rawDatabaseUrl}' has not been mounted: ${stdout.replace('\n', '\\n')} ${stderr.replace('\n', '\\n')}`);
+          Consola.error(
+            `Database at '${rawDatabaseUrl}' has not been mounted: ${stdout.replace(
+              '\n',
+              '\\n'
+            )} ${stderr.replace('\n', '\\n')}`
+          );
           return {
             props: {
               ...translations,
               configSchemaVersions: configSchemaVersions,
               databaseNotWriteable: true,
-              error: `Database at '${rawDatabaseUrl}' is not mounted:\n${stdout}`,
+              errorMessage: `Database at '${rawDatabaseUrl}' is not mounted:\n${stdout}`,
             },
           };
         }
@@ -146,8 +152,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
             ...translations,
             configSchemaVersions: configSchemaVersions,
             databaseNotWriteable: true,
-            error: error,
-            errorMessage: errorMessage
+            stringifiedError: JSON.stringify(error),
+            errorMessage: errorMessage,
           },
         };
       }
@@ -160,7 +166,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {
       ...translations,
       configSchemaVersions: configSchemaVersions,
-      databaseNotWriteable: false
+      databaseNotWriteable: false,
     },
   };
 };
