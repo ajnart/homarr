@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Ancho",
     "height": "Alto"
-  }
+  },
+  "public": "Pública",
+  "restricted": "Restringido"
 }
