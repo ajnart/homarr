@@ -2,17 +2,13 @@ import { Button, Global, Text, Title, Tooltip, clsx } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import {
-  IconApps,
-  IconEditCircle,
-  IconEditCircleOff,
-  IconSettings
-} from '@tabler/icons-react';
+import { IconApps, IconEditCircle, IconEditCircleOff, IconSettings } from '@tabler/icons-react';
 import Consola from 'consola';
 import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { env } from 'process';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
@@ -20,7 +16,6 @@ import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import { env } from 'process';
 import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
@@ -32,10 +27,7 @@ export const BoardLayout = ({ children }: BoardLayoutProps) => {
   const { data: session } = useSession();
 
   return (
-    <MainLayout
-      autoFocusSearch={session?.user.autoFocusSearch}
-      headerActions={<HeaderActions />}
-    >
+    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions />}>
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -135,7 +127,7 @@ const ToggleEditModeButton = () => {
                 <Text
                   component="a"
                   style={{ color: 'inherit', textDecoration: 'underline' }}
-                  href="https://homarr.dev/docs/customizations/layout"
+                  href="https://homarr.dev/docs/customizations/board-customization#screen-sizes"
                   target="_blank"
                 />
               ),
@@ -205,7 +197,7 @@ const BackgroundImage = () => {
           backgroundPosition: 'center center',
           backgroundSize: config?.settings.customization.backgroundImageSize ?? 'cover',
           backgroundRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
-          backgroundAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed'
+          backgroundAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed',
         },
       }}
     />
