@@ -8,7 +8,7 @@
 				"label": "Mostrar a barra de ferramentas para ajudá-lo a escrever markdown"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Permitir a verificação no modo de leitura"
 			},
 			"content": {
 				"label": "O conteúdo do notebook"
@@ -17,8 +17,8 @@
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
+			"bold": "Negrito",
+			"italic": "Itálico",
 			"strikethrough": "",
 			"underline": "",
 			"colorText": "",
