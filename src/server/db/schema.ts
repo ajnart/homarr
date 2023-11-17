@@ -1,3 +1,4 @@
+import type { MantineColor } from '@mantine/core';
 import { type InferSelectModel, relations } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { type AdapterAccount } from 'next-auth/adapters';
@@ -116,10 +117,10 @@ export const boards = sqliteTable('board', {
   name: text('name').notNull(),
 
   // Layout settings
-  isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).default(false),
+  isPingEnabled: int('is_ping_enabled', { mode: 'boolean' }).default(false).notNull(),
 
   // Access control
-  allowGuests: int('allow_guests', { mode: 'boolean' }).default(false),
+  allowGuests: int('allow_guests', { mode: 'boolean' }).default(false).notNull(),
 
   // Page metadata
   pageTitle: text('page_title'),
@@ -141,10 +142,10 @@ export const boards = sqliteTable('board', {
     .$type<BoardBackgroundImageSizeType>()
     .default('cover')
     .notNull(),
-  primaryColor: text('primary_color'),
-  secondaryColor: text('secondary_color'),
-  primaryShade: int('primary_shade'),
-  appOpacity: int('app_opacity'),
+  primaryColor: text('primary_color').$type<MantineColor>().default('red').notNull(),
+  secondaryColor: text('secondary_color').$type<MantineColor>().default('orange').notNull(),
+  primaryShade: int('primary_shade').default(6).notNull(),
+  appOpacity: int('app_opacity').default(100).notNull(),
   customCss: text('custom_css'),
 
   // Other
