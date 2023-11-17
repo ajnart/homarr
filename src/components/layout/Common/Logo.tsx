@@ -15,21 +15,12 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
   const primaryGradient = usePrimaryGradient();
   const largerThanMd = useScreenLargerThan('md');
 
-  const colors = theme.fn.variant({
-    variant: 'gradient',
-    gradient: {
-      from: 'red',
-      to: 'orange',
-      deg: 125,
-    },
-  });
-
   return (
     <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
       <Image
-        width={size === 'md' ? 50 : 12}
         src={board?.logoImageUrl || '/imgs/logo/logo-color.svg'}
-        height={size === 'md' ? 50 : 12}
+        width="unset"
+        height={size === 'md' ? 38 : 12}
         styles={{
           image: {
             objectFit: 'contain !important' as 'contain',

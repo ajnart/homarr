@@ -67,11 +67,5 @@ const shouldRedirectToOnboard = async (): Promise<boolean> => {
     return cachedUserCount === 0;
   };
 
-  if (!process.env.DATABASE_URL?.startsWith('file:')) {
-    return await cacheAndGetUserCount();
-  }
-
-  const fileUri = process.env.DATABASE_URL.substring(4);
   return await cacheAndGetUserCount();
-  // TODO: Show an error page if the database file is read-only
 };

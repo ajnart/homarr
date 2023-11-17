@@ -49,6 +49,7 @@ import TextStyle from '@tiptap/extension-text-style';
 import Underline from '@tiptap/extension-underline';
 import { BubbleMenu, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useRequiredBoard } from '~/components/Board/context';
@@ -62,8 +63,10 @@ import { INotebookWidget } from './NotebookWidgetTile';
 export function Editor({ widget }: { widget: INotebookWidget }) {
   const [content, setContent] = useState(widget.options.content);
   const [toSaveContent, setToSaveContent] = useState(content);
+  const isEditMode = useEditModeStore((x) => x.enabled);
 
-  const { enabled } = useEditModeStore();
+  const { data: sessionData } = useSession();
+  const enabled = !!sessionData?.user.isAdmin && !isEditMode;
   const [isEditing, setIsEditing] = useState(false);
 
   const board = useRequiredBoard();
@@ -119,11 +122,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
         TaskItem.configure({
           nested: true,
           onReadOnlyChecked: (node, checked) => {
-            if (widget.options.allowReadOnlyCheck) {
-              const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
-              dispatchEvent(event);
-            }
-            return widget.options.allowReadOnlyCheck;
+            const event = new CustomEvent('onReadOnlyCheck', { detail: { node, checked } });
+            dispatchEvent(event);
+            return true;
           },
         }),
         TaskList.configure({ itemTypeName: 'taskItem' }),
@@ -327,7 +328,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           <RichTextEditor.Content />
         </ScrollArea>
       </RichTextEditor>
-      {!enabled && (
+      {enabled && (
         <>
           <ActionIcon
             title={isEditing ? t('common:save') : t('common:edit')}

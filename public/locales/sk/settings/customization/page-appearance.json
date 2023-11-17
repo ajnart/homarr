@@ -18,6 +18,29 @@
   "background": {
     "label": "Pozadie"
   },
+  "backgroundImageAttachment": {
+    "label": "Pripojenie obrázku na pozadí",
+    "options": {
+      "fixed": "Pevné - pozadie zostáva v rovnakej polohe (odporúčané)",
+      "scroll": "Posúvanie - Pozadie sa posúva myšou"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Veľkosť obrázka na pozadí",
+    "options": {
+      "cover": "Cover (Zakryť) - zmenší obrázok na čo najmenšiu veľkosť, aby zakryl celé okno orezaním nadmerného priestoru. (odporúčané)",
+      "contain": "Obsahovať - zmenší obrázok na čo najväčšiu veľkosť v rámci kontajnera bez orezania alebo roztiahnutia obrázka."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Pripojenie obrázku na pozadí",
+    "options": {
+      "repeat": "Opakovať - Obrázok sa opakuje toľkokrát, koľko je potrebné na pokrytie celej oblasti maľovania obrázka na pozadí.",
+      "no-repeat": "Žiadne opakovanie - obrázok sa neopakuje a nemusí vyplniť celý priestor (odporúčané)",
+      "repeat-x": "Opakovať X - Rovnaké ako \"Opakovať\", ale len na horizontálnej osi.",
+      "repeat-y": "Opakovať Y - Rovnaké ako \"Opakovať\", ale len na zvislej osi."
+    }
+  },
   "customCSS": {
     "label": "Vlastné CSS",
     "description": "Ďalej si prispôsobte ovládací panel pomocou CSS, odporúča sa len pre skúsených používateľov",

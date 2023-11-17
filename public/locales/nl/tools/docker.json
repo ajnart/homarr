@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Docker is niet geconfigureerd in je Homarr instance of het is mislukt om containers op te halen. Raadpleeg de documentatie over het opzetten van de integratie."
+            "text": ""
         }
     },
     "modals": {

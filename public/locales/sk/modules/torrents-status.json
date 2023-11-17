@@ -11,10 +11,10 @@
         "label": "Zobraz dokončené torrenty"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Zobraziť aktívne torrenty"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Rýchlosť odosielania, aby sa torrent považoval za aktívny (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Zobraz zastarané torrenty"
@@ -27,8 +27,8 @@
         "description": "Ak je začiarknuté políčko 'is whitelist', bude sa toto políčko správať ako biela listina. Ak nie je začiarknuté, ide o čiernu listinu. Ak je prázdny, nerobí nič"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Zobraziť pomer zoznamu filtrovaných torrentov",
+        "info": "Ak je vypnutý, zobrazí sa iba globálny pomer. Globálny pomer bude stále používať štítky, ak je nastavený"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Chyba",
       "lastUpdated": "Naposledy aktualizované pred {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globálny pomer",
+      "ratioWithFilter": "Pomer s filtrom"
     },
     "table": {
       "header": {

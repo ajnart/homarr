@@ -18,6 +18,29 @@
   "background": {
     "label": "Tło"
   },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
   "customCSS": {
     "label": "Niestandardowy CSS",
     "description": "Jeszcze bardziej dostosuj swój pulpit za pomocą CSS, zalecane tylko dla doświadczonych użytkowników",

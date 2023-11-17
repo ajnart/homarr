@@ -21,7 +21,6 @@ export const GeneralTab = ({ form }: GeneralTabProps) => {
     t('general.internalAddress.troubleshoot.lines.enablePings'),
     t('general.internalAddress.troubleshoot.lines.wget'),
     t('general.internalAddress.troubleshoot.lines.iframe'),
-    t('general.internalAddress.troubleshoot.lines.clearCache'),
   ];
 
   return (

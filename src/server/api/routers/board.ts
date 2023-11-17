@@ -69,6 +69,7 @@ export const boardRouter = createTRPCRouter({
 
         return {
           name: name,
+          allowGuests: config.settings.access.allowGuests,
           countApps: countApps,
           countWidgets: config.widgets.length,
           countCategories: config.categories.length,
