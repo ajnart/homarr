@@ -10,15 +10,14 @@ import {
   Stack,
   Table,
   Text,
-  createStyles
+  createStyles,
 } from '@mantine/core';
 import {
   IconAnchor,
   IconKey,
   IconLanguage,
-  IconSchema,
   IconVersions,
-  IconVocabulary
+  IconVocabulary,
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { InitOptions } from 'i18next';
@@ -31,7 +30,6 @@ import { Contributors, ContributorsTable } from '~/components/layout/header/Abou
 import Credits from '~/components/layout/header/About/Credits';
 import Tip from '~/components/layout/header/About/Tip';
 import { TranslatorsTable } from '~/components/layout/header/About/Translators';
-import { useConfigContext } from '~/config/provider';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '~/tools/color';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -52,8 +50,6 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   const { attributes } = usePackageAttributesStore();
   const { primaryColor } = useColorTheme();
   const { t } = useTranslation(['layout/modals/about']);
-
-  const { configVersion } = useConfigContext();
 
   let items: InformationTableItem[] = [];
 
@@ -85,15 +81,6 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   }
 
   items = [
-    {
-      icon: <IconSchema size={20} />,
-      label: 'configurationSchemaVersion',
-      content: (
-        <Badge variant="light" color={primaryColor}>
-          {configVersion}
-        </Badge>
-      ),
-    },
     {
       icon: <IconVersions size={20} />,
       label: 'version',
