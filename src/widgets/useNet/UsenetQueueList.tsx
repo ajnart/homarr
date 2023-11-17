@@ -30,17 +30,17 @@ import { FunctionComponent, useState } from 'react';
 import { parseDuration } from '~/tools/client/parseDuration';
 import { humanFileSize } from '~/tools/humanFileSize';
 
-import { useGetUsenetDownloads } from '../dashDot/api';
+import { useGetUsenetDownloads } from './api';
 
 dayjs.extend(duration);
 
 interface UsenetQueueListProps {
-  appId: string;
+  integrationId: string;
 }
 
 const PAGE_SIZE = 13;
 
-export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId }) => {
+export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ integrationId }) => {
   const theme = useMantineTheme();
   const { t } = useTranslation('modules/usenet');
   const progressbarBreakpoint = parseInt(theme.breakpoints.xs, 10);
@@ -50,9 +50,9 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
 
   const [page, setPage] = useState(1);
   const { data, isLoading, isError, error } = useGetUsenetDownloads({
+    integrationId,
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 

@@ -5,25 +5,18 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
-import { useConfigContext } from '~/config/provider';
+import { useState } from 'react';
+import { useRequiredBoard } from '~/components/Board/context';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { humanFileSize } from '~/tools/humanFileSize';
-import { AppIntegrationType } from '~/types/app';
 
-import {
-  useGetUsenetInfo,
-  usePauseUsenetQueueMutation,
-  useResumeUsenetQueueMutation,
-} from '../dashDot/api';
 import { defineWidget } from '../helper';
 import { InferWidget } from '../widgets';
 import { UsenetHistoryList } from './UsenetHistoryList';
 import { UsenetQueueList } from './UsenetQueueList';
+import { useGetUsenetInfo, usePauseUsenetQueueMutation, useResumeUsenetQueueMutation } from './api';
 
 dayjs.extend(duration);
-
-const downloadAppTypes: AppIntegrationType['type'][] = ['sabnzbd', 'nzbGet'];
 
 const definition = defineWidget({
   id: 'usenet',
@@ -45,27 +38,18 @@ interface UseNetTileProps {
 }
 
 function UseNetTile({ widget }: UseNetTileProps) {
+  const { id: boardId } = useRequiredBoard();
   const { t } = useTranslation('modules/usenet');
-  const { config } = useConfigContext();
-  const downloadApps =
-    config?.apps.filter((x) => x.integration && downloadAppTypes.includes(x.integration.type)) ??
-    [];
   const { ref, width } = useElementSize();
   const { data: sessionData } = useSession();
+  const [integrationId, setIntegrationId] = useState(widget.integrations[0]?.id);
 
-  const [selectedAppId, setSelectedApp] = useState<string | null>(downloadApps[0]?.id);
-  const { data } = useGetUsenetInfo({ appId: selectedAppId! });
+  const { data } = useGetUsenetInfo({ integrationId });
 
-  useEffect(() => {
-    if (!selectedAppId && downloadApps.length) {
-      setSelectedApp(downloadApps[0].id);
-    }
-  }, [downloadApps, selectedAppId]);
+  const pauseAsync = usePauseUsenetQueueMutation();
+  const resumeAsync = useResumeUsenetQueueMutation();
 
-  const pauseAsync = usePauseUsenetQueueMutation({ appId: selectedAppId! });
-  const resumeAsync = useResumeUsenetQueueMutation({ appId: selectedAppId! });
-
-  if (downloadApps.length === 0) {
+  if (!integrationId) {
     return (
       <Stack>
         <Title order={3}>{t('card.errors.noDownloadClients.title')}</Title>
@@ -74,10 +58,6 @@ function UseNetTile({ widget }: UseNetTileProps) {
         </Group>
       </Stack>
     );
-  }
-
-  if (!selectedAppId) {
-    return null;
   }
 
   return (
@@ -98,21 +78,21 @@ function UseNetTile({ widget }: UseNetTileProps) {
           </Group>
         )}
       </Tabs.List>
-      {downloadApps.length > 1 && (
+      {widget.integrations.length > 1 && (
         <Select
-          value={selectedAppId}
-          onChange={setSelectedApp}
+          value={integrationId}
+          onChange={(v) => v && setIntegrationId(v)}
           ml="xs"
-          data={downloadApps.map((app) => ({ value: app.id, label: app.name }))}
+          data={widget.integrations.map(({ id, name }) => ({ value: id, label: name }))}
         />
       )}
       <Tabs.Panel value="queue">
-        <UsenetQueueList appId={selectedAppId} />
+        <UsenetQueueList integrationId={integrationId} />
         {sessionData?.user?.isAdmin &&
           (!data ? null : data.paused ? (
             <Button
               uppercase
-              onClick={async () => resumeAsync({ appId: selectedAppId })}
+              onClick={async () => resumeAsync({ integrationId })}
               radius="xl"
               size="xs"
               fullWidth
@@ -123,7 +103,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
           ) : (
             <Button
               uppercase
-              onClick={async () => pauseAsync({ appId: selectedAppId })}
+              onClick={async () => pauseAsync({ integrationId })}
               radius="xl"
               size="xs"
               fullWidth
@@ -135,7 +115,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
           ))}
       </Tabs.Panel>
       <Tabs.Panel value="history" style={{ display: 'flex', flexDirection: 'column' }}>
-        <UsenetHistoryList appId={selectedAppId} />
+        <UsenetHistoryList integrationId={integrationId} />
       </Tabs.Panel>
     </Tabs>
   );

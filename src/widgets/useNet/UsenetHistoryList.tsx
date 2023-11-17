@@ -21,26 +21,26 @@ import { FunctionComponent, useState } from 'react';
 import { parseDuration } from '~/tools/client/parseDuration';
 import { humanFileSize } from '~/tools/humanFileSize';
 
-import { useGetUsenetHistory } from '../dashDot/api';
+import { useGetUsenetHistory } from './api';
 
 dayjs.extend(duration);
 
 interface UsenetHistoryListProps {
-  appId: string;
+  integrationId: string;
 }
 
 const PAGE_SIZE = 13;
 
-export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ appId }) => {
+export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ integrationId }) => {
   const [page, setPage] = useState(1);
   const { t } = useTranslation(['modules/usenet', 'common']);
 
-  const { ref, width, height } = useElementSize();
+  const { ref, width } = useElementSize();
   const durationBreakpoint = 400;
   const { data, isLoading, isError, error } = useGetUsenetHistory({
+    integrationId,
     limit: PAGE_SIZE,
     offset: (page - 1) * PAGE_SIZE,
-    appId,
   });
   const totalPages = Math.ceil((data?.total || 1) / PAGE_SIZE);
 
