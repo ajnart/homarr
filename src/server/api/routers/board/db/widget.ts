@@ -13,6 +13,11 @@ export const getWidgetsForSectionsAsync = async (sectionIds: string[]) => {
   return await db.query.widgets.findMany({
     with: {
       options: true,
+      integrations: {
+        with: {
+          integration: true,
+        },
+      },
       item: {
         with: {
           layouts: {

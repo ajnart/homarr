@@ -1,6 +1,7 @@
 import { IconKey, IconPassword, IconUser, TablerIconsProps } from '@tabler/icons-react';
-import { objectEntries, objectKeys } from '~/tools/object';
 import widgets from '~/widgets';
+
+import { objectEntries, objectKeys } from '../../tools/object';
 
 type IntegrationTypeDefinition = {
   secrets: IntegrationSecretKey[];
@@ -48,6 +49,14 @@ export const widgetOptionTypes = [
   'array',
   'null',
 ] as const;
+export const boardBackgroundImageAttachmentTypes = ['fixed', 'scroll'] as const;
+export const boardBackgroundImageRepeatTypes = [
+  'repeat',
+  'repeat-x',
+  'repeat-y',
+  'no-repeat',
+] as const;
+export const boardBackgroundImageSizeTypes = ['cover', 'contain'] as const;
 export const appNamePositions = ['right', 'left', 'top', 'bottom'] as const;
 export const appNameStyles = ['normal', 'hide', 'hover'] as const;
 export const statusCodeTypes = [
@@ -159,6 +168,10 @@ export type IntegrationSecretVisibility = (typeof integrationSecretVisibility)[n
 export type IntegrationSecretKey = keyof typeof integrationSecrets;
 export type WidgetSort = (typeof widgetSorts)[number];
 export type WidgetOptionType = (typeof widgetOptionTypes)[number];
+export type BoardBackgroundImageAttachmentType =
+  (typeof boardBackgroundImageAttachmentTypes)[number];
+export type BoardBackgroundImageRepeatType = (typeof boardBackgroundImageRepeatTypes)[number];
+export type BoardBackgroundImageSizeType = (typeof boardBackgroundImageSizeTypes)[number];
 export type AppNamePosition = (typeof appNamePositions)[number];
 export type AppNameStyle = (typeof appNameStyles)[number];
 export type StatusCodeType = (typeof statusCodeTypes)[number];
