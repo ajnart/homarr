@@ -33,7 +33,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         Consola.error('Cannot add category before first section');
         return;
       }
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -81,7 +81,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
 
   const renameCategory = useCallback(
     ({ id: categoryId, name }: RenameCategory) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -101,7 +101,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
 
   const moveCategory = useCallback(
     ({ id, direction }: MoveCategory) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(
@@ -160,7 +160,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
 
   const removeCategory = useCallback(
     ({ id: categoryId }: RemoveCategory) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(

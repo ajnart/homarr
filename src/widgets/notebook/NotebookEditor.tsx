@@ -169,29 +169,32 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     editor.setEditable(current);
     if (current) return current;
 
-    utils.boards.byName.setData({ boardName: board.name }, (previous) => {
-      if (!previous) return previous;
-      return {
-        ...previous,
-        sections: previous.sections.map((section) => {
-          if (!section.items.some((item) => item.id === widget.id)) return section;
-          return {
-            ...section,
-            items: section.items.map((item) => {
-              if (item.id !== widget.id) return item;
-              const notebookEditor = item as INotebookWidget;
-              return {
-                ...notebookEditor,
-                options: {
-                  ...notebookEditor.options,
-                  content: debouncedContent,
-                },
-              };
-            }),
-          };
-        }),
-      };
-    });
+    utils.boards.byName.setData(
+      { boardName: board.name, userAgent: navigator.userAgent },
+      (previous) => {
+        if (!previous) return previous;
+        return {
+          ...previous,
+          sections: previous.sections.map((section) => {
+            if (!section.items.some((item) => item.id === widget.id)) return section;
+            return {
+              ...section,
+              items: section.items.map((item) => {
+                if (item.id !== widget.id) return item;
+                const notebookEditor = item as INotebookWidget;
+                return {
+                  ...notebookEditor,
+                  options: {
+                    ...notebookEditor.options,
+                    content: debouncedContent,
+                  },
+                };
+              }),
+            };
+          }),
+        };
+      }
+    );
 
     setToSaveContent(contentUpdate);
 

@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import { z } from 'zod';
 import { api } from '~/utils/api';
 import { widgetCreationSchema, widgetSortSchema } from '~/validations/widget';
-import { IWidget, IWidgetDefinition } from '~/widgets/widgets';
+import { IWidgetDefinition } from '~/widgets/widgets';
 
 import { EmptySection, WidgetItem } from '../../context';
 
@@ -21,7 +21,7 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
   const utils = api.useContext();
   const updateWidgetOptions = useCallback(
     ({ itemId, newOptions }: UpdateWidgetOptions) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -48,7 +48,7 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
 
   const createWidget = useCallback(
     ({ sort, definition }: CreateWidget) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
 
         let lastSection = prev.sections

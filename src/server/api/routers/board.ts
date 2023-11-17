@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { db } from '~/server/db';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import {
+  Integration,
   appStatusCodes,
   apps,
   boards,
@@ -140,14 +141,23 @@ export const boardRouter = createTRPCRouter({
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
   byName: publicProcedure
-    .input(z.object({ boardName: configNameSchema, layoutId: z.string().optional() }))
-    .query(async ({ input }) => {
+    .input(
+      z.object({
+        boardName: configNameSchema,
+        layoutId: z.string().optional(),
+        userAgent: z.string().optional(),
+      })
+    )
+    .query(async ({ ctx, input }) => {
+      const userAgent = input.userAgent ?? ctx.headers['user-agent'] ?? '';
+      const isMobile = isMobileUserAgent(userAgent);
       const board = await getFullBoardWithLayoutSectionsAsync(
         {
           key: 'name',
           value: input.boardName,
         },
-        input.layoutId
+        input.layoutId,
+        isMobile
       );
 
       if (!board) {
@@ -165,13 +175,25 @@ export const boardRouter = createTRPCRouter({
         });
       }
       const sectionIds = layout.sections.map((x) => x.id);
-      const apps = await getAppsForSectionsAsync(sectionIds);
+      const apps = await getAppsForSectionsAsync(board.id, sectionIds);
       const widgets = await getWidgetsForSectionsAsync(sectionIds);
 
+      const appsInHiddenSection = apps.filter((x) => x.layout.sectionId === 'hidden');
+      const widgetsInHiddenSection = widgets.filter((x) => x.item.layouts.length === 0);
+
+      const hiddenSection = mapSection(
+        {
+          id: 'hidden',
+          kind: 'hidden',
+          layoutId: layout.id,
+          name: null,
+          position: 0,
+        },
+        [...appsInHiddenSection.map(mapApp), ...widgetsInHiddenSection.map(mapWidget)]
+      );
+
       const preparedSections = layout.sections.map((section) => {
-        const filteredApps = apps.filter((x) =>
-          x.item.layouts.some((y) => y.sectionId === section.id)
-        );
+        const filteredApps = apps.filter((x) => x.layout.sectionId === section.id);
         const filteredWidgets = widgets.filter((x) =>
           x.item.layouts.some((y) => y.sectionId === section.id)
         );
@@ -180,7 +202,8 @@ export const boardRouter = createTRPCRouter({
           ...filteredWidgets.map(mapWidget),
         ]);
       });
-      const { layouts, ...withoutLayouts } = board;
+      preparedSections.push(hiddenSection);
+      const { layouts: _, mediaIntegrations, ...withoutLayouts } = board;
       return {
         ...withoutLayouts,
         layoutName: layout.name,
@@ -188,6 +211,9 @@ export const boardRouter = createTRPCRouter({
         showRightSidebar: layout.showRightSidebar,
         showLeftSidebar: layout.showLeftSidebar,
         sections: preparedSections,
+        mediaIntegrations: mediaIntegrations
+          .map((x) => x.integration)
+          .filter((x): x is Integration => x !== null),
       };
     }),
   byNameSimple: publicProcedure
@@ -195,6 +221,13 @@ export const boardRouter = createTRPCRouter({
     .query(async ({ input }) => {
       const board = await db.query.boards.findFirst({
         where: eq(boards.name, input.boardName),
+        with: {
+          mediaIntegrations: {
+            with: {
+              integration: true,
+            },
+          },
+        },
       });
 
       if (!board) {
@@ -203,7 +236,12 @@ export const boardRouter = createTRPCRouter({
           message: 'Board not found',
         });
       }
-      return board;
+      return {
+        ...board,
+        mediaIntegrations: board.mediaIntegrations
+          .map((x) => x.integration)
+          .filter((x): x is Integration => x !== null),
+      };
     }),
   updateCustomization: protectedProcedure
     .input(z.object({ boardName: configNameSchema, customization: boardCustomizationSchema }))
@@ -296,6 +334,8 @@ export const boardRouter = createTRPCRouter({
       })
     )
     .mutation(async ({ input }) => {
+      // TODO: It's currently deleting apps of other layouts, because no layout items are present for those. This will be changed
+      // with the help of the new hidden section feature.
       const boardWithSections = await db.query.boards.findFirst({
         where: eq(boards.id, input.boardId),
         with: {
@@ -331,8 +371,9 @@ export const boardRouter = createTRPCRouter({
       const dbSectionIds = dbSections.map((x) => x.id);
 
       // Insert new sections
+      const hiddenSection = input.sections.find((x) => x.kind === 'hidden');
       const newSections = input.sections
-        .filter((s) => dbSections.every((x) => x.id !== s.id))
+        .filter((s) => dbSections.every((x) => x.id !== s.id) && s.kind !== 'hidden')
         .map((section) => ({
           id: section.id,
           layoutId: layout.id,
@@ -358,13 +399,9 @@ export const boardRouter = createTRPCRouter({
         }));
       changes.sections.update.push(...updatedSections);
 
-      const dbItemsApps = await db.query.items.findMany({
+      const dbItemsAppsWithoutLayout = await db.query.items.findMany({
         where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'app')),
         with: {
-          layouts: {
-            where:
-              dbSectionIds.length >= 1 ? inArray(layoutItems.sectionId, dbSectionIds) : undefined,
-          },
           app: {
             with: {
               statusCodes: {
@@ -376,11 +413,23 @@ export const boardRouter = createTRPCRouter({
           },
         },
       });
-      const inputApps = input.sections.flatMap((s) =>
-        s.items
-          .filter((i): i is z.infer<typeof appSchema> => i.kind === 'app')
-          .map((i) => ({ ...i, sectionId: s.id }))
-      );
+
+      const dbLayoutItems = await db.query.layoutItems.findMany({
+        where: inArray(layoutItems.sectionId, dbSectionIds),
+      });
+
+      const dbItemsApps = dbItemsAppsWithoutLayout.map((x) => ({
+        ...x,
+        layout: dbLayoutItems.find((y) => y.itemId === x.id),
+      }));
+
+      const inputApps = input.sections
+        .filter((s) => s.kind !== 'hidden')
+        .flatMap((s) =>
+          s.items
+            .filter((i): i is z.infer<typeof appSchema> => i.kind === 'app')
+            .map((i) => ({ ...i, sectionId: s.id }))
+        );
 
       const newApps = inputApps.filter((x) => dbItemsApps.every((y) => y.id !== x.id));
       newApps.forEach(({ sectionId, ...app }) =>
@@ -409,13 +458,9 @@ export const boardRouter = createTRPCRouter({
         dbStatusCodes.every((dsc) => dsc.code !== sc)
       );
 
-      const dbWidgets = await db.query.items.findMany({
+      const dbWidgetsWithoutLayout = await db.query.items.findMany({
         where: and(eq(items.boardId, boardWithSections.id), eq(items.kind, 'widget')),
         with: {
-          layouts: {
-            where:
-              dbSectionIds.length >= 1 ? inArray(layoutItems.sectionId, dbSectionIds) : undefined,
-          },
           widget: {
             with: {
               options: true,
@@ -423,6 +468,12 @@ export const boardRouter = createTRPCRouter({
           },
         },
       });
+
+      const dbWidgets = dbWidgetsWithoutLayout.map((x) => ({
+        ...x,
+        layout: dbLayoutItems.find((y) => y.itemId === x.id),
+      }));
+
       const inputWidgets = input.sections.flatMap((s) =>
         s.items
           .filter((i): i is z.infer<typeof widgetSchema> => i.kind === 'widget')
@@ -468,7 +519,6 @@ export const boardRouter = createTRPCRouter({
         if (changes.apps.create.length > 0) {
           await tx.insert(apps).values(changes.apps.create);
         }
-        console.log('before appStatusCodes');
         if (changes.appStatusCodes.create.length > 0) {
           await tx.insert(appStatusCodes).values(changes.appStatusCodes.create);
         }
@@ -495,7 +545,6 @@ export const boardRouter = createTRPCRouter({
           await tx.update(widgets).set(widget).where(eq(widgets.itemId, _where));
         }
         for (const { _where, ...widgetOption } of changes.widgetOptions.update) {
-          console.log('update widgetOptions', _where, widgetOption);
           await tx
             .update(widgetOptions)
             .set(widgetOption)

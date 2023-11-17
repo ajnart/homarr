@@ -13,7 +13,7 @@ export const useAppActions = ({ boardName }: { boardName: string }) => {
   const utils = api.useContext();
   const createOrUpdateApp = useCallback(
     ({ app }: CreateOrUpdateApp) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
 
         let sectionId = prev.sections.find((section) =>

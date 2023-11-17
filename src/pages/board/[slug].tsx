@@ -16,9 +16,10 @@ import { RouterOutputs } from '~/utils/api';
 export default function BoardPage({
   board,
   dockerEnabled,
+  userAgent,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <BoardProvider initialBoard={board}>
+    <BoardProvider initialBoard={board} userAgent={userAgent}>
       <BoardLayout dockerEnabled={dockerEnabled}>
         <Board />
       </BoardLayout>
@@ -28,6 +29,7 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   board: RouterOutputs['boards']['byName'];
+  userAgent: string;
   dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
@@ -58,7 +60,11 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
 
   const helpers = await createTrpcServersideHelpers(ctx);
   const board = await helpers.boards.byName
-    .fetch({ boardName: routeParams.data.slug, layoutId: query.data.layout })
+    .fetch({
+      boardName: routeParams.data.slug,
+      layoutId: query.data.layout,
+      userAgent: ctx.req.headers['user-agent'],
+    })
     .catch((err) => {
       if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
         return null;
@@ -90,6 +96,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       secondaryColor: board.secondaryColor,
       primaryShade: board.primaryShade,
       dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
+      userAgent: ctx.req.headers['user-agent']!,
       ...translations,
     },
   };

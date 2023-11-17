@@ -9,15 +9,17 @@ type BoardContextType = {
 const BoardContext = createContext<BoardContextType | null>(null);
 type BoardProviderProps = {
   initialBoard: RouterOutputs['boards']['byName'];
+  userAgent: string;
   children: React.ReactNode;
 };
-export const BoardProvider = ({ children, ...props }: BoardProviderProps) => {
+export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderProps) => {
   const router = useRouter();
   const { layout } = router.query;
   const { data: board } = api.boards.byName.useQuery(
     {
       boardName: props.initialBoard.name,
       layoutId: layout as string | undefined,
+      userAgent,
     },
     {
       initialData: props.initialBoard,

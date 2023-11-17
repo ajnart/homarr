@@ -2,8 +2,6 @@ import { Button, Group, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps } from '@mantine/modals';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '~/config/provider';
-import { useConfigStore } from '~/config/store';
 import { CategoryType } from '~/types/category';
 
 export type CategoryEditModalInnerProps = {
@@ -16,8 +14,6 @@ export const CategoryEditModal = ({
   innerProps,
   id,
 }: ContextModalProps<CategoryEditModalInnerProps>) => {
-  const { name: configName } = useConfigContext();
-  const updateConfig = useConfigStore((x) => x.updateConfig);
   const form = useForm<FormType>({
     initialValues: {
       name: innerProps.category.name,

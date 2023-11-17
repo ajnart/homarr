@@ -17,7 +17,8 @@ type BoardParam<TKey extends ColumnKey<typeof boards>> = {
 
 export const getFullBoardWithLayoutSectionsAsync = async (
   boardParam: BoardParam<'name'> | BoardParam<'id'>,
-  layoutId: string | undefined
+  layoutId: string | undefined,
+  isMobile?: boolean
 ) => {
   return await db.query.boards.findFirst({
     columns: {
@@ -42,7 +43,14 @@ export const getFullBoardWithLayoutSectionsAsync = async (
             orderBy: sections.position,
           },
         },
-        where: layoutId ? eq(layouts.id, layoutId) : undefined,
+        where: layoutId
+          ? eq(layouts.id, layoutId)
+          : eq(layouts.kind, isMobile ? 'mobile' : 'desktop'),
+      },
+      mediaIntegrations: {
+        with: {
+          integration: true,
+        },
       },
     },
     where: eq(boards[boardParam.key], boardParam.value),

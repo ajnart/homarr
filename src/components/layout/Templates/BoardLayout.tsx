@@ -166,7 +166,11 @@ const ToggleEditModeButton = () => {
     toggleEditMode();
     if (!board || !name) return;
     await saveBoardAsync({ boardId: board.id, sections: board.sections, layoutId: board.layoutId });
-    utils.boards.byName.invalidate({ boardName: name, layoutId: board.layoutId });
+    utils.boards.byName.invalidate({
+      boardName: name,
+      layoutId: board.layoutId,
+      userAgent: navigator.userAgent,
+    });
     Consola.log('Saved config to server', name);
     hideNotification(editModeNotificationId);
   };

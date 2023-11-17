@@ -1,6 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
+import { z } from 'zod';
 import { Board } from '~/components/Board/Board';
 import { BoardProvider } from '~/components/Board/context';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
@@ -16,9 +17,10 @@ import { RouterOutputs } from '~/utils/api';
 export default function BoardPage({
   board,
   dockerEnabled,
+  userAgent,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <BoardProvider initialBoard={board}>
+    <BoardProvider initialBoard={board} userAgent={userAgent}>
       <BoardLayout dockerEnabled={dockerEnabled}>
         <Board />
       </BoardLayout>
@@ -28,20 +30,37 @@ export default function BoardPage({
 
 type BoardGetServerSideProps = {
   board: RouterOutputs['boards']['byName'];
+  userAgent: string;
   dockerEnabled: boolean;
   _nextI18Next?: SSRConfig['_nextI18Next'];
 };
 
+const querySchema = z.object({
+  layout: z.string().optional(),
+});
+
 export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = async (ctx) => {
+  const query = querySchema.safeParse(ctx.query);
+  if (!query.success) {
+    return {
+      notFound: true,
+    };
+  }
   const session = await getServerAuthSession(ctx);
   const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
   const helpers = await createTrpcServersideHelpers(ctx);
-  const board = await helpers.boards.byName.fetch({ boardName }).catch((err) => {
-    if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
-      return null;
-    }
-    throw err;
-  });
+  const board = await helpers.boards.byName
+    .fetch({
+      boardName,
+      layoutId: query.data.layout,
+      userAgent: ctx.req.headers['user-agent'],
+    })
+    .catch((err) => {
+      if (err instanceof TRPCError && err.code === 'NOT_FOUND') {
+        return null;
+      }
+      throw err;
+    });
 
   if (!board) {
     return {
@@ -72,6 +91,7 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       secondaryColor: board.secondaryColor,
       primaryShade: board.primaryShade,
       dockerEnabled: !!env.DOCKER_HOST && !!env.DOCKER_PORT,
+      userAgent: ctx.req.headers['user-agent']!,
       ...translations,
     },
   };

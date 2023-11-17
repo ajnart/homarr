@@ -1,31 +1,45 @@
 import { randomUUID } from 'crypto';
-import { inArray } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import { z } from 'zod';
 import { db } from '~/server/db';
-import { layoutItems } from '~/server/db/schema';
+import { items, layoutItems } from '~/server/db/schema';
 import { appSchema } from '~/validations/app';
 
 import { BoardSaveDbChanges } from '.';
 
-export const getAppsForSectionsAsync = async (sectionIds: string[]) => {
-  if (sectionIds.length === 0) return [];
+export const getAppsForSectionsAsync = async (boardId: string, sectionIds: string[]) => {
+  const dbLayoutItems = await db.query.layoutItems.findMany({
+    where: inArray(layoutItems.sectionId, sectionIds),
+  });
 
-  return await db.query.apps.findMany({
+  const dbItems = await db.query.items.findMany({
+    where: and(eq(items.boardId, boardId), eq(items.kind, 'app')),
     with: {
-      statusCodes: {
-        columns: {
-          code: true,
-        },
-      },
-      item: {
+      app: {
         with: {
-          layouts: {
-            where: inArray(layoutItems.sectionId, sectionIds),
+          statusCodes: {
+            columns: {
+              code: true,
+            },
           },
         },
       },
     },
   });
+
+  return dbItems.map((dbItem) => ({
+    ...dbItem,
+    app: dbItem.app!,
+    layout: dbLayoutItems.find((dbLayoutItem) => dbLayoutItem.itemId === dbItem.id) ?? {
+      id: 'hidden',
+      itemId: dbItem.id,
+      sectionId: 'hidden',
+      width: 0,
+      height: 0,
+      x: 0,
+      y: 0,
+    },
+  }));
 };
 
 export const applyCreateAppChanges = (

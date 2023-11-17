@@ -27,7 +27,7 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
   const utils = api.useContext();
   const moveAndResizeItem = useCallback(
     ({ itemId, ...positionProps }: MoveAndResizeItem) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -54,7 +54,7 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
 
   const moveItemToSection = useCallback(
     ({ itemId, sectionId, ...positionProps }: MoveItemToSection) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
 
         const currentSection = prev.sections.find((section) =>
@@ -104,7 +104,7 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
 
   const removeItem = useCallback(
     ({ itemId }: RemoveItem) => {
-      utils.boards.byName.setData({ boardName }, (prev) => {
+      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
         if (!prev) return prev;
         return {
           ...prev,
