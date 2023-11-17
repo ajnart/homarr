@@ -1,11 +1,15 @@
-import { useConfigContext } from '~/config/provider';
-import { api } from '~/utils/api';
+import { RouterInputs, api } from '~/utils/api';
 
-export const useGetDownloadClientsQueue = () => {
-  const { name: configName } = useConfigContext();
+export const useGetDownloadClientsQueue = ({
+  boardId,
+  widgetId,
+  sort,
+}: RouterInputs['download']['get']) => {
   return api.download.get.useQuery(
     {
-      configName: configName!,
+      boardId,
+      widgetId,
+      sort,
     },
     {
       refetchInterval: 3000,

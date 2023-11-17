@@ -17,6 +17,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
+import { useRequiredBoard } from '~/components/Board/context';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
@@ -83,6 +84,7 @@ interface TorrentTileProps {
 }
 
 function TorrentTile({ widget }: TorrentTileProps) {
+  const { id: boardId } = useRequiredBoard();
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
   const { classes } = useCardStyles(true);
@@ -97,7 +99,11 @@ function TorrentTile({ widget }: TorrentTileProps) {
     isError: boolean;
     isInitialLoading: boolean;
     dataUpdatedAt: number;
-  } = useGetDownloadClientsQueue();
+  } = useGetDownloadClientsQueue({
+    boardId,
+    widgetId: widget.id,
+    sort: 'torrents-status',
+  });
 
   if (isError) {
     return (

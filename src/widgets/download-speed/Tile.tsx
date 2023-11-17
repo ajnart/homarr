@@ -16,7 +16,8 @@ import { IconDownload, IconUpload } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
 import { AppAvatar } from '~/components/AppAvatar';
-import { useConfigContext } from '~/config/provider';
+import { useRequiredBoard } from '~/components/Board/context';
+import { integrationTypes } from '~/server/db/items';
 import { useColorTheme } from '~/tools/color';
 import { humanFileSize } from '~/tools/humanFileSize';
 import {
@@ -32,7 +33,7 @@ interface TorrentNetworkTrafficTileProps {
 }
 
 export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTrafficTileProps) {
-  const { config } = useConfigContext();
+  const { id: boardId } = useRequiredBoard();
   const { ref: refRoot, height: heightRoot } = useElementSize();
   const { ref: refTitle, height: heightTitle } = useElementSize();
   const { ref: refFooter, height: heightFooter } = useElementSize();
@@ -41,7 +42,11 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
   const [clientDataHistory, setClientDataHistory] = useListState<NormalizedDownloadQueueResponse>();
 
-  const { data, dataUpdatedAt } = useGetDownloadClientsQueue();
+  const { data, dataUpdatedAt } = useGetDownloadClientsQueue({
+    boardId,
+    widgetId: widget.id,
+    sort: 'dlspeed',
+  });
 
   useEffect(() => {
     if (data) {
@@ -60,17 +65,14 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
   const recoredAppsOverTime = clientDataHistory.flatMap((x) => x.apps.map((app) => app));
 
-  // removing duplicates the "naive" way: https://stackoverflow.com/a/9229821/15257712
-  const uniqueRecordedAppsOverTime = recoredAppsOverTime
-    .map((x) => x.appId)
-    .filter((item, position) => recoredAppsOverTime.map((y) => y.appId).indexOf(item) === position);
+  const uniqueRecordedAppsOverTime = [...new Set(recoredAppsOverTime.map((x) => x.integrationId))];
 
-  const lineChartData: Serie[] = uniqueRecordedAppsOverTime.flatMap((appId) => {
-    const records = recoredAppsOverTime.filter((x) => x.appId === appId);
+  const lineChartData: Serie[] = uniqueRecordedAppsOverTime.flatMap((integrationId) => {
+    const records = recoredAppsOverTime.filter((x) => x.integrationId === integrationId);
 
     const series: Serie[] = [
       {
-        id: `download_${appId}`,
+        id: `download_${integrationId}`,
         data: records.map((record, index) => ({
           x: index,
           y: record.totalDownload,
@@ -91,7 +93,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
       });
       const filteredRecords = torrentRecords.filter((x) => x !== null) as Datum[];
       series.push({
-        id: `upload_${appId}`,
+        id: `upload_${integrationId}`,
         data: filteredRecords,
       });
     }
@@ -101,7 +103,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
   const totalDownload = uniqueRecordedAppsOverTime
     .map((appId) => {
-      const records = recoredAppsOverTime.filter((x) => x.appId === appId);
+      const records = recoredAppsOverTime.filter((x) => x.integrationId === appId);
       const lastRecord = records.at(-1);
       return lastRecord?.totalDownload ?? 0;
     })
@@ -109,7 +111,9 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
   const totalUpload = uniqueRecordedAppsOverTime
     .map((appId) => {
-      const records = recoredAppsOverTime.filter((x) => x.appId === appId && x.type === 'torrent');
+      const records = recoredAppsOverTime.filter(
+        (x) => x.integrationId === appId && x.type === 'torrent'
+      );
       const lastRecord = records.at(-1) as TorrentTotalDownload;
       return lastRecord?.totalUpload ?? 0;
     })
@@ -140,7 +144,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
               const { points } = slice;
 
               const recordsFromPoints = uniqueRecordedAppsOverTime.map((appId) => {
-                const records = recoredAppsOverTime.filter((x) => x.appId === appId);
+                const records = recoredAppsOverTime.filter((x) => x.integrationId === appId);
                 const point = points.find((x) => x.id.includes(appId));
                 const pointIndex = Number(point?.data.x) ?? 0;
                 const color = point?.serieColor;
@@ -155,18 +159,20 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
                   <Card.Section p="xs">
                     <Stack spacing="xs">
                       {recordsFromPoints.map((entry, index) => {
-                        const app = config?.apps.find((x) => x.id === entry.record.appId);
+                        const current = widget.integrations.find(
+                          (i) => i.id === entry.record.integrationId
+                        );
 
-                        if (!app) {
+                        if (!current) {
                           return null;
                         }
 
                         return (
                           <Group key={`download-client-tooltip-${index}`}>
-                            <AppAvatar iconUrl={app.appearance.iconUrl} />
+                            <AppAvatar iconUrl={integrationTypes[current.sort].iconUrl} />
 
                             <Stack spacing={0}>
-                              <Text size="sm">{app.name}</Text>
+                              <Text size="sm">{current.name}</Text>
                               <Group>
                                 <Group spacing="xs">
                                   <IconDownload opacity={0.6} size={14} />
@@ -237,21 +243,21 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
           </Group>
         </Group>
         <Avatar.Group>
-          {uniqueRecordedAppsOverTime.map((appId, index) => {
-            const app = config?.apps.find((x) => x.id === appId);
+          {uniqueRecordedAppsOverTime.map((integrationId, index) => {
+            const current = widget.integrations.find((i) => i.id === integrationId);
 
-            if (!app) {
+            if (!current) {
               return null;
             }
 
             return (
               <Tooltip
-                label={app.name}
+                label={current.name}
                 key={`download-client-app-tooltip-${index}`}
                 withArrow
                 withinPortal
               >
-                <AppAvatar iconUrl={app.appearance.iconUrl} />
+                <AppAvatar iconUrl={integrationTypes[current.sort].iconUrl} />
               </Tooltip>
             );
           })}
