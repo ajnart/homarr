@@ -11,7 +11,7 @@ import {
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
+import { ReactNode, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { AppItem, useOptionalBoard } from '~/components/Board/context';
 import { api } from '~/utils/api';
 
@@ -35,6 +35,12 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
   const { colors } = useMantineTheme();
   const router = useRouter();
   const [showMovieModal, movieModal] = useDisclosure(router.query.movie === 'true');
+
+  useEffect(() => {
+    if (autoFocus) {
+      ref.current?.focus();
+    }
+  }, []);
 
   const apps = useBoardApps(search);
   const engines = generateEngines(
