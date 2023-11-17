@@ -3,8 +3,8 @@ import { Calendar } from '@mantine/dates';
 import { IconCalendarTime } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
+import { useRequiredBoard } from '~/components/Board/context';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
-import { useConfigContext } from '~/config/provider';
 import { getLanguageByCode } from '~/tools/language';
 import { RouterOutputs, api } from '~/utils/api';
 
@@ -54,7 +54,7 @@ interface CalendarTileProps {
 
 function CalendarTile({ widget }: CalendarTileProps) {
   const { colorScheme, radius } = useMantineTheme();
-  const { name: configName } = useConfigContext();
+  const { id: boardId } = useRequiredBoard();
   const [month, setMonth] = useState(new Date());
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { data: sessionData } = useSession();
@@ -66,7 +66,8 @@ function CalendarTile({ widget }: CalendarTileProps) {
 
   const { data: medias } = api.calendar.medias.useQuery(
     {
-      configName: configName!,
+      boardId,
+      widgetId: widget.id,
       month: month.getMonth() + 1,
       year: month.getFullYear(),
       options: {
