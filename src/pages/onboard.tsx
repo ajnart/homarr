@@ -26,7 +26,7 @@ export default function OnboardPage({
 
   const [onboardingSteps, { open: showOnboardingSteps }] = useDisclosure(false);
 
-  const isUpgradeFromSchemaOne = configSchemaVersions.includes(1);
+  const isUpgradeFromSchemaOne = false;
 
   return (
     <>
@@ -81,12 +81,12 @@ export default function OnboardPage({
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const userCount = await getTotalUserCountAsync();
-  if (userCount >= 1) {
-    return {
-      notFound: true,
-    };
-  }
+  // const userCount = await getTotalUserCountAsync();
+  // if (userCount >= 1) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
   const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
   const configs = files.map((file) => getConfig(file));

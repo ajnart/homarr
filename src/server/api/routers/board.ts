@@ -41,6 +41,7 @@ export const boardRouter = createTRPCRouter({
         apps: z.array(
           z.object({
             name: z.string(),
+            icon: z.string().optional(),
             port: z.number().optional(),
           })
         ),
@@ -71,6 +72,10 @@ export const boardRouter = createTRPCRouter({
               ...defaultApp,
               name: container.name,
               url: address,
+              appearance: {
+                ...defaultApp.appearance,
+                icon: container.icon,
+              },
               behaviour: {
                 ...defaultApp.behaviour,
                 externalUrl: address,

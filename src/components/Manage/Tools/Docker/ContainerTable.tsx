@@ -2,6 +2,7 @@ import {
   Badge,
   Checkbox,
   Group,
+  Image,
   ScrollArea,
   Table,
   Text,
@@ -13,6 +14,7 @@ import { IconSearch } from '@tabler/icons-react';
 import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useMemo, useState } from 'react';
+import { api } from '~/utils/api';
 
 import { MIN_WIDTH_MOBILE } from '../../../../constants/constants';
 import ContainerState from './ContainerState';
@@ -117,6 +119,22 @@ type RowProps = {
 const Row = ({ container, selected, toggleRow, width }: RowProps) => {
   const { t } = useTranslation('modules/docker');
   const { classes, cx } = useStyles();
+  const { data: iconsData } = api.icon.all.useQuery();
+  if (!iconsData) return null;
+  const containerName = container.Names[0].replace('/', '');
+  // Example image : linuxserver.io/sonarr:latest
+  // Remove the slashes
+  const imageParsed = container.Image.split('/');
+  // Remove the version
+  const image = imageParsed[imageParsed.length - 1].split(':')[0];
+  const foundIcon = iconsData
+    .flatMap((repository) =>
+      repository.entries.map((entry) => ({
+        ...entry,
+        repository: repository.name,
+      }))
+    )
+    .find((entry) => entry.name.toLowerCase().includes(image.toLowerCase()));
 
   return (
     <tr className={cx({ [classes.rowSelected]: selected })}>
@@ -124,9 +142,12 @@ const Row = ({ container, selected, toggleRow, width }: RowProps) => {
         <Checkbox checked={selected} onChange={() => toggleRow(container)} transitionDuration={0} />
       </td>
       <td>
-        <Text size="lg" weight={600}>
-          {container.Names[0].replace('/', '')}
-        </Text>
+        <Group noWrap>
+          <Image withPlaceholder src={foundIcon?.url} alt={image} width={30} height={30} />
+          <Text size="lg" weight={600}>
+            {containerName}
+          </Text>
+        </Group>
       </td>
       {width > MIN_WIDTH_MOBILE && (
         <td>

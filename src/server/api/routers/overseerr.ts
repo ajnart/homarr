@@ -7,10 +7,10 @@ import { OriginalLanguage, Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
 import { getConfig } from '~/tools/config/getConfig';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const overseerrRouter = createTRPCRouter({
-  search: publicProcedure
+  search: adminProcedure
     .input(
       z.object({
         configName: z.string(),

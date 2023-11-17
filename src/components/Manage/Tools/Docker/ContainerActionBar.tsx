@@ -94,7 +94,7 @@ export default function ContainerActionBar({
         color="indigo"
         variant="light"
         radius="md"
-        disabled={selected.length !== 1}
+        disabled={selected.length < 1}
         onClick={() => openDockerSelectBoardModal({ containers: selected })}
       >
         {t('actionBar.addToHomarr.title')}

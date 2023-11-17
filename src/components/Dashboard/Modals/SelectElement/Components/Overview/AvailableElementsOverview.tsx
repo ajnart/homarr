@@ -1,8 +1,9 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons-react';
+import { IconBox, IconBoxAlignTop, IconBrandDocker, IconStack } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -18,17 +19,19 @@ import { useStyles } from '../Shared/styles';
 interface AvailableElementTypesProps {
   modalId: string;
   onOpenIntegrations: () => void;
-  onOpenStaticElements: () => void;
+  onOpenDocker: () => void;
 }
 
 export const AvailableElementTypes = ({
   modalId,
   onOpenIntegrations: onOpenWidgets,
-  onOpenStaticElements,
+  onOpenDocker,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
   const { config, name: configName } = useConfigContext();
   const { updateConfig } = useConfigStore();
+  const { data } = useSession();
+
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   const onClickCreateCategory = async () => {
@@ -96,6 +99,13 @@ export const AvailableElementTypes = ({
             });
           }}
         />
+        {data && data.user.isAdmin && (
+          <ElementItem
+            name={t('importFromDocker')}
+            icon={<IconBrandDocker size={40} strokeWidth={1.3} />}
+            onClick={onOpenDocker}
+          />
+        )}
         <ElementItem
           name={t('widgets')}
           icon={<IconStack size={40} strokeWidth={1.3} />}
