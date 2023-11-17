@@ -1,13 +1,13 @@
 import {
-  Accordion,
-  ActionIcon,
-  Box,
-  List,
-  Menu,
-  Stack,
-  Text,
-  Title,
-  createStyles,
+	Accordion,
+	ActionIcon,
+	Box,
+	List,
+	Menu,
+	Stack,
+	Text,
+	Title,
+	tss
 } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import { modals } from '@mantine/modals';
@@ -97,7 +97,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
       }}
     >
       <Accordion.Item value={category.name}>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box style={{ display: 'flex', alignItems: 'center' }}>
           <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
             <Title order={3}>{category.name}</Title>
           </Accordion.Control>
@@ -130,7 +130,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   listItem: {
     '& div': {
       maxWidth: 'calc(100% - 23px)',

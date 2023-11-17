@@ -1,7 +1,8 @@
-import { Avatar, Flex, Popover, Text, createStyles } from '@mantine/core';
+import { Avatar, Flex, Popover, Text } from '@mantine/core';
 import { AppAvatar } from '~/components/AppAvatar';
 import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 import { AppType } from '~/types/app';
+import { tss } from '~/utils/tss';
 
 import { DetailCollapseable } from './DetailCollapseable';
 import { NowPlayingDisplay } from './NowPlayingDisplay';
@@ -56,7 +57,7 @@ export const TableRow = ({ session, app }: TableRowProps) => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   dataRow: {
     cursor: 'pointer',
   },

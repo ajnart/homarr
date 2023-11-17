@@ -8,7 +8,6 @@ import {
   Slider,
   Stack,
   TextInput,
-  createStyles,
   rem,
   useMantineTheme,
 } from '@mantine/core';
@@ -16,7 +15,12 @@ import { useTranslation } from 'next-i18next';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
 import { useColorTheme } from '~/tools/color';
-import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
+import {
+  BackgroundImageAttachment,
+  BackgroundImageRepeat,
+  BackgroundImageSize,
+} from '~/types/settings';
+import { tss } from '~/utils/tss';
 
 import { useBoardCustomizationFormContext } from '../form';
 
@@ -25,7 +29,7 @@ export const AppearanceCustomization = () => {
   const form = useBoardCustomizationFormContext();
 
   return (
-    <Stack spacing="sm">
+    <Stack gap="sm">
       <TextInput
         label={t('background.label')}
         placeholder="/imgs/backgrounds/background.png"
@@ -199,25 +203,25 @@ const CustomCssInput = () => {
   );
 };
 
-const useStyles = createStyles(({ colors, colorScheme, radius }) => ({
+const useStyles = tss.create(({ theme, colorScheme }) => ({
   codeEditorFooter: {
-    borderBottomLeftRadius: radius.sm,
-    borderBottomRightRadius: radius.sm,
-    backgroundColor: colorScheme === 'dark' ? colors.dark[7] : undefined,
+    borderBottomLeftRadius: theme.radius.sm,
+    borderBottomRightRadius: theme.radius.sm,
+    backgroundColor: colorScheme === 'dark' ? theme.colors.dark[5] : undefined,
   },
   codeEditorRoot: {
     marginTop: 4,
-    borderColor: colorScheme === 'dark' ? colors.dark[4] : colors.gray[4],
+    borderColor: colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[4],
     borderWidth: 1,
     borderStyle: 'solid',
-    borderRadius: radius.sm,
+    borderRadius: theme.radius.sm,
   },
   codeEditor: {
-    backgroundColor: colorScheme === 'dark' ? colors.dark[6] : 'white',
+    backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
     fontSize: 12,
 
     '& ::placeholder': {
-      color: colorScheme === 'dark' ? colors.dark[3] : colors.gray[5],
+      color: colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
     },
   },
 }));

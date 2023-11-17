@@ -1,13 +1,9 @@
 import { Avatar, DefaultMantineColor, useMantineTheme } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 
-export const AppAvatar = ({
-  iconUrl,
-  color,
-}: {
-  iconUrl: string;
-  color?: DefaultMantineColor | undefined;
-}) => {
-  const { colors, colorScheme } = useMantineTheme();
+export const AppAvatar = ({ iconUrl }: { iconUrl: string }) => {
+  const { colors, primaryColor } = useMantineTheme();
+  const colorScheme = useColorScheme();
 
   return (
     <Avatar
@@ -19,7 +15,7 @@ export const AppAvatar = ({
       p={4}
       styles={{
         root: {
-          borderColor: color !== undefined ? colors[color] : undefined,
+          borderColor: primaryColor[5],
         },
       }}
     />

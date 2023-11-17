@@ -1,7 +1,8 @@
-import { Center, Grid, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Center, Grid, Stack, Text, Title } from '@mantine/core';
 import { IconUnlink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
+import { tss } from '~/utils/tss';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -167,10 +168,10 @@ function DashDotTile({ widget }: DashDotTileProps) {
   if (detectedProtocolDowngrade) {
     return (
       <Center h="100%">
-        <Stack spacing="xs" align="center">
+        <Stack gap="xs" align="center">
           <IconUnlink size={40} strokeWidth={1.2} />
           <Title order={5}>{t('card.errors.protocolDowngrade.title')}</Title>
-          <Text align="center" size="sm">
+          <Text style={{ textAlign: 'center' }} size="sm">
             {t('card.errors.protocolDowngrade.text')}
           </Text>
         </Stack>
@@ -181,7 +182,7 @@ function DashDotTile({ widget }: DashDotTileProps) {
   const { dashName, graphsOrder, usePercentages, columns, graphHeight } = widget.properties;
 
   return (
-    <Stack spacing="xs">
+    <Stack gap="xs">
       <Title order={3}>{dashName || t('card.title')}</Title>
       {!info && <p>{t('card.errors.noInformation')}</p>}
       {info && (
@@ -219,7 +220,7 @@ const useDashDotInfoQuery = ({ dashDotUrl, enabled }: { dashDotUrl: string; enab
     }
   );
 
-export const useDashDotTileStyles = createStyles((theme) => ({
+export const useDashDotTileStyles = tss.create(({ theme }) => ({
   graphsContainer: {
     marginRight: `calc(${theme.spacing.sm} * -1)`,
   },

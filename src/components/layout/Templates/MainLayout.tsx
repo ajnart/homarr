@@ -1,4 +1,5 @@
 import { AppShell, useMantineTheme } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { MainHeader } from '~/components/layout/header/Header';
 
 type MainLayoutProps = {
@@ -17,24 +18,25 @@ export const MainLayout = ({
   autoFocusSearch,
 }: MainLayoutProps) => {
   const theme = useMantineTheme();
+  const colorScheme = useColorScheme();
 
   return (
     <AppShell
       styles={{
         root: {
-          background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
+          background: colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[1],
         },
       }}
-      header={
+      className="dashboard-app-shell"
+    >
+      <AppShell.Header>
         <MainHeader
           autoFocusSearch={autoFocusSearch}
           headerActions={headerActions}
           contentComponents={contentComponents}
           showExperimental={showExperimental}
         />
-      }
-      className="dashboard-app-shell"
-    >
+      </AppShell.Header>
       {children}
     </AppShell>
   );

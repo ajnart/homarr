@@ -62,7 +62,7 @@ export const LocationSelection = ({
   return (
     <>
       <Card>
-        <Stack spacing="xs">
+        <Stack gap="xs">
           <Flex direction="row" justify="space-between" wrap="nowrap">
             <Title order={5}>{t(`modules/${widgetId}:descriptor.settings.${key}.label`)}</Title>
             {info && (
@@ -73,7 +73,7 @@ export const LocationSelection = ({
             )}
           </Flex>
 
-          <Group noWrap align="end">
+          <Group wrap="nowrap" align="end">
             <TextInput
               w="100%"
               label={t('form.field.query')}
@@ -95,7 +95,7 @@ export const LocationSelection = ({
                     if (selectionEnabled) open();
                   }}
                   variant="light"
-                  leftIcon={<IconListSearch size={16} />}
+                  leftSection={<IconListSearch size={16} />}
                 >
                   {t('form.button.search.label')}
                 </Button>
@@ -115,7 +115,7 @@ export const LocationSelection = ({
                 });
                 setQuery(emptyLocation);
               }}
-              precision={5}
+              decimalScale={5}
               label={t('form.field.latitude')}
               hideControls
             />
@@ -130,7 +130,7 @@ export const LocationSelection = ({
                 });
                 setQuery(emptyLocation);
               }}
-              precision={5}
+              decimalScale={5}
               label={t('form.field.longitude')}
               hideControls
             />
@@ -218,7 +218,7 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
             {isLoading && (
               <tr>
                 <td colSpan={5}>
-                  <Group position="center">
+                  <Group justify="center">
                     <Loader />
                   </Group>
                 </td>
@@ -248,7 +248,7 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
                       {formatter.format(city.population)}
                     </Text>
                   ) : (
-                    <Text color="dimmed"> {t('modal.table.population.fallback')}</Text>
+                    <Text c="dimmed"> {t('modal.table.population.fallback')}</Text>
                   )}
                 </td>
                 <td>
@@ -273,7 +273,7 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
             ))}
           </tbody>
         </Table>
-        <Group position="right">
+        <Group justify="right">
           <Button variant="light" onClick={() => closeModal()}>
             {t('common:cancel')}
           </Button>

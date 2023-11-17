@@ -3,15 +3,11 @@ import {
   Burger,
   Drawer,
   Flex,
-  Footer,
   Group,
   Indicator,
   NavLink,
-  Navbar,
-  Paper,
   Text,
   ThemeIcon,
-  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -21,7 +17,6 @@ import {
   IconBrandGithub,
   IconGitFork,
   IconHome,
-  IconInfoCircle,
   IconInfoSmall,
   IconLayoutDashboard,
   IconMailForward,
@@ -187,11 +182,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
       .some((href) => router.pathname.endsWith(href));
 
     return (
-      <NavLink
-        {...commonProps}
-        defaultOpened={isAnyActive}
-        ref={ref as RefObject<HTMLButtonElement>}
-      >
+      <NavLink {...commonProps} defaultOpened={isAnyActive} ref={ref as any}>
         {Object.entries(navigationLink.items).map(([itemName, item], index) => {
           const commonItemProps = {
             label: t(`navigation.${name}.items.${itemName}`),
@@ -249,34 +240,27 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
 
   return (
     <>
-      <AppShell
-        navbar={
-          <Navbar width={{ base: !screenLargerThanMd ? 0 : 220 }} hidden={!screenLargerThanMd}>
-            <Navbar.Section pt="xs" grow>
-              {navigationLinkComponents}
-            </Navbar.Section>
-          </Navbar>
-        }
-        header={<MainHeader showExperimental={false} logoHref="/b/" leftIcon={burgerMenu} />}
-        footer={
-          <Footer height={25}>
-            <Group position="apart" px="md">
-              <Flex gap="md" align="center" columnGap={5}>
-                <Image src="/imgs/logo/logo.svg" width={20} height={20} alt="" />
-                <Text fw="bold" size={15}>
-                  Homarr
-                </Text>
-                {packageVersion && (
-                  <Text color="dimmed" size={13}>
-                    {packageVersion}
-                  </Text>
-                )}
-              </Flex>
-            </Group>
-          </Footer>
-        }
-      >
+      <AppShell>
+        <AppShell.Header>
+          <MainHeader showExperimental={false} logoHref="/b/" leftSection={burgerMenu} />
+        </AppShell.Header>
+        <AppShell.Navbar>{navigationLinkComponents}</AppShell.Navbar>
         {children}
+        <AppShell.Footer>
+          <Group h={25} justify="apart" px="md">
+            <Flex gap="md" align="center" columnGap={5}>
+              <Image src="/imgs/logo/logo.svg" width={20} height={20} alt="" />
+              <Text fw="bold" size="15">
+                Homarr
+              </Text>
+              {packageVersion && (
+                <Text c="dimmed" size="13">
+                  {packageVersion}
+                </Text>
+              )}
+            </Flex>
+          </Group>
+        </AppShell.Footer>
       </AppShell>
       <Drawer
         opened={burgerMenuOpen}

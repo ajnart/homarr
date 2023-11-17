@@ -24,13 +24,13 @@ export const DashDotCompactStorage = ({ info, url }: DashDotCompactStorageProps)
   });
 
   return (
-    <Group noWrap align="start" position="apart" w="100%">
+    <Group wrap="nowrap" align="start" justify="apart" w="100%">
       <Text weight={500}>{t('card.graphs.storage.label')}</Text>
-      <Stack align="end" spacing={0}>
-        <Text color="dimmed" size="xs">
+      <Stack align="end" gap={0}>
+        <Text c="dimmed" size="xs">
           {percentage(totalUsed, totalSize)}%
         </Text>
-        <Text color="dimmed" size="xs">
+        <Text c="dimmed" size="xs">
           {bytes.toString(totalUsed)} / {bytes.toString(totalSize)}
         </Text>
       </Stack>

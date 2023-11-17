@@ -15,7 +15,7 @@ export function Logo({ size = 'md', withoutText = false }: LogoProps) {
   const largerThanMd = useScreenLargerThan('md');
 
   return (
-    <Group spacing={size === 'md' ? 'xs' : 4} noWrap>
+    <Group gap={size === 'md' ? 'xs' : 4} wrap="nowrap">
       <Image
         width="unset"
         height={size === 'md' ? 38 : 12}

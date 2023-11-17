@@ -62,7 +62,7 @@ export const CreateAccountSecurityStep = ({
                 {...form.getInputProps('password')}
               />
               <Button
-                leftIcon={<IconDice size="1rem" />}
+                leftSection={<IconDice size="1rem" />}
                 onClick={async () => {
                   const randomPassword = await mutateAsync();
                   form.setFieldValue('password', randomPassword);
@@ -82,12 +82,12 @@ export const CreateAccountSecurityStep = ({
         </Popover.Dropdown>
       </Popover>
 
-      <Group position="apart" noWrap>
-        <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
+      <Group justify="apart" wrap="nowrap">
+        <Button leftSection={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
           {t('common:previous')}
         </Button>
         <Button
-          rightIcon={<IconArrowRight size="1rem" />}
+          rightSection={<IconArrowRight size="1rem" />}
           onClick={() => {
             nextStep({
               password: form.values.password,

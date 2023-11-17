@@ -1,6 +1,9 @@
-import { Flex, Group, Indicator, Paper, Stack, createStyles } from '@mantine/core';
+import { Flex, Group, Indicator, Paper, Stack } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { Logo } from '~/components/layout/Common/Logo';
 import { createDummyArray } from '~/tools/client/arrays';
+import { useColorTheme } from '~/tools/color';
+import { tss } from '~/utils/tss';
 
 type LayoutPreviewProps = {
   showLeftSidebar: boolean;
@@ -15,14 +18,14 @@ export const LayoutPreview = ({
   const { classes } = useStyles();
 
   return (
-    <Stack spacing="xs">
+    <Stack gap="xs">
       <Paper px="xs" py={4} withBorder>
-        <Group position="apart">
+        <Group justify="apart">
           <div style={{ flex: 1 }}>
             <Logo size="xs" />
           </div>
           <BaseElement width={60} height={10} />
-          <Group style={{ flex: 1 }} position="right">
+          <Group style={{ flex: 1 }} justify="right">
             <BaseElement width={10} height={10} />
           </Group>
         </Group>
@@ -79,7 +82,7 @@ export const LayoutPreview = ({
   );
 };
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create(() => ({
   primaryWrapper: {
     flexGrow: 2,
   },
@@ -89,16 +92,19 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const BaseElement = ({ height, width }: { height: number; width: number }) => (
-  <Paper
-    sx={(theme) => ({
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[1],
-    })}
-    h={height}
-    p={2}
-    w={width}
-  />
-);
+const BaseElement = ({ height, width }: { height: number; width: number }) => {
+  const colorScheme = useColorScheme();
+  return (
+    <Paper
+      style={(theme) => ({
+        backgroundColor: colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[1],
+      })}
+      h={height}
+      p={2}
+      w={width}
+    />
+  );
+};
 
 type PlaceholderElementProps = {
   height: number;

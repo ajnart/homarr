@@ -1,10 +1,10 @@
-import { createStyles } from '@mantine/core';
 import { useConfigContext } from '~/config/provider';
+import { tss } from '~/utils/tss';
 
 export const useCardStyles = (isCategory: boolean) => {
   const { config } = useConfigContext();
   const appOpacity = config?.settings.customization.appOpacity;
-  return createStyles(({ colorScheme }, _params) => {
+  return tss.create(({ colorScheme }) => {
     const opacity = (appOpacity || 100) / 100;
 
     if (colorScheme === 'dark') {

@@ -1,13 +1,13 @@
 import {
-  Avatar,
-  Card,
-  Flex,
-  Group,
-  Indicator,
-  Stack,
-  Text,
-  Tooltip,
-  useMantineTheme,
+	Avatar,
+	Card,
+	Flex,
+	Group,
+	Indicator,
+	Stack,
+	Text,
+	Tooltip,
+	useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconChartBar, IconExternalLink } from '@tabler/icons-react';
@@ -108,11 +108,11 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
       <Card py={5} px={10} radius="md" style={{ overflow: 'unset' }} withBorder>
         {baseStats.map((stat, index) => {
           return (
-            <Group key={index} position="apart">
-              <Text color="dimmed" align="center" size="xs">
+            <Group key={index} justify="apart">
+              <Text c="dimmed" align="center" size="xs">
                 {stat.label}
               </Text>
-              <Text align="center" size="xs">
+              <Text style={{ textAlign: 'center' }} size="xs">
                 {stat.number}
               </Text>
             </Group>
@@ -120,7 +120,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
         })}
       </Card>
       <Text mt={2}>{t('userStats.title')}</Text>
-      <Stack ref={ref} style={{ flex: 1 }} spacing={5} p={0} sx={{ overflow: 'hidden' }}>
+      <Stack ref={ref} style={{ flex: 1 }} gap={5} p={0} style={{ overflow: 'hidden' }}>
         {users.map((user) => {
           return (
             <Card
@@ -163,7 +163,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
                   </Tooltip.Floating>
                 )}
                 <Avatar radius="xl" size={45} src={user.userProfilePicture} alt="user avatar" />
-                <Stack spacing={0} style={{ flex: 1 }}>
+                <Stack gap={0} style={{ flex: 1 }}>
                   <Text>{user.userName}</Text>
                   <Text size="xs">
                     {t('userStats.requests', { number: user.userRequestCount })}

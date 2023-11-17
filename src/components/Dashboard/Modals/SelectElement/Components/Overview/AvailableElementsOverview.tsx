@@ -78,9 +78,9 @@ export const AvailableElementTypes = ({
 
   return (
     <>
-      <Text color="dimmed">{t('modal.text')}</Text>
+      <Text c="dimmed">{t('modal.text')}</Text>
       <Space h="lg" />
-      <Group spacing="md" grow>
+      <Group gap="md" grow>
         <ElementItem
           name={t('apps')}
           icon={<IconBox size={40} strokeWidth={1.3} />}
@@ -125,7 +125,7 @@ const ElementItem = ({ name, icon, onClick }: ElementItemProps) => {
       onClick={onClick}
       py="md"
     >
-      <Stack className={classes.elementStack} align="center" spacing={5}>
+      <Stack className={classes.elementStack} align="center" gap={5}>
         <motion.div
           // On hover zoom in
           whileHover={{ scale: 1.2 }}

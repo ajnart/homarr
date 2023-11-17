@@ -113,12 +113,12 @@ export const DetailCollapseable = ({ session }: { session: GenericSessionInfo })
       <Group align="start">
         {details.map((detail, index) => (
           <>
-            <Stack spacing={0} key={index}>
+            <Stack gap={0} key={index}>
               <Text weight="bold">{detail.title}</Text>
               {detail.metrics
                 .filter((x) => x.value !== undefined)
                 .map((metric, index2) => (
-                  <Group position="apart" key={index2}>
+                  <Group justify="apart" key={index2}>
                     <Text>{metric.name}</Text>
                     <Text>{metric.value}</Text>
                   </Group>

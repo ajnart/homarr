@@ -12,9 +12,9 @@ import { humanFileSize } from '~/tools/humanFileSize';
 import { AppIntegrationType } from '~/types/app';
 
 import {
-  useGetUsenetInfo,
-  usePauseUsenetQueueMutation,
-  useResumeUsenetQueueMutation,
+	useGetUsenetInfo,
+	usePauseUsenetQueueMutation,
+	useResumeUsenetQueueMutation,
 } from '../dashDot/api';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -86,7 +86,7 @@ function UseNetTile({ widget }: UseNetTileProps) {
         <Tabs.Tab value="queue">{t('tabs.queue')}</Tabs.Tab>
         <Tabs.Tab value="history">{t('tabs.history')}</Tabs.Tab>
         {data && (
-          <Group position="right" ml="auto">
+          <Group justify="right" ml="auto">
             {width > MIN_WIDTH_MOBILE && (
               <>
                 <Badge>{humanFileSize(data?.speed)}/s</Badge>

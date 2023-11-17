@@ -1,8 +1,6 @@
-import { Container, Grid, Text } from '@mantine/core';
-import { IconCursorText } from '@tabler/icons-react';
+import { Grid, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
-import { GenericAvailableElementType } from '../Shared/GenericElementType';
 import { SelectorBackArrow } from '../Shared/SelectorBackArrow';
 
 interface AvailableStaticTypesProps {
@@ -15,7 +13,7 @@ export const AvailableStaticTypes = ({ onClickBack }: AvailableStaticTypesProps)
     <>
       <SelectorBackArrow onClickBack={onClickBack} />
 
-      <Text mb="md" color="dimmed">
+      <Text mb="md" c="dimmed">
         Static elements provide you additional control over your dashboard. They are static, because
         they don&apos;t integrate with any apps and their content never changes.
       </Text>

@@ -1,39 +1,39 @@
 import {
-  ActionIcon,
-  Button,
-  ColorPicker,
-  ColorSwatch,
-  Group,
-  NumberInput,
-  Popover,
-  ScrollArea,
-  Stack,
-  TextInput,
-  useMantineTheme,
+	ActionIcon,
+	Button,
+	ColorPicker,
+	ColorSwatch,
+	Group,
+	NumberInput,
+	Popover,
+	ScrollArea,
+	Stack,
+	TextInput,
+	useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure, useInputState } from '@mantine/hooks';
 import { Link, RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
 import {
-  IconCheck,
-  IconCircleOff,
-  IconColumnInsertLeft,
-  IconColumnInsertRight,
-  IconColumnRemove,
-  IconDeviceFloppy,
-  IconEdit,
-  IconHighlight,
-  IconIndentDecrease,
-  IconIndentIncrease,
-  IconLayoutGrid,
-  IconLetterA,
-  IconListCheck,
-  IconPhoto,
-  IconRowInsertBottom,
-  IconRowInsertTop,
-  IconRowRemove,
-  IconTableOff,
-  IconTablePlus,
-  IconX,
+	IconCheck,
+	IconCircleOff,
+	IconColumnInsertLeft,
+	IconColumnInsertRight,
+	IconColumnRemove,
+	IconDeviceFloppy,
+	IconEdit,
+	IconHighlight,
+	IconIndentDecrease,
+	IconIndentIncrease,
+	IconLayoutGrid,
+	IconLetterA,
+	IconListCheck,
+	IconPhoto,
+	IconRowInsertBottom,
+	IconRowInsertTop,
+	IconRowRemove,
+	IconTableOff,
+	IconTablePlus,
+	IconX,
 } from '@tabler/icons-react';
 import { Color } from '@tiptap/extension-color';
 import Highlight from '@tiptap/extension-highlight';
@@ -223,7 +223,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
             '& .ProseMirror': {
               padding: '0  !important',
             },
-            backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
+            backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : 'white',
             border: 'none',
             borderRadius: '0.5rem',
             display: 'flex',
@@ -513,14 +513,14 @@ function ColoredControl({
     >
       <Popover.Target>
         <RichTextEditor.Control onClick={toggle} title={hoverText}>
-          <Group spacing={3} px="0.2rem">
+          <Group gap={3} px="0.2rem">
             {icon}
             <ColorSwatch size={14} color={color} />
           </Group>
         </RichTextEditor.Control>
       </Popover.Target>
       <Popover.Dropdown>
-        <Stack spacing={8}>
+        <Stack gap={8}>
           <ColorPicker
             value={color}
             onChange={setColor}
@@ -528,7 +528,7 @@ function ColoredControl({
             swatches={palette}
             swatchesPerRow={6}
           />
-          <Group position="right" spacing={8}>
+          <Group justify="right" gap={8}>
             <ActionIcon title={t('common:cancel')} variant="default" onClick={close}>
               <IconX stroke={1.5} size="1rem" />
             </ActionIcon>
@@ -615,7 +615,7 @@ function EmbedImage() {
         </RichTextEditor.Control>
       </Popover.Target>
       <Popover.Dropdown>
-        <Stack spacing={5}>
+        <Stack gap={5}>
           <TextInput
             label={t('card.modals.source')}
             value={src || ''}
@@ -874,7 +874,7 @@ function TableToggle() {
         </RichTextEditor.Control>
       </Popover.Target>
       <Popover.Dropdown>
-        <Stack spacing={5}>
+        <Stack gap={5}>
           <NumberInput
             label={t('card.modals.columns')}
             min={1}

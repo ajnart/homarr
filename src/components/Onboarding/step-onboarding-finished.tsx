@@ -1,4 +1,4 @@
-import { Divider, NavLink, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Divider, NavLink, Stack, Text, Title } from '@mantine/core';
 import {
   IconChevronRight,
   IconDashboard,
@@ -8,6 +8,8 @@ import {
 } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { tss } from '~/utils/tss';
+
 
 import { OnboardingStepWrapper } from './common-wrapper';
 
@@ -65,7 +67,7 @@ export const StepOnboardingFinished = () => {
   );
 };
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create((theme) => ({
   link: {
     borderRadius: '0.4rem',
   },

@@ -57,7 +57,7 @@ function VideoStreamWidget({ widget }: VideoStreamWidgetProps) {
     );
   }
   return (
-    <Group position="center" w="100%" h="100%">
+    <Group justify="center" w="100%" h="100%">
       <VideoFeed
         source={widget?.properties.FeedUrl}
         muted={widget?.properties.muted}

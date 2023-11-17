@@ -2,7 +2,6 @@ import { Button, Card, Center, Grid, Stack, Text } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import React from 'react';
 
 import { useStyles } from './styles';
 
@@ -35,7 +34,7 @@ export const GenericAvailableElementType = ({
     <Grid.Col xs={12} sm={4} md={3}>
       <Card style={{ height: '100%' }}>
         <Stack justify="space-between" style={{ height: '100%' }}>
-          <Stack spacing="xs">
+          <Stack gap="xs">
             <Center>
               <Icon />
             </Center>
@@ -43,7 +42,7 @@ export const GenericAvailableElementType = ({
               {name}
             </Text>
             {description && (
-              <Text className={classes.elementText} size="xs" align="center" color="dimmed">
+              <Text className={classes.elementText} size="xs" align="center" c="dimmed">
                 {description}
               </Text>
             )}

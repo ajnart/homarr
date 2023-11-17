@@ -8,13 +8,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { z } from 'zod';
 import {
-  CreateAccountStep,
-  createAccountStepValidationSchema,
+	CreateAccountStep,
+	createAccountStepValidationSchema,
 } from '~/components/Manage/User/Create/create-account-step';
 import { ReviewInputStep } from '~/components/Manage/User/Create/review-input-step';
 import {
-  CreateAccountSecurityStep,
-  createAccountSecurityStepValidationSchema,
+	CreateAccountSecurityStep,
+	createAccountSecurityStepValidationSchema,
 } from '~/components/Manage/User/Create/security-step';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
@@ -103,14 +103,14 @@ const CreateNewUserPage = () => {
                 form.reset();
                 setActive(0);
               }}
-              leftIcon={<IconUserPlus size="1rem" />}
+              leftSection={<IconUserPlus size="1rem" />}
               variant="default"
             >
               {t('buttons.createAnother')}
             </Button>
             <Button
               component={Link}
-              leftIcon={<IconArrowLeft size="1rem" />}
+              leftSection={<IconArrowLeft size="1rem" />}
               variant="default"
               href="/manage/users"
             >

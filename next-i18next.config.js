@@ -34,9 +34,8 @@ module.exports = {
       'uk',
       'vi',
     ],
-
-    localeDetection: false,
   },
+  localeDetection: false,
   returnEmptyString: false,
   appendNamespaceToCIMode: true,
   reloadOnPrerender: process.env.NODE_ENV === 'development',

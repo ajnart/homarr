@@ -1,17 +1,17 @@
 import {
-  ActionIcon,
-  Autocomplete,
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  Flex,
-  Group,
-  Pagination,
-  Table,
-  Text,
-  Title,
-  Tooltip,
+	ActionIcon,
+	Autocomplete,
+	Avatar,
+	Badge,
+	Box,
+	Button,
+	Flex,
+	Group,
+	Pagination,
+	Table,
+	Text,
+	Title,
+	Tooltip,
 } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconPlus, IconTrash, IconUserDown, IconUserUp } from '@tabler/icons-react';
@@ -66,7 +66,7 @@ const ManageUsersPage = () => {
         />
         <Button
           component={Link}
-          leftIcon={<IconPlus size="1rem" />}
+          leftSection={<IconPlus size="1rem" />}
           href="/manage/users/create"
           variant="default"
         >
@@ -86,8 +86,8 @@ const ManageUsersPage = () => {
               {data.users.map((user, index) => (
                 <tr key={index}>
                   <td>
-                    <Group position="apart">
-                      <Group spacing="xs">
+                    <Group justify="apart">
+                      <Group gap="xs">
                         <Avatar size="sm" />
                         <Text>{user.name}</Text>
                         {user.isOwner && (

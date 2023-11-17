@@ -1,17 +1,17 @@
 import {
-  ActionIcon,
-  Anchor,
-  Badge,
-  Card,
-  Center,
-  Flex,
-  Group,
-  Image,
-  ScrollArea,
-  Stack,
-  Text,
-  Tooltip,
-  useMantineTheme,
+	ActionIcon,
+	Anchor,
+	Badge,
+	Card,
+	Center,
+	Flex,
+	Group,
+	Image,
+	ScrollArea,
+	Stack,
+	Text,
+	Tooltip,
+	useMantineTheme,
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IconCheck, IconGitPullRequest, IconThumbDown, IconThumbUp } from '@tabler/icons-react';
@@ -151,15 +151,15 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   radius="xs"
                   withPlaceholder
                 />
-                <Stack spacing={0}>
-                  <Group spacing="xs">
+                <Stack gap={0}>
+                  <Group gap="xs">
                     {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
                     <MediaRequestStatusBadge status={item.status} />
                   </Group>
                   <Anchor
                     href={item.href}
                     target={widget.properties.openInNewTab ? '_blank' : '_self'}
-                    c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
+                    c={mantinecolorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
                     <Text lineClamp={1}>{item.name}</Text>
                   </Anchor>
@@ -178,7 +178,7 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                   <Anchor
                     href={item.userLink}
                     target={widget.properties.openInNewTab ? '_blank' : '_self'}
-                    c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
+                    c={mantinecolorScheme === 'dark' ? 'gray.3' : 'gray.8'}
                   >
                     {item.userName}
                   </Anchor>

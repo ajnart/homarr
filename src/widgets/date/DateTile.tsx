@@ -1,4 +1,4 @@
-import { Stack, Text, createStyles } from '@mantine/core';
+import { Stack, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
 import dayjs from 'dayjs';
@@ -9,6 +9,7 @@ import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { getLanguageByCode } from '~/tools/language';
 import { api } from '~/utils/api';
+import { tss } from '~/utils/tss';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
@@ -130,7 +131,7 @@ function DateTile({ widget }: DateTileProps) {
   );
 }
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'column',

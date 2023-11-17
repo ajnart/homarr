@@ -1,4 +1,4 @@
-import { Alert, Button, Checkbox, Group, Modal, Stack, Table, createStyles } from '@mantine/core';
+import { Alert, Button, Checkbox, Group, Modal, Stack, Table, rgba } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import { IconAlertCircle, IconCheck, IconDownload } from '@tabler/icons-react';
 import Consola from 'consola';
@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { useColorTheme } from '~/tools/color';
 import { api } from '~/utils/api';
+import { tss } from '~/utils/tss';
 
 import { MovieResult } from './Movie.d';
 import { Result } from './SearchResult';
@@ -18,11 +19,11 @@ interface RequestModalProps {
   setOpened: (opened: boolean) => void;
 }
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create(({ theme, colorScheme }) => ({
   rowSelected: {
     backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.fn.rgba(theme.colors[theme.primaryColor][7], 0.2)
+      colorScheme === 'dark'
+        ? rgba(theme.colors[theme.primaryColor][7], 0.2)
         : theme.colors[theme.primaryColor][0],
   },
 }));
@@ -185,7 +186,6 @@ export function TvRequestModal({
                   onChange={toggleAll}
                   checked={selection.length === result.seasons.length}
                   indeterminate={selection.length > 0 && selection.length !== result.seasons.length}
-                  transitionDuration={0}
                 />
               </th>
               <th>{t('popup.seasonSelector.table.header.season')}</th>
@@ -194,7 +194,7 @@ export function TvRequestModal({
           </thead>
           <tbody>{rows}</tbody>
         </Table>
-        <Group position="center">
+        <Group justify="center">
           <Button variant="outline" color="gray" onClick={() => setOpened(false)}>
             {t('popup.item.buttons.cancel')}
           </Button>

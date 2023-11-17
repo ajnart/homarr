@@ -1,16 +1,16 @@
 import {
-  Alert,
-  Center,
-  Code,
-  Group,
-  List,
-  Pagination,
-  Popover,
-  Skeleton,
-  Stack,
-  Table,
-  Text,
-  Title,
+	Alert,
+	Center,
+	Code,
+	Group,
+	List,
+	Pagination,
+	Popover,
+	Skeleton,
+	Stack,
+	Table,
+	Text,
+	Title,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconAlertCircle, IconClock, IconFileDownload, IconFileInfo } from '@tabler/icons-react';
@@ -56,7 +56,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
 
   if (isError) {
     return (
-      <Group position="center">
+      <Group justify="center">
         <Alert
           icon={<IconAlertCircle size={16} />}
           my="lg"
@@ -82,7 +82,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
   }
 
   return (
-    <Stack justify="space-around" spacing="xs">
+    <Stack justify="space-around" gap="xs">
       <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
         <thead>
           <tr>
@@ -145,7 +145,7 @@ export const UsenetHistoryList: FunctionComponent<UsenetHistoryListProps> = ({ a
       </Table>
       {totalPages > 1 && (
         <Pagination
-          noWrap
+          wrap="nowrap"
           size="sm"
           position="center"
           mt="md"

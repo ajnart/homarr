@@ -1,29 +1,29 @@
 import {
-  ActionIcon,
-  Badge,
-  Button,
-  Card,
-  Group,
-  LoadingOverlay,
-  Menu,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
+	ActionIcon,
+	Badge,
+	Button,
+	Card,
+	Group,
+	LoadingOverlay,
+	Menu,
+	SimpleGrid,
+	Stack,
+	Text,
+	Title,
 } from '@mantine/core';
 import { useListState } from '@mantine/hooks';
 import {
-  IconBox,
-  IconCategory,
-  IconDeviceFloppy,
-  IconDotsVertical,
-  IconFolderFilled,
-  IconLock,
-  IconLockOff,
-  IconPlus,
-  IconStack,
-  IconStarFilled,
-  IconTrash,
+	IconBox,
+	IconCategory,
+	IconDeviceFloppy,
+	IconDotsVertical,
+	IconFolderFilled,
+	IconLock,
+	IconLockOff,
+	IconPlus,
+	IconStack,
+	IconStarFilled,
+	IconTrash,
 } from '@tabler/icons-react';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -67,12 +67,12 @@ export default function BoardsPage({
         <title>{metaTitle}</title>
       </Head>
 
-      <Group position="apart">
+      <Group justify="apart">
         <Title mb="xl">{t('pageTitle')}</Title>
         {session?.user.isAdmin && (
           <Button
             onClick={openCreateBoardModal}
-            leftIcon={<IconPlus size="1rem" />}
+            leftSection={<IconPlus size="1rem" />}
             variant="default"
           >
             {t('buttons.create')}
@@ -92,11 +92,11 @@ export default function BoardsPage({
           <Card key={index} shadow="sm" padding="lg" radius="md" pos="relative" withBorder>
             <LoadingOverlay visible={deletingDashboards.includes(board.name)} />
 
-            <Group mb="xl" position="apart" noWrap>
+            <Group mb="xl" justify="apart" wrap="nowrap">
               <Text weight={500} mb="xs">
                 {board.name}
               </Text>
-              <Group spacing="xs" noWrap>
+              <Group gap="xs" wrap="nowrap">
                 <Badge leftSection={<IconFolderFilled size=".7rem" />} color="pink" variant="light">
                   {t('cards.badges.fileSystem')}
                 </Badge>
@@ -121,27 +121,27 @@ export default function BoardsPage({
               </Group>
             </Group>
 
-            <Stack spacing={3}>
-              <Group position="apart">
-                <Group spacing="xs">
+            <Stack gap={3}>
+              <Group justify="apart">
+                <Group gap="xs">
                   <IconBox opacity={0.7} size="1rem" />
-                  <Text color="dimmed">{t('cards.statistics.apps')}</Text>
+                  <Text c="dimmed">{t('cards.statistics.apps')}</Text>
                 </Group>
                 <Text>{board.countApps}</Text>
               </Group>
 
-              <Group position="apart">
-                <Group spacing="xs">
+              <Group justify="apart">
+                <Group gap="xs">
                   <IconStack opacity={0.7} size="1rem" />
-                  <Text color="dimmed">{t('cards.statistics.widgets')}</Text>
+                  <Text c="dimmed">{t('cards.statistics.widgets')}</Text>
                 </Group>
                 <Text>{board.countWidgets}</Text>
               </Group>
 
-              <Group position="apart">
-                <Group spacing="xs">
+              <Group justify="apart">
+                <Group gap="xs">
                   <IconCategory opacity={0.7} size="1rem" />
-                  <Text color="dimmed">{t('cards.statistics.categories')}</Text>
+                  <Text c="dimmed">{t('cards.statistics.categories')}</Text>
                 </Group>
                 <Text>{board.countCategories}</Text>
               </Group>

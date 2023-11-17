@@ -53,7 +53,7 @@ export const StepCreateAccount = ({
 
   return (
     <OnboardingStepWrapper>
-      <Title order={2} align="center" mb="md">
+      <Title order={2} style={{textAlign: "center"}} mb="md">
         Create your administrator account
       </Title>
       <Text>
@@ -94,11 +94,11 @@ export const StepCreateAccount = ({
             {...form.getInputProps('passwordConfirmation')}
           />
           <Group grow>
-            <Button onClick={previous} leftIcon={<IconArrowLeft size="0.9rem" />} variant="default">
+            <Button onClick={previous} leftSection={<IconArrowLeft size="0.9rem" />} variant="default">
               Back
             </Button>
             <Button
-              rightIcon={<IconArrowRight size="0.9rem" />}
+              rightSection={<IconArrowRight size="0.9rem" />}
               disabled={!form.isValid()}
               type="submit"
               loading={isSigninIn}

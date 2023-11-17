@@ -49,7 +49,7 @@ export const CreateAccountStep = ({
 
       <Flex justify="end" wrap="nowrap">
         <Button
-          rightIcon={<IconArrowRight size="1rem" />}
+          rightSection={<IconArrowRight size="1rem" />}
           disabled={!form.isValid()}
           onClick={() => {
             nextStep({

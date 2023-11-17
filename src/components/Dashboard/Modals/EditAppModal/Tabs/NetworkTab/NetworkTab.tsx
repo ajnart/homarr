@@ -15,7 +15,7 @@ export const NetworkTab = ({ form }: NetworkTabProps) => {
   );
   return (
     <Tabs.Panel value="network" pt="lg">
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <Switch
           label={t('network.statusChecker.label')}
           description={t('network.statusChecker.description')}

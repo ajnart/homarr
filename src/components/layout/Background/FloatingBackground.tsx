@@ -1,5 +1,6 @@
-import { Box, createStyles, useMantineTheme } from '@mantine/core';
-import { useMouse } from '@mantine/hooks';
+import { Box, rgba } from '@mantine/core';
+import { useColorScheme, useMouse } from '@mantine/hooks';
+import { tss } from '~/utils/tss';
 
 import { PolkaElement } from './PolkaElement';
 
@@ -20,15 +21,16 @@ export const FloatingBackground = () => {
 
 const MouseBackdrop = () => {
   const { x, y } = useMouse();
+  const colorScheme = useColorScheme();
   const radius = 40;
   return (
     <Box pos="absolute" top={0} left={0} w="100%" h="100%">
       <Box
-        sx={(theme) => {
+        style={(theme) => {
           const dropColor =
-            theme.colorScheme === 'dark'
-              ? theme.fn.rgba(theme.colors.red[8], 0.05)
-              : theme.fn.rgba(theme.colors.red[2], 0.4);
+            colorScheme === 'dark'
+              ? rgba(theme.colors.red[8], 0.05)
+              : rgba(theme.colors.red[2], 0.4);
           const boxShadow = `0px 0px ${radius}px ${radius}px ${dropColor}`;
           return {
             width: 50,
@@ -46,7 +48,7 @@ const MouseBackdrop = () => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   noOverflow: {
     overflow: 'hidden',
   },

@@ -10,16 +10,16 @@ export const LayoutCustomization = () => {
 
   return (
     <Grid gutter="xl" align="stretch">
-      <Grid.Col span={12} sm={6}>
+      <Grid.Col span={{ base: 12, sm: 6 }}>
         <LayoutPreview
           showLeftSidebar={form.values.layout.leftSidebarEnabled}
           showRightSidebar={form.values.layout.rightSidebarEnabled}
           showPings={form.values.layout.pingsEnabled}
         />
       </Grid.Col>
-      <Grid.Col span={12} sm={6}>
-        <Stack spacing="sm" h="100%" justify="space-between">
-          <Stack spacing="xs">
+      <Grid.Col span={{ base: 12, sm: 6 }}>
+        <Stack gap="sm" h="100%" justify="space-between">
+          <Stack gap="xs">
             <Checkbox
               label={t('layout.enablelsidebar')}
               description={t('layout.enablelsidebardesc')}

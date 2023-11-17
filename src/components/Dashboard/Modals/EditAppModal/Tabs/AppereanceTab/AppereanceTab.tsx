@@ -1,4 +1,4 @@
-import { Flex, NumberInput, Select, Stack, Switch, Tabs } from '@mantine/core';
+import { Flex, NumberInput, Select, Stack, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
@@ -39,7 +39,7 @@ export const AppearanceTab = ({
 
   return (
     <Tabs.Panel value="appearance" pt="lg">
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <Flex gap={5} mb="xs">
           <IconSelector
             defaultValue={form.values.appearance.iconUrl}

@@ -1,7 +1,8 @@
-import { LoadingOverlay, createStyles } from '@mantine/core';
+import { LoadingOverlay } from '@mantine/core';
 import { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import { tss } from '~/utils/tss';
 
 interface VideoFeedProps {
   source: string;
@@ -55,11 +56,11 @@ const VideoFeed = ({ source, controls, autoPlay, muted }: VideoFeedProps) => {
   );
 };
 
-const useStyles = createStyles(({ radius }) => ({
+const useStyles = tss.create(({ theme }) => ({
   video: {
     height: '100%',
     width: '100%',
-    borderRadius: radius.md,
+    borderRadius: theme.radius.md,
     overflow: 'hidden',
   },
 }));

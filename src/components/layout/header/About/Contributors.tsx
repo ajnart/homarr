@@ -1,12 +1,12 @@
 import {
-  Anchor,
-  Avatar,
-  Group,
-  Pagination,
-  Stack,
-  Table,
-  Text,
-  Title,
+	Anchor,
+	Avatar,
+	Group,
+	Pagination,
+	Stack,
+	Table,
+	Text,
+	Title,
 } from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
 import { Trans, useTranslation } from 'next-i18next';
@@ -58,7 +58,7 @@ export function ContributorsTable({ contributors }: { contributors: Contributors
       <tr key={contributor.id}>
         <td>
           <Anchor href={`https://github.com/${contributor.login}`} target="_blank">
-            <Group noWrap>
+            <Group wrap="nowrap">
               <Avatar size={25} radius="lg" src={contributor.avatar_url} alt={contributor.login} />
               {contributor.login}
             </Group>

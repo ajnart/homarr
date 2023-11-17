@@ -1,13 +1,13 @@
 import {
-  Avatar,
-  Box,
-  Card,
-  Group,
-  Stack,
-  Text,
-  Title,
-  Tooltip,
-  useMantineTheme,
+	Avatar,
+	Box,
+	Card,
+	Group,
+	Stack,
+	Text,
+	Title,
+	Tooltip,
+	useMantineTheme,
 } from '@mantine/core';
 import { useElementSize, useListState } from '@mantine/hooks';
 import { linearGradientDef } from '@nivo/core';
@@ -20,8 +20,8 @@ import { useConfigContext } from '~/config/provider';
 import { useColorTheme } from '~/tools/color';
 import { humanFileSize } from '~/tools/humanFileSize';
 import {
-  NormalizedDownloadQueueResponse,
-  TorrentTotalDownload,
+	NormalizedDownloadQueueResponse,
+	TorrentTotalDownload,
 } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
 import definition, { ITorrentNetworkTraffic } from './TorrentNetworkTrafficTile';
@@ -153,7 +153,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
               return (
                 <Card p="xs" radius="md" withBorder>
                   <Card.Section p="xs">
-                    <Stack spacing="xs">
+                    <Stack gap="xs">
                       {recordsFromPoints.map((entry, index) => {
                         const app = config?.apps.find((x) => x.id === entry.record.appId);
 
@@ -165,20 +165,20 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
                           <Group key={`download-client-tooltip-${index}`}>
                             <AppAvatar iconUrl={app.appearance.iconUrl} />
 
-                            <Stack spacing={0}>
+                            <Stack gap={0}>
                               <Text size="sm">{app.name}</Text>
                               <Group>
-                                <Group spacing="xs">
+                                <Group gap="xs">
                                   <IconDownload opacity={0.6} size={14} />
-                                  <Text size="xs" color="dimmed">
+                                  <Text size="xs" c="dimmed">
                                     {humanFileSize(entry.record.totalDownload, false)}
                                   </Text>
                                 </Group>
 
                                 {entry.record.type === 'torrent' && (
-                                  <Group spacing="xs">
+                                  <Group gap="xs">
                                     <IconUpload opacity={0.6} size={14} />
-                                    <Text size="xs" color="dimmed">
+                                    <Text size="xs" c="dimmed">
                                       {humanFileSize(entry.record.totalUpload, false)}
                                     </Text>
                                   </Group>
@@ -221,17 +221,17 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
         </Box>
       </Box>
 
-      <Group position="apart" ref={refFooter}>
+      <Group justify="apart" ref={refFooter}>
         <Group>
-          <Group spacing="xs">
+          <Group gap="xs">
             <IconDownload color={colors[primaryColor][5]} opacity={0.6} size={18} />
-            <Text color="dimmed" size="sm">
+            <Text c="dimmed" size="sm">
               {humanFileSize(totalDownload, false)}
             </Text>
           </Group>
-          <Group spacing="xs">
+          <Group gap="xs">
             <IconUpload color={colors[secondaryColor][5]} opacity={0.6} size={18} />
-            <Text color="dimmed" size="sm">
+            <Text c="dimmed" size="sm">
               {humanFileSize(totalUpload, false)}
             </Text>
           </Group>

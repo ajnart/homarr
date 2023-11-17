@@ -1,23 +1,23 @@
 import {
-  Button,
-  Card,
-  Center,
-  Grid,
-  Group,
-  Loader,
-  Image as MantineImage,
-  Modal,
-  ScrollArea,
-  Stack,
-  Text,
-  Title,
+	Button,
+	Card,
+	Center,
+	Grid,
+	Group,
+	Loader,
+	Image as MantineImage,
+	Modal,
+	ScrollArea,
+	Stack,
+	Text,
+	Title,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { z } from 'zod';
 import { availableIntegrations } from '~/components/Dashboard/Modals/EditAppModal/Tabs/IntegrationTab/Components/InputElements/IntegrationSelector';
 import { useConfigContext } from '~/config/provider';
@@ -141,7 +141,7 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
 
   return (
     <Card withBorder>
-      <Group noWrap style={{ maxHeight: 250 }} p={0} m={0} spacing="xs" align="stretch">
+      <Group wrap="nowrap" style={{ maxHeight: 250 }} p={0} m={0} gap="xs" align="stretch">
         <MantineImage
           withPlaceholder
           src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
@@ -153,16 +153,16 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
           fit="cover"
         />
         <Stack justify="space-between">
-          <Stack spacing={4}>
+          <Stack gap={4}>
             <Title lineClamp={2} order={5}>
               {movie.title ?? movie.name ?? movie.originalName}
             </Title>
-            <Text color="dimmed" size="xs" lineClamp={4}>
+            <Text c="dimmed" size="xs" lineClamp={4}>
               {movie.overview}
             </Text>
           </Stack>
 
-          <Group spacing="xs">
+          <Group gap="xs">
             {!movie.mediaInfo?.mediaAddedAt && (
               <>
                 <RequestModal
@@ -176,7 +176,7 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
                   }}
                   variant="light"
                   size="sm"
-                  rightIcon={<IconDownload size={15} />}
+                  rightSection={<IconDownload size={15} />}
                 >
                   {t('buttons.request')}
                 </Button>
@@ -189,7 +189,7 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
                 variant="light"
                 href={mediaUrl}
                 size="sm"
-                rightIcon={<IconPlayerPlay size={15} />}
+                rightSection={<IconPlayerPlay size={15} />}
               >
                 {t('buttons.play')}
               </Button>
@@ -201,7 +201,7 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
                 href={externalUrl.href}
                 variant="outline"
                 size="sm"
-                rightIcon={<IconExternalLink size={15} />}
+                rightSection={<IconExternalLink size={15} />}
               >
                 {serviceUrl ? (type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr') : 'TMDB'}
               </Button>

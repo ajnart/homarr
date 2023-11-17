@@ -114,7 +114,7 @@ export const WidgetsEditModal = ({
           />
         );
       })}
-      <Group position="right">
+      <Group justify="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
           {t('common:cancel')}
         </Button>
@@ -143,7 +143,7 @@ const WidgetOptionTypeSwitch: FC<{
   switch (option.type) {
     case 'switch':
       return (
-        <Group align="center" spacing="sm">
+        <Group align="center" gap="sm">
           <Switch
             label={t(`descriptor.settings.${key}.label`)}
             checked={value as boolean}
@@ -155,8 +155,8 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'text':
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -171,8 +171,8 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'multi-select':
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -199,8 +199,8 @@ const WidgetOptionTypeSwitch: FC<{
           : dataType;
       });
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -218,8 +218,8 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'number':
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -234,8 +234,8 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'slider':
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -288,8 +288,8 @@ const WidgetOptionTypeSwitch: FC<{
         );
 
       return (
-        <Stack spacing="xs">
-          <Group align="center" spacing="sm">
+        <Stack gap="xs">
+          <Group align="center" gap="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
             {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
@@ -317,8 +317,8 @@ const WidgetOptionTypeSwitch: FC<{
       );
     case 'multiple-text':
       return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
+        <Stack gap={0}>
+          <Group align="center" gap="sm">
             <Text size="0.875rem" weight="500">
               {t(`descriptor.settings.${key}.label`)}
             </Text>
@@ -344,8 +344,8 @@ const WidgetOptionTypeSwitch: FC<{
     case 'draggable-editable-list':
       const { t: translateDraggableList } = useTranslation('widgets/draggable-list');
       return (
-        <Stack spacing="xs">
-          <Group align="center" spacing="sm">
+        <Stack gap="xs">
+          <Group align="center" gap="sm">
             <Text>{t(`descriptor.settings.${key}.label`)}</Text>
             {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
@@ -362,7 +362,7 @@ const WidgetOptionTypeSwitch: FC<{
             <Card>
               <Stack align="center">
                 <IconPlaylistX size="2rem" />
-                <Stack align="center" spacing={0}>
+                <Stack align="center" gap={0}>
                   <Title order={5}>{translateDraggableList('noEntries.title')}</Title>
                   <Text>{translateDraggableList('noEntries.text')}</Text>
                 </Stack>
@@ -375,7 +375,7 @@ const WidgetOptionTypeSwitch: FC<{
               onClick={() => {
                 handleChange('items', [...value, option.create()]);
               }}
-              leftIcon={<IconPlus size={16} />}
+              leftSection={<IconPlus size={16} />}
               variant="default"
               fullWidth
             >

@@ -47,7 +47,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
       return (
         <Card
           m={10}
-          sx={(theme) => ({
+          style={(theme) => ({
             backgroundColor: theme.colors.red[5],
           })}
           radius="lg"
@@ -58,19 +58,19 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
           <WidgetsMenu integration={this.props.integration} widget={this.props.widget} />
           <ScrollArea h="100%" type="auto" offsetScrollbars>
             <Center>
-              <Stack align="center" spacing="xs">
+              <Stack align="center" gap="xs">
                 <IconBug color="white" />
-                <Stack spacing={0} align="center">
+                <Stack gap={0} align="center">
                   <Title order={5} color="white" align="center">
                     {this.props.t('card.title')}
                   </Title>
                   {this.state.error && (
-                    <Text color="white" align="center" size="sm">
+                    <Text c="white" align="center" size="sm">
                       {this.state.error.toString()}
                     </Text>
                   )}
                 </Stack>
-                <Group spacing="xs">
+                <Group gap="xs">
                   <Button
                     onClick={() =>
                       openModal({
@@ -89,13 +89,13 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
                               </>
                             )}
                             <Button
-                              sx={(theme) => ({
+                              style={(theme) => ({
                                 backgroundColor: theme.colors.gray[8],
                                 '&:hover': {
                                   backgroundColor: theme.colors.gray[9],
                                 },
                               })}
-                              leftIcon={<IconBrandGithub />}
+                              leftSection={<IconBrandGithub />}
                               component="a"
                               href="https://github.com/ajnart/homarr/issues/new?assignees=&labels=%F0%9F%90%9B+Bug&template=bug.yml&title=New%20bug"
                               target="_blank"
@@ -108,14 +108,14 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
                         ),
                       })
                     }
-                    leftIcon={<IconInfoCircle size={16} />}
+                    leftSection={<IconInfoCircle size={16} />}
                     variant="light"
                   >
                     {this.props.t('card.buttons.details')}
                   </Button>
                   <Button
                     onClick={() => this.setState({ hasError: false })}
-                    leftIcon={<IconRefresh size={16} />}
+                    leftSection={<IconRefresh size={16} />}
                     variant="light"
                   >
                     {this.props.t('card.buttons.tryAgain')}

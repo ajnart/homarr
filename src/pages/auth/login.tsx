@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Alert,
   Button,
   Card,
@@ -8,7 +7,7 @@ import {
   Stack,
   Text,
   TextInput,
-  Title,
+  Title
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconAlertTriangle } from '@tabler/icons-react';
@@ -73,12 +72,12 @@ export default function LoginPage({
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
         <ThemeSchemeToggle pos="absolute" top={20} right={20} />
-        <Stack spacing={40} align="center" w="100%">
-          <Stack spacing={0} align="center">
+        <Stack gap={40} align="center" w="100%">
+          <Stack gap={0} align="center">
             <Image src="/imgs/logo/logo.svg" width={80} height={80} alt="" />
             <Text
-              sx={(theme) => ({
-                color: theme.colorScheme === 'dark' ? theme.colors.gray[5] : theme.colors.dark[6],
+              style={(theme) => ({
+                color: colorScheme === 'dark' ? theme.colors.gray[5] : theme.colors.dark[6],
                 fontSize: '4rem',
                 fontWeight: 800,
                 lineHeight: 1,
@@ -95,11 +94,11 @@ export default function LoginPage({
             </Alert>
           )}
           <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
-            <Title style={{ whiteSpace: 'nowrap' }} align="center" weight={900}>
+            <Title style={{ whiteSpace: 'nowrap' }} style={{textAlign: "center"}} weight={900}>
               {t('title')}
             </Title>
 
-            <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+            <Text c="dimmed" size="sm" align="center" mt={5} mb="md">
               {t('text')}
             </Text>
 
@@ -132,7 +131,7 @@ export default function LoginPage({
                 </Button>
 
                 {redirectAfterLogin && (
-                  <Text color="dimmed" align="center" size="xs">
+                  <Text c="dimmed" align="center" size="xs">
                     {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
                   </Text>
                 )}

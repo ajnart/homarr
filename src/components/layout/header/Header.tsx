@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Box,
   Center,
   Flex,
@@ -8,11 +7,11 @@ import {
   Text,
   Title,
   UnstyledButton,
-  useMantineTheme,
+  useMantineTheme
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
@@ -23,7 +22,7 @@ type MainHeaderProps = {
   showExperimental?: boolean;
   headerActions?: React.ReactNode;
   contentComponents?: React.ReactNode;
-  leftIcon?: React.ReactNode;
+  leftSection?: React.ReactNode;
   autoFocusSearch?: boolean;
 };
 
@@ -31,7 +30,7 @@ export const MainHeader = ({
   showExperimental = false,
   logoHref = '/',
   headerActions,
-  leftIcon,
+  leftSection,
   contentComponents,
   autoFocusSearch,
 }: MainHeaderProps) => {
@@ -45,9 +44,9 @@ export const MainHeader = ({
 
   return (
     <Header height={headerHeight} pb="sm" pt={0}>
-      <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
-        <Group noWrap style={{ flex: 1 }}>
-          {leftIcon}
+      <Group gap="xl" mt="xs" px="md" justify="apart" wrap="nowrap">
+        <Group wrap="nowrap" style={{ flex: 1 }}>
+          {leftSection}
           <UnstyledButton component="a" href={logoHref}>
             <Logo />
           </UnstyledButton>
@@ -55,8 +54,8 @@ export const MainHeader = ({
 
         {!isSmallerThanMd && <Search autoFocus={autoFocusSearch} />}
 
-        <Group noWrap style={{ flex: 1 }} position="right">
-          <Group noWrap spacing={8}>
+        <Group wrap="nowrap" style={{ flex: 1 }} justify="right">
+          <Group wrap="nowrap" gap={8}>
             {contentComponents}
             {headerActions}
           </Group>
@@ -85,7 +84,7 @@ const ExperimentalHeaderNote = ({ visible = false, height = 30 }: ExperimentalHe
     <Box bg="red" h={height} p={3} px={6} style={{ overflow: 'hidden' }}>
       <Flex h="100%" align="center" columnGap={7}>
         <IconAlertTriangle color="white" size="1rem" style={{ minWidth: '1rem' }} />
-        <Text color="white" lineClamp={height === 30 ? 1 : 2}>
+        <Text c="white" lineClamp={height === 30 ? 1 : 2}>
           <Title>Make an announcement here</Title>
         </Text>
       </Flex>

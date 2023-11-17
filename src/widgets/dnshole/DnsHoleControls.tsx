@@ -88,10 +88,10 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
       <Center h="100%">
         <Stack align="center">
           <IconDeviceGamepad size={40} strokeWidth={1} />
-          <Title align="center" order={6}>
+          <Title style={{textAlign: "center"}} order={6}>
             {t('modules/dns-hole-controls:descriptor.errors.general.title')}
           </Title>
-          <Text align="center">
+          <Text style={{ textAlign: 'center' }}>
             {t('modules/dns-hole-controls:descriptor.errors.general.text')}
           </Text>
         </Stack>
@@ -128,7 +128,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   };
 
   return (
-    <Stack justify="space-between" h={'100%'} spacing="0.25rem">
+    <Stack justify="space-between" h={'100%'} gap="0.25rem">
       {sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons && (
         <SimpleGrid
           ref={ref}
@@ -152,7 +152,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
               );
             }}
             disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
-            leftIcon={<IconPlayerPlay size={20} />}
+            leftSection={<IconPlayerPlay size={20} />}
             variant="light"
             color="green"
             h="2rem"
@@ -175,7 +175,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
               );
             }}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
-            leftIcon={<IconPlayerStop size={20} />}
+            leftSection={<IconPlayerStop size={20} />}
             variant="light"
             color="red"
             h="2rem"
@@ -204,9 +204,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             <Card withBorder={true} key={dnsHole.appId} p="xs" radius="md">
               <Group>
                 <Box
-                  sx={(theme) => ({
+                  style={(theme) => ({
                     backgroundColor:
-                      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
+                      colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2],
                     textAlign: 'center',
                     padding: 5,
                     borderRadius: theme.radius.md,
@@ -214,7 +214,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 >
                   <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
-                <Stack spacing="0rem">
+                <Stack gap="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
                     onClick={async () => {
@@ -240,13 +240,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                         root: {
                           '&:hover': {
                             background:
-                              theme.colorScheme === 'dark'
+                              colorScheme === 'dark'
                                 ? theme.colors.dark[4]
                                 : theme.colors.gray[2],
                           },
                           '&:active': {
                             background:
-                              theme.colorScheme === 'dark'
+                              colorScheme === 'dark'
                                 ? theme.colors.dark[5]
                                 : theme.colors.gray[3],
                           },

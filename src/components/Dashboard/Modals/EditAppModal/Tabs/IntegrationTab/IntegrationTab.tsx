@@ -22,7 +22,7 @@ export const IntegrationTab = ({ form }: IntegrationTabProps) => {
       {hasIntegrationSelected && (
         <>
           <Divider label={t('integration.type.label')} labelPosition="center" mt="xl" mb="md" />
-          <Text size="sm" color="dimmed" mb="lg">
+          <Text size="sm" c="dimmed" mb="lg">
             {t('integration.secrets.description')}
           </Text>
           <IntegrationOptionsRenderer form={form} />

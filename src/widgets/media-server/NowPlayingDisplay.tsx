@@ -1,10 +1,10 @@
 import { Flex, Stack, Text } from '@mantine/core';
 import {
-  IconDeviceTv,
-  IconHeadphones,
-  IconMovie,
-  IconQuestionMark,
-  IconVideo,
+	IconDeviceTv,
+	IconHeadphones,
+	IconMovie,
+	IconQuestionMark,
+	IconVideo,
 } from '@tabler/icons-react';
 import { GenericSessionInfo } from '~/types/api/media-server/session-info';
 
@@ -33,16 +33,16 @@ export const NowPlayingDisplay = ({ session }: { session: GenericSessionInfo }) 
   return (
     <Flex wrap="nowrap" gap="sm" align="center">
       <Icon size={16} />
-      <Stack spacing={0}>
+      <Stack gap={0}>
         <Text lineClamp={1}>{session.currentlyPlaying.name}</Text>
 
         {session.currentlyPlaying.albumName ? (
-          <Text lineClamp={1} color="dimmed" size="xs">
+          <Text lineClamp={1} c="dimmed" size="xs">
             {session.currentlyPlaying.albumName}
           </Text>
         ) : (
           session.currentlyPlaying.seasonName && (
-            <Text lineClamp={1} color="dimmed" size="xs">
+            <Text lineClamp={1} c="dimmed" size="xs">
               {session.currentlyPlaying.seasonName} - {session.currentlyPlaying.episodeName}
             </Text>
           )

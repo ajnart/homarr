@@ -1,13 +1,11 @@
 import {
-  Group,
-  HoverCard,
-  Stack,
-  Switch,
-  Tabs,
-  Text,
-  TextInput,
-  Tooltip,
-  useMantineTheme,
+	Group,
+	Stack,
+	Switch,
+	Tabs,
+	Text,
+	TextInput,
+	useMantineTheme
 } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
@@ -24,14 +22,14 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
 
   return (
     <Tabs.Panel value="behaviour" pt="xs">
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <Switch
           label={t('behaviour.isOpeningNewTab.label')}
           description={t('behaviour.isOpeningNewTab.description')}
           styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
           {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
         />
-        <Stack spacing="0.25rem">
+        <Stack gap="0.25rem">
           <Group>
             <Text size="0.875rem" weight={500}>
               {t('behaviour.tooltipDescription.label')}

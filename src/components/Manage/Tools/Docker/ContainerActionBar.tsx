@@ -1,13 +1,13 @@
 import { Button, Group } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import {
-  IconCheck,
-  IconPlayerPlay,
-  IconPlayerStop,
-  IconPlus,
-  IconRefresh,
-  IconRotateClockwise,
-  IconTrash,
+	IconCheck,
+	IconPlayerPlay,
+	IconPlayerStop,
+	IconPlus,
+	IconRefresh,
+	IconRotateClockwise,
+	IconTrash,
 } from '@tabler/icons-react';
 import Dockerode from 'dockerode';
 import { useTranslation } from 'next-i18next';
@@ -30,9 +30,9 @@ export default function ContainerActionBar({
   const sendDockerCommand = useDockerActionMutation();
 
   return (
-    <Group spacing="xs">
+    <Group gap="xs">
       <Button
-        leftIcon={<IconRefresh />}
+        leftSection={<IconRefresh />}
         onClick={reload}
         variant="light"
         color="violet"
@@ -42,7 +42,7 @@ export default function ContainerActionBar({
         {t('actionBar.refreshData.title')}
       </Button>
       <Button
-        leftIcon={<IconRotateClockwise />}
+        leftSection={<IconRotateClockwise />}
         onClick={async () =>
           await Promise.all(selected.map((container) => sendDockerCommand(container, 'restart')))
         }
@@ -54,7 +54,7 @@ export default function ContainerActionBar({
         {t('actionBar.restart.title')}
       </Button>
       <Button
-        leftIcon={<IconPlayerStop />}
+        leftSection={<IconPlayerStop />}
         onClick={async () =>
           await Promise.all(selected.map((container) => sendDockerCommand(container, 'stop')))
         }
@@ -66,7 +66,7 @@ export default function ContainerActionBar({
         {t('actionBar.stop.title')}
       </Button>
       <Button
-        leftIcon={<IconPlayerPlay />}
+        leftSection={<IconPlayerPlay />}
         onClick={async () =>
           await Promise.all(selected.map((container) => sendDockerCommand(container, 'start')))
         }
@@ -78,7 +78,7 @@ export default function ContainerActionBar({
         {t('actionBar.start.title')}
       </Button>
       <Button
-        leftIcon={<IconTrash />}
+        leftSection={<IconTrash />}
         color="red"
         variant="light"
         radius="md"
@@ -90,7 +90,7 @@ export default function ContainerActionBar({
         {t('actionBar.remove.title')}
       </Button>
       <Button
-        leftIcon={<IconPlus />}
+        leftSection={<IconPlus />}
         color="indigo"
         variant="light"
         radius="md"

@@ -1,8 +1,8 @@
-import { useMantineTheme } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import Head from 'next/head';
 
 export const CommonHead = () => {
-  const { colorScheme } = useMantineTheme();
+  const colorScheme = useColorScheme();
 
   return (
     <Head>

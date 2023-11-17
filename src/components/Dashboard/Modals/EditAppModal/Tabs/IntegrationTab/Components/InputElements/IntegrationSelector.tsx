@@ -4,12 +4,12 @@ import { UseFormReturnType } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 import { forwardRef } from 'react';
 import {
-  AppIntegrationPropertyType,
-  AppIntegrationType,
-  AppType,
-  IntegrationField,
-  integrationFieldDefinitions,
-  integrationFieldProperties,
+	AppIntegrationPropertyType,
+	AppIntegrationType,
+	AppType,
+	IntegrationField,
+	integrationFieldDefinitions,
+	integrationFieldProperties,
 } from '~/types/app';
 
 interface IntegrationSelectorProps {
@@ -91,13 +91,13 @@ interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
 const SelectItemComponent = forwardRef<HTMLDivElement, ItemProps>(
   ({ image, label, description, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
-      <Group noWrap>
+      <Group wrap="nowrap">
         <Image src={image} alt="integration icon" width={20} height={20} fit="contain" />
 
         <div>
           <Text size="sm">{label}</Text>
           {description && (
-            <Text size="xs" color="dimmed">
+            <Text size="xs" c="dimmed">
               {description}
             </Text>
           )}

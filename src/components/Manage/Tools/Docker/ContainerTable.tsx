@@ -1,27 +1,19 @@
-import {
-  Badge,
-  Checkbox,
-  Group,
-  ScrollArea,
-  Table,
-  Text,
-  TextInput,
-  createStyles,
-} from '@mantine/core';
+import { Badge, Checkbox, Group, ScrollArea, Table, Text, TextInput, rgba } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import Dockerode, { ContainerInfo } from 'dockerode';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useMemo, useState } from 'react';
+import { tss } from '~/utils/tss';
 
 import { MIN_WIDTH_MOBILE } from '../../../../constants/constants';
 import ContainerState from './ContainerState';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create(({ theme, colorScheme }) => ({
   rowSelected: {
     backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.fn.rgba(theme.colors[theme.primaryColor][7], 0.2)
+      colorScheme === 'dark'
+        ? rgba(theme.colors[theme.primaryColor][7], 0.2)
         : theme.colors[theme.primaryColor][0],
   },
 }));
@@ -64,7 +56,7 @@ export default function ContainerTable({
       <TextInput
         placeholder={t('search.placeholder') ?? undefined}
         mr="md"
-        icon={<IconSearch size={14} />}
+        leftSection={<IconSearch size={14} />}
         value={search}
         autoFocus
         onChange={handleSearchChange}
@@ -79,7 +71,6 @@ export default function ContainerTable({
                 indeterminate={
                   selection.length > 0 && selection.length !== filteredContainers.length
                 }
-                transitionDuration={0}
                 disabled={filteredContainers.length === 0}
               />
             </th>
@@ -121,10 +112,10 @@ const Row = ({ container, selected, toggleRow, width }: RowProps) => {
   return (
     <tr className={cx({ [classes.rowSelected]: selected })}>
       <td>
-        <Checkbox checked={selected} onChange={() => toggleRow(container)} transitionDuration={0} />
+        <Checkbox checked={selected} onChange={() => toggleRow(container)} />
       </td>
       <td>
-        <Text size="lg" weight={600}>
+        <Text size="lg" style={{ fontWeight: 600 }}>
           {container.Names[0].replace('/', '')}
         </Text>
       </td>

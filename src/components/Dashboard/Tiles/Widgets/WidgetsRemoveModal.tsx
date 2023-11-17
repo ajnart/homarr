@@ -37,7 +37,7 @@ export const WidgetsRemoveModal = ({
         components={[<Text weight={500} />]}
         values={{ item: innerProps.widgetType }}
       />
-      <Group position="right">
+      <Group justify="right">
         <Button onClick={() => context.closeModal(id)} variant="light">
           {t('common:cancel')}
         </Button>

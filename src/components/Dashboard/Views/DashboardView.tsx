@@ -17,7 +17,7 @@ export const DashboardView = () => {
   const { isReady, mainAreaRef } = usePrepareGridstack();
 
   return (
-    <Group align="top" h="100%" spacing="xs">
+    <Group align="top" h="100%" gap="xs">
       {sidebarsVisible.left ? (
         <DashboardSidebar location="left" isGridstackReady={isReady} />
       ) : null}

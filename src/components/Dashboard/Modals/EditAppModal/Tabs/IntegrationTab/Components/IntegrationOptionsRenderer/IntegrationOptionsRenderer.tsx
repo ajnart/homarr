@@ -2,11 +2,11 @@ import { Stack } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { IconKey } from '@tabler/icons-react';
 import {
-  AppIntegrationPropertyType,
-  AppType,
-  IntegrationField,
-  integrationFieldDefinitions,
-  integrationFieldProperties,
+	AppIntegrationPropertyType,
+	AppType,
+	IntegrationField,
+	integrationFieldDefinitions,
+	integrationFieldProperties,
 } from '~/types/app';
 
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
@@ -23,7 +23,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
   const displayedProperties = integrationFieldProperties[selectedIntegration];
 
   return (
-    <Stack spacing="xs" mb="md">
+    <Stack gap="xs" mb="md">
       {displayedProperties.map((property, index) => {
         const [_, definition] = Object.entries(integrationFieldDefinitions).find(
           ([key]) => property === key

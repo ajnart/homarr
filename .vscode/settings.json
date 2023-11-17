@@ -13,6 +13,13 @@
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true
 	},
+	"cssVariables.lookupFiles": [
+		"node_modules/@mantine/core/esm/index.css",
+		"**/*.css",
+		"**/*.scss",
+		"**/*.sass",
+		"**/*.less"
+	],
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"explorer.fileNesting.patterns": {
 		"package.json": "pnpm-lock.yaml, yarn.lock, package-lock.json",

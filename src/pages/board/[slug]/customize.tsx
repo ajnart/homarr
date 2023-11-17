@@ -1,27 +1,27 @@
 import {
-  Affix,
-  Button,
-  Card,
-  Container,
-  Group,
-  Paper,
-  Stack,
-  Text,
-  Title,
-  Transition,
-  rem,
+	Affix,
+	Button,
+	Card,
+	Container,
+	Group,
+	Paper,
+	Stack,
+	Text,
+	Title,
+	Transition,
+	rem,
 } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
-  IconArrowLeft,
-  IconBrush,
-  IconChartCandle,
-  IconCheck,
-  IconDragDrop,
-  IconLayout,
-  IconLock,
-  IconX,
-  TablerIconsProps,
+	IconArrowLeft,
+	IconBrush,
+	IconChartCandle,
+	IconCheck,
+	IconDragDrop,
+	IconLayout,
+	IconLock,
+	IconX,
+	TablerIconsProps,
 } from '@tabler/icons-react';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -36,8 +36,8 @@ import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/G
 import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
 import { PageMetadataCustomization } from '~/components/Board/Customize/PageMetadata/PageMetadataCustomization';
 import {
-  BoardCustomizationFormProvider,
-  useBoardCustomizationForm,
+	BoardCustomizationFormProvider,
+	useBoardCustomizationForm,
 } from '~/components/Board/Customize/form';
 import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
@@ -176,7 +176,7 @@ export default function CustomizationPage({
           color={config?.settings.customization.colors.primary ?? 'red'}
           href={backToBoardHref}
           variant="light"
-          leftIcon={<IconArrowLeft size={16} />}
+          leftSection={<IconArrowLeft size={16} />}
         >
           {t('backToBoard')}
         </Button>
@@ -190,16 +190,16 @@ export default function CustomizationPage({
           {(transitionStyles) => (
             <Card
               style={transitionStyles}
-              sx={(theme) => ({
+              style={(theme) => ({
                 background:
-                  theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
+                  colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[1],
               })}
               shadow="md"
               withBorder
             >
-              <Group position="apart" noWrap>
+              <Group justify="apart" wrap="nowrap">
                 <Text weight="bold">{t('save.note')}</Text>
-                <Group spacing="md">
+                <Group gap="md">
                   <Button
                     onClick={() => {
                       form.reset();
@@ -232,7 +232,7 @@ export default function CustomizationPage({
       <Container>
         <Paper p="xl" py="sm" mih="100%" withBorder>
           <Stack>
-            <Group position="apart">
+            <Group justify="apart">
               <Title order={2}>
                 {t('pageTitle', {
                   name: firstUpperCase(query.slug),
@@ -240,24 +240,24 @@ export default function CustomizationPage({
               </Title>
             </Group>
             <BoardCustomizationFormProvider form={form}>
-              <Stack spacing="xl">
-                <Stack spacing="xs">
+              <Stack gap="xl">
+                <Stack gap="xs">
                   <SectionTitle type="layout" icon={IconLayout} />
                   <LayoutCustomization />
                 </Stack>
-                <Stack spacing="xs">
+                <Stack gap="xs">
                   <SectionTitle type="access" icon={IconLock} />
                   <AccessCustomization />
                 </Stack>
-                <Stack spacing="xs">
+                <Stack gap="xs">
                   <SectionTitle type="gridstack" icon={IconDragDrop} />
                   <GridstackCustomization />
                 </Stack>
-                <Stack spacing="xs">
+                <Stack gap="xs">
                   <SectionTitle type="pageMetadata" icon={IconChartCandle} />
                   <PageMetadataCustomization />
                 </Stack>
-                <Stack spacing="xs">
+                <Stack gap="xs">
                   <SectionTitle type="appereance" icon={IconBrush} />
                   <AppearanceCustomization />
                 </Stack>
@@ -279,12 +279,12 @@ const SectionTitle = ({ type, icon: Icon }: SectionTitleProps) => {
   const { t } = useTranslation('settings/customization/general');
 
   return (
-    <Stack spacing={0}>
-      <Group spacing="xs">
+    <Stack gap={0}>
+      <Group gap="xs">
         <Icon size={16} />
         <Title order={5}>{t(`accordeon.${type}.name`)}</Title>
       </Group>
-      <Text color="dimmed">{t(`accordeon.${type}.description`)}</Text>
+      <Text c="dimmed">{t(`accordeon.${type}.description`)}</Text>
     </Stack>
   );
 };

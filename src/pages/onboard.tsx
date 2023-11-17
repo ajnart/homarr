@@ -38,8 +38,12 @@ export default function OnboardPage({
 
       <ThemeSchemeToggle pos="absolute" top={20} right={20} variant="default" />
 
-      <Stack h="100dvh" bg={background} spacing={0}>
-        <Center bg={fn.linearGradient(145, colors.red[7], colors.red[5])} mih={150} h={150}>
+      <Stack h="100dvh" bg={background} gap={0}>
+        <Center
+          bg={`linear-gradient(145deg, --var(--mantine-color-red-7), var(--mantine-color-red-5)`}
+          mih={150}
+          h={150}
+        >
           <Center bg={background} w={100} h={100} style={{ borderRadius: 64 }}>
             <Image width={70} src="/imgs/logo/logo-color.svg" alt="Homarr Logo" />
           </Center>
@@ -65,7 +69,7 @@ export default function OnboardPage({
 
                   <Button
                     onClick={showOnboardingSteps}
-                    rightIcon={<IconArrowRight size="1rem" />}
+                    rightSection={<IconArrowRight size="1rem" />}
                     variant="default"
                   >
                     Start update process

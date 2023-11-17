@@ -10,7 +10,6 @@ import {
   Stack,
   Table,
   Text,
-  createStyles
 } from '@mantine/core';
 import {
   IconAnchor,
@@ -18,7 +17,7 @@ import {
   IconLanguage,
   IconSchema,
   IconVersions,
-  IconVocabulary
+  IconVocabulary,
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { InitOptions } from 'i18next';
@@ -35,6 +34,7 @@ import { useConfigContext } from '~/config/provider';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { useColorTheme } from '~/tools/color';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { tss } from '~/utils/tss';
 
 import { REPO_URL } from '../../../data/constants';
 
@@ -98,7 +98,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
       icon: <IconVersions size={20} />,
       label: 'version',
       content: (
-        <Group position="right">
+        <Group justify="right">
           <Badge variant="light" color={primaryColor}>
             {attributes.packageVersion ?? 'Unknown'}
           </Badge>
@@ -151,7 +151,7 @@ const useInformationTableItems = (newVersionAvailable?: string): InformationTabl
   return items;
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   informationTableColumn: {
     textAlign: 'right',
   },
@@ -160,7 +160,7 @@ const useStyles = createStyles(() => ({
   },
 }));
 
-export const Page = ({ contributors }: { contributors: Contributors[] }) => {
+export default function Page({ contributors }: { contributors: Contributors[] }) {
   const { data } = useQuery({
     queryKey: ['github/latest'],
     cacheTime: 1000 * 60 * 60 * 24,
@@ -209,12 +209,12 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
           <Trans i18nKey="layout/modals/about:description" />
         </Text>
 
-        <Table withBorder>
+        <Table withTableBorder>
           <tbody>
             {informations.map((item, index) => (
               <tr key={index}>
                 <td>
-                  <Group spacing="xs">
+                  <Group gap="xs">
                     <ActionIcon className={classes.informationIcon} variant="default">
                       {item.icon}
                     </ActionIcon>
@@ -260,7 +260,7 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
       </Stack>
     </ManageLayout>
   );
-};
+}
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   const contributors = (await fetch(
@@ -276,5 +276,3 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
     },
   };
 }
-
-export default Page;

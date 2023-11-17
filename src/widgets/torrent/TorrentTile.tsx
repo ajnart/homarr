@@ -1,15 +1,15 @@
-import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
-  Badge,
-  Center,
-  Flex,
-  Group,
-  Loader,
-  ScrollArea,
-  Stack,
-  Table,
-  Text,
-  Title,
+	Badge,
+	Center,
+	Flex,
+	Group,
+	Loader,
+	ScrollArea,
+	Stack,
+	Table,
+	Text,
+	Title,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload, IconInfoCircle } from '@tabler/icons-react';
@@ -119,9 +119,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
         }}
       >
         <Loader />
-        <Stack align="center" spacing={0}>
+        <Stack align="center" gap={0}>
           <Text>{t('card.loading.title')}</Text>
-          <Text color="dimmed">{t('card.loading.description')}</Text>
+          <Text c="dimmed">{t('card.loading.description')}</Text>
         </Stack>
       </Stack>
     );
@@ -157,8 +157,8 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
   return (
-    <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
+    <Flex direction="column" style={{ height: '100%' }} ref={ref}>
+      <ScrollArea style={{ height: '100%', width: '100%' }} mb="xs">
         <Table striped highlightOnHover p="sm">
           <thead>
             <tr>
@@ -180,7 +180,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
                 <td colSpan={width > MIN_WIDTH_MOBILE ? 6 : 3}>
                   <Flex gap="xs" align="center" justify="center">
                     <IconInfoCircle opacity={0.7} size={18} />
-                    <Text align="center" color="dimmed">
+                    <Text style={{ textAlign: 'center' }} c="dimmed">
                       {t('card.table.body.filterHidingItems', {
                         count: torrents.length - filteredTorrents.length,
                       })}
@@ -192,14 +192,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
           </tbody>
         </Table>
       </ScrollArea>
-      <Group spacing="sm">
+      <Group gap="sm">
         {data.apps.some((x) => !x.success) && (
           <Badge variant="dot" color="red">
             {t('card.footer.error')}
           </Badge>
         )}
 
-        <Text color="dimmed" size="xs">
+        <Text c="dimmed" size="xs">
         {t('card.footer.lastUpdated', { time: humanizedDuration })}
           {` - ${t('card.footer.ratioGlobal')} : ${
             ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)

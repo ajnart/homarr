@@ -1,13 +1,13 @@
 import {
-  Button,
-  Container,
-  Group,
-  LoadingOverlay,
-  Paper,
-  Select,
-  Stack,
-  Text,
-  Title,
+	Button,
+	Container,
+	Group,
+	LoadingOverlay,
+	Paper,
+	Select,
+	Stack,
+	Text,
+	Title,
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
@@ -38,7 +38,7 @@ const PreferencesPage = () => {
     <MainLayout
       showExperimental
       contentComponents={
-        <Button component="a" href="/board/" variant="light" leftIcon={<IconArrowLeft size={16} />}>
+        <Button component="a" href="/board/" variant="light" leftSection={<IconArrowLeft size={16} />}>
           {t('common:back')}
         </Button>
       }
@@ -128,7 +128,7 @@ const SettingsComponent = ({
     <FormProvider form={form}>
       <form style={{ position: 'relative' }} onSubmit={form.onSubmit(handleSubmit)}>
         <LoadingOverlay visible={isLoading} overlayBlur={2} />
-        <Stack spacing={5}>
+        <Stack gap={5}>
           <Select
             label={t('boards.defaultBoard.label')}
             data={boardsData.map((board) => board.name)}
@@ -196,7 +196,7 @@ interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
 const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ image, label, description, country, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
-      <Group noWrap>
+      <Group wrap="nowrap">
         {country !== 'CROWDIN' && <span className={`fi fi-${country?.toLowerCase()}`}></span>}
         {country === 'CROWDIN' && <img src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'} alt={label} width={16} height={16} />}
         <div>

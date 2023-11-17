@@ -1,9 +1,10 @@
-import { Collapse, Flex, Stack, Text, createStyles } from '@mantine/core';
+import { Collapse, Flex, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown, IconGripVertical } from '@tabler/icons-react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 import { IDraggableEditableListInputValue } from '~/widgets/widgets';
+import { tss } from '~/utils/tss';
 
 interface DraggableListProps {
   items: {
@@ -100,15 +101,15 @@ const ListItem: FC<{
   );
 };
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create(({theme,colorScheme}) => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
     borderRadius: theme.radius.md,
     border: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
+      colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.white,
+    backgroundColor: colorScheme === 'dark' ? theme.colors.dark[5] : theme.white,
     marginBottom: theme.spacing.xs,
   },
   row: {
@@ -125,7 +126,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: 16,
   },
   clickableIcons: {
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
+    color: colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
     cursor: 'pointer',
     userSelect: 'none',
     transition: 'transform .3s ease-in-out',

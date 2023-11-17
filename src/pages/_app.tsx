@@ -1,4 +1,7 @@
-import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
+import { MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
+// Import styles of packages that you've installed.
+// All packages except `@mantine/hooks` require styles imports
+import '@mantine/core/styles.css';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -14,7 +17,8 @@ import { SessionProvider, getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { createEmotionSsrAdvancedApproach } from 'tss-react/next/pagesDir';
 import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { ConfigProvider } from '~/config/provider';
@@ -22,7 +26,6 @@ import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
-import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
 import {
   ServerSidePackageAttributesType,
@@ -39,6 +42,12 @@ import '../styles/global.scss';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
+
+const { augmentDocumentWithEmotionCache, withAppEmotionCache } = createEmotionSsrAdvancedApproach({
+  key: 'css',
+});
+
+export { augmentDocumentWithEmotionCache };
 
 function App(
   this: any,
@@ -64,35 +73,6 @@ function App(
   if (language.locale !== 'cr') require(`dayjs/locale/${language.locale}.js`);
   dayjs.locale(language.locale);
 
-  const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.primaryColor ?? 'red'
-  );
-  const [secondaryColor, setSecondaryColor] = useState<MantineTheme['primaryColor']>(
-    props.pageProps.secondaryColor ?? 'orange'
-  );
-  const [primaryShade, setPrimaryShade] = useState<MantineTheme['primaryShade']>(
-    props.pageProps.primaryShade ?? 6
-  );
-  const colorTheme = {
-    primaryColor,
-    secondaryColor,
-    setPrimaryColor,
-    setSecondaryColor,
-    primaryShade,
-    setPrimaryShade,
-  };
-
-  useEffect(() => {
-    setPrimaryColor(props.pageProps.primaryColor ?? 'red');
-    setSecondaryColor(props.pageProps.secondaryColor ?? 'orange');
-    setPrimaryShade(props.pageProps.primaryShade ?? 6);
-    return () => {
-      setPrimaryColor('red');
-      setSecondaryColor('orange');
-      setPrimaryShade(6);
-    };
-  }, [props.pageProps]);
-
   const { setInitialPackageAttributes } = usePackageAttributesStore();
   useEffect(() => {
     setInitialPackageAttributes(props.pageProps.packageAttributes);
@@ -115,44 +95,24 @@ function App(
         />
       )}
       <SessionProvider session={pageProps.session}>
-        <ColorSchemeProvider {...pageProps}>
-          {(colorScheme) => (
-            <ColorTheme.Provider value={colorTheme}>
-              <MantineProvider
-                theme={{
-                  ...theme,
-                  components: {
-                    Checkbox: {
-                      styles: {
-                        input: { cursor: 'pointer' },
-                        label: { cursor: 'pointer' },
-                      },
-                    },
-                    Switch: {
-                      styles: {
-                        input: { cursor: 'pointer' },
-                        label: { cursor: 'pointer' },
-                      },
-                    },
-                  },
-                  primaryColor,
-                  primaryShade,
-                  colorScheme,
-                }}
-                withGlobalStyles
-                withNormalizeCSS
-                withCSSVariables
-              >
-                <ConfigProvider {...props.pageProps}>
-                  <Notifications limit={4} position="bottom-left" />
-                  <ModalsProvider modals={modals}>
-                    <Component {...pageProps} />
-                  </ModalsProvider>
-                </ConfigProvider>
-              </MantineProvider>
-            </ColorTheme.Provider>
-          )}
-        </ColorSchemeProvider>
+        <ConfigProvider {...props.pageProps}>
+          <MantineProvider
+            theme={
+              {
+                //TODO: Fix secondary color
+                // secondaryColor: props.pageProps.secondaryColor ?? 'orange',
+                // primaryColor: 'var(--mantine-color-red-6)',
+                // primaryShade: props.pageProps.primaryShade ?? 6,
+                // ...theme,
+              }
+            }
+          >
+            <Notifications limit={4} position="bottom-left" />
+            <ModalsProvider modals={modals}>
+              <Component {...pageProps} />
+            </ModalsProvider>
+          </MantineProvider>
+        </ConfigProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </SessionProvider>
     </>
@@ -187,7 +147,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
   };
 };
 
-export default appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig as any);
+export default withAppEmotionCache(appWithTranslation<any>(api.withTRPC(App), nextI18nextConfig));
 
 const getActiveColorScheme = (session: Session | null, ctx: GetServerSidePropsContext) => {
   const environmentColorScheme = env.NEXT_PUBLIC_DEFAULT_COLOR_SCHEME ?? 'light';

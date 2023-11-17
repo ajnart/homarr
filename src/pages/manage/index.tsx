@@ -8,7 +8,7 @@ import {
   Text,
   Title,
   UnstyledButton,
-  createStyles,
+  rgba,
 } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
@@ -20,10 +20,11 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { OnlyKeysWithStructure } from '~/types/helpers';
+import { tss } from '~/utils/tss';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
-import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 
 const ManagementPage = () => {
   const { t } = useTranslation('manage/index');
@@ -38,8 +39,8 @@ const ManagementPage = () => {
         <title>{metaTitle}</title>
       </Head>
       <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
-        <Group position="apart" noWrap>
-          <Stack spacing={15}>
+        <Group justify="apart" wrap="nowrap">
+          <Stack gap={15}>
             <Title className={classes.boxTitle} order={2}>
               {t('hero.title', {
                 username: sessionData?.user?.name ?? t('hero.fallbackUsername'),
@@ -104,8 +105,8 @@ const QuickActionCard = ({ type, href }: QuickActionCardProps) => {
   return (
     <UnstyledButton component={Link} href={href}>
       <Card className={classes.quickActionCard}>
-        <Group position="apart" noWrap>
-          <Stack spacing={0}>
+        <Group justify="apart" wrap="nowrap">
+          <Stack gap={0}>
             <Text weight={500}>{t(`quickActions.${type}.title`)}</Text>
             <Text>{t(`quickActions.${type}.subtitle`)}</Text>
           </Stack>
@@ -139,20 +140,19 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 export default ManagementPage;
 
-const useStyles = createStyles((theme) => ({
+const useStyles = tss.create(({ theme, colorScheme }) => ({
   box: {
     borderRadius: theme.radius.md,
-    backgroundColor:
-      theme.colorScheme === 'dark' ? theme.fn.rgba(theme.colors.red[8], 0.1) : theme.colors.red[1],
+    backgroundColor: colorScheme === 'dark' ? rgba(theme.colors.red[8], 0.1) : theme.colors.red[1],
   },
   boxTitle: {
     color: theme.colors.red[6],
   },
   quickActionCard: {
     height: '100%',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
+    backgroundColor: colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
+      backgroundColor: colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[3],
     },
   },
 }));

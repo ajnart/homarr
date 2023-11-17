@@ -1,27 +1,27 @@
 import {
-  Alert,
-  Center,
-  Code,
-  Group,
-  List,
-  Pagination,
-  Popover,
-  Progress,
-  Skeleton,
-  Stack,
-  Table,
-  Text,
-  Title,
-  useMantineTheme,
+	Alert,
+	Center,
+	Code,
+	Group,
+	List,
+	Pagination,
+	Popover,
+	Progress,
+	Skeleton,
+	Stack,
+	Table,
+	Text,
+	Title,
+	useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
-  IconAlertCircle,
-  IconClock,
-  IconClockPause,
-  IconFileDownload,
-  IconFileInfo,
-  IconPercentage,
+	IconAlertCircle,
+	IconClock,
+	IconClockPause,
+	IconFileDownload,
+	IconFileInfo,
+	IconPercentage,
 } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
@@ -68,7 +68,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
 
   if (isError) {
     return (
-      <Group position="center">
+      <Group justify="center">
         <Alert
           icon={<IconAlertCircle size={16} />}
           my="lg"
@@ -95,7 +95,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
 
   // TODO: Set ScollArea dynamic height based on the widget size
   return (
-    <Stack justify="space-around" spacing="xs">
+    <Stack justify="space-around" gap="xs">
       <Table highlightOnHover style={{ tableLayout: 'fixed' }} ref={ref}>
         <thead>
           <tr>
@@ -144,7 +144,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
                   ) : null}
                   <td>
                     {nzb.eta <= 0 ? (
-                      <Text size="xs" color="dimmed">
+                      <Text size="xs" c="dimmed">
                         {t('queue.paused')}
                       </Text>
                     ) : (
@@ -193,7 +193,7 @@ export const UsenetQueueList: FunctionComponent<UsenetQueueListProps> = ({ appId
       </Table>
       {totalPages > 1 && (
         <Pagination
-          noWrap
+          wrap="nowrap"
           size="sm"
           position="center"
           total={totalPages}

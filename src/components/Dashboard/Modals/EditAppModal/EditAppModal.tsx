@@ -110,7 +110,7 @@ export const EditAppModal = ({
 
     // also close the parent modal
     context.closeAll();
-    umami.track('Add app', { name:  values.name });
+    umami.track('Add app', { name: values.name });
   };
 
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
@@ -145,10 +145,17 @@ export const EditAppModal = ({
             restricted. Please report this incident.
           </Alert>
         ))}
-      <Stack spacing={0} align="center" my="lg">
+      <Stack gap={0} align="center" my="lg">
         <DebouncedImage src={form.values.appearance.iconUrl} width={120} height={120} />
 
-        <Text align="center" weight="bold" size="lg" mt="md">
+        <Text
+          style={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+          }}
+          size="lg"
+          mt="md"
+        >
           {form.values.name ?? 'New App'}
         </Text>
       </Stack>
@@ -162,42 +169,42 @@ export const EditAppModal = ({
         >
           <Tabs
             value={activeTab}
-            onTabChange={(tab) => setActiveTab(tab as EditAppModalTab)}
+            onChange={(tab) => setActiveTab(tab as EditAppModalTab)}
             defaultValue="general"
             radius="md"
           >
             <Tabs.List grow>
               <Tabs.Tab
                 rightSection={<ValidationErrorIndicator keys={['name', 'url']} />}
-                icon={<IconAdjustments size={14} />}
+                leftSection={<IconAdjustments size={14} />}
                 value="general"
               >
                 {t('tabs.general')}
               </Tabs.Tab>
               <Tabs.Tab
                 rightSection={<ValidationErrorIndicator keys={['behaviour.externalUrl']} />}
-                icon={<IconClick size={14} />}
+                leftSection={<IconClick size={14} />}
                 value="behaviour"
               >
                 {t('tabs.behaviour')}
               </Tabs.Tab>
               <Tabs.Tab
                 rightSection={<ValidationErrorIndicator keys={[]} />}
-                icon={<IconAccessPoint size={14} />}
+                leftSection={<IconAccessPoint size={14} />}
                 value="network"
               >
                 {t('tabs.network')}
               </Tabs.Tab>
               <Tabs.Tab
                 rightSection={<ValidationErrorIndicator keys={['appearance.iconUrl']} />}
-                icon={<IconBrush size={14} />}
+                leftSection={<IconBrush size={14} />}
                 value="appearance"
               >
                 {t('tabs.appearance')}
               </Tabs.Tab>
               <Tabs.Tab
                 rightSection={<ValidationErrorIndicator keys={[]} />}
-                icon={<IconPlug size={14} />}
+                leftSection={<IconPlug size={14} />}
                 value="integration"
               >
                 {t('tabs.integration')}
@@ -215,7 +222,7 @@ export const EditAppModal = ({
             <IntegrationTab form={form} />
           </Tabs>
 
-          <Group noWrap position="right" mt="md">
+          <Group wrap="nowrap" justify="right" mt="md">
             <Button onClick={closeModal} px={50} variant="light" color="gray">
               {t('common:cancel')}
             </Button>
@@ -240,7 +247,9 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
           </Button>
         </div>
       </Popover.Target>
-      <Popover.Dropdown sx={{ pointerEvents: 'none' }}>{t('validation.popover')}</Popover.Dropdown>
+      <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+        {t('validation.popover')}
+      </Popover.Dropdown>
     </Popover>
   );
 };

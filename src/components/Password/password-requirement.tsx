@@ -9,7 +9,7 @@ export const PasswordRequirement = ({ meets, label }: { meets: boolean; label: s
   return (
     <Text
       color={meets ? 'teal' : 'red'}
-      sx={{ display: 'flex', alignItems: 'center' }}
+      style={{ display: 'flex', alignItems: 'center' }}
       mt={7}
       size="sm"
     >

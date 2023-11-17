@@ -1,8 +1,7 @@
-import { ColorScheme as MantineColorScheme } from '@mantine/core';
 import { useHotkeys } from '@mantine/hooks';
 import { setCookie } from 'cookies-next';
 import { Session } from 'next-auth';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import { api } from '~/utils/api';
 
 import { COOKIE_COLOR_SCHEME_KEY } from '../../data/constants';
@@ -59,12 +58,4 @@ export const ColorSchemeProvider = ({
       {children(mantineColorScheme)}
     </ColorSchemeContext.Provider>
   );
-};
-
-export const useColorScheme = () => {
-  const context = useContext(ColorSchemeContext);
-  if (!context) {
-    throw new Error('useColorScheme must be used within a ColorSchemeProvider');
-  }
-  return context;
 };

@@ -5,19 +5,20 @@ import {
   Stack,
   Text,
   Title,
-  createStyles,
-  useMantineTheme,
+
+  useMantineTheme
 } from '@mantine/core';
 import { IconDeviceDesktop, IconInfoCircle, IconServer } from '@tabler/icons-react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import imageBugFixing from '~/images/undraw_bug_fixing_oc-7-a.svg';
+import { tss } from '~/utils/tss';
 
 function Error({ statusCode }: { statusCode: number }) {
   const { classes } = useStyles();
   const theme = useMantineTheme();
-  const getColor = (color: string) => theme.colors[color][theme.colorScheme === 'dark' ? 5 : 7];
+  const getColor = (color: string) => theme.colors[color][colorScheme === 'dark' ? 5 : 7];
   return (
     <Center className={classes.root} h="100dvh" maw={400}>
       <Head>
@@ -37,17 +38,17 @@ function Error({ statusCode }: { statusCode: number }) {
               Detailed error information
             </Accordion.Control>
             <Accordion.Panel>
-              <Stack spacing="xs">
-                <Group position="apart">
+              <Stack gap="xs">
+                <Group justify="apart">
                   <Text fw="bold">Type</Text>
                   <Text>
                     {statusCode ? (
-                      <Group spacing="xs">
+                      <Group gap="xs">
                         <IconServer size="1rem" />
                         <Text>Server side</Text>
                       </Group>
                     ) : (
-                      <Group spacing="xs">
+                      <Group gap="xs">
                         <IconDeviceDesktop size="1rem" />
                         <Text>Client side</Text>
                       </Group>
@@ -68,7 +69,7 @@ Error.getInitialProps = ({ res, err }: NextPageContext) => {
   return { statusCode };
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   root: {
     margin: '0 auto',
   },

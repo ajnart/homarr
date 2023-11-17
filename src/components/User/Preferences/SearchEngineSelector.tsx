@@ -26,7 +26,7 @@ export const SearchEngineSettings = () => {
         }}
       />
       <Paper p="md" py="sm" mb="md" withBorder>
-        <Stack spacing="sm">
+        <Stack gap="sm">
           <Switch
             label={t('searchEngine.newTab.label')}
             {...form.getInputProps('openSearchInNewTab', { type: 'checkbox' })}

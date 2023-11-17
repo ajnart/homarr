@@ -10,7 +10,7 @@ export function SelectorBackArrow({ onClickBack }: SelectorBackArrowProps) {
   const { t } = useTranslation('layout/element-selector/selector');
   return (
     <Button
-      leftIcon={<IconArrowNarrowLeft />}
+      leftSection={<IconArrowNarrowLeft />}
       onClick={onClickBack}
       styles={{ inner: { width: 'fit-content' } }}
       fullWidth

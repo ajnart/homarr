@@ -10,7 +10,6 @@ import {
   Progress,
   Stack,
   Text,
-  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import {
@@ -28,6 +27,7 @@ import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { AppType } from '~/types/app';
+import { tss } from '~/utils/tss';
 
 interface TorrentQueueItemProps {
   torrent: NormalizedTorrent;
@@ -63,7 +63,7 @@ export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPro
               {torrent.name}
             </Text>
             {app && (
-              <Text size="xs" color="dimmed">
+              <Text size="xs" c="dimmed">
                 {t('card.table.item.text', {
                   appName: app.name,
                   ratio: torrent.ratio.toFixed(2),
@@ -79,14 +79,16 @@ export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemPro
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {torrent.downloadSpeed > 0 ? `${humanFileSize(torrent.downloadSpeed,false)}/s` : '-'}
+                {torrent.downloadSpeed > 0
+                  ? `${humanFileSize(torrent.downloadSpeed, false)}/s`
+                  : '-'}
               </Text>
             </td>
           )}
           {width > MIN_WIDTH_MOBILE && (
             <td>
               <Text className={classes.noTextBreak} size="xs">
-                {torrent.uploadSpeed > 0 ? `${humanFileSize(torrent.uploadSpeed,false)}/s` : '-'}
+                {torrent.uploadSpeed > 0 ? `${humanFileSize(torrent.uploadSpeed, false)}/s` : '-'}
               </Text>
             </td>
           )}
@@ -134,11 +136,11 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
       return colors.green[7];
     };
     return (
-      <Group spacing="xs">
-        <Group spacing={3}>
+      <Group gap="xs">
+        <Group gap={3}>
           <Text>{t('card.popover.metrics.ratio')}</Text>
 
-          <Text color={color()} weight="bold">
+          <Text c={color()} weight="bold">
             {torrent.ratio.toFixed(2)}
           </Text>
         </Group>
@@ -147,14 +149,14 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
   };
 
   return (
-    <Stack spacing="xs">
+    <Stack gap="xs">
       {app && (
-        <Group spacing={3}>
-          <Text size="xs" color="dimmed">
+        <Group gap={3}>
+          <Text size="xs" c="dimmed">
             {t('card.popover.introductionPrefix')}
           </Text>
           <img src={app.appearance.iconUrl} alt="download client logo" width={15} height={15} />
-          <Text size="xs" color="dimmed">
+          <Text size="xs" c="dimmed">
             {app.name}
           </Text>
         </Group>
@@ -175,14 +177,14 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
           <RatioMetric />
         </List.Item>
         <List.Item icon={<IconSortDescending size={16} />}>
-          <Group spacing="xs">
+          <Group gap="xs">
             <Text>
               {t('card.popover.metrics.queuePosition', { position: torrent.queuePosition })}
             </Text>
           </Group>
         </List.Item>
         <List.Item icon={<IconPercentage size={16} />}>
-          <Group spacing="xs">
+          <Group gap="xs">
             <Text>
               {t('card.popover.metrics.progress', {
                 progress: (torrent.progress * 100).toFixed(2),
@@ -207,7 +209,7 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
           </Text>
         </List.Item>
         <List.Item icon={<IconDownload size={16} />}>
-          <Group spacing="xs">
+          <Group gap="xs">
             <Text>{humanFileSize(torrent.totalDownloaded, false)}</Text>
             <IconUpload size={16} />
             <Text>{humanFileSize(torrent.totalUploaded, false)}</Text>
@@ -233,7 +235,7 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   noTextBreak: {
     whiteSpace: 'nowrap',
   },

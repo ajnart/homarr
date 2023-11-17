@@ -17,17 +17,17 @@ export const DashDotCompactNetwork = ({ info }: DashDotCompactNetworkProps) => {
   const downSpeed = bytes.toPerSecondString(info?.network?.speedDown);
 
   return (
-    <Group noWrap align="start" position="apart" w="100%">
+    <Group wrap="nowrap" align="start" justify="apart" w="100%">
       <Text weight={500}>{t('card.graphs.network.label')}</Text>
-      <Stack align="end" spacing={0}>
-        <Group spacing={0}>
-          <Text size="xs" color="dimmed" align="right">
+      <Stack align="end" gap={0}>
+        <Group gap={0}>
+          <Text size="xs" c="dimmed" align="right">
             {upSpeed}
           </Text>
           <IconArrowNarrowUp size={16} stroke={1.5} />
         </Group>
-        <Group spacing={0}>
-          <Text size="xs" color="dimmed" align="right">
+        <Group gap={0}>
+          <Text size="xs" c="dimmed" align="right">
             {downSpeed}
           </Text>
           <IconArrowNarrowDown size={16} stroke={1.5} />

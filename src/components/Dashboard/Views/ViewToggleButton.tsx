@@ -11,13 +11,13 @@ export const ViewToggleButton = () => {
   const { t } = useTranslation('layout/header/actions/toggle-edit-mode');
 
   return (
-    <Tooltip width={100} label={<Text align="center">{t('description')}</Text>}>
+    <Tooltip width={100} label={<Text style={{ textAlign: 'center' }}>{t('description')}</Text>}>
       {screenLargerThanMd ? (
         <Button
           variant={isEditMode ? 'filled' : 'default'}
           h={44}
           w={180}
-          leftIcon={isEditMode ? <IconEditOff /> : <IconEdit />}
+          leftSection={isEditMode ? <IconEditOff /> : <IconEdit />}
           onClick={() => toggleEditMode()}
           color={isEditMode ? 'red' : undefined}
           radius="md"

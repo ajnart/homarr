@@ -1,12 +1,12 @@
-import { Box, Card, Center, Container, Flex, Text } from '@mantine/core';
+import { Card, Center, Container, Flex, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
-  IconAd,
-  IconBarrierBlock,
-  IconPercentage,
-  IconSearch,
-  IconWorldWww,
-  TablerIconsProps,
+	IconAd,
+	IconBarrierBlock,
+	IconPercentage,
+	IconSearch,
+	IconWorldWww,
+	TablerIconsProps,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
@@ -154,11 +154,11 @@ const StatCard = ({ item, data, usePiHoleColors }: StatCardProps) => {
               flex: isLong ? 1 : undefined,
             }}
           >
-            <Text align="center" lh={1.2} size="md" weight="bold">
+            <Text style={{ textAlign: 'center' }} lh={1.2} size="md" weight="bold">
               {item.value(data)}
             </Text>
             {item.label && (
-              <Text align="center" lh={1.2} size="0.75rem">
+              <Text style={{ textAlign: 'center' }} lh={1.2} size="0.75rem">
                 {t<string>(item.label)}
               </Text>
             )}

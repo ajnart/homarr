@@ -1,5 +1,7 @@
-import { Title, createStyles, getStylesRef, useMantineTheme } from '@mantine/core';
+import { Title, useMantineTheme } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
+import { tss } from '~/utils/tss';
 
 import { DashDotCompactNetwork, DashDotInfo } from './DashDotCompactNetwork';
 import { DashDotCompactStorage } from './DashDotCompactStorage';
@@ -60,7 +62,8 @@ const useIframeSrc = (
   multiView: boolean,
   usePercentages: boolean
 ) => {
-  const { colorScheme, colors, radius } = useMantineTheme();
+  const { colors, radius } = useMantineTheme();
+  const colorScheme = useColorScheme();
   const surface = (colorScheme === 'dark' ? colors.dark[7] : colors.gray[0]).substring(1); // removes # from hex value
 
   return (
@@ -78,7 +81,7 @@ const useIframeSrc = (
   );
 };
 
-export const useStyles = createStyles((theme, _params) => ({
+export const useStyles = tss.create(({ theme }) => ({
   iframe: {
     flex: '1 0 auto',
     maxWidth: '100%',
@@ -88,7 +91,6 @@ export const useStyles = createStyles((theme, _params) => ({
     colorScheme: 'light', // fixes white borders around iframe
   },
   graphTitle: {
-    ref: getStylesRef('graphTitle'),
     position: 'absolute',
     right: 0,
     bottom: 0,
@@ -100,8 +102,6 @@ export const useStyles = createStyles((theme, _params) => ({
   },
   graphContainer: {
     position: 'relative',
-    [`&:hover .${getStylesRef('graphTitle')}`]: {
-      opacity: 0.5,
-    },
+    opacity: 0.5,
   },
 }));

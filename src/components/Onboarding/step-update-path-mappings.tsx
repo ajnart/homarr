@@ -1,5 +1,5 @@
-import { Box, Button, Code, Group, List, Space, Tabs, TabsValue, Text, Title } from '@mantine/core';
-import { Prism } from '@mantine/prism';
+import { CodeHighlight } from '@mantine/code-highlight';
+import { Box, Button, Code, Group, List, Space, Tabs, Text, Title } from '@mantine/core';
 import {
   IconArrowRight,
   IconBrandDebian,
@@ -39,37 +39,39 @@ services:
 const added = { color: 'green', label: '+' };
 
 export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
-  const [selectedTab, setSelectedTab] = useState<TabsValue>('standard_docker');
+  const [selectedTab, setSelectedTab] = useState<any>('standard_docker');
   return (
     <OnboardingStepWrapper>
-      <Title order={2} align="center" mb="md">
+      <Title order={2} style={{ textAlign: 'center' }} mb="md">
         Update path mappings
       </Title>
-      <Text color="dimmed">
+      <Text c="dimmed">
         Homarr has updated the location of the saved data. We detected, that your instance might
         need an update to function as expected. It is recommended, that you take a backup of your
         .json configuration file on the file system and copy it, in case something goes wrong.
       </Text>
 
       <Space h={15} />
-      <Tabs value={selectedTab} onTabChange={(tab) => setSelectedTab(tab)} mt="xs">
-        <Tabs.List position="center">
-          <Tabs.Tab value="standard_docker" icon={<IconBrandDocker size={16} />}>
+      <Tabs value={selectedTab} onChange={(tab) => setSelectedTab(tab)} mt="xs">
+        <Tabs.List justify="center">
+          <Tabs.Tab value="standard_docker" leftSection={<IconBrandDocker size={16} />}>
             Docker
           </Tabs.Tab>
-          <Tabs.Tab value="docker_compose" icon={<IconBrandDocker size={16} />}>
+          <Tabs.Tab value="docker_compose" leftSection={<IconBrandDocker size={16} />}>
             Docker Compose
           </Tabs.Tab>
-          <Tabs.Tab value="standalone" icon={<IconBrandDebian size={16} />}>
+          <Tabs.Tab value="standalone" leftSection={<IconBrandDebian size={16} />}>
             Standalone Linux / Windows
           </Tabs.Tab>
           <Tabs.Tab
             value="unraid"
-            icon={<Image width={16} height={16} src="/imgs/app-icons/unraid-alt.svg" alt="" />}
+            leftSection={
+              <Image width={16} height={16} src="/imgs/app-icons/unraid-alt.svg" alt="" />
+            }
           >
             Unraid
           </Tabs.Tab>
-          <Tabs.Tab value="others" icon={<IconInfoSquareRounded size={16} />}>
+          <Tabs.Tab value="others" leftSection={<IconInfoSquareRounded size={16} />}>
             Others
           </Tabs.Tab>
         </Tabs.List>
@@ -102,9 +104,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
                 Run <Code>docker run ...</Code> again, that you used to create the Homarr container.
                 Note, that you need to add a new line:
               </Text>
-              <Prism highlightLines={{ 6: added }} language="bash" withLineNumbers>
-                {dockerRunCommand}
-              </Prism>
+              <CodeHighlight language="bash" code={dockerRunCommand} />
             </List.Item>
             <List.Item>Refresh this page and click on "continue"</List.Item>
           </List>
@@ -136,9 +136,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
                 Edit <Code>docker-compose.yml</Code> using text editor. Use Notepad or VSC on GUI
                 based systems. Use <Code>nano</Code> or <Code>vim</Code> on terminal systems.
               </Text>
-              <Prism highlightLines={{ 12: added }} language="bash" withLineNumbers>
-                {dockerComposeCommand}
-              </Prism>
+              <CodeHighlight withCopyButton={false} language="js" code={dockerComposeCommand} />
             </List.Item>
             <List.Item>
               Run <Code>docker compose up</Code>.
@@ -190,7 +188,7 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
         <Group align="end" mt="lg">
           <Button
             onClick={next}
-            rightIcon={<IconArrowRight size="0.9rem" />}
+            rightSection={<IconArrowRight size="0.9rem" />}
             color="green"
             fullWidth
           >
@@ -199,7 +197,13 @@ export const StepUpdatePathMappings = ({ next }: { next: () => void }) => {
         </Group>
       ) : (
         <Box w="100%" p="xl">
-          <Text color="dimmed" align="center" size="xs">
+          <Text
+            c="dimmed"
+            style={{
+              textAlign: 'center',
+            }}
+            size="xs"
+          >
             Please select your installation method
           </Text>
         </Box>

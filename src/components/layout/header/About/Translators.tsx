@@ -1,12 +1,12 @@
 import {
-  Anchor,
-  Avatar,
-  Group,
-  Pagination,
-  Stack,
-  Table,
-  Text,
-  Title,
+	Anchor,
+	Avatar,
+	Group,
+	Pagination,
+	Stack,
+	Table,
+	Text,
+	Title,
 } from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
 import { Trans, useTranslation } from 'next-i18next';
@@ -36,7 +36,7 @@ export function TranslatorsTable({ loadedLanguages }: { loadedLanguages: number 
           }}
         >
           <Anchor href={`https://crowdin.com/profile/${translator.user.username}`} target="_blank">
-            <Group noWrap>
+            <Group wrap="nowrap">
               <Avatar
                 size={25}
                 radius="lg"

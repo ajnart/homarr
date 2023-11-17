@@ -1,13 +1,12 @@
 import { Alert, Button, Card, Group, Table, Text, Title } from '@mantine/core';
 import {
-  IconAlertTriangle,
-  IconAlertTriangleFilled,
-  IconArrowLeft,
-  IconCheck,
-  IconInfoCircle,
-  IconKey,
-  IconMail,
-  IconUser,
+	IconAlertTriangleFilled,
+	IconArrowLeft,
+	IconCheck,
+	IconInfoCircle,
+	IconKey,
+	IconMail,
+	IconUser
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { CreateAccountSchema } from '~/pages/manage/users/create';
@@ -52,7 +51,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
         <tbody>
           <tr>
             <td>
-              <Group spacing="xs">
+              <Group gap="xs">
                 <IconUser size="1rem" />
                 <Text>{t('steps.finish.table.header.username')}</Text>
               </Group>
@@ -61,7 +60,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
           </tr>
           <tr>
             <td>
-              <Group spacing="xs">
+              <Group gap="xs">
                 <IconMail size="1rem" />
                 <Text>{t('steps.finish.table.header.email')}</Text>
               </Group>
@@ -70,24 +69,24 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
               {values.account.eMail ? (
                 <Text>{values.account.eMail}</Text>
               ) : (
-                <Group spacing="xs">
+                <Group gap="xs">
                   <IconInfoCircle size="1rem" color="orange" />
-                  <Text color="orange">{t('steps.finish.table.notSet')}</Text>
+                  <Text c="orange">{t('steps.finish.table.notSet')}</Text>
                 </Group>
               )}
             </td>
           </tr>
           <tr>
             <td>
-              <Group spacing="xs">
+              <Group gap="xs">
                 <IconKey size="1rem" />
                 <Text>{t('steps.finish.table.header.password')}</Text>
               </Group>
             </td>
             <td>
-              <Group spacing="xs">
+              <Group gap="xs">
                 <IconCheck size="1rem" color="green" />
-                <Text color="green">{t('steps.finish.table.valid')}</Text>
+                <Text c="green">{t('steps.finish.table.valid')}</Text>
               </Group>
             </td>
           </tr>
@@ -96,12 +95,12 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
 
       {isError && (
         <Alert color="red" icon={<IconAlertTriangleFilled size="0.9rem" />} mb="lg">
-          <Text color="red">{t('steps.finish.failed', { error: error.message })}</Text>
+          <Text c="red">{t('steps.finish.failed', { error: error.message })}</Text>
         </Alert>
       )}
 
-      <Group position="apart" noWrap>
-        <Button leftIcon={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
+      <Group justify="apart" wrap="nowrap">
+        <Button leftSection={<IconArrowLeft size="1rem" />} onClick={prevStep} variant="light" px="xl">
           {t('common:previous')}
         </Button>
         <Button
@@ -114,7 +113,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
             umami.track('Create user', { username: values.account.username});
           }}
           loading={isLoading}
-          rightIcon={<IconCheck size="1rem" />}
+          rightSection={<IconCheck size="1rem" />}
           variant="light"
           px="xl"
         >

@@ -3,11 +3,10 @@ import {
   Card,
   Flex,
   PasswordInput,
-  Popover,
   Stack,
   Text,
   TextInput,
-  Title,
+  Title
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { showNotification, updateNotification } from '@mantine/notifications';
@@ -113,11 +112,11 @@ export default function AuthInvitePage() {
         <FloatingBackground />
         <ThemeSchemeToggle pos="absolute" top={20} right={20} />
         <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={420}>
-          <Title align="center" weight={900}>
+          <Title style={{textAlign: "center"}} weight={900}>
             {t('title')}
           </Title>
 
-          <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+          <Text c="dimmed" size="sm" align="center" mt={5} mb="md">
             {t('text')}
           </Text>
 

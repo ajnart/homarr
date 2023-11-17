@@ -1,13 +1,13 @@
 import {
-  Avatar,
-  Center,
-  Group,
-  Loader,
-  ScrollArea,
-  Stack,
-  Table,
-  Text,
-  Title,
+	Avatar,
+	Center,
+	Group,
+	Loader,
+	ScrollArea,
+	Stack,
+	Table,
+	Text,
+	Title,
 } from '@mantine/core';
 import { IconAlertTriangle, IconMovie } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
@@ -68,9 +68,9 @@ function MediaServerTile({ widget }: MediaServerWidgetProps) {
         }}
       >
         <Loader />
-        <Stack align="center" spacing={0}>
+        <Stack align="center" gap={0}>
           <Text>{t('descriptor.name')}</Text>
-          <Text color="dimmed">{t('loading')}</Text>
+          <Text c="dimmed">{t('loading')}</Text>
         </Stack>
       </Stack>
     );

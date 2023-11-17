@@ -13,10 +13,10 @@ import {
   Text,
   TextInput,
   Title,
-  createStyles,
   useMantineTheme,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
+import { useColorScheme } from '@mantine/hooks';
 import {
   IconAlertTriangle,
   IconBookmark,
@@ -27,11 +27,11 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
-import React from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { IconSelector } from '~/components/IconSelector/IconSelector';
+import { tss } from '~/utils/tss';
 
 import { defineWidget } from '../helper';
 import { IDraggableEditableListInputValue, IWidget } from '../widgets';
@@ -121,13 +121,13 @@ const definition = defineWidget({
           <form>
             <Stack>
               <TextInput
-                icon={<IconTypography size="1rem" />}
+                leftSection={<IconTypography size="1rem" />}
                 {...form.getInputProps('name')}
                 label={t('item.name')}
                 withAsterisk
               />
               <TextInput
-                icon={<IconLink size="1rem" />}
+                leftSection={<IconLink size="1rem" />}
                 {...form.getInputProps('href')}
                 label={t('item.url')}
                 withAsterisk
@@ -156,7 +156,7 @@ const definition = defineWidget({
               />
               <Button
                 onClick={() => deleteData()}
-                leftIcon={<IconTrash size="1rem" />}
+                leftSection={<IconTrash size="1rem" />}
                 variant="light"
                 type="button"
               >
@@ -196,18 +196,20 @@ interface BookmarkWidgetTileProps {
 function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   const { classes } = useStyles();
   const { enabled: isEditModeEnabled } = useEditModeStore();
-  const { fn, colors, colorScheme } = useMantineTheme();
+  const { colors } = useMantineTheme();
+  const colorScheme = useColorScheme();
   const { t } = useTranslation('modules/bookmark');
+  const theme = useMantineTheme();
 
   if (widget.properties.items.length === 0) {
     return (
       <Stack align="center">
         <IconPlaylistX />
-        <Stack spacing={0}>
-          <Title order={5} align="center">
+        <Stack gap={0}>
+          <Title order={5} style={{ textAlign: 'center' }}>
             {t('card.noneFound.title')}
           </Title>
-          <Text align="center" size="sm">
+          <Text style={{ textAlign: 'center' }} size="sm">
             {t('card.noneFound.text')}
           </Text>
         </Stack>
@@ -218,7 +220,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
   switch (widget.properties.layout) {
     case 'autoGrid':
       return (
-        <Stack h="100%" spacing={0}>
+        <Stack h="100%" gap={0}>
           <Title size="h4" px="0.25rem">
             {widget.properties.name}
           </Title>
@@ -240,8 +242,8 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                 bg={
                   colorScheme === 'dark' ? colors.dark[5].concat('80') : colors.blue[0].concat('80')
                 }
-                sx={{
-                  '&:hover': { backgroundColor: fn.primaryColor().concat('40') }, //'40' = 25% opacity
+                style={{
+                  '&:hover': { backgroundColor: theme.primaryColor.concat('40') }, //'40' = 25% opacity
                   flex: '1 1 auto',
                 }}
                 display="flex"
@@ -256,7 +258,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
     case 'vertical':
       const flexDirection = widget.properties.layout === 'vertical' ? 'column' : 'row';
       return (
-        <Stack h="100%" spacing={0}>
+        <Stack h="100%" gap={0}>
           <Title size="h4" px="0.25rem">
             {widget.properties.name}
           </Title>
@@ -268,11 +270,14 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
             mr={isEditModeEnabled && widget.properties.name === '' ? 'xl' : undefined}
             styles={{
               viewport: {
+                //TODO: Fix this
+                display: 'flex !important',
+                height: '100%',
                 //mantine being mantine again... this might break. Needed for taking 100% of widget space
-                '& div[style="min-width: 100%; display: table;"]': {
-                  display: 'flex !important',
-                  height: '100%',
-                },
+                // '& div[style="min-width: 100%; display: table;"]': {
+                //   display: 'flex !important',
+                //   height: '100%',
+                // },
               },
             }}
           >
@@ -297,7 +302,7 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
                     target={item.openNewTab ? '_blank' : undefined}
                     radius="md"
                     bg="transparent"
-                    sx={{
+                    style={{
                       '&:hover': { backgroundColor: fn.primaryColor().concat('40') }, //'40' = 25% opacity
                       flex: '1 1 auto',
                       overflow: 'unset',
@@ -318,18 +323,17 @@ function BookmarkWidgetTile({ widget }: BookmarkWidgetTileProps) {
 }
 
 const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
-  const { colorScheme } = useMantineTheme();
+  const colorScheme = useColorScheme();
   return (
-    <Group spacing="0rem 1rem">
+    <Group gap="0rem 1rem">
       <Image
         hidden={item.hideIcon}
         src={item.iconUrl}
-        width={47}
-        height={47}
+        w={47}
+        h={47}
         fit="contain"
-        withPlaceholder
       />
-      <Stack spacing={0}>
+      <Stack gap={0}>
         <Text size="md">{item.name}</Text>
         <Text
           color={colorScheme === 'dark' ? 'gray.6' : 'gray.7'}
@@ -343,7 +347,7 @@ const BookmarkItemContent = ({ item }: { item: BookmarkItem }) => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   grid: {
     display: 'grid',
     gap: 10,

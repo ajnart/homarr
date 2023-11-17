@@ -191,10 +191,10 @@ export function MediaDisplay({ media }: { media: IMedia }) {
   const { t } = useTranslation('modules/common-media-cards');
 
   return (
-    <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
+    <Group wrap="nowrap" style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} gap="xs">
       <Image src={media.poster?? media.altPoster} height={200} width={150} radius="md" fit="cover" withPlaceholder/>
       <Stack justify="space-around">
-        <Stack spacing="sm">
+        <Stack gap="sm">
           <Text lineClamp={2}>
             <Title order={5}>{media.title}</Title>
           </Text>
@@ -230,11 +230,11 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               </Badge>
             ))}
           </Group>
-          <Text color="dimmed" size="xs" lineClamp={4}>
+          <Text c="dimmed" size="xs" lineClamp={4}>
             {media.overview}
           </Text>
         </Stack>
-        <Group spacing="xs">
+        <Group gap="xs">
           {media.plexUrl && (
             <Button
               component="a"
@@ -242,7 +242,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               variant="outline"
               href={media.plexUrl}
               size="sm"
-              rightIcon={<IconPlayerPlay size={15} />}
+              rightSection={<IconPlayerPlay size={15} />}
             >
               {t('buttons.play')}
             </Button>
@@ -254,7 +254,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               href={`https://www.imdb.com/title/${media.imdbId}`}
               variant="outline"
               size="sm"
-              rightIcon={<IconExternalLink size={15} />}
+              rightSection={<IconExternalLink size={15} />}
             >
               IMDb
             </Button>
@@ -266,7 +266,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
               href={media.overseerrId}
               variant="outline"
               size="sm"
-              rightIcon={<IconExternalLink size={15} />}
+              rightSection={<IconExternalLink size={15} />}
             >
               TMDb
             </Button>
@@ -282,7 +282,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
                 onClick={() => setOpened(true)}
                 color={secondaryColor}
                 size="sm"
-                rightIcon={<IconDownload size={15} />}
+                rightSection={<IconDownload size={15} />}
               >
                 {t('buttons.request')}
               </Button>

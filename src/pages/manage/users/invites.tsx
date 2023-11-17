@@ -1,13 +1,13 @@
 import {
-  ActionIcon,
-  Button,
-  Center,
-  Flex,
-  Pagination,
-  Table,
-  Text,
-  Title,
-  createStyles,
+	ActionIcon,
+	Button,
+	Center,
+	Flex,
+	Pagination,
+	Table,
+	Text,
+	Title,
+	tss
 } from '@mantine/core';
 import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
@@ -52,7 +52,7 @@ const ManageUserInvitesPage = () => {
       <Flex justify="end" mb="md">
         <Button
           onClick={openCreateInviteModal}
-          leftIcon={<IconPlus size="1rem" />}
+          leftSection={<IconPlus size="1rem" />}
           variant="default"
         >
           {t('button.createInvite')}
@@ -113,7 +113,7 @@ const ManageUserInvitesPage = () => {
                 <tr>
                   <td colSpan={4}>
                     <Center p="md">
-                      <Text color="dimmed">{t('noInvites')}</Text>
+                      <Text c="dimmed">{t('noInvites')}</Text>
                     </Center>
                   </td>
                 </tr>
@@ -142,7 +142,7 @@ const ManageUserInvitesPage = () => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   tableGrowCell: {
     width: '50%',
   },

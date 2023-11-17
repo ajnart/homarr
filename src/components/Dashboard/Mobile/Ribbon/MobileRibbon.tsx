@@ -1,10 +1,11 @@
-import { ActionIcon, Space, createStyles } from '@mantine/core';
+import { ActionIcon, Space } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import { useConfigContext } from '~/config/provider';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 
 import { MobileRibbonSidebarDrawer } from './MobileRibbonSidebarDrawer';
+import { tss } from '~/utils/tss';
 
 export const MobileRibbons = () => {
   const { classes, cx } = useStyles();
@@ -60,7 +61,7 @@ export const MobileRibbons = () => {
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   root: {
     position: 'fixed',
     top: 0,

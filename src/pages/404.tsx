@@ -1,4 +1,4 @@
-import { Button, Center, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Button, Center, Stack, Text, Title } from '@mantine/core';
 import { GetServerSidePropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -7,6 +7,8 @@ import Link from 'next/link';
 import pageNotFoundImage from '~/images/undraw_page_not_found_re_e9o6.svg';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { pageNotFoundNamespaces } from '~/tools/server/translation-namespaces';
+import { tss } from '~/utils/tss';
+
 
 export default function Custom404() {
   const { classes } = useStyles();
@@ -48,7 +50,7 @@ export async function getStaticProps({ req, res, locale }: GetServerSidePropsCon
   };
 }
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   image: {
     margin: '0 auto',
     display: 'block',

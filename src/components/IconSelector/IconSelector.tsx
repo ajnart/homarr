@@ -6,17 +6,17 @@ import {
   Image,
   Loader,
   ScrollArea,
-  SelectItemProps,
+  SelectProps,
   Stack,
   Text,
   Title,
-  createStyles,
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { api } from '~/utils/api';
+import { tss } from '~/utils/tss';
 
 import { DebouncedImage } from './DebouncedImage';
 
@@ -71,12 +71,12 @@ export const IconSelector = forwardRef(
       <Stack w="100%">
         <Autocomplete
           nothingFound={
-            <Stack align="center" spacing="xs" my="lg">
+            <Stack align="center" gap="xs" my="lg">
               <IconSearch />
-              <Title order={6} align="center">
+              <Title order={6} style={{ textAlign: 'center' }}>
                 {t('appearance.icon.autocomplete.title')}
               </Title>
-              <Text align="center" maw={350}>
+              <Text style={{ textAlign: 'center' }} maw={350}>
                 {t('appearance.icon.autocomplete.text')}
               </Text>
             </Stack>
@@ -93,12 +93,9 @@ export const IconSelector = forwardRef(
           description={t('appearance.icon.description', {
             suggestionsCount: data?.reduce((a, b) => a + b.count, 0) ?? 0,
           })}
-          filter={(search, item) =>
-            item.value
-              .toLowerCase()
-              .replaceAll('_', '')
-              .replaceAll(' ', '-')
-              .includes(search.toLowerCase().replaceAll('_', '').replaceAll(' ', '-'))
+          filter={({ search, options }) =>
+            // Returns true if the search term is included in the label
+            options.filter((option) => option.label.toLowerCase().includes(search.toLowerCase()))
           }
           dropdownComponent={(props: any) => <ScrollArea {...props} mah={250} />}
           onChange={(event) => {
@@ -115,11 +112,11 @@ export const IconSelector = forwardRef(
         {(!data || isLoading) && (
           <Group>
             <Loader variant="oval" size="sm" />
-            <Stack spacing={0}>
+            <Stack gap={0}>
               <Text size="xs" weight="bold">
                 {t('appearance.icon.noItems.title')}
               </Text>
-              <Text color="dimmed" size="xs">
+              <Text c="dimmed" size="xs">
                 {t('appearance.icon.noItems.text')}
               </Text>
             </Stack>
@@ -130,7 +127,7 @@ export const IconSelector = forwardRef(
   }
 );
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   textInput: {
     flexGrow: 1,
   },
@@ -139,25 +136,24 @@ const useStyles = createStyles(() => ({
 const AutoCompleteItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ label, size, copyright, url, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
-      <Group noWrap>
+      <Group wrap="nowrap">
         <Box
-          sx={(theme) => ({
-            backgroundColor:
-              theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2],
+          style={(theme) => ({
+            backgroundColor: colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2],
             borderRadius: theme.radius.md,
           })}
           p={2}
         >
           <Image src={url} width={30} height={30} fit="contain" />
         </Box>
-        <Stack spacing={0}>
+        <Stack gap={0}>
           <Text>{label}</Text>
           <Group>
-            <Text color="dimmed" size="xs">
+            <Text c="dimmed" size="xs">
               {humanFileSize(size, false)}
             </Text>
             {copyright && (
-              <Text color="dimmed" size="xs">
+              <Text c="dimmed" size="xs">
                 © {copyright}
               </Text>
             )}
@@ -168,7 +164,7 @@ const AutoCompleteItem = forwardRef<HTMLDivElement, ItemProps>(
   )
 );
 
-interface ItemProps extends SelectItemProps {
+interface ItemProps extends SelectProps {
   url: string;
   group: string;
   size: number;

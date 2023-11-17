@@ -10,12 +10,12 @@ import {
   ThemeIcon,
   Title,
   Tooltip,
-  createStyles,
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { AppIntegrationPropertyAccessabilityType } from '~/types/app';
+import { tss } from '~/utils/tss';
 
 interface GenericSecretInputProps {
   label: string;
@@ -45,18 +45,18 @@ export const GenericSecretInput = ({
   return (
     <Card p="xs" withBorder>
       <Grid>
-        <Grid.Col className={classes.alignSelfCenter} xs={12} md={6}>
-          <Group spacing="sm" noWrap>
+        <Grid.Col className={classes.alignSelfCenter} span={{ xs: 12, md: 6 }}>
+          <Group gap="sm" wrap="nowrap">
             <ThemeIcon color={secretIsPresent ? 'green' : 'red'} variant="light" size="lg">
               <Icon size={18} />
             </ThemeIcon>
             <Flex justify="start" align="start" direction="column">
-              <Group spacing="xs">
+              <Group gap="xs">
                 <Title className={classes.subtitle} order={6}>
                   {t(label)}
                 </Title>
 
-                <Group spacing="xs">
+                <Group gap="xs">
                   <Badge
                     className={classes.textTransformUnset}
                     color={secretIsPresent ? 'green' : 'red'}
@@ -69,7 +69,7 @@ export const GenericSecretInput = ({
                   {type === 'private' ? (
                     <Tooltip
                       label={t('integration.type.explanationPrivate')}
-                      width={400}
+                      w={400}
                       multiline
                       withinPortal
                       withArrow
@@ -81,7 +81,7 @@ export const GenericSecretInput = ({
                   ) : (
                     <Tooltip
                       label={t('integration.type.explanationPublic')}
-                      width={400}
+                      w={400}
                       multiline
                       withinPortal
                       withArrow
@@ -93,7 +93,7 @@ export const GenericSecretInput = ({
                   )}
                 </Group>
               </Group>
-              <Text size="xs" color="dimmed" w={400}>
+              <Text size="xs" c="dimmed" w={400}>
                 {type === 'private'
                   ? 'Private: Once saved, you cannot read out this value again'
                   : 'Public: Can be read out repeatedly'}
@@ -101,7 +101,7 @@ export const GenericSecretInput = ({
             </Flex>
           </Group>
         </Grid.Col>
-        <Grid.Col xs={12} md={6}>
+        <Grid.Col span={{ xs: 12, md: 6 }}>
           <Flex gap={10} justify="end" align="end">
             {displayUpdateField === true ? (
               <PasswordInput
@@ -123,7 +123,7 @@ export const GenericSecretInput = ({
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   subtitle: {
     lineHeight: 1.1,
   },

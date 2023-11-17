@@ -1,6 +1,8 @@
-import { Image, Loader, createStyles } from '@mantine/core';
+import { Image, Loader } from '@mantine/core';
 import { useDebouncedValue } from '@mantine/hooks';
 import { IconPhotoOff } from '@tabler/icons-react';
+import NextImage from 'next/image';
+import { tss } from '~/utils/tss';
 
 interface DebouncedImageProps {
   width: number;
@@ -25,32 +27,33 @@ export const DebouncedImage = ({
   if (debouncedIconImageUrl.length > 0) {
     return (
       <Image
-        placeholder={<IconPhotoOff />}
+        placeholder="blur"
         className={classes.iconImage}
         src={debouncedIconImageUrl}
         width={width}
         height={height}
         fit="contain"
         alt=""
-        withPlaceholder
+        component={NextImage}
       />
     );
   }
 
   return (
     <Image
+      component={NextImage}
       className={classes.iconImage}
       src="/imgs/logo/logo.png"
       width={width}
       height={height}
       fit="contain"
       alt=""
-      withPlaceholder
+      placeholder="empty"
     />
   );
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   iconImage: {
     objectFit: 'contain',
   },

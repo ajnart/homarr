@@ -28,7 +28,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
 
   return (
     <Tabs.Panel value="general" pt="sm">
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <TextInput
           icon={<IconCursorText size={16} />}
           label={t('general.appname.label')}
@@ -82,7 +82,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
 
         {!form.values.behaviour.externalUrl.startsWith('https://') &&
           !form.values.behaviour.externalUrl.startsWith('http://') && (
-            <Text color="red" mt="sm" size="sm">
+            <Text c="red" mt="sm" size="sm">
               {t('behaviour.customProtocolWarning')}
             </Text>
           )}

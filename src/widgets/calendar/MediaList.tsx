@@ -1,12 +1,12 @@
-import { Divider, ScrollArea, createStyles } from '@mantine/core';
+import { Divider, ScrollArea } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
-import React from 'react';
 import {
   LidarrMediaDisplay,
   RadarrMediaDisplay,
   ReadarrMediaDisplay,
   SonarrMediaDisplay,
 } from '~/modules/common';
+import { tss } from '~/utils/tss';
 
 import { MediasType } from './type';
 
@@ -60,7 +60,7 @@ const getLastMediaType = (medias: MediasType) => {
   return 'tv-show';
 };
 
-const useStyles = createStyles(() => ({
+const useStyles = tss.create(() => ({
   scrollArea: {
     width: 400,
   },

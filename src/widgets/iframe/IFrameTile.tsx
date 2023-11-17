@@ -1,6 +1,7 @@
-import { Center, Container, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Center, Container, Stack, Text, Title } from '@mantine/core';
 import { IconBrowser, IconUnlink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { tss } from '~/utils/tss';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -70,11 +71,11 @@ function IFrameTile({ widget }: IFrameTileProps) {
       <Center h="100%">
         <Stack align="center">
           <IconUnlink size={36} strokeWidth={1.2} />
-          <Stack align="center" spacing={0}>
-            <Title order={6} align="center">
+          <Stack align="center" gap={0}>
+            <Title order={6} style={{ textAlign: 'center' }}>
               {t('card.errors.noUrl.title')}
             </Title>
-            <Text align="center" maw={200}>
+            <Text style={{ textAlign: 'center' }} maw={200}>
               {t('card.errors.noUrl.text')}
             </Text>
           </Stack>
@@ -127,9 +128,9 @@ function IFrameTile({ widget }: IFrameTileProps) {
   );
 }
 
-const useStyles = createStyles(({ radius }) => ({
+const useStyles = tss.create(({ theme }) => ({
   iframe: {
-    borderRadius: radius.sm,
+    borderRadius: theme.radius.sm,
     width: '100%',
     height: '100%',
     border: 'none',

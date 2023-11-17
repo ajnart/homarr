@@ -12,7 +12,6 @@ import {
   Stack,
   Text,
   Title,
-  createStyles,
 } from '@mantine/core';
 import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
 import dayjs from 'dayjs';
@@ -20,6 +19,7 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
+import { tss } from '~/utils/tss';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
@@ -106,7 +106,7 @@ function RssTile({ widget }: RssTileProps) {
         <Stack align="center">
           <IconRss size={25} strokeWidth={1} />
           <Title order={5}>{t('descriptor.card.errors.general.title')}</Title>
-          <Text align="center">{t('descriptor.card.errors.general.text')}</Text>
+          <Text style={{ textAlign: 'center' }}>{t('descriptor.card.errors.general.text')}</Text>
         </Stack>
         <RefetchButton refetch={refetch} isFetching={isFetching} />
       </Center>
@@ -117,7 +117,7 @@ function RssTile({ widget }: RssTileProps) {
     <Stack h="100%">
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         {data.map((feed, index) => (
-          <Stack w="100%" spacing="xs">
+          <Stack w="100%" gap="xs">
             {feed.feed &&
               feed.feed.items.map((item: any, index: number) => (
                 <Card
@@ -146,7 +146,6 @@ function RssTile({ widget }: RssTileProps) {
                           width={140}
                           height={140}
                           radius="md"
-                          withPlaceholder
                         />
                       </MediaQuery>
                     )}
@@ -228,9 +227,9 @@ const RefetchButton = ({ isFetching, refetch }: RefetchButtonProps) => (
 );
 
 const InfoDisplay = ({ date, title }: { date: string; title: string | undefined }) => (
-  <Group mt="auto" spacing="xs">
+  <Group mt="auto" gap="xs">
     <IconClock size={14} />
-    <Text size="xs" color="dimmed">
+    <Text size="xs" c="dimmed">
       {date}
     </Text>
     {title && (
@@ -241,7 +240,7 @@ const InfoDisplay = ({ date, title }: { date: string; title: string | undefined 
   </Group>
 );
 
-const useStyles = createStyles(({ colorScheme, colors, radius, spacing }) => ({
+const useStyles = tss.create(({ theme, colorScheme }) => ({
   backgroundImage: {
     position: 'absolute',
     width: '100%',
@@ -260,20 +259,20 @@ const useStyles = createStyles(({ colorScheme, colors, radius, spacing }) => ({
     img: {
       height: 100,
       width: 'auto',
-      borderRadius: radius.sm,
+      borderRadius: theme.radius.sm,
     },
     blockquote: {
       marginLeft: 10,
       marginRight: 10,
-      paddingLeft: spacing.xs,
-      paddingRight: spacing.xs,
+      paddingLeft: theme.spacing.xs,
+      paddingRight: theme.spacing.xs,
       paddingTop: 1,
       paddingBottom: 1,
       borderLeftWidth: 4,
       borderLeftStyle: 'solid',
-      borderLeftColor: colors.red[5],
-      borderRadius: radius.sm,
-      backgroundColor: colorScheme === 'dark' ? colors.dark[4] : '',
+      borderLeftColor: theme.colors.red[5],
+      borderRadius: theme.radius.sm,
+      backgroundColor: colorScheme === 'dark' ? theme.colors.dark[4] : '',
     },
   },
 }));

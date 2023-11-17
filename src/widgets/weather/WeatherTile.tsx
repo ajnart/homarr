@@ -64,7 +64,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
         style={{ height: '100%', width: '100%' }}
       >
         <Skeleton height={40} width={100} mb="xl" />
-        <Group noWrap>
+        <Group wrap="nowrap">
           <Skeleton height={50} circle />
           <Group>
             <Skeleton height={25} width={70} mr="lg" />
@@ -108,7 +108,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
       </Flex>
 
       {width > 200 && (
-        <Group noWrap spacing="xs">
+        <Group wrap="nowrap" gap="xs">
           <IconArrowUpRight />
           {getPerferedUnit(
             weather.daily.temperature_2m_max[0],
@@ -123,7 +123,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
       )}
 
       {widget.properties.displayCityName && (
-        <Group noWrap spacing={5} align="center">
+        <Group wrap="nowrap" gap={5} align="center">
           <IconMapPin height={15} width={15} />
           <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
         </Group>

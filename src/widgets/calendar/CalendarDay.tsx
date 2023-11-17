@@ -1,10 +1,9 @@
 import {
-  Button,
-  Container,
-  Indicator,
-  IndicatorProps,
-  Popover,
-  useMantineTheme,
+	Container,
+	Indicator,
+	IndicatorProps,
+	Popover,
+	useMantineTheme
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
@@ -68,7 +67,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
           onClick={medias.totalCount > 0 && !opened ? open : close}
           h="100%"
           w="100%"
-          sx={{
+          style={{
             padding: '18% !important',
             borderRadius: ['xs', 'sm'].includes(size) ? radius.md : radius.lg,
             borderStyle: 'solid',

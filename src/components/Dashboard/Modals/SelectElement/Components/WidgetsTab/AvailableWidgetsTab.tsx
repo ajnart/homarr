@@ -17,7 +17,7 @@ export const AvailableIntegrationElements = ({
     <>
       <SelectorBackArrow onClickBack={onClickBack} />
 
-      <Text mb="md" color="dimmed">
+      <Text mb="md" c="dimmed">
         {t('widgetDescription')}
       </Text>
 

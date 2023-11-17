@@ -1,12 +1,12 @@
 import { Autocomplete, Group, Text, useMantineTheme } from '@mantine/core';
 import { useDisclosure, useHotkeys } from '@mantine/hooks';
 import {
-  IconBrandYoutube,
-  IconDownload,
-  IconMovie,
-  IconSearch,
-  IconWorld,
-  TablerIconsProps,
+	IconBrandYoutube,
+	IconDownload,
+	IconMovie,
+	IconSearch,
+	IconWorld,
+	TablerIconsProps,
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -121,7 +121,7 @@ const SearchItemComponent = forwardRef<HTMLDivElement, SearchAutoCompleteItem & 
     let Icon = getItemComponent(icon);
 
     return (
-      <Group ref={ref} noWrap {...others}>
+      <Group ref={ref} wrap="nowrap" {...others}>
         <Icon size={20} />
         <Text>{label}</Text>
       </Group>

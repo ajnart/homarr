@@ -1,7 +1,6 @@
-import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
-import { createStyles, useMantineTheme } from '@mantine/styles';
+import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
+import { useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { AppType } from '~/types/app';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -41,7 +40,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <Box
           className={`${classes.base} ${cx(classes.appContent, 'dashboard-tile-app')}`}
           h="100%"
-          sx={{
+          style={{
             flexFlow: app.appearance.positionAppName ?? 'column',
           }}
         >
@@ -51,7 +50,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
               fw={700}
               size={app.appearance.appNameFontSize}
               ta="center"
-              sx={{
+              style={{
                 flex: isRow ? '1' : undefined,
               }}
               lineClamp={app.appearance.lineClampAppName}
@@ -100,7 +99,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   );
 };
 
-const useStyles = createStyles((theme, _params, getRef) => ({
+const useStyles = tss.create((theme, _params, getRef) => ({
   base: {
     display: 'flex',
     alignItems: 'center',

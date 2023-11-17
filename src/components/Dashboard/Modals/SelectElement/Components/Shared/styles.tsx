@@ -1,11 +1,11 @@
-import { createStyles } from '@mantine/core';
+import { tss } from '~/utils/tss';
 
-export const useStyles = createStyles((theme) => ({
+export const useStyles = tss.create(({ theme, colorScheme }) => ({
   styledButton: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[9] : theme.colors.gray[2],
-    color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
+    backgroundColor: colorScheme === 'dark' ? theme.colors.gray[9] : theme.colors.gray[2],
+    color: colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[9],
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[3],
+      backgroundColor: colorScheme === 'dark' ? theme.colors.gray[8] : theme.colors.gray[3],
     },
   },
   elementButton: {

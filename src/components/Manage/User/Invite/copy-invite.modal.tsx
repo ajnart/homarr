@@ -26,7 +26,7 @@ export const CopyInviteModal = ({ id, innerProps }: ContextModalProps<InnerProps
         {t('modals.copy.invitationLink')}
       </Link>
 
-      <Stack spacing="xs">
+      <Stack gap="xs">
         <Text weight="bold">{t('modals.copy.details.id')}:</Text>
         <Mark style={{ borderRadius: 4 }} color="gray" px={5}>
           {innerProps.id}
