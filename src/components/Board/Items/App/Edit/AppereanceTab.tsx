@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { IconSelector } from '~/components/IconSelector/IconSelector';
 import { appNamePositions, appNameStyles } from '~/server/db/items';
 
-import { AppForm } from '../EditAppModal';
+import { type AppForm } from '../EditAppModal';
 
 interface AppearanceTabProps {
   form: AppForm;

@@ -1,5 +1,5 @@
+// TODO: This file can be deleted once the new gridstack is fully implemented
 import { createWithEqualityFn } from 'zustand/traditional';
-import { useConfigContext } from '~/config/provider';
 import { GridstackBreakpoints } from '~/constants/gridstack-breakpoints';
 
 export const useGridstackStore = createWithEqualityFn<GridstackStoreType>(

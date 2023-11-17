@@ -23,14 +23,13 @@ import { useState } from 'react';
 import { InfoCard } from '~/components/InfoCard/InfoCard';
 import { City } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
-
-import { IntegrationOptionsValueType } from '../WidgetsEditModal';
+import { ILocationOptionValue } from '~/widgets/widgets';
 
 type LocationSelectionProps = {
   widgetId: string;
   propName: string;
   value: any;
-  handleChange: (key: string, value: IntegrationOptionsValueType) => void;
+  handleChange: (key: string, value: ILocationOptionValue['defaultValue']) => void;
   info?: boolean;
   infoLink?: string;
 };
@@ -82,8 +81,8 @@ export const LocationSelection = ({
                 setQuery(ev.currentTarget.value);
                 handleChange(key, {
                   name: ev.currentTarget.value,
-                  longitude: '',
-                  latitude: '',
+                  longitude: 0,
+                  latitude: 0,
                 });
               }}
             />

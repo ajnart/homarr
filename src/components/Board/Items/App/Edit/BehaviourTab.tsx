@@ -1,8 +1,8 @@
-import { Group, Stack, Switch, Tabs, Text, TextInput, useMantineTheme } from '@mantine/core';
+import { Group, Stack, Switch, Tabs, Text, TextInput } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { InfoCard } from '~/components/InfoCard/InfoCard';
 
-import { AppForm } from '../EditAppModal';
+import { type AppForm } from '../EditAppModal';
 
 interface BehaviourTabProps {
   form: AppForm;

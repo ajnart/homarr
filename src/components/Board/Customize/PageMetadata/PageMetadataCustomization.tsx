@@ -1,4 +1,4 @@
-import { Grid, Stack, TextInput } from '@mantine/core';
+import { Grid, TextInput } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import { useBoardCustomizationFormContext } from '../form';

@@ -1,6 +1,6 @@
-import { GridItemHTMLElement, GridStack, GridStackNode } from 'fily-publish-gridstack';
+import { GridItemHTMLElement, GridStack } from 'fily-publish-gridstack';
 import { MutableRefObject, RefObject } from 'react';
-import { Item, Section } from '~/components/Board/context';
+import type { Section } from '~/components/Board/context';
 
 type InitializeGridstackProps = {
   section: Section;

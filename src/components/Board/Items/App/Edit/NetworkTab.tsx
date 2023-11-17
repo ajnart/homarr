@@ -2,7 +2,7 @@ import { MultiSelect, Stack, Switch, Tabs } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { statusCodeData } from '~/tools/acceptableStatusCodes';
 
-import { AppForm } from '../EditAppModal';
+import { type AppForm } from '../EditAppModal';
 
 interface NetworkTabProps {
   form: AppForm;

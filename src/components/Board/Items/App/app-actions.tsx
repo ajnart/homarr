@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { api } from '~/utils/api';
 import { appFormSchema } from '~/validations/app';
 
-import { AppItem, EmptySection } from '../../context';
+import { type AppItem, type EmptySection } from '../../context';
 
 type CreateOrUpdateApp = {
   app: z.infer<typeof appFormSchema>;

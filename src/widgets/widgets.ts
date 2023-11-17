@@ -115,9 +115,9 @@ export type ISliderInputOptionValue = {
 };
 
 // will show a custom location selector
-type ILocationOptionValue = {
+export type ILocationOptionValue = {
   type: 'location';
-  defaultValue: { latitude: number; longitude: number };
+  defaultValue: { latitude: number; longitude: number; name: string };
 };
 
 // will show a sortable list that can have sub settings

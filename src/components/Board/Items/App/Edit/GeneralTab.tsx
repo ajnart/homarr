@@ -3,7 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-import { AppForm } from '../EditAppModal';
+import { type AppForm } from '../EditAppModal';
 
 interface GeneralTabProps {
   form: AppForm;
