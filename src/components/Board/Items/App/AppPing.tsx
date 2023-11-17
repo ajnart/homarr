@@ -4,8 +4,7 @@ import Consola from 'consola';
 import { TargetAndTransition, Transition, motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { AppItem } from '~/components/Board/context';
-import { useConfigContext } from '~/config/provider';
+import { AppItem, useRequiredBoard } from '~/components/Board/context';
 import { RouterOutputs, api } from '~/utils/api';
 
 interface AppPingProps {
@@ -90,14 +89,13 @@ const useTooltipLabel = ({ isFetching, isError, data, errorMessage }: TooltipLab
 };
 
 const usePing = (app: AppItem) => {
-  const { config, name } = useConfigContext();
-  const isActive =
-    (config?.settings.customization.layout.enabledPing && app.isPingEnabled) ?? false;
+  const board = useRequiredBoard();
+  const isActive = board.isPingEnabled! && app.isPingEnabled;
 
   const queryResult = api.app.ping.useQuery(
     {
       id: app.id,
-      configName: name ?? '',
+      boardId: board.id,
     },
     {
       retry: false,

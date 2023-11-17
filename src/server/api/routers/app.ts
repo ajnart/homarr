@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 import Consola from 'consola';
 import https from 'https';
 import { z } from 'zod';
-import { getConfig } from '~/tools/config/getConfig';
+import { getAppAsync } from '~/server/db/queries/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -12,15 +12,14 @@ export const appRouter = createTRPCRouter({
     .input(
       z.object({
         id: z.string(),
-        configName: z.string(),
+        boardId: z.string(),
       })
     )
-    .query(async ({ input }) => {
+    .query(async ({ input, ctx }) => {
       const agent = new https.Agent({ rejectUnauthorized: false });
-      const config = getConfig(input.configName);
-      const app = config.apps.find((app) => app.id === input.id);
+      const appItem = await getAppAsync(input.boardId, input.id, ctx.session?.user);
 
-      if (!app?.url) {
+      if (!appItem?.app) {
         Consola.error(`App ${input} not found`);
         throw new TRPCError({
           code: 'NOT_FOUND',
@@ -29,20 +28,16 @@ export const appRouter = createTRPCRouter({
         });
       }
       const res = await axios
-        .get(app.url, { httpsAgent: agent, timeout: 10000 })
+        .get(appItem.app.internalUrl, { httpsAgent: agent, timeout: 10000 })
         .then((response) => ({
           status: response.status,
           statusText: response.statusText,
-          state: app.network.statusCodes?.includes(response.status.toString())
-            ? 'online'
-            : 'offline',
+          state: getNetworkState(appItem.app!.statusCodes, response.status),
         }))
         .catch((error: AxiosError) => {
           if (error.response) {
             return {
-              state: app.network.statusCodes?.includes(error.response.status.toString())
-                ? 'online'
-                : 'offline',
+              state: getNetworkState(appItem.app!.statusCodes, error.response.status),
               status: error.response.status,
               statusText: error.response.statusText,
             };
@@ -50,7 +45,7 @@ export const appRouter = createTRPCRouter({
 
           if (error.code === 'ECONNABORTED') {
             Consola.error(
-              `Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`
+              `Ping timed out for app with id '${input.id}' in config '${input.boardId}' -> url: ${appItem.app?.internalUrl})`
             );
             throw new TRPCError({
               code: 'TIMEOUT',
@@ -69,3 +64,7 @@ export const appRouter = createTRPCRouter({
       return res;
     }),
 });
+
+function getNetworkState(statusCodes: { code: number }[], responseStatus: number) {
+  return statusCodes.some((s) => s.code === responseStatus) ? 'online' : 'offline';
+}
