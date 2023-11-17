@@ -21,7 +21,6 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
-import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
@@ -148,12 +147,10 @@ function App(
                 withNormalizeCSS
                 withCSSVariables
               >
-                <ConfigProvider {...props.pageProps}>
-                  <Notifications limit={4} position="bottom-left" />
-                  <ModalsProvider modals={modals}>
-                    <Component {...pageProps} />
-                  </ModalsProvider>
-                </ConfigProvider>
+                <Notifications limit={4} position="bottom-left" />
+                <ModalsProvider modals={modals}>
+                  <Component {...pageProps} />
+                </ModalsProvider>
               </MantineProvider>
             </ColorTheme.Provider>
           )}
