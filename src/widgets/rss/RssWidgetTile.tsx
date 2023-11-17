@@ -18,11 +18,11 @@ import { IconClock, IconRefresh, IconRss } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useConfigContext } from '~/config/provider';
+import { useRequiredBoard } from '~/components/Board/context';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
-import { IWidget, InferWidget, InferWidgetOptions } from '../widgets';
+import { InferWidget, InferWidgetOptions } from '../widgets';
 
 const definition = defineWidget({
   id: 'rss',
@@ -70,9 +70,9 @@ interface RssTileProps {
 
 function RssTile({ widget }: RssTileProps) {
   const { t } = useTranslation('modules/rss');
-  const { name: configName } = useConfigContext();
+  const board = useRequiredBoard();
   const { data, isLoading, isFetching, isError, refetch } = useGetRssFeeds(
-    configName,
+    board.id,
     widget.options.rssFeedUrl,
     widget.options.refreshInterval,
     widget.id
@@ -186,14 +186,14 @@ function RssTile({ widget }: RssTileProps) {
 }
 
 export const useGetRssFeeds = (
-  configName: string | undefined,
+  boardId: string,
   feedUrls: string[],
   refreshInterval: number,
   widgetId: string
 ) =>
   api.rss.all.useQuery(
     {
-      configName: configName ?? '',
+      boardId,
       feedUrls,
       widgetId,
     },
@@ -201,7 +201,6 @@ export const useGetRssFeeds = (
       // Cache the results for 24 hours
       cacheTime: 1000 * 60 * 60 * 24,
       staleTime: 1000 * 60 * refreshInterval,
-      enabled: !!configName,
     }
   );
 

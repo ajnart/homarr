@@ -4,9 +4,8 @@ import { decode, encode } from 'html-entities';
 import RssParser from 'rss-parser';
 import xss from 'xss';
 import { z } from 'zod';
-import { getConfig } from '~/tools/config/getConfig';
+import { getWidgetAsync } from '~/server/db/queries/widget';
 import { Stopwatch } from '~/tools/shared/time/stopwatch.tool';
-import { IRssWidget, RssWidgetOptions } from '~/widgets/rss/RssWidgetTile';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
@@ -51,18 +50,19 @@ export const rssRouter = createTRPCRouter({
       z.object({
         widgetId: z.string().uuid(),
         feedUrls: z.array(z.string()),
-        configName: z.string(),
+        boardId: z.string(),
       })
     )
     .output(z.array(rssFeedResultObjectSchema))
-    .query(async ({ input }) => {
-      const config = getConfig(input.configName);
+    .query(async ({ input, ctx }) => {
+      const widgetItem = await getWidgetAsync(
+        input.boardId,
+        input.widgetId,
+        ctx.session?.user,
+        'rss'
+      );
 
-      const rssWidgetOptions = config.widgets.find(
-        (x) => x.type === 'rss' && x.id === input.widgetId
-      )?.properties as RssWidgetOptions | undefined;
-
-      if (!rssWidgetOptions) {
+      if (!widgetItem) {
         throw new TRPCError({
           code: 'NOT_FOUND',
           message: 'required widget does not exist',
@@ -75,7 +75,7 @@ export const rssRouter = createTRPCRouter({
 
       const result = await Promise.all(
         input.feedUrls.map(async (feedUrl) =>
-          getFeedUrl(feedUrl, rssWidgetOptions.dangerousAllowSanitizedItemContent)
+          getFeedUrl(feedUrl, widgetItem.options.dangerousAllowSanitizedItemContent)
         )
       );
 
