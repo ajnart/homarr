@@ -1,10 +1,13 @@
-import { InferSelectModel, relations } from 'drizzle-orm';
+import { type InferSelectModel, relations } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { type AdapterAccount } from 'next-auth/adapters';
 
-import {
+import type {
   AppNamePosition,
   AppNameStyle,
+  BoardBackgroundImageAttachmentType,
+  BoardBackgroundImageRepeatType,
+  BoardBackgroundImageSizeType,
   ColorScheme,
   FirstDayOfWeek,
   IntegrationSecretKey,
@@ -12,7 +15,6 @@ import {
   IntegrationType,
   LayoutKind,
   SectionType,
-  StatusCodeType,
   WidgetOptionType,
   WidgetSort,
 } from './items';
@@ -127,6 +129,18 @@ export const boards = sqliteTable('board', {
 
   // Appearance
   backgroundImageUrl: text('background_image_url'),
+  backgroundImageAttachment: text('background_image_attachment')
+    .$type<BoardBackgroundImageAttachmentType>()
+    .default('fixed')
+    .notNull(),
+  backgroundImageRepeat: text('background_image_repeat')
+    .$type<BoardBackgroundImageRepeatType>()
+    .default('no-repeat')
+    .notNull(),
+  backgroundImageSize: text('background_image_size')
+    .$type<BoardBackgroundImageSizeType>()
+    .default('cover')
+    .notNull(),
   primaryColor: text('primary_color'),
   secondaryColor: text('secondary_color'),
   primaryShade: int('primary_shade'),
@@ -142,6 +156,8 @@ export const boards = sqliteTable('board', {
 export const integrations = sqliteTable('integration', {
   id: text('id').notNull().primaryKey(),
   sort: text('sort').$type<IntegrationType>().notNull(),
+  name: text('name').notNull(),
+  url: text('url').notNull(),
 });
 
 export const integrationSecrets = sqliteTable(
@@ -159,6 +175,17 @@ export const integrationSecrets = sqliteTable(
   })
 );
 
+export const boardIntegrations = sqliteTable(
+  'board_integration',
+  {
+    boardId: text('board_id'),
+    integrationId: text('integration_id'),
+  },
+  (boardIntegration) => ({
+    compoundKey: primaryKey(boardIntegration.boardId, boardIntegration.integrationId),
+  })
+);
+
 export const widgets = sqliteTable('widget', {
   id: text('id').notNull().primaryKey(),
   sort: text('sort').$type<WidgetSort>().notNull(),
@@ -166,6 +193,21 @@ export const widgets = sqliteTable('widget', {
     .notNull()
     .references(() => items.id, { onDelete: 'cascade' }),
 });
+
+export const widgetIntegrations = sqliteTable(
+  'widget_integration',
+  {
+    widgetId: text('widget_id')
+      .notNull()
+      .references(() => widgets.id, { onDelete: 'cascade' }),
+    integrationId: text('integration_id')
+      .notNull()
+      .references(() => integrations.id, { onDelete: 'cascade' }),
+  },
+  (widgetIntegration) => ({
+    compoundKey: primaryKey(widgetIntegration.widgetId, widgetIntegration.integrationId),
+  })
+);
 
 export const widgetOptions = sqliteTable(
   'widget_option',
@@ -318,6 +360,18 @@ export const widgetRelations = relations(widgets, ({ one, many }) => ({
     references: [items.id],
   }),
   options: many(widgetOptions),
+  integrations: many(widgetIntegrations),
+}));
+
+export const widgetIntegrationRelations = relations(widgetIntegrations, ({ one }) => ({
+  widget: one(widgets, {
+    fields: [widgetIntegrations.widgetId],
+    references: [widgets.id],
+  }),
+  integration: one(integrations, {
+    fields: [widgetIntegrations.integrationId],
+    references: [integrations.id],
+  }),
 }));
 
 export const itemRelations = relations(items, ({ one, many }) => ({
@@ -332,6 +386,8 @@ export const itemRelations = relations(items, ({ one, many }) => ({
 
 export const integrationRelations = relations(integrations, ({ many }) => ({
   secrets: many(integrationSecrets),
+  widgets: many(widgetIntegrations),
+  boards: many(boardIntegrations),
 }));
 
 export const appRelations = relations(apps, ({ many, one }) => ({
@@ -356,6 +412,18 @@ export const boardRelations = relations(boards, ({ one, many }) => ({
   }),
   items: many(items),
   layouts: many(layouts),
+  mediaIntegrations: many(boardIntegrations),
+}));
+
+export const boardIntegrationRelations = relations(boardIntegrations, ({ one }) => ({
+  board: one(boards, {
+    fields: [boardIntegrations.boardId],
+    references: [boards.id],
+  }),
+  integration: one(integrations, {
+    fields: [boardIntegrations.integrationId],
+    references: [integrations.id],
+  }),
 }));
 
 export const accountRelations = relations(accounts, ({ one }) => ({
@@ -389,3 +457,4 @@ export const inviteRelations = relations(invites, ({ one }) => ({
 export type UserSettings = InferSelectModel<typeof userSettings>;
 export type Invite = InferSelectModel<typeof invites>;
 export type Section = InferSelectModel<typeof sections>;
+export type Integration = InferSelectModel<typeof integrations>;
