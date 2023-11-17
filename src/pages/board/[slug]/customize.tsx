@@ -122,7 +122,8 @@ export default function CustomizationPage({
       },
       {
         onSettled() {
-          void utils.boards.byNameSimple.invalidate({ boardName: query.slug });
+          void utils.boards.byNameSimple.invalidate();
+          void utils.boards.byName.invalidate();
         },
         onSuccess() {
           updateNotification({
