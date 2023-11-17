@@ -6,14 +6,13 @@ import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { useColorTheme } from '~/tools/color';
-import { api } from '~/utils/api';
+import { RouterOutputs, api } from '~/utils/api';
 
 import { MovieResult } from './Movie.d';
-import { Result } from './SearchResult';
 import { TvShowResult, TvShowResultSeason } from './TvShow.d';
 
 interface RequestModalProps {
-  base: Result;
+  base: Pick<RouterOutputs['overseerr']['search'][number], 'id' | 'mediaType' | 'seasons'>;
   opened: boolean;
   setOpened: (opened: boolean) => void;
 }

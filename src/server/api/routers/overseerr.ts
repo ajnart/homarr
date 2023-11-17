@@ -3,8 +3,9 @@ import axios from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
 import { MovieResult } from '~/modules/overseerr/Movie';
-import { OriginalLanguage, Result } from '~/modules/overseerr/SearchResult';
+import { Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
+import { getIntegrations, getSecret } from '~/server/db/queries/integrations';
 import { getConfig } from '~/tools/config/getConfig';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
@@ -13,39 +14,64 @@ export const overseerrRouter = createTRPCRouter({
   search: publicProcedure
     .input(
       z.object({
-        configName: z.string(),
+        boardId: z.string(),
         integration: z.enum(['overseerr', 'jellyseerr']),
         query: z.string().or(z.undefined()),
         limit: z.number().default(10),
       })
     )
-    .query(async ({ input }) => {
-      const config = getConfig(input.configName);
+    .query(async ({ input, ctx }) => {
+      const integrations = await getIntegrations(
+        input.boardId,
+        [input.integration],
+        ctx.session?.user
+      );
 
-      const app = config.apps.find((app) => app.integration?.type === input.integration);
-
-      if (input.query === '' || input.query === undefined) {
+      if (input.query === '' || input.query === undefined || integrations.length === 0) {
         return [];
       }
 
-      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
-      if (!app || !apiKey) {
-        throw new TRPCError({
-          code: 'BAD_REQUEST',
-          message: 'Wrong request',
-        });
-      }
-      const appUrl = new URL(app.url);
-      const data = await axios
-        .get(`${appUrl.origin}/api/v1/search?query=${input.query}`, {
-          headers: {
-            // Set X-Api-Key to the value of the API key
-            'X-Api-Key': apiKey,
-          },
+      const resultsFromIntegrationApi = await Promise.allSettled<Promise<Result[]>>(
+        integrations.map(async (integration) => {
+          const url = new URL(integration.url);
+          return await axios
+            .get(`${url.origin}/api/v1/search?query=${input.query}`, {
+              headers: {
+                // Set X-Api-Key to the value of the API key
+                'X-Api-Key': getSecret(integration, 'apiKey'),
+              },
+            })
+            .then((res) =>
+              res.data.results.map((x: Result) => ({ ...x, integrationId: integration.id }))
+            )
+            .catch((err) => {
+              Consola.error(err);
+              return [];
+            });
         })
-        .then((res) => res.data.results as Result[]);
+      );
 
-      return data.slice(0, input.limit);
+      const results = resultsFromIntegrationApi
+        .filter(
+          (x): x is PromiseFulfilledResult<(Result & { integrationId: string })[]> =>
+            x.status === 'fulfilled'
+        )
+        .flatMap((x) => x.value);
+
+      return results.slice(0, input.limit).map((result) => ({
+        id: result.id,
+        integrationId: result.integrationId,
+        imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
+          result.posterPath ?? result.backdropPath
+        }`,
+        title: result.title ?? result.name ?? result.originalName,
+        description: result.overview,
+        mediaUrl: result.mediaInfo?.plexUrl ?? result.mediaInfo?.mediaUrl,
+        externalUrl: result.mediaInfo?.serviceUrl,
+        isRequestable: !result.mediaInfo?.mediaAddedAt,
+        mediaType: result.mediaType,
+        seasons: result.mediaType === 'tv' ? (result as unknown as TvShowResult).seasons : [],
+      }));
     }),
   byId: publicProcedure
     .input(

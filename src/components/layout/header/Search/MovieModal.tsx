@@ -17,9 +17,9 @@ import { IconDownload, IconExternalLink, IconPlayerPlay } from '@tabler/icons-re
 import { Trans, useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { z } from 'zod';
-import { useConfigContext } from '~/config/provider';
+import { useRequiredBoard } from '~/components/Board/context';
 import { RequestModal } from '~/modules/overseerr/RequestModal';
 import { integrationTypes } from '~/server/db/items';
 import { RouterOutputs, api } from '~/utils/api';
@@ -74,11 +74,11 @@ type MovieResultsProps = Omit<z.infer<typeof queryParamsSchema>, 'movie'>;
 
 const MovieResults = ({ search, type }: MovieResultsProps) => {
   const { t } = useTranslation('layout/header');
-  const { name: configName } = useConfigContext();
+  const board = useRequiredBoard();
   const { data: movies, isLoading } = api.overseerr.search.useQuery(
     {
       query: search,
-      configName: configName!,
+      boardId: board.id,
       integration: type,
       limit: 12,
     },
@@ -129,29 +129,22 @@ type MovieDisplayProps = {
 
 const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
   const { t } = useTranslation('modules/common-media-cards');
-  const { config } = useConfigContext();
   const [requestModalOpened, requestModal] = useDisclosure(false);
 
-  if (!config) {
-    return null;
-  }
-
-  const service = config.apps.find((service) => service.integration.type === type);
+  /*const service = config.apps.find((service) => service.integration.type === type);
   const mediaUrl = movie.mediaInfo?.plexUrl ?? movie.mediaInfo?.mediaUrl;
   const serviceUrl = service?.behaviour.externalUrl ?? service?.url;
   const externalUrl = new URL(
     `${movie.mediaType}/${movie.id}`,
     serviceUrl ?? 'https://www.themoviedb.org'
-  );
+  );*/
 
   return (
     <Card withBorder>
       <Group noWrap style={{ maxHeight: 250 }} p={0} m={0} spacing="xs" align="stretch">
         <MantineImage
           withPlaceholder
-          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
-            movie.posterPath ?? movie.backdropPath
-          }`}
+          src={movie.imageUrl}
           height={200}
           width={150}
           radius="md"
@@ -160,15 +153,15 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
         <Stack justify="space-between">
           <Stack spacing={4}>
             <Title lineClamp={2} order={5}>
-              {movie.title ?? movie.name ?? movie.originalName}
+              {movie.title}
             </Title>
             <Text color="dimmed" size="xs" lineClamp={4}>
-              {movie.overview}
+              {movie.description}
             </Text>
           </Stack>
 
           <Group spacing="xs">
-            {!movie.mediaInfo?.mediaAddedAt && (
+            {movie.isRequestable && (
               <>
                 <RequestModal
                   base={movie}
@@ -187,28 +180,28 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
                 </Button>
               </>
             )}
-            {mediaUrl && (
+            {movie.mediaUrl && (
               <Button
                 component="a"
                 target="_blank"
                 variant="light"
-                href={mediaUrl}
+                href={movie.mediaUrl}
                 size="sm"
                 rightIcon={<IconPlayerPlay size={15} />}
               >
                 {t('buttons.play')}
               </Button>
             )}
-            {externalUrl && (
+            {movie.externalUrl && (
               <Button
                 component="a"
                 target="_blank"
-                href={externalUrl.href}
+                href={movie.externalUrl}
                 variant="outline"
                 size="sm"
                 rightIcon={<IconExternalLink size={15} />}
               >
-                {serviceUrl ? (type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr') : 'TMDB'}
+                {movie.externalUrl ? (type === 'jellyseerr' ? 'Jellyfin' : 'Overseerr') : 'TMDB'}
               </Button>
             )}
           </Group>
