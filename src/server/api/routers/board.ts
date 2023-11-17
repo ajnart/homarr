@@ -53,6 +53,7 @@ export const boardRouter = createTRPCRouter({
     const dbBoards = await db.query.boards.findMany({
       columns: {
         name: true,
+        allowGuests: true,
       },
       with: {
         items: true,
@@ -88,6 +89,7 @@ export const boardRouter = createTRPCRouter({
         countCategories: 0, // TODO: Is different depending on layout
         isDefaultForUser: x.name === defaultBoard,
         type: 'db',
+        allowGuests: x.allowGuests,
       }))
     );
   }),
@@ -264,6 +266,9 @@ export const boardRouter = createTRPCRouter({
           isPingEnabled: input.customization.network.pingsEnabled,
           appOpacity: input.customization.appearance.opacity,
           backgroundImageUrl: input.customization.appearance.backgroundSrc,
+          backgroundImageAttachment: input.customization.appearance.backgroundImageAttachment,
+          backgroundImageSize: input.customization.appearance.backgroundImageSize,
+          backgroundImageRepeat: input.customization.appearance.backgroundImageRepeat,
           primaryColor: input.customization.appearance.primaryColor,
           secondaryColor: input.customization.appearance.secondaryColor,
           customCss: input.customization.appearance.customCss,
