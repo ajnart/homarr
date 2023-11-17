@@ -222,6 +222,8 @@ const BoardsPage = ({
   );
 };
 
+export default BoardsPage;
+
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const session = await getServerAuthSession({ req: context.req, res: context.res });
   const result = checkForSessionOrAskForLogin(
