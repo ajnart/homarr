@@ -8,7 +8,7 @@ export type NormalizedDownloadQueueResponse = {
 
 export type NormalizedDownloadAppStat = {
   success: boolean;
-  appId: string;
+  integrationId: string;
 } & (TorrentTotalDownload | UsenetTotalDownloas);
 
 export type TorrentTotalDownload = {

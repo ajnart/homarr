@@ -173,11 +173,11 @@ const collectAdGuardSummary = async (app: ConfigAppType) => {
 
   const blockedQueriesToday =
     stats.time_units === 'days'
-      ? stats.blocked_filtering[stats.blocked_filtering.length - 1]
+      ? stats.blocked_filtering[stats.blocked_filtering.length - 1] ?? 0
       : stats.blocked_filtering.reduce((prev, sum) => prev + sum, 0);
   const queriesToday =
     stats.time_units === 'days'
-      ? stats.dns_queries[stats.dns_queries.length - 1]
+      ? stats.dns_queries[stats.dns_queries.length - 1] ?? 0
       : stats.dns_queries.reduce((prev, sum) => prev + sum, 0);
 
   return {

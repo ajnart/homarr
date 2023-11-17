@@ -1,4 +1,4 @@
-import { Box, Card, Center, Container, Flex, Text } from '@mantine/core';
+import { Card, Center, Container, Flex, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconAd,
@@ -9,13 +9,12 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { useConfigContext } from '~/config/provider';
 import { formatNumber, formatPercentage } from '~/tools/client/math';
 import { RouterOutputs, api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
-import { IWidget, InferWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 
 const availableLayouts = ['grid', 'row', 'column'] as const;
 type AvailableLayout = (typeof availableLayouts)[number];
@@ -50,10 +49,18 @@ interface DnsHoleSummaryWidgetProps {
 }
 
 function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
-  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
+  const firstIntegration = widget.integrations[0];
+  const { isInitialLoading, data } = useDnsHoleSummeryQuery({
+    integrationId: firstIntegration?.id,
+  });
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
+  }
+
+  // TODO: Add no integration notice
+  if (!firstIntegration) {
+    return <></>;
   }
 
   return (
@@ -104,15 +111,14 @@ type StatItem = {
   color: string;
 };
 
-export const useDnsHoleSummeryQuery = () => {
-  const { name: configName } = useConfigContext();
-
+export const useDnsHoleSummeryQuery = ({ integrationId }: { integrationId?: string }) => {
   return api.dnsHole.summary.useQuery(
     {
-      configName: configName!,
+      integrationId: integrationId!,
     },
     {
       staleTime: 1000 * 60 * 2,
+      enabled: !!integrationId,
     }
   );
 };

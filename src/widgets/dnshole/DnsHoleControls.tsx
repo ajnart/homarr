@@ -21,7 +21,7 @@ import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
-import { IWidget, InferWidget } from '../widgets';
+import { InferWidget } from '../widgets';
 import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
 
 const definition = defineWidget({
@@ -71,7 +71,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const utils = api.useContext();
   const { data: sessionData } = useSession();
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
-  const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
+  const { mutateAsync, isLoading: changingStatus } = api.dnsHole.control.useMutation();
   const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
 
@@ -265,6 +265,5 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     </Stack>
   );
 }
-const useDnsHoleControlMutation = () => api.dnsHole.control.useMutation();
 
 export default definition;
