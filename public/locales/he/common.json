@@ -51,5 +51,7 @@
   "attributes": {
     "width": "רוחב",
     "height": "גובה"
-  }
+  },
+  "public": "ציבורי",
+  "restricted": "מוגבל"
 }

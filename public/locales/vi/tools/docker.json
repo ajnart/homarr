@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Phiên bản Homarr của bạn không được định cấu hình Docker hoặc không thể tìm nạp vùng chứa. Vui lòng kiểm tra tài liệu về cách thiết lập tích hợp."
+            "text": ""
         }
     },
     "modals": {

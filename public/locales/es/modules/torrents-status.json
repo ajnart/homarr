@@ -27,8 +27,8 @@
         "description": "Cuando se marca 'está en la lista blanca', actuará como una lista blanca. Si no se marca, esta es una lista negra. No hará nada cuando esté vacío"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Mostrar la relación de la lista de torrents filtrados",
+        "info": "Si está deshabilitado, solo se mostrará la relación global. La relación global seguirá usando las etiquetas si están configuradas"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Error",
       "lastUpdated": "Última actualización hace {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Relación global",
+      "ratioWithFilter": "Relación con filtro"
     },
     "table": {
       "header": {

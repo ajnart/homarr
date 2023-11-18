@@ -1,19 +1,25 @@
-import { Box, Button, Center, Image, Stack, Text, Title, useMantineTheme } from '@mantine/core';
+import { Button, Center, Image, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconArrowRight } from '@tabler/icons-react';
+import Consola from 'consola';
 import fs from 'fs';
+import fsPromises from 'fs/promises';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
+import { DatabaseNotWriteable } from '~/components/Onboarding/database-not-writeable';
 import { OnboardingSteps } from '~/components/Onboarding/onboarding-steps';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
-import { db } from '~/server/db';
+import { env } from '~/env';
 import { getTotalUserCountAsync } from '~/server/db/queries/user';
 import { getConfig } from '~/tools/config/getConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 
 export default function OnboardPage({
   configSchemaVersions,
+  databaseNotWriteable,
+  stringifiedError,
+  errorMessage,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { fn, colors, colorScheme } = useMantineTheme();
   const background = colorScheme === 'dark' ? 'dark.6' : 'gray.1';
@@ -39,29 +45,35 @@ export default function OnboardPage({
           </Center>
         </Center>
 
-        {onboardingSteps ? (
-          <OnboardingSteps isUpdate={isUpgradeFromSchemaOne} />
+        {databaseNotWriteable == true ? (
+          <DatabaseNotWriteable stringifiedError={stringifiedError} errorMessage={errorMessage} />
         ) : (
-          <Center h="100%">
-            <Stack align="center" p="lg">
-              <Title order={1} weight={800} size="3rem" opacity={0.8}>
-                Welcome to Homarr!
-              </Title>
-              <Text size="lg" mb={40}>
-                Your favorite dashboard has received a big upgrade.
-                <br />
-                We'll help you update within the next few steps
-              </Text>
+          <>
+            {onboardingSteps ? (
+              <OnboardingSteps isUpdate={isUpgradeFromSchemaOne} />
+            ) : (
+              <Center h="100%">
+                <Stack align="center" p="lg">
+                  <Title order={1} weight={800} size="3rem" opacity={0.8}>
+                    Welcome to Homarr!
+                  </Title>
+                  <Text size="lg" mb={40}>
+                    Your favorite dashboard has received a big upgrade.
+                    <br />
+                    We'll help you update within the next few steps
+                  </Text>
 
-              <Button
-                onClick={showOnboardingSteps}
-                rightIcon={<IconArrowRight size="1rem" />}
-                variant="default"
-              >
-                Start update process
-              </Button>
-            </Stack>
-          </Center>
+                  <Button
+                    onClick={showOnboardingSteps}
+                    rightIcon={<IconArrowRight size="1rem" />}
+                    variant="default"
+                  >
+                    Start update process
+                  </Button>
+                </Stack>
+              </Center>
+            )}
+          </>
         )}
       </Stack>
     </>
@@ -87,10 +99,34 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     ctx.res
   );
 
+  if (env.DATABASE_URL.startsWith('file:')) {
+    const rawDatabaseUrl = env.DATABASE_URL.substring('file:'.length);
+    Consola.info(
+      `Instance is using a database on the file system. Checking if file '${rawDatabaseUrl}' is writable...`
+    );
+    try {
+      await fsPromises.access(rawDatabaseUrl, fs.constants.W_OK);
+    } catch (error) {
+      // this usually occurs when the database path is not mounted in Docker
+      Consola.error(`Database '${rawDatabaseUrl}' is not writable.`, error);
+      return {
+        props: {
+          ...translations,
+          configSchemaVersions: configSchemaVersions,
+          databaseNotWriteable: true,
+          errorMessage: 'Database is not writeable',
+          stringifiedError: JSON.stringify(error),
+        },
+      };
+    }
+    Consola.info('Database is writeable');
+  }
+
   return {
     props: {
       ...translations,
       configSchemaVersions: configSchemaVersions,
+      databaseNotWriteable: false,
     },
   };
 };

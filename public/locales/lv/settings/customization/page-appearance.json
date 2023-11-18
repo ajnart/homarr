@@ -18,6 +18,29 @@
   "background": {
     "label": "Fons"
   },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
   "customCSS": {
     "label": "Pielāgotais CSS",
     "description": "Turklāt pielāgojiet paneli, izmantojot CSS, ieteicams tikai pieredzējušiem lietotājiem",

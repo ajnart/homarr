@@ -27,8 +27,8 @@
         "description": "Quando 'è whitelist' è selezionato, agirà come una whitelist. Se non selezionato, è una blacklist. Non farà nulla quando vuoto"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Visualizza il ratio dell'elenco dei torrent filtrati",
+        "info": "Se disabilitato, verrà visualizzato solo il ratio globale. Il ratio globale utilizzerà comunque i label, se impostati"
       }
     }
   },
@@ -36,8 +36,8 @@
     "footer": {
       "error": "Errore",
       "lastUpdated": "Ultimo aggiornamento {{time}} fa",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Ratio globale",
+      "ratioWithFilter": "Ratio con filtro"
     },
     "table": {
       "header": {

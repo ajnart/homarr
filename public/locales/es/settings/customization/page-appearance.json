@@ -18,6 +18,29 @@
   "background": {
     "label": "Fondo"
   },
+  "backgroundImageAttachment": {
+    "label": "Adjuntar imagen de fondo",
+    "options": {
+      "fixed": "Fijo - El fondo permanece en la misma posición (recomendado)",
+      "scroll": "Desplazar - El fondo se desplaza con el ratón"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Tamaño de la imagen de fondo",
+    "options": {
+      "cover": "Cubrir - Escala la imagen lo mínimo posible para cubrir toda la ventana recortando el espacio excesivo (recomendado)",
+      "contain": "Contener - Escala la imagen lo más grande posible dentro de su contenedor sin recortarla ni estirarla"
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Adjuntar imagen de fondo",
+    "options": {
+      "repeat": "Repetir - La imagen se repite tanto como sea necesario para cubrir toda el área de pintura de la imagen de fondo",
+      "no-repeat": "Sin repetir - La imagen no se repite y puede no ocupar todo el espacio (recomendado)",
+      "repeat-x": "Repetir X - Igual que 'Repetir' pero sólo en el eje horizontal",
+      "repeat-y": "Repetir Y: igual que 'Repetir' pero solo en el eje vertical"
+    }
+  },
   "customCSS": {
     "label": "CSS Personalizado",
     "description": "Además, personaliza tu panel usando CSS, solo recomendado para usuarios avanzados",

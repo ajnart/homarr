@@ -1,10 +1,10 @@
 import {
   MRT_Table,
-  type MRT_ColumnDef,
   useMantineReactTable,
+  type MRT_ColumnDef,
 } from 'mantine-react-table';
 
-import { NormalizedTorrent, TorrentState } from '@ctrl/shared-torrent';
+import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
@@ -15,25 +15,24 @@ import {
   Stack,
   Text,
   Title,
+  useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import { IconFileDownload, IconInfoCircle } from '@tabler/icons-react';
+import { IconFileDownload } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
-import { MIN_WIDTH_MOBILE } from '~/constants/constants';
-import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '~/types/app';
 import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
+import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { AppIntegrationType } from '~/types/app';
 
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { BitTorrentQueueItem } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -113,6 +112,8 @@ function TorrentTile({ widget }: TorrentTileProps) {
   }
 
   const filteredTorrents = filterTorrents(widget, torrents);
+
+  const theme = useMantineTheme();
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');
@@ -276,7 +277,11 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea>
+      <ScrollArea styles={{
+        viewport: {
+          borderRadius: theme.radius.md
+        }
+      }}>
         <MRT_Table table={torrentsTable} />
       </ScrollArea>
       <Group spacing="sm">

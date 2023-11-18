@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": "Din Homarr-instans har ikke Docker konfigureret, eller den har fejlet i at hente containere. Se i dokumentationen, hvordan du sætter integrationen op."
+            "text": "Din Homarr-instans har ikke Docker konfigureret, eller den har ikke kunne hente containere. Se venligst dokumentationen for, hvordan du opsætter integrationen."
         }
     },
     "modals": {
