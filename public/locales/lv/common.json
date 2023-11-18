@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Platums",
     "height": "Augstums"
-  }
+  },
+  "public": "Publisks",
+  "restricted": ""
 }

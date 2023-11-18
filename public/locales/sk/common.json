@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Šírka",
     "height": "Výška"
-  }
+  },
+  "public": "Verejné",
+  "restricted": ""
 }

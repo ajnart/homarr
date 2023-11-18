@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Bredde",
     "height": "Højde"
-  }
+  },
+  "public": "Offentlig",
+  "restricted": "Begrænset"
 }
