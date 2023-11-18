@@ -10,6 +10,7 @@ import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
 import { inviteRouter } from './routers/invite/invite-router';
+import { logRouter } from './routers/log';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { notebookRouter } from './routers/notebook';
@@ -47,6 +48,7 @@ export const rootRouter = createTRPCRouter({
   boards: boardRouter,
   password: passwordRouter,
   notebook: notebookRouter,
+  log: logRouter
 });
 
 // export type definition of API

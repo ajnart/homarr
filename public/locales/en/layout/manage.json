@@ -22,10 +22,11 @@
                 "contribute": "Contribute"
             }
         },
-        "tools": {
-            "title": "Tools",
+        "system": {
+            "title": "System",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "log": "Log"
             }
         },
         "about": {

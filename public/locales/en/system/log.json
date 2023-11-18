@@ -1,0 +1,6 @@
+{
+    "title": "Log",
+    "metaTitle": "Log",
+    "timeDisplay": "Refreshing log in {{time}}s",
+    "notSupported": "Your system either does not support viewing the log in Homarr or your OS does not support the proper functions."
+}

@@ -17,12 +17,14 @@ COPY yarn.lock ./temp_yarn.lock
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 COPY ./scripts/run.sh ./scripts/run.sh
+COPY ./scripts/pipe-log.sh ./scripts/pipe-log.sh
 COPY ./drizzle ./drizzle
 
 COPY ./drizzle/migrate ./migrate
 COPY ./tsconfig.json ./migrate/tsconfig.json
 
 RUN mkdir /data
+RUN mkdir /tmp/homarr-logs/
 
 # Install dependencies
 RUN apt update && apt install -y openssl wget
@@ -57,4 +59,4 @@ HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
 
 VOLUME [ "/app/data/configs" ]
 VOLUME [ "/data" ]
-ENTRYPOINT ["sh", "./scripts/run.sh"]
+ENTRYPOINT ["sh", "./scripts/pipe-log.sh"]
