@@ -11,11 +11,11 @@ import {
   Flex,
   Group,
   Loader,
+  Progress,
   ScrollArea,
   Stack,
   Text,
   Title,
-  useMantineTheme,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload } from '@tabler/icons-react';
@@ -25,6 +25,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { useCardStyles } from '~/components/layout/Common/useCardStyles';
+import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
@@ -113,7 +114,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   const filteredTorrents = filterTorrents(widget, torrents);
 
-  const theme = useMantineTheme();
 
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');
@@ -124,70 +124,54 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   const columns = useMemo<MRT_ColumnDef<NormalizedTorrent>[]>(() => [
     {
-      accessorFn: (row) => (row.isCompleted ? 'true' : 'false'), //must be strings
-      id: 'isCompleted',
-      header: t('card.table.header.isCompleted'),
-      filterVariant: 'checkbox',
-      Cell: ({ cell }) =>
-        cell.getValue() === 'true' ? 'Completed' : 'Incomplete',
-      size: 220,
-    },
-    {
       id: "dateAdded",
       accessorFn: (row) => new Date(row.dateAdded),
-      header: t('card.table.header.dateAdded'),
-      sortDescFirst: true,
-      enableMultiSort: true,
+      header: "dateAdded",
     },
     {
       accessorKey: 'name',
       header: t('card.table.header.name'),
-      sortDescFirst: true,
-      enableMultiSort: true,
     },
     {
       accessorKey: 'totalSize',
       header: t('card.table.header.size'),
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
-      enableMultiSort: true,
-
     },
     {
       accessorKey: 'uploadSpeed',
       header: t('card.table.header.upload'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
-      enableMultiSort: true,
-      filterVariant: 'range-slider',
-      filterFn: 'betweenInclusive',
-      mantineFilterRangeSliderProps: {
-        max: 100 * 1024 * 1024, //100MiB/s
-        min: 0,
-        label: (value: number) => formatSpeed(value),
-      }
     },
     {
       accessorKey: 'downloadSpeed',
       header: t('card.table.header.download'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
-      enableMultiSort: true,
-      filterVariant: 'range-slider',
-      filterFn: 'betweenInclusive',
-      mantineFilterRangeSliderProps: {
-        max: 100 * 1024 * 1024, //100MiB/s
-        min: 0,
-        label: (value: number) => formatSpeed(value),
-      }
     },
     {
       accessorKey: 'eta',
       header: t('card.table.header.estimatedTimeOfArrival'),
       Cell: ({ cell }) => formatETA(Number(cell.getValue())),
       sortDescFirst: true,
-      enableMultiSort: true,
-      enableColumnFilter: false,
+    },
+    {
+      accessorKey: 'progress',
+      header: t('card.table.header.progress'),
+      Cell: ({ cell, row }) => (
+        <Flex>
+          <Text className={classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
+          <Progress
+            radius="lg"
+            color={
+              Number(cell.getValue()) === 1 ? 'green' : row.original.state === 'paused' ? 'yellow' : 'blue'
+            }
+            value={Number(cell.getValue()) * 100}
+            size="lg"
+          />,
+        </Flex>),
+      sortDescFirst: true,
     },
   ], []);
 
@@ -278,11 +262,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea styles={{
-        viewport: {
-          borderRadius: theme.radius.md
-        }
-      }}>
+      <ScrollArea>
         <MRT_Table table={torrentsTable} />
       </ScrollArea>
       <Group spacing="sm">
@@ -291,7 +271,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
             {t('card.footer.error')}
           </Badge>
         )}
-
         <Text color="dimmed" size="xs">
           {t('card.footer.lastUpdated', { time: humanizedDuration })}
           {` - ${t('card.footer.ratioGlobal')} : ${
