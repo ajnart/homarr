@@ -3,6 +3,8 @@
 :root {
   --gridstack-widget-width: 64;
   --gridstack-column-count: 12;
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter
+  scrollbar-gutter: stable;
 }
 
 .grid-stack-placeholder > .placeholder-content {
@@ -40,7 +42,7 @@
 }
 
 .grid-stack>.grid-stack-item {
-  min-width: calc(percentage(1) * #{var(--gridstack-widget-width)});
+  min-width: #{var(--gridstack-widget-width)};
 }
 
 // Styling for sidebar grid-stack elements

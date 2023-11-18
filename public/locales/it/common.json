@@ -1,5 +1,7 @@
 {
   "save": "Salva",
+  "apply": "Applica",
+  "insert": "Inserisci",
   "about": "Info",
   "cancel": "Annulla",
   "close": "Chiudi",
@@ -40,5 +42,14 @@
     "medium": "medio",
     "large": "grande"
   },
-  "seeMore": "Vedi di più..."
+  "seeMore": "Vedi di più...",
+  "position": {
+    "left": "Sinistra",
+    "center": "Centra",
+    "right": "Destra"
+  },
+  "attributes": {
+    "width": "Larghezza",
+    "height": "Altezza"
+  }
 }

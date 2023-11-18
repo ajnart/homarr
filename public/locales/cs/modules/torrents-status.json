@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": ""
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": ""
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "",
         "description": ""
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "",
-      "lastUpdated": ""
+      "lastUpdated": "Naposledy aktualizováno před {{time}}",
+      "ratioGlobal": "Globální poměr",
+      "ratioWithFilter": "Filtrovaný poměr"
     },
     "table": {
       "header": {
@@ -45,7 +57,7 @@
       }
     },
     "lineChart": {
-      "title": "",
+      "title": "Aktuální rychlost stahování",
       "download": "",
       "upload": "",
       "timeSpan": "",

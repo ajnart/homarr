@@ -1,7 +1,7 @@
 {
     "metaTitle": "Opprett konto",
     "title": "Opprett konto",
-    "text": "Vennligst definer legitimasjonen din nedenfor",
+    "text": "Vennligst angi innloggingsinformasjonen under",
     "form": {
         "fields": {
             "username": {

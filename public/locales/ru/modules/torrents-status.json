@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Отображение завершенных торрентов"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Отображение устаревших торрентов"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Список меток",
         "description": "Когда отмечено 'белый список', применится как белый список. Если не отмечено, применится как чёрный список. Не будет ничего делать, если пусто"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Ошибка",
-      "lastUpdated": "Последнее обновление {{time}} назад"
+      "lastUpdated": "Последнее обновление {{time}} назад",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

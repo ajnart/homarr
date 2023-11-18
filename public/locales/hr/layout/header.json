@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Ovo je eksperimentalna značajka Homarra. Prijavite sve probleme na <gh>GitHub</gh> ili <dc>Discord</dc>."
-    },
     "search": {
         "label": "traži",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Korisničke postavke",
             "defaultBoard": "Zadana nadzorna ploča",
             "manage": "Upravljati",
-            "about": {
-                "label": "O aplikaciji",
-                "new": "Novi"
-            },
             "logout": "Odjava iz {{username}}",
             "login": "Prijaviti se"
         }

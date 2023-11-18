@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Bu Homarr'ın deneysel bir özelliğidir. Lütfen herhangi bir sorunu <gh>GitHub</gh> veya <dc>Discord</dc>adresinden bildirin."
-    },
     "search": {
         "label": "Ara",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Kullanıcı Tercihleri",
             "defaultBoard": "Varsayılan Panel",
             "manage": "Yönet",
-            "about": {
-                "label": "Hakkında",
-                "new": "Yeni"
-            },
             "logout": "{{username}} kullanıcısından çıkış yapın",
             "login": "Giriş"
         }

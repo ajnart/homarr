@@ -42,10 +42,12 @@ import {
 import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
+import { configRouter } from '~/server/api/routers/config';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { firstUpperCase } from '~/tools/shared/strings';
+import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { boardCustomizationSchema } from '~/validations/boards';
@@ -59,14 +61,20 @@ export default function CustomizationPage({
     slug: string;
   };
   const utils = api.useContext();
-  const { data: config } = api.config.byName.useQuery(
+  const {
+    data: config,
+    error,
+    isError,
+  } = api.config.byName.useQuery(
     { name: query.slug },
     {
       initialData: initialConfig,
       refetchOnMount: false,
+      useErrorBoundary: false,
+      suspense: false,
     }
   );
-  const { mutateAsync: saveCusomization, isLoading } = api.config.saveCusomization.useMutation();
+  const { mutateAsync: saveCustomization, isLoading } = api.config.saveCustomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
   const { t } = useTranslation('boards/customize');
   const form = useBoardCustomizationForm({
@@ -86,6 +94,9 @@ export default function CustomizationPage({
         shade: (config?.settings.customization.colors.shade as number | undefined) ?? 8,
         opacity: config?.settings.customization.appOpacity ?? 50,
         customCss: config?.settings.customization.customCss ?? '',
+        backgroundImageAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed',
+        backgroundImageRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
+        backgroundImageSize: config?.settings.customization.backgroundImageSize ?? 'cover',
       },
       gridstack: {
         sm: config?.settings.customization.gridstack?.columnCountSmall ?? 3,
@@ -114,7 +125,7 @@ export default function CustomizationPage({
       message: t('notifications.pending.message'),
       loading: true,
     });
-    await saveCusomization(
+    await saveCustomization(
       {
         name: query.slug,
         ...values,
@@ -149,6 +160,12 @@ export default function CustomizationPage({
   const metaTitle = `${t('metaTitle', {
     name: firstUpperCase(query.slug),
   })} • Homarr`;
+
+  if (isError || error) {
+    return {
+      notFound: true,
+    };
+  }
 
   return (
     <MainLayout
@@ -285,15 +302,30 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const session = await getServerAuthSession({ req: context.req, res: context.res });
-  
-  const result = checkForSessionOrAskForLogin(context, session, () => session?.user.isAdmin == true);
+
+  const result = checkForSessionOrAskForLogin(
+    context,
+    session,
+    () => session?.user.isAdmin == true
+  );
   if (result) {
     return result;
   }
 
   const helpers = await createTrpcServersideHelpers({ req: context.req, res: context.res });
+  const caller = configRouter.createCaller({
+    session: session,
+    cookies: context.req.cookies,
+  });
 
-  const config = await helpers.config.byName.fetch({ name: routeParams.data.slug });
+  let config: ConfigType;
+  try {
+    config = await caller.byName({ name: routeParams.data.slug });
+  } catch {
+    return {
+      notFound: true
+    };
+  }
 
   const translations = await getServerSideTranslations(
     [

@@ -4,12 +4,6 @@
     "description": "Toont een kalender met komende releases, van ondersteunde integraties.",
     "settings": {
       "title": "Instellingen voor Kalender widget",
-      "useSonarrv4": {
-        "label": "Gebruik Sonarr v4 API"
-      },
-      "useRadarrv5": {
-        "label": "Radarr v5 API gebruiken"
-      },
       "radarrReleaseType": {
         "label": "Radarr release type",
         "data": {

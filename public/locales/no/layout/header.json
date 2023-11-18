@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Dette er et eksperimentelt trekk ved Homarr. Vennligst rapporter eventuelle problemer på <gh>GitHub</gh> eller <dc>Discord</dc>."
-    },
     "search": {
         "label": "Søk",
         "engines": {
@@ -14,13 +11,9 @@
     "actions": {
         "avatar": {
             "switchTheme": "Bytt tema",
-            "preferences": "Brukerpreferanser",
+            "preferences": "Brukerinnstillinger",
             "defaultBoard": "Standard dashbord",
-            "manage": "Få til",
-            "about": {
-                "label": "Info",
-                "new": "Ny"
-            },
+            "manage": "Endre",
             "logout": "Logg ut fra {{username}}",
             "login": "Logg Inn"
         }

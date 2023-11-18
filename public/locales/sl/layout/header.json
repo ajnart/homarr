@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
         "label": "",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "",
             "defaultBoard": "",
             "manage": "",
-            "about": {
-                "label": "O programu",
-                "new": ""
-            },
             "logout": "",
             "login": "Prijava"
         }

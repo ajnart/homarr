@@ -74,7 +74,6 @@ const SettingsComponent = ({
     label: language.originalName,
     description: language.translatedName,
     value: language.shortName,
-    country: language.country,
   }));
 
   const { t, i18n } = useTranslation(['user/preferences', 'common']);

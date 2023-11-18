@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "顯示已完成 Torrents"
       },
+      "displayActiveTorrents": {
+        "label": "顯示活耀的種子"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "將 Torrent 視為活耀的上傳速度 (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "顯示過期 Torrents"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "標籤列表",
         "description": "當選中 \"白名單\" 時，將成為白名單，如不選中，則為黑名單，為空時則不會做任何事情"
+      },
+      "displayRatioWithFilter": {
+        "label": "顯示過濾後的 Torrents 列表比例",
+        "info": "如果禁用，則只會顯示全局比率，而全局比率仍將使用標籤"
       }
     }
   },
   "card": {
     "footer": {
       "error": "錯誤",
-      "lastUpdated": "最後更新於 {{time}} 前"
+      "lastUpdated": "最後更新於 {{time}} 前",
+      "ratioGlobal": "全局比率",
+      "ratioWithFilter": "含過濾後的比率"
     },
     "table": {
       "header": {

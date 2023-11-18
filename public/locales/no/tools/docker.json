@@ -7,11 +7,11 @@
     },
     "modals": {
         "selectBoard": {
-            "title": "Velg et brett",
-            "text": "Velg brettet der du vil legge til appene for de valgte Docker-beholderne.",
+            "title": "Velg en tavle",
+            "text": "Velg tavlen der du vil legge til appene for de valgte Docker-beholderne.",
             "form": {
                 "board": {
-                    "label": "Borde"
+                    "label": "Tavle"
                 },
                 "submit": "Legg til apper"
             }
@@ -20,7 +20,7 @@
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "Lagt apper til bord",
+                "title": "Lagt apper til tavle",
                 "message": "Appene for de valgte Docker-beholderne er lagt til tavlen."
             },
             "error": {

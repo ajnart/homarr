@@ -1,12 +1,14 @@
 {
 	"description": "Homarr is een <strong>sterk</strong>, <strong>modern</strong> dashboard dat al je apps en diensten binnen handbereik brengt. Met Homarr heb je toegang tot en controle over alles op één handige locatie. Homarr integreert naadloos met de apps die je hebt toegevoegd en geeft je waardevolle informatie en volledige controle. Installatie is een fluitje van een cent en Homarr ondersteunt een breed scala aan implementatiemethoden.",
-	"contact": "Problemen of vragen? Neem contact met ons op!",
 	"addToDashboard": "Aan dashboard toevoegen",
 	"tip": "Mod verwijst naar uw modifier toets, dat zijn de Ctrl en Commando/Super/Windows toets",
 	"key": "Sneltoets",
 	"action": "Actie",
 	"keybinds": "Sneltoetsen",
-	"documentation": "Documentatie",
+	"translators": "",
+	"translatorsDescription": "",
+	"contributors": "",
+	"contributorsDescription": "",
 	"actions": {
 		"toggleTheme": "Schakelen tussen licht en donker",
 		"focusSearchBar": "Focus op zoekbalk",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuratieschema versie",
-		"configurationsCount": "Beschikbare configuraties",
 		"version": "Versie",
 		"nodeEnvironment": "Node environment",
 		"i18n": "I18n vertaling namespaces geladen",

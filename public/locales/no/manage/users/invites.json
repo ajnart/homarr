@@ -15,7 +15,7 @@
         },
         "data": {
             "expiresAt": "utløpt {{at}}",
-            "expiresIn": "i {{in}}"
+            "expiresIn": "om {{in}}"
         }
     },
     "modals": {
@@ -24,7 +24,7 @@
             "description": "Etter utløpet vil en invitasjon ikke lenger være gyldig, og mottakeren av invitasjonen vil ikke kunne opprette en konto.",
             "form": {
                 "expires": "Utløpsdato",
-                "submit": "Skape"
+                "submit": "Opprett"
             }
         },
         "copy": {
@@ -36,12 +36,12 @@
                 "token": "Token"
             },
             "button": {
-                "close": "Kopier og avvis"
+                "close": "Kopier og lukk"
             }
         },
         "delete": {
             "title": "Slett invitasjon",
-            "description": "Er du sikker på at du vil slette denne invitasjonen? Brukere med denne koblingen vil ikke lenger kunne opprette en konto ved å bruke den koblingen."
+            "description": "Er du sikker på at du vil slette denne invitasjonen? Brukere med denne koblingen vil ikke lenger kunne opprette en konto ved å bruke den linken."
         }
     },
     "noInvites": "Det er ingen invitasjoner ennå."

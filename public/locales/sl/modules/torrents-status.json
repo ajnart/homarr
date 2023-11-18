@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Prikaži dokončane torrente"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Prikaži zastarele torrente"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "",
         "description": ""
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Napaka",
-      "lastUpdated": "Nazadnje posodobljeno {{time}} nazaj"
+      "lastUpdated": "Nazadnje posodobljeno {{time}} nazaj",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

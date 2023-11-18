@@ -4,12 +4,6 @@
     "description": "サポートされている統合機能からリリース予定のカレンダーを表示します。",
     "settings": {
       "title": "カレンダーウィジェットの設定",
-      "useSonarrv4": {
-        "label": "Sonarr v4 API を使用"
-      },
-      "useRadarrv5": {
-        "label": "Radarr v5 API を使用する"
-      },
       "radarrReleaseType": {
         "label": "ラダーリリースタイプ",
         "data": {

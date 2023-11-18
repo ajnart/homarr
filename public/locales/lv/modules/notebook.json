@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Rādīt rīkjoslu, lai palīdzētu rakstīt markdown tekstu"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Atļaut atzīmi lasīšanas režīmā"
+			},
 			"content": {
 				"label": "Piezīmju saturs"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Treknraksts",
+			"italic": "Slīpraksts",
+			"strikethrough": "Pārsvītrojums",
+			"underline": "Pasvītrojums",
+			"colorText": "Krāsains teksts",
+			"colorHighlight": "Krāsains izcelts teksts",
+			"code": "Kods",
+			"clear": "Notīrīt formatējumu",
+			"heading": "Virsraksts {{level}}",
+			"align": "Teksta līdzināšana: {{position}}",
+			"blockquote": "Citāts",
+			"horizontalLine": "Horizontāla līnija",
+			"bulletList": "Aizzīmju saraksts",
+			"orderedList": "Numurēts saraksts",
+			"checkList": "Pārbaudes saraksts",
+			"increaseIndent": "Palielināt atkāpi",
+			"decreaseIndent": "Samazināt atkāpi",
+			"link": "Saite",
+			"unlink": "Noņemt saiti",
+			"image": "Iegult attēlu",
+			"addTable": "Pievienot tabulu",
+			"deleteTable": "Dzēst tabulu",
+			"colorCell": "Krāsaina šūna",
+			"mergeCell": "Pārslēgt šūnu apvienošanu",
+			"addColumnLeft": "Pievienot kolonnu pirms",
+			"addColumnRight": "Pievienot kolonnu pēc",
+			"deleteColumn": "Dzēst kolonnu",
+			"addRowTop": "Pievienot rindu pirms",
+			"addRowBelow": "Pievienot rindu pēc",
+			"deleteRow": "Dzēst rindu"
+		},
+		"modals": {
+			"clearColor": "Notīrīt krāsu",
+			"source": "Avots",
+			"widthPlaceholder": "Vērtība % vai pikseļos",
+			"columns": "Kolonnas",
+			"rows": "Rindas"
 		}
 	}
 }

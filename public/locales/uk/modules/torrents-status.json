@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Відображати завершені торренти"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Відображати застарілі торренти"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Відмітити список",
         "description": "Якщо позначено опцію \"білий список\", він буде діяти як білий список. Якщо не позначено, це чорний список. Нічого не робитиме, якщо порожній"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Помилка",
-      "lastUpdated": "Востаннє оновлено {{time}} тому"
+      "lastUpdated": "Востаннє оновлено {{time}} тому",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

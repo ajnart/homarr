@@ -18,7 +18,7 @@
       }
     },
     "lineChart": {
-      "title": "",
+      "title": "Aktuální rychlost stahování",
       "download": "",
       "upload": "",
       "timeSpan": "",

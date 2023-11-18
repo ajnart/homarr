@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS widget",
-    "description": "RSS-widgeten lar deg vise RSS-feeder på dashbordet.",
+    "description": "RSS-widgeten lar deg vise RSS-feeder på tavlen.",
     "settings": {
       "title": "Innstillinger for RSS widget",
       "rssFeedUrl": {

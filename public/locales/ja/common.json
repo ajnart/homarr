@@ -1,5 +1,7 @@
 {
   "save": "保存",
+  "apply": "",
+  "insert": "",
   "about": "About",
   "cancel": "キャンセル",
   "close": "閉じる",
@@ -40,5 +42,14 @@
     "medium": "中",
     "large": "大"
   },
-  "seeMore": "もっと見る..."
+  "seeMore": "もっと見る...",
+  "position": {
+    "left": "左",
+    "center": "",
+    "right": "右"
+  },
+  "attributes": {
+    "width": "幅",
+    "height": "高さ"
+  }
 }

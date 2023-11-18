@@ -11,10 +11,10 @@
         "label": "Tillat fullskjerm"
       },
       "allowTransparency": {
-        "label": "Tillat åpenhet"
+        "label": "Tillat gjennomsiktighet"
       },
       "allowScrolling": {
-        "label": "Tillat rulling"
+        "label": "Tillat skrolling"
       },
       "allowPayment": {
         "label": "Tillat betaling"
@@ -36,7 +36,7 @@
   "card": {
     "errors": {
       "noUrl": {
-        "title": "ugyldig URL",
+        "title": "Ugyldig URL",
         "text": "Sørg for at du har angitt en gyldig adresse i konfigurasjonen av widgeten din"
       },
       "browserSupport": "Nettleseren din støtter ikke iframes. Vennligst oppdater nettleseren din."

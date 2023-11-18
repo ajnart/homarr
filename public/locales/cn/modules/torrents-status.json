@@ -8,10 +8,16 @@
         "label": "刷新间隔（秒）"
       },
       "displayCompletedTorrents": {
-        "label": "显示已完成 torrents"
+        "label": "显示已完成的种子"
+      },
+      "displayActiveTorrents": {
+        "label": "显示正活跃的种子"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "将torrent视为活动的上传速度(kB/s)"
       },
       "displayStaleTorrents": {
-        "label": "显示过期 torrents"
+        "label": "显示已过期的种子"
       },
       "labelFilterIsWhitelist": {
         "label": "标签列表是白名单 (而不是黑名单)"
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "标签列表",
         "description": "当选中 “白名单” 时，这将成为白名单。如果不选中，则是黑名单。为空时不会做任何事情。"
+      },
+      "displayRatioWithFilter": {
+        "label": "显示过滤后的 torrents 列表比例",
+        "info": "如果禁用，则只显示全局比率。如果设置为 \"禁用\"，全局比率仍将使用标签。"
       }
     }
   },
   "card": {
     "footer": {
       "error": "错误",
-      "lastUpdated": "最后更新于 {{time}} 前"
+      "lastUpdated": "最后更新于 {{time}} 前",
+      "ratioGlobal": "全局比率",
+      "ratioWithFilter": "含过滤后的比率"
     },
     "table": {
       "header": {

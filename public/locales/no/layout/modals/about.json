@@ -1,21 +1,22 @@
 {
 	"description": "Homarr er et <strong>sleek</strong>, <strong>moderne</strong> dashbord som legger alle apper og tjenester ved fingertuppene dine. Med Homarr, kan du få tilgang til og kontrollere alt på et bekvemt sted. Homarr sømløst integrerer med appene du har lagt til, gir deg verdifull informasjon og gir deg full kontroll. Installasjon er en lek, og Homarr støtter en lang rekke distribusjonsmetoder.",
-	"contact": "Har du problemer med eller spørsmål? Ta kontakt med oss!",
 	"addToDashboard": "Legg til på dashbord",
 	"tip": "Mod refererer til endringstasten din, den er Ctrl og Command/Super/Windows tasten",
 	"key": "Hurtigtast",
 	"action": "Handling",
 	"keybinds": "Hurtigtaster",
-	"documentation": "Dokumentasjon",
+	"translators": "Oversettere ({{count}})",
+	"translatorsDescription": "Takket være disse menneskene er Homarr tilgjengelig på {{languages}} språk! Vil du hjelpe med å oversette Homarr til ditt språk? Les hvordan du kan bidra <a>her</a>.",
+	"contributors": "Bidragsytere ({{count}})",
+	"contributorsDescription": "Disse menneskene har bygget koden som får homarr til å fungere! Vil du være med å bygge Homarr? Les hvordan du kan bidra <a>her</a>",
 	"actions": {
-		"toggleTheme": "Veksle mellom lys/mørke modus",
+		"toggleTheme": "Veksle mellom lys/mørk modus",
 		"focusSearchBar": "Fokuser på søkefeltet",
 		"openDocker": "Åpne docker-widget",
 		"toggleEdit": "Veksle redigeringsmodus"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurasjonsskjema versjon",
-		"configurationsCount": "Tilgjengelige konfigurasjoner",
 		"version": "Versjon",
 		"nodeEnvironment": "Node miljø",
 		"i18n": "Lastet I18n oversettelsesnavneområder",

@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Wyświetlanie ukończonych torrentów"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Wyświetlanie nieaktualnych torrentów"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Lista etykiet",
         "description": "Po zaznaczeniu opcji \"jest białą listą\" będzie ona działać jako biała lista. Jeśli nie jest zaznaczone, jest to czarna lista. Nie zrobi nic, gdy jest pusta"
+      },
+      "displayRatioWithFilter": {
+        "label": "Wyświetl współczynnik listy przefiltrowanych torrentów",
+        "info": "Jeśli ta opcja jest wyłączona, wyświetlany będzie tylko współczynnik globalny. Współczynnik globalny będzie nadal używał etykiet, jeśli są ustawione"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Błąd",
-      "lastUpdated": "Ostatnia aktualizacja {{time}} temu"
+      "lastUpdated": "Ostatnia aktualizacja {{time}} temu",
+      "ratioGlobal": "Współczynnik globalny",
+      "ratioWithFilter": "Współczynnik z filtrem"
     },
     "table": {
       "header": {
@@ -72,7 +84,7 @@
         "queuePosition": "Pozycja w kolejce - {{position}}",
         "progress": "Postęp - {{progress}}%",
         "totalSelectedSize": "Razem - {{totalSize}}",
-        "state": "Państwo - {{state}}",
+        "state": "Status - {{state}}",
         "ratio": "Współczynnik -.",
         "completed": "Zakończono"
       }

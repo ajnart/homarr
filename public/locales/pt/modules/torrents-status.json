@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Mostrar torrentes completas"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Exibição de torrentes envelhecidas"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Lista de rótulos",
         "description": "Quando a opção \"is whitelist\" estiver marcada, ela funcionará como uma lista de permissões. Se não estiver marcada, será uma lista negra. Não fará nada quando estiver vazia"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Erro",
-      "lastUpdated": "Última actualização {{time}} atrás"
+      "lastUpdated": "Última actualização {{time}} atrás",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

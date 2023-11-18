@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Ez a Homarr kísérleti funkciója. Kérjük, jelezz bármilyen problémát a <gh>GitHubon</gh> vagy a <dc>Discordon</dc>."
-    },
     "search": {
         "label": "Keresés",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Beállítások",
             "defaultBoard": "Alapértelmezett vezérlőpult",
             "manage": "Kezelés",
-            "about": {
-                "label": "Névjegy",
-                "new": "Új"
-            },
             "logout": "{{username}} kijelentkezése",
             "login": "Bejelentkezés"
         }

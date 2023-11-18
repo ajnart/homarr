@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "這是 Homarr 的一項實現性功能。請在 <gh>Github</gh> 或 <dc>Discord</dc>上回報任何問題"
-    },
     "search": {
         "label": "搜尋",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "使用者設定",
             "defaultBoard": "預設儀錶板",
             "manage": "管理",
-            "about": {
-                "label": "關於",
-                "new": "新"
-            },
             "logout": "登出 {{username}}",
             "login": "登入"
         }

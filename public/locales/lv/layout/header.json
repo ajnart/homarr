@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Šī ir eksperimentāla Homarr funkcija. Lūdzu, ziņojiet par jebkādām problēmām <gh>GitHub</gh> vai <dc>Discord</dc>."
-    },
     "search": {
         "label": "Meklēt",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Lietotāja iestatījumi",
             "defaultBoard": "Noklusējuma darbvirsma",
             "manage": "Pārvaldīt",
-            "about": {
-                "label": "Par Programmu",
-                "new": "Jauns"
-            },
             "logout": "Izrakstīšanās no {{username}}",
             "login": "Pieslēgties"
         }

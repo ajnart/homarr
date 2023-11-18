@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Εμφάνιση ολοκληρωμένων torrents"
       },
+      "displayActiveTorrents": {
+        "label": "Εμφάνιση ενεργών torrents"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Ταχύτητα μεταφόρτωσης για να θεωρηθεί ένα torrent ενεργό (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Εμφάνιση stale torrents"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Λίστα ετικετών",
         "description": "Όταν είναι επιλεγμένο το 'is whitelist', τότε θα συμπεριφερθεί σαν επιτρεπόμενη λίστα. Εάν δεν είναι επιλεγμένο, τότε είναι αποκλεισμένη λίστα. Εάν είναι άδειο δε θα κάνει τίποτα"
+      },
+      "displayRatioWithFilter": {
+        "label": "Εμφάνιση φιλτραρισμένης αναλογίας λίστας torrents",
+        "info": "Εάν απενεργοποιηθεί, θα εμφανιστεί μόνο η συνολική αναλογία. Η συνολική αναλογία θα εξακολουθεί να χρησιμοποιεί τις ετικέτες αν έχει οριστεί"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Σφάλμα",
-      "lastUpdated": "Τελευταία ενημέρωση {{time}} πριν"
+      "lastUpdated": "Τελευταία ενημέρωση {{time}} πριν",
+      "ratioGlobal": "Συνολική αναλογία",
+      "ratioWithFilter": "Αναλογία με φίλτρο"
     },
     "table": {
       "header": {

@@ -21,10 +21,10 @@
       },
       "titleState": {
         "label": "Bytittel",
-        "info": "Hvis du aktiverer Tidssone-alternativet, kan navnet på byen og tidssonekoden vises.<br/>Du kan også vise byen alene eller til og med ikke vise noen.",
+        "info": "Hvis du aktiverer Tidssone-alternativet, kan navnet på byen og tidssonekoden vises.<br/>Du kan også vise byen alene eller ikke vise noen.",
         "data": {
           "both": "By og tidssone",
-          "city": "Bare by",
+          "city": "Kun by",
           "none": "Ingen"
         }
       }

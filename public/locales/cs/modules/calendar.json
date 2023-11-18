@@ -4,12 +4,6 @@
     "description": "",
     "settings": {
       "title": "",
-      "useSonarrv4": {
-        "label": ""
-      },
-      "useRadarrv5": {
-        "label": ""
-      },
       "radarrReleaseType": {
         "label": "",
         "data": {

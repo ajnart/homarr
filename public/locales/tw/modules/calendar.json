@@ -4,12 +4,6 @@
     "description": "在日曆中顯示來自支持集成中的即將發布版本",
     "settings": {
       "title": "日曆組件設定",
-      "useSonarrv4": {
-        "label": "使用 Sonarr V4 API"
-      },
-      "useRadarrv5": {
-        "label": "使用 Radarr V5 API"
-      },
       "radarrReleaseType": {
         "label": "Radarr 發布類型",
         "data": {

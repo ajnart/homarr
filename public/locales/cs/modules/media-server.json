@@ -10,9 +10,9 @@
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Relace",
+        "user": "Uživatel",
+        "currentlyPlaying": "Právě přehráváno"
       }
     },
     "errors": {

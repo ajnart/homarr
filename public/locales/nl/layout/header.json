@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Dit is een experimentele functie van Homarr. Meld problemen alsjeblieft op <gh>GitHub</gh> of <dc>Discord</dc>."
-    },
     "search": {
         "label": "Zoek op",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Gebruikersvoorkeuren",
             "defaultBoard": "Standaard dashboard",
             "manage": "Beheer",
-            "about": {
-                "label": "Over",
-                "new": "Nieuw"
-            },
             "logout": "Afmelden bij {{username}}",
             "login": "Inloggen"
         }

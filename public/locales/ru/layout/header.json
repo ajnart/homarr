@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "Это экспериментальная функция Homarr. Пожалуйста, сообщайте о любых проблемах на <gh>GitHub</gh> или <dc>Discord</dc>."
-    },
     "search": {
         "label": "Поиск",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Пользовательские настройки",
             "defaultBoard": "Панель по умолчанию",
             "manage": "Управление",
-            "about": {
-                "label": "О проекте",
-                "new": "Новый"
-            },
             "logout": "Выйти как {{username}}",
             "login": "Вход в систему"
         }

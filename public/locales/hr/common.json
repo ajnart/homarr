@@ -1,5 +1,7 @@
 {
   "save": "Spremi",
+  "apply": "",
+  "insert": "",
   "about": "O aplikaciji",
   "cancel": "Otkaži",
   "close": "Zatvori",
@@ -40,5 +42,14 @@
     "medium": "srednje",
     "large": "veliko"
   },
-  "seeMore": "Vidi više..."
+  "seeMore": "Vidi više...",
+  "position": {
+    "left": "Lijevo",
+    "center": "",
+    "right": "Pravo"
+  },
+  "attributes": {
+    "width": "Širina",
+    "height": "Visina"
+  }
 }

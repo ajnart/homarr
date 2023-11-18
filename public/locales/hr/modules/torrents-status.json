@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Prikaži završene torrente"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Prikaži neaktivne torrente"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Popis oznaka",
         "description": "Kada je označena opcija \"is whitelist\", ovo će djelovati kao popis dopuštenih oznaka. Ako nije označeno, ovo je popis zabranjenih oznaka - \"blacklist\". Neće imati nikakav učinak kada je prazno"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Pogreška",
-      "lastUpdated": "Zadnje ažurirano prije {{time}}"
+      "lastUpdated": "Zadnje ažurirano prije {{time}}",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {

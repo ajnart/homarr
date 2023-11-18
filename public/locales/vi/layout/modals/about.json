@@ -1,12 +1,14 @@
 {
 	"description": "Homarr là một bảng điều khiển <strong>nuột nà</strong>, <strong>hiện đại</strong>, giúp bạn đặt tất cả các ứng dụng và dịch vụ ngay trong tầm với. Với Homarr, bạn có thể truy cập và kiểm soát mọi thứ thuận tiện từ một nơi nhất định. Homarr tích hợp liền mạch với các ứng dụng bạn đã thêm, cung cấp các thông tin quan trọng tới bạn và trao cho bạn toàn quyền kiểm soát. Cài đặt Homarr rất dễ dàng, và Homarr còn hỗ trợ nhiều phương thức triển khai nữa.",
-	"contact": "Gặp khó khăn hoặc có thắc mắc? Hãy liên hệ với chúng tôi!",
 	"addToDashboard": "Thêm vào bảng điều khiển",
 	"tip": "Mod đề cập đến các phím bổ trợ của bạn, cụ thể là phím Ctrl và Command/Super/Windows",
 	"key": "Phím tắt",
 	"action": "Hành động",
 	"keybinds": "Phím tắt",
-	"documentation": "Tài liệu",
+	"translators": "Phiên dịch viên ({{count}})",
+	"translatorsDescription": "Nhờ những người này, Homarr hiện có sẵn {{languages}} ngôn ngữ khác nhau! Bạn muốn giúp dịch Homarr sang ngôn ngữ của bạn? Đọc cách thực hiện <a>tại đây</a>.",
+	"contributors": "Người đóng góp ({{count}})",
+	"contributorsDescription": "Những người này đã lập trình nên Homarr! Bạn muốn giúp xây dựng Homarr? Đọc cách thực hiện <a>tại đây</a>",
 	"actions": {
 		"toggleTheme": "Đổi chế độ sáng/tối",
 		"focusSearchBar": "Tập trung vào thanh tìm kiếm",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Phiên bản lược đồ cấu hình",
-		"configurationsCount": "Cấu hình có sẵn",
 		"version": "Phiên bản",
 		"nodeEnvironment": "Môi trường node",
 		"i18n": "Bản dịch I18n đã tải",
