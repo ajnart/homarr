@@ -1,4 +1,6 @@
 {
+  "name": "Homarr",
+  "start_url": "/",
   "display": "standalone",
   "icons": [
     {
