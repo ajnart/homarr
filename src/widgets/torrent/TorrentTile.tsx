@@ -8,9 +8,11 @@ import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
   Center,
+  createStyles,
   Flex,
   Group,
   Loader,
+  Popover,
   Progress,
   ScrollArea,
   Stack,
@@ -34,6 +36,7 @@ import { AppIntegrationType } from '~/types/app';
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
+import { TorrentQueuePopover } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
@@ -131,6 +134,32 @@ function TorrentTile({ widget }: TorrentTileProps) {
     {
       accessorKey: 'name',
       header: t('card.table.header.name'),
+      Cell: ({ cell, row }) => (
+        <Popover
+              withArrow
+              withinPortal
+              radius="lg"
+              shadow="sm"
+              transitionProps={{
+                transition: 'pop',
+              }}
+            >
+          <Popover.Target>
+            <Text
+              style={{
+                maxWidth: '30vw',
+              }}
+              size="xs"
+              lineClamp={1}
+            >
+              {String(cell.getValue())}
+            </Text>
+          </Popover.Target>
+          <Popover.Dropdown>
+            <TorrentQueuePopover torrent={row.original} app={undefined} />
+          </Popover.Dropdown>
+        </Popover>
+      ),
     },
     {
       accessorKey: 'totalSize',
@@ -161,7 +190,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       header: t('card.table.header.progress'),
       Cell: ({ cell, row }) => (
         <Flex>
-          <Text className={classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
+          <Text className={useStyles().classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
           <Progress
             radius="lg"
             color={
@@ -367,5 +396,11 @@ const formatSpeed = (speedInBytesPerSecond: number) => {
 const formatETA = (seconds: number) => {
   return calculateETA(seconds);
 };
+
+const useStyles = createStyles(() => ({
+  noTextBreak: {
+    whiteSpace: 'nowrap',
+  },
+}));
 
 export default definition;
