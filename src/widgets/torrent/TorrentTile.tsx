@@ -138,8 +138,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
       header: t('card.table.header.dateAdded'),
       sortDescFirst: true,
       enableMultiSort: true,
-      Cell: ({ cell }) => new Date(String(cell.getValue())).toLocaleString(),
-      filterVariant: 'date-range',
     },
     {
       accessorKey: 'name',
@@ -153,12 +151,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
       enableMultiSort: true,
-      filterVariant: 'range-slider',
-      filterFn: 'betweenInclusive',
-      mantineFilterRangeSliderProps: {
-        step: 1024,
-        label: (value: number) => formatSize(value),
-      }
 
     },
     {
@@ -216,14 +208,23 @@ function TorrentTile({ widget }: TorrentTileProps) {
       columnVisibility: {
         isCompleted: false,
         dateAdded: false,
-        name: true,
-        totalSize: true,
-        // uploadSpeed: width > MIN_WIDTH_MOBILE,
-        // downloadSpeed: width > MIN_WIDTH_MOBILE,
-        // eta: width > MIN_WIDTH_MOBILE,
+        uploadSpeed: false,
+        downloadSpeed: false,
+        eta: false,
       },
     },
-    // ... Others options if necessary
+    state: {
+      showColumnFilters: false,
+      showGlobalFilter: false,
+      density: 'xs',
+      columnVisibility: {
+        isCompleted: false,
+        dateAdded: false,
+        uploadSpeed: width > MIN_WIDTH_MOBILE,
+        downloadSpeed: width > MIN_WIDTH_MOBILE,
+        eta: width > MIN_WIDTH_MOBILE,
+      },
+    },
   });
 
 
@@ -304,74 +305,6 @@ function TorrentTile({ widget }: TorrentTileProps) {
       </Group>
     </Flex>
   );
-  /* // OldTable
-  return (
-    <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea sx={{ height: '100%', width: '100%' }} mb="xs">
-        <Table striped highlightOnHover p="sm">
-          <thead>
-            <tr>
-              <th style={{cursor: "pointer"}} onClick={() => requestSort('name')}>{t('card.table.header.name')}</th>
-              <th style={{cursor: "pointer"}} onClick={() => requestSort('totalSize')}>{t('card.table.header.size')}</th>
-              {width > MIN_WIDTH_MOBILE && (
-                <th style={{cursor: "pointer"}} onClick={() => requestSort('downloadSpeed')}>
-                  {t('card.table.header.download')}
-                </th>
-              )}
-              {width > MIN_WIDTH_MOBILE && (
-                <th style={{cursor: "pointer"}} onClick={() => requestSort('uploadSpeed')}>{t('card.table.header.upload')}</th>
-              )}
-              {width > MIN_WIDTH_MOBILE && (
-                <th style={{cursor: "pointer"}} onClick={() => requestSort('eta')}>
-                  {t('card.table.header.estimatedTimeOfArrival')}
-                </th>
-              )}
-              <th style={{cursor: "pointer"}} onClick={() => requestSort('progress')}>{t('card.table.header.progress')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredTorrents.map((torrent, index) => (
-              <BitTorrentQueueItem key={index} torrent={torrent} width={width} app={undefined} />
-            ))}
-
-            {filteredTorrents.length !== torrents.length && (
-              <tr className={classes.card}>
-                <td colSpan={width > MIN_WIDTH_MOBILE ? 6 : 3}>
-                  <Flex gap="xs" align="center" justify="center">
-                    <IconInfoCircle opacity={0.7} size={18} />
-                    <Text align="center" color="dimmed">
-                      {t('card.table.body.filterHidingItems', {
-                        count: torrents.length - filteredTorrents.length,
-                      })}
-                    </Text>
-                  </Flex>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </Table>
-      </ScrollArea>
-      <Group spacing="sm">
-        {data.apps.some((x) => !x.success) && (
-          <Badge variant="dot" color="red">
-            {t('card.footer.error')}
-          </Badge>
-        )}
-
-        <Text color="dimmed" size="xs">
-          {t('card.footer.lastUpdated', { time: humanizedDuration })}
-          {` - ${t('card.footer.ratioGlobal')} : ${
-            ratioGlobal === -1 ? '∞' : ratioGlobal.toFixed(2)
-          }`}
-          {widget.properties.displayRatioWithFilter &&
-            ` - ${t('card.footer.ratioWithFilter')} : ${
-              ratioWithFilter === -1 ? '∞' : ratioWithFilter.toFixed(2)
-            }`}
-        </Text>
-      </Group>
-    </Flex>
-  );
-  */
 }
 
 export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
