@@ -201,20 +201,14 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
 
           const matchesActive = router.pathname.endsWith(item.href);
 
-          if (item.href.startsWith('http')) {
-            return (
-              <NavLink
-                {...commonItemProps}
-                active={matchesActive}
-                target={item.target}
-                key={index}
-                component="a"
-              />
-            );
-          }
-
           return (
-            <NavLink {...commonItemProps} active={matchesActive} component={Link} key={index} />
+            <NavLink
+              {...commonItemProps}
+              target={item.target}
+              active={matchesActive}
+              component={Link}
+              key={index}
+            />
           );
         })}
       </NavLink>
