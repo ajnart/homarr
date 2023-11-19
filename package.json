@@ -75,7 +75,6 @@
     "axios": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^8.6.0",
-    "browser-geo-tz": "^0.0.4",
     "consola": "^3.0.0",
     "cookies": "^0.8.0",
     "cookies-next": "^2.1.1",

@@ -4,6 +4,13 @@
     "description": "Displays the current date and time.",
     "settings": {
       "title": "Settings for Date and Time widget",
+      "timezone":{
+        "label":"Timezone",
+        "info":"Select the name of your timezone, find yours here: "
+      },
+      "customTitle":{
+        "label":"City name or custom title"
+      },
       "display24HourFormat": {
         "label": "Display full time (24-hour)"
       },
@@ -13,18 +20,12 @@
           "hide": "Hide Date"
         }
       },
-      "enableTimezone": {
-        "label": "Display a custom Timezone"
-      },
-      "timezoneLocation": {
-        "label": "Timezone Location"
-      },
       "titleState": {
-        "label": "City title",
-        "info": "In case you activate the Timezone option, the name of the city and the timezone code can be shown.<br/>You can also show the city alone or even show none.",
+        "label": "Clock title",
+        "info": "The custom title and the timezone code can be shown on your widget.<br/>You can also show the city alone, show none,<br/>or even show the timezone alone when both are selected but no title is provided.",
         "data": {
-          "both": "City and Timezone",
-          "city": "City only",
+          "both": "Title and Timezone",
+          "city": "Title only",
           "none": "None"
         }
       }

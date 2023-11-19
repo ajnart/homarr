@@ -16,7 +16,6 @@ import { notebookRouter } from './routers/notebook';
 import { overseerrRouter } from './routers/overseerr';
 import { passwordRouter } from './routers/password';
 import { rssRouter } from './routers/rss';
-import { timezoneRouter } from './routers/timezone';
 import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
@@ -40,7 +39,6 @@ export const rootRouter = createTRPCRouter({
   mediaRequest: mediaRequestsRouter,
   mediaServer: mediaServerRouter,
   overseerr: overseerrRouter,
-  timezone: timezoneRouter,
   usenet: usenetRouter,
   weather: weatherRouter,
   invites: inviteRouter,
