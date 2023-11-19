@@ -6,7 +6,7 @@ import { Board } from '~/components/Board/Board';
 import { BoardProvider } from '~/components/Board/context';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { env } from '~/env';
-import { createTrpcServersideHelpers } from '~/server/api/helper';
+import { boardRouter } from '~/server/api/routers/board';
 import { getServerAuthSession } from '~/server/auth';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -48,9 +48,13 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
   }
   const session = await getServerAuthSession(ctx);
   const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
-  const helpers = await createTrpcServersideHelpers(ctx);
-  const board = await helpers.boards.byName
-    .fetch({
+  const caller = boardRouter.createCaller({
+    session,
+    cookies: ctx.req.cookies,
+    headers: ctx.req.headers,
+  });
+  const board = await caller
+    .byName({
       boardName,
       layoutId: query.data.layout,
       userAgent: ctx.req.headers['user-agent'],

@@ -6,7 +6,7 @@ import { Board } from '~/components/Board/Board';
 import { BoardProvider } from '~/components/Board/context';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { env } from '~/env';
-import { createTrpcServersideHelpers } from '~/server/api/helper';
+import { boardRouter } from '~/server/api/routers/board';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
@@ -58,9 +58,15 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
     ctx.res
   );
 
-  const helpers = await createTrpcServersideHelpers(ctx);
-  const board = await helpers.boards.byName
-    .fetch({
+  const session = await getServerAuthSession({ req: ctx.req, res: ctx.res });
+
+  const caller = boardRouter.createCaller({
+    session,
+    cookies: ctx.req.cookies,
+    headers: ctx.req.headers,
+  });
+  const board = await caller
+    .byName({
       boardName: routeParams.data.slug,
       layoutId: query.data.layout,
       userAgent: ctx.req.headers['user-agent'],
@@ -77,8 +83,6 @@ export const getServerSideProps: GetServerSideProps<BoardGetServerSideProps> = a
       notFound: true,
     };
   }
-
-  const session = await getServerAuthSession({ req: ctx.req, res: ctx.res });
 
   const result = checkForSessionOrAskForLogin(
     ctx,

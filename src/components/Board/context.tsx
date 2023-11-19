@@ -19,17 +19,20 @@ export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderPr
   const { enabled } = useEditModeStore();
   const router = useRouter();
   const { layout } = router.query;
-  const { data: board } = api.boards.byName.useQuery(
+  const { data: queryBoard } = api.boards.byName.useQuery(
     {
       boardName: props.initialBoard.name,
       layoutId: layout as string | undefined,
       userAgent,
     },
     {
-      initialData: props.initialBoard,
-      //enabled: !!layout,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      enabled: typeof window !== 'undefined', // Disable on server-side so it is not cached with an old result.
     }
   );
+
+  const board = queryBoard ?? props.initialBoard; // Initialdata property is not working because it somehow ignores the enabled property.
 
   useConfirmLeavePage(enabled);
 
