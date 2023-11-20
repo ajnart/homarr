@@ -1,7 +1,7 @@
 {
   "save": "Zapisz",
   "apply": "Zastosuj",
-  "insert": "",
+  "insert": "Wstaw",
   "about": "O programie",
   "cancel": "Anuluj",
   "close": "Zamknij",
@@ -45,7 +45,7 @@
   "seeMore": "Zobacz więcej...",
   "position": {
     "left": "Lewo",
-    "center": "",
+    "center": "Wyśrodkowany",
     "right": "Prawo"
   },
   "attributes": {
@@ -53,5 +53,5 @@
     "height": "Wysokość"
   },
   "public": "Publiczna",
-  "restricted": ""
+  "restricted": "Ograniczone"
 }
