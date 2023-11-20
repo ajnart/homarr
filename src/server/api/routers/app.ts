@@ -1,13 +1,18 @@
 import { TRPCError } from '@trpc/server';
-import axios, { AxiosError } from 'axios';
+import { AxiosError } from 'axios';
 import Consola from 'consola';
-import https from 'https';
 import { z } from 'zod';
 import { isStatusOk } from '~/components/Dashboard/Tiles/Apps/AppPing';
 import { getConfig } from '~/tools/config/getConfig';
 import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
+
+// const agent = new https.Agent({ rejectUnauthorized: false });
+// const getCacheResponse = unstable_cache(
+//   async (app) => await axios.get(app.url, { httpsAgent: agent, timeout: 10000 }),
+//   ['app-id']
+// );
 
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
@@ -18,7 +23,6 @@ export const appRouter = createTRPCRouter({
       })
     )
     .query(async ({ input }) => {
-      const agent = new https.Agent({ rejectUnauthorized: false });
       const config = getConfig(input.configName);
       const app = config.apps.find((app) => app.id === input.id);
 
@@ -30,8 +34,16 @@ export const appRouter = createTRPCRouter({
           message: `App ${input.id} was not found`,
         });
       }
-      const res = await axios
-        .get(app.url, { httpsAgent: agent, timeout: 10000 })
+
+      const res = await fetch(app.url, {
+        method: 'GET',
+        cache: 'force-cache',
+        headers: {
+          // Cache for 5 minutes
+          'Cache-Control': 'max-age=300',
+          'Content-Type': 'application/json',
+        },
+      })
         .then((response) => ({
           status: response.status,
           statusText: response.statusText,

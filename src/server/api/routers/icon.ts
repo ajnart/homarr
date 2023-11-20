@@ -5,7 +5,7 @@ import { UnpkgIconsRepository } from '~/tools/server/images/unpkg-icons-reposito
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
-const respositories = [
+export const IconRespositories = [
   new LocalIconsRepository(),
   new GitHubIconsRepository(
     GitHubIconsRepository.walkxcode,
@@ -31,7 +31,7 @@ const respositories = [
 
 export const iconRouter = createTRPCRouter({
   all: publicProcedure.query(async () => {
-    const fetches = respositories.map((rep) => rep.fetch());
+    const fetches = IconRespositories.map((rep) => rep.fetch());
     const data = await Promise.all(fetches);
     return data;
   }),

@@ -1,16 +1,26 @@
-import { Button, Global, Text, Title, Tooltip, clsx } from '@mantine/core';
-import { useHotkeys, useWindowEvent } from '@mantine/hooks';
+import { Button, Global, Modal, Stack, Text, Title, Tooltip, clsx } from '@mantine/core';
+import { useDisclosure, useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import { IconApps, IconEditCircle, IconEditCircleOff, IconSettings } from '@tabler/icons-react';
+import {
+  IconApps,
+  IconBrandDocker,
+  IconEditCircle,
+  IconEditCircleOff,
+  IconSettings,
+} from '@tabler/icons-react';
 import Consola from 'consola';
+import { ContainerInfo } from 'dockerode';
 import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { env } from 'process';
+import { useEffect, useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
+import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
+import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
@@ -44,7 +54,51 @@ export const HeaderActions = () => {
   return (
     <>
       <ToggleEditModeButton />
+      <DockerButton />
       <CustomizeBoardButton />
+    </>
+  );
+};
+
+const DockerButton = () => {
+  const [selection, setSelection] = useState<(ContainerInfo & { icon?: string })[]>([]);
+  const [opened, { open, close, toggle }] = useDisclosure(false);
+  useHotkeys([['mod+B', toggle]]);
+
+  const { data, refetch, isRefetching } = api.docker.containers.useQuery(undefined, {
+    cacheTime: 60 * 1000 * 5,
+    staleTime: 60 * 1000 * 1,
+  });
+  const { t } = useTranslation('tools/docker');
+  const reload = () => {
+    refetch();
+    setSelection([]);
+  };
+
+  return (
+    <>
+      <Tooltip label={t('title')}>
+        <HeaderActionButton onClick={open}>
+          <IconBrandDocker size={20} stroke={1.5} />
+        </HeaderActionButton>
+      </Tooltip>
+      <Modal
+        title={t('title')}
+        withCloseButton={true}
+        closeOnClickOutside={true}
+        size="full"
+        opened={opened}
+        onClose={close}
+      >
+        <Stack>
+          <ContainerActionBar selected={selection} reload={reload} isLoading={isRefetching} />
+          <ContainerTable
+            containers={data ?? []}
+            selection={selection}
+            setSelection={setSelection}
+          />
+        </Stack>
+      </Modal>
     </>
   );
 };

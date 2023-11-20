@@ -55,7 +55,6 @@ export const boardRouter = createTRPCRouter({
         });
       }
       const config = await getConfig(input.boardName);
-
       const lowestWrapper = config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
       const newConfig = {
@@ -67,14 +66,13 @@ export const boardRouter = createTRPCRouter({
             const address = container.port
               ? `http://localhost:${container.port}`
               : 'http://localhost';
-
             return {
               ...defaultApp,
               name: container.name,
               url: address,
               appearance: {
                 ...defaultApp.appearance,
-                icon: container.icon,
+                iconUrl: container.icon,
               },
               behaviour: {
                 ...defaultApp.behaviour,

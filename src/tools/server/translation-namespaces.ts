@@ -1,4 +1,5 @@
 export const boardNamespaces = [
+  'tools/docker',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',

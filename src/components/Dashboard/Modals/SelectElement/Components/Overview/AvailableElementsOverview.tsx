@@ -1,7 +1,7 @@
 import { Group, Space, Stack, Text, UnstyledButton } from '@mantine/core';
 import { closeModal } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
-import { IconBox, IconBoxAlignTop, IconBrandDocker, IconStack } from '@tabler/icons-react';
+import { IconBox, IconBoxAlignTop, IconStack } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -19,13 +19,11 @@ import { useStyles } from '../Shared/styles';
 interface AvailableElementTypesProps {
   modalId: string;
   onOpenIntegrations: () => void;
-  onOpenDocker: () => void;
 }
 
 export const AvailableElementTypes = ({
   modalId,
   onOpenIntegrations: onOpenWidgets,
-  onOpenDocker,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
   const { config, name: configName } = useConfigContext();
@@ -99,13 +97,6 @@ export const AvailableElementTypes = ({
             });
           }}
         />
-        {data && data.user.isAdmin && (
-          <ElementItem
-            name={t('importFromDocker')}
-            icon={<IconBrandDocker size={40} strokeWidth={1.3} />}
-            onClick={onOpenDocker}
-          />
-        )}
         <ElementItem
           name={t('widgets')}
           icon={<IconStack size={40} strokeWidth={1.3} />}

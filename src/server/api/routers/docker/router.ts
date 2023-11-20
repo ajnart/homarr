@@ -3,6 +3,7 @@ import Dockerode from 'dockerode';
 import { z } from 'zod';
 
 import { adminProcedure, createTRPCRouter } from '../../trpc';
+import { IconRespositories } from '../icon';
 import DockerSingleton from './DockerSingleton';
 
 const dockerActionSchema = z.enum(['remove', 'start', 'stop', 'restart']);
@@ -12,7 +13,27 @@ export const dockerRouter = createTRPCRouter({
     try {
       const docker = new Dockerode({});
       const containers = await docker.listContainers({ all: true });
-      return containers;
+      const fetches = IconRespositories.map((rep) => rep.fetch());
+      const data = await Promise.all(fetches);
+      const returnedData = containers.map((container) => {
+        const imageParsed = container.Image.split('/');
+        // Remove the version
+        const image = imageParsed[imageParsed.length - 1].split(':')[0];
+        const foundIcon = data
+          .flatMap((repository) =>
+            repository.entries.map((entry) => ({
+              ...entry,
+              repository: repository.name,
+            }))
+          )
+          .find((entry) => entry.name.toLowerCase().includes(image.toLowerCase()));
+
+        return {
+          ...container,
+          icon: foundIcon?.url ?? '/public/imgs/logo/logo.svg'
+        };
+      });
+      return returnedData;
     } catch (err) {
       throw new TRPCError({
         code: 'INTERNAL_SERVER_ERROR',

@@ -1,4 +1,4 @@
-import { Button, Group, Select, Stack, Text, TextInput, Title } from '@mantine/core';
+import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
@@ -6,6 +6,7 @@ import { IconCheck, IconX } from '@tabler/icons-react';
 import { ContainerInfo } from 'dockerode';
 import { Trans, useTranslation } from 'next-i18next';
 import { z } from 'zod';
+import { useConfigStore } from '~/config/store';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 
@@ -14,7 +15,7 @@ const dockerSelectBoardSchema = z.object({
 });
 
 type InnerProps = {
-  containers: ContainerInfo[];
+  containers: (ContainerInfo & { icon?: string })[];
 };
 type FormType = z.infer<typeof dockerSelectBoardSchema>;
 
@@ -22,12 +23,14 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
   const { t } = useTranslation('tools/docker');
   const { mutateAsync, isLoading } = api.boards.addAppsForContainers.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
+  const { updateConfig } = useConfigStore();
   const handleSubmit = async (values: FormType) => {
     await mutateAsync(
       {
         apps: innerProps.containers.map((container) => ({
           name: (container.Names.at(0) ?? 'App').replace('/', ''),
           port: container.Ports.at(0)?.PublicPort,
+          icon: container.icon,
         })),
         boardName: values.board,
       },
@@ -39,7 +42,7 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
             icon: <IconCheck />,
             color: 'green',
           });
-
+          //TODO: Update config or reload it from server
           modals.close(id);
         },
         onError: () => {
@@ -117,5 +120,9 @@ export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
     ),
     innerProps,
   });
-  umami.track('Add to homarr modal')
+  umami.track('Add to homarr modal');
 };
+function uuidv4(): any {
+  throw new Error('Function not implemented.');
+}
+
