@@ -8,7 +8,7 @@
 				"label": "Pokaż pasek narzędzi ułatwiający pisanie w markdown"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Zezwalaj na sprawdzanie w trybie tylko do odczytu"
 			},
 			"content": {
 				"label": "Zawartość notatnika"
@@ -39,7 +39,7 @@
 			"image": "Osadź obraz",
 			"addTable": "Dodaj tabelę",
 			"deleteTable": "Usuń tabelę",
-			"colorCell": "",
+			"colorCell": "Kolor Komórki",
 			"mergeCell": "Przełączanie scalania komórek",
 			"addColumnLeft": "Dodaj kolumnę przed",
 			"addColumnRight": "Dodaj kolumnę po",
