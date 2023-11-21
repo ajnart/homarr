@@ -8,6 +8,7 @@ import {
   IconSun,
   IconUserCog,
 } from '@tabler/icons-react';
+import { createHash } from 'crypto';
 import { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -93,12 +94,20 @@ type CurrentUserAvatarProps = {
   user: User | null;
 };
 
+const getGravatar = (email?: string | undefined | null) => {
+  if (!email) {
+    return null;
+  }
+  const emailHash = createHash('sha256').update(email.trim().toLowerCase()).digest('hex');
+  return `https://gravatar.com/avatar/${emailHash}?d=null`;
+};
+
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
   ({ user, ...others }, ref) => {
     const { primaryColor } = useMantineTheme();
     if (!user) return <Avatar ref={ref} {...others} />;
     return (
-      <Avatar ref={ref} color={primaryColor} {...others}>
+      <Avatar ref={ref} color={primaryColor} {...others} src={getGravatar(user.email)}>
         {user.name?.slice(0, 2).toUpperCase()}
       </Avatar>
     );
