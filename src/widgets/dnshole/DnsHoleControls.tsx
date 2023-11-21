@@ -32,6 +32,10 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    allowUserControl: {
+      type: 'switch',
+      defaultValue: false,
+    }
   },
   gridstack: {
     minWidth: 2,
@@ -74,6 +78,8 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
+
+  const enableControls = widget.properties.allowUserControl ? sessionData !== null : sessionData?.user.isAdmin ?? false;
 
   const { name: configName, config } = useConfigContext();
 
@@ -123,15 +129,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     return dnsList;
   };
 
-  const toggleDns = async (action: 'enable' | 'disable') => {
-    if (!sessionData?.user?.isAdmin) {
-      return Promise.reject(new Error('Forbidden'));
-    }
+  const toggleDns = async (action: 'enable' | 'disable', appsToChange?: string[]) => {
     await mutateAsync(
       {
         action,
         configName,
-        appsToChange: getDnsStatus()?.disabled,
+        appsToChange,
+        widgetId: widget.id,
       },
       {
         onSettled: () => {
@@ -147,7 +151,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
 
   return (
     <Stack justify="space-between" h={'100%'} spacing="0.25rem">
-      {sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons && (
+      {enableControls && widget.properties.showToggleAllButtons && (
         <SimpleGrid
           ref={ref}
           cols={width > 275 ? 2 : 1}
@@ -155,7 +159,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           spacing="0.25rem"
         >
           <Button
-            onClick={() => toggleDns('enable')}
+            onClick={() => toggleDns('enable', getDnsStatus()?.disabled)}
             disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerPlay size={20} />}
             variant="light"
@@ -165,7 +169,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             {t('enableAll')}
           </Button>
           <Button
-            onClick={() => toggleDns('disable')}
+            onClick={() => toggleDns('disable', getDnsStatus()?.enabled)}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerStop size={20} />}
             variant="light"
@@ -183,7 +187,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         style={{
           flex: '1',
           justifyContent:
-            sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons
+            enableControls && widget.properties.showToggleAllButtons
               ? 'flex-end'
               : 'space-evenly',
         }}
@@ -212,9 +216,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={() => toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable')}
+                    onClick={() => toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])}
                     disabled={fetchingDnsSummary || changingStatus}
-                    style={{ pointerEvents: sessionData?.user?.isAdmin ? 'auto' : 'none' }}
+                    style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                   >
                     <Badge
                       variant="dot"

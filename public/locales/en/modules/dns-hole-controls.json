@@ -6,6 +6,9 @@
       "title": "DNS hole controls settings",
       "showToggleAllButtons": {
         "label": "Show 'Enable/Disable All' Buttons"
+      },
+      "allowUserControl": {
+        "label": "Allow normal users to use the toggle buttons"
       }
     },
     "errors": {

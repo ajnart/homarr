@@ -8,6 +8,7 @@ import { ConfigAppType } from '~/types/app';
 import { AdStatistics } from '~/widgets/dnshole/type';
 
 import { createTRPCRouter, publicProcedure } from '../../trpc';
+import { TRPCError } from '@trpc/server';
 
 export const dnsHoleRouter = createTRPCRouter({
   control: publicProcedure
@@ -15,11 +16,17 @@ export const dnsHoleRouter = createTRPCRouter({
       z.object({
         action: z.enum(['enable', 'disable']),
         configName: z.string(),
+        widgetId: z.string(),
         appsToChange: z.optional(z.array(z.string())),
       })
     )
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const config = getConfig(input.configName);
+      const widget = config.widgets.find(({ id }) => input.widgetId === id)
+
+      if (widget !== undefined && widget.properties.allowUserControl ? ctx.session === null : !ctx.session?.user.isAdmin) {
+        throw new TRPCError({ code: 'UNAUTHORIZED' })
+      }
 
       const applicableApps = config.apps.filter(
         (app) =>
