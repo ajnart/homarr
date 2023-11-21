@@ -32,10 +32,6 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
-    allowUserControl: {
-      type: 'switch',
-      defaultValue: false,
-    }
   },
   gridstack: {
     minWidth: 2,
@@ -72,18 +68,17 @@ const dnsLightStatus = (
 };
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
-  const utils = api.useContext();
   const { data: sessionData } = useSession();
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
 
-  const enableControls = widget.properties.allowUserControl ? sessionData !== null : sessionData?.user.isAdmin ?? false;
+  const enableControls = sessionData?.user.isAdmin ?? false;
 
   const { name: configName, config } = useConfigContext();
 
-  const trpcUtils = api.useContext();
+  const trpcUtils = api.useUtils();
 
   if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
@@ -135,18 +130,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         action,
         configName,
         appsToChange,
-        widgetId: widget.id,
       },
       {
         onSettled: () => {
-          reFetchSummaryDns();
+          trpcUtils.dnsHole.summary.invalidate();
         },
       }
     );
-  };
-
-  const reFetchSummaryDns = () => {
-    trpcUtils.dnsHole.summary.invalidate();
   };
 
   return (
@@ -187,9 +177,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         style={{
           flex: '1',
           justifyContent:
-            enableControls && widget.properties.showToggleAllButtons
-              ? 'flex-end'
-              : 'space-evenly',
+            enableControls && widget.properties.showToggleAllButtons ? 'flex-end' : 'space-evenly',
         }}
       >
         {data.status.map((dnsHole, index) => {
@@ -216,7 +204,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={() => toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])}
+                    onClick={() =>
+                      toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
+                    }
                     disabled={fetchingDnsSummary || changingStatus}
                     style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                   >
