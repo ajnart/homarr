@@ -123,6 +123,24 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     return dnsList;
   };
 
+  const toggleDns = async (action: 'enable' | 'disable') => {
+    if (!sessionData?.user?.isAdmin) {
+      return Promise.reject(new Error('Forbidden'));
+    }
+    await mutateAsync(
+      {
+        action,
+        configName,
+        appsToChange: getDnsStatus()?.disabled,
+      },
+      {
+        onSettled: () => {
+          reFetchSummaryDns();
+        },
+      }
+    );
+  };
+
   const reFetchSummaryDns = () => {
     trpcUtils.dnsHole.summary.invalidate();
   };
@@ -137,20 +155,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           spacing="0.25rem"
         >
           <Button
-            onClick={async () => {
-              await mutateAsync(
-                {
-                  action: 'enable',
-                  configName,
-                  appsToChange: getDnsStatus()?.disabled,
-                },
-                {
-                  onSettled: () => {
-                    reFetchSummaryDns();
-                  },
-                }
-              );
-            }}
+            onClick={() => toggleDns('enable')}
             disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerPlay size={20} />}
             variant="light"
@@ -160,20 +165,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             {t('enableAll')}
           </Button>
           <Button
-            onClick={async () => {
-              await mutateAsync(
-                {
-                  action: 'disable',
-                  configName,
-                  appsToChange: getDnsStatus()?.enabled,
-                },
-                {
-                  onSettled: () => {
-                    reFetchSummaryDns();
-                  },
-                }
-              );
-            }}
+            onClick={() => toggleDns('disable')}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerStop size={20} />}
             variant="light"
@@ -190,7 +182,10 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         display="flex"
         style={{
           flex: '1',
-          justifyContent: widget.properties.showToggleAllButtons ? 'flex-end' : 'space-evenly',
+          justifyContent:
+            sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons
+              ? 'flex-end'
+              : 'space-evenly',
         }}
       >
         {data.status.map((dnsHole, index) => {
@@ -217,21 +212,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={async () => {
-                      await mutateAsync(
-                        {
-                          action: dnsHole.status === 'enabled' ? 'disable' : 'enable',
-                          configName,
-                          appsToChange: [app.id],
-                        },
-                        {
-                          onSettled: () => {
-                            reFetchSummaryDns();
-                          },
-                        }
-                      );
-                    }}
+                    onClick={() => toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable')}
                     disabled={fetchingDnsSummary || changingStatus}
+                    style={{ pointerEvents: sessionData?.user?.isAdmin ? 'auto' : 'none' }}
                   >
                     <Badge
                       variant="dot"
