@@ -7,11 +7,11 @@
     },
     "modals": {
         "selectBoard": {
-            "title": "Escolha uma placa",
+            "title": "Escolha um quadro",
             "text": "Escolha o quadro em que deseja adicionar os aplicativos para os contêineres do Docker selecionados.",
             "form": {
                 "board": {
-                    "label": "Diretoria"
+                    "label": "Quadro"
                 },
                 "submit": "Adicionar aplicativos"
             }
