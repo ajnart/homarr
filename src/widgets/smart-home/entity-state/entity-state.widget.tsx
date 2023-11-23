@@ -48,6 +48,7 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
       },
       {
         enabled: !!configName,
+        refetchInterval: 2 * 60 * 1000
       }
     );
 
