@@ -1,4 +1,5 @@
 import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
+
 import { Property } from 'csstype';
 
 import { TileBaseType } from './tile';
@@ -55,7 +56,8 @@ export type IntegrationType =
   | 'jellyfin'
   | 'nzbGet'
   | 'pihole'
-  | 'adGuardHome';
+  | 'adGuardHome'
+  | 'homeAssistant';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -97,6 +99,7 @@ export const integrationFieldProperties: {
   plex: ['apiKey'],
   pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
+  homeAssistant: ['apiKey']
 };
 
 export type IntegrationFieldDefinitionType = {
