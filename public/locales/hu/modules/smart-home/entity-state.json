@@ -1,10 +1,10 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Elem nem található",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Otthoni asszisztens egység",
+        "description": "Egy egység aktuális állapota a Home Assistantban",
         "settings": {
-            "title": "",
+            "title": "Egység állapota",
             "entityId": {
                 "label": "",
                 "info": ""
