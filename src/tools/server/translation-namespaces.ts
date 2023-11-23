@@ -29,6 +29,7 @@ export const boardNamespaces = [
   'modules/dns-hole-controls',
   'modules/bookmark',
   'modules/notebook',
+  'modules/smart-home/entity-state',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',

@@ -51,5 +51,7 @@
   "attributes": {
     "width": "crwdns3910:0crwdne3910:0",
     "height": "crwdns3912:0crwdne3912:0"
-  }
+  },
+  "public": "crwdns4034:0crwdne4034:0",
+  "restricted": "crwdns4036:0crwdne4036:0"
 }

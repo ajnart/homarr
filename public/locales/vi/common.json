@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Chiều rộng",
     "height": "Chiều cao"
-  }
+  },
+  "public": "Công khai",
+  "restricted": ""
 }

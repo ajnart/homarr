@@ -21,7 +21,7 @@
   "backgroundImageAttachment": {
     "label": "Arkaplan resim ekle",
     "options": {
-      "fixed": "Düzeltildi - Arka plan aynı konumda kalıyor (tavsiye edilen)",
+      "fixed": "Sabit - Arka plan aynı konumda kalır (önerilir)",
       "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
     }
   },
@@ -36,7 +36,7 @@
     "label": "Arkaplan resim ekle",
     "options": {
       "repeat": "Tekrarla - Resim, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
-      "no-repeat": "",
+      "no-repeat": "Tekrarsız - Resim tekrarlanmaz ve tüm alanı doldurmayabilir (önerilir)",
       "repeat-x": "Tekrarla X - 'Tekrarla' ile aynıdır ancak yalnızca yatay eksende.",
       "repeat-y": "Tekrar Y - 'Tekrarla' ile aynıdır, ancak yalnızca dikey eksende."
     }

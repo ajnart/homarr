@@ -1,4 +1,5 @@
 {
+    "license": "MIT",
     "description": "This package.json is used for the migration script the dependencies are only installed within the Dockerfile.",
     "scripts": {
         "db:migrate": "ts-node ./migrate.ts"

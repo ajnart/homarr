@@ -19,26 +19,26 @@
     "label": "Tło"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Ustawienie obrazu tła",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fixed – Tło pozostaje w tej samej pozycji (zalecane)",
+      "scroll": "Scroll - Tło przewija się za pomocą myszy"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Rozmiar obrazu tła",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Cover — skaluje obraz do najmniejszego możliwego rozmiaru, aby pokryć całe okno poprzez przycięcie nadmiernej przestrzeni. (Zalecana)",
+      "contain": "Contain — skaluje obraz do największego możliwego rozmiaru w jego kontenerze, bez przycinania i rozciągania obrazu."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Ustawienie obrazu tła",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Repeat — obraz jest powtarzany tak często, jak to konieczne, aby pokryć cały obszar obrazu tła.",
+      "no-repeat": "No repeat — obraz nie jest powtarzany i może nie wypełniać całej przestrzeni (zalecane)",
+      "repeat-x": "Repeat X — to samo co „Powtórz”, ale tylko na osi poziomej.",
+      "repeat-y": "Repeat Y — to samo co „Powtórz”, ale tylko w osi pionowej."
     }
   },
   "customCSS": {

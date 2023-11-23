@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Dash.",
+    "name": "Dach.",
     "description": "Wyświetla wykresy zewnętrznego Dash. Instancja wewnątrz Homarr.",
     "settings": {
       "title": "Ustawienia dla widgetu Dash.",
@@ -82,7 +82,7 @@
     }
   },
   "card": {
-    "title": "Dash.",
+    "title": "Dach.",
     "errors": {
       "noService": "Nie znaleziono usługi Dash. Proszę dodać ją do pulpitu Homarra lub ustawić adres URL usługi Dash. w opcjach modułu",
       "noInformation": "Nie można uzyskać informacji z dash. - używasz najnowszej wersji?",
