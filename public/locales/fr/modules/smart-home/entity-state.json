@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Entité non trouvée",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Entité Home Assistant",
+        "description": "État actuel d'une entité dans Home Assistant",
         "settings": {
-            "title": "",
+            "title": "État de l'entité",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "ID de l’entité",
+                "info": "ID d’entité unique dans Home Assistant. Copiez en cliquant sur l'entité > Cliquez sur l'icône en forme de rouage > Cliquez sur le bouton Copier sous « ID d'entité ». Certaines entités personnalisées peuvent ne pas être prises en charge."
             },
             "displayName": {
-                "label": ""
+                "label": "Nom d'affichage"
             }
         }
     }
