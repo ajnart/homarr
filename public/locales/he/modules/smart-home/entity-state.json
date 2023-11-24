@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "הישות לא נמצאה",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "ישות Home Assistant",
+        "description": "מצב נוכחי של ישות ב-Home Assistant",
         "settings": {
-            "title": "",
+            "title": "מצב ישות",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "מזהה ישות",
+                "info": "מזהה ישות ייחודי ב-Home Assistant. העתק על ידי לחיצה על ישות > לחץ על סמל גלגל שיניים > לחץ על כפתור העתק ב'זיהוי ישות'. ייתכן שחלק מהישויות המותאמות אישית אינן נתמכות."
             },
             "displayName": {
-                "label": ""
+                "label": "הצג שם"
             }
         }
     }
