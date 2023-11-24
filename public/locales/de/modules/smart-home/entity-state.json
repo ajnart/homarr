@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Eintrag nicht gefunden",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistant Eintrag",
+        "description": "Aktueller Status eines Eintrags in Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Zustand des Eintrags",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "Eintrag-ID",
+                "info": "Eindeutige Eintrag-ID im Home Assistant. Kopieren durch Anklicken von Eintrag > Anklicken des Zahnradsymbols > Anklicken der Schaltfläche \"Kopieren\" bei \"Eintrag-ID\". Einige benutzerdefinierte Einträge werden möglicherweise nicht unterstützt."
             },
             "displayName": {
-                "label": ""
+                "label": "Anzeigename"
             }
         }
     }
