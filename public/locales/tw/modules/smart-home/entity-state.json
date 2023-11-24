@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "未找到實體",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistant 實體",
+        "description": "Home Assistant 中實體的目前狀態",
         "settings": {
-            "title": "",
+            "title": "實體狀態",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "實體 ID",
+                "info": "Home Assistant 中的唯一實體ID，通過點擊實體 > 點擊齒輪圖示 > 點擊實體 ID 觸地的複製按鈕進行複製，某些自定義實體可能不支持"
             },
             "displayName": {
-                "label": ""
+                "label": "顯示名稱"
             }
         }
     }
