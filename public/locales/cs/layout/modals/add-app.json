@@ -9,29 +9,29 @@
 	"general": {
 		"appname": {
 			"label": "Název aplikace",
-			"description": ""
+			"description": "Zobrazuje se s aplikací na ploše."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": "",
+			"label": "Interní adresa",
+			"description": "Interní IP adresa aplikace.",
 			"troubleshoot": {
 				"label": "Narazili jste na problém?",
-				"header": "",
+				"header": "Zde je seznam nejčastějších chyb a jejich řešení:",
 				"lines": {
-					"nothingAfterPort": "",
-					"protocolCheck": "",
-					"preferIP": "",
-					"enablePings": "",
-					"wget": "",
-					"iframe": "",
+					"nothingAfterPort": "Ve většině případů, ne-li ve všech, byste za port neměli zadávat žádnou cestu. (Dokonce ani '/admin' pro pihole nebo '/web' pro plex)",
+					"protocolCheck": "Vždy se ujistěte, že na začátku URL je http nebo https a také se ujistěte, že používáte správnou předponu.",
+					"preferIP": "Doporučuje se používat přímo Ip adresu stroje nebo kontejneru, se kterým se snažíte komunikovat.",
+					"enablePings": "Zkontrolujte, zda je IP adresa správná, povolením pingů. Běžte do Přizpůsobení plochy -> Rozložení -> Povolit ping. Na dlaždicích aplikace se objeví malá červená nebo zelená bublina a po najetí na ni se zobrazí kód odpovědi (ve většině případů se očekává zelená bublina s kódem 200).",
+					"wget": "Chcete-li se ujistit, že homarr může komunikovat s ostatními aplikacemi, zkontrolujte, zda wget/curl/ping odpovídá IP adrese:portu aplikace.",
+					"iframe": "Pokud jde o iframe, ty by měly vždy používat stejný protokol (http/s) jako Homarr.",
 					"clearCache": ""
 				},
-				"footer": ""
+				"footer": "Pro řešení dalších problémů se obraťte na náš {{discord}}."
 			}
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Veřejná adresa",
+			"description": "URL která bude otevřena po kliknutí na aplikaci."
 		}
 	},
 	"behaviour": {
@@ -47,18 +47,18 @@
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Kontrola stavu",
+			"description": "Kontroluje, zda je aplikace online pomocí jednoduchého HTTP(S) požadavku."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Stavové kódy HTTP",
+			"description": "Stavové kódy HTTP, které jsou považovány jako online."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": "",
+			"label": "Ikona aplikace",
+			"description": "Začněte psát pro vyhledání ikony. Můžete také vložit adresu URL obrázku a použít vlastní ikonu.",
 			"autocomplete": {
 				"title": "",
 				"text": ""
@@ -69,38 +69,38 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Velikost písma názvu aplikace",
+			"description": "Nastavte velikost písma zobrazení názvu aplikace na dlaždici."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Stav názvu aplikace",
+			"description": "Zvolte, kde se má název zobrazit, pokud se vůbec má zobrazit.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Zobrazení názvu pouze na dlaždici",
+				"hover": "Zobrazení názvu pouze při najetí myší",
+				"hidden": "Nezobrazovat vůbec"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Pozice názvu aplikace",
+			"description": "Pozice názvu aplikace vzhledem k ikoně.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Nahoře",
+				"right": "Vpravo",
+				"bottom": "Dole",
+				"left": "Vlevo"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Řádky názvu aplikace",
+			"description": "Určuje, na kolik řádků se má maximálně vejít váš nadpis. Nastavte 0 pro neomezený počet."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
+			"label": "Nastavení propojení",
+			"description": "Konfigurace integrace, která bude použita pro připojení k vaší aplikaci.",
+			"placeholder": "Vyberte integraci",
 			"defined": "",
 			"undefined": "",
 			"public": "",
