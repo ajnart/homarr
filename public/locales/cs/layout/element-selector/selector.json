@@ -6,20 +6,20 @@
     "widgetDescription": "Widgety komunikují s vašimi aplikacemi, aby nad nimi poskytovaly větší kontrolu. Před použitím obvykle vyžadují další konfiguraci.",
     "goBack": "Přejít zpět na předchozí stránku",
     "actionIcon": {
-        "tooltip": ""
+        "tooltip": "Přidat dlaždici"
     },
     "apps": "Aplikace",
     "app": {
-        "defaultName": ""
+        "defaultName": "Vaše aplikace"
     },
     "widgets": "Widgety",
     "categories": "Kategorie",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Název nové kategorie",
+        "defaultName": "Nová kategorie",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategorie vytvořena",
+            "message": "Kategorie \"{{name}}\" byla vytvořena"
         }
     }
 }
