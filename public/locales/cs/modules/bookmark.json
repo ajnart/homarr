@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Záložka",
+    "description": "Zobrazí statický seznam textů nebo odkazů",
     "settings": {
       "title": "",
       "name": {
