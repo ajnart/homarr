@@ -5,11 +5,11 @@
   "about": "",
   "cancel": "",
   "close": "",
-  "back": "",
+  "back": "Zpět",
   "delete": "",
   "ok": "",
   "edit": "",
-  "next": "",
+  "next": "Další",
   "previous": "",
   "confirm": "",
   "enabled": "",
@@ -53,5 +53,5 @@
     "height": ""
   },
   "public": "",
-  "restricted": ""
+  "restricted": "Omezené"
 }
