@@ -8,22 +8,22 @@
             "categories": "Kategorie"
         },
         "buttons": {
-            "view": ""
+            "view": "Zobrazit plochu"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Nastavit jako výchozí plochu",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Trvale smazat",
+                "disabled": "Smazání je zakázáno, protože starší komponenty Homarru neumožňují smazání výchozí konfigurace. Smazání bude možné v budoucnu."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Souborový systém",
+            "default": "Výchozí"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Vytvořit novou plochu"
     },
     "modals": {
         "delete": {
@@ -31,13 +31,13 @@
             "text": ""
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Vytvořit plochu",
+            "text": "Název nelze po vytvoření plochy změnit.",
             "form": {
                 "name": {
                     "label": ""
                 },
-                "submit": ""
+                "submit": "Vytvořit"
             }
         }
     }
