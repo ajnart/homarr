@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Předvolby",
+    "pageTitle": "Vaše předvolby",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Výchozí plocha"
         }
     },
     "accessibility": {
         "title": "",
         "disablePulse": {
-            "label": "",
-            "description": ""
+            "label": "Vypnout pulsování pingu",
+            "description": "Ve výchozím nastavení budou indikátory pingu v Homarru pulzovat. To může být dráždivé. Tento posuvník deaktivuje animaci"
         },
         "replaceIconsWithDots": {
-            "label": "",
-            "description": ""
+            "label": "Nahraďte tečky pingu ikonami",
+            "description": "Pro barvoslepé uživatele mohou být body pingu nerozpoznatelné. Toto nahradí indikátory ikonami"
         }
     },
     "localization": {
         "language": {
-            "label": ""
+            "label": "Jazyk"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "První den v týdnu",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Pondělí",
+                "saturday": "Sobota",
+                "sunday": "Neděle"
             }
         }
     },
     "searchEngine": {
-        "title": "",
-        "custom": "",
+        "title": "Vyhledávač",
+        "custom": "Vlastní",
         "newTab": {
-            "label": ""
+            "label": "Otevřít výsledky hledání v nové záložce"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Zaměřit na vyhledávací panel po načtení stránky.",
+            "description": "Při přechodu na stránky plochy se automaticky zaměří vyhledávací panel. Funguje pouze na stolních počítačích."
         },
         "template": {
-            "label": "",
-            "description": ""
+            "label": "Adresa URL dotazu",
+            "description": "Použijte %s jako zástupný znak pro dotaz"
         }
     }
 }
