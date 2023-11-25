@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Rychlost stahování",
+    "description": "Zobrazuje rychlost stahování a odesílání z podporovaných integrací."
   },
   "card": {
     "table": {
