@@ -2,6 +2,7 @@ import { SelectItem } from '@mantine/core';
 
 export const StatusCodes: SelectItem[] = [
   { value: '200', label: '200 - OK', group: 'Sucessful responses' },
+  { value: '202', label: '202 - Accepted', group: 'Sucessful responses' },
   { value: '204', label: '204 - No Content', group: 'Sucessful responses' },
   { value: '301', label: '301 - Moved Permanently', group: 'Redirection responses' },
   { value: '302', label: '302 - Found / Moved Temporarily', group: 'Redirection responses' },
