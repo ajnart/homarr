@@ -37,6 +37,7 @@ export const getFullBoardWithLayoutSectionsAsync = async (
           name: true,
           showLeftSidebar: true,
           showRightSidebar: true,
+          columnCount: true,
         },
         with: {
           sections: {

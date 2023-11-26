@@ -208,10 +208,13 @@ export const boardRouter = createTRPCRouter({
       const { layouts: _, mediaIntegrations, ...withoutLayouts } = board;
       return {
         ...withoutLayouts,
-        layoutName: layout.name,
-        layoutId: layout.id,
-        showRightSidebar: layout.showRightSidebar,
-        showLeftSidebar: layout.showLeftSidebar,
+        layout: {
+          id: layout.id,
+          name: layout.name,
+          showLeftSidebar: layout.showLeftSidebar,
+          showRightSidebar: layout.showRightSidebar,
+          columnCount: layout.columnCount,
+        },
         sections: preparedSections,
         mediaIntegrations: mediaIntegrations
           .map((x) => x.integration)

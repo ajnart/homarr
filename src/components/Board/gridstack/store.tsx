@@ -2,6 +2,8 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { GridstackBreakpoints } from '~/constants/gridstack-breakpoints';
 
+import { useRequiredBoard } from '../context';
+
 export const useGridstackStore = createWithEqualityFn<GridstackStoreType>(
   (set, get) => ({
     mainAreaWidth: null,
@@ -30,23 +32,9 @@ export const useNamedWrapperColumnCount = (): 'small' | 'medium' | 'large' | nul
 };
 
 export const useWrapperColumnCount = () => {
-  return 10;
-  /*const { config } = useConfigContext();
+  const board = useRequiredBoard();
 
-  if (!config) {
-    return null;
-  }
-
-  switch (useNamedWrapperColumnCount()) {
-    case 'large':
-      return config.settings.customization.gridstack?.columnCountLarge ?? 12;
-    case 'medium':
-      return config.settings.customization.gridstack?.columnCountMedium ?? 6;
-    case 'small':
-      return config.settings.customization.gridstack?.columnCountSmall ?? 3;
-    default:
-      return null;
-  }*/
+  return board.layout.columnCount;
 };
 
 function getCurrentShapeSize(size: number) {

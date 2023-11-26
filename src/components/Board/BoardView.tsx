@@ -16,7 +16,6 @@ import { DashboardSidebar } from './Sections/Sidebar/SidebarSection';
 import { useGridstackStore } from './gridstack/store';
 
 export const BoardView = () => {
-  const board = useRequiredBoard();
   const boardName = useRequiredBoard().name;
   const stackedSections = useStackedSections();
   const sidebarsVisible = useSidebarVisibility();
@@ -96,14 +95,14 @@ const usePrepareGridstack = () => {
 };
 
 const useSidebarVisibility = () => {
-  const board = useRequiredBoard();
+  const layout = useRequiredBoard().layout;
   const screenLargerThanMd = useScreenLargerThan('md'); // For smaller screens mobile ribbons are displayed with drawers
 
   const isScreenSizeUnknown = typeof screenLargerThanMd === 'undefined';
 
   return {
-    right: board.showRightSidebar && screenLargerThanMd,
-    left: board.showLeftSidebar && screenLargerThanMd,
+    right: layout.showRightSidebar && screenLargerThanMd,
+    left: layout.showLeftSidebar && screenLargerThanMd,
     isLoading: isScreenSizeUnknown,
   };
 };
