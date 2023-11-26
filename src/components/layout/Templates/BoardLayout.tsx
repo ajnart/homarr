@@ -16,7 +16,7 @@ import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { env } from 'process';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
 import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
@@ -30,14 +30,15 @@ import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
   children: React.ReactNode;
+  isDockerEnabled?: boolean;
 };
 
-export const BoardLayout = ({ children }: BoardLayoutProps) => {
+export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutProps) => {
   const { config } = useConfigContext();
   const { data: session } = useSession();
 
   return (
-    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions />}>
+    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}>
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -46,7 +47,7 @@ export const BoardLayout = ({ children }: BoardLayoutProps) => {
   );
 };
 
-export const HeaderActions = () => {
+export const HeaderActions = ({isDockerEnabled = false} : { isDockerEnabled: boolean}) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
@@ -54,7 +55,7 @@ export const HeaderActions = () => {
   return (
     <>
       <ToggleEditModeButton />
-      <DockerButton />
+      {isDockerEnabled && <DockerButton />}
       <CustomizeBoardButton />
     </>
   );

@@ -1,4 +1,3 @@
-import Consola from 'consola';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
@@ -16,19 +15,19 @@ import { api } from '~/utils/api';
 
 export default function BoardPage({
   config: initialConfig,
-  dockerIsConfigured,
+  isDockerEnabled,
   initialContainers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
   const { data } = api.docker.containers.useQuery(undefined, {
-    initialData: initialContainers,
-    enabled: dockerIsConfigured,
+    initialData: initialContainers ?? undefined,
+    enabled: isDockerEnabled,
     cacheTime: 60 * 1000 * 5,
     staleTime: 60 * 1000 * 1,
   });
 
   return (
-    <BoardLayout>
+    <BoardLayout isDockerEnabled={isDockerEnabled}>
       <Dashboard />
     </BoardLayout>
   );
@@ -68,7 +67,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   try {
     if (session?.user.isAdmin == true) containers = await caller.containers();
   } catch (error) {
-    Consola.error(`The docker integration failed with the following error: ${error}`);
+    
   }
   return {
     props: {
@@ -76,8 +75,8 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
       primaryColor: config.settings.customization.colors.primary,
       secondaryColor: config.settings.customization.colors.secondary,
       primaryShade: config.settings.customization.colors.shade,
-      dockerIsConfigured: containers != undefined,
-      initialContainers: containers,
+      isDockerEnabled: containers != undefined,
+      initialContainers: containers ?? null,
       ...translations,
     },
   };
