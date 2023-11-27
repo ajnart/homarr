@@ -35,7 +35,7 @@
   "card": {
     "footer": {
       "error": "Hata",
-      "lastUpdated": "Son Güncelleme {{time}} önce",
+      "lastUpdated": "Son Güncelleme {{time}} önce ",
       "ratioGlobal": "Genel Ratio",
       "ratioWithFilter": "Filtrelenen ratio"
     },
@@ -60,7 +60,7 @@
       "title": "Şu anki indirme hızı",
       "download": "İndirme: {{download}}",
       "upload": "Yükleme: {{upload}}",
-      "timeSpan": "{{seconds}} saniye önce",
+      "timeSpan": "{{seconds}} saniye önce ",
       "totalDownload": "İndirme: {{download}}/s",
       "totalUpload": "Yükleme: {{upload}}/s"
     },
