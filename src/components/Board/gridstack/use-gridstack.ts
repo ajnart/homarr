@@ -8,7 +8,7 @@ import {
   useRef,
 } from 'react';
 import { useItemActions } from '~/components/Board/Items/item-actions';
-import { type Section, useRequiredBoard } from '~/components/Board/context';
+import { type Section } from '~/components/Board/context';
 
 import { useEditModeStore } from '../useEditModeStore';
 import { initializeGridstack } from './init-gridstack';
@@ -28,8 +28,7 @@ type UseGridstackProps = {
 
 export const useGridstack = ({ section }: UseGridstackProps): UseGristackReturnType => {
   const isEditMode = useEditModeStore((x) => x.enabled);
-  const board = useRequiredBoard();
-  const { moveAndResizeItem, moveItemToSection } = useItemActions({ boardName: board.name });
+  const { moveAndResizeItem, moveItemToSection } = useItemActions();
   // define reference for wrapper - is used to calculate the width of the wrapper
   const wrapperRef = useRef<HTMLDivElement>(null);
   // references to the diffrent items contained in the gridstack

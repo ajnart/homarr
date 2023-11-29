@@ -38,7 +38,6 @@ export type WidgetEditModalInnerProps = {
   widgetType: string;
   options: Record<string, unknown>;
   widgetOptions: IWidgetDefinition['options'];
-  boardName: string;
 };
 
 export const WidgetsEditModal = ({
@@ -52,7 +51,7 @@ export const WidgetsEditModal = ({
 
   // Find the Key in the "Widgets" Object that matches the widgetId
   const currentWidgetDefinition = Widgets[innerProps.widgetType as keyof typeof Widgets];
-  const { updateWidgetOptions } = useWidgetActions({ boardName: innerProps.boardName });
+  const { updateWidgetOptions } = useWidgetActions();
 
   if (!innerProps.options) return null;
 

@@ -10,7 +10,6 @@ import { GenericAvailableElementType } from '../Shared/GenericElementType';
 
 interface WidgetElementTypeProps {
   sort: WidgetSort;
-  boardName: string;
   image: string | Icon;
   disabled?: boolean;
   widget: IWidgetDefinition;
@@ -22,12 +21,11 @@ export const WidgetElementType = ({
   image,
   disabled,
   widget,
-  boardName,
   modalId,
 }: WidgetElementTypeProps) => {
   const { closeModal } = useModals();
   const { t } = useTranslation(`modules/${sort}`);
-  const { createWidget } = useWidgetActions({ boardName });
+  const { createWidget } = useWidgetActions();
 
   const handleAddition = async () => {
     createWidget({

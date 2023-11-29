@@ -1,5 +1,5 @@
 import { openRemoveItemModal, useItemActions } from '~/components/Board/Items/item-actions';
-import { type AppItem, useRequiredBoard } from '~/components/Board/context';
+import { type AppItem } from '~/components/Board/context';
 import { useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
@@ -11,8 +11,7 @@ interface AppMenuProps {
 }
 
 export const AppMenu = ({ app }: AppMenuProps) => {
-  const board = useRequiredBoard();
-  const { removeItem } = useItemActions({ boardName: board.name });
+  const { removeItem } = useItemActions();
   const resizeGridItem = useResizeGridItem();
 
   const handleClickEdit = () => {
@@ -21,7 +20,6 @@ export const AppMenu = ({ app }: AppMenuProps) => {
       size: 'xl',
       innerProps: {
         app,
-        board,
         allowAppNamePropagation: false,
       },
       styles: {
@@ -37,7 +35,6 @@ export const AppMenu = ({ app }: AppMenuProps) => {
       modal: 'changeAppPositionModal',
       innerProps: {
         app,
-        boardName: board.name,
         resizeGridItem,
       },
       styles: {

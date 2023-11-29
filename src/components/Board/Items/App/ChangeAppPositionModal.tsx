@@ -9,7 +9,6 @@ import { CommonChangePositionModal } from '../CommonChangePositionModal';
 
 type ChangeAppPositionModalInnerProps = {
   app: AppItem;
-  boardName: string;
   resizeGridItem: ReturnType<typeof useResizeGridItem>;
 };
 
@@ -18,7 +17,7 @@ export const ChangeAppPositionModal = ({
   context,
   innerProps,
 }: ContextModalProps<ChangeAppPositionModalInnerProps>) => {
-  const { moveAndResizeItem } = useItemActions({ boardName: innerProps.boardName });
+  const { moveAndResizeItem } = useItemActions();
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     moveAndResizeItem({

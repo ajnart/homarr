@@ -3,10 +3,10 @@ import Router, { useRouter } from 'next/router';
 import { createContext, useContext, useEffect } from 'react';
 import { RouterOutputs, api } from '~/utils/api';
 
+import { useRequiredBoardProps } from './outer-context';
 import { useEditModeStore } from './useEditModeStore';
 
 type BoardContextType = {
-  layout?: string;
   board: RouterOutputs['boards']['byName'];
 };
 const BoardContext = createContext<BoardContextType | null>(null);
@@ -16,6 +16,7 @@ type BoardProviderProps = {
   children: React.ReactNode;
 };
 export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderProps) => {
+  const { setProps } = useRequiredBoardProps();
   const { enabled } = useEditModeStore();
   const router = useRouter();
   const { layout } = router.query;
@@ -32,6 +33,16 @@ export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderPr
     }
   );
 
+  // Setting props for the outer context so they can be used within modals.
+  useEffect(() => {
+    if (!queryBoard) return;
+    setProps({
+      boardName: queryBoard.name,
+      boardId: queryBoard.id,
+      layoutId: layout as string | undefined,
+    });
+  }, [layout, queryBoard?.name, queryBoard?.id, setProps]);
+
   const board = queryBoard ?? props.initialBoard; // Initialdata property is not working because it somehow ignores the enabled property.
 
   useConfirmLeavePage(enabled);
@@ -39,7 +50,6 @@ export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderPr
   return (
     <BoardContext.Provider
       value={{
-        ...props,
         board: board!,
       }}
     >
@@ -49,9 +59,9 @@ export const BoardProvider = ({ children, userAgent, ...props }: BoardProviderPr
 };
 
 export const useRequiredBoard = () => {
-  const ctx = useContext(BoardContext);
-  if (!ctx) throw new Error('useBoard must be used within a BoardProvider');
-  return ctx.board;
+  const optionalBoard = useOptionalBoard();
+  if (!optionalBoard) throw new Error('useBoard must be used within a BoardProvider');
+  return optionalBoard;
 };
 
 export const useOptionalBoard = () => {

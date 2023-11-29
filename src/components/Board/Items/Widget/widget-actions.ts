@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
-import { api } from '~/utils/api';
 import { widgetCreationSchema, widgetSortSchema } from '~/validations/widget';
 import { IWidgetDefinition } from '~/widgets/widgets';
 
+import { useUpdateBoard } from '../../board-actions';
 import { EmptySection, WidgetItem } from '../../context';
 
 type UpdateWidgetOptions = {
@@ -17,11 +17,11 @@ type CreateWidget = {
   definition: IWidgetDefinition;
 };
 
-export const useWidgetActions = ({ boardName }: { boardName: string }) => {
-  const utils = api.useContext();
+export const useWidgetActions = () => {
+  const updateBoard = useUpdateBoard();
   const updateWidgetOptions = useCallback(
     ({ itemId, newOptions }: UpdateWidgetOptions) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -43,12 +43,12 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   const createWidget = useCallback(
     ({ sort, definition }: CreateWidget) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
 
         let lastSection = prev.sections
@@ -82,7 +82,7 @@ export const useWidgetActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   return {

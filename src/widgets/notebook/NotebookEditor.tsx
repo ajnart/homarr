@@ -52,6 +52,7 @@ import StarterKit from '@tiptap/starter-kit';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { useUpdateBoard } from '~/components/Board/board-actions';
 import { useRequiredBoard } from '~/components/Board/context';
 import { useEditModeStore } from '~/components/Board/useEditModeStore';
 import { useColorTheme } from '~/tools/color';
@@ -70,7 +71,7 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const board = useRequiredBoard();
-  const utils = api.useContext();
+  const updateBoard = useUpdateBoard();
   const { primaryColor } = useColorTheme();
 
   const { mutateAsync } = api.notebook.update.useMutation();
@@ -169,32 +170,29 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
     editor.setEditable(current);
     if (current) return current;
 
-    utils.boards.byName.setData(
-      { boardName: board.name, userAgent: navigator.userAgent },
-      (previous) => {
-        if (!previous) return previous;
-        return {
-          ...previous,
-          sections: previous.sections.map((section) => {
-            if (!section.items.some((item) => item.id === widget.id)) return section;
-            return {
-              ...section,
-              items: section.items.map((item) => {
-                if (item.id !== widget.id) return item;
-                const notebookEditor = item as INotebookWidget;
-                return {
-                  ...notebookEditor,
-                  options: {
-                    ...notebookEditor.options,
-                    content: debouncedContent,
-                  },
-                };
-              }),
-            };
-          }),
-        };
-      }
-    );
+    updateBoard((previous) => {
+      if (!previous) return previous;
+      return {
+        ...previous,
+        sections: previous.sections.map((section) => {
+          if (!section.items.some((item) => item.id === widget.id)) return section;
+          return {
+            ...section,
+            items: section.items.map((item) => {
+              if (item.id !== widget.id) return item;
+              const notebookEditor = item as INotebookWidget;
+              return {
+                ...notebookEditor,
+                options: {
+                  ...notebookEditor.options,
+                  content: debouncedContent,
+                },
+              };
+            }),
+          };
+        }),
+      };
+    });
 
     setToSaveContent(contentUpdate);
 

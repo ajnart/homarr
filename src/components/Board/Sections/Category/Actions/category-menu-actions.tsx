@@ -1,16 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useCategoryActions } from '~/components/Board/Sections/Category/Actions/category-actions';
-import { useRequiredBoard } from '~/components/Board/context';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { CategoryType } from '~/types/category';
 
 import { CategoryEditModalInnerProps } from '../CategoryEditModal';
 
 export const useCategoryMenuActions = (category: CategoryType) => {
-  const boardName = useRequiredBoard().name;
-  const { addCategory, moveCategory, removeCategory, renameCategory } = useCategoryActions({
-    boardName,
-  });
+  const { addCategory, moveCategory, removeCategory, renameCategory } = useCategoryActions();
 
   // creates a new category above the current
   const addCategoryAbove = () => {

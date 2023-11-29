@@ -9,33 +9,25 @@ import { v4 as uuidv4 } from 'uuid';
 import { CategoryEditModalInnerProps } from '~/components/Board/Sections/Category/CategoryEditModal';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { generateDefaultApp2 } from '~/tools/shared/app';
-import { RouterOutputs } from '~/utils/api';
 
 import { EditAppModalInnerProps } from '../../Items/App/EditAppModal';
 import { useCategoryActions } from '../../Sections/Category/Actions/category-actions';
-import { AppItem, CategorySection, EmptySection } from '../../context';
+import { AppItem } from '../../context';
 import { useStyles } from '../Shared/styles';
 
 interface AvailableElementTypesProps {
   modalId: string;
-  board: RouterOutputs['boards']['byName'];
   onOpenIntegrations: () => void;
 }
 
 export const AvailableElementTypes = ({
   modalId,
-  board,
   onOpenIntegrations: onOpenWidgets,
 }: AvailableElementTypesProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
-  const { addCategory } = useCategoryActions({ boardName: board.name });
-  const lastSection = board.sections
-    .filter((x): x is CategorySection | EmptySection => x.kind === 'empty' || x.kind === 'category')
-    .sort((a, b) => b.position - a.position)
-    .at(0);
+  const { addCategoryToEnd } = useCategoryActions();
 
   const onClickCreateCategory = async () => {
-    if (!lastSection) return;
     openContextModalGeneric<CategoryEditModalInnerProps>({
       modal: 'categoryEditModal',
       title: t('category.newName'),
@@ -47,7 +39,7 @@ export const AvailableElementTypes = ({
           position: 0, // doesn't matter, is being overwritten
         },
         onSuccess: async (category) => {
-          addCategory({ name: category.name, position: lastSection.position + 1 });
+          addCategoryToEnd({ name: category.name });
           closeModal(modalId);
           showNotification({
             title: t('category.created.title'),
@@ -72,7 +64,6 @@ export const AvailableElementTypes = ({
               modal: 'editApp',
               innerProps: {
                 app: generateDefaultApp2() as AppItem,
-                board: board,
                 allowAppNamePropagation: true,
               },
               size: 'xl',

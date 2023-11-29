@@ -1,19 +1,19 @@
 import { useCallback } from 'react';
 import { z } from 'zod';
-import { api } from '~/utils/api';
 import { appFormSchema } from '~/validations/app';
 
+import { useUpdateBoard } from '../../board-actions';
 import { type AppItem, type EmptySection } from '../../context';
 
 type CreateOrUpdateApp = {
   app: z.infer<typeof appFormSchema>;
 };
 
-export const useAppActions = ({ boardName }: { boardName: string }) => {
-  const utils = api.useContext();
+export const useAppActions = () => {
+  const updateBoard = useUpdateBoard();
   const createOrUpdateApp = useCallback(
     ({ app }: CreateOrUpdateApp) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
 
         let sectionId = prev.sections.find((section) =>
@@ -40,7 +40,7 @@ export const useAppActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   return {

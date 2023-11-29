@@ -2,7 +2,8 @@ import { Text, Title } from '@mantine/core';
 import { openConfirmModal } from '@mantine/modals';
 import { useCallback } from 'react';
 import { Trans } from 'react-i18next';
-import { api } from '~/utils/api';
+
+import { useUpdateBoard } from '../board-actions';
 
 type MoveAndResizeItem = {
   itemId: string;
@@ -23,11 +24,11 @@ type RemoveItem = {
   itemId: string;
 };
 
-export const useItemActions = ({ boardName }: { boardName: string }) => {
-  const utils = api.useContext();
+export const useItemActions = () => {
+  const updateBoard = useUpdateBoard();
   const moveAndResizeItem = useCallback(
     ({ itemId, ...positionProps }: MoveAndResizeItem) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -49,12 +50,12 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   const moveItemToSection = useCallback(
     ({ itemId, sectionId, ...positionProps }: MoveItemToSection) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
 
         const currentSection = prev.sections.find((section) =>
@@ -99,12 +100,12 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   const removeItem = useCallback(
     ({ itemId }: RemoveItem) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -116,7 +117,7 @@ export const useItemActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   return {
@@ -155,16 +156,3 @@ export const openRemoveItemModal = ({ name, onConfirm }: OpenRemoveItemModalProp
     onConfirm,
   });
 };
-
-/*
-- Add category (on top, below, above)
-- Rename category
-- Move category (down & up)
-- Remove category
-- Add widget
-- Edit widget
-- Remove widget
-- Add app
-- Edit app
-- Remove app
-*/

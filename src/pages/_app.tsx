@@ -20,6 +20,7 @@ import { type AppProps } from 'next/app';
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import 'video.js/dist/video-js.css';
+import { OuterBoardProvider } from '~/components/Board/outer-context';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { env } from '~/env.js';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
@@ -148,9 +149,11 @@ function App(
                 withCSSVariables
               >
                 <Notifications limit={4} position="bottom-left" />
-                <ModalsProvider modals={modals}>
-                  <Component {...pageProps} />
-                </ModalsProvider>
+                <OuterBoardProvider>
+                  <ModalsProvider modals={modals}>
+                    <Component {...pageProps} />
+                  </ModalsProvider>
+                </OuterBoardProvider>
               </MantineProvider>
             </ColorTheme.Provider>
           )}

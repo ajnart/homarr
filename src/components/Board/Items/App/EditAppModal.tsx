@@ -14,7 +14,6 @@ import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-tr
 import { useState } from 'react';
 import { z } from 'zod';
 import { objectKeys } from '~/tools/object';
-import { RouterOutputs } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { appFormSchema } from '~/validations/app';
 
@@ -28,7 +27,6 @@ import { useAppActions } from './app-actions';
 
 export type EditAppModalInnerProps = {
   app: AppItem;
-  board: RouterOutputs['boards']['byName'];
   allowAppNamePropagation: boolean;
 };
 
@@ -39,7 +37,7 @@ export const EditAppModal = ({
 }: ContextModalProps<EditAppModalInnerProps>) => {
   const { t } = useTranslation(['layout/modals/add-app', 'common']);
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
-  const { createOrUpdateApp } = useAppActions({ boardName: innerProps.board.name });
+  const { createOrUpdateApp } = useAppActions();
   // TODO: change to ref
   const [allowAppNamePropagation, setAllowAppNamePropagation] = useState<boolean>(
     innerProps.allowAppNamePropagation

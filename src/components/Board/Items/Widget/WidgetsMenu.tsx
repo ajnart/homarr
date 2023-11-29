@@ -1,7 +1,7 @@
 import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openRemoveItemModal, useItemActions } from '~/components/Board/Items/item-actions';
-import { type WidgetItem, useRequiredBoard } from '~/components/Board/context';
+import { type WidgetItem } from '~/components/Board/context';
 import { useResizeGridItem } from '~/components/Board/gridstack/useResizeGridItem';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 
@@ -17,10 +17,9 @@ interface WidgetsMenuProps {
 
 export const WidgetsMenu = ({ widget }: WidgetsMenuProps) => {
   const { t } = useTranslation(`modules/${widget.sort}`);
-  const board = useRequiredBoard();
   const wrapperColumnCount = useWrapperColumnCount();
   const resizeGridItem = useResizeGridItem();
-  const { removeItem } = useItemActions({ boardName: board.name });
+  const { removeItem } = useItemActions();
 
   if (!widget || !wrapperColumnCount) return null;
   // Then get the widget definition
@@ -44,7 +43,6 @@ export const WidgetsMenu = ({ widget }: WidgetsMenuProps) => {
       title: null,
       innerProps: {
         widget,
-        boardName: board.name,
         wrapperColumnCount,
         resizeGridItem,
       },
@@ -59,7 +57,6 @@ export const WidgetsMenu = ({ widget }: WidgetsMenuProps) => {
         widgetId: widget.id,
         widgetType: widget.sort,
         options: widget.options,
-        boardName: board.name,
         widgetOptions: widgetDefinitionObject.options,
       },
       zIndex: 250,

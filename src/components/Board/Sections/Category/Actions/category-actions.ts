@@ -1,7 +1,7 @@
 import Consola from 'consola';
 import { useCallback } from 'react';
 import { v4 } from 'uuid';
-import { api } from '~/utils/api';
+import { useUpdateBoard } from '~/components/Board/board-actions';
 
 import { type CategorySection, type EmptySection } from '../../../context';
 
@@ -24,8 +24,8 @@ type RemoveCategory = {
   id: string;
 };
 
-export const useCategoryActions = ({ boardName }: { boardName: string }) => {
-  const utils = api.useContext();
+export const useCategoryActions = () => {
+  const updateBoard = useUpdateBoard();
 
   const addCategory = useCallback(
     ({ name, position }: AddCategory) => {
@@ -33,7 +33,7 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         Consola.error('Cannot add category before first section');
         return;
       }
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -76,12 +76,58 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
+  );
+
+  const addCategoryToEnd = useCallback(
+    ({ name }: { name: string }) => {
+      updateBoard((prev) => {
+        if (!prev) return prev;
+
+        const lastSection = prev.sections
+          .filter(
+            (x): x is CategorySection | EmptySection => x.kind === 'empty' || x.kind === 'category'
+          )
+          .sort((a, b) => b.position - a.position)
+          .at(0);
+
+        if (!lastSection) return prev;
+        const lastPosition = lastSection.position;
+
+        return {
+          ...prev,
+          sections: [
+            // Ignore sidebar and hidden sections
+            ...prev.sections.filter(
+              (section) => section.kind === 'sidebar' || section.kind === 'hidden'
+            ),
+            // Place sections before the new category
+            ...prev.sections.filter((section) => section.kind === 'category'),
+            {
+              id: v4(),
+              name,
+              kind: 'category',
+              position: lastPosition + 1,
+              items: [],
+            },
+            {
+              id: v4(),
+              kind: 'empty',
+              position: lastPosition + 2,
+              items: [],
+            },
+            // Place sections after the new category
+            ...prev.sections.filter((section) => section.kind === 'empty'),
+          ],
+        };
+      });
+    },
+    [updateBoard]
   );
 
   const renameCategory = useCallback(
     ({ id: categoryId, name }: RenameCategory) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
         return {
           ...prev,
@@ -96,12 +142,12 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   const moveCategory = useCallback(
     ({ id, direction }: MoveCategory) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(
@@ -155,12 +201,12 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   const removeCategory = useCallback(
     ({ id: categoryId }: RemoveCategory) => {
-      utils.boards.byName.setData({ boardName, userAgent: navigator.userAgent }, (prev) => {
+      updateBoard((prev) => {
         if (!prev) return prev;
 
         const currentCategory = prev.sections.find(
@@ -194,11 +240,12 @@ export const useCategoryActions = ({ boardName }: { boardName: string }) => {
         };
       });
     },
-    [boardName, utils]
+    [updateBoard]
   );
 
   return {
     addCategory,
+    addCategoryToEnd,
     renameCategory,
     moveCategory,
     removeCategory,

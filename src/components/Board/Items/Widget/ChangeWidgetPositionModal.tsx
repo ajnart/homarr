@@ -10,7 +10,6 @@ import { CommonChangePositionModal } from '../CommonChangePositionModal';
 
 export type WidgetChangePositionModalInnerProps = {
   widget: WidgetItem;
-  boardName: string;
   wrapperColumnCount: number;
   resizeGridItem: ReturnType<typeof useResizeGridItem>;
 };
@@ -20,7 +19,7 @@ export const ChangeWidgetPositionModal = ({
   id,
   innerProps,
 }: ContextModalProps<WidgetChangePositionModalInnerProps>) => {
-  const { moveAndResizeItem } = useItemActions({ boardName: innerProps.boardName });
+  const { moveAndResizeItem } = useItemActions();
 
   const handleSubmit = (x: number, y: number, width: number, height: number) => {
     moveAndResizeItem({
