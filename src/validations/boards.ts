@@ -1,6 +1,10 @@
 import { DEFAULT_THEME, MANTINE_COLORS, MantineColor } from '@mantine/core';
 import { z } from 'zod';
-import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
+import {
+  BackgroundImageAttachment,
+  BackgroundImageRepeat,
+  BackgroundImageSize,
+} from '~/types/settings';
 
 export const createBoardSchemaValidation = z.object({
   name: z.string().min(2).max(25),
@@ -36,6 +40,9 @@ export const boardCustomizationSchema = z.object({
       .max(DEFAULT_THEME.colors['blue'].length - 1),
     opacity: z.number().min(10).max(100),
     customCss: z.string(),
+  }),
+  search: z.object({
+    mediaIntegrations: z.array(z.string()),
   }),
 });
 

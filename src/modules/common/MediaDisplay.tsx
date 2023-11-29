@@ -26,41 +26,6 @@ export interface IMedia {
   [key: string]: any;
 }
 
-export function OverseerrMediaDisplay(props: any) {
-  const { media }: { media: Result } = props;
-  const { config } = useConfigContext();
-
-  if (!config) {
-    return null;
-  }
-
-  const service = config.apps.find(
-    (service) =>
-      service.integration.type === 'overseerr' || service.integration.type === 'jellyseerr'
-  );
-
-  return (
-    <MediaDisplay
-      media={{
-        ...media,
-        genres: [],
-        overview: media.overview ?? '',
-        title: media.title ?? media.name ?? media.originalName,
-        poster: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${media.posterPath}`,
-        seasonNumber: media.mediaInfo?.seasons.length,
-        episodetitle: media.title,
-        plexUrl: media.mediaInfo?.plexUrl ?? media.mediaInfo?.mediaUrl,
-        voteAverage: media.voteAverage?.toString(),
-        overseerrResult: media,
-        overseerrId: `${
-          service?.behaviour.externalUrl ? service.behaviour.externalUrl : service?.url
-        }/${media.mediaType}/${media.id}`,
-        type: 'overseer',
-      }}
-    />
-  );
-}
-
 export function ReadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfigContext();
@@ -192,7 +157,14 @@ export function MediaDisplay({ media }: { media: IMedia }) {
 
   return (
     <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
-      <Image src={media.poster?? media.altPoster} height={200} width={150} radius="md" fit="cover" withPlaceholder/>
+      <Image
+        src={media.poster ?? media.altPoster}
+        height={200}
+        width={150}
+        radius="md"
+        fit="cover"
+        withPlaceholder
+      />
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>

@@ -49,10 +49,7 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
   )
     .filter(
       (engine) =>
-        engine.sort !== 'movie' ||
-        board?.sections.some((section) =>
-          section.items.some((x) => x.kind === 'app' && x.integration?.type === engine.value)
-        )
+        engine.sort !== 'movie' || board?.mediaIntegrations.some((x) => x.sort === engine.value)
     )
     .map((engine) => ({
       ...engine,
@@ -61,6 +58,7 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
         query: search,
       }),
     }));
+
   const data = [...apps, ...engines];
 
   return (

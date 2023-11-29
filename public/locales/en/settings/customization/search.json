@@ -1,0 +1,6 @@
+{
+    "mediaIntegrations": {
+        "label": "Search media integrations",
+        "description": "Selected integrations will be available in the search of this board"
+    }
+}

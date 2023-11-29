@@ -1,11 +1,14 @@
 import { TRPCError } from '@trpc/server';
 import axios from 'axios';
 import Consola from 'consola';
+import { and, eq } from 'drizzle-orm';
 import { z } from 'zod';
 import { MovieResult } from '~/modules/overseerr/Movie';
 import { Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
-import { getIntegrations, getSecret } from '~/server/db/queries/integrations';
+import { db } from '~/server/db';
+import { getSecret } from '~/server/db/queries/integrations';
+import { boardIntegrations, integrationSecrets, integrations } from '~/server/db/schema';
 import { getConfig } from '~/tools/config/getConfig';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
@@ -20,47 +23,51 @@ export const overseerrRouter = createTRPCRouter({
         limit: z.number().default(10),
       })
     )
-    .query(async ({ input, ctx }) => {
-      const integrations = await getIntegrations(
-        input.boardId,
-        [input.integration],
-        ctx.session?.user
-      );
+    .query(async ({ input }) => {
+      const dbIntegration = await db
+        .select()
+        .from(boardIntegrations)
+        .leftJoin(integrations, eq(integrations.id, boardIntegrations.integrationId))
+        .leftJoin(integrationSecrets, eq(integrationSecrets.integrationId, integrations.id))
+        .where(
+          and(
+            eq(boardIntegrations.boardId, input.boardId),
+            eq(integrations.sort, input.integration)
+          )
+        )
+        .get();
 
-      if (input.query === '' || input.query === undefined || integrations.length === 0) {
+      if (!dbIntegration || !dbIntegration.integration || !dbIntegration.integration_secret) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'No integration found',
+        });
+      }
+
+      if (input.query === '' || input.query === undefined) {
         return [];
       }
 
-      const resultsFromIntegrationApi = await Promise.allSettled<Promise<Result[]>>(
-        integrations.map(async (integration) => {
-          const url = new URL(integration.url);
-          return await axios
-            .get(`${url.origin}/api/v1/search?query=${input.query}`, {
-              headers: {
-                // Set X-Api-Key to the value of the API key
-                'X-Api-Key': getSecret(integration, 'apiKey'),
-              },
-            })
-            .then((res) =>
-              res.data.results.map((x: Result) => ({ ...x, integrationId: integration.id }))
-            )
-            .catch((err) => {
-              Consola.error(err);
-              return [];
-            });
+      const integration = {
+        ...dbIntegration.integration,
+        secrets: [dbIntegration.integration_secret!],
+      };
+      const url = new URL(integration.url);
+      const results: Result[] = await axios
+        .get(`${url.origin}/api/v1/search?query=${input.query}`, {
+          headers: {
+            // Set X-Api-Key to the value of the API key
+            'X-Api-Key': getSecret(integration, 'apiKey'),
+          },
         })
-      );
-
-      const results = resultsFromIntegrationApi
-        .filter(
-          (x): x is PromiseFulfilledResult<(Result & { integrationId: string })[]> =>
-            x.status === 'fulfilled'
-        )
-        .flatMap((x) => x.value);
+        .then((res) => res.data)
+        .catch((err) => {
+          Consola.error(err);
+          return [];
+        });
 
       return results.slice(0, input.limit).map((result) => ({
         id: result.id,
-        integrationId: result.integrationId,
         imageUrl: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${
           result.posterPath ?? result.backdropPath
         }`,

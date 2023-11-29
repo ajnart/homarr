@@ -131,14 +131,6 @@ const MovieDisplay = ({ movie, type }: MovieDisplayProps) => {
   const { t } = useTranslation('modules/common-media-cards');
   const [requestModalOpened, requestModal] = useDisclosure(false);
 
-  /*const service = config.apps.find((service) => service.integration.type === type);
-  const mediaUrl = movie.mediaInfo?.plexUrl ?? movie.mediaInfo?.mediaUrl;
-  const serviceUrl = service?.behaviour.externalUrl ?? service?.url;
-  const externalUrl = new URL(
-    `${movie.mediaType}/${movie.id}`,
-    serviceUrl ?? 'https://www.themoviedb.org'
-  );*/
-
   return (
     <Card withBorder>
       <Group noWrap style={{ maxHeight: 250 }} p={0} m={0} spacing="xs" align="stretch">

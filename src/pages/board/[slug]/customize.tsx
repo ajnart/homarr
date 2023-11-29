@@ -20,6 +20,7 @@ import {
   IconChartCandle,
   IconCheck,
   IconLock,
+  IconSearch,
   IconX,
   TablerIconsProps,
 } from '@tabler/icons-react';
@@ -30,18 +31,20 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 import { z } from 'zod';
+import type generalSettingsTranslations from '~/../public/locales/en/settings/customization/general.json';
 import { AccessCustomization } from '~/components/Board/Customize/Access/AccessCustomization';
 import { AppearanceCustomization } from '~/components/Board/Customize/Appearance/AppearanceCustomization';
 import { NetworkCustomization } from '~/components/Board/Customize/Network/NetworkCustomization';
 import { PageMetadataCustomization } from '~/components/Board/Customize/PageMetadata/PageMetadataCustomization';
+import { SearchCustomization } from '~/components/Board/Customize/Search/SearchCustomization';
 import {
   BoardCustomizationFormProvider,
   useBoardCustomizationForm,
 } from '~/components/Board/Customize/form';
 import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
-import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { boardRouter } from '~/server/api/routers/board';
+import { integrationRouter } from '~/server/api/routers/integration';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
@@ -54,22 +57,27 @@ const notificationId = 'board-customization-notification';
 
 export default function CustomizationPage({
   initialBoard,
+  allMediaIntegrations,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const query = useRouter().query as { slug: string };
   const utils = api.useContext();
   const {
-    data: board,
+    data: queryBoard,
     isError,
     error,
   } = api.boards.byNameSimple.useQuery(
     { boardName: query.slug },
     {
-      initialData: initialBoard,
       refetchOnMount: false,
+      refetchOnReconnect: false,
       useErrorBoundary: false,
       suspense: false,
+      enabled: typeof window !== 'undefined', // Disable on server-side so it is not cached with an old result.
     }
   );
+
+  const board = queryBoard ?? initialBoard; // Initialdata property is not working because it somehow ignores the enabled property.
+
   const { mutateAsync: updateCustomization, isLoading } =
     api.boards.updateCustomization.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
@@ -98,6 +106,9 @@ export default function CustomizationPage({
         metaTitle: board.metaTitle ?? '',
         logoSrc: board.logoImageUrl ?? '',
         faviconSrc: board.faviconImageUrl ?? '',
+      },
+      search: {
+        mediaIntegrations: board.mediaIntegrations.map(({ id }) => id),
       },
     },
     validate: i18nZodResolver(boardCustomizationSchema),
@@ -251,6 +262,10 @@ export default function CustomizationPage({
                   </Grid.Col>
                 </Grid>
                 <Stack spacing="xs">
+                  <SectionTitle type="search" icon={IconSearch} />
+                  <SearchCustomization allMediaIntegrations={allMediaIntegrations} />
+                </Stack>
+                <Stack spacing="xs">
                   <SectionTitle type="appereance" icon={IconBrush} />
                   <AppearanceCustomization />
                 </Stack>
@@ -264,7 +279,7 @@ export default function CustomizationPage({
 }
 
 type SectionTitleProps = {
-  type: 'network' | 'pageMetadata' | 'appereance' | 'access';
+  type: keyof (typeof generalSettingsTranslations)['accordeon'];
   icon: (props: TablerIconsProps) => ReactNode;
 };
 
@@ -305,19 +320,26 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     return result;
   }
 
-  const helpers = await createTrpcServersideHelpers({ req: context.req, res: context.res });
-  const caller = boardRouter.createCaller({
+  const boardCaller = boardRouter.createCaller({
     session: session,
     cookies: context.req.cookies,
     headers: context.req.headers,
   });
 
-  const board = await caller.byNameSimple({ boardName: routeParams.data.slug });
+  const board = await boardCaller.byNameSimple({ boardName: routeParams.data.slug });
   if (!board) {
     return {
       notFound: true,
     };
   }
+
+  const integrationCaller = integrationRouter.createCaller({
+    session: session,
+    cookies: context.req.cookies,
+    headers: context.req.headers,
+  });
+
+  const allMediaIntegrations = await integrationCaller.allMedia();
 
   const translations = await getServerSideTranslations(
     [
@@ -329,6 +351,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
       'settings/customization/opacity-selector',
       'settings/customization/gridstack',
       'settings/customization/access',
+      'settings/customization/search',
     ],
     context.locale,
     context.req,
@@ -341,6 +364,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
       secondaryColor: board.secondaryColor,
       primaryShade: board.primaryShade,
       initialBoard: board,
+      allMediaIntegrations,
       ...translations,
     },
   };

@@ -179,8 +179,8 @@ export const integrationSecrets = sqliteTable(
 export const boardIntegrations = sqliteTable(
   'board_integration',
   {
-    boardId: text('board_id'),
-    integrationId: text('integration_id'),
+    boardId: text('board_id').notNull(),
+    integrationId: text('integration_id').notNull(),
   },
   (boardIntegration) => ({
     compoundKey: primaryKey(boardIntegration.boardId, boardIntegration.integrationId),

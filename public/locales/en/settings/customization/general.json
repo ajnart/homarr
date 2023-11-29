@@ -16,6 +16,10 @@
     "access": {
       "name": "Access",
       "description": "Configure who has access to your board"
+    },
+    "search": {
+      "name": "Search",
+      "description": "Customize the search experience on your board"
     }
   }
 }

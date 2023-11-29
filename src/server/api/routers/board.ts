@@ -9,6 +9,7 @@ import {
   Integration,
   appStatusCodes,
   apps,
+  boardIntegrations,
   boards,
   items,
   layoutItems,
@@ -262,26 +263,59 @@ export const boardRouter = createTRPCRouter({
         });
       }
 
-      await db
-        .update(boards)
-        .set({
-          allowGuests: input.customization.access.allowGuests,
-          isPingEnabled: input.customization.network.pingsEnabled,
-          appOpacity: input.customization.appearance.opacity,
-          backgroundImageUrl: input.customization.appearance.backgroundSrc,
-          backgroundImageAttachment: input.customization.appearance.backgroundImageAttachment,
-          backgroundImageSize: input.customization.appearance.backgroundImageSize,
-          backgroundImageRepeat: input.customization.appearance.backgroundImageRepeat,
-          primaryColor: input.customization.appearance.primaryColor,
-          secondaryColor: input.customization.appearance.secondaryColor,
-          customCss: input.customization.appearance.customCss,
-          pageTitle: input.customization.pageMetadata.pageTitle,
-          metaTitle: input.customization.pageMetadata.metaTitle,
-          logoImageUrl: input.customization.pageMetadata.logoSrc,
-          faviconImageUrl: input.customization.pageMetadata.faviconSrc,
-          primaryShade: input.customization.appearance.shade,
-        })
-        .where(eq(boards.id, dbBoard.id));
+      const dbIntegrations = await db.query.boardIntegrations.findMany({
+        where: eq(boardIntegrations.boardId, dbBoard.id),
+      });
+
+      const inputIntegrations = input.customization.search.mediaIntegrations;
+
+      const newIntegrations = inputIntegrations.filter((id) =>
+        dbIntegrations.every((y) => y.integrationId !== id)
+      );
+
+      const removedIntegrations = dbIntegrations.filter((x) =>
+        inputIntegrations.every((y) => y !== x.integrationId)
+      );
+
+      await db.transaction(async (tx) => {
+        await tx
+          .update(boards)
+          .set({
+            allowGuests: input.customization.access.allowGuests,
+            isPingEnabled: input.customization.network.pingsEnabled,
+            appOpacity: input.customization.appearance.opacity,
+            backgroundImageUrl: input.customization.appearance.backgroundSrc,
+            backgroundImageAttachment: input.customization.appearance.backgroundImageAttachment,
+            backgroundImageSize: input.customization.appearance.backgroundImageSize,
+            backgroundImageRepeat: input.customization.appearance.backgroundImageRepeat,
+            primaryColor: input.customization.appearance.primaryColor,
+            secondaryColor: input.customization.appearance.secondaryColor,
+            customCss: input.customization.appearance.customCss,
+            pageTitle: input.customization.pageMetadata.pageTitle,
+            metaTitle: input.customization.pageMetadata.metaTitle,
+            logoImageUrl: input.customization.pageMetadata.logoSrc,
+            faviconImageUrl: input.customization.pageMetadata.faviconSrc,
+            primaryShade: input.customization.appearance.shade,
+          })
+          .where(eq(boards.id, dbBoard.id));
+
+        if (newIntegrations.length > 0) {
+          await tx.insert(boardIntegrations).values(
+            newIntegrations.map((id) => ({
+              boardId: dbBoard.id,
+              integrationId: id,
+            }))
+          );
+        }
+        if (removedIntegrations.length > 0) {
+          await tx.delete(boardIntegrations).where(
+            inArray(
+              boardIntegrations.integrationId,
+              removedIntegrations.map((x) => x.integrationId)
+            )
+          );
+        }
+      });
 
       return dbBoard;
     }),
