@@ -1,6 +1,7 @@
 import { Stack, Text, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconClock } from '@tabler/icons-react';
+import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import timezones from 'dayjs/plugin/timezone';
@@ -8,7 +9,6 @@ import utc from 'dayjs/plugin/utc';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { getLanguageByCode } from '~/tools/language';
-import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
@@ -81,16 +81,15 @@ function DateTile({ widget }: DateTileProps) {
   const { cx, classes } = useStyles();
   const { data: sessionData } = useSession();
   const [now, setDate] = useState(new Date());
-  const { data, isFetching } = api.timezone.at.useQuery(
-    {
-      latitude: widget.properties.timezoneLocation.latitude,
-      longitude: widget.properties.timezoneLocation.longitude,
-    },
-    {
-      enabled: location !== undefined && widget.properties.enableTimezone,
-      retry: false,
-    }
-  );
+  const { data, isFetching } = useQuery({
+    queryKey: [widget.properties.timezoneLocation],
+    queryFn: () => getTimezone(widget.properties.timezoneLocation),
+    enabled: location !== undefined && widget.properties.enableTimezone,
+    cacheTime: Infinity,
+    staleTime: Infinity,
+    retry: false,
+  });
+
   useEffect(() => {
     // Refresh the time every second
     const interval = setInterval(() => setDate(new Date()), 1000);
@@ -129,6 +128,19 @@ function DateTile({ widget }: DateTileProps) {
     </Stack>
   );
 }
+
+const getTimezone = async (location: { latitude: number; longitude: number }) => {
+  const res = await fetch(
+    `https://api.teleport.org/api/locations/${location.latitude},${location.longitude}/?embed=location:nearest-cities/location:nearest-city/city:timezone`
+  );
+  return res.json().then((value) => {
+    return value
+      ._embedded['location:nearest-cities'][0]
+      ._embedded['location:nearest-city']
+      ._embedded['city:timezone']
+      .iana_name;
+  });
+};
 
 const useStyles = createStyles(() => ({
   wrapper: {
