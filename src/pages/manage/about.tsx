@@ -10,7 +10,7 @@ import {
   Stack,
   Table,
   Text,
-  createStyles
+  createStyles,
 } from '@mantine/core';
 import {
   IconAnchor,
@@ -18,7 +18,7 @@ import {
   IconLanguage,
   IconSchema,
   IconVersions,
-  IconVocabulary
+  IconVocabulary,
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { InitOptions } from 'i18next';
@@ -262,7 +262,7 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
   );
 };
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const contributors = (await fetch(
     `https://api.github.com/repos/${REPO_URL}/contributors?per_page=100`,
     {
@@ -272,7 +272,12 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       contributors,
-      ...(await getServerSideTranslations(['layout/manage', 'manage/index'], locale)),
+      ...(await getServerSideTranslations(
+        ['layout/manage', 'manage/index'],
+        ctx.locale,
+        ctx.req,
+        ctx.res
+      )),
     },
   };
 }
