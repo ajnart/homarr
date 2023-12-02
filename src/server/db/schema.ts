@@ -1,5 +1,5 @@
 import type { MantineColor } from '@mantine/core';
-import { type InferSelectModel, relations } from 'drizzle-orm';
+import { relations, type InferSelectModel } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { type AdapterAccount } from 'next-auth/adapters';
 
@@ -12,12 +12,11 @@ import type {
   ColorScheme,
   FirstDayOfWeek,
   IntegrationSecretKey,
-  IntegrationSecretVisibility,
   IntegrationType,
   LayoutKind,
   SectionType,
   WidgetOptionType,
-  WidgetSort,
+  WidgetType,
 } from './items';
 
 export const users = sqliteTable('user', {
@@ -156,7 +155,7 @@ export const boards = sqliteTable('board', {
 
 export const integrations = sqliteTable('integration', {
   id: text('id').notNull().primaryKey(),
-  sort: text('sort').$type<IntegrationType>().notNull(),
+  type: text('type').$type<IntegrationType>().notNull(),
   name: text('name').notNull(),
   url: text('url').notNull(),
 });
@@ -166,7 +165,6 @@ export const integrationSecrets = sqliteTable(
   {
     key: text('key').$type<IntegrationSecretKey>().notNull(),
     value: text('value'),
-    visibility: text('visibility').$type<IntegrationSecretVisibility>().notNull(),
     integrationId: text('integration_id')
       .notNull()
       .references(() => integrations.id, { onDelete: 'cascade' }),
@@ -189,7 +187,7 @@ export const boardIntegrations = sqliteTable(
 
 export const widgets = sqliteTable('widget', {
   id: text('id').notNull().primaryKey(),
-  sort: text('sort').$type<WidgetSort>().notNull(),
+  type: text('sort').$type<WidgetType>().notNull(),
   itemId: text('item_id')
     .notNull()
     .references(() => items.id, { onDelete: 'cascade' }),

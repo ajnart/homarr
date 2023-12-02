@@ -15,7 +15,7 @@ export async function getIntegrations<TIntegrations extends IntegrationType>(
 
 export const getIntegrationsForWidget = async <TIntegrations extends IntegrationType>(
   boardId: string,
-  sorts: TIntegrations[],
+  types: TIntegrations[],
 
   user: User | null | undefined,
   widgetId: 'ignore' | (string & {})
@@ -24,7 +24,7 @@ export const getIntegrationsForWidget = async <TIntegrations extends Integration
     where: and(
       eq(items.boardId, boardId),
       user ? undefined : eq(boards.allowGuests, true),
-      sorts.length >= 1 ? inArray(integrations.sort, sorts) : undefined,
+      types.length >= 1 ? inArray(integrations.type, types) : undefined,
       widgetId !== 'ignore' ? eq(items.id, widgetId) : undefined
     ),
     with: {
@@ -46,7 +46,7 @@ export const getIntegrationsForWidget = async <TIntegrations extends Integration
   });
   return widgetItems
     .flatMap((x) => x.widget?.integrations ?? [])
-    .map((x) => ({ ...x.integration, sort: x.integration.sort as TIntegrations }));
+    .map((x) => ({ ...x.integration, type: x.integration.type as TIntegrations }));
 };
 
 export async function getIntegrationAsync(integrationId: string) {

@@ -43,10 +43,10 @@ export const calendarRouter = createTRPCRouter({
       ]);
 
       const promises = widget.integrations.map(async (integration) => {
-        const endpoint = integrationTypeEndpointMap.get(integration.sort);
+        const endpoint = integrationTypeEndpointMap.get(integration.type);
         if (!endpoint) {
           return {
-            sort: integration.sort,
+            type: integration.type,
             items: [],
             success: false,
           };
@@ -62,7 +62,7 @@ export const calendarRouter = createTRPCRouter({
         const end = new Date(input.year, input.month, 0); // Last day of month
 
         const apiKey = integration.secrets.find((x) => x.key === 'apiKey')?.value;
-        if (!apiKey) return { sort: integration.sort, items: [], success: false };
+        if (!apiKey) return { type: integration.type, items: [], success: false };
         const url = new URL(`${origin}${endpoint}`);
         url.searchParams.set('apiKey', apiKey);
         url.searchParams.set('end', end.toISOString());
@@ -74,13 +74,13 @@ export const calendarRouter = createTRPCRouter({
 
         return axios
           .get(url.toString())
-          .then((x) => ({ sort: integration.sort, items: x.data as unknown[], success: true }))
+          .then((x) => ({ type: integration.type, items: x.data as unknown[], success: true }))
           .catch((err) => {
             Consola.error(
-              `failed to process request for integration '${integration.sort}' (${integration.name}): ${err}`
+              `failed to process request for integration '${integration.type}' (${integration.name}): ${err}`
             );
             return {
-              sort: integration.sort,
+              type: integration.type,
               items: [],
               success: false,
             };
@@ -95,10 +95,10 @@ export const calendarRouter = createTRPCRouter({
       }
 
       return {
-        tvShows: medias.filter((m) => m.sort === 'sonarr').flatMap((m) => m.items),
-        movies: medias.filter((m) => m.sort === 'radarr').flatMap((m) => m.items),
-        books: medias.filter((m) => m.sort === 'readarr').flatMap((m) => m.items),
-        musics: medias.filter((m) => m.sort === 'lidarr').flatMap((m) => m.items),
+        tvShows: medias.filter((m) => m.type === 'sonarr').flatMap((m) => m.items),
+        movies: medias.filter((m) => m.type === 'radarr').flatMap((m) => m.items),
+        books: medias.filter((m) => m.type === 'readarr').flatMap((m) => m.items),
+        musics: medias.filter((m) => m.type === 'lidarr').flatMap((m) => m.items),
         totalCount: medias.reduce((p, c) => p + c.items.length, 0),
       };
     }),

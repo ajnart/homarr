@@ -24,9 +24,9 @@ import {
   NormalizedDownloadQueueResponse,
   TorrentTotalDownload,
 } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
+import { api } from '~/utils/api';
 
 import definition, { ITorrentNetworkTraffic } from './TorrentNetworkTrafficTile';
-import { useGetDownloadClientsQueue } from './useGetNetworkSpeed';
 
 interface TorrentNetworkTrafficTileProps {
   widget: ITorrentNetworkTraffic;
@@ -42,11 +42,16 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
   const [clientDataHistory, setClientDataHistory] = useListState<NormalizedDownloadQueueResponse>();
 
-  const { data, dataUpdatedAt } = useGetDownloadClientsQueue({
-    boardId,
-    widgetId: widget.id,
-    sort: 'dlspeed',
-  });
+  const { data, dataUpdatedAt } = api.download.get.useQuery(
+    {
+      boardId,
+      widgetId: widget.id,
+      type: definition.id,
+    },
+    {
+      refetchInterval: 3000,
+    }
+  );
 
   useEffect(() => {
     if (data) {
@@ -169,7 +174,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
 
                         return (
                           <Group key={`download-client-tooltip-${index}`}>
-                            <AppAvatar iconUrl={integrationTypes[current.sort].iconUrl} />
+                            <AppAvatar iconUrl={integrationTypes[current.type].iconUrl} />
 
                             <Stack spacing={0}>
                               <Text size="sm">{current.name}</Text>
@@ -257,7 +262,7 @@ export default function TorrentNetworkTrafficTile({ widget }: TorrentNetworkTraf
                 withArrow
                 withinPortal
               >
-                <AppAvatar iconUrl={integrationTypes[current.sort].iconUrl} />
+                <AppAvatar iconUrl={integrationTypes[current.type].iconUrl} />
               </Tooltip>
             );
           })}

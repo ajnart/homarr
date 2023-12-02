@@ -44,7 +44,7 @@ export const applyCreateWidgetChanges = (
   const widgetId = randomUUID();
   changes.widgets.create.push({
     id: widgetId,
-    sort: widget.sort,
+    type: widget.type,
     itemId: widget.id,
   });
 

@@ -25,7 +25,7 @@ export const downloadRouter = createTRPCRouter({
       z.object({
         boardId: z.string(),
         widgetId: z.string(),
-        sort: z.enum(['torrents-status', 'dlspeed']),
+        type: z.enum(['torrents-status', 'dlspeed']),
       })
     )
     .query(async ({ input, ctx }) => {
@@ -33,7 +33,7 @@ export const downloadRouter = createTRPCRouter({
         input.boardId,
         input.widgetId,
         ctx.session?.user,
-        input.sort
+        input.type
       );
 
       if (!widget) {
@@ -107,7 +107,7 @@ const GetDataFromClient = async (
       .reduce((acc, torrent) => acc + torrent, 0),
   });
 
-  switch (integration.sort) {
+  switch (integration.type) {
     case 'deluge': {
       return reduceTorrent(
         await new Deluge({

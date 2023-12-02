@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { v4 } from 'uuid';
 import { z } from 'zod';
-import { widgetCreationSchema, widgetSortSchema } from '~/validations/widget';
+import { widgetCreationSchema, widgetTypeSchema } from '~/validations/widget';
 import { IWidgetDefinition } from '~/widgets/widgets';
 
 import { useUpdateBoard } from '../../board-actions';
@@ -13,7 +13,7 @@ type UpdateWidgetOptions = {
 };
 
 type CreateWidget = {
-  sort: z.infer<typeof widgetSortSchema>;
+  type: z.infer<typeof widgetTypeSchema>;
   definition: IWidgetDefinition;
 };
 
@@ -47,7 +47,7 @@ export const useWidgetActions = () => {
   );
 
   const createWidget = useCallback(
-    ({ sort, definition }: CreateWidget) => {
+    ({ type, definition }: CreateWidget) => {
       updateBoard((prev) => {
         if (!prev) return prev;
 
@@ -58,7 +58,7 @@ export const useWidgetActions = () => {
         const widget = {
           id: v4(),
           kind: 'widget',
-          sort,
+          type,
           options: Object.entries(definition.options).reduce(
             (prev, [k, v]) => {
               const newPrev = prev;

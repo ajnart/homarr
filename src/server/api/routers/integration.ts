@@ -7,7 +7,7 @@ import { adminProcedure, createTRPCRouter } from '../trpc';
 export const integrationRouter = createTRPCRouter({
   allMedia: adminProcedure.query(async () => {
     return await db.query.integrations.findMany({
-      where: inArray(integrations.sort, ['jellyseerr', 'overseerr']),
+      where: inArray(integrations.type, ['jellyseerr', 'overseerr']),
     });
   }),
 });

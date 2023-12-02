@@ -40,7 +40,7 @@ export function SectionContent({ items, refs }: SectionContentProps) {
         </GridstackItemWrapper>
       ))}
       {widgets.map((widget) => {
-        const definition = Widgets[widget.sort];
+        const definition = Widgets[widget.type];
         if (!definition) return null;
 
         return (

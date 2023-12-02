@@ -127,26 +127,6 @@ export const configRouter = createTRPCRouter({
 
       newConfig = {
         ...newConfig,
-        widgets: [
-          ...newConfig.widgets.map((x) => {
-            if (x.type !== 'rss') {
-              return x;
-            }
-
-            const rssWidget = x as IRssWidget;
-
-            return {
-              ...rssWidget,
-              properties: {
-                ...rssWidget.properties,
-                rssFeedUrl:
-                  typeof rssWidget.properties.rssFeedUrl === 'string'
-                    ? [rssWidget.properties.rssFeedUrl]
-                    : rssWidget.properties.rssFeedUrl,
-              },
-            } as IRssWidget;
-          }),
-        ],
       };
 
       // Save the body in the /data/config folder with the slug as filename

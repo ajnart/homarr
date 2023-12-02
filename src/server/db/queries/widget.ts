@@ -8,18 +8,18 @@ import { InferWidgetOptions } from '~/widgets/widgets';
 import { db } from '..';
 import { boards, items, widgets } from '../schema';
 
-export const getWidgetAsync = async <TSort extends keyof typeof widgetDefinitions>(
+export const getWidgetAsync = async <TType extends keyof typeof widgetDefinitions>(
   boardId: string,
   id: string,
   user: User | null | undefined,
-  sort: TSort
+  type: TType
 ) => {
   const widgetItem = await db.query.items.findFirst({
     where: and(
       eq(items.boardId, boardId),
       eq(items.id, id),
       user ? undefined : eq(boards.allowGuests, true),
-      eq(widgets.sort, sort)
+      eq(widgets.type, type)
     ),
     with: {
       widget: {
@@ -44,21 +44,21 @@ export const getWidgetAsync = async <TSort extends keyof typeof widgetDefinition
     },
   });
 
-  if (!widgetItem) {
+  if (!widgetItem || !widgetItem.widget) {
     return null;
   }
 
   const mappedOptions = mapWidgetOptions(
-    widgetItem.widget!.options.sort((a, b) => a.path.localeCompare(b.path))
+    widgetItem.widget.options.sort((a, b) => a.path.localeCompare(b.path))
   );
-  objectEntries(widgetDefinitions[sort].options).forEach(([key, definition]) => {
+  objectEntries(widgetDefinitions[type].options).forEach(([key, definition]) => {
     mappedOptions[key] = mappedOptions[key] ?? definition.defaultValue;
   });
 
   return {
     id: widgetItem.id,
-    sort: widgetItem.widget!.sort,
-    options: mappedOptions as InferWidgetOptions<(typeof widgetDefinitions)[TSort]>,
+    type: widgetItem.widget.type,
+    options: mappedOptions as InferWidgetOptions<(typeof widgetDefinitions)[TType]>,
     integrations: widgetItem.widget!.integrations.map((i) => ({
       ...i.integration,
     })),

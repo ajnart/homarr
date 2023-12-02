@@ -14,7 +14,7 @@ interface WidgetWrapperProps {
 
 // If a property has no value, set it to the default value
 const useWidgetWithDefaultOptionValues = <T extends WidgetItem>(widget: T): T => {
-  const definition = Widgets[widget.sort];
+  const definition = Widgets[widget.type];
 
   const newProps: Record<string, unknown> = {};
 

@@ -13,7 +13,7 @@ export interface UsenetClient {
 }
 
 export function createUsenetClient(integration: WidgetIntegration) {
-  if (integration.sort === 'nzbGet') return new NzbgetUsenetClient(integration);
+  if (integration.type === 'nzbGet') return new NzbgetUsenetClient(integration);
   return new SabnzbdUsenetClient(integration);
 }
 

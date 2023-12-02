@@ -49,7 +49,7 @@ export const Search = ({ isMobile, autoFocus }: SearchProps) => {
   )
     .filter(
       (engine) =>
-        engine.sort !== 'movie' || board?.mediaIntegrations.some((x) => x.sort === engine.value)
+        engine.sort !== 'movie' || board?.mediaIntegrations.some((x) => x.type === engine.value)
     )
     .map((engine) => ({
       ...engine,

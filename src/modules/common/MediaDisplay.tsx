@@ -246,7 +246,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
           {media.type === 'overseer' && !media.overseerrResult?.mediaInfo?.mediaAddedAt && (
             <>
               <RequestModal
-                base={media.overseerrResult as Result}
+                base={media.overseerrResult}
                 opened={opened}
                 setOpened={setOpened}
               />

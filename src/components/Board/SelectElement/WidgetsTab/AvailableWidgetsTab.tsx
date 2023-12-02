@@ -26,7 +26,7 @@ export const AvailableIntegrationElements = ({
 
       <Grid>
         {objectEntries(widgets).map(([k, v]) => (
-          <WidgetElementType key={k} sort={k} image={v.icon} widget={v} modalId={modalId} />
+          <WidgetElementType key={k} type={k} image={v.icon} widget={v} modalId={modalId} />
         ))}
       </Grid>
     </>

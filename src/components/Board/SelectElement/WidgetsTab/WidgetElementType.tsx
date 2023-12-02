@@ -2,14 +2,14 @@ import { useModals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { Icon, IconChecks } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { WidgetSort } from '~/server/db/items';
+import { WidgetType } from '~/server/db/items';
 import { IWidgetDefinition } from '~/widgets/widgets';
 
 import { useWidgetActions } from '../../Items/Widget/widget-actions';
 import { GenericAvailableElementType } from '../Shared/GenericElementType';
 
 interface WidgetElementTypeProps {
-  sort: WidgetSort;
+  type: WidgetType;
   image: string | Icon;
   disabled?: boolean;
   widget: IWidgetDefinition;
@@ -17,19 +17,19 @@ interface WidgetElementTypeProps {
 }
 
 export const WidgetElementType = ({
-  sort,
+  type,
   image,
   disabled,
   widget,
   modalId,
 }: WidgetElementTypeProps) => {
   const { closeModal } = useModals();
-  const { t } = useTranslation(`modules/${sort}`);
+  const { t } = useTranslation(`modules/${type}`);
   const { createWidget } = useWidgetActions();
 
   const handleAddition = async () => {
     createWidget({
-      sort,
+      type,
       definition: widget,
     });
     closeModal(modalId);

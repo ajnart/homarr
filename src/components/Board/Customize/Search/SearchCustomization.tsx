@@ -37,7 +37,7 @@ export const SearchCustomization = ({ allMediaIntegrations }: IntegrationCustomi
         data={allMediaIntegrations.map((x) => ({
           value: x.id,
           label: x.name,
-          sort: x.sort,
+          type: x.type,
         }))}
       />
     </Stack>
@@ -45,16 +45,16 @@ export const SearchCustomization = ({ allMediaIntegrations }: IntegrationCustomi
 };
 
 interface ItemProps extends React.ComponentPropsWithoutRef<'div'> {
-  sort: IntegrationType;
+  type: IntegrationType;
   label: string;
 }
 
 const IntegrationSelectItem = forwardRef<HTMLDivElement, ItemProps>(
-  ({ label, sort, ...others }: ItemProps, ref) => {
+  ({ label, type, ...others }: ItemProps, ref) => {
     return (
       <div ref={ref} {...others}>
         <Group noWrap>
-          <Avatar size={20} src={integrationTypes[sort].iconUrl} />
+          <Avatar size={20} src={integrationTypes[type].iconUrl} />
 
           <Text>{label}</Text>
         </Group>
@@ -89,7 +89,7 @@ const IntegrationSelectValue =
           })}
         >
           <Box mr={10}>
-            <Avatar size="xs" src={integrationTypes[current!.sort].iconUrl} />
+            <Avatar size="xs" src={integrationTypes[current!.type].iconUrl} />
           </Box>
           <Box sx={{ lineHeight: 1, fontSize: rem(12) }}>{label}</Box>
           <CloseButton

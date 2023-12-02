@@ -16,18 +16,18 @@ interface WidgetsMenuProps {
 }
 
 export const WidgetsMenu = ({ widget }: WidgetsMenuProps) => {
-  const { t } = useTranslation(`modules/${widget.sort}`);
+  const { t } = useTranslation(`modules/${widget.type}`);
   const wrapperColumnCount = useWrapperColumnCount();
   const resizeGridItem = useResizeGridItem();
   const { removeItem } = useItemActions();
 
   if (!widget || !wrapperColumnCount) return null;
   // Then get the widget definition
-  const widgetDefinitionObject = WidgetsDefinitions[widget.sort as keyof typeof WidgetsDefinitions];
+  const widgetDefinitionObject = WidgetsDefinitions[widget.type as keyof typeof WidgetsDefinitions];
 
   const handleDeleteClick = () => {
     openRemoveItemModal({
-      name: widget.sort,
+      name: widget.type,
       onConfirm() {
         removeItem({
           itemId: widget.id,
@@ -55,7 +55,7 @@ export const WidgetsMenu = ({ widget }: WidgetsMenuProps) => {
       title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
       innerProps: {
         widgetId: widget.id,
-        widgetType: widget.sort,
+        widgetType: widget.type,
         options: widget.options,
         widgetOptions: widgetDefinitionObject.options,
       },

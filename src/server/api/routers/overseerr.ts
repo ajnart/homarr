@@ -32,7 +32,7 @@ export const overseerrRouter = createTRPCRouter({
         .where(
           and(
             eq(boardIntegrations.boardId, input.boardId),
-            eq(integrations.sort, input.integration)
+            eq(integrations.type, input.integration)
           )
         )
         .get();

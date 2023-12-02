@@ -22,8 +22,8 @@ import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppIntegrationType } from '~/types/app';
+import { api } from '~/utils/api';
 
-import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
 import { InferWidget } from '../widgets';
 import { BitTorrentQueueItem } from './TorrentQueueItem';
@@ -99,11 +99,16 @@ function TorrentTile({ widget }: TorrentTileProps) {
     isError: boolean;
     isInitialLoading: boolean;
     dataUpdatedAt: number;
-  } = useGetDownloadClientsQueue({
-    boardId,
-    widgetId: widget.id,
-    sort: 'torrents-status',
-  });
+  } = api.download.get.useQuery(
+    {
+      boardId,
+      widgetId: widget.id,
+      type: definition.id,
+    },
+    {
+      refetchInterval: 3000,
+    }
+  );
 
   if (isError) {
     return (
