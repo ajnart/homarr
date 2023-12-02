@@ -141,6 +141,3 @@ export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
   });
   umami.track('Add to homarr modal');
 };
-function uuidv4(): any {
-  throw new Error('Function not implemented.');
-}
