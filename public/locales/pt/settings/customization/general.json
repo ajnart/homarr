@@ -22,7 +22,7 @@
       "description": "Configure o Homarr para usuários com deficiência ou incapacitados"
     },
     "access": {
-      "name": "",
+      "name": "Acesso",
       "description": "Configure quem tem acesso ao seu quadro"
     }
   }

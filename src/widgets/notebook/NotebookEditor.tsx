@@ -52,6 +52,7 @@ import StarterKit from '@tiptap/starter-kit';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { api } from '~/utils/api';
@@ -62,9 +63,10 @@ import { INotebookWidget } from './NotebookWidgetTile';
 export function Editor({ widget }: { widget: INotebookWidget }) {
   const [content, setContent] = useState(widget.properties.content);
   const [toSaveContent, setToSaveContent] = useState(content);
+  const isEditMode = useEditModeStore((x) => x.enabled);
 
   const { data: sessionData } = useSession();
-  const enabled = !!sessionData?.user.isAdmin;
+  const enabled = !!sessionData?.user.isAdmin && !isEditMode;
   const [isEditing, setIsEditing] = useState(false);
 
   const { config, name: configName } = useConfigContext();

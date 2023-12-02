@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Breedte",
     "height": "Hoogte"
-  }
+  },
+  "public": "Openbaar",
+  "restricted": ""
 }

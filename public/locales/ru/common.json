@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Ширина",
     "height": "Высота"
-  }
+  },
+  "public": "Публичный",
+  "restricted": ""
 }

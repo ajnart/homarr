@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Širina",
     "height": "Višina"
-  }
+  },
+  "public": "Javna stran",
+  "restricted": ""
 }

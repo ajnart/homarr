@@ -5,7 +5,7 @@
 	"key": "快捷键",
 	"action": "操作",
 	"keybinds": "热键绑定",
-	"translators": "翻译 ({{count}})",
+	"translators": "翻译者 ({{count}})",
 	"translatorsDescription": "感谢这些人，Homarr 现已支持 {{languages}} 种语言！想要帮助将 Homarr 翻译成您的语言吗？请阅读<a>此处</a>了解如何执行此操作 。",
 	"contributors": "贡献者 ({{count}})",
 	"contributorsDescription": "这些人构建了让 homarr 工作的代码！想帮助建造 Homarr 吗？请阅读<a>此处</a>了解如何操作",

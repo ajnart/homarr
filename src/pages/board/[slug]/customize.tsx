@@ -229,7 +229,7 @@ export default function CustomizationPage({
           )}
         </Transition>
       </Affix>
-      <Container>
+      <Container pb="6rem">
         <Paper p="xl" py="sm" mih="100%" withBorder>
           <Stack>
             <Group position="apart">

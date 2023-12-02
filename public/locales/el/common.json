@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Πλάτος",
     "height": "Ύψος"
-  }
+  },
+  "public": "Δημόσιο",
+  "restricted": "Περιορισμένη πρόσβαση"
 }

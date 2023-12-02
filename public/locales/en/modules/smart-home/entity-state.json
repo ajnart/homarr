@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Entity not found",
+    "descriptor": {
+        "name": "Home Assistant entity",
+        "description": "Current state of an entity in Home Assistant",
+        "settings": {
+            "title": "Entity state",
+            "entityId": {
+                "label": "Entity ID",
+                "info": "Unique entity ID in Home Assistant. Copy by clicking on entity > Click on cog icon > Click on copy button at 'Entity ID'. Some custom entities may not be supported."
+            },
+            "displayName": {
+                "label": "Display name"
+            }
+        }
+    }
+}

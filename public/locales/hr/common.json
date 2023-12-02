@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Širina",
     "height": "Visina"
-  }
+  },
+  "public": "Javno",
+  "restricted": ""
 }

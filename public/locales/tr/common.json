@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Genişlik",
     "height": "Yükseklik"
-  }
+  },
+  "public": "Herkese açık",
+  "restricted": "Sınırlı"
 }

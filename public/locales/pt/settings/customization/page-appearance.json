@@ -19,26 +19,26 @@
     "label": "Antecedentes"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Anexo de imagem de fundo",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fixado - O plano de fundo permanece na mesma posição (recomendado)",
+      "scroll": "Rolagem - O plano de fundo rola com seu mouse"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Tamanho da imagem de fundo",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Capa - Dimensiona a imagem o menor possível para cobrir toda a janela cortando o espaço excessivo. (recomendado)",
+      "contain": "Conter - Dimensiona a imagem o máximo possível dentro de seu contêiner, sem cortar ou esticar a imagem."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Anexo de imagem de fundo",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Repetir - A imagem é repetida o quanto for necessário para cobrir toda a área de pintura da imagem de fundo.",
+      "no-repeat": "Sem repetição - A imagem não se repete e pode não preencher todo o espaço (recomendado)",
+      "repeat-x": "Repetir X - O mesmo que 'Repetir', mas apenas no eixo horizontal.",
+      "repeat-y": "Repetir Y - O mesmo que 'Repetir', mas apenas no eixo vertical."
     }
   },
   "customCSS": {

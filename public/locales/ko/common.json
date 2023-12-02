@@ -51,5 +51,7 @@
   "attributes": {
     "width": "너비",
     "height": "높이"
-  }
+  },
+  "public": "공개",
+  "restricted": ""
 }
