@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/cli/node_modules/
 
 # testing
 /coverage
@@ -49,6 +50,7 @@ data/configs
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+/cli/.yarn/
 
 #envfiles
 .env
