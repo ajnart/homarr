@@ -56,7 +56,6 @@ const env = createEnv({
           AUTH_OIDC_URI: z.string().url(),
           // Custom Display name, defaults to OIDC
           AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
-          AUTH_OIDC_GROUP_CLAIM: z.string().default('groups'),
           AUTH_OIDC_ADMIN_GROUP: z.string().default('admin'),
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
         }

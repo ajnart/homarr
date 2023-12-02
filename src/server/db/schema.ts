@@ -14,7 +14,7 @@ export const _users = {
   salt: text('salt'),
   isAdmin: int('is_admin', { mode: 'boolean' }).notNull().default(false),
   isOwner: int('is_owner', { mode: 'boolean' }).notNull().default(false),
-}
+};
 
 export const users = sqliteTable('user', _users);
 

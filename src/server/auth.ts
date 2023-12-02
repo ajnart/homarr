@@ -4,14 +4,13 @@ import { type GetServerSidePropsContext, type NextApiRequest, type NextApiRespon
 import { type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
+import { adapter, onCreateUser, providers } from '~/utils/auth';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser } from '~/validations/user';
-import { providers, adapter } from '~/utils/auth';
 
 import { db } from './db';
-import { userSettings, users } from './db/schema';
-import { randomUUID } from 'crypto';
+import { users } from './db/schema';
 
 const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
 
@@ -25,12 +24,7 @@ export const constructAuthOptions = (
   res: NextApiResponse
 ): NextAuthOptions => ({
   events: {
-    async createUser({user}) {
-      await db.insert(userSettings).values({
-        id: randomUUID(),
-        userId: user.id,
-      });
-    },
+    createUser: onCreateUser,
   },
   callbacks: {
     async session({ session, user }) {
@@ -102,10 +96,7 @@ export const constructAuthOptions = (
     error: '/auth/login',
   },
   adapter: adapter as Adapter,
-  providers: [
-    ...providers,
-    EmptyNextAuthProvider(),
-  ],
+  providers: [...providers, EmptyNextAuthProvider()],
   jwt: {
     async encode(params) {
       if (!isCredentialsRequest(req)) {
@@ -131,7 +122,9 @@ const isCredentialsRequest = (req: NextApiRequest): boolean => {
   const nextAuthQueryParams = req.query.nextauth as string[];
   return (
     nextAuthQueryParams.includes('callback') &&
-    (nextAuthQueryParams.includes('credentials') || nextAuthQueryParams.includes('ldap') || nextAuthQueryParams.includes('oidc')) &&
+    (nextAuthQueryParams.includes('credentials') ||
+      nextAuthQueryParams.includes('ldap') ||
+      nextAuthQueryParams.includes('oidc')) &&
     req.method === 'POST'
   );
 };

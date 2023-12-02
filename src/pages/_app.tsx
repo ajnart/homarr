@@ -103,10 +103,10 @@ function App(
       <CommonHead />
       {analyticsEnabled === true && (
         <Script
-        src="https://umami.homarr.dev/script.js"
-        data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
-        strategy="lazyOnload"
-      />
+          src="https://umami.homarr.dev/script.js"
+          data-website-id="f133f10c-30a7-4506-889c-3a803f328fa4"
+          strategy="lazyOnload"
+        />
       )}
       <SessionProvider session={pageProps.session}>
         <ColorSchemeProvider {...pageProps}>

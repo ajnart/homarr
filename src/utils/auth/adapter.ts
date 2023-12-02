@@ -1,32 +1,44 @@
-import { Adapter, AdapterAccount } from 'next-auth/adapters';
-import { eq, and } from "drizzle-orm"
+import { randomUUID } from 'crypto';
+import { and, eq } from 'drizzle-orm';
 import {
-  sqliteTable as defaultSqliteTableFn,
   BaseSQLiteDatabase,
   SQLiteTableFn,
+  sqliteTable as defaultSqliteTableFn,
   text,
-} from "drizzle-orm/sqlite-core"
-
-import { _users, accounts, sessions, verificationTokens } from '~/server/db/schema';
+} from 'drizzle-orm/sqlite-core';
+import { User } from 'next-auth';
+import { Adapter, AdapterAccount } from 'next-auth/adapters';
 import { db } from '~/server/db';
+import { _users, accounts, sessions, userSettings, verificationTokens } from '~/server/db/schema';
 
 // Need to modify createTables with custom schema
 const createTables = (sqliteTable: SQLiteTableFn) => ({
   users: sqliteTable('user', {
     ..._users,
-    email: text('email').notNull() // workaround for typescript
-  }), accounts, sessions, verificationTokens
-})
+    email: text('email').notNull(), // workaround for typescript
+  }),
+  accounts,
+  sessions,
+  verificationTokens,
+});
 
-export type DefaultSchema = ReturnType<typeof createTables>
+export type DefaultSchema = ReturnType<typeof createTables>;
+
+export const onCreateUser = async ({ user }: { user: User }) => {
+  await db.insert(userSettings).values({
+    id: randomUUID(),
+    userId: user.id,
+  });
+};
 
 // Keep this the same as original file @auth/drizzle-adapter/src/lib/sqlite.ts
+// only change changed return type from Adapter to "satisfies Adapter", to tell typescript createUser exists
+
 export function SQLiteDrizzleAdapter(
   client: InstanceType<typeof BaseSQLiteDatabase>,
   tableFn = defaultSqliteTableFn
-): Adapter {
-  const { users, accounts, sessions, verificationTokens } =
-    createTables(tableFn)
+) {
+  const { users, accounts, sessions, verificationTokens } = createTables(tableFn);
 
   return {
     createUser(data) {
@@ -34,18 +46,16 @@ export function SQLiteDrizzleAdapter(
         .insert(users)
         .values({ ...data, id: crypto.randomUUID() })
         .returning()
-        .get()
+        .get();
     },
     getUser(data) {
-      return client.select().from(users).where(eq(users.id, data)).get() ?? null
+      return client.select().from(users).where(eq(users.id, data)).get() ?? null;
     },
     getUserByEmail(data) {
-      return (
-        client.select().from(users).where(eq(users.email, data)).get() ?? null
-      )
+      return client.select().from(users).where(eq(users.email, data)).get() ?? null;
     },
     createSession(data) {
-      return client.insert(sessions).values(data).returning().get()
+      return client.insert(sessions).values(data).returning().get();
     },
     getSessionAndUser(data) {
       return (
@@ -58,19 +68,14 @@ export function SQLiteDrizzleAdapter(
           .where(eq(sessions.sessionToken, data))
           .innerJoin(users, eq(users.id, sessions.userId))
           .get() ?? null
-      )
+      );
     },
     updateUser(data) {
       if (!data.id) {
-        throw new Error("No user id.")
+        throw new Error('No user id.');
       }
 
-      return client
-        .update(users)
-        .set(data)
-        .where(eq(users.id, data.id))
-        .returning()
-        .get()
+      return client.update(users).set(data).where(eq(users.id, data.id)).returning().get();
     },
     updateSession(data) {
       return client
@@ -78,14 +83,10 @@ export function SQLiteDrizzleAdapter(
         .set(data)
         .where(eq(sessions.sessionToken, data.sessionToken))
         .returning()
-        .get()
+        .get();
     },
     linkAccount(rawAccount) {
-      const updatedAccount = client
-        .insert(accounts)
-        .values(rawAccount)
-        .returning()
-        .get()
+      const updatedAccount = client.insert(accounts).values(rawAccount).returning().get();
 
       const account: AdapterAccount = {
         ...updatedAccount,
@@ -97,9 +98,9 @@ export function SQLiteDrizzleAdapter(
         scope: updatedAccount.scope ?? undefined,
         expires_at: updatedAccount.expires_at ?? undefined,
         session_state: updatedAccount.session_state ?? undefined,
-      }
+      };
 
-      return account
+      return account;
     },
     getUserByAccount(account) {
       const results = client
@@ -112,21 +113,18 @@ export function SQLiteDrizzleAdapter(
             eq(accounts.providerAccountId, account.providerAccountId)
           )
         )
-        .get()
+        .get();
 
-      return results?.user ?? null
+      return results?.user ?? null;
     },
     deleteSession(sessionToken) {
       return (
-        client
-          .delete(sessions)
-          .where(eq(sessions.sessionToken, sessionToken))
-          .returning()
-          .get() ?? null
-      )
+        client.delete(sessions).where(eq(sessions.sessionToken, sessionToken)).returning().get() ??
+        null
+      );
     },
     createVerificationToken(token) {
-      return client.insert(verificationTokens).values(token).returning().get()
+      return client.insert(verificationTokens).values(token).returning().get();
     },
     useVerificationToken(token) {
       try {
@@ -141,13 +139,13 @@ export function SQLiteDrizzleAdapter(
             )
             .returning()
             .get() ?? null
-        )
+        );
       } catch (err) {
-        throw new Error("No verification token found.")
+        throw new Error('No verification token found.');
       }
     },
     deleteUser(id) {
-      return client.delete(users).where(eq(users.id, id)).returning().get()
+      return client.delete(users).where(eq(users.id, id)).returning().get();
     },
     unlinkAccount(account) {
       client
@@ -158,11 +156,11 @@ export function SQLiteDrizzleAdapter(
             eq(accounts.provider, account.provider)
           )
         )
-        .run()
+        .run();
 
-      return undefined
+      return undefined;
     },
-  }
+  } satisfies Adapter;
 }
 
 export default SQLiteDrizzleAdapter(db);

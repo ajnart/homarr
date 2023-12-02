@@ -217,7 +217,7 @@ export const getServerSideProps = async ({
       ...(await getServerSideTranslations(['authentication/login'], locale, req, res)),
       redirectAfterLogin,
       providers: env.AUTH_PROVIDER,
-      oidcProviderName: env.AUTH_OIDC_CLIENT_NAME,
+      oidcProviderName: env.AUTH_OIDC_CLIENT_NAME || null,
       isDemo,
     },
   };

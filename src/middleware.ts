@@ -38,7 +38,7 @@ export async function middleware(req: NextRequest) {
     // not working, should work in next-auth 5
     // @see https://github.com/nextauthjs/next-auth/pull/7443
 
-    // const session = await getServerSession(); 
+    // const session = await getServerSession();
     // if (!session?.user) {
     //   return NextResponse.redirect(getUrl(req) + '/auth/login')
     // }

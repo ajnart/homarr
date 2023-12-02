@@ -14,6 +14,7 @@ import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { env } from 'process';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
@@ -23,7 +24,6 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { api } from '~/utils/api';
 
 import { MainLayout } from './MainLayout';
-import { env } from 'process';
 
 type BoardLayoutProps = {
   dockerEnabled: boolean;

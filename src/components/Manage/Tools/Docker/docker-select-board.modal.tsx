@@ -117,5 +117,5 @@ export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
     ),
     innerProps,
   });
-  umami.track('Add to homarr modal')
+  umami.track('Add to homarr modal');
 };
