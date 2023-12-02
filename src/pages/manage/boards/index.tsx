@@ -9,9 +9,9 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Title,
+  Title
 } from '@mantine/core';
-import { useListState } from '@mantine/hooks';
+import { useDisclosure, useListState } from '@mantine/hooks';
 import {
   IconBox,
   IconCategory,
@@ -30,7 +30,7 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { openCreateBoardModal } from '~/components/Manage/Board/create-board.modal';
+import { CreateBoardModal } from '~/components/Board/BoardCreateModal';
 import { openDeleteBoardModal } from '~/components/Manage/Board/delete-board.modal';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { boardRouter } from '~/server/api/routers/board';
@@ -59,6 +59,7 @@ const BoardsPage = ({
   const [deletingDashboards, { append, filter }] = useListState<string>([]);
 
   const { t } = useTranslation('manage/boards');
+  const [opened, handlers] = useDisclosure(false);
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
 
@@ -71,15 +72,14 @@ const BoardsPage = ({
       <Group position="apart">
         <Title mb="xl">{t('pageTitle')}</Title>
         {session?.user.isAdmin && (
-          <Button
-            onClick={openCreateBoardModal}
-            leftIcon={<IconPlus size="1rem" />}
-            variant="default"
-          >
+          <Button onClick={handlers.toggle} leftIcon={<IconPlus size="1rem" />} variant="default">
             {t('buttons.create')}
           </Button>
         )}
       </Group>
+      <Card display={opened ? 'block' : 'none'} mb="lg">
+        <CreateBoardModal id={'none'} />
+      </Card>
 
       <SimpleGrid
         cols={3}
