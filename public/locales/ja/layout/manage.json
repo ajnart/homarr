@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "ホーム"
         },
         "boards": {
-            "title": ""
+            "title": "ボード"
         },
         "users": {
-            "title": "",
+            "title": "ユーザー",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "管理",
+                "invites": "招待"
             }
         },
         "help": {
-            "title": "",
+            "title": "ヘルプ",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "ドキュメンテーション",
+                "report": "問題/バグを報告する",
+                "discord": "コミュニティ・ディスコード",
+                "contribute": "貢献する"
             }
         },
         "tools": {
-            "title": "",
+            "title": "ツール",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "About"
         }
     }
 }

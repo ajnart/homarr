@@ -1,35 +1,33 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "미디어 요청",
+    "description": "오버서 또는 젤리서 인스턴스의 모든 미디어 요청 목록 보기",
     "settings": {
-      "title": "",
+      "title": "미디어 요청 목록",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "외부 호스트로 링크 교체"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "새 탭에서 링크 열기"
       }
     }
   },
-  "noRequests": "",
-  "pending": "",
-  "nonePending": "",
+  "noRequests": "요청을 찾을 수 없습니다. 앱을 올바르게 구성했는지 확인하세요.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "승인됨",
+    "pendingApproval": "승인 대기 중",
+    "declined": "거부됨"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "요청 승인",
+    "decline": "요청 거부",
+    "approving": "요청 승인 중..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "승인",
+    "declining": "거절",
+    "request": "요청...",
+    "approved": "요청이 승인되었습니다!",
+    "declined": "요청이 거부되었습니다!"
   }
 }

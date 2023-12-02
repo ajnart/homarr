@@ -1,15 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Caderno de anotações",
+		"description": "Um widget interativo baseado em markdown para você fazer suas anotações!",
 		"settings": {
-			"title": "",
+			"title": "Configurações do widget do notebook",
 			"showToolbar": {
-				"label": ""
+				"label": "Mostrar a barra de ferramentas para ajudá-lo a escrever markdown"
+			},
+			"allowReadOnlyCheck": {
+				"label": "Permitir a verificação no modo de leitura"
 			},
 			"content": {
-				"label": ""
+				"label": "O conteúdo do notebook"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Negrito",
+			"italic": "Itálico",
+			"strikethrough": "Riscar",
+			"underline": "Sublinhar",
+			"colorText": "Cor do texto",
+			"colorHighlight": "Texto colorido em destaque",
+			"code": "Código",
+			"clear": "Limpar formatação",
+			"heading": "Cabeçalho {{level}}",
+			"align": "Alinhar texto: {{position}}",
+			"blockquote": "Bloco de Citação",
+			"horizontalLine": "Linha horizontal",
+			"bulletList": "Lista de marcadores",
+			"orderedList": "Lista ordenada",
+			"checkList": "Lista de verificação",
+			"increaseIndent": "Aumentar recuo",
+			"decreaseIndent": "Diminuir recuo",
+			"link": "Link",
+			"unlink": "Remover link",
+			"image": "Incorporar imagem",
+			"addTable": "Adicionar tabela",
+			"deleteTable": "Excluir tabela",
+			"colorCell": "Cor da Célula",
+			"mergeCell": "Ativar/desativar mesclagem de células",
+			"addColumnLeft": "Adicionar coluna antes",
+			"addColumnRight": "Adicionar coluna depois",
+			"deleteColumn": "Excluir coluna",
+			"addRowTop": "Adicionar linha antes",
+			"addRowBelow": "Adicionar linha depois",
+			"deleteRow": "Excluir linha"
+		},
+		"modals": {
+			"clearColor": "Limpar cor",
+			"source": "Fonte",
+			"widthPlaceholder": "Valor em % ou pixels",
+			"columns": "Colunas",
+			"rows": "Linhas"
 		}
 	}
 }

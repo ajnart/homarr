@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "Obecné",
+		"behaviour": "Chování",
+		"network": "",
+		"appearance": "Vzhled",
+		"integration": "Integrace"
+	},
+	"general": {
+		"appname": {
+			"label": "Název aplikace",
+			"description": ""
+		},
+		"internalAddress": {
+			"label": "",
+			"description": "",
+			"troubleshoot": {
+				"label": "Narazili jste na problém?",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
+		},
+		"externalAddress": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Otevřít na nové kartě",
+			"description": "Otevřete aplikaci na nové kartě místo aktuální."
+		},
+		"tooltipDescription": {
+			"label": "Popis aplikace",
+			"description": ""
+		},
+		"customProtocolWarning": ""
+	},
+	"network": {
+		"statusChecker": {
+			"label": "",
+			"description": ""
+		},
+		"statusCodes": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "",
+			"description": "",
+			"autocomplete": {
+				"title": "",
+				"text": ""
+			},
+			"noItems": {
+				"title": "",
+				"text": ""
+			}
+		},
+		"appNameFontSize": {
+			"label": "",
+			"description": ""
+		},
+		"appNameStatus": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"normal": "",
+				"hover": "",
+				"hidden": ""
+			}
+		},
+		"positionAppName": {
+			"label": "",
+			"description": "",
+			"dropdown": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"lineClampAppName": {
+			"label": "",
+			"description": ""
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "",
+			"description": "",
+			"placeholder": "",
+			"defined": "",
+			"undefined": "",
+			"public": "",
+			"private": "",
+			"explanationPrivate": "",
+			"explanationPublic": ""
+		},
+		"secrets": {
+			"description": "",
+			"warning": "",
+			"clear": "",
+			"save": "",
+			"update": ""
+		}
+	},
+	"validation": {
+		"popover": "",
+		"name": "",
+		"noUrl": "",
+		"invalidUrl": "",
+		"noIconUrl": "",
+		"noExternalUri": "",
+		"invalidExternalUri": ""
+	}
+}

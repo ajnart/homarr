@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
-        "required": "",
+        "default": "Ovo polje nije važeće",
+        "required": "ovo polje je obavezno",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Ovo polje mora započeti s {{startsWith}}",
+            "endsWith": "Ovo polje mora završavati s {{endsWith}}",
+            "includes": "Ovo polje mora sadržavati {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Ovo polje mora sadržavati najmanje {{minimum}} znakova",
+            "number": "Ovo polje mora biti veće ili jednako {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Ovo polje mora sadržavati najviše {{maximum}} znakova",
+            "number": "Ovo polje mora biti manje ili jednako {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "lozinka mora odgovarati"
         }
     }
 }

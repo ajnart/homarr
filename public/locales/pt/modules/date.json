@@ -8,24 +8,24 @@
         "label": "Mostrar tempo (24 horas)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formatação de data",
         "data": {
-          "hide": ""
+          "hide": "Ocultar data"
         }
       },
       "enableTimezone": {
-        "label": ""
+        "label": "Exibir um fuso horário personalizado"
       },
       "timezoneLocation": {
-        "label": ""
+        "label": "Localização do fuso horário"
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Título da cidade",
+        "info": "Se você ativar a opção Fuso horário, o nome da cidade e o código do fuso horário poderão ser exibidos.<br/>Você também pode mostrar somente a cidade ou até mesmo não mostrar nenhuma.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Cidade e fuso horário",
+          "city": "Somente na cidade",
+          "none": "Nenhum"
         }
       }
     }

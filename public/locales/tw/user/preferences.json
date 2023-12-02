@@ -1,0 +1,48 @@
+{
+    "metaTitle": "偏好設定",
+    "pageTitle": "您的偏好設定",
+    "boards": {
+        "defaultBoard": {
+            "label": "預設面板"
+        }
+    },
+    "accessibility": {
+        "title": "無障礙服務",
+        "disablePulse": {
+            "label": "關閉 Ping 功能",
+            "description": "預設情況下，Homarr 的 Ping 功能會一直工作，這可能讓人很煩，此選項可禁用 Ping 功能"
+        },
+        "replaceIconsWithDots": {
+            "label": "用圖標替換 Ping 點",
+            "description": "對於色盲使用者，Ping 點可能無法識別，這廂用途標替換指示器"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "語言"
+        },
+        "firstDayOfWeek": {
+            "label": "一週的第一天",
+            "options": {
+                "monday": "週一",
+                "saturday": "週六",
+                "sunday": "週日"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "搜尋引擎",
+        "custom": "自定義",
+        "newTab": {
+            "label": "在新分頁中開啟搜尋攔截果"
+        },
+        "autoFocus": {
+            "label": "頁面載入時讓輸入游標在搜尋欄",
+            "description": "當您導航到面板頁面時，鍵盤輸入游標自動停留在搜尋欄上，該功能僅適用於桌面設備"
+        },
+        "template": {
+            "label": "查詢網址",
+            "description": "使用 %s 作為查詢的佔位符"
+        }
+    }
+}

@@ -8,13 +8,11 @@
         "label": "リンクを外部ホストに置き換える"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "リンクを新しいタブで開く"
       }
     }
   },
   "noRequests": "リクエストが見つかりません。アプリが正しく設定されているか確認してください。",
-  "pending": "{{countPendingApproval}} リクエストが承認待ちです。",
-  "nonePending": "現在保留中の承認はありません。準備完了です！",
   "state": {
     "approved": "承認済み",
     "pendingApproval": "承認待ち",

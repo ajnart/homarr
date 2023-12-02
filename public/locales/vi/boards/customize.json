@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Tùy chỉnh {{name}} bảng",
+    "pageTitle": "Tùy chỉnh cho {{name}} bảng",
+    "backToBoard": "Quay lại bảng",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Màu chính",
+            "secondaryColor": "Màu thứ cấp"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Lưu thay đổi",
+        "note": "Hãy cẩn thận, bạn có những thay đổi chưa được lưu!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Đang lưu tùy chỉnh",
+            "message": "Vui lòng đợi trong khi chúng tôi lưu tùy chỉnh của bạn"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Đã lưu tùy chỉnh",
+            "message": "Tùy chỉnh của bạn đã được lưu thành công"
         },
         "error": {
             "title": "Lỗi",
-            "message": ""
+            "message": "Không thể lưu thay đổi"
         }
     }
 }

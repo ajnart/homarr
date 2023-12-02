@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Legg til en flis"
     },
-    "apps": "",
+    "apps": "Apper",
     "app": {
-        "defaultName": ""
+        "defaultName": "Din app"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgetter",
+    "categories": "Kategorier",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Navn på ny kategori",
+        "defaultName": "Ny kategori",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategori opprettet",
+            "message": "Kategorien \"{{name}}\" er opprettet"
         }
     }
 }

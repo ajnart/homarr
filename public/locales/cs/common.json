@@ -1,0 +1,57 @@
+{
+  "save": "Uložit",
+  "apply": "",
+  "insert": "",
+  "about": "",
+  "cancel": "",
+  "close": "",
+  "back": "",
+  "delete": "",
+  "ok": "",
+  "edit": "",
+  "next": "",
+  "previous": "",
+  "confirm": "",
+  "enabled": "",
+  "disabled": "",
+  "enableAll": "",
+  "disableAll": "",
+  "version": "",
+  "changePosition": "Změnit pozici",
+  "remove": "",
+  "removeConfirm": "",
+  "createItem": "",
+  "sections": {
+    "settings": "",
+    "dangerZone": "Nebezpečná zóna"
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "",
+    "password": ""
+  },
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  },
+  "loading": "",
+  "breakPoints": {
+    "small": "malý",
+    "medium": "střední",
+    "large": "velký"
+  },
+  "seeMore": "",
+  "position": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "attributes": {
+    "width": "",
+    "height": ""
+  },
+  "public": "",
+  "restricted": ""
+}

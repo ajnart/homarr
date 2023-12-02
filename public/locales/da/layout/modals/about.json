@@ -1,12 +1,14 @@
 {
 	"description": "Homarr er et <strong>elegant</strong>, <strong>moderne</strong> dashboard, der giver dig alle dine apps og tjenester lige ved hånden. Med Homarr kan du få adgang til og styre alt på ét praktisk sted. Homarr integrerer problemfrit med de apps, du har tilføjet, og giver dig værdifulde oplysninger og fuld kontrol. Installationen er en leg, og Homarr understøtter en lang række implementeringsmetoder.",
-	"contact": "Har du problemer eller spørgsmål? Kontakt os!",
 	"addToDashboard": "Tilføj til dashboard",
 	"tip": "Mod henviser til din modificeringstast, det er Ctrl og Command/Super/Windows-tasten",
 	"key": "Genvejstast",
 	"action": "Handling",
 	"keybinds": "Genvejstaster",
-	"documentation": "Dokumentation",
+	"translators": "Oversættere ({{count}})",
+	"translatorsDescription": "Takket være disse mennesker er Homarr tilgængelig på {{languages}} sprog! Vil du hjælpe med at oversætte Homarr til dit sprog? Læs hvordan du gør det <a>her</a>.",
+	"contributors": "Bidragsydere ({{count}})",
+	"contributorsDescription": "Disse mennesker har bygget den kode, der får homarr til at fungere! Vil du være med til at bygge Homarr? Læs, hvordan du gør <a>her</a>",
 	"actions": {
 		"toggleTheme": "Slå lys/mørk tilstand til/fra",
 		"focusSearchBar": "Fokusér på søgebjælken",
@@ -15,7 +17,6 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Konfigurationsskema version",
-		"configurationsCount": "Tilgængelige konfigurationer",
 		"version": "Version",
 		"nodeEnvironment": "Node miljø",
 		"i18n": "Indlæste I18n-oversættelsesnavneområder",

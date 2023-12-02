@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Tìm kiếm",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Tìm kiếm {{query}} trên mạng",
+            "youtube": "Tìm kiếm {{query}} trên YouTube",
+            "torrent": "Tìm kiếm {{query}} torrent",
+            "movie": "Tìm kiếm {{query}} trên {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Về chúng tôi",
-                "new": ""
-            },
-            "logout": "",
-            "login": ""
+            "switchTheme": "Chuyển chủ đề",
+            "preferences": "Sở thích của người sử dụng",
+            "defaultBoard": "Trang tổng quan mặc định",
+            "manage": "Quản lý",
+            "logout": "Đăng xuất từ {{username}}",
+            "login": "Đăng nhập"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "{{count}} kết quả hàng đầu cho <b>{{search}}</b>."
         }
     }
 }

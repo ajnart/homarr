@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Notranji naslov",
-			"description": "Notranji naslov IP aplikacije."
+			"description": "Notranji naslov IP aplikacije.",
+			"troubleshoot": {
+				"label": "",
+				"header": "",
+				"lines": {
+					"nothingAfterPort": "",
+					"protocolCheck": "",
+					"preferIP": "",
+					"enablePings": "",
+					"wget": "",
+					"iframe": "",
+					"clearCache": ""
+				},
+				"footer": ""
+			}
 		},
 		"externalAddress": {
 			"label": "Zunanji naslov",

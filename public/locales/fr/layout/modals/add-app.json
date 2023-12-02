@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Adresse interne",
-			"description": "IP interne de l'application."
+			"description": "IP interne de l'application.",
+			"troubleshoot": {
+				"label": "Un problème ?",
+				"header": "Voici une liste des erreurs les plus courantes et des solutions de dépannage :",
+				"lines": {
+					"nothingAfterPort": "Dans la plupart des cas, si ce n'est tous, vous ne devez pas saisir de chemin après le port. (Même le '/admin' pour pihole ou '/web' pour plex)",
+					"protocolCheck": "Assurez-vous toujours que l'URL est précédé de http ou https, et que vous utilisez le bon.",
+					"preferIP": "Il est recommandé d'utiliser l'adresse IP directe de la machine ou du conteneur avec lequel vous essayez de communiquer.",
+					"enablePings": "Vérifiez que l'IP est correcte en activant les \"pings\". Personnaliser le tableau de bord -> Mise en page -> Activer les \"pings\". Une petite bulle rouge ou verte apparaîtra sur les tuiles de vos applications et en la survolant, vous verrez le code de réponse (une bulle verte avec le code 200 est attendue dans la plupart des cas).",
+					"wget": "Pour s'assurer que homarr peut communiquer avec les autres applications, assurez-vous de wget/curl/ping le combo \"IP:port\" de l'application.",
+					"iframe": "En ce qui concerne les iframes, ceux-ci devraient toujours utiliser le même protocole (http/s) que Homarr.",
+					"clearCache": "Certaines informations sont enregistrées dans le cache, donc une intégration peut ne pas fonctionner à moins que vous ne vidiez le cache dans les options générales de Homarr."
+				},
+				"footer": "Pour plus d'aide, contactez nous sûr {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Adresse externe",
@@ -106,7 +120,7 @@
 		"popover": "Votre formulaire contient des données invalides et ne peut être sauvegardé. Veuillez résoudre tous les problèmes et cliquez à nouveau sur ce bouton pour enregistrer vos modifications",
 		"name": "Un nom est requis",
 		"noUrl": "Un lien est requis",
-		"invalidUrl": "Ce lien n'est pas un URL valide",
+		"invalidUrl": "La valeur n'est pas une url valide",
 		"noIconUrl": "Ce champ est requis",
 		"noExternalUri": "Un URI externe est requis",
 		"invalidExternalUri": "Cet URI externe n'est pas un URI valide"

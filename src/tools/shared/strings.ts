@@ -12,3 +12,9 @@ export const trimStringEnding = (original: string, toTrimIfExists: string[]) => 
 export const firstUpperCase = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+export const appendPath = (url: URL, path: string) => {
+  const newUrl = new URL(url);
+  newUrl.pathname += path;
+  return newUrl;
+}

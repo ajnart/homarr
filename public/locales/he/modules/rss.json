@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "וידג׳ט רסס",
-    "description": "",
+    "description": "ווידג'ט rss מאפשר לך להציג הזנות RSS בלוח המחוונים שלך.",
     "settings": {
       "title": "הגדרות עבור וידג׳ט רסס",
       "rssFeedUrl": {

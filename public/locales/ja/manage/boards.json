@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "ボード",
+    "pageTitle": "ボード",
     "cards": {
         "statistics": {
             "apps": "アプリ",
@@ -8,36 +8,36 @@
             "categories": "カテゴリー"
         },
         "buttons": {
-            "view": ""
+            "view": "ボードを見る"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "デフォルトボードに設定",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "永久削除",
+                "disabled": "古いHomarrコンポーネントはデフォルト設定の削除を許可していないため、削除は無効です。将来的には削除できるようになるでしょう。"
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "ファイルシステム",
+            "default": "デフォルト"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "新しいボードを作成する"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "ボードの削除",
+            "text": "本当にこのボードを削除しますか？この操作は元に戻せず、データは永久に失われます。"
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "ボード作成",
+            "text": "ボード作成後に名前を変更することはできません。",
             "form": {
                 "name": {
                     "label": "名称"
                 },
-                "submit": ""
+                "submit": "作成"
             }
         }
     }

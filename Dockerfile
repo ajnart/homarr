@@ -1,4 +1,4 @@
-FROM node:20.5-slim
+FROM node:20.2.0-slim
 WORKDIR /app
 
 # Define node.js environment variables
@@ -18,29 +18,43 @@ COPY .next/standalone ./
 COPY .next/static ./.next/static
 COPY ./scripts/run.sh ./scripts/run.sh
 COPY ./drizzle ./drizzle
-RUN mkdir database
-COPY ./src/migrate.ts ./src/migrate.ts
+
+COPY ./drizzle/migrate ./migrate
+COPY ./tsconfig.json ./migrate/tsconfig.json
+
+RUN mkdir /data
 
 # Install dependencies
-RUN apt-get update -y && apt-get install -y openssl wget
+RUN apt update && apt install -y openssl wget
 
-# Required for migration
+# Move node_modules to temp location to avoid overwriting
 RUN mv node_modules _node_modules
 RUN rm package.json
-RUN yarn add typescript ts-node dotenv drizzle-orm@0.28.6 better-sqlite3@8.6.0 @types/better-sqlite3
-RUN mv node_modules node_modules_migrate
+
+# Install dependencies for migration
+RUN cp ./migrate/package.json ./package.json
+RUN yarn
+
+# Copy better_sqlite3 build for current platform
+RUN cp /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/_node_modules/better-sqlite3/build/Release/better_sqlite3.node
+
+# Copy node_modules for migration to migrate folder for migration script
+RUN mv node_modules ./migrate/node_modules
+# Copy temp node_modules of app to app folder
 RUN mv _node_modules node_modules
 
 # Expose the default application port
 EXPOSE $PORT
 ENV PORT=${PORT}
 
-ENV DATABASE_URL "file:./database/db.sqlite"
-ENV NEXTAUTH_URL "http://localhost:3000"
+ENV DATABASE_URL "file:/data/db.sqlite"
+ENV NEXTAUTH_URL "http://localhost:7575"
 ENV PORT 7575
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
 
-CMD ["sh", "./scripts/run.sh"]
+VOLUME [ "/app/data/configs" ]
+VOLUME [ "/data" ]
+ENTRYPOINT ["sh", "./scripts/run.sh"]

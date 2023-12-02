@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "切換編輯模式",
+    "enable": "啟用編輯模式",
+    "disable": "關閉編輯模式"
+  },
+  "form": {
+    "label": "編輯模式密碼",
+    "message": "要切換編輯模式，需要在名為 <Code>EDIT _MODE_PASSWORD</Code> 的環境變量中輸入密碼，如未設定，則無法切換編輯模式",
+    "submit": "提交"
+  },
+  "notification": {
+    "success": {
+      "title": "成功",
+      "message": "成功切換編輯模式，重新載入頁面..."
+    },
+    "error": {
+      "title": "錯誤",
+      "message": "切換編輯模式失敗，請重試"
+    }
+  }
+}

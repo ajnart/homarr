@@ -7,25 +7,25 @@
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Chọn một bảng",
+            "text": "Chọn bảng nơi bạn muốn thêm ứng dụng cho vùng chứa Docker đã chọn.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Bảng"
                 },
-                "submit": ""
+                "submit": "Thêm ứng dụng"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Đã thêm ứng dụng vào bảng",
+                "message": "Các ứng dụng cho vùng chứa Docker đã chọn đã được thêm vào bảng."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Không thêm được ứng dụng vào bảng",
+                "message": "Không thể thêm ứng dụng cho vùng chứa Docker đã chọn vào bảng."
             }
         }
     }

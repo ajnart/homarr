@@ -5,31 +5,29 @@
     "settings": {
       "title": "Lijst met mediaverzoeken",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Links vervangen door externe host"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Links in nieuw tabblad openen"
       }
     }
   },
   "noRequests": "Geen verzoeken gevonden. Zorg ervoor dat u uw apps correct hebt geconfigureerd.",
-  "pending": "Er zijn {{countPendingApproval}} aanvragen die wachten op goedkeuring.",
-  "nonePending": "Er zijn momenteel geen lopende goedkeuringen. Je bent klaar om te gaan!",
   "state": {
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
     "declined": "Afgewezen"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Verzoeken goedkeuren",
+    "decline": "Verzoeken weigeren",
+    "approving": "Verzoek goedkeuren..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Goedkeuring",
+    "declining": "Afnemend",
+    "request": "verzoek...",
+    "approved": "Aanvraag goedgekeurd!",
+    "declined": "Verzoek afgewezen!"
   }
 }

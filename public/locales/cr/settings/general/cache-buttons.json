@@ -1,0 +1,24 @@
+{
+  "title": "crwdns3283:0crwdne3283:0",
+  "selector": {
+    "label": "crwdns3285:0crwdne3285:0",
+    "data": {
+      "ping": "crwdns3287:0crwdne3287:0",
+      "repositoryIcons": "crwdns3289:0crwdne3289:0",
+      "calendar&medias": "crwdns3291:0crwdne3291:0",
+      "weather": "crwdns3293:0crwdne3293:0"
+    }
+  },
+  "buttons": {
+    "notificationTitle": "crwdns3295:0crwdne3295:0",
+    "clearAll": {
+      "text": "crwdns3297:0crwdne3297:0",
+      "notificationMessage": "crwdns3299:0crwdne3299:0"
+    },
+    "clearSelect": {
+      "text": "crwdns3301:0crwdne3301:0",
+      "notificationMessageSingle": "crwdns3303:0{{value}}crwdne3303:0",
+      "notificationMessageMulti": "crwdns3305:0{{values}}crwdne3305:0"
+    }
+  }
+}

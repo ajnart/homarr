@@ -1,0 +1,36 @@
+{
+    "metaTitle": "用户",
+    "pageTitle": "管理用户",
+    "text": "通过账号，您可以配置谁可以编辑您的面板。Homarr的未来版本将对权限和面板进行更精细地控制。",
+    "buttons": {
+        "create": "创建"
+    },
+    "table": {
+        "header": {
+            "user": "用户"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "删除用户",
+        "demoteAdmin": "撤销管理员",
+        "promoteToAdmin": "提升为管理员"
+    },
+    "modals": {
+        "delete": {
+            "title": "删除用户 {{name}}",
+            "text": "您确定要删除用户 {{name}} 吗？这将删除与该账户相关的数据，但不会删除该用户创建的任何仪表盘。"
+        },
+        "change-role": {
+            "promote": {
+                "title": "将用户 {{name}} 提升为管理员",
+                "text": "您确定要将用户{{name}} 提升为管理员吗? 这将允许用户访问Homarr实例上的所有资源。"
+            },
+            "demote": {
+                "title": "将用户 {{name}} 降级为用户",
+                "text": "您确定要将用户{{name}} 降级为用户吗? 这将删除用户对Homarr实例上所有资源的访问权限。"
+            },
+            "confirm": "确认"
+        }
+    },
+    "searchDoesntMatch": "您的搜索与任何条目都不匹配。请调整您的过滤器。"
+}

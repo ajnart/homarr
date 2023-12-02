@@ -5,11 +5,6 @@ import {
 } from './abstract-icons-repository';
 
 export class JsdelivrIconsRepository extends AbstractIconRepository {
-  static readonly tablerRepository = {
-    api: 'https://data.jsdelivr.com/v1/packages/gh/walkxcode/dashboard-icons@main?structure=flat',
-    blob: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/{0}/{1}',
-  } as JsdelivrRepositoryUrl;
-
   static readonly papirusRepository = {
     api: 'https://data.jsdelivr.com/v1/packages/gh/PapirusDevelopmentTeam/papirus_icons@master?structure=flat',
     blob: 'https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/{1}',
@@ -35,6 +30,7 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
     const normalizedEntries = body.files
       .filter((file) => !['_banner.png', '_logo.png'].some((x) => file.name.includes(x)))
       .filter((file) => ['.png', '.svg'].some((x) => file.name.endsWith(x)))
+
       .map((file): NormalizedIcon => {
         const fileNameParts = file.name.split('/');
         const fileName = fileNameParts[fileNameParts.length - 1];

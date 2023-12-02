@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Interna adresa",
-			"description": "Interna IP-adresa aplikacije."
+			"description": "Interna IP-adresa aplikacije.",
+			"troubleshoot": {
+				"label": "Imate problema?",
+				"header": "Evo popisa najčešćih pogrešaka i rješavanja problema:",
+				"lines": {
+					"nothingAfterPort": "U većini, ako ne iu svim slučajevima, ne biste trebali unositi nikakav put nakon porta. (Čak i '/admin' za pihole ili '/web' za plex)",
+					"protocolCheck": "Uvijek provjerite ima li ispred URL-a http ili https i provjerite koristite li pravi.",
+					"preferIP": "Preporuča se korištenje izravnog IP-a stroja ili spremnika s kojim pokušavate komunicirati.",
+					"enablePings": "Provjerite je li IP ispravan omogućavanjem pingova. Prilagodite ploču -> Izgled -> Omogući pingove. Na pločicama vaše aplikacije pojavit će se mali crveni ili zeleni mjehurić, a lebdeći iznad njega dat ćete njezin kod odgovora (u većini slučajeva očekuje se zeleni mjehurić s kodom 200).",
+					"wget": "Kako biste bili sigurni da homarr može komunicirati s drugim aplikacijama, provjerite wget/curl/ping IP:port aplikacije.",
+					"iframe": "Kada su u pitanju iframeovi, oni bi uvijek trebali koristiti isti protokol (http/s) kao Homarr.",
+					"clearCache": "Neke su informacije registrirane u predmemoriji, tako da integracija možda neće raditi osim ako ne izbrišete predmemoriju u općim opcijama Homarra."
+				},
+				"footer": "Za dodatna rješenja problema obratite se na našu {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Vanjska adresa",
@@ -26,10 +40,10 @@
 			"description": "Otvori aplikaciju u novoj kartici umjesto u trenutnoj."
 		},
 		"tooltipDescription": {
-			"label": "",
-			"description": ""
+			"label": "Opis aplikacije",
+			"description": "Tekst koji unesete pojavit će se kada zadržite pokazivač iznad vaše aplikacije.\r\nKoristite ovo da biste korisnicima dali više pojedinosti o svojoj aplikaciji ili ostavite prazno da nemate ništa."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Korištenje nestandardnog protokola. To može zahtijevati unaprijed instalirane aplikacije i predstavljati sigurnosne rizike. Provjerite je li vaša adresa sigurna i pouzdana."
 	},
 	"network": {
 		"statusChecker": {
@@ -55,31 +69,31 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Veličina fonta naziva aplikacije",
+			"description": "Postavite veličinu fonta kada se naziv aplikacije prikazuje na pločici."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Status naziva aplikacije",
+			"description": "Odaberite gdje želite da se naslov pojavi, ako uopće.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Prikaži naslov samo na pločici",
+				"hover": "Prikaz naslova samo na opisu alata",
+				"hidden": "Ne pokazuj uopće"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Pozicija naziva aplikacije",
+			"description": "Položaj naziva aplikacije u odnosu na ikonu.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Vrh",
+				"right": "Pravo",
+				"bottom": "Dno",
+				"left": "Lijevo"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Naziv aplikacije Line Clamp",
+			"description": "Definira koliko redaka vaš naslov treba maksimalno stati. Postavite 0 za neograničeno."
 		}
 	},
 	"integration": {
@@ -104,11 +118,11 @@
 	},
 	"validation": {
 		"popover": "Vaš obrazac sadrži neispravne podatke. Stoga se ne može spremiti. Molimo riješite sve probleme i ponovno kliknite ovaj gumb da biste spremili promjene",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"name": "Ime je potrebno",
+		"noUrl": "Url je obavezan",
+		"invalidUrl": "Vrijednost nije važeći url",
+		"noIconUrl": "ovo polje je obavezno",
+		"noExternalUri": "Potreban je vanjski URI",
+		"invalidExternalUri": "Vanjski URI nije važeći URI"
 	}
 }

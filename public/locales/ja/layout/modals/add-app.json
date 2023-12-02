@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "内部アドレス",
-			"description": "アプリの内部IP-address。"
+			"description": "アプリの内部IP-address。",
+			"troubleshoot": {
+				"label": "問題がありますか？",
+				"header": "よくある間違いとトラブルシューティングのリストです：",
+				"lines": {
+					"nothingAfterPort": "ほとんどの場合、ポートの後にパスを入力してはいけません。(piholeの'/admin'やplexの'/web'でも)",
+					"protocolCheck": "URLの前にhttpまたはhttpsがついていることを常に確認してください。",
+					"preferIP": "通信しようとしているマシンやコンテナのダイレクトipを使うことを推奨する。",
+					"enablePings": "Pingを有効にして、IPが正しいことを確認する。ボードのカスタマイズ -> レイアウト -> pingを有効にする。アプリのタイル上に赤または緑の小さな吹き出しが表示され、その上にカーソルを置くと応答コードが表示されます（ほとんどの場合、コード200の緑の吹き出しが表示されます）。",
+					"wget": "homarrが他のアプリと通信できることを確認するために、アプリのIP:ポートをwget/curl/pingしてください。",
+					"iframe": "iframeに関しては、常にHomarrと同じプロトコル（http/s）を使用する必要があります。",
+					"clearCache": "一部の情報はキャッシュに登録されるため、Homarrの一般オプションでキャッシュをクリアしないと統合が機能しない場合があります。"
+				},
+				"footer": "トラブルシューティングについては、 {{discord}}までお問い合わせください。"
+			}
 		},
 		"externalAddress": {
 			"label": "外部アドレス",
@@ -55,8 +69,8 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "アプリ名 文字サイズ",
+			"description": "タイル上にアプリ名を表示する際のフォントサイズを設定します。"
 		},
 		"appNameStatus": {
 			"label": "アプリ名の状態",

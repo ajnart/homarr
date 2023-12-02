@@ -1,0 +1,25 @@
+{
+    "modal": {
+        "title": "crwdns1989:0crwdne1989:0",
+        "text": "crwdns2293:0crwdne2293:0"
+    },
+    "widgetDescription": "crwdns2295:0crwdne2295:0",
+    "goBack": "crwdns1995:0crwdne1995:0",
+    "actionIcon": {
+        "tooltip": "crwdns1997:0crwdne1997:0"
+    },
+    "apps": "crwdns3231:0crwdne3231:0",
+    "app": {
+        "defaultName": "crwdns3233:0crwdne3233:0"
+    },
+    "widgets": "crwdns3235:0crwdne3235:0",
+    "categories": "crwdns3237:0crwdne3237:0",
+    "category": {
+        "newName": "crwdns3239:0crwdne3239:0",
+        "defaultName": "crwdns3241:0crwdne3241:0",
+        "created": {
+            "title": "crwdns3243:0crwdne3243:0",
+            "message": "crwdns3245:0{{name}}crwdne3245:0"
+        }
+    }
+}

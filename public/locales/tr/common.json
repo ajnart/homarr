@@ -1,5 +1,7 @@
 {
   "save": "Kaydet",
+  "apply": "Uygula",
+  "insert": "Ekle",
   "about": "Hakkında",
   "cancel": "Vazgeç",
   "close": "Kapat",
@@ -40,5 +42,16 @@
     "medium": "Orta",
     "large": "Büyük"
   },
-  "seeMore": "Daha fazla..."
+  "seeMore": "Daha fazla...",
+  "position": {
+    "left": "Sol",
+    "center": "Merkez",
+    "right": "Sağ"
+  },
+  "attributes": {
+    "width": "Genişlik",
+    "height": "Yükseklik"
+  },
+  "public": "Herkese açık",
+  "restricted": "Sınırlı"
 }

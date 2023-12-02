@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "Mediální server",
+    "description": "",
+    "settings": {
+      "title": ""
+    }
+  },
+  "loading": "Načítání streamů",
+  "card": {
+    "table": {
+      "header": {
+        "session": "Relace",
+        "user": "Uživatel",
+        "currentlyPlaying": "Právě přehráváno"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "",
+        "text": ""
+      }
+    }
+  }
+}

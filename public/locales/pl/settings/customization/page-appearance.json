@@ -18,6 +18,29 @@
   "background": {
     "label": "Tło"
   },
+  "backgroundImageAttachment": {
+    "label": "Ustawienie obrazu tła",
+    "options": {
+      "fixed": "Fixed – Tło pozostaje w tej samej pozycji (zalecane)",
+      "scroll": "Scroll - Tło przewija się za pomocą myszy"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Rozmiar obrazu tła",
+    "options": {
+      "cover": "Cover — skaluje obraz do najmniejszego możliwego rozmiaru, aby pokryć całe okno poprzez przycięcie nadmiernej przestrzeni. (Zalecana)",
+      "contain": "Contain — skaluje obraz do największego możliwego rozmiaru w jego kontenerze, bez przycinania i rozciągania obrazu."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Ustawienie obrazu tła",
+    "options": {
+      "repeat": "Repeat — obraz jest powtarzany tak często, jak to konieczne, aby pokryć cały obszar obrazu tła.",
+      "no-repeat": "No repeat — obraz nie jest powtarzany i może nie wypełniać całej przestrzeni (zalecane)",
+      "repeat-x": "Repeat X — to samo co „Powtórz”, ale tylko na osi poziomej.",
+      "repeat-y": "Repeat Y — to samo co „Powtórz”, ale tylko w osi pionowej."
+    }
+  },
   "customCSS": {
     "label": "Niestandardowy CSS",
     "description": "Jeszcze bardziej dostosuj swój pulpit za pomocą CSS, zalecane tylko dla doświadczonych użytkowników",

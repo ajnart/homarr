@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "日历",
+    "description": "在日历中显示来自支持集成中的即将发布的版本。",
+    "settings": {
+      "title": "日历组件设置",
+      "radarrReleaseType": {
+        "label": "Radarr发布类型",
+        "data": {
+          "inCinemas": "影院放映",
+          "physicalRelease": "实体",
+          "digitalRelease": "数字"
+        }
+      },
+      "hideWeekDays": {
+        "label": "隐藏星期"
+      },
+      "showUnmonitored": {
+        "label": "显示未监视项目"
+      },
+      "fontSize": {
+        "label": "字体大小",
+        "data": {
+          "xs": "超小号",
+          "sm": "小号",
+          "md": "中号",
+          "lg": "大号",
+          "xl": "超大号"
+        }
+      }
+    }
+  }
+}

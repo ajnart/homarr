@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Prijaviti se",
   "title": "Dobro došli natrag!",
-  "text": "",
+  "text": "Molimo unesite svoje vjerodajnice",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Prijavi se"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Nakon prijave, bit ćete preusmjereni na {{url}}"
   },
-  "alert": ""
+  "alert": "Vaše vjerodajnice nisu točne ili ovaj račun ne postoji. Molim te pokušaj ponovno."
 }

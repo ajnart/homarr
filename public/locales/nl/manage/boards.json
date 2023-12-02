@@ -1,43 +1,43 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Borden",
+    "pageTitle": "Borden",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Apps",
+            "widgets": "Widgets",
+            "categories": "Categorieën"
         },
         "buttons": {
-            "view": ""
+            "view": "Bekijk bord"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Instellen als standaardkaart",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Permanent verwijderen",
+                "disabled": "Verwijderen uitgeschakeld, omdat oudere Homarr-componenten het verwijderen van de standaardconfiguratie niet toestaan. Verwijdering zal in de toekomst mogelijk zijn."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Bestandssysteem",
+            "default": "Standaard"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Nieuw bord maken"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Verwijder bord",
+            "text": "Weet je zeker dat je dit bord wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt en je gegevens zullen permanent verloren gaan."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Maak bord",
+            "text": "De naam kan niet worden gewijzigd nadat een bord is aangemaakt.",
             "form": {
                 "name": {
                     "label": "Naam"
                 },
-                "submit": ""
+                "submit": "Maak"
             }
         }
     }

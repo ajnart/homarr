@@ -1,0 +1,45 @@
+{
+  "descriptor": {
+    "name": "crwdns2699:0crwdne2699:0",
+    "description": "crwdns2613:0crwdne2613:0",
+    "settings": {
+      "title": "crwdns2701:0crwdne2701:0",
+      "embedUrl": {
+        "label": "crwdns2617:0crwdne2617:0"
+      },
+      "allowFullScreen": {
+        "label": "crwdns2619:0crwdne2619:0"
+      },
+      "allowTransparency": {
+        "label": "crwdns2917:0crwdne2917:0"
+      },
+      "allowScrolling": {
+        "label": "crwdns2919:0crwdne2919:0"
+      },
+      "allowPayment": {
+        "label": "crwdns2921:0crwdne2921:0"
+      },
+      "allowAutoPlay": {
+        "label": "crwdns2923:0crwdne2923:0"
+      },
+      "allowMicrophone": {
+        "label": "crwdns2925:0crwdne2925:0"
+      },
+      "allowCamera": {
+        "label": "crwdns2927:0crwdne2927:0"
+      },
+      "allowGeolocation": {
+        "label": "crwdns2929:0crwdne2929:0"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "crwdns2931:0crwdne2931:0",
+        "text": "crwdns2623:0crwdne2623:0"
+      },
+      "browserSupport": "crwdns3139:0crwdne3139:0"
+    }
+  }
+}

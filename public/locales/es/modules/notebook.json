@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Muestra la barra de herramientas para ayudarte a escribir Markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Permitir verificación en modo solo lectura"
+			},
 			"content": {
 				"label": "El contenido del Bloc de notas"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Negrita",
+			"italic": "Cursiva",
+			"strikethrough": "Tachado",
+			"underline": "Subrayado",
+			"colorText": "Color de texto",
+			"colorHighlight": "Texto resaltado en color",
+			"code": "Código",
+			"clear": "Borrar formato",
+			"heading": "Encabezado {{level}}",
+			"align": "Alinear texto: {{position}}",
+			"blockquote": "Cita",
+			"horizontalLine": "Línea horizontal",
+			"bulletList": "Lista sin ordenar",
+			"orderedList": "Lista ordenada",
+			"checkList": "Lista de control",
+			"increaseIndent": "Aumentar sangría",
+			"decreaseIndent": "Disminuir sangría",
+			"link": "Enlace",
+			"unlink": "Eliminar enlace",
+			"image": "Insertar imagen",
+			"addTable": "Añadir tabla",
+			"deleteTable": "Eliminar tabla",
+			"colorCell": "Color de celda",
+			"mergeCell": "Alternar combinación de celdas",
+			"addColumnLeft": "Añadir columna a la izquierda",
+			"addColumnRight": "Añadir columna a la derecha",
+			"deleteColumn": "Eliminar columna",
+			"addRowTop": "Añadir fila encima",
+			"addRowBelow": "Añadir fila debajo",
+			"deleteRow": "Eliminar fila"
+		},
+		"modals": {
+			"clearColor": "Eliminar color",
+			"source": "Fuente",
+			"widthPlaceholder": "Valor en % o píxeles",
+			"columns": "Columnas",
+			"rows": "Filas"
 		}
 	}
 }

@@ -1,0 +1,22 @@
+{
+  "menu": {
+    "toggle": "切换编辑模式",
+    "enable": "启用编辑模式",
+    "disable": "关闭编辑模式"
+  },
+  "form": {
+    "label": "编辑密码",
+    "message": "要切换编辑模式，需要在名为 <Code>EDIT_MODE_PASSWORD</Code> 的环境变量中输入密码。如果未设置，则无法切换编辑模式。",
+    "submit": "提交"
+  },
+  "notification": {
+    "success": {
+      "title": "成功",
+      "message": "成功切换编辑模式，重新加载页面..."
+    },
+    "error": {
+      "title": "错误",
+      "message": "切换编辑模式失败，请重试。"
+    }
+  }
+}

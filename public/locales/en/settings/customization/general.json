@@ -22,7 +22,7 @@
       "description": "Configure Homarr for disabled and handicapped users"
     },
     "access": {
-      "name": "Acccess",
+      "name": "Access",
       "description": "Configure who has access to your board"
     }
   }

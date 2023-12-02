@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "Brukere",
+    "pageTitle": "Administrer brukere",
+    "text": "Ved å bruke brukere kan du konfigurere hvem som kan redigere tavlene dine. Fremtidige versjoner av Homarr vil ha enda mer detaljert kontroll over tillatelser og tavler.",
     "buttons": {
-        "create": ""
+        "create": "Opprett"
     },
     "table": {
         "header": {
@@ -11,26 +11,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Slett bruker",
+        "demoteAdmin": "Degrader administrator",
+        "promoteToAdmin": "Oppgrader til administrator"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Slett bruker {{name}}",
+            "text": "Er du sikker på at du vil slette brukeren {{name}}? Dette vil slette data knyttet til denne kontoen, men ikke eventuelle tavler som er opprettet av denne brukeren."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Promoter bruker {{name}} til administrator",
+                "text": "Er du sikker på at du vil promotere brukeren {{name}} til administrator? Dette vil gi brukeren tilgang til alle ressurser på Homarr-forekomsten."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Degrader bruker {{name}} til bruker",
+                "text": "Er du sikker på at du vil degradere brukeren {{name}} til bruker? Dette vil fjerne brukerens tilgang til alle ressurser på Homarr-forekomsten."
             },
             "confirm": "Bekreft"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Søket ditt samsvarer ikke med noen oppføringer. Vennligst juster filteret ditt."
 }

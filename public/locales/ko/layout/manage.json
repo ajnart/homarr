@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "홈"
         },
         "boards": {
-            "title": ""
+            "title": "보드"
         },
         "users": {
-            "title": "",
+            "title": "사용자",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "관리",
+                "invites": "초대"
             }
         },
         "help": {
-            "title": "",
+            "title": "도움말",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "문서",
+                "report": "문제/버그 신고",
+                "discord": "커뮤니티 불화",
+                "contribute": "기여하기"
             }
         },
         "tools": {
-            "title": "",
+            "title": "도구",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "정보"
         }
     }
 }

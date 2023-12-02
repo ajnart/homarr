@@ -18,6 +18,29 @@
   "background": {
     "label": "Background"
   },
+  "backgroundImageAttachment": {
+    "label": "Background image attachment",
+    "options": {
+      "fixed": "Fixed - Background stays in the same position (recommended)",
+      "scroll": "Scroll - Background scrolls with your mouse"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Background image size",
+    "options": {
+      "cover": "Cover - Scales the image as small as possible to cover the entire window by cropping excessive space. (recommended)",
+      "contain": "Contain - Scales the image as large as possible within its container without cropping or stretching the image."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Background image attachment",
+    "options": {
+      "repeat": "Repeat - The image is repeated as much as needed to cover the whole background image painting area.",
+      "no-repeat": "No repeat - The image is not repeated and may not fill the entire space (recommended)",
+      "repeat-x": "Repeat X - Same as 'Repeat' but only on horizontal axis.",
+      "repeat-y": "Repeat Y - Same as 'Repeat' but only on vertical axis."
+    }
+  },
   "customCSS": {
     "label": "Custom CSS",
     "description": "Further, customize your dashboard using CSS, only recommended for experienced users",

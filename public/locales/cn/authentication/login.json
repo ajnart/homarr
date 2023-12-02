@@ -1,0 +1,20 @@
+{
+  "metaTitle": "登录",
+  "title": "欢迎回来！",
+  "text": "请确认您的凭证",
+  "form": {
+    "fields": {
+      "username": {
+        "label": "用户名"
+      },
+      "password": {
+        "label": "密码"
+      }
+    },
+    "buttons": {
+      "submit": "登录"
+    },
+    "afterLoginRedirection": "登录后，您将被重定向到 {{url}}"
+  },
+  "alert": "您的凭据不正确或此账户不存在。请重试。"
+}

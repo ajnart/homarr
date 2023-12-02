@@ -1,0 +1,35 @@
+{
+    "navigation": {
+        "home": {
+            "title": "crwdns3505:0crwdne3505:0"
+        },
+        "boards": {
+            "title": "crwdns3507:0crwdne3507:0"
+        },
+        "users": {
+            "title": "crwdns3509:0crwdne3509:0",
+            "items": {
+                "manage": "crwdns3511:0crwdne3511:0",
+                "invites": "crwdns3513:0crwdne3513:0"
+            }
+        },
+        "help": {
+            "title": "crwdns3515:0crwdne3515:0",
+            "items": {
+                "documentation": "crwdns3517:0crwdne3517:0",
+                "report": "crwdns3519:0crwdne3519:0",
+                "discord": "crwdns3521:0crwdne3521:0",
+                "contribute": "crwdns3523:0crwdne3523:0"
+            }
+        },
+        "tools": {
+            "title": "crwdns3525:0crwdne3525:0",
+            "items": {
+                "docker": "crwdns3527:0crwdne3527:0"
+            }
+        },
+        "about": {
+            "title": "crwdns3990:0crwdne3990:0"
+        }
+    }
+}

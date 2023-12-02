@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Cacher les torrents terminés"
       },
+      "displayActiveTorrents": {
+        "label": "Afficher les torrents actifs"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Vitesse d'envoi pour considérer un torrent comme actif (Ko/s)"
+      },
       "displayStaleTorrents": {
         "label": "Afficher les torrents obsolètes"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Liste des libellés",
         "description": "Si la case \"La liste des libellés est une liste blanche\" est cochée, elle sera appliquée comme une liste blanche. Si la case n'est pas cochée, elle s'appliquera comme une liste noire. Rien ne se passera si elle est vide"
+      },
+      "displayRatioWithFilter": {
+        "label": "Afficher le ratio de la liste des torrents filtrés",
+        "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Erreur",
-      "lastUpdated": "Dernière mise à jour : {{time}}"
+      "lastUpdated": "Dernière mise à jour : {{time}}",
+      "ratioGlobal": "Ratio global",
+      "ratioWithFilter": "Ratio avec filtre"
     },
     "table": {
       "header": {
@@ -59,7 +71,7 @@
       },
       "generic": {
         "title": "Une erreur inattendue s'est produite",
-        "text": "Impossible de communiquer avec votre client de Torrent. Veuillez vérifier votre configuration."
+        "text": "Impossible de communiquer avec vos clients Torrent. Veuillez vérifier votre configuration"
       }
     },
     "loading": {

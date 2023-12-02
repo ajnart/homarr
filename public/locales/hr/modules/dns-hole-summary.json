@@ -10,9 +10,9 @@
       "layout": {
         "label": "Raspored",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 po 2",
+          "row": "Horizontalno",
+          "column": "Okomito"
         }
       }
     }
@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domenae na popisu blokiranih",
       "queriesToday": "Upiti danas",
-      "queriesBlockedTodayPercentage": "blokirano danas",
-      "queriesBlockedToday": "blokirano danas"
+      "queriesBlockedTodayPercentage": "",
+      "queriesBlockedToday": ""
     }
   }
 }

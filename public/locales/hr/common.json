@@ -1,14 +1,16 @@
 {
   "save": "Spremi",
+  "apply": "",
+  "insert": "",
   "about": "O aplikaciji",
   "cancel": "Otkaži",
   "close": "Zatvori",
-  "back": "",
+  "back": "leđa",
   "delete": "Obriši",
   "ok": "U REDU",
   "edit": "Uredi",
-  "next": "",
-  "previous": "",
+  "next": "Sljedeći",
+  "previous": "Prethodno",
   "confirm": "Potvrdi",
   "enabled": "Omogućeno",
   "disabled": "Onemogućeno",
@@ -40,5 +42,16 @@
     "medium": "srednje",
     "large": "veliko"
   },
-  "seeMore": ""
+  "seeMore": "Vidi više...",
+  "position": {
+    "left": "Lijevo",
+    "center": "",
+    "right": "Pravo"
+  },
+  "attributes": {
+    "width": "Širina",
+    "height": "Visina"
+  },
+  "public": "Javno",
+  "restricted": ""
 }

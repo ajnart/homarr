@@ -1,0 +1,32 @@
+{
+    "title": "crwdns3821:0crwdne3821:0",
+    "alerts": {
+        "notConfigured": {
+            "text": "crwdns4008:0crwdne4008:0"
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "crwdns3825:0crwdne3825:0",
+            "text": "crwdns3827:0crwdne3827:0",
+            "form": {
+                "board": {
+                    "label": "crwdns3829:0crwdne3829:0"
+                },
+                "submit": "crwdns3831:0crwdne3831:0"
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "crwdns3833:0crwdne3833:0",
+                "message": "crwdns3835:0crwdne3835:0"
+            },
+            "error": {
+                "title": "crwdns3837:0crwdne3837:0",
+                "message": "crwdns3839:0crwdne3839:0"
+            }
+        }
+    }
+}

@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Izveidot lietotāju",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Pirmais solis",
+            "text": "Izveidot kontu",
             "username": {
                 "label": "Lietotājvārds"
             },
             "email": {
-                "label": ""
+                "label": "E-pasts"
             }
         },
         "security": {
-            "title": "",
+            "title": "Otrais solis",
             "text": "Parole",
             "password": {
                 "label": "Parole"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Apstiprinājums",
+            "text": "Saglabāt datubāzē",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Pārskatiet savus ievades datus",
+                "text": "Pēc datu nosūtīšanas datubāzei lietotājs varēs pieslēgties. Vai esat pārliecināts, ka vēlaties saglabāt šo lietotāju datubāzē un aktivizēt pieslēgšanos?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Īpašība",
+                    "value": "Vērtība",
                     "username": "Lietotājvārds",
-                    "email": "",
+                    "email": "E-pasts",
                     "password": "Parole"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nav iestatīts",
+                "valid": "Derīgs"
             },
-            "failed": ""
+            "failed": "Lietotāja izveide neizdevās: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Lietotājs tika izveidots",
+                "text": "Datubāzē tika izveidots lietotājs. Tagad lietotājs var pieslēgties."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Ģenerēt nejaušu",
+        "createAnother": "Izveidot vēl vienu"
     }
 }

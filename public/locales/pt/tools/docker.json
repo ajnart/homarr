@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Sua instância do Homarr não possui o Docker configurado ou falhou em buscar contêineres. Por favor, verifique a documentação sobre como configurar a integração."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Escolha um quadro",
+            "text": "Escolha o quadro em que deseja adicionar os aplicativos para os contêineres do Docker selecionados.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Quadro"
                 },
-                "submit": ""
+                "submit": "Adicionar aplicativos"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Adição de aplicativos ao quadro",
+                "message": "Os aplicativos para os contêineres Docker selecionados foram adicionados ao quadro."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Falha ao adicionar aplicativos ao quadro",
+                "message": "Os aplicativos para os contêineres Docker selecionados não puderam ser adicionados ao quadro."
             }
         }
     }

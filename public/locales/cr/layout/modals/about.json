@@ -1,0 +1,30 @@
+{
+	"description": "crwdns2303:0crwdne2303:0",
+	"addToDashboard": "crwdns2147:0crwdne2147:0",
+	"tip": "crwdns2745:0crwdne2745:0",
+	"key": "crwdns2747:0crwdne2747:0",
+	"action": "crwdns2749:0crwdne2749:0",
+	"keybinds": "crwdns2751:0crwdne2751:0",
+	"translators": "crwdns3992:0{{count}}crwdne3992:0",
+	"translatorsDescription": "crwdns3994:0{{languages}}crwdne3994:0",
+	"contributors": "crwdns3996:0{{count}}crwdne3996:0",
+	"contributorsDescription": "crwdns3998:0crwdne3998:0",
+	"actions": {
+		"toggleTheme": "crwdns3223:0crwdne3223:0",
+		"focusSearchBar": "crwdns3225:0crwdne3225:0",
+		"openDocker": "crwdns3227:0crwdne3227:0",
+		"toggleEdit": "crwdns3229:0crwdne3229:0"
+	},
+	"metrics": {
+		"configurationSchemaVersion": "crwdns2531:0crwdne2531:0",
+		"version": "crwdns2535:0crwdne2535:0",
+		"nodeEnvironment": "crwdns2537:0crwdne2537:0",
+		"i18n": "crwdns2539:0crwdne2539:0",
+		"locales": "crwdns2541:0crwdne2541:0",
+		"experimental_disableEditMode": "crwdns2681:0crwdne2681:0"
+	},
+	"version": {
+		"new": "crwdns3279:0{{newVersion}}crwdne3279:0",
+		"dropdown": "crwdns3281:0{{newVersion}}crwdnd3281:0{{currentVersion}}crwdne3281:0"
+	}
+}

@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "Zoek op",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Zoek naar {{query}} op het web",
+            "youtube": "Zoek naar {{query}} op YouTube",
+            "torrent": "Zoeken naar {{query}} torrents",
+            "movie": "Zoek naar {{query}} op {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "Over",
-                "new": ""
-            },
-            "logout": "",
-            "login": ""
+            "switchTheme": "Thema omschakelen",
+            "preferences": "Gebruikersvoorkeuren",
+            "defaultBoard": "Standaard dashboard",
+            "manage": "Beheer",
+            "logout": "Afmelden bij {{username}}",
+            "login": "Inloggen"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Top {{count}} resultaten voor <b>{{search}}</b>."
         }
     }
 }

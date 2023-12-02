@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Zobrazenie panela nástrojov na pomoc pri písaní poznámok"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Povolenie kontroly v režime len na čítanie"
+			},
 			"content": {
 				"label": "Obsah zápisníka"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Tučné",
+			"italic": "Kurzíva",
+			"strikethrough": "Prečiarknuté",
+			"underline": "Podčiarknuté",
+			"colorText": "Farebný text",
+			"colorHighlight": "Farebné zvýraznenie textu",
+			"code": "Kód",
+			"clear": "Vyčistiť formátovanie",
+			"heading": "Nadpis {{level}}",
+			"align": "Zarovnanie textu: {{position}}",
+			"blockquote": "Citát",
+			"horizontalLine": "Horizontálna čiara",
+			"bulletList": "Zoznam odrážok",
+			"orderedList": "Objednaný zoznam",
+			"checkList": "Kontrolný zoznam",
+			"increaseIndent": "Zväčšenie odstupu",
+			"decreaseIndent": "Zníženie odstupu",
+			"link": "Odkaz",
+			"unlink": "Odstrániť odkaz",
+			"image": "Vložiť obrázok",
+			"addTable": "Pridať tabuľku",
+			"deleteTable": "Odstrániť tabuľku",
+			"colorCell": "Farebná bunka",
+			"mergeCell": "Prepnúť zlúčenie buniek",
+			"addColumnLeft": "Pridať stĺpec pred",
+			"addColumnRight": "Pridať stĺpec po",
+			"deleteColumn": "Vymazať stĺpec",
+			"addRowTop": "Pridať riadok pred",
+			"addRowBelow": "Pridať riadok po",
+			"deleteRow": "Vymazať riadok"
+		},
+		"modals": {
+			"clearColor": "Vymazať farbu",
+			"source": "Zdroj",
+			"widthPlaceholder": "Hodnota v % alebo pixeloch",
+			"columns": "Stĺpce",
+			"rows": "Riadky"
 		}
 	}
 }

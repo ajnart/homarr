@@ -8,18 +8,18 @@
     "actionIcon": {
         "tooltip": "Dodaj ploču"
     },
-    "apps": "",
+    "apps": "aplikacije",
     "app": {
-        "defaultName": ""
+        "defaultName": "Vaša aplikacija"
     },
-    "widgets": "",
-    "categories": "",
+    "widgets": "Widgeti",
+    "categories": "Kategorije",
     "category": {
-        "newName": "",
-        "defaultName": "",
+        "newName": "Naziv nove kategorije",
+        "defaultName": "Nova kategorija",
         "created": {
-            "title": "",
-            "message": ""
+            "title": "Kategorija je stvorena",
+            "message": "Stvorena je kategorija \"{{name}}\"."
         }
     }
 }

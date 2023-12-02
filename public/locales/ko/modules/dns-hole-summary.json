@@ -1,26 +1,26 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "DNS 구멍 요약",
+    "description": "PiHole 또는 AdGuard의 중요한 데이터를 표시합니다.",
     "settings": {
-      "title": "",
+      "title": "DNS 홀 요약 설정",
       "usePiHoleColors": {
-        "label": ""
+        "label": "PiHole의 색상 사용"
       },
       "layout": {
-        "label": "",
+        "label": "레이아웃",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2x2",
+          "row": "수평",
+          "column": "세로"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
+      "domainsOnAdlist": "애드리스트에 있는 도메인",
+      "queriesToday": "오늘 쿼리",
       "queriesBlockedTodayPercentage": "",
       "queriesBlockedToday": ""
     }

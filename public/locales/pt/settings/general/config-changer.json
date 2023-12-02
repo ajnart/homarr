@@ -36,8 +36,8 @@
     },
     "confirmDeletion": {
       "title": "Confirme a eliminação da sua configuração",
-      "warningText": "",
-      "text": "",
+      "warningText": "Você está prestes a excluir '<b>{{configName}}</b>'",
+      "text": "Observe que a exclusão não é reversível, e seus dados serão perdidos permanentemente. Após clicar nesse botão, o arquivo será excluído permanentemente do disco. Certifique-se de criar um backup adequado de sua configuração.",
       "buttons": {
         "confirm": "Sim, eliminar '<b>{{configName}}</b>'"
       }
@@ -57,7 +57,7 @@
           "message": "A configuração de apagar falhou"
         },
         "deleteFailedDefaultConfig": {
-          "title": "",
+          "title": "A configuração padrão não pode ser excluída",
           "message": "A configuração não foi apagada do sistema de ficheiros"
         }
       }

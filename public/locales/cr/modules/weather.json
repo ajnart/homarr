@@ -1,0 +1,37 @@
+{
+  "descriptor": {
+    "name": "crwdns1562:0crwdne1562:0",
+    "description": "crwdns2383:0crwdne2383:0",
+    "settings": {
+      "title": "crwdns2385:0crwdne2385:0",
+      "displayInFahrenheit": {
+        "label": "crwdns1566:0crwdne1566:0"
+      },
+      "displayCityName": {
+        "label": "crwdns3047:0crwdne3047:0"
+      },
+      "location": {
+        "label": "crwdns1568:0crwdne1568:0"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "crwdns1570:0crwdne1570:0",
+      "mainlyClear": "crwdns1572:0crwdne1572:0",
+      "fog": "crwdns1574:0crwdne1574:0",
+      "drizzle": "crwdns1576:0crwdne1576:0",
+      "freezingDrizzle": "crwdns1578:0crwdne1578:0",
+      "rain": "crwdns1580:0crwdne1580:0",
+      "freezingRain": "crwdns1582:0crwdne1582:0",
+      "snowFall": "crwdns1584:0crwdne1584:0",
+      "snowGrains": "crwdns1586:0crwdne1586:0",
+      "rainShowers": "crwdns1588:0crwdne1588:0",
+      "snowShowers": "crwdns1590:0crwdne1590:0",
+      "thunderstorm": "crwdns1592:0crwdne1592:0",
+      "thunderstormWithHail": "crwdns1594:0crwdne1594:0",
+      "unknown": "crwdns1596:0crwdne1596:0"
+    }
+  },
+  "error": "crwdns3858:0crwdne3858:0"
+}

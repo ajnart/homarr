@@ -14,7 +14,7 @@ export const adGuardApiStatsResponseSchema = z.object({
   num_replaced_safebrowsing: z.number().min(0),
   num_replaced_safesearch: z.number().min(0),
   num_replaced_parental: z.number().min(0),
-  avg_processing_time: z.number().min(0).max(1),
+  avg_processing_time: z.number().min(0),
 });
 
 export const adGuardApiStatusResponseSchema = z.object({

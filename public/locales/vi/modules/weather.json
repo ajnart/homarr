@@ -8,7 +8,7 @@
         "label": "Hiển thị bằng Fahrenheit"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Hiển thị tên thành phố"
       },
       "location": {
         "label": "Vị trí thời tiết"
@@ -33,5 +33,5 @@
       "unknown": "Không xác định"
     }
   },
-  "error": ""
+  "error": "Đã xảy ra lỗi"
 }

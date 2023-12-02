@@ -20,6 +20,7 @@ import { openCreateInviteModal } from '~/components/Manage/User/Invite/create-in
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
@@ -152,11 +153,9 @@ const useStyles = createStyles(() => ({
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getServerAuthSession(ctx);
-
-  if (!session?.user.isAdmin) {
-    return {
-      notFound: true,
-    };
+  const result = checkForSessionOrAskForLogin(ctx, session, () => session?.user.isAdmin == true);
+  if (result) {
+    return result;
   }
 
   const translations = await getServerSideTranslations(

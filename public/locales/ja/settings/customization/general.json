@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "",
-      "description": ""
+      "description": "ボードにアクセスできる人を設定する"
     }
   }
 }

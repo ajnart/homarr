@@ -11,7 +11,6 @@ import {
 } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
-import { changeLanguage } from 'i18next';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -71,7 +70,6 @@ const SettingsComponent = ({
   boardsData: RouterOutputs['boards']['all'];
 }) => {
   const languagesData = languages.map((language) => ({
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
     label: language.originalName,
     description: language.translatedName,
     value: language.shortName,
@@ -199,8 +197,8 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
   ({ image, label, description, country, ...others }: ItemProps, ref) => (
     <div ref={ref} {...others}>
       <Group noWrap>
-        <span className={`fi fi-${country?.toLowerCase()}`}></span>
-
+        {country !== 'CROWDIN' && <span className={`fi fi-${country?.toLowerCase()}`}></span>}
+        {country === 'CROWDIN' && <img src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'} alt={label} width={16} height={16} />}
         <div>
           <Text size="sm">{label}</Text>
           <Text size="xs" opacity={0.65}>

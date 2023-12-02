@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "",
-      "description": ""
+      "description": "Định cấu hình ai có quyền truy cập vào bảng của bạn"
     }
   }
 }

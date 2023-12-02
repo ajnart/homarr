@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Widżet RSS",
-    "description": "",
+    "description": "Widżet rss umożliwia wyświetlanie kanałów RSS na pulpicie nawigacyjnym.",
     "settings": {
       "title": "Ustawienia dla widżetu RSS",
       "rssFeedUrl": {

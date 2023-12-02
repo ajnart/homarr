@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Iekšējā adrese",
-			"description": "Lietotnes iekšējā IP adrese."
+			"description": "Lietotnes iekšējā IP adrese.",
+			"troubleshoot": {
+				"label": "Radušās problēmas?",
+				"header": "Šeit ir saraksts ar biežāk pieļautajām kļūdām un to novēršanu:",
+				"lines": {
+					"nothingAfterPort": "Lielākajā daļā gadījumu, ja ne visos, jums nevajadzētu ievadīt nekādu ceļu pēc porta. (Pat \"/admin\" (pihole gadījumā) vai \"/web\" (plex gadījumā))",
+					"protocolCheck": "Vienmēr pārliecinieties, ka pirms URL ir http vai https, un pārliecinieties, ka izmantojat pareizo URL.",
+					"preferIP": "Ieteicams izmantot mašīnas vai konteinera, ar kuru mēģināt sazināties, tiešo ip adresi.",
+					"enablePings": "Pārbaudiet, vai IP ir pareizs, aktivizējot ping. Pielāgot Dēli -> Izkārtojums -> Ieslēgt ping. Uz lietotnes flīzēm parādīsies mazs sarkans vai zaļš burbulītis, un, uzliekot uz tā kursoru, tiks parādīts atbildes kods (vairumā gadījumu tiek sagaidīts zaļš burbulītis ar kodu 200).",
+					"wget": "Lai pārliecinātos, ka homarr var sazināties ar citām lietotnēm, pārliecinieties, ka var veikt wget/curl/ping uz lietotnes IP:ports (piemēram, ping 192.168.1.20:8080).",
+					"iframe": "Kad runa ir par iframe, tām vienmēr jāizmanto tas pats protokols (http/s) kā Homarr.",
+					"clearCache": "Dažas ziņas tiek reģistrētas kešatmiņā, tāpēc integrācija var nedarboties, ja vien Homarr vispārīgajos iestatījumos neiztīrīsiet kešatmiņu."
+				},
+				"footer": "Lai iegūtu papildu informāciju par problēmu novēršanu, sazinieties mūsu {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Ārējā adrese",

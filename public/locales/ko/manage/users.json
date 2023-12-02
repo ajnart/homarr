@@ -1,36 +1,36 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "text": "",
+    "metaTitle": "사용자",
+    "pageTitle": "사용자 관리",
+    "text": "사용자를 사용하여 대시보드를 편집할 수 있는 사용자를 구성할 수 있습니다. 향후 Homarr 버전에서는 권한과 보드를 더욱 세밀하게 제어할 수 있습니다.",
     "buttons": {
-        "create": ""
+        "create": "만들기"
     },
     "table": {
         "header": {
-            "user": ""
+            "user": "사용자"
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "사용자 삭제",
+        "demoteAdmin": "관리자 강등",
+        "promoteToAdmin": "관리자로 승격"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "사용자 삭제 {{name}}",
+            "text": "{{name}}사용자를 삭제하시겠습니까? 이렇게 하면 이 계정과 관련된 데이터는 삭제되지만 이 사용자가 만든 대시보드는 삭제되지 않습니다."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "{{name}} 사용자를 관리자로 승격",
+                "text": "{{name}} 사용자를 관리자로 승격하시겠습니까? 이렇게 하면 해당 사용자가 Homarr 인스턴스의 모든 리소스에 액세스할 수 있습니다."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "{{name}} 사용자를 사용자로 강등",
+                "text": "{{name}} 사용자를 사용자로 강등하시겠습니까? 이렇게 하면 Homarr 인스턴스의 모든 리소스에 대한 사용자의 액세스 권한이 제거됩니다."
             },
             "confirm": "확인"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "검색한 항목과 일치하는 항목이 없습니다. 필터를 조정해 주세요."
 }

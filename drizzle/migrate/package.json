@@ -1,0 +1,15 @@
+{
+    "license": "MIT",
+    "description": "This package.json is used for the migration script the dependencies are only installed within the Dockerfile.",
+    "scripts": {
+        "db:migrate": "ts-node ./migrate.ts"
+    },
+    "dependencies": {
+        "@types/better-sqlite3": "^7.6.7",
+        "better-sqlite3": "8.6.0",
+        "drizzle-orm": "^0.28.6",
+        "dotenv": "^16.3.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    }
+}

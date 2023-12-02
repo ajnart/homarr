@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "好み",
+    "pageTitle": "あなたの好み",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "デフォルト・ボード"
         }
     },
     "accessibility": {
@@ -22,27 +22,27 @@
             "label": "言語"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "週の初日",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "月曜日",
+                "saturday": "土曜日",
+                "sunday": "日曜日"
             }
         }
     },
     "searchEngine": {
         "title": "検索エンジン",
-        "custom": "",
+        "custom": "カスタム",
         "newTab": {
-            "label": ""
+            "label": "検索結果を新しいタブで開く"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "ページロード時に検索バーをフォーカスする。",
+            "description": "これにより、掲示板のページに移動すると、自動的に検索バーがフォーカスされます。デスクトップデバイスでのみ機能します。"
         },
         "template": {
             "label": "クエリURL",
-            "description": ""
+            "description": "%s 、クエリーのプレースホルダーとして使用する。"
         }
     }
 }

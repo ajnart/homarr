@@ -1,0 +1,50 @@
+{
+  "pageTitle": {
+    "label": "Název stránky",
+    "description": "Název plochy v levém horním rohu"
+  },
+  "metaTitle": {
+    "label": "Meta název",
+    "description": "Název zobrazený na kartě prohlížeče"
+  },
+  "logo": {
+    "label": "Logo",
+    "description": "Logo zobrazené v levém horním rohu"
+  },
+  "favicon": {
+    "label": "Ikona",
+    "description": "Ikona zobrazená na kartě prohlížeče"
+  },
+  "background": {
+    "label": "Pozadí"
+  },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
+  "customCSS": {
+    "label": "Vlastní CSS",
+    "description": "Dále si můžete přizpůsobit ovládací panel pomocí CSS, doporučujeme pouze zkušeným uživatelům",
+    "placeholder": "",
+    "applying": ""
+  }
+}

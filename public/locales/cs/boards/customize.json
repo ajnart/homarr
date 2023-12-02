@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Přizpůsobení {{name}} plochy",
+    "pageTitle": "Přizpůsobení {{name}} plochy",
+    "backToBoard": "Zpět na plochu",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Primární barva",
+            "secondaryColor": "Doplňková barva"
+        }
+    },
+    "save": {
+        "button": "",
+        "note": ""
+    },
+    "notifications": {
+        "pending": {
+            "title": "",
+            "message": ""
+        },
+        "success": {
+            "title": "",
+            "message": ""
+        },
+        "error": {
+            "title": "",
+            "message": ""
+        }
+    }
+}

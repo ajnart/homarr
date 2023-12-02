@@ -1,0 +1,29 @@
+{
+  "text": "",
+  "accordeon": {
+    "layout": {
+      "name": "Rozložení",
+      "description": "Povolte a zakažte prvky v záhlaví a na dlaždicích plochy"
+    },
+    "gridstack": {
+      "name": "GridStack",
+      "description": "Upravte chování a sloupce v oblasti plochy"
+    },
+    "pageMetadata": {
+      "name": "Metadata stránky",
+      "description": "Upravte názvy, logo a PWA"
+    },
+    "appereance": {
+      "name": "Vzhled",
+      "description": "Přizpůsobte pozadí, barvy a zobrazení aplikací"
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
+    },
+    "access": {
+      "name": "Oprávnění",
+      "description": "Nastavte, kdo má přístup k Vaší ploše"
+    }
+  }
+}

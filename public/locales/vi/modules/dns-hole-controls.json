@@ -3,15 +3,15 @@
     "name": "Trình điều khiển DNS",
     "description": "Kiểm soát PiHole hoặc AdGuard từ bảng điều khiển của bạn",
     "settings": {
-      "title": "",
+      "title": "Cài đặt kiểm soát lỗ DNS",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Hiển thị các nút 'Bật/Tắt tất cả'"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Không thể tìm thấy lỗ DNS",
+        "text": "Đã xảy ra sự cố khi kết nối với (các) Lỗ DNS của bạn. Vui lòng xác minh (các) cấu hình/tích hợp của bạn."
       }
     }
   }

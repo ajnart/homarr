@@ -1,14 +1,16 @@
 {
   "save": "Lưu",
+  "apply": "",
+  "insert": "",
   "about": "Về chúng tôi",
   "cancel": "Hủy",
   "close": "Đóng",
-  "back": "",
+  "back": "Mặt sau",
   "delete": "Xóa",
   "ok": "OK",
   "edit": "Sửa",
-  "next": "",
-  "previous": "",
+  "next": "Kế tiếp",
+  "previous": "Trước",
   "confirm": "Xác nhận",
   "enabled": "Bật",
   "disabled": "Tắt",
@@ -40,5 +42,16 @@
     "medium": "trung bình",
     "large": "lớn"
   },
-  "seeMore": ""
+  "seeMore": "Xem thêm...",
+  "position": {
+    "left": "Bên trái",
+    "center": "",
+    "right": "Phải"
+  },
+  "attributes": {
+    "width": "Chiều rộng",
+    "height": "Chiều cao"
+  },
+  "public": "Công khai",
+  "restricted": ""
 }

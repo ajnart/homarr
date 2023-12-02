@@ -1,0 +1,20 @@
+{
+  "title": "搜索引擎",
+  "configurationName": "搜索引擎设置",
+  "custom": "自定义",
+  "tips": {
+    "generalTip": "您可以使用多种前缀！将这些添加到您的查询前将过滤结果。：!s (网页), !t (Torrents), !y (YouTube), 和 !m (媒体)。",
+    "placeholderTip": "%s 可以作为查询的占位符。"
+  },
+  "customEngine": {
+    "title": "自定义搜索引擎",
+    "label": "查询网址",
+    "placeholder": "自定义查询网址"
+  },
+  "searchNewTab": {
+    "label": "在新选项卡中打开搜索结果页"
+  },
+  "searchEnabled": {
+    "label": "启用搜索"
+  }
+}

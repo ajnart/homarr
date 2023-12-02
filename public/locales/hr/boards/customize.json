@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Prilagodite ploču {{name}}",
+    "pageTitle": "Prilagodba za {{name}} ploču",
+    "backToBoard": "Povratak na ploču",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Primarna boja",
+            "secondaryColor": "Sekundarna boja"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Spremi promjene",
+        "note": "Pažljivo, imate nespremljene promjene!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Spremanje prilagodbe",
+            "message": "Pričekajte dok ne spremimo vašu prilagodbu"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Prilagodba spremljena",
+            "message": "Vaša prilagodba je uspješno spremljena"
         },
         "error": {
             "title": "Pogreška",
-            "message": ""
+            "message": "Nije moguće spremiti promjene"
         }
     }
 }

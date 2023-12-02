@@ -8,20 +8,20 @@
         "label": "Thay thế liên kết bằng máy chủ bên ngoài"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Mở liên kết trong tab mới"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Thống kê truyền thông",
+    "pending": "Chờ duyệt",
+    "tvRequests": "Yêu cầu TV",
+    "movieRequests": "Yêu cầu phim",
+    "approved": "Đã được phê duyệt",
+    "totalRequests": "Tổng cộng"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Người dùng hàng đầu",
+    "requests": "Yêu cầu: {{number}}"
   }
 }

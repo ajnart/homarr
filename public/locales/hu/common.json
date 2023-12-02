@@ -1,5 +1,7 @@
 {
   "save": "Mentés",
+  "apply": "",
+  "insert": "",
   "about": "Névjegy",
   "cancel": "Mégse",
   "close": "Bezár",
@@ -40,5 +42,16 @@
     "medium": "közepes",
     "large": "nagy"
   },
-  "seeMore": "Lásd még..."
+  "seeMore": "Lásd még...",
+  "position": {
+    "left": "Bal",
+    "center": "",
+    "right": "Jobb"
+  },
+  "attributes": {
+    "width": "Szélesség",
+    "height": "Magasság"
+  },
+  "public": "Nyilvános",
+  "restricted": "Korlátozott"
 }

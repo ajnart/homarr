@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Sở thích",
+    "pageTitle": "sở thích của bạn",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Bảng mặc định"
         }
     },
     "accessibility": {
@@ -22,27 +22,27 @@
             "label": "Ngôn ngữ"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Ngày đầu tiên trong tuần",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Thứ hai",
+                "saturday": "Thứ bảy",
+                "sunday": "Chủ nhật"
             }
         }
     },
     "searchEngine": {
         "title": "Công cụ tìm kiếm",
-        "custom": "",
+        "custom": "Phong tục",
         "newTab": {
-            "label": ""
+            "label": "Mở kết quả tìm kiếm trong tab mới"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Thanh tìm kiếm tập trung vào tải trang.",
+            "description": "Điều này sẽ tự động tập trung vào thanh tìm kiếm khi bạn điều hướng đến các trang bảng. Nó sẽ chỉ hoạt động trên các thiết bị máy tính để bàn."
         },
         "template": {
             "label": "URL truy vấn",
-            "description": ""
+            "description": "Sử dụng %s làm phần giữ chỗ cho truy vấn"
         }
     }
 }

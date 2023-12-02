@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Nav atrasts neviens pieprasījums. Lūdzu, pārliecinieties, vai esat pareizi konfigurējuši savas aplikācijas.",
-  "pending": "Apstiprinājumu gaida {{countPendingApproval}} pieprasījumi.",
-  "nonePending": "Pašlaik nav nepabeigtu apstiprinājumu. Jums viss iet labi!",
   "state": {
     "approved": "Apstiprināts",
     "pendingApproval": "Nepabeigts apstiprinājums",

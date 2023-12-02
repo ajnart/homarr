@@ -7,9 +7,53 @@
 			"showToolbar": {
 				"label": "Pokaż pasek narzędzi ułatwiający pisanie w markdown"
 			},
+			"allowReadOnlyCheck": {
+				"label": "Zezwalaj na sprawdzanie w trybie tylko do odczytu"
+			},
 			"content": {
 				"label": "Zawartość notatnika"
 			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Pogrubienie",
+			"italic": "Kursywa",
+			"strikethrough": "Przekreślenie",
+			"underline": "Podkreślenie",
+			"colorText": "Kolorowy tekst",
+			"colorHighlight": "Kolorowy wyróżniony tekst",
+			"code": "Kod",
+			"clear": "Wyczyść formatowanie",
+			"heading": "Nagłówek {{level}}",
+			"align": "Wyrównanie tekstu: {{position}}",
+			"blockquote": "Cytat",
+			"horizontalLine": "Linia pozioma",
+			"bulletList": "Lista punktowana",
+			"orderedList": "Lista numerowana",
+			"checkList": "Lista kontrolna",
+			"increaseIndent": "Zwiększ wcięcie",
+			"decreaseIndent": "Zmniejsz wcięcie",
+			"link": "Odnośnik",
+			"unlink": "Usuń odnośnik",
+			"image": "Osadź obraz",
+			"addTable": "Dodaj tabelę",
+			"deleteTable": "Usuń tabelę",
+			"colorCell": "Kolor Komórki",
+			"mergeCell": "Przełączanie scalania komórek",
+			"addColumnLeft": "Dodaj kolumnę przed",
+			"addColumnRight": "Dodaj kolumnę po",
+			"deleteColumn": "Usuń kolumnę",
+			"addRowTop": "Dodaj wiersz przed",
+			"addRowBelow": "Dodaj wiersz po",
+			"deleteRow": "Usuń wiersz"
+		},
+		"modals": {
+			"clearColor": "Usuń kolor",
+			"source": "Źródło",
+			"widthPlaceholder": "Wartość w % lub pikselach",
+			"columns": "Kolumny",
+			"rows": "Wiersze"
 		}
 	}
 }

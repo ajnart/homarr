@@ -5,31 +5,29 @@
     "settings": {
       "title": "Liste over media forespørsler",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Erstatt lenker med ekstern vert"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Åpne lenker i ny fane"
       }
     }
   },
   "noRequests": "Ingen forespørsler funnet. Vennligst skjekk at du har konfigurert appene dine riktig.",
-  "pending": "",
-  "nonePending": "Det er for tiden ingen ventende godkjenninger. Alt er klart!",
   "state": {
     "approved": "Godkjent",
     "pendingApproval": "Venter på godkjenning",
     "declined": "Avvist"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Godkjenne forespørsler",
+    "decline": "Avslå forespørsler",
+    "approving": "Godkjenner forespørselen..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Godkjenner",
+    "declining": "Avslår",
+    "request": "forespør...",
+    "approved": "Forespørselen ble godkjent!",
+    "declined": "Forespørselen ble avvist!"
   }
 }

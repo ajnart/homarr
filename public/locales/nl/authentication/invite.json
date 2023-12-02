@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Account aanmaken",
+    "title": "Account aanmaken",
+    "text": "Geef hieronder uw referenties aan",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Wachtwoord"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Wachtwoord bevestigen"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Account aanmaken"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Account aanmaken",
+            "text": "Even geduld"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Account aangemaakt",
+            "text": "Je account is succesvol aangemaakt"
         },
         "error": {
             "title": "Fout",
-            "text": ""
+            "text": "Er ging iets mis, ik kreeg de volgende foutmelding: {{error}}"
         }
     }
 }

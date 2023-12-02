@@ -18,6 +18,7 @@ export interface IMedia {
   episodetitle?: string;
   voteAverage?: string;
   poster?: string;
+  altPoster?: string;
   genres: string[];
   seasonNumber?: number;
   plexUrl?: string;
@@ -136,7 +137,6 @@ export function RadarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfigContext();
   const calendar = config?.widgets.find((w) => w.type === 'calendar');
-  const useRadarrv5 = calendar?.properties.useRadarrv5 ?? false;
 
   // Find a poster CoverType
   const poster = media.images.find((image: any) => image.coverType === 'poster');
@@ -147,7 +147,8 @@ export function RadarrMediaDisplay(props: any) {
         title: media.title ?? media.originalTitle,
         overview: media.overview ?? '',
         genres: media.genres ?? [],
-        poster: useRadarrv5 ? poster.remoteUrl : poster.url,
+        poster: poster.url,
+        altPoster: poster.remoteUrl,
         voteAverage: media.ratings.tmdb.value.toString(),
         imdbId: media.imdbId,
         type: 'movie',
@@ -160,7 +161,6 @@ export function SonarrMediaDisplay(props: any) {
   const { media }: { media: any } = props;
   const { config } = useConfigContext();
   const calendar = config?.widgets.find((w) => w.type === 'calendar');
-  const useSonarrv4 = calendar?.properties.useSonarrv4 ?? false;
 
   // Find a poster CoverType
   const poster = media.series.images.find((image: any) => image.coverType === 'poster');
@@ -172,7 +172,8 @@ export function SonarrMediaDisplay(props: any) {
         genres: media.series.genres ?? [],
         overview: media.overview ?? media.series.overview ?? '',
         title: media.series.title,
-        poster: useSonarrv4 ? poster.remoteUrl : poster.url,
+        poster: poster.url,
+        altPoster: poster.remoteUrl,
         episodeNumber: media.episodeNumber,
         seasonNumber: media.seasonNumber,
         episodetitle: media.title,
@@ -191,7 +192,7 @@ export function MediaDisplay({ media }: { media: IMedia }) {
 
   return (
     <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
-      <Image src={media.poster} height={200} width={150} radius="md" fit="cover" />
+      <Image src={media.poster?? media.altPoster} height={200} width={150} radius="md" fit="cover" withPlaceholder/>
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>

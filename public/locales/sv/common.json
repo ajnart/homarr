@@ -1,5 +1,7 @@
 {
   "save": "Spara",
+  "apply": "",
+  "insert": "",
   "about": "Om",
   "cancel": "Avbryt",
   "close": "Stäng",
@@ -40,5 +42,16 @@
     "medium": "mellan",
     "large": "stor"
   },
-  "seeMore": "Se mer..."
+  "seeMore": "Se mer...",
+  "position": {
+    "left": "Vänster",
+    "center": "",
+    "right": "Höger"
+  },
+  "attributes": {
+    "width": "Bredd",
+    "height": "Höjd"
+  },
+  "public": "Publik",
+  "restricted": ""
 }

@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Logg Inn",
   "title": "Velkommen tilbake!",
-  "text": "",
+  "text": "Vennligst skriv inn påloggingsinformasjonen din",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Logg inn"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Etter pålogging blir du omdirigert til {{url}}"
   },
-  "alert": ""
+  "alert": "Påloggingsinformasjonen din er feil eller denne kontoen eksisterer ikke. Vennligst prøv på nytt."
 }

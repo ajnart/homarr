@@ -1,7 +1,7 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Prijava",
   "title": "Dobrodošli nazaj!",
-  "text": "",
+  "text": "Vnesite svoje poverilnice",
   "form": {
     "fields": {
       "username": {
@@ -14,7 +14,7 @@
     "buttons": {
       "submit": "Prijava"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Po prijavi boste preusmerjeni na spletno stran {{url}}."
   },
-  "alert": ""
+  "alert": "Vaše poverilnice so napačne ali pa ta račun ne obstaja. Poskusite znova."
 }

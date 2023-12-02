@@ -1,19 +1,21 @@
 {
   "save": "Opslaan",
+  "apply": "",
+  "insert": "",
   "about": "Over",
   "cancel": "Annuleer",
   "close": "Sluiten",
-  "back": "",
+  "back": "Terug",
   "delete": "Verwijder",
   "ok": "OK",
   "edit": "Wijzig",
-  "next": "",
-  "previous": "",
+  "next": "Volgende",
+  "previous": "Vorige",
   "confirm": "Bevestig",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
+  "enabled": "Ingeschakeld",
+  "disabled": "Uitgeschakeld",
+  "enableAll": "Alles inschakelen",
+  "disableAll": "Alles uitschakelen",
   "version": "Versie",
   "changePosition": "Positie wijzigen",
   "remove": "Verwijder",
@@ -40,5 +42,16 @@
     "medium": "gemiddeld",
     "large": "groot"
   },
-  "seeMore": ""
+  "seeMore": "Zie meer...",
+  "position": {
+    "left": "Links",
+    "center": "",
+    "right": "Rechts"
+  },
+  "attributes": {
+    "width": "Breedte",
+    "height": "Hoogte"
+  },
+  "public": "Openbaar",
+  "restricted": ""
 }

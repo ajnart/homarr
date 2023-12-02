@@ -4,9 +4,6 @@
     "description": "Muestra un calendario con los próximos lanzamientos, de integraciones soportadas.",
     "settings": {
       "title": "Ajustes del widget Calendario",
-      "useSonarrv4": {
-        "label": "Usar la API de Sonarr v4"
-      },
       "radarrReleaseType": {
         "label": "Tipo de lanzamiento de Radarr",
         "data": {

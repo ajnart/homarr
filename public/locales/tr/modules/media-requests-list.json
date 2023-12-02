@@ -13,8 +13,6 @@
     }
   },
   "noRequests": "Hiç talep bulunamadı. Lütfen uygulamalarınızı doğru yapılandırdığınızdan emin olun.",
-  "pending": "Onay bekleyen {{countPendingApproval}} talepleri bulunmaktadır.",
-  "nonePending": "Şu anda onay bekleyen istek bulunmamaktadır. Herşey yolunda!",
   "state": {
     "approved": "Onaylandı",
     "pendingApproval": "Onay bekliyor",

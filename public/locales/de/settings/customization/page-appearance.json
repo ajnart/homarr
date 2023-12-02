@@ -18,6 +18,29 @@
   "background": {
     "label": "Hintergrund"
   },
+  "backgroundImageAttachment": {
+    "label": "Anhang des Hintergrundbildes",
+    "options": {
+      "fixed": "Fixiert - Hintergrund bleibt in der gleichen Position (empfohlen)",
+      "scroll": "Scrollen – Scrollt mit der Maus im Hintergrund"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Hintergrundbild-Größe",
+    "options": {
+      "cover": "Abdecken - Skaliert das Bild so klein wie möglich, um das gesamte Fenster abzudecken, indem überschüssiger Platz abgeschnitten wird. (empfohlen)",
+      "contain": "Einschließen – Skaliert das Bild innerhalb seines Containers so groß wie möglich, ohne das Bild zu beschneiden oder zu strecken."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Anhang des Hintergrundbildes",
+    "options": {
+      "repeat": "Wiederholen - Das Bild wird so oft wiederholt, bis es den gesamten Bereich des Hintergrundbildes abdeckt.",
+      "no-repeat": "Keine Wiederholung – Das Bild wird nicht wiederholt und füllt möglicherweise nicht den gesamten Raum aus (empfohlen)",
+      "repeat-x": "Wiederholen X – Wie „Wiederholen“, jedoch nur auf der horizontalen Achse.",
+      "repeat-y": "Wiederholen Y – Wie „Wiederholen“, jedoch nur auf der vertikalen Achse."
+    }
+  },
   "customCSS": {
     "label": "Benutzerdefiniertes CSS",
     "description": "Außerdem können Sie Ihr Dashboard mittels CSS anpassen, dies wird nur für erfahrene Benutzer empfohlen",

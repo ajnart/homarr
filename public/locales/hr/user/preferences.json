@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Postavke",
+    "pageTitle": "Vaše preferencije",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Zadana ploča"
         }
     },
     "accessibility": {
@@ -22,27 +22,27 @@
             "label": "Jezik"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Prvi dan u tjednu",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "ponedjeljak",
+                "saturday": "subota",
+                "sunday": "nedjelja"
             }
         }
     },
     "searchEngine": {
         "title": "Pretraživač",
-        "custom": "",
+        "custom": "Prilagođen",
         "newTab": {
-            "label": ""
+            "label": "Otvori rezultate pretraživanja u novoj kartici"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Fokusirajte traku za pretraživanje na učitavanje stranice.",
+            "description": "Ovo će automatski fokusirati traku za pretraživanje, kada idete na stranice ploče. Radit će samo na stolnim uređajima."
         },
         "template": {
             "label": "URL upita",
-            "description": ""
+            "description": "Koristite %s kao rezervirano mjesto za upit"
         }
     }
 }

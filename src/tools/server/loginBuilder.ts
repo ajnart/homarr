@@ -1,34 +1,41 @@
 import {
-  GetServerSideProps,
   GetServerSidePropsContext,
   GetServerSidePropsResult,
   PreviewData,
+  Redirect
 } from 'next';
+
 import { Session } from 'next-auth';
+
 import { ParsedUrlQuery } from 'querystring';
 
 export const checkForSessionOrAskForLogin = (
   context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>,
   session: Session | null,
   accessCallback: () => boolean
-): GetServerSidePropsResult<any> | undefined => {
-  if (!session?.user) {
-    console.log('detected logged out user!');
+): GetServerSidePropsResult<never> | undefined => {
+  const permitted = accessCallback();
+
+  // user is logged in but does not have the required access
+  if (session?.user && !permitted) {
     return {
-      props: {},
       redirect: {
-        destination: `/auth/login?redirectAfterLogin=${context.resolvedUrl}`,
-        permanent: false,
-      },
+        destination: '/401',
+        permanent: false
+      }
     };
   }
 
-  if (!accessCallback()) {
-    return {
-      props: {},
-      notFound: true,
-    };
+  // user *may* be logged in and permitted
+  if (permitted) {
+    return undefined;
   }
 
-  return undefined;
+  // user is logged out and needs to sign in
+  return {
+    redirect: {
+      destination: `/auth/login?redirectAfterLogin=${context.resolvedUrl}`,
+      permanent: false,
+    },
+  };
 };

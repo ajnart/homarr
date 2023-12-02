@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "RSS Widget",
-    "description": "",
+    "description": "RSS widget omogućuje vam prikaz RSS izvora na nadzornoj ploči.",
     "settings": {
       "title": "Postavke za RSS Widget",
       "rssFeedUrl": {
@@ -12,8 +12,8 @@
         "label": "Interval osvježavanja (u minutama)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Dopusti HTML formatiranje (opasno)",
+        "info": "Dopuštanje HTML oblikovanja izvana može biti opasno.<br/>Provjerite je li feed iz pouzdanog izvora."
       },
       "textLinesClamp": {
         "label": "Ograničavanje broja redaka teksta"

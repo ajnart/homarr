@@ -1,34 +1,27 @@
 {
-    "experimentalNote": {
-        "label": ""
-    },
     "search": {
-        "label": "",
+        "label": "검색",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "웹에서 {{query}} 검색",
+            "youtube": "YouTube에서 {{query}} 검색",
+            "torrent": "{{query}} 토렌트 검색",
+            "movie": "{{app}}에서 {{query}} 검색"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "about": {
-                "label": "",
-                "new": ""
-            },
-            "logout": "",
-            "login": ""
+            "switchTheme": "테마 전환",
+            "preferences": "사용자 기본 설정",
+            "defaultBoard": "기본 대시보드",
+            "manage": "관리",
+            "logout": "{{username}}에서 로그아웃",
+            "login": "로그인"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "<b>{{search}}</b>에 대한 상위 {{count}} 결과"
         }
     }
 }

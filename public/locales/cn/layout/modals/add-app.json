@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "通用",
+		"behaviour": "行为",
+		"network": "网络",
+		"appearance": "外观",
+		"integration": "集成"
+	},
+	"general": {
+		"appname": {
+			"label": "应用名称",
+			"description": "用于在面板上显示。"
+		},
+		"internalAddress": {
+			"label": "内部地址",
+			"description": "应用的内部IP地址。",
+			"troubleshoot": {
+				"label": "遇到问题了？",
+				"header": "下面是一些常见的错误和解决方法：",
+				"lines": {
+					"nothingAfterPort": "在大多数情况下（不是所有情况），您不应该在端口之后输入任何路径。(即使是 pihole 的 '/admin' 或 plex 的 '/web')",
+					"protocolCheck": "一定要确保URL前面是http或https，并确保你使用的是正确的URL。",
+					"preferIP": "建议使用要与之通信的机器或容器的直接 Ip 地址。",
+					"enablePings": "通过开启ping检查IP是否正确。 自定义面板 -> 布局 -> 启用 ping。应用磁贴上会出现一个红色或绿色的小泡泡，鼠标悬停在此就会显示相应代码（在大多数的情况下，绿色泡泡的代码为200）。",
+					"wget": "为了确保homarr可以与其他应用程序通信，请使用wget/curl/ping应用程序的IP:port。",
+					"iframe": "在使用 iframe 时，应始终使用与 Homarr 相同的协议 (http/s)。",
+					"clearCache": "有些信息是在缓存中注册的，因此除非您在Homarr的一般选项中清除缓存，否则集成可能无法工作。"
+				},
+				"footer": "更多故障排除，请联系我们的{{discord}}。"
+			}
+		},
+		"externalAddress": {
+			"label": "外部地址",
+			"description": "点击应用时打开的网址。"
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "在新标签页中打开",
+			"description": "在新标签页中打开应用，而不是当前标签页。"
+		},
+		"tooltipDescription": {
+			"label": "应用描述",
+			"description": "将鼠标悬停在应用上时，将显示您输入的文本。\n它可以为用户提供更多关于应用的详细信息，留空以隐藏。"
+		},
+		"customProtocolWarning": "使用非标准协议。这可能需要预先安装应用程序，并可能带来安全风险。确保您的地址安全可靠。"
+	},
+	"network": {
+		"statusChecker": {
+			"label": "状态检测",
+			"description": "使用简单的HTTP(S) 请求检查您的应用是否在线。"
+		},
+		"statusCodes": {
+			"label": "HTTP状态码",
+			"description": "被视为在线的 HTTP 状态码。"
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "应用图标",
+			"description": "输入以搜索图标，也可以粘贴自定义图标的网址。",
+			"autocomplete": {
+				"title": "未找到结果",
+				"text": "尝试使用一个更具体的搜索词。如果您找不到您想要的图标，可以在上方粘贴图片的网址，以获得一个自定义图标。"
+			},
+			"noItems": {
+				"title": "正在加载外部图标",
+				"text": "这可能需要几秒钟"
+			}
+		},
+		"appNameFontSize": {
+			"label": "应用名称大小",
+			"description": "设置应用名称在磁贴上显示时的字体大小。"
+		},
+		"appNameStatus": {
+			"label": "应用名称状态",
+			"description": "如果您想要显示标题，请选择显示的位置。",
+			"dropdown": {
+				"normal": "仅在磁贴上显示标题",
+				"hover": "仅在悬停时显示标题",
+				"hidden": "完全不显示"
+			}
+		},
+		"positionAppName": {
+			"label": "应用名称位置",
+			"description": "应用名称相对于图标的位置。",
+			"dropdown": {
+				"top": "上边",
+				"right": "右边",
+				"bottom": "下边",
+				"left": "左边"
+			}
+		},
+		"lineClampAppName": {
+			"label": "应用名称行数",
+			"description": "定义标题最多能容纳多少行。设置为 0 表示无限制。"
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "集成配置",
+			"description": "集成配置将用于连接到您的应用。",
+			"placeholder": "选择一个集成",
+			"defined": "已定义",
+			"undefined": "未定义",
+			"public": "公开",
+			"private": "私有",
+			"explanationPrivate": "私有密钥仅会被发送到服务器一次。一旦您的浏览器刷新了页面，它将永远不会再次发送。",
+			"explanationPublic": "公开的密钥将始终发送给客户端，并且可以通过API访问。它不应该包含任何机密值，如用户名、密码、令牌、证书等!"
+		},
+		"secrets": {
+			"description": "输入值并点击保存以更新密钥。使用清除按钮以删除密钥。",
+			"warning": "您的凭据作为集成的访问权限，您应该<strong>永远不</strong>与任何人共享它们。Homarr 团队永远不会索要证书。确保<strong>安全地存储和管理您的秘钥</strong>。",
+			"clear": "清除密钥",
+			"save": "保存密钥",
+			"update": "更新密钥"
+		}
+	},
+	"validation": {
+		"popover": "您的表单包含无效数据，因此它不能被保存。请解决所有问题，并再次点击此按钮以保存您的更改。",
+		"name": "名称为必填项",
+		"noUrl": "地址为必填项",
+		"invalidUrl": "不是有效的地址",
+		"noIconUrl": "此字段为必填",
+		"noExternalUri": "外部地址为必填项",
+		"invalidExternalUri": "无效的外部地址"
+	}
+}

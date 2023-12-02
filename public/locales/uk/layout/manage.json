@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Головна"
         },
         "boards": {
-            "title": ""
+            "title": "Дошки"
         },
         "users": {
-            "title": "",
+            "title": "Користувачі",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Керувати",
+                "invites": "Запрошує"
             }
         },
         "help": {
-            "title": "",
+            "title": "Допоможіть!",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Документація",
+                "report": "Повідомити про проблему / помилку",
+                "discord": "Розбрат у громаді",
+                "contribute": "Зробити внесок"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Інструменти",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "Про програму"
         }
     }
 }

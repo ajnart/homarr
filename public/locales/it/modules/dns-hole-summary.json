@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domini su adlists",
       "queriesToday": "Query di oggi",
-      "queriesBlockedTodayPercentage": "bloccati oggi",
-      "queriesBlockedToday": "bloccati oggi"
+      "queriesBlockedTodayPercentage": "Bloccati oggi",
+      "queriesBlockedToday": "Bloccati oggi"
     }
   }
 }

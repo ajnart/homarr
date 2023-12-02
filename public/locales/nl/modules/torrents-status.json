@@ -10,6 +10,12 @@
       "displayCompletedTorrents": {
         "label": "Afgeronde torrents weergeven"
       },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
       "displayStaleTorrents": {
         "label": "Toon verouderde torrents"
       },
@@ -19,13 +25,19 @@
       "labelFilter": {
         "label": "Label lijst",
         "description": "Als \"is whitelist\" is aangevinkt, is dit een witte lijst. Indien niet aangevinkt, is dit een zwarte lijst. Doet niets als hij leeg is"
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
       }
     }
   },
   "card": {
     "footer": {
       "error": "Fout",
-      "lastUpdated": "Laatst bijgewerkt {{time}} geleden"
+      "lastUpdated": "Laatst bijgewerkt {{time}} geleden",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
     },
     "table": {
       "header": {
@@ -59,12 +71,12 @@
       },
       "generic": {
         "title": "Er is een onverwachte fout opgetreden",
-        "text": ""
+        "text": "Kan niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Laden",
+      "description": "Verbinding maken"
     },
     "popover": {
       "introductionPrefix": "Beheerd door",

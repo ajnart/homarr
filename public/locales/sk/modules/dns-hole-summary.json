@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domény na adlistoch",
       "queriesToday": "Poziadavky dnes",
-      "queriesBlockedTodayPercentage": "dnes zablokované",
-      "queriesBlockedToday": "dnes zablokované"
+      "queriesBlockedTodayPercentage": "Zablokované dnes",
+      "queriesBlockedToday": "Zablokované dnes"
     }
   }
 }

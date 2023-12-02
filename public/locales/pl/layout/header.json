@@ -1,7 +1,4 @@
 {
-    "experimentalNote": {
-        "label": "To jest eksperymentalna funkcja Homarr. Zgłoś wszelkie problemy na <gh>GitHub</gh> lub <dc>Discord</dc>."
-    },
     "search": {
         "label": "Szukaj",
         "engines": {
@@ -17,10 +14,6 @@
             "preferences": "Preferencje",
             "defaultBoard": "Domyślna tablica",
             "manage": "Zarządzaj",
-            "about": {
-                "label": "O programie",
-                "new": "Nowy"
-            },
             "logout": "Wyloguj z {{username}}",
             "login": "Zaloguj się"
         }

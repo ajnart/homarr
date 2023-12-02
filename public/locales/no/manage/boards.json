@@ -1,43 +1,43 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tavler",
+    "pageTitle": "Tavler",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Apper",
+            "widgets": "Widgetter",
+            "categories": "Kategorier"
         },
         "buttons": {
-            "view": ""
+            "view": "Vis tavle"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Angi som standardtavle",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Slett permanent",
+                "disabled": "Sletting er deaktivert fordi eldre Homarr-komponenter ikke tillater sletting av standardkonfigurasjonen. Sletting vil være mulig i fremtiden."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Filsystem",
+            "default": "Standard"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Lag en ny tavle"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Slett tavle",
+            "text": "Er du sikker på at du vil slette denne tavlen? Denne handlingen kan ikke angres og dataene dine går tapt permanent."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Opprett tavle",
+            "text": "Navnet kan ikke endres etter at en tavle er opprettet.",
             "form": {
                 "name": {
                     "label": "Navn"
                 },
-                "submit": ""
+                "submit": "Opprett"
             }
         }
     }

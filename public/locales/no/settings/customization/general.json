@@ -18,12 +18,12 @@
       "description": "Tilpass både bakgrunn, farger og apper"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Hjelpemidler",
+      "description": "Konfigurer Homarr for funksjonshemmede og funksjonshemmede brukere"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Tilgang",
+      "description": "Konfigurer hvem som har tilgang til din tavle"
     }
   }
 }

@@ -14,7 +14,7 @@
         },
         "replaceIconsWithDots": {
             "label": "Ping noktalarını ikon ile değiştirin",
-            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, göstergeleri simgelerle değiştirecektir"
+            "description": "Renk körü (Daltonizm) kullanıcılar için ping noktaları tanınmayabilir. Bu, panelde ki renkli noktaları simgeler ile değiştirecektir"
         }
     },
     "localization": {

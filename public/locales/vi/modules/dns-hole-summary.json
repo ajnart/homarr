@@ -10,9 +10,9 @@
       "layout": {
         "label": "Bố cục",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 x 2",
+          "row": "Nằm ngang",
+          "column": "Thẳng đứng"
         }
       }
     }
@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Tên miền trên danh sách quảng cáo",
       "queriesToday": "Truy vấn hôm nay",
-      "queriesBlockedTodayPercentage": "đã chặn hôm nay",
-      "queriesBlockedToday": "đã chặn hôm nay"
+      "queriesBlockedTodayPercentage": "Đã chặn hôm nay",
+      "queriesBlockedToday": "Đã chặn hôm nay"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "bảng",
+    "pageTitle": "bảng",
     "cards": {
         "statistics": {
             "apps": "Ứng dụng",
@@ -8,36 +8,36 @@
             "categories": "Danh mục"
         },
         "buttons": {
-            "view": ""
+            "view": "Xem bảng"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Đặt làm bảng mặc định của bạn",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Xóa vĩnh viễn",
+                "disabled": "Tính năng xóa bị vô hiệu hóa vì các thành phần Homarr cũ hơn không cho phép xóa cấu hình mặc định. Việc xóa sẽ có thể xảy ra trong tương lai."
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Hệ thống tập tin",
+            "default": "Mặc định"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Tạo bảng mới"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Xóa bảng",
+            "text": "Bạn có chắc chắn muốn xóa bảng này không? Hành động này không thể hoàn tác được và dữ liệu của bạn sẽ bị mất vĩnh viễn."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Tạo bảng",
+            "text": "Tên không thể thay đổi sau khi một bảng đã được tạo.",
             "form": {
                 "name": {
                     "label": "Tên"
                 },
-                "submit": ""
+                "submit": "Tạo nên"
             }
         }
     }

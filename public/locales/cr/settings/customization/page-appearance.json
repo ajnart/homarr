@@ -1,0 +1,50 @@
+{
+  "pageTitle": {
+    "label": "crwdns1616:0crwdne1616:0",
+    "description": "crwdns2551:0crwdne2551:0"
+  },
+  "metaTitle": {
+    "label": "crwdns1953:0crwdne1953:0",
+    "description": "crwdns2717:0crwdne2717:0"
+  },
+  "logo": {
+    "label": "crwdns1620:0crwdne1620:0",
+    "description": "crwdns2719:0crwdne2719:0"
+  },
+  "favicon": {
+    "label": "crwdns1624:0crwdne1624:0",
+    "description": "crwdns2721:0crwdne2721:0"
+  },
+  "background": {
+    "label": "crwdns1628:0crwdne1628:0"
+  },
+  "backgroundImageAttachment": {
+    "label": "crwdns4010:0crwdne4010:0",
+    "options": {
+      "fixed": "crwdns4012:0crwdne4012:0",
+      "scroll": "crwdns4014:0crwdne4014:0"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "crwdns4016:0crwdne4016:0",
+    "options": {
+      "cover": "crwdns4018:0crwdne4018:0",
+      "contain": "crwdns4020:0crwdne4020:0"
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "crwdns4022:0crwdne4022:0",
+    "options": {
+      "repeat": "crwdns4024:0crwdne4024:0",
+      "no-repeat": "crwdns4032:0crwdne4032:0",
+      "repeat-x": "crwdns4028:0crwdne4028:0",
+      "repeat-y": "crwdns4030:0crwdne4030:0"
+    }
+  },
+  "customCSS": {
+    "label": "crwdns1702:0crwdne1702:0",
+    "description": "crwdns2723:0crwdne2723:0",
+    "placeholder": "crwdns2389:0crwdne2389:0",
+    "applying": "crwdns2561:0crwdne2561:0"
+  }
+}

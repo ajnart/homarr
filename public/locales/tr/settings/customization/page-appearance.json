@@ -13,10 +13,33 @@
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Tarayıcı sekmenizde görüntülenen icon"
+    "description": "Tarayıcı sekmenizde görüntülenen ikon"
   },
   "background": {
     "label": "Arkaplan"
+  },
+  "backgroundImageAttachment": {
+    "label": "Arkaplan resim ekle",
+    "options": {
+      "fixed": "Sabit - Arka plan aynı konumda kalır (önerilir)",
+      "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Arkaplan resim boyutu",
+    "options": {
+      "cover": "Kapak - Fazla alanı kırparak tüm pencereyi kaplamak için görüntüyü mümkün olduğunca küçük ölçeklendirir. (tavsiye edilen)",
+      "contain": "Kapsam - Görüntüyü kırpmadan veya genişletmeden, kapsayıcısı içinde mümkün olduğu kadar büyük ölçeklendirir."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Arkaplan resim ekle",
+    "options": {
+      "repeat": "Tekrarla - Resim, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
+      "no-repeat": "Tekrarsız - Resim tekrarlanmaz ve tüm alanı doldurmayabilir (önerilir)",
+      "repeat-x": "Tekrarla X - 'Tekrarla' ile aynıdır ancak yalnızca yatay eksende.",
+      "repeat-y": "Tekrar Y - 'Tekrarla' ile aynıdır, ancak yalnızca dikey eksende."
+    }
   },
   "customCSS": {
     "label": "Özel CSS",

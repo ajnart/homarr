@@ -1,0 +1,27 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
+      }
+    }
+  },
+  "mediaStats": {
+    "title": "Statistiky médií",
+    "pending": "Čeká na schválení",
+    "tvRequests": "Požadavky seriálů",
+    "movieRequests": "Požadavky filmů",
+    "approved": "Již schváleno",
+    "totalRequests": "Celkem"
+  },
+  "userStats": {
+    "title": "Top uživatelé",
+    "requests": "Požadavků: {{number}}"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "replaceLinksWithExternalHost": {
+        "label": ""
+      },
+      "openInNewTab": {
+        "label": ""
+      }
+    }
+  },
+  "noRequests": "",
+  "state": {
+    "approved": "Schváleno",
+    "pendingApproval": "",
+    "declined": ""
+  },
+  "tooltips": {
+    "approve": "",
+    "decline": "",
+    "approving": ""
+  },
+  "mutation": {
+    "approving": "",
+    "declining": "",
+    "request": "",
+    "approved": "",
+    "declined": ""
+  }
+}

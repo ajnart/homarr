@@ -1,0 +1,37 @@
+{
+  "descriptor": {
+    "name": "天气",
+    "description": "显示指定位置的当前天气信息。",
+    "settings": {
+      "title": "天气组件设置",
+      "displayInFahrenheit": {
+        "label": "显示为华氏度"
+      },
+      "displayCityName": {
+        "label": "显示城市名称"
+      },
+      "location": {
+        "label": "天气位置"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "晴朗",
+      "mainlyClear": "晴朗为主",
+      "fog": "雾",
+      "drizzle": "细雨",
+      "freezingDrizzle": "冻毛毛雨",
+      "rain": "雨",
+      "freezingRain": "冻雨",
+      "snowFall": "降雪",
+      "snowGrains": "霰",
+      "rainShowers": "阵雨",
+      "snowShowers": "阵雪",
+      "thunderstorm": "雷暴",
+      "thunderstormWithHail": "雷暴夹冰雹",
+      "unknown": "未知"
+    }
+  },
+  "error": "出现了一个错误"
+}

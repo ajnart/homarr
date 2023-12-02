@@ -4,12 +4,12 @@
             "title": "Главная"
         },
         "boards": {
-            "title": "Доски"
+            "title": "Панели"
         },
         "users": {
             "title": "Пользователи",
             "items": {
-                "manage": "Управлять",
+                "manage": "Управление",
                 "invites": "Приглашения"
             }
         },
@@ -18,7 +18,7 @@
             "items": {
                 "documentation": "Документация",
                 "report": "Сообщить о проблеме / ошибке",
-                "discord": "Дискорд сообщество",
+                "discord": "Сообщество Discord",
                 "contribute": "Внести вклад"
             }
         },
@@ -27,6 +27,9 @@
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "О программе"
         }
     }
 }

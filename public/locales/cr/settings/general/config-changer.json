@@ -1,0 +1,86 @@
+{
+  "configSelect": {
+    "label": "crwdns2391:0crwdne2391:0",
+    "description": "crwdns2417:0{{configCount}}crwdne2417:0",
+    "loadingNew": "crwdns1957:0crwdne1957:0",
+    "pleaseWait": "crwdns2393:0crwdne2393:0"
+  },
+  "modal": {
+    "copy": {
+      "title": "crwdns2419:0crwdne2419:0",
+      "form": {
+        "configName": {
+          "label": "crwdns2421:0crwdne2421:0",
+          "validation": {
+            "required": "crwdns2423:0crwdne2423:0",
+            "notUnique": "crwdns2449:0crwdne2449:0"
+          },
+          "placeholder": "crwdns2425:0crwdne2425:0"
+        },
+        "submitButton": "crwdns2427:0crwdne2427:0"
+      },
+      "events": {
+        "configSaved": {
+          "title": "crwdns2429:0crwdne2429:0",
+          "message": "crwdns2431:0{{configName}}crwdne2431:0"
+        },
+        "configCopied": {
+          "title": "crwdns2433:0crwdne2433:0",
+          "message": "crwdns2435:0{{configName}}crwdne2435:0"
+        },
+        "configNotCopied": {
+          "title": "crwdns2437:0crwdne2437:0",
+          "message": "crwdns2439:0{{configName}}crwdne2439:0"
+        }
+      }
+    },
+    "confirmDeletion": {
+      "title": "crwdns2441:0crwdne2441:0",
+      "warningText": "crwdns2725:0{{configName}}crwdne2725:0",
+      "text": "crwdns2727:0crwdne2727:0",
+      "buttons": {
+        "confirm": "crwdns2447:0{{configName}}crwdne2447:0"
+      }
+    }
+  },
+  "buttons": {
+    "download": "crwdns1652:0crwdne1652:0",
+    "delete": {
+      "text": "crwdns1654:0crwdne1654:0",
+      "notifications": {
+        "deleted": {
+          "title": "crwdns1656:0crwdne1656:0",
+          "message": "crwdns1658:0crwdne1658:0"
+        },
+        "deleteFailed": {
+          "title": "crwdns1660:0crwdne1660:0",
+          "message": "crwdns1662:0crwdne1662:0"
+        },
+        "deleteFailedDefaultConfig": {
+          "title": "crwdns2729:0crwdne2729:0",
+          "message": "crwdns2415:0crwdne2415:0"
+        }
+      }
+    },
+    "saveCopy": "crwdns1664:0crwdne1664:0"
+  },
+  "dropzone": {
+    "notifications": {
+      "invalidConfig": {
+        "title": "crwdns1666:0crwdne1666:0",
+        "message": "crwdns1668:0crwdne1668:0"
+      },
+      "loadedSuccessfully": {
+        "title": "crwdns1670:0{{configName}}crwdne1670:0"
+      }
+    },
+    "accept": {
+      "title": "crwdns1971:0crwdne1971:0",
+      "text": "crwdns2395:0crwdne2395:0"
+    },
+    "reject": {
+      "title": "crwdns1973:0crwdne1973:0",
+      "text": "crwdns2397:0crwdne2397:0"
+    }
+  }
+}

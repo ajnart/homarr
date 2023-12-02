@@ -1,10 +1,10 @@
 {
   "columnsCount": {
-    "labelPreset": "",
-    "descriptionPreset": "",
-    "descriptionExceedsPreset": ""
+    "labelPreset": "{{size}} 크기의 열",
+    "descriptionPreset": "화면 너비가 {{pixels}} 픽셀 미만인 경우 열 수",
+    "descriptionExceedsPreset": "화면 크기가 {{pixels}} 픽셀을 초과하는 경우 열 수"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "저장하지 않은 변경 사항이 있습니다. 아래의 변경 사항 적용 버튼을 클릭하여 적용하고 저장합니다.",
+  "applyChanges": "변경 사항 적용",
+  "defaultValues": "기본값"
 }

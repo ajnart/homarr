@@ -1,22 +1,22 @@
 {
   "descriptor": {
     "name": "RSS widget",
-    "description": "",
+    "description": "RSS-widgeten lar deg vise RSS-feeder på tavlen.",
     "settings": {
       "title": "Innstillinger for RSS widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "RSS-feed-URLer",
+        "description": "URL-ene til RSS-feedene du vil vise fra."
       },
       "refreshInterval": {
         "label": "Oppdaterings intervall (i minutter)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Tillat HTML-formatering (farlig)",
+        "info": "Å tillate HTML-formatering utenfra kan være farlig.<br/>Sørg for at feeden er fra en pålitelig kilde."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Tekstlinjer klemme"
       }
     },
     "card": {

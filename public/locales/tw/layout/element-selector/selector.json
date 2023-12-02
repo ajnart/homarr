@@ -1,0 +1,25 @@
+{
+    "modal": {
+        "title": "新增磁貼",
+        "text": "磁貼是 Homarr 主要組成元素，磁貼被用來顯示您的應用程式和其他訊息，您可以根據需要增加任意數量的磁貼"
+    },
+    "widgetDescription": "組件與您的應用交互，為您提供更多應用控制，且在使用前通常需要額外的配置",
+    "goBack": "上一步",
+    "actionIcon": {
+        "tooltip": "新增磁貼"
+    },
+    "apps": "應用",
+    "app": {
+        "defaultName": "您的應用"
+    },
+    "widgets": "組件",
+    "categories": "類別",
+    "category": {
+        "newName": "新類別名稱",
+        "defaultName": "新增類別",
+        "created": {
+            "title": "類別已新增",
+            "message": "已新增類別\"{{name}}\""
+        }
+    }
+}

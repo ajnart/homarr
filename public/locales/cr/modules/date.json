@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "crwdns2339:0crwdne2339:0",
+    "description": "crwdns2341:0crwdne2341:0",
+    "settings": {
+      "title": "crwdns2343:0crwdne2343:0",
+      "display24HourFormat": {
+        "label": "crwdns1430:0crwdne1430:0"
+      },
+      "dateFormat": {
+        "label": "crwdns3055:0crwdne3055:0",
+        "data": {
+          "hide": "crwdns3057:0crwdne3057:0"
+        }
+      },
+      "enableTimezone": {
+        "label": "crwdns3059:0crwdne3059:0"
+      },
+      "timezoneLocation": {
+        "label": "crwdns3061:0crwdne3061:0"
+      },
+      "titleState": {
+        "label": "crwdns3063:0crwdne3063:0",
+        "info": "crwdns3065:0crwdne3065:0",
+        "data": {
+          "both": "crwdns3067:0crwdne3067:0",
+          "city": "crwdns3069:0crwdne3069:0",
+          "none": "crwdns3071:0crwdne3071:0"
+        }
+      }
+    }
+  }
+}

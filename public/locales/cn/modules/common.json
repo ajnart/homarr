@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "设置"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

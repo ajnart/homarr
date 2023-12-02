@@ -1,20 +1,20 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Innstillinger",
+    "pageTitle": "Dine innstillinger",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Standard tavle"
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Hjelpemiddel",
         "disablePulse": {
-            "label": "",
-            "description": ""
+            "label": "Deaktivere ping puls",
+            "description": "Som standard vil Ping indikatorene i Homarr pulsere, dette kan være irriterende. Denne glidebryteren deaktiverer animasjonen"
         },
         "replaceIconsWithDots": {
-            "label": "",
-            "description": ""
+            "label": "Erstatt ping prikker med ikoner",
+            "description": "For fargesblinde brukere kan det være ugjenkjennelig. Dette vil erstatte indikatorer med ikoner"
         }
     },
     "localization": {
@@ -22,27 +22,27 @@
             "label": "Språk"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Første dag i uken",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Mandag",
+                "saturday": "Lørdag",
+                "sunday": "Søndag"
             }
         }
     },
     "searchEngine": {
         "title": "Søkemotor",
-        "custom": "",
+        "custom": "Tilpasset",
         "newTab": {
-            "label": ""
+            "label": "Åpne søkeresultater i ny fane"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Fokuser på søkefeltet ved innlasting av siden.",
+            "description": "Dette vil automatisk fokusere søkefeltet når du navigerer til tavlene. Det vil bare fungere på stasjonære enheter."
         },
         "template": {
             "label": "SpørringsURL",
-            "description": ""
+            "description": "%s kan brukes som plassholder for spørringen"
         }
     }
 }

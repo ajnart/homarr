@@ -1,5 +1,7 @@
 {
   "save": "Uložiť",
+  "apply": "Použiť",
+  "insert": "Vložiť",
   "about": "O aplikácii",
   "cancel": "Zrušiť",
   "close": "Zavrieť",
@@ -40,5 +42,16 @@
     "medium": "stredný",
     "large": "veľký"
   },
-  "seeMore": "Viac informácií..."
+  "seeMore": "Viac informácií...",
+  "position": {
+    "left": "Vľavo",
+    "center": "Na stred",
+    "right": "Vpravo"
+  },
+  "attributes": {
+    "width": "Šírka",
+    "height": "Výška"
+  },
+  "public": "Verejné",
+  "restricted": ""
 }

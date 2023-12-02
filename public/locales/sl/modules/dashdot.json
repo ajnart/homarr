@@ -5,7 +5,7 @@
     "settings": {
       "title": "Nastavitve za pripomoček Dash",
       "dashName": {
-        "label": ""
+        "label": "Pomišljaj. Ime"
       },
       "url": {
         "label": "Dash. URL"

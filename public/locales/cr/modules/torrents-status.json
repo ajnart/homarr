@@ -1,0 +1,93 @@
+{
+  "descriptor": {
+    "name": "crwdns2283:0crwdne2283:0",
+    "description": "crwdns2369:0crwdne2369:0",
+    "settings": {
+      "title": "crwdns2371:0crwdne2371:0",
+      "refreshInterval": {
+        "label": "crwdns2219:0crwdne2219:0"
+      },
+      "displayCompletedTorrents": {
+        "label": "crwdns2221:0crwdne2221:0"
+      },
+      "displayActiveTorrents": {
+        "label": "crwdns3986:0crwdne3986:0"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "crwdns3988:0crwdne3988:0"
+      },
+      "displayStaleTorrents": {
+        "label": "crwdns2223:0crwdne2223:0"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "crwdns2825:0crwdne2825:0"
+      },
+      "labelFilter": {
+        "label": "crwdns2827:0crwdne2827:0",
+        "description": "crwdns2829:0crwdne2829:0"
+      },
+      "displayRatioWithFilter": {
+        "label": "crwdns4000:0crwdne4000:0",
+        "info": "crwdns4002:0crwdne4002:0"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "crwdns2457:0crwdne2457:0",
+      "lastUpdated": "crwdns2459:0{{time}}crwdne2459:0",
+      "ratioGlobal": "crwdns4004:0crwdne4004:0",
+      "ratioWithFilter": "crwdns4006:0crwdne4006:0"
+    },
+    "table": {
+      "header": {
+        "name": "crwdns2225:0crwdne2225:0",
+        "size": "crwdns2227:0crwdne2227:0",
+        "download": "crwdns2229:0crwdne2229:0",
+        "upload": "crwdns2231:0crwdne2231:0",
+        "estimatedTimeOfArrival": "crwdns2233:0crwdne2233:0",
+        "progress": "crwdns2235:0crwdne2235:0"
+      },
+      "item": {
+        "text": "crwdns2461:0{{appName}}crwdnd2461:0{{ratio}}crwdne2461:0"
+      },
+      "body": {
+        "nothingFound": "crwdns2237:0crwdne2237:0",
+        "filterHidingItems": "crwdns2831:0{{count}}crwdne2831:0"
+      }
+    },
+    "lineChart": {
+      "title": "crwdns2239:0crwdne2239:0",
+      "download": "crwdns2241:0{{download}}crwdne2241:0",
+      "upload": "crwdns2243:0{{upload}}crwdne2243:0",
+      "timeSpan": "crwdns2245:0{{seconds}}crwdne2245:0",
+      "totalDownload": "crwdns2247:0{{download}}crwdne2247:0",
+      "totalUpload": "crwdns2249:0{{upload}}crwdne2249:0"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "crwdns2373:0crwdne2373:0",
+        "text": "crwdns2375:0crwdne2375:0"
+      },
+      "generic": {
+        "title": "crwdns2707:0crwdne2707:0",
+        "text": "crwdns3193:0crwdne3193:0"
+      }
+    },
+    "loading": {
+      "title": "crwdns3195:0crwdne3195:0",
+      "description": "crwdns3197:0crwdne3197:0"
+    },
+    "popover": {
+      "introductionPrefix": "crwdns2463:0crwdne2463:0",
+      "metrics": {
+        "queuePosition": "crwdns2465:0{{position}}crwdne2465:0",
+        "progress": "crwdns2467:0{{progress}}crwdne2467:0",
+        "totalSelectedSize": "crwdns2469:0{{totalSize}}crwdne2469:0",
+        "state": "crwdns2471:0{{state}}crwdne2471:0",
+        "ratio": "crwdns2473:0crwdne2473:0",
+        "completed": "crwdns2475:0crwdne2475:0"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "pageTitle": {
+    "label": "頁面標題",
+    "description": "面板中左上角的標題"
+  },
+  "metaTitle": {
+    "label": "無標題",
+    "description": "在您的瀏覽器分頁中顯示的標題"
+  },
+  "logo": {
+    "label": "LOGO",
+    "description": "顯示在左上方的LOGO"
+  },
+  "favicon": {
+    "label": "圖標",
+    "description": "在您的瀏覽器分頁中顯示的圖標"
+  },
+  "background": {
+    "label": "背景"
+  },
+  "backgroundImageAttachment": {
+    "label": "背景圖片附件",
+    "options": {
+      "fixed": "固定 - 背景保持在同一位置 (推薦)",
+      "scroll": "滾動 - 背景隨滑鼠滾動"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "背景圖像大小",
+    "options": {
+      "cover": "覆蓋 - 通過剪裁多餘的區域，將圖像縮放到盡可能小的方式來覆蓋整個窗口 (推薦)",
+      "contain": "包含 - 在不剪裁或拉伸圖像的方式下，在容器中盡可能大的方式來縮放圖像"
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "背景圖片附件",
+    "options": {
+      "repeat": "重複 - 根據需要重複圖像，以覆蓋整個背景圖像繪製區域",
+      "no-repeat": "不重複 - 圖像不重複且不填滿整個區域 (推薦)",
+      "repeat-x": "重複 X 軸 - 與\"重複\"相同，但只在水平軸上重複",
+      "repeat-y": "重複 Y 軸 - 與\"重複\"相同，但只在垂直上重複"
+    }
+  },
+  "customCSS": {
+    "label": "自定義 CSS",
+    "description": "此外，只推薦有經驗的使用者使用 CSS 自定義面板",
+    "placeholder": "自定義 CSS 將最後應用",
+    "applying": "應用 CSS 中..."
+  }
+}

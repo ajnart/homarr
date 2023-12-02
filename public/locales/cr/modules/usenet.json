@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "crwdns1923:0crwdne1923:0",
+    "description": "crwdns2379:0crwdne2379:0"
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "crwdns1710:0crwdne1710:0",
+        "text": "crwdns2381:0crwdne2381:0"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "crwdns1834:0crwdne1834:0",
+    "history": "crwdns1836:0crwdne1836:0"
+  },
+  "info": {
+    "sizeLeft": "crwdns1838:0crwdne1838:0",
+    "paused": "crwdns1840:0crwdne1840:0"
+  },
+  "queue": {
+    "header": {
+      "name": "crwdns1722:0crwdne1722:0",
+      "size": "crwdns1724:0crwdne1724:0",
+      "eta": "crwdns1726:0crwdne1726:0",
+      "progress": "crwdns1728:0crwdne1728:0"
+    },
+    "empty": "crwdns1842:0crwdne1842:0",
+    "error": {
+      "title": "crwdns1844:0crwdne1844:0",
+      "message": "crwdns1846:0crwdne1846:0"
+    },
+    "paused": "crwdns1848:0crwdne1848:0"
+  },
+  "history": {
+    "header": {
+      "name": "crwdns1738:0crwdne1738:0",
+      "size": "crwdns1740:0crwdne1740:0",
+      "duration": "crwdns1850:0crwdne1850:0"
+    },
+    "empty": "crwdns1852:0crwdne1852:0",
+    "error": {
+      "title": "crwdns1854:0crwdne1854:0",
+      "message": "crwdns1856:0crwdne1856:0"
+    },
+    "paused": "crwdns1858:0crwdne1858:0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "text": "crwdns2493:0crwdne2493:0",
+  "accordeon": {
+    "layout": {
+      "name": "crwdns2495:0crwdne2495:0",
+      "description": "crwdns2497:0crwdne2497:0"
+    },
+    "gridstack": {
+      "name": "crwdns2499:0crwdne2499:0",
+      "description": "crwdns2501:0crwdne2501:0"
+    },
+    "pageMetadata": {
+      "name": "crwdns2503:0crwdne2503:0",
+      "description": "crwdns2505:0crwdne2505:0"
+    },
+    "appereance": {
+      "name": "crwdns2713:0crwdne2713:0",
+      "description": "crwdns2715:0crwdne2715:0"
+    },
+    "accessibility": {
+      "name": "crwdns2989:0crwdne2989:0",
+      "description": "crwdns2991:0crwdne2991:0"
+    },
+    "access": {
+      "name": "crwdns3898:0crwdne3898:0",
+      "description": "crwdns3857:0crwdne3857:0"
+    }
+  }
+}

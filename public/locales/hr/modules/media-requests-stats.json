@@ -8,20 +8,20 @@
         "label": "Zamijeni veze s vanjskim poslužiteljem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otvori veze u novoj kartici"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Medijska statistika",
+    "pending": "Odobrenjea na čekanju",
+    "tvRequests": "TV zahtjevi",
+    "movieRequests": "Zahtjevi za Filmovima",
+    "approved": "Već odobreno",
+    "totalRequests": "Ukupno"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Najbolji korisnici",
+    "requests": "Zahtjevi: {{number}}"
   }
 }

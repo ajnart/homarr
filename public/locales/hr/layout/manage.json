@@ -1,32 +1,35 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Dom"
         },
         "boards": {
-            "title": ""
+            "title": "Daske"
         },
         "users": {
-            "title": "",
+            "title": "Korisnici",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Upravljati",
+                "invites": "poziva"
             }
         },
         "help": {
-            "title": "",
+            "title": "Pomozite",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Dokumentacija",
+                "report": "Prijavite problem/bug",
+                "discord": "Nesloga u zajednici",
+                "contribute": "Doprinesite"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Alati",
             "items": {
                 "docker": "Docker"
             }
+        },
+        "about": {
+            "title": "O aplikaciji"
         }
     }
 }

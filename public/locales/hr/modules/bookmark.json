@@ -5,8 +5,8 @@
     "settings": {
       "title": "Postavke oznake",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Naslov widgeta",
+        "info": "Ostavite prazno kako bi naslov ostao skriven."
       },
       "items": {
         "label": "Stavke"
@@ -14,9 +14,9 @@
       "layout": {
         "label": "Raspored",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Auto Grid",
+          "horizontal": "Horizontalno",
+          "vertical": "Okomito"
         }
       }
     }
@@ -29,15 +29,15 @@
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Duljina mora biti između {{shortest}} i {{longest}}",
+      "invalidLink": "Veza nije valjana",
+      "errorMsg": "Nije spremljeno jer je bilo pogrešaka pri provjeri valjanosti. Molimo prilagodite svoje unose"
     },
     "name": "Naziv",
-    "url": "",
+    "url": "URL",
     "newTab": "Otvori u novoj kartici",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Sakrij naziv hosta",
+    "hideIcon": "Sakrij ikonu",
     "delete": "Obriši"
   }
 }

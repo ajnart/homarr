@@ -13,7 +13,21 @@
 		},
 		"internalAddress": {
 			"label": "Adres wewnętrzny",
-			"description": "Wewnętrzny adres IP aplikacji."
+			"description": "Wewnętrzny adres IP aplikacji.",
+			"troubleshoot": {
+				"label": "Masz problemy?",
+				"header": "Oto lista najczęściej popełnianych błędów i sposobów ich rozwiązywania:",
+				"lines": {
+					"nothingAfterPort": "W większości, jeśli nie we wszystkich przypadkach, nie należy wprowadzać żadnej ścieżki po porcie. (Nawet '/admin' dla pihole lub '/web' dla plex)",
+					"protocolCheck": "Zawsze upewnij się, że adres URL jest poprzedzony przez http lub https, i upewnij się, że używasz odpowiedniego adresu.",
+					"preferIP": "Zalecane jest użycie bezpośredniego adresu IP maszyny lub kontenera, z którym próbujesz się komunikować.",
+					"enablePings": "Sprawdź, czy adres IP jest prawidłowy, włączając polecenia ping. Dostosuj tablicę -> Układ -> Włącz pingi. Na kafelkach aplikacji pojawi się mała czerwona lub zielona dymka, a najechanie na nią spowoduje wyświetlenie kodu odpowiedzi (w większości przypadków oczekiwana jest zielona dymka z kodem 200).",
+					"wget": "Aby mieć pewność, że homarr będzie mógł komunikować się z innymi aplikacjami, wykonaj wget/curl/ping IP:port aplikacji.",
+					"iframe": "Jeśli chodzi o ramki iframe, powinny one zawsze używać tego samego protokołu (http/s), co Homarr.",
+					"clearCache": "Niektóre informacje są rejestrowane w pamięci podręcznej, więc integracja może nie działać, jeśli nie wyczyścisz pamięci podręcznej w ogólnych opcjach Homarr."
+				},
+				"footer": "Aby uzyskać więcej informacji na temat rozwiązywania problemów, skontaktuj się z nami na naszym {{discord}}."
+			}
 		},
 		"externalAddress": {
 			"label": "Adres zewnętrzny",

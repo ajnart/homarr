@@ -8,13 +8,11 @@
         "label": "Thay thế liên kết bằng máy chủ bên ngoài"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Mở liên kết trong tab mới"
       }
     }
   },
   "noRequests": "Không tìm thấy yêu cầu. Hãy đảm bảo rằng bạn đã thiết lập đúng ứng dụng của mình.",
-  "pending": "Có {{countPendingApproval}} yêu cầu đang chờ phê duyệt.",
-  "nonePending": "Hiện tại không có yêu cầu nào đang chờ phê duyệt. Tốt lắm bạn!",
   "state": {
     "approved": "Đã duyệt",
     "pendingApproval": "Chờ duyệt",
@@ -23,13 +21,13 @@
   "tooltips": {
     "approve": "Duyệt yêu cầu",
     "decline": "Từ chối yêu cầu",
-    "approving": ""
+    "approving": "Đang phê duyệt yêu cầu..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Phê duyệt",
+    "declining": "Giảm dần",
+    "request": "lời yêu cầu...",
+    "approved": "Yêu cầu đã được chấp thuận!",
+    "declined": "Yêu cầu đã bị từ chối!"
   }
 }

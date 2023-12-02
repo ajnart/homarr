@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Resumo das falhas de DNS",
+    "description": "Exibe dados importantes do PiHole ou do AdGuard",
     "settings": {
-      "title": "",
+      "title": "Configurações para o resumo do DNS Hole",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Usar cores do PiHole"
       },
       "layout": {
         "label": "Layout",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 por 2",
+          "row": "Horizontal",
+          "column": "Vertical"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domínios em adlists",
+      "queriesToday": "Consultas hoje",
+      "queriesBlockedTodayPercentage": "Bloqueado hoje",
+      "queriesBlockedToday": "Bloqueado hoje"
     }
   }
 }

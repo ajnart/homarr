@@ -10,22 +10,34 @@
       "displayCompletedTorrents": {
         "label": "Mostrar torrentes completas"
       },
+      "displayActiveTorrents": {
+        "label": "Exibir torrents ativos"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Velocidade de upload para considerar um torrent como ativo (kB/s)"
+      },
       "displayStaleTorrents": {
         "label": "Exibição de torrentes envelhecidas"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "A lista de rótulos é uma lista branca (em vez de uma lista negra)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Lista de rótulos",
+        "description": "Quando a opção \"is whitelist\" estiver marcada, ela funcionará como uma lista de permissões. Se não estiver marcada, será uma lista negra. Não fará nada quando estiver vazia"
+      },
+      "displayRatioWithFilter": {
+        "label": "Exibir proporção da lista de torrents filtrados",
+        "info": "Se estiver desativado, somente a proporção global será exibida. A proporção global ainda usará os rótulos se estiver definida"
       }
     }
   },
   "card": {
     "footer": {
       "error": "Erro",
-      "lastUpdated": "Última actualização {{time}} atrás"
+      "lastUpdated": "Última actualização {{time}} atrás",
+      "ratioGlobal": "Proporção global",
+      "ratioWithFilter": "Proporção com filtro"
     },
     "table": {
       "header": {
@@ -41,7 +53,7 @@
       },
       "body": {
         "nothingFound": "Nenhum torrent encontrado",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} as entradas são ocultadas por seus filtros"
       }
     },
     "lineChart": {
@@ -58,13 +70,13 @@
         "text": "Adicione um cliente Torrent suportado para ver os seus downloads actuais"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Ocorreu um erro inesperado",
+        "text": "Não é possível se comunicar com seus clientes Torrent. Verifique sua configuração"
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Carregamento",
+      "description": "Estabelecimento de uma conexão"
     },
     "popover": {
       "introductionPrefix": "Gerido por",

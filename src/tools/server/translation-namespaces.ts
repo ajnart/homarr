@@ -6,12 +6,6 @@ export const boardNamespaces = [
   'layout/header/actions/toggle-edit-mode',
   'layout/mobile/drawer',
   'settings/common',
-  'settings/general/config-changer',
-  'settings/general/edit-mode-toggle',
-  'settings/general/internationalization',
-  'settings/general/search-engine',
-  'settings/general/theme-selector',
-  'settings/general/widget-positions',
   'modules/common',
   'modules/date',
   'modules/calendar',
@@ -35,6 +29,7 @@ export const boardNamespaces = [
   'modules/dns-hole-controls',
   'modules/bookmark',
   'modules/notebook',
+  'modules/smart-home/entity-state',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',
@@ -51,3 +46,5 @@ export const manageNamespaces = [
 export const loginNamespaces = ['authentication/login'];
 
 export const pageNotFoundNamespaces = ['layout/errors/not-found'];
+
+export const pageAccessDeniedNamespaces = ['layout/errors/access-denied'];
