@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^8.6.0",
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "consola": "^3.0.0",
+    "drizzle-orm": "^0.28.6",
+    "yargs": "^17.7.2"
+  },
+  "type": "module"
+}
