@@ -18,7 +18,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { z } from 'zod';
 import { ThemeSchemeToggle } from '~/components/ThemeSchemeToggle/ThemeSchemeToggle';
 import { FloatingBackground } from '~/components/layout/Background/FloatingBackground';
@@ -34,6 +34,7 @@ export default function LoginPage({
   redirectAfterLogin,
   providers,
   oidcProviderName,
+  oidcAutoLogin,
   isDemo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { t } = useTranslation('authentication/login');
@@ -68,6 +69,10 @@ export default function LoginPage({
     });
   };
 
+  useEffect(() => {
+    if (oidcAutoLogin) signIn('oidc');
+  }, [oidcAutoLogin]);
+
   const metaTitle = `${t('metaTitle')} • Homarr`;
 
   return (
@@ -75,7 +80,6 @@ export default function LoginPage({
       <Head>
         <title>{metaTitle}</title>
       </Head>
-
       <Flex h="100dvh" display="flex" w="100%" direction="column" align="center" justify="center">
         <FloatingBackground />
         <ThemeSchemeToggle pos="absolute" top={20} right={20} />
@@ -100,86 +104,94 @@ export default function LoginPage({
               <b>demodemo</b>
             </Alert>
           )}
-          <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
-            <Title style={{ whiteSpace: 'nowrap' }} align="center" weight={900}>
-              {t('title')}
-            </Title>
+          {oidcAutoLogin ? (
+            <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
+              <Text size="lg" align="center" m="md">
+                Signing in with OIDC provider
+              </Text>
+            </Card>
+          ) : (
+            <Card withBorder shadow="md" p="xl" radius="md" w="90%" maw={450}>
+              <Title style={{ whiteSpace: 'nowrap' }} align="center" weight={900}>
+                {t('title')}
+              </Title>
 
-            <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-              {t('text')}
-            </Text>
+              <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+                {t('text')}
+              </Text>
 
-            {isError && (
-              <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
-                {t('alert')}
-              </Alert>
-            )}
-            {hasCredentialsInput && (
-              <form onSubmit={form.onSubmit(handleSubmit)}>
-                <Stack>
-                  <TextInput
-                    variant="filled"
-                    label={t('form.fields.username.label')}
-                    autoComplete="homarr-username"
-                    withAsterisk
-                    {...form.getInputProps('name')}
-                  />
+              {isError && (
+                <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
+                  {t('alert')}
+                </Alert>
+              )}
+              {hasCredentialsInput && (
+                <form onSubmit={form.onSubmit(handleSubmit)}>
+                  <Stack>
+                    <TextInput
+                      variant="filled"
+                      label={t('form.fields.username.label')}
+                      autoComplete="homarr-username"
+                      withAsterisk
+                      {...form.getInputProps('name')}
+                    />
 
-                  <PasswordInput
-                    variant="filled"
-                    label={t('form.fields.password.label')}
-                    autoComplete="homarr-password"
-                    withAsterisk
-                    {...form.getInputProps('password')}
-                  />
+                    <PasswordInput
+                      variant="filled"
+                      label={t('form.fields.password.label')}
+                      autoComplete="homarr-password"
+                      withAsterisk
+                      {...form.getInputProps('password')}
+                    />
 
-                  {providers.includes('credentials') && (
-                    <Button
-                      mt="xs"
-                      variant="light"
-                      fullWidth
-                      type="submit"
-                      disabled={isLoading && form.values.provider != 'credentials'}
-                      loading={isLoading && form.values.provider == 'credentials'}
-                      name="credentials"
-                      onClick={() => form.setFieldValue('provider', 'credentials')}
-                    >
-                      {t('form.buttons.submit')}
-                    </Button>
-                  )}
+                    {providers.includes('credentials') && (
+                      <Button
+                        mt="xs"
+                        variant="light"
+                        fullWidth
+                        type="submit"
+                        disabled={isLoading && form.values.provider != 'credentials'}
+                        loading={isLoading && form.values.provider == 'credentials'}
+                        name="credentials"
+                        onClick={() => form.setFieldValue('provider', 'credentials')}
+                      >
+                        {t('form.buttons.submit')}
+                      </Button>
+                    )}
 
-                  {providers.includes('ldap') && (
-                    <Button
-                      mt="xs"
-                      variant="light"
-                      fullWidth
-                      type="submit"
-                      disabled={isLoading && form.values.provider != 'ldap'}
-                      loading={isLoading && form.values.provider == 'ldap'}
-                      name="ldap"
-                      onClick={() => form.setFieldValue('provider', 'ldap')}
-                    >
-                      {t('form.buttons.submit')} - LDAP
-                    </Button>
-                  )}
+                    {providers.includes('ldap') && (
+                      <Button
+                        mt="xs"
+                        variant="light"
+                        fullWidth
+                        type="submit"
+                        disabled={isLoading && form.values.provider != 'ldap'}
+                        loading={isLoading && form.values.provider == 'ldap'}
+                        name="ldap"
+                        onClick={() => form.setFieldValue('provider', 'ldap')}
+                      >
+                        {t('form.buttons.submit')} - LDAP
+                      </Button>
+                    )}
 
-                  {redirectAfterLogin && (
-                    <Text color="dimmed" align="center" size="xs">
-                      {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
-                    </Text>
-                  )}
-                </Stack>
-              </form>
-            )}
-            {hasCredentialsInput && providers.includes('oidc') && (
-              <Divider label="OIDC" labelPosition="center" mt="xl" mb="md" />
-            )}
-            {providers.includes('oidc') && (
-              <Button mt="xs" variant="light" fullWidth onClick={() => signIn('oidc')}>
-                {t('form.buttons.submit')} - {oidcProviderName}
-              </Button>
-            )}
-          </Card>
+                    {redirectAfterLogin && (
+                      <Text color="dimmed" align="center" size="xs">
+                        {t('form.afterLoginRedirection', { url: redirectAfterLogin })}
+                      </Text>
+                    )}
+                  </Stack>
+                </form>
+              )}
+              {hasCredentialsInput && providers.includes('oidc') && (
+                <Divider label="OIDC" labelPosition="center" mt="xl" mb="md" />
+              )}
+              {providers.includes('oidc') && (
+                <Button mt="xs" variant="light" fullWidth onClick={() => signIn('oidc')}>
+                  {t('form.buttons.submit')} - {oidcProviderName}
+                </Button>
+              )}
+            </Card>
+          )}
         </Stack>
       </Flex>
     </>
@@ -218,6 +230,7 @@ export const getServerSideProps = async ({
       redirectAfterLogin,
       providers: env.AUTH_PROVIDER,
       oidcProviderName: env.AUTH_OIDC_CLIENT_NAME || null,
+      oidcAutoLogin: env.AUTH_OIDC_AUTO_LOGIN || null,
       isDemo,
     },
   };

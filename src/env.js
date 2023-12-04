@@ -1,6 +1,14 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
+const trueStrings = ["1", "t", "T", "TRUE", "true", "True"];
+const falseStrings = ["0", "f", "F", "FALSE", "false", "False"];
+
+const zodParsedBoolean = () => z
+  .enum([...trueStrings, ...falseStrings])
+  .default("false")
+  .transform((value) => trueStrings.includes(value))
+
 const portSchema = z
   .string()
   .regex(/\d*/)
@@ -36,29 +44,30 @@ const env = createEnv({
     // LDAP
     ...(authProviders.includes('ldap')
       ? {
-          AUTH_LDAP_URI: z.string().url(),
-          AUTH_LDAP_BIND_DN: z.string(),
-          AUTH_LDAP_BIND_PASSWORD: z.string(),
-          AUTH_LDAP_BASE: z.string(),
-          AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
-          AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
-          AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
-          AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: z.string().default('dn'),
-          AUTH_LDAP_ADMIN_GROUP: z.string().default('admin'),
-          AUTH_LDAP_OWNER_GROUP: z.string().default('admin'),
-        }
+        AUTH_LDAP_URI: z.string().url(),
+        AUTH_LDAP_BIND_DN: z.string(),
+        AUTH_LDAP_BIND_PASSWORD: z.string(),
+        AUTH_LDAP_BASE: z.string(),
+        AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
+        AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
+        AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
+        AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: z.string().default('dn'),
+        AUTH_LDAP_ADMIN_GROUP: z.string().default('admin'),
+        AUTH_LDAP_OWNER_GROUP: z.string().default('admin'),
+      }
       : {}),
     // OIDC
     ...(authProviders.includes('oidc')
       ? {
-          AUTH_OIDC_CLIENT_ID: z.string(),
-          AUTH_OIDC_CLIENT_SECRET: z.string(),
-          AUTH_OIDC_URI: z.string().url(),
-          // Custom Display name, defaults to OIDC
-          AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
-          AUTH_OIDC_ADMIN_GROUP: z.string().default('admin'),
-          AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
-        }
+        AUTH_OIDC_CLIENT_ID: z.string(),
+        AUTH_OIDC_CLIENT_SECRET: z.string(),
+        AUTH_OIDC_URI: z.string().url(),
+        // Custom Display name, defaults to OIDC
+        AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
+        AUTH_OIDC_ADMIN_GROUP: z.string().default('admin'),
+        AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
+        AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean()
+      }
       : {}),
   },
 
@@ -114,6 +123,7 @@ const env = createEnv({
     AUTH_OIDC_GROUP_CLAIM: process.env.AUTH_OIDC_GROUP_CLAIM,
     AUTH_OIDC_ADMIN_GROUP: process.env.AUTH_OIDC_ADMIN_GROUP,
     AUTH_OIDC_OWNER_GROUP: process.env.AUTH_OIDC_OWNER_GROUP,
+    AUTH_OIDC_AUTO_LOGIN: process.env.AUTH_OIDC_AUTO_LOGIN,
     DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
