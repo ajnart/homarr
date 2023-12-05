@@ -1,11 +1,19 @@
 import { TRPCError } from '@trpc/server';
+
 import bcrypt from 'bcryptjs';
+
 import { randomUUID } from 'crypto';
-import { eq, like, sql } from 'drizzle-orm';
+
+import { and, eq, like, sql } from 'drizzle-orm';
+
 import { z } from 'zod';
+
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
+import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+
 import { db } from '~/server/db';
 import { getTotalUserCountAsync } from '~/server/db/queries/user';
-import { UserSettings, invites, userSettings, users } from '~/server/db/schema';
+import { UserSettings, invites, sessions, userSettings, users } from '~/server/db/schema';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -13,9 +21,6 @@ import {
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
-
-import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -34,6 +39,47 @@ export const userRouter = createTRPCRouter({
       isOwner: true,
     });
   }),
+  updatePassword: adminProcedure
+    .input(
+      z.object({
+        userId: z.string(),
+        newPassword: z.string().min(3),
+        terminateExistingSessions: z.boolean(),
+      })
+    )
+    .mutation(async ({ input, ctx }) => {
+      const user = await db.query.users.findFirst({
+        where: eq(users.id, input.userId),
+      });
+
+      if (!user) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+        });
+      }
+
+      if (user.isOwner && user.id !== ctx.session.user.id) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'Operation not allowed or incorrect user',
+        });
+      }
+
+      const salt = bcrypt.genSaltSync(10);
+      const hashedPassword = hashPassword(input.newPassword, salt);
+
+      if (input.terminateExistingSessions) {
+        await db.delete(sessions).where(eq(sessions.userId, input.userId));
+      }
+
+      await db
+        .update(users)
+        .set({
+          password: hashedPassword,
+          salt: salt,
+        })
+        .where(eq(users.id, input.userId));
+    }),
   count: publicProcedure.query(async () => {
     return await getTotalUserCountAsync();
   }),
@@ -213,12 +259,39 @@ export const userRouter = createTRPCRouter({
           isOwner: user.isOwner,
         })),
         countPages: Math.ceil(countUsers / limit),
+        stats: {
+          roles: {
+            all: (await db.select({ count: sql<number>`count(*)` }).from(users))[0]['count'],
+            owner: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(eq(users.isOwner, true))
+            )[0]['count'],
+            admin: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(and(eq(users.isAdmin, true), eq(users.isOwner, false)))
+            )[0]['count'],
+            normal: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(and(eq(users.isAdmin, false), eq(users.isOwner, false)))
+            )[0]['count'],
+          } as Record<string, number>,
+        },
       };
     }),
-  create: adminProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
+  create: adminProcedure.input(createNewUserSchema).mutation(async ({ input }) => {
     await createUserIfNotPresent(input);
   }),
-
+  details: adminProcedure.input(z.object({ userId: z.string() })).query(async ({ input }) => {
+    return await db.query.users.findFirst({
+      where: eq(users.id, input.userId),
+    });
+  }),
   deleteUser: adminProcedure
     .input(
       z.object({
