@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Nombre",
+        "dateAdded": "",
         "size": "Tamaño",
         "download": "Descarga",
         "upload": "Subida",
         "estimatedTimeOfArrival": "Tiempo restante",
-        "progress": "Completado %"
+        "progress": "Completado %",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Estado",
+        "stateMessage": ""
       },
       "item": {
         "text": "Gestionado por {{appName}}, proporción {{ratio}}"
