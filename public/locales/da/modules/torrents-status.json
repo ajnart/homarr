@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Navn",
+        "dateAdded": "",
         "size": "Størrelse",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Fremskridt"
+        "progress": "Fremskridt",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Tilstand",
+        "stateMessage": ""
       },
       "item": {
         "text": "Administreret af {{appName}}, {{ratio}} ratio"
