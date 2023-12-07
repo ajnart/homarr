@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "מוריד",
         "name": "שם",
-        "dateAdded": "",
+        "dateAdded": "נוסף על",
         "size": "גודל",
         "download": "הורדה",
         "upload": "העלאה",
         "estimatedTimeOfArrival": "זמן סיום משוער",
         "progress": "התקדמות",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "סך העלאה",
+        "totalDownloaded": "הורדה כוללת",
+        "ratio": "יחס",
+        "seeds": "זרעים (מחוברים)",
+        "peers": "עמיתים (מחוברים)",
+        "label": "תווית",
         "state": "מצב",
-        "stateMessage": ""
+        "stateMessage": "הודעת מצב"
       },
       "item": {
         "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
