@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Tên",
+        "dateAdded": "",
         "size": "Kích cỡ",
         "download": "Tải xuống",
         "upload": "Tải lên",
         "estimatedTimeOfArrival": "Thời gian dự kiến",
-        "progress": "Tiến độ"
+        "progress": "Tiến độ",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Trạng thái",
+        "stateMessage": ""
       },
       "item": {
         "text": "Quản lý bởi {{appName}}, tỷ lệ {{ratio}}"
