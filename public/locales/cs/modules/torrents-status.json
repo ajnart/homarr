@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "",
+        "dateAdded": "",
         "size": "",
         "download": "",
         "upload": "",
         "estimatedTimeOfArrival": "",
-        "progress": ""
+        "progress": "",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "",
+        "stateMessage": ""
       },
       "item": {
         "text": ""
