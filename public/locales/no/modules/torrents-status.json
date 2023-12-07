@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Navn",
+        "dateAdded": "",
         "size": "Størrelse",
         "download": "Ned",
         "upload": "Opp",
         "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
-        "progress": "Fremgang"
+        "progress": "Fremgang",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Status",
+        "stateMessage": ""
       },
       "item": {
         "text": "Styrt med {{appName}}, {{ratio}} forhold"
