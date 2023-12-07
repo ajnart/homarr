@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Entidad no encontrada",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Entidad de Home Assistant",
+        "description": "Estado actual de una entidad en Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Estado de la entidad",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "ID de la entidad",
+                "info": "ID de entidad única en Home Assistant. Copie haciendo clic en la entidad > Clic en el icono de engranaje > Clic en el botón copiar en 'ID de entidad'. Algunas entidades personalizadas pueden no ser compatibles."
             },
             "displayName": {
-                "label": ""
+                "label": "Nombre a mostrar"
             }
         }
     }
