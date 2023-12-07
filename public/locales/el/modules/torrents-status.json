@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Όνομα",
+        "dateAdded": "",
         "size": "Μέγεθος",
         "download": "Κάτω",
         "upload": "Πάνω",
         "estimatedTimeOfArrival": "Εκτιμώμενος χρόνος αναμονής",
-        "progress": "Πρόοδος"
+        "progress": "Πρόοδος",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Κατάσταση",
+        "stateMessage": ""
       },
       "item": {
         "text": "Διαχειρίζεται από {{appName}}, {{ratio}} αναλογία"
