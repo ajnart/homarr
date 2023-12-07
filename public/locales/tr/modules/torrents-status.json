@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "İsim",
+        "dateAdded": "",
         "size": "Boyut",
         "download": "İndirme",
         "upload": "Yükleme",
         "estimatedTimeOfArrival": "ETA (Kalan Süre)",
-        "progress": "İlerleme"
+        "progress": "İlerleme",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Durum",
+        "stateMessage": ""
       },
       "item": {
         "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
