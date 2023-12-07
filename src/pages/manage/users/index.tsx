@@ -189,9 +189,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const translations = await getServerSideTranslations(
     manageNamespaces,
     ctx.locale,
-    undefined,
-    undefined
+    ctx.req,
+    ctx.res
   );
+
   return {
     props: {
       ...translations,
