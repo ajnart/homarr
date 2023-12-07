@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Имя",
+        "dateAdded": "",
         "size": "Размер",
         "download": "Загрузка",
         "upload": "Отдача",
         "estimatedTimeOfArrival": "Осталось",
-        "progress": "Прогресс"
+        "progress": "Прогресс",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Состояние",
+        "stateMessage": ""
       },
       "item": {
         "text": "Под управлением {{appName}}, {{ratio}} рейтинг"
