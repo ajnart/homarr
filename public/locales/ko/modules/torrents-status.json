@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "이름",
+        "dateAdded": "",
         "size": "크기",
         "download": "다운로드",
         "upload": "업로드",
         "estimatedTimeOfArrival": "남은 시간",
-        "progress": "진행률"
+        "progress": "진행률",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "상태",
+        "stateMessage": ""
       },
       "item": {
         "text": "관리: {{appName}}, {{ratio}} 비율"
