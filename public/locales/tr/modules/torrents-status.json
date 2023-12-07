@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "İndiriliyor",
         "name": "İsim",
-        "dateAdded": "",
+        "dateAdded": "Eklendi",
         "size": "Boyut",
         "download": "İndirme",
         "upload": "Yükleme",
         "estimatedTimeOfArrival": "ETA (Kalan Süre)",
         "progress": "İlerleme",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Toplam Yüklenen",
+        "totalDownloaded": "Toplam İndirilen",
+        "ratio": "Ratio",
+        "seeds": "Tohumlar (Bağlı)",
+        "peers": "Eşler (Bağlı)",
+        "label": "Etiket",
         "state": "Durum",
-        "stateMessage": ""
+        "stateMessage": "Durum Mesajı"
       },
       "item": {
         "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
