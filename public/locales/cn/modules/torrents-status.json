@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "名称",
+        "dateAdded": "",
         "size": "大小",
         "download": "下载",
         "upload": "上传",
         "estimatedTimeOfArrival": "剩余时间",
-        "progress": "进度"
+        "progress": "进度",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "状态",
+        "stateMessage": ""
       },
       "item": {
         "text": "由 {{appName}}, {{ratio}} 管理的比率"
