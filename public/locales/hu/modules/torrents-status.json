@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Név",
+        "dateAdded": "",
         "size": "Méret",
         "download": "Le",
         "upload": "Fel",
         "estimatedTimeOfArrival": "Hátralévő idő",
-        "progress": "Folyamat"
+        "progress": "Folyamat",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Állapot",
+        "stateMessage": ""
       },
       "item": {
         "text": "Kezeli: {{appName}}, {{ratio}} arány"
