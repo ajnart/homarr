@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "שם",
+        "dateAdded": "",
         "size": "גודל",
         "download": "הורדה",
         "upload": "העלאה",
         "estimatedTimeOfArrival": "זמן סיום משוער",
-        "progress": "התקדמות"
+        "progress": "התקדמות",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "מצב",
+        "stateMessage": ""
       },
       "item": {
         "text": "מנוהל על ידי {{appName}}, יחס {{ratio}}"
