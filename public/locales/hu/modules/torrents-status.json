@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Letöltés",
         "name": "Név",
-        "dateAdded": "",
+        "dateAdded": "Hozzáadva",
         "size": "Méret",
         "download": "Le",
         "upload": "Fel",
         "estimatedTimeOfArrival": "Hátralévő idő",
         "progress": "Folyamat",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Teljes feltöltés",
+        "totalDownloaded": "Összes letöltés",
+        "ratio": "Arány",
+        "seeds": "Teljes megosztó (csatlakozott)",
+        "peers": "Részleges megosztó (csatlakozott)",
+        "label": "Azonosító",
         "state": "Állapot",
-        "stateMessage": ""
+        "stateMessage": "Statikus üzenet"
       },
       "item": {
         "text": "Kezeli: {{appName}}, {{ratio}} arány"
