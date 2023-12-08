@@ -56,7 +56,7 @@
         "peers": "Peers (Verbunden)",
         "label": "Kategorie",
         "state": "Staat",
-        "stateMessage": ""
+        "stateMessage": "Statusmeldung"
       },
       "item": {
         "text": "Verwaltet von {{appName}}, {{ratio}} ratio"
