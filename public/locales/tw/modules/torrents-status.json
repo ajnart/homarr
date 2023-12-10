@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "正在下載",
         "name": "名稱",
-        "dateAdded": "",
+        "dateAdded": "已新增",
         "size": "大小",
         "download": "下載",
         "upload": "上傳",
         "estimatedTimeOfArrival": "剩餘時間",
         "progress": "進度",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "總上傳",
+        "totalDownloaded": "總下載",
+        "ratio": "分享率",
+        "seeds": "種子數(已連接)",
+        "peers": "用戶數(已連接)",
+        "label": "標籤",
         "state": "狀態",
-        "stateMessage": ""
+        "stateMessage": "狀態訊息"
       },
       "item": {
         "text": "由 {{appName}},{{ratio}} 管理的比率"
