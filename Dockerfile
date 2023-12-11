@@ -21,6 +21,7 @@ COPY ./drizzle ./drizzle
 
 COPY ./drizzle/migrate ./migrate
 COPY ./tsconfig.json ./migrate/tsconfig.json
+COPY ./cli ./cli
 
 RUN mkdir /data
 
@@ -42,6 +43,10 @@ RUN cp /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/_
 RUN mv node_modules ./migrate/node_modules
 # Copy temp node_modules of app to app folder
 RUN mv _node_modules node_modules
+
+RUN echo '#!/bin/bash\nnode /app/cli/cli.js "$@"' > /usr/bin/homarr
+RUN chmod +x /usr/bin/homarr
+RUN cd /app/cli && yarn --immutable
 
 # Expose the default application port
 EXPOSE $PORT
