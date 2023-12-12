@@ -8,10 +8,8 @@ import {
   Indicator,
   NavLink,
   Navbar,
-  Paper,
   Text,
-  ThemeIcon,
-  useMantineTheme,
+  ThemeIcon
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -21,7 +19,6 @@ import {
   IconBrandGithub,
   IconGitFork,
   IconHome,
-  IconInfoCircle,
   IconInfoSmall,
   IconLayoutDashboard,
   IconMailForward,
@@ -29,7 +26,7 @@ import {
   IconTool,
   IconUser,
   IconUsers,
-  TablerIconsProps,
+  TablerIconsProps
 } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
@@ -42,6 +39,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ConditionalWrapper } from '~/utils/security';
 
+import { IconPlugConnected } from '@tabler/icons-react';
 import { REPO_URL } from '../../../../data/constants';
 import { type navigation } from '../../../../public/locales/en/layout/manage.json';
 import { MainHeader } from '../header/Header';
@@ -95,6 +93,11 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           href: '/manage/users/invites',
         },
       },
+    },
+    integrations: {
+      icon: IconPlugConnected,
+      onlyAdmin: true,
+      href: '/manage/integrations',
     },
     tools: {
       icon: IconTool,

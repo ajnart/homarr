@@ -58,7 +58,7 @@ export type IntegrationType =
   | 'adGuardHome';
 
 export type AppIntegrationType = {
-  type: IntegrationType | null;
+  type: IntegrationType;
   properties: AppIntegrationPropertyType[];
 };
 
@@ -69,8 +69,7 @@ export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & 
 export type AppIntegrationPropertyType = {
   type: AppIntegrationPropertyAccessabilityType;
   field: IntegrationField;
-  value?: string | null;
-  isDefined: boolean;
+  value: string;
 };
 
 export type AppIntegrationPropertyAccessabilityType = 'private' | 'public';

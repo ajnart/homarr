@@ -9,7 +9,7 @@ import { dnsHoleRouter } from './routers/dns-hole/router';
 import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
-import { integrationRouter } from './routers/integration';
+import { integrationsRouter } from './routers/integration';
 import { inviteRouter } from './routers/invite/invite-router';
 import { layoutsRouter } from './routers/layout/layout.router';
 import { mediaRequestsRouter } from './routers/media-request';
@@ -50,7 +50,7 @@ export const rootRouter = createTRPCRouter({
   password: passwordRouter,
   notebook: notebookRouter,
   layouts: layoutsRouter,
-  integration: integrationRouter,
+  integration: integrationsRouter,
 });
 
 // export type definition of API

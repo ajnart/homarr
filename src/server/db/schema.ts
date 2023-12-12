@@ -1,5 +1,5 @@
 import type { MantineColor } from '@mantine/core';
-import { relations, type InferSelectModel } from 'drizzle-orm';
+import { type InferSelectModel, relations } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { type AdapterAccount } from 'next-auth/adapters';
 

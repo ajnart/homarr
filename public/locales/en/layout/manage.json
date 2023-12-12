@@ -22,6 +22,9 @@
                 "contribute": "Contribute"
             }
         },
+        "integrations": {
+            "title": "Integrations"
+        },
         "tools": {
             "title": "Tools",
             "items": {
