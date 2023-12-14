@@ -7923,31 +7923,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"module-deps@npm:^6.2.3":
-  version: 6.2.3
-  resolution: "module-deps@npm:6.2.3"
-  dependencies:
-    JSONStream: ^1.0.3
-    browser-resolve: ^2.0.0
-    cached-path-relative: ^1.0.2
-    concat-stream: ~1.6.0
-    defined: ^1.0.0
-    detective: ^5.2.0
-    duplexer2: ^0.1.2
-    inherits: ^2.0.1
-    parents: ^1.0.0
-    readable-stream: ^2.0.2
-    resolve: ^1.4.0
-    stream-combiner2: ^1.1.1
-    subarg: ^1.0.0
-    through2: ^2.0.0
-    xtend: ^4.0.0
-  bin:
-    module-deps: bin/cmd.js
-  checksum: cccead8f81b77ec621c29c4407978ce50de6f15c7152b54e81b65ff043d4254fd40071e53a3989a36066ff0d3ce9ae9e65f81aed79b3b5397024dbc8be5d68c7
-  languageName: node
-  linkType: hard
-
 "moment-timezone@npm:^0.5.43":
   version: 0.5.43
   resolution: "moment-timezone@npm:0.5.43"
@@ -10651,11 +10626,11 @@ __metadata:
 
 "typescript@patch:typescript@5.1.6#~builtin<compat/typescript>":
   version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
+  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
+  checksum: 21e88b0a0c0226f9cb9fd25b9626fb05b4c0f3fddac521844a13e1f30beb8f14e90bd409a9ac43c812c5946d714d6e0dee12d5d02dfc1c562c5aacfa1f49b606
   languageName: node
   linkType: hard
 
