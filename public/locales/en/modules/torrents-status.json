@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Downloading",
         "name": "Name",
+        "dateAdded": "Added On",
         "size": "Size",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Progress"
+        "progress": "Progress",
+        "totalUploaded": "Total Upload",
+        "totalDownloaded": "Total Download",
+        "ratio": "Ratio",
+        "seeds": "Seeds (Connected)",
+        "peers": "Peers (Connected)",
+        "label": "Label",
+        "state": "State",
+        "stateMessage": "State Message"
       },
       "item": {
         "text": "Managed by {{appName}}, {{ratio}} ratio"
