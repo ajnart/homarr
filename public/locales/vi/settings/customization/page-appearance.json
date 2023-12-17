@@ -28,17 +28,17 @@
   "backgroundImageSize": {
     "label": "Kích cỡ ảnh nền",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Che - Chia tỷ lệ hình ảnh càng nhỏ càng tốt để che toàn bộ cửa sổ bằng cách cắt bớt khoảng trống quá mức. (được khuyến nghị)",
+      "contain": "Chứa - Dùng tỷ lệ hình ảnh lớn nhất có thể trong khung chứa của nó mà không cắt xén hay kéo giãn."
     }
   },
   "backgroundImageRepeat": {
     "label": "Vị trí ảnh nền",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Lặp lại - Hình ảnh được lặp lại nhiều nhất có thể để bao phủ toàn bộ khu vực vẽ hình nền.",
+      "no-repeat": "Không lặp lại - Hình ảnh không được lặp lại và có thể không lấp đầy toàn bộ không gian (được khuyến nghị)",
+      "repeat-x": "Lặp lại trục X - Tương tự như 'Lặp lại' nhưng chỉ trên trục ngang.",
+      "repeat-y": "Lặp lại trục Y - Tương tự như 'Lặp lại' nhưng chỉ trên trục tung."
     }
   },
   "customCSS": {
