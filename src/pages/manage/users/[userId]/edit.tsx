@@ -23,6 +23,7 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
+import { ManageUserRoles } from '~/components/Manage/User/Edit/ManageUserRoles';
 
 const EditPage = () => {
   const { t } = useTranslation('manage/users/edit');
@@ -62,6 +63,8 @@ const EditPage = () => {
           />
           <Divider />
           <ManageUserSecurityForm userId={data.id} />
+          <Divider />
+          <ManageUserRoles user={data} />
           <Divider />
           <ManageUserDanger userId={data.id} username={data.name} />
         </Stack>

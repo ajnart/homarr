@@ -85,7 +85,6 @@ const ManageUsersPage = () => {
     page: activePage,
     search: debouncedForm.values.fullTextSearch,
   });
-  const { data: sessionData } = useSession();
 
   const { t } = useTranslation('manage/users');
 
@@ -203,35 +202,6 @@ const ManageUsersPage = () => {
                   </td>
                   <td>
                     <Group position="right">
-                      {user.isAdmin ? (
-                        <Tooltip label={t('tooltips.demoteAdmin')} withinPortal withArrow>
-                          <ActionIcon
-                            disabled={user.id === sessionData?.user?.id || user.isOwner}
-                            onClick={() => {
-                              openRoleChangeModal({
-                                ...user,
-                                type: 'demote',
-                              });
-                            }}
-                          >
-                            <IconUserDown size="1rem" />
-                          </ActionIcon>
-                        </Tooltip>
-                      ) : (
-                        <Tooltip label={t('tooltips.promoteToAdmin')} withinPortal withArrow>
-                          <ActionIcon
-                            onClick={() => {
-                              openRoleChangeModal({
-                                ...user,
-                                type: 'promote',
-                              });
-                            }}
-                          >
-                            <IconUserUp size="1rem" />
-                          </ActionIcon>
-                        </Tooltip>
-                      )}
-
                       <Button
                         component={Link}
                         href={`/manage/users/${user.id}/edit`}
@@ -240,19 +210,6 @@ const ManageUsersPage = () => {
                       >
                         Edit
                       </Button>
-                      <Tooltip label={t('tooltips.deleteUser')} withinPortal withArrow>
-                        <Button
-                          disabled={user.id === sessionData?.user?.id || user.isOwner}
-                          onClick={() => {
-                            openDeleteUserModal(user);
-                          }}
-                          px="xs"
-                          variant="light"
-                          color="red"
-                        >
-                          <IconTrash size="1rem" />
-                        </Button>
-                      </Tooltip>
                     </Group>
                   </td>
                 </tr>

@@ -11,6 +11,7 @@ export const ChangeUserRoleModal = ({ id, innerProps }: ContextModalProps<InnerP
   const { isLoading, mutateAsync } = api.user.changeRole.useMutation({
     onSuccess: async () => {
       await utils.user.all.invalidate();
+      await utils.user.details.invalidate();
       modals.close(id);
     },
   });
