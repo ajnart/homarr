@@ -13,7 +13,7 @@ import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure }
 
 import { db } from '~/server/db';
 import { getTotalUserCountAsync } from '~/server/db/queries/user';
-import { UserSettings, invites, sessions, userSettings, users } from '~/server/db/schema';
+import { invites, sessions, users, userSettings, UserSettings } from '~/server/db/schema';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -21,6 +21,7 @@ import {
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
+import { PossibleRoleFilter } from '~/pages/manage/users';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -45,7 +46,7 @@ export const userRouter = createTRPCRouter({
         userId: z.string(),
         newPassword: z.string().min(3),
         terminateExistingSessions: z.boolean(),
-      })
+      }),
     )
     .mutation(async ({ input, ctx }) => {
       const user = await db.query.users.findFirst({
@@ -88,8 +89,8 @@ export const userRouter = createTRPCRouter({
       signUpFormSchema.and(
         z.object({
           inviteToken: z.string(),
-        })
-      )
+        }),
+      ),
     )
     .mutation(async ({ ctx, input }) => {
       const invite = await db.query.invites.findFirst({
@@ -121,7 +122,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         colorScheme: colorSchemeParser,
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       await db
@@ -168,7 +169,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         language: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       await db
@@ -230,24 +231,48 @@ export const userRouter = createTRPCRouter({
       z.object({
         limit: z.number().min(1).max(100).default(10),
         page: z.number().min(0),
-        search: z
-          .string()
-          .optional()
-          .transform((value) => (value === '' ? undefined : value)),
-      })
+        search: z.object({
+          fullTextSearch: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          role: z
+            .string()
+            .transform((value) => (value.length > 0 ? value : undefined))
+            .optional(),
+        }),
+      }),
     )
     .query(async ({ ctx, input }) => {
+
+      const roleFilter = () => {
+        if (input.search.role === PossibleRoleFilter[1].id) {
+          return eq(users.isOwner, true);
+        }
+
+        if (input.search.role === PossibleRoleFilter[2].id) {
+          return eq(users.isAdmin, true);
+        }
+
+        if (input.search.role === PossibleRoleFilter[3].id) {
+          return and(eq(users.isAdmin, false), eq(users.isOwner, false));
+        }
+
+        return undefined;
+      };
+
       const limit = input.limit;
       const dbUsers = await db.query.users.findMany({
         limit: limit + 1,
         offset: limit * input.page,
-        where: input.search ? like(users.name, `%${input.search}%`) : undefined,
+        where: and(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined, roleFilter()),
       });
 
       const countUsers = await db
         .select({ count: sql<number>`count(*)` })
         .from(users)
-        .where(input.search ? like(users.name, `%${input.search}%`) : undefined)
+        .where(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined)
+        .where(roleFilter())
         .then((rows) => rows[0].count);
 
       return {
@@ -296,7 +321,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         id: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const user = await db.query.users.findFirst({
@@ -332,7 +357,7 @@ const createUserIfNotPresent = async (
   options: {
     defaultSettings?: Partial<UserSettings>;
     isOwner?: boolean;
-  } | void
+  } | void,
 ) => {
   const existingUser = await db.query.users.findFirst({
     where: eq(users.name, input.username),
