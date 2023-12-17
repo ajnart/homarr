@@ -313,9 +313,19 @@ export const userRouter = createTRPCRouter({
     await createUserIfNotPresent(input);
   }),
   details: adminProcedure.input(z.object({ userId: z.string() })).query(async ({ input }) => {
-    return await db.query.users.findFirst({
+    return db.query.users.findFirst({
       where: eq(users.id, input.userId),
     });
+  }),
+  updateDetails: adminProcedure.input(z.object({
+    userId: z.string(),
+    username: z.string(),
+    eMail: z.string().optional().transform(value => value?.length === 0 ? null : value),
+  })).mutation(async ({ input }) => {
+    await db.update(users).set({
+      name: input.username,
+      email: input.eMail as string | null,
+    }).where(eq(users.id, input.userId));
   }),
   deleteUser: adminProcedure
     .input(

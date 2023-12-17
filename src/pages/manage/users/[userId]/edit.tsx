@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  Group,
-  Loader,
-  Text,
-  Stack,
-  ThemeIcon,
-  Title,
-  UnstyledButton, Divider,
-} from '@mantine/core';
+import { Avatar, Divider, Group, Loader, Stack, Text, ThemeIcon, Title, UnstyledButton } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -60,6 +51,7 @@ const EditPage = () => {
           <ManageUserGeneralForm
             defaultUsername={data?.name ?? ''}
             defaultEmail={data?.email ?? ''}
+            userId={data.id}
           />
           <Divider />
           <ManageUserSecurityForm userId={data.id} />
