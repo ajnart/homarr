@@ -8,7 +8,7 @@
 				"label": "Hiển thị thanh công cụ giúp bạn viết markdown"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Cho phép tích dấu kiểm tra ở chế độ chỉ đọc"
 			},
 			"content": {
 				"label": "Nội dung của ghi chú"
@@ -32,25 +32,25 @@
 			"bulletList": "Danh sách kiểu ký hiệu",
 			"orderedList": "Danh sách đánh số",
 			"checkList": "Danh sách kiểm tra",
-			"increaseIndent": "",
-			"decreaseIndent": "",
+			"increaseIndent": "Tăng thụt lề",
+			"decreaseIndent": "Giảm thụt lề",
 			"link": "Liên kết",
 			"unlink": "Gỡ bỏ liên kết",
 			"image": "Nhúng hình ảnh",
 			"addTable": "Thêm bảng",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"deleteTable": "Xóa bảng",
+			"colorCell": "Màu ô",
+			"mergeCell": "Bật/tắt hợp nhất ô",
+			"addColumnLeft": "Thêm cột trước",
+			"addColumnRight": "Thêm cột sau",
+			"deleteColumn": "Xóa cột",
+			"addRowTop": "Thêm dòng bên trên",
+			"addRowBelow": "Thêm dòng bên dưới",
+			"deleteRow": "Xóa dòng"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
+			"clearColor": "Xóa màu",
+			"source": "Nguồn",
 			"widthPlaceholder": "Giá trị tính bằng % hoặc pixel",
 			"columns": "Cột",
 			"rows": "Dòng"
