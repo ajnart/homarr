@@ -11,10 +11,10 @@
         "label": "Hiển thị torrent hoàn thành"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Hiển thị torrent đang hoạt động"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Tốc độ tải lên để coi torrent là đang hoạt động (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Hiển thị torrent hết hạn"
@@ -27,8 +27,8 @@
         "description": "Nếu chọn \"Danh sách trắng\", các nhãn sẽ được dùng như một danh sách trắng. Nếu không được chọn, đây sẽ là danh sách đen. Sẽ không có gì xảy ra nếu trống không"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Hiển thị tỷ lệ danh sách torrent sau lọc",
+        "info": "Nếu tắt, chỉ tỉ lệ chung sẽ được hiển thị. Tỉ lệ chung sẽ vẫn sử dụng nhãn nếu được đặt"
       }
     }
   },
@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Đang tải",
         "name": "Tên",
-        "dateAdded": "",
+        "dateAdded": "Được thêm vào",
         "size": "Kích cỡ",
         "download": "Tải xuống",
         "upload": "Tải lên",
         "estimatedTimeOfArrival": "Thời gian dự kiến",
         "progress": "Tiến độ",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Tổng tải lên",
+        "totalDownloaded": "Tổng tải xuống",
+        "ratio": "Tỉ lệ",
+        "seeds": "Chia sẻ (Đã kết nối)",
+        "peers": "Ngang hàng (Đã kết nối)",
+        "label": "Nhãn",
         "state": "Trạng thái",
-        "stateMessage": ""
+        "stateMessage": "Thông tin trạng thái"
       },
       "item": {
         "text": "Quản lý bởi {{appName}}, tỷ lệ {{ratio}}"
