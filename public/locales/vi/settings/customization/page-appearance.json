@@ -19,21 +19,21 @@
     "label": "Hình nền"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Vị trí ảnh nền",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Cố định - Nền vẫn giữ nguyên vị trí (được khuyến nghị)",
+      "scroll": "Cuộn - Ảnh nền bám theo cuộn chuột"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Kích cỡ ảnh nền",
     "options": {
       "cover": "",
       "contain": ""
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Vị trí ảnh nền",
     "options": {
       "repeat": "",
       "no-repeat": "",
