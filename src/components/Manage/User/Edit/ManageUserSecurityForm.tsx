@@ -3,6 +3,7 @@ import { useForm, zodResolver } from '@mantine/form';
 import { IconAlertTriangle, IconPassword } from '@tabler/icons-react';
 import { z } from 'zod';
 import { api } from '~/utils/api';
+import { useTranslation } from 'next-i18next';
 
 export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
   const form = useForm({
@@ -21,6 +22,8 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
     validateInputOnBlur: true,
     validateInputOnChange: true,
   });
+
+  const { t } = useTranslation(['manage/users/edit', 'common']);
 
   const apiUtils = api.useUtils();
 
@@ -43,25 +46,25 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
     <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
       <Title order={3}>
-        Security
+        {t('sections.security.title')}
       </Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <PasswordInput
           icon={<IconPassword size="1rem" />}
-          label="Password"
+          label={t('sections.security.inputs.password.label')}
           mb="md"
           withAsterisk
           {...form.getInputProps('password')}
         />
         <Checkbox
-          label="Terminate existing sessions"
-          description="Forces user to log in again on their devices"
+          label={t('sections.security.inputs.terminateExistingSessions.label')}
+          description={t('sections.security.inputs.terminateExistingSessions.description')}
           mb="md"
           {...form.getInputProps('terminateExistingSessions')}
         />
         <Checkbox
-          label="Confirm"
-          description="Password will be updated. Action cannot be reverted."
+          label={t('sections.security.inputs.confirm.label')}
+          description={t('sections.security.inputs.confirm.description')}
           {...form.getInputProps('confirm')}
         />
         <Group position="right" mt="md">
@@ -73,7 +76,7 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
             variant="light"
             type="submit"
           >
-            Update Password
+            {t('common:save')}
           </Button>
         </Group>
       </form>

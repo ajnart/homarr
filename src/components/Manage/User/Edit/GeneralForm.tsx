@@ -2,6 +2,7 @@ import { Box, Button, Group, TextInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconAt, IconCheck, IconLetterCase } from '@tabler/icons-react';
 import { z } from 'zod';
+import { useTranslation } from 'next-i18next';
 
 export const ManageUserGeneralForm = ({
   defaultUsername,
@@ -24,20 +25,21 @@ export const ManageUserGeneralForm = ({
     validateInputOnBlur: true,
     validateInputOnChange: true
   });
+  const { t } = useTranslation(['manage/users/edit', 'common']);
   return (
     <Box maw={500}>
       <Title order={3}>
-        General
+        {t('sections.general.title')}
       </Title>
       <form>
         <TextInput
           icon={<IconLetterCase size="1rem" />}
-          label="Username"
+          label={t('sections.general.inputs.username.label')}
           mb="md"
           withAsterisk
           {...form.getInputProps('username')}
         />
-        <TextInput icon={<IconAt size="1rem" />} label="E-Mail" {...form.getInputProps('eMail')} />
+        <TextInput icon={<IconAt size="1rem" />} label={t('sections.general.inputs.eMail.label')} {...form.getInputProps('eMail')} />
       </form>
       <Group position="right" mt="md">
         <Button
@@ -46,7 +48,7 @@ export const ManageUserGeneralForm = ({
           color="green"
           variant="light"
         >
-          Save
+          {t('common:save')}
         </Button>
       </Group>
     </Box>

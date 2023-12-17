@@ -17,17 +17,18 @@ export const ManageUserRoles = ({ user }: {
     isOwner: boolean;
   }
 }) => {
-  const { t } = useTranslation('manage/users');
+  const { t } = useTranslation(['manage/users/edit', 'manage/users']);
   const { data: sessionData } = useSession();
   return (
     <Box maw={500}>
       <Title order={3}>
-        Roles
+        {t('sections.roles.title')}
       </Title>
 
       <Group mb={'md'}>
-        <Text>Current role:</Text>
-        {user.isOwner ? (<Badge>Owner</Badge>) : user.isAdmin ? (<Badge>Admin</Badge>) : (<Badge>Normal</Badge>)}
+        <Text>{t('sections.roles.currentRole')}</Text>
+        {user.isOwner ? (<Badge>{t('sections.roles.badges.owner')}</Badge>) : user.isAdmin ? (
+          <Badge>{t('sections.roles.badges.admin')}</Badge>) : (<Badge>{t('sections.roles.badges.normal')}</Badge>)}
       </Group>
 
       {user.isAdmin ? (
@@ -42,7 +43,7 @@ export const ManageUserRoles = ({ user }: {
             });
           }}
         >
-          {t('tooltips.demoteAdmin')}
+          {t('manage/users:tooltips.demoteAdmin')}
         </Button>
       ) : (
         <Button
@@ -56,7 +57,7 @@ export const ManageUserRoles = ({ user }: {
           }}
         >
 
-          {t('tooltips.promoteToAdmin')}
+          {t('manage/users:tooltips.promoteToAdmin')}
         </Button>
       )}
     </Box>

@@ -46,7 +46,7 @@ const EditPage = () => {
           <ThemeIcon variant='default'>
             <IconArrowLeft size='1rem' />
           </ThemeIcon>
-          <Text>Back to user management</Text>
+          <Text>{t('back')}</Text>
         </Group>
       </UnstyledButton>
 

@@ -1,8 +1,9 @@
 import { Box, Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
-import { IconPassword, IconTrash } from '@tabler/icons-react';
+import { IconTextSize, IconTrash } from '@tabler/icons-react';
 import { z } from 'zod';
 import { api } from '~/utils/api';
+import { useTranslation } from 'next-i18next';
 
 export const ManageUserDanger = ({ userId, username }: { userId: string, username: string | null }) => {
   const form = useForm({
@@ -29,6 +30,8 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
     },
   });
 
+  const { t } = useTranslation(['manage/users/edit', 'common']);
+
   const handleSubmit = () => {
     mutate({
       id: userId,
@@ -39,20 +42,20 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
     <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
       <Title order={3}>
-        Account deletion
+        {t('sections.deletion.title')}
       </Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <PasswordInput
-          icon={<IconPassword size="1rem" />}
-          label="Confirm username"
-          description="Type username to confirm deletion"
+          icon={<IconTextSize size="1rem" />}
+          label={t('sections.deletion.inputs.confirmUsername.label')}
+          description={t('sections.deletion.inputs.confirmUsername.description')}
           mb="md"
           withAsterisk
           {...form.getInputProps('username')}
         />
         <Checkbox
-          label="Delete permanently"
-          description="I am aware that this action is permanent and all account data will be lost."
+          label={t('sections.deletion.inputs.confirm.label')}
+          description={t('sections.deletion.inputs.confirm.description')}
           {...form.getInputProps('confirm')}
         />
         <Group position="right" mt="md">
@@ -64,7 +67,7 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
             variant="light"
             type="submit"
           >
-            Delete
+            {t('common:delete')}
           </Button>
         </Group>
       </form>
