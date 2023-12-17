@@ -1,10 +1,10 @@
-import { Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
+import { Box, Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconPassword, IconTrash } from '@tabler/icons-react';
 import { z } from 'zod';
 import { api } from '~/utils/api';
 
-export const ManageUserDanger = ({ userId, username }: { userId: string, username: string }) => {
+export const ManageUserDanger = ({ userId, username }: { userId: string, username: string | null }) => {
   const form = useForm({
     initialValues: {
       username: '',
@@ -36,9 +36,9 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
   };
 
   return (
-    <>
+    <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
-      <Title order={6} mb="md">
+      <Title order={3}>
         Account deletion
       </Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -68,6 +68,6 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
           </Button>
         </Group>
       </form>
-    </>
+    </Box>
   );
 };

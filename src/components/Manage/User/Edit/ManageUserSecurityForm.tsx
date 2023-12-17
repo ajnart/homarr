@@ -1,4 +1,4 @@
-import { Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
+import { Box, Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconAlertTriangle, IconPassword } from '@tabler/icons-react';
 import { z } from 'zod';
@@ -40,9 +40,9 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
   };
 
   return (
-    <>
+    <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
-      <Title order={6} mb="md">
+      <Title order={3}>
         Security
       </Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -77,6 +77,6 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
           </Button>
         </Group>
       </form>
-    </>
+    </Box>
   );
 };

@@ -1,14 +1,12 @@
 import {
   Avatar,
-  Card,
-  Center,
-  Grid,
   Group,
   Loader,
   Text,
+  Stack,
   ThemeIcon,
   Title,
-  UnstyledButton,
+  UnstyledButton, Divider,
 } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
@@ -42,63 +40,34 @@ const EditPage = () => {
       <Head>
         <title>{metaTitle}</title>
       </Head>
-      <UnstyledButton component={Link} href="/manage/users">
-        <Group mb="md">
-          <ThemeIcon variant="default">
-            <IconArrowLeft size="1rem" />
+      <UnstyledButton component={Link} href='/manage/users'>
+        <Group mb='md'>
+          <ThemeIcon variant='default'>
+            <IconArrowLeft size='1rem' />
           </ThemeIcon>
           <Text>Back to user management</Text>
         </Group>
       </UnstyledButton>
 
-      <Group mb="md">
+      <Group mb='xl'>
         <Avatar>{data?.name?.slice(0, 2).toUpperCase()}</Avatar>
         <Title>{data?.name}</Title>
       </Group>
-      <Grid>
-        <Grid.Col sm={12} md={6}>
-          <Card>
-            {isLoading ? (
-              <Center>
-                <Loader />
-              </Center>
-            ) : (
-              <ManageUserGeneralForm
-                defaultUsername={data?.name ?? ''}
-                defaultEmail={data?.email ?? ''}
-              />
-            )}
-          </Card>
-        </Grid.Col>
-        <Grid.Col sm={12} md={6}>
-          <Card>
-            {isLoading || !data ? (
-              <Center>
-                <Loader />
-              </Center>
-            ) : (
-              <ManageUserSecurityForm userId={data.id} />
-            )}
-          </Card>
-        </Grid.Col>
-        <Grid.Col sm={12} md={6}>
-          <Card
-            sx={(theme) => ({
-              borderColor: `${theme.colors.red[8]} !important`,
-              borderWidth: '3px !important'
-            })}
-            withBorder
-          >
-            {isLoading || !data?.name ? (
-              <Center>
-                <Loader />
-              </Center>
-            ) : (
-              <ManageUserDanger userId={data.id} username={data.name} />
-            )}
-          </Card>
-        </Grid.Col>
-      </Grid>
+
+      {data ? (
+        <Stack>
+          <ManageUserGeneralForm
+            defaultUsername={data?.name ?? ''}
+            defaultEmail={data?.email ?? ''}
+          />
+          <Divider />
+          <ManageUserSecurityForm userId={data.id} />
+          <Divider />
+          <ManageUserDanger userId={data.id} username={data.name} />
+        </Stack>
+      ) : (
+        <Loader />
+      )}
     </ManageLayout>
   );
 };
@@ -114,7 +83,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     manageNamespaces,
     ctx.locale,
     undefined,
-    undefined
+    undefined,
   );
   return {
     props: {

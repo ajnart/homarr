@@ -1,4 +1,4 @@
-import { Button, Group, TextInput, Title } from '@mantine/core';
+import { Box, Button, Group, TextInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconAt, IconCheck, IconLetterCase } from '@tabler/icons-react';
 import { z } from 'zod';
@@ -25,8 +25,8 @@ export const ManageUserGeneralForm = ({
     validateInputOnChange: true
   });
   return (
-    <>
-      <Title order={6} mb="md">
+    <Box maw={500}>
+      <Title order={3}>
         General
       </Title>
       <form>
@@ -49,6 +49,6 @@ export const ManageUserGeneralForm = ({
           Save
         </Button>
       </Group>
-    </>
+    </Box>
   );
 };
