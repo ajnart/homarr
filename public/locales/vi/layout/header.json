@@ -4,7 +4,7 @@
         "engines": {
             "web": "Tìm kiếm {{query}} trên mạng",
             "youtube": "Tìm kiếm {{query}} trên YouTube",
-            "torrent": "Tìm kiếm {{query}} torrent",
+            "torrent": "Tìm kiếm torrent {{query}}",
             "movie": "Tìm kiếm {{query}} trên {{app}}"
         }
     },
