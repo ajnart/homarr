@@ -36,8 +36,8 @@
     "footer": {
       "error": "Lỗi",
       "lastUpdated": "Cập nhật cuối cách đây {{time}}",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Tỉ lệ chung",
+      "ratioWithFilter": "Tỉ lệ sau lọc"
     },
     "table": {
       "header": {
@@ -63,7 +63,7 @@
       },
       "body": {
         "nothingFound": "Không tìm thấy torrent nào",
-        "filterHidingItems": "Đã ẩn {{count}} dòng bởi bộ lọc của bạn"
+        "filterHidingItems": "{{count}} dòng đã ẩn bởi bộ lọc của bạn"
       }
     },
     "lineChart": {
