@@ -1,16 +1,16 @@
 import { Box, Button, Group, TextInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconAt, IconCheck, IconLetterCase } from '@tabler/icons-react';
-import { z } from 'zod';
 import { useTranslation } from 'next-i18next';
+import { z } from 'zod';
 import { api } from '~/utils/api';
 
 export const ManageUserGeneralForm = ({
-                                        userId,
-                                        defaultUsername,
-                                        defaultEmail,
-                                      }: {
-  userId: string
+  userId,
+  defaultUsername,
+  defaultEmail,
+}: {
+  userId: string;
   defaultUsername: string;
   defaultEmail: string;
 }) => {
@@ -22,8 +22,8 @@ export const ManageUserGeneralForm = ({
     validate: zodResolver(
       z.object({
         username: z.string(),
-        eMail: z.string().optional(),
-      }),
+        eMail: z.string().email().or(z.literal('')),
+      })
     ),
     validateInputOnBlur: true,
     validateInputOnChange: true,
@@ -35,6 +35,7 @@ export const ManageUserGeneralForm = ({
   const { mutate, isLoading } = api.user.updateDetails.useMutation({
     onSettled: async () => {
       await utils.user.invalidate();
+      form.resetDirty();
     },
   });
 
@@ -42,32 +43,34 @@ export const ManageUserGeneralForm = ({
     mutate({
       userId: userId,
       username: form.values.username,
-      eMail: form.values.eMail
+      eMail: form.values.eMail,
     });
   }
 
   return (
     <Box maw={500}>
-      <Title order={3}>
-        {t('sections.general.title')}
-      </Title>
+      <Title order={3}>{t('sections.general.title')}</Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
-          icon={<IconLetterCase size='1rem' />}
+          icon={<IconLetterCase size="1rem" />}
           label={t('sections.general.inputs.username.label')}
-          mb='md'
+          mb="md"
           withAsterisk
           {...form.getInputProps('username')}
         />
-        <TextInput icon={<IconAt size='1rem' />}
-                   label={t('sections.general.inputs.eMail.label')} {...form.getInputProps('eMail')} />
-        <Group position='right' mt='md'>
+        <TextInput
+          icon={<IconAt size="1rem" />}
+          label={t('sections.general.inputs.eMail.label')}
+          {...form.getInputProps('eMail')}
+        />
+        <Group position="right" mt="md">
           <Button
             disabled={!form.isDirty() || !form.isValid() || isLoading}
             loading={isLoading}
-            leftIcon={<IconCheck size='1rem' />}
-            color='green'
-            variant='light'
+            leftIcon={<IconCheck size="1rem" />}
+            color="green"
+            variant="light"
+            type="submit"
           >
             {t('common:save')}
           </Button>

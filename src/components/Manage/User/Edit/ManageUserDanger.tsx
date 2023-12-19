@@ -1,11 +1,17 @@
 import { Box, Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { IconTextSize, IconTrash } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 import { api } from '~/utils/api';
-import { useTranslation } from 'next-i18next';
 
-export const ManageUserDanger = ({ userId, username }: { userId: string, username: string | null }) => {
+export const ManageUserDanger = ({
+  userId,
+  username,
+}: {
+  userId: string;
+  username: string | null;
+}) => {
   const form = useForm({
     initialValues: {
       username: '',
@@ -24,6 +30,9 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
   const apiUtils = api.useUtils();
 
   const { mutate, isLoading } = api.user.deleteUser.useMutation({
+    onSuccess: () => {
+      window.location.href = '/manage/users';
+    },
     onSettled: () => {
       void apiUtils.user.details.invalidate();
       form.reset();
@@ -41,9 +50,7 @@ export const ManageUserDanger = ({ userId, username }: { userId: string, usernam
   return (
     <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
-      <Title order={3}>
-        {t('sections.deletion.title')}
-      </Title>
+      <Title order={3}>{t('sections.deletion.title')}</Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <PasswordInput
           icon={<IconTextSize size="1rem" />}

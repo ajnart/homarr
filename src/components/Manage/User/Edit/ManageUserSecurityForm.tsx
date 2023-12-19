@@ -1,9 +1,10 @@
 import { Box, Button, Checkbox, Group, LoadingOverlay, PasswordInput, Title } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
+import { useInputState } from '@mantine/hooks';
 import { IconAlertTriangle, IconPassword } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { z } from 'zod';
 import { api } from '~/utils/api';
-import { useTranslation } from 'next-i18next';
 
 export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
   const form = useForm({
@@ -23,6 +24,8 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
     validateInputOnChange: true,
   });
 
+  const [checked, setChecked] = useInputState(false);
+
   const { t } = useTranslation(['manage/users/edit', 'common']);
 
   const apiUtils = api.useUtils();
@@ -40,14 +43,13 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
       terminateExistingSessions: values.terminateExistingSessions,
       userId: userId,
     });
+    setChecked(false);
   };
 
   return (
     <Box maw={500}>
       <LoadingOverlay visible={isLoading} />
-      <Title order={3}>
-        {t('sections.security.title')}
-      </Title>
+      <Title order={3}>{t('sections.security.title')}</Title>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <PasswordInput
           icon={<IconPassword size="1rem" />}
@@ -65,6 +67,10 @@ export const ManageUserSecurityForm = ({ userId }: { userId: string }) => {
         <Checkbox
           label={t('sections.security.inputs.confirm.label')}
           description={t('sections.security.inputs.confirm.description')}
+          checked={checked}
+          onClick={(event) => {
+            setChecked(event.currentTarget.checked);
+          }}
           {...form.getInputProps('confirm')}
         />
         <Group position="right" mt="md">
