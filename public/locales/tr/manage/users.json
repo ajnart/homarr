@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Tümü",
+            "normal": "Normal",
+            "admin": "Yönetici",
+            "owner": "Sahip"
         }
     },
     "table": {
