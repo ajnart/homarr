@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Usuario {{username}}",
+  "back": "Volver a la administración de usuario",
   "sections": {
     "general": {
       "title": "General",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Seguridad",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nueva contraseña"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Finalizar sesiones activas",
+          "description": "Fuerza al usuario a iniciar sesión nuevamente en sus dispositivos"
         },
         "confirm": {
           "label": "Confirmar",
-          "description": ""
+          "description": "La contraseña será actualiza. La acción no puede ser revertida."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Roles",
+      "currentRole": "Rol actual: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Dueño",
+        "admin": "Administrador",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Eliminación de la cuenta",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Confirmar nombre de usuario",
+          "description": "Introduzca el nombre de usuario para confirmar la eliminación"
         },
         "confirm": {
           "label": "Eliminar permanentemente",
-          "description": ""
+          "description": "Estoy al tanto de que dicha acción es permanente, y todos los datos serán borrados."
         }
       }
     }
