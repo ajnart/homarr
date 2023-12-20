@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Tutto",
+            "normal": "Normale",
+            "admin": "Admin",
+            "owner": "Proprietario"
         }
     },
     "table": {
