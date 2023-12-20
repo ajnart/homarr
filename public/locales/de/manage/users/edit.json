@@ -1,6 +1,6 @@
 {
   "metaTitle": "",
-  "back": "",
+  "back": "Zurück zur Benutzerverwaltung",
   "sections": {
     "general": {
       "title": "Allgemein",
@@ -17,21 +17,21 @@
       "title": "",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Neues Passwort"
         },
         "terminateExistingSessions": {
           "label": "",
-          "description": ""
+          "description": "Erzwingt den Benutzer, sich erneut auf seinen Geräten anzumelden"
         },
         "confirm": {
           "label": "Bestätigen",
-          "description": ""
+          "description": "Das Passwort wird aktualisiert. Diese Aktion kann nicht rückgängig gemacht werden."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Rollen",
+      "currentRole": "Aktuelle Rolle: ",
       "badges": {
         "owner": "",
         "admin": "",
@@ -42,12 +42,12 @@
       "title": "",
       "inputs": {
         "confirmUsername": {
-          "label": "",
+          "label": "Benutzername bestätigen",
           "description": ""
         },
         "confirm": {
           "label": "Dauerhaft löschen",
-          "description": ""
+          "description": "Mir ist bewusst, dass diese Aktion permanent ist und alle Kontodaten verloren gehen."
         }
       }
     }
