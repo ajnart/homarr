@@ -1,5 +1,5 @@
 {
-  "metaTitle": "",
+  "metaTitle": "Benutzer {{username}}",
   "back": "Zurück zur Benutzerverwaltung",
   "sections": {
     "general": {
@@ -14,14 +14,14 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Sicherheit",
       "inputs": {
         "password": {
           "label": "Neues Passwort"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": "Erzwingt den Benutzer, sich erneut auf seinen Geräten anzumelden"
+          "label": "Beenden Sie bestehende Sitzungen",
+          "description": "Erzwingt die erneute Anmeldung des Benutzers auf seinen Geräten"
         },
         "confirm": {
           "label": "Bestätigen",
@@ -33,21 +33,21 @@
       "title": "Rollen",
       "currentRole": "Aktuelle Rolle: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Eigentümer",
+        "admin": "Admin",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Löschung des Kontos",
       "inputs": {
         "confirmUsername": {
           "label": "Benutzername bestätigen",
-          "description": ""
+          "description": "Geben Sie den Benutzernamen ein, um die Löschung zu bestätigen"
         },
         "confirm": {
           "label": "Dauerhaft löschen",
-          "description": "Mir ist bewusst, dass diese Aktion permanent ist und alle Kontodaten verloren gehen."
+          "description": "Ich bin mir bewusst, dass diese Maßnahme dauerhaft ist und alle Kontodaten im Zuge dessen verloren gehen."
         }
       }
     }
