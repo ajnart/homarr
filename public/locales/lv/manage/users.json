@@ -1,13 +1,21 @@
 {
     "metaTitle": "Lietotāji",
     "pageTitle": "Pārvaldīt lietotājus",
-    "text": "Izmantojot lietotājus, varat konfigurēt, kas var rediģēt paneļus. Nākamajās Homarr versijās būs pieejama vēl detalizētāka piekļuves tiesību un dēļu kontrole.",
     "buttons": {
         "create": "Izveidot"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Lietotājs"
+            "user": "Lietotājs",
+            "email": "E-pasts"
         }
     },
     "tooltips": {
