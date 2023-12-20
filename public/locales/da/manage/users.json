@@ -1,13 +1,21 @@
 {
     "metaTitle": "Brugere",
     "pageTitle": "Administrér brugere",
-    "text": "Ved hjælp af brugere kan du konfigurere, hvem der kan redigere dine dashboards. Fremtidige versioner af Homarr vil have endnu mere detaljeret kontrol over tilladelser og tavler.",
     "buttons": {
         "create": "Opret"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Bruger"
+            "user": "Bruger",
+            "email": "E-mail"
         }
     },
     "tooltips": {
