@@ -1,0 +1,55 @@
+{
+  "metaTitle": "User {{username}}",
+  "back": "Back to user management",
+  "sections": {
+    "general": {
+      "title": "General",
+      "inputs": {
+        "username": {
+          "label": "Username"
+        },
+        "eMail": {
+          "label": "E-Mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Security",
+      "inputs": {
+        "password": {
+          "label": "New password"
+        },
+        "terminateExistingSessions": {
+          "label": "Terminate existing sessions",
+          "description": "Forces user to log in again on their devices"
+        },
+        "confirm": {
+          "label": "Confirm",
+          "description": "Password will be updated. Action cannot be reverted."
+        }
+      }
+    },
+    "roles": {
+      "title": "Roles",
+      "currentRole": "Current role: ",
+      "badges": {
+        "owner": "Owner",
+        "admin": "Admin",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Account deletion",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Confirm username",
+          "description": "Type username to confirm deletion"
+        },
+        "confirm": {
+          "label": "Delete permanently",
+          "description": "I am aware that this action is permanent and all account data will be lost."
+        }
+      }
+    }
+  }
+}

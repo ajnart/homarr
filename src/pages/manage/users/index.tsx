@@ -1,28 +1,34 @@
 import {
-  ActionIcon,
-  Autocomplete,
   Avatar,
   Badge,
-  Box,
   Button,
   Flex,
+  Grid,
   Group,
+  Loader,
+  NavLink,
   Pagination,
   Table,
   Text,
+  TextInput,
   Title,
-  Tooltip,
 } from '@mantine/core';
+import { useForm, zodResolver } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
-import { IconPlus, IconTrash, IconUserDown, IconUserUp } from '@tabler/icons-react';
+import {
+  IconPencil,
+  IconUser,
+  IconUserPlus,
+  IconUserShield,
+  IconUserStar,
+  IconX,
+} from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
-import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { openRoleChangeModal } from '~/components/Manage/User/change-user-role.modal';
-import { openDeleteUserModal } from '~/components/Manage/User/delete-user.modal';
+import { z } from 'zod';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
@@ -30,17 +36,49 @@ import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
 
+export const PossibleRoleFilter = [
+  {
+    id: 'all',
+    icon: IconUser,
+  },
+  {
+    id: 'owner',
+    icon: IconUserStar,
+  },
+  {
+    id: 'admin',
+    icon: IconUserShield,
+  },
+  {
+    id: 'normal',
+    icon: IconUser,
+  },
+];
+
 const ManageUsersPage = () => {
   const [activePage, setActivePage] = useState(0);
-  const [nonDebouncedSearch, setNonDebouncedSearch] = useState<string | undefined>('');
-  const [debouncedSearch] = useDebouncedValue<string | undefined>(nonDebouncedSearch, 200);
-  const { data } = api.user.all.useQuery({
-    page: activePage,
-    search: debouncedSearch,
+  const form = useForm({
+    initialValues: {
+      fullTextSearch: '',
+      role: PossibleRoleFilter[0].id,
+    },
+    validate: zodResolver(
+      z.object({
+        fullTextSearch: z.string(),
+        role: z
+          .string()
+          .transform((value) => (value.length > 0 ? value : undefined))
+          .optional(),
+      })
+    ),
   });
-  const { data: sessionData } = useSession();
+  const [debouncedForm] = useDebouncedValue(form, 200);
+  const { data, isLoading } = api.user.all.useQuery({
+    page: activePage,
+    search: debouncedForm.values,
+  });
 
-  const { t } = useTranslation('manage/users');
+  const { t } = useTranslation(['manage/users', 'common']);
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
 
@@ -51,118 +89,127 @@ const ManageUsersPage = () => {
       </Head>
 
       <Title mb="md">{t('pageTitle')}</Title>
-      <Text mb="xl">{t('text')}</Text>
 
-      <Flex columnGap={10} justify="end" mb="md">
-        <Autocomplete
-          placeholder="Filter"
-          data={
-            (data?.users.map((user) => user.name).filter((name) => name !== null) as string[]) ?? []
+      <Flex columnGap={10} mb="md">
+        <TextInput
+          rightSection={
+            <IconX
+              onClick={() => {
+                form.setFieldValue('fullTextSearch', '');
+              }}
+              size="1rem"
+            />
           }
-          variant="filled"
-          onChange={(value) => {
-            setNonDebouncedSearch(value);
+          style={{
+            flexGrow: 1,
           }}
+          placeholder="Filter"
+          variant="filled"
+          {...form.getInputProps('fullTextSearch')}
         />
         <Button
           component={Link}
-          leftIcon={<IconPlus size="1rem" />}
+          leftIcon={<IconUserPlus size="1rem" />}
           href="/manage/users/create"
-          variant="default"
+          color="green"
+          variant="light"
+          px="xl"
         >
           {t('buttons.create')}
         </Button>
       </Flex>
 
-      {data && (
-        <>
+      <Grid>
+        <Grid.Col xs={12} md={4}>
+          <Text color="dimmed" size="sm" mb="xs">
+            Roles
+          </Text>
+          {PossibleRoleFilter.map((role) => (
+            <NavLink
+              key={role.id}
+              icon={<role.icon size="1rem" />}
+              rightSection={!isLoading && data && <Badge>{data?.stats.roles[role.id]}</Badge>}
+              label={t(`filter.roles.${role.id}`)}
+              active={form.values.role === role.id}
+              onClick={() => {
+                form.setFieldValue('role', role.id);
+              }}
+              sx={(theme) => ({
+                borderRadius: theme.radius.md,
+                marginBottom: 5,
+              })}
+            />
+          ))}
+        </Grid.Col>
+        <Grid.Col xs={12} md={8}>
           <Table mb="md" withBorder highlightOnHover>
-            <thead>
-              <tr>
-                <th>{t('table.header.user')}</th>
-              </tr>
-            </thead>
             <tbody>
-              {data.users.map((user, index) => (
-                <tr key={index}>
-                  <td>
-                    <Group position="apart">
-                      <Group spacing="xs">
-                        <Avatar size="sm" />
-                        <Text>{user.name}</Text>
-                        {user.isOwner && (
-                          <Badge color="pink" size="sm">
-                            Owner
-                          </Badge>
-                        )}
-                        {user.isAdmin && (
-                          <Badge color="red" size="sm">
-                            Admin
-                          </Badge>
-                        )}
-                      </Group>
-                      <Group>
-                        {user.isAdmin ? (
-                          <Tooltip label={t('tooltips.demoteAdmin')} withinPortal withArrow>
-                            <ActionIcon
-                              disabled={user.id === sessionData?.user?.id || user.isOwner}
-                              onClick={() => {
-                                openRoleChangeModal({
-                                  ...user,
-                                  type: 'demote',
-                                });
-                              }}
-                            >
-                              <IconUserDown size="1rem" />
-                            </ActionIcon>
-                          </Tooltip>
-                        ) : (
-                          <Tooltip label={t('tooltips.promoteToAdmin')} withinPortal withArrow>
-                            <ActionIcon
-                              onClick={() => {
-                                openRoleChangeModal({
-                                  ...user,
-                                  type: 'promote',
-                                });
-                              }}
-                            >
-                              <IconUserUp size="1rem" />
-                            </ActionIcon>
-                          </Tooltip>
-                        )}
-
-                        <Tooltip label={t('tooltips.deleteUser')} withinPortal withArrow>
-                          <ActionIcon
-                            disabled={user.id === sessionData?.user?.id || user.isOwner}
-                            onClick={() => {
-                              openDeleteUserModal(user);
-                            }}
-                            color="red"
-                            variant="light"
-                          >
-                            <IconTrash size="1rem" />
-                          </ActionIcon>
-                        </Tooltip>
-                      </Group>
+              {isLoading && (
+                <tr>
+                  <td colSpan={4}>
+                    <Group position="center" p="lg">
+                      <Loader variant="dots" />
                     </Group>
                   </td>
                 </tr>
-              ))}
-
-              {debouncedSearch && debouncedSearch.length > 0 && data.countPages === 0 && (
+              )}
+              {data?.users.length === 0 && (
                 <tr>
-                  <td colSpan={1}>
-                    <Box p={15}>
-                      <Text>{t('searchDoesntMatch')}</Text>
-                    </Box>
+                  <td colSpan={4}>
+                    <Text p="lg" color="dimmed">
+                      {t('searchDoesntMatch')}
+                    </Text>
                   </td>
                 </tr>
               )}
+              {data?.users.map((user, index) => (
+                <tr key={index}>
+                  <td width="1%">
+                    <Avatar size="sm" />
+                  </td>
+                  <td>
+                    <Grid grow>
+                      <Grid.Col span={6} p={0}>
+                        <Group spacing="xs" noWrap>
+                          <Text>{user.name}</Text>
+                          {user.isOwner && (
+                            <Badge color="pink" size="sm">
+                              Owner
+                            </Badge>
+                          )}
+                          {user.isAdmin && (
+                            <Badge color="red" size="sm">
+                              Admin
+                            </Badge>
+                          )}
+                        </Group>
+                      </Grid.Col>
+                      <Grid.Col span={6} p={0}>
+                        {user.email ? (
+                          <Text>{user.email}</Text>
+                        ) : (
+                          <Text color="dimmed">No E-Mail</Text>
+                        )}
+                      </Grid.Col>
+                    </Grid>
+                  </td>
+                  <td width="1%">
+                    <Button
+                      component={Link}
+                      href={`/manage/users/${user.id}/edit`}
+                      leftIcon={<IconPencil size="1rem" />}
+                      variant="default"
+                    >
+                      {t('common:edit')}
+                    </Button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </Table>
+        </Grid.Col>
+        <Group position="right" w="100%" px="sm">
           <Pagination
-            total={data.countPages}
-            value={activePage + 1}
             onNextPage={() => {
               setActivePage((prev) => prev + 1);
             }}
@@ -172,9 +219,12 @@ const ManageUsersPage = () => {
             onChange={(targetPage) => {
               setActivePage(targetPage - 1);
             }}
+            total={data?.countPages ?? 0}
+            value={activePage + 1}
+            withControls
           />
-        </>
-      )}
+        </Group>
+      </Grid>
     </ManageLayout>
   );
 };
