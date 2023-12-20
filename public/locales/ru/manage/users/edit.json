@@ -1,0 +1,55 @@
+{
+  "metaTitle": "",
+  "back": "",
+  "sections": {
+    "general": {
+      "title": "Общие",
+      "inputs": {
+        "username": {
+          "label": "Имя пользователя"
+        },
+        "eMail": {
+          "label": "E-Mail"
+        }
+      }
+    },
+    "security": {
+      "title": "",
+      "inputs": {
+        "password": {
+          "label": ""
+        },
+        "terminateExistingSessions": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Подтвердить",
+          "description": ""
+        }
+      }
+    },
+    "roles": {
+      "title": "",
+      "currentRole": "",
+      "badges": {
+        "owner": "",
+        "admin": "",
+        "normal": ""
+      }
+    },
+    "deletion": {
+      "title": "",
+      "inputs": {
+        "confirmUsername": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Удалить навсегда",
+          "description": ""
+        }
+      }
+    }
+  }
+}
