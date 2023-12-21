@@ -1,6 +1,6 @@
 {
   "metaTitle": "用户 {{username}}",
-  "back": "返回到用户管理",
+  "back": "返回用户管理",
   "sections": {
     "general": {
       "title": "通用",
@@ -21,7 +21,7 @@
         },
         "terminateExistingSessions": {
           "label": "终止现有会话",
-          "description": "强制用户在其设备上再次登录"
+          "description": "强制用户在其设备上重新登录"
         },
         "confirm": {
           "label": "确认",
