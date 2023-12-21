@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Объект не найден",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Объект Home Assistant",
+        "description": "Текущее состояние объекта в Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Состояние объекта",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "ID объекта",
+                "info": "Уникальный идентификатор объекта в Home Assistant. Скопируйте, нажав на объект > Щелкните значок шестеренки > Нажмите кнопку копирования в разделе «Идентификатор объекта». Некоторые пользовательские объекты могут не поддерживаться."
             },
             "displayName": {
-                "label": ""
+                "label": "Отображаемое имя"
             }
         }
     }
