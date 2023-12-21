@@ -39,15 +39,15 @@
       }
     },
     "deletion": {
-      "title": "",
+      "title": "删除账号",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "确认用户名",
+          "description": "输入用户名以确认删除"
         },
         "confirm": {
           "label": "永久删除",
-          "description": ""
+          "description": "我知道此操作是永久性的，所有帐户数据都将丢失。"
         }
       }
     }
