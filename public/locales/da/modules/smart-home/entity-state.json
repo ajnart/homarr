@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Entitet blev ikke fundet",
+    "descriptor": {
+        "name": "Home Assistant entitet",
+        "description": "Aktuel tilstand for en entitet i Home Assistant",
+        "settings": {
+            "title": "Entitet tilstand",
+            "entityId": {
+                "label": "Entitet ID",
+                "info": "Unikt entitets-id i Home Assistant. Kopier ved at klikke på entitet > Klik på tandhjulsikon > Klik på kopieringsknappen ved 'Entitets-ID'. Nogle brugerdefinerede entiteter understøttes muligvis ikke."
+            },
+            "displayName": {
+                "label": "Visningsnavn"
+            }
+        }
+    }
+}

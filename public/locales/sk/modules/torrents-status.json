@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Názov",
+        "dateAdded": "",
         "size": "Veľkosť",
         "download": "Dole",
         "upload": "Hore",
         "estimatedTimeOfArrival": "Odhad",
-        "progress": "Stav"
+        "progress": "Stav",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Stav",
+        "stateMessage": ""
       },
       "item": {
         "text": "Spravuje {{appName}}, {{ratio}} pomer"

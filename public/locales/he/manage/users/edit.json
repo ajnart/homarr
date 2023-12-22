@@ -1,0 +1,55 @@
+{
+  "metaTitle": "משתמש {{username}}",
+  "back": "חזרה לניהול משתמשים",
+  "sections": {
+    "general": {
+      "title": "כללי",
+      "inputs": {
+        "username": {
+          "label": "שם משתמש"
+        },
+        "eMail": {
+          "label": "אימייל"
+        }
+      }
+    },
+    "security": {
+      "title": "אבטחה",
+      "inputs": {
+        "password": {
+          "label": "סיסמה חדשה"
+        },
+        "terminateExistingSessions": {
+          "label": "סיום הפעלות קיימות",
+          "description": "מאלץ את המשתמש להתחבר שוב במכשירים שלו"
+        },
+        "confirm": {
+          "label": "לאשר",
+          "description": "הסיסמה תעודכן. לא ניתן לבטל פעולה."
+        }
+      }
+    },
+    "roles": {
+      "title": "תפקידים",
+      "currentRole": "תפקיד נוכחי: ",
+      "badges": {
+        "owner": "בעלים",
+        "admin": "מנהל מערכת",
+        "normal": "רגיל"
+      }
+    },
+    "deletion": {
+      "title": "מחיקת חשבון",
+      "inputs": {
+        "confirmUsername": {
+          "label": "אשר את שם המשתמש",
+          "description": "הקלד שם משתמש כדי לאשר את המחיקה"
+        },
+        "confirm": {
+          "label": "מחיקה לצמיתות",
+          "description": "אני מודע לכך שהפעולה הזו היא קבועה וכל נתוני החשבון יאבדו."
+        }
+      }
+    }
+  }
+}

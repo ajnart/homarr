@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Mediální server",
-    "description": "",
+    "description": "Interagujte se svým mediálním serverem Jellyfin nebo Plex",
     "settings": {
       "title": ""
     }

@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Varlık bulunamadı",
+    "descriptor": {
+        "name": "Home Assistant varlığı",
+        "description": "Home Assistant'nda bir varlığın mevcut durumu",
+        "settings": {
+            "title": "Varlık Durumu",
+            "entityId": {
+                "label": "Varlık Kimliği",
+                "info": "Home Assistant'ta benzersiz varlık kimliği. Varlığa tıklayın > Çark simgesine tıklayın > 'Varlık Kimliği'ndeki kopyala butonuna tıklayın. Bazı özel varlıklar desteklenmeyebilir."
+            },
+            "displayName": {
+                "label": "Ekran adı"
+            }
+        }
+    }
+}

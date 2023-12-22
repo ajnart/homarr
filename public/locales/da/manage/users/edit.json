@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Bruger {{username}}",
+  "back": "Tilbage til brugeradministration",
+  "sections": {
+    "general": {
+      "title": "Generelt",
+      "inputs": {
+        "username": {
+          "label": "Brugernavn"
+        },
+        "eMail": {
+          "label": "E-mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Sikkerhed",
+      "inputs": {
+        "password": {
+          "label": "Nyt kodeord"
+        },
+        "terminateExistingSessions": {
+          "label": "Afslut eksisterende sessioner",
+          "description": "Tvinger brugeren til at logge ind igen på deres enheder"
+        },
+        "confirm": {
+          "label": "Bekræft",
+          "description": "Adgangskoden vil blive opdateret. Handlingen kan ikke fortrydes."
+        }
+      }
+    },
+    "roles": {
+      "title": "Roller",
+      "currentRole": "Nuværende rolle: ",
+      "badges": {
+        "owner": "Ejer",
+        "admin": "Admin",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Sletning af konto",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Bekræft brugernavn",
+          "description": "Indtast brugernavn for at bekræfte sletningen"
+        },
+        "confirm": {
+          "label": "Slet permanent",
+          "description": "Jeg er klar over, at denne handling er permanent, og alle kontodata vil gå tabt."
+        }
+      }
+    }
+  }
+}

@@ -1,13 +1,21 @@
 {
     "metaTitle": "",
     "pageTitle": "",
-    "text": "",
     "buttons": {
         "create": ""
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Uporabnik"
+            "user": "Uporabnik",
+            "email": ""
         }
     },
     "tooltips": {

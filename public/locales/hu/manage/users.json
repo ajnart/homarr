@@ -1,13 +1,21 @@
 {
     "metaTitle": "Felhasználók",
     "pageTitle": "Felhasználók kezelése",
-    "text": "A felhasználók segítségével beállíthatja, hogy ki szerkesztheti a műszerfalait. A Homarr jövőbeli verziói még részletesebb szabályozást biztosítanak a jogosultságok és a táblák felett.",
     "buttons": {
         "create": "Létrehozás"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Felhasználó"
+            "user": "Felhasználó",
+            "email": "Email cím"
         }
     },
     "tooltips": {

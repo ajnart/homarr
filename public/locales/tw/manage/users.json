@@ -1,13 +1,21 @@
 {
     "metaTitle": "使用者",
     "pageTitle": "管理使用者",
-    "text": "通過使用者，您可以設定誰可以編輯您的面板，Homarr 的未來版本將對權限和面板進行更精細的控制",
     "buttons": {
         "create": "創建"
     },
+    "filter": {
+        "roles": {
+            "all": "全部",
+            "normal": "普通",
+            "admin": "管理員",
+            "owner": "所有者"
+        }
+    },
     "table": {
         "header": {
-            "user": "使用者"
+            "user": "使用者",
+            "email": "E-mail"
         }
     },
     "tooltips": {

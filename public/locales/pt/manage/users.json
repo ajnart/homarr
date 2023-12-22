@@ -1,13 +1,21 @@
 {
     "metaTitle": "Usuários",
     "pageTitle": "Gerenciar usuários",
-    "text": "Usando usuários, você pode configurar quem pode editar seus painéis. As versões futuras do Homarr terão um controle ainda mais granular sobre as permissões e os painéis.",
     "buttons": {
         "create": "Criar"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Usuário"
+            "user": "Usuário",
+            "email": "E-mail"
         }
     },
     "tooltips": {
