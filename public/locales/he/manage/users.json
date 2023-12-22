@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "את כל",
+            "normal": "רגיל",
+            "admin": "מנהל מערכת",
+            "owner": "בעלים"
         }
     },
     "table": {
