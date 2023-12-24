@@ -43,7 +43,7 @@
       "header": {
         "isCompleted": "Descargando",
         "name": "Nombre",
-        "dateAdded": "Añadido En",
+        "dateAdded": "Añadido el",
         "size": "Tamaño",
         "download": "Descarga",
         "upload": "Subida",
@@ -52,8 +52,8 @@
         "totalUploaded": "Subida Total",
         "totalDownloaded": "Descarga Total",
         "ratio": "Ratio",
-        "seeds": "Semillas (conectadas)",
-        "peers": "Pares (conectados)",
+        "seeds": "Semillas (Conectadas)",
+        "peers": "Pares (Conectados)",
         "label": "Etiqueta",
         "state": "Estado",
         "stateMessage": "Mensaje de estado"
