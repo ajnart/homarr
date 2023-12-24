@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Sťahovanie",
         "name": "Názov",
-        "dateAdded": "",
+        "dateAdded": "Pridané Dňa",
         "size": "Veľkosť",
         "download": "Dole",
         "upload": "Hore",
         "estimatedTimeOfArrival": "Odhad",
         "progress": "Stav",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Celkové odoslanie",
+        "totalDownloaded": "Celkovo stiahnuté",
+        "ratio": "Pomer",
+        "seeds": "Semená (pripojené)",
+        "peers": "Semená (pripojené)",
+        "label": "Štítok",
         "state": "Stav",
-        "stateMessage": ""
+        "stateMessage": "Správa"
       },
       "item": {
         "text": "Spravuje {{appName}}, {{ratio}} pomer"
