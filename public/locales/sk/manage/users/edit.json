@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Používateľ {{username}}",
+  "back": "Späť na správu používateľov",
   "sections": {
     "general": {
       "title": "Všeobecné",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Bezpečnosť",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nové heslo"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Ukončite existujúce relácie",
+          "description": "Núti používateľa, aby sa znova prihlásil na svojich zariadeniach"
         },
         "confirm": {
           "label": "Potvrďte",
-          "description": ""
+          "description": "Heslo bude aktualizované. Akciu nie je možné vrátiť späť."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Kontá",
+      "currentRole": "Súčasná úloha: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Vlastník",
+        "admin": "Správca",
+        "normal": "Normálna"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Vymazanie účtu",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Potvrďte používateľské meno",
+          "description": "Zadaním používateľského mena potvrďte vymazanie"
         },
         "confirm": {
           "label": "Odstrániť natrvalo",
-          "description": ""
+          "description": "Uvedomujem si, že táto akcia je trvalá a všetky údaje účtu sa stratia."
         }
       }
     }

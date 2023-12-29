@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Všetko",
+            "normal": "Normálna",
+            "admin": "Správca",
+            "owner": "Vlastník"
         }
     },
     "table": {

@@ -25,7 +25,7 @@
         },
         "confirm": {
           "label": "Confirmar",
-          "description": "La contraseña será actualiza. La acción no puede ser revertida."
+          "description": "La contraseña se actualizará. La acción no se puede revertir."
         }
       }
     },
@@ -33,7 +33,7 @@
       "title": "Roles",
       "currentRole": "Rol actual: ",
       "badges": {
-        "owner": "Dueño",
+        "owner": "Propietario",
         "admin": "Administrador",
         "normal": "Normal"
       }
@@ -43,11 +43,11 @@
       "inputs": {
         "confirmUsername": {
           "label": "Confirmar nombre de usuario",
-          "description": "Introduzca el nombre de usuario para confirmar la eliminación"
+          "description": "Escribe el nombre de usuario para confirmar la eliminación"
         },
         "confirm": {
           "label": "Eliminar permanentemente",
-          "description": "Estoy al tanto de que dicha acción es permanente, y todos los datos serán borrados."
+          "description": "Soy consciente de que esta acción es permanente y se perderán todos los datos de la cuenta."
         }
       }
     }
