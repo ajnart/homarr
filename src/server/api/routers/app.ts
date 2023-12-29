@@ -8,12 +8,6 @@ import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
 
-// const agent = new https.Agent({ rejectUnauthorized: false });
-// const getCacheResponse = unstable_cache(
-//   async (app) => await axios.get(app.url, { httpsAgent: agent, timeout: 10000 }),
-//   ['app-id']
-// );
-
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
     .input(

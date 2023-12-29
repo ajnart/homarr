@@ -26,7 +26,7 @@ export default function OnboardPage({
 
   const [onboardingSteps, { open: showOnboardingSteps }] = useDisclosure(false);
 
-  const isUpgradeFromSchemaOne = false;
+  const isUpgradeFromSchemaOne = configSchemaVersions.includes(1);
 
   return (
     <>
