@@ -22,5 +22,5 @@
       "message": "Kategorien \"{{name}}\" er blevet oprettet"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importer fra docker"
 }
