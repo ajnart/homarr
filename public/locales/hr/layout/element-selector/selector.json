@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Dodaj novu ploču",
-        "text": "Ploče su glavni element Homarr-a. Koriste se za prikaz vaših aplikacija i drugih informacija. Možete dodati koliko god ploča želite."
-    },
-    "widgetDescription": "Widgeti komuniciraju s vašim aplikacijama kako bi vam pružili veću kontrolu nad istima. Obično zahtijevaju dodatnu konfiguraciju prije upotrebe.",
-    "goBack": "Vrati se na prijašnji korak",
-    "actionIcon": {
-        "tooltip": "Dodaj ploču"
-    },
-    "apps": "aplikacije",
-    "app": {
-        "defaultName": "Vaša aplikacija"
-    },
-    "widgets": "Widgeti",
-    "categories": "Kategorije",
-    "category": {
-        "newName": "Naziv nove kategorije",
-        "defaultName": "Nova kategorija",
-        "created": {
-            "title": "Kategorija je stvorena",
-            "message": "Stvorena je kategorija \"{{name}}\"."
-        }
+  "modal": {
+    "title": "Dodaj novu ploču",
+    "text": "Ploče su glavni element Homarr-a. Koriste se za prikaz vaših aplikacija i drugih informacija. Možete dodati koliko god ploča želite."
+  },
+  "widgetDescription": "Widgeti komuniciraju s vašim aplikacijama kako bi vam pružili veću kontrolu nad istima. Obično zahtijevaju dodatnu konfiguraciju prije upotrebe.",
+  "goBack": "Vrati se na prijašnji korak",
+  "actionIcon": {
+    "tooltip": "Dodaj ploču"
+  },
+  "apps": "aplikacije",
+  "app": {
+    "defaultName": "Vaša aplikacija"
+  },
+  "widgets": "Widgeti",
+  "categories": "Kategorije",
+  "category": {
+    "newName": "Naziv nove kategorije",
+    "defaultName": "Nova kategorija",
+    "created": {
+      "title": "Kategorija je stvorena",
+      "message": "Stvorena je kategorija \"{{name}}\"."
     }
+  },
+  "importFromDocker": ""
 }
