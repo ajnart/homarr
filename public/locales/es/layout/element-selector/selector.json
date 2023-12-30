@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Añadir un mosaico nuevo",
-        "text": "Los mosaicos son el elemento principal de Homarr. Se utilizan para mostrar tus aplicaciones y otra información. Puedes añadir tantos mosaicos como desees."
-    },
-    "widgetDescription": "Los widgets interactúan con tus aplicaciones, para proporcionarte un mayor control sobre ellas. Por lo general, requieren de configuración adicional antes de poder usarlos.",
-    "goBack": "Volver al paso anterior",
-    "actionIcon": {
-        "tooltip": "Añadir mosaico"
-    },
-    "apps": "Aplicaciones",
-    "app": {
-        "defaultName": "Tu aplicación"
-    },
-    "widgets": "Widgets",
-    "categories": "Categorías",
-    "category": {
-        "newName": "Nombre de la nueva categoría",
-        "defaultName": "Nueva categoría",
-        "created": {
-            "title": "Categoría creada",
-            "message": "La categoría \"{{name}}\" ha sido creada"
-        }
+  "modal": {
+    "title": "Añadir un mosaico nuevo",
+    "text": "Los mosaicos son el elemento principal de Homarr. Se utilizan para mostrar tus aplicaciones y otra información. Puedes añadir tantos mosaicos como desees."
+  },
+  "widgetDescription": "Los widgets interactúan con tus aplicaciones, para proporcionarte un mayor control sobre ellas. Por lo general, requieren de configuración adicional antes de poder usarlos.",
+  "goBack": "Volver al paso anterior",
+  "actionIcon": {
+    "tooltip": "Añadir mosaico"
+  },
+  "apps": "Aplicaciones",
+  "app": {
+    "defaultName": "Tu aplicación"
+  },
+  "widgets": "Widgets",
+  "categories": "Categorías",
+  "category": {
+    "newName": "Nombre de la nueva categoría",
+    "defaultName": "Nueva categoría",
+    "created": {
+      "title": "Categoría creada",
+      "message": "La categoría \"{{name}}\" ha sido creada"
     }
+  },
+  "importFromDocker": ""
 }
