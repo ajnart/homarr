@@ -4,6 +4,13 @@
     "description": "Affiche la date et l'heure courante.",
     "settings": {
       "title": "Paramètres du widget Date et heure",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Affichage 24 h"
       },
@@ -13,18 +20,12 @@
           "hide": "Masquer la date"
         }
       },
-      "enableTimezone": {
-        "label": "Afficher un fuseau horaire personnalisé"
-      },
-      "timezoneLocation": {
-        "label": "Localisation du fuseau horaire"
-      },
       "titleState": {
-        "label": "Nom de la ville",
-        "info": "Si vous avez choisi d'activer un fuseau horaire différent, le nom de la ville ainsi que le nom de son fuseau horaire peuvent être affichés.<br/>Vous pouvez aussi n'afficher que la ville ou aucun des deux.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Ville et fuseau horaire",
-          "city": "Ville uniquement",
+          "both": "",
+          "city": "",
           "none": "Aucun"
         }
       }
