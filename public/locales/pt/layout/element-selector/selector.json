@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Acrescentar um novo azulejo",
-        "text": "Os azulejos são o principal elemento do Homarr. São utilizados para exibir as suas aplicações e outras informações. Pode adicionar tantos azulejos quantos desejar."
-    },
-    "widgetDescription": "Os widgets interagem com as suas aplicações, para lhe proporcionar mais controlo sobre as suas aplicações. Normalmente requerem configuração adicional antes da sua utilização.",
-    "goBack": "Voltar ao passo anterior",
-    "actionIcon": {
-        "tooltip": "Acrescentar um azulejo"
-    },
-    "apps": "Aplicativos",
-    "app": {
-        "defaultName": "Seu aplicativo"
-    },
-    "widgets": "Widgets",
-    "categories": "Categorias",
-    "category": {
-        "newName": "Nome da nova categoria",
-        "defaultName": "Nova categoria",
-        "created": {
-            "title": "Categoria criada",
-            "message": "A categoria \"{{name}}\" foi criada"
-        }
+  "modal": {
+    "title": "Acrescentar um novo azulejo",
+    "text": "Os azulejos são o principal elemento do Homarr. São utilizados para exibir as suas aplicações e outras informações. Pode adicionar tantos azulejos quantos desejar."
+  },
+  "widgetDescription": "Os widgets interagem com as suas aplicações, para lhe proporcionar mais controlo sobre as suas aplicações. Normalmente requerem configuração adicional antes da sua utilização.",
+  "goBack": "Voltar ao passo anterior",
+  "actionIcon": {
+    "tooltip": "Acrescentar um azulejo"
+  },
+  "apps": "Aplicativos",
+  "app": {
+    "defaultName": "Seu aplicativo"
+  },
+  "widgets": "Widgets",
+  "categories": "Categorias",
+  "category": {
+    "newName": "Nome da nova categoria",
+    "defaultName": "Nova categoria",
+    "created": {
+      "title": "Categoria criada",
+      "message": "A categoria \"{{name}}\" foi criada"
     }
+  },
+  "importFromDocker": ""
 }

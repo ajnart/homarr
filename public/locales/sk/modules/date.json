@@ -4,6 +4,13 @@
     "description": "Zobrazuje aktuálny dátum a čas.",
     "settings": {
       "title": "Nastavenia miniaplikácie Dátum a čas",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Zobraziť celý čas (24 hodín)"
       },
@@ -13,18 +20,12 @@
           "hide": "Skryť dátum"
         }
       },
-      "enableTimezone": {
-        "label": "Zobrazenie vlastného časového pásma"
-      },
-      "timezoneLocation": {
-        "label": "Lokalita Časového pásma"
-      },
       "titleState": {
-        "label": "Názov mesta",
-        "info": "Ak aktivujete možnosť Časové pásmo, môže sa zobraziť názov mesta a kód časového pásma.<br/>Môžete zobraziť aj samotné mesto alebo dokonca nezobraziť žiadne.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Mesto a časové pásmo",
-          "city": "Iba mesto",
+          "both": "",
+          "city": "",
           "none": "Žiadne"
         }
       }

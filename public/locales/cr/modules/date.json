@@ -4,6 +4,13 @@
     "description": "crwdns2341:0crwdne2341:0",
     "settings": {
       "title": "crwdns2343:0crwdne2343:0",
+      "timezone": {
+        "label": "crwdns4124:0crwdne4124:0",
+        "info": "crwdns4126:0crwdne4126:0"
+      },
+      "customTitle": {
+        "label": "crwdns4128:0crwdne4128:0"
+      },
       "display24HourFormat": {
         "label": "crwdns1430:0crwdne1430:0"
       },
@@ -13,18 +20,12 @@
           "hide": "crwdns3057:0crwdne3057:0"
         }
       },
-      "enableTimezone": {
-        "label": "crwdns3059:0crwdne3059:0"
-      },
-      "timezoneLocation": {
-        "label": "crwdns3061:0crwdne3061:0"
-      },
       "titleState": {
-        "label": "crwdns3063:0crwdne3063:0",
-        "info": "crwdns3065:0crwdne3065:0",
+        "label": "crwdns4130:0crwdne4130:0",
+        "info": "crwdns4132:0crwdne4132:0",
         "data": {
-          "both": "crwdns3067:0crwdne3067:0",
-          "city": "crwdns3069:0crwdne3069:0",
+          "both": "crwdns4134:0crwdne4134:0",
+          "city": "crwdns4136:0crwdne4136:0",
           "none": "crwdns3071:0crwdne3071:0"
         }
       }

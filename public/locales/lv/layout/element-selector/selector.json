@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Pievienot jaunu flīzi",
-        "text": "Galvenais Homarr elements ir flīzes. Tās tiek izmantotas, lai parādītu Jūsu programmas un citu informāciju. Varat pievienot tik daudz flīzes, cik vēlaties."
-    },
-    "widgetDescription": "Logrīki mijiedarbojas ar Jūsu lietojumprogrammām, lai Jūs varētu labāk kontrolēt savas lietojumprogrammas. Pirms lietošanas tiem parasti nepieciešama papildu konfigurācija.",
-    "goBack": "Atgriezties uz iepriekšējo soli",
-    "actionIcon": {
-        "tooltip": "Pievienot flīzi"
-    },
-    "apps": "Lietotnes",
-    "app": {
-        "defaultName": "Jūsu Lietotne"
-    },
-    "widgets": "Logrīki",
-    "categories": "Kategorijas",
-    "category": {
-        "newName": "Kategorijas nosaukums",
-        "defaultName": "Jauna Kategorija",
-        "created": {
-            "title": "Kategorija izveidota",
-            "message": "Ir izveidota kategorija \"{{name}}\""
-        }
+  "modal": {
+    "title": "Pievienot jaunu flīzi",
+    "text": "Galvenais Homarr elements ir flīzes. Tās tiek izmantotas, lai parādītu Jūsu programmas un citu informāciju. Varat pievienot tik daudz flīzes, cik vēlaties."
+  },
+  "widgetDescription": "Logrīki mijiedarbojas ar Jūsu lietojumprogrammām, lai Jūs varētu labāk kontrolēt savas lietojumprogrammas. Pirms lietošanas tiem parasti nepieciešama papildu konfigurācija.",
+  "goBack": "Atgriezties uz iepriekšējo soli",
+  "actionIcon": {
+    "tooltip": "Pievienot flīzi"
+  },
+  "apps": "Lietotnes",
+  "app": {
+    "defaultName": "Jūsu Lietotne"
+  },
+  "widgets": "Logrīki",
+  "categories": "Kategorijas",
+  "category": {
+    "newName": "Kategorijas nosaukums",
+    "defaultName": "Jauna Kategorija",
+    "created": {
+      "title": "Kategorija izveidota",
+      "message": "Ir izveidota kategorija \"{{name}}\""
     }
+  },
+  "importFromDocker": ""
 }

@@ -4,6 +4,13 @@
     "description": "Muestra la fecha y hora actual.",
     "settings": {
       "title": "Ajustes del widget Fecha y Hora",
+      "timezone": {
+        "label": "Zona horaria",
+        "info": "Selecciona el nombre de tu zona horaria, encuentra la tuya aquí: "
+      },
+      "customTitle": {
+        "label": "Nombre de ciudad o título personalizado"
+      },
       "display24HourFormat": {
         "label": "Mostrar hora completa (24 horas)"
       },
@@ -13,18 +20,12 @@
           "hide": "Ocultar Fecha"
         }
       },
-      "enableTimezone": {
-        "label": "Mostrar una zona horaria personalizada"
-      },
-      "timezoneLocation": {
-        "label": "Ubicación de la zona horaria"
-      },
       "titleState": {
-        "label": "Título de la ciudad",
-        "info": "En caso de que se active la opción zona horaria, se puede mostrar el nombre de la ciudad y el código de la zona horaria.<br/>También se puede mostrar la ciudad sola o incluso no mostrar nada.",
+        "label": "Título del reloj",
+        "info": "El título personalizado y el código de zona horaria se pueden mostrar en tu widget.<br/>También puedes mostrar solo la ciudad, no mostrar ninguna<br/>o incluso mostrar solo la zona horaria cuando ambas están seleccionadas y no se proporcione ningún título.",
         "data": {
-          "both": "Ciudad y zona horaria",
-          "city": "Solo ciudad",
+          "both": "Título y zona horaria",
+          "city": "Solo título",
           "none": "Nada"
         }
       }

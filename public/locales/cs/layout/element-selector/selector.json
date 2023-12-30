@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Přidat novou dlaždici",
-        "text": "Dlaždice jsou hlavním prvkem Homarru. Slouží k zobrazení Vašich aplikací a dalších informací. Můžete přidat libovolný počet dlaždic."
-    },
-    "widgetDescription": "Widgety komunikují s vašimi aplikacemi, aby nad nimi poskytovaly větší kontrolu. Před použitím obvykle vyžadují další konfiguraci.",
-    "goBack": "Přejít zpět na předchozí stránku",
-    "actionIcon": {
-        "tooltip": "Přidat dlaždici"
-    },
-    "apps": "Aplikace",
-    "app": {
-        "defaultName": "Vaše aplikace"
-    },
-    "widgets": "Widgety",
-    "categories": "Kategorie",
-    "category": {
-        "newName": "Název nové kategorie",
-        "defaultName": "Nová kategorie",
-        "created": {
-            "title": "Kategorie vytvořena",
-            "message": "Kategorie \"{{name}}\" byla vytvořena"
-        }
+  "modal": {
+    "title": "Přidat novou dlaždici",
+    "text": "Dlaždice jsou hlavním prvkem Homarru. Slouží k zobrazení Vašich aplikací a dalších informací. Můžete přidat libovolný počet dlaždic."
+  },
+  "widgetDescription": "Widgety komunikují s vašimi aplikacemi, aby nad nimi poskytovaly větší kontrolu. Před použitím obvykle vyžadují další konfiguraci.",
+  "goBack": "Přejít zpět na předchozí stránku",
+  "actionIcon": {
+    "tooltip": "Přidat dlaždici"
+  },
+  "apps": "Aplikace",
+  "app": {
+    "defaultName": "Vaše aplikace"
+  },
+  "widgets": "Widgety",
+  "categories": "Kategorie",
+  "category": {
+    "newName": "Název nové kategorie",
+    "defaultName": "Nová kategorie",
+    "created": {
+      "title": "Kategorie vytvořena",
+      "message": "Kategorie \"{{name}}\" byla vytvořena"
     }
+  },
+  "importFromDocker": ""
 }
