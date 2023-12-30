@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Tilføj et nyt felt",
-        "text": "Felter er det vigtigste element i Homarr. De bruges til at vise dine apps og andre oplysninger. Du kan tilføje så mange felter, som du ønsker."
-    },
-    "widgetDescription": "Widgets interagerer med dine apps for at give dig mere kontrol over dine programmer. De kræver normalt nogle få konfigurationer, før de kan bruges.",
-    "goBack": "Gå tilbage til det forrige trin",
-    "actionIcon": {
-        "tooltip": "Tilføj et felt"
-    },
-    "apps": "Apps",
-    "app": {
-        "defaultName": "Din app"
-    },
-    "widgets": "Widgets",
-    "categories": "Kategorier",
-    "category": {
-        "newName": "Navn på ny kategori",
-        "defaultName": "Ny kategori",
-        "created": {
-            "title": "Kategorien er oprettet",
-            "message": "Kategorien \"{{name}}\" er blevet oprettet"
-        }
+  "modal": {
+    "title": "Tilføj et nyt felt",
+    "text": "Felter er det vigtigste element i Homarr. De bruges til at vise dine apps og andre oplysninger. Du kan tilføje så mange felter, som du ønsker."
+  },
+  "widgetDescription": "Widgets interagerer med dine apps for at give dig mere kontrol over dine programmer. De kræver normalt nogle få konfigurationer, før de kan bruges.",
+  "goBack": "Gå tilbage til det forrige trin",
+  "actionIcon": {
+    "tooltip": "Tilføj et felt"
+  },
+  "apps": "Apps",
+  "app": {
+    "defaultName": "Din app"
+  },
+  "widgets": "Widgets",
+  "categories": "Kategorier",
+  "category": {
+    "newName": "Navn på ny kategori",
+    "defaultName": "Ny kategori",
+    "created": {
+      "title": "Kategorien er oprettet",
+      "message": "Kategorien \"{{name}}\" er blevet oprettet"
     }
+  },
+  "importFromDocker": ""
 }
