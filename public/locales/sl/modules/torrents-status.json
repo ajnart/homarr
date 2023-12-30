@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Ime",
+        "dateAdded": "",
         "size": "Velikost",
         "download": "Dol",
         "upload": "Gor",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Napredek"
+        "progress": "Napredek",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Stanje",
+        "stateMessage": ""
       },
       "item": {
         "text": "Upravlja {{appName}}, {{ratio}} razmerje"

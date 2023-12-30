@@ -1,0 +1,55 @@
+{
+  "metaTitle": "",
+  "back": "",
+  "sections": {
+    "general": {
+      "title": "Općenito",
+      "inputs": {
+        "username": {
+          "label": "Korisničko ime"
+        },
+        "eMail": {
+          "label": "E-pošta"
+        }
+      }
+    },
+    "security": {
+      "title": "",
+      "inputs": {
+        "password": {
+          "label": ""
+        },
+        "terminateExistingSessions": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Potvrdi",
+          "description": ""
+        }
+      }
+    },
+    "roles": {
+      "title": "",
+      "currentRole": "",
+      "badges": {
+        "owner": "",
+        "admin": "",
+        "normal": ""
+      }
+    },
+    "deletion": {
+      "title": "",
+      "inputs": {
+        "confirmUsername": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Izbriši trajno",
+          "description": ""
+        }
+      }
+    }
+  }
+}

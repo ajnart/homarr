@@ -1,6 +1,6 @@
 {
     "metaTitle": "Sở thích",
-    "pageTitle": "sở thích của bạn",
+    "pageTitle": "Cá nhân hoá",
     "boards": {
         "defaultBoard": {
             "label": "Bảng mặc định"
@@ -37,7 +37,7 @@
             "label": "Mở kết quả tìm kiếm trong tab mới"
         },
         "autoFocus": {
-            "label": "Thanh tìm kiếm tập trung vào tải trang.",
+            "label": "Tự tập trung vào thanh tìm kiếm khi tải trang.",
             "description": "Điều này sẽ tự động tập trung vào thanh tìm kiếm khi bạn điều hướng đến các trang bảng. Nó sẽ chỉ hoạt động trên các thiết bị máy tính để bàn."
         },
         "template": {

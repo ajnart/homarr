@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Nosaukums",
+        "dateAdded": "",
         "size": "Lielums",
         "download": "Lejupielāde",
         "upload": "Augšupielāde",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Progress"
+        "progress": "Progress",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Stāvoklis",
+        "stateMessage": ""
       },
       "item": {
         "text": "Pārvalda {{appName}}, {{ratio}} attiecība"

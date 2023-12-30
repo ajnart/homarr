@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Nome",
+        "dateAdded": "",
         "size": "Tamanho",
         "download": "Para baixo",
         "upload": "Para cima",
         "estimatedTimeOfArrival": "TED",
-        "progress": "Progresso"
+        "progress": "Progresso",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Estado",
+        "stateMessage": ""
       },
       "item": {
         "text": "Gerido por {{appName}}, {{ratio}} ratio"

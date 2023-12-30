@@ -1,13 +1,21 @@
 {
     "metaTitle": "Benutzer",
     "pageTitle": "Verwaltung von Benutzern",
-    "text": "Mit Benutzern können Sie konfigurieren, wer Ihre Dashboards bearbeiten kann. Zukünftige Versionen von Homarr werden eine noch detailliertere Kontrolle über Berechtigungen und Boards haben.",
     "buttons": {
         "create": "Erstellen"
     },
+    "filter": {
+        "roles": {
+            "all": "Alle",
+            "normal": "Normal",
+            "admin": "Admin",
+            "owner": "Eigentümer"
+        }
+    },
     "table": {
         "header": {
-            "user": "Benutzer"
+            "user": "Benutzer",
+            "email": "E-Mail"
         }
     },
     "tooltips": {

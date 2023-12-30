@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Žádosti o média",
+    "description": "Podívejte se na seznam všech požadavků na média z vaší instance Overseerr nebo Jellyseerr",
     "settings": {
       "title": "",
       "replaceLinksWithExternalHost": {

@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Streamování videa",
+    "description": "Vložte video stream nebo video z kamery nebo webové stránky",
     "settings": {
       "title": "",
       "FeedUrl": {

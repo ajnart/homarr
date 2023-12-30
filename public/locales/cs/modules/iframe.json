@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Vložte jakýkoli obsah z internetu. Některé webové stránky mohou omezit přístup.",
     "settings": {
       "title": "",
       "embedUrl": {

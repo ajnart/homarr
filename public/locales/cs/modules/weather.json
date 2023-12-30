@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Počasí",
+    "description": "Zobrazuje aktuální informace o počasí na nastaveném místě.",
     "settings": {
       "title": "",
       "displayInFahrenheit": {

@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Nie znaleziono obiektu",
+    "descriptor": {
+        "name": "Obiekt asystenta domu",
+        "description": "Aktualny stan obiektu w Asystencie Domu",
+        "settings": {
+            "title": "Stan obiektu",
+            "entityId": {
+                "label": "ID obiektu",
+                "info": "Unikalne ID obiektu w Asystencie Domu. Kopiuj klikając na obiekt > Kliknij ikonę koła zębatego > Kliknij na przycisk kopiuj na 'ID obiektu'. Niektóre niestandardowe obiekty mogą nie być obsługiwane."
+            },
+            "displayName": {
+                "label": "Nazwa wyświetlana"
+            }
+        }
+    }
+}

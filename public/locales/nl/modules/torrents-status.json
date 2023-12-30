@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Naam",
+        "dateAdded": "",
         "size": "Grootte",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Voortgang"
+        "progress": "Voortgang",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Status",
+        "stateMessage": ""
       },
       "item": {
         "text": "Beheerd door {{appName}}, {{ratio}} verhouding"

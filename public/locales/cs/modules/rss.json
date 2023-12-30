@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "RSS Widget",
+    "description": "RSS widget umožňuje zobrazit RSS kanály na vaší nástěnce.",
     "settings": {
       "title": "",
       "rssFeedUrl": {

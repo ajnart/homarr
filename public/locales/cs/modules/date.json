@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Datum a čas",
+    "description": "Zobrazuje aktuální datum a čas.",
     "settings": {
       "title": "",
       "display24HourFormat": {

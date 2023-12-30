@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Usenet",
+    "description": "Umožňuje zobrazit a spravovat instanci Usenetu."
   },
   "card": {
     "errors": {

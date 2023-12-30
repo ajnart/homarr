@@ -11,9 +11,9 @@
     "actions": {
         "avatar": {
             "switchTheme": "切换主题",
-            "preferences": "用户首选项",
-            "defaultBoard": "默认仪表盘",
-            "manage": "管理",
+            "preferences": "用户选项",
+            "defaultBoard": "默认面板",
+            "manage": "管理中心",
             "logout": "注销 {{username}}",
             "login": "登录"
         }

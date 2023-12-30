@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Homarr của bạn chưa được thiết lập Docker hoặc không tìm thấy các vùng chứa. Hãy tham khảo cách thiết lập bên trong tài liệu."
         }
     },
     "modals": {

@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Identita nebola nájdená",
+    "descriptor": {
+        "name": "Subjekt Home Assistant",
+        "description": "Aktuálny stav entity v aplikácii Home Assistant",
+        "settings": {
+            "title": "Stav subjektu",
+            "entityId": {
+                "label": "ID subjektu",
+                "info": "Jedinečné ID subjektu v aplikácii Home Assistant. Kopírujte kliknutím na entitu > kliknite na ikonu ozubeného kolieska > kliknite na tlačidlo Kopírovať pri \"ID entity\". Niektoré vlastné entity nemusia byť podporované."
+            },
+            "displayName": {
+                "label": "Zobrazenie názvu"
+            }
+        }
+    }
+}

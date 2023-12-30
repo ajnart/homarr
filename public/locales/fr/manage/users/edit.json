@@ -1,0 +1,55 @@
+{
+  "metaTitle": "",
+  "back": "",
+  "sections": {
+    "general": {
+      "title": "Général",
+      "inputs": {
+        "username": {
+          "label": "Nom d'utilisateur"
+        },
+        "eMail": {
+          "label": "Courriel"
+        }
+      }
+    },
+    "security": {
+      "title": "",
+      "inputs": {
+        "password": {
+          "label": ""
+        },
+        "terminateExistingSessions": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Confirmer",
+          "description": ""
+        }
+      }
+    },
+    "roles": {
+      "title": "",
+      "currentRole": "",
+      "badges": {
+        "owner": "",
+        "admin": "",
+        "normal": ""
+      }
+    },
+    "deletion": {
+      "title": "",
+      "inputs": {
+        "confirmUsername": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Supprimer définitivement",
+          "description": ""
+        }
+      }
+    }
+  }
+}
