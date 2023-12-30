@@ -16,7 +16,7 @@ import { RouterInputs, api } from '~/utils/api';
 import { openDockerSelectBoardModal } from './docker-select-board.modal';
 
 export interface ContainerActionBarProps {
-  selected: Dockerode.ContainerInfo[];
+  selected: (Dockerode.ContainerInfo & { icon?: string })[];
   reload: () => void;
   isLoading: boolean;
 }
@@ -94,7 +94,7 @@ export default function ContainerActionBar({
         color="indigo"
         variant="light"
         radius="md"
-        disabled={selected.length !== 1}
+        disabled={selected.length < 1}
         onClick={() => openDockerSelectBoardModal({ containers: selected })}
       >
         {t('actionBar.addToHomarr.title')}
@@ -127,13 +127,7 @@ const useDockerActionMutation = () => {
       { action, id: container.Id },
       {
         onSuccess: () => {
-          notifications.update({
-            id: container.Id,
-            title: containerName,
-            message: `${t(`actions.${action}.end`)} ${containerName}`,
-            icon: <IconCheck />,
-            autoClose: 2000,
-          });
+          notifications.cleanQueue();
         },
         onError: (err) => {
           notifications.update({

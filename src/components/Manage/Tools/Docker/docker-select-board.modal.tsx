@@ -1,4 +1,4 @@
-import { Button, Group, Select, Stack, Text, TextInput, Title } from '@mantine/core';
+import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
@@ -6,6 +6,9 @@ import { IconCheck, IconX } from '@tabler/icons-react';
 import { ContainerInfo } from 'dockerode';
 import { Trans, useTranslation } from 'next-i18next';
 import { z } from 'zod';
+import { useConfigContext } from '~/config/provider';
+import { useConfigStore } from '~/config/store';
+import { generateDefaultApp } from '~/tools/shared/app';
 import { api } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 
@@ -14,7 +17,7 @@ const dockerSelectBoardSchema = z.object({
 });
 
 type InnerProps = {
-  containers: ContainerInfo[];
+  containers: (ContainerInfo & { icon?: string })[];
 };
 type FormType = z.infer<typeof dockerSelectBoardSchema>;
 
@@ -22,13 +25,18 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
   const { t } = useTranslation('tools/docker');
   const { mutateAsync, isLoading } = api.boards.addAppsForContainers.useMutation();
   const { i18nZodResolver } = useI18nZodResolver();
+  const { name: configName } = useConfigContext();
+
+  const updateConfig = useConfigStore((store) => store.updateConfig);
   const handleSubmit = async (values: FormType) => {
+    const newApps = innerProps.containers.map((container) => ({
+      name: (container.Names.at(0) ?? 'App').replace('/', ''),
+      port: container.Ports.at(0)?.PublicPort,
+      icon: container.icon,
+    }));
     await mutateAsync(
       {
-        apps: innerProps.containers.map((container) => ({
-          name: (container.Names.at(0) ?? 'App').replace('/', ''),
-          port: container.Ports.at(0)?.PublicPort,
-        })),
+        apps: newApps,
         boardName: values.board,
       },
       {
@@ -39,7 +47,21 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
             icon: <IconCheck />,
             color: 'green',
           });
-
+          updateConfig(configName!, (config) => {
+            const lowestWrapper = config?.wrappers.sort((a, b) => a.position - b.position)[0];
+            const defaultApp = generateDefaultApp(lowestWrapper.id);
+            return {
+              ...config,
+              apps: [
+                ...config.apps,
+                ...newApps.map((app) => ({
+                  ...defaultApp,
+                  ...app,
+                  wrapperId: lowestWrapper.id,
+                })),
+              ],
+            };
+          });
           modals.close(id);
         },
         onError: () => {
@@ -117,5 +139,5 @@ export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
     ),
     innerProps,
   });
-  umami.track('Add to homarr modal')
+  umami.track('Add to homarr modal');
 };
