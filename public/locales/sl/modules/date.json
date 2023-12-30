@@ -4,6 +4,13 @@
     "description": "Prikaže trenutni datum in čas.",
     "settings": {
       "title": "Nastavitve za gradnik Datum in čas",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Prikaz polnega časa (24-urni)"
       },
@@ -13,18 +20,12 @@
           "hide": "Skrij datum"
         }
       },
-      "enableTimezone": {
-        "label": "Prikaz časovnega območja po meri"
-      },
-      "timezoneLocation": {
-        "label": "Časovni pas Lokacija"
-      },
       "titleState": {
-        "label": "Naziv mesta",
-        "info": "Če aktivirate možnost Časovni pas, lahko prikažete ime mesta in kodo časovnega pasu.<br/>Prikažete lahko tudi samo mesto ali pa ne prikažete ničesar.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Mesto in časovno območje",
-          "city": "Samo mesto",
+          "both": "",
+          "city": "",
           "none": "Ni"
         }
       }
