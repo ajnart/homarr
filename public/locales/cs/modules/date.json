@@ -4,6 +4,13 @@
     "description": "Zobrazuje aktuální datum a čas.",
     "settings": {
       "title": "",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": ""
       },
@@ -12,12 +19,6 @@
         "data": {
           "hide": ""
         }
-      },
-      "enableTimezone": {
-        "label": ""
-      },
-      "timezoneLocation": {
-        "label": ""
       },
       "titleState": {
         "label": "",
