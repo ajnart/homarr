@@ -22,5 +22,5 @@
       "message": "\"{{name}}\" kategorisi oluşturuldu"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Docker'dan içe aktar"
 }
