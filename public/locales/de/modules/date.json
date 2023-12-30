@@ -5,11 +5,11 @@
     "settings": {
       "title": "\"Datum und Uhrzeit\" Widget Einstellungen",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Zeitzone",
+        "info": "Wählen Sie den Namen Ihrer Zeitzone, Ihre finden Sie hier: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Name der Stadt oder benutzerdefinierter Name"
       },
       "display24HourFormat": {
         "label": "24-Stunden Format"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Titel der Uhr",
+        "info": "Der benutzerdefinierte Name und der Zeitzonencode können auf Ihrem Widget angezeigt werden.<br/>Sie können auch nur die Stadt anzeigen, keine anzeigen,<br/>oder sogar nur die Zeitzone anzeigen, wenn beide ausgewählt sind, aber kein Titel angegeben wird.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Name und Zeitzone",
+          "city": "Nur Name",
           "none": "Keine"
         }
       }
