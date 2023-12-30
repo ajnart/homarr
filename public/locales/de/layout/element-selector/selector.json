@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Neue Kachel hinzufügen",
-        "text": "Kacheln sind das Hauptelement von Homarr. Sie werden verwendet, um Ihre Anwendungen und andere Informationen anzuzeigen. Sie können so viele Kacheln hinzufügen, wie Sie möchten."
-    },
-    "widgetDescription": "Widgets interagieren mit Ihren Anwendungen, um Ihnen mehr Kontrolle über sie zu geben. Sie erfordern in der Regel eine zusätzliche Konfiguration vor der Verwendung.",
-    "goBack": "Zurück auf die vorherige Seite",
-    "actionIcon": {
-        "tooltip": "Kachel hinzufügen"
-    },
-    "apps": "Apps",
-    "app": {
-        "defaultName": "Ihre Apps"
-    },
-    "widgets": "Widgets",
-    "categories": "Kategorien",
-    "category": {
-        "newName": "Name der Kategorie",
-        "defaultName": "Neue Kategorie",
-        "created": {
-            "title": "Kategorie erstellt",
-            "message": "Die Kategorie \"{{name}}\" wurde erstellt"
-        }
+  "modal": {
+    "title": "Neue Kachel hinzufügen",
+    "text": "Kacheln sind das Hauptelement von Homarr. Sie werden verwendet, um Ihre Anwendungen und andere Informationen anzuzeigen. Sie können so viele Kacheln hinzufügen, wie Sie möchten."
+  },
+  "widgetDescription": "Widgets interagieren mit Ihren Anwendungen, um Ihnen mehr Kontrolle über sie zu geben. Sie erfordern in der Regel eine zusätzliche Konfiguration vor der Verwendung.",
+  "goBack": "Zurück auf die vorherige Seite",
+  "actionIcon": {
+    "tooltip": "Kachel hinzufügen"
+  },
+  "apps": "Apps",
+  "app": {
+    "defaultName": "Ihre Apps"
+  },
+  "widgets": "Widgets",
+  "categories": "Kategorien",
+  "category": {
+    "newName": "Name der Kategorie",
+    "defaultName": "Neue Kategorie",
+    "created": {
+      "title": "Kategorie erstellt",
+      "message": "Die Kategorie \"{{name}}\" wurde erstellt"
     }
+  },
+  "importFromDocker": ""
 }
