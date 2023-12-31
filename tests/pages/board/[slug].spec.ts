@@ -28,6 +28,10 @@ vitest.mock('./../../tools/server/getServerSideTranslations.ts', () => ({
   getServerSideTranslations: () => null,
 }));
 
+vitest.mock('../../../src/server/api/routers/docker/router.ts', () => ({
+  dockerRouter: () => null,
+}));
+
 describe('[slug] page', () => {
   it('getServerSideProps should return not found when no params', async () => {
     // arrange
