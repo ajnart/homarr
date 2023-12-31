@@ -3,7 +3,7 @@
     "name": "Kalendarz",
     "description": "Wyświetla kalendarz z nadchodzącymi wydaniami, z obsługiwanych integracji.",
     "settings": {
-      "title": "Ustawienia dla widżetu Kalendarz",
+      "title": "Ustawienia dla widżetu Kalendarza",
       "radarrReleaseType": {
         "label": "Rodzaj premiery w Radarr",
         "data": {

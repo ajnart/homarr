@@ -4,6 +4,13 @@
     "description": "現在の日付と時刻を表示します。",
     "settings": {
       "title": "日付と時刻ウィジェットの設定",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "24時間表示"
       },
@@ -13,18 +20,12 @@
           "hide": "日付を隠す"
         }
       },
-      "enableTimezone": {
-        "label": "カスタムタイムゾーンを表示"
-      },
-      "timezoneLocation": {
-        "label": "タイムゾーン"
-      },
       "titleState": {
-        "label": "都市名",
-        "info": "タイムゾーンオプションを有効にすると、都市名とタイムゾーンコードが表示されます。<br/>また、都市だけを表示することも、何も表示しないこともできます。",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "都市とタイムゾーン",
-          "city": "都市のみ",
+          "both": "",
+          "city": "",
           "none": "なし"
         }
       }

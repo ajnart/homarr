@@ -20,11 +20,11 @@
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Vytvořit pozvánku",
+            "description": "Po vypršení platnosti pozvánka přestane být platná a příjemce pozvánky si nebude moci vytvořit účet.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Datum konce platnosti",
+                "submit": "Vytvořit"
             }
         },
         "copy": {
@@ -44,5 +44,5 @@
             "description": ""
         }
     },
-    "noInvites": ""
+    "noInvites": "Zatím zde nejsou žádné pozvánky."
 }

@@ -1,13 +1,21 @@
 {
     "metaTitle": "Uživatelé",
     "pageTitle": "Správa uživatelů",
-    "text": "",
     "buttons": {
-        "create": ""
+        "create": "Vytvořit"
+    },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
     },
     "table": {
         "header": {
-            "user": "Uživatel"
+            "user": "Uživatel",
+            "email": "E-mail"
         }
     },
     "tooltips": {

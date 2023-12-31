@@ -1,7 +1,7 @@
 {
   "save": "Salvar",
-  "apply": "",
-  "insert": "",
+  "apply": "Aplicar",
+  "insert": "Inserir",
   "about": "Sobre",
   "cancel": "Cancelar",
   "close": "Fechar",
@@ -45,11 +45,13 @@
   "seeMore": "Veja mais...",
   "position": {
     "left": "Esquerda",
-    "center": "",
+    "center": "Centralizado",
     "right": "Certo"
   },
   "attributes": {
     "width": "Largura",
     "height": "Altura"
-  }
+  },
+  "public": "Público",
+  "restricted": "Restrito"
 }

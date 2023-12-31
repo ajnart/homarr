@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Enhet ikke funnet",
+    "descriptor": {
+        "name": "Home Assistant enhet",
+        "description": "Nåværende tilstand for en enhet i Home Assistant",
+        "settings": {
+            "title": "Enhetstilstand",
+            "entityId": {
+                "label": "Enhets-ID",
+                "info": "Unik enhets-ID i Home Assistant. Kopier ved å klikke på enhet > Klikk på tannhjulikonet > Klikk på kopieringsknappen ved Entitets-ID. Noen egendefinerte enheter støttes kanskje ikke."
+            },
+            "displayName": {
+                "label": "Visningsnavn"
+            }
+        }
+    }
+}

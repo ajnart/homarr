@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Benutzer {{username}}",
+  "back": "Zurück zur Benutzerverwaltung",
+  "sections": {
+    "general": {
+      "title": "Allgemein",
+      "inputs": {
+        "username": {
+          "label": "Benutzername"
+        },
+        "eMail": {
+          "label": "E-Mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Sicherheit",
+      "inputs": {
+        "password": {
+          "label": "Neues Passwort"
+        },
+        "terminateExistingSessions": {
+          "label": "Beenden Sie bestehende Sitzungen",
+          "description": "Erzwingt die erneute Anmeldung des Benutzers auf seinen Geräten"
+        },
+        "confirm": {
+          "label": "Bestätigen",
+          "description": "Das Passwort wird aktualisiert. Diese Aktion kann nicht rückgängig gemacht werden."
+        }
+      }
+    },
+    "roles": {
+      "title": "Rollen",
+      "currentRole": "Aktuelle Rolle: ",
+      "badges": {
+        "owner": "Eigentümer",
+        "admin": "Admin",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Löschung des Kontos",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Benutzername bestätigen",
+          "description": "Geben Sie den Benutzernamen ein, um die Löschung zu bestätigen"
+        },
+        "confirm": {
+          "label": "Dauerhaft löschen",
+          "description": "Ich bin mir bewusst, dass diese Maßnahme dauerhaft ist und alle Kontodaten im Zuge dessen verloren gehen."
+        }
+      }
+    }
+  }
+}

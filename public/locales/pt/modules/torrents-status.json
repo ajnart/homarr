@@ -11,10 +11,10 @@
         "label": "Mostrar torrentes completas"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Exibir torrents ativos"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Velocidade de upload para considerar um torrent como ativo (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Exibição de torrentes envelhecidas"
@@ -27,8 +27,8 @@
         "description": "Quando a opção \"is whitelist\" estiver marcada, ela funcionará como uma lista de permissões. Se não estiver marcada, será uma lista negra. Não fará nada quando estiver vazia"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Exibir proporção da lista de torrents filtrados",
+        "info": "Se estiver desativado, somente a proporção global será exibida. A proporção global ainda usará os rótulos se estiver definida"
       }
     }
   },
@@ -36,17 +36,27 @@
     "footer": {
       "error": "Erro",
       "lastUpdated": "Última actualização {{time}} atrás",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Proporção global",
+      "ratioWithFilter": "Proporção com filtro"
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Nome",
+        "dateAdded": "",
         "size": "Tamanho",
         "download": "Para baixo",
         "upload": "Para cima",
         "estimatedTimeOfArrival": "TED",
-        "progress": "Progresso"
+        "progress": "Progresso",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Estado",
+        "stateMessage": ""
       },
       "item": {
         "text": "Gerido por {{appName}}, {{ratio}} ratio"

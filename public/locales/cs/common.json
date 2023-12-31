@@ -5,11 +5,11 @@
   "about": "",
   "cancel": "",
   "close": "",
-  "back": "",
+  "back": "Zpět",
   "delete": "",
   "ok": "",
   "edit": "",
-  "next": "",
+  "next": "Další",
   "previous": "",
   "confirm": "",
   "enabled": "",
@@ -44,12 +44,14 @@
   },
   "seeMore": "",
   "position": {
-    "left": "",
+    "left": "Vlevo",
     "center": "",
-    "right": ""
+    "right": "Vpravo"
   },
   "attributes": {
     "width": "",
     "height": ""
-  }
+  },
+  "public": "",
+  "restricted": "Omezené"
 }

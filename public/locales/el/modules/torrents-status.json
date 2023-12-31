@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Λήψη",
         "name": "Όνομα",
+        "dateAdded": "Προστέθηκε στις",
         "size": "Μέγεθος",
         "download": "Κάτω",
         "upload": "Πάνω",
         "estimatedTimeOfArrival": "Εκτιμώμενος χρόνος αναμονής",
-        "progress": "Πρόοδος"
+        "progress": "Πρόοδος",
+        "totalUploaded": "Συνολική Μεταφόρτωση",
+        "totalDownloaded": "Συνολικές λήψεις",
+        "ratio": "Αναλογία",
+        "seeds": "Seeds (Συνδεδεμένοι)",
+        "peers": "Peers (Συνδεδεμένοι)",
+        "label": "Ετικέτα",
+        "state": "Κατάσταση",
+        "stateMessage": "Μήνυμα Κατάστασης"
       },
       "item": {
         "text": "Διαχειρίζεται από {{appName}}, {{ratio}} αναλογία"

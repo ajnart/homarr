@@ -4,6 +4,13 @@
     "description": "현재 날짜와 시간을 표시합니다.",
     "settings": {
       "title": "날짜 및 시간 위젯 설정",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "24시간제로 표시"
       },
@@ -13,18 +20,12 @@
           "hide": "날짜 숨기기"
         }
       },
-      "enableTimezone": {
-        "label": "사용자 지정 시간대 표시"
-      },
-      "timezoneLocation": {
-        "label": "표준 시간대 위치"
-      },
       "titleState": {
-        "label": "도시 제목",
-        "info": "시간대 옵션을 활성화하면 도시 이름과 시간대 코드가 표시될 수 있습니다.<br/>도시만 표시하거나 도시를 표시하지 않을 수도 있습니다.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "도시 및 표준 시간대",
-          "city": "도시 전용",
+          "both": "",
+          "city": "",
           "none": "없음"
         }
       }

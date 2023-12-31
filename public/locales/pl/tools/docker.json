@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Twoja instancja Homarr nie ma skonfigurowanego Dockera lub nie była w stanie pobrać listę kontenerów. Sprawdź dokumentację, aby dowiedzieć się, jak skonfigurować integrację."
         }
     },
     "modals": {

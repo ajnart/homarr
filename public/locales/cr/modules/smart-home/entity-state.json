@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "crwdns4038:0crwdne4038:0",
+    "descriptor": {
+        "name": "crwdns4040:0crwdne4040:0",
+        "description": "crwdns4042:0crwdne4042:0",
+        "settings": {
+            "title": "crwdns4044:0crwdne4044:0",
+            "entityId": {
+                "label": "crwdns4046:0crwdne4046:0",
+                "info": "crwdns4048:0crwdne4048:0"
+            },
+            "displayName": {
+                "label": "crwdns4050:0crwdne4050:0"
+            }
+        }
+    }
+}

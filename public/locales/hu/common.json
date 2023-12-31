@@ -51,5 +51,7 @@
   "attributes": {
     "width": "Szélesség",
     "height": "Magasság"
-  }
+  },
+  "public": "Nyilvános",
+  "restricted": "Korlátozott"
 }

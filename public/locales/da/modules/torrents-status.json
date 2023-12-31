@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Downloader",
         "name": "Navn",
+        "dateAdded": "Tilføjet den",
         "size": "Størrelse",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Fremskridt"
+        "progress": "Fremskridt",
+        "totalUploaded": "Samlet upload",
+        "totalDownloaded": "Samlet download",
+        "ratio": "Delingsforhold",
+        "seeds": "Seeds (forbundet)",
+        "peers": "Peers (forbundet)",
+        "label": "Etiket",
+        "state": "Tilstand",
+        "stateMessage": "Tilstandsbesked"
       },
       "item": {
         "text": "Administreret af {{appName}}, {{ratio}} ratio"

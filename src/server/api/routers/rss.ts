@@ -39,10 +39,10 @@ const rssFeedResultObjectSchema = z
             title: z.string(),
             content: z.string(),
             pubDate: z.string().optional(),
-          })
+          }),
         ),
       }),
-    })
+    }),
   );
 
 export const rssRouter = createTRPCRouter({
@@ -52,7 +52,7 @@ export const rssRouter = createTRPCRouter({
         widgetId: z.string().uuid(),
         feedUrls: z.array(z.string()),
         configName: z.string(),
-      })
+      }),
     )
     .output(z.array(rssFeedResultObjectSchema))
     .query(async ({ input }) => {
@@ -75,8 +75,8 @@ export const rssRouter = createTRPCRouter({
 
       const result = await Promise.all(
         input.feedUrls.map(async (feedUrl) =>
-          getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent)
-        )
+          getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent),
+        ),
       );
 
       return result;
@@ -106,11 +106,11 @@ const getFeedUrl = async (feedUrl: string, dangerousAllowSanitizedItemContent: b
           title: item.title ? decode(item.title) : undefined,
           content: processItemContent(
             item['content:encoded'] ?? item.content,
-            dangerousAllowSanitizedItemContent
+            dangerousAllowSanitizedItemContent,
           ),
           enclosure: createEnclosure(item),
           link: createLink(item),
-        })
+        }),
       )
       .sort((a: { pubDate: number }, b: { pubDate: number }) => {
         if (!a.pubDate || !b.pubDate) {
@@ -159,7 +159,9 @@ const processItemContent = (content: string, dangerousAllowSanitizedItemContent:
     });
   }
 
-  return encode(content);
+  return encode(content, {
+    level: "html5"
+  });
 };
 
 const createLink = (item: any) => {

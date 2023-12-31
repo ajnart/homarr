@@ -1,13 +1,21 @@
 {
     "metaTitle": "crwdns3789:0crwdne3789:0",
     "pageTitle": "crwdns3791:0crwdne3791:0",
-    "text": "crwdns3793:0crwdne3793:0",
     "buttons": {
         "create": "crwdns3795:0crwdne3795:0"
     },
+    "filter": {
+        "roles": {
+            "all": "crwdns4114:0crwdne4114:0",
+            "normal": "crwdns4116:0crwdne4116:0",
+            "admin": "crwdns4118:0crwdne4118:0",
+            "owner": "crwdns4120:0crwdne4120:0"
+        }
+    },
     "table": {
         "header": {
-            "user": "crwdns3797:0crwdne3797:0"
+            "user": "crwdns3797:0crwdne3797:0",
+            "email": "crwdns4122:0crwdne4122:0"
         }
     },
     "tooltips": {

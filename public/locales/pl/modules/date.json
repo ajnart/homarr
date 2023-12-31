@@ -4,6 +4,13 @@
     "description": "Wyświetla bieżącą datę i godzinę.",
     "settings": {
       "title": "Ustawienia dla widżetu Data i Czas",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Wyświetlaj pełną godzinę (format 24-godzinny)"
       },
@@ -13,18 +20,12 @@
           "hide": "Ukryj datę"
         }
       },
-      "enableTimezone": {
-        "label": "Wyświetl niestandardową strefę czasową"
-      },
-      "timezoneLocation": {
-        "label": "Lokalizacja strefy czasowej"
-      },
       "titleState": {
-        "label": "Nazwa miasta",
-        "info": "W przypadku aktywowania opcji Strefa czasowa, wyświetlana może być nazwa miasta i kod strefy czasowej.<br/>Możesz także wyświetlić samo miasto lub nie wyświetlać żadnego.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Miasto i strefa czasowa",
-          "city": "Tylko miasto",
+          "both": "",
+          "city": "",
           "none": "Żaden"
         }
       }

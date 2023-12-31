@@ -1,13 +1,21 @@
 {
     "metaTitle": "Users",
     "pageTitle": "Manage users",
-    "text": "Using users, you can configure who can edit your dashboards. Future versions of Homarr will have even more granular control over permissions and boards.",
     "buttons": {
         "create": "Create"
     },
+    "filter": {
+        "roles": {
+            "all": "All",
+            "normal": "Normal",
+            "admin": "Admin",
+            "owner": "Owner"
+        }
+    },
     "table": {
         "header": {
-            "user": "User"
+            "user": "User",
+            "email": "E-Mail"
         }
     },
     "tooltips": {

@@ -4,6 +4,13 @@
     "description": "Prikaži trenutni datum i vrijeme.",
     "settings": {
       "title": "Postavke za widget Datuma i Vremena",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Prikaži full-time oblik (24-satni)"
       },
@@ -13,18 +20,12 @@
           "hide": "Sakrij datum"
         }
       },
-      "enableTimezone": {
-        "label": "Prikaz prilagođene vremenske zone"
-      },
-      "timezoneLocation": {
-        "label": "Lokacija vremenske zone"
-      },
       "titleState": {
-        "label": "Naslov grada",
-        "info": "U slučaju da aktivirate opciju Vremenska zona, može se prikazati ime grada i šifra vremenske zone.<br/>Također možete prikazati grad sam ili ga čak ne prikazati.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Grad i vremenska zona",
-          "city": "Samo grad",
+          "both": "",
+          "city": "",
           "none": "Nijedan"
         }
       }

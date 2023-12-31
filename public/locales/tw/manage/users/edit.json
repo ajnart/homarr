@@ -1,0 +1,55 @@
+{
+  "metaTitle": "使用者 {{username}}",
+  "back": "返回使用者管理",
+  "sections": {
+    "general": {
+      "title": "一般",
+      "inputs": {
+        "username": {
+          "label": "使用者"
+        },
+        "eMail": {
+          "label": "E-mail"
+        }
+      }
+    },
+    "security": {
+      "title": "安全",
+      "inputs": {
+        "password": {
+          "label": "新密碼"
+        },
+        "terminateExistingSessions": {
+          "label": "停止現有會話",
+          "description": "強制使用者在其設備上重新登錄"
+        },
+        "confirm": {
+          "label": "確認",
+          "description": "密碼將被更新，此操作不可取消"
+        }
+      }
+    },
+    "roles": {
+      "title": "腳色",
+      "currentRole": "當前腳色: ",
+      "badges": {
+        "owner": "所有者",
+        "admin": "管理員",
+        "normal": "普通"
+      }
+    },
+    "deletion": {
+      "title": "刪除帳號",
+      "inputs": {
+        "confirmUsername": {
+          "label": "確認使用者名",
+          "description": "輸入使用者名以確認刪除"
+        },
+        "confirm": {
+          "label": "永久刪除",
+          "description": "我明白此操作不可逆，所有帳號數據都會消失"
+        }
+      }
+    }
+  }
+}

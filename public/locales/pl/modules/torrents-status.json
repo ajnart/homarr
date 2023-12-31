@@ -11,10 +11,10 @@
         "label": "Wyświetlanie ukończonych torrentów"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Wyświetl aktywne torrenty"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Prędkość wysyłania pozwalająca uznać torrent za aktywny (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Wyświetlanie nieaktualnych torrentów"
@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Nazwa",
+        "dateAdded": "",
         "size": "Rozmiar",
         "download": "Pobieranie",
         "upload": "Udostępnianie",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Postęp"
+        "progress": "Postęp",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Status",
+        "stateMessage": ""
       },
       "item": {
         "text": "Zarządzany przez {{appName}}, {{ratio}} stosunek"

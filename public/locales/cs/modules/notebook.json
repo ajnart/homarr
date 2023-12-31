@@ -1,7 +1,7 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Zápisník",
+		"description": "Interaktivní widget založený na Markdownu, do kterého si můžete zapisovat poznámky!",
 		"settings": {
 			"title": "",
 			"showToolbar": {

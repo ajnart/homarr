@@ -1,0 +1,55 @@
+{
+  "metaTitle": "用户 {{username}}",
+  "back": "返回用户管理",
+  "sections": {
+    "general": {
+      "title": "通用",
+      "inputs": {
+        "username": {
+          "label": "用户名"
+        },
+        "eMail": {
+          "label": "邮箱"
+        }
+      }
+    },
+    "security": {
+      "title": "安全",
+      "inputs": {
+        "password": {
+          "label": "新密码"
+        },
+        "terminateExistingSessions": {
+          "label": "终止现有会话",
+          "description": "强制用户在其设备上重新登录"
+        },
+        "confirm": {
+          "label": "确认",
+          "description": "密码将被更新。该操作不可撤销。"
+        }
+      }
+    },
+    "roles": {
+      "title": "角色",
+      "currentRole": "当前角色： ",
+      "badges": {
+        "owner": "所有者",
+        "admin": "管理员",
+        "normal": "普通"
+      }
+    },
+    "deletion": {
+      "title": "删除账号",
+      "inputs": {
+        "confirmUsername": {
+          "label": "确认用户名",
+          "description": "输入用户名以确认删除"
+        },
+        "confirm": {
+          "label": "永久删除",
+          "description": "我知道此操作是永久性的，所有帐户数据都将丢失。"
+        }
+      }
+    }
+  }
+}

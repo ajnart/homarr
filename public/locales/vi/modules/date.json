@@ -4,6 +4,13 @@
     "description": "Hiện thị ngày giờ hiện tại.",
     "settings": {
       "title": "Cài đặt cho tiện ích ngày giờ",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Dùng thời gian 24 giờ"
       },
@@ -13,18 +20,12 @@
           "hide": "Ẩn ngày"
         }
       },
-      "enableTimezone": {
-        "label": "Hiển thị múi giờ tùy chỉnh"
-      },
-      "timezoneLocation": {
-        "label": "Vị trí múi giờ"
-      },
       "titleState": {
-        "label": "Tiêu đề thành phố",
-        "info": "Trong trường hợp bạn kích hoạt tùy chọn Múi giờ, tên thành phố và mã múi giờ có thể được hiển thị.<br/>Bạn cũng có thể chỉ hiển thị thành phố hoặc thậm chí không hiển thị thành phố nào.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Thành phố và múi giờ",
-          "city": "Chỉ thành phố",
+          "both": "",
+          "city": "",
           "none": "Không có"
         }
       }

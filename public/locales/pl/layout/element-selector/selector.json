@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Dodaj nowy kafelek",
-        "text": "Kafelki są głównym elementem Homarr. Służą one do wyświetlania Twoich aplikacji i innych informacji. Możesz dodać tyle kafelków, ile chcesz."
-    },
-    "widgetDescription": "Widżety wchodzą w interakcję z Twoimi aplikacjami, aby zapewnić Ci większą kontrolę nad Twoimi aplikacjami. Zazwyczaj wymagają one dodatkowej konfiguracji przed użyciem.",
-    "goBack": "Wróć do poprzedniego kroku",
-    "actionIcon": {
-        "tooltip": "Dodaj kafelek"
-    },
-    "apps": "Aplikacje",
-    "app": {
-        "defaultName": "Twoja aplikacja"
-    },
-    "widgets": "Widżety",
-    "categories": "Kategorie",
-    "category": {
-        "newName": "Nazwa nowej kategorii",
-        "defaultName": "Nowa kategoria",
-        "created": {
-            "title": "Utworzono nową kategorię",
-            "message": "Kategoria \"{{name}}\" została utworzona"
-        }
+  "modal": {
+    "title": "Dodaj nowy kafelek",
+    "text": "Kafelki są głównym elementem Homarr. Służą one do wyświetlania Twoich aplikacji i innych informacji. Możesz dodać tyle kafelków, ile chcesz."
+  },
+  "widgetDescription": "Widżety wchodzą w interakcję z Twoimi aplikacjami, aby zapewnić Ci większą kontrolę nad Twoimi aplikacjami. Zazwyczaj wymagają one dodatkowej konfiguracji przed użyciem.",
+  "goBack": "Wróć do poprzedniego kroku",
+  "actionIcon": {
+    "tooltip": "Dodaj kafelek"
+  },
+  "apps": "Aplikacje",
+  "app": {
+    "defaultName": "Twoja aplikacja"
+  },
+  "widgets": "Widżety",
+  "categories": "Kategorie",
+  "category": {
+    "newName": "Nazwa nowej kategorii",
+    "defaultName": "Nowa kategoria",
+    "created": {
+      "title": "Utworzono nową kategorię",
+      "message": "Kategoria \"{{name}}\" została utworzona"
     }
+  },
+  "importFromDocker": ""
 }

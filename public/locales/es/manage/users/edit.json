@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Usuario {{username}}",
+  "back": "Volver a la administración de usuario",
+  "sections": {
+    "general": {
+      "title": "General",
+      "inputs": {
+        "username": {
+          "label": "Nombre de usuario"
+        },
+        "eMail": {
+          "label": "Correo electrónico"
+        }
+      }
+    },
+    "security": {
+      "title": "Seguridad",
+      "inputs": {
+        "password": {
+          "label": "Nueva contraseña"
+        },
+        "terminateExistingSessions": {
+          "label": "Finalizar sesiones activas",
+          "description": "Fuerza al usuario a iniciar sesión nuevamente en sus dispositivos"
+        },
+        "confirm": {
+          "label": "Confirmar",
+          "description": "La contraseña se actualizará. La acción no se puede revertir."
+        }
+      }
+    },
+    "roles": {
+      "title": "Roles",
+      "currentRole": "Rol actual: ",
+      "badges": {
+        "owner": "Propietario",
+        "admin": "Administrador",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Eliminación de la cuenta",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Confirmar nombre de usuario",
+          "description": "Escribe el nombre de usuario para confirmar la eliminación"
+        },
+        "confirm": {
+          "label": "Eliminar permanentemente",
+          "description": "Soy consciente de que esta acción es permanente y se perderán todos los datos de la cuenta."
+        }
+      }
+    }
+  }
+}

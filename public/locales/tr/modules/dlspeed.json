@@ -21,7 +21,7 @@
       "title": "Şu anki indirme hızı",
       "download": "İndirme: {{download}}",
       "upload": "Yükleme: {{upload}}",
-      "timeSpan": "{{seconds}} saniye önce",
+      "timeSpan": "{{seconds}} saniye önce ",
       "totalDownload": "İndirme: {{download}}/s",
       "totalUpload": "Yükleme: {{upload}}/s"
     },

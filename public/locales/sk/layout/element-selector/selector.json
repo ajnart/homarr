@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Pridajte novú dlaždicu",
-        "text": "Dlaždice sú hlavným prvkom Homarr. Používajú sa na zobrazenie vašich aplikácií a ďalších informácií. Môžete pridať toľko dlaždíc, koľko chcete."
-    },
-    "widgetDescription": "Mini aplikácie spolupracujú s vašimi aplikáciami, aby vám poskytli väčšiu kontrolu nad vašimi aplikáciami. Pred použitím zvyčajne vyžadujú dodatočnú konfiguráciu.",
-    "goBack": "Vráťte sa na predchádzajúci krok",
-    "actionIcon": {
-        "tooltip": "Pridajte dlaždicu"
-    },
-    "apps": "Aplikácie",
-    "app": {
-        "defaultName": "Vaša aplikácia"
-    },
-    "widgets": "Miniaplikácie",
-    "categories": "Kategórie",
-    "category": {
-        "newName": "Názov novej kategórie",
-        "defaultName": "Nová Kategória",
-        "created": {
-            "title": "Kategória vytvorená",
-            "message": "Bola vytvorená kategória \"{{name}}\""
-        }
+  "modal": {
+    "title": "Pridajte novú dlaždicu",
+    "text": "Dlaždice sú hlavným prvkom Homarr. Používajú sa na zobrazenie vašich aplikácií a ďalších informácií. Môžete pridať toľko dlaždíc, koľko chcete."
+  },
+  "widgetDescription": "Mini aplikácie spolupracujú s vašimi aplikáciami, aby vám poskytli väčšiu kontrolu nad vašimi aplikáciami. Pred použitím zvyčajne vyžadujú dodatočnú konfiguráciu.",
+  "goBack": "Vráťte sa na predchádzajúci krok",
+  "actionIcon": {
+    "tooltip": "Pridajte dlaždicu"
+  },
+  "apps": "Aplikácie",
+  "app": {
+    "defaultName": "Vaša aplikácia"
+  },
+  "widgets": "Miniaplikácie",
+  "categories": "Kategórie",
+  "category": {
+    "newName": "Názov novej kategórie",
+    "defaultName": "Nová Kategória",
+    "created": {
+      "title": "Kategória vytvorená",
+      "message": "Bola vytvorená kategória \"{{name}}\""
     }
+  },
+  "importFromDocker": ""
 }

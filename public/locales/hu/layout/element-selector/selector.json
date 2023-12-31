@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Új csempe hozzáadása",
-        "text": "A Homarr fő eleme a csempe. Alkalmazásai és egyéb információk megjelenítésére szolgálnak. Annyi csempét adhat hozzá, amennyit csak akar."
-    },
-    "widgetDescription": "A widgetek együttműködnek az alkalmazásokkal, hogy nagyobb kontrollt biztosítsanak az alkalmazások felett. Használatuk előtt általában további konfigurációt igényelnek.",
-    "goBack": "Visszatérés az előző lépéshez",
-    "actionIcon": {
-        "tooltip": "Csempe hozzáadása"
-    },
-    "apps": "Alkalmazások",
-    "app": {
-        "defaultName": "Az Ön alkalmazása"
-    },
-    "widgets": "Widgetek",
-    "categories": "Kategóriák",
-    "category": {
-        "newName": "Az új kategória neve",
-        "defaultName": "Új kategória",
-        "created": {
-            "title": "Létrehozott kategória",
-            "message": "Létrejött a \"{{name}}\" kategória"
-        }
+  "modal": {
+    "title": "Új csempe hozzáadása",
+    "text": "A Homarr fő eleme a csempe. Alkalmazásai és egyéb információk megjelenítésére szolgálnak. Annyi csempét adhat hozzá, amennyit csak akar."
+  },
+  "widgetDescription": "A widgetek együttműködnek az alkalmazásokkal, hogy nagyobb kontrollt biztosítsanak az alkalmazások felett. Használatuk előtt általában további konfigurációt igényelnek.",
+  "goBack": "Visszatérés az előző lépéshez",
+  "actionIcon": {
+    "tooltip": "Csempe hozzáadása"
+  },
+  "apps": "Alkalmazások",
+  "app": {
+    "defaultName": "Az Ön alkalmazása"
+  },
+  "widgets": "Widgetek",
+  "categories": "Kategóriák",
+  "category": {
+    "newName": "Az új kategória neve",
+    "defaultName": "Új kategória",
+    "created": {
+      "title": "Létrehozott kategória",
+      "message": "Létrejött a \"{{name}}\" kategória"
     }
+  },
+  "importFromDocker": ""
 }

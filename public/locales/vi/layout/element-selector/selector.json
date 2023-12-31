@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Thêm ô mới",
-        "text": "Ô là thành phần chính của Homarr. Chúng được dùng để hiện thị các ứng dụng và thông tin khác. Bạn có thể thêm bất kỳ số lượng ô tuỳ thích."
-    },
-    "widgetDescription": "Tiện ích tương tác với ứng dụng của bạn, giúp bạn nắm thêm quyền điều khiển chúng. Các tiện ích thường cần được thiết lập đôi chút trước khi sử dụng.",
-    "goBack": "Quay lại bước trước",
-    "actionIcon": {
-        "tooltip": "Thêm ô"
-    },
-    "apps": "Ứng dụng",
-    "app": {
-        "defaultName": "Ứng dụng của bạn"
-    },
-    "widgets": "Tiện ích",
-    "categories": "Danh mục",
-    "category": {
-        "newName": "Tên danh mục mới",
-        "defaultName": "Danh mục mới",
-        "created": {
-            "title": "Danh mục đã được tạo",
-            "message": "Danh mục \"{{name}}\" đã được tạo"
-        }
+  "modal": {
+    "title": "Thêm ô mới",
+    "text": "Ô là thành phần chính của Homarr. Chúng được dùng để hiện thị các ứng dụng và thông tin khác. Bạn có thể thêm bất kỳ số lượng ô tuỳ thích."
+  },
+  "widgetDescription": "Tiện ích tương tác với ứng dụng của bạn, giúp bạn nắm thêm quyền điều khiển chúng. Các tiện ích thường cần được thiết lập đôi chút trước khi sử dụng.",
+  "goBack": "Quay lại bước trước",
+  "actionIcon": {
+    "tooltip": "Thêm ô"
+  },
+  "apps": "Ứng dụng",
+  "app": {
+    "defaultName": "Ứng dụng của bạn"
+  },
+  "widgets": "Tiện ích",
+  "categories": "Danh mục",
+  "category": {
+    "newName": "Tên danh mục mới",
+    "defaultName": "Danh mục mới",
+    "created": {
+      "title": "Danh mục đã được tạo",
+      "message": "Danh mục \"{{name}}\" đã được tạo"
     }
+  },
+  "importFromDocker": ""
 }

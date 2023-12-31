@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Elem nem található",
+    "descriptor": {
+        "name": "Otthoni asszisztens egység",
+        "description": "Egy egység aktuális állapota a Home Assistantban",
+        "settings": {
+            "title": "Egység állapota",
+            "entityId": {
+                "label": "Egység azonosító",
+                "info": "Egyedi egység ID a Home Assistantben. Másolás az egységre kattintva > Kattintson a fogaskerék ikonra > Kattintson a másolás gombra az „Egység ID”-nél. Előfordulhat, hogy egyes egyéni egységek nem támogatottak."
+            },
+            "displayName": {
+                "label": "Megjelenített név"
+            }
+        }
+    }
+}
