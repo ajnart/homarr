@@ -33,11 +33,6 @@ export default function BoardPage({
   );
 }
 
-type BoardGetServerSideProps = {
-  config: ConfigType;
-  _nextI18Next?: SSRConfig['_nextI18Next'];
-};
-
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const session = await getServerAuthSession(context);
   const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
@@ -66,9 +61,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   // Fetch containers if user is admin, otherwise we don't need them
   try {
     if (session?.user.isAdmin == true) containers = await caller.containers();
-  } catch (error) {
-    
-  }
+  } catch (error) {}
   return {
     props: {
       config,
