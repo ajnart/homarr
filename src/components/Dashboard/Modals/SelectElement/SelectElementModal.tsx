@@ -2,11 +2,10 @@ import { ContextModalProps } from '@mantine/modals';
 import { useState } from 'react';
 
 import { AvailableElementTypes } from './Components/Overview/AvailableElementsOverview';
-import { AvailableStaticTypes } from './Components/StaticElementsTab/AvailableStaticElementsTab';
 import { AvailableIntegrationElements } from './Components/WidgetsTab/AvailableWidgetsTab';
 
 export const SelectElementModal = ({ context, id }: ContextModalProps) => {
-  const [activeTab, setActiveTab] = useState<undefined | 'integrations' | 'static_elements'>();
+  const [activeTab, setActiveTab] = useState<undefined | 'integrations' | 'dockerImport'>();
 
   switch (activeTab) {
     case undefined:
@@ -14,13 +13,10 @@ export const SelectElementModal = ({ context, id }: ContextModalProps) => {
         <AvailableElementTypes
           modalId={id}
           onOpenIntegrations={() => setActiveTab('integrations')}
-          onOpenStaticElements={() => setActiveTab('static_elements')}
         />
       );
     case 'integrations':
       return <AvailableIntegrationElements onClickBack={() => setActiveTab(undefined)} />;
-    case 'static_elements':
-      return <AvailableStaticTypes onClickBack={() => setActiveTab(undefined)} />;
     default:
       /* default to the main selection tab */
       setActiveTab(undefined);

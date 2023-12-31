@@ -1,0 +1,17 @@
+{
+    "entityNotFound": "Không tìm thấy thực thể",
+    "descriptor": {
+        "name": "Thực thể Home Assistant",
+        "description": "Trạng thái hiện tại của một thực thể trong Home Assistant",
+        "settings": {
+            "title": "Trạng thái thực thể",
+            "entityId": {
+                "label": "ID thực thể",
+                "info": "ID thực thể độc nhất trong Home Assistant. Sao chép bằng cách nhấp vào thực thể > Nhấp vào biểu tượng răng cưa > Nhấp vào nút sao chép tại 'ID thực thể'. Một số thực thể tùy chỉnh có thể không được hỗ trợ."
+            },
+            "displayName": {
+                "label": "Tên hiển thị"
+            }
+        }
+    }
+}

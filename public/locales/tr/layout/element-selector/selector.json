@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Yeni araç ekle",
-        "text": "Araçlar, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar araç ekleyebilirsiniz."
-    },
-    "widgetDescription": "Widget'lar, uygulamalarınız üzerinde daha fazla kontrol sağlamak için uygulamalarınızla etkileşime girer. Genellikle kullanımdan önce ek yapılandırma gerektirirler.",
-    "goBack": "Önceki adıma geri dön",
-    "actionIcon": {
-        "tooltip": "Araç Ekle"
-    },
-    "apps": "Uygulamalar",
-    "app": {
-        "defaultName": "Uygulama Adınız"
-    },
-    "widgets": "Widget'lar",
-    "categories": "Kategoriler",
-    "category": {
-        "newName": "Yeni Kategori adı",
-        "defaultName": "Yeni Kategori",
-        "created": {
-            "title": "Kategori oluşturuldu",
-            "message": "\"{{name}}\" kategorisi oluşturuldu"
-        }
+  "modal": {
+    "title": "Yeni araç ekle",
+    "text": "Araçlar, Homarr'ın ana öğesidir. Uygulamalarınızı ve diğer bilgileri görüntülemek için kullanılırlar. İstediğiniz kadar araç ekleyebilirsiniz."
+  },
+  "widgetDescription": "Widget'lar, uygulamalarınız üzerinde daha fazla kontrol sağlamak için uygulamalarınızla etkileşime girer. Genellikle kullanımdan önce ek yapılandırma gerektirirler.",
+  "goBack": "Önceki adıma geri dön",
+  "actionIcon": {
+    "tooltip": "Araç Ekle"
+  },
+  "apps": "Uygulamalar",
+  "app": {
+    "defaultName": "Uygulama Adınız"
+  },
+  "widgets": "Widget'lar",
+  "categories": "Kategoriler",
+  "category": {
+    "newName": "Yeni Kategori adı",
+    "defaultName": "Yeni Kategori",
+    "created": {
+      "title": "Kategori oluşturuldu",
+      "message": "\"{{name}}\" kategorisi oluşturuldu"
     }
+  },
+  "importFromDocker": "Docker'dan içe aktar"
 }

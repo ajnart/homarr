@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Aggiungi nuovo riquadro",
-        "text": "I tile sono l'elemento principale di Homarr. Sono utilizzati per visualizzare le tue app e altre informazioni. Puoi aggiungere tutti i tile che vuoi."
-    },
-    "widgetDescription": "I widget interagiscono con le applicazioni per fornire un maggior controllo. Normalmente richiedono configurazioni aggiuntive prima di essere utilizzati.",
-    "goBack": "Torna indietro allo step precedente",
-    "actionIcon": {
-        "tooltip": "Aggiungi riquadro"
-    },
-    "apps": "Applicazioni",
-    "app": {
-        "defaultName": "La tua app"
-    },
-    "widgets": "Widgets",
-    "categories": "Categorie",
-    "category": {
-        "newName": "Nome della nuova categoria",
-        "defaultName": "Nuova Categoria",
-        "created": {
-            "title": "Categoria creata",
-            "message": "La categoria \"{{name}}\" è stata creata"
-        }
+  "modal": {
+    "title": "Aggiungi nuovo riquadro",
+    "text": "I tile sono l'elemento principale di Homarr. Sono utilizzati per visualizzare le tue app e altre informazioni. Puoi aggiungere tutti i tile che vuoi."
+  },
+  "widgetDescription": "I widget interagiscono con le applicazioni per fornire un maggior controllo. Normalmente richiedono configurazioni aggiuntive prima di essere utilizzati.",
+  "goBack": "Torna indietro allo step precedente",
+  "actionIcon": {
+    "tooltip": "Aggiungi riquadro"
+  },
+  "apps": "Applicazioni",
+  "app": {
+    "defaultName": "La tua app"
+  },
+  "widgets": "Widgets",
+  "categories": "Categorie",
+  "category": {
+    "newName": "Nome della nuova categoria",
+    "defaultName": "Nuova Categoria",
+    "created": {
+      "title": "Categoria creata",
+      "message": "La categoria \"{{name}}\" è stata creata"
     }
+  },
+  "importFromDocker": ""
 }

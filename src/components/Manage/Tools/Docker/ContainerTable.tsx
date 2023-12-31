@@ -2,6 +2,7 @@ import {
   Badge,
   Checkbox,
   Group,
+  Image,
   ScrollArea,
   Table,
   Text,
@@ -96,6 +97,7 @@ export default function ContainerTable({
               <Row
                 key={container.Id}
                 container={container}
+                icon={(container as any).icon ?? undefined}
                 selected={selected}
                 toggleRow={toggleRow}
                 width={width}
@@ -113,10 +115,12 @@ type RowProps = {
   selected: boolean;
   toggleRow: (container: ContainerInfo) => void;
   width: number;
+  icon?: string;
 };
-const Row = ({ container, selected, toggleRow, width }: RowProps) => {
+const Row = ({ icon, container, selected, toggleRow, width }: RowProps) => {
   const { t } = useTranslation('modules/docker');
   const { classes, cx } = useStyles();
+  const containerName = container.Names[0].replace('/', '');
 
   return (
     <tr className={cx({ [classes.rowSelected]: selected })}>
@@ -124,13 +128,16 @@ const Row = ({ container, selected, toggleRow, width }: RowProps) => {
         <Checkbox checked={selected} onChange={() => toggleRow(container)} transitionDuration={0} />
       </td>
       <td>
-        <Text size="lg" weight={600}>
-          {container.Names[0].replace('/', '')}
-        </Text>
+        <Group noWrap>
+          <Image withPlaceholder src={icon} width={30} height={30} />
+          <Text size="lg" weight={600}>
+            {containerName}
+          </Text>
+        </Group>
       </td>
       {width > MIN_WIDTH_MOBILE && (
         <td>
-          <Text size="lg">{container.Image}</Text>
+          <Text size="lg">{container.Image.slice(0, 25)}</Text>
         </td>
       )}
       {width > MIN_WIDTH_MOBILE && (

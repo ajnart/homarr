@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Shrnutí DNS hole",
+    "description": "Zobrazuje důležitá data ze služby PiHole nebo AdGuard",
     "settings": {
       "title": "",
       "usePiHoleColors": {

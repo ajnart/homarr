@@ -23,6 +23,7 @@ describe('TorrentTile', () => {
         displayActiveTorrents: true,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: false,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -60,6 +61,7 @@ describe('TorrentTile', () => {
         displayActiveTorrents: true,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -97,6 +99,7 @@ describe('TorrentTile', () => {
         displayActiveTorrents: false,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -134,12 +137,25 @@ describe('TorrentTile', () => {
         displayActiveTorrents: true,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
       constructTorrent('ABC', 'Nice Torrent', false, 672, 672),
-      constructTorrent('HH', 'I am completed and uploading less than 10 ko/s (10239 ≈ 9.99ko/s)', true, 0, 10239),
-      constructTorrent('HH', 'I am completed and uploading more than 10 ko/s (10241 ≈ 10.01ko/s)', true, 0, 10241),
+      constructTorrent(
+        'HH',
+        'I am completed and uploading less than 10 ko/s (10239 ≈ 9.99ko/s)',
+        true,
+        0,
+        10239
+      ),
+      constructTorrent(
+        'HH',
+        'I am completed and uploading more than 10 ko/s (10241 ≈ 10.01ko/s)',
+        true,
+        0,
+        10241
+      ),
       constructTorrent('HH', 'I am completed', true, 0, 0),
       constructTorrent('HH', 'I am stale', false, 0, 0),
     ];
@@ -175,6 +191,7 @@ describe('TorrentTile', () => {
         displayActiveTorrents: true,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -212,6 +229,7 @@ describe('TorrentTile', () => {
         displayActiveTorrents: false,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -229,7 +247,7 @@ describe('TorrentTile', () => {
     expect(filtered.includes(torrents[1])).toBe(false);
     expect(filtered.at(1)).toBe(torrents[2]);
   });
-  
+
   it('calcul ratio', () => {
     // arrange
     const widget: ITorrent = {
@@ -249,11 +267,10 @@ describe('TorrentTile', () => {
         displayActiveTorrents: false,
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
+        displayRatioWithFilter: false,
       },
     };
-    const torrents: NormalizedTorrent[] = [
-      constructTorrent('HH', 'I am completed', true, 0),
-    ];
+    const torrents: NormalizedTorrent[] = [constructTorrent('HH', 'I am completed', true, 0, 0)];
 
     // act
     const filtered = filterTorrents(widget, torrents);
@@ -263,7 +280,7 @@ describe('TorrentTile', () => {
     // assert
     expect(filtered.length).toBe(0);
     expect(filtered.includes(torrents[1])).toBe(false);
-    expect(ratioGlobal).toBe(378535535/23024335);
+    expect(ratioGlobal).toBe(378535535 / 23024335);
     expect(ratioWithFilter).toBe(-1); //infinite ratio
   });
 });

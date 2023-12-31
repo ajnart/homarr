@@ -19,26 +19,26 @@
     "label": "Bakgrunn"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Bakgrunnsbildevedlegg",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fast - Bakgrunn holder seg i samme posisjon (anbefales)",
+      "scroll": "Rull - Bakgrunnen ruller med musen"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Størrelse på bakgrunnsbilde",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Dekk - Skalerer bildet så lite som mulig for å dekke hele vinduet ved å beskjære for mye plass. (anbefales)",
+      "contain": "Sperr inne - Skalerer bildet så stort som mulig i beholderen uten å beskjære eller strekke ut bildet."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Bakgrunnsbildevedlegg",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Gjenta - Bildet gjentas så mye som nødvendig for å dekke hele bakgrunnsbildet.",
+      "no-repeat": "Ingen repetisjon - Bildet gjentas ikke og fyller kanskje ikke hele plassen (anbefalt)",
+      "repeat-x": "Gjenta X - Samme som \"Gjenta\", men bare på horisontal akse.",
+      "repeat-y": "Gjenta Y - Samme som \"Gjenta\", men bare på vertikal akse."
     }
   },
   "customCSS": {

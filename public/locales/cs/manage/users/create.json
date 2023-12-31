@@ -1,25 +1,25 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Vytvořit uživatele",
     "steps": {
         "account": {
-            "title": "",
+            "title": "První krok",
             "text": "",
             "username": {
                 "label": ""
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Druhý krok",
             "text": "",
             "password": {
                 "label": ""
             }
         },
         "finish": {
-            "title": "",
+            "title": "Potvrzení",
             "text": "",
             "card": {
                 "title": "",
@@ -30,7 +30,7 @@
                     "property": "",
                     "value": "",
                     "username": "",
-                    "email": "",
+                    "email": "E-mail",
                     "password": ""
                 },
                 "notSet": "",

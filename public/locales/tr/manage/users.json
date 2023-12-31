@@ -1,13 +1,21 @@
 {
     "metaTitle": "Kullanıcılar",
     "pageTitle": "Kullanıcıları yönet",
-    "text": "Kullanıcıları kullanarak panelşnizi kimlerin düzenleyebileceğini yapılandırabilirsiniz. Homarr'ın gelecekteki sürümleri, izinler ve panolar üzerinde daha da ayrıntılı kontrole sahip olacak.",
     "buttons": {
         "create": "Oluştur"
     },
+    "filter": {
+        "roles": {
+            "all": "Tümü",
+            "normal": "Normal",
+            "admin": "Yönetici",
+            "owner": "Sahip"
+        }
+    },
     "table": {
         "header": {
-            "user": "Kullanıcı"
+            "user": "Kullanıcı",
+            "email": "E-Posta"
         }
     },
     "tooltips": {

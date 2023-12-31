@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Torrenty",
+    "description": "Zobrazuje seznam torrentů z podporovaných klientů Torrent.",
     "settings": {
       "title": "",
       "refreshInterval": {
@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "",
+        "dateAdded": "",
         "size": "",
         "download": "",
         "upload": "",
         "estimatedTimeOfArrival": "",
-        "progress": ""
+        "progress": "",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "",
+        "stateMessage": ""
       },
       "item": {
         "text": ""

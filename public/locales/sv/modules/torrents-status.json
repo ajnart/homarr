@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Namn",
+        "dateAdded": "",
         "size": "Storlek",
         "download": "Ned",
         "upload": "Upp",
         "estimatedTimeOfArrival": "Beräknad sluttid",
-        "progress": "Förlopp"
+        "progress": "Förlopp",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Läge",
+        "stateMessage": ""
       },
       "item": {
         "text": "Hanteras av {{appName}}, {{ratio}} förhållande"

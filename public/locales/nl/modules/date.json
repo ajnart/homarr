@@ -4,6 +4,13 @@
     "description": "Toont de huidige datum en tijd.",
     "settings": {
       "title": "Instellingen voor datum en tijd widget",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Volledige tijd weergeven (24-uur)"
       },
@@ -13,18 +20,12 @@
           "hide": "Datum verbergen"
         }
       },
-      "enableTimezone": {
-        "label": "Een aangepaste tijdzone weergeven"
-      },
-      "timezoneLocation": {
-        "label": "Tijdzone Locatie"
-      },
       "titleState": {
-        "label": "Titel",
-        "info": "Als je de optie Tijdzone activeert, kun je de naam van de stad en de code van de tijdzone laten zien.<br/>Je kunt ook alleen de stad of zelfs geen stad weergeven.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Stad en tijdzone",
-          "city": "Alleen stad",
+          "both": "",
+          "city": "",
           "none": "Geen"
         }
       }

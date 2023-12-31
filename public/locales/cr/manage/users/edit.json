@@ -1,0 +1,55 @@
+{
+  "metaTitle": "crwdns4072:0{{username}}crwdne4072:0",
+  "back": "crwdns4074:0crwdne4074:0",
+  "sections": {
+    "general": {
+      "title": "crwdns4076:0crwdne4076:0",
+      "inputs": {
+        "username": {
+          "label": "crwdns4078:0crwdne4078:0"
+        },
+        "eMail": {
+          "label": "crwdns4080:0crwdne4080:0"
+        }
+      }
+    },
+    "security": {
+      "title": "crwdns4082:0crwdne4082:0",
+      "inputs": {
+        "password": {
+          "label": "crwdns4084:0crwdne4084:0"
+        },
+        "terminateExistingSessions": {
+          "label": "crwdns4086:0crwdne4086:0",
+          "description": "crwdns4088:0crwdne4088:0"
+        },
+        "confirm": {
+          "label": "crwdns4090:0crwdne4090:0",
+          "description": "crwdns4092:0crwdne4092:0"
+        }
+      }
+    },
+    "roles": {
+      "title": "crwdns4094:0crwdne4094:0",
+      "currentRole": "crwdns4096:0crwdne4096:0",
+      "badges": {
+        "owner": "crwdns4098:0crwdne4098:0",
+        "admin": "crwdns4100:0crwdne4100:0",
+        "normal": "crwdns4102:0crwdne4102:0"
+      }
+    },
+    "deletion": {
+      "title": "crwdns4104:0crwdne4104:0",
+      "inputs": {
+        "confirmUsername": {
+          "label": "crwdns4106:0crwdne4106:0",
+          "description": "crwdns4108:0crwdne4108:0"
+        },
+        "confirm": {
+          "label": "crwdns4110:0crwdne4110:0",
+          "description": "crwdns4112:0crwdne4112:0"
+        }
+      }
+    }
+  }
+}

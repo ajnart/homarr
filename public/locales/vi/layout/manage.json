@@ -4,7 +4,7 @@
             "title": "Trang chủ"
         },
         "boards": {
-            "title": "bảng"
+            "title": "Bảng"
         },
         "users": {
             "title": "Người dùng",
@@ -18,7 +18,7 @@
             "items": {
                 "documentation": "Tài liệu",
                 "report": "Báo cáo sự cố/lỗi",
-                "discord": "Bất hòa cộng đồng",
+                "discord": "Discord",
                 "contribute": "Đóng góp"
             }
         },

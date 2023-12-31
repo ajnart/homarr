@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "crwdns4052:0crwdne4052:0",
         "name": "crwdns2225:0crwdne2225:0",
+        "dateAdded": "crwdns4054:0crwdne4054:0",
         "size": "crwdns2227:0crwdne2227:0",
         "download": "crwdns2229:0crwdne2229:0",
         "upload": "crwdns2231:0crwdne2231:0",
         "estimatedTimeOfArrival": "crwdns2233:0crwdne2233:0",
-        "progress": "crwdns2235:0crwdne2235:0"
+        "progress": "crwdns2235:0crwdne2235:0",
+        "totalUploaded": "crwdns4056:0crwdne4056:0",
+        "totalDownloaded": "crwdns4058:0crwdne4058:0",
+        "ratio": "crwdns4060:0crwdne4060:0",
+        "seeds": "crwdns4062:0crwdne4062:0",
+        "peers": "crwdns4064:0crwdne4064:0",
+        "label": "crwdns4066:0crwdne4066:0",
+        "state": "crwdns4068:0crwdne4068:0",
+        "stateMessage": "crwdns4070:0crwdne4070:0"
       },
       "item": {
         "text": "crwdns2461:0{{appName}}crwdnd2461:0{{ratio}}crwdne2461:0"

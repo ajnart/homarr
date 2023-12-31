@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Ім’я",
+        "dateAdded": "",
         "size": "Розмір",
         "download": "Завантаження",
         "upload": "Віддача",
         "estimatedTimeOfArrival": "Залишилося",
-        "progress": "Прогрес"
+        "progress": "Прогрес",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Стан",
+        "stateMessage": ""
       },
       "item": {
         "text": "Управляється {{appName}}, {{ratio}} співвідношення"

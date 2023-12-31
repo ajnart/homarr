@@ -1,13 +1,21 @@
 {
     "metaTitle": "Utenti",
     "pageTitle": "Gestisci utenti",
-    "text": "Utilizzando gli utenti, è possibile configurare chi può modificare i dashboard. Le versioni future di Homarr offriranno un controllo ancora più granulare sulle autorizzazioni e sulle board.",
     "buttons": {
         "create": "Crea"
     },
+    "filter": {
+        "roles": {
+            "all": "Tutto",
+            "normal": "Normale",
+            "admin": "Admin",
+            "owner": "Proprietario"
+        }
+    },
     "table": {
         "header": {
-            "user": "Utente"
+            "user": "Utente",
+            "email": "E-mail"
         }
     },
     "tooltips": {

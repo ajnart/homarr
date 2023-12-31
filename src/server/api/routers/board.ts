@@ -41,6 +41,7 @@ export const boardRouter = createTRPCRouter({
         apps: z.array(
           z.object({
             name: z.string(),
+            icon: z.string().optional(),
             port: z.number().optional(),
           })
         ),
@@ -54,7 +55,6 @@ export const boardRouter = createTRPCRouter({
         });
       }
       const config = await getConfig(input.boardName);
-
       const lowestWrapper = config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
       const newConfig = {
@@ -66,11 +66,14 @@ export const boardRouter = createTRPCRouter({
             const address = container.port
               ? `http://localhost:${container.port}`
               : 'http://localhost';
-
             return {
               ...defaultApp,
               name: container.name,
               url: address,
+              appearance: {
+                ...defaultApp.appearance,
+                iconUrl: container.icon,
+              },
               behaviour: {
                 ...defaultApp.behaviour,
                 externalUrl: address,

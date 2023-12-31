@@ -207,6 +207,7 @@ const WidgetOptionTypeSwitch: FC<{
             {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <Select
+            searchable
             defaultValue={option.defaultValue}
             data={data}
             value={value as string}

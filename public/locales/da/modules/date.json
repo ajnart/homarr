@@ -4,6 +4,13 @@
     "description": "Viser aktuel dag og klokkeslæt.",
     "settings": {
       "title": "Indstillinger for dato og tid widget",
+      "timezone": {
+        "label": "Tidszone",
+        "info": "Vælg navnet på din tidszone, find din her: "
+      },
+      "customTitle": {
+        "label": "Bynavn eller tilpasset titel"
+      },
       "display24HourFormat": {
         "label": "Vis fuld tid (24-timer)"
       },
@@ -13,18 +20,12 @@
           "hide": "Skjul dato"
         }
       },
-      "enableTimezone": {
-        "label": "Vis en brugerdefineret tidszone"
-      },
-      "timezoneLocation": {
-        "label": "Tidszone Lokation"
-      },
       "titleState": {
-        "label": "Byens titel",
-        "info": "Hvis du aktiverer indstillingen Tidszone, kan du få vist navnet på byen og tidszonekoden.<br/>Du kan også vise byen alene eller slet ikke vise noget.",
+        "label": "Urets titel",
+        "info": "Den tilpassede titel og tidszonekoden kan vises på din widget.<br/>Du kan også vise byen alene, vise ingen,<br/>eller endda vise tidszonen alene, når begge er valgt, men ingen titel er angivet.",
         "data": {
-          "both": "By og tidszone",
-          "city": "Kun by",
+          "both": "Titel og tidszone",
+          "city": "Kun titel",
           "none": "Intet"
         }
       }

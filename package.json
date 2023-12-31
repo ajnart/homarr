@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.14.2",
+  "version": "0.14.3",
   "description": "Homarr - A homepage for your server.",
   "license": "MIT",
   "repository": {
@@ -75,7 +75,6 @@
     "axios": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^8.6.0",
-    "browser-geo-tz": "^0.0.4",
     "consola": "^3.0.0",
     "cookies": "^0.8.0",
     "cookies-next": "^2.1.1",
@@ -91,6 +90,10 @@
     "html-entities": "^2.3.3",
     "i18next": "^22.5.1",
     "immer": "^10.0.2",
+    "js-file-download": "^0.4.12",
+    "mantine-react-table": "^1.3.4",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
     "next": "13.4.12",
     "next-auth": "^4.23.0",
     "next-i18next": "^14.0.0",

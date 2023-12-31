@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Legg til en ny flis",
-        "text": "Fliser er det viktigste elementet i Homarr. De brukes til å vise appene og annen informasjon. Du kan legge til så mange fliser som du vil."
-    },
-    "widgetDescription": "Widgets samhandler med appene dine for å gi deg mer kontroll over applikasjonene. De krever vanligvis ekstra konfigurasjon før bruk.",
-    "goBack": "Gå tilbake til forrige steg",
-    "actionIcon": {
-        "tooltip": "Legg til en flis"
-    },
-    "apps": "Apper",
-    "app": {
-        "defaultName": "Din app"
-    },
-    "widgets": "Widgetter",
-    "categories": "Kategorier",
-    "category": {
-        "newName": "Navn på ny kategori",
-        "defaultName": "Ny kategori",
-        "created": {
-            "title": "Kategori opprettet",
-            "message": "Kategorien \"{{name}}\" er opprettet"
-        }
+  "modal": {
+    "title": "Legg til en ny flis",
+    "text": "Fliser er det viktigste elementet i Homarr. De brukes til å vise appene og annen informasjon. Du kan legge til så mange fliser som du vil."
+  },
+  "widgetDescription": "Widgets samhandler med appene dine for å gi deg mer kontroll over applikasjonene. De krever vanligvis ekstra konfigurasjon før bruk.",
+  "goBack": "Gå tilbake til forrige steg",
+  "actionIcon": {
+    "tooltip": "Legg til en flis"
+  },
+  "apps": "Apper",
+  "app": {
+    "defaultName": "Din app"
+  },
+  "widgets": "Widgetter",
+  "categories": "Kategorier",
+  "category": {
+    "newName": "Navn på ny kategori",
+    "defaultName": "Ny kategori",
+    "created": {
+      "title": "Kategori opprettet",
+      "message": "Kategorien \"{{name}}\" er opprettet"
     }
+  },
+  "importFromDocker": ""
 }

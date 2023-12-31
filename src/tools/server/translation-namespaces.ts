@@ -1,4 +1,5 @@
 export const boardNamespaces = [
+  'tools/docker',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
@@ -42,6 +43,7 @@ export const manageNamespaces = [
   'manage/users',
   'manage/users/invites',
   'manage/users/create',
+  'manage/users/edit'
 ];
 export const loginNamespaces = ['authentication/login'];
 

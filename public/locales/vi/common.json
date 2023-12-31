@@ -1,11 +1,11 @@
 {
   "save": "Lưu",
-  "apply": "",
-  "insert": "",
+  "apply": "Áp dụng",
+  "insert": "Thêm",
   "about": "Về chúng tôi",
   "cancel": "Hủy",
   "close": "Đóng",
-  "back": "Mặt sau",
+  "back": "Quay lại",
   "delete": "Xóa",
   "ok": "OK",
   "edit": "Sửa",
@@ -45,7 +45,7 @@
   "seeMore": "Xem thêm...",
   "position": {
     "left": "Bên trái",
-    "center": "",
+    "center": "Giữa",
     "right": "Phải"
   },
   "attributes": {
@@ -53,5 +53,5 @@
     "height": "Chiều cao"
   },
   "public": "Công khai",
-  "restricted": ""
+  "restricted": "Bị hạn chế"
 }

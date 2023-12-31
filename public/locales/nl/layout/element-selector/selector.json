@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Nieuwe tegel toevoegen",
-        "text": "Tegels zijn het belangrijkste element van Homarr. Ze worden gebruikt om je apps en andere informatie weer te geven. Je kunt zoveel tegels toevoegen als je wilt."
-    },
-    "widgetDescription": "Widgets werken samen met uw apps, om u meer controle over uw toepassingen te geven. Ze vereisen meestal extra configuratie voor gebruik.",
-    "goBack": "Ga terug naar de vorige stap",
-    "actionIcon": {
-        "tooltip": "Tegel toevoegen"
-    },
-    "apps": "Apps",
-    "app": {
-        "defaultName": "Uw app"
-    },
-    "widgets": "Widgets",
-    "categories": "Categorieën",
-    "category": {
-        "newName": "Naam van nieuwe categorie",
-        "defaultName": "Nieuwe categorie",
-        "created": {
-            "title": "Categorie gemaakt",
-            "message": "De categorie \"{{name}}\" is aangemaakt"
-        }
+  "modal": {
+    "title": "Nieuwe tegel toevoegen",
+    "text": "Tegels zijn het belangrijkste element van Homarr. Ze worden gebruikt om je apps en andere informatie weer te geven. Je kunt zoveel tegels toevoegen als je wilt."
+  },
+  "widgetDescription": "Widgets werken samen met uw apps, om u meer controle over uw toepassingen te geven. Ze vereisen meestal extra configuratie voor gebruik.",
+  "goBack": "Ga terug naar de vorige stap",
+  "actionIcon": {
+    "tooltip": "Tegel toevoegen"
+  },
+  "apps": "Apps",
+  "app": {
+    "defaultName": "Uw app"
+  },
+  "widgets": "Widgets",
+  "categories": "Categorieën",
+  "category": {
+    "newName": "Naam van nieuwe categorie",
+    "defaultName": "Nieuwe categorie",
+    "created": {
+      "title": "Categorie gemaakt",
+      "message": "De categorie \"{{name}}\" is aangemaakt"
     }
+  },
+  "importFromDocker": ""
 }

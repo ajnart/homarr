@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Kalendář",
+    "description": "Zobrazí kalendář s nadcházejícími vydáními z podporovaných integrací.",
     "settings": {
       "title": "",
       "radarrReleaseType": {
