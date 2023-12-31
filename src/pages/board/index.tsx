@@ -33,11 +33,6 @@ export default function BoardPage({
   );
 }
 
-type BoardGetServerSideProps = {
-  config: ConfigType;
-  _nextI18Next?: SSRConfig['_nextI18Next'];
-};
-
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
   const session = await getServerAuthSession(context);
   const boardName = await getDefaultBoardAsync(session?.user?.id, 'default');
