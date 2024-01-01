@@ -6,7 +6,7 @@
       "title": "Cài đặt cho tiện ích ngày giờ",
       "timezone": {
         "label": "Múi giờ",
-        "info": ""
+        "info": "Chọn múi giờ của bạn, có thể tìm chúng ở đây: "
       },
       "customTitle": {
         "label": "Tên thành phố hoặc tiêu đề tùy chỉnh"
@@ -26,7 +26,7 @@
         "data": {
           "both": "Tiêu đề và Múi giờ",
           "city": "Chỉ tiêu đề",
-          "none": "Không có"
+          "none": "Không hiển thị"
         }
       }
     }
