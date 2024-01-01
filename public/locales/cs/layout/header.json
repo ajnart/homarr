@@ -15,7 +15,7 @@
             "defaultBoard": "Výchozí plocha",
             "manage": "Spravovat",
             "logout": "Odhlásit {{username}}",
-            "login": ""
+            "login": "Přihlásit se"
         }
     },
     "modals": {
