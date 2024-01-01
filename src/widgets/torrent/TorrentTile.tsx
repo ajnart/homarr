@@ -162,7 +162,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       ),
     },
     {
-      accessorKey: 'totalSize',
+      accessorKey: 'totalSelected',
       header: t('card.table.header.size'),
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
