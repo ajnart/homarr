@@ -6,7 +6,7 @@
       "title": "Obecné",
       "inputs": {
         "username": {
-          "label": ""
+          "label": "Uživatelské jméno"
         },
         "eMail": {
           "label": "E-mail"
