@@ -22,5 +22,5 @@
       "message": "Danh mục \"{{name}}\" đã được tạo"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Nhập từ docker"
 }
