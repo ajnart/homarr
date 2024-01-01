@@ -5,11 +5,11 @@
     "settings": {
       "title": "Nastavenia miniaplikácie Dátum a čas",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Časové pásmo",
+        "info": "Vyberte názov svojho časového pásma, nájdete ho tu: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Názov mesta alebo vlastný názov"
       },
       "display24HourFormat": {
         "label": "Zobraziť celý čas (24 hodín)"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Názov hodín",
+        "info": "Vlastný názov a kód časového pásma sa môžu zobraziť na miniaplikácii.<br/>Môžete tiež zobraziť samotné mesto, nezobraziť žiadne,<br/>alebo dokonca zobraziť iba časové pásmo, keď sú vybraté obe, ale nie je uvedený žiadny názov.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Názov a časové pásmo",
+          "city": "Iba názov",
           "none": "Žiadne"
         }
       }
