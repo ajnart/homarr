@@ -5,10 +5,10 @@
     "form": {
         "fields": {
             "username": {
-                "label": ""
+                "label": "Uživatelské jméno"
             },
             "password": {
-                "label": ""
+                "label": "Heslo"
             },
             "passwordConfirmation": {
                 "label": "Potvrďte heslo"
