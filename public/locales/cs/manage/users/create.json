@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "První krok",
-            "text": "",
+            "text": "Vytvořit účet",
             "username": {
                 "label": ""
             },
