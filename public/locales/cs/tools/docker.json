@@ -20,12 +20,12 @@
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Aplikace přidány na plochu",
+                "message": "Aplikace pro vybrané Docker kontejnery byly přidány na plochu."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Nepodařilo se přidat aplikace na plochu",
+                "message": "Aplikace pro vybrané Docker kontejnery nebylo možné přidat na plochu."
             }
         }
     }
