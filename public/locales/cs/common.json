@@ -2,7 +2,7 @@
   "save": "Uložit",
   "apply": "Použít",
   "insert": "Vložit",
-  "about": "",
+  "about": "O aplikaci",
   "cancel": "",
   "close": "Zavřít",
   "back": "Zpět",
@@ -12,29 +12,29 @@
   "next": "Další",
   "previous": "Předchozí",
   "confirm": "Potvrdit",
-  "enabled": "Povoleno",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
+  "enabled": "Zapnuto",
+  "disabled": "Vypnuto",
+  "enableAll": "Aktivovat vše",
+  "disableAll": "Zakázat vše",
+  "version": "Verze",
   "changePosition": "Změnit pozici",
   "remove": "",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Jste si jisti, že chcete odstranit {{item}}?",
+  "createItem": "+ vytvořit {{item}}",
   "sections": {
     "settings": "",
     "dangerZone": "Nebezpečná zóna"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
-    "password": ""
+    "apiKey": "API klíč",
+    "username": "Uživatelské jméno",
+    "password": "Heslo"
   },
-  "tip": "",
+  "tip": "Tip: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "vteřiny",
+    "minutes": "minuty",
+    "hours": "hodiny"
   },
   "loading": "",
   "breakPoints": {
@@ -42,10 +42,10 @@
     "medium": "střední",
     "large": "velký"
   },
-  "seeMore": "",
+  "seeMore": "Zobrazit více...",
   "position": {
     "left": "Vlevo",
-    "center": "",
+    "center": "Střed",
     "right": "Vpravo"
   },
   "attributes": {
