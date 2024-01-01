@@ -27,8 +27,8 @@
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Odstranit plochu",
+            "text": "Jste si jisti, že chcete tuto plochu smazat? Tuto akci nelze vrátit zpět a vaše data budou trvale ztracena."
         },
         "create": {
             "title": "Vytvořit plochu",
