@@ -5,7 +5,7 @@
             "title": "První krok",
             "text": "Vytvořit účet",
             "username": {
-                "label": ""
+                "label": "Uživatelské jméno"
             },
             "email": {
                 "label": "E-mail"
@@ -13,9 +13,9 @@
         },
         "security": {
             "title": "Druhý krok",
-            "text": "",
+            "text": "Heslo",
             "password": {
-                "label": ""
+                "label": "Heslo"
             }
         },
         "finish": {
@@ -29,9 +29,9 @@
                 "header": {
                     "property": "",
                     "value": "",
-                    "username": "",
+                    "username": "Uživatelské jméno",
                     "email": "E-mail",
-                    "password": ""
+                    "password": "Heslo"
                 },
                 "notSet": "",
                 "valid": ""
