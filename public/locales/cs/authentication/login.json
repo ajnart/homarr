@@ -1,20 +1,20 @@
 {
-  "metaTitle": "",
-  "title": "",
-  "text": "",
+  "metaTitle": "Přihlásit se",
+  "title": "Vítejte zpět!",
+  "text": "Zadejte prosím Vaše přihlašovací údaje",
   "form": {
     "fields": {
       "username": {
-        "label": ""
+        "label": "Uživatelské jméno"
       },
       "password": {
-        "label": ""
+        "label": "Heslo"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Přihlásit se"
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "Po přihlášení budete přesměrováni na {{url}}"
   },
-  "alert": ""
+  "alert": "Vaše přihlašovací údaje jsou nesprávné nebo tento účet neexistuje. Zkuste to prosím znovu."
 }
