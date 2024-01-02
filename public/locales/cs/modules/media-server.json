@@ -3,7 +3,7 @@
     "name": "Mediální server",
     "description": "Interagujte se svým mediálním serverem Jellyfin nebo Plex",
     "settings": {
-      "title": ""
+      "title": "Nastavení widgetu serveru médií"
     }
   },
   "loading": "Načítání streamů",
@@ -17,8 +17,8 @@
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nelze načíst obsah",
+        "text": "Nelze načíst informace ze serveru. Pro více informací se podívejte do logů"
       }
     }
   }
