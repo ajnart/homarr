@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Όλοι",
+            "normal": "Κανονικός",
+            "admin": "Διαχειριστής",
+            "owner": "Ιδιοκτήτης"
         }
     },
     "table": {
