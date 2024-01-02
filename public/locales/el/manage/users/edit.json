@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Χρήστης {{username}}",
+  "back": "Πίσω στη διαχείριση χρηστών",
   "sections": {
     "general": {
       "title": "Γενικά",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Ασφάλεια",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Νέος κωδικός"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Τερματισμός υπαρχόντων συνεδριών",
+          "description": "Αναγκάζει τον χρήστη να συνδεθεί ξανά στις συσκευές του"
         },
         "confirm": {
           "label": "Επιβεβαίωση",
-          "description": ""
+          "description": "Ο κωδικός πρόσβασης θα ενημερωθεί. Η ενέργεια δεν μπορεί να αντιστραφεί."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Ρόλοι",
+      "currentRole": "Τρέχων ρόλος: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Ιδιοκτήτης",
+        "admin": "Διαχειριστής",
+        "normal": "Κανονικός"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Διαγραφή λογαριασμού",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Επιβεβαίωση ονόματος χρήστη",
+          "description": "Πληκτρολογήστε το όνομα χρήστη για να επιβεβαιώσετε τη διαγραφή"
         },
         "confirm": {
           "label": "Οριστική διαγραφή",
-          "description": ""
+          "description": "Γνωρίζω ότι η ενέργεια αυτή είναι μόνιμη και ότι όλα τα δεδομένα του λογαριασμού θα χαθούν."
         }
       }
     }
