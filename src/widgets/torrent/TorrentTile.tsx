@@ -130,6 +130,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       id: "dateAdded",
       accessorFn: (row) => new Date(row.dateAdded),
       header: "dateAdded",
+      maxSize: 1
     },
     {
       accessorKey: 'name',
@@ -146,9 +147,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
             >
           <Popover.Target>
             <Text
-              style={{
-                maxWidth: '30vw',
-              }}
+              maw={"30vw"}
               size="xs"
               lineClamp={1}
             >
@@ -160,34 +159,41 @@ function TorrentTile({ widget }: TorrentTileProps) {
           </Popover.Dropdown>
         </Popover>
       ),
+      maxSize: 1,
+      size: 1
     },
     {
-      accessorKey: 'totalSize',
+      accessorKey: 'totalSelected',
       header: t('card.table.header.size'),
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1
     },
     {
       accessorKey: 'uploadSpeed',
       header: t('card.table.header.upload'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1
     },
     {
       accessorKey: 'downloadSpeed',
       header: t('card.table.header.download'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1
     },
     {
       accessorKey: 'eta',
       header: t('card.table.header.estimatedTimeOfArrival'),
       Cell: ({ cell }) => formatETA(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1
     },
     {
       accessorKey: 'progress',
       header: t('card.table.header.progress'),
+      maxSize: 1,
       Cell: ({ cell, row }) => (
         <Flex>
           <Text className={useStyles().classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
@@ -291,7 +297,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea>
+      <ScrollArea style={{ flexGrow: 1 }}>
         <MRT_Table table={torrentsTable} />
       </ScrollArea>
       <Group spacing="sm">
