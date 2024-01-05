@@ -49,10 +49,6 @@
 		"statusChecker": {
 			"label": "Status checker",
 			"description": "Checks if your app is online using a simple HTTP(S) request."
-		},
-		"statusCodes": {
-			"label": "HTTP status codes",
-			"description": "The HTTP status codes that are considered as online."
 		}
 	},
 	"appearance": {
