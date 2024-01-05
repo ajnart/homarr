@@ -35,7 +35,6 @@ export const appRouter = createTRPCRouter({
         headers: {
           // Cache for 5 minutes
           'Cache-Control': 'max-age=300',
-          'Content-Type': 'application/json',
         },
       })
         .then((response) => ({
@@ -63,12 +62,11 @@ export const appRouter = createTRPCRouter({
             });
           }
 
-          Consola.error(`Unexpected response: ${error.message}`);
-          throw new TRPCError({
-            code: 'UNPROCESSABLE_CONTENT',
-            cause: input,
-            message: `Unexpected response: ${error.message}`,
-          });
+          return {
+            status: 200,
+            statusText: 'OK',
+            state: 'online',
+          };
         });
       return res;
     }),
