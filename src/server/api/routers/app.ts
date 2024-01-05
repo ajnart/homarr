@@ -30,7 +30,7 @@ export const appRouter = createTRPCRouter({
           },
         });
       } catch (error: any) {
-        if (error.cause.code === 'ENOTFOUND') {
+        if (error.cause.code === 'ENOTFOUND' || error.cause.code === 'ECONNREFUSED') {
           return false;
         }
       }
