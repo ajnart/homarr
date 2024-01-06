@@ -7,13 +7,13 @@
     "item": {
       "buttons": {
         "askFor": "",
-        "cancel": "",
+        "cancel": "Zrušit",
         "request": ""
       },
       "alerts": {
         "automaticApproval": {
           "title": "",
-          "text": ""
+          "text": "Tato žádost bude automaticky schválena"
         }
       }
     },
@@ -21,8 +21,8 @@
       "caption": "",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Sezóna",
+          "numberOfEpisodes": "Počet epizod"
         }
       }
     }
