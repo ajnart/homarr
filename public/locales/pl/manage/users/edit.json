@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Użytkownik {{username}}",
+  "back": "Powrót do zarządzania użytkownikami",
   "sections": {
     "general": {
       "title": "Ogólne",
@@ -14,27 +14,27 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Bezpieczeństwo",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nowe hasło"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Zakończ istniejące sesje",
+          "description": "Wymusza ponowne zalogowanie się użytkownika na swoich urządzeniach"
         },
         "confirm": {
           "label": "Potwierdź",
-          "description": ""
+          "description": "Hasło zostanie zaktualizowane. Działania nie można cofnąć."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Role",
+      "currentRole": "Obecna rola: ",
       "badges": {
-        "owner": "",
-        "admin": "",
+        "owner": "Właściciel",
+        "admin": "Admin",
         "normal": ""
       }
     },
