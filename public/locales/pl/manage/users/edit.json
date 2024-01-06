@@ -35,19 +35,19 @@
       "badges": {
         "owner": "Właściciel",
         "admin": "Admin",
-        "normal": ""
+        "normal": "Zwykły"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Usunięcie konta",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Potwierdź nazwę użytkownika",
+          "description": "Wpisz nazwę użytkownika, aby potwierdzić usunięcie"
         },
         "confirm": {
           "label": "Usuń trwale",
-          "description": ""
+          "description": "Mam świadomość, że to działanie jest trwałe i wszystkie dane konta zostaną utracone."
         }
       }
     }
