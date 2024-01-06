@@ -7,7 +7,7 @@
     "filter": {
         "roles": {
             "all": "",
-            "normal": "",
+            "normal": "Zwykły",
             "admin": "Admin",
             "owner": "Właściciel"
         }
