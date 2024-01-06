@@ -1,26 +1,26 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Docker",
     "description": ""
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Vyhledávejte podle kontejneru nebo názvu snímku"
   },
   "table": {
     "header": {
-      "name": "",
+      "name": "Název",
       "image": "",
-      "ports": "",
-      "state": ""
+      "ports": "Porty",
+      "state": "Status"
     },
     "body": {
       "portCollapse": ""
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Běží",
+      "created": "Vytvořený",
+      "stopped": "Zastavený",
+      "unknown": "Neznámý"
     }
   },
   "actionBar": {
@@ -29,22 +29,22 @@
       "message": ""
     },
     "restart": {
-      "title": ""
+      "title": "Restartovat"
     },
     "stop": {
-      "title": ""
+      "title": "Zastavit"
     },
     "start": {
-      "title": ""
+      "title": "Spustit"
     },
     "refreshData": {
-      "title": ""
+      "title": "Aktualizovat data"
     },
     "remove": {
-      "title": ""
+      "title": "Odstranit"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Přidat do Homarra"
     }
   },
   "actions": {
@@ -54,7 +54,7 @@
     },
     "stop": {
       "start": "",
-      "end": ""
+      "end": "Zastavený"
     },
     "restart": {
       "start": "",
@@ -67,17 +67,17 @@
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
+      "title": "Integrace Dockeru selhala",
       "message": ""
     },
     "unknownError": {
-      "title": ""
+      "title": "Došlo k chybě"
     },
     "oneServiceAtATime": {
       "title": ""
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
