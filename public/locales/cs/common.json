@@ -3,14 +3,14 @@
   "apply": "Použít",
   "insert": "Vložit",
   "about": "O aplikaci",
-  "cancel": "",
+  "cancel": "Zrušit",
   "close": "Zavřít",
   "back": "Zpět",
   "delete": "Odstranit",
   "ok": "OK",
   "edit": "Upravit",
   "next": "Další",
-  "previous": "Předchozí",
+  "previous": "Zpět",
   "confirm": "Potvrdit",
   "enabled": "Zapnuto",
   "disabled": "Vypnuto",
@@ -36,7 +36,7 @@
     "minutes": "minuty",
     "hours": "hodiny"
   },
-  "loading": "",
+  "loading": "Načítám...",
   "breakPoints": {
     "small": "malý",
     "medium": "střední",
@@ -49,9 +49,9 @@
     "right": "Vpravo"
   },
   "attributes": {
-    "width": "",
-    "height": ""
+    "width": "Šířka",
+    "height": "Výška"
   },
-  "public": "",
+  "public": "Veřejné",
   "restricted": "Omezené"
 }
