@@ -1,16 +1,16 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Entita nenalezena",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Entita Home Assistant",
+        "description": "Aktuální stav entity v Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Stav entity",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "ID entity",
+                "info": "Jedinečné ID entity v aplikaci Home Assistant. Zkopírujte kliknutím na entitu > klikněte na ikonu ozubeného kolečka > klikněte na tlačítko kopírovat \"ID entity\". Některé vlastní entity nemusí být podporovány."
             },
             "displayName": {
-                "label": ""
+                "label": "Zobrazovaný název"
             }
         }
     }
