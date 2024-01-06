@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Ping",
     "description": ""
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Načítám..."
   }
 }
