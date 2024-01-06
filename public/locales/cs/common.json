@@ -18,11 +18,11 @@
   "disableAll": "Zakázat vše",
   "version": "Verze",
   "changePosition": "Změnit pozici",
-  "remove": "",
+  "remove": "Odstranit",
   "removeConfirm": "Jste si jisti, že chcete odstranit {{item}}?",
   "createItem": "+ vytvořit {{item}}",
   "sections": {
-    "settings": "",
+    "settings": "Nastavení",
     "dangerZone": "Nebezpečná zóna"
   },
   "secrets": {
