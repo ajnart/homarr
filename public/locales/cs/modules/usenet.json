@@ -21,7 +21,7 @@
   },
   "queue": {
     "header": {
-      "name": "",
+      "name": "Název",
       "size": "",
       "eta": "",
       "progress": ""
@@ -35,7 +35,7 @@
   },
   "history": {
     "header": {
-      "name": "",
+      "name": "Název",
       "size": "",
       "duration": ""
     },
