@@ -1,1 +1,6 @@
-{}
+{
+	"xPosition": "Poloha osy X",
+	"yPosition": "Poloha osy Y",
+	"zeroOrHigher": "0 a vyšší",
+	"betweenXandY": "Mezi {{min}} a {{max}}"
+}
