@@ -42,7 +42,7 @@
     "table": {
       "header": {
         "isCompleted": "",
-        "name": "",
+        "name": "Název",
         "dateAdded": "",
         "size": "",
         "download": "",
@@ -55,7 +55,7 @@
         "seeds": "",
         "peers": "",
         "label": "",
-        "state": "",
+        "state": "Status",
         "stateMessage": ""
       },
       "item": {
