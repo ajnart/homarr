@@ -1,7 +1,7 @@
 {
     "errors": {
         "default": "Toto pole je neplatné",
-        "required": "",
+        "required": "Toto pole je nutné vyplnit",
         "string": {
             "startsWith": "Toto pole musí začínat {{startsWith}}",
             "endsWith": "Toto pole musí končit {{endsWith}}",
