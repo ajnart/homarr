@@ -9,7 +9,7 @@
     "table": {
         "header": {
             "id": "ID",
-            "creator": "Vytvořil",
+            "creator": "Vytvořil/a",
             "expires": "Expiruje",
             "action": "Akce"
         },
