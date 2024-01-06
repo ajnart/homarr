@@ -11,8 +11,8 @@
         "label": "Rozložení",
         "data": {
           "grid": "",
-          "row": "",
-          "column": ""
+          "row": "Horizontální",
+          "column": "Vertikální"
         }
       }
     }
