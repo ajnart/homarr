@@ -6,7 +6,7 @@
     },
     "filter": {
         "roles": {
-            "all": "",
+            "all": "Všichni",
             "normal": "Normální",
             "admin": "Administrátor",
             "owner": "Vlastník"
