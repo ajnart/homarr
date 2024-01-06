@@ -87,8 +87,8 @@
       "noService": "",
       "noInformation": "Nepodařilo se získat informace z dash. - používáte nejnovější verzi?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Zjištěn downgrade protokolu",
+        "text": "Připojení k vaší instanci Dash. používá protokol HTTP. To představuje bezpečnostní riziko, protože protokol HTTP není šifrovaný a útočníci by mohli toto připojení zneužít. Ujistěte se, že Dash. používá HTTPS, nebo snižte úroveň Homarr na HTTP (nedoporučujeme)."
       }
     },
     "graphs": {
