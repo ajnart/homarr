@@ -12,7 +12,7 @@
       }
     }
   },
-  "noRequests": "",
+  "noRequests": "Nebyly nalezeny žádné požadavky. Zkontrolujte, zda jste aplikace správně nakonfigurovali.",
   "state": {
     "approved": "Schváleno",
     "pendingApproval": "",
