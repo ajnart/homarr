@@ -1,78 +1,78 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Zobrazuje grafy z externího Dash. Instance uvnitř Homarru.",
+    "description": "Zobrazuje grafy z externí Dash. Instance uvnitř Homarru.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro Dash. widget",
       "dashName": {
-        "label": ""
+        "label": "Dash. jméno"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Zobrazovat procenta"
       },
       "columns": {
-        "label": ""
+        "label": "Počet sloupců"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Výška grafů"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafy (seřazené)",
         "storage": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Zobrazit jako text (kompaktní)"
           },
           "multiView": {
-            "label": ""
+            "label": "Zobrazit jako zobrazení pro více disků"
           }
         },
         "network": {
           "label": "",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
             "label": ""
           },
           "compactView": {
-            "label": ""
+            "label": "Zobrazit jako text (kompaktní)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "Procesor",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
             "label": ""
           },
           "multiView": {
-            "label": ""
+            "label": "Zobrazit jako zobrazení pro více jáder procesoru"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
             "label": ""
           }
         },
         "gpu": {
-          "label": "",
+          "label": "Grafická karta",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
             "label": ""
@@ -85,7 +85,7 @@
     "title": "Dash.",
     "errors": {
       "noService": "",
-      "noInformation": "",
+      "noInformation": "Nepodařilo se získat informace z dash. - používáte nejnovější verzi?",
       "protocolDowngrade": {
         "title": "",
         "text": ""
@@ -94,24 +94,24 @@
     "graphs": {
       "storage": {
         "title": "",
-        "label": ""
+        "label": "Úložiště:"
       },
       "network": {
         "title": "",
-        "label": "",
+        "label": "Síť:",
         "metrics": {
           "download": "",
           "upload": ""
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Procesor"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "Grafická karta"
       }
     }
   }
