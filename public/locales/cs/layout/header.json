@@ -2,10 +2,10 @@
     "search": {
         "label": "Vyhledat",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Hledat {{query}} na webu",
+            "youtube": "Hledat {{query}} na YouTube",
+            "torrent": "Hledat {{query}} torrenty",
+            "movie": "Hledat {{query}} na {{app}}"
         }
     },
     "actions": {
