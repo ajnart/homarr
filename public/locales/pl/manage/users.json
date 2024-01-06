@@ -8,8 +8,8 @@
         "roles": {
             "all": "",
             "normal": "",
-            "admin": "",
-            "owner": ""
+            "admin": "Admin",
+            "owner": "Właściciel"
         }
     },
     "table": {
