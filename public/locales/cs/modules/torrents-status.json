@@ -45,8 +45,8 @@
         "name": "Název",
         "dateAdded": "",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "Stahování",
+        "upload": "Nahrávání",
         "estimatedTimeOfArrival": "",
         "progress": "",
         "totalUploaded": "",
@@ -62,17 +62,17 @@
         "text": ""
       },
       "body": {
-        "nothingFound": "",
+        "nothingFound": "Nebyly nalezeny žádné torrenty",
         "filterHidingItems": ""
       }
     },
     "lineChart": {
       "title": "Aktuální rychlost stahování",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "download": "Stahování: {{download}}",
+      "upload": "Nahrávání: {{upload}}",
+      "timeSpan": "před {{seconds}} sekundami",
+      "totalDownload": "Stahování: {{download}}/s",
+      "totalUpload": "Nahrávání: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
