@@ -8,7 +8,7 @@
       "buttons": {
         "askFor": "",
         "cancel": "Zrušit",
-        "request": ""
+        "request": "Vyžádat"
       },
       "alerts": {
         "automaticApproval": {
