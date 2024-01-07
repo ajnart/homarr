@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
   Flex,
@@ -9,7 +8,6 @@ import {
   Progress,
   Stack,
   Text,
-  createStyles,
   useMantineTheme
 } from '@mantine/core';
 import {
@@ -25,9 +23,10 @@ import {
 import { useTranslation } from 'next-i18next';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { AppType } from '~/types/app';
+import { TorrentTotalDownload } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
 interface TorrentQueueItemProps {
-  torrent: NormalizedTorrent;
+  torrent: TorrentTotalDownload['torrents'][0];
   app?: AppType;
   width: number;
 }
@@ -147,9 +146,3 @@ export const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps
     </Stack>
   );
 };
-
-const useStyles = createStyles(() => ({
-  noTextBreak: {
-    whiteSpace: 'nowrap',
-  },
-}));
