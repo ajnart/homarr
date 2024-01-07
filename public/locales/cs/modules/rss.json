@@ -3,27 +3,27 @@
     "name": "RSS Widget",
     "description": "RSS widget umožňuje zobrazit RSS kanály na vaší nástěnce.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro RSS widget",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "Adresy URL kanálů RSS",
+        "description": "Adresy URL kanálů RSS, které chcete zobrazit."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Interval obnovení (v minutách)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Povolit formátování HTML (nebezpečné)",
+        "info": "Povolení formátování HTML zvenčí by mohlo být nebezpečné.<br/>Ujistěte se, že kanál RSS pochází z důvěryhodného zdroje."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Svorka textových řádků"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "",
-          "text": ""
+          "title": "Nepodařilo se načíst kanál RSS",
+          "text": "Vyskytl se problém s načítáním kanálu RSS. Ujistěte se, že jste správně nakonfigurovali kanál RSS pomocí platné adresy URL. Adresy URL by měly odpovídat oficiální specifikaci. Po aktualizaci kanálu bude možná nutné znovu načíst plochu."
         }
       }
     }
