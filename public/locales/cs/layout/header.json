@@ -2,7 +2,7 @@
     "search": {
         "label": "Vyhledat",
         "engines": {
-            "web": "Hledat {{query}} na webu",
+            "web": "Hledat {{query}} na internetu",
             "youtube": "Hledat {{query}} na YouTube",
             "torrent": "Hledat {{query}} torrenty",
             "movie": "Hledat {{query}} na {{app}}"
@@ -14,14 +14,14 @@
             "preferences": "Uživatelská nastavení",
             "defaultBoard": "Výchozí plocha",
             "manage": "Spravovat",
-            "logout": "Odhlásit {{username}}",
+            "logout": "Odhlásit uživatele {{username}}",
             "login": "Přihlásit se"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "{{count}} výsledků pro <b>{{search}}</b>."
         }
     }
 }
