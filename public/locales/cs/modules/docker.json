@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": ""
+    "description": "Umožňuje snadno zobrazit a spravovat všechny Docker kontejnery."
   },
   "search": {
     "placeholder": "Vyhledávejte podle kontejneru nebo názvu snímku"
@@ -9,12 +9,12 @@
   "table": {
     "header": {
       "name": "Název",
-      "image": "",
+      "image": "Obraz",
       "ports": "Porty",
       "state": "Status"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "+ dalších {{ports}}"
     },
     "states": {
       "running": "Běží",
@@ -25,8 +25,8 @@
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Přidat aplikaci",
+      "message": "Přidat aplikaci do Homarra"
     },
     "restart": {
       "title": "Restartovat"
@@ -49,32 +49,32 @@
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Startuje",
+      "end": "Zastaven"
     },
     "stop": {
-      "start": "",
+      "start": "Zastavování",
       "end": "Zastavený"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Restartování",
+      "end": "Restartován"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Odstraňování",
+      "end": "Odstraněn"
     }
   },
   "errors": {
     "integrationFailed": {
       "title": "Integrace Dockeru selhala",
-      "message": ""
+      "message": "Zapomněli jste připojit Docker socket?"
     },
     "unknownError": {
       "title": "Došlo k chybě"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Přidávejte, prosím, vždy jen jednu aplikaci nebo službu!"
     }
   },
   "actionIcon": {
