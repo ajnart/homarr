@@ -7,9 +7,9 @@
     "filter": {
         "roles": {
             "all": "Všichni",
-            "normal": "Normální",
-            "admin": "Administrátor",
-            "owner": "Vlastník"
+            "normal": "Uživatelé",
+            "admin": "Administrátoři",
+            "owner": "Vlastníci"
         }
     },
     "table": {
