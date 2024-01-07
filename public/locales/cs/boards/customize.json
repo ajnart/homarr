@@ -22,7 +22,7 @@
             "message": "Vaše přizpůsobení bylo úspěšně uloženo"
         },
         "error": {
-            "title": "",
+            "title": "Chyba",
             "message": "Nelze uložit změny"
         }
     }
