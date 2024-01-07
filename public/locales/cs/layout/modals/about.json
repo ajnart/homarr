@@ -1,5 +1,5 @@
 {
-	"description": "",
+	"description": "Homarr je <strong>elegantní</strong>, <strong>moderní</strong> plocha, která vám poskytne všechny aplikace a služby na dosah ruky. S aplikací Homarr máte přístup ke všemu na jednom místě a můžete vše pohodlně ovládat. Homarr se hladce integruje s aplikacemi, které jste si přidali, poskytuje Vám cenné informace a dává Vám plnou kontrolu. Instalace je snadná a Homarr podporuje širokou škálu metod nasazení.",
 	"addToDashboard": "Přidat na plochu",
 	"tip": "Mod odkazuje na Vaši modifikační klávesu, je to Ctrl a klávesa Command/Super/Windows",
 	"key": "Klávesová zkratka",
@@ -18,9 +18,9 @@
 	"metrics": {
 		"configurationSchemaVersion": "Verze konfiguračního schématu",
 		"version": "Verze",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
+		"nodeEnvironment": "Prostředí uzlu",
+		"i18n": "Načteny jmenné prostory překladu I18n",
+		"locales": "Nakonfigurováno I18n jazyků",
 		"experimental_disableEditMode": "<b>EXPERIMENTÁLNÍ</b>: Zakázat režim úprav"
 	},
 	"version": {
