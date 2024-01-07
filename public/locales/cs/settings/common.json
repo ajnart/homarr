@@ -10,7 +10,7 @@
   },
   "credits": {
     "madeWithLove": "Vyrobeno s ❤️ by @",
-    "thirdPartyContent": "Podívejte se na obsah třetích stran",
+    "thirdPartyContent": "Podívejte se na závislosti na aplikacích třetích stran",
     "thirdPartyContentTable": {
       "dependencyName": "Závislost",
       "dependencyVersion": "Verze"
@@ -30,7 +30,7 @@
     "enablersidebar": "Povolit pravý postranní panel",
     "enablelsidebar": "Povolit levý postranní panel",
     "enablesearchbar": "Povolit vyhledávací pole",
-    "enabledocker": "Povolit integraci dockeru",
+    "enabledocker": "Povolit integraci Dockeru",
     "enableping": "Povolit pingy",
     "enablelsidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace",
     "enablersidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace"
