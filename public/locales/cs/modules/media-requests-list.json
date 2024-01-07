@@ -3,31 +3,31 @@
     "name": "Žádosti o média",
     "description": "Podívejte se na seznam všech požadavků na média z vaší instance Overseerr nebo Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Nastavení seznamu Žádostí o média",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Nahradit odkazy externím hostitelem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otevírat odkazy v nové kartě"
       }
     }
   },
   "noRequests": "Nebyly nalezeny žádné požadavky. Zkontrolujte, zda jste aplikace správně nakonfigurovali.",
   "state": {
     "approved": "Schváleno",
-    "pendingApproval": "",
-    "declined": ""
+    "pendingApproval": "Čeká na schválení",
+    "declined": "Zamítnuto"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Schválit žádosti",
+    "decline": "Zamítnout žádosti",
+    "approving": "Schvaluji žádosti..."
   },
   "mutation": {
-    "approving": "",
+    "approving": "Schvalování",
     "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "request": "žádosti...",
+    "approved": "Žádost byla schválena!",
+    "declined": "Žádost byla zamítnuta!"
   }
 }
