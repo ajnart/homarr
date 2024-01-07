@@ -4,8 +4,8 @@
       "title": "Vyskakovací okna jsou zablokována",
       "text": "Váš prohlížeč zablokoval Homarr přístup k jeho API. Nejčastěji je to způsobeno blokátory reklam nebo odepřenými oprávněními. Homarr nemůže automaticky žádat o oprávnění.",
       "list": {
-        "browserPermission": "Klikněte na ikonu vedle adresy URL a zkontrolujte oprávnění. Povolit vyskakovací okna a přesměrování",
-        "adBlockers": "Zakažte ve Vašem prohlížeči blokovače reklam a bezpečnostní nástroje",
+        "browserPermission": "Klikněte na ikonu nastavení webu vedle adresy URL a zkontrolujte oprávnění. Povolte vyskakovací okna a přesměrování",
+        "adBlockers": "Zakažte v prohlížeči blokátory reklam a bezpečnostní nástroje",
         "otherBrowser": "Zkuste jiný webový prohlížeč"
       }
     }
