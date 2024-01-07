@@ -28,7 +28,7 @@
             "text": "Váš účet byl úspěšně vytvořen"
         },
         "error": {
-            "title": "",
+            "title": "Chyba",
             "text": "Něco se nepodařilo, objevila se následující chyba: {{error}}"
         }
     }
