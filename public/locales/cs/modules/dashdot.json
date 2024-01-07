@@ -22,12 +22,12 @@
       "graphsOrder": {
         "label": "Grafy (seřazené)",
         "storage": {
-          "label": "",
+          "label": "Úložiště",
           "enabled": {
             "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "compactView": {
             "label": "Zobrazit jako text (kompaktní)"
@@ -37,12 +37,12 @@
           }
         },
         "network": {
-          "label": "",
+          "label": "Síť",
           "enabled": {
             "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "compactView": {
             "label": "Zobrazit jako text (kompaktní)"
@@ -54,7 +54,7 @@
             "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "multiView": {
             "label": "Zobrazit jako zobrazení pro více jader procesoru"
@@ -66,7 +66,7 @@
             "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           }
         },
         "gpu": {
@@ -75,7 +75,7 @@
             "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           }
         }
       }
@@ -84,7 +84,7 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "",
+      "noService": "Nebyla nalezena žádná služba Dash. Přidejte ji prosím na svou Homarr plochu nebo nastavte URL aplikace Dash. v možnostech modulu",
       "noInformation": "Nepodařilo se získat informace z dash. - používáte nejnovější verzi?",
       "protocolDowngrade": {
         "title": "Zjištěn downgrade protokolu",
@@ -93,15 +93,15 @@
     },
     "graphs": {
       "storage": {
-        "title": "",
+        "title": "Úložiště",
         "label": "Úložiště:"
       },
       "network": {
-        "title": "",
+        "title": "Síť",
         "label": "Síť:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Stahování",
+          "upload": "Nahrávání"
         }
       },
       "cpu": {
