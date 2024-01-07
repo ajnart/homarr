@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "První krok",
-            "text": "Vytvořit účet",
+            "text": "Tvorba účtu",
             "username": {
                 "label": "Uživatelské jméno"
             },
@@ -47,6 +47,6 @@
     },
     "buttons": {
         "generateRandomPassword": "Vygenerovat náhodné heslo",
-        "createAnother": "Vytvořit dalšího"
+        "createAnother": "Vytvořit dalšího uživatele"
     }
 }
