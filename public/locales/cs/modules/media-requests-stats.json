@@ -5,10 +5,10 @@
     "settings": {
       "title": "Statistiky požadavků médií",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Nahradit odkazy externím hostitelem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otevírat odkazy v nové kartě"
       }
     }
   },
