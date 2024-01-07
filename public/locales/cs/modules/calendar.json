@@ -3,29 +3,29 @@
     "name": "Kalendář",
     "description": "Zobrazí kalendář s nadcházejícími vydáními z podporovaných integrací.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro widget kalendáře",
       "radarrReleaseType": {
-        "label": "",
+        "label": "Typ vydání filmu pro Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "V Kinech",
+          "physicalRelease": "Fyzické",
+          "digitalRelease": "Digitální"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Skrýt názvy dnů"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Zobrazovat nemonitorované položky"
       },
       "fontSize": {
-        "label": "",
+        "label": "Velikost písma",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Extra malé",
+          "sm": "Malé",
+          "md": "Střední",
+          "lg": "Velké",
+          "xl": "Extra velké"
         }
       }
     }
