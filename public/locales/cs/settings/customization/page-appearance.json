@@ -29,7 +29,7 @@
     "label": "Velikost obrázku na pozadí",
     "options": {
       "cover": "Překrýt - zmenší obrázek tak, aby překrýval celé okno oříznutím nadbytečného prostoru. (doporučeno)",
-      "contain": "Obsáhnout - škáluje obrázek co nejvíce je to možné v rámci jeho kontejneru, aniž by obrázek ořízl nebo roztáhl."
+      "contain": "Obsáhnout - škáluje obrázek co nejvíce je to možné v rámci jeho kontejneru, aniž by obrázek byl oříznut nebo roztáhnut."
     }
   },
   "backgroundImageRepeat": {
