@@ -24,8 +24,8 @@
     "approving": "Schvaluji žádosti..."
   },
   "mutation": {
-    "approving": "Schvalování",
-    "declining": "",
+    "approving": "Probíhá schvalování",
+    "declining": "Probíhá zamítnutí",
     "request": "žádosti...",
     "approved": "Žádost byla schválena!",
     "declined": "Žádost byla zamítnuta!"
