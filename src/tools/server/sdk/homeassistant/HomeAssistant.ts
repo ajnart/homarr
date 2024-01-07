@@ -8,7 +8,7 @@ export class HomeAssistant {
 
   constructor(url: URL, token: string) {
     if (!url.pathname.endsWith('/')) {
-      url.pathname += "/";
+      url.pathname += '/';
     }
     url.pathname += 'api';
     this.basePath = url;
@@ -19,14 +19,14 @@ export class HomeAssistant {
     try {
       const response = await fetch(appendPath(this.basePath, `/states/${entityId}`), {
         headers: {
-          'Authorization': `Bearer ${this.token}`
-        }
+          'Authorization': `Bearer ${this.token}`,
+        },
       });
       const body = await response.json();
       if (!response.ok) {
         return {
           success: false as const,
-          error: body
+          error: body,
         };
       }
       return entityStateSchema.safeParseAsync(body);
@@ -34,8 +34,26 @@ export class HomeAssistant {
       Consola.error(`Failed to fetch from '${this.basePath}': ${err}`);
       return {
         success: false as const,
-        error: err
+        error: err,
       };
+    }
+  }
+
+  async triggerAutomation(entityId: string) {
+    try {
+      const response = await fetch(appendPath(this.basePath, `/services/automation/trigger`), {
+        headers: {
+          'Authorization': `Bearer ${this.token}`,
+        },
+        body: JSON.stringify({
+          'entity_id': entityId,
+        }),
+        method: 'POST'
+      });
+      return response.ok;
+    } catch (err) {
+      Consola.error(`Failed to fetch from '${this.basePath}': ${err}`);
+      return false;
     }
   }
 }
