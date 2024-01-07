@@ -39,7 +39,7 @@
         "title": "Neplatná URL adresa",
         "text": "Ujistěte se, že jste v konfiguraci widgetu zadali platnou URL adresu"
       },
-      "browserSupport": ""
+      "browserSupport": "Váš prohlížeč nepodporuje iFrame. Aktualizujte, prosím, svůj prohlížeč."
     }
   }
 }
