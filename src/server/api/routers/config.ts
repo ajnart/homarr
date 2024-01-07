@@ -8,15 +8,10 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
-import { boardCustomizationSchema } from '~/validations/boards';
+import { boardCustomizationSchema, configNameSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
-import { db } from '~/server/db';
-import { users } from '~/server/db/schema';
-import { sql } from 'drizzle-orm';
-
-export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
 
 export const configRouter = createTRPCRouter({
   delete: adminProcedure
