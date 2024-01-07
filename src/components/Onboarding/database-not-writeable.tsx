@@ -31,8 +31,8 @@ export const DatabaseNotWriteable = ({
             </List.Item>
             <List.Item>
               Ensure that you followed the installation instructions at{' '}
-              <a href="https://homarr.dev/docs/introduction/installation">
-                https://homarr.dev/docs/introduction/installation
+              <a href="https://homarr.dev/docs/getting-started/installation">
+                https://homarr.dev/docs/getting-started/installation
               </a>
             </List.Item>
           </List>
