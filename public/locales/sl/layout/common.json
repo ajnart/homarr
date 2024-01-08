@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Blokirana pojavna okna",
+      "text": "Vaš brskalnik je blokiral dostop do vmesnika API podjetja Homarr. To najpogosteje povzročajo blokatorji oglasov ali zavrnjena dovoljenja. Homarr ne more samodejno zahtevati dovoljenj.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Kliknite ikono poleg naslova URL in preverite dovoljenja. Dovolite pojavna okna in okna",
+        "adBlockers": "onemogočite blokatorje oglasov in varnostna orodja v brskalniku",
+        "otherBrowser": "Poskusite z drugim brskalnikom"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Odprite vse v novem zavihku"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Premaknite se navzgor",
+    "moveDown": "Premaknite se navzdol",
+    "addCategory": "Dodajanje kategorije {{location}}",
+    "addAbove": "nad",
+    "addBelow": "pod"
   }
 }
