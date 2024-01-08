@@ -22,6 +22,7 @@ import {
   updateSettingsValidationSchema,
 } from '~/validations/user';
 import { PossibleRoleFilter } from '~/pages/manage/users';
+import { createSelectSchema } from 'drizzle-zod';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -41,6 +42,7 @@ export const userRouter = createTRPCRouter({
     });
   }),
   updatePassword: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/password', tags: ['user'] } })
     .input(
       z.object({
         userId: z.string(),
@@ -48,6 +50,7 @@ export const userRouter = createTRPCRouter({
         terminateExistingSessions: z.boolean(),
       }),
     )
+    .output(z.void())
     .mutation(async ({ input, ctx }) => {
       const user = await db.query.users.findFirst({
         where: eq(users.id, input.userId),
@@ -81,9 +84,13 @@ export const userRouter = createTRPCRouter({
         })
         .where(eq(users.id, input.userId));
     }),
-  count: publicProcedure.query(async () => {
-    return await getTotalUserCountAsync();
-  }),
+  count: publicProcedure
+    .meta({ openapi: { method: 'GET', path: '/users/count', tags: ['user'] } })
+    .input(z.void())
+    .output(z.number())
+    .query(async () => {
+      return await getTotalUserCountAsync();
+    }),
   createFromInvite: publicProcedure
     .input(
       signUpFormSchema.and(
@@ -133,7 +140,9 @@ export const userRouter = createTRPCRouter({
         .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
   changeRole: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/roles', tags: ['user'] } })
     .input(z.object({ id: z.string(), type: z.enum(['promote', 'demote']) }))
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       if (ctx.session?.user?.id === input.id) {
         throw new TRPCError({
@@ -166,11 +175,13 @@ export const userRouter = createTRPCRouter({
         .where(eq(users.id, input.id));
     }),
   changeLanguage: protectedProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/language', tags: ['user'] } })
     .input(
       z.object({
         language: z.string(),
       }),
     )
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       await db
         .update(userSettings)
@@ -218,6 +229,8 @@ export const userRouter = createTRPCRouter({
     }),
 
   makeDefaultDashboard: protectedProcedure
+    .meta({ openapi: { method: 'POST', path: '/users/make-default-dashboard', tags: ['user'] } })
+    .output(z.void())
     .input(z.object({ board: z.string() }))
     .mutation(async ({ ctx, input }) => {
       await db
@@ -243,7 +256,20 @@ export const userRouter = createTRPCRouter({
         }),
       }),
     )
-    .query(async ({ ctx, input }) => {
+    .output(z.object({
+      users: z.array(z.object({
+        id: z.string(),
+        name: z.string(),
+        email: z.string().or(z.null()).optional(),
+        isAdmin: z.boolean(),
+        isOwner: z.boolean(),
+      })),
+      countPages: z.number().min(0),
+      stats: z.object({
+        roles: z.record(z.number()),
+      }),
+    }))
+    .query(async ({ input }) => {
 
       const roleFilter = () => {
         if (input.search.role === PossibleRoleFilter[1].id) {
@@ -309,30 +335,54 @@ export const userRouter = createTRPCRouter({
         },
       };
     }),
-  create: adminProcedure.input(createNewUserSchema).mutation(async ({ input }) => {
-    await createUserIfNotPresent(input);
-  }),
-  details: adminProcedure.input(z.object({ userId: z.string() })).query(async ({ input }) => {
-    return db.query.users.findFirst({
-      where: eq(users.id, input.userId),
-    });
-  }),
-  updateDetails: adminProcedure.input(z.object({
-    userId: z.string(),
-    username: z.string(),
-    eMail: z.string().optional().transform(value => value?.length === 0 ? null : value),
-  })).mutation(async ({ input }) => {
-    await db.update(users).set({
-      name: input.username,
-      email: input.eMail as string | null,
-    }).where(eq(users.id, input.userId));
-  }),
+  create: adminProcedure
+    .meta({ openapi: { method: 'POST', path: '/users', tags: ['user'] } })
+    .input(createNewUserSchema)
+    .output(z.void())
+    .mutation(async ({ input }) => {
+      await createUserIfNotPresent(input);
+    }),
+  details: adminProcedure
+    .meta({ openapi: { method: 'GET', path: '/users/getById', tags: ['user'] } })
+    .input(z.object({ userId: z.string() }))
+    .output(
+      createSelectSchema(users)
+        .omit({
+          password: true,
+          salt: true,
+        })
+        .optional())
+    .query(async ({ input }) => {
+      return db.query.users.findFirst({
+        where: eq(users.id, input.userId),
+        columns: {
+          password: false,
+          salt: false,
+        },
+      });
+    }),
+  updateDetails: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/details', tags: ['user'] } })
+    .input(z.object({
+      userId: z.string(),
+      username: z.string(),
+      eMail: z.string().optional().transform(value => value?.length === 0 ? null : value),
+    }))
+    .output(z.void())
+    .mutation(async ({ input }) => {
+      await db.update(users).set({
+        name: input.username,
+        email: input.eMail as string | null,
+      }).where(eq(users.id, input.userId));
+    }),
   deleteUser: adminProcedure
+    .meta({ openapi: { method: 'DELETE', path: '/users', tags: ['user'] } })
     .input(
       z.object({
         id: z.string(),
       }),
     )
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       const user = await db.query.users.findFirst({
         where: eq(users.id, input.id),

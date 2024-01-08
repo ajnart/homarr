@@ -21,63 +21,95 @@
 
 // Styling for grid-stack main area
 @for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-w="#{$i}"]  { width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
-	.grid-stack>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
-	.grid-stack>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
+  .grid-stack > .grid-stack-item[gs-w="#{$i}"] {
+    width: calc(100% / #{var(--gridstack-column-count)} * #{$i})
+  }
+  .grid-stack > .grid-stack-item[gs-min-w="#{$i}"] {
+    min-width: calc(100% / #{var(--gridstack-column-count)} * #{$i})
+  }
+  .grid-stack > .grid-stack-item[gs-max-w="#{$i}"] {
+    max-width: calc(100% / #{var(--gridstack-column-count)} * #{$i})
+  }
 }
 
 @for $i from 1 to 96 {
-  .grid-stack>.grid-stack-item[gs-h="#{$i}"] { height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
-  .grid-stack>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  calc(#{$i}px * #{var(--gridstack-widget-width)}) }
+  .grid-stack > .grid-stack-item[gs-h="#{$i}"] {
+    height: calc(#{$i}px * #{var(--gridstack-widget-width)})
+  }
+  .grid-stack > .grid-stack-item[gs-min-h="#{$i}"] {
+    min-height: calc(#{$i}px * #{var(--gridstack-widget-width)})
+  }
+  .grid-stack > .grid-stack-item[gs-max-h="#{$i}"] {
+    max-height: calc(#{$i}px * #{var(--gridstack-widget-width)})
+  }
 }
 
 @for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-x="#{$i}"]  { left: calc(100% / #{var(--gridstack-column-count)} * #{$i}) }
+  .grid-stack > .grid-stack-item[gs-x="#{$i}"] {
+    left: calc(100% / #{var(--gridstack-column-count)} * #{$i})
+  }
 }
 
 
 @for $i from 1 to 96 {
-	.grid-stack>.grid-stack-item[gs-y="#{$i}"]  { top:  calc(#{$i}px * #{var(--gridstack-widget-width)})  }
+  .grid-stack > .grid-stack-item[gs-y="#{$i}"] {
+    top: calc(#{$i}px * #{var(--gridstack-widget-width)})
+  }
 }
 
-.grid-stack>.grid-stack-item {
+.grid-stack > .grid-stack-item {
   min-width: #{var(--gridstack-widget-width)};
 }
 
 // Styling for sidebar grid-stack elements
 @for $i from 1 to 96 {
-  .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-w="#{$i}"]  { width: 128px * $i }
-	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-min-w="#{$i}"]  { min-width: 128px * $i }
-	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-max-w="#{$i}"]  { max-width: 128px * $i }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-w="#{$i}"] {
+    width: 128px * $i
+  }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-min-w="#{$i}"] {
+    min-width: 128px * $i
+  }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-max-w="#{$i}"] {
+    max-width: 128px * $i
+  }
 }
 
 @for $i from 1 to 96 {
-  .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-h="#{$i}"] { height:  128px * $i }
-  .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-min-h="#{$i}"] { min-height:  128px * $i }
-  .grid-stack.grid-stack-sidebar>.grid-stack-item[gs-max-h="#{$i}"] { max-height:  128px * $i }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-h="#{$i}"] {
+    height: 128px * $i
+  }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-min-h="#{$i}"] {
+    min-height: 128px * $i
+  }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-max-h="#{$i}"] {
+    max-height: 128px * $i
+  }
 }
 
 @for $i from 1 to 3 {
-	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-x="#{$i}"]  { left: 128px * $i }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-x="#{$i}"] {
+    left: 128px * $i
+  }
 }
 
 
 @for $i from 1 to 96 {
-	.grid-stack.grid-stack-sidebar>.grid-stack-item[gs-y="#{$i}"]  { top:  128px * $i }
+  .grid-stack.grid-stack-sidebar > .grid-stack-item[gs-y="#{$i}"] {
+    top: 128px * $i
+  }
 }
 
-.grid-stack.grid-stack-sidebar>.grid-stack-item {
+.grid-stack.grid-stack-sidebar > .grid-stack-item {
   min-width: 128px;
 }
 
 // General gridstack styling
-.grid-stack>.grid-stack-item>.grid-stack-item-content,
-.grid-stack>.grid-stack-item>.placeholder-content {
+.grid-stack > .grid-stack-item > .grid-stack-item-content,
+.grid-stack > .grid-stack-item > .placeholder-content {
   inset: 10px;
 }
 
-.grid-stack>.grid-stack-item>.ui-resizable-se {
+.grid-stack > .grid-stack-item > .ui-resizable-se {
   bottom: 10px;
   right: 10px;
 }
@@ -102,8 +134,8 @@
 
 .polka {
   background-image: radial-gradient(
-    color-mix(in srgb, var(--mantine-color-red-6) 20%, transparent) 6px,
-    transparent 6px
+                  color-mix(in srgb, var(--mantine-color-red-6) 20%, transparent) 6px,
+                  transparent 6px
   );
   background-size: 60px 60px;
 }
@@ -115,6 +147,7 @@
 
   ul[data-type="taskList"] {
     padding-left: 17px;
+
     li {
       list-style-type: none;
       display: flex;
@@ -124,6 +157,7 @@
 
   img {
     max-width: 100%;
+
     &.ProseMirror-selectednode {
       outline: 3px solid rgba(0, 65, 198, 0.8);
     }
@@ -180,4 +214,38 @@
 .tableWrapper {
   padding: 1rem 0;
   overflow-x: auto;
+}
+
+.open-api-container[data-color-scheme="dark"] .swagger-ui {
+  select {
+    background-color: #25262b;
+    color: #82858e;
+  }
+
+  .scheme-container {
+    background-color: #1a1b1e !important;
+  }
+
+  .opblock-tag,
+  .info .title {
+    color: #bfc5d5;
+  }
+
+  .servers-title,
+  .opblock .opblock-summary-operation-id,
+  .opblock .opblock-summary-path,
+  .opblock .opblock-summary-path__deprecated,
+  .info li, .info p, .info table {
+    color: #82858e;
+  }
+
+  .expand-methods svg,
+  .expand-operation svg,
+  .opblock-control-arrow svg {
+    fill: #8c8c8c;
+  }
+
+  .opblock-summary-description {
+    color: white;
+  }
 }

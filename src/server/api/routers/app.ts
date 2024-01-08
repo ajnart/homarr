@@ -11,12 +11,18 @@ import * as https from 'https';
 
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
+    .meta({ openapi: { method: 'GET', path: '/app/ping', tags: ['app'] } })
     .input(
       z.object({
         id: z.string(),
         configName: z.string(),
-      })
+      }),
     )
+    .output(z.object({
+      status: z.number(),
+      statusText: z.string(),
+      state: z.string()
+    }))
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
       const app = config.apps.find((app) => app.id === input.id);
@@ -62,7 +68,7 @@ export const appRouter = createTRPCRouter({
 
           if (error.code === 'ECONNABORTED') {
             Consola.error(
-              `Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`
+              `Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`,
             );
             throw new TRPCError({
               code: 'TIMEOUT',
