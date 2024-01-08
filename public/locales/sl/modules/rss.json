@@ -1,22 +1,22 @@
 {
   "descriptor": {
     "name": "RSS pripomoček",
-    "description": "",
+    "description": "Z gradnikom rss lahko na nadzorni plošči prikažete vire RSS.",
     "settings": {
       "title": "Nastavitve za RSS pripomoček",
       "rssFeedUrl": {
-        "label": "",
-        "description": ""
+        "label": "URL-ji virov RSS",
+        "description": "URL-ji virov RSS, ki jih želite prikazati."
       },
       "refreshInterval": {
-        "label": ""
+        "label": "Interval osveževanja (v minutah)"
       },
       "dangerousAllowSanitizedItemContent": {
-        "label": "",
-        "info": ""
+        "label": "Omogočanje oblikovanja HTML (nevarno)",
+        "info": "Dovoljenje oblikovanja HTML od zunaj je lahko nevarno.<br/>Prepričajte se, da je vir iz zaupanja vrednega vira."
       },
       "textLinesClamp": {
-        "label": ""
+        "label": "Objemka za besedilne vrstice"
       }
     },
     "card": {
