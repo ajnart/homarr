@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Ustvari uporabnika",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "Prvi korak",
+            "text": "Ustvarite račun",
             "username": {
                 "label": "Uporabniško ime"
             },
             "email": {
-                "label": ""
+                "label": "E-naslov"
             }
         },
         "security": {
-            "title": "",
+            "title": "Drugi korak",
             "text": "Geslo",
             "password": {
                 "label": "Geslo"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Potrditev",
+            "text": "Shranjevanje v zbirko podatkov",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Pregled vhodnih podatkov",
+                "text": "Ko podatke pošljete v podatkovno zbirko, se bo uporabnik lahko prijavil. Ali ste prepričani, da želite tega uporabnika shraniti v zbirko podatkov in aktivirati prijavo?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Lastnina",
+                    "value": "Vrednost",
                     "username": "Uporabniško ime",
-                    "email": "",
+                    "email": "E-naslov",
                     "password": "Geslo"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Ni nastavljeno",
+                "valid": "Velja"
             },
-            "failed": ""
+            "failed": "Ustvarjanje uporabnika je bilo neuspešno: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Uporabnik je bil ustvarjen",
+                "text": "Uporabnik je bil ustvarjen v zbirki podatkov. Zdaj se lahko prijavi."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Ustvarjanje naključnih",
+        "createAnother": "Ustvarite še eno"
     }
 }
