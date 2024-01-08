@@ -1,59 +1,59 @@
 {
 	"descriptor": {
-		"name": "",
-		"description": "",
+		"name": "Beležnica",
+		"description": "Interaktivni gradnik, ki temelji na markdownu, za zapisovanje opomb!",
 		"settings": {
-			"title": "",
+			"title": "Nastavitve za gradnik beležnice",
 			"showToolbar": {
-				"label": ""
+				"label": "Prikaži orodno vrstico za pomoč pri pisanju markdowna"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Dovolite preverjanje v načinu samo za branje"
 			},
 			"content": {
-				"label": ""
+				"label": "Vsebina zvezka"
 			}
 		}
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
-			"bulletList": "",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
-			"link": "",
-			"unlink": "",
-			"image": "",
-			"addTable": "",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"bold": "Krepko",
+			"italic": "Kurzivna pisava",
+			"strikethrough": "Prečrtano",
+			"underline": "Podčrtajte",
+			"colorText": "Barvno besedilo",
+			"colorHighlight": "Barvni poudarek besedila",
+			"code": "Koda",
+			"clear": "Jasno oblikovanje",
+			"heading": "Naslov {{level}}",
+			"align": "Poravnava besedila: {{position}}",
+			"blockquote": "Blokovni citat",
+			"horizontalLine": "Vodoravna črta",
+			"bulletList": "Seznam kroglic",
+			"orderedList": "Naročeni seznam",
+			"checkList": "Kontrolni seznam",
+			"increaseIndent": "Povečanje odmika",
+			"decreaseIndent": "Zmanjšanje odmika",
+			"link": "Povezava",
+			"unlink": "Odstrani povezavo",
+			"image": "Vstavljanje slik",
+			"addTable": "Dodajte mizo",
+			"deleteTable": "Brisanje tabele",
+			"colorCell": "Barvna celica",
+			"mergeCell": "Preklapljanje združevanja celic",
+			"addColumnLeft": "Dodajte stolpec pred",
+			"addColumnRight": "Dodajte stolpec za",
+			"deleteColumn": "Brisanje stolpca",
+			"addRowTop": "Dodajte vrstico pred",
+			"addRowBelow": "Dodajte vrstico za",
+			"deleteRow": "Brisanje vrstice"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Čista barva",
+			"source": "Vir:",
+			"widthPlaceholder": "Vrednost v % ali pikslih",
+			"columns": "Stolpci",
+			"rows": "Vrstice"
 		}
 	}
 }
