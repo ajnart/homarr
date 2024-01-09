@@ -16,7 +16,9 @@
   "state": {
     "approved": "Odobreno",
     "pendingApproval": "V postopku odobritve",
-    "declined": "Zavrnjeno"
+    "declined": "Zavrnjeno",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Odobritev zahtevkov",
