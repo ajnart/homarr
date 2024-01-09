@@ -16,7 +16,9 @@
   "state": {
     "approved": "Schváleno",
     "pendingApproval": "Čeká na schválení",
-    "declined": "Zamítnuto"
+    "declined": "Zamítnuto",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Schválit žádosti",
