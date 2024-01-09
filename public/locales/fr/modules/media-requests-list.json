@@ -16,7 +16,9 @@
   "state": {
     "approved": "Validée",
     "pendingApproval": "En attente de validation",
-    "declined": "Refusée"
+    "declined": "Refusée",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Valider les demandes",
