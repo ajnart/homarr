@@ -16,7 +16,9 @@
   "state": {
     "approved": "Zatwierdzono",
     "pendingApproval": "Oczekujące na zatwierdzenie",
-    "declined": "Odrzucono"
+    "declined": "Odrzucono",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Zatwierdź zapytania",
