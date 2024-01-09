@@ -17,8 +17,8 @@
     "approved": "Onaylandı",
     "pendingApproval": "Onay bekliyor",
     "declined": "Reddedildi",
-    "available": "",
-    "partial": ""
+    "available": "Mevcut",
+    "partial": "Kısmi"
   },
   "tooltips": {
     "approve": "Talebi Onayla",
