@@ -17,8 +17,8 @@
     "approved": "Одобрен",
     "pendingApproval": "Ожидает одобрения",
     "declined": "Отклонён",
-    "available": "",
-    "partial": ""
+    "available": "Доступен",
+    "partial": "Частично"
   },
   "tooltips": {
     "approve": "Одобрить запросы",
