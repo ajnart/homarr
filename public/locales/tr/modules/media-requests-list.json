@@ -16,7 +16,9 @@
   "state": {
     "approved": "Onaylandı",
     "pendingApproval": "Onay bekliyor",
-    "declined": "Reddedildi"
+    "declined": "Reddedildi",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Talebi Onayla",
