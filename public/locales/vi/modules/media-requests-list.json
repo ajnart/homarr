@@ -16,7 +16,9 @@
   "state": {
     "approved": "Đã duyệt",
     "pendingApproval": "Chờ duyệt",
-    "declined": "Bị từ chối"
+    "declined": "Bị từ chối",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Duyệt yêu cầu",
