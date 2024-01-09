@@ -16,7 +16,9 @@
   "state": {
     "approved": "אושר",
     "pendingApproval": "ממתין לאישור",
-    "declined": "נדחה"
+    "declined": "נדחה",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "בקשות שאושרו",
