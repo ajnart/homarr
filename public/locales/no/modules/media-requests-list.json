@@ -16,7 +16,9 @@
   "state": {
     "approved": "Godkjent",
     "pendingApproval": "Venter på godkjenning",
-    "declined": "Avvist"
+    "declined": "Avvist",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Godkjenne forespørsler",
