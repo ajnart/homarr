@@ -16,7 +16,9 @@
   "state": {
     "approved": "Apstiprināts",
     "pendingApproval": "Nepabeigts apstiprinājums",
-    "declined": "Noraidīt"
+    "declined": "Noraidīt",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Apstiprināt pieprasījumus",
