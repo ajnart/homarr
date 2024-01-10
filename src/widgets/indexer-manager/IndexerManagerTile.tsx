@@ -1,5 +1,5 @@
-import { Card, Flex, Group, Text } from '@mantine/core';
-import { IconReportSearch } from '@tabler/icons-react';
+import { Card, Center, Flex, Group, Stack, Text } from '@mantine/core';
+import { IconReportSearch, IconUnlink } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 
 import { defineWidget } from '../helper';
@@ -61,9 +61,19 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
     fetchIndexerStatus();
   }, []);
 
+  if (error) {
+    return (
+      <Center h="100%">
+        <Stack spacing="xs" align="center">
+          <IconUnlink size={40} strokeWidth={1.2} />
+          <Text> Error: {error}</Text>
+        </Stack>
+      </Center>
+    );
+  }
+
   return (
     <Flex h="100%" gap={0} direction="column">
-      {error && <p>Error: {error}</p>}
       <Text mt={2}>Indexer Status</Text>
       <Card py={5} px={10} radius="md" style={{ overflow: 'unset' }} withBorder>
         {indexerData.map((indexer: any, index) => {
