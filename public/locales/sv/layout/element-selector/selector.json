@@ -22,5 +22,5 @@
       "message": "Kategorin \"{{name}}\" har skapats"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importera från docker"
 }
