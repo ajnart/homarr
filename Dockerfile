@@ -17,6 +17,7 @@ COPY yarn.lock ./temp_yarn.lock
 COPY .next/standalone ./
 COPY .next/static ./.next/static
 COPY ./scripts/run.sh ./scripts/run.sh
+RUN chmod +x ./scripts/run.sh
 COPY ./drizzle ./drizzle
 
 COPY ./drizzle/migrate ./migrate
