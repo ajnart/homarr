@@ -17,8 +17,8 @@
     "approved": "Schváleno",
     "pendingApproval": "Čeká na schválení",
     "declined": "Zamítnuto",
-    "available": "",
-    "partial": ""
+    "available": "K dispozici",
+    "partial": "Částečně dostupné"
   },
   "tooltips": {
     "approve": "Schválit žádosti",
