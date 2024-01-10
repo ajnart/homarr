@@ -17,8 +17,8 @@
     "approved": "Godkendt",
     "pendingApproval": "Afventer godkendelse",
     "declined": "Afvist",
-    "available": "",
-    "partial": ""
+    "available": "Tilgængelig",
+    "partial": "Delvis"
   },
   "tooltips": {
     "approve": "Godkend anmodninger",
