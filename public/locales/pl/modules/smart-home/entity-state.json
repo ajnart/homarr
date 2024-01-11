@@ -9,6 +9,10 @@
                 "label": "ID obiektu",
                 "info": "Unikalne ID obiektu w Asystencie Domu. Kopiuj klikając na obiekt > Kliknij ikonę koła zębatego > Kliknij na przycisk kopiuj na 'ID obiektu'. Niektóre niestandardowe obiekty mogą nie być obsługiwane."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Nazwa wyświetlana"
             }
