@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Szövegvonalak rögzítője"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
