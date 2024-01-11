@@ -9,6 +9,10 @@
                 "label": "ID thực thể",
                 "info": "ID thực thể độc nhất trong Home Assistant. Sao chép bằng cách nhấp vào thực thể > Nhấp vào biểu tượng răng cưa > Nhấp vào nút sao chép tại 'ID thực thể'. Một số thực thể tùy chỉnh có thể không được hỗ trợ."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Tên hiển thị"
             }
