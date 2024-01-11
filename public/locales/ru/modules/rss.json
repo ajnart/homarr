@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Ограничение количества строк текста"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Сортировать по дате публикации (по возрастанию)"
       }
     },
     "card": {
