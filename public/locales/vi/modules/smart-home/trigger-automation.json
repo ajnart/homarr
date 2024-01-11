@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Tự động hoá Home Assistant",
+    "description": "Chạy tự động hoá",
     "settings": {
-      "title": "",
+      "title": "Chạy tự động hoá",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "ID tự động hóa",
+        "info": "ID tự động hóa riêng của bạn. Luôn bắt đầu bằng tự động hóa.XXXXX."
       },
       "displayName": {
         "label": "Tên hiển thị"
