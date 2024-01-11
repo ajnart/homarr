@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Ograničavanje broja redaka teksta"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
