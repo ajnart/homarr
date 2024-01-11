@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Αυτοματισμός Home Assistant",
+    "description": "Εκτέλεση ενός αυτοματισμού",
     "settings": {
-      "title": "",
+      "title": "Εκτέλεση ενός αυτοματισμού",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "Αναγνωριστικό αυτοματισμού",
+        "info": "Το μοναδικό σας αναγνωριστικό αυτοματισμού. Ξεκινά πάντα με automation.XXXXX."
       },
       "displayName": {
         "label": "Εμφανιζόμενο όνομα"
