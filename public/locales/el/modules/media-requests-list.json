@@ -17,8 +17,8 @@
     "approved": "Εγκρίθηκε",
     "pendingApproval": "Αναμένεται έγκριση",
     "declined": "Απορρίφθηκε",
-    "available": "",
-    "partial": ""
+    "available": "Διαθέσιμο",
+    "partial": "Μερικώς"
   },
   "tooltips": {
     "approve": "Έγκριση αιτημάτων",
