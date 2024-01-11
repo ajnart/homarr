@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Svorka textových riadkov"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
