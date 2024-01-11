@@ -15,6 +15,11 @@ type CustomItem = {
   enclosure: {
     url: string;
   };
+  'media:group'?: {
+    'media:description'?: string;
+    'media:thumbnail'?: string;
+  },
+  pubDate?: string;
 };
 
 const rssFeedResultObjectSchema = z
@@ -38,7 +43,7 @@ const rssFeedResultObjectSchema = z
             categories: z.array(z.string()).or(z.undefined()),
             title: z.string(),
             content: z.string(),
-            pubDate: z.string().optional(),
+            pubDate: z.date().optional(),
           }),
         ),
       }),
@@ -73,13 +78,11 @@ export const rssRouter = createTRPCRouter({
         return [];
       }
 
-      const result = await Promise.all(
+      return await Promise.all(
         input.feedUrls.map(async (feedUrl) =>
           getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent),
         ),
       );
-
-      return result;
     }),
 });
 
@@ -97,7 +100,12 @@ const getFeedUrl = async (feedUrl: string, dangerousAllowSanitizedItemContent: b
           title: string;
           content: string;
           'content:encoded': string;
+          'media:group'?: {
+            'media:description'?: string;
+            'media:thumbnail'?: string;
+          }
           categories: string[] | { _: string }[];
+          pubDate?: string;
         }) => ({
           ...item,
           categories: item.categories
@@ -105,11 +113,12 @@ const getFeedUrl = async (feedUrl: string, dangerousAllowSanitizedItemContent: b
             .filter((category: unknown): category is string => typeof category === 'string'),
           title: item.title ? decode(item.title) : undefined,
           content: processItemContent(
-            item['content:encoded'] ?? item.content,
+            item['content:encoded'] ?? item.content ?? item['media:group']?.['media:description'],
             dangerousAllowSanitizedItemContent,
           ),
           enclosure: createEnclosure(item),
           link: createLink(item),
+          pubDate: item.pubDate ? new Date(item.pubDate) : null,
         }),
       )
       .sort((a: { pubDate: number }, b: { pubDate: number }) => {
@@ -183,11 +192,18 @@ const createEnclosure = (item: any) => {
     };
   }
 
+  if (item['media:group'] && item['media:group']['media:thumbnail']) {
+    // no clue why this janky parse is needed
+    return {
+      url: item['media:group']['media:thumbnail'][0].$.url
+    };
+  }
+
   return undefined;
 };
 
 const parser: RssParser<any, CustomItem> = new RssParser({
   customFields: {
-    item: ['media:content', 'enclosure'],
+    item: ['media:content', 'enclosure', 'media:group'],
   },
 });
