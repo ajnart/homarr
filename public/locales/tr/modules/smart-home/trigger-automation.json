@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Ev Asistanı otomasyonu",
+    "description": "Bir otomasyon yürütün",
     "settings": {
-      "title": "",
+      "title": "Bir otomasyon yürütün",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "Otomasyon Kimliği",
+        "info": "Benzersiz otomasyon kimliğiniz. Her zaman automation.XXXXX başlar."
       },
       "displayName": {
         "label": "Ekran adı"
