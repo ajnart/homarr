@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Klämma för textrader"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
