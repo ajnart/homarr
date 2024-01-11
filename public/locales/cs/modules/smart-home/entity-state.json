@@ -10,8 +10,8 @@
                 "info": "Jedinečné ID entity v aplikaci Home Assistant. Zkopírujte kliknutím na entitu > klikněte na ikonu ozubeného kolečka > klikněte na tlačítko kopírovat \"ID entity\". Některé vlastní entity nemusí být podporovány."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "Volitelné ID automatizace",
+                "info": "Vaše unikátní ID automatizace. Vždy začíná s automation.XXXXX. Pokud nebude nastaveno, na widget nebude možné kliknout a bude možné zobrazit pouze stav. Po kliknutí bude stav entity obnoven."
             },
             "displayName": {
                 "label": "Zobrazovaný název"
