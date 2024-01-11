@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Περιορισμός γραμμών κειμένου"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
