@@ -9,6 +9,10 @@
                 "label": "ID subjekta",
                 "info": "Edinstveni identifikator entitete v programu Home Assistant. Kopirajte s klikom na entiteto > kliknite na ikono z zobnikom > kliknite na gumb za kopiranje pri \"ID entitete\". Nekatere entitete po meri morda ne bodo podprte."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Prikaži ime"
             }
