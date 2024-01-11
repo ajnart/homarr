@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Objemka za besedilne vrstice"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {
