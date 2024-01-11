@@ -9,6 +9,10 @@
                 "label": "Egység azonosító",
                 "info": "Egyedi egység ID a Home Assistantben. Másolás az egységre kattintva > Kattintson a fogaskerék ikonra > Kattintson a másolás gombra az „Egység ID”-nél. Előfordulhat, hogy egyes egyéni egységek nem támogatottak."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Megjelenített név"
             }
