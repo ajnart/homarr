@@ -9,6 +9,10 @@
                 "label": "Entitet ID",
                 "info": "Unikt entitets-id i Home Assistant. Kopier ved at klikke på entitet > Klik på tandhjulsikon > Klik på kopieringsknappen ved 'Entitets-ID'. Nogle brugerdefinerede entiteter understøttes muligvis ikke."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Visningsnavn"
             }
