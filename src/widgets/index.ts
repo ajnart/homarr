@@ -10,6 +10,7 @@ import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
 import notebook from './notebook/NotebookWidgetTile';
+import prowlarr from './prowlarr/ProwlarrTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
 import torrent from './torrent/TorrentTile';
@@ -19,6 +20,7 @@ import weather from './weather/WeatherTile';
 
 export default {
   calendar,
+  prowlarr,
   dashdot,
   usenet,
   weather,
@@ -35,5 +37,5 @@ export default {
   'dns-hole-controls': dnsHoleControls,
   bookmark,
   notebook,
-  'smart-home/entity-state': smartHomeEntityState
+  'smart-home/entity-state': smartHomeEntityState,
 };

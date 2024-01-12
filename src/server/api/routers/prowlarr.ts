@@ -33,7 +33,7 @@ export const prowlarrRouter = createTRPCRouter({
             'X-Api-Key': apiKey,
           },
         })
-        .then((res) => res.data.results);
+        .then((res) => res.data);
       return data;
     }),
 });
