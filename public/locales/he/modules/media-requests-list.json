@@ -17,8 +17,8 @@
     "approved": "אושר",
     "pendingApproval": "ממתין לאישור",
     "declined": "נדחה",
-    "available": "",
-    "partial": ""
+    "available": "זמין",
+    "partial": "חלקי"
   },
   "tooltips": {
     "approve": "בקשות שאושרו",
