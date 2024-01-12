@@ -164,6 +164,11 @@ export const availableIntegrations = [
     label: 'Readarr',
   },
   {
+    value: 'prowlarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/prowlarr.png',
+    label: 'Prowlarr',
+  },
+  {
     value: 'jellyfin',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
     label: 'Jellyfin',
@@ -186,6 +191,6 @@ export const availableIntegrations = [
   {
     value: 'homeAssistant',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/home-assistant.png',
-    label: 'Home Assistant'
-  }
+    label: 'Home Assistant',
+  },
 ] as const satisfies Readonly<SelectItem[]>;

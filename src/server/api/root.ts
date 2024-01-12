@@ -1,4 +1,5 @@
 import { createTRPCRouter } from '~/server/api/trpc';
+
 import { appRouter } from './routers/app';
 import { boardRouter } from './routers/board';
 import { calendarRouter } from './routers/calendar';
@@ -14,6 +15,7 @@ import { mediaServerRouter } from './routers/media-server';
 import { notebookRouter } from './routers/notebook';
 import { overseerrRouter } from './routers/overseerr';
 import { passwordRouter } from './routers/password';
+import { prowlarrRouter } from './routers/prowlarr';
 import { rssRouter } from './routers/rss';
 import { smartHomeEntityStateRouter } from './routers/smart-home/entity-state';
 import { usenetRouter } from './routers/usenet/router';
@@ -30,6 +32,7 @@ export const rootRouter = createTRPCRouter({
   rss: rssRouter,
   user: userRouter,
   calendar: calendarRouter,
+  prowlarr: prowlarrRouter,
   config: configRouter,
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
@@ -45,7 +48,7 @@ export const rootRouter = createTRPCRouter({
   boards: boardRouter,
   password: passwordRouter,
   notebook: notebookRouter,
-  smartHomeEntityState: smartHomeEntityStateRouter
+  smartHomeEntityState: smartHomeEntityStateRouter,
 });
 
 // export type definition of API
