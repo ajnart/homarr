@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "אוטומציה של Home Assistant",
+    "description": "בצע אוטומציה",
     "settings": {
-      "title": "",
+      "title": "בצע אוטומציה",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "מזהה אוטומציה",
+        "info": "מזהה האוטומציה הייחודי שלך. תמיד מתחיל באוטומציה.XXXXXX."
       },
       "displayName": {
         "label": "הצג שם"
