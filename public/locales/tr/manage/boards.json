@@ -16,15 +16,15 @@
                 "label": "Kalıcı olarak sil",
                 "disabled": "Silme devre dışı, çünkü eski Homarr bileşenleri varsayılan yapılandırmanın silinmesine izin vermiyor. Silme işlemi gelecekte mümkün olacaktır."
             },
-            "duplicate": "",
+            "duplicate": "Çoğalt",
             "rename": {
-                "label": "",
+                "label": "Yeniden adlandır",
                 "modal": {
-                    "title": "",
+                    "title": "Paneli yeniden adlandır {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Yeni isim",
+                            "placeholder": "Yeni panel ismi"
                         }
                     }
                 }
