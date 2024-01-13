@@ -1,5 +1,6 @@
-import { Box, Card, Flex, Group, Text } from '@mantine/core';
-import { IconReportSearch } from '@tabler/icons-react';
+import { Box, Button, Card, Flex, Group, Text } from '@mantine/core';
+import { IconCircleCheck, IconCircleX, IconReportSearch, IconTestPipe } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
@@ -14,8 +15,8 @@ const definition = defineWidget({
   gridstack: {
     minWidth: 1,
     minHeight: 1,
-    maxWidth: 3,
-    maxHeight: 3,
+    maxWidth: 2,
+    maxHeight: 2,
   },
   component: ProwlarrWidgetTile,
 });
@@ -27,37 +28,40 @@ interface ProwlarrWidgetProps {
 }
 
 function ProwlarrWidgetTile({ widget }: ProwlarrWidgetProps) {
-  const { isInitialLoading, data } = useProwlarrIndexersQuery(widget);
+  const { t } = useTranslation('modules/prowlarr');
+  const { isInitialLoading, data } = useProwlarrIndexersQuery();
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
   }
 
+  const handleTestAllClick = async () => {
+    useProwlarrTestAll();
+  };
+
   return (
     <Flex h="100%" gap={0} direction="column">
-      <Text mt={2}>Indexer Status</Text>
+      <Text mt={2}>{t('Indexer Status')}</Text>
       <Card py={5} px={10} radius="md" style={{ overflow: 'unset' }} withBorder>
         {data.map((indexer: any) => (
           <Group key={indexer.id} position="apart">
             <Text color="dimmed" align="center" size="xs">
               {indexer.name}
             </Text>
-            <Box
-              style={{
-                width: '16px',
-                height: '16px',
-                borderRadius: '50%',
-                backgroundColor: indexer.enable ? '#2ecc71' : '#d9534f',
-              }}
-            />
+            {indexer.enable ? <IconCircleCheck color="#2ecc71" /> : <IconCircleX color="#d9534f" />}
           </Group>
         ))}
       </Card>
+      <Box mt={5}>
+        <Button variant="light" onClick={handleTestAllClick} rightIcon={<IconTestPipe size={20} />}>
+          {t('Test All')}
+        </Button>
+      </Box>
     </Flex>
   );
 }
 
-export const useProwlarrIndexersQuery = (widget: IProwlarrWidget) => {
+export const useProwlarrIndexersQuery = () => {
   const { name: configName } = useConfigContext();
 
   return api.prowlarr.indexers.useQuery(
@@ -69,6 +73,15 @@ export const useProwlarrIndexersQuery = (widget: IProwlarrWidget) => {
       staleTime: 1000 * 60 * 2,
     }
   );
+};
+
+export const useProwlarrTestAll = () => {
+  const { name: configName } = useConfigContext();
+  const mutation = api.prowlarr.testAllIndexers.useMutation();
+  return mutation.mutate({
+    configName: configName!,
+    integration: 'prowlarr',
+  });
 };
 
 export default definition;

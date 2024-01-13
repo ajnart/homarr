@@ -15,9 +15,7 @@ export const prowlarrRouter = createTRPCRouter({
     )
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
-
       const app = config.apps.find((app) => app.integration?.type === input.integration);
-
       const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
       if (!app || !apiKey) {
         throw new TRPCError({
@@ -35,5 +33,36 @@ export const prowlarrRouter = createTRPCRouter({
         })
         .then((res) => res.data);
       return data;
+    }),
+
+  testAllIndexers: protectedProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+        integration: z.enum(['prowlarr']),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const config = getConfig(input.configName);
+      const app = config.apps.find((app) => app.integration?.type === input.integration);
+      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+
+      if (!app || !apiKey) {
+        throw new TRPCError({
+          code: 'BAD_REQUEST',
+          message: 'Wrong request',
+        });
+      }
+
+      const appUrl = new URL(app.url);
+      const result = await axios
+        .post(`${appUrl.origin}/api/v1/indexer/testall`, null, {
+          headers: {
+            'X-Api-Key': apiKey,
+          },
+        })
+        .then((res) => res.data);
+
+      return result;
     }),
 });
