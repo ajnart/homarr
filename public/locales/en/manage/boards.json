@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Delete permanently",
                 "disabled": "Deletion disabled, because older Homarr components do not allow the deletion of the default config. Deletion will be possible in the future."
+            },
+            "duplicate": "Duplicate",
+            "rename": {
+                "label": "Rename",
+                "modal": {
+                    "title": "Rename board {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "New name",
+                            "placeholder": "New board name"
+                        }
+                    }
+                }
             }
         },
         "badges": {
