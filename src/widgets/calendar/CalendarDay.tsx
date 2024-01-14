@@ -1,54 +1,25 @@
-import {
-  Button,
-  Container,
-  Indicator,
-  IndicatorProps,
-  Popover,
-  useMantineTheme,
-} from '@mantine/core';
+import { Container, Indicator, IndicatorProps, Popover, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-import { MediaList } from './MediaList';
-import { MediasType } from './type';
+import { CalendarEventList } from './CalendarEventList';
+import { calendarEvents, calendarMediaEventSchema } from './type';
+import { z } from 'zod';
+import { ReactNode } from 'react';
 
 interface CalendarDayProps {
   date: Date;
-  medias: MediasType;
+  medias: z.infer<typeof calendarEvents>;
   size: string;
 }
 
 export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
   const [opened, { close, open }] = useDisclosure(false);
   const { radius, fn } = useMantineTheme();
-  var indicatorSize = 10;
-  var indicatorOffset = -4;
-  switch (size) {
-    case 'xs': {
-      indicatorSize += 0;
-      indicatorOffset -= 0;
-      break;
-    }
-    case 'sm': {
-      indicatorSize += 1;
-      indicatorOffset -= 1;
-      break;
-    }
-    case 'md': {
-      indicatorSize += 2;
-      indicatorOffset -= 1;
-      break;
-    }
-    case 'lg': {
-      indicatorSize += 3;
-      indicatorOffset -= 2;
-      break;
-    }
-    case 'xl': {
-      indicatorSize += 4;
-      indicatorOffset -= 3;
-      break;
-    }
-  }
+
+  const filteredEvents = medias.events.filter(event =>
+    event.date.getDate() == date.getDate() &&
+    event.date.getMonth() == date.getMonth() &&
+    event.date.getFullYear() == date.getFullYear());
 
   return (
     <Popover
@@ -65,7 +36,7 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
     >
       <Popover.Target>
         <Container
-          onClick={medias.totalCount > 0 && !opened ? open : close}
+          onClick={filteredEvents.length > 0 && !opened ? open : close}
           h="100%"
           w="100%"
           sx={{
@@ -76,62 +47,40 @@ export const CalendarDay = ({ date, medias, size }: CalendarDayProps) => {
             borderColor: opened ? fn.primaryColor() : 'transparent',
           }}
         >
-          <DayIndicator
-            size={indicatorSize}
-            offset={indicatorOffset}
-            color="red"
-            position="bottom-start"
-            medias={medias.books}
-          >
+          {filteredEvents.length > 0 ? (
             <DayIndicator
-              size={indicatorSize}
-              offset={indicatorOffset}
-              color="yellow"
-              position="top-start"
-              medias={medias.movies}
+              size={16}
+              color="red"
+              position="bottom-start"
+              medias={filteredEvents}
             >
-              <DayIndicator
-                size={indicatorSize}
-                offset={indicatorOffset}
-                color="blue"
-                position="top-end"
-                medias={medias.tvShows}
-              >
-                <DayIndicator
-                  size={indicatorSize}
-                  offset={indicatorOffset}
-                  color="green"
-                  position="bottom-end"
-                  medias={medias.musics}
-                >
-                  <div style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>{date.getDate()}</div>
-                </DayIndicator>
-              </DayIndicator>
+              <div style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>{date.getDate()}</div>
             </DayIndicator>
-          </DayIndicator>
+          ) : (
+            <div style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>{date.getDate()}</div>
+          )}
         </Container>
       </Popover.Target>
       <Popover.Dropdown>
-        <MediaList medias={medias} />
+        <CalendarEventList events={filteredEvents as z.infer<typeof calendarMediaEventSchema>[]} />
       </Popover.Dropdown>
     </Popover>
   );
 };
 
 interface DayIndicatorProps {
-  size: any;
-  offset: any;
+  size: number;
   color: string;
   medias: any[];
-  children: JSX.Element;
+  children: ReactNode;
   position: IndicatorProps['position'];
 }
 
-const DayIndicator = ({ size, offset, color, medias, children, position }: DayIndicatorProps) => {
+const DayIndicator = ({ size, color, medias, children, position }: DayIndicatorProps) => {
   if (medias.length === 0) return children;
 
   return (
-    <Indicator size={size} withBorder offset={offset} color={color} position={position} zIndex={0}>
+    <Indicator size={size} withBorder color={color} position={position} zIndex={0}>
       {children}
     </Indicator>
   );

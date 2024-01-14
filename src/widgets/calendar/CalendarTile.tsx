@@ -12,7 +12,7 @@ import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 import { CalendarDay } from './CalendarDay';
 import { getBgColorByDateAndTheme } from './bg-calculator';
-import { MediasType } from './type';
+import { WidgetLoading } from '~/widgets/loading';
 
 const definition = defineWidget({
   id: 'calendar',
@@ -21,10 +21,6 @@ const definition = defineWidget({
     hideWeekDays: {
       type: 'switch',
       defaultValue: true,
-    },
-    showUnmonitored: {
-      type: 'switch',
-      defaultValue: false,
     },
     radarrReleaseType: {
       type: 'select',
@@ -64,22 +60,23 @@ function CalendarTile({ widget }: CalendarTileProps) {
 
   const language = getLanguageByCode(userWithSettings?.settings.language ?? 'en');
 
-  const { data: medias } = api.calendar.medias.useQuery(
+  const { data } = api.calendar.getAllEvents.useQuery(
     {
       configName: configName!,
       month: month.getMonth() + 1,
-      year: month.getFullYear(),
-      options: {
-        showUnmonitored: widget.properties.showUnmonitored,
-      },
+      year: month.getFullYear()
     },
     {
       staleTime: 1000 * 60 * 60 * 5,
-      enabled: isEditMode === false,
+      enabled: !isEditMode,
     }
   );
 
   const firstDayOfWeek = userWithSettings?.settings.firstDayOfWeek ?? 'monday';
+
+  if (!data) {
+    return <WidgetLoading />
+  }
 
   return (
     <Calendar
@@ -135,7 +132,7 @@ function CalendarTile({ widget }: CalendarTileProps) {
       renderDay={(date) => (
         <CalendarDay
           date={date}
-          medias={getReleasedMediasForDate(medias, date, widget)}
+          medias={data}
           size={widget.properties.fontSize}
         />
       )}
@@ -149,37 +146,6 @@ const getFirstDayOfWeek = (
   if (firstDayOfWeek === 'sunday') return 0;
   if (firstDayOfWeek === 'monday') return 1;
   return 6;
-};
-const getReleasedMediasForDate = (
-  medias: MediasType | undefined,
-  date: Date,
-  widget: ICalendarWidget
-): MediasType => {
-  const { radarrReleaseType } = widget.properties;
-
-  const books =
-    medias?.books.filter((b) => new Date(b.releaseDate).toDateString() === date.toDateString()) ??
-    [];
-  const movies =
-    medias?.movies.filter(
-      (m) => new Date(m[radarrReleaseType]).toDateString() === date.toDateString()
-    ) ?? [];
-  const musics =
-    medias?.musics.filter((m) => new Date(m.releaseDate).toDateString() === date.toDateString()) ??
-    [];
-  const tvShows =
-    medias?.tvShows.filter(
-      (tv) => new Date(tv.airDateUtc).toDateString() === date.toDateString()
-    ) ?? [];
-  const totalCount = medias ? books.length + movies.length + musics.length + tvShows.length : 0;
-
-  return {
-    books,
-    movies,
-    musics,
-    tvShows,
-    totalCount,
-  };
 };
 
 export default definition;
