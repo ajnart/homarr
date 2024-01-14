@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "next",
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vitest/recommended"
+  ],
+  "plugins": [
+    "testing-library",
+    "unused-imports",
+    "react",
+    "vitest"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": [
+        "plugin:testing-library/react"
+      ]
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/no-cycle": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-children-prop": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-imports": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-continue": "off",
+    "linebreak-style": 0,
+    "import/extensions": "off",
+    "vitest/max-nested-describe": [
+      "error",
+      {
+        "max": 3
+      }
+    ],
+    "testing-library/no-node-access": [
+      "error",
+      {
+        "allowContainerFirstChild": true
+      }
+    ]
+  }
+}
