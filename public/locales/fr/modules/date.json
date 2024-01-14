@@ -5,11 +5,11 @@
     "settings": {
       "title": "Paramètres du widget Date et heure",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Fuseau Horaire",
+        "info": "Sélectionnez le nom de votre fuseau horaire, trouvez le vôtre ici : "
       },
       "customTitle": {
-        "label": ""
+        "label": "Nom de la ville ou titre personnalisé"
       },
       "display24HourFormat": {
         "label": "Affichage 24 h"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Titre de l'horloge",
+        "info": "Le titre personnalisé et le code du fuseau horaire peuvent être affichés sur votre widget.<br/>Vous pouvez également afficher la ville seule, n'en afficher aucune,<br/>ou même afficher le fuseau horaire seul lorsque les deux sont sélectionnés mais qu'aucun titre n'est fourni.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Titre et fuseau horaire",
+          "city": "Titre uniquement",
           "none": "Aucun"
         }
       }
