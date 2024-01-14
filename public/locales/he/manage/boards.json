@@ -16,15 +16,15 @@
                 "label": "מחיקה לצמיתות",
                 "disabled": "המחיקה מושבתת, מכיוון שרכיבי Homarr ישנים יותר אינם מאפשרים מחיקה של תצורת ברירת המחדל. המחיקה תתאפשר בעתיד."
             },
-            "duplicate": "",
+            "duplicate": "שכפול",
             "rename": {
-                "label": "",
+                "label": "שינוי שם",
                 "modal": {
-                    "title": "",
+                    "title": "שנה את שם הלוח {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "שם חדש",
+                            "placeholder": "שם לוח חדש"
                         }
                     }
                 }
