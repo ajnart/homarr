@@ -45,7 +45,7 @@
         },
         "create": {
             "title": "Vytvořit plochu",
-            "text": "Název nelze po vytvoření plochy změnit.",
+            "text": "Jméno nelze po vytvoření plochy změnit.",
             "form": {
                 "name": {
                     "label": "Název"
