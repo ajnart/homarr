@@ -1,5 +1,5 @@
 import { TRPCError } from '@trpc/server';
-import { AxiosError } from 'axios';
+import axios, { AxiosError } from 'axios';
 import Consola from 'consola';
 import { z } from 'zod';
 import { isStatusOk } from '~/components/Dashboard/Tiles/Apps/AppPing';
@@ -7,6 +7,7 @@ import { getConfig } from '~/tools/config/getConfig';
 import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
+import * as https from 'https';
 
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
@@ -29,14 +30,21 @@ export const appRouter = createTRPCRouter({
         });
       }
 
-      const res = await fetch(app.url, {
+      const agent = new https.Agent({
+        rejectUnauthorized: false,
+        requestCert: false
+      });
+
+      return await axios.get(app.url, {
         method: 'GET',
-        cache: 'force-cache',
         headers: {
           // Cache for 5 minutes
-          'Cache-Control': 'max-age=300',
-          'Content-Type': 'application/json',
+          'Cache-Control': 'max-age=300'
         },
+        httpAgent: agent,
+        httpsAgent: agent,
+        timeout: 12 * 1000, // 12 seconds,
+        maxRedirects: 3
       })
         .then((response) => ({
           status: response.status,
@@ -70,6 +78,5 @@ export const appRouter = createTRPCRouter({
             message: `Unexpected response: ${error.message}`,
           });
         });
-      return res;
     }),
 });
