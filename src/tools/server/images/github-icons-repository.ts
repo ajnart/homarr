@@ -51,6 +51,8 @@ export class GitHubIconsRepository extends AbstractIconRepository {
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "GitHub";
 }
 
 type GitHubRepositoryUrl = {
