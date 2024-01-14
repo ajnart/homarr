@@ -1,9 +1,4 @@
-import {
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-  PreviewData,
-  Redirect
-} from 'next';
+import { GetServerSidePropsContext, GetServerSidePropsResult, PreviewData } from 'next';
 
 import { Session } from 'next-auth';
 

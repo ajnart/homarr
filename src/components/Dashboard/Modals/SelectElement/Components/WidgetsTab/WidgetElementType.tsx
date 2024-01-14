@@ -29,7 +29,7 @@ export const WidgetElementType = ({ id, image, disabled, widget }: WidgetElement
   const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   const handleAddition = async () => {
-    updateConfig(
+    await updateConfig(
       configName,
       (prev) => ({
         ...prev,

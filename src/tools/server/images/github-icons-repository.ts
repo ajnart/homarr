@@ -1,8 +1,4 @@
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class GitHubIconsRepository extends AbstractIconRepository {
   static readonly walkxcode = {

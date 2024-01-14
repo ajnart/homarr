@@ -1,14 +1,4 @@
-import {
-  ActionIcon,
-  Button,
-  Center,
-  Flex,
-  Pagination,
-  Table,
-  Text,
-  Title,
-  createStyles,
-} from '@mantine/core';
+import { ActionIcon, Button, Center, createStyles, Flex, Pagination, Table, Text, Title } from '@mantine/core';
 import { modals } from '@mantine/modals';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 import dayjs from 'dayjs';

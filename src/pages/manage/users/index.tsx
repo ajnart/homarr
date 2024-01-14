@@ -15,14 +15,7 @@ import {
 } from '@mantine/core';
 import { useForm, zodResolver } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
-import {
-  IconPencil,
-  IconUser,
-  IconUserPlus,
-  IconUserShield,
-  IconUserStar,
-  IconX,
-} from '@tabler/icons-react';
+import { IconPencil, IconUser, IconUserPlus, IconUserShield, IconUserStar, IconX } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
