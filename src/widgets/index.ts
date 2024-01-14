@@ -6,11 +6,11 @@ import dnsHoleControls from './dnshole/DnsHoleControls';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
 import iframe from './iframe/IFrameTile';
+import indexerManager from './indexer-manager/IndexerManagerTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
 import notebook from './notebook/NotebookWidgetTile';
-import prowlarr from './prowlarr/ProwlarrTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
 import torrent from './torrent/TorrentTile';
@@ -20,7 +20,7 @@ import weather from './weather/WeatherTile';
 
 export default {
   calendar,
-  prowlarr,
+  'indexer-manager': indexerManager,
   dashdot,
   usenet,
   weather,

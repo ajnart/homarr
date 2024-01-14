@@ -1,21 +1,25 @@
 import { TRPCError } from '@trpc/server';
 import axios from 'axios';
 import { z } from 'zod';
+import { checkIntegrationsType } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
+import { IntegrationType } from '~/types/app';
 
 import { createTRPCRouter, protectedProcedure } from '../trpc';
 
-export const prowlarrRouter = createTRPCRouter({
+export const indexerManagerRouter = createTRPCRouter({
   indexers: protectedProcedure
     .input(
       z.object({
         configName: z.string(),
-        integration: z.enum(['prowlarr']),
       })
     )
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
-      const app = config.apps.find((app) => app.integration?.type === input.integration);
+      const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
+      const app = config.apps.find((app) =>
+        checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
+      );
       const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
       if (!app || !apiKey) {
         throw new TRPCError({
@@ -39,12 +43,14 @@ export const prowlarrRouter = createTRPCRouter({
     .input(
       z.object({
         configName: z.string(),
-        integration: z.enum(['prowlarr']),
       })
     )
     .mutation(async ({ input }) => {
       const config = getConfig(input.configName);
-      const app = config.apps.find((app) => app.integration?.type === input.integration);
+      const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
+      const app = config.apps.find((app) =>
+        checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
+      );
       const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
 
       if (!app || !apiKey) {

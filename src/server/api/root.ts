@@ -9,13 +9,13 @@ import { dnsHoleRouter } from './routers/dns-hole/router';
 import { dockerRouter } from './routers/docker/router';
 import { downloadRouter } from './routers/download';
 import { iconRouter } from './routers/icon';
+import { indexerManagerRouter } from './routers/indexer-manager';
 import { inviteRouter } from './routers/invite/invite-router';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { notebookRouter } from './routers/notebook';
 import { overseerrRouter } from './routers/overseerr';
 import { passwordRouter } from './routers/password';
-import { prowlarrRouter } from './routers/prowlarr';
 import { rssRouter } from './routers/rss';
 import { smartHomeEntityStateRouter } from './routers/smart-home/entity-state';
 import { usenetRouter } from './routers/usenet/router';
@@ -32,7 +32,7 @@ export const rootRouter = createTRPCRouter({
   rss: rssRouter,
   user: userRouter,
   calendar: calendarRouter,
-  prowlarr: prowlarrRouter,
+  indexerManager: indexerManagerRouter,
   config: configRouter,
   dashDot: dashDotRouter,
   dnsHole: dnsHoleRouter,
