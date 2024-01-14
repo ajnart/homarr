@@ -20,11 +20,11 @@
             "rename": {
                 "label": "Přejmenovat",
                 "modal": {
-                    "title": "",
+                    "title": "Přejmenovat plochu {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nové jméno",
+                            "placeholder": "Nové jméno plochy"
                         }
                     }
                 }
