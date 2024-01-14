@@ -8,10 +8,8 @@ import {
   Indicator,
   NavLink,
   Navbar,
-  Paper,
   Text,
   ThemeIcon,
-  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -21,10 +19,9 @@ import {
   IconBrandGithub,
   IconGitFork,
   IconHome,
-  IconInfoCircle,
   IconInfoSmall,
   IconLayoutDashboard,
-  IconMailForward,
+  IconMailForward, IconPlug,
   IconQuestionMark,
   IconTool,
   IconUser,
@@ -104,6 +101,10 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           icon: IconBrandDocker,
           href: '/manage/tools/docker',
         },
+        api: {
+          icon: IconPlug,
+          href: '/manage/tools/swagger'
+        }
       },
     },
     help: {

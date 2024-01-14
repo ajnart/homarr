@@ -5,17 +5,26 @@ import { z } from 'zod';
 import { db } from '~/server/db';
 import { invites } from '~/server/db/schema';
 
-import { adminProcedure, createTRPCRouter, publicProcedure } from '../../trpc';
+import { adminProcedure, createTRPCRouter } from '../../trpc';
 
 export const inviteRouter = createTRPCRouter({
   all: adminProcedure
+    .meta({ openapi: { method: 'GET', path: '/invites', tags: ['invite'] } })
     .input(
       z.object({
         limit: z.number().min(1).max(100).default(10),
         page: z.number().min(0),
-      })
+      }),
     )
-    .query(async ({ ctx, input }) => {
+    .output(z.object({
+      invites: z.array(z.object({
+        id: z.string(),
+        expires: z.date(),
+        creator: z.string().or(z.null()),
+      })),
+      countPages: z.number().min(0),
+    }))
+    .query(async ({ input }) => {
       const limit = input.limit;
       const dbInvites = await db.query.invites.findMany({
         limit: limit,
@@ -44,14 +53,20 @@ export const inviteRouter = createTRPCRouter({
       };
     }),
   create: adminProcedure
+    .meta({ openapi: { method: 'POST', path: '/invites', tags: ['invite'] } })
     .input(
       z.object({
         expiration: z
           .date()
           .min(dayjs().add(5, 'minutes').toDate())
           .max(dayjs().add(6, 'months').toDate()),
-      })
+      }),
     )
+    .output(z.object({
+      id: z.string(),
+      token: z.string(),
+      expires: z.date(),
+    }))
     .mutation(async ({ ctx, input }) => {
       const inviteToInsert = {
         id: randomUUID(),
@@ -67,7 +82,11 @@ export const inviteRouter = createTRPCRouter({
         expires: inviteToInsert.expires,
       };
     }),
-  delete: adminProcedure.input(z.object({ id: z.string() })).mutation(async ({ input }) => {
-    await db.delete(invites).where(eq(invites.id, input.id));
-  }),
+  delete: adminProcedure
+    .meta({ openapi: { method: 'DELETE', path: '/invites', tags: ['invite'] } })
+    .input(z.object({ id: z.string() }))
+    .output(z.void())
+    .mutation(async ({ input }) => {
+      await db.delete(invites).where(eq(invites.id, input.id));
+    }),
 });

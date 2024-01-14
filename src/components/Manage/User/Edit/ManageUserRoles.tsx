@@ -1,24 +1,23 @@
-import { ActionIcon, Badge, Box, Group, Title, Text, Tooltip, Button } from '@mantine/core';
+import { Badge, Box, Button, Group, Text, Title } from '@mantine/core';
 import { openRoleChangeModal } from '~/components/Manage/User/change-user-role.modal';
 import { IconUserDown, IconUserUp } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useSession } from 'next-auth/react';
+import { createSelectSchema } from 'drizzle-zod';
+import { users } from '~/server/db/schema';
+import { z } from 'zod';
+
+const userWithoutSecrets = createSelectSchema(users).omit({
+  password: true,
+  salt: true,
+});
 
 export const ManageUserRoles = ({ user }: {
-  user: {
-    image: string | null;
-    id: string;
-    name: string | null;
-    password: string | null;
-    email: string | null;
-    emailVerified: Date | null;
-    salt: string | null;
-    isAdmin: boolean;
-    isOwner: boolean;
-  }
+  user: z.infer<typeof userWithoutSecrets>
 }) => {
   const { t } = useTranslation(['manage/users/edit', 'manage/users']);
   const { data: sessionData } = useSession();
+
   return (
     <Box maw={500}>
       <Title order={3}>
@@ -33,7 +32,7 @@ export const ManageUserRoles = ({ user }: {
 
       {user.isAdmin ? (
         <Button
-          leftIcon={<IconUserDown size='1rem' />}
+          leftIcon={<IconUserDown size="1rem" />}
           disabled={user.id === sessionData?.user?.id || user.isOwner}
           onClick={() => {
             openRoleChangeModal({
@@ -47,7 +46,7 @@ export const ManageUserRoles = ({ user }: {
         </Button>
       ) : (
         <Button
-          leftIcon={<IconUserUp size='1rem' />}
+          leftIcon={<IconUserUp size="1rem" />}
           onClick={() => {
             openRoleChangeModal({
               name: user.name as string,

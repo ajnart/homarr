@@ -13,30 +13,43 @@ import { writeConfig } from '~/tools/config/writeConfig';
 import { configNameSchema } from '~/validations/boards';
 
 export const boardRouter = createTRPCRouter({
-  all: protectedProcedure.query(async ({ ctx }) => {
-    const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
+  all: protectedProcedure
+    .meta({ openapi: { method: 'GET', path: '/boards/all', tags: ['board'] } })
+    .input(z.void())
+    .output(z.array(z.object({
+      name: z.string(),
+      allowGuests: z.boolean(),
+      countApps: z.number().min(0),
+      countWidgets: z.number().min(0),
+      countCategories: z.number().min(0),
+      isDefaultForUser: z.boolean(),
+    })))
+    .query(async ({ ctx }) => {
+      const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
-    const defaultBoard = await getDefaultBoardAsync(ctx.session.user.id, 'default');
+      const defaultBoard = await getDefaultBoardAsync(ctx.session.user.id, 'default');
 
-    return await Promise.all(
-      files.map(async (file) => {
-        const name = file.replace('.json', '');
-        const config = await getFrontendConfig(name);
+      return await Promise.all(
+        files.map(async (file) => {
+          const name = file.replace('.json', '');
+          const config = await getFrontendConfig(name);
 
-        const countApps = config.apps.length;
+          const countApps = config.apps.length;
 
-        return {
-          name: name,
-          allowGuests: config.settings.access.allowGuests,
-          countApps: countApps,
-          countWidgets: config.widgets.length,
-          countCategories: config.categories.length,
-          isDefaultForUser: name === defaultBoard,
-        };
-      }),
-    );
-  }),
+          return {
+            name: name,
+            allowGuests: config.settings.access.allowGuests,
+            countApps: countApps,
+            countWidgets: config.widgets.length,
+            countCategories: config.categories.length,
+            isDefaultForUser: name === defaultBoard,
+          };
+        }),
+      );
+    }),
   addAppsForContainers: adminProcedure
+    .meta({ openapi: { method: 'POST', path: '/boards/add-apps', tags: ['board'] } })
+    .output(z.void())
     .input(
       z.object({
         boardName: configNameSchema,
@@ -89,10 +102,12 @@ export const boardRouter = createTRPCRouter({
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
   renameBoard: protectedProcedure
+    .meta({ openapi: { method: 'PUT', path: '/boards/rename', tags: ['board'] } })
     .input(z.object({
       oldName: z.string(),
       newName: z.string().min(1),
     }))
+    .output(z.void())
     .mutation(async ({ input }) => {
       if (input.oldName === 'default') {
         Consola.error(`Attempted to rename default configuration. Aborted deletion.`);
@@ -127,9 +142,11 @@ export const boardRouter = createTRPCRouter({
       Consola.info(`Deleted ${input.oldName} from file system`);
     }),
   duplicateBoard: protectedProcedure
+    .meta({ openapi: { method: 'POST', path: '/boards/duplicate', tags: ['board'] } })
     .input(z.object({
       boardName: z.string(),
     }))
+    .output(z.void())
     .mutation(async ({ input }) => {
       if (!configExists(input.boardName)) {
         Consola.error(`Tried to duplicate ${input.boardName} but this configuration does not exist.`);
