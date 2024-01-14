@@ -17,7 +17,7 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "配置模式版本",
-		"version": "版本",
+		"version": "当前版本",
 		"nodeEnvironment": "节点环境",
 		"i18n": "I18n 翻译空间已加载",
 		"locales": "I18n 本地语言已配置",

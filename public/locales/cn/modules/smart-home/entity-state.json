@@ -9,6 +9,10 @@
                 "label": "实体 ID",
                 "info": "Home Assistant 中的唯一实体 ID。通过单击实体 > 单击齿轮图标 > 单击“实体 ID”处的复制按钮进行复制。某些自定义实体可能不受支持。"
             },
+            "automationId": {
+                "label": "可选自动化 ID",
+                "info": "您唯一的自动化 ID。总是以 automation.XXXXX 开头。如果未设置，小部件将不可点击，只能显示状态。点击后，实体状态将被刷新。"
+            },
             "displayName": {
                 "label": "显示名称"
             }

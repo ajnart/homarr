@@ -22,5 +22,5 @@
       "message": "Bola vytvorená kategória \"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Import z dockera"
 }

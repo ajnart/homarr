@@ -1,7 +1,7 @@
 {
   "save": "Shrani",
-  "apply": "",
-  "insert": "",
+  "apply": "Uporabi",
+  "insert": "Vstavite",
   "about": "O programu",
   "cancel": "Prekliči",
   "close": "Zapri",
@@ -44,14 +44,14 @@
   },
   "seeMore": "Oglejte si več...",
   "position": {
-    "left": "",
-    "center": "",
-    "right": ""
+    "left": "Leva stran",
+    "center": "Center",
+    "right": "Desno"
   },
   "attributes": {
     "width": "Širina",
     "height": "Višina"
   },
   "public": "Javna stran",
-  "restricted": ""
+  "restricted": "Omejeno"
 }

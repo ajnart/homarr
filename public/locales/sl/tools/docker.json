@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Vaš primerek Homarr nima konfiguriranega programa Docker ali pa mu ni uspelo pridobiti vsebnikov. Preverite dokumentacijo o tem, kako nastaviti integracijo."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Izberite ploščo",
+            "text": "Izberite ploščo, na katero želite dodati aplikacije za izbrane vsebnike Docker.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Upravni odbor"
                 },
-                "submit": ""
+                "submit": "Dodajanje aplikacij"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Dodane aplikacije na krovu",
+                "message": "Aplikacije za izbrane vsebnike Docker so bile dodane na tablo."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Neuspešno dodajanje aplikacij na tablo",
+                "message": "Aplikacij za izbrane vsebnike Docker ni bilo mogoče dodati na tablo."
             }
         }
     }

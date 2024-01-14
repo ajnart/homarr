@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Metin karakter sınırı"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Yayınlanma tarihine göre sırala (artan)"
       }
     },
     "card": {

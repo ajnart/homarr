@@ -1,7 +1,7 @@
 {
     "metaTitle": "Настройка панели {{name}}",
     "pageTitle": "Настройка для панели {{name}}",
-    "backToBoard": "Вернуться к доске",
+    "backToBoard": "Вернуться к панели",
     "settings": {
         "appearance": {
             "primaryColor": "Основной цвет",

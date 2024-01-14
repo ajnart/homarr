@@ -2,7 +2,7 @@
     "metaTitle": "Spravovat",
     "hero": {
         "title": "Vítej zpět, {{username}}",
-        "fallbackUsername": "",
+        "fallbackUsername": "Anonymní",
         "subtitle": "Vítejte ve Vašem Centru aplikací. Organizujte, optimalizujte a ovládněte!"
     },
     "quickActions": {

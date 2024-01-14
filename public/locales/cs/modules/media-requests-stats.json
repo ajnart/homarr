@@ -3,12 +3,12 @@
     "name": "Statistiky požadavků na média",
     "description": "Statistiky vašich požadavků na média",
     "settings": {
-      "title": "",
+      "title": "Statistiky požadavků médií",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Nahradit odkazy externím hostitelem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Otevírat odkazy v nové kartě"
       }
     }
   },

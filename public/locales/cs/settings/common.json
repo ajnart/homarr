@@ -1,36 +1,36 @@
 {
-  "title": "",
-  "tooltip": "",
+  "title": "Nastavení",
+  "tooltip": "Nastavení",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Obecný",
+    "customizations": "Přizpůsobení"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Nahrajte svůj konfigurační soubor přetažením na stránku!"
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Vyrobeno s ❤️ by @",
+    "thirdPartyContent": "Podívejte se na závislosti na aplikacích třetích stran",
     "thirdPartyContentTable": {
-      "dependencyName": "",
-      "dependencyVersion": ""
+      "dependencyName": "Závislost",
+      "dependencyVersion": "Verze"
     }
   },
-  "grow": "",
+  "grow": "Rostoucí mřížka (zabírá veškerý prostor)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Náhled",
+      "subtitle": "Změny se uloží automaticky"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
+    "divider": "Možnosti rozvržení",
+    "main": "Hlavní",
+    "sidebar": "Postranní panel",
+    "cannotturnoff": "Nelze vypnout",
+    "dashboardlayout": "Rozložení plochy",
     "enablersidebar": "Povolit pravý postranní panel",
     "enablelsidebar": "Povolit levý postranní panel",
-    "enablesearchbar": "",
-    "enabledocker": "",
+    "enablesearchbar": "Povolit vyhledávací pole",
+    "enabledocker": "Povolit integraci Dockeru",
     "enableping": "Povolit pingy",
     "enablelsidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace",
     "enablersidebardesc": "Volitelné. Lze použít pouze pro aplikace a integrace"

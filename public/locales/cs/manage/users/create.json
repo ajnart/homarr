@@ -3,9 +3,9 @@
     "steps": {
         "account": {
             "title": "První krok",
-            "text": "",
+            "text": "Tvorba účtu",
             "username": {
-                "label": ""
+                "label": "Uživatelské jméno"
             },
             "email": {
                 "label": "E-mail"
@@ -13,40 +13,40 @@
         },
         "security": {
             "title": "Druhý krok",
-            "text": "",
+            "text": "Heslo",
             "password": {
-                "label": ""
+                "label": "Heslo"
             }
         },
         "finish": {
             "title": "Potvrzení",
-            "text": "",
+            "text": "Uložit do databáze",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Zkontrolujte, co jste vyplnili",
+                "text": "Po odeslání dat se uživatel bude moci přihlásit. Jste si jisti, že chcete tohoto uživatele uložit do databáze?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
-                    "username": "",
+                    "property": "Vlastnosti",
+                    "value": "Hodnoty",
+                    "username": "Uživatelské jméno",
                     "email": "E-mail",
-                    "password": ""
+                    "password": "Heslo"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nenastaveno",
+                "valid": "Platné"
             },
-            "failed": ""
+            "failed": "Vytvoření uživatele se nezdařilo: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Uživatel byl úspěšně vytvořen",
+                "text": "Uživatel byl vytvořen v databázi. Nyní se může přihlásit."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Vygenerovat náhodné heslo",
+        "createAnother": "Vytvořit dalšího uživatele"
     }
 }

@@ -1,30 +1,30 @@
 {
-	"description": "",
+	"description": "Homarr je <strong>elegantní</strong>, <strong>moderní</strong> plocha, která vám poskytne všechny aplikace a služby na dosah ruky. S aplikací Homarr máte přístup ke všemu na jednom místě a můžete vše pohodlně ovládat. Homarr se hladce integruje s aplikacemi, které jste si přidali, poskytuje Vám cenné informace a dává Vám plnou kontrolu. Instalace je snadná a Homarr podporuje širokou škálu metod nasazení.",
 	"addToDashboard": "Přidat na plochu",
-	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
-	"translators": "",
-	"translatorsDescription": "",
-	"contributors": "",
-	"contributorsDescription": "",
+	"tip": "Mod odkazuje na Vaši modifikační klávesu, je to Ctrl a klávesa Command/Super/Windows",
+	"key": "Klávesová zkratka",
+	"action": "Akce",
+	"keybinds": "Klávesové zkratky",
+	"translators": "Překladatelé ({{count}})",
+	"translatorsDescription": "Díky těmto lidem je Homarr dostupný v {{languages}} jazycích! Chcete pomoci přeložit Homarr do svého jazyka? Přečtěte si, jak na to, <a>zde</a>.",
+	"contributors": "Přispěvatelé ({{count}})",
+	"contributorsDescription": "Tito lidé vytvořili kód, díky kterému funguje homarr! Chcete pomoci vybudovat Homarr? Přečtěte si, jak na to, <a>zde</a>",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Přepne světlý/tmavý motiv",
+		"focusSearchBar": "Zaměří na vyhledávací panel",
+		"openDocker": "Otevře Docker widget",
+		"toggleEdit": "Přepne režim úprav"
 	},
 	"metrics": {
-		"configurationSchemaVersion": "",
-		"version": "",
-		"nodeEnvironment": "",
-		"i18n": "",
-		"locales": "",
-		"experimental_disableEditMode": ""
+		"configurationSchemaVersion": "Verze konfiguračního schématu",
+		"version": "Verze",
+		"nodeEnvironment": "Prostředí uzlu",
+		"i18n": "Načteny jmenné prostory překladu I18n",
+		"locales": "Nakonfigurováno I18n jazyků",
+		"experimental_disableEditMode": "<b>EXPERIMENTÁLNÍ</b>: Zakázat režim úprav"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nová verze: {{newVersion}}",
+		"dropdown": "Verze {{newVersion}} je nyní dostupná! Vaše aktuální verze je {{currentVersion}}"
 	}
 }

@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Permanent verwijderen",
                 "disabled": "Verwijderen uitgeschakeld, omdat oudere Homarr-componenten het verwijderen van de standaardconfiguratie niet toestaan. Verwijdering zal in de toekomst mogelijk zijn."
+            },
+            "duplicate": "",
+            "rename": {
+                "label": "",
+                "modal": {
+                    "title": "",
+                    "fields": {
+                        "name": {
+                            "label": "",
+                            "placeholder": ""
+                        }
+                    }
+                }
             }
         },
         "badges": {

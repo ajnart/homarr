@@ -1,22 +1,22 @@
 {
     "errors": {
-        "default": "",
-        "required": "",
+        "default": "Toto pole je neplatné",
+        "required": "Toto pole je nutné vyplnit",
         "string": {
-            "startsWith": "",
-            "endsWith": "",
-            "includes": ""
+            "startsWith": "Toto pole musí začínat {{startsWith}}",
+            "endsWith": "Toto pole musí končit {{endsWith}}",
+            "includes": "Toto pole musí obsahovat {{includes}}"
         },
         "tooSmall": {
-            "string": "",
-            "number": ""
+            "string": "Toto pole musí obsahovat alespoň {{minimum}} znaků",
+            "number": "Toto pole musí být větší nebo rovno {{minimum}}"
         },
         "tooBig": {
-            "string": "",
-            "number": ""
+            "string": "Toto pole může být maximálně {{maximum}} znaků dlouhé",
+            "number": "Toto pole musí být menší nebo rovno {{maximum}}"
         },
         "custom": {
-            "passwordMatch": ""
+            "passwordMatch": "Hesla musí souhlasit"
         }
     }
 }

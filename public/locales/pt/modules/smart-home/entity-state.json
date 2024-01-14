@@ -9,6 +9,10 @@
                 "label": "ID da entidade",
                 "info": "ID de entidade exclusiva do Home Assistant. Copie clicando na entidade > Clique no ícone de engrenagem > Clique no botão copiar em 'ID da entidade'. Algumas entidades personalizadas podem não ser suportadas."
             },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
             "displayName": {
                 "label": "Nome de exibição"
             }

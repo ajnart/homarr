@@ -43,20 +43,20 @@
       "header": {
         "isCompleted": "Téléchargement en cours",
         "name": "Nom",
-        "dateAdded": "",
+        "dateAdded": "Ajouté le",
         "size": "Taille",
         "download": "Descendant",
         "upload": "Montant",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progrès",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Total envoyé",
+        "totalDownloaded": "Total reçu",
+        "ratio": "Ratio",
+        "seeds": "Seeds (connectés)",
+        "peers": "Peers (connectés)",
+        "label": "Étiquette",
         "state": "État",
-        "stateMessage": ""
+        "stateMessage": "Message d'état"
       },
       "item": {
         "text": "Géré par {{appName}}, {{ratio}} ratio"

@@ -3,43 +3,43 @@
     "name": "iFrame",
     "description": "Vložte jakýkoli obsah z internetu. Některé webové stránky mohou omezit přístup.",
     "settings": {
-      "title": "",
+      "title": "Nastavení iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Embed URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Povolit celou obrazovku"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Povolit průhlednost"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Povolit posouvání"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Povolit platbu"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Povolit automatické přehrávání"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Povolit mikrofon"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Povolit kameru"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Povolit polohu"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Neplatná URL adresa",
+        "text": "Ujistěte se, že jste v konfiguraci widgetu zadali platnou URL adresu"
       },
-      "browserSupport": ""
+      "browserSupport": "Váš prohlížeč nepodporuje iFrame. Aktualizujte, prosím, svůj prohlížeč."
     }
   }
 }

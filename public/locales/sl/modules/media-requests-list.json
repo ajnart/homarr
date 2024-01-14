@@ -1,33 +1,35 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Zahteve za medije",
+    "description": "Oglejte si seznam vseh zahtevkov za medije iz vašega primera Overseerr ali Jellyseerr.",
     "settings": {
-      "title": "",
+      "title": "Seznam zahtev za medije",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Zamenjajte povezave z zunanjim gostiteljem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Odprite povezave v novem zavihku"
       }
     }
   },
-  "noRequests": "",
+  "noRequests": "Ni bilo najdenih zahtevkov. Prepričajte se, da ste pravilno konfigurirali svoje aplikacije.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": ""
+    "approved": "Odobreno",
+    "pendingApproval": "V postopku odobritve",
+    "declined": "Zavrnjeno",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Odobritev zahtevkov",
+    "decline": "Zavračanje zahtevkov",
+    "approving": "Odobritev zahtevka..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Odobritev",
+    "declining": "Upadanje",
+    "request": "zahteva...",
+    "approved": "Zahteva je bila odobrena!",
+    "declined": "Zahteva je bila zavrnjena!"
   }
 }

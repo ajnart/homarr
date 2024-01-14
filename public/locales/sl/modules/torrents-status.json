@@ -11,24 +11,24 @@
         "label": "Prikaži dokončane torrente"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Prikaz aktivnih torrentov"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Hitrost prenosa, da se torrent šteje za aktivnega (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Prikaži zastarele torrente"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Seznam nalepk je beli seznam (namesto črnega seznama)."
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Seznam oznak",
+        "description": "Če je možnost 'je bela lista' označena, bo delovala kot bela lista. Če ni preverjeno, je to črni seznam. Če je prazen, ne bo naredil ničesar."
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Prikaz razmerja filtriranega seznama torrentov",
+        "info": "Če je onemogočeno, se prikaže samo globalno razmerje. Če je nastavljeno globalno razmerje, se bodo še vedno uporabljale oznake."
       }
     }
   },
@@ -36,34 +36,34 @@
     "footer": {
       "error": "Napaka",
       "lastUpdated": "Nazadnje posodobljeno {{time}} nazaj",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globalno razmerje",
+      "ratioWithFilter": "Razmerje s filtrom"
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Prenašanje spletne strani",
         "name": "Ime",
-        "dateAdded": "",
+        "dateAdded": "Dodano na",
         "size": "Velikost",
         "download": "Dol",
         "upload": "Gor",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Napredek",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Skupno nalaganje",
+        "totalDownloaded": "Skupaj za prenos",
+        "ratio": "Razmerje",
+        "seeds": "Semena (povezana)",
+        "peers": "Vrstniki (povezani)",
+        "label": "Oznaka",
         "state": "Stanje",
-        "stateMessage": ""
+        "stateMessage": "Sporočilo države"
       },
       "item": {
         "text": "Upravlja {{appName}}, {{ratio}} razmerje"
       },
       "body": {
         "nothingFound": "Ni najdenih torrentov",
-        "filterHidingItems": ""
+        "filterHidingItems": "{{count}} vnosi so skriti z vašimi filtri."
       }
     },
     "lineChart": {
@@ -81,12 +81,12 @@
       },
       "generic": {
         "title": "Prišlo je do nepričakovane napake",
-        "text": ""
+        "text": "Ne morete komunicirati z odjemalci Torrent. Preverite svojo konfiguracijo."
       }
     },
     "loading": {
-      "title": "",
-      "description": ""
+      "title": "Nalaganje",
+      "description": "Vzpostavitev povezave"
     },
     "popover": {
       "introductionPrefix": "Upravlja jo",

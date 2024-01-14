@@ -16,7 +16,9 @@
   "state": {
     "approved": "Aprovado",
     "pendingApproval": "Aprovação pendente",
-    "declined": "Recusado"
+    "declined": "Recusado",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Aprovar solicitações",

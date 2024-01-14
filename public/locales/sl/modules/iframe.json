@@ -11,35 +11,35 @@
         "label": "Omogočite celozaslonsko prikazovanje"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Omogočanje preglednosti"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Omogočite pomikanje"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Dovolite plačilo"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Dovolite samodejno predvajanje"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Dovolite mikrofon"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Dovolite kamero"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Omogočanje zemljepisne lokacije"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
+        "title": "Nepravilen URL",
         "text": "Prepričajte se, da ste v konfiguracijo svojega pripomočka vnesli veljaven naslov"
       },
-      "browserSupport": ""
+      "browserSupport": "Vaš brskalnik ne podpira iframov. Posodobite svoj brskalnik."
     }
   }
 }

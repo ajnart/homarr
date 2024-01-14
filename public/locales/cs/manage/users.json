@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Všichni",
+            "normal": "Uživatelé",
+            "admin": "Administrátoři",
+            "owner": "Vlastníci"
         }
     },
     "table": {
@@ -19,26 +19,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Vymazat uživatele",
+        "demoteAdmin": "Zrušit oprávnění správce",
+        "promoteToAdmin": "Povýšit na správce"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Vymazat uživatele {{name}}",
+            "text": "Jste si jisti, že chcete vymazat uživatele {{name}}? Tím se odstraní data spojená s tímto účtem, ale ne panely vytvořené tímto uživatelem."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Povýšit uživatele {{name}} na správce",
+                "text": "Jste si jisti, že chcete uživatele {{name}} povýšit na správce? Tím získá uživatel přístup ke všem prostředkům ve vaší instanci Homarr."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Zrušit oprávnění správce pro uživatele {{name}}",
+                "text": "Jste si jisti, že chcete zrušit oprávnění správce pro uživatele {{name}}? Tím ztratí přístup ke všem prostředkům ve vaší instanci Homarr."
             },
-            "confirm": ""
+            "confirm": "Potvrdit"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Vašemu vyhledávání neodpovídají žádné záznamy. Prosím, upravte svůj filtr."
 }

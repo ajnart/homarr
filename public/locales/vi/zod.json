@@ -16,7 +16,7 @@
             "number": "Trường này phải nhỏ hơn hoặc bằng {{maximum}}"
         },
         "custom": {
-            "passwordMatch": "mật khẩu phải trùng khớp"
+            "passwordMatch": "Mật khẩu phải trùng khớp"
         }
     }
 }

@@ -1,44 +1,44 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Uporabniki",
+    "pageTitle": "Upravljanje uporabnikov",
     "buttons": {
-        "create": ""
+        "create": "Ustvarite spletno stran"
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Vse",
+            "normal": "Normalno",
+            "admin": "Admin",
+            "owner": "Lastnik"
         }
     },
     "table": {
         "header": {
             "user": "Uporabnik",
-            "email": ""
+            "email": "E-naslov"
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Izbriši uporabnika",
+        "demoteAdmin": "Razrešitev upravitelja",
+        "promoteToAdmin": "Napredovanje v upravitelja"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Brisanje uporabnika {{name}}",
+            "text": "Ste prepričani, da želite izbrisati uporabnika {{name}}? To bo izbrisalo podatke, povezane s tem računom, ne pa tudi nadzornih plošč, ki jih je ustvaril ta uporabnik."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Promoviranje uporabnika {{name}} v upravitelja",
+                "text": "Ali ste prepričani, da želite uporabnika {{name}} povišati v administratorja? S tem bo uporabnik dobil dostop do vseh virov v vaši instanci Homarr."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Preimenovanje uporabnika {{name}} v uporabnika",
+                "text": "Ali ste prepričani, da želite uporabnika {{name}} degradirati v uporabnika? S tem boste uporabniku odvzeli dostop do vseh virov v instanci Homarr."
             },
             "confirm": "Potrdi"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Vaše iskanje se ne ujema z nobenim vnosom. Prilagodite svoj filter."
 }

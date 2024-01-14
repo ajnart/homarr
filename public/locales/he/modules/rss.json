@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "הגבלת שורות טקסט"
+      },
+      "sortByPublishDateAscending": {
+        "label": "מיין לפי תאריך פרסום (עולה)"
       }
     },
     "card": {

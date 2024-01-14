@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "家庭助理自动化",
+    "description": "执行自动化",
+    "settings": {
+      "title": "执行自动化",
+      "automationId": {
+        "label": "自动化 ID",
+        "info": "您唯一的自动化 ID。总是以 automation.XXXXX 开头。"
+      },
+      "displayName": {
+        "label": "显示名称"
+      }
+    }
+  }
+}

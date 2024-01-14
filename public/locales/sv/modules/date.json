@@ -5,11 +5,11 @@
     "settings": {
       "title": "Inställningar för datum och tid widget",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Tidszon",
+        "info": "Välj namnet på din tidszon, hitta din här: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Stadsnamn eller anpassad titel"
       },
       "display24HourFormat": {
         "label": "Visa heltid (24-timmars)"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Klockans titel",
+        "info": "Den anpassade titeln och tidszonskoden kan visas på din widget.<br/>Du kan också visa staden ensam, visa ingen,<br/>eller till och med visa tidszonen ensam när båda är valda men ingen titel tillhandahålls.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Titel och tidszon",
+          "city": "Endast titel",
           "none": "Ingen"
         }
       }

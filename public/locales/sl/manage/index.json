@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Upravljanje",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Dobrodošli nazaj, {{username}}",
+        "fallbackUsername": "Anonimni",
+        "subtitle": "Dobrodošli v vozlišču aplikacij. Organizirajte, optimizirajte in osvojite!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Hitri ukrepi",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Vaše table",
+            "subtitle": "Ustvarjanje in upravljanje tabel"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Povabite novega uporabnika",
+            "subtitle": "Ustvarite in pošljite vabilo za registracijo"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Upravljanje uporabnikov",
+            "subtitle": "Brisanje in upravljanje uporabnikov"
         }
     }
 }

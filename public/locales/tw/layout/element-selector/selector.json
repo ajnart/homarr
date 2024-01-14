@@ -22,5 +22,5 @@
       "message": "已新增類別\"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "從 Docker 導入"
 }

@@ -3,22 +3,22 @@
     "name": "Streamování videa",
     "description": "Vložte video stream nebo video z kamery nebo webové stránky",
     "settings": {
-      "title": "",
+      "title": "Nastavení widgetu videostreamu",
       "FeedUrl": {
-        "label": ""
+        "label": "URL zdroje"
       },
       "autoPlay": {
-        "label": ""
+        "label": "Automatické přehrávání"
       },
       "muted": {
-        "label": ""
+        "label": "Ztlumený zvuk"
       },
       "controls": {
-        "label": ""
+        "label": "Ovládací prvky přehrávače videa"
       }
     }
   },
   "errors": {
-    "invalidStream": ""
+    "invalidStream": "Neplatný stream"
   }
 }

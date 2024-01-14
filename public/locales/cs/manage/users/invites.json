@@ -1,20 +1,20 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Pozvánky uživatelů",
     "pageTitle": "Správa pozvánek uživatelů",
-    "description": "Pomocí pozvánek můžete pozvat uživatele do instance služby Homarr. Pozvánka je platná pouze po určitou dobu a lze ji použít pouze jednou. Platnost musí být v rozmezí od 5 minut do 12 měsíců od vytvoření.",
+    "description": "Pomocí pozvánek můžete pozvat uživatele do Homarra. Pozvánka je platná pouze po určitou dobu a lze ji použít pouze jednou. Platnost pozvánky musí být v rozmezí od 5 minut do 12 měsíců od vytvoření.",
     "button": {
         "createInvite": "Vytvořit pozvánku",
-        "deleteInvite": ""
+        "deleteInvite": "Odstranit pozvánku"
     },
     "table": {
         "header": {
             "id": "ID",
-            "creator": "Vytvořil",
+            "creator": "Vytvořil/a",
             "expires": "Expiruje",
             "action": "Akce"
         },
         "data": {
-            "expiresAt": "",
+            "expiresAt": "vypršela {{at}}",
             "expiresIn": "za {{in}}"
         }
     },
@@ -28,20 +28,20 @@
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Kopírovat pozvánku",
+            "description": "Vaše pozvánka byla vygenerována. Po zavření tohoto okna <b>již nebude možné tento odkaz zkopírovat</b>. Pokud si již nepřejete uvedenou osobu pozvat, můžete tuto pozvánku kdykoli smazat.",
+            "invitationLink": "Odkaz na pozvánku",
             "details": {
                 "id": "ID",
-                "token": ""
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Zkopírovat odkaz a zavřít"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Odstranit pozvánku",
+            "description": "Jste si jisti, že chcete tuto pozvánku smazat? Uživatelé s tímto odkazem již nebudou moci pomocí tohoto odkazu vytvořit účet."
         }
     },
     "noInvites": "Zatím zde nejsou žádné pozvánky."

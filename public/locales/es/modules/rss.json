@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Límite de líneas de texto"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

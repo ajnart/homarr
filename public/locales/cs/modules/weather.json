@@ -3,35 +3,35 @@
     "name": "Počasí",
     "description": "Zobrazuje aktuální informace o počasí na nastaveném místě.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro widget počasí",
       "displayInFahrenheit": {
-        "label": ""
+        "label": "Zobrazení ve stupních Fahrenheita"
       },
       "displayCityName": {
-        "label": ""
+        "label": "Zobrazit název města"
       },
       "location": {
-        "label": ""
+        "label": "Lokalita pro počasí"
       }
     }
   },
   "card": {
     "weatherDescriptions": {
-      "clear": "",
-      "mainlyClear": "",
-      "fog": "",
-      "drizzle": "",
-      "freezingDrizzle": "",
-      "rain": "",
-      "freezingRain": "",
-      "snowFall": "",
-      "snowGrains": "",
-      "rainShowers": "",
-      "snowShowers": "",
-      "thunderstorm": "",
-      "thunderstormWithHail": "",
-      "unknown": ""
+      "clear": "Jasno",
+      "mainlyClear": "Převážně jasno",
+      "fog": "Mlha",
+      "drizzle": "Mrholení",
+      "freezingDrizzle": "Mrznoucí mrholení",
+      "rain": "Déšť",
+      "freezingRain": "Mrznoucí déšť",
+      "snowFall": "Sněžení",
+      "snowGrains": "Sněhová zrna",
+      "rainShowers": "Dešťové přeháňky",
+      "snowShowers": "Sněhové přeháňky",
+      "thunderstorm": "Bouřka",
+      "thunderstormWithHail": "Bouřka s krupobitím",
+      "unknown": "Neznámý"
     }
   },
-  "error": ""
+  "error": "Došlo k chybě"
 }

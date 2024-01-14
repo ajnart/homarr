@@ -16,7 +16,9 @@
   "state": {
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
-    "declined": "Afgewezen"
+    "declined": "Afgewezen",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Verzoeken goedkeuren",

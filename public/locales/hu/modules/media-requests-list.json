@@ -16,7 +16,9 @@
   "state": {
     "approved": "Jóváhagyva",
     "pendingApproval": "Várakozás jóváhagyásra",
-    "declined": "Elutasítva"
+    "declined": "Elutasítva",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Kérelem megerősítése",

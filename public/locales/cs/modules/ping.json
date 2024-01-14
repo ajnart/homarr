@@ -1,11 +1,11 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Ping",
+    "description": "Zobrazuje indikátor statusu podle kódu HTTP odpovědi dané URL."
   },
   "states": {
-    "online": "",
-    "offline": "",
-    "loading": ""
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Načítám..."
   }
 }

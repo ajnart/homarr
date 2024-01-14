@@ -16,7 +16,9 @@
   "state": {
     "approved": "crwdns2765:0crwdne2765:0",
     "pendingApproval": "crwdns2767:0crwdne2767:0",
-    "declined": "crwdns2769:0crwdne2769:0"
+    "declined": "crwdns2769:0crwdne2769:0",
+    "available": "crwdns4140:0crwdne4140:0",
+    "partial": "crwdns4142:0crwdne4142:0"
   },
   "tooltips": {
     "approve": "crwdns2893:0crwdne2893:0",

@@ -1,57 +1,57 @@
 {
   "save": "Uložit",
-  "apply": "",
-  "insert": "",
-  "about": "",
-  "cancel": "",
-  "close": "",
+  "apply": "Použít",
+  "insert": "Vložit",
+  "about": "O aplikaci",
+  "cancel": "Zrušit",
+  "close": "Zavřít",
   "back": "Zpět",
-  "delete": "",
-  "ok": "",
-  "edit": "",
+  "delete": "Odstranit",
+  "ok": "OK",
+  "edit": "Upravit",
   "next": "Další",
-  "previous": "",
-  "confirm": "",
-  "enabled": "",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
+  "previous": "Zpět",
+  "confirm": "Potvrdit",
+  "enabled": "Zapnuto",
+  "disabled": "Vypnuto",
+  "enableAll": "Aktivovat vše",
+  "disableAll": "Zakázat vše",
+  "version": "Verze",
   "changePosition": "Změnit pozici",
-  "remove": "",
-  "removeConfirm": "",
-  "createItem": "",
+  "remove": "Odstranit",
+  "removeConfirm": "Jste si jisti, že chcete odstranit {{item}}?",
+  "createItem": "+ vytvořit {{item}}",
   "sections": {
-    "settings": "",
+    "settings": "Nastavení",
     "dangerZone": "Nebezpečná zóna"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
-    "password": ""
+    "apiKey": "API klíč",
+    "username": "Uživatelské jméno",
+    "password": "Heslo"
   },
-  "tip": "",
+  "tip": "Tip: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "vteřiny",
+    "minutes": "minuty",
+    "hours": "hodiny"
   },
-  "loading": "",
+  "loading": "Načítám...",
   "breakPoints": {
     "small": "malý",
     "medium": "střední",
     "large": "velký"
   },
-  "seeMore": "",
+  "seeMore": "Zobrazit více...",
   "position": {
     "left": "Vlevo",
-    "center": "",
+    "center": "Střed",
     "right": "Vpravo"
   },
   "attributes": {
-    "width": "",
-    "height": ""
+    "width": "Šířka",
+    "height": "Výška"
   },
-  "public": "",
+  "public": "Veřejné",
   "restricted": "Omezené"
 }

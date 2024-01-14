@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Затискач текстових рядків"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

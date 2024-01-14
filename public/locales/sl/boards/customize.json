@@ -1,29 +1,29 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "backToBoard": "",
+    "metaTitle": "Prilagodite {{name}} Board",
+    "pageTitle": "Prilagoditev za {{name}} Board",
+    "backToBoard": "Nazaj na krov",
     "settings": {
         "appearance": {
-            "primaryColor": "",
-            "secondaryColor": ""
+            "primaryColor": "Osnovna barva",
+            "secondaryColor": "Sekundarna barva"
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Shranjevanje sprememb",
+        "note": "Previdno, imate neshranjene spremembe!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Shranjevanje prilagoditev",
+            "message": "Počakajte, da shranimo vašo prilagoditev"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Shranjene prilagoditve",
+            "message": "Vaša prilagoditev je bila uspešno shranjena"
         },
         "error": {
             "title": "Napaka",
-            "message": ""
+            "message": "Ni mogoče shraniti sprememb"
         }
     }
 }

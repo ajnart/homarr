@@ -9,7 +9,7 @@
         "users": {
             "title": "用户",
             "items": {
-                "manage": "管理",
+                "manage": "管理中心",
                 "invites": "邀请"
             }
         },

@@ -1,7 +1,7 @@
 {
   "save": "Spara",
-  "apply": "",
-  "insert": "",
+  "apply": "Verkställ",
+  "insert": "Infoga",
   "about": "Om",
   "cancel": "Avbryt",
   "close": "Stäng",
@@ -45,7 +45,7 @@
   "seeMore": "Se mer...",
   "position": {
     "left": "Vänster",
-    "center": "",
+    "center": "Centrera",
     "right": "Höger"
   },
   "attributes": {
@@ -53,5 +53,5 @@
     "height": "Höjd"
   },
   "public": "Publik",
-  "restricted": ""
+  "restricted": "Begränsad"
 }

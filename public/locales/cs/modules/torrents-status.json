@@ -3,85 +3,85 @@
     "name": "Torrenty",
     "description": "Zobrazuje seznam torrentů z podporovaných klientů Torrent.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro widget Torrentů",
       "refreshInterval": {
-        "label": ""
+        "label": "Interval obnovení (v sekundách)"
       },
       "displayCompletedTorrents": {
-        "label": ""
+        "label": "Zobrazit dokončené torrenty"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Zobrazit aktivní torrenty"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Rychlost nahrávání, aby byl torrent považován za aktivní (kB/s)"
       },
       "displayStaleTorrents": {
-        "label": ""
+        "label": "Zobrazovat neaktivní torrenty"
       },
       "labelFilterIsWhitelist": {
-        "label": ""
+        "label": "Seznam štítků je whitelist (místo blacklistu)"
       },
       "labelFilter": {
-        "label": "",
-        "description": ""
+        "label": "Seznam štítků",
+        "description": "Když je zaškrtnuta možnost \"je whitelist\", bude se chovat jako whitelist. Pokud možnost není zaškrtnutá, bude se chovat jako blacklist. Nebude dělat nic, když zůstane prázdný"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Zobrazení filtrovaného poměru seznamu torrentů",
+        "info": "Pokud je vypnuto, zobrazí se pouze obecný poměr. Obecný poměr bude stále používat štítky, pokud jsou nastaveny"
       }
     }
   },
   "card": {
     "footer": {
-      "error": "",
+      "error": "Chyba",
       "lastUpdated": "Naposledy aktualizováno před {{time}}",
       "ratioGlobal": "Obecný poměr",
       "ratioWithFilter": "Filtrovaný poměr"
     },
     "table": {
       "header": {
-        "isCompleted": "",
-        "name": "",
-        "dateAdded": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": "",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
-        "state": "",
-        "stateMessage": ""
+        "isCompleted": "Stahování",
+        "name": "Název",
+        "dateAdded": "Přidáno dne",
+        "size": "Velikost",
+        "download": "Stahování",
+        "upload": "Nahrávání",
+        "estimatedTimeOfArrival": "Odhadovaný čas",
+        "progress": "Postup",
+        "totalUploaded": "Celkem nahráno",
+        "totalDownloaded": "Celkem staženo",
+        "ratio": "Poměr",
+        "seeds": "Seeds (připojení)",
+        "peers": "Peers (připojení)",
+        "label": "Popis",
+        "state": "Status",
+        "stateMessage": "Zpráva stavu"
       },
       "item": {
-        "text": ""
+        "text": "Spravováno aplikací {{appName}}, poměr {{ratio}}"
       },
       "body": {
-        "nothingFound": "",
-        "filterHidingItems": ""
+        "nothingFound": "Nebyly nalezeny žádné torrenty",
+        "filterHidingItems": "{{count}} položek je skryto Vašimi filtry"
       }
     },
     "lineChart": {
       "title": "Aktuální rychlost stahování",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "download": "Stahování: {{download}}",
+      "upload": "Nahrávání: {{upload}}",
+      "timeSpan": "před {{seconds}} sekundami",
+      "totalDownload": "Stahování: {{download}}/s",
+      "totalUpload": "Nahrávání: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nebyl nalezen žádný podporovaný Torrent klient!",
+        "text": "Přidejte podporovaného Torrent klienta pro zobrazení aktuálně stahovaných souborů"
       },
       "generic": {
-        "title": "",
-        "text": ""
+        "title": "Došlo k neočekávané chybě",
+        "text": "Nelze komunikovat s Vašimi klienty Torrentu. Zkontrolujte prosím Vaši konfiguraci"
       }
     },
     "loading": {
@@ -89,14 +89,14 @@
       "description": "Navazování spojení"
     },
     "popover": {
-      "introductionPrefix": "",
+      "introductionPrefix": "Spravuje",
       "metrics": {
-        "queuePosition": "",
-        "progress": "",
-        "totalSelectedSize": "",
-        "state": "",
-        "ratio": "",
-        "completed": ""
+        "queuePosition": "Pozice ve frontě - {{position}}",
+        "progress": "Postup - {{progress}}%",
+        "totalSelectedSize": "Celkem - {{totalSize}}",
+        "state": "Stav - {{state}}",
+        "ratio": "Poměr -",
+        "completed": "Hotovo"
       }
     }
   }

@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Textzeilen Klammer"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

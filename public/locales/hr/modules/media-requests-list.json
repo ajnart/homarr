@@ -16,7 +16,9 @@
   "state": {
     "approved": "Odobreno",
     "pendingApproval": "Odobrenje na čekanju",
-    "declined": "Odbijeno"
+    "declined": "Odbijeno",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Odobri zahtjeve",

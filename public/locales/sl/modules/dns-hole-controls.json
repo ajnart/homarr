@@ -1,17 +1,17 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Nadzor luknje DNS",
+    "description": "Nadzorujte PiHole ali AdGuard iz nadzorne plošče",
     "settings": {
-      "title": "",
+      "title": "Nastavitve nadzora luknje DNS",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Prikaži gumbe \"Omogoči/izključi vse"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Ni mogoče najti luknje DNS",
+        "text": "Pri povezovanju z vašimi luknjami DNS je prišlo do težave. Prosimo, preverite svojo konfiguracijo/integracijo(-e)."
       }
     }
   }

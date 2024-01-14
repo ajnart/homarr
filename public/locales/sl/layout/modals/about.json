@@ -5,15 +5,15 @@
 	"key": "Bližnjična tipka",
 	"action": "Dejanje",
 	"keybinds": "Vezave tipk",
-	"translators": "",
-	"translatorsDescription": "",
-	"contributors": "",
-	"contributorsDescription": "",
+	"translators": "Prevajalci ({{count}})",
+	"translatorsDescription": "Zahvaljujoč tem ljudem je Homarr na voljo v {{languages}} jezikih! Želite pomagati pri prevajanju Homarra v svoj jezik? Preberite, kako to storiti <a>tukaj</a>.",
+	"contributors": "Sodelujoči ({{count}})",
+	"contributorsDescription": "Ti ljudje so ustvarili kodo, ki omogoča delovanje sistema homarr! Želite pomagati graditi Homarr? Preberite, kako to storiti <a>tukaj</a>",
 	"actions": {
-		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"toggleTheme": "Preklapljanje med načinom svetlobe in teme",
+		"focusSearchBar": "Osredotočite se na iskalno vrstico",
+		"openDocker": "Odprite docker Pripomoček",
+		"toggleEdit": "Preklapljanje načina urejanja"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Različica konfiguracijske sheme",
@@ -24,7 +24,7 @@
 		"experimental_disableEditMode": "<b>EKSPERIMENTALNO</b>: Onemogočite način urejanja"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Novo: {{newVersion}}",
+		"dropdown": "Različica {{newVersion}} je na voljo! Trenutna različica je {{currentVersion}}"
 	}
 }
