@@ -16,9 +16,9 @@
                 "label": "Trvale smazat",
                 "disabled": "Smazání je zakázáno, protože starší komponenty Homarru neumožňují smazání výchozí konfigurace. Smazání bude možné v budoucnu."
             },
-            "duplicate": "",
+            "duplicate": "Duplikovat",
             "rename": {
-                "label": "",
+                "label": "Přejmenovat",
                 "modal": {
                     "title": "",
                     "fields": {
