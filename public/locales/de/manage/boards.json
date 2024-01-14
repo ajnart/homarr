@@ -16,15 +16,15 @@
                 "label": "Dauerhaft löschen",
                 "disabled": "Ein Löschen wurde deaktiviert, da ältere Homarr-Komponenten das Löschen der Standardkonfiguration nicht erlauben. Die Löschung wird in Zukunft möglich sein."
             },
-            "duplicate": "",
+            "duplicate": "Duplizieren",
             "rename": {
-                "label": "",
+                "label": "Umbenennen",
                 "modal": {
-                    "title": "",
+                    "title": "Board {{name}} umbenennen",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Neuer Name",
+                            "placeholder": "Neuer Boardname"
                         }
                     }
                 }
