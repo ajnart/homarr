@@ -95,7 +95,7 @@ export const integrationFieldProperties: {
   nzbGet: ['username', 'password'],
   qBittorrent: ['username', 'password'],
   transmission: ['username', 'password'],
-  jellyfin: ['username', 'password'],
+  jellyfin: ["apiKey"],
   plex: ['apiKey'],
   pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
