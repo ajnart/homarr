@@ -52,11 +52,11 @@
         "totalUploaded": "Total uppladdning",
         "totalDownloaded": "Total nedladdning",
         "ratio": "Förhållande",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "seeds": "Seeds (anslutna)",
+        "peers": "Peers (ansluten)",
+        "label": "Etikett",
         "state": "Läge",
-        "stateMessage": ""
+        "stateMessage": "Status meddelande"
       },
       "item": {
         "text": "Hanteras av {{appName}}, {{ratio}} förhållande"
