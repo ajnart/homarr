@@ -46,6 +46,8 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "JsDelivr";
 }
 
 type JsdelivrRepositoryUrl = {

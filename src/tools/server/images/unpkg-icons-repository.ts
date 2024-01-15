@@ -35,6 +35,8 @@ export class UnpkgIconsRepository extends AbstractIconRepository {
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "UnPkg";
 }
 
 type UnpkgResponse = {
