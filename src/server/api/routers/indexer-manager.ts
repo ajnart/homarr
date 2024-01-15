@@ -1,7 +1,7 @@
-import { TRPCError } from '@trpc/server';
 import axios from 'axios';
+import Consola from 'consola';
 import { z } from 'zod';
-import { checkIntegrationsType } from '~/tools/client/app-properties';
+import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { IntegrationType } from '~/types/app';
 
@@ -20,12 +20,11 @@ export const indexerManagerRouter = createTRPCRouter({
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
       );
-      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!app || !apiKey) {
-        throw new TRPCError({
-          code: 'BAD_REQUEST',
-          message: 'Wrong request',
-        });
+        Consola.error(
+          `failed to process request to app '${app?.integration}' (${app?.id}). Please check api key`
+        );
       }
 
       const appUrl = new URL(app.url);
@@ -51,13 +50,11 @@ export const indexerManagerRouter = createTRPCRouter({
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
       );
-      const apiKey = app?.integration?.properties.find((x) => x.field === 'apiKey')?.value;
-
+      const apiKey = findAppProperty(app, 'apiKey');
       if (!app || !apiKey) {
-        throw new TRPCError({
-          code: 'BAD_REQUEST',
-          message: 'Wrong request',
-        });
+        Consola.error(
+          `failed to process request to app '${app?.integration}' (${app?.id}). Please check api key`
+        );
       }
 
       const appUrl = new URL(app.url);

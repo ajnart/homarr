@@ -41,7 +41,7 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
 
   return (
     <Flex h="100%" gap={0} direction="column">
-      <Text mt={2}>{t('status.title')}</Text>
+      <Text mt={2}>{t('indexersStatus.title')}</Text>
       <Card py={5} px={10} radius="md" withBorder>
         {data.map((indexer: any) => (
           <Group key={indexer.id} position="apart">
@@ -58,7 +58,7 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         onClick={handleTestAllClick}
         rightIcon={<IconTestPipe size={20} />}
       >
-        {t('status.testAll')}
+        {t('indexersStatus.testAllButton')}
       </Button>
     </Flex>
   );
