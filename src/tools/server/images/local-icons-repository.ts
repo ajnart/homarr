@@ -1,10 +1,6 @@
 import fs from 'fs';
 
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class LocalIconsRepository extends AbstractIconRepository {
   constructor() {

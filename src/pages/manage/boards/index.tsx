@@ -5,7 +5,8 @@ import {
   Card,
   Group,
   LoadingOverlay,
-  Menu, Modal,
+  Menu,
+  Modal,
   SimpleGrid,
   Stack,
   Text,
@@ -15,7 +16,8 @@ import { useDisclosure, useListState } from '@mantine/hooks';
 import {
   IconBox,
   IconCategory,
-  IconCopy, IconCursorText,
+  IconCopy,
+  IconCursorText,
   IconDeviceFloppy,
   IconDotsVertical,
   IconFolderFilled,
@@ -40,7 +42,6 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
-import { modals } from '@mantine/modals';
 import { notifications } from '@mantine/notifications';
 import { RenameBoardModal } from '~/components/Dashboard/Modals/RenameBoard/RenameBoardModal';
 import { useState } from 'react';

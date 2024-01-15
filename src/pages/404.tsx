@@ -1,4 +1,4 @@
-import { Button, Center, Stack, Text, Title, createStyles } from '@mantine/core';
+import { Button, Center, createStyles, Stack, Text, Title } from '@mantine/core';
 import { GetServerSidePropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';

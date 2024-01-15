@@ -1,4 +1,4 @@
-import { GetServerSidePropsContext, NextPage } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import dynamic from 'next/dynamic';
 import 'swagger-ui-react/swagger-ui.css';
 import React, { useEffect } from 'react';

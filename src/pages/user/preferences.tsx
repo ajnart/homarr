@@ -1,14 +1,4 @@
-import {
-  Button,
-  Container,
-  Group,
-  LoadingOverlay,
-  Paper,
-  Select,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Button, Container, Group, LoadingOverlay, Paper, Select, Stack, Text, Title } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
@@ -24,7 +14,7 @@ import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { RouterOutputs, api } from '~/utils/api';
+import { api, RouterOutputs } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';
 
