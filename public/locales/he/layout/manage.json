@@ -25,7 +25,8 @@
         "tools": {
             "title": "כלים",
             "items": {
-                "docker": "דוקר"
+                "docker": "דוקר",
+                "api": "ממשק API"
             }
         },
         "about": {

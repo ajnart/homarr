@@ -9,7 +9,7 @@
         "users": {
             "title": "用户",
             "items": {
-                "manage": "管理中心",
+                "manage": "管理",
                 "invites": "邀请"
             }
         },
@@ -25,7 +25,8 @@
         "tools": {
             "title": "工具",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {

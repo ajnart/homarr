@@ -16,15 +16,15 @@
                 "label": "Odstrániť natrvalo",
                 "disabled": "Odstránenie zakázané, pretože staršie komponenty Homarr neumožňujú odstránenie predvoleného konfigurátora. Odstránenie bude možné v budúcnosti."
             },
-            "duplicate": "",
+            "duplicate": "Duplikovať",
             "rename": {
-                "label": "",
+                "label": "Premenovať",
                 "modal": {
-                    "title": "",
+                    "title": "Premenovať tabuľu {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nový názov",
+                            "placeholder": "Nový názov dosky"
                         }
                     }
                 }

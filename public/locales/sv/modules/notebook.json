@@ -17,11 +17,11 @@
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
+			"bold": "Fet",
+			"italic": "Kursiv",
+			"strikethrough": "Genomstruken",
+			"underline": "Understruken",
+			"colorText": "Textfärg",
 			"colorHighlight": "",
 			"code": "",
 			"clear": "",

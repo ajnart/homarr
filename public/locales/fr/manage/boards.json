@@ -16,15 +16,15 @@
                 "label": "Supprimer définitivement",
                 "disabled": "Suppression désactivée car certains anciens composants Homarr ne permettent pas la suppression de la configuration par défaut. La suppression sera possible dans le futur."
             },
-            "duplicate": "",
+            "duplicate": "Dupliquer",
             "rename": {
-                "label": "",
+                "label": "Renommer",
                 "modal": {
-                    "title": "",
+                    "title": "Renommer le tableau {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nouveau nom",
+                            "placeholder": "Nouveau nom de tableau"
                         }
                     }
                 }

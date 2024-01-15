@@ -16,15 +16,15 @@
                 "label": "永久删除",
                 "disabled": "删除功能被禁用，因为较旧的 Homarr 组件不允许删除默认配置。将来可能会删除。"
             },
-            "duplicate": "",
+            "duplicate": "复制",
             "rename": {
-                "label": "",
+                "label": "重命名",
                 "modal": {
-                    "title": "",
+                    "title": "重命名面板 {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "新名称",
+                            "placeholder": "新面板名称"
                         }
                     }
                 }

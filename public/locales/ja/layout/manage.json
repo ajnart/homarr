@@ -25,7 +25,8 @@
         "tools": {
             "title": "ツール",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": ""
             }
         },
         "about": {

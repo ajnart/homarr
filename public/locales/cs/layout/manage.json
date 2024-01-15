@@ -25,7 +25,8 @@
         "tools": {
             "title": "Nástroje",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {
