@@ -47,10 +47,8 @@ export const appRouter = createTRPCRouter({
           // Cache for 5 minutes
           'Cache-Control': 'max-age=300'
         },
-        httpAgent: agent,
         httpsAgent: agent,
-        timeout: 12 * 1000, // 12 seconds,
-        maxRedirects: 3
+        timeout: 12 * 1000 // 12 seconds
       })
         .then((response) => ({
           status: response.status,
