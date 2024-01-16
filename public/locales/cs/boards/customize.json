@@ -1,6 +1,6 @@
 {
     "metaTitle": "Přizpůsobení {{name}} plochy",
-    "pageTitle": "Přizpůsobení {{name}} plochy",
+    "pageTitle": "Přizpůsobení plochy {{name}}",
     "backToBoard": "Zpět na plochu",
     "settings": {
         "appearance": {
@@ -9,21 +9,21 @@
         }
     },
     "save": {
-        "button": "",
-        "note": ""
+        "button": "Uložit změny",
+        "note": "Pozor, máte neuložené změny!"
     },
     "notifications": {
         "pending": {
-            "title": "",
-            "message": ""
+            "title": "Ukládání přizpůsobení",
+            "message": "Počkejte prosím, než vaše přizpůsobení uložíme"
         },
         "success": {
-            "title": "",
-            "message": ""
+            "title": "Přizpůsobení uloženo",
+            "message": "Vaše přizpůsobení bylo úspěšně uloženo"
         },
         "error": {
-            "title": "",
-            "message": ""
+            "title": "Chyba",
+            "message": "Nelze uložit změny"
         }
     }
 }

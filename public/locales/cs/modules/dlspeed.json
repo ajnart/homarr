@@ -6,29 +6,29 @@
   "card": {
     "table": {
       "header": {
-        "name": "",
-        "size": "",
-        "download": "",
-        "upload": "",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "name": "Název",
+        "size": "Velikost",
+        "download": "Stahování",
+        "upload": "Nahrávání",
+        "estimatedTimeOfArrival": "Odhadovaný čas",
+        "progress": "Postup"
       },
       "body": {
-        "nothingFound": ""
+        "nothingFound": "Nebyly nalezeny žádné torrenty"
       }
     },
     "lineChart": {
       "title": "Aktuální rychlost stahování",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "download": "Stahování: {{download}}",
+      "upload": "Nahrávání: {{upload}}",
+      "timeSpan": "před {{seconds}} sekundami",
+      "totalDownload": "Stahování: {{download}}/s",
+      "totalUpload": "Nahrávání: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nebyl nalezen žádný podporovaný klient pro stahování!",
+        "text": "Chcete-li zobrazit aktuální stahování, přidejte službu stahování"
       }
     }
   }

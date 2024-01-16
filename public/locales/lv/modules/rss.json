@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Teksta līniju skava"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

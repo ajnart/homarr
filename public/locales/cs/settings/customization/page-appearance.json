@@ -19,32 +19,32 @@
     "label": "Pozadí"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Příloha obrázku na pozadí",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Pevné - pozadí zůstává ve stejné poloze (doporučeno)",
+      "scroll": "Posouvání - Pozadí se posouvá s Vaší myší"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Velikost obrázku na pozadí",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Překrýt - zmenší obrázek tak, aby překrýval celé okno oříznutím nadbytečného prostoru. (doporučeno)",
+      "contain": "Obsáhnout - škáluje obrázek co nejvíce je to možné v rámci jeho kontejneru, aniž by obrázek byl oříznut nebo roztáhnut."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Příloha obrázku na pozadí",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Opakovat - Obrázek se opakuje tolikrát, kolikrát je potřeba, aby pokryl celou oblast pro pozadí.",
+      "no-repeat": "Žádné opakování - obrázek se neopakuje a nemusí vyplnit celý prostor (doporučeno)",
+      "repeat-x": "Opakovat X - Stejné jako \"Opakovat\", ale pouze na vodorovné ose.",
+      "repeat-y": "Opakovat Y - Stejné jako \"Opakovat\", ale pouze na svislé ose."
     }
   },
   "customCSS": {
     "label": "Vlastní CSS",
     "description": "Dále si můžete přizpůsobit ovládací panel pomocí CSS, doporučujeme pouze zkušeným uživatelům",
-    "placeholder": "",
-    "applying": ""
+    "placeholder": "Vlastní CSS se použije jako poslední",
+    "applying": "Aplikování CSS..."
   }
 }

@@ -16,6 +16,11 @@ const definition = defineWidget({
       defaultValue: 'sun.sun',
       info: true,
     },
+    automationId: {
+      type: 'text',
+      info: true,
+      defaultValue: '',
+    },
     displayName: {
       type: 'text',
       defaultValue: 'Sun',
@@ -39,6 +44,7 @@ interface SmartHomeEntityStateWidgetProps {
 function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
   const { t } = useTranslation('modules/smart-home/entity-state');
   const { name: configName } = useConfigContext();
+  const utils = api.useUtils();
 
   const { data, isInitialLoading, isLoading, isError, error } =
     api.smartHomeEntityState.retrieveStatus.useQuery(
@@ -48,9 +54,26 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
       },
       {
         enabled: !!configName,
-        refetchInterval: 2 * 60 * 1000
-      }
+        refetchInterval: 2 * 60 * 1000,
+      },
     );
+
+  const { mutateAsync: mutateTriggerAutomationAsync } = api.smartHomeEntityState.triggerAutomation.useMutation({
+    onSuccess: () => {
+      void utils.smartHomeEntityState.invalidate();
+    },
+  });
+
+  const handleClick = async () => {
+    if (!widget.properties.automationId) {
+      return;
+    }
+
+    await mutateTriggerAutomationAsync({
+      configName: configName as string,
+      widgetId: widget.id,
+    });
+  };
 
   let dataComponent = null;
 
@@ -84,7 +107,15 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
   }
 
   return (
-    <Center h="100%" w="100%">
+    <Center
+      onClick={handleClick}
+      sx={() => {
+        return {
+          cursor: widget.properties.automationId?.length > 0 ? 'pointer' : undefined,
+        };
+      }}
+      h="100%"
+      w="100%">
       <Stack align="center" spacing={3}>
         <Text align="center" weight="bold" size="lg">
           {widget.properties.displayName}

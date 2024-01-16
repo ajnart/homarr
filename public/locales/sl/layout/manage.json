@@ -1,31 +1,32 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Domov"
         },
         "boards": {
-            "title": ""
+            "title": "Deske"
         },
         "users": {
-            "title": "",
+            "title": "Uporabniki",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Upravljanje",
+                "invites": "Vabi"
             }
         },
         "help": {
-            "title": "",
+            "title": "Pomoč",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Dokumentacija",
+                "report": "Poročanje o težavi / hrošču",
+                "discord": "Skupnost Discord",
+                "contribute": "Prispevajte"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Orodja",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": ""
             }
         },
         "about": {

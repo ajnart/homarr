@@ -29,7 +29,7 @@ export const StepOnboardingFinished = () => {
           </Text>
           <NavLink
             component={Link}
-            href="https://homarr.dev/docs/introduction/after-the-installation"
+            href="https://homarr.dev/docs/getting-started/after-the-installation"
             target="_blank"
             rightSection={<IconExternalLink size="0.8rem" stroke={1.5} />}
             className={classes.link}

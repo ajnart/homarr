@@ -13,6 +13,7 @@ import superjson from 'superjson';
 import { ZodError } from 'zod';
 
 import { getServerAuthSession } from '../auth';
+import { OpenApiMeta } from 'trpc-openapi';
 
 /**
  * 1. CONTEXT
@@ -70,7 +71,7 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
  * errors on the backend.
  */
 
-const t = initTRPC.context<typeof createTRPCContext>().create({
+const t = initTRPC.context<typeof createTRPCContext>().meta<OpenApiMeta>().create({
   transformer: superjson,
   errorFormatter({ shape, error }) {
     return {

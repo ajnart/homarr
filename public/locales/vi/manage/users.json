@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Tất cả",
+            "normal": "Thường",
+            "admin": "Quản trị viên",
+            "owner": "Chủ"
         }
     },
     "table": {

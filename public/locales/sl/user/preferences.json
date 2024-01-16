@@ -1,20 +1,20 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Nastavitve",
+    "pageTitle": "Vaše želje",
     "boards": {
         "defaultBoard": {
-            "label": ""
+            "label": "Privzeta plošča"
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Dostopnost",
         "disablePulse": {
-            "label": "",
-            "description": ""
+            "label": "Onemogočite impulze ping",
+            "description": "Privzeto bodo kazalniki ping v Homarru utripali. To je lahko moteče. Ta drsnik bo deaktiviral animacijo"
         },
         "replaceIconsWithDots": {
-            "label": "",
-            "description": ""
+            "label": "Zamenjajte ping pike z ikonami",
+            "description": "Za barvno slepe uporabnike bodo pingove pike morda neprepoznavne. To bo kazalnike nadomestilo z ikonami"
         }
     },
     "localization": {
@@ -22,11 +22,11 @@
             "label": "Jezik"
         },
         "firstDayOfWeek": {
-            "label": "",
+            "label": "Prvi dan v tednu",
             "options": {
-                "monday": "",
-                "saturday": "",
-                "sunday": ""
+                "monday": "Ponedeljek",
+                "saturday": "Sobota",
+                "sunday": "Nedelja"
             }
         }
     },
@@ -34,15 +34,15 @@
         "title": "Iskalnik",
         "custom": "Po meri",
         "newTab": {
-            "label": ""
+            "label": "Odprite rezultate iskanja v novem zavihku"
         },
         "autoFocus": {
-            "label": "",
-            "description": ""
+            "label": "Osredotočite se na iskalno vrstico ob nalaganju strani.",
+            "description": "To bo samodejno osredotočilo iskalno vrstico, ko se boste pomikali po straneh odbora. Deluje samo na namiznih napravah."
         },
         "template": {
             "label": "URL poizvedbe",
-            "description": ""
+            "description": "Uporabite %s kot nadomestno ime za poizvedbo"
         }
     }
 }

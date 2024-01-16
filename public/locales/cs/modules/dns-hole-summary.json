@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "Shrnutí DNS hole",
+    "name": "Souhrn DNS hole",
     "description": "Zobrazuje důležitá data ze služby PiHole nebo AdGuard",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro souhrn DNS Hole",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Používat barvy z PiHole"
       },
       "layout": {
         "label": "Rozložení",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2x2",
+          "row": "Horizontální",
+          "column": "Vertikální"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domény na adlistech",
+      "queriesToday": "Dotazů dnes",
+      "queriesBlockedTodayPercentage": "Zablokováno dnes",
+      "queriesBlockedToday": "Zablokováno dnes"
     }
   }
 }

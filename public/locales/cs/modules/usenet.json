@@ -6,44 +6,44 @@
   "card": {
     "errors": {
       "noDownloadClients": {
-        "title": "",
-        "text": ""
+        "title": "Nebyl nalezen žádný podporovaný klient pro stahování!",
+        "text": "Přidejte podporovaného Usenet klienta pro zobrazení aktuálně stahovaných souborů"
       }
     }
   },
   "tabs": {
-    "queue": "",
-    "history": ""
+    "queue": "Fronta",
+    "history": "Historie"
   },
   "info": {
-    "sizeLeft": "",
-    "paused": ""
+    "sizeLeft": "Zbývá",
+    "paused": "Pozastaveno"
   },
   "queue": {
     "header": {
-      "name": "",
-      "size": "",
-      "eta": "",
-      "progress": ""
+      "name": "Název",
+      "size": "Velikost",
+      "eta": "Odhadovaný čas",
+      "progress": "Postup"
     },
-    "empty": "",
+    "empty": "Prázdné",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Chyba",
+      "message": "Došlo k chybě"
     },
-    "paused": ""
+    "paused": "Pozastaveno"
   },
   "history": {
     "header": {
-      "name": "",
-      "size": "",
-      "duration": ""
+      "name": "Název",
+      "size": "Velikost",
+      "duration": "Doba trvání"
     },
-    "empty": "",
+    "empty": "Prázdné",
     "error": {
-      "title": "",
-      "message": ""
+      "title": "Chyba",
+      "message": "Chyba při načítání historie"
     },
-    "paused": ""
+    "paused": "Pozastaveno"
   }
 }

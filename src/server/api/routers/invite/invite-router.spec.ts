@@ -3,11 +3,9 @@ import { eq } from 'drizzle-orm';
 import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
 import { Session, User } from 'next-auth';
 import { v4 } from 'uuid';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { db, sqlite } from '~/server/db';
 import { invites, users } from '~/server/db/schema';
-
-import { rootRouter } from '../../root';
 import { inviteRouter } from './invite-router';
 
 const sessionMock = (user?: Partial<User>): Session => ({

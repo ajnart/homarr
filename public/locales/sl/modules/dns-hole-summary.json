@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Povzetek lukenj DNS",
+    "description": "Prikaže pomembne podatke iz PiHole ali AdGuard",
     "settings": {
-      "title": "",
+      "title": "Nastavitve za povzetek luknje DNS",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Uporaba barv iz PiHole"
       },
       "layout": {
         "label": "Postavitev",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 po 2",
+          "row": "Vodoravno",
+          "column": "Navpično"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domene na seznamu adlists",
+      "queriesToday": "Poizvedbe danes",
+      "queriesBlockedTodayPercentage": "Blokirano danes",
+      "queriesBlockedToday": "Blokirano danes"
     }
   }
 }

@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Umožňuje snadno zobrazit a spravovat všechny Docker kontejnery."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Vyhledávejte podle kontejneru nebo názvu snímku"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Název",
+      "image": "Obraz",
+      "ports": "Porty",
+      "state": "Status"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "+ dalších {{ports}}"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Běží",
+      "created": "Vytvořený",
+      "stopped": "Zastavený",
+      "unknown": "Neznámý"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Přidat aplikaci",
+      "message": "Přidat aplikaci do Homarra"
     },
     "restart": {
-      "title": ""
+      "title": "Restartovat"
     },
     "stop": {
-      "title": ""
+      "title": "Zastavit"
     },
     "start": {
-      "title": ""
+      "title": "Spustit"
     },
     "refreshData": {
-      "title": ""
+      "title": "Aktualizovat data"
     },
     "remove": {
-      "title": ""
+      "title": "Odstranit"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Přidat do Homarra"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Startuje",
+      "end": "Zastaven"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Zastavování",
+      "end": "Zastavený"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Restartování",
+      "end": "Restartován"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Odstraňování",
+      "end": "Odstraněn"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Integrace Dockeru selhala",
+      "message": "Zapomněli jste připojit Docker socket?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Došlo k chybě"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Přidávejte, prosím, vždy jen jednu aplikaci nebo službu!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }

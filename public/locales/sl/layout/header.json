@@ -1,27 +1,27 @@
 {
     "search": {
-        "label": "",
+        "label": "Iskanje",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Iskanje {{query}} na spletu",
+            "youtube": "Poiščite {{query}} na YouTubu",
+            "torrent": "Iskanje torrentov {{query}}",
+            "movie": "Iskanje za {{query}} na {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "logout": "",
+            "switchTheme": "Tema preklopa",
+            "preferences": "Uporabniške nastavitve",
+            "defaultBoard": "Privzeta armaturna plošča",
+            "manage": "Upravljanje",
+            "logout": "Odjava iz {{username}}",
             "login": "Prijava"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Najboljši rezultati {{count}} za <b>{{search}}</b>."
         }
     }
 }

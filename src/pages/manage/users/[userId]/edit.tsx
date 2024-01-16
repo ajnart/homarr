@@ -21,7 +21,7 @@ const EditPage = () => {
 
   const router = useRouter();
 
-  const { isLoading, data } = api.user.details.useQuery({ userId: router.query.userId as string });
+  const { data } = api.user.details.useQuery({ userId: router.query.userId as string });
 
   const metaTitle = `${t('metaTitle', {
     username: data?.name,

@@ -1,10 +1,4 @@
-import {
-  MRT_Table,
-  useMantineReactTable,
-  type MRT_ColumnDef,
-} from 'mantine-react-table';
-
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
+import { type MRT_ColumnDef, MRT_Table, useMantineReactTable } from 'mantine-react-table';
 import {
   Badge,
   Center,
@@ -26,12 +20,13 @@ import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
-import { useCardStyles } from '~/components/layout/Common/useCardStyles';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
-import { NormalizedDownloadQueueResponse } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { AppIntegrationType } from '~/types/app';
+import {
+  NormalizedDownloadQueueResponse,
+  TorrentTotalDownload,
+} from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
@@ -40,8 +35,6 @@ import { TorrentQueuePopover } from './TorrentQueueItem';
 
 dayjs.extend(duration);
 dayjs.extend(relativeTime);
-
-const downloadAppTypes: AppIntegrationType['type'][] = ['deluge', 'qBittorrent', 'transmission'];
 
 const definition = defineWidget({
   id: 'torrents-status',
@@ -96,7 +89,6 @@ interface TorrentTileProps {
 function TorrentTile({ widget }: TorrentTileProps) {
   const { t } = useTranslation('modules/torrents-status');
   const { width, ref } = useElementSize();
-  const { classes } = useCardStyles(true);
 
   const {
     data,
@@ -110,9 +102,9 @@ function TorrentTile({ widget }: TorrentTileProps) {
     dataUpdatedAt: number;
   } = useGetDownloadClientsQueue();
 
-  let torrents: NormalizedTorrent[] = [];
-  if(!(isError || !data || data.apps.length === 0 || Object.values(data.apps).length < 1)) { 
-    torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []))
+  let torrents: TorrentTotalDownload['torrents'] = [];
+  if (!(isError || !data || data.apps.length === 0 || Object.values(data.apps).length < 1)) {
+    torrents = data.apps.flatMap((app) => (app.type === 'torrent' ? app.torrents : []));
   }
 
   const filteredTorrents = filterTorrents(widget, torrents);
@@ -125,30 +117,29 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const ratioGlobal = getTorrentsRatio(widget, torrents, false);
   const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
-  const columns = useMemo<MRT_ColumnDef<NormalizedTorrent>[]>(() => [
+  const columns = useMemo<MRT_ColumnDef<TorrentTotalDownload['torrents'][0]>[]>(() => [
     {
-      id: "dateAdded",
+      id: 'dateAdded',
       accessorFn: (row) => new Date(row.dateAdded),
-      header: "dateAdded",
+      header: 'dateAdded',
+      maxSize: 1,
     },
     {
       accessorKey: 'name',
       header: t('card.table.header.name'),
       Cell: ({ cell, row }) => (
         <Popover
-              withArrow
-              withinPortal
-              radius="lg"
-              shadow="sm"
-              transitionProps={{
-                transition: 'pop',
-              }}
-            >
+          withArrow
+          withinPortal
+          radius="lg"
+          shadow="sm"
+          transitionProps={{
+            transition: 'pop',
+          }}
+        >
           <Popover.Target>
             <Text
-              style={{
-                maxWidth: '30vw',
-              }}
+              maw={'30vw'}
               size="xs"
               lineClamp={1}
             >
@@ -160,34 +151,41 @@ function TorrentTile({ widget }: TorrentTileProps) {
           </Popover.Dropdown>
         </Popover>
       ),
+      maxSize: 1,
+      size: 1,
     },
     {
-      accessorKey: 'totalSize',
+      accessorKey: 'totalSelected',
       header: t('card.table.header.size'),
       Cell: ({ cell }) => formatSize(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1,
     },
     {
       accessorKey: 'uploadSpeed',
       header: t('card.table.header.upload'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1,
     },
     {
       accessorKey: 'downloadSpeed',
       header: t('card.table.header.download'),
       Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1,
     },
     {
       accessorKey: 'eta',
       header: t('card.table.header.estimatedTimeOfArrival'),
       Cell: ({ cell }) => formatETA(Number(cell.getValue())),
       sortDescFirst: true,
+      maxSize: 1,
     },
     {
       accessorKey: 'progress',
       header: t('card.table.header.progress'),
+      maxSize: 1,
       Cell: ({ cell, row }) => (
         <Flex>
           <Text className={useStyles().classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
@@ -291,7 +289,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   return (
     <Flex direction="column" sx={{ height: '100%' }} ref={ref}>
-      <ScrollArea>
+      <ScrollArea style={{ flexGrow: 1 }}>
         <MRT_Table table={torrentsTable} />
       </ScrollArea>
       <Group spacing="sm">
@@ -315,14 +313,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
   );
 }
 
-export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
+export const filterTorrents = (widget: ITorrent, torrents: TorrentTotalDownload['torrents']) => {
   let result = torrents;
   if (!widget.properties.displayCompletedTorrents) {
     result = result.filter(
       (torrent) =>
         !torrent.isCompleted ||
         (widget.properties.displayActiveTorrents &&
-          torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024)
+          torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024),
     );
   }
 
@@ -330,7 +328,7 @@ export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) 
     result = filterTorrentsByLabels(
       result,
       widget.properties.labelFilter,
-      widget.properties.labelFilterIsWhitelist
+      widget.properties.labelFilterIsWhitelist,
     );
   }
 
@@ -339,7 +337,7 @@ export const filterTorrents = (widget: ITorrent, torrents: NormalizedTorrent[]) 
   return result;
 };
 
-const filterStaleTorrent = (widget: ITorrent, torrents: NormalizedTorrent[]) => {
+const filterStaleTorrent = (widget: ITorrent, torrents: TorrentTotalDownload['torrents']) => {
   if (widget.properties.displayStaleTorrents) {
     return torrents;
   }
@@ -348,9 +346,9 @@ const filterStaleTorrent = (widget: ITorrent, torrents: NormalizedTorrent[]) => 
 };
 
 const filterTorrentsByLabels = (
-  torrents: NormalizedTorrent[],
+  torrents: TorrentTotalDownload['torrents'],
   labels: string[],
-  isWhitelist: boolean
+  isWhitelist: boolean,
 ) => {
   if (isWhitelist) {
     return torrents.filter((torrent) => torrent.label && labels.includes(torrent.label));
@@ -361,8 +359,8 @@ const filterTorrentsByLabels = (
 
 export const getTorrentsRatio = (
   widget: ITorrent,
-  torrents: NormalizedTorrent[],
-  applyAllFilter: boolean
+  torrents: TorrentTotalDownload['torrents'],
+  applyAllFilter: boolean,
 ) => {
   if (applyAllFilter) {
     torrents = filterTorrents(widget, torrents);
@@ -370,18 +368,18 @@ export const getTorrentsRatio = (
     torrents = filterTorrentsByLabels(
       torrents,
       widget.properties.labelFilter,
-      widget.properties.labelFilterIsWhitelist
+      widget.properties.labelFilterIsWhitelist,
     );
   }
 
   let totalDownloadedSum = torrents.reduce(
     (sum, torrent) => sum + torrent.totalDownloaded,
-    0
+    0,
   );
 
   return totalDownloadedSum > 0
     ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) /
-        totalDownloadedSum
+    totalDownloadedSum
     : -1;
 };
 

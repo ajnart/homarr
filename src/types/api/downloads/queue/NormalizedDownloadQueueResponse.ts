@@ -13,7 +13,25 @@ export type NormalizedDownloadAppStat = {
 
 export type TorrentTotalDownload = {
   type: 'torrent';
-  torrents: NormalizedTorrent[];
+  torrents: {
+    name: string;
+    state: NormalizedTorrent['state'];
+    totalSelected: number;
+    totalPeers: number;
+    totalSeeds: number;
+    eta: number;
+    progress: number;
+    ratio: number;
+    uploadSpeed: number;
+    downloadSpeed: number;
+    isCompleted: boolean;
+    totalDownloaded: number;
+    totalUploaded: number;
+    label?: string;
+    queuePosition: number;
+    stateMessage: string;
+    dateAdded: string;
+  }[];
   totalDownload: number;
   totalUpload: number;
 };

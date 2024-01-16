@@ -9,6 +9,10 @@
                 "label": "ID de la entidad",
                 "info": "ID de entidad única de Home Assistant. Copia haciendo clic en la entidad > Clic en el icono de engranaje > Clic en el botón copiar en 'ID de la entidad'. Algunas entidades personalizadas pueden no ser compatibles."
             },
+            "automationId": {
+                "label": "ID de automatización opcional",
+                "info": "Su ID de automatización única. Siempre empieza por automation.XXXXX. Si no está establecida, no se podrá hacer clic en el widget, y solo se mostrará el estado. Al hacer clic, la entidad se refrescará."
+            },
             "displayName": {
                 "label": "Nombre a mostrar"
             }

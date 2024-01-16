@@ -25,7 +25,8 @@
         "tools": {
             "title": "Alati",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": ""
             }
         },
         "about": {

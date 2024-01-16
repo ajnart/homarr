@@ -22,5 +22,5 @@
       "message": "已创建分类\"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "从 docker 导入"
 }

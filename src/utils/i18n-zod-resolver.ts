@@ -1,7 +1,7 @@
 import { zodResolver } from '@mantine/form';
 import { TFunction } from 'i18next';
 import { useTranslation } from 'next-i18next';
-import { ErrorMapCtx, ZodIssueCode, ZodSchema, ZodTooBigIssue, ZodTooSmallIssue, z } from 'zod';
+import { ErrorMapCtx, z, ZodIssueCode, ZodSchema, ZodTooBigIssue, ZodTooSmallIssue } from 'zod';
 
 export const useI18nZodResolver = () => {
   const { t } = useTranslation('zod');

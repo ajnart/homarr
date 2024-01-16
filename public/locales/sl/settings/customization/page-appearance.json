@@ -19,26 +19,26 @@
     "label": "Ozadje"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Pritrditev slike v ozadju",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Določeno - ozadje ostane v istem položaju (priporočljivo)",
+      "scroll": "Pomikanje - ozadje se pomika z miško"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Velikost slike v ozadju",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Pokritje - sliko čim bolj pomanjša, da pokrije celotno okno, tako da obreže prevelik prostor. (priporočljivo)",
+      "contain": "Contain - Sliko pomanjša na največjo možno velikost v vsebniku, ne da bi jo obrezal ali raztegnil."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Pritrditev slike v ozadju",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Ponoviti - Slika se ponovi tolikokrat, kolikor je potrebno, da pokrije celotno območje slikanja slike ozadja.",
+      "no-repeat": "Brez ponavljanja - Slika se ne ponavlja in ne sme zapolniti celotnega prostora (priporočljivo).",
+      "repeat-x": "Ponovi X - Enako kot \"Ponovi\", vendar le na vodoravni osi.",
+      "repeat-y": "Ponovi Y - Enako kot \"Ponovi\", vendar le na navpični osi."
     }
   },
   "customCSS": {

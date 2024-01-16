@@ -3,30 +3,30 @@
     "name": "Datum a čas",
     "description": "Zobrazuje aktuální datum a čas.",
     "settings": {
-      "title": "",
+      "title": "Nastavení widgetu Datum a čas",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Časové pásmo",
+        "info": "Vyberte název svého časového pásma, najdete jej zde: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Název města nebo vlastní název"
       },
       "display24HourFormat": {
-        "label": ""
+        "label": "Zobrazit ve 24hodinovém formátu"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Formátování data",
         "data": {
-          "hide": ""
+          "hide": "Skrýt datum"
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Popis hodin",
+        "info": "Na widgetu lze zobrazit vlastní název a kód časové zóny.<br/>Můžete také zobrazit pouze město, nezobrazit nic,<br/>nebo dokonce zobrazit pouze časové pásmo, pokud je jsou obě informace zadány, ale není zadán vlastní název.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Název a časové pásmo",
+          "city": "Pouze název",
+          "none": "Žádný"
         }
       }
     }

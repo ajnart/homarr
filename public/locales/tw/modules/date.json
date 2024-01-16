@@ -5,11 +5,11 @@
     "settings": {
       "title": "設定日期與時間組件",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "時區",
+        "info": "選擇您所在的時區: "
       },
       "customTitle": {
-        "label": ""
+        "label": "城市名稱或自定義標題"
       },
       "display24HourFormat": {
         "label": "顯示 24 小時制"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "時鐘標題",
+        "info": "自定義標題和時區代碼可以顯示在Widget上。<br/>並還可以單獨顯示城市名稱或不顯示。<br/>甚至在同時選擇城市和時區且未提供標題時單獨顯示時區",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "標題和時區",
+          "city": "僅標題",
           "none": "無"
         }
       }

@@ -1,35 +1,35 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Vytvořit účet",
+    "title": "Vytvořit účet",
+    "text": "Prosím uveďte níže své přihlašovací údaje",
     "form": {
         "fields": {
             "username": {
-                "label": ""
+                "label": "Uživatelské jméno"
             },
             "password": {
-                "label": ""
+                "label": "Heslo"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Potvrďte heslo"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Vytvořit účet"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Vytváření účtu",
+            "text": "Čekejte prosím"
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Účet byl vytvořen",
+            "text": "Váš účet byl úspěšně vytvořen"
         },
         "error": {
-            "title": "",
-            "text": ""
+            "title": "Chyba",
+            "text": "Něco se nepodařilo, objevila se následující chyba: {{error}}"
         }
     }
 }

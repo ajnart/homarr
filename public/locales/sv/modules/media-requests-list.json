@@ -16,7 +16,9 @@
   "state": {
     "approved": "Godkänd",
     "pendingApproval": "Väntar på godkännande",
-    "declined": "Avböjd"
+    "declined": "Avböjd",
+    "available": "Tillgänglig",
+    "partial": "Delvis"
   },
   "tooltips": {
     "approve": "Godkänn begäran",

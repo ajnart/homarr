@@ -4,7 +4,7 @@
     "descriptionPreset": "Počet sloupců, pokud je obrazovka užší než {{pixels}} pixelů",
     "descriptionExceedsPreset": "Počet sloupců, pokud je obrazovka širší než {{pixels}} pixelů"
   },
-  "unsavedChanges": "",
-  "applyChanges": "",
-  "defaultValues": ""
+  "unsavedChanges": "Máte neuložené změny. Klikněte na tlačítko \"Použít změny\" níže, abyste je použili a uložili.",
+  "applyChanges": "Použít změny",
+  "defaultValues": "Výchozí hodnoty"
 }

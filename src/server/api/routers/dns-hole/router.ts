@@ -7,10 +7,10 @@ import { PiHoleClient } from '~/tools/server/sdk/pihole/piHole';
 import { ConfigAppType } from '~/types/app';
 import { AdStatistics } from '~/widgets/dnshole/type';
 
-import { createTRPCRouter, publicProcedure } from '../../trpc';
+import { adminProcedure, createTRPCRouter, publicProcedure } from '../../trpc';
 
 export const dnsHoleRouter = createTRPCRouter({
-  control: publicProcedure
+  control: adminProcedure
     .input(
       z.object({
         action: z.enum(['enable', 'disable']),

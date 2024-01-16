@@ -1,43 +1,56 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Deske",
+    "pageTitle": "Deske",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
-            "categories": ""
+            "apps": "Aplikacije",
+            "widgets": "Pripomočki",
+            "categories": "Kategorije"
         },
         "buttons": {
-            "view": ""
+            "view": "Ogled tablice"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Nastavite kot privzeto ploščo",
             "delete": {
+                "label": "Trajno izbriši",
+                "disabled": "Brisanje je onemogočeno, ker starejše komponente Homarr ne omogočajo brisanja privzete konfiguracije. Brisanje bo mogoče v prihodnosti."
+            },
+            "duplicate": "",
+            "rename": {
                 "label": "",
-                "disabled": ""
+                "modal": {
+                    "title": "",
+                    "fields": {
+                        "name": {
+                            "label": "",
+                            "placeholder": ""
+                        }
+                    }
+                }
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Datotečni sistem",
+            "default": "Privzeto"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Ustvari novo tablo"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Izbriši tablo",
+            "text": "Ali ste prepričani, da želite izbrisati to ploščo? Tega dejanja ni mogoče preklicati in vaši podatki bodo trajno izgubljeni."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Ustvari tablo",
+            "text": "Po ustvarjanju plošče imena ni mogoče spremeniti.",
             "form": {
                 "name": {
                     "label": "Ime"
                 },
-                "submit": ""
+                "submit": "Ustvarite spletno stran"
             }
         }
     }

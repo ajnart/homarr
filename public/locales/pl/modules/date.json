@@ -5,11 +5,11 @@
     "settings": {
       "title": "Ustawienia dla widżetu Data i Czas",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Strefa czasowa",
+        "info": "Wybierz nazwę swojej strefy czasowej, znajdź swoją tutaj: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Nazwa miasta lub nazwa własna"
       },
       "display24HourFormat": {
         "label": "Wyświetlaj pełną godzinę (format 24-godzinny)"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Nazwa zegara",
+        "info": "Własna nazwa i kod strefy czasowej mogą być wyświetlone na widżecie.<br/>Możesz również wyświetlić samo miasto, wyświetlić nic,<br/>lub nawet wyświetlić samą strefę czasową, gdy obydwie opcje są zaznaczone, ale nie podano tytułu.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Nazwa i strefa czasowa",
+          "city": "Tylko nazwa",
           "none": "Żaden"
         }
       }

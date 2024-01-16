@@ -9,6 +9,10 @@
                 "label": "Varlık Kimliği",
                 "info": "Home Assistant'ta benzersiz varlık kimliği. Varlığa tıklayın > Çark simgesine tıklayın > 'Varlık Kimliği'ndeki kopyala butonuna tıklayın. Bazı özel varlıklar desteklenmeyebilir."
             },
+            "automationId": {
+                "label": "İsteğe bağlı otomasyon kimliği",
+                "info": "Benzersiz otomasyon kimliğiniz. Her zaman automation.XXXXX başlar. Ayarlanmazsa widget etkileşimli olmayacak ve yalnızca durumu görüntüleyecektir. Tıklandığında varlık durumu yenilenecektir."
+            },
             "displayName": {
                 "label": "Ekran adı"
             }

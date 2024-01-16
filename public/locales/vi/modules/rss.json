@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Ngắt dòng"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Sắp xếp theo ngày phát hành (tăng dần)"
       }
     },
     "card": {

@@ -1,6 +1,7 @@
 import { TRPCError } from '@trpc/server';
-import { AxiosError } from 'axios';
+import axios, { AxiosError } from 'axios';
 import Consola from 'consola';
+import * as https from 'https';
 import { z } from 'zod';
 import { isStatusOk } from '~/components/Dashboard/Tiles/Apps/AppPing';
 import { getConfig } from '~/tools/config/getConfig';
@@ -10,10 +11,18 @@ import { createTRPCRouter, publicProcedure } from '../trpc';
 
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
+    .meta({ openapi: { method: 'GET', path: '/app/ping', tags: ['app'] } })
     .input(
       z.object({
         id: z.string(),
         configName: z.string(),
+      })
+    )
+    .output(
+      z.object({
+        status: z.number(),
+        statusText: z.string(),
+        state: z.string(),
       })
     )
     .query(async ({ input }) => {
@@ -29,15 +38,16 @@ export const appRouter = createTRPCRouter({
         });
       }
 
-      const res = await fetch(app.url, {
-        method: 'GET',
-        cache: 'force-cache',
-        headers: {
-          // Cache for 5 minutes
-          'Cache-Control': 'max-age=300',
-          'Content-Type': 'application/json',
-        },
-      })
+      const agent = new https.Agent({
+        rejectUnauthorized: false,
+        requestCert: false,
+      });
+
+      return await axios
+        .get(app.url, {
+          httpsAgent: agent,
+          timeout: 12 * 1000, // 12 seconds
+        })
         .then((response) => ({
           status: response.status,
           statusText: response.statusText,
@@ -70,6 +80,5 @@ export const appRouter = createTRPCRouter({
             message: `Unexpected response: ${error.message}`,
           });
         });
-      return res;
     }),
 });

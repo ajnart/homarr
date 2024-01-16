@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Grampo de linhas de texto"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

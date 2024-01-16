@@ -3,57 +3,57 @@
 		"name": "Zápisník",
 		"description": "Interaktivní widget založený na Markdownu, do kterého si můžete zapisovat poznámky!",
 		"settings": {
-			"title": "",
+			"title": "Nastavení widgetu zápisníku",
 			"showToolbar": {
-				"label": ""
+				"label": "Zobrazovat panel nástroju, který Vám pomůže s formátováním textu"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Povolit kontrolu v režimu pouze pro čtení"
 			},
 			"content": {
-				"label": ""
+				"label": "Obsah zápisníku"
 			}
 		}
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
-			"bulletList": "",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
-			"link": "",
-			"unlink": "",
-			"image": "",
-			"addTable": "",
-			"deleteTable": "",
-			"colorCell": "",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"bold": "Tučné",
+			"italic": "Kurzíva",
+			"strikethrough": "Přeškrtnuté",
+			"underline": "Podtržení",
+			"colorText": "Barva písma",
+			"colorHighlight": "Barevné zvýraznění textu",
+			"code": "Kód",
+			"clear": "Vymazat formátování",
+			"heading": "Nadpis {{level}}",
+			"align": "Zarovnat text: {{position}}",
+			"blockquote": "Citace",
+			"horizontalLine": "Vodorovná čára",
+			"bulletList": "Odrážkový seznam",
+			"orderedList": "Číslovaný seznam",
+			"checkList": "Zaškrtávací seznam",
+			"increaseIndent": "Zvětšit odsazení",
+			"decreaseIndent": "Zmenšit odsazení",
+			"link": "Vložit odkaz",
+			"unlink": "Odstranit odkaz",
+			"image": "Vložit obrázek",
+			"addTable": "Přidat tabulku",
+			"deleteTable": "Odstranit tabulku",
+			"colorCell": "Barva výplně",
+			"mergeCell": "Sloučit buňky",
+			"addColumnLeft": "Přidat sloupec před",
+			"addColumnRight": "Přidat sloupec za",
+			"deleteColumn": "Odstranit sloupec",
+			"addRowTop": "Přidat řádek nad",
+			"addRowBelow": "Přidat řádek pod",
+			"deleteRow": "Odstranit řádek"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Odstranit barvu",
+			"source": "Zdroj",
+			"widthPlaceholder": "Hodnota v % nebo pixelech",
+			"columns": "Sloupce",
+			"rows": "Řádky"
 		}
 	}
 }

@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Tekstregels klem"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

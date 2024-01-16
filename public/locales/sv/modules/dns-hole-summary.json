@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "Domäner på adlists",
       "queriesToday": "Förfrågningar idag",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "Blockerade idag",
+      "queriesBlockedToday": "Blockerade idag"
     }
   }
 }

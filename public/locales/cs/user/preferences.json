@@ -7,7 +7,7 @@
         }
     },
     "accessibility": {
-        "title": "",
+        "title": "Přístupnost",
         "disablePulse": {
             "label": "Vypnout pulsování pingu",
             "description": "Ve výchozím nastavení budou indikátory pingu v Homarru pulzovat. To může být dráždivé. Tento posuvník deaktivuje animaci"

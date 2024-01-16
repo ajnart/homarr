@@ -1,8 +1,4 @@
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class GitHubIconsRepository extends AbstractIconRepository {
   static readonly walkxcode = {
@@ -55,6 +51,8 @@ export class GitHubIconsRepository extends AbstractIconRepository {
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "GitHub";
 }
 
 type GitHubRepositoryUrl = {

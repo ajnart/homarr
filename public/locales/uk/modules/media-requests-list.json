@@ -16,7 +16,9 @@
   "state": {
     "approved": "Схвалено",
     "pendingApproval": "Очікує схвалення",
-    "declined": "Відхилено"
+    "declined": "Відхилено",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "Запити на підтвердження",

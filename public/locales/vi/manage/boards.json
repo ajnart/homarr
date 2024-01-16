@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Xóa vĩnh viễn",
                 "disabled": "Tính năng xóa bị vô hiệu hóa vì các thành phần Homarr cũ hơn không cho phép xóa cấu hình mặc định. Việc xóa sẽ có thể xảy ra trong tương lai."
+            },
+            "duplicate": "Nhân bản",
+            "rename": {
+                "label": "Đổi tên",
+                "modal": {
+                    "title": "Đổi tên bảng {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Tên mới",
+                            "placeholder": "Tên bảng mới"
+                        }
+                    }
+                }
             }
         },
         "badges": {
