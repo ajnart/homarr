@@ -4,9 +4,8 @@ import { IconKey } from '@tabler/icons-react';
 import {
   AppIntegrationPropertyType,
   AppType,
-  IntegrationField,
   integrationFieldDefinitions,
-  integrationFieldProperties,
+  integrationFieldProperties
 } from '~/types/app';
 
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
@@ -25,19 +24,20 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
   return (
     <Stack spacing="xs" mb="md">
       {displayedProperties.map((property, index) => {
+       
         const [_, definition] = Object.entries(integrationFieldDefinitions).find(
-          ([key]) => property === key
+          ([key]) => property.type === key
         )!;
 
         let indexInFormValue =
-          form.values.integration?.properties.findIndex((p) => p.field === property) ?? -1;
+          form.values.integration?.properties.findIndex((p) => p.field === property.type) ?? -1;
         if (indexInFormValue === -1) {
           const { type } = Object.entries(integrationFieldDefinitions).find(
-            ([k, v]) => k === property
+            ([k, v]) => k === property.type
           )![1];
           const newProperty: AppIntegrationPropertyType = {
             type,
-            field: property as IntegrationField,
+            field: property.type ,
             isDefined: false,
           };
           form.insertListItem('integration.properties', newProperty);
@@ -47,39 +47,42 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
 
         const isPresent = formValue?.isDefined;
         const accessabilityType = formValue?.type;
+        console.log(`index: ${index}, indexInFormValue: ${indexInFormValue}, isPresent: ${isPresent}, accessabilityType: ${accessabilityType}`)
+
 
         if (!definition) {
           return (
             <GenericSecretInput
+              required={property.isRequired} 
               onClickUpdateButton={(value) => {
-                form.setFieldValue(`integration.properties.${index}.value`, value);
+                form.setFieldValue(`integration.properties.${indexInFormValue}.value`, value);
                 form.setFieldValue(
-                  `integration.properties.${index}.isDefined`,
+                  `integration.properties.${indexInFormValue}.isDefined`,
                   value !== undefined
                 );
-              }}
+              } }
               key={`input-${property}`}
               label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
               setIcon={IconKey}
               type={accessabilityType}
-              {...form.getInputProps(`integration.properties.${index}.value`)}
-            />
+              {...form.getInputProps(`integration.properties.${indexInFormValue}.value`)}            />
           );
         }
 
         return (
           <GenericSecretInput
+          required={property.isRequired} 
             onClickUpdateButton={(value) => {
-              form.setFieldValue(`integration.properties.${index}.value`, value);
-              form.setFieldValue(`integration.properties.${index}.isDefined`, value !== undefined);
+              form.setFieldValue(`integration.properties.${indexInFormValue}.value`, value);
+              form.setFieldValue(`integration.properties.${indexInFormValue}.isDefined`, value !== undefined);
             }}
             key={`input-${definition.label}`}
             label={definition.label}
             secretIsPresent={isPresent}
             setIcon={definition.icon}
             type={accessabilityType}
-            {...form.getInputProps(`integration.properties.${index}.value`)}
+            {...form.getInputProps(`integration.properties.${indexInFormValue}.value`)}
           />
         );
       })}

@@ -70,7 +70,7 @@ export type ConfigAppIntegrationType = Omit<AppIntegrationType, 'properties'> & 
 
 export type AppIntegrationPropertyType = {
   type: AppIntegrationPropertyAccessabilityType;
-  field: IntegrationField;
+  field: IntegrationFieldType;
   value?: string | null;
   isDefined: boolean;
 };
@@ -79,27 +79,48 @@ export type AppIntegrationPropertyAccessabilityType = 'private' | 'public';
 
 type ConfigAppIntegrationPropertyType = Omit<AppIntegrationPropertyType, 'isDefined'>;
 
-export type IntegrationField = 'apiKey' | 'password' | 'username';
+export type IntegrationFieldType = 'apiKey' | 'password' | 'username';
+
+export type IntegrationField = {
+  type: IntegrationFieldType;
+  isRequired: boolean;
+}
+
+
+
 
 export const integrationFieldProperties: {
-  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[];
+  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[] ;
 } = {
-  lidarr: ['apiKey'],
-  radarr: ['apiKey'],
-  sonarr: ['apiKey'],
-  sabnzbd: ['apiKey'],
-  readarr: ['apiKey'],
-  overseerr: ['apiKey'],
-  jellyseerr: ['apiKey'],
-  deluge: ['password'],
-  nzbGet: ['username', 'password'],
-  qBittorrent: ['username', 'password'],
-  transmission: ['username', 'password'],
-  jellyfin: ["apiKey"],
-  plex: ['apiKey'],
-  pihole: ['apiKey'],
-  adGuardHome: ['username', 'password'],
-  homeAssistant: ['apiKey']
+  lidarr: [{ type: 'apiKey', isRequired: true }],
+  radarr: [{ type: 'apiKey', isRequired: true }],
+  sonarr: [{ type: 'apiKey', isRequired: true }],
+  sabnzbd: [{ type: 'apiKey', isRequired: true }],
+  readarr: [{ type: 'apiKey', isRequired: true }],
+  overseerr: [{ type: 'apiKey', isRequired: true }],
+  jellyseerr: [{ type: 'apiKey', isRequired: true }],
+  deluge: [{ type: 'password', isRequired: true }],
+  nzbGet: [
+    { type: 'username', isRequired: true},
+    { type: 'password', isRequired: true },
+  ],
+  qBittorrent: [
+    { type: 'username', isRequired: true },
+    { type: 'password', isRequired: true },
+  ],
+  transmission: [
+    { type: 'username', isRequired: true },
+    { type: 'password', isRequired: true },
+  ],
+  jellyfin: [{ type: 'username', isRequired: false },
+  { type: 'password', isRequired: false },{ type: 'apiKey', isRequired: false }],
+  plex: [{ type: 'apiKey', isRequired: true }],
+  pihole: [{ type: 'apiKey', isRequired: true }],
+  adGuardHome: [
+    { type: 'username', isRequired: true },
+    { type: 'password', isRequired: true },
+  ],
+  homeAssistant: [{ type: 'apiKey', isRequired: true }],
 };
 
 export type IntegrationFieldDefinitionType = {
@@ -109,7 +130,7 @@ export type IntegrationFieldDefinitionType = {
 };
 
 export const integrationFieldDefinitions: {
-  [key in IntegrationField]: IntegrationFieldDefinitionType;
+  [key in IntegrationFieldType]: IntegrationFieldDefinitionType;
 } = {
   apiKey: {
     type: 'private',

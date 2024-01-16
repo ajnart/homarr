@@ -73,10 +73,27 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
     case 'jellyfin': {
       const apiKey = findAppProperty(app, 'apiKey');
 
-      
+      const username = findAppProperty(app, 'username');
+      const password = findAppProperty(app, 'password');
 
 
-      if ( !apiKey) {
+
+      let api; 
+      let infoApi;
+      let sessionApi;
+
+
+      if (apiKey &&  apiKey.length > 5 ) {
+        api = jellyfin.createApi(app.url, apiKey);
+        infoApi = await getSystemApi(api).getPublicSystemInfo();
+        sessionApi = getSessionApi(api);
+      }else if (username && password){
+        api = jellyfin.createApi(app.url);
+        await api.authenticateUserByName(username, password);
+        infoApi = await getSystemApi(api).getPublicSystemInfo();
+        sessionApi = getSessionApi(api);
+      }
+      else{
         return {
           appId: app.id,
           serverAddress: app.url,
@@ -88,9 +105,7 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       }
 
       
-      const api = jellyfin.createApi(app.url, apiKey);
-      const infoApi = await getSystemApi(api).getPublicSystemInfo();
-      const sessionApi = getSessionApi(api);
+      
       
 
 

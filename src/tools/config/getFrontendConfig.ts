@@ -1,7 +1,7 @@
 import Consola from 'consola';
 import fs from 'fs';
 import { fetchCity } from '~/server/api/routers/weather';
-import { IntegrationField } from '~/types/app';
+import { IntegrationField, IntegrationFieldType } from '~/types/app';
 import { BackendConfigType, ConfigType } from '~/types/config';
 
 import { getConfig } from './getConfig';
@@ -118,7 +118,7 @@ const migratePiholeIntegrationField = (config: BackendConfigType) => {
           if (property.field === 'password') {
             return {
               ...property,
-              field: 'apiKey' as IntegrationField,
+              field: 'apiKey' as IntegrationFieldType,
             };
           }
           return property;

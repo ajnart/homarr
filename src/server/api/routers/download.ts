@@ -14,7 +14,7 @@ import {
   NormalizedDownloadAppStat,
   NormalizedDownloadQueueResponse,
 } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
-import { ConfigAppType, IntegrationField } from '~/types/app';
+import { ConfigAppType, IntegrationField, IntegrationFieldType } from '~/types/app';
 import { UsenetQueueItem } from '~/widgets/useNet/types';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
@@ -109,7 +109,7 @@ const GetDataFromClient = async (
       .reduce((acc, torrent) => acc + torrent, 0),
   });
 
-  const findField = (app: ConfigAppType, field: IntegrationField) =>
+  const findField = (app: ConfigAppType, field: IntegrationFieldType) =>
     app.integration?.properties.find((x) => x.field === field)?.value ?? undefined;
 
   switch (app.integration?.type) {

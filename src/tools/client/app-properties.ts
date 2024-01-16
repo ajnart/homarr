@@ -1,6 +1,6 @@
-import { ConfigAppType, IntegrationField, IntegrationType } from '~/types/app';
+import { ConfigAppType, IntegrationFieldType, IntegrationType } from '~/types/app';
 
-export const findAppProperty = (app: ConfigAppType, key: IntegrationField) =>
+export const findAppProperty = (app: ConfigAppType, key: IntegrationFieldType) =>
   app.integration?.properties.find((prop) => prop.field === key)?.value ?? '';
 
 /** Checks if the type of an integration is part of the TIntegrations array with propper typing */
