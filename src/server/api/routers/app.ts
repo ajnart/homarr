@@ -45,11 +45,6 @@ export const appRouter = createTRPCRouter({
 
       return await axios
         .get(app.url, {
-          method: 'GET',
-          headers: {
-            // Cache for 5 minutes
-            'Cache-Control': 'max-age=300',
-          },
           httpsAgent: agent,
           timeout: 12 * 1000, // 12 seconds
         })
