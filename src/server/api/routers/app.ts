@@ -1,13 +1,13 @@
 import { TRPCError } from '@trpc/server';
 import axios, { AxiosError } from 'axios';
 import Consola from 'consola';
+import * as https from 'https';
 import { z } from 'zod';
 import { isStatusOk } from '~/components/Dashboard/Tiles/Apps/AppPing';
 import { getConfig } from '~/tools/config/getConfig';
 import { AppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
-import * as https from 'https';
 
 export const appRouter = createTRPCRouter({
   ping: publicProcedure
@@ -16,13 +16,15 @@ export const appRouter = createTRPCRouter({
       z.object({
         id: z.string(),
         configName: z.string(),
-      }),
+      })
     )
-    .output(z.object({
-      status: z.number(),
-      statusText: z.string(),
-      state: z.string()
-    }))
+    .output(
+      z.object({
+        status: z.number(),
+        statusText: z.string(),
+        state: z.string(),
+      })
+    )
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
       const app = config.apps.find((app) => app.id === input.id);
@@ -38,19 +40,19 @@ export const appRouter = createTRPCRouter({
 
       const agent = new https.Agent({
         rejectUnauthorized: false,
-        requestCert: false
+        requestCert: false,
       });
 
-      return await axios.get(app.url, {
-        method: 'GET',
-        headers: {
-          // Cache for 5 minutes
-          'Cache-Control': 'max-age=300'
-        },
-        httpsAgent: agent,
-        timeout: 12 * 1000, // 12 seconds,
-        maxRedirects: 3
-      })
+      return await axios
+        .get(app.url, {
+          method: 'GET',
+          headers: {
+            // Cache for 5 minutes
+            'Cache-Control': 'max-age=300',
+          },
+          httpsAgent: agent,
+          timeout: 12 * 1000, // 12 seconds
+        })
         .then((response) => ({
           status: response.status,
           statusText: response.statusText,
@@ -67,7 +69,7 @@ export const appRouter = createTRPCRouter({
 
           if (error.code === 'ECONNABORTED') {
             Consola.error(
-              `Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`,
+              `Ping timed out for app with id '${input.id}' in config '${input.configName}' -> url: ${app.url})`
             );
             throw new TRPCError({
               code: 'TIMEOUT',
