@@ -26,7 +26,7 @@
             "title": "Værktøjer",
             "items": {
                 "docker": "Docker",
-                "api": ""
+                "api": "API"
             }
         },
         "about": {
