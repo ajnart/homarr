@@ -243,6 +243,26 @@ const BackgroundImage = () => {
     return null;
   }
 
+  // Check if the background image URL is a video
+  const videoFormat = /\.(mp4|webm|ogg)$/i.exec(config.settings.customization.backgroundImageUrl)?.[1];
+
+  if (videoFormat) {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '100vw', minHeight: '100vh' }}
+      >
+        <source
+          src={config.settings.customization.backgroundImageUrl}
+          type={`video/${videoFormat}`}
+        />
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+
   return (
     <Global
       styles={{
