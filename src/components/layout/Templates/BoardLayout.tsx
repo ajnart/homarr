@@ -244,9 +244,9 @@ const BackgroundImage = () => {
   }
 
   // Check if the background image URL is a video
-  const videoFormat = /\.(mp4|webm|ogg)$/i.exec(config.settings.customization.backgroundImageUrl)?.[1];
+  const videoFormat = GetVideoFormat(config?.settings.customization.backgroundImageUrl);
   if (videoFormat) {
-    return BackgroundVideo(config.settings.customization.backgroundImageUrl, videoFormat);
+    return <BackgroundVideo videoSource={config?.settings.customization.backgroundImageUrl} videoFormat={videoFormat} />;
   }
 
   return (
@@ -265,7 +265,20 @@ const BackgroundImage = () => {
   );
 };
 
-const BackgroundVideo = (video: string, videoFormat: string) => {
+
+const GetVideoFormat = (video: string) => {
+  const supportedFormats = ['mp4', 'webm', 'ogg'];
+  for(const format of supportedFormats) {
+    if(video.endsWith(format)) return format;
+  }
+}
+
+interface BackgroundVideoProps {
+  videoSource: string;
+  videoFormat: string;
+}
+
+const BackgroundVideo = ({videoSource, videoFormat}: BackgroundVideoProps) => {
     return (
       <video
         autoPlay
@@ -280,7 +293,7 @@ const BackgroundVideo = (video: string, videoFormat: string) => {
           objectFit: 'cover'
         }}
       >
-        <source src={video} type={`video/${videoFormat}`} />
+        <source src={videoSource} type={`video/${videoFormat}`} />
       </video>
     );
 };
