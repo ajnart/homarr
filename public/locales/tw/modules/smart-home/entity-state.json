@@ -11,7 +11,7 @@
             },
             "automationId": {
                 "label": "可選自動化ID",
-                "info": "自動化ID必須以 automation.XXXX 開頭，當未設定時小部件將不可點擊，且僅顯示狀況，點擊後實體狀態將被更新。"
+                "info": "自動化ID必須以 automation.XXXX 開頭，當未設定時小部件將不可點擊，且僅顯示狀況，點擊後實體狀態將被更新"
             },
             "displayName": {
                 "label": "顯示名稱"
