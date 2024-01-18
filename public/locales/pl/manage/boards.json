@@ -20,11 +20,11 @@
             "rename": {
                 "label": "Zmień nazwę",
                 "modal": {
-                    "title": "",
+                    "title": "Zmień nazwę tablicy {{name}}",
                     "fields": {
                         "name": {
                             "label": "Nowa nazwa",
-                            "placeholder": ""
+                            "placeholder": "Nowa nazwa tablicy"
                         }
                     }
                 }
@@ -32,7 +32,7 @@
         },
         "badges": {
             "fileSystem": "System plików",
-            "default": "Domyślnie"
+            "default": "Domyślne"
         }
     },
     "buttons": {
