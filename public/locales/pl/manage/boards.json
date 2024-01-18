@@ -16,14 +16,14 @@
                 "label": "Usuń trwale",
                 "disabled": "Usuwanie nie jest możliwe, ponieważ starsze komponenty Homarr nie pozwalają na usunięcie domyślnej konfiguracji. Usunięcie będzie możliwe w przyszłości."
             },
-            "duplicate": "",
+            "duplicate": "Zduplikuj",
             "rename": {
-                "label": "",
+                "label": "Zmień nazwę",
                 "modal": {
                     "title": "",
                     "fields": {
                         "name": {
-                            "label": "",
+                            "label": "Nowa nazwa",
                             "placeholder": ""
                         }
                     }
