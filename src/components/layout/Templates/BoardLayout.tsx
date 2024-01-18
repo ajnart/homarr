@@ -271,6 +271,7 @@ const GetVideoFormat = (video: string) => {
   for(const format of supportedFormats) {
     if(video.endsWith(format)) return format;
   }
+  return undefined;
 }
 
 interface BackgroundVideoProps {
