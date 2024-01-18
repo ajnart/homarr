@@ -245,22 +245,8 @@ const BackgroundImage = () => {
 
   // Check if the background image URL is a video
   const videoFormat = /\.(mp4|webm|ogg)$/i.exec(config.settings.customization.backgroundImageUrl)?.[1];
-
   if (videoFormat) {
-    return (
-      <video
-        autoPlay
-        muted
-        loop
-        style={{ position: 'fixed', right: 0, bottom: 0, minWidth: '100vw', minHeight: '100vh' }}
-      >
-        <source
-          src={config.settings.customization.backgroundImageUrl}
-          type={`video/${videoFormat}`}
-        />
-        Your browser does not support the video tag.
-      </video>
-    );
+    return BackgroundVideo(config.settings.customization.backgroundImageUrl, videoFormat);
   }
 
   return (
@@ -278,6 +264,27 @@ const BackgroundImage = () => {
     />
   );
 };
+
+const BackgroundVideo = (video: string, videoFormat: string) => {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          objectFit: 'cover'
+        }}
+      >
+        <source src={video} type={`video/${videoFormat}`} />
+      </video>
+    );
+};
+
 
 export const useBoardLink = (
   link: '/board' | `/board/${string}/customize` | `/board/${string}`
