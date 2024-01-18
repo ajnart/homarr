@@ -16,15 +16,15 @@
                 "label": "永久刪除",
                 "disabled": "刪除功能被禁用，因為較舊的 Homarr 組件不允許刪除預設的設定，將來可能會刪除"
             },
-            "duplicate": "",
+            "duplicate": "複製",
             "rename": {
-                "label": "",
+                "label": "重新命名",
                 "modal": {
-                    "title": "",
+                    "title": "重新命名面板 {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "新名稱",
+                            "placeholder": "新面板名稱"
                         }
                     }
                 }
