@@ -1,16 +1,16 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Hem"
         },
         "boards": {
-            "title": ""
+            "title": "Tavlor"
         },
         "users": {
-            "title": "",
+            "title": "Användare",
             "items": {
                 "manage": "Hantera",
-                "invites": ""
+                "invites": "Inbjudningar"
             }
         },
         "help": {
