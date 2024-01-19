@@ -47,6 +47,6 @@
     },
     "buttons": {
         "generateRandomPassword": "Generera slumpmässigt",
-        "createAnother": ""
+        "createAnother": "Skapa en till"
     }
 }
