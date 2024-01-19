@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tavlor",
+    "pageTitle": "Tavlor",
     "cards": {
         "statistics": {
             "apps": "Appar",
@@ -16,15 +16,15 @@
                 "label": "",
                 "disabled": ""
             },
-            "duplicate": "",
+            "duplicate": "Duplicera",
             "rename": {
-                "label": "",
+                "label": "Ändra namn",
                 "modal": {
-                    "title": "",
+                    "title": "Byt namn på tavlan {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nytt namn",
+                            "placeholder": "Nytt namn på tavlan"
                         }
                     }
                 }
