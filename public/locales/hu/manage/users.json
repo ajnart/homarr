@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Mind",
+            "normal": "Normál",
+            "admin": "Adminisztrátor",
+            "owner": "Tulajdonos"
         }
     },
     "table": {
