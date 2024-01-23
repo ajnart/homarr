@@ -17,8 +17,8 @@
     "approved": "Approvato",
     "pendingApproval": "In attesa di approvazione",
     "declined": "Rifiutato",
-    "available": "",
-    "partial": ""
+    "available": "Disponibile",
+    "partial": "Parziale"
   },
   "tooltips": {
     "approve": "Approva richieste",
