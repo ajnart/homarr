@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Group, Text } from '@mantine/core';
+import { Button, Card, Flex, Group, ScrollArea, Text } from '@mantine/core';
 import { IconCircleCheck, IconCircleX, IconReportSearch, IconTestPipe } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
@@ -42,18 +42,25 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
   return (
     <Flex h="100%" gap={0} direction="column">
       <Text mt={2}>{t('indexersStatus.title')}</Text>
-      <Card py={5} px={10} radius="md" withBorder>
-        {data.map((indexer: any) => (
-          <Group key={indexer.id} position="apart">
-            <Text color="dimmed" align="center" size="xs">
-              {indexer.name}
-            </Text>
-            {indexer.enable ? <IconCircleCheck color="#2ecc71" /> : <IconCircleX color="#d9534f" />}
-          </Group>
-        ))}
+      <Card py={5} px={10} radius="md" withBorder style={{ flex: '1' }}>
+        <ScrollArea h="100%">
+          {data.map((indexer: any) => (
+            <Group key={indexer.id} position="apart">
+              <Text color="dimmed" align="center" size="xs">
+                {indexer.name}
+              </Text>
+              {indexer.enable ? (
+                <IconCircleCheck color="#2ecc71" />
+              ) : (
+                <IconCircleX color="#d9534f" />
+              )}
+            </Group>
+          ))}
+        </ScrollArea>
       </Card>
       <Button
         mt={5}
+        radius="md"
         variant="light"
         onClick={handleTestAllClick}
         rightIcon={<IconTestPipe size={20} />}
