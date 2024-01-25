@@ -30,7 +30,6 @@ interface IndexerManagerWidgetProps {
 function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
   const { t } = useTranslation('modules/indexer-manager');
   const { isInitialLoading, data } = useProwlarrIndexersQuery();
-
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
   }
@@ -44,12 +43,12 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
       <Text mt={2}>{t('indexersStatus.title')}</Text>
       <Card py={5} px={10} radius="md" withBorder style={{ flex: '1' }}>
         <ScrollArea h="100%">
-          {data.map((indexer: any) => (
+          {data.indexer.map((indexer: any) => (
             <Group key={indexer.id} position="apart">
               <Text color="dimmed" align="center" size="xs">
                 {indexer.name}
               </Text>
-              {indexer.enable ? (
+              {!data.indexerStatus.indexerId?.includes(indexer.id) && indexer.enable ? (
                 <IconCircleCheck color="#2ecc71" />
               ) : (
                 <IconCircleX color="#d9534f" />

@@ -7,8 +7,60 @@ import { IntegrationType } from '~/types/app';
 
 import { createTRPCRouter, protectedProcedure } from '../trpc';
 
+const makeIndexerRequest = async (appUrl, apiKey, endpoint) => {
+  try {
+    const response = await axios.get(`${appUrl.origin}/api/v1/${endpoint}`, {
+      headers: {
+        'X-Api-Key': apiKey,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    Consola.error(`Failed to make request to ${endpoint}: ${error.message}`);
+    throw error;
+  }
+};
+
 export const indexerManagerRouter = createTRPCRouter({
   indexers: protectedProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+      })
+    )
+    .query(async ({ input }) => {
+      const config = getConfig(input.configName);
+      const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
+      const app = config.apps.find((app) =>
+        checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
+      );
+      if (!app) {
+        Consola.error(
+          `Failed to process request to indexer app (${app?.id}): App not found. Please check the configuration.`
+        );
+      }
+      const apiKey = findAppProperty(app, 'apiKey');
+      if (!apiKey) {
+        Consola.error(
+          `Failed to process request to indexer app (${app.id}): API key not found. Please check the configuration.`
+        );
+        return null;
+      }
+
+      const appUrl = new URL(app.url);
+      try {
+        const [indexerData, indexerStatus] = await Promise.all([
+          makeIndexerRequest(appUrl, apiKey, 'indexer'),
+          makeIndexerRequest(appUrl, apiKey, 'indexerstatus'),
+        ]);
+        return { indexer: indexerData, indexerStatus };
+      } catch (error) {
+        Consola.error(`Failed to process request to indexer app (${app.id}): ${error.message}`);
+        return null;
+      }
+    }),
+
+  status: protectedProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -28,14 +80,14 @@ export const indexerManagerRouter = createTRPCRouter({
       }
 
       const appUrl = new URL(app.url);
-      const data = await axios
-        .get(`${appUrl.origin}/api/v1/indexer`, {
+      const status = await axios
+        .get(`${appUrl.origin}/api/v1/indexerstatus`, {
           headers: {
             'X-Api-Key': apiKey,
           },
         })
         .then((res) => res.data);
-      return data;
+      return status;
     }),
 
   testAllIndexers: protectedProcedure
