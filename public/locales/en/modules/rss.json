@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Sort by publish date (ascending)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Put posts without publish date to the top"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Maximum amount of posts"
       }
     },
     "card": {
