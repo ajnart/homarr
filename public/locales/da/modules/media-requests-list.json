@@ -16,7 +16,9 @@
   "state": {
     "approved": "Godkendt",
     "pendingApproval": "Afventer godkendelse",
-    "declined": "Afvist"
+    "declined": "Afvist",
+    "available": "Tilgængelig",
+    "partial": "Delvis"
   },
   "tooltips": {
     "approve": "Godkend anmodninger",

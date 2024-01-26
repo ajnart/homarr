@@ -68,16 +68,17 @@ const dnsLightStatus = (
 };
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
-  const utils = api.useContext();
   const { data: sessionData } = useSession();
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
 
+  const enableControls = sessionData?.user.isAdmin ?? false;
+
   const { name: configName, config } = useConfigContext();
 
-  const trpcUtils = api.useContext();
+  const trpcUtils = api.useUtils();
 
   if (isInitialLoading || !data || !configName) {
     return <WidgetLoading />;
@@ -123,13 +124,24 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     return dnsList;
   };
 
-  const reFetchSummaryDns = () => {
-    trpcUtils.dnsHole.summary.invalidate();
+  const toggleDns = async (action: 'enable' | 'disable', appsToChange?: string[]) => {
+    await mutateAsync(
+      {
+        action,
+        configName,
+        appsToChange,
+      },
+      {
+        onSettled: () => {
+          trpcUtils.dnsHole.summary.invalidate();
+        },
+      }
+    );
   };
 
   return (
     <Stack justify="space-between" h={'100%'} spacing="0.25rem">
-      {sessionData?.user?.isAdmin && widget.properties.showToggleAllButtons && (
+      {enableControls && widget.properties.showToggleAllButtons && (
         <SimpleGrid
           ref={ref}
           cols={width > 275 ? 2 : 1}
@@ -137,20 +149,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           spacing="0.25rem"
         >
           <Button
-            onClick={async () => {
-              await mutateAsync(
-                {
-                  action: 'enable',
-                  configName,
-                  appsToChange: getDnsStatus()?.disabled,
-                },
-                {
-                  onSettled: () => {
-                    reFetchSummaryDns();
-                  },
-                }
-              );
-            }}
+            onClick={() => toggleDns('enable', getDnsStatus()?.disabled)}
             disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerPlay size={20} />}
             variant="light"
@@ -160,20 +159,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             {t('enableAll')}
           </Button>
           <Button
-            onClick={async () => {
-              await mutateAsync(
-                {
-                  action: 'disable',
-                  configName,
-                  appsToChange: getDnsStatus()?.enabled,
-                },
-                {
-                  onSettled: () => {
-                    reFetchSummaryDns();
-                  },
-                }
-              );
-            }}
+            onClick={() => toggleDns('disable', getDnsStatus()?.enabled)}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerStop size={20} />}
             variant="light"
@@ -190,7 +176,8 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         display="flex"
         style={{
           flex: '1',
-          justifyContent: widget.properties.showToggleAllButtons ? 'flex-end' : 'space-evenly',
+          justifyContent:
+            enableControls && widget.properties.showToggleAllButtons ? 'flex-end' : 'space-evenly',
         }}
       >
         {data.status.map((dnsHole, index) => {
@@ -217,21 +204,11 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={async () => {
-                      await mutateAsync(
-                        {
-                          action: dnsHole.status === 'enabled' ? 'disable' : 'enable',
-                          configName,
-                          appsToChange: [app.id],
-                        },
-                        {
-                          onSettled: () => {
-                            reFetchSummaryDns();
-                          },
-                        }
-                      );
-                    }}
+                    onClick={() =>
+                      toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
+                    }
                     disabled={fetchingDnsSummary || changingStatus}
+                    style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                   >
                     <Badge
                       variant="dot"

@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "새 타일 추가",
-        "text": "타일은 Homarr의 주요 요소입니다. 타일은 앱과 기타 정보를 표시하는 데 사용됩니다. 원하는 만큼 타일을 추가할 수 있습니다."
-    },
-    "widgetDescription": "위젯은 앱과 상호 작용하여 애플리케이션을 더 잘 제어할 수 있도록 도와줍니다. 일반적으로 사용하기 전에 추가 구성이 필요합니다.",
-    "goBack": "이전 단계로 돌아가기",
-    "actionIcon": {
-        "tooltip": "타일 추가"
-    },
-    "apps": "앱",
-    "app": {
-        "defaultName": "앱"
-    },
-    "widgets": "위젯",
-    "categories": "카테고리",
-    "category": {
-        "newName": "새 카테고리 이름",
-        "defaultName": "새 카테고리",
-        "created": {
-            "title": "카테고리 생성",
-            "message": "\"{{name}}\" 카테고리가 생성되었습니다."
-        }
+  "modal": {
+    "title": "새 타일 추가",
+    "text": "타일은 Homarr의 주요 요소입니다. 타일은 앱과 기타 정보를 표시하는 데 사용됩니다. 원하는 만큼 타일을 추가할 수 있습니다."
+  },
+  "widgetDescription": "위젯은 앱과 상호 작용하여 애플리케이션을 더 잘 제어할 수 있도록 도와줍니다. 일반적으로 사용하기 전에 추가 구성이 필요합니다.",
+  "goBack": "이전 단계로 돌아가기",
+  "actionIcon": {
+    "tooltip": "타일 추가"
+  },
+  "apps": "앱",
+  "app": {
+    "defaultName": "앱"
+  },
+  "widgets": "위젯",
+  "categories": "카테고리",
+  "category": {
+    "newName": "새 카테고리 이름",
+    "defaultName": "새 카테고리",
+    "created": {
+      "title": "카테고리 생성",
+      "message": "\"{{name}}\" 카테고리가 생성되었습니다."
     }
+  },
+  "importFromDocker": ""
 }

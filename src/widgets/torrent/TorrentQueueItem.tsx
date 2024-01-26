@@ -1,17 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import { NormalizedTorrent } from '@ctrl/shared-torrent';
 import {
   Badge,
   Flex,
   Group,
   List,
   MantineColor,
-  Popover,
   Progress,
   Stack,
   Text,
-  createStyles,
-  useMantineTheme,
+  useMantineTheme
 } from '@mantine/core';
 import {
   IconAffiliate,
@@ -24,100 +21,17 @@ import {
   IconUpload,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { MIN_WIDTH_MOBILE } from '~/constants/constants';
-import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { AppType } from '~/types/app';
+import { TorrentTotalDownload } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
 interface TorrentQueueItemProps {
-  torrent: NormalizedTorrent;
+  torrent: TorrentTotalDownload['torrents'][0];
   app?: AppType;
   width: number;
 }
 
-export const BitTorrentQueueItem = ({ torrent, width, app }: TorrentQueueItemProps) => {
-  const { classes } = useStyles();
-  const { t } = useTranslation('modules/torrents-status');
-
-  const size = torrent.totalSelected;
-  return (
-    <Popover
-      withArrow
-      withinPortal
-      radius="lg"
-      shadow="sm"
-      transitionProps={{
-        transition: 'pop',
-      }}
-    >
-      <Popover.Target>
-        <tr key={torrent.id} style={{ cursor: 'pointer' }}>
-          <td>
-            <Text
-              style={{
-                maxWidth: '30vw',
-              }}
-              size="xs"
-              lineClamp={1}
-            >
-              {torrent.name}
-            </Text>
-            {app && (
-              <Text size="xs" color="dimmed">
-                {t('card.table.item.text', {
-                  appName: app.name,
-                  ratio: torrent.ratio.toFixed(2),
-                })}
-              </Text>
-            )}
-          </td>
-          <td>
-            <Text className={classes.noTextBreak} size="xs">
-              {humanFileSize(size, false)}
-            </Text>
-          </td>
-          {width > MIN_WIDTH_MOBILE && (
-            <td>
-              <Text className={classes.noTextBreak} size="xs">
-                {torrent.downloadSpeed > 0 ? `${humanFileSize(torrent.downloadSpeed,false)}/s` : '-'}
-              </Text>
-            </td>
-          )}
-          {width > MIN_WIDTH_MOBILE && (
-            <td>
-              <Text className={classes.noTextBreak} size="xs">
-                {torrent.uploadSpeed > 0 ? `${humanFileSize(torrent.uploadSpeed,false)}/s` : '-'}
-              </Text>
-            </td>
-          )}
-          {width > MIN_WIDTH_MOBILE && (
-            <td>
-              <Text className={classes.noTextBreak} size="xs">
-                {torrent.eta <= 0 ? '∞' : calculateETA(torrent.eta)}
-              </Text>
-            </td>
-          )}
-          <td>
-            <Text className={classes.noTextBreak}>{(torrent.progress * 100).toFixed(1)}%</Text>
-            <Progress
-              radius="lg"
-              color={
-                torrent.progress === 1 ? 'green' : torrent.state === 'paused' ? 'yellow' : 'blue'
-              }
-              value={torrent.progress * 100}
-              size="lg"
-            />
-          </td>
-        </tr>
-      </Popover.Target>
-      <Popover.Dropdown>
-        <TorrentQueuePopover torrent={torrent} app={app} />
-      </Popover.Dropdown>
-    </Popover>
-  );
-};
-
-const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'width'>) => {
+export const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'width'>) => {
   const { t } = useTranslation('modules/torrents-status');
   const { colors } = useMantineTheme();
 
@@ -232,9 +146,3 @@ const TorrentQueuePopover = ({ torrent, app }: Omit<TorrentQueueItemProps, 'widt
     </Stack>
   );
 };
-
-const useStyles = createStyles(() => ({
-  noTextBreak: {
-    whiteSpace: 'nowrap',
-  },
-}));

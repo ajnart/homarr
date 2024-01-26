@@ -1,11 +1,19 @@
 import { TRPCError } from '@trpc/server';
+
 import bcrypt from 'bcryptjs';
+
 import { randomUUID } from 'crypto';
-import { eq, like, sql } from 'drizzle-orm';
+
+import { and, eq, like, sql } from 'drizzle-orm';
+
 import { z } from 'zod';
+
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
+import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+
 import { db } from '~/server/db';
 import { getTotalUserCountAsync } from '~/server/db/queries/user';
-import { UserSettings, invites, userSettings, users } from '~/server/db/schema';
+import { invites, sessions, users, userSettings, UserSettings } from '~/server/db/schema';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -13,9 +21,8 @@ import {
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
-
-import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import { PossibleRoleFilter } from '~/pages/manage/users';
+import { createSelectSchema } from 'drizzle-zod';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -34,16 +41,63 @@ export const userRouter = createTRPCRouter({
       isOwner: true,
     });
   }),
-  count: publicProcedure.query(async () => {
-    return await getTotalUserCountAsync();
-  }),
+  updatePassword: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/password', tags: ['user'] } })
+    .input(
+      z.object({
+        userId: z.string(),
+        newPassword: z.string().min(3),
+        terminateExistingSessions: z.boolean(),
+      }),
+    )
+    .output(z.void())
+    .mutation(async ({ input, ctx }) => {
+      const user = await db.query.users.findFirst({
+        where: eq(users.id, input.userId),
+      });
+
+      if (!user) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+        });
+      }
+
+      if (user.isOwner && user.id !== ctx.session.user.id) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'Operation not allowed or incorrect user',
+        });
+      }
+
+      const salt = bcrypt.genSaltSync(10);
+      const hashedPassword = hashPassword(input.newPassword, salt);
+
+      if (input.terminateExistingSessions) {
+        await db.delete(sessions).where(eq(sessions.userId, input.userId));
+      }
+
+      await db
+        .update(users)
+        .set({
+          password: hashedPassword,
+          salt: salt,
+        })
+        .where(eq(users.id, input.userId));
+    }),
+  count: publicProcedure
+    .meta({ openapi: { method: 'GET', path: '/users/count', tags: ['user'] } })
+    .input(z.void())
+    .output(z.number())
+    .query(async () => {
+      return await getTotalUserCountAsync();
+    }),
   createFromInvite: publicProcedure
     .input(
       signUpFormSchema.and(
         z.object({
           inviteToken: z.string(),
-        })
-      )
+        }),
+      ),
     )
     .mutation(async ({ ctx, input }) => {
       const invite = await db.query.invites.findFirst({
@@ -75,7 +129,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         colorScheme: colorSchemeParser,
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       await db
@@ -86,7 +140,9 @@ export const userRouter = createTRPCRouter({
         .where(eq(userSettings.userId, ctx.session?.user?.id));
     }),
   changeRole: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/roles', tags: ['user'] } })
     .input(z.object({ id: z.string(), type: z.enum(['promote', 'demote']) }))
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       if (ctx.session?.user?.id === input.id) {
         throw new TRPCError({
@@ -119,11 +175,13 @@ export const userRouter = createTRPCRouter({
         .where(eq(users.id, input.id));
     }),
   changeLanguage: protectedProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/language', tags: ['user'] } })
     .input(
       z.object({
         language: z.string(),
-      })
+      }),
     )
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       await db
         .update(userSettings)
@@ -171,6 +229,8 @@ export const userRouter = createTRPCRouter({
     }),
 
   makeDefaultDashboard: protectedProcedure
+    .meta({ openapi: { method: 'POST', path: '/users/make-default-dashboard', tags: ['user'] } })
+    .output(z.void())
     .input(z.object({ board: z.string() }))
     .mutation(async ({ ctx, input }) => {
       await db
@@ -184,24 +244,61 @@ export const userRouter = createTRPCRouter({
       z.object({
         limit: z.number().min(1).max(100).default(10),
         page: z.number().min(0),
-        search: z
-          .string()
-          .optional()
-          .transform((value) => (value === '' ? undefined : value)),
-      })
+        search: z.object({
+          fullTextSearch: z
+            .string()
+            .optional()
+            .transform((value) => (value === '' ? undefined : value)),
+          role: z
+            .string()
+            .transform((value) => (value.length > 0 ? value : undefined))
+            .optional(),
+        }),
+      }),
     )
-    .query(async ({ ctx, input }) => {
+    .output(z.object({
+      users: z.array(z.object({
+        id: z.string(),
+        name: z.string(),
+        email: z.string().or(z.null()).optional(),
+        isAdmin: z.boolean(),
+        isOwner: z.boolean(),
+      })),
+      countPages: z.number().min(0),
+      stats: z.object({
+        roles: z.record(z.number()),
+      }),
+    }))
+    .query(async ({ input }) => {
+
+      const roleFilter = () => {
+        if (input.search.role === PossibleRoleFilter[1].id) {
+          return eq(users.isOwner, true);
+        }
+
+        if (input.search.role === PossibleRoleFilter[2].id) {
+          return eq(users.isAdmin, true);
+        }
+
+        if (input.search.role === PossibleRoleFilter[3].id) {
+          return and(eq(users.isAdmin, false), eq(users.isOwner, false));
+        }
+
+        return undefined;
+      };
+
       const limit = input.limit;
       const dbUsers = await db.query.users.findMany({
         limit: limit + 1,
         offset: limit * input.page,
-        where: input.search ? like(users.name, `%${input.search}%`) : undefined,
+        where: and(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined, roleFilter()),
       });
 
       const countUsers = await db
         .select({ count: sql<number>`count(*)` })
         .from(users)
-        .where(input.search ? like(users.name, `%${input.search}%`) : undefined)
+        .where(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined)
+        .where(roleFilter())
         .then((rows) => rows[0].count);
 
       return {
@@ -213,18 +310,79 @@ export const userRouter = createTRPCRouter({
           isOwner: user.isOwner,
         })),
         countPages: Math.ceil(countUsers / limit),
+        stats: {
+          roles: {
+            all: (await db.select({ count: sql<number>`count(*)` }).from(users))[0]['count'],
+            owner: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(eq(users.isOwner, true))
+            )[0]['count'],
+            admin: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(and(eq(users.isAdmin, true), eq(users.isOwner, false)))
+            )[0]['count'],
+            normal: (
+              await db
+                .select({ count: sql<number>`count(*)` })
+                .from(users)
+                .where(and(eq(users.isAdmin, false), eq(users.isOwner, false)))
+            )[0]['count'],
+          } as Record<string, number>,
+        },
       };
     }),
-  create: adminProcedure.input(createNewUserSchema).mutation(async ({ ctx, input }) => {
-    await createUserIfNotPresent(input);
-  }),
-
+  create: adminProcedure
+    .meta({ openapi: { method: 'POST', path: '/users', tags: ['user'] } })
+    .input(createNewUserSchema)
+    .output(z.void())
+    .mutation(async ({ input }) => {
+      await createUserIfNotPresent(input);
+    }),
+  details: adminProcedure
+    .meta({ openapi: { method: 'GET', path: '/users/getById', tags: ['user'] } })
+    .input(z.object({ userId: z.string() }))
+    .output(
+      createSelectSchema(users)
+        .omit({
+          password: true,
+          salt: true,
+        })
+        .optional())
+    .query(async ({ input }) => {
+      return db.query.users.findFirst({
+        where: eq(users.id, input.userId),
+        columns: {
+          password: false,
+          salt: false,
+        },
+      });
+    }),
+  updateDetails: adminProcedure
+    .meta({ openapi: { method: 'PUT', path: '/users/details', tags: ['user'] } })
+    .input(z.object({
+      userId: z.string(),
+      username: z.string(),
+      eMail: z.string().optional().transform(value => value?.length === 0 ? null : value),
+    }))
+    .output(z.void())
+    .mutation(async ({ input }) => {
+      await db.update(users).set({
+        name: input.username,
+        email: input.eMail as string | null,
+      }).where(eq(users.id, input.userId));
+    }),
   deleteUser: adminProcedure
+    .meta({ openapi: { method: 'DELETE', path: '/users', tags: ['user'] } })
     .input(
       z.object({
         id: z.string(),
-      })
+      }),
     )
+    .output(z.void())
     .mutation(async ({ ctx, input }) => {
       const user = await db.query.users.findFirst({
         where: eq(users.id, input.id),
@@ -259,7 +417,7 @@ const createUserIfNotPresent = async (
   options: {
     defaultSettings?: Partial<UserSettings>;
     isOwner?: boolean;
-  } | void
+  } | void,
 ) => {
   const existingUser = await db.query.users.findFirst({
     where: eq(users.name, input.username),

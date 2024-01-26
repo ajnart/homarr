@@ -1,5 +1,4 @@
-import { IncomingMessage } from 'http';
-import { ServerResponse } from 'http';
+import { IncomingMessage, ServerResponse } from 'http';
 import { GetServerSidePropsContext } from 'next';
 import { SSRConfig } from 'next-i18next';
 import { ParsedUrlQuery } from 'querystring';

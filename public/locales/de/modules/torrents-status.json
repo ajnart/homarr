@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Herunterladen",
         "name": "Name",
+        "dateAdded": "Hinzugefügt am",
         "size": "Größe",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "Voraussichtlicher Abschluss",
-        "progress": "Fortschritt"
+        "progress": "Fortschritt",
+        "totalUploaded": "Upload gesamt",
+        "totalDownloaded": "Download gesamt",
+        "ratio": "Verhältnis",
+        "seeds": "Seeds (verbunden)",
+        "peers": "Peers (Verbunden)",
+        "label": "Kategorie",
+        "state": "Staat",
+        "stateMessage": "Statusmeldung"
       },
       "item": {
         "text": "Verwaltet von {{appName}}, {{ratio}} ratio"

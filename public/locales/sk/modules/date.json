@@ -4,6 +4,13 @@
     "description": "Zobrazuje aktuálny dátum a čas.",
     "settings": {
       "title": "Nastavenia miniaplikácie Dátum a čas",
+      "timezone": {
+        "label": "Časové pásmo",
+        "info": "Vyberte názov svojho časového pásma, nájdete ho tu: "
+      },
+      "customTitle": {
+        "label": "Názov mesta alebo vlastný názov"
+      },
       "display24HourFormat": {
         "label": "Zobraziť celý čas (24 hodín)"
       },
@@ -13,18 +20,12 @@
           "hide": "Skryť dátum"
         }
       },
-      "enableTimezone": {
-        "label": "Zobrazenie vlastného časového pásma"
-      },
-      "timezoneLocation": {
-        "label": "Lokalita Časového pásma"
-      },
       "titleState": {
-        "label": "Názov mesta",
-        "info": "Ak aktivujete možnosť Časové pásmo, môže sa zobraziť názov mesta a kód časového pásma.<br/>Môžete zobraziť aj samotné mesto alebo dokonca nezobraziť žiadne.",
+        "label": "Názov hodín",
+        "info": "Vlastný názov a kód časového pásma sa môžu zobraziť na miniaplikácii.<br/>Môžete tiež zobraziť samotné mesto, nezobraziť žiadne,<br/>alebo dokonca zobraziť iba časové pásmo, keď sú vybraté obe, ale nie je uvedený žiadny názov.",
         "data": {
-          "both": "Mesto a časové pásmo",
-          "city": "Iba mesto",
+          "both": "Názov a časové pásmo",
+          "city": "Iba názov",
           "none": "Žiadne"
         }
       }

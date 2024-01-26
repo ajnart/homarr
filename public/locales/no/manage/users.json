@@ -1,13 +1,21 @@
 {
     "metaTitle": "Brukere",
     "pageTitle": "Administrer brukere",
-    "text": "Ved å bruke brukere kan du konfigurere hvem som kan redigere tavlene dine. Fremtidige versjoner av Homarr vil ha enda mer detaljert kontroll over tillatelser og tavler.",
     "buttons": {
         "create": "Opprett"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Bruker"
+            "user": "Bruker",
+            "email": "E-post"
         }
     },
     "tooltips": {

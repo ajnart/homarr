@@ -16,7 +16,9 @@
   "state": {
     "approved": "승인됨",
     "pendingApproval": "승인 대기 중",
-    "declined": "거부됨"
+    "declined": "거부됨",
+    "available": "",
+    "partial": ""
   },
   "tooltips": {
     "approve": "요청 승인",

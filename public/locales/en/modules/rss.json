@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Text lines clamp"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Sort by publish date (ascending)"
       }
     },
     "card": {

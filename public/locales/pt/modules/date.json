@@ -4,6 +4,13 @@
     "description": "Apresenta a data e hora actuais.",
     "settings": {
       "title": "Definições para o widget de Data e Hora",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Mostrar tempo (24 horas)"
       },
@@ -13,18 +20,12 @@
           "hide": "Ocultar data"
         }
       },
-      "enableTimezone": {
-        "label": "Exibir um fuso horário personalizado"
-      },
-      "timezoneLocation": {
-        "label": "Localização do fuso horário"
-      },
       "titleState": {
-        "label": "Título da cidade",
-        "info": "Se você ativar a opção Fuso horário, o nome da cidade e o código do fuso horário poderão ser exibidos.<br/>Você também pode mostrar somente a cidade ou até mesmo não mostrar nenhuma.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Cidade e fuso horário",
-          "city": "Somente na cidade",
+          "both": "",
+          "city": "",
           "none": "Nenhum"
         }
       }

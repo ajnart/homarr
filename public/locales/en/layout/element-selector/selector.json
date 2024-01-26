@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Add a new tile",
-        "text": "Tiles are the main element of Homarr. They are used to display your apps and other information. You can add as many tiles as you want."
-    },
-    "widgetDescription": "Widgets interact with your apps, to provide you with more control over your applications. They usually require additional configuration before use.",
-    "goBack": "Go back to the previous step",
-    "actionIcon": {
-        "tooltip": "Add a tile"
-    },
-    "apps": "Apps",
-    "app": {
-        "defaultName": "Your App"
-    },
-    "widgets": "Widgets",
-    "categories": "Categories",
-    "category": {
-        "newName": "Name of new category",
-        "defaultName": "New Category",
-        "created": {
-            "title": "Category created",
-            "message": "The category \"{{name}}\" has been created"
-        }
+  "modal": {
+    "title": "Add a new tile",
+    "text": "Tiles are the main element of Homarr. They are used to display your apps and other information. You can add as many tiles as you want."
+  },
+  "widgetDescription": "Widgets interact with your apps, to provide you with more control over your applications. They usually require additional configuration before use.",
+  "goBack": "Go back to the previous step",
+  "actionIcon": {
+    "tooltip": "Add a tile"
+  },
+  "apps": "Apps",
+  "app": {
+    "defaultName": "Your App"
+  },
+  "widgets": "Widgets",
+  "categories": "Categories",
+  "category": {
+    "newName": "Name of new category",
+    "defaultName": "New Category",
+    "created": {
+      "title": "Category created",
+      "message": "The category \"{{name}}\" has been created"
     }
+  },
+  "importFromDocker": "Import from docker"
 }

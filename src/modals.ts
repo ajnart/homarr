@@ -30,7 +30,7 @@ export const modals = {
   copyInviteModal: CopyInviteModal,
   deleteBoardModal: DeleteBoardModal,
   changeUserRoleModal: ChangeUserRoleModal,
-  dockerSelectBoardModal: DockerSelectBoardModal,
+  dockerSelectBoardModal: DockerSelectBoardModal
 };
 
 declare module '@mantine/modals' {

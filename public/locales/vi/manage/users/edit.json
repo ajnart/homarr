@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Người dùng {{username}}",
+  "back": "Quay lại quản lý người dùng",
+  "sections": {
+    "general": {
+      "title": "Chung",
+      "inputs": {
+        "username": {
+          "label": "Tên người dùng"
+        },
+        "eMail": {
+          "label": "E-mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Bảo mật",
+      "inputs": {
+        "password": {
+          "label": "Mật khẩu mới"
+        },
+        "terminateExistingSessions": {
+          "label": "Chấm dứt các phiên hiện có",
+          "description": "Buộc người dùng phải đăng nhập lại trên thiết bị của họ"
+        },
+        "confirm": {
+          "label": "Xác nhận",
+          "description": "Mật khẩu sẽ được cập nhật. Hành động không thể được hoàn tác."
+        }
+      }
+    },
+    "roles": {
+      "title": "Vai trò",
+      "currentRole": "Vai trò hiện tại: ",
+      "badges": {
+        "owner": "Chủ",
+        "admin": "Quản trị viên",
+        "normal": "Thường"
+      }
+    },
+    "deletion": {
+      "title": "Xóa tài khoản",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Xác nhận tên người dùng",
+          "description": "Nhập tên người dùng để xác nhận xóa"
+        },
+        "confirm": {
+          "label": "Xóa vĩnh viễn",
+          "description": "Tôi biết rằng hành động này là vĩnh viễn và tất cả dữ liệu tài khoản sẽ bị mất."
+        }
+      }
+    }
+  }
+}

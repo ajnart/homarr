@@ -1,0 +1,55 @@
+{
+  "metaTitle": "",
+  "back": "",
+  "sections": {
+    "general": {
+      "title": "일반",
+      "inputs": {
+        "username": {
+          "label": "사용자 이름"
+        },
+        "eMail": {
+          "label": "이메일"
+        }
+      }
+    },
+    "security": {
+      "title": "",
+      "inputs": {
+        "password": {
+          "label": ""
+        },
+        "terminateExistingSessions": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "확인",
+          "description": ""
+        }
+      }
+    },
+    "roles": {
+      "title": "",
+      "currentRole": "",
+      "badges": {
+        "owner": "",
+        "admin": "",
+        "normal": ""
+      }
+    },
+    "deletion": {
+      "title": "",
+      "inputs": {
+        "confirmUsername": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "영구 삭제",
+          "description": ""
+        }
+      }
+    }
+  }
+}

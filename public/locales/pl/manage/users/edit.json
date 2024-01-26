@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Użytkownik {{username}}",
+  "back": "Powrót do zarządzania użytkownikami",
+  "sections": {
+    "general": {
+      "title": "Ogólne",
+      "inputs": {
+        "username": {
+          "label": "Nazwa użytkownika"
+        },
+        "eMail": {
+          "label": "E-mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Bezpieczeństwo",
+      "inputs": {
+        "password": {
+          "label": "Nowe hasło"
+        },
+        "terminateExistingSessions": {
+          "label": "Zakończ istniejące sesje",
+          "description": "Wymusza ponowne zalogowanie się użytkownika na swoich urządzeniach"
+        },
+        "confirm": {
+          "label": "Potwierdź",
+          "description": "Hasło zostanie zaktualizowane. Działania nie można cofnąć."
+        }
+      }
+    },
+    "roles": {
+      "title": "Role",
+      "currentRole": "Obecna rola: ",
+      "badges": {
+        "owner": "Właściciel",
+        "admin": "Admin",
+        "normal": "Zwykły"
+      }
+    },
+    "deletion": {
+      "title": "Usunięcie konta",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Potwierdź nazwę użytkownika",
+          "description": "Wpisz nazwę użytkownika, aby potwierdzić usunięcie"
+        },
+        "confirm": {
+          "label": "Usuń trwale",
+          "description": "Mam świadomość, że to działanie jest trwałe i wszystkie dane konta zostaną utracone."
+        }
+      }
+    }
+  }
+}

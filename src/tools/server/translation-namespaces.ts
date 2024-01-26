@@ -1,4 +1,5 @@
 export const boardNamespaces = [
+  'tools/docker',
   'layout/element-selector/selector',
   'layout/modals/add-app',
   'layout/modals/change-position',
@@ -30,6 +31,7 @@ export const boardNamespaces = [
   'modules/bookmark',
   'modules/notebook',
   'modules/smart-home/entity-state',
+  'modules/smart-home/trigger-automation',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',
@@ -42,6 +44,7 @@ export const manageNamespaces = [
   'manage/users',
   'manage/users/invites',
   'manage/users/create',
+  'manage/users/edit'
 ];
 export const loginNamespaces = ['authentication/login'];
 

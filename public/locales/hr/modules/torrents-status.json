@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "Naziv",
+        "dateAdded": "",
         "size": "Veličina",
         "download": "Isključeno",
         "upload": "Uključeno",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "Napredak"
+        "progress": "Napredak",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Stanje",
+        "stateMessage": ""
       },
       "item": {
         "text": "Upravlja {{appName}}, omjer: {{ratio}}"

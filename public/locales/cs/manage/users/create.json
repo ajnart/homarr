@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Vytvořit uživatele",
     "steps": {
         "account": {
-            "title": "",
-            "text": "",
+            "title": "První krok",
+            "text": "Tvorba účtu",
             "username": {
-                "label": ""
+                "label": "Uživatelské jméno"
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
-            "text": "",
+            "title": "Druhý krok",
+            "text": "Heslo",
             "password": {
-                "label": ""
+                "label": "Heslo"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Potvrzení",
+            "text": "Uložit do databáze",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Zkontrolujte, co jste vyplnili",
+                "text": "Po odeslání dat se uživatel bude moci přihlásit. Jste si jisti, že chcete tohoto uživatele uložit do databáze?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
-                    "username": "",
-                    "email": "",
-                    "password": ""
+                    "property": "Vlastnosti",
+                    "value": "Hodnoty",
+                    "username": "Uživatelské jméno",
+                    "email": "E-mail",
+                    "password": "Heslo"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nenastaveno",
+                "valid": "Platné"
             },
-            "failed": ""
+            "failed": "Vytvoření uživatele se nezdařilo: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Uživatel byl úspěšně vytvořen",
+                "text": "Uživatel byl vytvořen v databázi. Nyní se může přihlásit."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Vygenerovat náhodné heslo",
+        "createAnother": "Vytvořit dalšího uživatele"
     }
 }

@@ -1,0 +1,21 @@
+{
+    "entityNotFound": "",
+    "descriptor": {
+        "name": "",
+        "description": "",
+        "settings": {
+            "title": "",
+            "entityId": {
+                "label": "",
+                "info": ""
+            },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
+            "displayName": {
+                "label": ""
+            }
+        }
+    }
+}

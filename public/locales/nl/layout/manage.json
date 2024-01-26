@@ -25,7 +25,8 @@
         "tools": {
             "title": "Gereedschap",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": ""
             }
         },
         "about": {

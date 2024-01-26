@@ -1,13 +1,21 @@
 {
     "metaTitle": "Korisnici",
     "pageTitle": "Upravljanje korisnicima",
-    "text": "Pomoću korisnika možete konfigurirati tko može uređivati vaše nadzorne ploče. Buduće verzije Homarra imat će još detaljniju kontrolu nad dozvolama i pločama.",
     "buttons": {
         "create": "Stvoriti"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Korisnik"
+            "user": "Korisnik",
+            "email": "E-pošta"
         }
     },
     "tooltips": {

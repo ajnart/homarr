@@ -4,6 +4,13 @@
     "description": "Geçerli tarih ve saati görüntüler.",
     "settings": {
       "title": "Tarih ve Saat widget'ı için ayarlar",
+      "timezone": {
+        "label": "Saat dilimi",
+        "info": "Saat diliminizin adını seçin, sizinkini burada bulabilirsiniz: "
+      },
+      "customTitle": {
+        "label": "Şehir adı yada özel başlık"
+      },
       "display24HourFormat": {
         "label": "Tam zamanı göster (24 saat)"
       },
@@ -13,18 +20,12 @@
           "hide": "Tarihi Gizle"
         }
       },
-      "enableTimezone": {
-        "label": "Özel bir saat dilimi görüntüleme"
-      },
-      "timezoneLocation": {
-        "label": "Saat Dilimi Konumu"
-      },
       "titleState": {
-        "label": "Şehir adı",
-        "info": "Saat Dilimi seçeneğini etkinleştirmeniz durumunda, şehrin adı ve saat dilimi kodu gösterilir.<br/>Ayrıca şehir adını tek başına gösterebilir veya hiç göstermeyebilirsiniz.",
+        "label": "Saat başlığı",
+        "info": "Özel başlık ve saat dilimi kodu widget'ınızda gösterilebilir.<br/>Ayrıca şehri tek başına gösterebilir, hiçbirini göstermeyebilir,<br/>veya her ikisi de seçildiğinde ancak başlık sağlanmadığında saat dilimini tek başına gösterebilirsiniz.",
         "data": {
-          "both": "Şehir ve Saat Dilimi",
-          "city": "Yanlız şehir",
+          "both": "Başlık ve Saat Dilimi",
+          "city": "Sadece başlık",
           "none": "Hiçbiri"
         }
       }

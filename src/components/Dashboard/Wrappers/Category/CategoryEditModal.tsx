@@ -28,7 +28,7 @@ export const CategoryEditModal = ({
   });
 
   const handleSubmit = async (values: FormType) => {
-    innerProps.onSuccess({ ...innerProps.category, name: values.name });
+    await innerProps.onSuccess({ ...innerProps.category, name: values.name });
     context.closeModal(id);
   };
 

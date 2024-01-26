@@ -1,13 +1,21 @@
 {
     "metaTitle": "ユーザー",
     "pageTitle": "ユーザー管理",
-    "text": "ユーザーを使用して、ダッシュボードを編集できるユーザーを設定できます。Homarrの将来のバージョンでは、権限とボードをさらに細かく制御できるようになります。",
     "buttons": {
         "create": "作成"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "ユーザー"
+            "user": "ユーザー",
+            "email": "Eメール"
         }
     },
     "tooltips": {

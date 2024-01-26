@@ -8,10 +8,8 @@ import {
   Indicator,
   NavLink,
   Navbar,
-  Paper,
   Text,
   ThemeIcon,
-  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -21,10 +19,9 @@ import {
   IconBrandGithub,
   IconGitFork,
   IconHome,
-  IconInfoCircle,
   IconInfoSmall,
   IconLayoutDashboard,
-  IconMailForward,
+  IconMailForward, IconPlug,
   IconQuestionMark,
   IconTool,
   IconUser,
@@ -104,6 +101,10 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           icon: IconBrandDocker,
           href: '/manage/tools/docker',
         },
+        api: {
+          icon: IconPlug,
+          href: '/manage/tools/swagger'
+        }
       },
     },
     help: {
@@ -201,20 +202,14 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
 
           const matchesActive = router.pathname.endsWith(item.href);
 
-          if (item.href.startsWith('http')) {
-            return (
-              <NavLink
-                {...commonItemProps}
-                active={matchesActive}
-                target={item.target}
-                key={index}
-                component="a"
-              />
-            );
-          }
-
           return (
-            <NavLink {...commonItemProps} active={matchesActive} component={Link} key={index} />
+            <NavLink
+              {...commonItemProps}
+              target={item.target}
+              active={matchesActive}
+              component={Link}
+              key={index}
+            />
           );
         })}
       </NavLink>

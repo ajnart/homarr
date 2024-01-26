@@ -1,0 +1,55 @@
+{
+  "metaTitle": "",
+  "back": "",
+  "sections": {
+    "general": {
+      "title": "Általános",
+      "inputs": {
+        "username": {
+          "label": "Felhasználónév"
+        },
+        "eMail": {
+          "label": "Email cím"
+        }
+      }
+    },
+    "security": {
+      "title": "",
+      "inputs": {
+        "password": {
+          "label": ""
+        },
+        "terminateExistingSessions": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Megerősít",
+          "description": ""
+        }
+      }
+    },
+    "roles": {
+      "title": "",
+      "currentRole": "",
+      "badges": {
+        "owner": "",
+        "admin": "",
+        "normal": ""
+      }
+    },
+    "deletion": {
+      "title": "",
+      "inputs": {
+        "confirmUsername": {
+          "label": "",
+          "description": ""
+        },
+        "confirm": {
+          "label": "Végleges törlés",
+          "description": ""
+        }
+      }
+    }
+  }
+}

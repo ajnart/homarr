@@ -1,13 +1,21 @@
 {
     "metaTitle": "Người dùng",
     "pageTitle": "Quản lý người dùng",
-    "text": "Bằng cách sử dụng người dùng, bạn có thể định cấu hình ai có thể chỉnh sửa trang tổng quan của mình. Các phiên bản tương lai của Homarr sẽ có quyền kiểm soát chi tiết hơn đối với các quyền và bảng.",
     "buttons": {
         "create": "Tạo nên"
     },
+    "filter": {
+        "roles": {
+            "all": "Tất cả",
+            "normal": "Thường",
+            "admin": "Quản trị viên",
+            "owner": "Chủ"
+        }
+    },
     "table": {
         "header": {
-            "user": "Người dùng"
+            "user": "Người dùng",
+            "email": "E-mail"
         }
     },
     "tooltips": {

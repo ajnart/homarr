@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Dodajanje nove ploščice",
-        "text": "Ploščice so glavni element sistema Homarr. Uporabljajo se za prikaz aplikacij in drugih informacij. Dodate lahko poljubno število ploščic."
-    },
-    "widgetDescription": "Pripomočki sodelujejo z vašimi aplikacijami in vam omogočajo boljši nadzor nad aplikacijami. Pred uporabo običajno zahtevajo dodatno konfiguracijo.",
-    "goBack": "Vrnite se na prejšnji korak",
-    "actionIcon": {
-        "tooltip": "Dodajanje ploščice"
-    },
-    "apps": "",
-    "app": {
-        "defaultName": ""
-    },
-    "widgets": "",
-    "categories": "",
-    "category": {
-        "newName": "",
-        "defaultName": "",
-        "created": {
-            "title": "",
-            "message": ""
-        }
+  "modal": {
+    "title": "Dodajanje nove ploščice",
+    "text": "Ploščice so glavni element sistema Homarr. Uporabljajo se za prikaz aplikacij in drugih informacij. Dodate lahko poljubno število ploščic."
+  },
+  "widgetDescription": "Pripomočki sodelujejo z vašimi aplikacijami in vam omogočajo boljši nadzor nad aplikacijami. Pred uporabo običajno zahtevajo dodatno konfiguracijo.",
+  "goBack": "Vrnite se na prejšnji korak",
+  "actionIcon": {
+    "tooltip": "Dodajanje ploščice"
+  },
+  "apps": "Aplikacije",
+  "app": {
+    "defaultName": "Vaša aplikacija"
+  },
+  "widgets": "Pripomočki",
+  "categories": "Kategorije",
+  "category": {
+    "newName": "Ime nove kategorije",
+    "defaultName": "Nova kategorija",
+    "created": {
+      "title": "Ustvarjena kategorija",
+      "message": "Ustvarjena je bila kategorija \"{{name}}\""
     }
+  },
+  "importFromDocker": "Uvoz iz dockerja"
 }

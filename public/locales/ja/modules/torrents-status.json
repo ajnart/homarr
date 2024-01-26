@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "",
         "name": "名称",
+        "dateAdded": "",
         "size": "サイズ",
         "download": "ダウンロード",
         "upload": "アップロード",
         "estimatedTimeOfArrival": "ETA",
-        "progress": "進捗状況"
+        "progress": "進捗状況",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "状態",
+        "stateMessage": ""
       },
       "item": {
         "text": "運営： {{appName}}, {{ratio}} 比率"

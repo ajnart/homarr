@@ -1,7 +1,7 @@
 {
-    "metaTitle": "",
-    "title": "",
-    "text": "",
+    "metaTitle": "Ustvarjanje računa",
+    "title": "Ustvarjanje računa",
+    "text": "V nadaljevanju opredelite svoje poverilnice",
     "form": {
         "fields": {
             "username": {
@@ -11,25 +11,25 @@
                 "label": "Geslo"
             },
             "passwordConfirmation": {
-                "label": ""
+                "label": "Potrditev gesla"
             }
         },
         "buttons": {
-            "submit": ""
+            "submit": "Ustvarite račun"
         }
     },
     "notifications": {
         "loading": {
-            "title": "",
-            "text": ""
+            "title": "Ustvarjanje računa",
+            "text": "Prosimo, počakajte."
         },
         "success": {
-            "title": "",
-            "text": ""
+            "title": "Ustvarjen račun",
+            "text": "Vaš račun je bil uspešno ustvarjen"
         },
         "error": {
             "title": "Napaka",
-            "text": ""
+            "text": "Nekaj je šlo narobe, dobil sem naslednjo napako: {{error}}"
         }
     }
 }

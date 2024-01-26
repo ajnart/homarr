@@ -6,15 +6,18 @@ import {
   Group,
   LoadingOverlay,
   Menu,
+  Modal,
   SimpleGrid,
   Stack,
   Text,
   Title,
 } from '@mantine/core';
-import { useListState } from '@mantine/hooks';
+import { useDisclosure, useListState } from '@mantine/hooks';
 import {
   IconBox,
   IconCategory,
+  IconCopy,
+  IconCursorText,
   IconDeviceFloppy,
   IconDotsVertical,
   IconFolderFilled,
@@ -39,19 +42,39 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
+import { notifications } from '@mantine/notifications';
+import { RenameBoardModal } from '~/components/Dashboard/Modals/RenameBoard/RenameBoardModal';
+import { useState } from 'react';
 
 // Infer return type from the `getServerSideProps` function
 export default function BoardsPage({
-  boards,
-  session,
+ boards,
+ session,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [openedRenameBoardModal, { open: openRenameBoardModal, close: closeRenameBoardModal }] = useDisclosure(false);
+  const [renameBoardName, setRenameBoardName] = useState<{ boardName: string }>();
+
   const { data, refetch } = api.boards.all.useQuery(undefined, {
     initialData: boards,
     cacheTime: 1000 * 60 * 5, // Cache for 5 minutes
   });
   const { mutateAsync } = api.user.makeDefaultDashboard.useMutation({
     onSettled: () => {
-      refetch();
+      void refetch();
+    },
+  });
+
+  const utils = api.useUtils();
+
+  const { mutateAsync: mutateDuplicateBoardAsync } = api.boards.duplicateBoard.useMutation({
+    onSettled: () => {
+      void utils.boards.all.invalidate();
+    },
+    onError: (error) => {
+      notifications.show({
+        title: 'An error occurred while duplicating',
+        message: error.message,
+      });
     },
   });
 
@@ -66,6 +89,12 @@ export default function BoardsPage({
       <Head>
         <title>{metaTitle}</title>
       </Head>
+
+      <Modal opened={openedRenameBoardModal} onClose={closeRenameBoardModal}
+             title={t('cards.menu.rename.modal.title', { name: renameBoardName?.boardName })}>
+        <RenameBoardModal boardName={renameBoardName?.boardName as string} configNames={data.map(board => board.name)}
+                          onClose={closeRenameBoardModal} />
+      </Modal>
 
       <Group position="apart">
         <Title mb="xl">{t('pageTitle')}</Title>
@@ -166,6 +195,26 @@ export default function BoardsPage({
                 </Menu.Target>
                 <Menu.Dropdown>
                   <Menu.Item
+                    onClick={async () => {
+                      await mutateDuplicateBoardAsync({
+                        boardName: board.name,
+                      });
+                    }}
+                    icon={<IconCopy size={'1rem'} />}>
+                    {t('cards.menu.duplicate')}
+                  </Menu.Item>
+                  <Menu.Item
+                    onClick={() => {
+                      setRenameBoardName({
+                        boardName: board.name as string
+                      });
+                      openRenameBoardModal();
+                    }}
+                    icon={<IconCursorText size={'1rem'} />}
+                    disabled={board.name === 'default'}>
+                    {t('cards.menu.rename.label')}
+                  </Menu.Item>
+                  <Menu.Item
                     icon={<IconDeviceFloppy size="1rem" />}
                     onClick={async () => {
                       void mutateAsync({
@@ -177,7 +226,6 @@ export default function BoardsPage({
                   </Menu.Item>
                   {session?.user.isAdmin && (
                     <>
-                      <Menu.Divider />
                       <Menu.Item
                         onClick={async () => {
                           openDeleteBoardModal({
@@ -216,7 +264,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   const result = checkForSessionOrAskForLogin(
     context,
     session,
-    () => session?.user.isAdmin == true
+    () => session?.user.isAdmin == true,
   );
   if (result !== undefined) {
     return result;
@@ -233,7 +281,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     manageNamespaces,
     context.locale,
     context.req,
-    context.res
+    context.res,
   );
 
   return {

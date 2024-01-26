@@ -4,6 +4,13 @@
     "description": "Visualizza la data e l'ora correnti.",
     "settings": {
       "title": "Impostazioni per il widget Data e Ora",
+      "timezone": {
+        "label": "Fuso orario",
+        "info": "Seleziona il nome del tuo fuso orario, trova il tuo qui: "
+      },
+      "customTitle": {
+        "label": "Nome città o titolo personalizzato"
+      },
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
       },
@@ -13,18 +20,12 @@
           "hide": "Nascondi data"
         }
       },
-      "enableTimezone": {
-        "label": "Mostra un fuso orario personalizzato"
-      },
-      "timezoneLocation": {
-        "label": "Posizione Fuso Orario"
-      },
       "titleState": {
-        "label": "Titolo città",
-        "info": "Nel caso in cui si attivasse l'opzione fuso orario, sarà possibile visualizzare il nome della città e il codice del fuso orario.<br/>Puoi anche mostrare la città da sola o anche non mostrarla.",
+        "label": "Titolo orologio",
+        "info": "Il titolo personalizzato e il codice del fuso orario possono essere visualizzati sul tuo widget.<br/>È anche possibile mostrare solo la città, non mostrarne nessuna,<br/>o anche mostrare solo il fuso orario quando sono selezionati entrambi ma non viene fornito alcun titolo.",
         "data": {
-          "both": "Città e fuso orario",
-          "city": "Solo città",
+          "both": "Titolo e fuso orario",
+          "city": "Solo titolo",
           "none": "Niente"
         }
       }

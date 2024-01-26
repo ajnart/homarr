@@ -1,25 +1,26 @@
 {
-    "modal": {
-        "title": "Ajouter une tuile",
-        "text": "Les tuiles sont l'élément principal de Homarr. Elles sont utilisées pour afficher vos applications et autres informations. Vous pouvez ajouter autant de tuiles que vous le souhaitez."
-    },
-    "widgetDescription": "Les widgets interagissent avec vos applications, pour vous permettre de mieux les contrôler. Ils nécessitent généralement quelques configurations supplémentaires avant d'être utilisés.",
-    "goBack": "Retourner à la page précédente",
-    "actionIcon": {
-        "tooltip": "Ajouter une tuile"
-    },
-    "apps": "Applications",
-    "app": {
-        "defaultName": "Votre application"
-    },
-    "widgets": "Widgets",
-    "categories": "Catégories",
-    "category": {
-        "newName": "Nom de la nouvelle catégorie",
-        "defaultName": "Nouvelle catégorie",
-        "created": {
-            "title": "Catégorie créée",
-            "message": "La catégorie « {{name}} » a été créée"
-        }
+  "modal": {
+    "title": "Ajouter une tuile",
+    "text": "Les tuiles sont l'élément principal de Homarr. Elles sont utilisées pour afficher vos applications et autres informations. Vous pouvez ajouter autant de tuiles que vous le souhaitez."
+  },
+  "widgetDescription": "Les widgets interagissent avec vos applications, pour vous permettre de mieux les contrôler. Ils nécessitent généralement quelques configurations supplémentaires avant d'être utilisés.",
+  "goBack": "Retourner à la page précédente",
+  "actionIcon": {
+    "tooltip": "Ajouter une tuile"
+  },
+  "apps": "Applications",
+  "app": {
+    "defaultName": "Votre application"
+  },
+  "widgets": "Widgets",
+  "categories": "Catégories",
+  "category": {
+    "newName": "Nom de la nouvelle catégorie",
+    "defaultName": "Nouvelle catégorie",
+    "created": {
+      "title": "Catégorie créée",
+      "message": "La catégorie « {{name}} » a été créée"
     }
+  },
+  "importFromDocker": "Importer depuis Docker"
 }

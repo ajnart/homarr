@@ -18,12 +18,12 @@
       "description": "Prilagodite ozadje, barve in videz aplikacije"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Dostopnost",
+      "description": "Konfiguracija sistema Homarr za uporabnike invalide in osebe s posebnimi potrebami"
     },
     "access": {
-      "name": "",
-      "description": ""
+      "name": "Dostop",
+      "description": "Konfigurirajte, kdo ima dostop do vašega odbora"
     }
   }
 }

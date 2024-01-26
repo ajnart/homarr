@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Tekstlinjer klemme"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

@@ -3,6 +3,7 @@ import {
   ActionIcon,
   Anchor,
   Badge,
+  createStyles,
   Divider,
   Group,
   HoverCard,
@@ -10,20 +11,12 @@ import {
   Stack,
   Table,
   Text,
-  createStyles
 } from '@mantine/core';
-import {
-  IconAnchor,
-  IconKey,
-  IconLanguage,
-  IconSchema,
-  IconVersions,
-  IconVocabulary
-} from '@tabler/icons-react';
+import { IconAnchor, IconKey, IconLanguage, IconSchema, IconVersions, IconVocabulary } from '@tabler/icons-react';
 import { useQuery } from '@tanstack/react-query';
 import { InitOptions } from 'i18next';
 import { GetServerSidePropsContext } from 'next';
-import { Trans, i18n, useTranslation } from 'next-i18next';
+import { i18n, Trans, useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
@@ -262,7 +255,7 @@ export const Page = ({ contributors }: { contributors: Contributors[] }) => {
   );
 };
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const contributors = (await fetch(
     `https://api.github.com/repos/${REPO_URL}/contributors?per_page=100`,
     {
@@ -272,7 +265,12 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       contributors,
-      ...(await getServerSideTranslations(['layout/manage', 'manage/index'], locale)),
+      ...(await getServerSideTranslations(
+        ['layout/manage', 'manage/index'],
+        ctx.locale,
+        ctx.req,
+        ctx.res
+      )),
     },
   };
 }

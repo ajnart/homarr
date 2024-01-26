@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Kullanıcı {{username}}",
+  "back": "Kullanıcı Yönetimine dön",
+  "sections": {
+    "general": {
+      "title": "Genel",
+      "inputs": {
+        "username": {
+          "label": "Kullanıcı adı"
+        },
+        "eMail": {
+          "label": "E-Posta"
+        }
+      }
+    },
+    "security": {
+      "title": "Güvenlik",
+      "inputs": {
+        "password": {
+          "label": "Yeni parola"
+        },
+        "terminateExistingSessions": {
+          "label": "Mevcut oturumları sonlandır",
+          "description": "Kullanıcıyı cihazlarında tekrar oturum açmaya zorlar"
+        },
+        "confirm": {
+          "label": "Onayla",
+          "description": "Parola güncellenecektir. İşlem geri alınamaz."
+        }
+      }
+    },
+    "roles": {
+      "title": "Roller",
+      "currentRole": "Mevcut rol: ",
+      "badges": {
+        "owner": "Sahip",
+        "admin": "Yönetici",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Hesap silme",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Kullanıcı adını onaylayın",
+          "description": "Silme işlemini onaylamak için kullanıcı adını yazın"
+        },
+        "confirm": {
+          "label": "Kalıcı olarak sil",
+          "description": "Bu işlemin kalıcı olduğunun ve tüm hesap verilerinin kaybolacağının farkındayım."
+        }
+      }
+    }
+  }
+}

@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "Blocco righe di testo"
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
       }
     },
     "card": {

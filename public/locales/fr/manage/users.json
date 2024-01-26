@@ -1,13 +1,21 @@
 {
     "metaTitle": "Utilisateurs",
     "pageTitle": "Gérer les utilisateurs",
-    "text": "En utilisant des utilisateurs, vous pouvez configurer qui peut éditer vos tableaux de bord. Les prochaines versions de Homarr auront un contrôle plus fin quant aux permissions et les tableaux de bord.",
     "buttons": {
         "create": "Créer"
     },
+    "filter": {
+        "roles": {
+            "all": "Tous",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Utilisateur"
+            "user": "Utilisateur",
+            "email": "Courriel"
         }
     },
     "tooltips": {

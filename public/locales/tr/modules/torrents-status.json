@@ -35,18 +35,28 @@
   "card": {
     "footer": {
       "error": "Hata",
-      "lastUpdated": "Son Güncelleme {{time}} önce",
+      "lastUpdated": "Son Güncelleme {{time}} önce ",
       "ratioGlobal": "Genel Ratio",
       "ratioWithFilter": "Filtrelenen ratio"
     },
     "table": {
       "header": {
+        "isCompleted": "İndiriliyor",
         "name": "İsim",
+        "dateAdded": "Eklendi",
         "size": "Boyut",
         "download": "İndirme",
         "upload": "Yükleme",
         "estimatedTimeOfArrival": "ETA (Kalan Süre)",
-        "progress": "İlerleme"
+        "progress": "İlerleme",
+        "totalUploaded": "Toplam Yüklenen",
+        "totalDownloaded": "Toplam İndirilen",
+        "ratio": "Ratio",
+        "seeds": "Tohumlar (Bağlı)",
+        "peers": "Eşler (Bağlı)",
+        "label": "Etiket",
+        "state": "Durum",
+        "stateMessage": "Durum Mesajı"
       },
       "item": {
         "text": "{{appName}} tarafından yönetilen, {{ratio}} oranı"
@@ -60,7 +70,7 @@
       "title": "Şu anki indirme hızı",
       "download": "İndirme: {{download}}",
       "upload": "Yükleme: {{upload}}",
-      "timeSpan": "{{seconds}} saniye önce",
+      "timeSpan": "{{seconds}} saniye önce ",
       "totalDownload": "İndirme: {{download}}/s",
       "totalUpload": "Yükleme: {{upload}}/s"
     },

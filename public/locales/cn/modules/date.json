@@ -4,6 +4,13 @@
     "description": "显示当前的日期和时间。",
     "settings": {
       "title": "日期和时间组件设置",
+      "timezone": {
+        "label": "时区",
+        "info": "选择您所在时区的名称，在此找到您所在的时区： "
+      },
+      "customTitle": {
+        "label": "城市名称或自定义标题"
+      },
       "display24HourFormat": {
         "label": "全时显示（24 小时）"
       },
@@ -13,19 +20,13 @@
           "hide": "隐藏日期"
         }
       },
-      "enableTimezone": {
-        "label": "显示自定义时区"
-      },
-      "timezoneLocation": {
-        "label": "时区位置"
-      },
       "titleState": {
-        "label": "城市名称",
-        "info": "如果激活时区选项，则可显示城市名称和时区代码。<br/>您也可以只显示城市，甚至不显示。",
+        "label": "时钟标题",
+        "info": "自定义标题和时区代码可以显示在 widget 上。<br/>您还可以单独显示城市、不显示、<br/>，甚至在同时选择了城市和时区但未提供标题时单独显示时区。",
         "data": {
-          "both": "城市和时区",
-          "city": "仅城市",
-          "none": "无"
+          "both": "标题和时区",
+          "city": "仅标题",
+          "none": "不显示"
         }
       }
     }

@@ -1,16 +1,26 @@
-import { Button, Global, Text, Title, Tooltip, clsx } from '@mantine/core';
-import { useHotkeys, useWindowEvent } from '@mantine/hooks';
+import { Button, Global, Modal, Stack, Text, Title, Tooltip, clsx } from '@mantine/core';
+import { useDisclosure, useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { openContextModal } from '@mantine/modals';
 import { hideNotification, showNotification } from '@mantine/notifications';
-import { IconApps, IconEditCircle, IconEditCircleOff, IconSettings } from '@tabler/icons-react';
+import {
+  IconApps,
+  IconBrandDocker,
+  IconEditCircle,
+  IconEditCircleOff,
+  IconSettings,
+} from '@tabler/icons-react';
 import Consola from 'consola';
+import { ContainerInfo } from 'dockerode';
 import { useSession } from 'next-auth/react';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { env } from 'process';
+import { useState } from 'react';
 import { useEditModeStore } from '~/components/Dashboard/Views/useEditModeStore';
 import { useNamedWrapperColumnCount } from '~/components/Dashboard/Wrappers/gridstack/store';
+import ContainerActionBar from '~/components/Manage/Tools/Docker/ContainerActionBar';
+import ContainerTable from '~/components/Manage/Tools/Docker/ContainerTable';
 import { BoardHeadOverride } from '~/components/layout/Meta/BoardHeadOverride';
 import { HeaderActionButton } from '~/components/layout/header/ActionButton';
 import { useConfigContext } from '~/config/provider';
@@ -20,14 +30,15 @@ import { MainLayout } from './MainLayout';
 
 type BoardLayoutProps = {
   children: React.ReactNode;
+  isDockerEnabled?: boolean;
 };
 
-export const BoardLayout = ({ children }: BoardLayoutProps) => {
+export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutProps) => {
   const { config } = useConfigContext();
   const { data: session } = useSession();
 
   return (
-    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions />}>
+    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}>
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -36,7 +47,7 @@ export const BoardLayout = ({ children }: BoardLayoutProps) => {
   );
 };
 
-export const HeaderActions = () => {
+export const HeaderActions = ({isDockerEnabled = false} : { isDockerEnabled: boolean}) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
@@ -44,7 +55,51 @@ export const HeaderActions = () => {
   return (
     <>
       <ToggleEditModeButton />
+      {isDockerEnabled && <DockerButton />}
       <CustomizeBoardButton />
+    </>
+  );
+};
+
+const DockerButton = () => {
+  const [selection, setSelection] = useState<(ContainerInfo & { icon?: string })[]>([]);
+  const [opened, { open, close, toggle }] = useDisclosure(false);
+  useHotkeys([['mod+B', toggle]]);
+
+  const { data, refetch, isRefetching } = api.docker.containers.useQuery(undefined, {
+    cacheTime: 60 * 1000 * 5,
+    staleTime: 60 * 1000 * 1,
+  });
+  const { t } = useTranslation('tools/docker');
+  const reload = () => {
+    refetch();
+    setSelection([]);
+  };
+
+  return (
+    <>
+      <Tooltip label={t('title')}>
+        <HeaderActionButton onClick={open}>
+          <IconBrandDocker size={20} stroke={1.5} />
+        </HeaderActionButton>
+      </Tooltip>
+      <Modal
+        title={t('title')}
+        withCloseButton={true}
+        closeOnClickOutside={true}
+        size="full"
+        opened={opened}
+        onClose={close}
+      >
+        <Stack>
+          <ContainerActionBar selected={selection} reload={reload} isLoading={isRefetching} />
+          <ContainerTable
+            containers={data ?? []}
+            selection={selection}
+            setSelection={setSelection}
+          />
+        </Stack>
+      </Modal>
     </>
   );
 };
@@ -188,6 +243,12 @@ const BackgroundImage = () => {
     return null;
   }
 
+  // Check if the background image URL is a video
+  const videoFormat = getVideoFormat(config?.settings.customization.backgroundImageUrl);
+  if (videoFormat) {
+    return <BackgroundVideo videoSource={config?.settings.customization.backgroundImageUrl} videoFormat={videoFormat} />;
+  }
+
   return (
     <Global
       styles={{
@@ -203,6 +264,41 @@ const BackgroundImage = () => {
     />
   );
 };
+
+
+const getVideoFormat = (video: string) => {
+  const supportedFormats = ['mp4', 'webm', 'ogg'];
+  for(const format of supportedFormats) {
+    if(video.endsWith(format)) return format;
+  }
+  return undefined;
+}
+
+interface BackgroundVideoProps {
+  videoSource: string;
+  videoFormat: string;
+}
+
+const BackgroundVideo = ({videoSource, videoFormat}: BackgroundVideoProps) => {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          objectFit: 'cover'
+        }}
+      >
+        <source src={videoSource} type={`video/${videoFormat}`} />
+      </video>
+    );
+};
+
 
 export const useBoardLink = (
   link: '/board' | `/board/${string}/customize` | `/board/${string}`

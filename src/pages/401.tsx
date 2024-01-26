@@ -1,14 +1,14 @@
-import { Button, Center, Stack, Title, Text, createStyles } from "@mantine/core";
-import { useTranslation } from "next-i18next";
-import Image from "next/image";
-import Head from "next/head";
-import { MainLayout } from "~/components/layout/Templates/MainLayout";
-import Link from "next/link";
+import { Button, Center, createStyles, Stack, Text, Title } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
+import Head from 'next/head';
+import { MainLayout } from '~/components/layout/Templates/MainLayout';
+import Link from 'next/link';
 
 import imageAccessDenied from '~/images/undraw_secure_login_pdn4.svg';
-import { pageAccessDeniedNamespaces } from "~/tools/server/translation-namespaces";
-import { getServerSideTranslations } from "~/tools/server/getServerSideTranslations";
-import { GetServerSidePropsContext } from "next";
+import { pageAccessDeniedNamespaces } from '~/tools/server/translation-namespaces';
+import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { GetServerSidePropsContext } from 'next';
 
 export default function Custom401() {
   const { classes } = useStyles();

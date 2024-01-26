@@ -2,36 +2,36 @@
 	"tabs": {
 		"general": "Obecné",
 		"behaviour": "Chování",
-		"network": "",
+		"network": "Síť",
 		"appearance": "Vzhled",
 		"integration": "Integrace"
 	},
 	"general": {
 		"appname": {
 			"label": "Název aplikace",
-			"description": ""
+			"description": "Zobrazuje se s aplikací na ploše."
 		},
 		"internalAddress": {
-			"label": "",
-			"description": "",
+			"label": "Interní adresa",
+			"description": "Interní IP adresa aplikace.",
 			"troubleshoot": {
 				"label": "Narazili jste na problém?",
-				"header": "",
+				"header": "Zde je seznam nejčastějších chyb a jejich řešení:",
 				"lines": {
-					"nothingAfterPort": "",
-					"protocolCheck": "",
-					"preferIP": "",
-					"enablePings": "",
-					"wget": "",
-					"iframe": "",
-					"clearCache": ""
+					"nothingAfterPort": "Ve většině případů, ne-li ve všech, byste za port neměli zadávat žádnou cestu. (Dokonce ani '/admin' pro pihole nebo '/web' pro plex)",
+					"protocolCheck": "Vždy se ujistěte, že na začátku URL je http nebo https a také se ujistěte, že používáte správnou předponu.",
+					"preferIP": "Doporučuje se používat přímo Ip adresu stroje nebo kontejneru, se kterým se snažíte komunikovat.",
+					"enablePings": "Zkontrolujte, zda je IP adresa správná, povolením pingů. Běžte do Přizpůsobení plochy -> Rozložení -> Povolit ping. Na dlaždicích aplikace se objeví malá červená nebo zelená bublina a po najetí na ni se zobrazí kód odpovědi (ve většině případů se očekává zelená bublina s kódem 200).",
+					"wget": "Chcete-li se ujistit, že homarr může komunikovat s ostatními aplikacemi, zkontrolujte, zda wget/curl/ping odpovídá IP adrese:portu aplikace.",
+					"iframe": "Pokud jde o iframe, ty by měly vždy používat stejný protokol (http/s) jako Homarr.",
+					"clearCache": "Některé informace jsou zaznamenány v mezipaměti, takže integrace nemusí fungovat, pokud nevymažete mezipaměť v obecných možnostech aplikace Homarr."
 				},
-				"footer": ""
+				"footer": "Pro řešení dalších problémů se obraťte na náš {{discord}}."
 			}
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Veřejná adresa",
+			"description": "URL která bude otevřena po kliknutí na aplikaci."
 		}
 	},
 	"behaviour": {
@@ -41,88 +41,88 @@
 		},
 		"tooltipDescription": {
 			"label": "Popis aplikace",
-			"description": ""
+			"description": "Zadaný text se zobrazí po najetí na aplikaci.\nPoužijte jej k tomu, abyste uživatelům poskytli více informací o své aplikaci, nebo jej nechte prázdný, aby se nic nezobrazovalo."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Používá se nestandardní protokol. To může vyžadovat předinstalované aplikace a může přinést bezpečnostní rizika. Ujistěte se, že vaše adresa je bezpečná a důvěryhodná."
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
-			"description": ""
+			"label": "Kontrola stavu",
+			"description": "Kontroluje, zda je aplikace online pomocí jednoduchého HTTP(S) požadavku."
 		},
 		"statusCodes": {
-			"label": "",
-			"description": ""
+			"label": "Stavové kódy HTTP",
+			"description": "Stavové kódy HTTP, které jsou považovány jako online."
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
-			"description": "",
+			"label": "Ikona aplikace",
+			"description": "Začněte psát pro vyhledání ikony. Můžete také vložit adresu URL obrázku a použít vlastní ikonu.",
 			"autocomplete": {
-				"title": "",
-				"text": ""
+				"title": "Nebyly nalezeny žádné výsledky",
+				"text": "Zkuste použít konkrétnější vyhledávací výraz. Pokud nemůžete najít požadovanou ikonu, vložte adresu URL obrázku Vaší žádané ikony"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Načítám externí ikony",
+				"text": "Může to chvíli trvat"
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
-			"description": ""
+			"label": "Velikost písma názvu aplikace",
+			"description": "Nastavte velikost písma zobrazení názvu aplikace na dlaždici."
 		},
 		"appNameStatus": {
-			"label": "",
-			"description": "",
+			"label": "Stav názvu aplikace",
+			"description": "Zvolte, kde se má název zobrazit, resp. má-li se vůbec má zobrazit.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
-				"hidden": ""
+				"normal": "Zobrazení názvu pouze na dlaždici",
+				"hover": "Zobrazení názvu pouze při najetí myší",
+				"hidden": "Nezobrazovat název vůbec"
 			}
 		},
 		"positionAppName": {
-			"label": "",
-			"description": "",
+			"label": "Pozice názvu aplikace",
+			"description": "Pozice názvu aplikace vzhledem k ikoně.",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Nahoře",
+				"right": "Vpravo",
+				"bottom": "Dole",
+				"left": "Vlevo"
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Řádky názvu aplikace",
+			"description": "Určuje, na kolik řádků se má maximálně vejít váš nadpis. Nastavte 0 pro neomezený počet."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Nastavení integrace",
+			"description": "Konfigurace integrace, která bude použita pro připojení k vaší aplikaci.",
+			"placeholder": "Vyberte integraci",
+			"defined": "Definováno",
+			"undefined": "Nedefinovaný",
+			"public": "Veřejné",
+			"private": "Soukromý",
+			"explanationPrivate": "Soukromé heslo/API klíč se na server odešle pouze jednou. Po obnovení stránky se již nikdy neodešle.",
+			"explanationPublic": "Veřejný secret se vždy odešle klientovi a je přístupný prostřednictvím API. Neměl by obsahovat žádné důvěrné hodnoty, jako jsou uživatelská jména, hesla, tokeny, certifikáty a podobně!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Chcete-li aktualizovat API klíč, zadejte novou hodnotu a klikněte na tlačítko uložit. Chcete-li API klíč vymazat, použijte tlačítko vymazat.",
+			"warning": "Vaše přihlašovací údaje slouží jako přístup k vašim integracím a <strong> nikdy</strong> byste je neměli sdílet s nikým jiným. Tým Homarr Vás nikdy nebude žádat o Vaše přihlašovací údaje. Dbejte na to, abyste svá <strong>hesla bezpečně ukládali a spravovali</strong>.",
+			"clear": "Vymazat heslo/klíč",
+			"save": "Uložit heslo/klíč",
+			"update": "Aktualizovat heslo/klíč"
 		}
 	},
 	"validation": {
-		"popover": "",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"popover": "Váš formulář obsahuje neplatná data. Proto jej nelze uložit. Vyřešte prosím všechny problémy a znovu uložte změny",
+		"name": "Jméno aplikace je nutné vyplnit",
+		"noUrl": "URL je nutné vyplnit",
+		"invalidUrl": "URL je nutné vyplnit",
+		"noIconUrl": "Toto pole je nutné vyplnit",
+		"noExternalUri": "Je vyžadována externí URI",
+		"invalidExternalUri": "Externí URI není platná URI"
 	}
 }

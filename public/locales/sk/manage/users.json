@@ -1,13 +1,21 @@
 {
     "metaTitle": "Používatelia",
     "pageTitle": "Spravovať používateľov",
-    "text": "Pomocou používateľov môžete nakonfigurovať, kto môže upravovať informačné panely. Budúce verzie aplikácie Homarr budú mať ešte podrobnejšie ovládanie oprávnení a tabuliek.",
     "buttons": {
         "create": "Vytvoriť"
     },
+    "filter": {
+        "roles": {
+            "all": "Všetko",
+            "normal": "Normálna",
+            "admin": "Správca",
+            "owner": "Vlastník"
+        }
+    },
     "table": {
         "header": {
-            "user": "Používateľ"
+            "user": "Používateľ",
+            "email": "E-mail"
         }
     },
     "tooltips": {

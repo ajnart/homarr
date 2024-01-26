@@ -4,6 +4,13 @@
     "description": "Visar aktuellt datum och tid.",
     "settings": {
       "title": "Inställningar för datum och tid widget",
+      "timezone": {
+        "label": "Tidszon",
+        "info": "Välj namnet på din tidszon, hitta din här: "
+      },
+      "customTitle": {
+        "label": "Stadsnamn eller anpassad titel"
+      },
       "display24HourFormat": {
         "label": "Visa heltid (24-timmars)"
       },
@@ -13,18 +20,12 @@
           "hide": "Dölj datum"
         }
       },
-      "enableTimezone": {
-        "label": "Visa en anpassad tidszon"
-      },
-      "timezoneLocation": {
-        "label": "Plats för tidszon"
-      },
       "titleState": {
-        "label": "Stadens namn",
-        "info": "Om du aktiverar alternativet Tidszon kan stadens namn och tidszonskoden visas.<br/>Du kan också visa enbart staden eller ingen stad alls.",
+        "label": "Klockans titel",
+        "info": "Den anpassade titeln och tidszonskoden kan visas på din widget.<br/>Du kan också visa staden ensam, visa ingen,<br/>eller till och med visa tidszonen ensam när båda är valda men ingen titel tillhandahålls.",
         "data": {
-          "both": "Stad och tidszon",
-          "city": "Endast stad",
+          "both": "Titel och tidszon",
+          "city": "Endast titel",
           "none": "Ingen"
         }
       }

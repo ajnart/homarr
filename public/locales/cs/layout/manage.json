@@ -16,7 +16,7 @@
         "help": {
             "title": "Nápověda",
             "items": {
-                "documentation": "",
+                "documentation": "Dokumentace",
                 "report": "Nahlášení problému/chyby",
                 "discord": "Komunitní Discord",
                 "contribute": "Zapojte se"
@@ -25,11 +25,12 @@
         "tools": {
             "title": "Nástroje",
             "items": {
-                "docker": ""
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {
-            "title": ""
+            "title": "O aplikaci"
         }
     }
 }

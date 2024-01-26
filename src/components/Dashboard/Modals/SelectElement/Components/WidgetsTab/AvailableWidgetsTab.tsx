@@ -1,4 +1,4 @@
-import { Grid, Text } from '@mantine/core';
+import { Grid, Stack, Text } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 import widgets from '../../../../../../widgets';
@@ -14,7 +14,7 @@ export const AvailableIntegrationElements = ({
 }: AvailableIntegrationElementsProps) => {
   const { t } = useTranslation('layout/element-selector/selector');
   return (
-    <>
+    <Stack m="sm">
       <SelectorBackArrow onClickBack={onClickBack} />
 
       <Text mb="md" color="dimmed">
@@ -26,6 +26,6 @@ export const AvailableIntegrationElements = ({
           <WidgetElementType key={k} id={k} image={v.icon} widget={v} />
         ))}
       </Grid>
-    </>
+    </Stack>
   );
 };

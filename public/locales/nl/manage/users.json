@@ -1,13 +1,21 @@
 {
     "metaTitle": "Gebruikers",
     "pageTitle": "Gebruikers beheren",
-    "text": "Met behulp van gebruikers kun je instellen wie je dashboards mag bewerken. Toekomstige versies van Homarr zullen nog meer granulaire controle hebben over rechten en borden.",
     "buttons": {
         "create": "Maak"
     },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
     "table": {
         "header": {
-            "user": "Gebruiker"
+            "user": "Gebruiker",
+            "email": "E-mail"
         }
     },
     "tooltips": {

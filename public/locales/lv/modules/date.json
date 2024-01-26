@@ -4,6 +4,13 @@
     "description": "Rāda pašreizējo datumu un laiku.",
     "settings": {
       "title": "Datuma un Laika logrīka iestatījumi",
+      "timezone": {
+        "label": "",
+        "info": ""
+      },
+      "customTitle": {
+        "label": ""
+      },
       "display24HourFormat": {
         "label": "Rādīt pilnu laiku (24 stundu)"
       },
@@ -13,18 +20,12 @@
           "hide": "Paslēpt Datumu"
         }
       },
-      "enableTimezone": {
-        "label": "Rādīt pielāgotu laika joslu"
-      },
-      "timezoneLocation": {
-        "label": "Laika joslas Atrašanās vieta"
-      },
       "titleState": {
-        "label": "Pilsētas nosaukums",
-        "info": "Aktivizējot opciju Laika josla, var parādīt pilsētas nosaukumu un laika joslas kodu.<br/>Varat arī parādīt tikai pilsētu vai pat nerādīt nevienu.",
+        "label": "",
+        "info": "",
         "data": {
-          "both": "Pilsēta un Laika josla",
-          "city": "Tikai pilsēta",
+          "both": "",
+          "city": "",
           "none": "Nekas"
         }
       }

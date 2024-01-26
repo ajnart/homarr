@@ -24,7 +24,7 @@ import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useMediaRequestQuery } from './media-request-query';
-import { MediaRequest, MediaRequestStatus } from './media-request-types';
+import { MediaRequest, MediaRequestAvailability, MediaRequestStatus } from './media-request-types';
 
 const definition = defineWidget({
   id: 'media-requests-list',
@@ -154,7 +154,10 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                 <Stack spacing={0}>
                   <Group spacing="xs">
                     {item.airDate && <Text>{item.airDate.split('-')[0]}</Text>}
-                    <MediaRequestStatusBadge status={item.status} />
+                    <MediaRequestStatusBadge
+                      status={item.status}
+                      availability={item.availability}
+                    />
                   </Group>
                   <Anchor
                     href={item.href}
@@ -245,11 +248,24 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
   );
 }
 
-const MediaRequestStatusBadge = ({ status }: { status: MediaRequestStatus }) => {
+const MediaRequestStatusBadge = ({
+  status,
+  availability,
+}: {
+  status: MediaRequestStatus;
+  availability: MediaRequestAvailability;
+}) => {
   const { t } = useTranslation('modules/media-requests-list');
   switch (status) {
     case MediaRequestStatus.Approved:
-      return <Badge color="green">{t('state.approved')}</Badge>;
+      switch (availability) {
+        case MediaRequestAvailability.Available:
+          return <Badge color="green">{t('state.available')}</Badge>;
+        case MediaRequestAvailability.Partial:
+          return <Badge color="yellow">{t('state.partial')}</Badge>;
+        default:
+          return <Badge color="violet">{t('state.approved')}</Badge>;
+      }
     case MediaRequestStatus.Declined:
       return <Badge color="red">{t('state.declined')}</Badge>;
     case MediaRequestStatus.PendingApproval:

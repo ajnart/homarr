@@ -41,12 +41,22 @@
     },
     "table": {
       "header": {
+        "isCompleted": "Laster ned",
         "name": "Navn",
+        "dateAdded": "Lagt til",
         "size": "Størrelse",
         "download": "Ned",
         "upload": "Opp",
         "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
-        "progress": "Fremgang"
+        "progress": "Fremgang",
+        "totalUploaded": "Total opplasting",
+        "totalDownloaded": "Totalt nedlasting",
+        "ratio": "Forhold",
+        "seeds": "Seeds (tilkoblet)",
+        "peers": "Peers (tilkoblet)",
+        "label": "Etikett",
+        "state": "Status",
+        "stateMessage": "Tilstandsmelding"
       },
       "item": {
         "text": "Styrt med {{appName}}, {{ratio}} forhold"
