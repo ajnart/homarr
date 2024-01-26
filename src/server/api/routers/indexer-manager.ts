@@ -5,24 +5,10 @@ import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-prope
 import { getConfig } from '~/tools/config/getConfig';
 import { IntegrationType } from '~/types/app';
 
-import { createTRPCRouter, protectedProcedure } from '../trpc';
-
-const makeIndexerRequest = async (appUrl, apiKey, endpoint) => {
-  try {
-    const response = await axios.get(`${appUrl.origin}/api/v1/${endpoint}`, {
-      headers: {
-        'X-Api-Key': apiKey,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    Consola.error(`Failed to make request to ${endpoint}: ${error.message}`);
-    throw error;
-  }
-};
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const indexerManagerRouter = createTRPCRouter({
-  indexers: protectedProcedure
+  indexers: publicProcedure
     .input(
       z.object({
         configName: z.string(),
@@ -34,30 +20,52 @@ export const indexerManagerRouter = createTRPCRouter({
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
       );
-      if (!app) {
-        Consola.error(
-          `Failed to process request to indexer app (${app?.id}): App not found. Please check the configuration.`
-        );
-      }
       const apiKey = findAppProperty(app, 'apiKey');
-      if (!apiKey) {
+      if (!app || !apiKey) {
         Consola.error(
           `Failed to process request to indexer app (${app.id}): API key not found. Please check the configuration.`
         );
-        return null;
       }
 
       const appUrl = new URL(app.url);
-      try {
-        const [indexerData, indexerStatus] = await Promise.all([
-          makeIndexerRequest(appUrl, apiKey, 'indexer'),
-          makeIndexerRequest(appUrl, apiKey, 'indexerstatus'),
-        ]);
-        return { indexer: indexerData, indexerStatus };
-      } catch (error) {
-        Consola.error(`Failed to process request to indexer app (${app.id}): ${error.message}`);
-        return null;
+      const data = await axios
+        .get(`${appUrl.origin}/api/v1/indexer`, {
+          headers: {
+            'X-Api-Key': apiKey,
+          },
+        })
+        .then((res) => res.data);
+      return data;
+    }),
+
+  statuses: publicProcedure
+    .input(
+      z.object({
+        configName: z.string(),
+      })
+    )
+    .query(async ({ input }) => {
+      const config = getConfig(input.configName);
+      const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
+      const app = config.apps.find((app) =>
+        checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
+      );
+      const apiKey = findAppProperty(app, 'apiKey');
+      if (!app || !apiKey) {
+        Consola.error(
+          `Failed to process request to indexer app (${app.id}): API key not found. Please check the configuration.`
+        );
       }
+
+      const appUrl = new URL(app.url);
+      const data = await axios
+        .get(`${appUrl.origin}/api/v1/indexerstatus`, {
+          headers: {
+            'X-Api-Key': apiKey,
+          },
+        })
+        .then((res) => res.data);
+      return data;
     }),
 
   testAllIndexers: protectedProcedure
@@ -86,7 +94,8 @@ export const indexerManagerRouter = createTRPCRouter({
             'X-Api-Key': apiKey,
           },
         })
-        .then((res) => res.data);
+        .then((res) => res.data)
+        .catch((err: any) => err.response.data);
 
       return result;
     }),

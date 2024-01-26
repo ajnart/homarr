@@ -1,5 +1,6 @@
 import { Button, Card, Flex, Group, ScrollArea, Text } from '@mantine/core';
 import { IconCircleCheck, IconCircleX, IconReportSearch, IconTestPipe } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
@@ -29,8 +30,29 @@ interface IndexerManagerWidgetProps {
 
 function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
   const { t } = useTranslation('modules/indexer-manager');
-  const { isInitialLoading, data } = useProwlarrIndexersQuery();
-  if (isInitialLoading || !data) {
+  const { data: sessionData } = useSession();
+  const { name: configName } = useConfigContext();
+  const utils = api.useUtils();
+  const { isLoading: testAllLoading, mutateAsync: testAll } =
+    api.indexerManager.testAllIndexers.useMutation({
+      onSuccess: async () => {
+        await utils.indexerManager.invalidate();
+      },
+    });
+  const { isInitialLoading: indexersLoading, data: indexers } =
+    api.indexerManager.indexers.useQuery({
+      configName: configName!,
+    });
+  const { isInitialLoading: statusesLoading, data: statuses } =
+    api.indexerManager.statuses.useQuery(
+      {
+        configName: configName!,
+      },
+      {
+        staleTime: 1000 * 60 * 2,
+      }
+    );
+  if (indexersLoading || !indexers || statusesLoading) {
     return <WidgetLoading />;
   }
 
@@ -39,12 +61,13 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
       <Text mt={2}>{t('indexersStatus.title')}</Text>
       <Card py={5} px={10} radius="md" withBorder style={{ flex: '1' }}>
         <ScrollArea h="100%">
-          {data.indexer.map((indexer: any) => (
+          {indexers.map((indexer: any) => (
             <Group key={indexer.id} position="apart">
               <Text color="dimmed" align="center" size="xs">
                 {indexer.name}
               </Text>
-              {!data.indexerStatus.indexerId?.includes(indexer.id) && indexer.enable ? (
+              {!statuses.find((status: any) => indexer.id === status.indexerId) &&
+              indexer.enable ? (
                 <IconCircleCheck color="#2ecc71" />
               ) : (
                 <IconCircleX color="#d9534f" />
@@ -53,40 +76,23 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
           ))}
         </ScrollArea>
       </Card>
-      <Button
-        mt={5}
-        radius="md"
-        variant="light"
-        onClick={() => async () => {
-          useProwlarrTestAll();
-        }}
-        rightIcon={<IconTestPipe size={20} />}
-      >
-        {t('indexersStatus.testAllButton')}
-      </Button>
+      {sessionData && (
+        <Button
+          mt={5}
+          radius="md"
+          variant="light"
+          onClick={() => {
+            testAll({ configName: configName! });
+          }}
+          loading={testAllLoading}
+          loaderPosition="right"
+          rightIcon={<IconTestPipe size={20} />}
+        >
+          {t('indexersStatus.testAllButton')}
+        </Button>
+      )}
     </Flex>
   );
 }
-
-export const useProwlarrIndexersQuery = () => {
-  const { name: configName } = useConfigContext();
-
-  return api.indexerManager.indexers.useQuery(
-    {
-      configName: configName!,
-    },
-    {
-      staleTime: 1000 * 60 * 2,
-    }
-  );
-};
-
-export const useProwlarrTestAll = () => {
-  const { name: configName } = useConfigContext();
-  const mutation = api.indexerManager.testAllIndexers.useMutation();
-  return mutation.mutate({
-    configName: configName!,
-  });
-};
 
 export default definition;
