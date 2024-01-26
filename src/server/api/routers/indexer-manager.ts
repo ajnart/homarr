@@ -60,36 +60,6 @@ export const indexerManagerRouter = createTRPCRouter({
       }
     }),
 
-  status: protectedProcedure
-    .input(
-      z.object({
-        configName: z.string(),
-      })
-    )
-    .query(async ({ input }) => {
-      const config = getConfig(input.configName);
-      const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
-      const app = config.apps.find((app) =>
-        checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
-      );
-      const apiKey = findAppProperty(app, 'apiKey');
-      if (!app || !apiKey) {
-        Consola.error(
-          `failed to process request to app '${app?.integration}' (${app?.id}). Please check api key`
-        );
-      }
-
-      const appUrl = new URL(app.url);
-      const status = await axios
-        .get(`${appUrl.origin}/api/v1/indexerstatus`, {
-          headers: {
-            'X-Api-Key': apiKey,
-          },
-        })
-        .then((res) => res.data);
-      return status;
-    }),
-
   testAllIndexers: protectedProcedure
     .input(
       z.object({

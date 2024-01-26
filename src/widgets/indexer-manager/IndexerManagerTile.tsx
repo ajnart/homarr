@@ -34,10 +34,6 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
     return <WidgetLoading />;
   }
 
-  const handleTestAllClick = async () => {
-    useProwlarrTestAll();
-  };
-
   return (
     <Flex h="100%" gap={0} direction="column">
       <Text mt={2}>{t('indexersStatus.title')}</Text>
@@ -61,7 +57,9 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         mt={5}
         radius="md"
         variant="light"
-        onClick={handleTestAllClick}
+        onClick={() => async () => {
+          useProwlarrTestAll();
+        }}
         rightIcon={<IconTestPipe size={20} />}
       >
         {t('indexersStatus.testAllButton')}
