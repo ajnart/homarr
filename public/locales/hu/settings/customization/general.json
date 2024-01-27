@@ -22,7 +22,7 @@
       "description": "A Homarr konfigurálása fogyatékkal élő és fogyatékkal élő felhasználók számára"
     },
     "access": {
-      "name": "",
+      "name": "Hozzáférés",
       "description": "Annak beállítása, hogy ki férhet hozzá a táblához"
     }
   }

@@ -1,30 +1,30 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Användarinbjudningar",
+    "pageTitle": "Hantera användarinbjudningar",
+    "description": "Med hjälp av inbjudningar kan du bjuda in användare till din Homarr-instans. En inbjudan är endast giltig under en viss tidsperiod och kan användas en gång. Löptiden måste vara mellan 5 minuter och 12 månader efter skapandet.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Skapa inbjudan",
+        "deleteInvite": "Ta bort inbjudan"
     },
     "table": {
         "header": {
             "id": "ID",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "creator": "Skapare",
+            "expires": "Förfaller",
+            "action": "Åtgärder"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "utgången {{at}}",
+            "expiresIn": "om {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
+            "title": "Skapa inbjudan",
             "description": "",
             "form": {
                 "expires": "",
-                "submit": ""
+                "submit": "Skapa"
             }
         },
         "copy": {
@@ -40,7 +40,7 @@
             }
         },
         "delete": {
-            "title": "",
+            "title": "Ta bort inbjudan",
             "description": ""
         }
     },

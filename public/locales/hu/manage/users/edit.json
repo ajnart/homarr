@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Felhasználó {{username}}",
+  "back": "Vissza a felhasználókezeléshez",
   "sections": {
     "general": {
       "title": "Általános",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Biztonság",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Új jelszó"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Meglévő munkamenetek megszüntetése",
+          "description": "Kényszeríti a felhasználót, hogy újból bejelentkezzen az eszközein"
         },
         "confirm": {
           "label": "Megerősít",
-          "description": ""
+          "description": "A jelszó frissül. A művelet nem vonható vissza."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Szerepek",
+      "currentRole": "Jelenlegi szerepe: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Tulajdonos",
+        "admin": "Adminisztrátor",
+        "normal": "Normál"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Fiók törlése",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Felhasználónév megerősítése",
+          "description": "Írja be a felhasználónevet a törlés megerősítéséhez"
         },
         "confirm": {
           "label": "Végleges törlés",
-          "description": ""
+          "description": "Tisztában vagyok vele, hogy ez a művelet végleges, és minden fiókadat elveszik."
         }
       }
     }

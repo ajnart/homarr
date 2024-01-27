@@ -16,15 +16,15 @@
                 "label": "Elimina definitivamente",
                 "disabled": "Eliminazione disabilitata, perché i vecchi componenti di Homarr non consentono la cancellazione della configurazione predefinita. La cancellazione sarà possibile in futuro."
             },
-            "duplicate": "",
+            "duplicate": "Duplica",
             "rename": {
-                "label": "",
+                "label": "Rinomina",
                 "modal": {
-                    "title": "",
+                    "title": "Rinomina scheda {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nuovo nome",
+                            "placeholder": "Nuovo nome scheda"
                         }
                     }
                 }

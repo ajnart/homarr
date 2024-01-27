@@ -1,12 +1,12 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Användare",
+    "pageTitle": "Hantera användare",
     "buttons": {
-        "create": ""
+        "create": "Skapa"
     },
     "filter": {
         "roles": {
-            "all": "",
+            "all": "Alla",
             "normal": "",
             "admin": "",
             "owner": ""
@@ -19,13 +19,13 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Ta bort användare",
+        "demoteAdmin": "Ta bort administratör",
+        "promoteToAdmin": "Befordra till administratör"
     },
     "modals": {
         "delete": {
-            "title": "",
+            "title": "Ta bort användare {{name}}",
             "text": ""
         },
         "change-role": {
