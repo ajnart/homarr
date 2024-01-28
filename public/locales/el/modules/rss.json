@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Ταξινόμηση κατά ημερομηνία δημοσίευσης (αύξουσα)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
