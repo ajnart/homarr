@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Сортировать по дате публикации (по возрастанию)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
