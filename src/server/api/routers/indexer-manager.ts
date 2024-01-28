@@ -19,7 +19,7 @@ export const indexerManagerRouter = createTRPCRouter({
       const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
-      );
+      )!;
       const apiKey = findAppProperty(app, 'apiKey');
       if (!app || !apiKey) {
         Consola.error(
@@ -49,7 +49,7 @@ export const indexerManagerRouter = createTRPCRouter({
       const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
-      );
+      )!;
       const apiKey = findAppProperty(app, 'apiKey');
       if (!app || !apiKey) {
         Consola.error(
@@ -79,7 +79,7 @@ export const indexerManagerRouter = createTRPCRouter({
       const indexerAppIntegrationTypes = ['prowlarr'] as const satisfies readonly IntegrationType[];
       const app = config.apps.find((app) =>
         checkIntegrationsType(app.integration, indexerAppIntegrationTypes)
-      );
+      )!;
       const apiKey = findAppProperty(app, 'apiKey');
       if (!app || !apiKey) {
         Consola.error(
