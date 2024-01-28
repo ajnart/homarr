@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Ordina per data di pubblicazione (ascendente)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
