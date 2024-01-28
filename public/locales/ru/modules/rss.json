@@ -22,10 +22,10 @@
         "label": "Сортировать по дате публикации (по возрастанию)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Разместить сообщения без даты публикации вверху списка"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Максимальное количество постов"
       }
     },
     "card": {
