@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "crwdns4160:0crwdne4160:0"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "crwdns4176:0crwdne4176:0"
+      },
+      "maximumAmountOfPosts": {
+        "label": "crwdns4178:0crwdne4178:0"
       }
     },
     "card": {
