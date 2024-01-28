@@ -1,27 +1,27 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Statistika zahtevkov za medije",
+    "description": "Statistični podatki o vaših zahtevah za medije",
     "settings": {
-      "title": "",
+      "title": "Statistika zahtevkov za medije",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Zamenjajte povezave z zunanjim gostiteljem"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Odprite povezave v novem zavihku"
       }
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Statistika medijev",
+    "pending": "Odobritve, ki čakajo na odobritev",
+    "tvRequests": "Prošnje za televizijo",
+    "movieRequests": "Prošnje za filme",
+    "approved": "Že odobreno",
+    "totalRequests": "Skupaj"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Najboljši uporabniki",
+    "requests": "Zahteve: {{number}}"
   }
 }

@@ -243,6 +243,12 @@ const BackgroundImage = () => {
     return null;
   }
 
+  // Check if the background image URL is a video
+  const videoFormat = getVideoFormat(config?.settings.customization.backgroundImageUrl);
+  if (videoFormat) {
+    return <BackgroundVideo videoSource={config?.settings.customization.backgroundImageUrl} videoFormat={videoFormat} />;
+  }
+
   return (
     <Global
       styles={{
@@ -258,6 +264,41 @@ const BackgroundImage = () => {
     />
   );
 };
+
+
+const getVideoFormat = (video: string) => {
+  const supportedFormats = ['mp4', 'webm', 'ogg'];
+  for(const format of supportedFormats) {
+    if(video.endsWith(format)) return format;
+  }
+  return undefined;
+}
+
+interface BackgroundVideoProps {
+  videoSource: string;
+  videoFormat: string;
+}
+
+const BackgroundVideo = ({videoSource, videoFormat}: BackgroundVideoProps) => {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          objectFit: 'cover'
+        }}
+      >
+        <source src={videoSource} type={`video/${videoFormat}`} />
+      </video>
+    );
+};
+
 
 export const useBoardLink = (
   link: '/board' | `/board/${string}/customize` | `/board/${string}`

@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "Home Assistant automatizálás",
+    "description": "Automatizálás végrehajtása",
+    "settings": {
+      "title": "Automatizálás végrehajtása",
+      "automationId": {
+        "label": "Automatizálási azonosító",
+        "info": "Az Ön egyedi automatizálási azonosítója. Mindig automation.XXXXX."
+      },
+      "displayName": {
+        "label": "Megjelenített név"
+      }
+    }
+  }
+}

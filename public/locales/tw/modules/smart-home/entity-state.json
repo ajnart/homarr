@@ -9,6 +9,10 @@
                 "label": "實體 ID",
                 "info": "Home Assistant 中的唯一實體ID，通過點擊實體 > 點擊齒輪圖示 > 點擊實體 ID 觸地的複製按鈕進行複製，某些自定義實體可能不支持"
             },
+            "automationId": {
+                "label": "可選自動化ID",
+                "info": "自動化ID必須以 automation.XXXX 開頭，當未設定時小部件將不可點擊，且僅顯示狀況，點擊後實體狀態將被更新"
+            },
             "displayName": {
                 "label": "顯示名稱"
             }

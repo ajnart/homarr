@@ -16,7 +16,9 @@
   "state": {
     "approved": "Genehmigt",
     "pendingApproval": "Warten auf Freigabe",
-    "declined": "Abgelehnt"
+    "declined": "Abgelehnt",
+    "available": "Verfügbar",
+    "partial": "Teilweise"
   },
   "tooltips": {
     "approve": "Anfrage bestätigen",

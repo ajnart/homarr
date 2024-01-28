@@ -15,11 +15,24 @@
             "delete": {
                 "label": "Usuń trwale",
                 "disabled": "Usuwanie nie jest możliwe, ponieważ starsze komponenty Homarr nie pozwalają na usunięcie domyślnej konfiguracji. Usunięcie będzie możliwe w przyszłości."
+            },
+            "duplicate": "Zduplikuj",
+            "rename": {
+                "label": "Zmień nazwę",
+                "modal": {
+                    "title": "Zmień nazwę tablicy {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Nowa nazwa",
+                            "placeholder": "Nowa nazwa tablicy"
+                        }
+                    }
+                }
             }
         },
         "badges": {
             "fileSystem": "System plików",
-            "default": "Domyślnie"
+            "default": "Domyślne"
         }
     },
     "buttons": {

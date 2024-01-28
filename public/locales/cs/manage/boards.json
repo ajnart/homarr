@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Trvale smazat",
                 "disabled": "Smazání je zakázáno, protože starší komponenty Homarru neumožňují smazání výchozí konfigurace. Smazání bude možné v budoucnu."
+            },
+            "duplicate": "Duplikovat",
+            "rename": {
+                "label": "Přejmenovat",
+                "modal": {
+                    "title": "Přejmenovat plochu {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Nové jméno",
+                            "placeholder": "Nové jméno plochy"
+                        }
+                    }
+                }
             }
         },
         "badges": {
@@ -27,15 +40,15 @@
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Odstranit plochu",
+            "text": "Jste si jisti, že chcete tuto plochu smazat? Tuto akci nelze vrátit zpět a vaše data budou trvale ztracena."
         },
         "create": {
             "title": "Vytvořit plochu",
-            "text": "Název nelze po vytvoření plochy změnit.",
+            "text": "Jméno nelze po vytvoření plochy změnit.",
             "form": {
                 "name": {
-                    "label": ""
+                    "label": "Název"
                 },
                 "submit": "Vytvořit"
             }

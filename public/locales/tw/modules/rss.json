@@ -17,6 +17,9 @@
       },
       "textLinesClamp": {
         "label": "文字線條"
+      },
+      "sortByPublishDateAscending": {
+        "label": "依發布日期排序 (升序)"
       }
     },
     "card": {

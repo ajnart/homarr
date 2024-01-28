@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "Záložka",
+    "name": "Záložky",
     "description": "Zobrazí statický seznam textů nebo odkazů",
     "settings": {
-      "title": "",
+      "title": "Nastavení widgetu",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Název widgetu",
+        "info": "Ponechte prázdné, aby název zůstal skrytý."
       },
       "items": {
-        "label": ""
+        "label": "Položky"
       },
       "layout": {
         "label": "Rozložení",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Automatická mřížka",
+          "horizontal": "Horizontální",
+          "vertical": "Vertikální"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Seznam záložek je prázdný",
+      "text": "Přidejte nové položky do tohoto seznamu v režimu úprav"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Délka musí být mezi {{shortest}} a {{longest}}",
+      "invalidLink": "Neplatný odkaz",
+      "errorMsg": "Neuloženo, protože došlo k chybám. Prosím, zkontrolujte vyplněné informace"
     },
-    "name": "",
-    "url": "",
+    "name": "Název",
+    "url": "URL",
     "newTab": "Otevřít na nové kartě",
-    "hideHostname": "",
-    "hideIcon": "",
-    "delete": ""
+    "hideHostname": "Skrýt název hostitele",
+    "hideIcon": "Skrýt ikonu",
+    "delete": "Odstranit"
   }
 }

@@ -11,10 +11,10 @@
         "label": "Visa slutförda torrents"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Visa aktiva torrents"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Uppladdningshastighet för att betrakta en torrent som aktiv (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "Visa inaktuella torrents"
@@ -27,8 +27,8 @@
         "description": "Om \"är vitlista\" är markerat kommer detta att fungera som en vitlista. Om detta inte är markerat är detta en svartlista. Kommer inte att göra något när den är tom"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Visa filtrerade torrents listförhållande",
+        "info": "Om inaktiverat visas endast det globala förhållandet. Det globala förhållandet kommer fortfarande att använda etiketterna om det är inställt"
       }
     }
   },
@@ -36,27 +36,27 @@
     "footer": {
       "error": "Fel",
       "lastUpdated": "Senast uppdaterad {{time}} ago",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globalt förhållande",
+      "ratioWithFilter": "Förhållande med filter"
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Laddar ner",
         "name": "Namn",
-        "dateAdded": "",
+        "dateAdded": "Tillagd den",
         "size": "Storlek",
         "download": "Ned",
         "upload": "Upp",
         "estimatedTimeOfArrival": "Beräknad sluttid",
         "progress": "Förlopp",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Total uppladdning",
+        "totalDownloaded": "Total nedladdning",
+        "ratio": "Förhållande",
+        "seeds": "Seeds (anslutna)",
+        "peers": "Peers (ansluten)",
+        "label": "Etikett",
         "state": "Läge",
-        "stateMessage": ""
+        "stateMessage": "Status meddelande"
       },
       "item": {
         "text": "Hanteras av {{appName}}, {{ratio}} förhållande"

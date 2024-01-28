@@ -5,6 +5,9 @@ import {
   NormalizedIcon,
   NormalizedIconRepositoryResult,
 } from './abstract-icons-repository';
+import Consola from 'consola';
+
+const iconsDirectory = './public/icons';
 
 export class LocalIconsRepository extends AbstractIconRepository {
   constructor() {
@@ -12,7 +15,8 @@ export class LocalIconsRepository extends AbstractIconRepository {
   }
 
   protected async fetchInternally(): Promise<NormalizedIconRepositoryResult> {
-    if (!fs.existsSync('./public/icons')) {
+    if (!fs.existsSync(iconsDirectory)) {
+      Consola.info('Local icons repository directory does not exist');
       return {
         count: 0,
         entries: [],
@@ -22,24 +26,30 @@ export class LocalIconsRepository extends AbstractIconRepository {
       };
     }
 
-    const files = fs.readdirSync('./public/icons');
+    const files = fs.readdirSync(iconsDirectory);
+    Consola.info(`Local icons repository directory exists and contains ${files.length} icons`);
 
     const normalizedEntries = files
       .filter((file) => ['.png', '.svg', '.jpeg', '.jpg'].some((x) => file.endsWith(x)))
       .map(
-        (file): NormalizedIcon => ({
-          name: file,
-          url: `./icons/${file}`,
-          size: 0,
-        })
+        (file): NormalizedIcon => {
+          const stats = fs.statSync(`${iconsDirectory}/${file}`);
+          return {
+            name: file,
+            url: `/icons/${file}`,
+            size: stats.size,
+          };
+        }
       );
 
     return {
       entries: normalizedEntries,
       count: normalizedEntries.length,
       success: true,
-      name: 'Local',
+      name: this.name,
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "Local";
 }

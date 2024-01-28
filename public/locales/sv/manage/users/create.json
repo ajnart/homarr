@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "",
-            "text": "",
+            "text": "Skapa konto",
             "username": {
                 "label": "Användarnamn"
             },
@@ -12,41 +12,41 @@
             }
         },
         "security": {
-            "title": "",
+            "title": "Andra steget",
             "text": "Lösenord",
             "password": {
                 "label": "Lösenord"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Bekräftelse",
+            "text": "Spara till databas",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Granska dina inmatningar",
+                "text": "När du har skickat in dina data till databasen kommer användaren att kunna logga in. Är du säker på att du vill lagra denna användare i databasen och aktivera inloggningen?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Egenskap",
+                    "value": "Värde",
                     "username": "Användarnamn",
                     "email": "",
                     "password": "Lösenord"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Inte anget",
+                "valid": "Giltig"
             },
-            "failed": ""
+            "failed": "Skapandet av användare har misslyckats: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Användaren skapades",
+                "text": "Användaren skapades i databasen. De kan nu logga in."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generera slumpmässigt",
+        "createAnother": "Skapa en till"
     }
 }

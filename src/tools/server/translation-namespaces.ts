@@ -32,6 +32,7 @@ export const boardNamespaces = [
   'modules/bookmark',
   'modules/notebook',
   'modules/smart-home/entity-state',
+  'modules/smart-home/trigger-automation',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',

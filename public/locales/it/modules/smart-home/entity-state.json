@@ -9,6 +9,10 @@
                 "label": "ID entità",
                 "info": "ID entità univoco in Home Assistant. Copia facendo clic sull'entità > clic sull'icona della rondella > clic sul pulsante copia in \"ID entità\". Alcune entità personalizzate potrebbero non essere supportate."
             },
+            "automationId": {
+                "label": "ID automazione opzionale",
+                "info": "Il tuo ID di automazione univoco. Inizia sempre con automation.XXXXX. Se non impostato, il widget non sarà selezionabile e visualizzerà solo lo stato. Dopo il clic, lo stato dell'entità verrà aggiornato."
+            },
             "displayName": {
                 "label": "Visualizza nome"
             }

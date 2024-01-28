@@ -1,8 +1,4 @@
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class JsdelivrIconsRepository extends AbstractIconRepository {
   static readonly papirusRepository = {
@@ -50,6 +46,8 @@ export class JsdelivrIconsRepository extends AbstractIconRepository {
       copyright: this.copyright,
     };
   }
+
+  protected name: string = "JsDelivr";
 }
 
 type JsdelivrRepositoryUrl = {

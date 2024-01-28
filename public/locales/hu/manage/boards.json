@@ -15,6 +15,19 @@
             "delete": {
                 "label": "Végleges törlés",
                 "disabled": "Törlés letiltva, mivel a régebbi Homarr komponensek nem teszik lehetővé az alapértelmezett konfiguráció törlését. A törlés a jövőben lehetséges lesz."
+            },
+            "duplicate": "Duplikátum",
+            "rename": {
+                "label": "Átnevezés",
+                "modal": {
+                    "title": "A tábla átnevezése {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Új név",
+                            "placeholder": "Új fórumnév"
+                        }
+                    }
+                }
             }
         },
         "badges": {

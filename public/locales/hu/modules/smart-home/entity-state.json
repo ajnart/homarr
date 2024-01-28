@@ -9,6 +9,10 @@
                 "label": "Egység azonosító",
                 "info": "Egyedi egység ID a Home Assistantben. Másolás az egységre kattintva > Kattintson a fogaskerék ikonra > Kattintson a másolás gombra az „Egység ID”-nél. Előfordulhat, hogy egyes egyéni egységek nem támogatottak."
             },
+            "automationId": {
+                "label": "Választható automatizálási azonosító",
+                "info": "Az Ön egyedi automatizálási azonosítója. Mindig az automatizálással kezdődik.XXXX. Ha nincs beállítva, a widget nem kattintható, és csak az állapotot jeleníti meg. A kattintás után az entitás állapota frissül."
+            },
             "displayName": {
                 "label": "Megjelenített név"
             }

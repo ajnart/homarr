@@ -19,26 +19,26 @@
     "label": "Bakgrund"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Bilaga till bakgrundsbild",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fast - Bakgrunden stannar i samma position (rekommenderas)",
+      "scroll": "Scroll - Bakgrunden scrollar med musen"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Storlek på bakgrundsbild",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Cover - Skalar bilden så liten som möjligt för att täcka hela fönstret genom att beskära för mycket utrymme. (rekommenderad)",
+      "contain": "Innehåll - Skalar bilden så stor som möjligt i dess behållare utan att beskära eller sträcka ut bilden."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Bilaga till bakgrundsbild",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Upprepa - Bilden upprepas så många gånger som behövs för att täcka hela bakgrundsbildens målningsområde.",
+      "no-repeat": "Ingen upprepning - Bilden upprepas inte och kanske inte fyller hela utrymmet (rekommenderas)",
+      "repeat-x": "Upprepa X - Samma som \"Upprepa\" men endast på horisontell axel.",
+      "repeat-y": "Repeat Y - Samma som \"Repeat\" men endast på vertikal axel."
     }
   },
   "customCSS": {

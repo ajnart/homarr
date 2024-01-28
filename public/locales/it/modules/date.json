@@ -5,11 +5,11 @@
     "settings": {
       "title": "Impostazioni per il widget Data e Ora",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Fuso orario",
+        "info": "Seleziona il nome del tuo fuso orario, trova il tuo qui: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Nome città o titolo personalizzato"
       },
       "display24HourFormat": {
         "label": "Visualizza formato 24 ore"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Titolo orologio",
+        "info": "Il titolo personalizzato e il codice del fuso orario possono essere visualizzati sul tuo widget.<br/>È anche possibile mostrare solo la città, non mostrarne nessuna,<br/>o anche mostrare solo il fuso orario quando sono selezionati entrambi ma non viene fornito alcun titolo.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Titolo e fuso orario",
+          "city": "Solo titolo",
           "none": "Niente"
         }
       }

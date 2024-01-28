@@ -32,7 +32,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
           };
 
           // Adding category and wrapper and moving other items down
-          updateConfig(
+          await updateConfig(
             configName,
             (previous) => {
               const aboveWrappers = previous.wrappers.filter((x) => x.position <= abovePosition);
@@ -87,7 +87,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
           };
 
           // Adding category and wrapper and moving other items down
-          updateConfig(
+          await updateConfig(
             configName,
             (previous) => {
               const aboveWrappers = previous.wrappers.filter((x) => x.position < belowPosition);

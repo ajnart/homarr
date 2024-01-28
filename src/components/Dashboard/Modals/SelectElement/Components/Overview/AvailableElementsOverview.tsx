@@ -15,6 +15,8 @@ import { AppType } from '~/types/app';
 
 import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
+import { getLowestWrapper } from '~/tools/config/wrapper-finder';
+import { ConfigType } from '~/types/config';
 
 interface AvailableElementTypesProps {
   modalId: string;
@@ -29,8 +31,6 @@ export const AvailableElementTypes = ({
   const { config, name: configName } = useConfigContext();
   const { updateConfig } = useConfigStore();
   const { data } = useSession();
-
-  const getLowestWrapper = () => config?.wrappers.sort((a, b) => a.position - b.position)[0];
 
   const onClickCreateCategory = async () => {
     openContextModalGeneric<CategoryEditModalInnerProps>({
@@ -89,8 +89,7 @@ export const AvailableElementTypes = ({
             openContextModalGeneric<{ app: AppType; allowAppNamePropagation: boolean }>({
               modal: 'editApp',
               innerProps: {
-                app: generateDefaultApp(getLowestWrapper()?.id ?? 'default'),
-                // TODO: Add translation? t('app.defaultName')
+                app: generateDefaultApp(getLowestWrapper(config as ConfigType)?.id ?? 'default'),
                 allowAppNamePropagation: true,
               },
               size: 'xl',

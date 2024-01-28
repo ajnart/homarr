@@ -1,13 +1,17 @@
 {
-    "entityNotFound": "Nie znaleziono obiektu",
+    "entityNotFound": "Nie znaleziono encji",
     "descriptor": {
-        "name": "Obiekt asystenta domu",
-        "description": "Aktualny stan obiektu w Asystencie Domu",
+        "name": "Encja Home Assistant",
+        "description": "Aktualny stan encji w Home Assistant",
         "settings": {
-            "title": "Stan obiektu",
+            "title": "Stan encji",
             "entityId": {
-                "label": "ID obiektu",
-                "info": "Unikalne ID obiektu w Asystencie Domu. Kopiuj klikając na obiekt > Kliknij ikonę koła zębatego > Kliknij na przycisk kopiuj na 'ID obiektu'. Niektóre niestandardowe obiekty mogą nie być obsługiwane."
+                "label": "ID encji",
+                "info": "Unikalne ID encji w Home Assistant. Kopiuj klikając na encji > Kliknij ikonę koła zębatego > Kliknij na przycisk kopiuj na 'ID encji'. Niektóre niestandardowe obiekty mogą nie być obsługiwane."
+            },
+            "automationId": {
+                "label": "Opcjonalne ID automatyzacji",
+                "info": "Twój unikalny identyfikator automatyzacji. Zawsze zaczyna się od automation.XXXXX. Jeśli nie jest ustawiony, widżet nie będzie klikalny i będzie wyświetlał tylko stan. Po kliknięciu stan encji zostanie odświeżony."
             },
             "displayName": {
                 "label": "Nazwa wyświetlana"

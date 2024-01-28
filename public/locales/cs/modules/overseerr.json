@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Umožňuje vyhledávat a přidávat média z mediálního serveru Overseerr nebo Jellyseerr."
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
-        "request": ""
+        "askFor": "Požádat o {{title}}",
+        "cancel": "Zrušit",
+        "request": "Vyžádat"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "Používám API klíč",
+          "text": "Tato žádost bude automaticky schválena"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Zaškrtněte sezóny, které chcete stáhnout",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Sezóna",
+          "numberOfEpisodes": "Počet epizod"
         }
       }
     }

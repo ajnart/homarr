@@ -25,7 +25,8 @@
         "tools": {
             "title": "Rīki",
             "items": {
-                "docker": "Docker"
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {

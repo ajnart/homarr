@@ -15,6 +15,19 @@
             "delete": {
                 "label": "永久刪除",
                 "disabled": "刪除功能被禁用，因為較舊的 Homarr 組件不允許刪除預設的設定，將來可能會刪除"
+            },
+            "duplicate": "複製",
+            "rename": {
+                "label": "重新命名",
+                "modal": {
+                    "title": "重新命名面板 {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "新名稱",
+                            "placeholder": "新面板名稱"
+                        }
+                    }
+                }
             }
         },
         "badges": {

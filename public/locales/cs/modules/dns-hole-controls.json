@@ -3,15 +3,15 @@
     "name": "Ovládání DNS hole",
     "description": "Ovládejte PiHole nebo AdGuard z plochy",
     "settings": {
-      "title": "",
+      "title": "Nastavení DNS hole",
       "showToggleAllButtons": {
-        "label": ""
+        "label": "Zobrazit tlačítka \"Povolit/Zakázat vše\""
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nepodařilo se najít DNS hole",
+        "text": "Došlo k problému s připojením k Vaší DNS Hole. Ověřte prosím svou konfiguraci/integraci."
       }
     }
   }

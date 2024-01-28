@@ -25,11 +25,12 @@
         "tools": {
             "title": "Nástroje",
             "items": {
-                "docker": ""
+                "docker": "Docker",
+                "api": "API"
             }
         },
         "about": {
-            "title": ""
+            "title": "O aplikaci"
         }
     }
 }

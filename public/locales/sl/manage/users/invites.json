@@ -1,48 +1,48 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Vabila uporabnikov",
+    "pageTitle": "Upravljanje povabil uporabnikov",
+    "description": "Z vabili lahko uporabnike povabite v svoj primerek Homarr. Vabilo velja le za določen čas in ga lahko uporabite enkrat. Rok veljavnosti mora biti med 5 minutami in 12 meseci ob ustvarjanju.",
     "button": {
-        "createInvite": "",
-        "deleteInvite": ""
+        "createInvite": "Ustvarjanje povabila",
+        "deleteInvite": "Brisanje povabila"
     },
     "table": {
         "header": {
-            "id": "",
-            "creator": "",
-            "expires": "",
-            "action": ""
+            "id": "ID",
+            "creator": "Ustvarjalec",
+            "expires": "Velja do",
+            "action": "Ukrepi"
         },
         "data": {
-            "expiresAt": "",
-            "expiresIn": ""
+            "expiresAt": "potekel {{at}}",
+            "expiresIn": "na spletnem mestu {{in}}"
         }
     },
     "modals": {
         "create": {
-            "title": "",
-            "description": "",
+            "title": "Ustvarite povabilo",
+            "description": "Po izteku veljavnosti vabilo ne bo več veljavno in prejemnik vabila ne bo mogel ustvariti računa.",
             "form": {
-                "expires": "",
-                "submit": ""
+                "expires": "Datum izteka veljavnosti",
+                "submit": "Ustvarite spletno stran"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Kopija vabila",
+            "description": "Vaše vabilo je bilo ustvarjeno. Po zaprtju tega modalnega okna <b>te povezave ne boste mogli več kopirati</b>. Če omenjene osebe ne želite več povabiti, lahko to vabilo kadar koli izbrišete.",
+            "invitationLink": "Povezava na vabilo",
             "details": {
-                "id": "",
-                "token": ""
+                "id": "ID",
+                "token": "Žeton"
             },
             "button": {
-                "close": ""
+                "close": "Kopiraj in odpusti"
             }
         },
         "delete": {
-            "title": "",
-            "description": ""
+            "title": "Brisanje povabila",
+            "description": "Ali ste prepričani, da želite izbrisati to vabilo? Uporabniki s to povezavo ne bodo mogli več ustvariti računa z uporabo te povezave."
         }
     },
-    "noInvites": ""
+    "noInvites": "Vabil še ni."
 }

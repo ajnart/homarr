@@ -1,43 +1,43 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Zaznamek",
+    "description": "Prikaže statični seznam nizov ali povezav",
     "settings": {
-      "title": "",
+      "title": "Nastavitve zaznamkov",
       "name": {
-        "label": "",
-        "info": ""
+        "label": "Naslov pripomočka",
+        "info": "Pustite prazno, če želite, da je naslov skrit."
       },
       "items": {
-        "label": ""
+        "label": "Elementi"
       },
       "layout": {
         "label": "Postavitev",
         "data": {
-          "autoGrid": "",
-          "horizontal": "",
-          "vertical": ""
+          "autoGrid": "Samodejna mreža",
+          "horizontal": "Vodoravno",
+          "vertical": "Navpično"
         }
       }
     }
   },
   "card": {
     "noneFound": {
-      "title": "",
-      "text": ""
+      "title": "Seznam zaznamkov je prazen",
+      "text": "Dodajanje novih elementov na ta seznam v načinu urejanja"
     }
   },
   "item": {
     "validation": {
-      "length": "",
-      "invalidLink": "",
-      "errorMsg": ""
+      "length": "Dolžina mora biti med {{shortest}} in {{longest}}",
+      "invalidLink": "Ni veljavna povezava",
+      "errorMsg": "Ni bilo shranjeno, ker je prišlo do napak pri potrjevanju. Prosimo, da oprašite svoje podatke."
     },
     "name": "Ime",
-    "url": "",
+    "url": "URL",
     "newTab": "Odprite v novem zavihku",
-    "hideHostname": "",
-    "hideIcon": "",
+    "hideHostname": "Skrij gostiteljsko ime",
+    "hideIcon": "Skrij ikono",
     "delete": "Izbriši"
   }
 }

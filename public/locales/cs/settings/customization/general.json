@@ -1,5 +1,5 @@
 {
-  "text": "",
+  "text": "Úpravy vám umožňují nakonfigurovat a přizpůsobit vaši zkušenost s Homarrem dle vašich preferencí.",
   "accordeon": {
     "layout": {
       "name": "Rozložení",
@@ -18,8 +18,8 @@
       "description": "Přizpůsobte pozadí, barvy a zobrazení aplikací"
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Přístupnost",
+      "description": "Nakonfigurujte Homarr pro zdravotně postižené a handicapované uživatele"
     },
     "access": {
       "name": "Oprávnění",

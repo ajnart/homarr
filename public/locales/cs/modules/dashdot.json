@@ -1,81 +1,81 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Zobrazuje grafy z externího Dash. Instance uvnitř Homarru.",
+    "description": "Zobrazuje grafy z externí Dash. Instance uvnitř Homarru.",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro Dash. widget",
       "dashName": {
-        "label": ""
+        "label": "Dash. jméno"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Zobrazovat procenta"
       },
       "columns": {
-        "label": ""
+        "label": "Počet sloupců"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Výška grafů"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafy (seřazené)",
         "storage": {
-          "label": "",
+          "label": "Úložiště",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "compactView": {
-            "label": ""
+            "label": "Zobrazit jako text (kompaktní)"
           },
           "multiView": {
-            "label": ""
+            "label": "Zobrazit jako zobrazení pro více disků"
           }
         },
         "network": {
-          "label": "",
+          "label": "Síť",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "compactView": {
-            "label": ""
+            "label": "Zobrazit jako text (kompaktní)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "Procesor",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           },
           "multiView": {
-            "label": ""
+            "label": "Zobrazit jako zobrazení pro více jader procesoru"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "Grafická karta",
           "enabled": {
-            "label": ""
+            "label": "Zobrazovat ve widgetu"
           },
           "span": {
-            "label": ""
+            "label": "Rozpětí sloupce"
           }
         }
       }
@@ -84,34 +84,34 @@
   "card": {
     "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Nebyla nalezena žádná služba Dash. Přidejte ji prosím na svou Homarr plochu nebo nastavte URL aplikace Dash. v možnostech modulu",
+      "noInformation": "Nepodařilo se získat informace z dash. - používáte nejnovější verzi?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Zjištěn downgrade protokolu",
+        "text": "Připojení k vaší instanci Dash. používá protokol HTTP. To představuje bezpečnostní riziko, protože protokol HTTP není šifrovaný a útočníci by mohli toto připojení zneužít. Ujistěte se, že Dash. používá HTTPS, nebo snižte úroveň Homarr na HTTP (nedoporučujeme)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Úložiště",
+        "label": "Úložiště:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Síť",
+        "label": "Síť:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Stahování",
+          "upload": "Nahrávání"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Procesor"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "Grafická karta"
       }
     }
   }

@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Tavlor",
+    "pageTitle": "Tavlor",
     "cards": {
         "statistics": {
             "apps": "Appar",
@@ -8,36 +8,49 @@
             "categories": "Kategorier"
         },
         "buttons": {
-            "view": ""
+            "view": "Visa tavlan"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Ange som standardtavla",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Radera permanent",
+                "disabled": "Borttagning avaktiverad, eftersom äldre Homarr-komponenter inte tillåter radering av standardkonfigurationen. Radering kommer att vara möjlig i framtiden."
+            },
+            "duplicate": "Duplicera",
+            "rename": {
+                "label": "Ändra namn",
+                "modal": {
+                    "title": "Byt namn på tavlan {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Nytt namn",
+                            "placeholder": "Nytt namn på tavlan"
+                        }
+                    }
+                }
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Filsystem",
+            "default": "Standard"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Skapa ny tavla"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Ta bort tavla",
+            "text": "Är du säker på att du vill radera denna tavla? Denna åtgärd kan inte ångras och din data kommer att gå förlorade permanent."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Skapa tavla",
+            "text": "Namnet kan inte ändras efter att en tavla har skapats.",
             "form": {
                 "name": {
                     "label": "Namn"
                 },
-                "submit": ""
+                "submit": "Skapa"
             }
         }
     }

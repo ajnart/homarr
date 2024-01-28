@@ -9,6 +9,10 @@
                 "label": "ID subjektu",
                 "info": "Jedinečné ID subjektu v aplikácii Home Assistant. Kopírujte kliknutím na entitu > kliknite na ikonu ozubeného kolieska > kliknite na tlačidlo Kopírovať pri \"ID entity\". Niektoré vlastné entity nemusia byť podporované."
             },
+            "automationId": {
+                "label": "Voliteľné ID automatizácie",
+                "info": "Vaše jedinečné ID automatizácie. Vždy začína automatizáciou.XXXXX. Ak nie je nastavené, na miniaplikáciu sa nebude dať kliknúť a bude zobrazovať iba stav. Po kliknutí sa stav entity obnoví."
+            },
             "displayName": {
                 "label": "Zobrazenie názvu"
             }

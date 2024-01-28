@@ -1,10 +1,13 @@
+import Consola from 'consola';
+
 export abstract class AbstractIconRepository {
-  constructor(readonly copyright?: string) {}
+  protected constructor(readonly copyright?: string) {}
 
   async fetch(): Promise<NormalizedIconRepositoryResult> {
     try {
       return await this.fetchInternally();
     } catch (err) {
+      Consola.error(`Failed to fetch icons from repository '${this.name}': ${err}`);
       return {
         success: false,
         count: 0,
@@ -15,6 +18,8 @@ export abstract class AbstractIconRepository {
     }
   }
   protected abstract fetchInternally(): Promise<NormalizedIconRepositoryResult>;
+
+  protected abstract name: string;
 }
 
 export type NormalizedIconRepositoryResult = {

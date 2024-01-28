@@ -1,12 +1,12 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Uživatel {{username}}",
+  "back": "Zpět na správu uživatelů",
   "sections": {
     "general": {
       "title": "Obecné",
       "inputs": {
         "username": {
-          "label": ""
+          "label": "Uživatelské jméno"
         },
         "eMail": {
           "label": "E-mail"
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Bezpečnost",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nové heslo"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Ukončit stávající relace",
+          "description": "Přinutit uživatele, aby se znovu přihlásil na svých zařízeních"
         },
         "confirm": {
-          "label": "",
-          "description": ""
+          "label": "Potvrdit",
+          "description": "Heslo bude aktualizováno. Akci nelze vrátit zpět."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Role",
+      "currentRole": "Současná role: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Vlastník",
+        "admin": "Administrátor",
+        "normal": "Normální"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Smazání účtu",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Potvrďte uživatelské jméno",
+          "description": "Pro potvrzení smazání zadejte uživatelské jméno"
         },
         "confirm": {
           "label": "Trvale smazat",
-          "description": ""
+          "description": "Jsem si vědom toho, že tato akce je trvalá a všechna data účtu budou ztracena."
         }
       }
     }

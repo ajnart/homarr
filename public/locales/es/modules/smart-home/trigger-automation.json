@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "Automatización de Home Assistant",
+    "description": "Ejecutar una automatización",
+    "settings": {
+      "title": "Ejecutar una automatización",
+      "automationId": {
+        "label": "ID de automatización",
+        "info": "Su ID de automatización única. Siempre empieza por automation.XXXXX."
+      },
+      "displayName": {
+        "label": "Nombre a mostrar"
+      }
+    }
+  }
+}

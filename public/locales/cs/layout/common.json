@@ -1,25 +1,25 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Vyskakovací okna jsou zablokována",
+      "text": "Váš prohlížeč zablokoval Homarr přístup k jeho API. Nejčastěji je to způsobeno blokátory reklam nebo odepřenými oprávněními. Homarr nemůže automaticky žádat o oprávnění.",
       "list": {
-        "browserPermission": "",
-        "adBlockers": "",
-        "otherBrowser": ""
+        "browserPermission": "Klikněte na ikonu nastavení webu vedle adresy URL a zkontrolujte oprávnění. Povolte vyskakovací okna a přesměrování",
+        "adBlockers": "Zakažte v prohlížeči blokátory reklam a bezpečnostní nástroje",
+        "otherBrowser": "Zkuste jiný webový prohlížeč"
       }
     }
   },
   "actions": {
     "category": {
-      "openAllInNewTab": ""
+      "openAllInNewTab": "Otevřít na nové kartě"
     }
   },
   "menu": {
-    "moveUp": "",
-    "moveDown": "",
-    "addCategory": "",
-    "addAbove": "",
-    "addBelow": ""
+    "moveUp": "Posunout nahoru",
+    "moveDown": "Posunout dolů",
+    "addCategory": "Přidat kategorii {{location}}",
+    "addAbove": "nad",
+    "addBelow": "pod"
   }
 }

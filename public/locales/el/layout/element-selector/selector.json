@@ -22,5 +22,5 @@
       "message": "Η κατηγορία \"{{name}}\" έχει δημιουργηθεί"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Εισαγωγή από docker"
 }

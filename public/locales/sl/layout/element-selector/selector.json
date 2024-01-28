@@ -8,19 +8,19 @@
   "actionIcon": {
     "tooltip": "Dodajanje ploščice"
   },
-  "apps": "",
+  "apps": "Aplikacije",
   "app": {
-    "defaultName": ""
+    "defaultName": "Vaša aplikacija"
   },
-  "widgets": "",
-  "categories": "",
+  "widgets": "Pripomočki",
+  "categories": "Kategorije",
   "category": {
-    "newName": "",
-    "defaultName": "",
+    "newName": "Ime nove kategorije",
+    "defaultName": "Nova kategorija",
     "created": {
-      "title": "",
-      "message": ""
+      "title": "Ustvarjena kategorija",
+      "message": "Ustvarjena je bila kategorija \"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Uvoz iz dockerja"
 }

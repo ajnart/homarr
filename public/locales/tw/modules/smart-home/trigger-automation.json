@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "Home Assisant 自動化",
+    "description": "執行自動化",
+    "settings": {
+      "title": "執行自動化",
+      "automationId": {
+        "label": "自動化ID",
+        "info": "自動化ID，必須以 automation.XXXX 開頭"
+      },
+      "displayName": {
+        "label": "顯示名稱"
+      }
+    }
+  }
+}

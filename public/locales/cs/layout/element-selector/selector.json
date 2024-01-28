@@ -22,5 +22,5 @@
       "message": "Kategorie \"{{name}}\" byla vytvořena"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importovat z dockeru"
 }

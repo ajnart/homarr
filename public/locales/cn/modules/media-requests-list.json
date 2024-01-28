@@ -16,7 +16,9 @@
   "state": {
     "approved": "已批准",
     "pendingApproval": "待批准",
-    "declined": "已拒绝"
+    "declined": "已拒绝",
+    "available": "可用",
+    "partial": "部分"
   },
   "tooltips": {
     "approve": "批准请求",

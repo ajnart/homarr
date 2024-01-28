@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Uporabnik {{username}}",
+  "back": "Nazaj na upravljanje uporabnikov",
   "sections": {
     "general": {
       "title": "Splošno",
@@ -9,45 +9,45 @@
           "label": "Uporabniško ime"
         },
         "eMail": {
-          "label": ""
+          "label": "E-naslov"
         }
       }
     },
     "security": {
-      "title": "",
+      "title": "Varnost",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Novo geslo"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Prekinitev obstoječih sej",
+          "description": "Uporabnik se mora v svojih napravah znova prijaviti."
         },
         "confirm": {
           "label": "Potrdi",
-          "description": ""
+          "description": "Geslo bo posodobljeno. Ukrepa ni mogoče vrniti v prejšnje stanje."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Vloge",
+      "currentRole": "Trenutna vloga: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Lastnik",
+        "admin": "Admin",
+        "normal": "Normalno"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Brisanje računa",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Potrdite uporabniško ime",
+          "description": "Vnesite uporabniško ime za potrditev izbrisa"
         },
         "confirm": {
-          "label": "",
-          "description": ""
+          "label": "Trajno izbriši",
+          "description": "Zavedam se, da je ta ukrep trajen in da bodo vsi podatki o računu izgubljeni."
         }
       }
     }

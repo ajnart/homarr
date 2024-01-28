@@ -8,23 +8,20 @@ import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { BackendConfigType, ConfigType } from '~/types/config';
-import { boardCustomizationSchema } from '~/validations/boards';
+import { boardCustomizationSchema, configNameSchema } from '~/validations/boards';
 import { IRssWidget } from '~/widgets/rss/RssWidgetTile';
 
 import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
-import { db } from '~/server/db';
-import { users } from '~/server/db/schema';
-import { sql } from 'drizzle-orm';
-
-export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_]+$/);
 
 export const configRouter = createTRPCRouter({
   delete: adminProcedure
+    .meta({ openapi: { method: 'DELETE', path: '/configs', tags: ['config'] } })
     .input(
       z.object({
         name: configNameSchema,
       }),
     )
+    .output(z.object({ message: z.string() }))
     .mutation(async ({ input }) => {
       if (input.name.toLowerCase() === 'default') {
         Consola.error('Rejected config deletion because default configuration can\'t be deleted');
@@ -165,11 +162,21 @@ export const configRouter = createTRPCRouter({
       };
     }),
   byName: publicProcedure
+    .meta({
+      openapi: {
+        method: 'GET',
+        path: '/configs/byName',
+        tags: ['config'],
+        deprecated: true,
+        summary: 'Retrieve content of the JSON configuration. Deprecated because JSON will be removed in a future version and be replaced with a relational database.'
+      }
+    })
     .input(
       z.object({
         name: configNameSchema,
       }),
     )
+    .output(z.custom<ConfigType>())
     .query(async ({ ctx, input }) => {
       if (!configExists(input.name)) {
         throw new TRPCError({
@@ -182,6 +189,7 @@ export const configRouter = createTRPCRouter({
     }),
   saveCustomization: adminProcedure
     .input(boardCustomizationSchema.and(z.object({ name: configNameSchema })))
+    .output(z.void())
     .mutation(async ({ input }) => {
       const previousConfig = getConfig(input.name);
       const newConfig = {

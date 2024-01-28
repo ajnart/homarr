@@ -22,5 +22,5 @@
       "message": "Létrejött a \"{{name}}\" kategória"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importálás a dockerből"
 }

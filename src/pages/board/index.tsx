@@ -1,5 +1,4 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
-import { SSRConfig } from 'next-i18next';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
@@ -10,7 +9,6 @@ import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
-import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 
 export default function BoardPage({
