@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Yayınlanma tarihine göre sırala (artan)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
