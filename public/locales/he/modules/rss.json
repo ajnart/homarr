@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "מיין לפי תאריך פרסום (עולה)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
