@@ -117,7 +117,6 @@ const getFeedUrl = async (
           categories: string[] | { _: string }[];
           pubDate?: string;
         }) => {
-          Consola.info('item ' + item.title + ' has pub date ' + item.pubDate);
           return {
             ...item,
             categories: item.categories
