@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "依發布日期排序 (升序)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {
