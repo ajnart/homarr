@@ -55,6 +55,17 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
+    sortPostsWithoutPublishDateToTheTop: {
+      type: 'switch',
+      defaultValue: false
+    },
+    maximumAmountOfPosts: {
+      type: 'slider',
+      defaultValue: 20,
+      min: 1,
+      max: 350,
+      step: 1
+    }
   },
   gridstack: {
     minWidth: 2,
@@ -127,7 +138,7 @@ function RssTile({ widget }: RssTileProps) {
     <Stack h="100%">
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         <Stack w="100%" spacing="xs">
-          {orderedFeedItems.map((item: any, index: number) => (
+          {orderedFeedItems.slice(0, widget.properties.maximumAmountOfPosts).map((item: any, index: number) => (
             <Card
               key={index}
               withBorder
