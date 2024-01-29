@@ -22,10 +22,10 @@
         "label": "按发布日期排序（升序）"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "将没有发布日期的文章置顶"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "最大文章数量"
       }
     },
     "card": {
