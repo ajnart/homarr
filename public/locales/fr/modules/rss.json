@@ -22,10 +22,10 @@
         "label": "Trier par date de publication (croissant)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Placer les articles sans date de publication en haut de la page"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Nombre maximal d'articles"
       }
     },
     "card": {
