@@ -22,10 +22,10 @@
         "label": ""
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Sæt indlæg uden udgivelsesdato øverst"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maksimalt antal indlæg"
       }
     },
     "card": {
