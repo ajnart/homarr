@@ -8,6 +8,11 @@ export type Language = {
    */
   country: string;
   locale: string;
+
+  /**
+   *
+   */
+  dayJsLocale?: string;
 };
 
 export const languages = [
@@ -17,13 +22,14 @@ export const languages = [
     translatedName: 'English',
     country: 'GB',
     locale: 'en-gb',
+    dayJsLocale: 'en'
   },
   {
     shortName: 'cr',
     originalName: 'Crowdin',
     translatedName: '(Live translation)',
     locale: 'cr',
-    country: 'CROWDIN',
+    country: 'CROWDIN'
   },
   {
     shortName: 'fr',
@@ -31,6 +37,7 @@ export const languages = [
     translatedName: 'French',
     country: 'FR',
     locale: 'fr',
+    dayJsLocale: 'fr'
   },
   {
     shortName: 'cn',
@@ -38,6 +45,7 @@ export const languages = [
     translatedName: 'Chinese (Simplified)',
     country: 'CN',
     locale: 'zh-cn',
+    dayJsLocale: 'zh'
   },
   {
     shortName: 'cs',
@@ -45,6 +53,7 @@ export const languages = [
     translatedName: 'Czech',
     country: 'CZ',
     locale: 'cs',
+    dayJsLocale: 'cs'
   },
   {
     shortName: 'da',
@@ -52,6 +61,7 @@ export const languages = [
     translatedName: 'Danish',
     country: 'DK',
     locale: 'da',
+    dayJsLocale: 'da'
   },
   {
     shortName: 'de',
@@ -59,6 +69,7 @@ export const languages = [
     translatedName: 'German',
     country: 'DE',
     locale: 'de',
+    dayJsLocale: 'de'
   },
   {
     shortName: 'el',
@@ -66,6 +77,7 @@ export const languages = [
     translatedName: 'Greek',
     country: 'GR',
     locale: 'el',
+    dayJsLocale: 'el'
   },
   {
     shortName: 'es',
@@ -73,6 +85,7 @@ export const languages = [
     translatedName: 'Spanish',
     country: 'ES',
     locale: 'es',
+    dayJsLocale: 'es'
   },
   {
     shortName: 'he',
@@ -80,6 +93,7 @@ export const languages = [
     translatedName: 'Hebrew',
     country: 'IL',
     locale: 'he',
+    dayJsLocale: 'he'
   },
   {
     shortName: 'hr',
@@ -87,6 +101,7 @@ export const languages = [
     translatedName: 'Croatian',
     country: 'HR',
     locale: 'hr',
+    dayJsLocale: 'hr'
   },
   {
     shortName: 'hu',
@@ -94,6 +109,7 @@ export const languages = [
     translatedName: 'Hungarian',
     country: 'HU',
     locale: 'hu',
+    dayJsLocale: 'hu'
   },
   {
     shortName: 'it',
@@ -101,6 +117,7 @@ export const languages = [
     translatedName: 'Italian',
     country: 'IT',
     locale: 'it',
+    dayJsLocale: 'it'
   },
   {
     shortName: 'ja',
@@ -108,6 +125,7 @@ export const languages = [
     translatedName: 'Japanese',
     country: 'JP',
     locale: 'ja',
+    dayJsLocale: 'ja'
   },
   {
     shortName: 'ko',
@@ -115,6 +133,7 @@ export const languages = [
     translatedName: 'Korean',
     country: 'KR',
     locale: 'ko',
+    dayJsLocale: 'ko'
   },
   {
     shortName: 'lv',
@@ -122,6 +141,7 @@ export const languages = [
     translatedName: 'Latvian',
     country: 'LV',
     locale: 'lv',
+    dayJsLocale: 'lv'
   },
   {
     shortName: 'nl',
@@ -129,6 +149,7 @@ export const languages = [
     translatedName: 'Dutch',
     country: 'NL',
     locale: 'nl',
+    dayJsLocale: 'nl'
   },
   {
     shortName: 'no',
@@ -136,6 +157,7 @@ export const languages = [
     translatedName: 'Norwegian',
     country: 'NO',
     locale: 'no',
+    dayJsLocale: 'nb'
   },
   {
     shortName: 'pl',
@@ -143,6 +165,7 @@ export const languages = [
     translatedName: 'Polish',
     country: 'PL',
     locale: 'pl',
+    dayJsLocale: 'pl'
   },
   {
     shortName: 'pt',
@@ -157,6 +180,7 @@ export const languages = [
     translatedName: 'Russian',
     country: 'RU',
     locale: 'ru',
+    dayJsLocale: 'ru'
   },
   {
     shortName: 'sk',
@@ -164,6 +188,7 @@ export const languages = [
     translatedName: 'Slovak',
     country: 'SK',
     locale: 'sk',
+    dayJsLocale: 'sk'
   },
   {
     shortName: 'sl',
@@ -171,6 +196,7 @@ export const languages = [
     translatedName: 'Slovenian',
     country: 'SI',
     locale: 'sl',
+    dayJsLocale: 'sl'
   },
   {
     shortName: 'sv',
@@ -178,6 +204,7 @@ export const languages = [
     translatedName: 'Swedish',
     country: 'SE',
     locale: 'sv',
+    dayJsLocale: 'sv'
   },
   {
     shortName: 'tr',
@@ -185,6 +212,7 @@ export const languages = [
     translatedName: 'Turkish',
     country: 'TR',
     locale: 'tr',
+    dayJsLocale: 'tr'
   },
   {
     shortName: 'tw',
@@ -192,6 +220,7 @@ export const languages = [
     translatedName: 'Chinese (Traditional)',
     country: 'TW',
     locale: 'zh-tw',
+    dayJsLocale: 'zh-cn'
   },
   {
     shortName: 'uk',
@@ -199,6 +228,7 @@ export const languages = [
     translatedName: 'Ukrainian',
     country: 'UA',
     locale: 'uk',
+    dayJsLocale: 'uk'
   },
   {
     shortName: 'vi',
@@ -206,9 +236,10 @@ export const languages = [
     translatedName: 'Vietnamese',
     country: 'VN',
     locale: 'vi',
+    dayJsLocale: 'vi'
   },
 ] as const satisfies Readonly<Language[]>;
 
-export const getLanguageByCode = (code: string | null) =>
+export const getLanguageByCode = (code: string | null): Language =>
   languages.find((language) => language.shortName === code) ??
   languages.find((x) => x.locale === 'en-gb')!;

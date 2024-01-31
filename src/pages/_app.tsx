@@ -58,8 +58,8 @@ function App(
   const analyticsEnabled = pageProps.analyticsEnabled ?? true;
   // TODO: make mapping from our locales to moment locales
   const language = getLanguageByCode(pageProps.session?.user?.language ?? 'en');
-  if (language.locale !== 'cr') require(`dayjs/locale/${language.locale}.js`);
-  dayjs.locale(language.locale);
+  if (language.dayJsLocale) require(`dayjs/locale/${language.dayJsLocale}.js`);
+  dayjs.locale(language.dayJsLocale);
 
   const [primaryColor, setPrimaryColor] = useState<MantineTheme['primaryColor']>(
     props.pageProps.primaryColor ?? 'red'
