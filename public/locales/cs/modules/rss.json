@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Seřadit podle data zveřejnění (vzestupně)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Umístit příspěvky bez data zveřejnění navrch"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Maximální počet příspěvků"
       }
     },
     "card": {

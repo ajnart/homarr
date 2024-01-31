@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Rendezés a közzététel dátuma szerint (növekvő)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Sắp xếp theo ngày phát hành (tăng dần)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

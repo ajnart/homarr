@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Sæt indlæg uden udgivelsesdato øverst"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Maksimalt antal indlæg"
       }
     },
     "card": {
