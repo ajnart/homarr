@@ -22,10 +22,10 @@
         "label": "Yayınlanma tarihine göre sırala (artan)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Yayınlanma tarihi olmayan gönderileri en üste çıkar"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maksimum gönderi sayısı"
       }
     },
     "card": {
