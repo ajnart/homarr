@@ -23,6 +23,7 @@ export const boardNamespaces = [
   'modules/overseerr',
   'modules/media-server',
   'modules/indexer-manager',
+  'modules/openmediavault',
   'modules/common-media-cards',
   'modules/video-stream',
   'modules/media-requests-list',

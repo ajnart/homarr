@@ -14,6 +14,7 @@ import { inviteRouter } from './routers/invite/invite-router';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
 import { notebookRouter } from './routers/notebook';
+import { openmediavaultRouter } from './routers/openmediavault';
 import { overseerrRouter } from './routers/overseerr';
 import { passwordRouter } from './routers/password';
 import { rssRouter } from './routers/rss';
@@ -49,6 +50,7 @@ export const rootRouter = createTRPCRouter({
   password: passwordRouter,
   notebook: notebookRouter,
   smartHomeEntityState: smartHomeEntityStateRouter,
+  openmediavault: openmediavaultRouter,
 });
 
 // export type definition of API

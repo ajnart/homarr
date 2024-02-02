@@ -1,0 +1,31 @@
+{
+    "descriptor": {
+      "name": "OpenMediaVault information",
+      "description": "Information about your NAS",
+      "settings": {
+        "title": "OpenMediaVault information"
+        }
+      },
+      "info": {
+        "updates": "Available Updates",
+        "reboot": "Reboot Required",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "general": {
+        "total": "Total memory",
+        "disks": "Disks",
+        "used": "Used",
+        "available": "Available"
+      },
+      "cpu": {
+        "utilization": "CPU Utilization",
+        "temp": "CPU Temp"
+      },
+      "errors": {
+        "general": {
+          "title": "Unable to find your NAS",
+          "text": "There was a problem connecting to your NAS. Please verify your configuration/integration(s)."
+        }
+      }
+  }

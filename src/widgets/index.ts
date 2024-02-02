@@ -11,6 +11,7 @@ import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
 import notebook from './notebook/NotebookWidgetTile';
+import openmediavault from './openmediavault/OpenMediaVaultTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
 import torrent from './torrent/TorrentTile';
@@ -38,4 +39,5 @@ export default {
   bookmark,
   notebook,
   'smart-home/entity-state': smartHomeEntityState,
+  openmediavault,
 };
