@@ -10,8 +10,8 @@
                 "info": "Unik enhets-ID i Home Assistant. Kopier ved å klikke på enhet > Klikk på tannhjulikonet > Klikk på kopieringsknappen ved Entitets-ID. Noen egendefinerte enheter støttes kanskje ikke."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "Valgfri automatisering ID",
+                "info": "Din unike automatisering ID. Starter alltid med automation.XXXXX. Hvis den ikke er angitt, vil widgeten ikke være klikkbar og kun vise status Etter klikk vil enhetsstatus bli oppdatert."
             },
             "displayName": {
                 "label": "Visningsnavn"
