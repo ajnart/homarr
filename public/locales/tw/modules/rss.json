@@ -19,7 +19,13 @@
         "label": "文字線條"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "依發布日期排序 (升序)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "將尚未發布日期的文章置頂"
+      },
+      "maximumAmountOfPosts": {
+        "label": "最大文章數量"
       }
     },
     "card": {

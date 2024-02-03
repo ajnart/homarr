@@ -19,6 +19,12 @@
         "label": "Blocco righe di testo"
       },
       "sortByPublishDateAscending": {
+        "label": "Ordina per data di pubblicazione (ascendente)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
         "label": ""
       }
     },

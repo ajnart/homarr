@@ -1,23 +1,23 @@
 {
     "metaTitle": "Hantera",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Välkommen tillbaka, {{username}}",
+        "fallbackUsername": "Anonym",
+        "subtitle": "Välkommen till din applikationshubb. Organisera, optimera och erövra!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Snabbåtgärder",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Dina tavlor",
+            "subtitle": "Skapa och hantera dina tavlor"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Bjud in en ny användare",
+            "subtitle": "Skapa och skicka en inbjudan för registrering"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Hantera användare",
+            "subtitle": "Ta bort och hantera dina användare"
         }
     }
 }

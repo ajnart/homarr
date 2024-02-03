@@ -20,6 +20,12 @@
       },
       "sortByPublishDateAscending": {
         "label": "Zoradiť podľa dátumu vydania (vzostupne)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
       }
     },
     "card": {

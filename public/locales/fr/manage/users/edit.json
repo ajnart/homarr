@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Utilisateur {{username}}",
+  "back": "Retour à la gestion des utilisateurs",
   "sections": {
     "general": {
       "title": "Général",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Sécurité",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nouveau mot de passe"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Mettre fin aux sessions existantes",
+          "description": "Forcer les utilisateurs à se reconnecter sur leurs appareils"
         },
         "confirm": {
           "label": "Confirmer",
-          "description": ""
+          "description": "Le mot de passe va être mis à jour. Cette action ne peut pas être annulée."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Rôles",
+      "currentRole": "Rôle actuel : ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Propriétaire",
+        "admin": "Admin",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Suppression de compte",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Confirmer le nom d'utilisateur",
+          "description": "Tapez le nom d'utilisateur pour confirmer la suppression"
         },
         "confirm": {
           "label": "Supprimer définitivement",
-          "description": ""
+          "description": "J'ai conscience que cette action est permanente et que toutes les données du compte seront perdues."
         }
       }
     }

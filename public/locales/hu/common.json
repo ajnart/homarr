@@ -1,7 +1,7 @@
 {
   "save": "Mentés",
-  "apply": "",
-  "insert": "",
+  "apply": "Alkalmaz",
+  "insert": "Beillesztés",
   "about": "Névjegy",
   "cancel": "Mégse",
   "close": "Bezár",
@@ -13,6 +13,7 @@
   "previous": "Előző",
   "confirm": "Megerősít",
   "enabled": "Engedélyezve",
+  "duplicate": "Duplikátum",
   "disabled": "Letiltva",
   "enableAll": "Összes engedélyezése",
   "disableAll": "Az összes tiltása",
@@ -45,7 +46,7 @@
   "seeMore": "Lásd még...",
   "position": {
     "left": "Bal",
-    "center": "",
+    "center": "Középre",
     "right": "Jobb"
   },
   "attributes": {

@@ -14,14 +14,14 @@
             "preferences": "Användarinställningar",
             "defaultBoard": "Standard instrumentpanel",
             "manage": "Hantera",
-            "logout": "",
+            "logout": "Logga ut från {{username}}",
             "login": "Logga in"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Topp {{count}} resultat för <b>{{search}}</b>."
         }
     }
 }

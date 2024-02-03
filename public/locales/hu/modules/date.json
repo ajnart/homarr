@@ -5,11 +5,11 @@
     "settings": {
       "title": "A Naptár widget beállításai",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Időzóna",
+        "info": "Válassza ki az időzóna nevét, a sajátját itt találja: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Városnév vagy egyéni cím"
       },
       "display24HourFormat": {
         "label": "24 órás idő kijelzése"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Óra címe",
+        "info": "Az egyéni cím és az időzóna kód megjeleníthető a widgeten.<br/>Megjelenítheti a várost önmagában, nem jelenítheti meg,<br/>vagy akár az időzónát is megjelenítheti önmagában, ha mindkettő ki van választva, de nincs cím.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Cím és időzóna",
+          "city": "Csak a cím",
           "none": "Semmi"
         }
       }
