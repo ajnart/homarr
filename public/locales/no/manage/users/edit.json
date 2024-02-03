@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Bruker {{username}}",
+  "back": "Tilbake til brukeradministrasjon",
   "sections": {
     "general": {
       "title": "Generelt",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Sikkerhet",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nytt passord"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Avslutt eksisterende økter",
+          "description": "Tvinger brukeren til å logge på igjen på enhetene sine"
         },
         "confirm": {
           "label": "Bekreft",
-          "description": ""
+          "description": "Passordet vil bli oppdatert. Handlingen kan ikke tilbakestilles."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Roller",
+      "currentRole": "Nåværende rolle: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Eier",
+        "admin": "Administrator",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Konto sletting",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Bekreft brukernavn",
+          "description": "Skriv inn brukernavn for å bekrefte sletting"
         },
         "confirm": {
           "label": "Slett permanent",
-          "description": ""
+          "description": "Jeg er klar over at denne handlingen er permanent og alle kontodata vil gå tapt."
         }
       }
     }
