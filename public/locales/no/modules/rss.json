@@ -19,13 +19,13 @@
         "label": "Tekstlinjer klemme"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Sorter etter publiseringsdato (stigende)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Sett innlegg uten publiseringsdato øverst"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maksimalt antall innlegg"
       }
     },
     "card": {
