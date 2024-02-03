@@ -13,7 +13,7 @@
             "switchTheme": "Bytt tema",
             "preferences": "Brukerinnstillinger",
             "defaultBoard": "Standard dashbord",
-            "manage": "Endre",
+            "manage": "Administrer",
             "logout": "Logg ut fra {{username}}",
             "login": "Logg Inn"
         }
