@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Alle",
+            "normal": "Normal",
+            "admin": "Administrator",
+            "owner": "Eier"
         }
     },
     "table": {

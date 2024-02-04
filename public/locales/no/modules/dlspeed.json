@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Nedlastingshastighet",
+    "name": "Nedlastings- hastighet",
     "description": "Viser nedlastingshastighet og opplastingshastighet av støttede integrasjoner."
   },
   "card": {

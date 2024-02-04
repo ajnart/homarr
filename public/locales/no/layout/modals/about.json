@@ -1,6 +1,6 @@
 {
 	"description": "Homarr er et <strong>sleek</strong>, <strong>moderne</strong> dashbord som legger alle apper og tjenester ved fingertuppene dine. Med Homarr, kan du få tilgang til og kontrollere alt på et bekvemt sted. Homarr sømløst integrerer med appene du har lagt til, gir deg verdifull informasjon og gir deg full kontroll. Installasjon er en lek, og Homarr støtter en lang rekke distribusjonsmetoder.",
-	"addToDashboard": "Legg til på dashbord",
+	"addToDashboard": "Legg til tavlen",
 	"tip": "Mod refererer til endringstasten din, den er Ctrl og Command/Super/Windows tasten",
 	"key": "Hurtigtast",
 	"action": "Handling",
@@ -20,7 +20,7 @@
 		"version": "Versjon",
 		"nodeEnvironment": "Node miljø",
 		"i18n": "Lastet I18n oversettelsesnavneområder",
-		"locales": "Konfigurerte I18n-lokasjoner",
+		"locales": "Konfigurerte I18n-lokaliseringer",
 		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Deaktivere redigeringsmodus"
 	},
 	"version": {

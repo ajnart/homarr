@@ -16,15 +16,15 @@
                 "label": "Slett permanent",
                 "disabled": "Sletting er deaktivert fordi eldre Homarr-komponenter ikke tillater sletting av standardkonfigurasjonen. Sletting vil være mulig i fremtiden."
             },
-            "duplicate": "",
+            "duplicate": "Dupliser",
             "rename": {
-                "label": "",
+                "label": "Gi nytt navn",
                 "modal": {
-                    "title": "",
+                    "title": "Gi nytt navn til tavlen {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nytt navn",
+                            "placeholder": "Nytt tavlenavn"
                         }
                     }
                 }
