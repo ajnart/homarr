@@ -46,7 +46,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     return result;
   }
 
-  const isDockerEnabled: boolean = !!env.DOCKER_HOST || !!env.DOCKER_PORT || fs.existsSync('/var/run/docker');
+  const isDockerEnabled: boolean = !!env.DOCKER_HOST || !!env.DOCKER_PORT || fs.existsSync('/var/run/docker.sock');
 
   return {
     props: {
