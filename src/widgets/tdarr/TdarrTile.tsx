@@ -13,6 +13,7 @@ import {
   List,
   MantineColor,
   Popover,
+  ScrollArea,
   Select,
   Skeleton,
   Stack,
@@ -116,7 +117,9 @@ function TdarrTile({ widget }: TdarrTileProps) {
   }
 
   return (
-    <Stack spacing="xs">
+    <Stack spacing="xs" style={{
+      height: '100%',
+    }}>
       <Group position="apart">
         <Group>
           {app && (
@@ -166,83 +169,85 @@ function TdarrTile({ widget }: TdarrTileProps) {
         )}
       </Group>
       <Divider />
-      {tdarrApps.length > 1 && (
-        <Select
-          value={selectedAppId}
-          onChange={setSelectedApp}
-          ml="xs"
-          data={tdarrApps.map((app) => ({ value: app.id, label: app.name }))}
-        />
-      )}
-      {!!totalSize ? (
-        <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
-          <thead>
-          <tr>
-            <th>{t('table.header.name')}</th>
-            <th style={{ width: 75 }}>{t('table.header.size')}</th>
-            <th style={{ width: 100 }}>{t('table.header.status')}</th>
-          </tr>
-          </thead>
-          <tbody>
-          {[...staged, ...filteredQueued].map((file) => (
-            <Popover
-              withArrow
-              withinPortal
-              radius="lg"
-              shadow="sm"
-              transitionProps={{
-                transition: 'pop',
-              }}
-              key={file.filename}
-            >
-              <Popover.Target>
-                <tr>
-                  <td>
-                    <Text
-                      style={{
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                      }}
-                      size="xs"
-                    >
-                      {file.filename}
-                    </Text>
-                  </td>
-                  <td>
-                    <Text size="xs">{humanFileSize(file.size)}</Text>
-                  </td>
-                  <td>
-                    <Badge
-                      color={getStatusBadgeColor(file.status)}>
-                      {t(getStatusBadgeTextKey(file.status))}
-                    </Badge>
-                  </td>
-                </tr>
-              </Popover.Target>
-              <Popover.Dropdown>
-                <List>
-                  <List.Item icon={<IconFileInfo size={16} />}>{file.filename}</List.Item>
-                  <List.Item icon={<IconDeviceFloppy size={16} />}>
-                    {humanFileSize(file.size)}
-                  </List.Item>
-                  <List.Item icon={<IconInfoCircle size={16} />}>
-                    <Badge
-                      color={getStatusBadgeColor(file.status)}>
-                      {t(getStatusBadgeTextKey(file.status))}
-                    </Badge>
-                  </List.Item>
-                </List>
-              </Popover.Dropdown>
-            </Popover>
-          ))}
-          </tbody>
-        </Table>
-      ) : (
-        <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>{t('table.empty')}</Title>
-        </Center>
-      )}
+      <ScrollArea>
+        {tdarrApps.length > 1 && (
+          <Select
+            value={selectedAppId}
+            onChange={setSelectedApp}
+            ml="xs"
+            data={tdarrApps.map((app) => ({ value: app.id, label: app.name }))}
+          />
+        )}
+        {!!totalSize ? (
+          <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
+            <thead>
+            <tr>
+              <th>{t('table.header.name')}</th>
+              <th style={{ width: 75 }}>{t('table.header.size')}</th>
+              <th style={{ width: 100 }}>{t('table.header.status')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {[...staged, ...filteredQueued].map((file) => (
+              <Popover
+                withArrow
+                withinPortal
+                radius="lg"
+                shadow="sm"
+                transitionProps={{
+                  transition: 'pop',
+                }}
+                key={file.filename}
+              >
+                <Popover.Target>
+                  <tr>
+                    <td>
+                      <Text
+                        style={{
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                        size="xs"
+                      >
+                        {file.filename}
+                      </Text>
+                    </td>
+                    <td>
+                      <Text size="xs">{humanFileSize(file.size)}</Text>
+                    </td>
+                    <td>
+                      <Badge
+                        color={getStatusBadgeColor(file.status)}>
+                        {t(getStatusBadgeTextKey(file.status))}
+                      </Badge>
+                    </td>
+                  </tr>
+                </Popover.Target>
+                <Popover.Dropdown>
+                  <List>
+                    <List.Item icon={<IconFileInfo size={16} />}>{file.filename}</List.Item>
+                    <List.Item icon={<IconDeviceFloppy size={16} />}>
+                      {humanFileSize(file.size)}
+                    </List.Item>
+                    <List.Item icon={<IconInfoCircle size={16} />}>
+                      <Badge
+                        color={getStatusBadgeColor(file.status)}>
+                        {t(getStatusBadgeTextKey(file.status))}
+                      </Badge>
+                    </List.Item>
+                  </List>
+                </Popover.Dropdown>
+              </Popover>
+            ))}
+            </tbody>
+          </Table>
+        ) : (
+          <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Title order={3}>{t('table.empty')}</Title>
+          </Center>
+        )}
+      </ScrollArea>
     </Stack>
   );
 }
