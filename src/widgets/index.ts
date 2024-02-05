@@ -5,6 +5,7 @@ import date from './date/DateTile';
 import dnsHoleControls from './dnshole/DnsHoleControls';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
+import tdarr from './tdarr/TdarrTile';
 import iframe from './iframe/IFrameTile';
 import indexerManager from './indexer-manager/IndexerManagerTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
@@ -40,4 +41,5 @@ export default {
   notebook,
   'smart-home/entity-state': smartHomeEntityState,
   'smart-home/trigger-automation': smartHomeTriggerAutomation,
+  tdarr,
 };

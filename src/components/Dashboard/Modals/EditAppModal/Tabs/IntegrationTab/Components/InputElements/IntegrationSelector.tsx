@@ -193,4 +193,9 @@ export const availableIntegrations = [
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/home-assistant.png',
     label: 'Home Assistant',
   },
+  {
+    value: 'tdarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png',
+    label: 'Tdarr'
+  },
 ] as const satisfies Readonly<SelectItem[]>;
