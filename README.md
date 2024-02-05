@@ -123,3 +123,5 @@ You can also support us by helping with [translating the entire project](https:/
 All contributions, regardless of their size or scope, are welcome and highly appreciated! Thank you ❤️
 
 ![Alt](https://repobeats.axiom.co/api/embed/60a6f68f193faf831f64221bdf90782adec51c93.svg "Repobeats analytics image")
+
+[![Covered by Argos Visual Testing](https://argos-ci.com/badge-large.svg)](https://argos-ci.com?utm_source=%5Bhomarr%5D&utm_campaign=oss)
