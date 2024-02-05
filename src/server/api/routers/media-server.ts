@@ -71,22 +71,29 @@ export const mediaServerRouter = createTRPCRouter({
 const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | undefined> => {
   switch (app.integration?.type) {
     case 'jellyfin': {
+      const apiKey = findAppProperty(app, 'apiKey');
+
       const username = findAppProperty(app, 'username');
-
-      if (!username) {
-        return {
-          appId: app.id,
-          serverAddress: app.url,
-          sessions: [],
-          type: 'jellyfin',
-          version: undefined,
-          success: false,
-        };
-      }
-
       const password = findAppProperty(app, 'password');
 
-      if (!password) {
+
+
+      let api; 
+      let infoApi;
+      let sessionApi;
+
+
+      if (apiKey &&  apiKey.length > 5 ) {
+        api = jellyfin.createApi(app.url, apiKey);
+        infoApi = await getSystemApi(api).getPublicSystemInfo();
+        sessionApi = getSessionApi(api);
+      }else if (username && password){
+        api = jellyfin.createApi(app.url);
+        await api.authenticateUserByName(username, password);
+        infoApi = await getSystemApi(api).getPublicSystemInfo();
+        sessionApi = getSessionApi(api);
+      }
+      else{
         return {
           appId: app.id,
           serverAddress: app.url,
@@ -97,10 +104,14 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
         };
       }
 
-      const api = jellyfin.createApi(app.url);
-      const infoApi = await getSystemApi(api).getPublicSystemInfo();
-      await api.authenticateUserByName(username, password);
-      const sessionApi = await getSessionApi(api);
+      
+      
+      
+
+
+  
+
+      
       const { data: sessions } = await sessionApi.getSessions();
       return {
         type: 'jellyfin',

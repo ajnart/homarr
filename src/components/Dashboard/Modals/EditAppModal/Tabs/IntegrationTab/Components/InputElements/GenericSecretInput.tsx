@@ -21,6 +21,7 @@ interface GenericSecretInputProps {
   label: string;
   value: string;
   setIcon: Icon;
+  required: boolean;
   secretIsPresent: boolean;
   type: AppIntegrationPropertyAccessabilityType;
   onClickUpdateButton: (value: string | undefined) => void;
@@ -31,6 +32,7 @@ export const GenericSecretInput = ({
   value,
   setIcon,
   secretIsPresent,
+  required,
   type,
   onClickUpdateButton,
   ...props
@@ -105,7 +107,7 @@ export const GenericSecretInput = ({
           <Flex gap={10} justify="end" align="end">
             {displayUpdateField === true ? (
               <PasswordInput
-                required
+                required={required}
                 defaultValue={value}
                 placeholder="new secret"
                 styles={{ root: { width: 200 } }}

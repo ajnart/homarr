@@ -7,9 +7,9 @@ import {
   AppIntegrationPropertyType,
   AppIntegrationType,
   AppType,
-  IntegrationField,
+  IntegrationFieldType,
   integrationFieldDefinitions,
-  integrationFieldProperties,
+  integrationFieldProperties
 } from '~/types/app';
 
 interface IntegrationSelectorProps {
@@ -32,11 +32,11 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
 
     const requiredProperties = Object.entries(integrationFieldDefinitions).filter(([k, v]) => {
       const val = integrationFieldProperties[integrationType];
-      return val.includes(k as IntegrationField);
+      return val.map((a) => a.type).includes(k as IntegrationFieldType);
     })!;
     return requiredProperties.map(([k, value]) => ({
       type: value.type,
-      field: k as IntegrationField,
+      field: k as IntegrationFieldType,
       value: undefined,
       isDefined: false,
     }));
