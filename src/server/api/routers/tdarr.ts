@@ -124,7 +124,7 @@ function getTdarrApp(appId: string, configName: string) {
   if (!app || !checkIntegrationsType(app.integration, ['tdarr'])) {
     throw new TRPCError({
       code: 'BAD_REQUEST',
-      message: `App with ID "${appId}" could not be found.`,
+      message: `[Tdarr integration] App with ID "${appId}" could not be found.`,
     });
   }
 
