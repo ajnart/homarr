@@ -1,7 +1,7 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Vienība nav atrasta",
     "descriptor": {
-        "name": "",
+        "name": "Home Assistant vienība",
         "description": "",
         "settings": {
             "title": "",
