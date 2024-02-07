@@ -9,7 +9,7 @@
         "info": "Jūsu unikālais automatizācijas ID. Vienmēr sāksies ar automation.XXXXX."
       },
       "displayName": {
-        "label": ""
+        "label": "Parādāmais nosaukums"
       }
     }
   }
