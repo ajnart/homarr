@@ -9,11 +9,14 @@ import { createBoardSchemaValidation } from '~/validations/boards';
 
 export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
   const { t } = useTranslation('manage/boards');
-  const utils = api.useContext();
+  const utils = api.useUtils();
   const { isLoading, mutate } = api.config.save.useMutation({
     onSuccess: async () => {
       await utils.boards.all.invalidate();
       modals.close(id);
+    },
+    onError: async (error) => {
+      form.setFieldError('name', error.message);
     },
   });
 
@@ -31,6 +34,7 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
     mutate({
       name: form.values.name,
       config: fallbackConfig,
+      create: true,
     });
   };
 
@@ -59,7 +63,7 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
           <Button
             type="submit"
             onClick={async () => {
-              umami.track('Create new board')
+              umami.track('Create new board');
             }}
             disabled={isLoading}
             variant="light"
