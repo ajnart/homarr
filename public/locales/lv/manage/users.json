@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Viss",
+            "normal": "Normāls",
+            "admin": "Administrators",
+            "owner": "Īpašnieks"
         }
     },
     "table": {
