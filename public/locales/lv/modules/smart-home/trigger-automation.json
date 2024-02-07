@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Home Assistant automatizācija",
+    "description": "Automatizācijas izpilde",
     "settings": {
-      "title": "",
+      "title": "Automatizācijas izpilde",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "Automatizācijas ID",
+        "info": "Jūsu unikālais automatizācijas ID. Vienmēr sāksies ar automation.XXXXX."
       },
       "displayName": {
         "label": ""
