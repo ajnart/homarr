@@ -10,6 +10,7 @@ import { Icon } from '@tabler/icons-react';
 import React from 'react';
 import { AreaType } from '~/types/area';
 import { ShapeType } from '~/types/shape';
+import { IntegrationType } from '~/types/app';
 
 // Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
@@ -41,6 +42,7 @@ export type IWidgetOptionValue = (
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
   | ILocationOptionValue
+  | IAppSelect
 ) &
   ICommonWidgetOptions;
 
@@ -139,6 +141,14 @@ export type IMultipleTextInputOptionValue = {
   type: 'multiple-text';
   defaultValue: string[];
   inputProps?: Partial<TextInputProps>;
+};
+
+// will show a combobox to select an app that has one of the given integrations
+export type IAppSelect = {
+  type: 'app-select';
+  defaultValue: string;
+  integrations: IntegrationType[];
+  inputProps?: Partial<SelectProps>;
 };
 
 // is used to type the widget definitions which will be used to display all widgets

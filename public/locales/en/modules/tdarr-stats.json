@@ -1,0 +1,32 @@
+{
+  "descriptor": {
+    "name": "Tdarr Stats",
+    "description": "Displays statistics of an external Tdarr instance."
+  },
+  "title": "{{files}} files remaining ({{size}})",
+  "table": {
+    "header": {
+      "name": "File",
+      "size": "Size",
+      "status": "Status"
+    },
+    "empty": "Empty",
+    "error": {
+      "title": "Error",
+      "message": "An error occurred while fetching data from Tdarr."
+    }
+  },
+  "badges": {
+    "errors": {
+      "singular": "{{errors}} error",
+      "plural": "{{errors}} errors"
+    },
+    "status": {
+      "queued": "Queued",
+      "processing": "Proc",
+      "copying": "Copying",
+      "accepted": "Accepted",
+      "Transcode error": "Error"
+    }
+  }
+}

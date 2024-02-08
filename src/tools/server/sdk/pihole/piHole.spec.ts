@@ -12,7 +12,7 @@ describe('PiHole API client', () => {
     fetchMock.mockResponse((request) => {
       if (request.url === 'http://pi.hole/admin/api.php?summaryRaw&auth=nice') {
         return {
-          status: 404,
+          statistics: 404,
         };
       }
 
@@ -432,7 +432,7 @@ describe('PiHole API client', () => {
       if (request.url === 'http://pi.hole/admin/api.php?disable&auth=nice') {
         calledCount += 1;
         return {
-          status: 404,
+          statistics: 404,
         };
       }
 

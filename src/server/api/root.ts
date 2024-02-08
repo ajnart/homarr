@@ -1,4 +1,6 @@
+import { tdarrRouter } from '~/server/api/routers/tdarr';
 import { createTRPCRouter } from '~/server/api/trpc';
+
 import { appRouter } from './routers/app';
 import { boardRouter } from './routers/board';
 import { calendarRouter } from './routers/calendar';
@@ -20,7 +22,6 @@ import { smartHomeEntityStateRouter } from './routers/smart-home/entity-state';
 import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
-import { tdarrRouter } from '~/server/api/routers/tdarr';
 
 /**
  * This is the primary router for your server.

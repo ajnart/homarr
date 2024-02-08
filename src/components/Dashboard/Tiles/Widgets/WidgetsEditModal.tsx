@@ -29,6 +29,7 @@ import { InfoCard } from '../../../InfoCard/InfoCard';
 import { DraggableList } from './Inputs/DraggableList';
 import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
+import { AppSelector } from '~/components/Dashboard/Tiles/Widgets/Inputs/AppSelector';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -40,10 +41,10 @@ export type WidgetEditModalInnerProps = {
 export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<WidgetEditModalInnerProps>) => {
+                                   context,
+                                   id,
+                                   innerProps,
+                                 }: ContextModalProps<WidgetEditModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
@@ -78,14 +79,14 @@ export const WidgetsEditModal = ({
           widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
         };
       },
-      true
+      true,
     );
     context.closeModal(id);
   };
 
   return (
     <Stack>
-      {items.map(([key, _], index) => {
+      {items.map(([key], index) => {
         const option = (currentWidgetDefinition as any).options[key] as IWidgetOptionValue;
         const value = moduleProperties[key] ?? option.defaultValue;
 
@@ -193,9 +194,9 @@ const WidgetOptionTypeSwitch: FC<{
       const data = items.map((dataType) => {
         return !dataType.label
           ? {
-              value: dataType.value,
-              label: t(`descriptor.settings.${key}.data.${dataType.value}`),
-            }
+            value: dataType.value,
+            label: t(`descriptor.settings.${key}.data.${dataType.value}`),
+          }
           : dataType;
       });
       return (
@@ -278,14 +279,14 @@ const WidgetOptionTypeSwitch: FC<{
           typedVal.map((oldVal) =>
             oldVal.key === liName
               ? {
-                  ...oldVal,
-                  subValues: {
-                    ...oldVal.subValues,
-                    [settingName]: newVal,
-                  },
-                }
-              : oldVal
-          )
+                ...oldVal,
+                subValues: {
+                  ...oldVal.subValues,
+                  [settingName]: newVal,
+                },
+              }
+              : oldVal,
+          ),
         );
 
       return (
@@ -298,7 +299,7 @@ const WidgetOptionTypeSwitch: FC<{
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
             labels={mapObject(option.items, (liName) =>
-              t(`descriptor.settings.${key}.${liName}.label`)
+              t(`descriptor.settings.${key}.${liName}.label`),
             )}
           >
             {mapObject(option.items, (liName, liSettings) =>
@@ -311,7 +312,7 @@ const WidgetOptionTypeSwitch: FC<{
                   value={extractSubValue(liName, settingName)}
                   handleChange={handleSubChange(liName, settingName)}
                 />
-              ))
+              )),
             )}
           </StaticDraggableList>
         </Stack>
@@ -336,7 +337,7 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(values) =>
               handleChange(
                 key,
-                values.map((item: string) => item)
+                values.map((item: string) => item),
               )
             }
           />
@@ -385,6 +386,28 @@ const WidgetOptionTypeSwitch: FC<{
           </Flex>
         </Stack>
       );
+
+    case 'app-select':
+      return (
+        <Stack spacing={0}>
+          <Group align="center" spacing="sm">
+            <Text size="0.875rem" weight="500">
+              {t(`descriptor.settings.${key}.label`)}
+            </Text>
+            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
+          </Group>
+          <AppSelector
+            value={value}
+            onChange={(v) => handleChange(key, v ?? option.defaultValue)}
+            integrations={option.integrations}
+            selectProps={{
+              withinPortal: true,
+              ...option.inputProps,
+            }}
+          />
+        </Stack>
+      );
+
     /* eslint-enable no-case-declarations */
     default:
       return null;

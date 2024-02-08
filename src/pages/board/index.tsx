@@ -1,4 +1,6 @@
+import fs from 'fs';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { env } from 'process';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
 import { useInitConfig } from '~/config/init';
@@ -9,8 +11,6 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
-import { env } from 'process';
-import fs from 'fs';
 
 export default function BoardPage({
   config: initialConfig,

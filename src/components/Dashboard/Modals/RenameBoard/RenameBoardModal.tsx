@@ -1,35 +1,42 @@
-import { modals } from '@mantine/modals';
 import { Alert, Button, TextInput } from '@mantine/core';
-import { api } from '~/utils/api';
 import { useForm, zodResolver } from '@mantine/form';
-import { z } from 'zod';
+import { modals } from '@mantine/modals';
 import { IconAlertCircle } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { z } from 'zod';
+import { api } from '~/utils/api';
 import { configNameSchema } from '~/validations/boards';
 
 type RenameBoardModalProps = {
   boardName: string;
   configNames: string[];
   onClose: () => void;
-}
+};
 
 export const RenameBoardModal = ({ boardName, configNames, onClose }: RenameBoardModalProps) => {
   const { t } = useTranslation(['manage/boards', 'common']);
 
   const utils = api.useUtils();
-  const { mutateAsync: mutateRenameBoardAsync, isLoading, isError, error } = api.boards.renameBoard.useMutation({
+  const {
+    mutateAsync: mutateRenameBoardAsync,
+    isLoading,
+    isError,
+    error,
+  } = api.boards.renameBoard.useMutation({
     onSettled: () => {
       void utils.boards.all.invalidate();
-    }
+    },
   });
 
   const form = useForm({
     initialValues: {
       newName: '',
     },
-    validate: zodResolver(z.object({
-      newName: configNameSchema.refine(value => !configNames.includes(value)),
-    })),
+    validate: zodResolver(
+      z.object({
+        newName: configNameSchema.refine((value) => !configNames.includes(value)),
+      })
+    ),
     validateInputOnBlur: true,
     validateInputOnChange: true,
   });
@@ -46,7 +53,7 @@ export const RenameBoardModal = ({ boardName, configNames, onClose }: RenameBoar
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       {isError && error && (
-        <Alert icon={<IconAlertCircle size={"1rem"} />} mb={"md"}>
+        <Alert icon={<IconAlertCircle size={'1rem'} />} mb={'md'}>
           {error.message}
         </Alert>
       )}
@@ -54,13 +61,9 @@ export const RenameBoardModal = ({ boardName, configNames, onClose }: RenameBoar
         label={t('cards.menu.rename.modal.fields.name.label')}
         placeholder={t('cards.menu.rename.modal.fields.name.placeholder') as string}
         data-autofocus
-        {...form.getInputProps('newName')} />
-      <Button
-        loading={isLoading}
-        fullWidth
-        mt="md"
-        type={'submit'}
-        variant={"light"}>
+        {...form.getInputProps('newName')}
+      />
+      <Button loading={isLoading} fullWidth mt="md" type={'submit'} variant={'light'}>
         {t('common:confirm')}
       </Button>
     </form>

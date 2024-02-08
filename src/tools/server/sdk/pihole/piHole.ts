@@ -66,7 +66,7 @@ export class PiHoleClient {
     for (let loops = 0; loops < 10; loops++) {
       const summary = await this.getSummary();
       if (summary.status === action + 'd') {
-        return { status: summary.status } as PiHoleApiStatusChangeResponse;
+        return { statistics: summary.status } as PiHoleApiStatusChangeResponse;
       }
       await new Promise((resolve) => {
         setTimeout(resolve, 50);

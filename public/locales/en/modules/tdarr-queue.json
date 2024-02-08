@@ -1,14 +1,20 @@
 {
   "descriptor": {
-    "name": "Tdarr",
-    "description": "Displays statistics of an external Tdarr instance."
+    "name": "Tdarr Queue",
+    "description": "Displays the queue of an external Tdarr instance.",
+    "settings": {
+      "title": "Tdarr Queue Settings",
+      "appId": {
+        "label": "Select an app"
+      }
+    }
   },
   "title": "{{files}} files remaining ({{size}})",
   "table": {
     "header": {
       "name": "File",
-      "size": "Size",
-      "status": "Status"
+      "eta": "ETA",
+      "progress": "Progress"
     },
     "empty": "Empty",
     "error": {

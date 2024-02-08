@@ -24,7 +24,7 @@ export const downloadRouter = createTRPCRouter({
     .input(
       z.object({
         configName: z.string(),
-      }),
+      })
     )
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
@@ -44,7 +44,7 @@ export const downloadRouter = createTRPCRouter({
           return response;
         } catch (err: any) {
           Consola.error(
-            `Error communicating with your download client '${app.name}' (${app.id}): ${err}`,
+            `Error communicating with your download client '${app.name}' (${app.id}): ${err}`
           );
           failedClients.push(app.id);
           return {
@@ -67,7 +67,7 @@ export const downloadRouter = createTRPCRouter({
 
       if (failedClients.length > 0) {
         Consola.warn(
-          `${failedClients.length} download clients failed. Please check your configuration and the above log`,
+          `${failedClients.length} download clients failed. Please check your configuration and the above log`
         );
       }
 
@@ -76,7 +76,7 @@ export const downloadRouter = createTRPCRouter({
 });
 
 const GetDataFromClient = async (
-  app: ConfigAppType,
+  app: ConfigAppType
 ): Promise<NormalizedDownloadAppStat | undefined> => {
   const reduceTorrent = (data: AllClientData): NormalizedDownloadAppStat => ({
     type: 'torrent',
@@ -99,7 +99,7 @@ const GetDataFromClient = async (
       label: torrent.label,
       queuePosition: torrent.queuePosition,
       stateMessage: torrent.stateMessage,
-      dateAdded: torrent.dateAdded
+      dateAdded: torrent.dateAdded,
     })),
     totalDownload: data.torrents
       .map((torrent) => torrent.downloadSpeed)
@@ -118,7 +118,7 @@ const GetDataFromClient = async (
         await new Deluge({
           baseUrl: app.url,
           password: findField(app, 'password'),
-        }).getAllData(),
+        }).getAllData()
       );
     }
     case 'transmission': {
@@ -127,7 +127,7 @@ const GetDataFromClient = async (
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
-        }).getAllData(),
+        }).getAllData()
       );
     }
     case 'qBittorrent': {
@@ -136,7 +136,7 @@ const GetDataFromClient = async (
           baseUrl: app.url,
           username: findField(app, 'username'),
           password: findField(app, 'password'),
-        }).getAllData(),
+        }).getAllData()
       );
     }
     case 'sabnzbd': {

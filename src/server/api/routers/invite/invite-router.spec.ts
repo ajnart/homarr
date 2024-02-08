@@ -6,6 +6,7 @@ import { v4 } from 'uuid';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { db, sqlite } from '~/server/db';
 import { invites, users } from '~/server/db/schema';
+
 import { inviteRouter } from './invite-router';
 
 const sessionMock = (user?: Partial<User>): Session => ({

@@ -192,7 +192,14 @@ export function MediaDisplay({ media }: { media: IMedia }) {
 
   return (
     <Group noWrap style={{ maxHeight: 250, maxWidth: 400 }} p={0} m={0} spacing="xs">
-      <Image src={media.poster?? media.altPoster} height={200} width={150} radius="md" fit="cover" withPlaceholder/>
+      <Image
+        src={media.poster ?? media.altPoster}
+        height={200}
+        width={150}
+        radius="md"
+        fit="cover"
+        withPlaceholder
+      />
       <Stack justify="space-around">
         <Stack spacing="sm">
           <Text lineClamp={2}>

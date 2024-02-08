@@ -1,5 +1,4 @@
 import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
-
 import { Property } from 'csstype';
 
 import { TileBaseType } from './tile';

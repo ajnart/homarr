@@ -1,11 +1,11 @@
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
+import { getLowestWrapper } from '~/tools/config/wrapper-finder';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { generateDefaultApp } from '~/tools/shared/app';
 import { AppType } from '~/types/app';
 
 import { GenericTileMenu } from '../GenericTileMenu';
-import { getLowestWrapper } from '~/tools/config/wrapper-finder';
 
 interface TileMenuProps {
   app: AppType;

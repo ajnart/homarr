@@ -14,16 +14,20 @@ export const inviteRouter = createTRPCRouter({
       z.object({
         limit: z.number().min(1).max(100).default(10),
         page: z.number().min(0),
-      }),
+      })
     )
-    .output(z.object({
-      invites: z.array(z.object({
-        id: z.string(),
-        expires: z.date(),
-        creator: z.string().or(z.null()),
-      })),
-      countPages: z.number().min(0),
-    }))
+    .output(
+      z.object({
+        invites: z.array(
+          z.object({
+            id: z.string(),
+            expires: z.date(),
+            creator: z.string().or(z.null()),
+          })
+        ),
+        countPages: z.number().min(0),
+      })
+    )
     .query(async ({ input }) => {
       const limit = input.limit;
       const dbInvites = await db.query.invites.findMany({
@@ -60,13 +64,15 @@ export const inviteRouter = createTRPCRouter({
           .date()
           .min(dayjs().add(5, 'minutes').toDate())
           .max(dayjs().add(6, 'months').toDate()),
-      }),
+      })
     )
-    .output(z.object({
-      id: z.string(),
-      token: z.string(),
-      expires: z.date(),
-    }))
+    .output(
+      z.object({
+        id: z.string(),
+        token: z.string(),
+        expires: z.date(),
+      })
+    )
     .mutation(async ({ ctx, input }) => {
       const inviteToInsert = {
         id: randomUUID(),
