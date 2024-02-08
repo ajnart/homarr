@@ -23,12 +23,12 @@ const getStatisticsSchema = z.object({
 
 export type TdarrStatistics = {
   totalFileCount: number;
-  totalTranscodes: number;
-  totalHealthChecks: number;
+  totalTranscodeCount: number;
+  totalHealthCheckCount: number;
   failedTranscodeCount: number;
   failedHealthCheckCount: number;
-  stagedTranscodes: number;
-  stagedHealthChecks: number;
+  stagedTranscodeCount: number;
+  stagedHealthCheckCount: number;
 }
 
 const getNodesResponseSchema = z.record(z.string(), z.object({
@@ -82,21 +82,12 @@ export type TdarrFile = {
   size: number;
 };
 
-const getStagedFilesSchema = z.array(
-  z.object({
-    originalLibraryFile: z.object({
-      file: z.string(),
-      file_size: z.number(),
-    }),
-    status: z.string(),
-  }),
-);
+const getStatusTableSchema = z.object({
+  array: z.array(z.object({
 
-export type TdarrStagedFile = {
-  file: string;
-  status: 'processing' | 'copying' | 'accepted' | string;
-  size: number;
-};
+  })),
+  totalCount: z.number()
+})
 
 export const tdarrRouter = createTRPCRouter({
   statistics: publicProcedure
@@ -118,12 +109,12 @@ export const tdarrRouter = createTRPCRouter({
 
       return {
         totalFileCount: data.totalFileCount,
-        totalTranscodes: data.totalTranscodeCount,
-        totalHealthChecks: data.totalHealthCheckCount,
+        totalTranscodeCount: data.totalTranscodeCount,
+        totalHealthCheckCount: data.totalHealthCheckCount,
         failedTranscodeCount: data.table3Count,
         failedHealthCheckCount: data.table6Count,
-        stagedTranscodes: data.table1Count,
-        stagedHealthChecks: data.table4Count,
+        stagedTranscodeCount: data.table1Count,
+        stagedHealthCheckCount: data.table4Count,
       };
     }),
 
@@ -171,6 +162,7 @@ export const tdarrRouter = createTRPCRouter({
 
       const res = await axios.post(appUrl.toString(), body);
       const data = getFilesSchema.parse(res.data);
+      console.log(data.find((dat => dat.file.includes('Mitty'))));
 
       return data.map(file => ({
         file: file.file,
@@ -179,26 +171,30 @@ export const tdarrRouter = createTRPCRouter({
       }));
     }),
 
-  getStagedFiles: publicProcedure
-    .input(inputSchema)
-    .query(async ({ input }): Promise<TdarrStagedFile[]> => {
+  getStatusTable: publicProcedure
+    .input(inputSchema.extend({
+      table: z.enum(['transcodeQueue', 'transcodeSuccess', 'transcodeError', 'healthCheckQueue', 'healthCheckHealthy', 'healthCheckError']),
+      pageSize: z.number().optional()
+    }))
+    .query(async ({ input }): Promise<TdarrFile[]> => {
       const app = getTdarrApp(input.appId, input.configName);
       const appUrl = new URL('api/v2/cruddb', app.url);
 
       const body = {
         data: {
-          collection: 'StagedJSONDB',
+          collection: 'FileJSONDB',
           mode: 'getAll',
         },
       };
 
       const res = await axios.post(appUrl.toString(), body);
-      const data = getStagedFilesSchema.parse(res.data);
+      const data = getFilesSchema.parse(res.data);
+      console.log(data.find((dat => dat.file.includes('Mitty'))));
 
       return data.map(file => ({
-        file: file.originalLibraryFile.file,
-        status: file.status,
-        size: file.originalLibraryFile.file_size * 1_000_000, // file_size is in MB, convert to bytes
+        file: file.file,
+        status: file.TranscodeDecisionMaker,
+        size: file.file_size * 1_000_000, // file_size is in MB, convert to bytes
       }));
     }),
 });
