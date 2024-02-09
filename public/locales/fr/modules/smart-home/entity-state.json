@@ -9,12 +9,20 @@
                 "label": "ID de l’entité",
                 "info": "ID d’entité unique dans Home Assistant. Copiez en cliquant sur l'entité > Cliquez sur l'icône en forme de rouage > Cliquez sur le bouton Copier sous « ID d'entité ». Certaines entités personnalisées peuvent ne pas être prises en charge."
             },
+            "appendUnit": {
+                "label": "",
+                "info": ""
+            },
             "automationId": {
                 "label": "ID d'automatisation optionnelle",
                 "info": "Votre identifiant unique d'automatisation. Commence toujours par automation.XXXXX. S'il n'est pas défini, le widget ne sera pas cliquable et n'affichera que l'état de l'entité. Après un clic, l'état de l'entité sera actualisé."
             },
             "displayName": {
                 "label": "Nom d'affichage"
+            },
+            "displayFriendlyName": {
+                "label": "",
+                "info": ""
             }
         }
     }
