@@ -27,7 +27,6 @@
     "db:migrate": "dotenv ts-node drizzle/migrate/migrate.ts ./drizzle"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^0.3.2",
     "@ctrl/deluge": "^4.1.0",
     "@ctrl/qbittorrent": "^6.0.0",
     "@ctrl/shared-torrent": "^4.1.1",
@@ -92,9 +91,8 @@
     "i18next": "^22.5.1",
     "immer": "^10.0.2",
     "js-file-download": "^0.4.12",
+    "ldapjs": "^3.0.5",
     "mantine-react-table": "^1.3.4",
-    "moment": "^2.29.4",
-    "moment-timezone": "^0.5.43",
     "next": "13.4.12",
     "next-auth": "^4.23.0",
     "next-i18next": "^14.0.0",
@@ -123,6 +121,7 @@
     "@types/better-sqlite3": "^7.6.5",
     "@types/cookies": "^0.7.7",
     "@types/dockerode": "^3.3.9",
+    "@types/ldapjs": "^3.0.2",
     "@types/node": "18.17.8",
     "@types/prismjs": "^1.26.0",
     "@types/react": "^18.2.11",

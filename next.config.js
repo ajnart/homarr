@@ -6,6 +6,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  webpack: (config) => {
+    // for dynamic loading of auth providers
+    config.experiments = { ...config.experiments, topLevelAwait: true };
+    return config;
+  },
   images: {
     domains: ['cdn.jsdelivr.net'],
   },
