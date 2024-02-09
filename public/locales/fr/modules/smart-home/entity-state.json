@@ -10,8 +10,8 @@
                 "info": "ID d’entité unique dans Home Assistant. Copiez en cliquant sur l'entité > Cliquez sur l'icône en forme de rouage > Cliquez sur le bouton Copier sous « ID d'entité ». Certaines entités personnalisées peuvent ne pas être prises en charge."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Ajouter une unité de mesure",
+                "info": "Ajouter l'attribut d'unité de mesure à l'état de l'entité."
             },
             "automationId": {
                 "label": "ID d'automatisation optionnelle",
@@ -21,8 +21,8 @@
                 "label": "Nom d'affichage"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Afficher le nom personnalisé",
+                "info": "Afficher le nom personnalisé de Home Assistant au lieu du nom d'affichage"
             }
         }
     }
