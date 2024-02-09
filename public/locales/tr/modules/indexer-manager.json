@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Dizin oluşturucu yöneticisi statüsü",
+        "description": "Dizin oluşturucularınızın statüsü",
         "settings": {
-            "title": ""
+            "title": "Dizin oluşturucu yöneticisi statüsü"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Dizin oluşturucu yöneticisi",
+        "testAllButton": "Tümünü test et"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Dizin oluşturucu yöneticisi bulunamıyor",
+            "text": "Dizin oluşturucu yöneticinize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
         }
     }
 }
