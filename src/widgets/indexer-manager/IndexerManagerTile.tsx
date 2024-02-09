@@ -33,17 +33,17 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
   const { data: sessionData } = useSession();
   const { name: configName } = useConfigContext();
   const utils = api.useUtils();
-  const { isLoading: testAllLoading, mutateAsync: testAll } =
+  const { isLoading: testAllLoading, mutateAsync: testAllAsync } =
     api.indexerManager.testAllIndexers.useMutation({
       onSuccess: async () => {
         await utils.indexerManager.invalidate();
       },
     });
-  const { isInitialLoading: indexersLoading, data: indexers } =
+  const { isInitialLoading: indexersLoading, data: indexersData } =
     api.indexerManager.indexers.useQuery({
       configName: configName!,
     });
-  const { isInitialLoading: statusesLoading, data: statuses } =
+  const { isInitialLoading: statusesLoading, data: statusesData } =
     api.indexerManager.statuses.useQuery(
       {
         configName: configName!,
@@ -52,7 +52,7 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         staleTime: 1000 * 60 * 2,
       }
     );
-  if (indexersLoading || !indexers || statusesLoading) {
+  if (indexersLoading || !indexersData || statusesLoading) {
     return <WidgetLoading />;
   }
 
@@ -61,12 +61,12 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
       <Text mt={2}>{t('indexersStatus.title')}</Text>
       <Card py={5} px={10} radius="md" withBorder style={{ flex: '1' }}>
         <ScrollArea h="100%">
-          {indexers.map((indexer: any) => (
+          {indexersData.map((indexer: any) => (
             <Group key={indexer.id} position="apart">
               <Text color="dimmed" align="center" size="xs">
                 {indexer.name}
               </Text>
-              {!statuses.find((status: any) => indexer.id === status.indexerId) &&
+              {!statusesData.find((status: any) => indexer.id === status.indexerId) &&
               indexer.enable ? (
                 <IconCircleCheck color="#2ecc71" />
               ) : (
@@ -82,7 +82,7 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
           radius="md"
           variant="light"
           onClick={() => {
-            testAll({ configName: configName! });
+            testAllAsync({ configName: configName! });
           }}
           loading={testAllLoading}
           loaderPosition="right"
