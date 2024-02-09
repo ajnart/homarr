@@ -10,8 +10,8 @@
                 "info": "Home Assistant'ta benzersiz varlık kimliği. Varlığa tıklayın > Çark simgesine tıklayın > 'Varlık Kimliği'ndeki kopyala butonuna tıklayın. Bazı özel varlıklar desteklenmeyebilir."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Ölçü birimini ekle",
+                "info": "Varlık durumuna ölçü birim özelliğini ekler."
             },
             "automationId": {
                 "label": "İsteğe bağlı otomasyon kimliği",
@@ -21,8 +21,8 @@
                 "label": "Ekran adı"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Kolay adı görüntüle",
+                "info": "Görünen ad yerine Home Assistant'ın kolay adını görüntüler"
             }
         }
     }
