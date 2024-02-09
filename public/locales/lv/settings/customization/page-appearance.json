@@ -19,26 +19,26 @@
     "label": "Fons"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Fona attēla pielikums",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Fiksēts - fons paliek nemainīgā pozīcijā (ieteicams)",
+      "scroll": "Ritināšana - fons ritinās līdz ar kursora ritināšanu"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Fona attēla izmērs",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Pārklājums - pēc iespējas mazāks attēla mērogs, lai, apgriežot lieko vietu, pārklātu visu logu. (ieteicams)",
+      "contain": "Saturēt — mērogo attēlu pēc iespējas lielāku tā konteinerā, neapgriežot vai neizstiepjot attēlu."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Fona attēla pielikums",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Atkārtot — attēls tiek atkārtots tik daudz, cik nepieciešams, lai aptvertu visu fona laukumu.",
+      "no-repeat": "Bez atkārtojuma - attēls neatkārtojas un var neaizpildīt visu fona laukumu (ieteicams)",
+      "repeat-x": "Atkārtot X - tāpat kā \"Atkārtot\", bet tikai uz horizontālās ass.",
+      "repeat-y": "Atkārtot Y - tāpat kā \"Atkārtot\", bet tikai uz vertikālās ass."
     }
   },
   "customCSS": {

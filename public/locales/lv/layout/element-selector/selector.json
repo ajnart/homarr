@@ -22,5 +22,5 @@
       "message": "Ir izveidota kategorija \"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importēt no Docker"
 }

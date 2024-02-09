@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Jūsu Homarr instancē nav konfigurēts Docker vai arī nav izdevies iegūtu konteinerus. Lūdzu, pārbaudiet dokumentāciju par to, kā iestatīt integrāciju."
         }
     },
     "modals": {
