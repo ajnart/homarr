@@ -6,6 +6,7 @@ import dnsHoleControls from './dnshole/DnsHoleControls';
 import dnsHoleSummary from './dnshole/DnsHoleSummary';
 import torrentNetworkTraffic from './download-speed/TorrentNetworkTrafficTile';
 import iframe from './iframe/IFrameTile';
+import indexerManager from './indexer-manager/IndexerManagerTile';
 import mediaRequestsList from './media-requests/MediaRequestListTile';
 import mediaRequestsStats from './media-requests/MediaRequestStatsTile';
 import mediaServer from './media-server/MediaServerTile';
@@ -20,6 +21,7 @@ import weather from './weather/WeatherTile';
 
 export default {
   calendar,
+  'indexer-manager': indexerManager,
   dashdot,
   usenet,
   weather,
