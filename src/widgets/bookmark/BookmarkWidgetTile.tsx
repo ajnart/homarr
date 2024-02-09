@@ -87,7 +87,7 @@ const definition = defineWidget({
               return t('item.validation.length', { shortest: '1', longest: '100' });
             },
             href: (value) => {
-              if (!z.string().min(1).max(200).safeParse(value).success) {
+              if (!z.string().min(1).max(8192).safeParse(value).success) {
                 return t('item.validation.length', { shortest: '1', longest: '200' });
               }
 
