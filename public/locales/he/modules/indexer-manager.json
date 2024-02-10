@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "סטטוס מנהל אינדקס",
+        "description": "סטטוס לגבי האינדקסים שלך",
         "settings": {
-            "title": ""
+            "title": "סטטוס מנהל אינדקס"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "מנהל אינדקס",
+        "testAllButton": "בדוק הכל"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "לא ניתן למצוא מנהל אינדקס",
+            "text": "הייתה בעיה בחיבור למנהל האינדקס שלך. אנא בדוק את הגדרות האינטרגציה."
         }
     }
 }
