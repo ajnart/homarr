@@ -10,8 +10,8 @@
                 "info": "Eindeutige Eintrag-ID im Home Assistant. Kopieren durch Anklicken von Eintrag > Anklicken des Zahnradsymbols > Anklicken der Schaltfläche \"Kopieren\" bei \"Eintrag-ID\". Einige benutzerdefinierte Einträge werden möglicherweise nicht unterstützt."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Maßeinheiten anzeigen",
+                "info": "Fügt die Maßeinheit des Attributs an den Entitätszustand an."
             },
             "automationId": {
                 "label": "Optionale Automatisierungs-ID",
@@ -21,8 +21,8 @@
                 "label": "Anzeigename"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Benutzerdefinierten Namen anzeigen",
+                "info": "Zeige Zeige Benutzerdefinierten Namen statt Anzeigename vom Home-Assistenten an"
             }
         }
     }
