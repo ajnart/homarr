@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Indekserings manager status",
+        "description": "Status for dine indekser",
         "settings": {
-            "title": ""
+            "title": "Indekserings manager status"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indexer-manager",
+        "testAllButton": "Test alle"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Kan ikke finde en indekseringsmanager",
+            "text": "Der opstod et problem med at oprette forbindelse til din indekseringsmanager. Bekræft venligst din konfiguration/integration(er)."
         }
     }
 }
