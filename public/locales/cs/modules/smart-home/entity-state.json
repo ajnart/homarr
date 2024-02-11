@@ -21,7 +21,7 @@
                 "label": "Zobrazovaný název"
             },
             "displayFriendlyName": {
-                "label": "Zobrazovat přátelské jméno",
+                "label": "Zobrazovat čitelné jméno",
                 "info": "Zobrazovat přátelské jméno z Home Assistantu místo zobrazovaného jména"
             }
         }
