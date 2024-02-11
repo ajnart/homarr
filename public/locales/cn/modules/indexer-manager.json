@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "索引管理器状态",
+        "description": "有关索引器的状态",
         "settings": {
-            "title": ""
+            "title": "索引管理器状态"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "索引管理器",
+        "testAllButton": "测试全部"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "无法找到索引管理器",
+            "text": "连接索引管理器时出现问题。请验证您的配置/集成。"
         }
     }
 }
