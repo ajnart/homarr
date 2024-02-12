@@ -20,8 +20,8 @@ type InferrableSearchOptions<
 type SearchResultIndex<Attributes extends AttributeConstraint> = Attributes extends string
   ? Attributes
   : Attributes extends readonly string[]
-  ? Attributes[number]
-  : string;
+    ? Attributes[number]
+    : string;
 
 type SearchResult<
   Attributes extends AttributeConstraint,

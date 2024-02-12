@@ -1,4 +1,6 @@
+import fs from 'fs';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { env } from 'process';
 import { z } from 'zod';
 import { Dashboard } from '~/components/Dashboard/Dashboard';
 import { BoardLayout } from '~/components/layout/Templates/BoardLayout';
@@ -11,12 +13,10 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { boardNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
-import { env } from 'process';
-import fs from 'fs';
 
 export default function BoardPage({
   config: initialConfig,
-  isDockerEnabled: isDockerEnabled
+  isDockerEnabled: isDockerEnabled,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   useInitConfig(initialConfig);
 
@@ -65,7 +65,8 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     return result;
   }
 
-  const isDockerEnabled: boolean = !!env.DOCKER_HOST || !!env.DOCKER_PORT || fs.existsSync('/var/run/docker.sock');
+  const isDockerEnabled: boolean =
+    !!env.DOCKER_HOST || !!env.DOCKER_PORT || fs.existsSync('/var/run/docker.sock');
 
   return {
     props: {

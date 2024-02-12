@@ -68,19 +68,22 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
       }
     );
 
-  const attribute = (widget.properties.appendUnit && data?.attributes.unit_of_measurement ?
-    " " + data?.attributes.unit_of_measurement : ""
-  )
+  const attribute =
+    widget.properties.appendUnit && data?.attributes.unit_of_measurement
+      ? ' ' + data?.attributes.unit_of_measurement
+      : '';
 
-  const displayName = (widget.properties.displayFriendlyName && data?.attributes.friendly_name ?
-    data?.attributes.friendly_name : widget.properties.displayName
-  )
+  const displayName =
+    widget.properties.displayFriendlyName && data?.attributes.friendly_name
+      ? data?.attributes.friendly_name
+      : widget.properties.displayName;
 
-  const { mutateAsync: mutateTriggerAutomationAsync } = api.smartHomeEntityState.triggerAutomation.useMutation({
-    onSuccess: () => {
-      void utils.smartHomeEntityState.invalidate();
-    },
-  });
+  const { mutateAsync: mutateTriggerAutomationAsync } =
+    api.smartHomeEntityState.triggerAutomation.useMutation({
+      onSuccess: () => {
+        void utils.smartHomeEntityState.invalidate();
+      },
+    });
 
   const handleClick = async () => {
     if (!widget.properties.automationId) {
