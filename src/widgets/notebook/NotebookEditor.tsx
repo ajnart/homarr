@@ -99,9 +99,9 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           addAttributes() {
             return {
               ...this.parent?.(),
-              target: { default: null },
-            };
-          },
+              target: { default: null }
+            }
+          }
         }),
         StarterKit,
         Table.configure({

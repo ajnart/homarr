@@ -1,15 +1,4 @@
-import {
-  Box,
-  Card,
-  Group,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
-  UnstyledButton,
-  createStyles,
-} from '@mantine/core';
+import { Box, Card, createStyles, Group, Image, SimpleGrid, Stack, Text, Title, UnstyledButton } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
@@ -20,10 +9,10 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { OnlyKeysWithStructure } from '~/types/helpers';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 
 const ManagementPage = () => {
   const { t } = useTranslation('manage/index');

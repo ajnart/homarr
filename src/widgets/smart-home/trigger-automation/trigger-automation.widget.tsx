@@ -1,9 +1,9 @@
-import { Center, Stack, Text } from '@mantine/core';
+import { defineWidget } from '~/widgets/helper';
 import { IconSettingsAutomation } from '@tabler/icons-react';
+import { IWidget } from '~/widgets/widgets';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
-import { defineWidget } from '~/widgets/helper';
-import { IWidget } from '~/widgets/widgets';
+import { Center, Stack, Text } from '@mantine/core';
 
 const definition = defineWidget({
   id: 'smart-home/trigger-automation',
@@ -12,7 +12,7 @@ const definition = defineWidget({
     automationId: {
       type: 'text',
       info: true,
-      defaultValue: '',
+      defaultValue: ''
     },
     displayName: {
       type: 'text',
@@ -28,10 +28,7 @@ const definition = defineWidget({
   component: TriggerAutomationTile,
 });
 
-export type ISmartHomeTriggerAutomationWidget = IWidget<
-  (typeof definition)['id'],
-  typeof definition
->;
+export type ISmartHomeTriggerAutomationWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
 interface SmartHomeTriggerAutomationWidgetProps {
   widget: ISmartHomeTriggerAutomationWidget;
@@ -41,19 +38,18 @@ function TriggerAutomationTile({ widget }: SmartHomeTriggerAutomationWidgetProps
   const { name: configName } = useConfigContext();
   const utils = api.useUtils();
 
-  const { mutateAsync: mutateTriggerAutomationAsync } =
-    api.smartHomeEntityState.triggerAutomation.useMutation({
-      onSuccess: () => {
-        void utils.smartHomeEntityState.invalidate();
-      },
-    });
+  const { mutateAsync: mutateTriggerAutomationAsync } = api.smartHomeEntityState.triggerAutomation.useMutation({
+    onSuccess: () => {
+      void utils.smartHomeEntityState.invalidate();
+    }
+  });
 
   const handleClick = async () => {
     await mutateTriggerAutomationAsync({
       configName: configName as string,
-      widgetId: widget.id,
+      widgetId: widget.id
     });
-  };
+  }
 
   return (
     <Center onClick={handleClick} style={{ cursor: 'pointer' }} h="100%" w="100%">

@@ -30,7 +30,7 @@ export const dockerRouter = createTRPCRouter({
 
         return {
           ...container,
-          icon: foundIcon?.url ?? '/public/imgs/logo/logo.svg',
+          icon: foundIcon?.url ?? '/public/imgs/logo/logo.svg'
         };
       });
       return returnedData;

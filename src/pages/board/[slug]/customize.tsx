@@ -1,16 +1,4 @@
-import {
-  Affix,
-  Button,
-  Card,
-  Container,
-  Group,
-  Paper,
-  Stack,
-  Text,
-  Title,
-  Transition,
-  rem,
-} from '@mantine/core';
+import { Affix, Button, Card, Container, Group, Paper, rem, Stack, Text, Title, Transition } from '@mantine/core';
 import { showNotification, updateNotification } from '@mantine/notifications';
 import {
   IconArrowLeft,
@@ -35,10 +23,7 @@ import { AppearanceCustomization } from '~/components/Board/Customize/Appearance
 import { GridstackCustomization } from '~/components/Board/Customize/Gridstack/GridstackCustomization';
 import { LayoutCustomization } from '~/components/Board/Customize/Layout/LayoutCustomization';
 import { PageMetadataCustomization } from '~/components/Board/Customize/PageMetadata/PageMetadataCustomization';
-import {
-  BoardCustomizationFormProvider,
-  useBoardCustomizationForm,
-} from '~/components/Board/Customize/form';
+import { BoardCustomizationFormProvider, useBoardCustomizationForm } from '~/components/Board/Customize/form';
 import { useBoardLink } from '~/components/layout/Templates/BoardLayout';
 import { MainLayout } from '~/components/layout/Templates/MainLayout';
 import { createTrpcServersideHelpers } from '~/server/api/helper';
@@ -94,8 +79,7 @@ export default function CustomizationPage({
         shade: (config?.settings.customization.colors.shade as number | undefined) ?? 8,
         opacity: config?.settings.customization.appOpacity ?? 50,
         customCss: config?.settings.customization.customCss ?? '',
-        backgroundImageAttachment:
-          config?.settings.customization.backgroundImageAttachment ?? 'fixed',
+        backgroundImageAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed',
         backgroundImageRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
         backgroundImageSize: config?.settings.customization.backgroundImageSize ?? 'cover',
       },
@@ -324,7 +308,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     config = await caller.byName({ name: routeParams.data.slug });
   } catch {
     return {
-      notFound: true,
+      notFound: true
     };
   }
 

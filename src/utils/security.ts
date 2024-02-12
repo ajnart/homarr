@@ -11,8 +11,5 @@ interface ConditionalWrapperProps {
   children: ReactNode;
 }
 
-export const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({
-  condition,
-  wrapper,
-  children,
-}) => (condition ? wrapper(children) : children);
+export const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({ condition, wrapper, children }) =>
+  condition ? wrapper(children) : children;

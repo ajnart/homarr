@@ -1,31 +1,29 @@
 import { Stack, Stepper } from '@mantine/core';
 import { useState } from 'react';
-import { api } from '~/utils/api';
 
 import { StepCreateAccount } from './step-create-account';
 import { StepOnboardingFinished } from './step-onboarding-finished';
 import { StepUpdatePathMappings } from './step-update-path-mappings';
+import { api } from '~/utils/api';
 
 export const OnboardingSteps = ({ isUpdate }: { isUpdate: boolean }) => {
   const maximumSteps = isUpdate ? 3 : 2;
 
   const [currentStep, setCurrentStep] = useState(0);
 
-  const nextStep = () =>
-    setCurrentStep((current) => {
-      const newValue = current < maximumSteps ? current + 1 : current;
+  const nextStep = () => setCurrentStep((current) => {
+    const newValue = (current < maximumSteps ? current + 1 : current);
 
-      if (currentStep + 1 >= maximumSteps) {
-        onFinishOnboarding();
-      }
+    if (currentStep + 1 >= maximumSteps) {
+      onFinishOnboarding();
+    }
 
-      return newValue;
-    });
+    return newValue;
+  });
 
   const prevStep = () => setCurrentStep((current) => (current > 0 ? current - 1 : current));
 
-  const { mutate: mutateConfigSchemaVersion } =
-    api.config.updateConfigurationSchemaToLatest.useMutation();
+  const { mutate: mutateConfigSchemaVersion } = api.config.updateConfigurationSchemaToLatest.useMutation();
 
   const onFinishOnboarding = () => {
     mutateConfigSchemaVersion();

@@ -1,8 +1,4 @@
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class UnpkgIconsRepository extends AbstractIconRepository {
   static tablerRepository = 'https://unpkg.com/@tabler/icons-png@2.0.0-beta/icons/';
@@ -40,7 +36,7 @@ export class UnpkgIconsRepository extends AbstractIconRepository {
     };
   }
 
-  protected name: string = 'UnPkg';
+  protected name: string = "UnPkg";
 }
 
 type UnpkgResponse = {

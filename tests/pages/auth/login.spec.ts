@@ -40,7 +40,7 @@ describe('login page', () => {
         _i18Next: 'hello',
         oidcAutoLogin: null,
         oidcProviderName: null,
-        providers: undefined,
+        providers: undefined
       },
     });
 
@@ -80,7 +80,7 @@ describe('login page', () => {
         _i18Next: 'hello',
         oidcAutoLogin: null,
         oidcProviderName: null,
-        providers: undefined,
+        providers: undefined
       },
     });
 
@@ -120,7 +120,7 @@ describe('login page', () => {
         _i18Next: 'hello',
         oidcAutoLogin: null,
         oidcProviderName: null,
-        providers: undefined,
+        providers: undefined
       },
     });
 

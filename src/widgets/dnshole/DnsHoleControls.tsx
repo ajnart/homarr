@@ -22,7 +22,7 @@ import { api } from '~/utils/api';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
-import { useDnsHoleSummaryQuery } from './DnsHoleSummary';
+import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
@@ -69,7 +69,7 @@ const dnsLightStatus = (
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { data: sessionData } = useSession();
-  const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummaryQuery();
+  const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);

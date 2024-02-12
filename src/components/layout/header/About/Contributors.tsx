@@ -1,4 +1,13 @@
-import { Anchor, Avatar, Group, Pagination, Stack, Table, Text, Title } from '@mantine/core';
+import {
+  Anchor,
+  Avatar,
+  Group,
+  Pagination,
+  Stack,
+  Table,
+  Text,
+  Title,
+} from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
 import { Trans, useTranslation } from 'next-i18next';
 

@@ -7,7 +7,7 @@ import { OriginalLanguage, Result } from '~/modules/overseerr/SearchResult';
 import { TvShowResult } from '~/modules/overseerr/TvShow';
 import { getConfig } from '~/tools/config/getConfig';
 
-import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
+import { protectedProcedure, createTRPCRouter, publicProcedure } from '../trpc';
 
 export const overseerrRouter = createTRPCRouter({
   search: protectedProcedure

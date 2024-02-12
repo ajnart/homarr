@@ -52,6 +52,6 @@ function getCurrentShapeSize(size: number) {
   return size >= GridstackBreakpoints.large
     ? 'lg'
     : size >= GridstackBreakpoints.medium
-      ? 'md'
-      : 'sm';
+    ? 'md'
+    : 'sm';
 }

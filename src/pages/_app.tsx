@@ -10,7 +10,7 @@ import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
-import { SessionProvider, getSession } from 'next-auth/react';
+import { getSession, SessionProvider } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Script from 'next/script';
@@ -24,10 +24,7 @@ import { modals } from '~/modals';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
-import {
-  ServerSidePackageAttributesType,
-  getServiceSidePackageAttributes,
-} from '~/tools/server/getPackageVersion';
+import { getServiceSidePackageAttributes, ServerSidePackageAttributesType } from '~/tools/server/getPackageVersion';
 import { theme } from '~/tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';

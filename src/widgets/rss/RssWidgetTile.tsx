@@ -57,15 +57,15 @@ const definition = defineWidget({
     },
     sortPostsWithoutPublishDateToTheTop: {
       type: 'switch',
-      defaultValue: false,
+      defaultValue: false
     },
     maximumAmountOfPosts: {
       type: 'slider',
       defaultValue: 20,
       min: 1,
       max: 350,
-      step: 1,
-    },
+      step: 1
+    }
   },
   gridstack: {
     minWidth: 2,
@@ -89,7 +89,7 @@ function RssTile({ widget }: RssTileProps) {
     configName,
     widget.properties.rssFeedUrl,
     widget.properties.refreshInterval,
-    widget.id
+    widget.id,
   );
   const { classes } = useStyles();
 
@@ -128,77 +128,72 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  const flatFeeds = data.filter((feed) => feed.success).flatMap((feed) => feed.feed);
-  const flatFeedItems = flatFeeds.flatMap((feed) => feed!.items);
-  const orderedFeedItems = widget.properties.sortByPublishDateAscending
-    ? flatFeedItems.sort(
-        (item1, item2) =>
-          (item2.pubDate?.getTime() as number) - (item1.pubDate?.getTime() as number)
-      )
-    : flatFeedItems;
+  const flatFeeds = data.filter(feed => feed.success).flatMap(feed => feed.feed);
+  const flatFeedItems = flatFeeds.flatMap(feed => feed!.items);
+  const orderedFeedItems = widget.properties.sortByPublishDateAscending ?
+    flatFeedItems.sort((item1, item2) =>
+      (item2.pubDate?.getTime() as number) - (item1.pubDate?.getTime() as number)) : flatFeedItems;
 
   return (
     <Stack h="100%">
       <ScrollArea className="scroll-area-w100" w="100%" mt="sm" mb="sm">
         <Stack w="100%" spacing="xs">
-          {orderedFeedItems
-            .slice(0, widget.properties.maximumAmountOfPosts)
-            .map((item: any, index: number) => (
-              <Card
-                key={index}
-                withBorder
-                component={Link ?? 'div'}
-                href={item.link}
-                radius="md"
-                target="_blank"
-                w="100%"
-              >
-                {item.enclosure && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    className={classes.backgroundImage}
-                    src={item.enclosure.url ?? undefined}
-                    alt="backdrop"
-                  />
-                )}
+          {orderedFeedItems.slice(0, widget.properties.maximumAmountOfPosts).map((item: any, index: number) => (
+            <Card
+              key={index}
+              withBorder
+              component={Link ?? 'div'}
+              href={item.link}
+              radius="md"
+              target="_blank"
+              w="100%"
+            >
+              {item.enclosure && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  className={classes.backgroundImage}
+                  src={item.enclosure.url ?? undefined}
+                  alt="backdrop"
+                />
+              )}
 
-                <Flex gap="xs">
-                  {item.enclosure && item.enclosure.url && (
-                    <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
-                      <Image
-                        src={item.enclosure.url ?? undefined}
-                        width={140}
-                        height={140}
-                        radius="md"
-                        withPlaceholder
-                      />
-                    </MediaQuery>
-                  )}
-                  <Flex gap={2} direction="column" w="100%">
-                    {item.categories && (
-                      <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
-                        {item.categories.map((category: any, categoryIndex: number) => (
-                          <Badge key={categoryIndex}>{category}</Badge>
-                        ))}
-                      </Flex>
-                    )}
-
-                    <Text lineClamp={2}>{item.title}</Text>
-                    <Text
-                      className={classes.itemContent}
-                      color="dimmed"
-                      size="xs"
-                      lineClamp={widget.properties.textLinesClamp}
-                      dangerouslySetInnerHTML={{ __html: item.content }}
+              <Flex gap="xs">
+                {item.enclosure && item.enclosure.url && (
+                  <MediaQuery query="(max-width: 1200px)" styles={{ display: 'none' }}>
+                    <Image
+                      src={item.enclosure.url ?? undefined}
+                      width={140}
+                      height={140}
+                      radius="md"
+                      withPlaceholder
                     />
+                  </MediaQuery>
+                )}
+                <Flex gap={2} direction="column" w="100%">
+                  {item.categories && (
+                    <Flex gap="xs" wrap="wrap" h={20} style={{ overflow: 'hidden' }}>
+                      {item.categories.map((category: any, categoryIndex: number) => (
+                        <Badge key={categoryIndex}>{category}</Badge>
+                      ))}
+                    </Flex>
+                  )}
 
-                    {item.pubDate && (
-                      <InfoDisplay title={item.title} date={formatDate(item.pubDate)} />
-                    )}
-                  </Flex>
+                  <Text lineClamp={2}>{item.title}</Text>
+                  <Text
+                    className={classes.itemContent}
+                    color="dimmed"
+                    size="xs"
+                    lineClamp={widget.properties.textLinesClamp}
+                    dangerouslySetInnerHTML={{ __html: item.content }}
+                  />
+
+                  {item.pubDate && (
+                    <InfoDisplay title={item.title} date={formatDate(item.pubDate)} />
+                  )}
                 </Flex>
-              </Card>
-            ))}
+              </Flex>
+            </Card>
+          ))}
         </Stack>
       </ScrollArea>
 
@@ -211,7 +206,7 @@ export const useGetRssFeeds = (
   configName: string | undefined,
   feedUrls: string[],
   refreshInterval: number,
-  widgetId: string
+  widgetId: string,
 ) =>
   api.rss.all.useQuery(
     {
@@ -224,7 +219,7 @@ export const useGetRssFeeds = (
       cacheTime: 1000 * 60 * 60 * 24,
       staleTime: 1000 * 60 * refreshInterval,
       enabled: !!configName,
-    }
+    },
   );
 
 interface RefetchButtonProps {

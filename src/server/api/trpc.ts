@@ -10,10 +10,10 @@ import { TRPCError, initTRPC } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { type Session } from 'next-auth';
 import superjson from 'superjson';
-import { OpenApiMeta } from 'trpc-openapi';
 import { ZodError } from 'zod';
 
 import { getServerAuthSession } from '../auth';
+import { OpenApiMeta } from 'trpc-openapi';
 
 /**
  * 1. CONTEXT
@@ -71,21 +71,18 @@ export const createTRPCContext = async (opts: CreateNextContextOptions) => {
  * errors on the backend.
  */
 
-const t = initTRPC
-  .context<typeof createTRPCContext>()
-  .meta<OpenApiMeta>()
-  .create({
-    transformer: superjson,
-    errorFormatter({ shape, error }) {
-      return {
-        ...shape,
-        data: {
-          ...shape.data,
-          zodError: error.cause instanceof ZodError ? error.cause.flatten() : null,
-        },
-      };
-    },
-  });
+const t = initTRPC.context<typeof createTRPCContext>().meta<OpenApiMeta>().create({
+  transformer: superjson,
+  errorFormatter({ shape, error }) {
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError: error.cause instanceof ZodError ? error.cause.flatten() : null,
+      },
+    };
+  },
+});
 
 /**
  * 3. ROUTER & PROCEDURE (THE IMPORTANT BIT)

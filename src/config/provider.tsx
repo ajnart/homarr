@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { shallow } from 'zustand/shallow';
 import { useColorTheme } from '~/tools/color';
 import { ConfigType } from '~/types/config';

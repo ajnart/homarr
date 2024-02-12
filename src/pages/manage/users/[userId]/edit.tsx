@@ -1,14 +1,4 @@
-import {
-  Avatar,
-  Divider,
-  Group,
-  Loader,
-  Stack,
-  Text,
-  ThemeIcon,
-  Title,
-  UnstyledButton,
-} from '@mantine/core';
+import { Avatar, Divider, Group, Loader, Stack, Text, ThemeIcon, Title, UnstyledButton } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -17,7 +7,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ManageUserGeneralForm } from '~/components/Manage/User/Edit/GeneralForm';
 import { ManageUserDanger } from '~/components/Manage/User/Edit/ManageUserDanger';
-import { ManageUserRoles } from '~/components/Manage/User/Edit/ManageUserRoles';
 import { ManageUserSecurityForm } from '~/components/Manage/User/Edit/ManageUserSecurityForm';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
@@ -25,6 +14,7 @@ import { getServerSideTranslations } from '~/tools/server/getServerSideTranslati
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { manageNamespaces } from '~/tools/server/translation-namespaces';
 import { api } from '~/utils/api';
+import { ManageUserRoles } from '~/components/Manage/User/Edit/ManageUserRoles';
 
 const EditPage = () => {
   const { t } = useTranslation('manage/users/edit');
@@ -42,16 +32,16 @@ const EditPage = () => {
       <Head>
         <title>{metaTitle}</title>
       </Head>
-      <UnstyledButton component={Link} href="/manage/users">
-        <Group mb="md">
-          <ThemeIcon variant="default">
-            <IconArrowLeft size="1rem" />
+      <UnstyledButton component={Link} href='/manage/users'>
+        <Group mb='md'>
+          <ThemeIcon variant='default'>
+            <IconArrowLeft size='1rem' />
           </ThemeIcon>
           <Text>{t('back')}</Text>
         </Group>
       </UnstyledButton>
 
-      <Group mb="xl">
+      <Group mb='xl'>
         <Avatar>{data?.name?.slice(0, 2).toUpperCase()}</Avatar>
         <Title>{data?.name}</Title>
       </Group>
@@ -88,7 +78,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     manageNamespaces,
     ctx.locale,
     undefined,
-    undefined
+    undefined,
   );
   return {
     props: {

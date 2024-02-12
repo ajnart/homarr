@@ -50,7 +50,7 @@ interface DnsHoleSummaryWidgetProps {
 }
 
 function DnsHoleSummaryWidgetTile({ widget }: DnsHoleSummaryWidgetProps) {
-  const { isInitialLoading, data } = useDnsHoleSummaryQuery();
+  const { isInitialLoading, data } = useDnsHoleSummeryQuery();
 
   if (isInitialLoading || !data) {
     return <WidgetLoading />;
@@ -104,7 +104,7 @@ type StatItem = {
   color: string;
 };
 
-export const useDnsHoleSummaryQuery = () => {
+export const useDnsHoleSummeryQuery = () => {
   const { name: configName } = useConfigContext();
 
   return api.dnsHole.summary.useQuery(

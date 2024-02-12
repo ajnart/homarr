@@ -38,10 +38,7 @@ export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutPr
   const { data: session } = useSession();
 
   return (
-    <MainLayout
-      autoFocusSearch={session?.user.autoFocusSearch}
-      headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}
-    >
+    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}>
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -50,7 +47,7 @@ export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutPr
   );
 };
 
-export const HeaderActions = ({ isDockerEnabled = false }: { isDockerEnabled: boolean }) => {
+export const HeaderActions = ({isDockerEnabled = false} : { isDockerEnabled: boolean}) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;
@@ -249,12 +246,7 @@ const BackgroundImage = () => {
   // Check if the background image URL is a video
   const videoFormat = getVideoFormat(config?.settings.customization.backgroundImageUrl);
   if (videoFormat) {
-    return (
-      <BackgroundVideo
-        videoSource={config?.settings.customization.backgroundImageUrl}
-        videoFormat={videoFormat}
-      />
-    );
+    return <BackgroundVideo videoSource={config?.settings.customization.backgroundImageUrl} videoFormat={videoFormat} />;
   }
 
   return (
@@ -273,38 +265,40 @@ const BackgroundImage = () => {
   );
 };
 
+
 const getVideoFormat = (video: string) => {
   const supportedFormats = ['mp4', 'webm', 'ogg'];
-  for (const format of supportedFormats) {
-    if (video.endsWith(format)) return format;
+  for(const format of supportedFormats) {
+    if(video.endsWith(format)) return format;
   }
   return undefined;
-};
+}
 
 interface BackgroundVideoProps {
   videoSource: string;
   videoFormat: string;
 }
 
-const BackgroundVideo = ({ videoSource, videoFormat }: BackgroundVideoProps) => {
-  return (
-    <video
-      autoPlay
-      muted
-      loop
-      style={{
-        position: 'fixed',
-        width: '100vw',
-        height: '100vh',
-        top: 0,
-        left: 0,
-        objectFit: 'cover',
-      }}
-    >
-      <source src={videoSource} type={`video/${videoFormat}`} />
-    </video>
-  );
+const BackgroundVideo = ({videoSource, videoFormat}: BackgroundVideoProps) => {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+          top: 0,
+          left: 0,
+          objectFit: 'cover'
+        }}
+      >
+        <source src={videoSource} type={`video/${videoFormat}`} />
+      </video>
+    );
 };
+
 
 export const useBoardLink = (
   link: '/board' | `/board/${string}/customize` | `/board/${string}`

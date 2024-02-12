@@ -9,14 +9,14 @@ import { ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
-import { getLowestWrapper } from '~/tools/config/wrapper-finder';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { generateDefaultApp } from '~/tools/shared/app';
 import { AppType } from '~/types/app';
-import { ConfigType } from '~/types/config';
 
 import { CategoryEditModalInnerProps } from '../../../../Wrappers/Category/CategoryEditModal';
 import { useStyles } from '../Shared/styles';
+import { getLowestWrapper } from '~/tools/config/wrapper-finder';
+import { ConfigType } from '~/types/config';
 
 interface AvailableElementTypesProps {
   modalId: string;

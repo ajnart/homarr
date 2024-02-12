@@ -1,8 +1,4 @@
-import {
-  AbstractIconRepository,
-  NormalizedIcon,
-  NormalizedIconRepositoryResult,
-} from './abstract-icons-repository';
+import { AbstractIconRepository, NormalizedIcon, NormalizedIconRepositoryResult } from './abstract-icons-repository';
 
 export class GitHubIconsRepository extends AbstractIconRepository {
   static readonly walkxcode = {
@@ -19,7 +15,9 @@ export class GitHubIconsRepository extends AbstractIconRepository {
   }
 
   protected async fetchInternally(): Promise<NormalizedIconRepositoryResult> {
-    const response = await fetch(this.repository.api, {});
+    const response = await fetch(this.repository.api, { 
+      
+    });
     const body = (await response.json()) as GitHubRepo;
 
     const normalizedEntries = body.tree
@@ -54,13 +52,14 @@ export class GitHubIconsRepository extends AbstractIconRepository {
     };
   }
 
-  protected name: string = 'GitHub';
+  protected name: string = "GitHub";
 }
 
 type GitHubRepositoryUrl = {
   api: string;
   blob: string;
 };
+
 
 export interface GitHubRepo {
   sha: string;

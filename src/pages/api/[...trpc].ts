@@ -1,9 +1,9 @@
-import Consola from 'consola';
 import { NextApiRequest, NextApiResponse } from 'next';
 import cors from 'nextjs-cors';
 import { createOpenApiNextHandler } from 'trpc-openapi';
-import { rootRouter } from '~/server/api/root';
 import { createTRPCContext } from '~/server/api/trpc';
+import { rootRouter } from '~/server/api/root';
+import Consola from 'consola';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // Setup CORS
@@ -15,7 +15,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     createContext: createTRPCContext,
     onError({ error, path }) {
       Consola.error(`tRPC OpenAPI error on ${path}: ${error}`);
-    },
+    }
   })(req, res);
 };
 

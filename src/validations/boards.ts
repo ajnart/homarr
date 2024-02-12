@@ -1,10 +1,6 @@
 import { DEFAULT_THEME, MANTINE_COLORS, MantineColor } from '@mantine/core';
 import { z } from 'zod';
-import {
-  BackgroundImageAttachment,
-  BackgroundImageRepeat,
-  BackgroundImageSize,
-} from '~/types/settings';
+import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
 
 export const configNameSchema = z.string().regex(/^[a-zA-Z0-9-_\s()]+$/);
 

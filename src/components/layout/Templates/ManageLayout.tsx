@@ -21,8 +21,7 @@ import {
   IconHome,
   IconInfoSmall,
   IconLayoutDashboard,
-  IconMailForward,
-  IconPlug,
+  IconMailForward, IconPlug,
   IconQuestionMark,
   IconTool,
   IconUser,
@@ -104,8 +103,8 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
         },
         api: {
           icon: IconPlug,
-          href: '/manage/tools/swagger',
-        },
+          href: '/manage/tools/swagger'
+        }
       },
     },
     help: {

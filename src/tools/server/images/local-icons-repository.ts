@@ -1,4 +1,3 @@
-import Consola from 'consola';
 import fs from 'fs';
 
 import {
@@ -6,6 +5,7 @@ import {
   NormalizedIcon,
   NormalizedIconRepositoryResult,
 } from './abstract-icons-repository';
+import Consola from 'consola';
 
 const iconsDirectory = './public/icons';
 
@@ -31,14 +31,16 @@ export class LocalIconsRepository extends AbstractIconRepository {
 
     const normalizedEntries = files
       .filter((file) => ['.png', '.svg', '.jpeg', '.jpg'].some((x) => file.endsWith(x)))
-      .map((file): NormalizedIcon => {
-        const stats = fs.statSync(`${iconsDirectory}/${file}`);
-        return {
-          name: file,
-          url: `/icons/${file}`,
-          size: stats.size,
-        };
-      });
+      .map(
+        (file): NormalizedIcon => {
+          const stats = fs.statSync(`${iconsDirectory}/${file}`);
+          return {
+            name: file,
+            url: `/icons/${file}`,
+            size: stats.size,
+          };
+        }
+      );
 
     return {
       entries: normalizedEntries,
@@ -49,5 +51,5 @@ export class LocalIconsRepository extends AbstractIconRepository {
     };
   }
 
-  protected name: string = 'Local';
+  protected name: string = "Local";
 }

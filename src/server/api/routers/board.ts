@@ -1,33 +1,29 @@
 import { TRPCError } from '@trpc/server';
-import Consola from 'consola';
 import fs from 'fs';
 import { z } from 'zod';
+import Consola from 'consola';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
-import { writeConfig } from '~/tools/config/writeConfig';
 import { generateDefaultApp } from '~/tools/shared/app';
-import { configNameSchema } from '~/validations/boards';
 
 import { adminProcedure, createTRPCRouter, protectedProcedure } from '../trpc';
+import { writeConfig } from '~/tools/config/writeConfig';
+import { configNameSchema } from '~/validations/boards';
 
 export const boardRouter = createTRPCRouter({
   all: protectedProcedure
     .meta({ openapi: { method: 'GET', path: '/boards/all', tags: ['board'] } })
     .input(z.void())
-    .output(
-      z.array(
-        z.object({
-          name: z.string(),
-          allowGuests: z.boolean(),
-          countApps: z.number().min(0),
-          countWidgets: z.number().min(0),
-          countCategories: z.number().min(0),
-          isDefaultForUser: z.boolean(),
-        })
-      )
-    )
+    .output(z.array(z.object({
+      name: z.string(),
+      allowGuests: z.boolean(),
+      countApps: z.number().min(0),
+      countWidgets: z.number().min(0),
+      countCategories: z.number().min(0),
+      isDefaultForUser: z.boolean(),
+    })))
     .query(async ({ ctx }) => {
       const files = fs.readdirSync('./data/configs').filter((file) => file.endsWith('.json'));
 
@@ -48,7 +44,7 @@ export const boardRouter = createTRPCRouter({
             countCategories: config.categories.length,
             isDefaultForUser: name === defaultBoard,
           };
-        })
+        }),
       );
     }),
   addAppsForContainers: adminProcedure
@@ -62,9 +58,9 @@ export const boardRouter = createTRPCRouter({
             name: z.string(),
             icon: z.string().optional(),
             port: z.number().optional(),
-          })
+          }),
         ),
-      })
+      }),
     )
     .mutation(async ({ input }) => {
       if (!configExists(input.boardName)) {
@@ -107,12 +103,10 @@ export const boardRouter = createTRPCRouter({
     }),
   renameBoard: protectedProcedure
     .meta({ openapi: { method: 'PUT', path: '/boards/rename', tags: ['board'] } })
-    .input(
-      z.object({
-        oldName: z.string(),
-        newName: z.string().min(1),
-      })
-    )
+    .input(z.object({
+      oldName: z.string(),
+      newName: z.string().min(1),
+    }))
     .output(z.void())
     .mutation(async ({ input }) => {
       if (input.oldName === 'default') {
@@ -149,17 +143,13 @@ export const boardRouter = createTRPCRouter({
     }),
   duplicateBoard: protectedProcedure
     .meta({ openapi: { method: 'POST', path: '/boards/duplicate', tags: ['board'] } })
-    .input(
-      z.object({
-        boardName: z.string(),
-      })
-    )
+    .input(z.object({
+      boardName: z.string(),
+    }))
     .output(z.void())
     .mutation(async ({ input }) => {
       if (!configExists(input.boardName)) {
-        Consola.error(
-          `Tried to duplicate ${input.boardName} but this configuration does not exist.`
-        );
+        Consola.error(`Tried to duplicate ${input.boardName} but this configuration does not exist.`);
         throw new TRPCError({
           code: 'NOT_FOUND',
           message: 'Board not found',
@@ -174,7 +164,7 @@ export const boardRouter = createTRPCRouter({
       config.configProperties.name = targetName;
       writeConfig(config);
 
-      Consola.info(`Wrote config to name '${targetName}'`);
+      Consola.info(`Wrote config to name '${targetName}'`)
     }),
 });
 
@@ -195,7 +185,7 @@ const attemptGenerateDuplicateName = (baseName: string, maxAttempts: number) => 
     code: 'CONFLICT',
     message: 'Board conflicts with an existing board',
   });
-};
+}
 
 const generateDuplicateName = (baseName: string, increment: number) => {
   const result = duplicationName.exec(baseName);
@@ -207,4 +197,4 @@ const generateDuplicateName = (baseName: string, increment: number) => {
   }
 
   return `${baseName} (2)`;
-};
+}

@@ -34,7 +34,6 @@ export const boardNamespaces = [
   'modules/smart-home/entity-state',
   'modules/smart-home/trigger-automation',
   'modules/tdarr-queue',
-  'modules/tdarr-stats',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',

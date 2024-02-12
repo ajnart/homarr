@@ -61,7 +61,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
                   userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
-                  statistics: item.status,
+                  status: item.status,
                   availability: item.is4k ? item.media.status4k : item.media.status,
                   backdropPath: `https://image.tmdb.org/t/p/original/${genericItem.backdropPath}`,
                   posterPath: `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${genericItem.posterPath}`,

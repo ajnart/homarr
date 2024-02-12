@@ -1,6 +1,5 @@
 import Consola from 'consola';
 import { appendPath } from '~/tools/shared/strings';
-
 import { entityStateSchema } from './models/EntityState';
 
 export class HomeAssistant {
@@ -20,7 +19,7 @@ export class HomeAssistant {
     try {
       const response = await fetch(appendPath(this.basePath, `/states/${entityId}`), {
         headers: {
-          Authorization: `Bearer ${this.token}`,
+          'Authorization': `Bearer ${this.token}`,
         },
       });
       const body = await response.json();
@@ -44,12 +43,12 @@ export class HomeAssistant {
     try {
       const response = await fetch(appendPath(this.basePath, `/services/automation/trigger`), {
         headers: {
-          Authorization: `Bearer ${this.token}`,
+          'Authorization': `Bearer ${this.token}`,
         },
         body: JSON.stringify({
-          entity_id: entityId,
+          'entity_id': entityId,
         }),
-        method: 'POST',
+        method: 'POST'
       });
       return response.ok;
     } catch (err) {

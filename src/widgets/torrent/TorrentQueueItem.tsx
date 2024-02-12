@@ -8,7 +8,7 @@ import {
   Progress,
   Stack,
   Text,
-  useMantineTheme,
+  useMantineTheme
 } from '@mantine/core';
 import {
   IconAffiliate,
@@ -22,8 +22,8 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { humanFileSize } from '~/tools/humanFileSize';
-import { TorrentTotalDownload } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 import { AppType } from '~/types/app';
+import { TorrentTotalDownload } from '~/types/api/downloads/queue/NormalizedDownloadQueueResponse';
 
 interface TorrentQueueItemProps {
   torrent: TorrentTotalDownload['torrents'][0];

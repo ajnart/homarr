@@ -1,6 +1,8 @@
+import { type MRT_ColumnDef, MRT_Table, useMantineReactTable } from 'mantine-react-table';
 import {
   Badge,
   Center,
+  createStyles,
   Flex,
   Group,
   Loader,
@@ -10,14 +12,12 @@ import {
   Stack,
   Text,
   Title,
-  createStyles,
 } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconFileDownload } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { type MRT_ColumnDef, MRT_Table, useMantineReactTable } from 'mantine-react-table';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
@@ -109,6 +109,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
 
   const filteredTorrents = filterTorrents(widget, torrents);
 
+
   const difference = new Date().getTime() - dataUpdatedAt;
   const duration = dayjs.duration(difference, 'ms');
   const humanizedDuration = duration.humanize();
@@ -116,97 +117,90 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const ratioGlobal = getTorrentsRatio(widget, torrents, false);
   const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
-  const columns = useMemo<MRT_ColumnDef<TorrentTotalDownload['torrents'][0]>[]>(
-    () => [
-      {
-        id: 'dateAdded',
-        accessorFn: (row) => new Date(row.dateAdded),
-        header: 'dateAdded',
-        maxSize: 1,
-      },
-      {
-        accessorKey: 'name',
-        header: t('card.table.header.name'),
-        Cell: ({ cell, row }) => (
-          <Popover
-            withArrow
-            withinPortal
-            radius="lg"
-            shadow="sm"
-            transitionProps={{
-              transition: 'pop',
-            }}
-          >
-            <Popover.Target>
-              <Text maw={'30vw'} size="xs" lineClamp={1}>
-                {String(cell.getValue())}
-              </Text>
-            </Popover.Target>
-            <Popover.Dropdown>
-              <TorrentQueuePopover torrent={row.original} app={undefined} />
-            </Popover.Dropdown>
-          </Popover>
-        ),
-        maxSize: 1,
-        size: 1,
-      },
-      {
-        accessorKey: 'totalSelected',
-        header: t('card.table.header.size'),
-        Cell: ({ cell }) => formatSize(Number(cell.getValue())),
-        sortDescFirst: true,
-        maxSize: 1,
-      },
-      {
-        accessorKey: 'uploadSpeed',
-        header: t('card.table.header.upload'),
-        Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
-        sortDescFirst: true,
-        maxSize: 1,
-      },
-      {
-        accessorKey: 'downloadSpeed',
-        header: t('card.table.header.download'),
-        Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
-        sortDescFirst: true,
-        maxSize: 1,
-      },
-      {
-        accessorKey: 'eta',
-        header: t('card.table.header.estimatedTimeOfArrival'),
-        Cell: ({ cell }) => formatETA(Number(cell.getValue())),
-        sortDescFirst: true,
-        maxSize: 1,
-      },
-      {
-        accessorKey: 'progress',
-        header: t('card.table.header.progress'),
-        maxSize: 1,
-        Cell: ({ cell, row }) => (
-          <Flex>
-            <Text className={useStyles().classes.noTextBreak}>
-              {(Number(cell.getValue()) * 100).toFixed(1)}%
+  const columns = useMemo<MRT_ColumnDef<TorrentTotalDownload['torrents'][0]>[]>(() => [
+    {
+      id: 'dateAdded',
+      accessorFn: (row) => new Date(row.dateAdded),
+      header: 'dateAdded',
+      maxSize: 1,
+    },
+    {
+      accessorKey: 'name',
+      header: t('card.table.header.name'),
+      Cell: ({ cell, row }) => (
+        <Popover
+          withArrow
+          withinPortal
+          radius="lg"
+          shadow="sm"
+          transitionProps={{
+            transition: 'pop',
+          }}
+        >
+          <Popover.Target>
+            <Text
+              maw={'30vw'}
+              size="xs"
+              lineClamp={1}
+            >
+              {String(cell.getValue())}
             </Text>
-            <Progress
-              radius="lg"
-              color={
-                Number(cell.getValue()) === 1
-                  ? 'green'
-                  : row.original.state === 'paused'
-                    ? 'yellow'
-                    : 'blue'
-              }
-              value={Number(cell.getValue()) * 100}
-              size="lg"
-            />
-            ,
-          </Flex>
-        ),
-        sortDescFirst: true,
-      },
-    ],
-    []
-  );
+          </Popover.Target>
+          <Popover.Dropdown>
+            <TorrentQueuePopover torrent={row.original} app={undefined} />
+          </Popover.Dropdown>
+        </Popover>
+      ),
+      maxSize: 1,
+      size: 1,
+    },
+    {
+      accessorKey: 'totalSelected',
+      header: t('card.table.header.size'),
+      Cell: ({ cell }) => formatSize(Number(cell.getValue())),
+      sortDescFirst: true,
+      maxSize: 1,
+    },
+    {
+      accessorKey: 'uploadSpeed',
+      header: t('card.table.header.upload'),
+      Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
+      sortDescFirst: true,
+      maxSize: 1,
+    },
+    {
+      accessorKey: 'downloadSpeed',
+      header: t('card.table.header.download'),
+      Cell: ({ cell }) => formatSpeed(Number(cell.getValue())),
+      sortDescFirst: true,
+      maxSize: 1,
+    },
+    {
+      accessorKey: 'eta',
+      header: t('card.table.header.estimatedTimeOfArrival'),
+      Cell: ({ cell }) => formatETA(Number(cell.getValue())),
+      sortDescFirst: true,
+      maxSize: 1,
+    },
+    {
+      accessorKey: 'progress',
+      header: t('card.table.header.progress'),
+      maxSize: 1,
+      Cell: ({ cell, row }) => (
+        <Flex>
+          <Text className={useStyles().classes.noTextBreak}>{(Number(cell.getValue()) * 100).toFixed(1)}%</Text>
+          <Progress
+            radius="lg"
+            color={
+              Number(cell.getValue()) === 1 ? 'green' : row.original.state === 'paused' ? 'yellow' : 'blue'
+            }
+            value={Number(cell.getValue()) * 100}
+            size="lg"
+          />,
+        </Flex>),
+      sortDescFirst: true,
+    },
+  ], []);
 
   const torrentsTable = useMantineReactTable({
     columns,
@@ -243,6 +237,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       },
     },
   });
+
 
   if (isError) {
     return (
@@ -325,7 +320,7 @@ export const filterTorrents = (widget: ITorrent, torrents: TorrentTotalDownload[
       (torrent) =>
         !torrent.isCompleted ||
         (widget.properties.displayActiveTorrents &&
-          torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024)
+          torrent.uploadSpeed > widget.properties.speedLimitOfActiveTorrents * 1024),
     );
   }
 
@@ -333,7 +328,7 @@ export const filterTorrents = (widget: ITorrent, torrents: TorrentTotalDownload[
     result = filterTorrentsByLabels(
       result,
       widget.properties.labelFilter,
-      widget.properties.labelFilterIsWhitelist
+      widget.properties.labelFilterIsWhitelist,
     );
   }
 
@@ -353,7 +348,7 @@ const filterStaleTorrent = (widget: ITorrent, torrents: TorrentTotalDownload['to
 const filterTorrentsByLabels = (
   torrents: TorrentTotalDownload['torrents'],
   labels: string[],
-  isWhitelist: boolean
+  isWhitelist: boolean,
 ) => {
   if (isWhitelist) {
     return torrents.filter((torrent) => torrent.label && labels.includes(torrent.label));
@@ -365,7 +360,7 @@ const filterTorrentsByLabels = (
 export const getTorrentsRatio = (
   widget: ITorrent,
   torrents: TorrentTotalDownload['torrents'],
-  applyAllFilter: boolean
+  applyAllFilter: boolean,
 ) => {
   if (applyAllFilter) {
     torrents = filterTorrents(widget, torrents);
@@ -373,14 +368,18 @@ export const getTorrentsRatio = (
     torrents = filterTorrentsByLabels(
       torrents,
       widget.properties.labelFilter,
-      widget.properties.labelFilterIsWhitelist
+      widget.properties.labelFilterIsWhitelist,
     );
   }
 
-  let totalDownloadedSum = torrents.reduce((sum, torrent) => sum + torrent.totalDownloaded, 0);
+  let totalDownloadedSum = torrents.reduce(
+    (sum, torrent) => sum + torrent.totalDownloaded,
+    0,
+  );
 
   return totalDownloadedSum > 0
-    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) / totalDownloadedSum
+    ? torrents.reduce((sum, torrent) => sum + torrent.totalUploaded, 0) /
+    totalDownloadedSum
     : -1;
 };
 

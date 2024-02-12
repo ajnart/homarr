@@ -1,14 +1,4 @@
-import {
-  Button,
-  Container,
-  Group,
-  LoadingOverlay,
-  Paper,
-  Select,
-  Stack,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Button, Container, Group, LoadingOverlay, Paper, Select, Stack, Text, Title } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
@@ -24,7 +14,7 @@ import { createTrpcServersideHelpers } from '~/server/api/helper';
 import { getServerAuthSession } from '~/server/auth';
 import { languages } from '~/tools/language';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
-import { RouterOutputs, api } from '~/utils/api';
+import { api, RouterOutputs } from '~/utils/api';
 import { useI18nZodResolver } from '~/utils/i18n-zod-resolver';
 import { updateSettingsValidationSchema } from '~/validations/user';
 
@@ -198,14 +188,7 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
     <div ref={ref} {...others}>
       <Group noWrap>
         {country !== 'CROWDIN' && <span className={`fi fi-${country?.toLowerCase()}`}></span>}
-        {country === 'CROWDIN' && (
-          <img
-            src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'}
-            alt={label}
-            width={16}
-            height={16}
-          />
-        )}
+        {country === 'CROWDIN' && <img src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'} alt={label} width={16} height={16} />}
         <div>
           <Text size="sm">{label}</Text>
           <Text size="xs" opacity={0.65}>

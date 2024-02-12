@@ -110,7 +110,7 @@ export const EditAppModal = ({
 
     // also close the parent modal
     context.closeAll();
-    umami.track('Add app', { name: values.name });
+    umami.track('Add app', { name:  values.name });
   };
 
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');

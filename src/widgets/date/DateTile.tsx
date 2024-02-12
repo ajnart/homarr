@@ -25,7 +25,7 @@ const definition = defineWidget({
       data: () => Intl.supportedValuesOf('timeZone').map((value) => ({ value, label: value })),
       defaultValue: Intl.DateTimeFormat().resolvedOptions().timeZone,
       info: true,
-      infoLink: 'https://www.timeanddate.com/time/map/',
+      infoLink: "https://www.timeanddate.com/time/map/",
     },
     customTitle: {
       type: 'text',
