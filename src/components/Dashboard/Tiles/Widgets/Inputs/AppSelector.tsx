@@ -16,6 +16,7 @@ export function AppSelector(props: AppSelectorProps) {
   const { config } = useConfigContext();
 
   const apps = config?.apps.filter((app) => app.integration.type && integrations.includes(app.integration.type)) ?? [];
+  const selectedApp = apps.find(app => app.id === value);
 
   return (
     <Select
@@ -25,6 +26,7 @@ export function AppSelector(props: AppSelectorProps) {
         label: app.name,
       }))}
       onChange={onChange}
+      icon={selectedApp ? <AppAvatar iconUrl={selectedApp?.appearance.iconUrl} /> : undefined}
       itemComponent={forwardRef(({ value, label, ...rest }, ref) => {
         const app = apps.find(app => app.id === value);
 

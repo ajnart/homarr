@@ -1,39 +1,30 @@
 import {
-  ActionIcon,
   Alert,
   Center,
   Code,
-  Collapse,
   Divider,
   Group,
   List,
-  Progress,
-  ScrollArea,
+  Pagination,
+  SegmentedControl,
   Stack,
-  Table,
   Text,
   Title,
   Tooltip,
 } from '@mantine/core';
-import {
-  IconAdjustments,
-  IconAlertCircle,
-  IconChevronDown,
-  IconChevronUp,
-  IconHeartbeat,
-  IconTransform,
-} from '@tabler/icons-react';
+import { IconAlertCircle, IconClipboardList, IconCpu2, IconReportAnalytics } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { WidgetLoading } from '~/widgets/loading';
 import { api } from '~/utils/api';
 import { AppAvatar } from '~/components/AppAvatar';
-import { useDisclosure } from '@mantine/hooks';
-import { StatisticsBadge } from '~/widgets/tdarr/StatisticsBadge';
-import { Filename } from '~/widgets/tdarr/Filename';
+import { HealthCheckStatus } from '~/widgets/tdarr/HealthCheckStatus';
+import { useState } from 'react';
+import { z } from 'zod';
+import { WorkersPanel } from '~/widgets/tdarr/WorkersPanel';
+import { QueuePanel } from '~/widgets/tdarr/QueuePanel';
 
 const definition = defineWidget({
   id: 'tdarr-queue',
@@ -43,6 +34,40 @@ const definition = defineWidget({
       type: 'app-select',
       defaultValue: '',
       integrations: ['tdarr'],
+    },
+    defaultView: {
+      type: 'select',
+      data: [
+        {
+          value: 'workers',
+          label: 'Workers',
+        },
+        {
+          value: 'queue',
+          label: 'Queue',
+        },
+        {
+          value: 'statistics',
+          label: 'Statistics',
+        },
+      ],
+      defaultValue: 'workers',
+    },
+    showHealthCheck: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    showHealthChecksInQueue: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    queuePageSize: {
+      type: 'number',
+      defaultValue: 10,
+    },
+    showAppIcon: {
+      type: 'switch',
+      defaultValue: true,
     },
   },
   gridstack: {
@@ -65,47 +90,58 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
   const { config, name: configName } = useConfigContext();
 
   const app = config?.apps.find(app => app.id === widget.properties.appId);
+  const { defaultView, showHealthCheck, showHealthChecksInQueue, queuePageSize, showAppIcon } = widget.properties;
 
-  const statistics = api.tdarr.statistics.useQuery({
-    appId: app?.id!,
-    configName: configName!,
-  }, { enabled: !!app?.id && !!configName });
+  const [view, setView] = useState<'workers' | 'queue' | 'statistics'>(viewSchema.parse(defaultView));
 
-  const files = api.tdarr.getFiles.useQuery({
-    appId: app?.id!,
-    configName: configName!,
-  }, { enabled: !!app?.id && !!configName });
+  const [page, setPage] = useState(1);
 
   const workers = api.tdarr.workers.useQuery({
     appId: app?.id!,
     configName: configName!,
-  }, { enabled: !!app?.id && !!configName, refetchInterval: 5000 });
+  }, { enabled: !!app?.id && !!configName, refetchInterval: 2000 });
 
-  if (statistics.isError || files.isError || workers.isError) {
+  const statistics = api.tdarr.statistics.useQuery({
+    appId: app?.id!,
+    configName: configName!,
+  }, { enabled: !!app?.id && !!configName, refetchInterval: 10000 });
+
+  const queue = api.tdarr.queue.useQuery({
+    appId: app?.id!,
+    configName: configName!,
+    pageSize: queuePageSize,
+    page: page - 1,
+    showHealthChecksInQueue
+  }, {
+    enabled: !!app?.id && !!configName,
+    refetchInterval: 2000,
+  });
+
+  if (statistics.isError || workers.isError || queue.isError) {
     return (
       <Group position="center">
         <Alert
           icon={<IconAlertCircle size={16} />}
           my="lg"
-          title={t('table.error.title')}
+          title={t('error.title')}
           color="red"
           radius="md"
         >
-          {t('table.error.message')}
+          {t('error.message')}
           <List>
             {statistics.isError && (
               <Code mt="sm" block>
                 {statistics.error.message}
               </Code>
             )}
-            {files.isError && (
-              <Code mt="sm" block>
-                {files.error.message}
-              </Code>
-            )}
             {workers.isError && (
               <Code mt="sm" block>
                 {workers.error.message}
+              </Code>
+            )}
+            {queue.isError && (
+              <Code mt="sm" block>
+                {queue.error.message}
               </Code>
             )}
           </List>
@@ -116,25 +152,17 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
 
   if (!app) {
     return (
-      <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Title order={3}>{t('noAppSelected')}</Title>
-      </Center>
+      <Stack justify="center" style={{
+        height: '100%',
+      }}>
+        <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Title order={3}>{t('noAppSelected')}</Title>
+        </Center>
+      </Stack>
     );
   }
 
-  const [queueOpen, { toggle }] = useDisclosure(false);
-  const queuedFiles = (files.data ?? []).filter(file => file.status === 'Queued' && !workers.data?.some(worker => worker.file === file.file));
-  const queueDividerLabel = queueOpen ? (
-    <Group spacing={8}>
-      <IconChevronUp size={10} />
-      <Text size="xs">{t('table.divider.open', { count: queuedFiles.length })}</Text>
-    </Group>
-  ) : (
-    <Group spacing={8}>
-      <IconChevronDown size={10} />
-      <Text size="xs">{t('table.divider.closed', { count: queuedFiles.length })}</Text>
-    </Group>
-  );
+  const totalQueuePages = Math.ceil((queue.data?.totalCount || 1) / queuePageSize);
 
   return (
     <Stack
@@ -143,116 +171,90 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
         height: '100%',
       }}
     >
-      <Group position="apart">
-        <Tooltip label={app.name}>
-          <div>
-            <AppAvatar iconUrl={app.appearance.iconUrl} />
-          </div>
-        </Tooltip>
-        {statistics.data && (
-          <Group position="right" ml="auto" spacing={8}>
-            <ActionIcon color="dark" variant="subtle">
-              <IconAdjustments size="1.125rem" />
-            </ActionIcon>
-            <StatisticsBadge
-              type="transcodes"
-              staged={statistics.data.stagedTranscodeCount}
-              total={statistics.data.totalTranscodeCount}
-              failed={statistics.data.failedTranscodeCount} />
-            <StatisticsBadge
-              type="healthchecks"
-              staged={statistics.data.stagedHealthCheckCount}
-              total={statistics.data.totalHealthCheckCount}
-              failed={statistics.data.totalHealthCheckCount} />
-          </Group>
-        )}
-      </Group>
-      <Divider />
-      {statistics.isLoading || files.isLoading || workers.isLoading ? (
-        <Stack justify="center" style={{
-          flex: 1,
-        }}>
-          <WidgetLoading />
-        </Stack>
-      ) : !files.data.length || !workers.data.length ? (
-        <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Title order={3}>{t('table.empty')}</Title>
-        </Center>
+      {view === 'workers' ? (
+        <WorkersPanel workers={workers.data} isLoading={workers.isLoading} />
+      ) : view === "queue" ? (
+        <QueuePanel queue={queue.data} isLoading={queue.isLoading}/>
       ) : (
-        <ScrollArea>
-          <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
-            <thead>
-            <tr>
-              <th style={{ width: 20 }}></th>
-              <th>{t('table.header.name')}</th>
-              <th style={{ width: 60 }}>{t('table.header.eta')}</th>
-              <th style={{ width: 175 }}>{t('table.header.progress')}</th>
-            </tr>
-            </thead>
-            <tbody>
-            {workers.data.map((worker) => (
-              <tr key={worker.id}>
-                <td>
-                  {worker.jobType === 'transcode' ? (
-                    <Tooltip label={'Transcode'}>
-                      <IconTransform size={14} />
-                    </Tooltip>
-                  ) : (
-                    <Tooltip label={'Healthcheck'}>
-                      <IconHeartbeat size={14} />
-                    </Tooltip>
-                  )}
-                </td>
-                <td>
-                  <Filename filename={worker.file} />
-                </td>
-                <td>
-                  <Text size="xs">{worker.ETA.startsWith('0:') ? worker.ETA.substring(2) : worker.ETA}</Text>
-                </td>
-                <td>
-                  <Group noWrap>
-                    <Text size="xs">{worker.step}</Text>
-                    <Progress value={worker.percentage} label={`${Math.round(worker.percentage)}%`} size="xl"
-                              radius="xl" style={{
-                      flex: 1,
-                    }} />
-                  </Group>
-                </td>
-              </tr>
-            ))}
-            </tbody>
-          </Table>
-          {!!queuedFiles.length && (
-            <>
-              <Divider my={0} label={queueDividerLabel} labelPosition="center" onClick={toggle} style={{
-                cursor: 'pointer',
-              }} />
-              <Collapse in={queueOpen}>
-                <Table highlightOnHover style={{ tableLayout: 'fixed' }}>
-                  <thead>
-                  <tr style={{
-                    display: 'none',
-                  }}>
-                    <th>{t('table.header.name')}</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  {queuedFiles.map(file => (
-                    <tr>
-                      <td>
-                        <Filename filename={file.file} />
-                      </td>
-                    </tr>
-                  ))}
-                  </tbody>
-                </Table>
-              </Collapse>
-            </>
-          )}
-        </ScrollArea>
+        <>TODO</>
       )}
+      <Divider />
+      <Group spacing="xs">
+        <SegmentedControl
+          data={[
+            {
+              label: (
+                <Center>
+                  <IconCpu2 size={18} />
+                  <Text size="xs" ml={8}>{t('tabs.workers', { count1: workers.data?.length ?? '?' })}</Text>
+                </Center>
+              ),
+              value: 'workers',
+            },
+            {
+              label: (
+                <Center>
+                  <IconClipboardList size={18} />
+                  <Text size="xs" ml={8}>{t('tabs.queue', { count1: workers.data?.length ?? '?' })}</Text>
+                </Center>
+              ),
+              value: 'queue',
+            },
+            {
+              label: (
+                <Center>
+                  <IconReportAnalytics size={18} />
+                  <Text size="xs" ml={8}>{t('tabs.statistics', { count1: workers.data?.length ?? '?' })}</Text>
+                </Center>
+              ),
+              value: 'statistics',
+            },
+          ]}
+          value={view}
+          onChange={value => setView(viewSchema.parse(value))}
+          size="xs"
+        />
+        {view === 'queue' && !!queue.data && (
+          <>
+            <Pagination.Root
+              total={totalQueuePages}
+              value={page}
+              onChange={setPage}
+              size="sm"
+            >
+              <Group spacing={5} position="center">
+                <Pagination.First disabled={page === 1} />
+                <Pagination.Previous disabled={page === 1} />
+                <Pagination.Next disabled={page === totalQueuePages}  />
+                <Pagination.Last disabled={page === totalQueuePages} />
+              </Group>
+            </Pagination.Root>
+            <Text size="xs">{t("views.queue.table.footer.currentIndex", {
+              start: queue.data.startIndex + 1,
+              end: queue.data.endIndex + 1,
+              total: queue.data.totalCount
+            })}</Text>
+          </>
+        )}
+        <Group spacing="xs" style={{
+          marginLeft: 'auto',
+        }}>
+          {showHealthCheck && statistics.data && (
+            <HealthCheckStatus statistics={statistics.data} />
+          )}
+          {showAppIcon && (
+            <Tooltip label={app.name}>
+              <div>
+                <AppAvatar iconUrl={app.appearance.iconUrl} />
+              </div>
+            </Tooltip>
+          )}
+        </Group>
+      </Group>
     </Stack>
   );
 }
+
+const viewSchema = z.enum(['workers', 'queue', 'statistics']);
 
 export default definition;
