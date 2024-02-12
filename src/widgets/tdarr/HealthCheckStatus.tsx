@@ -10,8 +10,8 @@ import {
   Text,
 } from '@mantine/core';
 import { IconHeartbeat } from '@tabler/icons-react';
-import { useColorScheme } from '~/hooks/use-colorscheme';
 import { useTranslation } from 'next-i18next';
+import { useColorScheme } from '~/hooks/use-colorscheme';
 import { TdarrStatistics } from '~/server/api/routers/tdarr';
 
 interface StatisticsBadgeProps {
@@ -32,20 +32,28 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
     );
   }
 
-  const indicatorColor = statistics.failedHealthCheckCount ? 'red' : statistics.stagedHealthCheckCount ? 'yellow' : 'green';
+  const indicatorColor = statistics.failedHealthCheckCount
+    ? 'red'
+    : statistics.stagedHealthCheckCount
+      ? 'yellow'
+      : 'green';
 
   return (
     <HoverCard position="bottom" width={250} shadow="sm" openDelay={0} closeDelay={0}>
       <HoverCard.Target>
-        <ActionIcon variant="subtle" style={{
-          cursor: 'initial'
-        }}>
-            <Indicator
-              color={textColor(indicatorColor, colorScheme)}
-              size={8}
-              processing={!!statistics.stagedHealthCheckCount}>
-              <IconHeartbeat size={20} />
-            </Indicator>
+        <ActionIcon
+          variant="subtle"
+          style={{
+            cursor: 'initial',
+          }}
+        >
+          <Indicator
+            color={textColor(indicatorColor, colorScheme)}
+            size={8}
+            processing={!!statistics.stagedHealthCheckCount}
+          >
+            <IconHeartbeat size={20} />
+          </Indicator>
         </ActionIcon>
       </HoverCard.Target>
       <HoverCard.Dropdown>
@@ -54,9 +62,11 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
             <IconHeartbeat size={18} />
             <Text size="sm">{t(`healthCheckStatus.title`)}</Text>
           </Group>
-          <Divider style={{
-            alignSelf: 'stretch',
-          }} />
+          <Divider
+            style={{
+              alignSelf: 'stretch',
+            }}
+          />
           <RingProgress
             sections={[
               { value: statistics.stagedHealthCheckCount, color: textColor('yellow', colorScheme) },
@@ -66,15 +76,21 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
           />
           <Group display="flex" w="100%">
             <Stack style={{ flex: 1 }} spacing={0} align="center">
-              <Text size="xs" color={textColor('yellow', colorScheme)}>{statistics.stagedHealthCheckCount}</Text>
+              <Text size="xs" color={textColor('yellow', colorScheme)}>
+                {statistics.stagedHealthCheckCount}
+              </Text>
               <Text size="xs">{t(`healthCheckStatus.queued`)}</Text>
             </Stack>
             <Stack style={{ flex: 1 }} spacing={0} align="center">
-              <Text size="xs" color={textColor('green', colorScheme)}>{statistics.totalHealthCheckCount}</Text>
+              <Text size="xs" color={textColor('green', colorScheme)}>
+                {statistics.totalHealthCheckCount}
+              </Text>
               <Text size="xs">{t(`healthCheckStatus.healthy`)}</Text>
             </Stack>
             <Stack style={{ flex: 1 }} spacing={0} align="center">
-              <Text size="xs" color={textColor('red', colorScheme)}>{statistics.failedHealthCheckCount}</Text>
+              <Text size="xs" color={textColor('red', colorScheme)}>
+                {statistics.failedHealthCheckCount}
+              </Text>
               <Text size="xs">{t(`healthCheckStatus.unhealthy`)}</Text>
             </Stack>
           </Group>

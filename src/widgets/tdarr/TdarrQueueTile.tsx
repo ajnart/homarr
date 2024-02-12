@@ -12,20 +12,25 @@ import {
   Title,
   Tooltip,
 } from '@mantine/core';
-import { IconAlertCircle, IconClipboardList, IconCpu2, IconReportAnalytics } from '@tabler/icons-react';
+import {
+  IconAlertCircle,
+  IconClipboardList,
+  IconCpu2,
+  IconReportAnalytics,
+} from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
+import { z } from 'zod';
+import { AppAvatar } from '~/components/AppAvatar';
 import { useConfigContext } from '~/config/provider';
+import { api } from '~/utils/api';
+import { HealthCheckStatus } from '~/widgets/tdarr/HealthCheckStatus';
+import { QueuePanel } from '~/widgets/tdarr/QueuePanel';
+import { StatisticsPanel } from '~/widgets/tdarr/StatisticsPanel';
+import { WorkersPanel } from '~/widgets/tdarr/WorkersPanel';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
-import { api } from '~/utils/api';
-import { AppAvatar } from '~/components/AppAvatar';
-import { HealthCheckStatus } from '~/widgets/tdarr/HealthCheckStatus';
-import { useState } from 'react';
-import { z } from 'zod';
-import { WorkersPanel } from '~/widgets/tdarr/WorkersPanel';
-import { QueuePanel } from '~/widgets/tdarr/QueuePanel';
-import { StatisticsPanel } from '~/widgets/tdarr/StatisticsPanel';
 
 const definition = defineWidget({
   id: 'tdarr-queue',
@@ -90,33 +95,45 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
   const { t } = useTranslation('modules/tdarr-queue');
   const { config, name: configName } = useConfigContext();
 
-  const app = config?.apps.find(app => app.id === widget.properties.appId);
-  const { defaultView, showHealthCheck, showHealthChecksInQueue, queuePageSize, showAppIcon } = widget.properties;
+  const app = config?.apps.find((app) => app.id === widget.properties.appId);
+  const { defaultView, showHealthCheck, showHealthChecksInQueue, queuePageSize, showAppIcon } =
+    widget.properties;
 
-  const [view, setView] = useState<'workers' | 'queue' | 'statistics'>(viewSchema.parse(defaultView));
+  const [view, setView] = useState<'workers' | 'queue' | 'statistics'>(
+    viewSchema.parse(defaultView)
+  );
 
   const [page, setPage] = useState(1);
 
-  const workers = api.tdarr.workers.useQuery({
-    appId: app?.id!,
-    configName: configName!,
-  }, { enabled: !!app?.id && !!configName, refetchInterval: 2000 });
+  const workers = api.tdarr.workers.useQuery(
+    {
+      appId: app?.id!,
+      configName: configName!,
+    },
+    { enabled: !!app?.id && !!configName, refetchInterval: 2000 }
+  );
 
-  const statistics = api.tdarr.statistics.useQuery({
-    appId: app?.id!,
-    configName: configName!,
-  }, { enabled: !!app?.id && !!configName, refetchInterval: 10000 });
+  const statistics = api.tdarr.statistics.useQuery(
+    {
+      appId: app?.id!,
+      configName: configName!,
+    },
+    { enabled: !!app?.id && !!configName, refetchInterval: 10000 }
+  );
 
-  const queue = api.tdarr.queue.useQuery({
-    appId: app?.id!,
-    configName: configName!,
-    pageSize: queuePageSize,
-    page: page - 1,
-    showHealthChecksInQueue,
-  }, {
-    enabled: !!app?.id && !!configName,
-    refetchInterval: 2000,
-  });
+  const queue = api.tdarr.queue.useQuery(
+    {
+      appId: app?.id!,
+      configName: configName!,
+      pageSize: queuePageSize,
+      page: page - 1,
+      showHealthChecksInQueue,
+    },
+    {
+      enabled: !!app?.id && !!configName,
+      refetchInterval: 2000,
+    }
+  );
 
   if (statistics.isError || workers.isError || queue.isError) {
     return (
@@ -153,9 +170,12 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
 
   if (!app) {
     return (
-      <Stack justify="center" style={{
-        height: '100%',
-      }}>
+      <Stack
+        justify="center"
+        style={{
+          height: '100%',
+        }}
+      >
         <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Title order={3}>{t('noAppSelected')}</Title>
         </Center>
@@ -187,7 +207,9 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
               label: (
                 <Center>
                   <IconCpu2 size={18} />
-                  <Text size="xs" ml={8}>{t('tabs.workers', { count1: workers.data?.length ?? '?' })}</Text>
+                  <Text size="xs" ml={8}>
+                    {t('tabs.workers', { count1: workers.data?.length ?? '?' })}
+                  </Text>
                 </Center>
               ),
               value: 'workers',
@@ -196,7 +218,9 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
               label: (
                 <Center>
                   <IconClipboardList size={18} />
-                  <Text size="xs" ml={8}>{t('tabs.queue', { count1: workers.data?.length ?? '?' })}</Text>
+                  <Text size="xs" ml={8}>
+                    {t('tabs.queue', { count1: workers.data?.length ?? '?' })}
+                  </Text>
                 </Center>
               ),
               value: 'queue',
@@ -205,24 +229,21 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
               label: (
                 <Center>
                   <IconReportAnalytics size={18} />
-                  <Text size="xs" ml={8}>{t('tabs.statistics', { count1: workers.data?.length ?? '?' })}</Text>
+                  <Text size="xs" ml={8}>
+                    {t('tabs.statistics', { count1: workers.data?.length ?? '?' })}
+                  </Text>
                 </Center>
               ),
               value: 'statistics',
             },
           ]}
           value={view}
-          onChange={value => setView(viewSchema.parse(value))}
+          onChange={(value) => setView(viewSchema.parse(value))}
           size="xs"
         />
         {view === 'queue' && !!queue.data && (
           <>
-            <Pagination.Root
-              total={totalQueuePages}
-              value={page}
-              onChange={setPage}
-              size="sm"
-            >
+            <Pagination.Root total={totalQueuePages} value={page} onChange={setPage} size="sm">
               <Group spacing={5} position="center">
                 <Pagination.First disabled={page === 1} />
                 <Pagination.Previous disabled={page === 1} />
@@ -230,19 +251,22 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
                 <Pagination.Last disabled={page === totalQueuePages} />
               </Group>
             </Pagination.Root>
-            <Text size="xs">{t('views.queue.table.footer.currentIndex', {
-              start: queue.data.startIndex + 1,
-              end: queue.data.endIndex + 1,
-              total: queue.data.totalCount,
-            })}</Text>
+            <Text size="xs">
+              {t('views.queue.table.footer.currentIndex', {
+                start: queue.data.startIndex + 1,
+                end: queue.data.endIndex + 1,
+                total: queue.data.totalCount,
+              })}
+            </Text>
           </>
         )}
-        <Group spacing="xs" style={{
-          marginLeft: 'auto',
-        }}>
-          {showHealthCheck && statistics.data && (
-            <HealthCheckStatus statistics={statistics.data} />
-          )}
+        <Group
+          spacing="xs"
+          style={{
+            marginLeft: 'auto',
+          }}
+        >
+          {showHealthCheck && statistics.data && <HealthCheckStatus statistics={statistics.data} />}
           {showAppIcon && (
             <Tooltip label={app.name}>
               <div>

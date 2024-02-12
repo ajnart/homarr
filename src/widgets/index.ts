@@ -41,5 +41,5 @@ export default {
   notebook,
   'smart-home/entity-state': smartHomeEntityState,
   'smart-home/trigger-automation': smartHomeTriggerAutomation,
-  'tdarr-queue': tdarrQueue
+  'tdarr-queue': tdarrQueue,
 };

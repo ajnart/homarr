@@ -18,6 +18,7 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
+import { AppSelector } from '~/components/Dashboard/Tiles/Widgets/Inputs/AppSelector';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { mapObject } from '~/tools/client/objects';
@@ -29,7 +30,6 @@ import { InfoCard } from '../../../InfoCard/InfoCard';
 import { DraggableList } from './Inputs/DraggableList';
 import { LocationSelection } from './Inputs/LocationSelection';
 import { StaticDraggableList } from './Inputs/StaticDraggableList';
-import { AppSelector } from '~/components/Dashboard/Tiles/Widgets/Inputs/AppSelector';
 
 export type WidgetEditModalInnerProps = {
   widgetId: string;
@@ -41,10 +41,10 @@ export type WidgetEditModalInnerProps = {
 export type IntegrationOptionsValueType = IWidget<string, any>['properties'][string];
 
 export const WidgetsEditModal = ({
-                                   context,
-                                   id,
-                                   innerProps,
-                                 }: ContextModalProps<WidgetEditModalInnerProps>) => {
+  context,
+  id,
+  innerProps,
+}: ContextModalProps<WidgetEditModalInnerProps>) => {
   const { t } = useTranslation([`modules/${innerProps.widgetType}`, 'common']);
   const [moduleProperties, setModuleProperties] = useState(innerProps.options);
   const items = Object.entries(innerProps.widgetOptions ?? {}) as [
@@ -79,7 +79,7 @@ export const WidgetsEditModal = ({
           widgets: [...prev.widgets.filter((x) => x.id !== innerProps.widgetId), currentWidget!],
         };
       },
-      true,
+      true
     );
     context.closeModal(id);
   };
@@ -194,9 +194,9 @@ const WidgetOptionTypeSwitch: FC<{
       const data = items.map((dataType) => {
         return !dataType.label
           ? {
-            value: dataType.value,
-            label: t(`descriptor.settings.${key}.data.${dataType.value}`),
-          }
+              value: dataType.value,
+              label: t(`descriptor.settings.${key}.data.${dataType.value}`),
+            }
           : dataType;
       });
       return (
@@ -279,14 +279,14 @@ const WidgetOptionTypeSwitch: FC<{
           typedVal.map((oldVal) =>
             oldVal.key === liName
               ? {
-                ...oldVal,
-                subValues: {
-                  ...oldVal.subValues,
-                  [settingName]: newVal,
-                },
-              }
-              : oldVal,
-          ),
+                  ...oldVal,
+                  subValues: {
+                    ...oldVal.subValues,
+                    [settingName]: newVal,
+                  },
+                }
+              : oldVal
+          )
         );
 
       return (
@@ -299,7 +299,7 @@ const WidgetOptionTypeSwitch: FC<{
             value={typedVal}
             onChange={(v) => handleChange(key, v)}
             labels={mapObject(option.items, (liName) =>
-              t(`descriptor.settings.${key}.${liName}.label`),
+              t(`descriptor.settings.${key}.${liName}.label`)
             )}
           >
             {mapObject(option.items, (liName, liSettings) =>
@@ -312,7 +312,7 @@ const WidgetOptionTypeSwitch: FC<{
                   value={extractSubValue(liName, settingName)}
                   handleChange={handleSubChange(liName, settingName)}
                 />
-              )),
+              ))
             )}
           </StaticDraggableList>
         </Stack>
@@ -337,7 +337,7 @@ const WidgetOptionTypeSwitch: FC<{
             onChange={(values) =>
               handleChange(
                 key,
-                values.map((item: string) => item),
+                values.map((item: string) => item)
               )
             }
           />

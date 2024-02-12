@@ -8,9 +8,9 @@ import {
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import React from 'react';
+import { IntegrationType } from '~/types/app';
 import { AreaType } from '~/types/area';
 import { ShapeType } from '~/types/shape';
-import { IntegrationType } from '~/types/app';
 
 // Type of widgets which are saved to config
 export type IWidget<TKey extends string, TDefinition extends IWidgetDefinition> = {
