@@ -47,6 +47,22 @@
         },
         "empty": "Empty"
       }
+    },
+    "statistics": {
+      "empty": "Empty",
+      "box": {
+        "transcodes": "Transcodes:",
+        "healthChecks": "Health Checks:",
+        "files": "Files:",
+        "spaceSaved": "Saved:"
+      },
+      "pies": {
+        "transcodes": "Transcodes",
+        "healthChecks": "Health Checks",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Containers",
+        "videoResolutions": "Resolutions"
+      }
     }
   },
   "error": {

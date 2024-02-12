@@ -63,7 +63,7 @@ const getStatisticsSchema = z.object({
   ])),
 });
 
-type PieSegment = {
+export type TdarrPieSegment = {
   name: string;
   value: number;
 }
@@ -83,13 +83,13 @@ export type TdarrStatistics = {
     totalTranscodes: number;
     savedSpace: number;
     totalHealthChecks: number;
-    transcodeStatus: PieSegment[];
-    healthCheckStatus: PieSegment[];
-    videoCodecs: PieSegment[];
-    videoContainers: PieSegment[];
-    videoResolutions: PieSegment[];
-    audioCodecs: PieSegment[];
-    audioContainers: PieSegment[];
+    transcodeStatus: TdarrPieSegment[];
+    healthCheckStatus: TdarrPieSegment[];
+    videoCodecs: TdarrPieSegment[];
+    videoContainers: TdarrPieSegment[];
+    videoResolutions: TdarrPieSegment[];
+    audioCodecs: TdarrPieSegment[];
+    audioContainers: TdarrPieSegment[];
   }[];
 }
 
@@ -144,7 +144,7 @@ const getStatusTableSchema = z.object({
   totalCount: z.number(),
 });
 
-export type Queue = {
+export type TdarrQueue = {
   array: {
     id: string;
     healthCheck: string;
@@ -192,7 +192,7 @@ export const tdarrRouter = createTRPCRouter({
           libraryId: pie[1],
           totalFiles: pie[2],
           totalTranscodes: pie[3],
-          savedSpace: pie[4] * 1_000_000, // file_size is in MB, convert to bytes,
+          savedSpace: pie[4] * 1_000_000_000, // file_size is in GB, convert to bytes,
           totalHealthChecks: pie[5],
           transcodeStatus: pie[6],
           healthCheckStatus: pie[7],
@@ -236,7 +236,7 @@ export const tdarrRouter = createTRPCRouter({
 
   queue: publicProcedure
     .input(inputSchemeQueue)
-    .query(async ({ input }): Promise<Queue> => {
+    .query(async ({ input }): Promise<TdarrQueue> => {
       const app = getTdarrApp(input.appId, input.configName);
 
       const appUrl = new URL('api/v2/client/status-tables', app.url);

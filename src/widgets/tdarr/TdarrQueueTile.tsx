@@ -25,6 +25,7 @@ import { useState } from 'react';
 import { z } from 'zod';
 import { WorkersPanel } from '~/widgets/tdarr/WorkersPanel';
 import { QueuePanel } from '~/widgets/tdarr/QueuePanel';
+import { StatisticsPanel } from '~/widgets/tdarr/StatisticsPanel';
 
 const definition = defineWidget({
   id: 'tdarr-queue',
@@ -71,8 +72,8 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 2,
-    minHeight: 1,
+    minWidth: 3,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 6,
   },
@@ -111,7 +112,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
     configName: configName!,
     pageSize: queuePageSize,
     page: page - 1,
-    showHealthChecksInQueue
+    showHealthChecksInQueue,
   }, {
     enabled: !!app?.id && !!configName,
     refetchInterval: 2000,
@@ -173,10 +174,10 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
     >
       {view === 'workers' ? (
         <WorkersPanel workers={workers.data} isLoading={workers.isLoading} />
-      ) : view === "queue" ? (
-        <QueuePanel queue={queue.data} isLoading={queue.isLoading}/>
+      ) : view === 'queue' ? (
+        <QueuePanel queue={queue.data} isLoading={queue.isLoading} />
       ) : (
-        <>TODO</>
+        <StatisticsPanel statistics={statistics.data} isLoading={statistics.isLoading} />
       )}
       <Divider />
       <Group spacing="xs">
@@ -225,14 +226,14 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
               <Group spacing={5} position="center">
                 <Pagination.First disabled={page === 1} />
                 <Pagination.Previous disabled={page === 1} />
-                <Pagination.Next disabled={page === totalQueuePages}  />
+                <Pagination.Next disabled={page === totalQueuePages} />
                 <Pagination.Last disabled={page === totalQueuePages} />
               </Group>
             </Pagination.Root>
-            <Text size="xs">{t("views.queue.table.footer.currentIndex", {
+            <Text size="xs">{t('views.queue.table.footer.currentIndex', {
               start: queue.data.startIndex + 1,
               end: queue.data.endIndex + 1,
-              total: queue.data.totalCount
+              total: queue.data.totalCount,
             })}</Text>
           </>
         )}

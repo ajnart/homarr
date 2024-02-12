@@ -2,12 +2,12 @@ import { Center, Group, ScrollArea, Stack, Table, Text, Title, Tooltip } from '@
 import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { Filename } from '~/widgets/tdarr/Filename';
 import { useTranslation } from 'next-i18next';
-import { Queue } from '~/server/api/routers/tdarr';
+import { TdarrQueue } from '~/server/api/routers/tdarr';
 import { WidgetLoading } from '~/widgets/loading';
 import { humanFileSize } from '~/tools/humanFileSize';
 
 interface QueuePanelProps {
-  queue: Queue | undefined;
+  queue: TdarrQueue | undefined;
   isLoading: boolean;
 }
 
