@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Stato del gestore dell'indicizzatore",
+        "description": "Stato dei tuoi indicizzatori",
         "settings": {
-            "title": ""
+            "title": "Stato del gestore dell'indicizzatore"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Gestore dell'indicizzatore",
+        "testAllButton": "Prova Tutto"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Impossibile trovare un gestore dell'indicizzatore",
+            "text": "Si è verificato un problema durante la connessione al gestore dell'indicizzatore. Verifica la tua configurazione/integrazione."
         }
     }
 }
