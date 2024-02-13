@@ -10,8 +10,8 @@
                 "info": "Unik enhets-ID i Home Assistant. Kopier ved å klikke på enhet > Klikk på tannhjulikonet > Klikk på kopieringsknappen ved Entitets-ID. Noen egendefinerte enheter støttes kanskje ikke."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Legg til måleenhet",
+                "info": "Legg til måleenhetsattributtet til enhetstilstanden."
             },
             "automationId": {
                 "label": "Valgfri automatisering ID",
@@ -21,8 +21,8 @@
                 "label": "Visningsnavn"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Vis brukervennlig navn",
+                "info": "Vis brukervennlig navn fra Home Assistant i stedet for visningsnavn"
             }
         }
     }
