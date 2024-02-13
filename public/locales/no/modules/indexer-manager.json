@@ -1,18 +1,18 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Indekserer-behandler status",
+        "description": "Status om indeksererne dine",
         "settings": {
-            "title": ""
+            "title": "Indekserer-behandler status"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indekser-behandler",
+        "testAllButton": "Test alle"
     },
     "errors": {
         "general": {
-            "title": "",
+            "title": "Kan ikke finne en indekserings-behandler",
             "text": ""
         }
     }
