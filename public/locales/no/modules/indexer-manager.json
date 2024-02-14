@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "Indekserer-behandler status",
+        "name": "Indekserings-behandler status",
         "description": "Status om indeksererne dine",
         "settings": {
-            "title": "Indekserer-behandler status"
+            "title": "Indekserings-behandler status"
         }
     },
     "indexersStatus": {
-        "title": "Indekser-behandler",
+        "title": "Indekserings-behandler",
         "testAllButton": "Test alle"
     },
     "errors": {
         "general": {
             "title": "Kan ikke finne en indekserings-behandler",
-            "text": ""
+            "text": "Det oppsto et problem med å koble til din indekserings-behandler. Vennligst bekreft konfigurasjonen/integrasjonen(e)."
         }
     }
 }
