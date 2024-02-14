@@ -10,8 +10,8 @@
                 "info": "Home Assistant 中的唯一實體ID，通過點擊實體 > 點擊齒輪圖示 > 點擊實體 ID 觸地的複製按鈕進行複製，某些自定義實體可能不支持"
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "附加測量單位",
+                "info": "將測量單位的屬性附加至實體狀態"
             },
             "automationId": {
                 "label": "可選自動化ID",
@@ -21,8 +21,8 @@
                 "label": "顯示名稱"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "顯示友好名稱",
+                "info": "顯示來自 Home Assistant 的友好名稱，而不是顯示名稱"
             }
         }
     }
