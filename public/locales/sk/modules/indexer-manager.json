@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Stav správcu indexovača",
+        "description": "Stav vašich indexov",
         "settings": {
-            "title": ""
+            "title": "Stav správcu indexovača"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Správca indexovača",
+        "testAllButton": "Otestujte všetky"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nie je možné nájsť správcu indexera",
+            "text": "Vyskytol sa problém s pripojením k vášmu správcovi indexera. Overte svoju konfiguráciu/integráciu."
         }
     }
 }
