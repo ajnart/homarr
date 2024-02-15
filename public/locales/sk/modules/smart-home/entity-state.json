@@ -10,8 +10,8 @@
                 "info": "Jedinečné ID subjektu v aplikácii Home Assistant. Kopírujte kliknutím na entitu > kliknite na ikonu ozubeného kolieska > kliknite na tlačidlo Kopírovať pri \"ID entity\". Niektoré vlastné entity nemusia byť podporované."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Pripojte mernú jednotku",
+                "info": "Pripojte atribút jednotky merania k stavu entity."
             },
             "automationId": {
                 "label": "Voliteľné ID automatizácie",
@@ -21,8 +21,8 @@
                 "label": "Zobrazenie názvu"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Zobraziť priateľské meno",
+                "info": "Namiesto zobrazovaného mena zobraziť popisný názov z Home Assistant"
             }
         }
     }
