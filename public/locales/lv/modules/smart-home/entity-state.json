@@ -10,8 +10,8 @@
                 "info": "Unikāls vienības ID pakalpojumā Home Assistant. Ievietojiet starpliktuvē, noklikšķinot uz vienību > Noklikšķiniet uz zobrata ikonu > Noklikšķiniet uz kopēšanas pogu pie \"Vienības ID\". Dažas pielāgotas vienības var nebūt atbalstītas."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Pievienot mērvienību",
+                "info": "Pievieno mērvienības atribūtu vienības stāvoklim."
             },
             "automationId": {
                 "label": "Izvēles automatizācijas ID",
@@ -21,8 +21,8 @@
                 "label": "Parādāmais nosaukums"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Draudzīgais nosaukums",
+                "info": "Draudzīgā nosaukuma vietā parādiet no Home Assistant izgulto draudzīgo nosaukumu"
             }
         }
     }
