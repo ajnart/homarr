@@ -19,13 +19,13 @@
         "label": "Teksta līniju skava"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Kārtot pēc publicēšanas datuma (augošā secībā)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Ievietot ziņas bez publicēšanas datuma augšpusē"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maksimālais ierakstu skaits"
       }
     },
     "card": {

@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Lietotājs {{username}}",
+  "back": "Atgriezties uz lietotāju pārvaldību",
   "sections": {
     "general": {
       "title": "Vispārīgi",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Drošība",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Jauna parole"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Pārtraukt esošās sesijas",
+          "description": "Piespiež lietotāju no jauna pieteikties savās ierīcēs"
         },
         "confirm": {
           "label": "Apstipriniet",
-          "description": ""
+          "description": "Parole tiks atjaunināta. Šo darbību nevar atcelt."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Lomas",
+      "currentRole": "Pašreizējā loma: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Īpašnieks",
+        "admin": "Administrators",
+        "normal": "Normāls"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Konta dzēšana",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Apstiprināt lietotājvārdu",
+          "description": "Ierakstiet lietotājvārdu, lai apstiprinātu dzēšanu"
         },
         "confirm": {
           "label": "Neatgriezeniski dzēst",
-          "description": ""
+          "description": "Es apzinos, ka šī darbība ir neatgriezeniska un visi konta dati tiks zaudēti."
         }
       }
     }

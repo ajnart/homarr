@@ -125,8 +125,7 @@ export default function AuthInvitePage() {
                 withAsterisk
                 {...form.getInputProps('password')}
               />
-              <Card
-              >
+              <Card>
                 <PasswordRequirements value={form.values.password} />
               </Card>
 

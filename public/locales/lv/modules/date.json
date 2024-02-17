@@ -5,11 +5,11 @@
     "settings": {
       "title": "Datuma un Laika logrīka iestatījumi",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Laika zona",
+        "info": "Izvēlieties savas laika zonas nosaukumu, atrodiet savējo šeit: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Pilsētas nosaukums vai pielāgots nosaukums"
       },
       "display24HourFormat": {
         "label": "Rādīt pilnu laiku (24 stundu)"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Pulksteņa nosaukums",
+        "info": "Pielāgotais nosaukums un laika zonas kods var tikt parādīts jūsu logrīkā.<br/>Varat arī rādīt tikai pilsētu, nerādīt nevienu,<br/>vai pat rādīt tikai laika joslu, gadījumā ja ir atlasīti abi, bet nav norādīts nosaukums.",
         "data": {
-          "both": "",
-          "city": "",
+          "both": "Pilsēta un Laika zona",
+          "city": "Tikai nosaukums",
           "none": "Nekas"
         }
       }

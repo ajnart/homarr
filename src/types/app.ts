@@ -1,5 +1,4 @@
 import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
-
 import { Property } from 'csstype';
 
 import { TileBaseType } from './tile';
@@ -46,6 +45,7 @@ export type IntegrationType =
   | 'radarr'
   | 'sonarr'
   | 'lidarr'
+  | 'prowlarr'
   | 'sabnzbd'
   | 'jellyseerr'
   | 'overseerr'
@@ -87,6 +87,7 @@ export const integrationFieldProperties: {
   lidarr: ['apiKey'],
   radarr: ['apiKey'],
   sonarr: ['apiKey'],
+  prowlarr: ['apiKey'],
   sabnzbd: ['apiKey'],
   readarr: ['apiKey'],
   overseerr: ['apiKey'],
@@ -99,7 +100,7 @@ export const integrationFieldProperties: {
   plex: ['apiKey'],
   pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
-  homeAssistant: ['apiKey']
+  homeAssistant: ['apiKey'],
 };
 
 export type IntegrationFieldDefinitionType = {

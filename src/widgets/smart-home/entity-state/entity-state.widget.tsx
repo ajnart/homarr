@@ -16,6 +16,11 @@ const definition = defineWidget({
       defaultValue: 'sun.sun',
       info: true,
     },
+    appendUnit: {
+      type: 'switch',
+      defaultValue: false,
+      info: true,
+    },
     automationId: {
       type: 'text',
       info: true,
@@ -24,6 +29,11 @@ const definition = defineWidget({
     displayName: {
       type: 'text',
       defaultValue: 'Sun',
+    },
+    displayFriendlyName: {
+      type: 'switch',
+      defaultValue: false,
+      info: true,
     },
   },
   gridstack: {
@@ -57,6 +67,14 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
         refetchInterval: 2 * 60 * 1000,
       },
     );
+
+  const attribute = (widget.properties.appendUnit && data?.attributes.unit_of_measurement ?
+    " " + data?.attributes.unit_of_measurement : ""
+  )
+
+  const displayName = (widget.properties.displayFriendlyName && data?.attributes.friendly_name ?
+    data?.attributes.friendly_name : widget.properties.displayName
+  )
 
   const { mutateAsync: mutateTriggerAutomationAsync } = api.smartHomeEntityState.triggerAutomation.useMutation({
     onSuccess: () => {
@@ -101,6 +119,7 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
     dataComponent = (
       <Text align="center">
         {data?.state}
+        {attribute}
         {isLoading && <Loader ml="xs" size={10} />}
       </Text>
     );
@@ -118,7 +137,7 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
       w="100%">
       <Stack align="center" spacing={3}>
         <Text align="center" weight="bold" size="lg">
-          {widget.properties.displayName}
+          {displayName}
         </Text>
         {dataComponent}
       </Stack>

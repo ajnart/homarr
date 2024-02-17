@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Lejupielādē",
         "name": "Nosaukums",
-        "dateAdded": "",
+        "dateAdded": "Pievienots",
         "size": "Lielums",
         "download": "Lejupielāde",
         "upload": "Augšupielāde",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Progress",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Kopējā Augšupielāde",
+        "totalDownloaded": "Kopējā Lejupielāde",
+        "ratio": "Attiecība",
+        "seeds": "Devēji (savienoti)",
+        "peers": "Ņēmēji (savienoti)",
+        "label": "Birka",
         "state": "Stāvoklis",
-        "stateMessage": ""
+        "stateMessage": "Statusa Ziņojums"
       },
       "item": {
         "text": "Pārvalda {{appName}}, {{ratio}} attiecība"

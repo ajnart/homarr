@@ -95,6 +95,13 @@ export function Editor({ widget }: { widget: INotebookWidget }) {
           validate(url) {
             return /^https?:\/\//.test(url);
           },
+        }).extend({
+          addAttributes() {
+            return {
+              ...this.parent?.(),
+              target: { default: null }
+            }
+          }
         }),
         StarterKit,
         Table.configure({

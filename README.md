@@ -53,34 +53,46 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 - 🦞 Comprehensive built-in icon picker with over 7000 icons
 - 🐳 Easy deployment with Docker, unRAID, and Synology
 - 🚀 Compatible with any major consumer hardware (x86, Raspberry Pi, old laptops, ...)
-- 💵 Free and Open-Source - your data stays on your device. No telemetry data.
 
 <br/>
 <br/>
 
 ![Widgets & Integrations Section](docs/section-widgets-and-integrations.png)
 
-Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
-Each widget and integration has a comprehensive documentation for your comfort.
-Homarr will integrate with the following applications of yours:
+Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/management/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
+Each widget and integration has a comprehensive documentation
+Homarr will integrate with the following applications:
 
-- 📥 Torrent clients
-  - [Deluge](https://homarr.dev/docs/integrations/#deluge)
-  - [Transmission](https://homarr.dev/docs/integrations/#transmission)
-  - [qBittorent](https://homarr.dev/docs/integrations/#qbittorrent-integration)
-- 📥 Usenet clients
-  - [SABnzbd](https://homarr.dev/docs/integrations/#sabnzbd)
-  - [NZBGet](https://homarr.dev/docs/integrations/#nzbget)
-- 📚 Media collection managers
-  - [Sonarr](https://homarr.dev/docs/integrations/#sonarr)
-  - [Radarr](https://homarr.dev/docs/integrations/#radarr)
-  - [Lidarr](https://homarr.dev/docs/integrations/#lidarr)
-  - [Readarr](https://homarr.dev/docs/integrations/#readarr)
-- 🎞️ Media request managers
-  - [Overseerr](https://homarr.dev/docs/integrations/#overseerr--jellyseerr)
-  - [Jellyseerr](https://homarr.dev/docs/integrations/#overseerr--jellyseerr)
-- 🔌 [Dash.](https://homarr.dev/docs/integrations/#dash)
-- 🐳 [Docker](https://homarr.dev/docs/integrations/#docker)
+📥 Torrent clients
+- [Deluge](https://homarr.dev/docs/management/integrations/torrent-deluge)
+- [Transmission](https://homarr.dev/docs/management/integrations/torrent-transmission)
+- [qBittorent](https://homarr.dev/docs/management/integrations/torrent-qbittorrent)
+
+📥 Usenet clients
+- [SABnzbd](https://homarr.dev/docs/management/integrations/usenet-sabnzbd)
+- [NZBGet](https://homarr.dev/docs/management/integrations/usenet-nzbget)
+
+📺 Media servers
+- [Plex](https://homarr.dev/docs/management/integrations/media-server-plex)
+- [Jellyfin](https://homarr.dev/docs/management/integrations/media-server-jellyfin)
+
+📚 Media collection managers
+- [Sonarr](https://homarr.dev/docs/management/integrations/servarr-sonarr)
+- [Radarr](https://homarr.dev/docs/management/integrations/servarr-radarr)
+- [Lidarr](https://homarr.dev/docs/management/integrations/servarr-lidarr)
+- [Readarr](https://homarr.dev/docs/management/integrations/servarr-readarr)
+ 
+🎞️ Media request managers
+- [Overseerr](https://homarr.dev/docs/management/integrations/media-requester/)
+- [Jellyseerr](https://homarr.dev/docs/management/integrations/media-requester/)
+
+🚫 DNS ad-blockers
+- [Pihole](https://homarr.dev/docs/management/integrations/dns-pihole)
+- [AdGuard Home](https://homarr.dev/docs/management/integrations/dns-adguard-home)
+
+Other integrations
+- [🔌 Dash.](https://homarr.dev/docs/management/integrations/hardware-dash)
+- [🐳 Docker](https://homarr.dev/docs/management/integrations/containers-docker)  
 
 We're constantly adding new integrations and widgets, which will enhance your experience even further.
 
@@ -123,3 +135,4 @@ You can also support us by helping with [translating the entire project](https:/
 All contributions, regardless of their size or scope, are welcome and highly appreciated! Thank you ❤️
 
 ![Alt](https://repobeats.axiom.co/api/embed/60a6f68f193faf831f64221bdf90782adec51c93.svg "Repobeats analytics image")
+[![Covered by Argos Visual Testing](https://argos-ci.com/badge-large.svg)](https://argos-ci.com?utm_source=%5Bhomarr%5D&utm_campaign=oss)

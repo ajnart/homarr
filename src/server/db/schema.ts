@@ -2,7 +2,9 @@ import { InferSelectModel, relations } from 'drizzle-orm';
 import { index, int, integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { type AdapterAccount } from 'next-auth/adapters';
 
-export const users = sqliteTable('user', {
+// workaround for typescript check in adapter
+// preferably add email into credential login and make email non-nullable here
+export const _users = {
   id: text('id').notNull().primaryKey(),
   name: text('name'),
   email: text('email'),
@@ -12,7 +14,9 @@ export const users = sqliteTable('user', {
   salt: text('salt'),
   isAdmin: int('is_admin', { mode: 'boolean' }).notNull().default(false),
   isOwner: int('is_owner', { mode: 'boolean' }).notNull().default(false),
-});
+};
+
+export const users = sqliteTable('user', _users);
 
 export const accounts = sqliteTable(
   'account',

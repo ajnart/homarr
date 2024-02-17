@@ -22,10 +22,10 @@
         "label": "Zoradiť podľa dátumu vydania (vzostupne)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Umiestnite príspevky bez dátumu uverejnenia na začiatok"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maximálny počet príspevkov"
       }
     },
     "card": {

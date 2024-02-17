@@ -10,6 +10,7 @@ const skippedUrls = [
   '/favicon.ico',
   '/404',
   '/pages/_app',
+  '/auth/login',
   '/imgs/',
 ];
 
@@ -29,12 +30,15 @@ export async function middleware(req: NextRequest) {
   }
 
   // Do not redirect if there are users in the database
-  if (cachedUserCount > 0) {
-    return NextResponse.next();
-  }
+  if (cachedUserCount > 0 || !(await shouldRedirectToOnboard())) {
+    // redirect to login if not logged in
+    // not working, should work in next-auth 5
+    // @see https://github.com/nextauthjs/next-auth/pull/7443
 
-  // Do not redirect if there are users in the database
-  if (!(await shouldRedirectToOnboard())) {
+    // const session = await getServerSession();
+    // if (!session?.user) {
+    //   return NextResponse.redirect(getUrl(req) + '/auth/login')
+    // }
     return NextResponse.next();
   }
 

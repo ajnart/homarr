@@ -1,20 +1,20 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Vienība nav atrasta",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistant vienība",
+        "description": "Vienības pašreizējais stāvoklis pakalpojumā Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Vienības stāvoklis",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "Vienības ID",
+                "info": "Unikāls vienības ID pakalpojumā Home Assistant. Ievietojiet starpliktuvē, noklikšķinot uz vienību > Noklikšķiniet uz zobrata ikonu > Noklikšķiniet uz kopēšanas pogu pie \"Vienības ID\". Dažas pielāgotas vienības var nebūt atbalstītas."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "Izvēles automatizācijas ID",
+                "info": "Jūsu unikālais automatizācijas ID. Vienmēr sākas ar automatizāciju.XXXX. Ja tas nav iestatīts, logrīks nebūs noklikšķināms un tiks parādīts tikai statuss. Pēc noklikšķināšanas vienības stāvoklis tiks atsvaidzināts."
             },
             "displayName": {
-                "label": ""
+                "label": "Parādāmais nosaukums"
             }
         }
     }
