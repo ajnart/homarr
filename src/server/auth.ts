@@ -86,6 +86,14 @@ export const constructAuthOptions = (
 
       return true;
     },
+    async redirect(params) {
+      const protocol = req.headers['x-forwarded-proto'] ?? 'http';
+      const host = req.headers['x-forwarded-host'] ?? req.headers.host;
+
+      const url = `${protocol}://${host}/${params.url.split('/').slice(1).join('/')}`;
+
+      return url;
+    },
   },
   session: {
     strategy: 'database',
