@@ -6,17 +6,7 @@ import { getConfig } from '~/tools/config/getConfig';
 import { ConfigAppType } from '~/types/app';
 
 import { createTRPCRouter, publicProcedure } from '../trpc';
-
-const inputSchema = z.object({
-  appId: z.string(),
-  configName: z.string(),
-});
-
-const inputSchemeQueue = inputSchema.extend({
-  showHealthChecksInQueue: z.boolean(),
-  pageSize: z.number(),
-  page: z.number(),
-});
+import { TdarrQueue, TdarrStatistics, TdarrWorker } from '~/types/api/tdarr';
 
 const getStatisticsSchema = z.object({
   totalFileCount: z.number(),
@@ -87,36 +77,6 @@ const getStatisticsSchema = z.object({
   ),
 });
 
-export type TdarrPieSegment = {
-  name: string;
-  value: number;
-};
-
-export type TdarrStatistics = {
-  totalFileCount: number;
-  totalTranscodeCount: number;
-  totalHealthCheckCount: number;
-  failedTranscodeCount: number;
-  failedHealthCheckCount: number;
-  stagedTranscodeCount: number;
-  stagedHealthCheckCount: number;
-  pies: {
-    libraryName: string;
-    libraryId: string;
-    totalFiles: number;
-    totalTranscodes: number;
-    savedSpace: number;
-    totalHealthChecks: number;
-    transcodeStatus: TdarrPieSegment[];
-    healthCheckStatus: TdarrPieSegment[];
-    videoCodecs: TdarrPieSegment[];
-    videoContainers: TdarrPieSegment[];
-    videoResolutions: TdarrPieSegment[];
-    audioCodecs: TdarrPieSegment[];
-    audioContainers: TdarrPieSegment[];
-  }[];
-};
-
 const getNodesResponseSchema = z.record(
   z.string(),
   z.object({
@@ -148,20 +108,6 @@ const getNodesResponseSchema = z.record(
   })
 );
 
-export type TdarrWorker = {
-  id: string;
-  file: string;
-  fps: number;
-  percentage: number;
-  ETA: string;
-  jobType: string;
-  status: string;
-  step: string;
-  originalSize: number;
-  estimatedSize: number | null;
-  outputSize: number | null;
-};
-
 const getStatusTableSchema = z.object({
   array: z.array(
     z.object({
@@ -178,26 +124,12 @@ const getStatusTableSchema = z.object({
   totalCount: z.number(),
 });
 
-export type TdarrQueue = {
-  array: {
-    id: string;
-    healthCheck: string;
-    transcode: string;
-    file: string;
-    fileSize: number;
-    container: string;
-    codec: string;
-    resolution: string;
-    type: 'transcode' | 'health check';
-  }[];
-  totalCount: number;
-  startIndex: number;
-  endIndex: number;
-};
-
 export const tdarrRouter = createTRPCRouter({
   statistics: publicProcedure
-    .input(inputSchema)
+    .input(z.object({
+      appId: z.string(),
+      configName: z.string(),
+    }))
     .query(async ({ input }): Promise<TdarrStatistics> => {
       const app = getTdarrApp(input.appId, input.configName);
       const appUrl = new URL('api/v2/cruddb', app.url);
@@ -239,117 +171,129 @@ export const tdarrRouter = createTRPCRouter({
       };
     }),
 
-  workers: publicProcedure.input(inputSchema).query(async ({ input }): Promise<TdarrWorker[]> => {
-    const app = getTdarrApp(input.appId, input.configName);
-    const appUrl = new URL('api/v2/get-nodes', app.url);
+  workers: publicProcedure
+    .input(z.object({
+      appId: z.string(),
+      configName: z.string(),
+    })).query(async ({ input }): Promise<TdarrWorker[]> => {
+      const app = getTdarrApp(input.appId, input.configName);
+      const appUrl = new URL('api/v2/get-nodes', app.url);
 
-    const res = await axios.get(appUrl.toString());
-    const data = getNodesResponseSchema.parse(res.data);
+      const res = await axios.get(appUrl.toString());
+      const data = getNodesResponseSchema.parse(res.data);
 
-    const nodes = Object.values(data);
-    const workers = nodes.flatMap((node) => {
-      return Object.values(node.workers);
-    });
+      const nodes = Object.values(data);
+      const workers = nodes.flatMap((node) => {
+        return Object.values(node.workers);
+      });
 
-    return workers.map((worker) => ({
-      id: worker._id,
-      file: worker.file,
-      fps: worker.fps,
-      percentage: worker.percentage,
-      ETA: worker.ETA,
-      jobType: worker.job.type,
-      status: worker.status,
-      step: worker.lastPluginDetails?.number ?? '',
-      originalSize: worker.originalfileSizeInGbytes * 1_000_000, // file_size is in MB, convert to bytes,
-      estimatedSize: worker.estSize ? worker.estSize * 1_000_000 : null, // file_size is in MB, convert to bytes,
-      outputSize: worker.outputFileSizeInGbytes ? worker.outputFileSizeInGbytes * 1_000_000 : null, // file_size is in MB, convert to bytes,
-    }));
-  }),
+      return workers.map((worker) => ({
+        id: worker._id,
+        filePath: worker.file,
+        fps: worker.fps,
+        percentage: worker.percentage,
+        ETA: worker.ETA,
+        jobType: worker.job.type,
+        status: worker.status,
+        step: worker.lastPluginDetails?.number ?? '',
+        originalSize: worker.originalfileSizeInGbytes * 1_000_000_000, // file_size is in GB, convert to bytes,
+        estimatedSize: worker.estSize ? worker.estSize * 1_000_000_000 : null, // file_size is in GB, convert to bytes,
+        outputSize: worker.outputFileSizeInGbytes ? worker.outputFileSizeInGbytes * 1_000_000_000 : null, // file_size is in GB, convert to bytes,
+      }));
+    }),
 
-  queue: publicProcedure.input(inputSchemeQueue).query(async ({ input }): Promise<TdarrQueue> => {
-    const app = getTdarrApp(input.appId, input.configName);
+  queue: publicProcedure
+    .input(z.object({
+      appId: z.string(),
+      configName: z.string(),
+      showHealthChecksInQueue: z.boolean(),
+      pageSize: z.number(),
+      page: z.number(),
+    }))
+    .query(async ({ input }): Promise<TdarrQueue> => {
+      const app = getTdarrApp(input.appId, input.configName);
 
-    const appUrl = new URL('api/v2/client/status-tables', app.url);
+      const appUrl = new URL('api/v2/client/status-tables', app.url);
 
-    const { page, pageSize, showHealthChecksInQueue } = input;
+      const { page, pageSize, showHealthChecksInQueue } = input;
 
-    const firstItemIndex = page * pageSize;
+      const firstItemIndex = page * pageSize;
 
-    const transcodeQueueBody = {
-      data: {
-        start: firstItemIndex,
-        pageSize: pageSize,
-        filters: [],
-        sorts: [],
-        opts: {
-          table: 'table1',
+      const transcodeQueueBody = {
+        data: {
+          start: firstItemIndex,
+          pageSize: pageSize,
+          filters: [],
+          sorts: [],
+          opts: {
+            table: 'table1',
+          },
         },
-      },
-    };
+      };
 
-    const transcodeQueueRes = await axios.post(appUrl.toString(), transcodeQueueBody);
-    const transcodeQueueData = getStatusTableSchema.parse(transcodeQueueRes.data);
+      const transcodeQueueRes = await axios.post(appUrl.toString(), transcodeQueueBody);
+      const transcodeQueueData = getStatusTableSchema.parse(transcodeQueueRes.data);
 
-    const transcodeQueueResult = {
-      array: transcodeQueueData.array.map((item) => ({
+      const transcodeQueueResult = {
+        array: transcodeQueueData.array.map((item) => ({
+          id: item._id,
+          healthCheck: item.HealthCheck,
+          transcode: item.TranscodeDecisionMaker,
+          filePath: item.file,
+          fileSize: item.file_size * 1_000_000, // file_size is in MB, convert to bytes
+          container: item.container,
+          codec: item.video_codec_name,
+          resolution: item.video_resolution,
+          type: 'transcode' as const,
+        })),
+        totalCount: transcodeQueueData.totalCount,
+        startIndex: firstItemIndex,
+        endIndex: firstItemIndex + transcodeQueueData.array.length - 1,
+      };
+
+      if (!showHealthChecksInQueue) {
+        return transcodeQueueResult;
+      }
+
+      const healthCheckQueueBody = {
+        data: {
+          start: Math.max(firstItemIndex - transcodeQueueData.totalCount, 0),
+          pageSize: pageSize,
+          filters: [],
+          sorts: [],
+          opts: {
+            table: 'table4',
+          },
+        },
+      };
+
+      const healthCheckQueueRes = await axios.post(appUrl.toString(), healthCheckQueueBody);
+      const healthCheckQueueData = getStatusTableSchema.parse(healthCheckQueueRes.data);
+
+      const healthCheckResultArray = healthCheckQueueData.array.map((item) => ({
         id: item._id,
         healthCheck: item.HealthCheck,
         transcode: item.TranscodeDecisionMaker,
-        file: item.file,
+        filePath: item.file,
         fileSize: item.file_size * 1_000_000, // file_size is in MB, convert to bytes
         container: item.container,
         codec: item.video_codec_name,
         resolution: item.video_resolution,
-        type: 'transcode' as const,
-      })),
-      totalCount: transcodeQueueData.totalCount,
-      startIndex: firstItemIndex,
-      endIndex: firstItemIndex + transcodeQueueData.array.length - 1,
-    };
+        type: 'health check' as const,
+      }));
 
-    if (!showHealthChecksInQueue) {
-      return transcodeQueueResult;
-    }
+      const combinedArray = [...transcodeQueueResult.array, ...healthCheckResultArray].slice(
+        0,
+        pageSize
+      );
 
-    const healthCheckQueueBody = {
-      data: {
-        start: Math.max(firstItemIndex - transcodeQueueData.totalCount, 0),
-        pageSize: pageSize,
-        filters: [],
-        sorts: [],
-        opts: {
-          table: 'table4',
-        },
-      },
-    };
-
-    const healthCheckQueueRes = await axios.post(appUrl.toString(), healthCheckQueueBody);
-    const healthCheckQueueData = getStatusTableSchema.parse(healthCheckQueueRes.data);
-
-    const healthCheckResultArray = healthCheckQueueData.array.map((item) => ({
-      id: item._id,
-      healthCheck: item.HealthCheck,
-      transcode: item.TranscodeDecisionMaker,
-      file: item.file,
-      fileSize: item.file_size * 1_000_000, // file_size is in MB, convert to bytes
-      container: item.container,
-      codec: item.video_codec_name,
-      resolution: item.video_resolution,
-      type: 'health check' as const,
-    }));
-
-    const combinedArray = [...transcodeQueueResult.array, ...healthCheckResultArray].slice(
-      0,
-      pageSize
-    );
-
-    return {
-      array: combinedArray,
-      totalCount: transcodeQueueData.totalCount + healthCheckQueueData.totalCount,
-      startIndex: firstItemIndex,
-      endIndex: firstItemIndex + combinedArray.length - 1,
-    };
-  }),
+      return {
+        array: combinedArray,
+        totalCount: transcodeQueueData.totalCount + healthCheckQueueData.totalCount,
+        startIndex: firstItemIndex,
+        endIndex: firstItemIndex + combinedArray.length - 1,
+      };
+    }),
 });
 
 function getTdarrApp(appId: string, configName: string): ConfigAppType {

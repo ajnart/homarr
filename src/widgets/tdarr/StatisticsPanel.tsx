@@ -18,9 +18,9 @@ import {
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
-import { TdarrPieSegment, TdarrStatistics } from '~/server/api/routers/tdarr';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { WidgetLoading } from '~/widgets/loading';
+import { TdarrPieSegment, TdarrStatistics } from '~/types/api/tdarr';
 
 const PIE_COLORS: MantineColor[] = ['cyan', 'grape', 'gray', 'orange', 'pink'];
 
@@ -51,7 +51,7 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
   }
 
   return (
-    <Stack style={{ flex: '1' }}>
+    <Stack style={{ flex: '1' }} spacing="xs">
       <Group
         style={{
           flex: 1,

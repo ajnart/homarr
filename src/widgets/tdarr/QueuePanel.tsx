@@ -1,10 +1,10 @@
 import { Center, Group, ScrollArea, Table, Text, Title, Tooltip } from '@mantine/core';
 import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { TdarrQueue } from '~/server/api/routers/tdarr';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { WidgetLoading } from '~/widgets/loading';
 import { Filename } from '~/widgets/tdarr/Filename';
+import { TdarrQueue } from '~/types/api/tdarr';
 
 interface QueuePanelProps {
   queue: TdarrQueue | undefined;
@@ -55,7 +55,7 @@ export function QueuePanel(props: QueuePanelProps) {
                       </Tooltip>
                     )}
                   </div>
-                  <Filename filename={item.file} />
+                  <Filename filePath={item.filePath} />
                 </Group>
               </td>
               <td>

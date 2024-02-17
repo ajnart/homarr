@@ -92,7 +92,10 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
   const { t } = useTranslation('modules/tdarr-queue');
   const { config, name: configName } = useConfigContext();
 
-  const app = config?.apps.find((app) => app.id === widget.properties.appId);
+  const fallbackAppId = config?.apps.find(
+    (app) => app.integration.type === 'tdarr',
+  )?.id;
+  const app = config?.apps.find((app) => app.id === widget.properties.appId || fallbackAppId);
   const { defaultView, showHealthCheck, showHealthChecksInQueue, queuePageSize, showAppIcon } =
     widget.properties;
 
@@ -100,7 +103,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
     viewSchema.parse(defaultView)
   );
 
-  const [page, setPage] = useState(1);
+  const [queuePage, setQueuePage] = useState(1);
 
   const workers = api.tdarr.workers.useQuery(
     {
@@ -123,7 +126,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
       appId: app?.id!,
       configName: configName!,
       pageSize: queuePageSize,
-      page: page - 1,
+      page: queuePage - 1,
       showHealthChecksInQueue,
     },
     {
@@ -230,12 +233,12 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
         />
         {view === 'queue' && !!queue.data && (
           <>
-            <Pagination.Root total={totalQueuePages} value={page} onChange={setPage} size="sm">
+            <Pagination.Root total={totalQueuePages} value={queuePage} onChange={setQueuePage} size="sm">
               <Group spacing={5} position="center">
-                <Pagination.First disabled={page === 1} />
-                <Pagination.Previous disabled={page === 1} />
-                <Pagination.Next disabled={page === totalQueuePages} />
-                <Pagination.Last disabled={page === totalQueuePages} />
+                <Pagination.First disabled={queuePage === 1} />
+                <Pagination.Previous disabled={queuePage === 1} />
+                <Pagination.Next disabled={queuePage === totalQueuePages} />
+                <Pagination.Last disabled={queuePage === totalQueuePages} />
               </Group>
             </Pagination.Root>
             <Text size="xs">

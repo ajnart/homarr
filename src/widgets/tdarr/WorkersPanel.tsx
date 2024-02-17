@@ -10,9 +10,9 @@ import {
 } from '@mantine/core';
 import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
-import { TdarrWorker } from '~/server/api/routers/tdarr';
 import { WidgetLoading } from '~/widgets/loading';
 import { Filename } from '~/widgets/tdarr/Filename';
+import { TdarrWorker } from '~/types/api/tdarr';
 
 interface WorkersPanelProps {
   workers: TdarrWorker[] | undefined;
@@ -64,7 +64,7 @@ export function WorkersPanel(props: WorkersPanelProps) {
                       </Tooltip>
                     )}
                   </div>
-                  <Filename filename={worker.file} />
+                  <Filename filePath={worker.filePath} />
                 </Group>
               </td>
               <td>

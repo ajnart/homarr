@@ -11,7 +11,8 @@ import {
 import { IconHeartbeat } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useColorScheme } from '~/hooks/use-colorscheme';
-import { TdarrStatistics } from '~/server/api/routers/tdarr';
+
+import { TdarrStatistics } from '~/types/api/tdarr';
 
 interface StatisticsBadgeProps {
   statistics?: TdarrStatistics;
@@ -40,7 +41,7 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
             <IconHeartbeat size={20} />
           </Indicator>
       </HoverCard.Target>
-      <HoverCard.Dropdown>
+      <HoverCard.Dropdown bg={colorScheme === 'light' ? 'gray.2' : 'dark.8'}>
         <Stack spacing="sm" align="center">
           <Group spacing="xs">
             <IconHeartbeat size={18} />

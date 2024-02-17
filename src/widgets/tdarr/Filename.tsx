@@ -1,11 +1,11 @@
 import { Text } from '@mantine/core';
 
 interface FilenameProps {
-  filename: string;
+  filePath: string;
 }
 
 export function Filename(props: FilenameProps) {
-  const { filename } = props;
+  const { filePath } = props;
 
   return (
     <Text
@@ -16,7 +16,7 @@ export function Filename(props: FilenameProps) {
       }}
       size="xs"
     >
-      {filename.substring(filename.lastIndexOf('/') + 1)}
+      {filePath.split('\\').pop()?.split('/').pop() ?? filePath}
     </Text>
   );
 }
