@@ -35,16 +35,7 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
   const { t } = useTranslation('modules/tdarr-queue');
 
   if (isLoading) {
-    return (
-      <Stack
-        justify="center"
-        style={{
-          flex: 1,
-        }}
-      >
-        <WidgetLoading />
-      </Stack>
-    );
+    return <WidgetLoading />;
   }
 
   const allLibs = statistics?.pies.find((pie) => pie.libraryName === 'All');
@@ -52,7 +43,7 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
   if (!statistics || !allLibs) {
     return (
       <Center
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}
+        style={{ flex: '1' }}
       >
         <Title order={3}>{t('views.statistics.empty')}</Title>
       </Center>
@@ -70,43 +61,47 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
         noWrap
       >
         <Stack align="center" spacing={0}>
-          <RingProgress size={120} sections={allLibs.transcodeStatus.map(toRingProgressSection)} />
+          <RingProgress size={120} sections={toRingProgressSections(allLibs.transcodeStatus)} />
           <Text size="xs">{t('views.statistics.pies.transcodes')}</Text>
         </Stack>
         <Grid gutter="xs">
           <Grid.Col span={6}>
             <StatBox
               icon={<IconTransform size={18} />}
-              label={t('views.statistics.box.transcodes')}
-              value={statistics.totalTranscodeCount}
+              label={t('views.statistics.box.transcodes', {
+                value: statistics.totalTranscodeCount
+              })}
             />
           </Grid.Col>
           <Grid.Col span={6}>
             <StatBox
               icon={<IconHeartbeat size={18} />}
-              label={t('views.statistics.box.healthChecks')}
-              value={statistics.totalHealthCheckCount}
+              label={t('views.statistics.box.healthChecks', {
+                value: statistics.totalHealthCheckCount
+              })}
             />
           </Grid.Col>
           <Grid.Col span={6}>
             <StatBox
               icon={<IconFileDescription size={18} />}
-              label={t('views.statistics.box.files')}
-              value={statistics.totalFileCount}
+              label={t('views.statistics.box.files', {
+                value: statistics.totalFileCount
+              })}
             />
           </Grid.Col>
           <Grid.Col span={6}>
             <StatBox
               icon={<IconDatabaseHeart size={18} />}
-              label={t('views.statistics.box.spaceSaved')}
-              value={allLibs?.savedSpace ? humanFileSize(allLibs.savedSpace) : '-'}
+              label={t('views.statistics.box.spaceSaved', {
+                value: allLibs?.savedSpace ? humanFileSize(allLibs.savedSpace) : '-'
+              })}
             />
           </Grid.Col>
         </Grid>
         <Stack align="center" spacing={0}>
           <RingProgress
             size={120}
-            sections={allLibs.healthCheckStatus.map(toRingProgressSection)}
+            sections={toRingProgressSections(allLibs.healthCheckStatus)}
           />
           <Text size="xs">{t('views.statistics.pies.healthChecks')}</Text>
         </Stack>
@@ -120,15 +115,15 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
         noWrap
       >
         <Stack align="center" spacing={0}>
-          <RingProgress size={120} sections={allLibs.videoCodecs.map(toRingProgressSection)} />
+          <RingProgress size={120} sections={toRingProgressSections(allLibs.videoCodecs)} />
           <Text size="xs">{t('views.statistics.pies.videoCodecs')}</Text>
         </Stack>
         <Stack align="center" spacing={0}>
-          <RingProgress size={120} sections={allLibs.videoContainers.map(toRingProgressSection)} />
+          <RingProgress size={120} sections={toRingProgressSections(allLibs.videoContainers)} />
           <Text size="xs">{t('views.statistics.pies.videoContainers')}</Text>
         </Stack>
         <Stack align="center" spacing={0}>
-          <RingProgress size={120} sections={allLibs.videoResolutions.map(toRingProgressSection)} />
+          <RingProgress size={120} sections={toRingProgressSections(allLibs.videoResolutions)} />
           <Text size="xs">{t('views.statistics.pies.videoResolutions')}</Text>
         </Stack>
       </Group>
@@ -136,25 +131,22 @@ export function StatisticsPanel(props: StatisticsPanelProps) {
   );
 }
 
-function toRingProgressSection(
-  segment: TdarrPieSegment,
-  index: number
-): RingProgressProps['sections'][number] {
-  return {
-    value: segment.value,
+function toRingProgressSections(segments: TdarrPieSegment[]): RingProgressProps['sections'] {
+  const total = segments.reduce((prev, curr) => prev + curr.value , 0);
+  return segments.map((segment, index) => ({
+    value: (segment.value * 100) / total,
     tooltip: `${segment.name}: ${segment.value}`,
     color: PIE_COLORS[index % PIE_COLORS.length], // Ensures a valid color in the case that index > PIE_COLORS.length
-  };
+  }));
 }
 
 type StatBoxProps = {
   icon: ReactNode;
   label: string;
-  value: number | string;
 };
 
 function StatBox(props: StatBoxProps) {
-  const { icon, label, value } = props;
+  const { icon, label } = props;
   return (
     <Box
       sx={(theme) => ({
@@ -167,7 +159,7 @@ function StatBox(props: StatBoxProps) {
       <Stack spacing="xs" align="center">
         {icon}
         <Text size="xs">
-          {label} {value}
+          {label}
         </Text>
       </Stack>
     </Box>

@@ -1,4 +1,4 @@
-import { Center, Group, ScrollArea, Stack, Table, Text, Title, Tooltip } from '@mantine/core';
+import { Center, Group, ScrollArea, Table, Text, Title, Tooltip } from '@mantine/core';
 import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { TdarrQueue } from '~/server/api/routers/tdarr';
@@ -17,22 +17,13 @@ export function QueuePanel(props: QueuePanelProps) {
   const { t } = useTranslation('modules/tdarr-queue');
 
   if (isLoading) {
-    return (
-      <Stack
-        justify="center"
-        style={{
-          flex: 1,
-        }}
-      >
-        <WidgetLoading />
-      </Stack>
-    );
+    return <WidgetLoading />;
   }
 
-  if (!queue) {
+  if (!queue?.array.length) {
     return (
       <Center
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}
+        style={{ flex: '1' }}
       >
         <Title order={3}>{t('views.queue.table.empty')}</Title>
       </Center>
@@ -55,11 +46,11 @@ export function QueuePanel(props: QueuePanelProps) {
                 <Group spacing="xs" noWrap>
                   <div>
                     {item.type === 'transcode' ? (
-                      <Tooltip label={'Transcode'}>
+                      <Tooltip label={t('views.workers.table.tooltip.transcode')}>
                         <IconTransform size={14} />
                       </Tooltip>
                     ) : (
-                      <Tooltip label={'Healthcheck'}>
+                      <Tooltip label={t('views.workers.table.tooltip.healthCheck')}>
                         <IconHeartbeat size={14} />
                       </Tooltip>
                     )}

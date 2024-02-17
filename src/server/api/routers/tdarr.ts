@@ -141,8 +141,8 @@ const getNodesResponseSchema = z.record(
           })
           .optional(),
         originalfileSizeInGbytes: z.number(),
-        estSize: z.number(),
-        outputFileSizeInGbytes: z.number(),
+        estSize: z.number().optional(),
+        outputFileSizeInGbytes: z.number().optional(),
       })
     ),
   })
@@ -158,8 +158,8 @@ export type TdarrWorker = {
   status: string;
   step: string;
   originalSize: number;
-  estimatedSize: number;
-  outputSize: number;
+  estimatedSize: number | null;
+  outputSize: number | null;
 };
 
 const getStatusTableSchema = z.object({
@@ -261,8 +261,8 @@ export const tdarrRouter = createTRPCRouter({
       status: worker.status,
       step: worker.lastPluginDetails?.number ?? '',
       originalSize: worker.originalfileSizeInGbytes * 1_000_000, // file_size is in MB, convert to bytes,
-      estimatedSize: worker.estSize * 1_000_000, // file_size is in MB, convert to bytes,
-      outputSize: worker.outputFileSizeInGbytes * 1_000_000, // file_size is in MB, convert to bytes,
+      estimatedSize: worker.estSize ? worker.estSize * 1_000_000 : null, // file_size is in MB, convert to bytes,
+      outputSize: worker.outputFileSizeInGbytes ? worker.outputFileSizeInGbytes * 1_000_000 : null, // file_size is in MB, convert to bytes,
     }));
   }),
 

@@ -1,5 +1,4 @@
 import {
-  ActionIcon,
   Divider,
   Group,
   HoverCard,
@@ -25,11 +24,7 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
   const { t } = useTranslation('modules/tdarr-queue');
 
   if (!statistics) {
-    return (
-      <ActionIcon loading>
-        <IconHeartbeat size={20} />
-      </ActionIcon>
-    );
+    return <IconHeartbeat size={20} />;
   }
 
   const indicatorColor = statistics.failedHealthCheckCount
@@ -39,22 +34,11 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
       : 'green';
 
   return (
-    <HoverCard position="bottom" width={250} shadow="sm" openDelay={0} closeDelay={0}>
+    <HoverCard position="bottom" width={250} shadow="sm">
       <HoverCard.Target>
-        <ActionIcon
-          variant="subtle"
-          style={{
-            cursor: 'initial',
-          }}
-        >
-          <Indicator
-            color={textColor(indicatorColor, colorScheme)}
-            size={8}
-            processing={!!statistics.stagedHealthCheckCount}
-          >
+          <Indicator color={textColor(indicatorColor, colorScheme)} size={8} display="flex">
             <IconHeartbeat size={20} />
           </Indicator>
-        </ActionIcon>
       </HoverCard.Target>
       <HoverCard.Dropdown>
         <Stack spacing="sm" align="center">

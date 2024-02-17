@@ -3,7 +3,6 @@ import {
   Group,
   Progress,
   ScrollArea,
-  Stack,
   Table,
   Text,
   Title,
@@ -26,22 +25,13 @@ export function WorkersPanel(props: WorkersPanelProps) {
   const { t } = useTranslation('modules/tdarr-queue');
 
   if (isLoading) {
-    return (
-      <Stack
-        justify="center"
-        style={{
-          flex: 1,
-        }}
-      >
-        <WidgetLoading />
-      </Stack>
-    );
+    return <WidgetLoading />;
   }
 
   if (!workers?.length) {
     return (
       <Center
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1' }}
+        style={{ flex: '1' }}
       >
         <Title order={3}>{t('views.workers.table.empty')}</Title>
       </Center>
@@ -65,11 +55,11 @@ export function WorkersPanel(props: WorkersPanelProps) {
                 <Group spacing="xs" noWrap>
                   <div>
                     {worker.jobType === 'transcode' ? (
-                      <Tooltip label={'Transcode'}>
+                      <Tooltip label={t('views.workers.table.tooltip.transcode')}>
                         <IconTransform size={14} />
                       </Tooltip>
                     ) : (
-                      <Tooltip label={'Healthcheck'}>
+                      <Tooltip label={t('views.workers.table.tooltip.healthCheck')}>
                         <IconHeartbeat size={14} />
                       </Tooltip>
                     )}
@@ -83,24 +73,17 @@ export function WorkersPanel(props: WorkersPanelProps) {
                 </Text>
               </td>
               <td>
-                <Group noWrap>
+                <Group noWrap spacing="xs">
                   <Text size="xs">{worker.step}</Text>
                   <Progress
                     value={worker.percentage}
-                    label={`${Math.round(worker.percentage)}%`}
-                    size="xl"
+                    size="lg"
                     radius="xl"
                     style={{
                       flex: 1,
                     }}
-                    styles={{
-                      label: {
-                        position: 'absolute',
-                        right: worker.percentage < 40 ? '-10px' : '10px',
-                        transform: worker.percentage < 40 ? 'translateX(100%)' : 'translateX(0)',
-                      },
-                    }}
                   />
+                  <Text size="xs">{Math.round(worker.percentage)}%</Text>
                 </Group>
               </td>
             </tr>

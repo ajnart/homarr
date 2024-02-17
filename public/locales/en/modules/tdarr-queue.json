@@ -8,7 +8,12 @@
         "label": "Select an app"
       },
       "defaultView": {
-        "label": "Default view"
+        "label": "Default view",
+        "data": {
+          "workers": "Workers",
+          "queue": "Queue",
+          "statistics": "Statistics"
+        }
       },
       "showHealthCheck": {
         "label": "Show Health Check indicator"
@@ -33,7 +38,11 @@
           "eta": "ETA",
           "progress": "Progress"
         },
-        "empty": "Empty"
+        "empty": "Empty",
+        "tooltip": {
+          "transcode": "Transcode",
+          "healthCheck": "Health Check"
+        }
       }
     },
     "queue": {
@@ -45,16 +54,20 @@
         "footer": {
           "currentIndex": "{{start}}-{{end}} of {{total}}"
         },
-        "empty": "Empty"
+        "empty": "Empty",
+        "tooltip": {
+          "transcode": "Transcode",
+          "healthCheck": "Health Check"
+        }
       }
     },
     "statistics": {
       "empty": "Empty",
       "box": {
-        "transcodes": "Transcodes:",
-        "healthChecks": "Health Checks:",
-        "files": "Files:",
-        "spaceSaved": "Saved:"
+        "transcodes": "Transcodes: {{value}}",
+        "healthChecks": "Health Checks: {{value}}",
+        "files": "Files: {{value}}",
+        "spaceSaved": "Saved: {{value}}"
       },
       "pies": {
         "transcodes": "Transcodes",

@@ -46,15 +46,12 @@ const definition = defineWidget({
       data: [
         {
           value: 'workers',
-          label: 'Workers',
         },
         {
           value: 'queue',
-          label: 'Queue',
         },
         {
           value: 'statistics',
-          label: 'Statistics',
         },
       ],
       defaultValue: 'workers',
@@ -110,7 +107,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
       appId: app?.id!,
       configName: configName!,
     },
-    { enabled: !!app?.id && !!configName, refetchInterval: 2000 }
+    { enabled: !!app?.id && !!configName && view === 'workers', refetchInterval: 2000 }
   );
 
   const statistics = api.tdarr.statistics.useQuery(
@@ -130,7 +127,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
       showHealthChecksInQueue,
     },
     {
-      enabled: !!app?.id && !!configName,
+      enabled: !!app?.id && !!configName && view === 'queue',
       refetchInterval: 2000,
     }
   );
@@ -170,13 +167,8 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
 
   if (!app) {
     return (
-      <Stack
-        justify="center"
-        style={{
-          height: '100%',
-        }}
-      >
-        <Center style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Stack justify="center" h="100%">
+        <Center>
           <Title order={3}>{t('noAppSelected')}</Title>
         </Center>
       </Stack>
@@ -186,12 +178,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
   const totalQueuePages = Math.ceil((queue.data?.totalCount || 1) / queuePageSize);
 
   return (
-    <Stack
-      spacing="xs"
-      style={{
-        height: '100%',
-      }}
-    >
+    <Stack spacing="xs" h="100%">
       {view === 'workers' ? (
         <WorkersPanel workers={workers.data} isLoading={workers.isLoading} />
       ) : view === 'queue' ? (
@@ -208,7 +195,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
                 <Center>
                   <IconCpu2 size={18} />
                   <Text size="xs" ml={8}>
-                    {t('tabs.workers', { count1: workers.data?.length ?? '?' })}
+                    {t('tabs.workers')}
                   </Text>
                 </Center>
               ),
@@ -219,7 +206,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
                 <Center>
                   <IconClipboardList size={18} />
                   <Text size="xs" ml={8}>
-                    {t('tabs.queue', { count1: workers.data?.length ?? '?' })}
+                    {t('tabs.queue')}
                   </Text>
                 </Center>
               ),
@@ -230,7 +217,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
                 <Center>
                   <IconReportAnalytics size={18} />
                   <Text size="xs" ml={8}>
-                    {t('tabs.statistics', { count1: workers.data?.length ?? '?' })}
+                    {t('tabs.statistics')}
                   </Text>
                 </Center>
               ),
@@ -260,12 +247,7 @@ function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
             </Text>
           </>
         )}
-        <Group
-          spacing="xs"
-          style={{
-            marginLeft: 'auto',
-          }}
-        >
+        <Group spacing="xs" ml="auto">
           {showHealthCheck && statistics.data && <HealthCheckStatus statistics={statistics.data} />}
           {showAppIcon && (
             <Tooltip label={app.name}>
