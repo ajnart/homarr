@@ -87,12 +87,7 @@ export const constructAuthOptions = (
       return true;
     },
     async redirect(params) {
-      const protocol = req.headers['x-forwarded-proto'] ?? 'http';
-      const host = req.headers['x-forwarded-host'] ?? req.headers.host;
-
-      const url = `${protocol}://${host}/${params.url.split('/').slice(1).join('/')}`;
-
-      return url;
+      return await redirectCallback(req, params);
     },
   },
   session: {
@@ -154,4 +149,29 @@ export const getServerAuthSession = (ctx: {
       ctx.res as unknown as NextApiResponse
     )
   );
+};
+
+type RedirectCallbackRequest = {
+  headers: {
+    'x-forwarded-proto'?: string;
+    'x-forwarded-host'?: string;
+    host?: string;
+  };
+};
+
+export const redirectCallback = async (req: RedirectCallbackRequest, params: { url: string }) => {
+  let protocol = req.headers['x-forwarded-proto'] ?? 'http';
+
+  // @see https://support.glitch.com/t/x-forwarded-proto-contains-multiple-protocols/17219
+  if (protocol.includes(',')) {
+    protocol = protocol.includes('https') ? 'https' : 'http';
+  }
+
+  const path = params.url.startsWith('/') ? params.url : new URL(params.url).pathname;
+
+  const host = req.headers['x-forwarded-host'] ?? req.headers.host;
+
+  const url = `${protocol}://${host}${path}`;
+
+  return url;
 };
