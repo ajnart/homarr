@@ -25,7 +25,7 @@ const provider: OAuthConfig<Profile> = {
   async profile(profile) {
     const user = await adapter.getUserByEmail!(profile.email);
 
-    if (!profile.groups) {
+    if (profile.groups == undefined) {
       Consola.warn('no groups found in profile of oidc user');
     }
 
