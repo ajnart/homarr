@@ -19,6 +19,7 @@ export type OidcRedirectCallbackHeaders = {
   host?: string;
 };
 
+// The redirect_uri is constructed to work behind a reverse proxy. It is constructed from the headers x-forwarded-proto and x-forwarded-host.
 export const createRedirectUri = (headers: OidcRedirectCallbackHeaders) => {
   let protocol = headers['x-forwarded-proto'] ?? 'http';
 
