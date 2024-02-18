@@ -13,14 +13,37 @@ type Profile = {
   email_verified: boolean;
 };
 
-const provider: OAuthConfig<Profile> = {
+export type OidcRedirectCallbackHeaders = {
+  'x-forwarded-proto'?: string;
+  'x-forwarded-host'?: string;
+  host?: string;
+};
+
+export const createRedirectUri = (headers: OidcRedirectCallbackHeaders) => {
+  let protocol = headers['x-forwarded-proto'] ?? 'http';
+
+  // @see https://support.glitch.com/t/x-forwarded-proto-contains-multiple-protocols/17219
+  if (protocol.includes(',')) {
+    protocol = protocol.includes('https') ? 'https' : 'http';
+  }
+
+  const host = headers['x-forwarded-host'] ?? headers.host;
+
+  const url = `${protocol}://${host}/api/auth/callback/oidc`;
+
+  return url;
+};
+
+const createProvider = (headers: OidcRedirectCallbackHeaders): OAuthConfig<Profile> => ({
   id: 'oidc',
   name: env.AUTH_OIDC_CLIENT_NAME,
   type: 'oauth',
   clientId: env.AUTH_OIDC_CLIENT_ID,
   clientSecret: env.AUTH_OIDC_CLIENT_SECRET,
   wellKnown: `${env.AUTH_OIDC_URI}/.well-known/openid-configuration`,
-  authorization: { params: { scope: 'openid email profile groups' } },
+  authorization: {
+    params: { scope: 'openid email profile groups', redirect_uri: createRedirectUri(headers) },
+  },
   idToken: true,
   async profile(profile) {
     const user = await adapter.getUserByEmail!(profile.email);
@@ -46,6 +69,6 @@ const provider: OAuthConfig<Profile> = {
       isOwner,
     };
   },
-};
+});
 
-export default provider;
+export default createProvider;

@@ -2,6 +2,8 @@ import { DefaultSession } from 'next-auth';
 import { CredentialsConfig, OAuthConfig } from 'next-auth/providers';
 import { env } from '~/env';
 
+import { OidcRedirectCallbackHeaders } from './oidc';
+
 export { default as adapter, onCreateUser } from './adapter';
 
 /**
@@ -38,9 +40,16 @@ declare module 'next-auth/jwt' {
   }
 }
 
-export const providers: (CredentialsConfig | OAuthConfig<any>)[] = [];
+export const getProviders = async (headers: OidcRedirectCallbackHeaders) => {
+  const providers: (CredentialsConfig | OAuthConfig<any>)[] = [];
 
-if (env.AUTH_PROVIDER?.includes('ldap')) providers.push((await import('./ldap')).default);
-if (env.AUTH_PROVIDER?.includes('credentials'))
-  providers.push((await import('./credentials')).default);
-if (env.AUTH_PROVIDER?.includes('oidc')) providers.push((await import('./oidc')).default);
+  if (env.AUTH_PROVIDER?.includes('ldap')) providers.push((await import('./ldap')).default);
+  if (env.AUTH_PROVIDER?.includes('credentials'))
+    providers.push((await import('./credentials')).default);
+  if (env.AUTH_PROVIDER?.includes('oidc')) {
+    const createProvider = (await import('./oidc')).default;
+    providers.push(createProvider(headers));
+  }
+
+  return providers;
+};

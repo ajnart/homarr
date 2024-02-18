@@ -4,7 +4,7 @@ import { type GetServerSidePropsContext, type NextApiRequest, type NextApiRespon
 import { type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
-import { adapter, onCreateUser, providers } from '~/utils/auth';
+import { adapter, getProviders, onCreateUser } from '~/utils/auth';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser } from '~/validations/user';
@@ -19,10 +19,10 @@ const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
  *
  * @see https://next-auth.js.org/configuration/options
  */
-export const constructAuthOptions = (
+export const constructAuthOptions = async (
   req: NextApiRequest,
   res: NextApiResponse
-): NextAuthOptions => ({
+): Promise<NextAuthOptions> => ({
   events: {
     createUser: onCreateUser,
   },
@@ -86,9 +86,6 @@ export const constructAuthOptions = (
 
       return true;
     },
-    async redirect(params) {
-      return await redirectCallback(req, params);
-    },
   },
   session: {
     strategy: 'database',
@@ -99,7 +96,7 @@ export const constructAuthOptions = (
     error: '/auth/login',
   },
   adapter: adapter as Adapter,
-  providers: [...providers, EmptyNextAuthProvider()],
+  providers: [...(await getProviders(req.headers)), EmptyNextAuthProvider()],
   jwt: {
     async encode(params) {
       if (!isCredentialsRequest(req)) {
@@ -137,41 +134,16 @@ const isCredentialsRequest = (req: NextApiRequest): boolean => {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = (ctx: {
+export const getServerAuthSession = async (ctx: {
   req: GetServerSidePropsContext['req'];
   res: GetServerSidePropsContext['res'];
 }) => {
-  return getServerSession(
+  return await getServerSession(
     ctx.req,
     ctx.res,
-    constructAuthOptions(
+    await constructAuthOptions(
       ctx.req as unknown as NextApiRequest,
       ctx.res as unknown as NextApiResponse
     )
   );
-};
-
-type RedirectCallbackRequest = {
-  headers: {
-    'x-forwarded-proto'?: string;
-    'x-forwarded-host'?: string;
-    host?: string;
-  };
-};
-
-export const redirectCallback = async (req: RedirectCallbackRequest, params: { url: string }) => {
-  let protocol = req.headers['x-forwarded-proto'] ?? 'http';
-
-  // @see https://support.glitch.com/t/x-forwarded-proto-contains-multiple-protocols/17219
-  if (protocol.includes(',')) {
-    protocol = protocol.includes('https') ? 'https' : 'http';
-  }
-
-  const path = params.url.startsWith('/') ? params.url : new URL(params.url).pathname;
-
-  const host = req.headers['x-forwarded-host'] ?? req.headers.host;
-
-  const url = `${protocol}://${host}${path}`;
-
-  return url;
 };
