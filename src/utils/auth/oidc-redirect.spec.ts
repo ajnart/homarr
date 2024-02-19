@@ -10,7 +10,7 @@ describe('redirect', () => {
     };
 
     // Act
-    const result = await createRedirectUri(headers);
+    const result = await createRedirectUri(headers, '/api/auth/callback/oidc');
 
     // Assert
     expect(result).toBe('http://localhost:3000/api/auth/callback/oidc');
@@ -24,7 +24,7 @@ describe('redirect', () => {
     };
 
     // Act
-    const result = await createRedirectUri(headers);
+    const result = await createRedirectUri(headers, '/api/auth/callback/oidc');
 
     // Assert
     expect(result).toBe('https://localhost:3000/api/auth/callback/oidc');
@@ -38,7 +38,7 @@ describe('redirect', () => {
     };
 
     // Act
-    const result = await createRedirectUri(headers);
+    const result = await createRedirectUri(headers, '/api/auth/callback/oidc');
 
     // Assert
     expect(result).toBe('https://something.else/api/auth/callback/oidc');
@@ -52,7 +52,7 @@ describe('redirect', () => {
     };
 
     // Act
-    const result = await createRedirectUri(headers);
+    const result = await createRedirectUri(headers, '/api/auth/callback/oidc');
 
     // Assert
     expect(result).toBe('https://hello.world/api/auth/callback/oidc');

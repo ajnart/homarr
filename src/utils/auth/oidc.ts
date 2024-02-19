@@ -20,7 +20,7 @@ export type OidcRedirectCallbackHeaders = {
 };
 
 // The redirect_uri is constructed to work behind a reverse proxy. It is constructed from the headers x-forwarded-proto and x-forwarded-host.
-export const createRedirectUri = (headers: OidcRedirectCallbackHeaders) => {
+export const createRedirectUri = (headers: OidcRedirectCallbackHeaders, pathname: string) => {
   let protocol = headers['x-forwarded-proto'] ?? 'http';
 
   // @see https://support.glitch.com/t/x-forwarded-proto-contains-multiple-protocols/17219
@@ -28,9 +28,11 @@ export const createRedirectUri = (headers: OidcRedirectCallbackHeaders) => {
     protocol = protocol.includes('https') ? 'https' : 'http';
   }
 
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+
   const host = headers['x-forwarded-host'] ?? headers.host;
 
-  const url = `${protocol}://${host}/api/auth/callback/oidc`;
+  const url = `${protocol}://${host}${path}`;
 
   return url;
 };
@@ -43,7 +45,10 @@ const createProvider = (headers: OidcRedirectCallbackHeaders): OAuthConfig<Profi
   clientSecret: env.AUTH_OIDC_CLIENT_SECRET,
   wellKnown: `${env.AUTH_OIDC_URI}/.well-known/openid-configuration`,
   authorization: {
-    params: { scope: env.AUTH_OIDC_SCOPE_OVERWRITE, redirect_uri: createRedirectUri(headers) },
+    params: {
+      scope: env.AUTH_OIDC_SCOPE_OVERWRITE,
+      redirect_uri: createRedirectUri(headers, '/api/auth/callback/oidc'),
+    },
   },
   idToken: true,
   async profile(profile) {

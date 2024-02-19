@@ -5,6 +5,7 @@ import { type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
 import { adapter, getProviders, onCreateUser } from '~/utils/auth';
+import { createRedirectUri } from '~/utils/auth/oidc';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser } from '~/validations/user';
@@ -85,6 +86,11 @@ export const constructAuthOptions = async (
       });
 
       return true;
+    },
+    async redirect({ url, baseUrl }) {
+      const pathname = new URL(url, baseUrl).pathname;
+      const redirectUrl = createRedirectUri(req.headers, pathname);
+      return redirectUrl;
     },
   },
   session: {
