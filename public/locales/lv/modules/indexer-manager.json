@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Indeksētāja pārvaldnieka statuss",
+        "description": "Statuss par jūsu indeksētājiem",
         "settings": {
-            "title": ""
+            "title": "Indeksētāja pārvaldnieka statuss"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indexer pārvaldnieks",
+        "testAllButton": "Pārbaudīt visu"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nevar atrast indeksētāja pārvaldnieku",
+            "text": "Savienojoties ar indeksētāja pārvaldnieku radās problēma. Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
         }
     }
 }
