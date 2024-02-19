@@ -43,14 +43,18 @@ const createProvider = (headers: OidcRedirectCallbackHeaders): OAuthConfig<Profi
   clientSecret: env.AUTH_OIDC_CLIENT_SECRET,
   wellKnown: `${env.AUTH_OIDC_URI}/.well-known/openid-configuration`,
   authorization: {
-    params: { scope: 'openid email profile groups', redirect_uri: createRedirectUri(headers) },
+    params: { scope: env.AUTH_OIDC_SCOPE_OVERWRITE, redirect_uri: createRedirectUri(headers) },
   },
   idToken: true,
   async profile(profile) {
     const user = await adapter.getUserByEmail!(profile.email);
 
-    const isAdmin = profile.groups.includes(env.AUTH_OIDC_ADMIN_GROUP);
-    const isOwner = profile.groups.includes(env.AUTH_OIDC_OWNER_GROUP);
+    if (profile.groups == undefined) {
+      Consola.warn('no groups found in profile of oidc user');
+    }
+
+    const isAdmin = profile.groups?.includes(env.AUTH_OIDC_ADMIN_GROUP);
+    const isOwner = profile.groups?.includes(env.AUTH_OIDC_OWNER_GROUP);
 
     // check for role update
     if (user && (user.isAdmin != isAdmin || user.isOwner != isOwner)) {
