@@ -70,7 +70,15 @@ export default function LoginPage({
   };
 
   useEffect(() => {
-    if (oidcAutoLogin) signIn('oidc');
+    if (oidcAutoLogin && !isError)
+      signIn('oidc', {
+        redirect: false,
+        callbackUrl: '/',
+      }).then((response) => {
+        if (!response?.ok) {
+          setIsError(true);
+        }
+      });
   }, [oidcAutoLogin]);
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
@@ -186,7 +194,17 @@ export default function LoginPage({
                 <Divider label="OIDC" labelPosition="center" mt="xl" mb="md" />
               )}
               {providers.includes('oidc') && (
-                <Button mt="xs" variant="light" fullWidth onClick={() => signIn('oidc')}>
+                <Button
+                  mt="xs"
+                  variant="light"
+                  fullWidth
+                  onClick={() =>
+                    signIn('oidc', {
+                      redirect: false,
+                      callbackUrl: '/',
+                    })
+                  }
+                >
                   {t('form.buttons.submit')} - {oidcProviderName}
                 </Button>
               )}
