@@ -32,9 +32,8 @@ export const createRedirectUri = (headers: OidcRedirectCallbackHeaders, pathname
 
   const host = headers['x-forwarded-host'] ?? headers.host;
 
-  const url = `${protocol}://${host}${path}`;
 
-  return url;
+  return `${protocol}://${host}${path}`;
 };
 
 const createProvider = (headers: OidcRedirectCallbackHeaders): OAuthConfig<Profile> => ({
