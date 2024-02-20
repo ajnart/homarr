@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Statut du gestionnaire d’indexeur",
+        "description": "Statuts de vos indexeurs",
         "settings": {
-            "title": ""
+            "title": "Statut du gestionnaire d’indexeur"
         }
     },
     "indexersStatus": {
-        "title": "",
+        "title": "Gestionnaire d’indexeur",
         "testAllButton": "Tout tester"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Impossible de trouver un gestionnaire d’indexeur",
+            "text": "Il y a eu un problème de connexion à votre gestionnaire d’indexeur. Veuillez vérifier votre configuration/intégration(s)."
         }
     }
 }
