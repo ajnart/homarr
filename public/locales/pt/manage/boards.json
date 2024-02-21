@@ -24,7 +24,7 @@
                     "fields": {
                         "name": {
                             "label": "Novo nome",
-                            "placeholder": ""
+                            "placeholder": "Nome do novo quadro"
                         }
                     }
                 }
