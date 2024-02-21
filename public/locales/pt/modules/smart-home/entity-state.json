@@ -10,19 +10,19 @@
                 "info": "ID de entidade exclusiva do Home Assistant. Copie clicando na entidade > Clique no ícone de engrenagem > Clique no botão copiar em 'ID da entidade'. Algumas entidades personalizadas podem não ser suportadas."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Anexar unidade de medida",
+                "info": "Acrescentar o atributo da unidade de medida ao estado da entidade."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "ID de automação opcional",
+                "info": "Seu ID de automação único. Sempre começa com automation.XXXXX. Se não definido, o widget não será clicável e apenas será exibido. Após clicar, o estado da entidade será atualizado."
             },
             "displayName": {
                 "label": "Nome de exibição"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Exibir nome amigável",
+                "info": "Exibir nome amigável do Home Assistant em vez do nome de exibição"
             }
         }
     }
