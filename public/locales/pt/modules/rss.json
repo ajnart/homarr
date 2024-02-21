@@ -19,13 +19,13 @@
         "label": "Grampo de linhas de texto"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Ordenar por data de publicação (crescente)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Coloque postagens sem data de publicação no topo"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Quantidade máxima de postagens"
       }
     },
     "card": {
