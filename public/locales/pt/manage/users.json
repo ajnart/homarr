@@ -7,9 +7,9 @@
     "filter": {
         "roles": {
             "all": "Todos",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "normal": "Normal",
+            "admin": "Administrador",
+            "owner": "Dono"
         }
     },
     "table": {
