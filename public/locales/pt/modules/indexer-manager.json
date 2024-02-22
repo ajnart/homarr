@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Status do Gerenciador de Indexadores",
+        "description": "Estado dos seus indexadores",
         "settings": {
-            "title": ""
+            "title": "Status do Gerenciador de Indexadores"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Gerenciador de indexadores",
+        "testAllButton": "Testar todos"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Não foi possível localizar um gerenciador de indexador",
+            "text": "Houve um problema na conexão com seu gerente de indexação. Por favor, verifique sua configuração/integração(ões)."
         }
     }
 }
