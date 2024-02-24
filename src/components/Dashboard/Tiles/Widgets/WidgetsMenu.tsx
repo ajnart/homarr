@@ -63,7 +63,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleEditClick = () => {
     openContextModalGeneric<WidgetEditModalInnerProps>({
       modal: 'integrationOptions',
-      title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
+      title: t('descriptor.settings.title'),
       innerProps: {
         widgetId: widget.id,
         widgetType: integration,

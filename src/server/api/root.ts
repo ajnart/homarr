@@ -1,3 +1,4 @@
+import { tdarrRouter } from '~/server/api/routers/tdarr';
 import { createTRPCRouter } from '~/server/api/trpc';
 
 import { appRouter } from './routers/app';
@@ -49,6 +50,7 @@ export const rootRouter = createTRPCRouter({
   password: passwordRouter,
   notebook: notebookRouter,
   smartHomeEntityState: smartHomeEntityStateRouter,
+  tdarr: tdarrRouter,
 });
 
 // export type definition of API

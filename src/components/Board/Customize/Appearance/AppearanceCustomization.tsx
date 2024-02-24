@@ -16,7 +16,11 @@ import { useTranslation } from 'next-i18next';
 import { highlight, languages } from 'prismjs';
 import Editor from 'react-simple-code-editor';
 import { useColorTheme } from '~/tools/color';
-import { BackgroundImageAttachment, BackgroundImageRepeat, BackgroundImageSize } from '~/types/settings';
+import {
+  BackgroundImageAttachment,
+  BackgroundImageRepeat,
+  BackgroundImageSize,
+} from '~/types/settings';
 
 import { useBoardCustomizationFormContext } from '../form';
 

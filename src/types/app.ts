@@ -57,7 +57,8 @@ export type IntegrationType =
   | 'nzbGet'
   | 'pihole'
   | 'adGuardHome'
-  | 'homeAssistant';
+  | 'homeAssistant'
+  | 'tdarr';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -101,6 +102,7 @@ export const integrationFieldProperties: {
   pihole: ['apiKey'],
   adGuardHome: ['username', 'password'],
   homeAssistant: ['apiKey'],
+  tdarr: [],
 };
 
 export type IntegrationFieldDefinitionType = {
