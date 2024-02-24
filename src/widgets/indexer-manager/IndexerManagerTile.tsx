@@ -16,8 +16,8 @@ const definition = defineWidget({
   gridstack: {
     minWidth: 1,
     minHeight: 1,
-    maxWidth: 3,
-    maxHeight: 3,
+    maxWidth: 12,
+    maxHeight: 12,
   },
   component: IndexerManagerWidgetTile,
 });
