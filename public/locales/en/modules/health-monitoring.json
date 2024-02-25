@@ -1,0 +1,35 @@
+{
+    "descriptor": {
+      "name": "System Health Monitoring",
+      "description": "Information about your NAS",
+      "settings": {
+        "title": "System Health Monitoring",
+        "fahrenheit": {
+          "label": "Fahrenheit"
+        },
+        "cpu": {
+          "label": "CPU"
+        },
+        "memory": {
+          "label": "Memory"
+        },
+        "fileSystem": {
+          "label": "File System"
+        },
+        }
+      },
+      "info": {
+        "uptime": "Uptime",
+        "updates": "Updates",
+        "reboot": "Reboot",
+        "load": "Load Avg",
+        "totalMem": "Total memory",
+        "available": "Available",
+      },
+      "errors": {
+        "general": {
+          "title": "Unable to find your NAS",
+          "text": "There was a problem connecting to your NAS. Please verify your configuration/integration(s)."
+        }
+      }
+  }

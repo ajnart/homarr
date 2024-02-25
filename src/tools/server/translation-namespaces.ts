@@ -21,6 +21,7 @@ export const boardNamespaces = [
   'modules/docker',
   'modules/dashdot',
   'modules/overseerr',
+  'modules/health-monitoring',
   'modules/media-server',
   'modules/indexer-manager',
   'modules/common-media-cards',
