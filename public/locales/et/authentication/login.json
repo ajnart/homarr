@@ -1,0 +1,20 @@
+{
+  "metaTitle": "",
+  "title": "",
+  "text": "",
+  "form": {
+    "fields": {
+      "username": {
+        "label": ""
+      },
+      "password": {
+        "label": ""
+      }
+    },
+    "buttons": {
+      "submit": ""
+    },
+    "afterLoginRedirection": ""
+  },
+  "alert": ""
+}
