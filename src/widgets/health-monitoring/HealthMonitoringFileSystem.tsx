@@ -34,8 +34,10 @@ const HealthMonitoringFileSystem = ({ fileSystem }: any) => {
                   </HoverCard.Target>
                   <HoverCard.Dropdown>
                     <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
-                      {t('info.available')}: {humanFileSize(disk.available)} -{' '}
-                      {100 - disk.percentage}%
+                      {t('fileSystem.available', {
+                        available: humanFileSize(disk.available),
+                        percentage: 100 - disk.percentage,
+                      })}
                     </Text>
                   </HoverCard.Dropdown>
                 </HoverCard>

@@ -51,7 +51,7 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
               </HoverCard.Target>
               <HoverCard.Dropdown>
                 <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
-                  {t('info.load')}
+                  {t('cpu.load')}
                 </Text>
                 <Flex
                   direction={{ base: 'column', sm: 'row' }}
@@ -100,14 +100,7 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
         sections={[
           {
             value: cpuTemp.cputemp,
-            color:
-              cpuTemp.cputemp < 35
-                ? 'green'
-                : cpuTemp.cputemp > 35 && cpuTemp.cputemp < 60
-                  ? 'yellow'
-                  : cpuTemp.cputemp > 60 && cpuTemp.cputemp < 70
-                    ? 'orange'
-                    : 'red',
+            color: cpuTemp.cputemp < 60 ? 'green' : 'red',
           },
         ]}
       />

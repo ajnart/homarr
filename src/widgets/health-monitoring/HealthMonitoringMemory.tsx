@@ -25,10 +25,10 @@ const HealthMonitoringMemory = ({ info }: any) => {
               </HoverCard.Target>
               <HoverCard.Dropdown>
                 <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
-                  {t('info.totalMem')}: {totalMemoryGB}GB
+                  {t('memory.totalMem', { total: totalMemoryGB })}
                 </Text>
                 <Text fz="lg" fw={500} align="center">
-                  {t('info.available')}: {freeMemoryGB}GB - {percentageFree}%
+                  {t('memory.available', { available: freeMemoryGB, percentage: percentageFree })}
                 </Text>
               </HoverCard.Dropdown>
             </HoverCard>
@@ -37,14 +37,7 @@ const HealthMonitoringMemory = ({ info }: any) => {
         sections={[
           {
             value: percentageUsed,
-            color:
-              percentageUsed < 10
-                ? 'green'
-                : percentageUsed > 10 && percentageUsed < 70
-                  ? 'yellow'
-                  : percentageUsed > 70 && percentageUsed < 90
-                    ? 'orange'
-                    : 'red',
+            color: percentageUsed < 70 ? 'green' : 'red',
           },
         ]}
       />

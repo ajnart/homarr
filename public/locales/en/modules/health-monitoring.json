@@ -6,25 +6,26 @@
         "title": "System Health Monitoring",
         "fahrenheit": {
           "label": "Fahrenheit"
-        },
-        "cpu": {
-          "label": "CPU"
-        },
-        "memory": {
-          "label": "Memory"
-        },
-        "fileSystem": {
-          "label": "File System"
-        },
         }
+      }
+    },
+      "cpu": {
+        "label": "CPU",
+        "load": "Load Avg"
+      },
+      "memory": {
+        "label": "Memory",
+        "totalMem": "Total memory: {{total}}GB",
+        "available": "Available: {{available}}GB - {{percentage}}%"
+      },
+      "fileSystem": {
+        "label": "File System",
+        "available": "Available: {{available}} - {{percentage}}%"
       },
       "info": {
         "uptime": "Uptime",
         "updates": "Updates",
-        "reboot": "Reboot",
-        "load": "Load Avg",
-        "totalMem": "Total memory",
-        "available": "Available",
+        "reboot": "Reboot"
       },
       "errors": {
         "general": {
