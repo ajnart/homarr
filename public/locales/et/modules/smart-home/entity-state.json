@@ -1,0 +1,29 @@
+{
+    "entityNotFound": "",
+    "descriptor": {
+        "name": "",
+        "description": "",
+        "settings": {
+            "title": "",
+            "entityId": {
+                "label": "",
+                "info": ""
+            },
+            "appendUnit": {
+                "label": "",
+                "info": ""
+            },
+            "automationId": {
+                "label": "",
+                "info": ""
+            },
+            "displayName": {
+                "label": ""
+            },
+            "displayFriendlyName": {
+                "label": "",
+                "info": ""
+            }
+        }
+    }
+}
