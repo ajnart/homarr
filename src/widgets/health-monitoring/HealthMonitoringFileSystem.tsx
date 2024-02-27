@@ -3,6 +3,8 @@ import { IconServer } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import { humanFileSize } from '~/tools/humanFileSize';
 
+import { ringColor } from './HealthMonitoringTile';
+
 const HealthMonitoringFileSystem = ({ fileSystem }: any) => {
   const { t } = useTranslation('modules/health-monitoring');
 
@@ -46,7 +48,7 @@ const HealthMonitoringFileSystem = ({ fileSystem }: any) => {
             sections={[
               {
                 value: disk.percentage,
-                color: disk.percentage > 80 ? 'red' : 'green',
+                color: ringColor(disk.percentage),
                 tooltip: disk.used,
               },
             ]}

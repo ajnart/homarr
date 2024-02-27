@@ -2,6 +2,8 @@ import { Center, Group, HoverCard, RingProgress, Text } from '@mantine/core';
 import { IconBrain } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 
+import { ringColor } from './HealthMonitoringTile';
+
 const HealthMonitoringMemory = ({ info }: any) => {
   const { t } = useTranslation('modules/health-monitoring');
   const totalMemoryGB: any = (info.memTotal / 1024 ** 3).toFixed(2);
@@ -37,7 +39,7 @@ const HealthMonitoringMemory = ({ info }: any) => {
         sections={[
           {
             value: percentageUsed,
-            color: percentageUsed < 70 ? 'green' : 'red',
+            color: ringColor(percentageUsed),
           },
         ]}
       />

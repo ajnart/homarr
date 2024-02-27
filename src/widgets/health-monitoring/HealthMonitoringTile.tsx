@@ -108,6 +108,13 @@ function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
   );
 }
 
+export const ringColor = (percentage: number) => {
+  if (percentage < 30) return 'green';
+  else if (percentage < 60) return 'yellow';
+  else if (percentage < 90) return 'orange';
+  else return 'red';
+};
+
 export const useOpenmediavaultQuery = () => {
   const { name: configName } = useConfigContext();
   return api.openmediavault.fetchData.useQuery(
