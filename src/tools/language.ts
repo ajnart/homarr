@@ -238,6 +238,14 @@ export const languages = [
     locale: 'vi',
     dayJsLocale: 'vi'
   },
+  {
+    shortName: 'et',
+    originalName: 'Eesti',
+    translatedName: 'Estonian',
+    country: 'EE',
+    locale: 'et',
+    dayJsLocale: 'et'
+  },
 ] as const satisfies Readonly<Language[]>;
 
 export const getLanguageByCode = (code: string | null): Language =>

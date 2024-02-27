@@ -33,6 +33,7 @@ module.exports = {
       'tw',
       'uk',
       'vi',
+      'et',
     ],
 
     localeDetection: false,
