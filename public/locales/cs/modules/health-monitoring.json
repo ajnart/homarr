@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "Monitorování stavu systému",
+        "description": "Informace o Vaší NAS",
+        "settings": {
+            "title": "Monitorování stavu systému",
+            "fahrenheit": {
+                "label": ""
+            }
+        }
+    },
+    "cpu": {
+        "label": "Procesor",
+        "load": "",
+        "minute": ""
+    },
+    "memory": {
+        "label": "Pamět",
+        "totalMem": "Celková paměť: {{total}}GB",
+        "available": ""
+    },
+    "fileSystem": {
+        "label": "",
+        "available": ""
+    },
+    "info": {
+        "uptime": "",
+        "updates": "",
+        "reboot": ""
+    },
+    "errors": {
+        "general": {
+            "title": "",
+            "text": ""
+        }
+    }
+}
