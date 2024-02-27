@@ -5,33 +5,33 @@
         "settings": {
             "title": "Monitorování stavu systému",
             "fahrenheit": {
-                "label": ""
+                "label": "Stupně Fahrenheit"
             }
         }
     },
     "cpu": {
         "label": "Procesor",
-        "load": "",
-        "minute": ""
+        "load": "Průměrné zatížení",
+        "minute": "{{minute}} minut"
     },
     "memory": {
         "label": "Pamět",
         "totalMem": "Celková paměť: {{total}}GB",
-        "available": ""
+        "available": "K dispozici: {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "Souborový systém",
+        "available": "K dispozici: {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Doba provozu",
+        "updates": "Aktualizace",
+        "reboot": "Restartovat"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nepodařilo se najít Vaší NAS",
+            "text": "Došlo k problému s připojením k Vaší NAS. Ověřte prosím svou konfiguraci/integraci."
         }
     }
 }
