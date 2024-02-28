@@ -10,8 +10,8 @@
                 "info": "ID thực thể độc nhất trong Home Assistant. Sao chép bằng cách nhấp vào thực thể > Nhấp vào biểu tượng răng cưa > Nhấp vào nút sao chép tại 'ID thực thể'. Một số thực thể tùy chỉnh có thể không được hỗ trợ."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Thêm đơn vị đo",
+                "info": "Thêm thuộc tính đơn vị đo lường vào trạng thái thực thể."
             },
             "automationId": {
                 "label": "ID tự động hóa tùy chọn",
@@ -21,8 +21,8 @@
                 "label": "Tên hiển thị"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Hiển thị tên thân thiện",
+                "info": "Hiển thị tên thân thiện từ Home Assistant thay vì tên hiển thị"
             }
         }
     }
