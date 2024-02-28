@@ -30,8 +30,8 @@
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Kan ikke finde din NAS",
+            "text": "Der opstod et problem med at oprette forbindelse til din NAS. Bekræft venligst din konfiguration/integration(er)."
         }
     }
 }
