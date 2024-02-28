@@ -1,37 +1,37 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Giám sát tình trạng hệ thống",
+        "description": "Cung cấp thông tin về NAS của bạn",
         "settings": {
-            "title": "",
+            "title": "Giám sát tình trạng hệ thống",
             "fahrenheit": {
-                "label": ""
+                "label": "Độ F"
             }
         }
     },
     "cpu": {
         "label": "CPU",
-        "load": "",
-        "minute": ""
+        "load": "Tải trung bình",
+        "minute": "{{minute}} phút"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "Bộ nhớ",
+        "totalMem": "Tổng bộ nhớ: {{total}}GB",
+        "available": "Có sẵn: {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "Hệ thống tập tin",
+        "available": "Có sẵn: {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Thời gian hoạt động",
+        "updates": "Cập nhật",
+        "reboot": "Khởi động lại"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Không thể tìm thấy NAS của bạn",
+            "text": "Đã xảy ra sự cố khi kết nối với NAS của bạn. Vui lòng xác minh (các) cấu hình/tích hợp của bạn."
         }
     }
 }
