@@ -1,32 +1,32 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Systemsundhedsovervågning",
+        "description": "Oplysninger om din NAS",
         "settings": {
-            "title": "",
+            "title": "Systemsundhedsovervågning",
             "fahrenheit": {
-                "label": ""
+                "label": "Fahrenheit"
             }
         }
     },
     "cpu": {
         "label": "CPU",
-        "load": "",
-        "minute": ""
+        "load": "Load Gennemsnit",
+        "minute": "{{minute}} minutter"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "Hukommelse",
+        "totalMem": "Samlet hukommelse: {{total}}GB",
+        "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "Filsystem",
+        "available": "Tilgængelig: {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Oppetid",
+        "updates": "Opdateringer",
+        "reboot": "Genstart"
     },
     "errors": {
         "general": {
