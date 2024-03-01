@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "",
+    "buttons": {
+      "details": "",
+      "tryAgain": ""
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "",
+    "reportButton": ""
+  }
+}
