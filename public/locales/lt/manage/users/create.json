@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Sukurti vartotoją",
     "steps": {
         "account": {
-            "title": "",
+            "title": "Pirmieji žingsniai",
             "text": "Sukurti paskyrą",
             "username": {
                 "label": ""
             },
             "email": {
-                "label": ""
+                "label": "El. paštas"
             }
         },
         "security": {
-            "title": "",
+            "title": "Antras žingsnis",
             "text": "Slaptažodis",
             "password": {
                 "label": "Slaptažodis"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Patvirtinimas",
+            "text": "Išsaugoti duomenų bazėje",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Peržiūrėkite įvestus duomenis",
+                "text": "Pateikus duomenis į duomenų bazę, naudotojas galės prisijungti. Ar esate tikri, kad norite šį naudotoją išsaugoti duomenų bazėje ir aktyvuoti prisijungimą?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Savybė",
+                    "value": "Reikšmė",
                     "username": "",
-                    "email": "",
+                    "email": "El. paštas",
                     "password": "Slaptažodis"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nenustatytas",
+                "valid": "Galiojantis"
             },
-            "failed": ""
+            "failed": "Naudotojo sukūrimas nepavyko: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Vartotojas buvo sukurtas",
+                "text": "Vartotojas buvo sukurtas duomenų bazėje. Dabar jis gali prisijungti."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Sugeneruoti atsitiktinį",
+        "createAnother": "Sukurti kitą"
     }
 }
