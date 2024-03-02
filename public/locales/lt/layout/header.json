@@ -1,27 +1,27 @@
 {
     "search": {
-        "label": "",
+        "label": "Ieškoti",
         "engines": {
-            "web": "",
-            "youtube": "",
-            "torrent": "",
-            "movie": ""
+            "web": "Ieškoti {{query}} internete",
+            "youtube": "Ieškoti {{query}} svetainėje YouTube",
+            "torrent": "Ieškoti {{query}} torrentų",
+            "movie": "Ieškoti {{query}} {{app}}"
         }
     },
     "actions": {
         "avatar": {
-            "switchTheme": "",
-            "preferences": "",
-            "defaultBoard": "",
-            "manage": "",
-            "logout": "",
+            "switchTheme": "Perjugti temą",
+            "preferences": "Vartotojo nustatymai",
+            "defaultBoard": "Numatytasis skydelis",
+            "manage": "Valdyti",
+            "logout": "Atsijungti nuo {{username}}",
             "login": "Prisijungti"
         }
     },
     "modals": {
         "movie": {
             "title": "",
-            "topResults": ""
+            "topResults": "Geriausi {{count}} rezultatai <b>{{search}}</b>."
         }
     }
 }
