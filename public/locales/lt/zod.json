@@ -1,7 +1,7 @@
 {
     "errors": {
         "default": "",
-        "required": "",
+        "required": "Šis laukelis yra privalomas",
         "string": {
             "startsWith": "",
             "endsWith": "",
