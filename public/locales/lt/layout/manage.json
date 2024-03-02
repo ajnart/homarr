@@ -1,32 +1,32 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Pagrindinis"
         },
         "boards": {
-            "title": ""
+            "title": "Lentos"
         },
         "users": {
-            "title": "",
+            "title": "Vartotojai",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Valdyti",
+                "invites": "Pakvietimai"
             }
         },
         "help": {
-            "title": "",
+            "title": "Pagalba",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Dokumentacija",
+                "report": "Pranešti apie problemą / klaidą",
+                "discord": "Bendruomenės Discord",
+                "contribute": "Prisidėti"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Įrankiai",
             "items": {
                 "docker": "",
-                "api": ""
+                "api": "API"
             }
         },
         "about": {
