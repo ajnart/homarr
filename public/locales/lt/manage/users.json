@@ -1,5 +1,5 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Vartotojai",
     "pageTitle": "",
     "buttons": {
         "create": ""
@@ -15,7 +15,7 @@
     "table": {
         "header": {
             "user": "",
-            "email": ""
+            "email": "El. paštas"
         }
     },
     "tooltips": {
