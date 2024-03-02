@@ -3,7 +3,7 @@
     "steps": {
         "account": {
             "title": "",
-            "text": "",
+            "text": "Sukurti paskyrą",
             "username": {
                 "label": ""
             },
@@ -13,9 +13,9 @@
         },
         "security": {
             "title": "",
-            "text": "",
+            "text": "Slaptažodis",
             "password": {
-                "label": ""
+                "label": "Slaptažodis"
             }
         },
         "finish": {
@@ -31,7 +31,7 @@
                     "value": "",
                     "username": "",
                     "email": "",
-                    "password": ""
+                    "password": "Slaptažodis"
                 },
                 "notSet": "",
                 "valid": ""
