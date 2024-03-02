@@ -1,12 +1,12 @@
 {
-    "description": "",
+    "description": "Redagavimo režime galite reguliuoti plytekes ir konfigūruoti programas. Pakeitimai neišsaugomi, kol neišeinate iš redagavimo režimo.",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Įjunkite redagavimo režimą",
+        "enabled": "Išeikite ir išsaugokite"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Redagavimo režimas įjungtas <1>{{size}}</1> dydžiui",
+        "text": "Galite koreguoti save programas. Pakeitimai yra <strong>neišsaugomi</strong>, kol neišeinate iš redagavimo režimo"
     },
-    "unloadEvent": ""
+    "unloadEvent": "Išeikite iš redagavimo režimo, kad išsaugotumėte pakeitimus"
 }
