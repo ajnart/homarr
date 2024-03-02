@@ -45,14 +45,14 @@
   },
   "seeMore": "",
   "position": {
-    "left": "",
+    "left": "Kairėje",
     "center": "",
-    "right": ""
+    "right": "Dešinėje"
   },
   "attributes": {
-    "width": "",
-    "height": ""
+    "width": "Plotis",
+    "height": "Aukštis"
   },
-  "public": "",
+  "public": "Vieša",
   "restricted": ""
 }
