@@ -3,13 +3,13 @@
   "back": "",
   "sections": {
     "general": {
-      "title": "",
+      "title": "Bendras",
       "inputs": {
         "username": {
           "label": ""
         },
         "eMail": {
-          "label": ""
+          "label": "El. paštas"
         }
       }
     },
