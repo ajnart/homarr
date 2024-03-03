@@ -1,31 +1,31 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Kalendorius",
+    "description": "Rodo kalendorių su būsimais leidiniais iš palaikomų integracijų.",
     "settings": {
-      "title": "",
+      "title": "Kalendoriaus valdiklio nustatymai",
       "radarrReleaseType": {
-        "label": "",
+        "label": "\"Radarr\" išleidimo tipas",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "Kino teatruose",
+          "physicalRelease": "Fizinė",
+          "digitalRelease": "Skaitmeninė"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Paslėpti savaitės dienas"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Rodyti neprižiūrimus elementus"
       },
       "fontSize": {
-        "label": "",
+        "label": "Šrifto dydis",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Labai mažas",
+          "sm": "Mažas",
+          "md": "Vidutinis",
+          "lg": "Didelis",
+          "xl": "Labai didelis"
         }
       }
     }
