@@ -8,49 +8,49 @@
             "categories": "Kategorijos"
         },
         "buttons": {
-            "view": ""
+            "view": "Žiūrėti lentą"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Nustatyti kaip numatytąją lentą",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Ištrinti visam laikui",
+                "disabled": "Ištrynimas išjungtas, nes senesni \"Homarr\" komponentai neleidžia ištrinti numatytosios konfigūracijos. Ištrinti bus galima ateityje."
             },
-            "duplicate": "",
+            "duplicate": "Sukurti kopiją",
             "rename": {
-                "label": "",
+                "label": "Pervadinti",
                 "modal": {
-                    "title": "",
+                    "title": "Pervadinti lentą {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Naujas pavadinimas",
+                            "placeholder": "Naujas lentos pavadinimas"
                         }
                     }
                 }
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Failų sistema",
+            "default": "Numatytas"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Kurti naują lentą"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Ištrinti lentą",
+            "text": "Ar tikrai norite ištrinti šią lentą? Šio veiksmo negalima atšaukti ir jūsų duomenys bus prarasti visam laikui."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Sukurti lentą",
+            "text": "Sukūrus lentą, pavadinimo keisti negalima.",
             "form": {
                 "name": {
                     "label": ""
                 },
-                "submit": ""
+                "submit": "Sukurti"
             }
         }
     }
