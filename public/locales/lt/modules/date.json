@@ -1,32 +1,32 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Data ir Laikas",
+    "description": "Rodo dabartinę datą ir laiką.",
     "settings": {
-      "title": "",
+      "title": "Datos ir laiko valdiklio nustatymai",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Laiko juosta",
+        "info": "Pasirinkite savo laiko juostos pavadinimą, savo rasite čia: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Miesto pavadinimas arba pasirinktinis pavadinimas"
       },
       "display24HourFormat": {
-        "label": ""
+        "label": "Rodyti visą laiką (24 val.)"
       },
       "dateFormat": {
-        "label": "",
+        "label": "Datos formatavimas",
         "data": {
-          "hide": ""
+          "hide": "Paslėpti datą"
         }
       },
       "titleState": {
-        "label": "",
-        "info": "",
+        "label": "Laikrodžio pavadinimas",
+        "info": "Pasirinktinis pavadinimas ir laiko juostos kodas gali būti rodomi valdiklyje.<br/>Taip pat galite rodyti tik miestą, nerodyti nė vieno,<br/>arba net rodyti tik laiko juostą, kai pasirenkami abu pavadinimai, bet nepateikiamas pavadinimas.",
         "data": {
-          "both": "",
-          "city": "",
-          "none": ""
+          "both": "Pavadinimas ir laiko juosta",
+          "city": "Tik pavadinimas",
+          "none": "Nėra"
         }
       }
     }
