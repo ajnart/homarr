@@ -68,13 +68,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
 
   if (isLoading) {
     return (
-      <Stack
-        ref={ref}
-        spacing="xs"
-        justify="space-around"
-        align="center"
-        style={{ height: '100%', width: '100%' }}
-      >
+      <Stack ref={ref} spacing="xs" justify="space-around" align="center" w="100%" h="100%">
         <Skeleton height={40} width={100} mb="xl" />
         <Group noWrap>
           <Skeleton height={50} circle />
@@ -99,13 +93,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
   return (
     <>
       {widget?.properties.displayWeekly ? (
-        <Stack
-          style={{ height: '100%', width: '100%' }}
-          justify="space-around"
-          ref={ref}
-          spacing={0}
-          align="center"
-        >
+        <Stack w="100%" h="100%" justify="space-around" ref={ref} spacing={0} align="center">
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
