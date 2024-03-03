@@ -10,7 +10,7 @@
         }
     },
     "cpu": {
-        "label": "",
+        "label": "Procesorius",
         "load": "",
         "minute": ""
     },
