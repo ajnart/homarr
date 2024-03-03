@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Rodomi išorinio prietaiso Dash grafikai. Instance viduje Homarr.",
     "settings": {
-      "title": "",
+      "title": "Dash nustatymai. valdiklis",
       "dashName": {
-        "label": ""
+        "label": "Dash. Pavadinimas"
       },
       "url": {
-        "label": ""
+        "label": "Dash. URL"
       },
       "usePercentages": {
-        "label": ""
+        "label": "Rodyti procentus"
       },
       "columns": {
-        "label": ""
+        "label": "Rodyti stulpelius"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Grafikų aukštis"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafikai (Išdėstymas)",
         "storage": {
-          "label": "",
+          "label": "Saugykla",
           "enabled": {
-            "label": ""
+            "label": "Rodyti valdiklyje"
           },
           "span": {
-            "label": ""
+            "label": "Stulpelio apimtis"
           },
           "compactView": {
-            "label": ""
+            "label": "Rodyti kaip tekstą (glaustai)"
           },
           "multiView": {
-            "label": ""
+            "label": "Rodyti kaip kelių diskų peržiūrą"
           }
         },
         "network": {
-          "label": "",
+          "label": "Tinklas",
           "enabled": {
-            "label": ""
+            "label": "Rodyti valdiklyje"
           },
           "span": {
-            "label": ""
+            "label": "Stulpelio apimtis"
           },
           "compactView": {
-            "label": ""
+            "label": "Rodyti kaip tekstą (glaustai)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "Procesorius",
           "enabled": {
-            "label": ""
+            "label": "Rodyti valdiklyje"
           },
           "span": {
-            "label": ""
+            "label": "Stulpelio apimtis"
           },
           "multiView": {
-            "label": ""
+            "label": "Rodyti kaip kelių branduolių rodinį"
           }
         },
         "ram": {
-          "label": "",
+          "label": "RAM",
           "enabled": {
-            "label": ""
+            "label": "Rodyti valdiklyje"
           },
           "span": {
-            "label": ""
+            "label": "Stulpelio apimtis"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "Vaizdo plokštė",
           "enabled": {
-            "label": ""
+            "label": "Rodyti valdiklyje"
           },
           "span": {
-            "label": ""
+            "label": "Stulpelio apimtis"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Nerasta \"Dash.\" paslauga. Pridėkite ją į \"Homarr\" prietaisų skydelį arba nustatykite \"Dash. URL adresą modulio parinktyse",
+      "noInformation": "Negalima gauti informacijos iš dash. - Ar naudojate naujausią versiją?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "Aptiktas protokolo sumažinimas",
+        "text": "Ryšys su jūsų Dash. pavyzdys naudoja HTTP. Tai yra saugumo rizika, nes HTTP yra nešifruotas ir užpuolikai gali piktnaudžiauti šiuo ryšiu. Įsitikinkite, kad Dash. naudoja HTTPS arba sumažinkite Homarr versiją į HTTP (nerekomenduojama)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Saugykla",
+        "label": "Saugykla:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Tinklas",
+        "label": "Tinklas:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "Žemyn",
+          "upload": "Aukštyn"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Procesorius"
       },
       "ram": {
-        "title": ""
+        "title": "RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "Vaizdo plokštė"
       }
     }
   }
