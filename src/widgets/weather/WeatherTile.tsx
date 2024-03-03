@@ -1,4 +1,4 @@
-import { Center, Flex, Group, Skeleton, Stack, Text, Title } from '@mantine/core';
+import { Center, Flex, Group, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconArrowDownRight,
@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
+import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
 import Forecast from './WeeklyForecast';
@@ -67,18 +68,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
   const { t } = useTranslation('modules/weather');
 
   if (isLoading) {
-    return (
-      <Stack ref={ref} spacing="xs" justify="space-around" align="center" w="100%" h="100%">
-        <Skeleton height={40} width={100} mb="xl" />
-        <Group noWrap>
-          <Skeleton height={50} circle />
-          <Group>
-            <Skeleton height={25} width={70} mr="lg" />
-            <Skeleton height={25} width={70} />
-          </Group>
-        </Group>
-      </Stack>
-    );
+    return <WidgetLoading />;
   }
 
   if (isError) {
@@ -93,7 +83,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
   return (
     <>
       {widget?.properties.displayWeekly ? (
-        <Stack w="100%" h="100%" justify="space-around" ref={ref} spacing={0} align="center">
+        <Stack w="100%" h="100%" justify="space-between" ref={ref} spacing={0} align="center">
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
