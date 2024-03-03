@@ -1,37 +1,37 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "系统健康监测",
+        "description": "关于NAS的信息",
         "settings": {
-            "title": "",
+            "title": "系统健康监测",
             "fahrenheit": {
-                "label": ""
+                "label": "华氏度"
             }
         }
     },
     "cpu": {
         "label": "CPU",
-        "load": "",
-        "minute": ""
+        "load": "平均负载",
+        "minute": "{{minute}} 分钟"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "内存",
+        "totalMem": "内存总量： {{total}}GB",
+        "available": "可用： {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "文件系统",
+        "available": "可用： {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "运行时间",
+        "updates": "更新",
+        "reboot": "重启"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "找不到您的 NAS",
+            "text": "连接到您的NAS时出现了问题。请验证您的配置/集成。"
         }
     }
 }
