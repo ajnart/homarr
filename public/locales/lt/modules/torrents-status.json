@@ -42,7 +42,7 @@
     "table": {
       "header": {
         "isCompleted": "",
-        "name": "",
+        "name": "Pavadinimas",
         "dateAdded": "",
         "size": "",
         "download": "Žemyn",
@@ -55,24 +55,24 @@
         "seeds": "",
         "peers": "",
         "label": "",
-        "state": "",
+        "state": "Būsena",
         "stateMessage": ""
       },
       "item": {
         "text": ""
       },
       "body": {
-        "nothingFound": "",
+        "nothingFound": "Torrentų nerasta",
         "filterHidingItems": ""
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Dabartinis atsisiuntimo greitis",
+      "download": "Atsiuntimas: {{download}}",
+      "upload": "Įkelimas: {{upload}}",
+      "timeSpan": "Prieš {{seconds}} sekundžių",
+      "totalDownload": "Atsiuntimas: {{download}}/s",
+      "totalUpload": "Įkelimas: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
