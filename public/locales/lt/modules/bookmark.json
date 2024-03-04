@@ -15,8 +15,8 @@
         "label": "",
         "data": {
           "autoGrid": "Automatinis tinklelis",
-          "horizontal": "",
-          "vertical": ""
+          "horizontal": "Horizontalus",
+          "vertical": "Vertikalus"
         }
       }
     }
@@ -33,7 +33,7 @@
       "invalidLink": "Negaliojanti nuoroda",
       "errorMsg": "Neišsaugota, nes buvo patvirtinimo klaidų. Prašome pakoreguoti savo įvestus duomenis"
     },
-    "name": "",
+    "name": "Pavadinimas",
     "url": "URL",
     "newTab": "Atidaryti naujame skirtuke",
     "hideHostname": "Paslėpti kompiuterio pavadinimą",
