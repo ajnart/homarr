@@ -25,7 +25,7 @@
         "tools": {
             "title": "Įrankiai",
             "items": {
-                "docker": "",
+                "docker": "Docker",
                 "api": "API"
             }
         },
