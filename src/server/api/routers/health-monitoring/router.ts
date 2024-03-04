@@ -44,14 +44,26 @@ export const healthMonitoringRouter = createTRPCRouter({
       let systemData: any;
       let clusterData: any;
 
-      if (omvApp) {
-        const data = await makeOpenMediaVaultCalls(omvApp, input);
-        if (data) { systemData = data; }
-      }
+      try {
+        const results = await Promise.all([
+          omvApp ? makeOpenMediaVaultCalls(omvApp, input) : null,
+          proxApp ? makeProxmoxStatusAPICall(proxApp, input) : null,
+        ])
 
-      if (proxApp) {
-        const data = await makeProxmoxStatusAPICall(proxApp, input);
-        if (data != null) { clusterData = data; }
+        for (const response of results) {
+          if (response) {
+            if ('authenticated' in response) {
+              Consola.log('got omv data')
+              systemData = response
+            } else if ('nodes' in response) {
+              Consola.log('got prox data')
+              clusterData = response
+            }
+          }
+        }
+      } catch (error) {
+        Consola.error(`Error executing health monitoring requests(s): ${error}`)
+        return null
       }
 
       return {

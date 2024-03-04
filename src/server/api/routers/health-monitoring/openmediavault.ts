@@ -72,7 +72,16 @@ export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
           ?.split(';')[0];
       }
 
-      const [systemInfoResponse, fileSystemResponse, cpuTempResponse] = await Promise.all([
+      let cpuTempResponse: any;
+      const cpuTempResponsePromise = makeOpenMediaVaultRPCCall(
+        'cputemp',
+        'get',
+        {},
+        { Cookie: `${loginToken};${sessionId}` },
+        input
+      )
+
+      const [systemInfoResponse, fileSystemResponse, ] = await Promise.all([
         makeOpenMediaVaultRPCCall(
           'system',
           'getInformation',
@@ -87,14 +96,11 @@ export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
           { Cookie: `${loginToken};${sessionId}` },
           input
         ),
-        makeOpenMediaVaultRPCCall(
-          'cputemp',
-          'get',
-          {},
-          { Cookie: `${loginToken};${sessionId}` },
-          input
-        ),
       ]);
+
+      cpuTempResponsePromise.then((response) => {
+        cpuTempResponse = response;
+      })
 
       return {
         authenticated: authResponse ? authResponse.data.response.authenticated : true,

@@ -83,7 +83,7 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
           },
         ]}
       />
-      <RingProgress
+      {cpuTemp && <RingProgress
         roundCaps
         size={140}
         thickness={12}
@@ -103,7 +103,7 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
             color: cpuTemp.cputemp < 60 ? 'green' : 'red',
           },
         ]}
-      />
+      />}
     </Group>
   );
 };

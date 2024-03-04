@@ -7,48 +7,46 @@
       "fahrenheit": {
         "label": "Fahrenheit"
       },
-      "proxmox": {
-        "node": {
-          "label": "Filter by node name",
-          "info": "Enter your Proxmox node name to only show metrics for that node. By default, the entire cluster is shown."
-        },
-        "defaultViewState": {
-          "label": "Section open by default",
-          "data": {
-            "none": "None",
-            "node": "Nodes",
-            "vm": "VMs",
-            "lxc": "LXCs",
-            "storage": "Storage"
-          }
-        },
-        "summary": {
-          "label": "Show summary section"
-        },
-        "showNode": {
-          "label": "Show nodes section"
-        },
-        "showVM": {
-          "label": "Show VMs section"
-        },
-        "showLXCs": {
-          "label": "Show LXCs section"
-        },
-        "showStorage": {
-          "label": "Show storage section"
-        },
-        "sectionIndicatorColor": {
-          "label": "Requirement for section status indicator to be 'OK'",
-          "info": "'All' requires that all items be online for the indicator to be green. 'Any' requires at least one item to be online.",
-          "data": {
-            "any": "Any Active",
-            "all": "All Active"
-          }
-        },
-        "ignoreCert": {
-          "label": "Ignore Certificate Errors",
-          "info": "If enabled, the widget will ignore certificate errors when accessing the Proxmox API. This can be helpful when accessing Proxmox through HTTPS."
+      "node": {
+        "label": "Filter by node name",
+        "info": "Enter your Proxmox node name to only show metrics for that node. By default, the entire cluster is shown."
+      },
+      "defaultViewState": {
+        "label": "Section open by default",
+        "data": {
+          "none": "None",
+          "node": "Nodes",
+          "vm": "VMs",
+          "lxc": "LXCs",
+          "storage": "Storage"
         }
+      },
+      "summary": {
+        "label": "Show summary section"
+      },
+      "showNode": {
+        "label": "Show nodes section"
+      },
+      "showVM": {
+        "label": "Show VMs section"
+      },
+      "showLXCs": {
+        "label": "Show LXCs section"
+      },
+      "showStorage": {
+        "label": "Show storage section"
+      },
+      "sectionIndicatorColor": {
+        "label": "Requirement for section status indicator to be 'OK'",
+        "info": "'All' requires that all items be online for the indicator to be green. 'Any' requires at least one item to be online.",
+        "data": {
+          "any": "Any Active",
+          "all": "All Active"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignore Certificate Errors",
+        "info": "If enabled, the widget will ignore certificate errors when accessing the Proxmox API. This can be helpful when accessing Proxmox through HTTPS."
       }
     }
   },
