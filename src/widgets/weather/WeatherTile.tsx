@@ -83,7 +83,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
   return (
     <>
       {widget?.properties.displayWeekly ? (
-        <Stack w="100%" h="100%" justify="space-between" ref={ref} spacing={0} align="center">
+        <Stack w="100%" h="100%" justify="space-around" ref={ref} spacing={0} align="center">
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
