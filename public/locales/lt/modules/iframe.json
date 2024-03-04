@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Įterpkite bet kokį turinį iš interneto. Kai kuriose svetainėse prieiga gali būti ribojama.",
     "settings": {
-      "title": "",
+      "title": "iFrame nustatymai",
       "embedUrl": {
-        "label": ""
+        "label": "Įterpimo URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Leisti per visą ekraną"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Suteikti skaidrumo"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Leisti slinkti"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Leisti mokėti"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Leisti automatinį paleidimą"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Įgalinti mikrofoną"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Leisti kamerą"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Leisti nustatyti geografinę buvimo vietą"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Klaidingas URL",
+        "text": "Įsitikinkite, kad valdiklio konfigūracijoje įvedėte galiojantį adresą."
       },
-      "browserSupport": ""
+      "browserSupport": "Jūsų naršyklė nepalaiko iframe. Atnaujinkite savo naršyklę."
     }
   }
 }
