@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Leidžia lengvai matyti ir valdyti visus Docker konteinerius."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Ieškokite pagal konteinerio arba nuotraukos pavadinimą"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Pavadinimas",
+      "image": "Nuotrauka",
+      "ports": "Prievadai",
+      "state": "Būsena"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} daugiau"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Veikia",
+      "created": "Sukurta",
+      "stopped": "Sustabdyta",
+      "unknown": "Nežinoma"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Įtraukti programėlę",
+      "message": "Pridėti programą prie Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Paleisti iš naujo"
     },
     "stop": {
-      "title": ""
+      "title": "Sustabdyti"
     },
     "start": {
-      "title": ""
+      "title": "Paleisti"
     },
     "refreshData": {
-      "title": ""
+      "title": "Atnaujinti duomenis"
     },
     "remove": {
-      "title": ""
+      "title": "Pašalinti"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Pridėti prie Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Paleidžiama",
+      "end": "Paleista"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Stabdoma",
+      "end": "Sustabdyta"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Paleidžiama iš naujo",
+      "end": "Paleista iš naujo"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Trinamas",
+      "end": "Pašalinta"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Docker integravimas nepavyko",
+      "message": "Ar pamiršote prijungti docker lizdą?"
     },
     "unknownError": {
-      "title": ""
+      "title": "Įvyko klaida"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Vienu metu pridėkite tik vieną programą ar paslaugą!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
