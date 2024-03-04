@@ -5,10 +5,10 @@
     "settings": {
       "title": "",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Pakeiskite nuorodas išoriniu pagrindiniu kompiuteriu"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Atidaryti naujame skirtuke"
       }
     }
   },
