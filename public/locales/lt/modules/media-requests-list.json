@@ -1,35 +1,35 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medijų užklausos",
+    "description": "Peržiūrėkite visų medijų užklausų iš \"Overseerr\" arba \"Jellyseerr\" sąrašą",
     "settings": {
-      "title": "",
+      "title": "Medijų užklausų sąrašas",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Pakeiskite nuorodas išoriniu pagrindiniu kompiuteriu"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Atidaryti naujame skirtuke"
       }
     }
   },
-  "noRequests": "",
+  "noRequests": "Užklausų nerasta. Įsitikinkite, kad teisingai sukonfigūravote savo programas.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": "",
-    "available": "",
-    "partial": ""
+    "approved": "Patvirtinta",
+    "pendingApproval": "Laukia patvirtinimo",
+    "declined": "Atmesta",
+    "available": "Galima",
+    "partial": "Dalis"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Patvirtinti visas užklausas",
+    "decline": "Atmesti visas užklausas",
+    "approving": "Patvirtinama užklausa..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Patvirtinama",
+    "declining": "Atmetama",
+    "request": "užklausa...",
+    "approved": "Užklausa buvo patvirtinta!",
+    "declined": "Užklausa buvo atmesta!"
   }
 }
