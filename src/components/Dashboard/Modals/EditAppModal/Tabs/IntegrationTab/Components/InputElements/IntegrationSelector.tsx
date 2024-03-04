@@ -198,4 +198,9 @@ export const availableIntegrations = [
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/openmediavault.png',
     label: 'OpenMediaVault',
   },
+  {
+    value: 'proxmox',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/proxmox.png',
+    label: 'Proxmox',
+  }
 ] as const satisfies Readonly<SelectItem[]>;

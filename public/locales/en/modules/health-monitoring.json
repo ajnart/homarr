@@ -1,37 +1,118 @@
 {
-    "descriptor": {
-      "name": "System Health Monitoring",
-      "description": "Information about your NAS",
-      "settings": {
-        "title": "System Health Monitoring",
-        "fahrenheit": {
-          "label": "Fahrenheit"
+  "descriptor": {
+    "name": "System Health Monitoring",
+    "description": "Displays information showing the health and status of your system(s).",
+    "settings": {
+      "title": "System Health Monitoring",
+      "fahrenheit": {
+        "label": "Fahrenheit"
+      },
+      "proxmox": {
+        "node": {
+          "label": "Filter by node name",
+          "info": "Enter your Proxmox node name to only show metrics for that node. By default, the entire cluster is shown."
+        },
+        "defaultViewState": {
+          "label": "Section open by default",
+          "data": {
+            "none": "None",
+            "node": "Nodes",
+            "vm": "VMs",
+            "lxc": "LXCs",
+            "storage": "Storage"
+          }
+        },
+        "summary": {
+          "label": "Show summary section"
+        },
+        "showNode": {
+          "label": "Show nodes section"
+        },
+        "showVM": {
+          "label": "Show VMs section"
+        },
+        "showLXCs": {
+          "label": "Show LXCs section"
+        },
+        "showStorage": {
+          "label": "Show storage section"
+        },
+        "sectionIndicatorColor": {
+          "label": "Requirement for section status indicator to be 'OK'",
+          "info": "'All' requires that all items be online for the indicator to be green. 'Any' requires at least one item to be online.",
+          "data": {
+            "any": "Any Active",
+            "all": "All Active"
+          }
+        },
+        "ignoreCert": {
+          "label": "Ignore Certificate Errors",
+          "info": "If enabled, the widget will ignore certificate errors when accessing the Proxmox API. This can be helpful when accessing Proxmox through HTTPS."
         }
+      }
+    }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Load Average",
+    "minute": "{{minute}} minute"
+  },
+  "memory": {
+    "label": "Memory",
+    "totalMem": "Total memory: {{total}}GB",
+    "available": "Available: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "File System",
+    "available": "Available: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Uptime",
+    "updates": "Updates",
+    "reboot": "Reboot"
+  },
+  "errors": {
+    "general": {
+      "title": "Unable to find your system(s).",
+      "text": "There was a problem connecting to your system. Please verify your configuration/integration(s)."
+    }
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Nodes",
+        "vms": "VMs",
+        "lxcs": "LXCs",
+        "storage": "Storage"
       }
     },
-      "cpu": {
-        "label": "CPU",
-        "load": "Load Average",
-        "minute": "{{minute}} minute"
-      },
-      "memory": {
-        "label": "Memory",
-        "totalMem": "Total memory: {{total}}GB",
-        "available": "Available: {{available}}GB - {{percentage}}%"
-      },
-      "fileSystem": {
-        "label": "File System",
-        "available": "Available: {{available}} - {{percentage}}%"
-      },
-      "info": {
-        "uptime": "Uptime",
-        "updates": "Updates",
-        "reboot": "Reboot"
-      },
-      "errors": {
-        "general": {
-          "title": "Unable to find your NAS",
-          "text": "There was a problem connecting to your NAS. Please verify your configuration/integration(s)."
-        }
+    "table": {
+      "header": {
+        "name": "Name",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Node"
       }
+    },
+    "popover": {
+      "node": "Node",
+      "vmid": "VMID",
+      "details": "Details",
+      "cores": "Cores - {{maxCpu}}",
+      "memSize": "Memory - {{maxMem}}",
+      "memRatio": "Memory - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Uptime - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA State - {{haState}}",
+      "sharedStorage": "Shared Storage",
+      "localStorage": "Local Storage",
+      "na": "N/A"
+    }
   }
+}

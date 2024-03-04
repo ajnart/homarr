@@ -1,10 +1,9 @@
 import axios from 'axios';
 import Consola from 'consola';
-import { z } from 'zod';
 import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
+import { ConfigAppType } from '~/types/app';
 
-import { createTRPCRouter, publicProcedure } from '../trpc';
 
 let sessionId: string | null = null;
 let loginToken: string | null = null;
@@ -20,7 +19,7 @@ async function makeOpenMediaVaultRPCCall(
   const app = config.apps.find((app) => checkIntegrationsType(app.integration, ['openmediavault']));
 
   if (!app) {
-    Consola.error(`App not found for configName '${input.configName}'`);
+    Consola.error(`App 'openmediavault' not found for configName '${input.configName}'`);
     return null;
   }
 
@@ -42,25 +41,13 @@ async function makeOpenMediaVaultRPCCall(
   return response;
 }
 
-export const openmediavaultRouter = createTRPCRouter({
-  fetchData: publicProcedure
-    .input(
-      z.object({
-        configName: z.string(),
-      })
-    )
-    .query(async ({ input }) => {
+export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
       let authResponse: any = null;
-      let app: any;
 
       if (!sessionId || !loginToken) {
-        app = getConfig(input.configName)?.apps.find((app) =>
-          checkIntegrationsType(app.integration, ['openmediavault'])
-        );
-
         if (!app) {
           Consola.error(
-            `Failed to process request to app '${app.integration}' (${app.id}). Please check username & password`
+            `Failed to process request to app 'openmediavault'. Please check username & password`
           );
           return null;
         }
@@ -115,5 +102,4 @@ export const openmediavaultRouter = createTRPCRouter({
         fileSystem: fileSystemResponse?.data.response,
         cpuTemp: cpuTempResponse?.data.response,
       };
-    }),
-});
+    }
