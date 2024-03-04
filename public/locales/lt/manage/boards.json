@@ -48,7 +48,7 @@
             "text": "Sukūrus lentą, pavadinimo keisti negalima.",
             "form": {
                 "name": {
-                    "label": ""
+                    "label": "Pavadinimas"
                 },
                 "submit": "Sukurti"
             }
