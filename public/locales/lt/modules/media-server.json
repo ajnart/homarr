@@ -1,24 +1,24 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medijų serveris",
+    "description": "Bendraukite su savo Jellyfin arba Plex medijos serveriu",
     "settings": {
-      "title": ""
+      "title": "Medijos serverio valdiklio nustatymai"
     }
   },
-  "loading": "",
+  "loading": "Įkeliami srautai",
   "card": {
     "table": {
       "header": {
-        "session": "",
-        "user": "",
-        "currentlyPlaying": ""
+        "session": "Sesija",
+        "user": "Vartotojas",
+        "currentlyPlaying": "Dabar grojama"
       }
     },
     "errors": {
       "general": {
-        "title": "",
-        "text": ""
+        "title": "Nepavyko įkelti turinio",
+        "text": "Nepavyksta gauti informacijos iš serverio. Išsamesnės informacijos ieškokite logs"
       }
     }
   }
