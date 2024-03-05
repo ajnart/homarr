@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medijų užklausų statistikos",
+    "description": "Statistikos apie jūsų medijų užklausas",
     "settings": {
-      "title": "",
+      "title": "Medijų užklausų statistikos",
       "replaceLinksWithExternalHost": {
         "label": "Pakeiskite nuorodas išoriniu pagrindiniu kompiuteriu"
       },
@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Medijų statistikos",
+    "pending": "Laukia patvirtinimo",
+    "tvRequests": "TV užklausos",
+    "movieRequests": "Filmų užklausos",
+    "approved": "Jau patvirtinta",
+    "totalRequests": "Iš viso"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Top vartotojai",
+    "requests": "Užklausos: {{number}}"
   }
 }
