@@ -3,9 +3,18 @@
     "name": "System Health Monitoring",
     "description": "Displays information showing the health and status of your system(s).",
     "settings": {
-      "title": "System Health Monitoring",
+      "title": "Settings for system health monitoring widget",
       "fahrenheit": {
         "label": "Fahrenheit"
+      },
+      "cpu": {
+        "label": "Show CPU Info"
+      },
+      "memory": {
+        "label": "Show Memory Info"
+      },
+      "fileSystem": {
+        "label": "Show Filesystem Info"
       },
       "node": {
         "label": "Filter by node name",
@@ -19,6 +28,14 @@
           "vm": "VMs",
           "lxc": "LXCs",
           "storage": "Storage"
+        }
+      },
+      "defaultTabState": {
+        "label": "Tab open by default",
+        "info": "Tab open by default. Only used when multiple integrations are available.",
+        "data": {
+          "system": "System",
+          "cluster": "Cluster"
         }
       },
       "summary": {

@@ -53,10 +53,8 @@ export const healthMonitoringRouter = createTRPCRouter({
         for (const response of results) {
           if (response) {
             if ('authenticated' in response) {
-              Consola.log('got omv data')
               systemData = response
             } else if ('nodes' in response) {
-              Consola.log('got prox data')
               clusterData = response
             }
           }

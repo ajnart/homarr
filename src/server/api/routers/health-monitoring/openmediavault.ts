@@ -37,7 +37,13 @@ async function makeOpenMediaVaultRPCCall(
         ...headers,
       },
     }
-  );
+  ).catch((error) => {
+    if (serviceName === 'cputemp') {
+      // ignore cputemp errors; not always supported
+    } else {
+      Consola.error(error)
+    }
+  });
   return response;
 }
 

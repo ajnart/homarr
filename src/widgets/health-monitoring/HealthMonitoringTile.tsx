@@ -1,4 +1,4 @@
-import { Card, Center, Divider, Flex, Group, ScrollArea, Stack, Text, Title } from '@mantine/core';
+import { Card, Center, Divider, Group, ScrollArea, Stack, Tabs, Text, Title } from '@mantine/core';
 import {
   IconAlertTriangle,
   IconCloudDownload,
@@ -10,7 +10,6 @@ import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
-import Consola from 'consola';
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
@@ -24,6 +23,9 @@ type DefaultViewState = (typeof defaultViewStates)[number];
 
 const indicatorColorControls = ['all', 'any'] as const;
 type IndicatorColorControl = (typeof indicatorColorControls)[number];
+
+const defaultTabStates = ['system', 'cluster'] as const;
+type DefaultTabStates = (typeof defaultTabStates)[number];
 
 const definition = defineWidget({
   id: 'health-monitoring',
@@ -48,6 +50,12 @@ const definition = defineWidget({
     node: {
       type: 'text',
       defaultValue: '',
+      info: true,
+    },
+    defaultTabState: {
+      type: 'select',
+      defaultValue: 'system' as DefaultTabStates,
+      data: defaultTabStates.map((x) => ({ value: x })),
       info: true,
     },
     defaultViewState: {
@@ -103,12 +111,10 @@ interface HealthMonitoringWidgetProps {
 }
 function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
   const { t } = useTranslation('modules/health-monitoring');
-  const { data, isInitialLoading, isError } = useStatusQuery(
+  let { data, isInitialLoading, isError } = useStatusQuery(
     widget.properties.node,
     widget.properties.ignoreCert
   );
-
-  Consola.log(data)
 
   if (isInitialLoading) {
     return <WidgetLoading />;
@@ -126,17 +132,58 @@ function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
     );
   }
 
-  return (
-    <Flex h="100%" w="100%" direction="column">
-      <ScrollArea>
-        {!!data.system && <SystemStatusTile data={data.system} properties={widget.properties} />}
-        {!!data.cluster && <ClusterStatusTile data={data.cluster} properties={widget.properties} />}
+  if (data.system && data.cluster) {
+    return (
+      <ScrollArea
+        h="100%"
+        styles={{
+          viewport: {
+            '& div[style="min-width: 100%"]': {
+              display: 'flex !important',
+              height: '100%',
+            },
+          },
+        }}
+      >
+        <Tabs defaultValue={widget.properties.defaultTabState} variant="outline">
+          <Tabs.List grow>
+            <Tabs.Tab value="system">
+              <b>System</b>
+            </Tabs.Tab>
+            <Tabs.Tab value="cluster">
+              <b>Cluster</b>
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel mt="lg" value="system">
+            <SystemStatusTile data={data.system} properties={widget.properties} />
+          </Tabs.Panel>
+          <Tabs.Panel mt="lg" value="cluster">
+            <ClusterStatusTile data={data.cluster} properties={widget.properties} />
+          </Tabs.Panel>
+        </Tabs>
       </ScrollArea>
-    </Flex>
-  );
+    );
+  } else {
+    return (
+      <ScrollArea
+        h="100%"
+        styles={{
+          viewport: {
+            '& div[style="min-width: 100%"]': {
+              display: 'flex !important',
+              height: '100%',
+            },
+          },
+        }}
+      >
+        {data.system && <SystemStatusTile data={data.system} properties={widget.properties} />}
+        {data.cluster && <ClusterStatusTile data={data.cluster} properties={widget.properties} />}
+      </ScrollArea>
+    );
+  }
 }
 
-const SystemStatusTile = ({data, properties }: { data: any, properties: any}) => {
+const SystemStatusTile = ({ data, properties }: { data: any; properties: any }) => {
   const { t } = useTranslation('modules/health-monitoring');
 
   const formatUptime = (uptime: number) => {
