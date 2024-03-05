@@ -4,7 +4,6 @@ import { checkIntegrationsType, findAppProperty } from '~/tools/client/app-prope
 import { getConfig } from '~/tools/config/getConfig';
 import { ConfigAppType } from '~/types/app';
 
-
 let sessionId: string | null = null;
 let loginToken: string | null = null;
 
@@ -24,94 +23,96 @@ async function makeOpenMediaVaultRPCCall(
   }
 
   const appUrl = new URL(app.url);
-  const response = await axios.post(
-    `${appUrl.origin}/rpc.php`,
-    {
-      service: serviceName,
-      method: method,
-      params: params,
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        ...headers,
+  const response = await axios
+    .post(
+      `${appUrl.origin}/rpc.php`,
+      {
+        service: serviceName,
+        method: method,
+        params: params,
       },
-    }
-  ).catch((error) => {
-    if (serviceName === 'cputemp') {
-      // ignore cputemp errors; not always supported
-    } else {
-      Consola.error(error)
-    }
-  });
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          ...headers,
+        },
+      }
+    )
+    .catch((error) => {
+      if (serviceName === 'cputemp') {
+        // ignore cputemp errors; not always supported
+      } else {
+        Consola.error(error);
+      }
+    });
   return response;
 }
 
 export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
-      let authResponse: any = null;
+  let authResponse: any = null;
 
-      if (!sessionId || !loginToken) {
-        if (!app) {
-          Consola.error(
-            `Failed to process request to app 'openmediavault'. Please check username & password`
-          );
-          return null;
-        }
-
-        authResponse = await makeOpenMediaVaultRPCCall(
-          'session',
-          'login',
-          {
-            username: findAppProperty(app, 'username'),
-            password: findAppProperty(app, 'password'),
-          },
-          {},
-          input
-        );
-
-        const cookies = authResponse.headers['set-cookie'] || [];
-        sessionId = cookies
-          .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-SESSIONID'))
-          ?.split(';')[0];
-        loginToken = cookies
-          .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-LOGIN'))
-          ?.split(';')[0];
-      }
-
-      let cpuTempResponse: any;
-      const cpuTempResponsePromise = makeOpenMediaVaultRPCCall(
-        'cputemp',
-        'get',
-        {},
-        { Cookie: `${loginToken};${sessionId}` },
-        input
-      )
-
-      const [systemInfoResponse, fileSystemResponse, ] = await Promise.all([
-        makeOpenMediaVaultRPCCall(
-          'system',
-          'getInformation',
-          {},
-          { Cookie: `${loginToken};${sessionId}` },
-          input
-        ),
-        makeOpenMediaVaultRPCCall(
-          'filesystemmgmt',
-          'enumerateMountedFilesystems',
-          { includeroot: true },
-          { Cookie: `${loginToken};${sessionId}` },
-          input
-        ),
-      ]);
-
-      cpuTempResponsePromise.then((response) => {
-        cpuTempResponse = response;
-      })
-
-      return {
-        authenticated: authResponse ? authResponse.data.response.authenticated : true,
-        systemInfo: systemInfoResponse?.data.response,
-        fileSystem: fileSystemResponse?.data.response,
-        cpuTemp: cpuTempResponse?.data.response,
-      };
+  if (!sessionId || !loginToken) {
+    if (!app) {
+      Consola.error(
+        `Failed to process request to app 'openmediavault'. Please check username & password`
+      );
+      return null;
     }
+
+    authResponse = await makeOpenMediaVaultRPCCall(
+      'session',
+      'login',
+      {
+        username: findAppProperty(app, 'username'),
+        password: findAppProperty(app, 'password'),
+      },
+      {},
+      input
+    );
+
+    const cookies = authResponse.headers['set-cookie'] || [];
+    sessionId = cookies
+      .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-SESSIONID'))
+      ?.split(';')[0];
+    loginToken = cookies
+      .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-LOGIN'))
+      ?.split(';')[0];
+  }
+
+  let cpuTempResponse: any;
+  const cpuTempResponsePromise = makeOpenMediaVaultRPCCall(
+    'cputemp',
+    'get',
+    {},
+    { Cookie: `${loginToken};${sessionId}` },
+    input
+  );
+
+  const [systemInfoResponse, fileSystemResponse] = await Promise.all([
+    makeOpenMediaVaultRPCCall(
+      'system',
+      'getInformation',
+      {},
+      { Cookie: `${loginToken};${sessionId}` },
+      input
+    ),
+    makeOpenMediaVaultRPCCall(
+      'filesystemmgmt',
+      'enumerateMountedFilesystems',
+      { includeroot: true },
+      { Cookie: `${loginToken};${sessionId}` },
+      input
+    ),
+  ]);
+
+  cpuTempResponsePromise.then((response) => {
+    cpuTempResponse = response;
+  });
+
+  return {
+    authenticated: authResponse ? authResponse.data.response.authenticated : true,
+    systemInfo: systemInfoResponse?.data.response,
+    fileSystem: fileSystemResponse?.data.response,
+    cpuTemp: cpuTempResponse?.data.response,
+  };
+}

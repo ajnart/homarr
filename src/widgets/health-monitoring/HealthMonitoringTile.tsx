@@ -262,7 +262,6 @@ const useStatusQuery = (node: string, ignoreCerts: boolean) => {
       ignoreCerts: ignoreCerts!,
     },
     {
-      //refetchInterval: 10000,
       staleTime: 1000 * 10,
     }
   );

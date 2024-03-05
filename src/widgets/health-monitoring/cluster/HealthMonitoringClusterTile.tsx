@@ -5,18 +5,21 @@ import {
   IconCube,
   IconDatabase,
   IconDeviceLaptop,
-  IconServer
+  IconServer,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { ResourceData, ResourceSummary } from "~/widgets/health-monitoring/cluster/types";
+import { ResourceData, ResourceSummary } from '~/widgets/health-monitoring/cluster/types';
 
-import Consola from 'consola';
 import { ResourceType } from './HealthMonitoringClusterResourceRow';
 
-
-export const ClusterStatusTile = ({data, properties }: { data: ResourceSummary, properties: any}) => {
+export const ClusterStatusTile = ({
+  data,
+  properties,
+}: {
+  data: ResourceSummary;
+  properties: any;
+}) => {
   const { t } = useTranslation('modules/health-monitoring');
-  Consola.log(data)
 
   const running = (total: number, current: ResourceData) => {
     return current.running ? total + 1 : total;
@@ -27,9 +30,18 @@ export const ClusterStatusTile = ({data, properties }: { data: ResourceSummary, 
   const activeLXCs = data.lxcs.reduce(running, 0);
   const activeStorage = data.storage.reduce(running, 0);
 
-  const usedMem = data.nodes.reduce((sum: number, item: ResourceData) => (item.running ? item.mem + sum : sum), 0);
-  const maxMem = data.nodes.reduce((sum: number, item: ResourceData) => (item.running ? item.maxMem + sum : sum), 0);
-  const maxCpu = data.nodes.reduce((sum: number, item: ResourceData) => (item.running ? item.maxCpu + sum : sum), 0);
+  const usedMem = data.nodes.reduce(
+    (sum: number, item: ResourceData) => (item.running ? item.mem + sum : sum),
+    0
+  );
+  const maxMem = data.nodes.reduce(
+    (sum: number, item: ResourceData) => (item.running ? item.maxMem + sum : sum),
+    0
+  );
+  const maxCpu = data.nodes.reduce(
+    (sum: number, item: ResourceData) => (item.running ? item.maxCpu + sum : sum),
+    0
+  );
   const usedCpu = data.nodes.reduce(
     (sum: number, item: ResourceData) => (item.running ? item.cpu * item.maxCpu + sum : sum),
     0
@@ -101,7 +113,7 @@ export const ClusterStatusTile = ({data, properties }: { data: ResourceSummary, 
       </Accordion>
     </Stack>
   );
-}
+};
 
 interface SummaryHeaderProps {
   cpu: number;
