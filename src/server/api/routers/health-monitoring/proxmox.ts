@@ -13,7 +13,7 @@ export async function makeProxmoxStatusAPICall(app: ConfigAppType, input: any) {
 
   const apiKey = findAppProperty(app, 'apiKey');
   if (!apiKey) {
-    Consola.error('Proxmox: Missing or API key. Please check the configuration.');
+    Consola.error(`'proxmox': Missing API key. Please check the configuration.`);
     return null;
   }
 
@@ -31,7 +31,7 @@ export async function makeProxmoxStatusAPICall(app: ConfigAppType, input: any) {
     })
     .catch((error) => {
       Consola.error(
-        `Proxmox: Error accessing service API: '${appUrl}'. Please check the configuration.`
+        `'proxmox': Error accessing service API: '${appUrl}'. Please check the configuration.`
       );
       return null;
     })

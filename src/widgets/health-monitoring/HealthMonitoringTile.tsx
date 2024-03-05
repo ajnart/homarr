@@ -47,15 +47,15 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
     },
-    node: {
-      type: 'text',
-      defaultValue: '',
-      info: true,
-    },
     defaultTabState: {
       type: 'select',
       defaultValue: 'system' as DefaultTabStates,
       data: defaultTabStates.map((x) => ({ value: x })),
+      info: true,
+    },
+    node: {
+      type: 'text',
+      defaultValue: '',
       info: true,
     },
     defaultViewState: {

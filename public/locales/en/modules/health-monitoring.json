@@ -3,9 +3,9 @@
     "name": "System Health Monitoring",
     "description": "Displays information showing the health and status of your system(s).",
     "settings": {
-      "title": "Settings for system health monitoring widget",
+      "title": "Settings for system health monitoring",
       "fahrenheit": {
-        "label": "Fahrenheit"
+        "label": "CPU Temp in Fahrenheit"
       },
       "cpu": {
         "label": "Show CPU Info"
@@ -83,7 +83,7 @@
   },
   "info": {
     "uptime": "Uptime",
-    "updates": "Updates",
+    "updates": "Updates Available",
     "reboot": "Reboot"
   },
   "errors": {
