@@ -6,7 +6,11 @@ import { WeatherIcon } from './WeatherIcon';
 const Forecast = ({ daily, getPerferedUnit, widget }) => {
   const { width } = useElementSize();
   return (
+<<<<<<< HEAD
     <Flex align="center" direction="row" justify="space-between" w="100%" px="sm">
+=======
+    <Flex align="center" direction="row" justify="space-between">
+>>>>>>> 92ac100251045f85f7a624f7e1ab1556013671d5
       {daily.time.slice(0, widget.properties.forecastDays).map((time: any, index: number) => (
         <Card key={index} padding="0.25rem">
           <Flex direction="column" align="center">
