@@ -49,6 +49,7 @@ const env = createEnv({
       .transform((providers) =>
         providers
           .replaceAll(' ', '')
+          .toLowerCase()
           .split(',')
           .filter((provider) => {
             if (validAuthProviders.includes(provider)) return provider;
