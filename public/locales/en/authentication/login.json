@@ -15,7 +15,10 @@
       "submit": "Sign in"
     },
     "afterLoginRedirection": "After login, you'll be redirected to {{url}}",
-    "providersEmpty": "The provider(s) are unset, please check your logs for more information."
+    "providersEmpty": {
+      "title": "Auth Provider Error",
+      "message": "The provider(s) are unset, please check your logs for more information."
+    }
   },
   "alert": "Your credentials are incorrect or this account doesn't exist. Please try again."
 }

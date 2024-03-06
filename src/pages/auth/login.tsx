@@ -125,9 +125,13 @@ export default function LoginPage({
               </Title>
 
               {(providers.length < 1 && (
-                <Text align="center" mt={5}>
-                  {t('form.providersEmpty')}
-                </Text>
+                <Alert
+                  icon={<IconAlertTriangle size="1rem" />}
+                  title={t('form.providersEmpty.title')}
+                  mt={5}
+                >
+                  {t('form.providersEmpty.message')}
+                </Alert>
               )) || (
                 <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
                   {t('text')}
