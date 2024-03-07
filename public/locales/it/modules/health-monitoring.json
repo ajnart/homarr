@@ -1,37 +1,37 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Monitoraggio dello stato del sistema",
+        "description": "Informazioni sul tuo NAS",
         "settings": {
-            "title": "",
+            "title": "Monitoraggio dello stato del sistema",
             "fahrenheit": {
-                "label": ""
+                "label": "Fahrenheit"
             }
         }
     },
     "cpu": {
         "label": "CPU",
-        "load": "",
-        "minute": ""
+        "load": "Utilizzo medio",
+        "minute": "{{minute}} minuto"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "Memoria",
+        "totalMem": "Memoria totale: {{total}}GB",
+        "available": "Disponibile: {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "File System",
+        "available": "Disponibile: {{available}}- {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Uptime",
+        "updates": "Aggiornamenti",
+        "reboot": "Riavvio"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Impossibile trovare il tuo NAS",
+            "text": "Si è verificato un problema di connessione al tuo NAS. Verifica la configurazione/integrazione."
         }
     }
 }
