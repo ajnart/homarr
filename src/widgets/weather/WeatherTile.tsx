@@ -1,4 +1,4 @@
-import { Center, Flex, Group, Stack, Text, Title } from '@mantine/core';
+import { Card, Center, Flex, Group, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconArrowDownRight,
@@ -7,13 +7,13 @@ import {
   IconMapPin,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
+import { Weather } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
 
 import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
-import Forecast from './WeeklyForecast';
 
 const definition = defineWidget({
   id: 'weather',
@@ -79,11 +79,10 @@ function WeatherTile({ widget }: WeatherTileProps) {
     );
   }
 
-  // TODO: add widgetWrapper that is generic and uses the definition
   return (
-    <>
-      {widget?.properties.displayWeekly ? (
-        <Stack w="100%" h="100%" justify="space-around" ref={ref} spacing={0} align="center">
+    <Stack w="100%" h="100%" justify="space-around" ref={ref} spacing={0} align="center">
+      {(widget?.properties.displayWeekly && (
+        <>
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
@@ -100,22 +99,16 @@ function WeatherTile({ widget }: WeatherTileProps) {
             )}
             <WeatherIcon size={width < 300 ? 30 : 50} code={weather.current_weather.weathercode} />
             <Title size={'h2'} color={weather.current_weather.temperature > 20 ? 'red' : 'blue'}>
-              {getPerferedUnit(
+              {getPreferredUnit(
                 weather.current_weather.temperature,
                 widget.properties.displayInFahrenheit
               )}
             </Title>
           </Flex>
-          <Forecast daily={weather?.daily} getPerferedUnit={getPerferedUnit} widget={widget} />
-        </Stack>
-      ) : (
-        <Stack
-          style={{ height: '100%', width: '100%' }}
-          justify="space-around"
-          ref={ref}
-          spacing={0}
-          align="center"
-        >
+          <Forecast weather={weather} widget={widget} />
+        </>
+      )) || (
+        <>
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
@@ -124,7 +117,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
           >
             <WeatherIcon size={width < 300 ? 30 : 50} code={weather.current_weather.weathercode} />
             <Title size={'h2'}>
-              {getPerferedUnit(
+              {getPreferredUnit(
                 weather.current_weather.temperature,
                 widget.properties.displayInFahrenheit
               )}
@@ -134,12 +127,12 @@ function WeatherTile({ widget }: WeatherTileProps) {
           {width > 200 && (
             <Group noWrap spacing="xs">
               <IconArrowUpRight />
-              {getPerferedUnit(
+              {getPreferredUnit(
                 weather.daily.temperature_2m_max[0],
                 widget.properties.displayInFahrenheit
               )}
               <IconArrowDownRight />
-              {getPerferedUnit(
+              {getPreferredUnit(
                 weather.daily.temperature_2m_min[0],
                 widget.properties.displayInFahrenheit
               )}
@@ -152,13 +145,48 @@ function WeatherTile({ widget }: WeatherTileProps) {
               <Text style={{ whiteSpace: 'nowrap' }}>{widget.properties.location.name}</Text>
             </Group>
           )}
-        </Stack>
+        </>
       )}
-    </>
+    </Stack>
   );
 }
 
-const getPerferedUnit = (value: number, isFahrenheit = false): string =>
+const getPreferredUnit = (value: number, isFahrenheit = false): string =>
   isFahrenheit ? `${(value * (9 / 5) + 32).toFixed(1)}°F` : `${value.toFixed(1)}°C`;
+
+interface ForecastProps {
+  weather: Weather;
+  widget: IWeatherWidget;
+}
+
+function Forecast({ weather: { daily }, widget }: ForecastProps) {
+  const { width } = useElementSize();
+  return (
+    <Flex align="center" direction="row" justify="space-between" w="100%" px="sm">
+      {daily.time.slice(0, widget.properties.forecastDays).map((time: any, index: number) => (
+        <Card key={index} padding="0.25rem">
+          <Flex direction="column" align="center">
+            <Text fw={700} lh="1.25rem">
+              {time.split('-')[2]}
+            </Text>
+            <WeatherIcon size={width < 300 ? 30 : 50} code={daily.weathercode[index]} />
+            <Text fz="sm" lh="1rem">
+              {getPreferredUnit(
+                daily.temperature_2m_max[index],
+                widget.properties.displayInFahrenheit
+              )}
+            </Text>
+            <Text fz="sm" lh="1rem" color="grey">
+              {getPreferredUnit(
+                daily.temperature_2m_min[index],
+                widget.properties.displayInFahrenheit
+              )}
+            </Text>
+          </Flex>
+        </Card>
+      ))}
+    </Flex>
+  );
+}
 
 export default definition;
