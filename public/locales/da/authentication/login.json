@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Log ind"
     },
-    "afterLoginRedirection": "Når du er logget ind, bliver du omdirigeret til {{url}}"
+    "afterLoginRedirection": "Når du er logget ind, bliver du omdirigeret til {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Dine legitimationsoplysninger er forkerte, eller denne konto findes ikke. Prøv venligst igen."
 }
