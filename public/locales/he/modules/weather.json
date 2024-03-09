@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "הצגת שם העיר"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "מיקום מזג האוויר"
       }
