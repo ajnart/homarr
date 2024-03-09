@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Paieškos laukelis",
+    "description": "Paieškos juosta, kurioje galite ieškoti pasirinktoje paieškos sistemoje, YouTube ir palaikomose integracijose."
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Paieška internete..."
   },
-  "switched-to": "",
+  "switched-to": "Perjungta į",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Tinklas",
+      "description": "Ieškoti..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Ieškokite Youtube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrentai",
+      "description": "Ieškoti torentų"
     },
     "overseerr": {
-      "name": "",
-      "description": ""
+      "name": "Overseerr",
+      "description": "Ieškokite filmų ir TV laidų Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Paieškos juostą galite pasirinkti naudodami sparčiąją nuorodą ",
+  "switchedSearchEngine": "Pereita prie paieškos su {{searchEngine}}"
 }
