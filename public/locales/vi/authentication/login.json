@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Đăng nhập"
     },
-    "afterLoginRedirection": "Sau khi đăng nhập, bạn sẽ được chuyển hướng đến {{url}}"
+    "afterLoginRedirection": "Sau khi đăng nhập, bạn sẽ được chuyển hướng đến {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Thông tin xác thực của bạn không chính xác hoặc tài khoản này không tồn tại. Vui lòng thử lại."
 }
