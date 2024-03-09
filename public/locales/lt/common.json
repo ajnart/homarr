@@ -3,7 +3,7 @@
   "apply": "",
   "insert": "",
   "about": "",
-  "cancel": "",
+  "cancel": "Atšaukti",
   "close": "",
   "back": "",
   "delete": "",
@@ -37,7 +37,7 @@
     "minutes": "",
     "hours": ""
   },
-  "loading": "",
+  "loading": "Kraunama...",
   "breakPoints": {
     "small": "",
     "medium": "",
