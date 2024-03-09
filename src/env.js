@@ -4,6 +4,8 @@ const { createEnv } = require('@t3-oss/env-nextjs');
 const trueStrings = ['1', 't', 'T', 'TRUE', 'true', 'True'];
 const falseStrings = ['0', 'f', 'F', 'FALSE', 'false', 'False'];
 
+const ldapSearchScope = z.enum(['base', 'one', 'sub']).default('base');
+
 const zodParsedBoolean = () =>
   z
     .enum([...trueStrings, ...falseStrings])
@@ -52,6 +54,7 @@ const env = createEnv({
           AUTH_LDAP_BIND_DN: z.string(),
           AUTH_LDAP_BIND_PASSWORD: z.string(),
           AUTH_LDAP_BASE: z.string(),
+          AUTH_LDAP_SEARCH_SCOPE: z.enum(['base', 'one', 'sub']).default('base'),
           AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
           AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
           AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
@@ -115,6 +118,7 @@ const env = createEnv({
     AUTH_LDAP_BIND_DN: process.env.AUTH_LDAP_BIND_DN,
     AUTH_LDAP_BIND_PASSWORD: process.env.AUTH_LDAP_BIND_PASSWORD,
     AUTH_LDAP_BASE: process.env.AUTH_LDAP_BASE,
+    AUTH_LDAP_SEARCH_SCOPE: process.env.AUTH_LDAP_SEARCH_SCOPE?.toLowerCase(),
     AUTH_LDAP_USERNAME_ATTRIBUTE: process.env.AUTH_LDAP_USERNAME_ATTRIBUTE,
     AUTH_LDAP_GROUP_CLASS: process.env.AUTH_LDAP_GROUP_CLASS,
     AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: process.env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE,

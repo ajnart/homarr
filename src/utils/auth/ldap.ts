@@ -20,8 +20,8 @@ type InferrableSearchOptions<
 type SearchResultIndex<Attributes extends AttributeConstraint> = Attributes extends string
   ? Attributes
   : Attributes extends readonly string[]
-  ? Attributes[number]
-  : string;
+    ? Attributes[number]
+    : string;
 
 type SearchResult<
   Attributes extends AttributeConstraint,
@@ -101,10 +101,13 @@ export default Credentials({
       const ldapUser = (
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
           filter: `(uid=${data.name})`,
+          scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
           attributes: ['uid', 'mail'] as const,
         })
       )[0];
+
+      if (!ldapUser) throw new Error('User not found in LDAP');
 
       await ldapLogin(ldapUser.dn, data.password).then((client) => client.destroy());
 
@@ -113,6 +116,7 @@ export default Credentials({
           filter: `(&(objectclass=${env.AUTH_LDAP_GROUP_CLASS})(${
             env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE
           }=${ldapUser[env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE as 'dn' | 'uid']}))`,
+          scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
           attributes: 'cn',
         })
