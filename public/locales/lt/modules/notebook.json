@@ -1,29 +1,29 @@
 {
 	"descriptor": {
 		"name": "Užrašai",
-		"description": "",
+		"description": "Pažymėjimu pagrįstas interaktyvus valdiklis, skirtas užrašams užsirašyti!",
 		"settings": {
-			"title": "",
+			"title": "Užrašų knygelės valdiklio nustatymai",
 			"showToolbar": {
-				"label": ""
+				"label": "Rodyti įrankių juostą, padedančią rašyti žymėjimą"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Leidimas tikrinti tik skaitymo režimu"
 			},
 			"content": {
-				"label": ""
+				"label": "Užrašų knygelės turinys"
 			}
 		}
 	},
 	"card": {
 		"controls": {
-			"bold": "",
-			"italic": "",
-			"strikethrough": "",
-			"underline": "",
-			"colorText": "",
-			"colorHighlight": "",
-			"code": "",
+			"bold": "Paryškintas",
+			"italic": "Pasviręs",
+			"strikethrough": "Perbrauktas",
+			"underline": "Pabrauktas",
+			"colorText": "Spalvotas tekstas",
+			"colorHighlight": "Spalvotas paryškintas tekstas",
+			"code": "Kodas",
 			"clear": "",
 			"heading": "",
 			"align": "",
