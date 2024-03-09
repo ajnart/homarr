@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Şehir Adını Göster"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Hava durumu konumu"
       }
