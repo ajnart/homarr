@@ -11,10 +11,10 @@
         "label": "Şehir Adını Göster"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Haftalık Tahmini Göster"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Gösterilecek Günler"
       },
       "location": {
         "label": "Hava durumu konumu"
