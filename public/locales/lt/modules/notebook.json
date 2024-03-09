@@ -1,0 +1,59 @@
+{
+	"descriptor": {
+		"name": "Užrašai",
+		"description": "Pažymėjimu pagrįstas interaktyvus valdiklis, skirtas užrašams užsirašyti!",
+		"settings": {
+			"title": "Užrašų knygelės valdiklio nustatymai",
+			"showToolbar": {
+				"label": "Rodyti įrankių juostą, padedančią rašyti žymėjimą"
+			},
+			"allowReadOnlyCheck": {
+				"label": "Leidimas tikrinti tik skaitymo režimu"
+			},
+			"content": {
+				"label": "Užrašų knygelės turinys"
+			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Paryškintas",
+			"italic": "Pasviręs",
+			"strikethrough": "Perbrauktas",
+			"underline": "Pabrauktas",
+			"colorText": "Spalvotas tekstas",
+			"colorHighlight": "Spalvotas paryškintas tekstas",
+			"code": "Kodas",
+			"clear": "Išvalyti formatavimą",
+			"heading": "Antraštė {{level}}",
+			"align": "Teksto lygiavimas: {{position}}",
+			"blockquote": "Kabutės",
+			"horizontalLine": "Horizontali linija",
+			"bulletList": "Suženklintasis sąrašas",
+			"orderedList": "Surikiuotas sąrašas",
+			"checkList": "Sąrašas",
+			"increaseIndent": "Padidinti įtrauką",
+			"decreaseIndent": "Sumažinti įtrauką",
+			"link": "Nuoroda",
+			"unlink": "Pašalinti nuorodą",
+			"image": "Įterpti paveikslėlį",
+			"addTable": "Pridėti lentelę",
+			"deleteTable": "Ištrinti lentelę",
+			"colorCell": "Spalva",
+			"mergeCell": "Perjungti cell sujungimą",
+			"addColumnLeft": "Pridėti stulpelį prieš",
+			"addColumnRight": "Pridėti stulpelį po",
+			"deleteColumn": "Naikinti stulpelį",
+			"addRowTop": "Pridėti eilutę prieš",
+			"addRowBelow": "Pridėti eilutę po",
+			"deleteRow": "Naikinti eilutę"
+		},
+		"modals": {
+			"clearColor": "Pašalinti spalvą",
+			"source": "Šaltinis",
+			"widthPlaceholder": "Vertė % arba pikseliais",
+			"columns": "Stulpeliai",
+			"rows": "Eilutės"
+		}
+	}
+}

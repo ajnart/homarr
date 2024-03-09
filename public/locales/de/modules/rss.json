@@ -19,7 +19,7 @@
         "label": "Textzeilen Klammer"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Nach Veröffentlichungsdatum sortieren (aufsteigend)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
         "label": "Platzieren Sie Beiträge ohne Veröffentlichungsdatum ganz oben"

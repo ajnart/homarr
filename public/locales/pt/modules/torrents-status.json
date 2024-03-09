@@ -41,22 +41,22 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Baixando",
         "name": "Nome",
-        "dateAdded": "",
+        "dateAdded": "Adicionado em",
         "size": "Tamanho",
         "download": "Para baixo",
         "upload": "Para cima",
         "estimatedTimeOfArrival": "TED",
         "progress": "Progresso",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Total enviado",
+        "totalDownloaded": "Total baixado",
+        "ratio": "Razão",
+        "seeds": "Sementes (conectadas)",
+        "peers": "Pares (conectados)",
+        "label": "Etiqueta",
         "state": "Estado",
-        "stateMessage": ""
+        "stateMessage": "Mensagem de Estado"
       },
       "item": {
         "text": "Gerido por {{appName}}, {{ratio}} ratio"

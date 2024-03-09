@@ -1,0 +1,26 @@
+{
+  "modal": {
+    "title": "Pridėti naują plytelę",
+    "text": "Plytelės yra pagrindinis Homarr elementas. Jos naudojamos programėlėms ir kitai informacijai rodyti. Galite pridėti tiek plytelių, kiek norite."
+  },
+  "widgetDescription": "Valdikliai sąveikauja su jūsų programomis, kad galėtumėte geriau valdyti programas. Paprastai prieš naudojant jiems reikia papildomos konfigūracijos.",
+  "goBack": "Grįžkite prie ankstesnio veiksmo",
+  "actionIcon": {
+    "tooltip": "Pridėti naują plytelę"
+  },
+  "apps": "Programėlės",
+  "app": {
+    "defaultName": "Jūsų programėlė"
+  },
+  "widgets": "Valdikliai",
+  "categories": "Kategorijos",
+  "category": {
+    "newName": "Naujos kategorijos pavadinimas",
+    "defaultName": "Nauja kategorija",
+    "created": {
+      "title": "Kategorija sukurta",
+      "message": "Sukurta kategorija {{name}}"
+    }
+  },
+  "importFromDocker": "Importuoti iš docker"
+}

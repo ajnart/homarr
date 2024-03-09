@@ -1,0 +1,23 @@
+{
+    "metaTitle": "Valdyti",
+    "hero": {
+        "title": "Sveiki sugrįžę, {{username}}",
+        "fallbackUsername": "Anoniminis",
+        "subtitle": "Sveiki atvykę į jūsų programų centrą. Organizuokite, optimizuokite ir užkariaukite!"
+    },
+    "quickActions": {
+        "title": "Spartūs veiksmai",
+        "boards": {
+            "title": "Jūsų lentos",
+            "subtitle": "Kurkite ir tvarkykite lentas"
+        },
+        "inviteUsers": {
+            "title": "Pakviesti naują naudotoją",
+            "subtitle": "Sukurkite ir išsiųskite registracijos kvietimą"
+        },
+        "manageUsers": {
+            "title": "Tvarkyti vartotojus",
+            "subtitle": "Ištrinkite ir tvarkykite vartotojus"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "Docker",
+    "description": "Leidžia lengvai matyti ir valdyti visus Docker konteinerius."
+  },
+  "search": {
+    "placeholder": "Ieškokite pagal konteinerio arba nuotraukos pavadinimą"
+  },
+  "table": {
+    "header": {
+      "name": "Pavadinimas",
+      "image": "Nuotrauka",
+      "ports": "Prievadai",
+      "state": "Būsena"
+    },
+    "body": {
+      "portCollapse": "{{ports}} daugiau"
+    },
+    "states": {
+      "running": "Veikia",
+      "created": "Sukurta",
+      "stopped": "Sustabdyta",
+      "unknown": "Nežinoma"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "Įtraukti programėlę",
+      "message": "Pridėti programą prie Homarr"
+    },
+    "restart": {
+      "title": "Paleisti iš naujo"
+    },
+    "stop": {
+      "title": "Sustabdyti"
+    },
+    "start": {
+      "title": "Paleisti"
+    },
+    "refreshData": {
+      "title": "Atnaujinti duomenis"
+    },
+    "remove": {
+      "title": "Pašalinti"
+    },
+    "addToHomarr": {
+      "title": "Pridėti prie Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "Paleidžiama",
+      "end": "Paleista"
+    },
+    "stop": {
+      "start": "Stabdoma",
+      "end": "Sustabdyta"
+    },
+    "restart": {
+      "start": "Paleidžiama iš naujo",
+      "end": "Paleista iš naujo"
+    },
+    "remove": {
+      "start": "Trinamas",
+      "end": "Pašalinta"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "Docker integravimas nepavyko",
+      "message": "Ar pamiršote prijungti docker lizdą?"
+    },
+    "unknownError": {
+      "title": "Įvyko klaida"
+    },
+    "oneServiceAtATime": {
+      "title": "Vienu metu pridėkite tik vieną programą ar paslaugą!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "Docker"
+  }
+}

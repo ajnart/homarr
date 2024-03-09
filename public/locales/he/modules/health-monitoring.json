@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "ניטור בריאות המערכת",
+        "description": "מידע על ה-NAS שלך",
+        "settings": {
+            "title": "ניטור בריאות המערכת",
+            "fahrenheit": {
+                "label": "פרנהייט"
+            }
+        }
+    },
+    "cpu": {
+        "label": "מעבד",
+        "load": "טעינה ממוצעת",
+        "minute": "{{minute}} דקה"
+    },
+    "memory": {
+        "label": "זיכרון",
+        "totalMem": "סך הזיכרון: {{total}}GB",
+        "available": "זמין: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "מערכת קבצים",
+        "available": "זמין: {{available}} - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "זמן פעילות",
+        "updates": "עדכונים",
+        "reboot": "אתחול מחדש"
+    },
+    "errors": {
+        "general": {
+            "title": "לא מצליח למצוא את ה-NAS שלך",
+            "text": "הייתה בעיה בחיבור ל-NAS שלך. נא ודא את התצורה/השילובים שלך."
+        }
+    }
+}

@@ -16,7 +16,7 @@
       "dependencyVersion": "Versão"
     }
   },
-  "grow": "Grelha de cultivo (ocupar todo o espaço)",
+  "grow": "Grelha de crescimento (ocupar todo o espaço)",
   "layout": {
     "preview": {
       "title": "Pré-visualizar",

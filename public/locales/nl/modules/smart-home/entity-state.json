@@ -9,12 +9,20 @@
                 "label": "",
                 "info": ""
             },
+            "appendUnit": {
+                "label": "",
+                "info": ""
+            },
             "automationId": {
                 "label": "",
                 "info": ""
             },
             "displayName": {
                 "label": ""
+            },
+            "displayFriendlyName": {
+                "label": "",
+                "info": ""
             }
         }
     }

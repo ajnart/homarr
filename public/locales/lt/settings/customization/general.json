@@ -1,0 +1,29 @@
+{
+  "text": "",
+  "accordeon": {
+    "layout": {
+      "name": "",
+      "description": ""
+    },
+    "gridstack": {
+      "name": "",
+      "description": ""
+    },
+    "pageMetadata": {
+      "name": "",
+      "description": ""
+    },
+    "appereance": {
+      "name": "Išvaizda",
+      "description": ""
+    },
+    "accessibility": {
+      "name": "",
+      "description": ""
+    },
+    "access": {
+      "name": "",
+      "description": ""
+    }
+  }
+}

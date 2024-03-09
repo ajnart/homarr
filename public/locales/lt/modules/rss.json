@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "RSS valdiklis",
+    "description": "RSS valdiklis leidžia rodyti RSS informacijos santraukas prietaisų skydelyje.",
+    "settings": {
+      "title": "RSS valdiklio nustatymai",
+      "rssFeedUrl": {
+        "label": "RSS kanalų URL adresai",
+        "description": "RSS kanalų, kuriuos norite rodyti, URL adresai."
+      },
+      "refreshInterval": {
+        "label": "Atnaujinimo intervalas (minutėmis)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "Leisti HTML formatavimą (Pavojinga)",
+        "info": "Leidimas formatuoti HTML iš išorės gali būti pavojingas.<br/>Įsitikinkite, kad kanalas yra iš patikimo šaltinio."
+      },
+      "textLinesClamp": {
+        "label": "Teksto linijų spaustukas"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Rūšiuoti pagal paskelbimo datą (didėjančia tvarka)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Įdėkite pranešimus be paskelbimo datos į viršų"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Didžiausias pranešimų skaičius"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Nepavyksta gauti RSS kanalo",
+          "text": "Kilo problema, susijusi su RSS kanalo pasiekiamumu. Įsitikinkite, kad teisingai sukonfigūravote RSS kanalą naudodami galiojantį URL. URL turėtų atitikti oficialią specifikaciją. Atnaujinus kanalą gali tekti atnaujinti prietaisų skydelį."
+        }
+      }
+    }
+  }
+}

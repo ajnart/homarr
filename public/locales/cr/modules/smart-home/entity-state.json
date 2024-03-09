@@ -9,12 +9,20 @@
                 "label": "crwdns4046:0crwdne4046:0",
                 "info": "crwdns4048:0crwdne4048:0"
             },
+            "appendUnit": {
+                "label": "crwdns4180:0crwdne4180:0",
+                "info": "crwdns4182:0crwdne4182:0"
+            },
             "automationId": {
                 "label": "crwdns4156:0crwdne4156:0",
                 "info": "crwdns4158:0crwdne4158:0"
             },
             "displayName": {
                 "label": "crwdns4050:0crwdne4050:0"
+            },
+            "displayFriendlyName": {
+                "label": "crwdns4184:0crwdne4184:0",
+                "info": "crwdns4186:0crwdne4186:0"
             }
         }
     }

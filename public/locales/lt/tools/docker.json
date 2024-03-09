@@ -1,0 +1,32 @@
+{
+    "title": "Docker",
+    "alerts": {
+        "notConfigured": {
+            "text": ""
+        }
+    },
+    "modals": {
+        "selectBoard": {
+            "title": "",
+            "text": "",
+            "form": {
+                "board": {
+                    "label": ""
+                },
+                "submit": ""
+            }
+        }
+    },
+    "notifications": {
+        "selectBoard": {
+            "success": {
+                "title": "",
+                "message": ""
+            },
+            "error": {
+                "title": "",
+                "message": ""
+            }
+        }
+    }
+}

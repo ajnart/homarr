@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "Stav správce indexeru",
+        "description": "Stav Vašich indexerů",
+        "settings": {
+            "title": "Stav správce indexeru"
+        }
+    },
+    "indexersStatus": {
+        "title": "Správce indexeru",
+        "testAllButton": "Otestovat vše"
+    },
+    "errors": {
+        "general": {
+            "title": "Nepodařilo se najít správce indexeru",
+            "text": "Došlo k problému s připojením k Vašemu správci indexeru. Ověřte prosím svou konfiguraci/integraci."
+        }
+    }
+}

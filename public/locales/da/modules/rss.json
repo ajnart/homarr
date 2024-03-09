@@ -19,7 +19,7 @@
         "label": "Klemme til tekstlinjer"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Sorter efter udgivelsesdato (stigende)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
         "label": "Sæt indlæg uden udgivelsesdato øverst"

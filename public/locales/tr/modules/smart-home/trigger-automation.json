@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Ev Asistanı otomasyonu",
+    "name": "Home Assistant otomasyonu",
     "description": "Bir otomasyon yürütün",
     "settings": {
       "title": "Bir otomasyon yürütün",

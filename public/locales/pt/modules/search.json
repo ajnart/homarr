@@ -6,7 +6,7 @@
   "input": {
     "placeholder": "Pesquisar na Internet..."
   },
-  "switched-to": "Comutado para",
+  "switched-to": "Mudou para",
   "searchEngines": {
     "search": {
       "name": "Web",
@@ -18,13 +18,13 @@
     },
     "torrents": {
       "name": "Torrentes",
-      "description": "Pesquisa de Torrentes"
+      "description": "Pesquisa de Torrents"
     },
     "overseerr": {
       "name": "Overseerr",
       "description": "Pesquisa de Filmes e Programas de TV no Overseerr"
     }
   },
-  "tip": "Pode seleccionar a barra de pesquisa com o atalho ",
+  "tip": "Você pode selecionar a barra de pesquisa com o atalho ",
   "switchedSearchEngine": "Comutado para pesquisa com {{searchEngine}}"
 }

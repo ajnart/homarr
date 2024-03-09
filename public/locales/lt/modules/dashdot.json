@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Rodomi išorinio prietaiso Dash grafikai. Instance viduje Homarr.",
+    "settings": {
+      "title": "Dash nustatymai. valdiklis",
+      "dashName": {
+        "label": "Dash. Pavadinimas"
+      },
+      "url": {
+        "label": "Dash. URL"
+      },
+      "usePercentages": {
+        "label": "Rodyti procentus"
+      },
+      "columns": {
+        "label": "Rodyti stulpelius"
+      },
+      "graphHeight": {
+        "label": "Grafikų aukštis"
+      },
+      "graphsOrder": {
+        "label": "Grafikai (Išdėstymas)",
+        "storage": {
+          "label": "Saugykla",
+          "enabled": {
+            "label": "Rodyti valdiklyje"
+          },
+          "span": {
+            "label": "Stulpelio apimtis"
+          },
+          "compactView": {
+            "label": "Rodyti kaip tekstą (glaustai)"
+          },
+          "multiView": {
+            "label": "Rodyti kaip kelių diskų peržiūrą"
+          }
+        },
+        "network": {
+          "label": "Tinklas",
+          "enabled": {
+            "label": "Rodyti valdiklyje"
+          },
+          "span": {
+            "label": "Stulpelio apimtis"
+          },
+          "compactView": {
+            "label": "Rodyti kaip tekstą (glaustai)"
+          }
+        },
+        "cpu": {
+          "label": "Procesorius",
+          "enabled": {
+            "label": "Rodyti valdiklyje"
+          },
+          "span": {
+            "label": "Stulpelio apimtis"
+          },
+          "multiView": {
+            "label": "Rodyti kaip kelių branduolių rodinį"
+          }
+        },
+        "ram": {
+          "label": "RAM",
+          "enabled": {
+            "label": "Rodyti valdiklyje"
+          },
+          "span": {
+            "label": "Stulpelio apimtis"
+          }
+        },
+        "gpu": {
+          "label": "Vaizdo plokštė",
+          "enabled": {
+            "label": "Rodyti valdiklyje"
+          },
+          "span": {
+            "label": "Stulpelio apimtis"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Nerasta \"Dash.\" paslauga. Pridėkite ją į \"Homarr\" prietaisų skydelį arba nustatykite \"Dash. URL adresą modulio parinktyse",
+      "noInformation": "Negalima gauti informacijos iš dash. - Ar naudojate naujausią versiją?",
+      "protocolDowngrade": {
+        "title": "Aptiktas protokolo sumažinimas",
+        "text": "Ryšys su jūsų Dash. pavyzdys naudoja HTTP. Tai yra saugumo rizika, nes HTTP yra nešifruotas ir užpuolikai gali piktnaudžiauti šiuo ryšiu. Įsitikinkite, kad Dash. naudoja HTTPS arba sumažinkite Homarr versiją į HTTP (nerekomenduojama)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Saugykla",
+        "label": "Saugykla:"
+      },
+      "network": {
+        "title": "Tinklas",
+        "label": "Tinklas:",
+        "metrics": {
+          "download": "Žemyn",
+          "upload": "Aukštyn"
+        }
+      },
+      "cpu": {
+        "title": "Procesorius"
+      },
+      "ram": {
+        "title": "RAM"
+      },
+      "gpu": {
+        "title": "Vaizdo plokštė"
+      }
+    }
+  }
+}

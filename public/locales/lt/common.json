@@ -1,0 +1,58 @@
+{
+  "save": "",
+  "apply": "",
+  "insert": "",
+  "about": "",
+  "cancel": "Atšaukti",
+  "close": "",
+  "back": "",
+  "delete": "",
+  "ok": "",
+  "edit": "",
+  "next": "",
+  "previous": "",
+  "confirm": "",
+  "enabled": "",
+  "duplicate": "Sukurti kopiją",
+  "disabled": "",
+  "enableAll": "",
+  "disableAll": "",
+  "version": "",
+  "changePosition": "",
+  "remove": "Pašalinti",
+  "removeConfirm": "",
+  "createItem": "",
+  "sections": {
+    "settings": "Nustatymai",
+    "dangerZone": ""
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "",
+    "password": "Slaptažodis"
+  },
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  },
+  "loading": "Kraunama...",
+  "breakPoints": {
+    "small": "",
+    "medium": "",
+    "large": ""
+  },
+  "seeMore": "",
+  "position": {
+    "left": "Kairėje",
+    "center": "",
+    "right": "Dešinėje"
+  },
+  "attributes": {
+    "width": "Plotis",
+    "height": "Aukštis"
+  },
+  "public": "Vieša",
+  "restricted": ""
+}

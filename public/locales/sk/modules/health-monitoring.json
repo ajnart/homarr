@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "Monitorovanie stavu systému",
+        "description": "Informácie o vašom NAS",
+        "settings": {
+            "title": "Monitorovanie stavu systému",
+            "fahrenheit": {
+                "label": "Fahrenheit"
+            }
+        }
+    },
+    "cpu": {
+        "label": "CPU",
+        "load": "Priemerná záťaž",
+        "minute": "{minutes} min."
+    },
+    "memory": {
+        "label": "Pamäť",
+        "totalMem": "Celková pamäť: {{total}}GB",
+        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "Súborový systém",
+        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Čas prevádzky",
+        "updates": "Aktualizácie",
+        "reboot": "Reštartovať"
+    },
+    "errors": {
+        "general": {
+            "title": "Nemožno nájsť váš NAS",
+            "text": "Nastal problém s pripojením k vášmu NAS. Skontrolujte prosím svoju konfiguráciu/integráciu."
+        }
+    }
+}
