@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Zobrazit název města"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Lokalita pro počasí"
       }
