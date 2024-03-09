@@ -18,6 +18,8 @@ const weatherSchema = z.object({
     temperature: z.number(),
   }),
   daily: z.object({
+    time: z.array(z.string()),
+    weathercode: z.array(z.number()),
     temperature_2m_max: z.array(z.number()),
     temperature_2m_min: z.array(z.number()),
   }),
