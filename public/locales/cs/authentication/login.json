@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Po přihlášení budete přesměrováni na {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Chyba poskytovatele ověření",
+      "message": "Poskytovatel(é) není/nejsou nastaven/i, další informace naleznete ve Vašich protokolech."
     }
   },
   "alert": "Vaše přihlašovací údaje jsou nesprávné nebo tento účet neexistuje. Zkuste to prosím znovu."
