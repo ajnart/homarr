@@ -19,6 +19,7 @@ const portSchema = z
   .optional();
 const envSchema = z.enum(['development', 'test', 'production']);
 
+const validAuthProviders = ['credentials', 'ldap', 'oidc'];
 const authProviders = process.env.AUTH_PROVIDER?.replaceAll(' ', '').split(',') || ['credentials'];
 
 const env = createEnv({
@@ -45,8 +46,22 @@ const env = createEnv({
     // Authentication
     AUTH_PROVIDER: z
       .string()
+      .min(1)
       .default('credentials')
-      .transform((providers) => providers.replaceAll(' ', '').split(',')),
+      .transform((providers) =>
+        providers
+          .replaceAll(' ', '')
+          .toLowerCase()
+          .split(',')
+          .filter((provider) => {
+            if (validAuthProviders.includes(provider)) return provider;
+            else if (!provider)
+              console.log(
+                `One or more of the entries for AUTH_PROVIDER could not be parsed and/or returned null.`
+              );
+            else console.log(`The value entered for AUTH_PROVIDER "${provider}" is incorrect.`);
+          })
+      ),
     // LDAP
     ...(authProviders.includes('ldap')
       ? {
