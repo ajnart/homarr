@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Overseerr",
+    "description": "Leidžia ieškoti ir pridėti medijos iš Overseerr arba Jellyseerr."
   },
   "popup": {
     "item": {
       "buttons": {
-        "askFor": "",
-        "cancel": "",
+        "askFor": "Prašyti {{title}}",
+        "cancel": "Atšaukti",
         "request": "Užklausti"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "",
-          "text": ""
+          "title": "API rakto naudojimas",
+          "text": "Šis prašymas bus automatiškai patvirtintas"
         }
       }
     },
     "seasonSelector": {
-      "caption": "",
+      "caption": "Pažymėkite sezonus, kuriuos norite atsisiųsti",
       "table": {
         "header": {
-          "season": "",
-          "numberOfEpisodes": ""
+          "season": "Sezonas",
+          "numberOfEpisodes": "Epizodų skaičius"
         }
       }
     }
