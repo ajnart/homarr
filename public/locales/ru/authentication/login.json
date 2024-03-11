@@ -16,7 +16,7 @@
     },
     "afterLoginRedirection": "После входа вы будете перенаправлены на сайт {{url}}",
     "providersEmpty": {
-      "title": "",
+      "title": "Ошибка провайдера авторизации",
       "message": ""
     }
   },
