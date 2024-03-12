@@ -50,7 +50,7 @@ const definition = defineWidget({
     defaultTabState: {
       type: 'select',
       defaultValue: 'system' as DefaultTabStates,
-      data: defaultTabStates.map((x) => ({ value: x })),
+      data: defaultTabStates.map((stateValue) => ({ value: stateValue })),
       info: true,
     },
     node: {
@@ -61,7 +61,7 @@ const definition = defineWidget({
     defaultViewState: {
       type: 'select',
       defaultValue: 'none' as DefaultViewState,
-      data: defaultViewStates.map((x) => ({ value: x })),
+      data: defaultViewStates.map((stateValue) => ({ value: stateValue })),
     },
     summary: {
       type: 'switch',
@@ -86,7 +86,7 @@ const definition = defineWidget({
     sectionIndicatorColor: {
       type: 'select',
       defaultValue: 'all' as IndicatorColorControl,
-      data: indicatorColorControls.map((x) => ({ value: x })),
+      data: indicatorColorControls.map((sectionColor) => ({ value: sectionColor })),
       info: true,
     },
     ignoreCert: {
@@ -148,10 +148,10 @@ function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
         <Tabs defaultValue={widget.properties.defaultTabState} variant="outline">
           <Tabs.List grow>
             <Tabs.Tab value="system">
-              <b>System</b>
+              <b>{t('headings.system')}</b>
             </Tabs.Tab>
             <Tabs.Tab value="cluster">
-              <b>Cluster</b>
+              <b>{t('headings.cluster')}</b>
             </Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel mt="lg" value="system">
@@ -189,7 +189,7 @@ const SystemStatusTile = ({ data, properties }: { data: any; properties: any }) 
   const formatUptime = (uptime: number) => {
     const days = Math.floor(uptime / (60 * 60 * 24));
     const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    return `${days} days, ${remainingHours} hours`;
+    return t('info.uptimeFormat', { days: days, hours: remainingHours})
   };
 
   return (

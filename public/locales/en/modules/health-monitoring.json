@@ -83,6 +83,7 @@
   },
   "info": {
     "uptime": "Uptime",
+    "uptimeFormat": "{{days}} days, {{hours}} hours",
     "updates": "Updates Available",
     "reboot": "Reboot"
   },
@@ -91,6 +92,10 @@
       "title": "Unable to find your system(s).",
       "text": "There was a problem connecting to your system. Please verify your configuration/integration(s)."
     }
+  },
+  "headings": {
+    "system": "System",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {

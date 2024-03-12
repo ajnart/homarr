@@ -40,9 +40,10 @@ async function makeOpenMediaVaultRPCCall(
     )
     .catch((error) => {
       if (serviceName === 'cputemp') {
-        // ignore cputemp errors; not always supported
+        // handle cputemp errors differently; not always supported
+        Consola.info(`Error fetching cputemp from openmediavault. Disabling CPU Temp display.`);
       } else {
-        Consola.error(error);
+        Consola.error(`Error while fetching from openmediavault: ${error}`);
       }
     });
   return response;
