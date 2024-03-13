@@ -16,7 +16,7 @@ import { IconFileDownload } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { type MRT_ColumnDef, MRT_TableContainer, useMantineReactTable } from 'mantine-react-table';
+import { MRT_TableContainer, useMantineReactTable, type MRT_ColumnDef } from 'mantine-react-table';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
@@ -218,6 +218,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
     enableRowVirtualization: true,
     rowVirtualizerProps: { overscan: 20 },
     mantineTableContainerProps: { sx: { scrollbarWidth: 'none' } },
+    enableColumnOrdering: true,
     enableSorting: true,
     initialState: {
       showColumnFilters: false,
