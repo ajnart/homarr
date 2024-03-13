@@ -112,7 +112,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
       items: {
         documentation: {
           icon: IconBook2,
-          href: 'https://homarr.dev/docs/about',
+          href: 'https://homarr.dev/about-us',
           target: '_blank',
         },
         report: {
