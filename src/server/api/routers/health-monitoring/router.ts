@@ -57,9 +57,9 @@ export const healthMonitoringRouter = createTRPCRouter({
 
         for (const response of results) {
           if (response) {
-            if (response?.authenticated && response?.systemInfo) {
+            if ('systemInfo' in response && response.systemInfo != null) {
               systemData = response;
-            } else if (response?.nodes) {
+            } else if ('nodes' in response) {
               clusterData = response;
             }
           }
