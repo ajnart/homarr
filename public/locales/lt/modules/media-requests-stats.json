@@ -1,0 +1,27 @@
+{
+  "descriptor": {
+    "name": "Medijų užklausų statistikos",
+    "description": "Statistikos apie jūsų medijų užklausas",
+    "settings": {
+      "title": "Medijų užklausų statistikos",
+      "replaceLinksWithExternalHost": {
+        "label": "Pakeiskite nuorodas išoriniu pagrindiniu kompiuteriu"
+      },
+      "openInNewTab": {
+        "label": "Atidaryti naujame skirtuke"
+      }
+    }
+  },
+  "mediaStats": {
+    "title": "Medijų statistikos",
+    "pending": "Laukia patvirtinimo",
+    "tvRequests": "TV užklausos",
+    "movieRequests": "Filmų užklausos",
+    "approved": "Jau patvirtinta",
+    "totalRequests": "Iš viso"
+  },
+  "userStats": {
+    "title": "Top vartotojai",
+    "requests": "Užklausos: {{number}}"
+  }
+}

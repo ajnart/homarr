@@ -1,0 +1,50 @@
+{
+  "pageTitle": {
+    "label": "",
+    "description": ""
+  },
+  "metaTitle": {
+    "label": "",
+    "description": ""
+  },
+  "logo": {
+    "label": "",
+    "description": ""
+  },
+  "favicon": {
+    "label": "",
+    "description": ""
+  },
+  "background": {
+    "label": ""
+  },
+  "backgroundImageAttachment": {
+    "label": "",
+    "options": {
+      "fixed": "",
+      "scroll": ""
+    }
+  },
+  "backgroundImageSize": {
+    "label": "",
+    "options": {
+      "cover": "",
+      "contain": ""
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "",
+    "options": {
+      "repeat": "",
+      "no-repeat": "",
+      "repeat-x": "",
+      "repeat-y": ""
+    }
+  },
+  "customCSS": {
+    "label": "",
+    "description": "",
+    "placeholder": "",
+    "applying": ""
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Sukurti vartotoją",
+    "steps": {
+        "account": {
+            "title": "Pirmieji žingsniai",
+            "text": "Sukurti paskyrą",
+            "username": {
+                "label": ""
+            },
+            "email": {
+                "label": "El. paštas"
+            }
+        },
+        "security": {
+            "title": "Antras žingsnis",
+            "text": "Slaptažodis",
+            "password": {
+                "label": "Slaptažodis"
+            }
+        },
+        "finish": {
+            "title": "Patvirtinimas",
+            "text": "Išsaugoti duomenų bazėje",
+            "card": {
+                "title": "Peržiūrėkite įvestus duomenis",
+                "text": "Pateikus duomenis į duomenų bazę, naudotojas galės prisijungti. Ar esate tikri, kad norite šį naudotoją išsaugoti duomenų bazėje ir aktyvuoti prisijungimą?"
+            },
+            "table": {
+                "header": {
+                    "property": "Savybė",
+                    "value": "Reikšmė",
+                    "username": "",
+                    "email": "El. paštas",
+                    "password": "Slaptažodis"
+                },
+                "notSet": "Nenustatytas",
+                "valid": "Galiojantis"
+            },
+            "failed": "Naudotojo sukūrimas nepavyko: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Vartotojas buvo sukurtas",
+                "text": "Vartotojas buvo sukurtas duomenų bazėje. Dabar jis gali prisijungti."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Sugeneruoti atsitiktinį",
+        "createAnother": "Sukurti kitą"
+    }
+}

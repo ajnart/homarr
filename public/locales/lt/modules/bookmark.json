@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "Skirtukas",
+    "description": "Rodo statinį eilučių arba nuorodų sąrašą",
+    "settings": {
+      "title": "Skirtukų nustatymai",
+      "name": {
+        "label": "Valdiklio pavadinimas",
+        "info": "Palikite tuščią, kad pavadinimas būtų paslėptas."
+      },
+      "items": {
+        "label": "Elementai"
+      },
+      "layout": {
+        "label": "",
+        "data": {
+          "autoGrid": "Automatinis tinklelis",
+          "horizontal": "Horizontalus",
+          "vertical": "Vertikalus"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Skirtukų sarašas tuščias",
+      "text": "Naujų elementų įtraukimas į šį sąrašą redagavimo režimu"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "Ilgis turi būti nuo {{shortest}} iki {{longest}}",
+      "invalidLink": "Negaliojanti nuoroda",
+      "errorMsg": "Neišsaugota, nes buvo patvirtinimo klaidų. Prašome pakoreguoti savo įvestus duomenis"
+    },
+    "name": "Pavadinimas",
+    "url": "URL",
+    "newTab": "Atidaryti naujame skirtuke",
+    "hideHostname": "Paslėpti kompiuterio pavadinimą",
+    "hideIcon": "Paslėpti piktogramą",
+    "delete": ""
+  }
+}

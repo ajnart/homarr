@@ -1,13 +1,16 @@
 const { z } = require('zod');
 const { createEnv } = require('@t3-oss/env-nextjs');
 
-const trueStrings = ["1", "t", "T", "TRUE", "true", "True"];
-const falseStrings = ["0", "f", "F", "FALSE", "false", "False"];
+const trueStrings = ['1', 't', 'T', 'TRUE', 'true', 'True'];
+const falseStrings = ['0', 'f', 'F', 'FALSE', 'false', 'False'];
 
-const zodParsedBoolean = () => z
-  .enum([...trueStrings, ...falseStrings])
-  .default("false")
-  .transform((value) => trueStrings.includes(value))
+const ldapSearchScope = z.enum(['base', 'one', 'sub']).default('base');
+
+const zodParsedBoolean = () =>
+  z
+    .enum([...trueStrings, ...falseStrings])
+    .default('false')
+    .transform((value) => trueStrings.includes(value));
 
 const portSchema = z
   .string()
@@ -16,6 +19,7 @@ const portSchema = z
   .optional();
 const envSchema = z.enum(['development', 'test', 'production']);
 
+const validAuthProviders = ['credentials', 'ldap', 'oidc'];
 const authProviders = process.env.AUTH_PROVIDER?.replaceAll(' ', '').split(',') || ['credentials'];
 
 const env = createEnv({
@@ -40,34 +44,53 @@ const env = createEnv({
     HOSTNAME: z.string().optional(),
 
     // Authentication
-    AUTH_PROVIDER: z.string().default('credentials').transform(providers => providers.replaceAll(' ', '').split(',')),
+    AUTH_PROVIDER: z
+      .string()
+      .min(1)
+      .default('credentials')
+      .transform((providers) =>
+        providers
+          .replaceAll(' ', '')
+          .toLowerCase()
+          .split(',')
+          .filter((provider) => {
+            if (validAuthProviders.includes(provider)) return provider;
+            else if (!provider)
+              console.log(
+                `One or more of the entries for AUTH_PROVIDER could not be parsed and/or returned null.`
+              );
+            else console.log(`The value entered for AUTH_PROVIDER "${provider}" is incorrect.`);
+          })
+      ),
     // LDAP
     ...(authProviders.includes('ldap')
       ? {
-        AUTH_LDAP_URI: z.string().url(),
-        AUTH_LDAP_BIND_DN: z.string(),
-        AUTH_LDAP_BIND_PASSWORD: z.string(),
-        AUTH_LDAP_BASE: z.string(),
-        AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
-        AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
-        AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
-        AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: z.string().default('dn'),
-        AUTH_LDAP_ADMIN_GROUP: z.string().default('admin'),
-        AUTH_LDAP_OWNER_GROUP: z.string().default('admin'),
-      }
+          AUTH_LDAP_URI: z.string().url(),
+          AUTH_LDAP_BIND_DN: z.string(),
+          AUTH_LDAP_BIND_PASSWORD: z.string(),
+          AUTH_LDAP_BASE: z.string(),
+          AUTH_LDAP_SEARCH_SCOPE: z.enum(['base', 'one', 'sub']).default('base'),
+          AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
+          AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
+          AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
+          AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: z.string().default('dn'),
+          AUTH_LDAP_ADMIN_GROUP: z.string().default('admin'),
+          AUTH_LDAP_OWNER_GROUP: z.string().default('admin'),
+        }
       : {}),
     // OIDC
     ...(authProviders.includes('oidc')
       ? {
-        AUTH_OIDC_CLIENT_ID: z.string(),
-        AUTH_OIDC_CLIENT_SECRET: z.string(),
-        AUTH_OIDC_URI: z.string().url(),
-        // Custom Display name, defaults to OIDC
-        AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
-        AUTH_OIDC_ADMIN_GROUP: z.string().default('admin'),
-        AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
-        AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean()
-      }
+          AUTH_OIDC_CLIENT_ID: z.string(),
+          AUTH_OIDC_CLIENT_SECRET: z.string(),
+          AUTH_OIDC_URI: z.string().url(),
+          // Custom Display name, defaults to OIDC
+          AUTH_OIDC_CLIENT_NAME: z.string().default('OIDC'),
+          AUTH_OIDC_ADMIN_GROUP: z.string().default('admin'),
+          AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
+          AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
+          AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
+        }
       : {}),
   },
 
@@ -110,6 +133,7 @@ const env = createEnv({
     AUTH_LDAP_BIND_DN: process.env.AUTH_LDAP_BIND_DN,
     AUTH_LDAP_BIND_PASSWORD: process.env.AUTH_LDAP_BIND_PASSWORD,
     AUTH_LDAP_BASE: process.env.AUTH_LDAP_BASE,
+    AUTH_LDAP_SEARCH_SCOPE: process.env.AUTH_LDAP_SEARCH_SCOPE?.toLowerCase(),
     AUTH_LDAP_USERNAME_ATTRIBUTE: process.env.AUTH_LDAP_USERNAME_ATTRIBUTE,
     AUTH_LDAP_GROUP_CLASS: process.env.AUTH_LDAP_GROUP_CLASS,
     AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: process.env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE,
@@ -124,6 +148,7 @@ const env = createEnv({
     AUTH_OIDC_ADMIN_GROUP: process.env.AUTH_OIDC_ADMIN_GROUP,
     AUTH_OIDC_OWNER_GROUP: process.env.AUTH_OIDC_OWNER_GROUP,
     AUTH_OIDC_AUTO_LOGIN: process.env.AUTH_OIDC_AUTO_LOGIN,
+    AUTH_OIDC_SCOPE_OVERWRITE: process.env.AUTH_OIDC_SCOPE_OVERWRITE,
     DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

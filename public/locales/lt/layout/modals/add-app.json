@@ -1,0 +1,128 @@
+{
+	"tabs": {
+		"general": "Bendras",
+		"behaviour": "Elgesys",
+		"network": "Tinklas",
+		"appearance": "Išvaizda",
+		"integration": "Integracija"
+	},
+	"general": {
+		"appname": {
+			"label": "Programos pavadinimas",
+			"description": "Naudojama programai rodyti lentelėje."
+		},
+		"internalAddress": {
+			"label": "Vidinis adresas",
+			"description": "Programėlės vidinis IP adresas.",
+			"troubleshoot": {
+				"label": "Turite problemų?",
+				"header": "Čia pateikiamas dažniausiai daromų klaidų sąrašas ir jų šalinimas:",
+				"lines": {
+					"nothingAfterPort": "Daugeliu, jei ne visais atvejais, neturėtumėte įvesti jokio kelio po prievado. (Netgi „/admin“, skirta pihole, arba „/web“, skirta plex)",
+					"protocolCheck": "Visada įsitikinkite, kad prieš URL yra http arba https, ir įsitikinkite, kad naudojate tinkamą.",
+					"preferIP": "Rekomenduojama naudoti tiesioginį kompiuterio ar konteinerio Ip adresą, su kuriuo bandote susisiekti.",
+					"enablePings": "Patikrinkite, ar IP yra teisingas, įjungę ping. Pritaikyti valdybą -> Maketas -> Įjungti pingus. Programos plytelėse pasirodys mažas raudonas arba žalias burbuliukas, kurį užkliudžius bus nurodytas atsakymo kodas (dažniausiai tikimasi žalio burbuliuko su kodu 200).",
+					"wget": "Norėdami įsitikinti, kad \"homarr\" gali bendrauti su kitomis programėlėmis, atlikite wget/curl/ping programos IP:prievadas.",
+					"iframe": "Kalbant apie iframe, jie visada turėtų naudoti tą patį protokolą (http/s) kaip ir Homarr.",
+					"clearCache": "Kai kuri informacija registruojama talpykloje, todėl integracija gali neveikti, jei neišvalysite talpyklos \"Homarr\" bendrosiose parinktyse."
+				},
+				"footer": "Jei reikia daugiau trikčių šalinimo, susisiekite su mumis per {{discord}}."
+			}
+		},
+		"externalAddress": {
+			"label": "Išorinis adresas",
+			"description": "URL adresas, kuris bus atidarytas spustelėjus programą."
+		}
+	},
+	"behaviour": {
+		"isOpeningNewTab": {
+			"label": "Atidaryti naujame skirtuke",
+			"description": "Atidarykite programėlę naujame skirtuke, o ne dabartiniame."
+		},
+		"tooltipDescription": {
+			"label": "Programos aprašymas",
+			"description": "Įvestas tekstas bus rodomas užvedus pelės žymeklį virš programos.\nNaudokite tai, kad naudotojams pateiktumėte daugiau informacijos apie programą arba palikite tuščią, kad nieko neturėtumėte."
+		},
+		"customProtocolWarning": "Naudojant nestandartinį protokolą. Tam gali prireikti iš anksto įdiegtų programų ir gali kilti saugumo rizika. Įsitikinkite, kad jūsų adresas yra saugus ir patikimas."
+	},
+	"network": {
+		"statusChecker": {
+			"label": "Būsenos tikrintuvas",
+			"description": "Naudodamas paprastą HTTP(S) užklausą patikrina, ar jūsų programa yra prisijungusi."
+		},
+		"statusCodes": {
+			"label": "HTTP būsenos kodai",
+			"description": "HTTP būsenos kodai, kurie laikomi prisijungusiais."
+		}
+	},
+	"appearance": {
+		"icon": {
+			"label": "Programėlės piktograma",
+			"description": "Pradėkite rašyti, kad rastumėte piktogramą. Taip pat galite įklijuoti paveikslėlio URL adresą ir naudoti pasirinktą piktogramą.",
+			"autocomplete": {
+				"title": "Rezultatų nerasta",
+				"text": "Pabandykite naudoti tikslesnę paieškos frazę. Jei nerandate norimos piktogramos, įklijuokite pirmiau pateiktą paveikslėlio URL, kad gautumėte pasirinktinę piktogramą"
+			},
+			"noItems": {
+				"title": "Įkeliamos išorinės piktogramos",
+				"text": "Gali užtrukti kelias sekundes"
+			}
+		},
+		"appNameFontSize": {
+			"label": "Programos pavadinimo šrifto dydis",
+			"description": "Nustatykite šrifto dydį, kai programėlės pavadinimas rodomas plytelėje."
+		},
+		"appNameStatus": {
+			"label": "Programos pavadinimo būsena",
+			"description": "Pasirinkite, kurioje vietoje norite, kad būtų rodomas pavadinimas, jei apskritai norite, kad jis būtų rodomas.",
+			"dropdown": {
+				"normal": "Rodyti pavadinimą tik ant plytelės",
+				"hover": "Rodyti pavadinimą tik užvedus pelės žymeklį ant patarimo",
+				"hidden": "Visiškai nerodyti"
+			}
+		},
+		"positionAppName": {
+			"label": "Programos pavadinimas Pozicija",
+			"description": "Programėlės pavadinimo padėtis piktogramos atžvilgiu.",
+			"dropdown": {
+				"top": "Viršuje",
+				"right": "Dešinėje",
+				"bottom": "Apačioje",
+				"left": "Kairėje"
+			}
+		},
+		"lineClampAppName": {
+			"label": "Programos pavadinimo linijos spaustukas",
+			"description": "Nustato, kiek eilučių turėtų tilpti į maksimalų pavadinimą. Nustatykite 0, jei norite neriboto skaičiaus."
+		}
+	},
+	"integration": {
+		"type": {
+			"label": "Integracijos konfigūracija",
+			"description": "Integracijos konfigūracija, kuri bus naudojama prisijungti prie jūsų programos.",
+			"placeholder": "Pasirinkite integraciją",
+			"defined": "Nustatyta",
+			"undefined": "Nenustatyta",
+			"public": "Vieša",
+			"private": "Privatu",
+			"explanationPrivate": "Privati paslaptis į serverį siunčiama tik vieną kartą. Naršyklei atnaujinus puslapį, ji daugiau niekada nebus siunčiama.",
+			"explanationPublic": "Viešoji paslaptis visada siunčiama klientui ir yra pasiekiama per API. Jame neturėtų būti jokių konfidencialių verčių, pavyzdžiui, naudotojų vardų, slaptažodžių, žetonų, sertifikatų ir pan."
+		},
+		"secrets": {
+			"description": "Norėdami atnaujinti paslaptį, įveskite reikšmę ir spustelėkite mygtuką Išsaugoti. Jei norite pašalinti paslaptį, naudokite mygtuką ištrinti.",
+			"warning": "Jūsų prisijungimo duomenys yra jūsų integracijų prieiga, todėl turėtumėte <strong>niekada</strong> jais nesidalyti su niekuo kitu. \"Homarr\" komanda niekada neprašys pateikti įgaliojimų. Įsitikinkite, kad <strong>saugote ir saugiai valdote savo paslaptis</strong>.",
+			"clear": "Trinti paslaptį",
+			"save": "Išsaugoti paslaptį",
+			"update": "Atnaujinti paslaptį"
+		}
+	},
+	"validation": {
+		"popover": "Jūsų formoje yra neteisingų duomenų. Vadinasi, jo išsaugoti nepavyks. Išspręskite visas problemas ir dar kartą spustelėkite šį mygtuką, kad išsaugotumėte pakeitimus",
+		"name": "Pavadinimas yra būtinas",
+		"noUrl": "Reikalingas URL adresas",
+		"invalidUrl": "Reikšmė nėra galiojantis url",
+		"noIconUrl": "Šis laukelis yra privalomas",
+		"noExternalUri": "Reikalingas išorinis URL",
+		"invalidExternalUri": "Išorinis URL nėra galiojantis URL"
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "crwdns4188:0crwdne4188:0",
+        "description": "crwdns4190:0crwdne4190:0",
+        "settings": {
+            "title": "crwdns4192:0crwdne4192:0"
+        }
+    },
+    "indexersStatus": {
+        "title": "crwdns4194:0crwdne4194:0",
+        "testAllButton": "crwdns4196:0crwdne4196:0"
+    },
+    "errors": {
+        "general": {
+            "title": "crwdns4198:0crwdne4198:0",
+            "text": "crwdns4200:0crwdne4200:0"
+        }
+    }
+}

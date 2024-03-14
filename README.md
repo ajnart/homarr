@@ -59,40 +59,40 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 
 ![Widgets & Integrations Section](docs/section-widgets-and-integrations.png)
 
-Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/management/integrations/), that connect to your applications and enable you to control them directly from the dashboard.
+Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/category/integrations), that connect to your applications and enable you to control them directly from the dashboard.
 Each widget and integration has a comprehensive documentation
 Homarr will integrate with the following applications:
 
 📥 Torrent clients
-- [Deluge](https://homarr.dev/docs/management/integrations/torrent-deluge)
-- [Transmission](https://homarr.dev/docs/management/integrations/torrent-transmission)
-- [qBittorent](https://homarr.dev/docs/management/integrations/torrent-qbittorrent)
+- [Deluge](https://homarr.dev/docs/integrations/torrent#deluge)
+- [Transmission](https://homarr.dev/docs/integrations/torrent#transmission)
+- [qBittorent](https://homarr.dev/docs/integrations/torrent#qbittorrent-integration)
 
 📥 Usenet clients
-- [SABnzbd](https://homarr.dev/docs/management/integrations/usenet-sabnzbd)
-- [NZBGet](https://homarr.dev/docs/management/integrations/usenet-nzbget)
+- [SABnzbd](https://homarr.dev/docs/integrations/usenet#sabnzbd)
+- [NZBGet](https://homarr.dev/docs/integrations/usenet#nzbget)
 
 📺 Media servers
-- [Plex](https://homarr.dev/docs/management/integrations/media-server-plex)
-- [Jellyfin](https://homarr.dev/docs/management/integrations/media-server-jellyfin)
+- [Plex](https://homarr.dev/docs/integrations/usenet#nzbget)
+- [Jellyfin](https://homarr.dev/docs/integrations/usenet#nzbget)
 
 📚 Media collection managers
-- [Sonarr](https://homarr.dev/docs/management/integrations/servarr-sonarr)
-- [Radarr](https://homarr.dev/docs/management/integrations/servarr-radarr)
-- [Lidarr](https://homarr.dev/docs/management/integrations/servarr-lidarr)
-- [Readarr](https://homarr.dev/docs/management/integrations/servarr-readarr)
+- [Sonarr](https://homarr.dev/docs/integrations/servarr#sonarr)
+- [Radarr](https://homarr.dev/docs/integrations/servarr#radarr)
+- [Lidarr](https://homarr.dev/docs/integrations/servarr#lidarr)
+- [Readarr](https://homarr.dev/docs/integrations/servarr#readarr)
  
 🎞️ Media request managers
-- [Overseerr](https://homarr.dev/docs/management/integrations/media-requester/)
-- [Jellyseerr](https://homarr.dev/docs/management/integrations/media-requester/)
+- [Overseerr](https://homarr.dev/docs/integrations/media-requester)
+- [Jellyseerr](https://homarr.dev/docs/integrations/media-requester)
 
 🚫 DNS ad-blockers
-- [Pihole](https://homarr.dev/docs/management/integrations/dns-pihole)
-- [AdGuard Home](https://homarr.dev/docs/management/integrations/dns-adguard-home)
+- [Pihole](https://homarr.dev/docs/integrations/dns#pihole)
+- [AdGuard Home](https://homarr.dev/docs/integrations/dns#adguard-home)
 
 Other integrations
-- [🔌 Dash.](https://homarr.dev/docs/management/integrations/hardware-dash)
-- [🐳 Docker](https://homarr.dev/docs/management/integrations/containers-docker)  
+- [🔌 Dash.](https://homarr.dev/docs/integrations/hardware)
+- [🐳 Docker](https://homarr.dev/docs/integrations/containers)  
 
 We're constantly adding new integrations and widgets, which will enhance your experience even further.
 

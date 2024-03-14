@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Automatizace Home Assistanta",
-    "description": "Spustit automatizaci",
+    "description": "Spustí automatizaci",
     "settings": {
-      "title": "Spustit automatizaci",
+      "title": "Spustí automatizaci",
       "automationId": {
         "label": "ID automatizace",
         "info": "Vaše unikátní ID automatizace. Vždy začíná s automation.XXXXX."

@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "rssFeedUrl": {
+        "label": "",
+        "description": ""
+      },
+      "refreshInterval": {
+        "label": ""
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "",
+        "info": ""
+      },
+      "textLinesClamp": {
+        "label": ""
+      },
+      "sortByPublishDateAscending": {
+        "label": ""
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": ""
+      },
+      "maximumAmountOfPosts": {
+        "label": ""
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "",
+          "text": ""
+        }
+      }
+    }
+  }
+}

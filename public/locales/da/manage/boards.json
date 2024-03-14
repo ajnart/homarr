@@ -16,15 +16,15 @@
                 "label": "Slet permanent",
                 "disabled": "Sletning deaktiveret, fordi ældre Homarr-komponenter ikke tillader sletning af standardkonfigurationen. Sletning vil være mulig i fremtiden."
             },
-            "duplicate": "",
+            "duplicate": "Duplikér",
             "rename": {
-                "label": "",
+                "label": "Omdøb",
                 "modal": {
-                    "title": "",
+                    "title": "Omdøb tavlen {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nyt navn",
+                            "placeholder": "Nyt tavlenavn"
                         }
                     }
                 }

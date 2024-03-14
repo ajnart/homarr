@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "\"Home Assistant\" automatizavimas",
+    "description": "Vykdyti automatizavimą",
+    "settings": {
+      "title": "Vykdyti automatizavimą",
+      "automationId": {
+        "label": "Automatizavimo ID",
+        "info": "Jūsų unikalus automatizavimo ID. Visada prasideda automation.XXXXX."
+      },
+      "displayName": {
+        "label": "Rodomas vardas"
+      }
+    }
+  }
+}

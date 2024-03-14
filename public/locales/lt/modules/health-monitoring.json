@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "Sistemos būklės stebėjimas",
+        "description": "Informacija apie jūsų NAS",
+        "settings": {
+            "title": "Sistemos būklės stebėjimas",
+            "fahrenheit": {
+                "label": "Farenheitas"
+            }
+        }
+    },
+    "cpu": {
+        "label": "Procesorius",
+        "load": "Apkrovos vidurkis",
+        "minute": "{{minute}} minutė"
+    },
+    "memory": {
+        "label": "Atmintis",
+        "totalMem": "Bendra atmintis: {{total}}GB",
+        "available": "Galimi: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "Failų sistema",
+        "available": "Galimi: {{available}} - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Veikimo laikas",
+        "updates": "Atnaujinimai",
+        "reboot": "Paleisti iš naujo"
+    },
+    "errors": {
+        "general": {
+            "title": "Nepavyko rasti jūsų NAS",
+            "text": "Prisijungiant prie NAS kilo problema. Patikrinkite savo konfigūraciją / integraciją (-as)."
+        }
+    }
+}

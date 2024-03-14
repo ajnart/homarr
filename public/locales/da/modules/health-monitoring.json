@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "Systemsundhedsovervågning",
+        "description": "Oplysninger om din NAS",
+        "settings": {
+            "title": "Systemsundhedsovervågning",
+            "fahrenheit": {
+                "label": "Fahrenheit"
+            }
+        }
+    },
+    "cpu": {
+        "label": "CPU",
+        "load": "Load Gennemsnit",
+        "minute": "{{minute}} minutter"
+    },
+    "memory": {
+        "label": "Hukommelse",
+        "totalMem": "Samlet hukommelse: {{total}}GB",
+        "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "Filsystem",
+        "available": "Tilgængelig: {{available}} - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Oppetid",
+        "updates": "Opdateringer",
+        "reboot": "Genstart"
+    },
+    "errors": {
+        "general": {
+            "title": "Kan ikke finde din NAS",
+            "text": "Der opstod et problem med at oprette forbindelse til din NAS. Bekræft venligst din konfiguration/integration(er)."
+        }
+    }
+}

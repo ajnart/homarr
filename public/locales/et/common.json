@@ -1,0 +1,58 @@
+{
+  "save": "",
+  "apply": "",
+  "insert": "",
+  "about": "",
+  "cancel": "",
+  "close": "",
+  "back": "",
+  "delete": "",
+  "ok": "",
+  "edit": "",
+  "next": "",
+  "previous": "",
+  "confirm": "",
+  "enabled": "",
+  "duplicate": "",
+  "disabled": "",
+  "enableAll": "",
+  "disableAll": "",
+  "version": "",
+  "changePosition": "",
+  "remove": "",
+  "removeConfirm": "",
+  "createItem": "",
+  "sections": {
+    "settings": "",
+    "dangerZone": ""
+  },
+  "secrets": {
+    "apiKey": "",
+    "username": "",
+    "password": ""
+  },
+  "tip": "",
+  "time": {
+    "seconds": "",
+    "minutes": "",
+    "hours": ""
+  },
+  "loading": "",
+  "breakPoints": {
+    "small": "",
+    "medium": "",
+    "large": ""
+  },
+  "seeMore": "",
+  "position": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "attributes": {
+    "width": "",
+    "height": ""
+  },
+  "public": "",
+  "restricted": ""
+}

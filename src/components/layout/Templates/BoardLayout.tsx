@@ -182,7 +182,7 @@ const ToggleEditModeButton = () => {
                 <Text
                   component="a"
                   style={{ color: 'inherit', textDecoration: 'underline' }}
-                  href="https://homarr.dev/docs/customizations/board-customization#screen-sizes"
+                  href="https://homarr.dev/docs/advanced/customizations/board-customization#screen-sizes"
                   target="_blank"
                 />
               ),
