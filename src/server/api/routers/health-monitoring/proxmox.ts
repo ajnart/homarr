@@ -25,7 +25,7 @@ export async function makeProxmoxStatusAPICall(app: ConfigAppType, input: any) {
   const result = await axios
     .get(appUrl.toString(), {
       headers: {
-        Authorization: apiKey,
+        Authorization: `PVEAPIToken=${apiKey}`,
       },
       httpsAgent: agent,
     })
