@@ -60,7 +60,7 @@ interface ICommonWidgetOptions {
 export type IMultiSelectOptionValue = {
   type: 'multi-select';
   defaultValue: string[];
-  data: DataType[];
+  data: DataType[] | (() => DataType[]);
   inputProps?: Partial<MultiSelectProps>;
 };
 
