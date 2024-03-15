@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Prijava"
     },
-    "afterLoginRedirection": "Po prijavi boste preusmerjeni na spletno stran {{url}}."
+    "afterLoginRedirection": "Po prijavi boste preusmerjeni na spletno stran {{url}}.",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Vaše poverilnice so napačne ali pa ta račun ne obstaja. Poskusite znova."
 }

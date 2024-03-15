@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Показувати назву міста"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Погодна локація"
       }

@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "显示城市名称"
       },
+      "displayWeekly": {
+        "label": "显示每周预测"
+      },
+      "forecastDays": {
+        "label": "显示天数"
+      },
       "location": {
         "label": "天气位置"
       }

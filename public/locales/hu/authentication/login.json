@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Bejelentkezés"
     },
-    "afterLoginRedirection": "A bejelentkezés után a {{url}} oldalra kerül átirányításra"
+    "afterLoginRedirection": "A bejelentkezés után a {{url}} oldalra kerül átirányításra",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "A hitelesítő adatok helytelenek, vagy ez a fiók nem létezik. Kérjük, próbálja meg újra."
 }

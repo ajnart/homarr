@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Visa stadens namn"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Plats för väder"
       }

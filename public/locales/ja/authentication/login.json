@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "サインイン"
     },
-    "afterLoginRedirection": "ログイン後、 {{url}}にリダイレクトされます。"
+    "afterLoginRedirection": "ログイン後、 {{url}}にリダイレクトされます。",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "認証情報が間違っているか、このアカウントが存在しません。もう一度お試しください。"
 }
