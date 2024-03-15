@@ -68,6 +68,36 @@ export const mediaServerRouter = createTRPCRouter({
     }),
 });
 
+async function getJellyfinCrendentials(
+  app: ConfigAppType,
+  apiKey?: string,
+  username?: string,
+  password?: string
+) {
+  if (apiKey && apiKey.length > 0) {
+    let api = jellyfin.createApi(app.url, apiKey);
+    let infoApi = await getSystemApi(api).getPublicSystemInfo();
+    let sessionApi = getSessionApi(api);
+    return {
+      api,
+      infoApi,
+      sessionApi,
+    };
+  } else if (username && password) {
+    let api = jellyfin.createApi(app.url);
+    await api.authenticateUserByName(username, password);
+    let infoApi = await getSystemApi(api).getPublicSystemInfo();
+    let sessionApi = getSessionApi(api);
+    return {
+      api,
+      infoApi,
+      sessionApi,
+    };
+  } else {
+    return null;
+  }
+}
+
 const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | undefined> => {
   switch (app.integration?.type) {
     case 'jellyfin': {
@@ -76,24 +106,8 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
       const username = findAppProperty(app, 'username');
       const password = findAppProperty(app, 'password');
 
-
-
-      let api; 
-      let infoApi;
-      let sessionApi;
-
-
-      if (apiKey &&  apiKey.length > 5 ) {
-        api = jellyfin.createApi(app.url, apiKey);
-        infoApi = await getSystemApi(api).getPublicSystemInfo();
-        sessionApi = getSessionApi(api);
-      }else if (username && password){
-        api = jellyfin.createApi(app.url);
-        await api.authenticateUserByName(username, password);
-        infoApi = await getSystemApi(api).getPublicSystemInfo();
-        sessionApi = getSessionApi(api);
-      }
-      else{
+      let credentials = await getJellyfinCrendentials(app, apiKey, username, password);
+      if (credentials == null) {
         return {
           appId: app.id,
           serverAddress: app.url,
@@ -103,15 +117,8 @@ const handleServer = async (app: ConfigAppType): Promise<GenericMediaServer | un
           success: false,
         };
       }
+      let { api, infoApi, sessionApi } = credentials;
 
-      
-      
-      
-
-
-  
-
-      
       const { data: sessions } = await sessionApi.getSessions();
       return {
         type: 'jellyfin',

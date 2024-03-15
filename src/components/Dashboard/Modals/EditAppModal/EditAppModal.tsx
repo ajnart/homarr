@@ -110,7 +110,7 @@ export const EditAppModal = ({
 
     // also close the parent modal
     context.closeAll();
-    umami.track('Add app', { name:  values.name });
+    umami.track('Add app', { name: values.name });
   };
 
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');
@@ -235,7 +235,7 @@ const SaveButton = ({ formIsValid }: { formIsValid: boolean }) => {
     <Popover opened={opened && !formIsValid} width={300} withArrow withinPortal>
       <Popover.Target>
         <div onMouseEnter={open} onMouseLeave={close}>
-          <Button disabled={!formIsValid} px={50} type="submit" >
+          <Button disabled={!formIsValid} px={50} type="submit">
             {t('common:save')}
           </Button>
         </div>

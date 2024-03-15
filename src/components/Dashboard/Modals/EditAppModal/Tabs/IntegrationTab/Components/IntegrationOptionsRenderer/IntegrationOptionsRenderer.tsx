@@ -5,7 +5,7 @@ import {
   AppIntegrationPropertyType,
   AppType,
   integrationFieldDefinitions,
-  integrationFieldProperties
+  integrationFieldProperties,
 } from '~/types/app';
 
 import { GenericSecretInput } from '../InputElements/GenericSecretInput';
@@ -24,7 +24,6 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
   return (
     <Stack spacing="xs" mb="md">
       {displayedProperties.map((property, index) => {
-       
         const [_, definition] = Object.entries(integrationFieldDefinitions).find(
           ([key]) => property.type === key
         )!;
@@ -37,7 +36,7 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
           )![1];
           const newProperty: AppIntegrationPropertyType = {
             type,
-            field: property.type ,
+            field: property.type,
             isDefined: false,
           };
           form.insertListItem('integration.properties', newProperty);
@@ -47,35 +46,40 @@ export const IntegrationOptionsRenderer = ({ form }: IntegrationOptionsRendererP
 
         const isPresent = formValue?.isDefined;
         const accessabilityType = formValue?.type;
-        console.log(`index: ${index}, indexInFormValue: ${indexInFormValue}, isPresent: ${isPresent}, accessabilityType: ${accessabilityType}`)
-
+        console.log(
+          `index: ${index}, indexInFormValue: ${indexInFormValue}, isPresent: ${isPresent}, accessabilityType: ${accessabilityType}`
+        );
 
         if (!definition) {
           return (
             <GenericSecretInput
-              required={property.isRequired} 
+              required={property.isRequired}
               onClickUpdateButton={(value) => {
                 form.setFieldValue(`integration.properties.${indexInFormValue}.value`, value);
                 form.setFieldValue(
                   `integration.properties.${indexInFormValue}.isDefined`,
                   value !== undefined
                 );
-              } }
+              }}
               key={`input-${property}`}
               label={`${property} (potentionally unmapped)`}
               secretIsPresent={isPresent}
               setIcon={IconKey}
               type={accessabilityType}
-              {...form.getInputProps(`integration.properties.${indexInFormValue}.value`)}            />
+              {...form.getInputProps(`integration.properties.${indexInFormValue}.value`)}
+            />
           );
         }
 
         return (
           <GenericSecretInput
-          required={property.isRequired} 
+            required={property.isRequired}
             onClickUpdateButton={(value) => {
               form.setFieldValue(`integration.properties.${indexInFormValue}.value`, value);
-              form.setFieldValue(`integration.properties.${indexInFormValue}.isDefined`, value !== undefined);
+              form.setFieldValue(
+                `integration.properties.${indexInFormValue}.isDefined`,
+                value !== undefined
+              );
             }}
             key={`input-${definition.label}`}
             label={definition.label}

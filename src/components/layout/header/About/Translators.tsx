@@ -1,13 +1,4 @@
-import {
-  Anchor,
-  Avatar,
-  Group,
-  Pagination,
-  Stack,
-  Table,
-  Text,
-  Title,
-} from '@mantine/core';
+import { Anchor, Avatar, Group, Pagination, Stack, Table, Text, Title } from '@mantine/core';
 import { usePagination } from '@mantine/hooks';
 import { Trans, useTranslation } from 'next-i18next';
 
@@ -75,7 +66,10 @@ export function TranslatorsTable({ loadedLanguages }: { loadedLanguages: number 
         >
           <Text lineClamp={1}>
             {translator.languages.map((language, index) => (
-              <span key={language.id}>{language.name}{(index < translator.languages.length - 1 ? ", " : "")}</span>
+              <span key={language.id}>
+                {language.name}
+                {index < translator.languages.length - 1 ? ', ' : ''}
+              </span>
             ))}
           </Text>
         </td>

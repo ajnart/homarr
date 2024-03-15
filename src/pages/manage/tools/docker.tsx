@@ -57,7 +57,11 @@ export default function DockerPage({
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getServerAuthSession({ req: context.req, res: context.res });
-  const result = checkForSessionOrAskForLogin(context, session, () => session?.user.isAdmin == true);
+  const result = checkForSessionOrAskForLogin(
+    context,
+    session,
+    () => session?.user.isAdmin == true
+  );
   if (result) {
     return result;
   }

@@ -38,7 +38,10 @@ export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutPr
   const { data: session } = useSession();
 
   return (
-    <MainLayout autoFocusSearch={session?.user.autoFocusSearch} headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}>
+    <MainLayout
+      autoFocusSearch={session?.user.autoFocusSearch}
+      headerActions={<HeaderActions isDockerEnabled={isDockerEnabled} />}
+    >
       <BoardHeadOverride />
       <BackgroundImage />
       {children}
@@ -47,7 +50,7 @@ export const BoardLayout = ({ children, isDockerEnabled = false }: BoardLayoutPr
   );
 };
 
-export const HeaderActions = ({isDockerEnabled = false} : { isDockerEnabled: boolean}) => {
+export const HeaderActions = ({ isDockerEnabled = false }: { isDockerEnabled: boolean }) => {
   const { data: sessionData } = useSession();
 
   if (!sessionData?.user?.isAdmin) return null;

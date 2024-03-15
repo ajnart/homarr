@@ -1,14 +1,12 @@
 import { TRPCError } from '@trpc/server';
 import Consola from 'consola';
 import { ZodError, z } from 'zod';
-
-
-import { createTRPCRouter, protectedProcedure } from '../../trpc';
-
 import { findAppProperty } from '~/tools/client/app-properties';
 import { getConfig } from '~/tools/config/getConfig';
 import { HomeAssistantSingleton } from '~/tools/singleton/HomeAssistantSingleton';
 import { ISmartHomeEntityStateWidget } from '~/widgets/smart-home/entity-state/entity-state.widget';
+
+import { createTRPCRouter, protectedProcedure } from '../../trpc';
 
 export const smartHomeEntityStateRouter = createTRPCRouter({
   retrieveStatus: protectedProcedure
@@ -17,7 +15,7 @@ export const smartHomeEntityStateRouter = createTRPCRouter({
         configName: z.string(),
         // TODO: passing entity ID directly can be unsafe
         entityId: z.string().regex(/^[A-Za-z0-9-_\.]+$/),
-      }),
+      })
     )
     .query(async ({ input }) => {
       const config = getConfig(input.configName);
@@ -53,12 +51,17 @@ export const smartHomeEntityStateRouter = createTRPCRouter({
       return null;
     }),
   triggerAutomation: protectedProcedure
-    .input(z.object({
-      widgetId: z.string(),
-      configName: z.string(),
-    })).mutation(async ({ input }) => {
+    .input(
+      z.object({
+        widgetId: z.string(),
+        configName: z.string(),
+      })
+    )
+    .mutation(async ({ input }) => {
       const config = getConfig(input.configName);
-      const widget = config.widgets.find(widget => widget.id === input.widgetId) as ISmartHomeEntityStateWidget | null;
+      const widget = config.widgets.find(
+        (widget) => widget.id === input.widgetId
+      ) as ISmartHomeEntityStateWidget | null;
 
       if (!widget) {
         Consola.error(`Referenced widget ${input.widgetId} does not exist on backend.`);
@@ -69,7 +72,9 @@ export const smartHomeEntityStateRouter = createTRPCRouter({
       }
 
       if (!widget.properties.automationId || widget.properties.automationId.length < 1) {
-        Consola.error(`Referenced widget ${input.widgetId} does not have the required property set.`);
+        Consola.error(
+          `Referenced widget ${input.widgetId} does not have the required property set.`
+        );
         throw new TRPCError({
           code: 'CONFLICT',
           message: 'Referenced widget does not have the required property',

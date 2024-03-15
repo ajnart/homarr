@@ -1,19 +1,12 @@
 import { TRPCError } from '@trpc/server';
-
 import bcrypt from 'bcryptjs';
-
 import { randomUUID } from 'crypto';
-
 import { and, eq, like, sql } from 'drizzle-orm';
-
 import { z } from 'zod';
-
-import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
-import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
-
+import { PossibleRoleFilter } from '~/pages/manage/users';
 import { db } from '~/server/db';
 import { getTotalUserCountAsync } from '~/server/db/queries/user';
-import { invites, sessions, users, userSettings, UserSettings } from '~/server/db/schema';
+import { UserSettings, invites, sessions, userSettings, users } from '~/server/db/schema';
 import { hashPassword } from '~/utils/security';
 import {
   colorSchemeParser,
@@ -21,7 +14,9 @@ import {
   signUpFormSchema,
   updateSettingsValidationSchema,
 } from '~/validations/user';
-import { PossibleRoleFilter } from '~/pages/manage/users';
+
+import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../../../data/constants';
+import { adminProcedure, createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const userRouter = createTRPCRouter({
   createOwnerAccount: publicProcedure.input(signUpFormSchema).mutation(async ({ ctx, input }) => {
@@ -46,7 +41,7 @@ export const userRouter = createTRPCRouter({
         userId: z.string(),
         newPassword: z.string().min(3),
         terminateExistingSessions: z.boolean(),
-      }),
+      })
     )
     .mutation(async ({ input, ctx }) => {
       const user = await db.query.users.findFirst({
@@ -89,8 +84,8 @@ export const userRouter = createTRPCRouter({
       signUpFormSchema.and(
         z.object({
           inviteToken: z.string(),
-        }),
-      ),
+        })
+      )
     )
     .mutation(async ({ ctx, input }) => {
       const invite = await db.query.invites.findFirst({
@@ -122,7 +117,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         colorScheme: colorSchemeParser,
-      }),
+      })
     )
     .mutation(async ({ ctx, input }) => {
       await db
@@ -169,7 +164,7 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         language: z.string(),
-      }),
+      })
     )
     .mutation(async ({ ctx, input }) => {
       await db
@@ -241,10 +236,9 @@ export const userRouter = createTRPCRouter({
             .transform((value) => (value.length > 0 ? value : undefined))
             .optional(),
         }),
-      }),
+      })
     )
     .query(async ({ ctx, input }) => {
-
       const roleFilter = () => {
         if (input.search.role === PossibleRoleFilter[1].id) {
           return eq(users.isOwner, true);
@@ -265,13 +259,22 @@ export const userRouter = createTRPCRouter({
       const dbUsers = await db.query.users.findMany({
         limit: limit + 1,
         offset: limit * input.page,
-        where: and(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined, roleFilter()),
+        where: and(
+          input.search.fullTextSearch
+            ? like(users.name, `%${input.search.fullTextSearch}%`)
+            : undefined,
+          roleFilter()
+        ),
       });
 
       const countUsers = await db
         .select({ count: sql<number>`count(*)` })
         .from(users)
-        .where(input.search.fullTextSearch ? like(users.name, `%${input.search.fullTextSearch}%`) : undefined)
+        .where(
+          input.search.fullTextSearch
+            ? like(users.name, `%${input.search.fullTextSearch}%`)
+            : undefined
+        )
         .where(roleFilter())
         .then((rows) => rows[0].count);
 
@@ -317,21 +320,31 @@ export const userRouter = createTRPCRouter({
       where: eq(users.id, input.userId),
     });
   }),
-  updateDetails: adminProcedure.input(z.object({
-    userId: z.string(),
-    username: z.string(),
-    eMail: z.string().optional().transform(value => value?.length === 0 ? null : value),
-  })).mutation(async ({ input }) => {
-    await db.update(users).set({
-      name: input.username,
-      email: input.eMail as string | null,
-    }).where(eq(users.id, input.userId));
-  }),
+  updateDetails: adminProcedure
+    .input(
+      z.object({
+        userId: z.string(),
+        username: z.string(),
+        eMail: z
+          .string()
+          .optional()
+          .transform((value) => (value?.length === 0 ? null : value)),
+      })
+    )
+    .mutation(async ({ input }) => {
+      await db
+        .update(users)
+        .set({
+          name: input.username,
+          email: input.eMail as string | null,
+        })
+        .where(eq(users.id, input.userId));
+    }),
   deleteUser: adminProcedure
     .input(
       z.object({
         id: z.string(),
-      }),
+      })
     )
     .mutation(async ({ ctx, input }) => {
       const user = await db.query.users.findFirst({
@@ -367,7 +380,7 @@ const createUserIfNotPresent = async (
   options: {
     defaultSettings?: Partial<UserSettings>;
     isOwner?: boolean;
-  } | void,
+  } | void
 ) => {
   const existingUser = await db.query.users.findFirst({
     where: eq(users.name, input.username),

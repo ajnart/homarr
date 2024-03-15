@@ -78,7 +78,7 @@ function RssTile({ widget }: RssTileProps) {
     configName,
     widget.properties.rssFeedUrl,
     widget.properties.refreshInterval,
-    widget.id,
+    widget.id
   );
   const { classes } = useStyles();
 
@@ -117,11 +117,14 @@ function RssTile({ widget }: RssTileProps) {
     );
   }
 
-  const flatFeeds = data.filter(feed => feed.success).flatMap(feed => feed.feed);
-  const flatFeedItems = flatFeeds.flatMap(feed => feed!.items);
-  const orderedFeedItems = widget.properties.sortByPublishDateAscending ?
-    flatFeedItems.sort((item1, item2) =>
-      (item2.pubDate?.getTime() as number) - (item1.pubDate?.getTime() as number)) : flatFeedItems;
+  const flatFeeds = data.filter((feed) => feed.success).flatMap((feed) => feed.feed);
+  const flatFeedItems = flatFeeds.flatMap((feed) => feed!.items);
+  const orderedFeedItems = widget.properties.sortByPublishDateAscending
+    ? flatFeedItems.sort(
+        (item1, item2) =>
+          (item2.pubDate?.getTime() as number) - (item1.pubDate?.getTime() as number)
+      )
+    : flatFeedItems;
 
   return (
     <Stack h="100%">
@@ -195,7 +198,7 @@ export const useGetRssFeeds = (
   configName: string | undefined,
   feedUrls: string[],
   refreshInterval: number,
-  widgetId: string,
+  widgetId: string
 ) =>
   api.rss.all.useQuery(
     {
@@ -208,7 +211,7 @@ export const useGetRssFeeds = (
       cacheTime: 1000 * 60 * 60 * 24,
       staleTime: 1000 * 60 * refreshInterval,
       enabled: !!configName,
-    },
+    }
   );
 
 interface RefetchButtonProps {

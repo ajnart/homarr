@@ -94,7 +94,8 @@ export default function CustomizationPage({
         shade: (config?.settings.customization.colors.shade as number | undefined) ?? 8,
         opacity: config?.settings.customization.appOpacity ?? 50,
         customCss: config?.settings.customization.customCss ?? '',
-        backgroundImageAttachment: config?.settings.customization.backgroundImageAttachment ?? 'fixed',
+        backgroundImageAttachment:
+          config?.settings.customization.backgroundImageAttachment ?? 'fixed',
         backgroundImageRepeat: config?.settings.customization.backgroundImageRepeat ?? 'no-repeat',
         backgroundImageSize: config?.settings.customization.backgroundImageSize ?? 'cover',
       },
@@ -323,7 +324,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     config = await caller.byName({ name: routeParams.data.slug });
   } catch {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 

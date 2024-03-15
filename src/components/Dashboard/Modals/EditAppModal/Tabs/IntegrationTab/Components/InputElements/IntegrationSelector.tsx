@@ -9,7 +9,7 @@ import {
   AppType,
   IntegrationFieldType,
   integrationFieldDefinitions,
-  integrationFieldProperties
+  integrationFieldProperties,
 } from '~/types/app';
 
 interface IntegrationSelectorProps {
@@ -31,8 +31,8 @@ export const IntegrationSelector = ({ form }: IntegrationSelectorProps) => {
     }
 
     const requiredProperties = Object.entries(integrationFieldDefinitions).filter(([k, v]) => {
-      const val = integrationFieldProperties[integrationType];
-      return val.map((a) => a.type).includes(k as IntegrationFieldType);
+      const property = integrationFieldProperties[integrationType];
+      return property.map((a) => a.type).includes(k as IntegrationFieldType);
     })!;
     return requiredProperties.map(([k, value]) => ({
       type: value.type,
@@ -186,6 +186,6 @@ export const availableIntegrations = [
   {
     value: 'homeAssistant',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/home-assistant.png',
-    label: 'Home Assistant'
-  }
+    label: 'Home Assistant',
+  },
 ] as const satisfies Readonly<SelectItem[]>;

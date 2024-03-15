@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-
 export const entityStateSchema = z.object({
   attributes: z.record(z.union([z.string(), z.number(), z.boolean(), z.null()])),
   entity_id: z.string(),

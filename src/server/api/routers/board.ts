@@ -1,16 +1,16 @@
 import { TRPCError } from '@trpc/server';
+import Consola from 'consola';
 import fs from 'fs';
 import { z } from 'zod';
-import Consola from 'consola';
 import { getDefaultBoardAsync } from '~/server/db/queries/userSettings';
 import { configExists } from '~/tools/config/configExists';
 import { getConfig } from '~/tools/config/getConfig';
 import { getFrontendConfig } from '~/tools/config/getFrontendConfig';
+import { writeConfig } from '~/tools/config/writeConfig';
 import { generateDefaultApp } from '~/tools/shared/app';
+import { configNameSchema } from '~/validations/boards';
 
 import { adminProcedure, createTRPCRouter, protectedProcedure } from '../trpc';
-import { writeConfig } from '~/tools/config/writeConfig';
-import { configNameSchema } from '~/validations/boards';
 
 export const boardRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
@@ -33,7 +33,7 @@ export const boardRouter = createTRPCRouter({
           countCategories: config.categories.length,
           isDefaultForUser: name === defaultBoard,
         };
-      }),
+      })
     );
   }),
   addAppsForContainers: adminProcedure
@@ -45,9 +45,9 @@ export const boardRouter = createTRPCRouter({
             name: z.string(),
             icon: z.string().optional(),
             port: z.number().optional(),
-          }),
+          })
         ),
-      }),
+      })
     )
     .mutation(async ({ input }) => {
       if (!configExists(input.boardName)) {
@@ -89,10 +89,12 @@ export const boardRouter = createTRPCRouter({
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
   renameBoard: protectedProcedure
-    .input(z.object({
-      oldName: z.string(),
-      newName: z.string().min(1),
-    }))
+    .input(
+      z.object({
+        oldName: z.string(),
+        newName: z.string().min(1),
+      })
+    )
     .mutation(async ({ input }) => {
       if (input.oldName === 'default') {
         Consola.error(`Attempted to rename default configuration. Aborted deletion.`);
@@ -127,12 +129,16 @@ export const boardRouter = createTRPCRouter({
       Consola.info(`Deleted ${input.oldName} from file system`);
     }),
   duplicateBoard: protectedProcedure
-    .input(z.object({
-      boardName: z.string(),
-    }))
+    .input(
+      z.object({
+        boardName: z.string(),
+      })
+    )
     .mutation(async ({ input }) => {
       if (!configExists(input.boardName)) {
-        Consola.error(`Tried to duplicate ${input.boardName} but this configuration does not exist.`);
+        Consola.error(
+          `Tried to duplicate ${input.boardName} but this configuration does not exist.`
+        );
         throw new TRPCError({
           code: 'NOT_FOUND',
           message: 'Board not found',
@@ -147,7 +153,7 @@ export const boardRouter = createTRPCRouter({
       config.configProperties.name = targetName;
       writeConfig(config);
 
-      Consola.info(`Wrote config to name '${targetName}'`)
+      Consola.info(`Wrote config to name '${targetName}'`);
     }),
 });
 
@@ -168,7 +174,7 @@ const attemptGenerateDuplicateName = (baseName: string, maxAttempts: number) => 
     code: 'CONFLICT',
     message: 'Board conflicts with an existing board',
   });
-}
+};
 
 const generateDuplicateName = (baseName: string, increment: number) => {
   const result = duplicationName.exec(baseName);
@@ -180,4 +186,4 @@ const generateDuplicateName = (baseName: string, increment: number) => {
   }
 
   return `${baseName} (2)`;
-}
+};

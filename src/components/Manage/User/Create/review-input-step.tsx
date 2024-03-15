@@ -111,7 +111,7 @@ export const ReviewInputStep = ({ values, prevStep, nextStep }: ReviewInputStepP
               password: values.security.password,
               email: values.account.eMail === '' ? undefined : values.account.eMail,
             });
-            umami.track('Create user', { username: values.account.username});
+            umami.track('Create user', { username: values.account.username });
           }}
           loading={isLoading}
           rightIcon={<IconCheck size="1rem" />}

@@ -44,7 +44,7 @@ export const manageNamespaces = [
   'manage/users',
   'manage/users/invites',
   'manage/users/create',
-  'manage/users/edit'
+  'manage/users/edit',
 ];
 export const loginNamespaces = ['authentication/login'];
 

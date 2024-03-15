@@ -1,5 +1,4 @@
 import { Icon, IconKey, IconPassword, IconUser } from '@tabler/icons-react';
-
 import { Property } from 'csstype';
 
 import { TileBaseType } from './tile';
@@ -84,13 +83,10 @@ export type IntegrationFieldType = 'apiKey' | 'password' | 'username';
 export type IntegrationField = {
   type: IntegrationFieldType;
   isRequired: boolean;
-}
-
-
-
+};
 
 export const integrationFieldProperties: {
-  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[] ;
+  [key in Exclude<AppIntegrationType['type'], null>]: IntegrationField[];
 } = {
   lidarr: [{ type: 'apiKey', isRequired: true }],
   radarr: [{ type: 'apiKey', isRequired: true }],
@@ -101,7 +97,7 @@ export const integrationFieldProperties: {
   jellyseerr: [{ type: 'apiKey', isRequired: true }],
   deluge: [{ type: 'password', isRequired: true }],
   nzbGet: [
-    { type: 'username', isRequired: true},
+    { type: 'username', isRequired: true },
     { type: 'password', isRequired: true },
   ],
   qBittorrent: [
@@ -112,8 +108,11 @@ export const integrationFieldProperties: {
     { type: 'username', isRequired: true },
     { type: 'password', isRequired: true },
   ],
-  jellyfin: [{ type: 'username', isRequired: false },
-  { type: 'password', isRequired: false },{ type: 'apiKey', isRequired: false }],
+  jellyfin: [
+    { type: 'username', isRequired: false },
+    { type: 'password', isRequired: false },
+    { type: 'apiKey', isRequired: false },
+  ],
   plex: [{ type: 'apiKey', isRequired: true }],
   pihole: [{ type: 'apiKey', isRequired: true }],
   adGuardHome: [

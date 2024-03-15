@@ -45,9 +45,9 @@ export interface CustomizationSettingsType {
   logoImageUrl?: string;
   faviconUrl?: string;
   backgroundImageUrl?: string;
-  backgroundImageAttachment?: typeof BackgroundImageAttachment[number];
-  backgroundImageSize?: typeof BackgroundImageSize[number];
-  backgroundImageRepeat?: typeof BackgroundImageRepeat[number];
+  backgroundImageAttachment?: (typeof BackgroundImageAttachment)[number];
+  backgroundImageSize?: (typeof BackgroundImageSize)[number];
+  backgroundImageRepeat?: (typeof BackgroundImageRepeat)[number];
   customCss?: string;
   colors: ColorsCustomizationSettingsType;
   appOpacity?: number;
@@ -55,7 +55,7 @@ export interface CustomizationSettingsType {
   accessibility: AccessibilitySettings;
 }
 
-export const BackgroundImageAttachment = ['fixed',  'scroll'] as const;
+export const BackgroundImageAttachment = ['fixed', 'scroll'] as const;
 
 export const BackgroundImageSize = ['cover', 'contain'] as const;
 

@@ -198,7 +198,14 @@ const SelectItem = forwardRef<HTMLDivElement, ItemProps>(
     <div ref={ref} {...others}>
       <Group noWrap>
         {country !== 'CROWDIN' && <span className={`fi fi-${country?.toLowerCase()}`}></span>}
-        {country === 'CROWDIN' && <img src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'} alt={label} width={16} height={16} />}
+        {country === 'CROWDIN' && (
+          <img
+            src={'https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png'}
+            alt={label}
+            width={16}
+            height={16}
+          />
+        )}
         <div>
           <Text size="sm">{label}</Text>
           <Text size="xs" opacity={0.65}>

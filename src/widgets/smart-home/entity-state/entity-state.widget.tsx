@@ -55,14 +55,15 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
       {
         enabled: !!configName,
         refetchInterval: 2 * 60 * 1000,
-      },
+      }
     );
 
-  const { mutateAsync: mutateTriggerAutomationAsync } = api.smartHomeEntityState.triggerAutomation.useMutation({
-    onSuccess: () => {
-      void utils.smartHomeEntityState.invalidate();
-    },
-  });
+  const { mutateAsync: mutateTriggerAutomationAsync } =
+    api.smartHomeEntityState.triggerAutomation.useMutation({
+      onSuccess: () => {
+        void utils.smartHomeEntityState.invalidate();
+      },
+    });
 
   const handleClick = async () => {
     if (!widget.properties.automationId) {
@@ -115,7 +116,8 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
         };
       }}
       h="100%"
-      w="100%">
+      w="100%"
+    >
       <Stack align="center" spacing={3}>
         <Text align="center" weight="bold" size="lg">
           {widget.properties.displayName}

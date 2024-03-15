@@ -61,9 +61,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   // Fetch containers if user is admin, otherwise we don't need them
   try {
     if (session?.user.isAdmin == true) containers = await caller.containers();
-  } catch (error) {
-    
-  }
+  } catch (error) {}
   return {
     props: {
       config,

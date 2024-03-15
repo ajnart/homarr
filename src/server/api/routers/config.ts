@@ -18,14 +18,14 @@ export const configRouter = createTRPCRouter({
     .input(
       z.object({
         name: configNameSchema,
-      }),
+      })
     )
     .mutation(async ({ input }) => {
       if (input.name.toLowerCase() === 'default') {
-        Consola.error('Rejected config deletion because default configuration can\'t be deleted');
+        Consola.error("Rejected config deletion because default configuration can't be deleted");
         throw new TRPCError({
           code: 'FORBIDDEN',
-          message: 'Default config can\'t be deleted',
+          message: "Default config can't be deleted",
         });
       }
 
@@ -42,7 +42,7 @@ export const configRouter = createTRPCRouter({
       // If the target is not in the list of files, return an error
       if (!matchedFile) {
         Consola.error(
-          `Rejected config deletion request because config name '${input.name}' was not included in present configurations`,
+          `Rejected config deletion request because config name '${input.name}' was not included in present configurations`
         );
         throw new TRPCError({
           code: 'NOT_FOUND',
@@ -62,7 +62,7 @@ export const configRouter = createTRPCRouter({
       z.object({
         name: configNameSchema,
         config: z.custom<ConfigType>((x) => !!x && typeof x === 'object'),
-      }),
+      })
     )
     .mutation(async ({ input }) => {
       Consola.info(`Saving updated configuration of '${input.name}' config.`);
@@ -94,16 +94,16 @@ export const configRouter = createTRPCRouter({
                 }
 
                 const previousApp = previousConfig.apps.find(
-                  (previousApp) => previousApp.id === app.id,
+                  (previousApp) => previousApp.id === app.id
                 );
 
                 const previousProperty = previousApp?.integration?.properties.find(
-                  (previousProperty) => previousProperty.field === property.field,
+                  (previousProperty) => previousProperty.field === property.field
                 );
 
                 if (property.value !== undefined && property.value !== null) {
                   Consola.info(
-                    'Detected credential change of private secret. Value will be overwritten in configuration',
+                    'Detected credential change of private secret. Value will be overwritten in configuration'
                   );
                   return {
                     field: property.field,
@@ -163,7 +163,7 @@ export const configRouter = createTRPCRouter({
     .input(
       z.object({
         name: configNameSchema,
-      }),
+      })
     )
     .query(async ({ ctx, input }) => {
       if (!configExists(input.name)) {

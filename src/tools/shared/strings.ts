@@ -17,4 +17,4 @@ export const appendPath = (url: URL, path: string) => {
   const newUrl = new URL(url);
   newUrl.pathname += path;
   return newUrl;
-}
+};

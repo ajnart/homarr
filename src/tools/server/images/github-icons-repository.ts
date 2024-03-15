@@ -19,9 +19,7 @@ export class GitHubIconsRepository extends AbstractIconRepository {
   }
 
   protected async fetchInternally(): Promise<NormalizedIconRepositoryResult> {
-    const response = await fetch(this.repository.api, { 
-      
-    });
+    const response = await fetch(this.repository.api, {});
     const body = (await response.json()) as GitHubRepo;
 
     const normalizedEntries = body.tree
@@ -61,7 +59,6 @@ type GitHubRepositoryUrl = {
   api: string;
   blob: string;
 };
-
 
 export interface GitHubRepo {
   sha: string;

@@ -1,12 +1,5 @@
-import {
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-  PreviewData,
-  Redirect
-} from 'next';
-
+import { GetServerSidePropsContext, GetServerSidePropsResult, PreviewData, Redirect } from 'next';
 import { Session } from 'next-auth';
-
 import { ParsedUrlQuery } from 'querystring';
 
 export const checkForSessionOrAskForLogin = (
@@ -21,8 +14,8 @@ export const checkForSessionOrAskForLogin = (
     return {
       redirect: {
         destination: '/401',
-        permanent: false
-      }
+        permanent: false,
+      },
     };
   }
 

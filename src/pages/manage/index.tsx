@@ -20,10 +20,10 @@ import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
+import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 import { OnlyKeysWithStructure } from '~/types/helpers';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
-import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 
 const ManagementPage = () => {
   const { t } = useTranslation('manage/index');

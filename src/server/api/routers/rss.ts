@@ -18,7 +18,7 @@ type CustomItem = {
   'media:group'?: {
     'media:description'?: string;
     'media:thumbnail'?: string;
-  },
+  };
   pubDate?: string;
 };
 
@@ -44,10 +44,10 @@ const rssFeedResultObjectSchema = z
             title: z.string(),
             content: z.string(),
             pubDate: z.date().optional(),
-          }),
+          })
         ),
       }),
-    }),
+    })
   );
 
 export const rssRouter = createTRPCRouter({
@@ -57,7 +57,7 @@ export const rssRouter = createTRPCRouter({
         widgetId: z.string().uuid(),
         feedUrls: z.array(z.string()),
         configName: z.string(),
-      }),
+      })
     )
     .output(z.array(rssFeedResultObjectSchema))
     .query(async ({ input }) => {
@@ -80,8 +80,8 @@ export const rssRouter = createTRPCRouter({
 
       return await Promise.all(
         input.feedUrls.map(async (feedUrl) =>
-          getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent),
-        ),
+          getFeedUrl(feedUrl, rssWidget.properties.dangerousAllowSanitizedItemContent)
+        )
       );
     }),
 });
@@ -103,7 +103,7 @@ const getFeedUrl = async (feedUrl: string, dangerousAllowSanitizedItemContent: b
           'media:group'?: {
             'media:description'?: string;
             'media:thumbnail'?: string;
-          }
+          };
           categories: string[] | { _: string }[];
           pubDate?: string;
         }) => ({
@@ -114,12 +114,12 @@ const getFeedUrl = async (feedUrl: string, dangerousAllowSanitizedItemContent: b
           title: item.title ? decode(item.title) : undefined,
           content: processItemContent(
             item['content:encoded'] ?? item.content ?? item['media:group']?.['media:description'],
-            dangerousAllowSanitizedItemContent,
+            dangerousAllowSanitizedItemContent
           ),
           enclosure: createEnclosure(item),
           link: createLink(item),
           pubDate: item.pubDate ? new Date(item.pubDate) : null,
-        }),
+        })
       )
       .sort((a: { pubDate: number }, b: { pubDate: number }) => {
         if (!a.pubDate || !b.pubDate) {
@@ -169,7 +169,7 @@ const processItemContent = (content: string, dangerousAllowSanitizedItemContent:
   }
 
   return encode(content, {
-    level: "html5"
+    level: 'html5',
   });
 };
 
@@ -195,7 +195,7 @@ const createEnclosure = (item: any) => {
   if (item['media:group'] && item['media:group']['media:thumbnail']) {
     // no clue why this janky parse is needed
     return {
-      url: item['media:group']['media:thumbnail'][0].$.url
+      url: item['media:group']['media:thumbnail'][0].$.url,
     };
   }
 

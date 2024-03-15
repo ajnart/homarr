@@ -1,4 +1,5 @@
 import { createTRPCRouter } from '~/server/api/trpc';
+
 import { appRouter } from './routers/app';
 import { boardRouter } from './routers/board';
 import { calendarRouter } from './routers/calendar';
@@ -45,7 +46,7 @@ export const rootRouter = createTRPCRouter({
   boards: boardRouter,
   password: passwordRouter,
   notebook: notebookRouter,
-  smartHomeEntityState: smartHomeEntityStateRouter
+  smartHomeEntityState: smartHomeEntityStateRouter,
 });
 
 // export type definition of API
