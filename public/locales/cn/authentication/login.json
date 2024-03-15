@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "登录"
     },
-    "afterLoginRedirection": "登录后，您将被重定向到 {{url}}"
+    "afterLoginRedirection": "登录后，您将被重定向到 {{url}}",
+    "providersEmpty": {
+      "title": "验证提供程序错误",
+      "message": "服务提供商未设置，请检查您的日志获取更多信息。"
+    }
   },
   "alert": "您的凭据不正确或此账户不存在。请重试。"
 }

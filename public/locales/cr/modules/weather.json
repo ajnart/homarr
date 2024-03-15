@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "crwdns3047:0crwdne3047:0"
       },
+      "displayWeekly": {
+        "label": "crwdns4240:0crwdne4240:0"
+      },
+      "forecastDays": {
+        "label": "crwdns4242:0crwdne4242:0"
+      },
       "location": {
         "label": "crwdns1568:0crwdne1568:0"
       }

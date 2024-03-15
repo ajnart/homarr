@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Prijavi se"
     },
-    "afterLoginRedirection": "Nakon prijave, bit ćete preusmjereni na {{url}}"
+    "afterLoginRedirection": "Nakon prijave, bit ćete preusmjereni na {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Vaše vjerodajnice nisu točne ili ovaj račun ne postoji. Molim te pokušaj ponovno."
 }

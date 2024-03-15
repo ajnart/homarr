@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Prisijungti"
     },
-    "afterLoginRedirection": "Prisijungę būsite nukreipti į {{url}}"
+    "afterLoginRedirection": "Prisijungę būsite nukreipti į {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Jūsų kredencialai neteisingi arba šios paskyros nėra. Prašome, pabandyti dar kartą."
 }

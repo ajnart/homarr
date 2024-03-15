@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Giriş"
     },
-    "afterLoginRedirection": "Giriş yaptıktan sonra {{url}} adresine yönlendirileceksiniz"
+    "afterLoginRedirection": "Giriş yaptıktan sonra {{url}} adresine yönlendirileceksiniz",
+    "providersEmpty": {
+      "title": "Kimlik Doğrulama Sağlayıcısı Hatası",
+      "message": "Sağlayıcı(lar) ayarlanmamış, lütfen daha fazla bilgi için günlüklerinizi kontrol edin."
+    }
   },
   "alert": "Kimlik bilgileriniz yanlış veya bu hesap mevcut değil. Lütfen tekrar deneyin."
 }

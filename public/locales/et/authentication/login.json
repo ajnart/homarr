@@ -14,7 +14,11 @@
     "buttons": {
       "submit": ""
     },
-    "afterLoginRedirection": ""
+    "afterLoginRedirection": "",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": ""
 }

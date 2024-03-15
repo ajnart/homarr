@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "登入"
     },
-    "afterLoginRedirection": "登入後，您將進入 {{url}}"
+    "afterLoginRedirection": "登入後，您將進入 {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "您的憑證不正確或此帳號不存在，請重試"
 }

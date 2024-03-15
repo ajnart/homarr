@@ -1,37 +1,37 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Мониторинг состояния системы",
+        "description": "Информация о вашем NAS",
         "settings": {
-            "title": "",
+            "title": "Мониторинг состояния системы",
             "fahrenheit": {
-                "label": ""
+                "label": "По Фаренгейту"
             }
         }
     },
     "cpu": {
         "label": "ЦПУ",
-        "load": "",
-        "minute": ""
+        "load": "Средняя загрузка",
+        "minute": "{{minute}} минута"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "Память",
+        "totalMem": "Общий объем памяти: {{total}}Гб",
+        "available": "Доступно: {{available}}Гб - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "Файловая система",
+        "available": "Доступно: {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Время работы",
+        "updates": "Обновления",
+        "reboot": "Перезагрузка"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Не удалось найти ваш NAS",
+            "text": "Проблема с подключением к вашему NAS. Пожалуйста, проверьте свою конфигурацию/интеграцию."
         }
     }
 }
