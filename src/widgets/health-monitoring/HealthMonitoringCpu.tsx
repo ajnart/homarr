@@ -40,12 +40,12 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
     <Group position="center">
       <RingProgress
         roundCaps
-        size={140}
+        size={120}
         thickness={12}
         label={
           <Center style={{ flexDirection: 'column' }}>
             {info.cpuUtilization.toFixed(2)}%
-            <HoverCard width={280} shadow="md" position="top">
+            <HoverCard width={280} shadow="md" position="top" withinPortal>
               <HoverCard.Target>
                 <IconCpu size={40} />
               </HoverCard.Target>
@@ -83,27 +83,29 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
           },
         ]}
       />
-      <RingProgress
-        roundCaps
-        size={140}
-        thickness={12}
-        label={
-          <Center
-            style={{
-              flexDirection: 'column',
-            }}
-          >
-            {fahrenheit ? `${toFahrenheit(cpuTemp.cputemp)}°F` : `${cpuTemp.cputemp}°C`}
-            <IconCpu size={40} />
-          </Center>
-        }
-        sections={[
-          {
-            value: cpuTemp.cputemp,
-            color: cpuTemp.cputemp < 60 ? 'green' : 'red',
-          },
-        ]}
-      />
+      {cpuTemp && (
+        <RingProgress
+          roundCaps
+          size={120}
+          thickness={12}
+          label={
+            <Center
+              style={{
+                flexDirection: 'column',
+              }}
+            >
+              {fahrenheit ? `${toFahrenheit(cpuTemp.cputemp)}°F` : `${cpuTemp.cputemp}°C`}
+              <IconCpu size={40} />
+            </Center>
+          }
+          sections={[
+            {
+              value: cpuTemp.cputemp,
+              color: cpuTemp.cputemp < 60 ? 'green' : 'red',
+            },
+          ]}
+        />
+      )}
     </Group>
   );
 };
