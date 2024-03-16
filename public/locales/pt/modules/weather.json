@@ -11,10 +11,10 @@
         "label": "Exibir nome da cidade"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Exibir previsão semanal"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Dias a exibir"
       },
       "location": {
         "label": "Localização do tempo"
