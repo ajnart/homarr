@@ -76,51 +76,67 @@ export const openmediavaultRouter = createTRPCRouter({
           input
         );
 
-        const cookies = authResponse.headers['set-cookie'] || [];
-        sessionId = cookies
-          .find(
-            (cookie: any) =>
-              cookie.includes('X-OPENMEDIAVAULT-SESSIONID') ||
-              cookie.includes('OPENMEDIAVAULT-SESSIONID')
-          )
-          ?.split(';')[0];
-        loginToken = cookies
-          .find(
-            (cookie: any) =>
-              cookie.includes('X-OPENMEDIAVAULT-LOGIN') || cookie.includes('OPENMEDIAVAULT-LOGIN')
-          )
-          ?.split(';')[0];
+        if (authResponse.data.response.sessionid) {
+          sessionId = authResponse.data.response.sessionid;
+        } else {
+          const cookies = authResponse.headers['set-cookie'] || [];
+          sessionId = cookies
+            .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-SESSIONID'))
+            ?.split(';')[0];
+
+          loginToken = cookies
+            .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-LOGIN'))
+            ?.split(';')[0];
+        }
       }
 
-      const [systemInfoResponse, fileSystemResponse, cpuTempResponse] = await Promise.all([
+      const responses = await Promise.allSettled([
         makeOpenMediaVaultRPCCall(
           'system',
           'getInformation',
           {},
-          { Cookie: `${loginToken};${sessionId}` },
+          loginToken
+            ? { Cookie: `${loginToken};${sessionId}` }
+            : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
           input
         ),
         makeOpenMediaVaultRPCCall(
           'filesystemmgmt',
           'enumerateMountedFilesystems',
           { includeroot: true },
-          { Cookie: `${loginToken};${sessionId}` },
+          loginToken
+            ? { Cookie: `${loginToken};${sessionId}` }
+            : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
           input
         ),
         makeOpenMediaVaultRPCCall(
           'cputemp',
           'get',
           {},
-          { Cookie: `${loginToken};${sessionId}` },
+          loginToken
+            ? { Cookie: `${loginToken};${sessionId}` }
+            : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
           input
         ),
       ]);
 
+      const systemInfoResponse =
+        responses[0].status === 'fulfilled' && responses[0].value
+          ? responses[0].value.data?.response
+          : null;
+      const fileSystemResponse =
+        responses[1].status === 'fulfilled' && responses[1].value
+          ? responses[1].value.data?.response
+          : null;
+      const cpuTempResponse =
+        responses[2].status === 'fulfilled' && responses[2].value
+          ? responses[2].value.data?.response
+          : null;
+
       return {
-        authenticated: authResponse ? authResponse.data.response.authenticated : true,
-        systemInfo: systemInfoResponse?.data.response,
-        fileSystem: fileSystemResponse?.data.response,
-        cpuTemp: cpuTempResponse?.data.response,
+        systemInfo: systemInfoResponse,
+        fileSystem: fileSystemResponse,
+        cpuTemp: cpuTempResponse,
       };
     }),
 });

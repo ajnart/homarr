@@ -12,7 +12,8 @@
       "cpu": {
         "label": "CPU",
         "load": "Load Average",
-        "minute": "{{minute}} minute"
+        "minute": "{{minute}} minute",
+        "minutes": "{{minutes}} minutes"
       },
       "memory": {
         "label": "Memory",
