@@ -12,7 +12,8 @@
     "cpu": {
         "label": "CPU",
         "load": "Utilizzo medio",
-        "minute": "{{minute}} minuto"
+        "minute": "{{minute}} minuto",
+        "minutes": ""
     },
     "memory": {
         "label": "Memoria",
