@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Usuário {{username}}",
+  "back": "Voltar ao gerenciamento de usuários",
   "sections": {
     "general": {
       "title": "Geral",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Segurança",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nova senha"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Encerrar sessões existentes",
+          "description": "Força o usuário a fazer login novamente em seus dispositivos"
         },
         "confirm": {
           "label": "Confirme",
-          "description": ""
+          "description": "A senha será atualizada. A ação não pode ser revertida."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Funções",
+      "currentRole": "Função atual: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Dono",
+        "admin": "Administrador",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Exclusão de conta",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Confirmar nome de usuário",
+          "description": "Digite o nome de usuário para confirmar a exclusão"
         },
         "confirm": {
           "label": "Excluir permanentemente",
-          "description": ""
+          "description": "Estou ciente de que esta ação é permanente e todos os dados da conta serão perdidos."
         }
       }
     }

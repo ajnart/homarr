@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Parādāmais Pilsētas Nosaukums"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Laikapstākļu atrašānās vieta"
       }

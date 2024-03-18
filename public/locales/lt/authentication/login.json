@@ -1,0 +1,24 @@
+{
+  "metaTitle": "Prisijungti",
+  "title": "Sveiki sugrįžę!",
+  "text": "Įveskite savo kredencialus",
+  "form": {
+    "fields": {
+      "username": {
+        "label": ""
+      },
+      "password": {
+        "label": "Slaptažodis"
+      }
+    },
+    "buttons": {
+      "submit": "Prisijungti"
+    },
+    "afterLoginRedirection": "Prisijungę būsite nukreipti į {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "alert": "Jūsų kredencialai neteisingi arba šios paskyros nėra. Prašome, pabandyti dar kartą."
+}

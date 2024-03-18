@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Todos",
+            "normal": "Normal",
+            "admin": "Administrador",
+            "owner": "Dono"
         }
     },
     "table": {

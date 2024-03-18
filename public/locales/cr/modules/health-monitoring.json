@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "crwdns4202:0crwdne4202:0",
+        "description": "crwdns4204:0crwdne4204:0",
+        "settings": {
+            "title": "crwdns4206:0crwdne4206:0",
+            "fahrenheit": {
+                "label": "crwdns4208:0crwdne4208:0"
+            }
+        }
+    },
+    "cpu": {
+        "label": "crwdns4210:0crwdne4210:0",
+        "load": "crwdns4212:0crwdne4212:0",
+        "minute": "crwdns4214:0{{minute}}crwdne4214:0"
+    },
+    "memory": {
+        "label": "crwdns4216:0crwdne4216:0",
+        "totalMem": "crwdns4218:0{{total}}crwdne4218:0",
+        "available": "crwdns4220:0{{available}}crwdnd4220:0{{percentage}}crwdne4220:0"
+    },
+    "fileSystem": {
+        "label": "crwdns4222:0crwdne4222:0",
+        "available": "crwdns4224:0{{available}}crwdnd4224:0{{percentage}}crwdne4224:0"
+    },
+    "info": {
+        "uptime": "crwdns4226:0crwdne4226:0",
+        "updates": "crwdns4228:0crwdne4228:0",
+        "reboot": "crwdns4230:0crwdne4230:0"
+    },
+    "errors": {
+        "general": {
+            "title": "crwdns4232:0crwdne4232:0",
+            "text": "crwdns4234:0crwdne4234:0"
+        }
+    }
+}

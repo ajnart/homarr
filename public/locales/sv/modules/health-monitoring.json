@@ -1,0 +1,37 @@
+{
+    "descriptor": {
+        "name": "Övervakning av systemhälsan",
+        "description": "Information om din NAS",
+        "settings": {
+            "title": "Övervakning av systemhälsan",
+            "fahrenheit": {
+                "label": "Fahrenheit"
+            }
+        }
+    },
+    "cpu": {
+        "label": "CPU",
+        "load": "Genomsnittlig belastning",
+        "minute": "{{minute}} minut"
+    },
+    "memory": {
+        "label": "Minne",
+        "totalMem": "Totalt minne: {{total}}GB",
+        "available": "Tillgängligt: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "Filsystem",
+        "available": "Tillgängligt: {{available}} - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Drifttid",
+        "updates": "Uppdateringar",
+        "reboot": "Omstart"
+    },
+    "errors": {
+        "general": {
+            "title": "Det gick inte att hitta din NAS",
+            "text": "Det gick inte att ansluta till din NAS. Vänligen verifiera din konfiguration/integration(er)."
+        }
+    }
+}

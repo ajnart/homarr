@@ -1,13 +1,17 @@
 {
     "entityNotFound": "未找到实体",
     "descriptor": {
-        "name": "Home Assistant 实体",
-        "description": "Home Assistant 中实体的当前状态",
+        "name": "家庭助理实体",
+        "description": "家庭助理中实体的当前状态",
         "settings": {
             "title": "实体状态",
             "entityId": {
                 "label": "实体 ID",
-                "info": "Home Assistant 中的唯一实体 ID。通过单击实体 > 单击齿轮图标 > 单击“实体 ID”处的复制按钮进行复制。某些自定义实体可能不受支持。"
+                "info": "家庭助理中的唯一实体 ID。通过单击实体 > 单击齿轮图标 > 单击“实体 ID”处的复制按钮进行复制。某些自定义实体可能不受支持。"
+            },
+            "appendUnit": {
+                "label": "附加测量单位",
+                "info": "将测量单位属性附加到实体状态。"
             },
             "automationId": {
                 "label": "可选自动化 ID",
@@ -15,6 +19,10 @@
             },
             "displayName": {
                 "label": "显示名称"
+            },
+            "displayFriendlyName": {
+                "label": "显示友好名称",
+                "info": "显示来自家庭助理的友好名称，而不是显示名称"
             }
         }
     }

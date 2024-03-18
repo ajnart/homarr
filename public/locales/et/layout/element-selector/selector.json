@@ -1,0 +1,26 @@
+{
+  "modal": {
+    "title": "",
+    "text": ""
+  },
+  "widgetDescription": "",
+  "goBack": "",
+  "actionIcon": {
+    "tooltip": ""
+  },
+  "apps": "",
+  "app": {
+    "defaultName": ""
+  },
+  "widgets": "",
+  "categories": "",
+  "category": {
+    "newName": "",
+    "defaultName": "",
+    "created": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "importFromDocker": ""
+}

@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Εμφάνιση ονόματος πόλης"
       },
+      "displayWeekly": {
+        "label": "Εμφάνιση εβδομαδιαίας πρόβλεψης"
+      },
+      "forecastDays": {
+        "label": "Ημέρες Προς Εμφάνιση"
+      },
       "location": {
         "label": "Τοποθεσία καιρού"
       }

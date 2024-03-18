@@ -8,7 +8,10 @@
         "label": "CPU Temp in Fahrenheit"
       },
       "cpu": {
-        "label": "Show CPU Info"
+        "label": "Show CPU Info",
+        "load": "Load Average",
+        "minute": "{{minute}} minute",
+        "minutes": "{{minutes}} minutes"
       },
       "memory": {
         "label": "Show Memory Info"

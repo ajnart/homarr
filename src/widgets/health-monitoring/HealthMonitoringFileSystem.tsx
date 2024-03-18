@@ -15,6 +15,10 @@ const HealthMonitoringFileSystem = ({ fileSystem }: any) => {
     available: number;
   }
 
+  const sortedFileSystem = fileSystem.slice().sort((a: FileSystemDisk, b: FileSystemDisk) => {
+    return a.devicename.localeCompare(b.devicename);
+  });
+
   return (
     <Group position="center">
       <Flex
@@ -22,15 +26,15 @@ const HealthMonitoringFileSystem = ({ fileSystem }: any) => {
         gap={{ base: 'sm', sm: 'lg' }}
         justify={{ sm: 'center' }}
       >
-        {fileSystem.map((disk: FileSystemDisk) => (
+        {sortedFileSystem.map((disk: FileSystemDisk) => (
           <RingProgress
-            size={140}
+            size={120}
             roundCaps
             thickness={12}
             label={
               <Center style={{ flexDirection: 'column' }}>
                 {disk.devicename}
-                <HoverCard width={280} shadow="md" position="top">
+                <HoverCard width={280} radius="sm" position="top-end" withinPortal>
                   <HoverCard.Target>
                     <IconServer size={40} />
                   </HoverCard.Target>

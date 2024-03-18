@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Prihlásiť sa"
     },
-    "afterLoginRedirection": "Po prihlásení budete presmerovaní na stránku {{url}}"
+    "afterLoginRedirection": "Po prihlásení budete presmerovaní na stránku {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Vaše poverovacie údaje sú nesprávne alebo toto konto neexistuje. Skúste to prosím znova."
 }

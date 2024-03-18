@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Sukurti paskyrą",
+    "title": "Sukurti paskyrą",
+    "text": "Nurodykite savo kredencialus",
+    "form": {
+        "fields": {
+            "username": {
+                "label": ""
+            },
+            "password": {
+                "label": "Slaptažodis"
+            },
+            "passwordConfirmation": {
+                "label": "Patvirtinti slaptažodį"
+            }
+        },
+        "buttons": {
+            "submit": "Sukurti paskyrą"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Paskyra kuriama",
+            "text": "Prašome palaukti"
+        },
+        "success": {
+            "title": "Paskyra sukurta",
+            "text": "Jūsų paskyra sėkmingai sukurta"
+        },
+        "error": {
+            "title": "",
+            "text": "Kažkas nutiko ne taip, gauta ši klaida: {{error}}"
+        }
+    }
+}

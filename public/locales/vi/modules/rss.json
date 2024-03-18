@@ -22,10 +22,10 @@
         "label": "Sắp xếp theo ngày phát hành (tăng dần)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Đưa bài viết không có ngày xuất bản lên đầu"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Số lượng bài viết tối đa"
       }
     },
     "card": {

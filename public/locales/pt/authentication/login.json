@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Iniciar sessão"
     },
-    "afterLoginRedirection": "Após o login, você será redirecionado para {{url}}"
+    "afterLoginRedirection": "Após o login, você será redirecionado para {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Suas credenciais estão incorretas ou esta conta não existe. Tente novamente."
 }

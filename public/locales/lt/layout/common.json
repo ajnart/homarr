@@ -1,0 +1,25 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "Iššokantys langai užblokuoti",
+      "text": "Jūsų naršyklė užblokavo \"Homarr\" prieigą prie jos API. Dažniausiai taip nutinka dėl \"AdBlockers\" arba uždraustų leidimų. \"Homarr\" negali automatiškai prašyti leidimų.",
+      "list": {
+        "browserPermission": "Spustelėkite šalia URL esančią piktogramą ir patikrinkite leidimus. Leisti iššokančius langus ir langus",
+        "adBlockers": "Išjungti skelbimų blokatorius ir saugumo įrankius naršyklėje",
+        "otherBrowser": "Išbandykite kitą naršyklę"
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": "Atidaryti visus naujame skirtuke"
+    }
+  },
+  "menu": {
+    "moveUp": "Pakelti aukštyn",
+    "moveDown": "Perkelti žemyn",
+    "addCategory": "Pridėti kategoriją {{location}}",
+    "addAbove": "aukščiau",
+    "addBelow": "žemiau"
+  }
+}

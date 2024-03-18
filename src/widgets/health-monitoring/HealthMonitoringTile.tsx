@@ -247,7 +247,7 @@ export const getIntegrations = () => {
       configName: configName!,
     },
     {
-      staleTime: 1000 * 10,
+      refetchInterval: 5000,
     }
   );
 };

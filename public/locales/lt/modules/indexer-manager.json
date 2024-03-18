@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "Indeksavimo tvarkytuvo būsena",
+        "description": "Būsena apie jūsų indeksavimo įrenginius",
+        "settings": {
+            "title": "Indeksavimo tvarkytuvo būsena"
+        }
+    },
+    "indexersStatus": {
+        "title": "Indeksavimo tvarkyklė",
+        "testAllButton": "Išbandyk viską"
+    },
+    "errors": {
+        "general": {
+            "title": "Nepavyksta rasti indeksuotojo tvarkytuvo",
+            "text": "Prisijungiant prie indeksavimo tvarkyklės kilo problema. Patikrinkite savo konfigūraciją / integraciją (-as)."
+        }
+    }
+}

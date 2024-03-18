@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Dash.",
-    "description": "Exibe os gráficos de uma instância externa do Dash. Instance dentro da Homarr.",
+    "description": "Exibe os gráficos de um Dash. externo. Instância dentro de Homarr.",
     "settings": {
       "title": "Definições para o Dash. widget",
       "dashName": {

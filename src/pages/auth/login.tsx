@@ -124,9 +124,19 @@ export default function LoginPage({
                 {t('title')}
               </Title>
 
-              <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-                {t('text')}
-              </Text>
+              {(providers.length < 1 && (
+                <Alert
+                  icon={<IconAlertTriangle size="1rem" />}
+                  title={t('form.providersEmpty.title')}
+                  mt={5}
+                >
+                  {t('form.providersEmpty.message')}
+                </Alert>
+              )) || (
+                <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+                  {t('text')}
+                </Text>
+              )}
 
               {isError && (
                 <Alert icon={<IconAlertTriangle size="1rem" />} color="red">

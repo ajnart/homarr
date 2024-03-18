@@ -23,29 +23,20 @@ async function makeOpenMediaVaultRPCCall(
   }
 
   const appUrl = new URL(app.url);
-  const response = await axios
-    .post(
-      `${appUrl.origin}/rpc.php`,
-      {
-        service: serviceName,
-        method: method,
-        params: params,
+  const response = await axios.post(
+    `${appUrl.origin}/rpc.php`,
+    {
+      service: serviceName,
+      method: method,
+      params: params,
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        ...headers,
       },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          ...headers,
-        },
-      }
-    )
-    .catch((error) => {
-      if (serviceName === 'cputemp') {
-        // handle cputemp errors differently; not always supported
-        Consola.info(`Error fetching cputemp from openmediavault. Disabling CPU Temp display.`);
-      } else {
-        Consola.error(`Error while fetching from openmediavault: ${error}`);
-      }
-    });
+    }
+  );
   return response;
 }
 
@@ -71,56 +62,66 @@ export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
       input
     );
 
-    const cookies = authResponse.headers['set-cookie'] || [];
-    sessionId = cookies
-      .find(
-        (cookie: any) =>
-          cookie.includes('X-OPENMEDIAVAULT-SESSIONID') ||
-          cookie.includes('OPENMEDIAVAULT-SESSIONID')
-      )
-      ?.split(';')[0];
-    loginToken = cookies
-      .find(
-        (cookie: any) =>
-          cookie.includes('X-OPENMEDIAVAULT-LOGIN') || cookie.includes('OPENMEDIAVAULT-LOGIN')
-      )
-      ?.split(';')[0];
+    if (authResponse.data.response.sessionid) {
+      sessionId = authResponse.data.response.sessionid;
+    } else {
+      const cookies = authResponse.headers['set-cookie'] || [];
+      sessionId = cookies
+        .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-SESSIONID'))
+        ?.split(';')[0];
+
+      loginToken = cookies
+        .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-LOGIN'))
+        ?.split(';')[0];
+    }
+
+    const responses = await Promise.allSettled([
+      makeOpenMediaVaultRPCCall(
+        'system',
+        'getInformation',
+        {},
+        loginToken
+          ? { Cookie: `${loginToken};${sessionId}` }
+          : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
+        input
+      ),
+      makeOpenMediaVaultRPCCall(
+        'filesystemmgmt',
+        'enumerateMountedFilesystems',
+        { includeroot: true },
+        loginToken
+          ? { Cookie: `${loginToken};${sessionId}` }
+          : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
+        input
+      ),
+      makeOpenMediaVaultRPCCall(
+        'cputemp',
+        'get',
+        {},
+        loginToken
+          ? { Cookie: `${loginToken};${sessionId}` }
+          : { 'X-OPENMEDIAVAULT-SESSIONID': sessionId as string },
+        input
+      ),
+    ]);
+
+    const systemInfoResponse =
+      responses[0].status === 'fulfilled' && responses[0].value
+        ? responses[0].value.data?.response
+        : null;
+    const fileSystemResponse =
+      responses[1].status === 'fulfilled' && responses[1].value
+        ? responses[1].value.data?.response
+        : null;
+    const cpuTempResponse =
+      responses[2].status === 'fulfilled' && responses[2].value
+        ? responses[2].value.data?.response
+        : null;
+
+    return {
+      systemInfo: systemInfoResponse,
+      fileSystem: fileSystemResponse,
+      cpuTemp: cpuTempResponse,
+    };
   }
-
-  let cpuTempResponse: any;
-  const cpuTempResponsePromise = makeOpenMediaVaultRPCCall(
-    'cputemp',
-    'get',
-    {},
-    { Cookie: `${loginToken};${sessionId}` },
-    input
-  );
-
-  const [systemInfoResponse, fileSystemResponse] = await Promise.all([
-    makeOpenMediaVaultRPCCall(
-      'system',
-      'getInformation',
-      {},
-      { Cookie: `${loginToken};${sessionId}` },
-      input
-    ),
-    makeOpenMediaVaultRPCCall(
-      'filesystemmgmt',
-      'enumerateMountedFilesystems',
-      { includeroot: true },
-      { Cookie: `${loginToken};${sessionId}` },
-      input
-    ),
-  ]);
-
-  cpuTempResponsePromise.then((response) => {
-    cpuTempResponse = response;
-  });
-
-  return {
-    authenticated: authResponse ? authResponse.data.response.authenticated : true,
-    systemInfo: systemInfoResponse?.data.response,
-    fileSystem: fileSystemResponse?.data.response,
-    cpuTemp: cpuTempResponse?.data.response,
-  };
 }

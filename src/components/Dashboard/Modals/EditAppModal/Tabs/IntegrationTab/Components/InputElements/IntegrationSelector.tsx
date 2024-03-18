@@ -171,7 +171,7 @@ export const availableIntegrations = [
   {
     value: 'jellyfin',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
-    label: 'Jellyfin',
+    label: 'Jellyfin (and Emby)',
   },
   {
     value: 'plex',

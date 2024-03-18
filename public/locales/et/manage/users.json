@@ -1,0 +1,44 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "buttons": {
+        "create": ""
+    },
+    "filter": {
+        "roles": {
+            "all": "",
+            "normal": "",
+            "admin": "",
+            "owner": ""
+        }
+    },
+    "table": {
+        "header": {
+            "user": "",
+            "email": ""
+        }
+    },
+    "tooltips": {
+        "deleteUser": "",
+        "demoteAdmin": "",
+        "promoteToAdmin": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "change-role": {
+            "promote": {
+                "title": "",
+                "text": ""
+            },
+            "demote": {
+                "title": "",
+                "text": ""
+            },
+            "confirm": ""
+        }
+    },
+    "searchDoesntMatch": ""
+}

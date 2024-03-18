@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Vartotojai",
+    "pageTitle": "Tvarkyti vartotojus",
+    "buttons": {
+        "create": "Sukurti"
+    },
+    "filter": {
+        "roles": {
+            "all": "Visi",
+            "normal": "Įprastas",
+            "admin": "Administratorius",
+            "owner": "Savininkas"
+        }
+    },
+    "table": {
+        "header": {
+            "user": "Vartotojas",
+            "email": "El. paštas"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Ištrinti vartotoją",
+        "demoteAdmin": "Pažeminti administratorių",
+        "promoteToAdmin": "Paaukštinti į administratorių"
+    },
+    "modals": {
+        "delete": {
+            "title": "Ištrinti naudotoją {{name}}",
+            "text": "Ar tikrai norite ištrinti naudotoją {{name}}? Tai ištrins su šia paskyra susijusius duomenis, bet ne visus šio naudotojo sukurtas lentas."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Paaukštinti naudotoją {{name}} į administratorių",
+                "text": "Ar tikrai norite paaukštinti naudotoją {{name}} iki administratoriaus? Tai suteiks naudotojui prieigą prie visų jūsų \"Homarr\" lentų."
+            },
+            "demote": {
+                "title": "Pažeminti naudotoją {{name}} iki vartotojo",
+                "text": "Ar tikrai norite pažeminti naudotoją {{name}} į naudotoją? Tai pašalins vartotojo prieigą prie visų jūsų Homarr lentų."
+            },
+            "confirm": ""
+        }
+    },
+    "searchDoesntMatch": "Jūsų paieška neatitinka jokių įrašų. Pakoreguokite filtrą."
+}

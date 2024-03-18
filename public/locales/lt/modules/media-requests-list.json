@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Medijų užklausos",
+    "description": "Peržiūrėkite visų medijų užklausų iš \"Overseerr\" arba \"Jellyseerr\" sąrašą",
+    "settings": {
+      "title": "Medijų užklausų sąrašas",
+      "replaceLinksWithExternalHost": {
+        "label": "Pakeiskite nuorodas išoriniu pagrindiniu kompiuteriu"
+      },
+      "openInNewTab": {
+        "label": "Atidaryti naujame skirtuke"
+      }
+    }
+  },
+  "noRequests": "Užklausų nerasta. Įsitikinkite, kad teisingai sukonfigūravote savo programas.",
+  "state": {
+    "approved": "Patvirtinta",
+    "pendingApproval": "Laukia patvirtinimo",
+    "declined": "Atmesta",
+    "available": "Galima",
+    "partial": "Dalis"
+  },
+  "tooltips": {
+    "approve": "Patvirtinti visas užklausas",
+    "decline": "Atmesti visas užklausas",
+    "approving": "Patvirtinama užklausa..."
+  },
+  "mutation": {
+    "approving": "Patvirtinama",
+    "declining": "Atmetama",
+    "request": "užklausa...",
+    "approved": "Užklausa buvo patvirtinta!",
+    "declined": "Užklausa buvo atmesta!"
+  }
+}

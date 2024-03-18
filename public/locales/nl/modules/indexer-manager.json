@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "",
+        "description": "",
+        "settings": {
+            "title": ""
+        }
+    },
+    "indexersStatus": {
+        "title": "",
+        "testAllButton": ""
+    },
+    "errors": {
+        "general": {
+            "title": "",
+            "text": ""
+        }
+    }
+}

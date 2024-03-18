@@ -16,12 +16,12 @@ const HealthMonitoringMemory = ({ info }: any) => {
     <Group position="center">
       <RingProgress
         roundCaps
-        size={140}
+        size={120}
         thickness={12}
         label={
           <Center style={{ flexDirection: 'column' }}>
             {usedMemoryGB}GiB
-            <HoverCard width={280} shadow="md" position="top">
+            <HoverCard width={280} shadow="md" position="top" withinPortal>
               <HoverCard.Target>
                 <IconBrain size={40} />
               </HoverCard.Target>
