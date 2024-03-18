@@ -12,7 +12,8 @@
     "cpu": {
         "label": "處理器",
         "load": "",
-        "minute": ""
+        "minute": "",
+        "minutes": ""
     },
     "memory": {
         "label": "",
