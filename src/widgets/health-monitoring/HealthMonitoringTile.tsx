@@ -247,7 +247,7 @@ export const getIntegrations = () => {
       configName: configName!,
     },
     {
-      refetchInterval: 5000,
+      staleTime: 1000 * 10,
     }
   );
 };
@@ -262,7 +262,7 @@ const useStatusQuery = (node: string, ignoreCerts: boolean) => {
       ignoreCerts: ignoreCerts!,
     },
     {
-      staleTime: 1000 * 10,
+      refetchInterval: 5000,
     }
   );
 };
