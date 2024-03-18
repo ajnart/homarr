@@ -12,7 +12,8 @@
     "cpu": {
         "label": "ЦПУ",
         "load": "Средняя загрузка",
-        "minute": "{{minute}} минута"
+        "minute": "{{minute}} минута",
+        "minutes": ""
     },
     "memory": {
         "label": "Память",
