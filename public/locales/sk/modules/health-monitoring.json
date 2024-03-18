@@ -12,7 +12,8 @@
     "cpu": {
         "label": "CPU",
         "load": "Priemerná záťaž",
-        "minute": "{minutes} min."
+        "minute": "{minutes} min.",
+        "minutes": ""
     },
     "memory": {
         "label": "Pamäť",
