@@ -12,7 +12,8 @@
     "cpu": {
         "label": "Procesorius",
         "load": "Apkrovos vidurkis",
-        "minute": "{{minute}} minutė"
+        "minute": "{{minute}} minutė",
+        "minutes": ""
     },
     "memory": {
         "label": "Atmintis",
