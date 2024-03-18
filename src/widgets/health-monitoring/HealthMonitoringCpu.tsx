@@ -23,13 +23,13 @@ const HealthMonitoringCpu = ({ info, cpuTemp, fahrenheit }: any) => {
       color: 'teal',
     },
     {
-      label: `${t('cpu.minute', { minute: 5 })}`,
+      label: `${t('cpu.minutes', { minutes: 5 })}`,
       stats: info.loadAverage['5min'],
       progress: info.loadAverage['5min'],
       color: 'blue',
     },
     {
-      label: `${t('cpu.minute', { minute: 15 })}`,
+      label: `${t('cpu.minutes', { minutes: 15 })}`,
       stats: info.loadAverage['15min'],
       progress: info.loadAverage['15min'],
       color: 'red',
