@@ -12,7 +12,8 @@
     "cpu": {
         "label": "CPU",
         "load": "Yük Ortalaması",
-        "minute": "{{minute}} dakika"
+        "minute": "{{minute}} dakika",
+        "minutes": ""
     },
     "memory": {
         "label": "Bellek",
