@@ -13,7 +13,7 @@
         "label": "Procesor",
         "load": "Průměrné zatížení",
         "minute": "{{minute}} minut",
-        "minutes": ""
+        "minutes": "{{minutes}} minut"
     },
     "memory": {
         "label": "Pamět",
