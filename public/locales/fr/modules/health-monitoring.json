@@ -13,7 +13,7 @@
         "label": "CPU",
         "load": "Charge moyenne",
         "minute": "{{minute}} minute",
-        "minutes": ""
+        "minutes": "{{minutes}} minutes"
     },
     "memory": {
         "label": "Mémoire",
