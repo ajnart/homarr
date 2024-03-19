@@ -29,6 +29,15 @@
       "displayRatioWithFilter": {
         "label": "Display filtered torrents list ratio",
         "info": "If disabled, only the global ratio will be display. The global ratio will still use the labels if set"
+      },
+      "columns": {
+        "label": "Select columns to display",
+        "data": {
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Progress"
+        }
       }
     }
   },

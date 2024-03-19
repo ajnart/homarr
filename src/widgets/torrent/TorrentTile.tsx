@@ -16,7 +16,7 @@ import { IconFileDownload } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { MRT_TableContainer, useMantineReactTable, type MRT_ColumnDef } from 'mantine-react-table';
+import { type MRT_ColumnDef, MRT_TableContainer, useMantineReactTable } from 'mantine-react-table';
 import { useTranslation } from 'next-i18next';
 import { useMemo } from 'react';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
@@ -68,6 +68,11 @@ const definition = defineWidget({
       type: 'switch',
       defaultValue: true,
       info: true,
+    },
+    columns: {
+      type: 'multi-select',
+      defaultValue: ['up', 'down', 'eta', 'progress'],
+      data: [{ value: 'up' }, { value: 'down' }, { value: 'eta' }, { value: 'progress' }],
     },
   },
   gridstack: {
@@ -240,9 +245,10 @@ function TorrentTile({ widget }: TorrentTileProps) {
       columnVisibility: {
         isCompleted: false,
         dateAdded: false,
-        uploadSpeed: width > MIN_WIDTH_MOBILE,
-        downloadSpeed: width > MIN_WIDTH_MOBILE,
-        eta: width > MIN_WIDTH_MOBILE,
+        uploadSpeed: widget.properties.columns.includes('up') && width > MIN_WIDTH_MOBILE,
+        downloadSpeed: widget.properties.columns.includes('down') && width > MIN_WIDTH_MOBILE,
+        eta: widget.properties.columns.includes('eta') && width > MIN_WIDTH_MOBILE,
+        progress: widget.properties.columns.includes('progress'),
       },
     },
   });
