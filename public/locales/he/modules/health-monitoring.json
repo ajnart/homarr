@@ -13,7 +13,7 @@
         "label": "מעבד",
         "load": "טעינה ממוצעת",
         "minute": "{{minute}} דקה",
-        "minutes": ""
+        "minutes": "{{minutes}} דקות"
     },
     "memory": {
         "label": "זיכרון",
