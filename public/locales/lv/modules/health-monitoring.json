@@ -1,38 +1,38 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Sistēmas Stāvokļa Uzraudzība",
+        "description": "Informācija par jūsu NAS",
         "settings": {
-            "title": "",
+            "title": "Sistēmas Stāvokļa Uzraudzība",
             "fahrenheit": {
-                "label": ""
+                "label": "Fārenheits"
             }
         }
     },
     "cpu": {
         "label": "CPU",
-        "load": "",
-        "minute": "",
+        "load": "Vidējā slodze",
+        "minute": "{{minute}} minūte",
         "minutes": "{{minutes}} minūtes"
     },
     "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
+        "label": "Atmiņa",
+        "totalMem": "Kopējā atmiņa: {{total}}GB",
+        "available": "Pieejams: {{available}}GB - {{percentage}}%"
     },
     "fileSystem": {
-        "label": "",
-        "available": ""
+        "label": "Failu Sistēma",
+        "available": "Pieejams: {{available}} - {{percentage}}%"
     },
     "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
+        "uptime": "Darbības laiks",
+        "updates": "Atjaunojumi",
+        "reboot": "Pārstartēt"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nevarēja atrast Jūsu NAS",
+            "text": "Veidojot savienojumu ar Jūsu NAS radās problēma. Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
         }
     }
 }
