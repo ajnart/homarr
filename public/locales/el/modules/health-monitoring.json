@@ -13,7 +13,7 @@
         "label": "CPU",
         "load": "Μέσος Όρος Φόρτου",
         "minute": "{{minute}} λεπτό",
-        "minutes": ""
+        "minutes": "{{minutes}} λεπτά"
     },
     "memory": {
         "label": "Μνήμη",
