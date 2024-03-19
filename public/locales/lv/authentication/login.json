@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Pēc pieslēgšanās tiksiet novirzīts uz {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Autentifikācijas pakalpojuma kļūda",
+      "message": "Pakalpojuma sniedzējs(-i) nav iestatīts(-i), lūdzu, pārbaudiet žurnālus, lai iegūtu vairāk informācijas."
     }
   },
   "alert": "Jūsu pieslēgšanās dati ir nepareizi vai šis konts nepastāv. Lūdzu, mēģiniet vēlreiz."
