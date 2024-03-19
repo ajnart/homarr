@@ -13,7 +13,7 @@
         "label": "CPU",
         "load": "Durchschnittliche Last",
         "minute": "{{minute}} Minuten",
-        "minutes": ""
+        "minutes": "{{minutes}} Minuten"
     },
     "memory": {
         "label": "Arbeitsspeicher",
