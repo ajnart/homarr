@@ -13,7 +13,7 @@
         "label": "CPU",
         "load": "平均负载",
         "minute": "{{minute}} 分钟",
-        "minutes": ""
+        "minutes": "{{minutes}} 分钟"
     },
     "memory": {
         "label": "内存",
