@@ -13,7 +13,7 @@
         "label": "CPU",
         "load": "Utilizzo medio",
         "minute": "{{minute}} minuto",
-        "minutes": ""
+        "minutes": "{{minutes}} minuti"
     },
     "memory": {
         "label": "Memoria",
