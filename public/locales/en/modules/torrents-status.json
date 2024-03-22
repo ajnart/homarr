@@ -38,6 +38,9 @@
           "eta": "ETA",
           "progress": "Progress"
         }
+      },
+      "nameColumnSize": {
+        "label": "Change the name column size"
       }
     }
   },
@@ -92,10 +95,6 @@
         "title": "An unexpected error occurred",
         "text": "Unable to communicate with your Torrent clients. Please check your configuration"
       }
-    },
-    "loading": {
-      "title": "Loading",
-      "description": "Establishing a connection"
     },
     "popover": {
       "introductionPrefix": "Managed by",

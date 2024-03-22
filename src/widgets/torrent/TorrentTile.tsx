@@ -3,7 +3,6 @@ import {
   Center,
   Flex,
   Group,
-  Loader,
   Popover,
   Progress,
   Stack,
@@ -29,6 +28,7 @@ import {
 
 import { useGetDownloadClientsQueue } from '../download-speed/useGetNetworkSpeed';
 import { defineWidget } from '../helper';
+import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { TorrentQueuePopover } from './TorrentQueueItem';
 
@@ -73,6 +73,13 @@ const definition = defineWidget({
       type: 'multi-select',
       defaultValue: ['up', 'down', 'eta', 'progress'],
       data: [{ value: 'up' }, { value: 'down' }, { value: 'eta' }, { value: 'progress' }],
+    },
+    nameColumnSize: {
+      type: 'slider',
+      defaultValue: 2,
+      min: 1,
+      max: 4,
+      step: 1,
     },
   },
   gridstack: {
@@ -151,8 +158,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
             </Popover.Dropdown>
           </Popover>
         ),
-        maxSize: 1,
-        size: 1,
+        maxSize: widget.properties.nameColumnSize,
       },
       {
         accessorKey: 'totalSelected',
@@ -189,7 +195,10 @@ function TorrentTile({ widget }: TorrentTileProps) {
         Cell: ({ cell, row }) => (
           <Flex>
             <Text className={useStyles().classes.noTextBreak}>
-              {(Number(cell.getValue()) * 100).toFixed(1)}%
+              {Number(cell.getValue()) === 1
+                ? Number(cell.getValue()) * 100
+                : (Number(cell.getValue()) * 100).toFixed(1)}
+              %
             </Text>
             <Progress
               radius="lg"
@@ -265,21 +274,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
   }
 
   if (isInitialLoading || !data) {
-    return (
-      <Stack
-        align="center"
-        justify="center"
-        style={{
-          height: '100%',
-        }}
-      >
-        <Loader />
-        <Stack align="center" spacing={0}>
-          <Text>{t('card.loading.title')}</Text>
-          <Text color="dimmed">{t('card.loading.description')}</Text>
-        </Stack>
-      </Stack>
-    );
+    return <WidgetLoading />;
   }
 
   if (data.apps.length === 0) {
