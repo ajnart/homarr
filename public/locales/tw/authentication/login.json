@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "登入後，您將進入 {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "驗證提供錯誤",
+      "message": "驗證伺服器未設定，請檢察您的日誌內容"
     }
   },
   "alert": "您的憑證不正確或此帳號不存在，請重試"
