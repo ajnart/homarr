@@ -31,7 +31,7 @@
         "info": "Ist diese Option deaktiviert, wird nur das globale Verhältnis angezeigt. Für das globale Verhältnis werden weiterhin die Beschriftungen verwendet, wenn diese eingestellt sind"
       },
       "columns": {
-        "label": "",
+        "label": "Spalten zur Anzeige auswählen",
         "data": {
           "down": "Down",
           "up": "Up",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Ändern Sie die Größe der Namensspalte"
       }
     }
   },
