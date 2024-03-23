@@ -195,10 +195,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
         Cell: ({ cell, row }) => (
           <Flex>
             <Text className={useStyles().classes.noTextBreak}>
-              {Number(cell.getValue()) === 1
-                ? Number(cell.getValue()) * 100
-                : (Number(cell.getValue()) * 100).toFixed(1)}
-              %
+              {(Number(cell.getValue()) * 100).toPrecision(3)}%
             </Text>
             <Progress
               radius="lg"
