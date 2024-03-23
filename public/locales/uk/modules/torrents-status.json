@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Завантаження",
+          "up": "Віддача",
+          "eta": "Залишилося",
+          "progress": "Прогрес"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Трапилась неочікувана помилка",
         "text": "Не вдається зв'язатися з вашими Torrent-клієнтами. Будь ласка, перевірте вашу конфігурацію"
       }
-    },
-    "loading": {
-      "title": "Завантаження",
-      "description": "Встановлення з'єднання"
     },
     "popover": {
       "introductionPrefix": "Керується",
