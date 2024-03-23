@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "ניטור בריאות המערכת",
-    "description": "",
+    "description": "מציג מידע המציג את התקינות והסטטוס של המערכות שלך.",
     "settings": {
-      "title": "",
+      "title": "הגדרות עבור מערכת ניטור תקינות",
       "fahrenheit": {
-        "label": ""
+        "label": "טמפרטורת המעבד בפרנהייט"
       },
       "cpu": {
-        "label": "",
+        "label": "הצג מידע על המעבד",
         "load": "טעינה ממוצעת",
         "minute": "{{minute}} דקה",
-        "minutes": ""
+        "minutes": "{{minutes}} דקות"
       },
       "memory": {
-        "label": ""
+        "label": "הצג מידע זיכרון"
       },
       "fileSystem": {
-        "label": ""
+        "label": "הצג מידע על מערכת הקבצים"
       },
       "node": {
-        "label": "",
+        "label": "סנן לפי שם צומת",
         "info": ""
       },
       "defaultViewState": {
         "label": "",
         "data": {
           "none": "ללא",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "צמתים",
+          "vm": "VMs",
+          "lxc": "LXCs",
           "storage": "אחסון"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "כרטיסייה פתוחה כברירת מחדל",
+        "info": "כרטיסייה פתוחה כברירת מחדל. משמש רק כאשר זמינות אינטגרציות מרובות.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "מערכת",
+          "cluster": "אֶשׁכּוֹל"
         }
       },
       "summary": {
-        "label": ""
+        "label": "הצג קטע סיכום"
       },
       "showNode": {
-        "label": ""
+        "label": "הצג קטע צמתים"
       },
       "showVM": {
-        "label": ""
+        "label": "הצג את הקטע VMs"
       },
       "showLXCs": {
-        "label": ""
+        "label": "הצג את קטע LXCs"
       },
       "showStorage": {
-        "label": ""
+        "label": "הצג קטע אחסון"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "דרישה שמחוון מצב הסעיף יהיה 'בסדר'",
+        "info": "'הכל' דורש שכל הפריטים יהיו מקוונים כדי שהמחוון יהיה ירוק. 'כל' דורש לפחות פריט אחד להיות מקוון.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "אקטיבי",
+          "all": "הכל פעיל"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "התעלם משגיאות אישור",
+        "info": "אם מופעל, הווידג'ט יתעלם משגיאות אישור בעת גישה ל-Proxmox API. זה יכול להיות מועיל בעת גישה ל-Proxmox דרך HTTPS."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "זמן פעילות",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} ימים, {{hours}} שעות",
+    "updates": "עדכונים זמינים",
     "reboot": "אתחול מחדש"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "לא ניתן למצוא את המערכת שלך.",
+      "text": "הייתה בעיה בחיבור למערכת שלך. נא ודא את התצורה/השילובים שלך."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "מערכת",
+    "cluster": "אֶשׁכּוֹל"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "צמתים",
+        "vms": "VMs",
+        "lxcs": "LXCs",
         "storage": "אחסון"
       }
     },
@@ -118,24 +118,24 @@
         "name": "שם",
         "cpu": "מעבד",
         "ram": "זיכרון פנימי",
-        "node": ""
+        "node": "צוֹמֶת"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "צוֹמֶת",
+      "vmid": "VMID",
       "details": "פרטים",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "ליבות - {{maxCpu}}",
+      "memSize": "זיכרון - {{maxMem}}",
+      "memRatio": "זיכרון - {{usedMem}} / {{maxMem}}",
+      "diskSize": "דיסק - {{maxDisk}}",
+      "diskRatio": "דיסק - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "זמן פעילות - {{uptime}}",
+      "plugin": "תוסף",
+      "ha": "מצב - {{haState}}",
+      "sharedStorage": "אחסון משותף",
+      "localStorage": "אחסון מקומי",
+      "na": "לא זמין"
     }
   }
 }
