@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Vis filtrerede torrents liste ratio",
         "info": "Hvis deaktiveret, vil kun den globale ratio blive vist. Den globale ratio vil stadig bruge etiketter hvis sat"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Fremskridt"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Der opstod en uventet fejl",
         "text": "Kan ikke kommunikere med dine Torrent-klienter. Tjek venligst din konfiguration"
       }
-    },
-    "loading": {
-      "title": "Indlæser",
-      "description": "Etablerer en forbindelse"
     },
     "popover": {
       "introductionPrefix": "Administreret af",
