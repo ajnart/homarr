@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "crwdns4202:0crwdne4202:0",
-        "description": "crwdns4204:0crwdne4204:0",
-        "settings": {
-            "title": "crwdns4206:0crwdne4206:0",
-            "fahrenheit": {
-                "label": "crwdns4208:0crwdne4208:0"
-            }
+  "descriptor": {
+    "name": "crwdns4202:0crwdne4202:0",
+    "description": "crwdns4246:0crwdne4246:0",
+    "settings": {
+      "title": "crwdns4248:0crwdne4248:0",
+      "fahrenheit": {
+        "label": "crwdns4250:0crwdne4250:0"
+      },
+      "cpu": {
+        "label": "crwdns4252:0crwdne4252:0",
+        "load": "crwdns4254:0crwdne4254:0",
+        "minute": "crwdns4256:0{{minute}}crwdne4256:0",
+        "minutes": "crwdns4258:0{{minutes}}crwdne4258:0"
+      },
+      "memory": {
+        "label": "crwdns4260:0crwdne4260:0"
+      },
+      "fileSystem": {
+        "label": "crwdns4262:0crwdne4262:0"
+      },
+      "node": {
+        "label": "crwdns4264:0crwdne4264:0",
+        "info": "crwdns4266:0crwdne4266:0"
+      },
+      "defaultViewState": {
+        "label": "crwdns4268:0crwdne4268:0",
+        "data": {
+          "none": "crwdns4270:0crwdne4270:0",
+          "node": "crwdns4272:0crwdne4272:0",
+          "vm": "crwdns4274:0crwdne4274:0",
+          "lxc": "crwdns4276:0crwdne4276:0",
+          "storage": "crwdns4278:0crwdne4278:0"
         }
-    },
-    "cpu": {
-        "label": "crwdns4210:0crwdne4210:0",
-        "load": "crwdns4212:0crwdne4212:0",
-        "minute": "crwdns4214:0{{minute}}crwdne4214:0",
-        "minutes": "crwdns4244:0{{minutes}}crwdne4244:0"
-    },
-    "memory": {
-        "label": "crwdns4216:0crwdne4216:0",
-        "totalMem": "crwdns4218:0{{total}}crwdne4218:0",
-        "available": "crwdns4220:0{{available}}crwdnd4220:0{{percentage}}crwdne4220:0"
-    },
-    "fileSystem": {
-        "label": "crwdns4222:0crwdne4222:0",
-        "available": "crwdns4224:0{{available}}crwdnd4224:0{{percentage}}crwdne4224:0"
-    },
-    "info": {
-        "uptime": "crwdns4226:0crwdne4226:0",
-        "updates": "crwdns4228:0crwdne4228:0",
-        "reboot": "crwdns4230:0crwdne4230:0"
-    },
-    "errors": {
-        "general": {
-            "title": "crwdns4232:0crwdne4232:0",
-            "text": "crwdns4234:0crwdne4234:0"
+      },
+      "defaultTabState": {
+        "label": "crwdns4280:0crwdne4280:0",
+        "info": "crwdns4282:0crwdne4282:0",
+        "data": {
+          "system": "crwdns4284:0crwdne4284:0",
+          "cluster": "crwdns4286:0crwdne4286:0"
         }
+      },
+      "summary": {
+        "label": "crwdns4288:0crwdne4288:0"
+      },
+      "showNode": {
+        "label": "crwdns4290:0crwdne4290:0"
+      },
+      "showVM": {
+        "label": "crwdns4292:0crwdne4292:0"
+      },
+      "showLXCs": {
+        "label": "crwdns4294:0crwdne4294:0"
+      },
+      "showStorage": {
+        "label": "crwdns4296:0crwdne4296:0"
+      },
+      "sectionIndicatorColor": {
+        "label": "crwdns4298:0crwdne4298:0",
+        "info": "crwdns4300:0crwdne4300:0",
+        "data": {
+          "any": "crwdns4302:0crwdne4302:0",
+          "all": "crwdns4304:0crwdne4304:0"
+        }
+      },
+      "ignoreCert": {
+        "label": "crwdns4306:0crwdne4306:0",
+        "info": "crwdns4308:0crwdne4308:0"
+      }
     }
+  },
+  "cpu": {
+    "label": "crwdns4210:0crwdne4210:0",
+    "load": "crwdns4212:0crwdne4212:0",
+    "minute": "crwdns4214:0{{minute}}crwdne4214:0"
+  },
+  "memory": {
+    "label": "crwdns4216:0crwdne4216:0",
+    "totalMem": "crwdns4218:0{{total}}crwdne4218:0",
+    "available": "crwdns4220:0{{available}}crwdnd4220:0{{percentage}}crwdne4220:0"
+  },
+  "fileSystem": {
+    "label": "crwdns4222:0crwdne4222:0",
+    "available": "crwdns4224:0{{available}}crwdnd4224:0{{percentage}}crwdne4224:0"
+  },
+  "info": {
+    "uptime": "crwdns4226:0crwdne4226:0",
+    "uptimeFormat": "crwdns4310:0{{days}}crwdnd4310:0{{hours}}crwdne4310:0",
+    "updates": "crwdns4312:0crwdne4312:0",
+    "reboot": "crwdns4230:0crwdne4230:0"
+  },
+  "errors": {
+    "general": {
+      "title": "crwdns4314:0crwdne4314:0",
+      "text": "crwdns4316:0crwdne4316:0"
+    }
+  },
+  "headings": {
+    "system": "crwdns4318:0crwdne4318:0",
+    "cluster": "crwdns4320:0crwdne4320:0"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "crwdns4322:0crwdne4322:0",
+      "ram": "crwdns4324:0crwdne4324:0"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "crwdns4326:0crwdne4326:0",
+        "vms": "crwdns4328:0crwdne4328:0",
+        "lxcs": "crwdns4330:0crwdne4330:0",
+        "storage": "crwdns4332:0crwdne4332:0"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "crwdns4334:0crwdne4334:0",
+        "cpu": "crwdns4336:0crwdne4336:0",
+        "ram": "crwdns4338:0crwdne4338:0",
+        "node": "crwdns4340:0crwdne4340:0"
+      }
+    },
+    "popover": {
+      "node": "crwdns4342:0crwdne4342:0",
+      "vmid": "crwdns4344:0crwdne4344:0",
+      "details": "crwdns4346:0crwdne4346:0",
+      "cores": "crwdns4348:0{{maxCpu}}crwdne4348:0",
+      "memSize": "crwdns4350:0{{maxMem}}crwdne4350:0",
+      "memRatio": "crwdns4352:0{{usedMem}}crwdnd4352:0{{maxMem}}crwdne4352:0",
+      "diskSize": "crwdns4354:0{{maxDisk}}crwdne4354:0",
+      "diskRatio": "crwdns4356:0{{usedDisk}}crwdnd4356:0{{maxDisk}}crwdne4356:0",
+      "uptime": "crwdns4358:0{{uptime}}crwdne4358:0",
+      "plugin": "crwdns4360:0crwdne4360:0",
+      "ha": "crwdns4362:0{{haState}}crwdne4362:0",
+      "sharedStorage": "crwdns4364:0crwdne4364:0",
+      "localStorage": "crwdns4366:0crwdne4366:0",
+      "na": "crwdns4368:0crwdne4368:0"
+    }
+  }
 }
