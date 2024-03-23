@@ -164,7 +164,7 @@ const retrieveDetailsForItem = async (
       name: series.name,
       airDate: series.firstAirDate,
       backdropPath: series.backdropPath,
-      posterPath: series.backdropPath,
+      posterPath: series.posterPath ?? series.backdropPath,
     };
   }
 
@@ -175,7 +175,7 @@ const retrieveDetailsForItem = async (
   const movie = (await movieResponse.json()) as OverseerrMovie;
 
   return {
-    name: movie.originalTitle,
+    name: movie.title,
     airDate: movie.releaseDate,
     backdropPath: movie.backdropPath,
     posterPath: movie.posterPath,
@@ -190,7 +190,7 @@ type GenericOverseerrItem = {
 };
 
 type OverseerrMovie = {
-  originalTitle: string;
+  title: string;
   releaseDate: string;
   backdropPath: string;
   posterPath: string;
