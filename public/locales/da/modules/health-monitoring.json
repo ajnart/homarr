@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Systemsundhedsovervågning",
-        "description": "Oplysninger om din NAS",
-        "settings": {
-            "title": "Systemsundhedsovervågning",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Systemsundhedsovervågning",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Load Gennemsnit",
         "minute": "{{minute}} minutter",
-        "minutes": "{{minutes}} minutter"
-    },
-    "memory": {
-        "label": "Hukommelse",
-        "totalMem": "Samlet hukommelse: {{total}}GB",
-        "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Filsystem",
-        "available": "Tilgængelig: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Oppetid",
-        "updates": "Opdateringer",
-        "reboot": "Genstart"
-    },
-    "errors": {
-        "general": {
-            "title": "Kan ikke finde din NAS",
-            "text": "Der opstod et problem med at oprette forbindelse til din NAS. Bekræft venligst din konfiguration/integration(er)."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Intet",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Lager"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Load Gennemsnit",
+    "minute": "{{minute}} minutter"
+  },
+  "memory": {
+    "label": "Hukommelse",
+    "totalMem": "Samlet hukommelse: {{total}}GB",
+    "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Filsystem",
+    "available": "Tilgængelig: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Oppetid",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Genstart"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Lager"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Navn",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detaljer",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
