@@ -12,7 +12,8 @@
     "cpu": {
         "label": "CPU",
         "load": "Tải trung bình",
-        "minute": "{{minute}} phút"
+        "minute": "{{minute}} phút",
+        "minutes": ""
     },
     "memory": {
         "label": "Bộ nhớ",

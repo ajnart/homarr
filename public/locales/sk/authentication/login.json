@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Po prihlásení budete presmerovaní na stránku {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Chyba poskytovateľa autorizácie",
+      "message": "Poskytovateľ(-lia) nie je(sú) nastavený(-í), ďalšie informácie nájdete v záznamoch."
     }
   },
   "alert": "Vaše poverovacie údaje sú nesprávne alebo toto konto neexistuje. Skúste to prosím znova."

@@ -12,7 +12,8 @@
     "cpu": {
         "label": "CPU",
         "load": "Genomsnittlig belastning",
-        "minute": "{{minute}} minut"
+        "minute": "{{minute}} minut",
+        "minutes": ""
     },
     "memory": {
         "label": "Minne",

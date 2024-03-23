@@ -12,7 +12,8 @@
     "cpu": {
         "label": "Procesor",
         "load": "Průměrné zatížení",
-        "minute": "{{minute}} minut"
+        "minute": "{{minute}} minut",
+        "minutes": "{{minutes}} minut"
     },
     "memory": {
         "label": "Pamět",

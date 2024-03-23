@@ -1,7 +1,7 @@
 {
-  "metaTitle": "Login",
+  "metaTitle": "“Login”",
   "title": "Bem-vindo de volta!",
-  "text": "Digite suas credenciais",
+  "text": "Por favor insira suas credenciais",
   "form": {
     "fields": {
       "username": {
@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Após o login, você será redirecionado para {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Erro do provedor de autenticação",
+      "message": "O(s) provedo(s) não está(ão) definido(s). Por favor, verifique seus logs para mais informações."
     }
   },
   "alert": "Suas credenciais estão incorretas ou esta conta não existe. Tente novamente."

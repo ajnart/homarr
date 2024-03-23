@@ -12,7 +12,8 @@
     "cpu": {
         "label": "Процесор",
         "load": "",
-        "minute": ""
+        "minute": "",
+        "minutes": ""
     },
     "memory": {
         "label": "",
