@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "系統健康監控",
-        "description": "關於 NAS 訊息",
-        "settings": {
-            "title": "系統健康監控",
-            "fahrenheit": {
-                "label": "華氏度"
-            }
-        }
-    },
-    "cpu": {
-        "label": "處理器",
+  "descriptor": {
+    "name": "系統健康監控",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "平均負載",
         "minute": "{{minute}} 分鐘",
-        "minutes": "{{minutes}} 分鐘"
-    },
-    "memory": {
-        "label": "記憶體",
-        "totalMem": "總記憶體: {{total}} GB",
-        "available": "可用: {{available}} GB - {{percentage}} %"
-    },
-    "fileSystem": {
-        "label": "檔案系統",
-        "available": "可用: {{available}} - {{percentage}} %"
-    },
-    "info": {
-        "uptime": "運行時間",
-        "updates": "更新",
-        "reboot": "重新啟動"
-    },
-    "errors": {
-        "general": {
-            "title": "找不到您的 NAS",
-            "text": "連接您的NAS時出現問題，請確認配置/集成"
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "無",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "儲存設備"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "處理器",
+    "load": "平均負載",
+    "minute": "{{minute}} 分鐘"
+  },
+  "memory": {
+    "label": "記憶體",
+    "totalMem": "總記憶體: {{total}} GB",
+    "available": "可用: {{available}} GB - {{percentage}} %"
+  },
+  "fileSystem": {
+    "label": "檔案系統",
+    "available": "可用: {{available}} - {{percentage}} %"
+  },
+  "info": {
+    "uptime": "運行時間",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "重新啟動"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "處理器",
+      "ram": "記憶體"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "儲存設備"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "名稱",
+        "cpu": "處理器",
+        "ram": "記憶體",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "詳情",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
