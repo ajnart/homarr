@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Filtrelenmiş torrent listesi ratio oranını görüntüle",
         "info": "Devre dışı bırakılırsa, yalnızca genel ratio görüntülenir. Genel ratio, ayarlanmışsa etiketleri kullanmaya devam edecektir"
+      },
+      "columns": {
+        "label": "Görüntülenecek sütunları seçin",
+        "data": {
+          "down": "İndirme",
+          "up": "Yükleme",
+          "eta": "ETA (Kalan Süre)",
+          "progress": "İlerleme"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Ad sütunun boyutunu değiştirme"
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Beklenmeyen bir hata oluştu",
         "text": "Torrent istemcilerinizle iletişim kuramadı. Lütfen yapılandırmanızı kontrol edin"
       }
-    },
-    "loading": {
-      "title": "Yükleniyor",
-      "description": "Bağlantı kur"
     },
     "popover": {
       "introductionPrefix": "Tarafından yönetilen",
