@@ -31,7 +31,7 @@
         "info": "Hvis deaktiveret, vil kun den globale ratio blive vist. Den globale ratio vil stadig bruge etiketter hvis sat"
       },
       "columns": {
-        "label": "",
+        "label": "Vælg kolonner, der skal vises",
         "data": {
           "down": "Down",
           "up": "Up",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Skift størrelsen på navnekolonnen"
       }
     }
   },
