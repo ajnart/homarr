@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Systemsundhedsovervågning",
-    "description": "",
+    "description": "Viser oplysninger om dit/dine systems tilstand og status.",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for systemsundhedsovervågning",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-temperatur i Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Vis CPU-info",
         "load": "Load Gennemsnit",
         "minute": "{{minute}} minutter",
-        "minutes": ""
+        "minutes": "{{minutes}} minutter"
       },
       "memory": {
-        "label": ""
+        "label": "Vis hukommelsesoplysninger"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Vis information om filsystemet"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrer efter nodenavn",
+        "info": "Indtast navnet på din Proxmox-node for kun at vise metrikker for den node. Som standard vises hele klyngen."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sektion åben som standard",
         "data": {
           "none": "Intet",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Noder",
+          "vm": "VM'er",
+          "lxc": "LXC'er",
           "storage": "Lager"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Fanen åben som standard",
+        "info": "Fanen åben som standard. Bruges kun, når flere integrationer er tilgængelige.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "System",
+          "cluster": "Klynge"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Vis oversigtssektion"
       },
       "showNode": {
-        "label": ""
+        "label": "Vis nodesektion"
       },
       "showVM": {
-        "label": ""
+        "label": "Vis VM-sektion"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Vis LXC sektion"
       },
       "showStorage": {
-        "label": ""
+        "label": "Vis lagerplads sektion"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Krav om, at sektionsstatusindikator skal være 'OK'",
+        "info": "\"Alle\" kræver, at alle elementer er online, for at indikatoren er grøn. 'Any' kræver, at mindst ét element er online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Enhver aktiv",
+          "all": "Alle aktive"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorer certifikatfejl",
+        "info": "Hvis den er aktiveret, vil widgetten ignorere certifikatfejl, når den tilgår Proxmox API. Dette kan være nyttigt, når du får adgang til Proxmox via HTTPS."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Oppetid",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} dage, {{hours}} timer",
+    "updates": "Opdateringer tilgængelige",
     "reboot": "Genstart"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Kan ikke finde dit/dine system(er).",
+      "text": "Der opstod et problem med at oprette forbindelse til dit system. Bekræft venligst din konfiguration/integration(er)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "System",
+    "cluster": "Klynge"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Noder",
+        "vms": "VM'er",
+        "lxcs": "LXC'er",
         "storage": "Lager"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Navn",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Node"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Node",
+      "vmid": "VMID",
       "details": "Detaljer",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Kerner - {{maxCpu}}",
+      "memSize": "Hukommelse - {{maxMem}}",
+      "memRatio": "Hukommelse - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Oppetid - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA Tilstand - {{haState}}",
+      "sharedStorage": "Delt Lager",
+      "localStorage": "Lokalt lager",
+      "na": "Ikke tilgængelig"
     }
   }
 }
