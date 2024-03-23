@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Surveillance de l'état du système",
-        "description": "Informations concernant votre NAS",
-        "settings": {
-            "title": "Surveillance de l'état du système",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Surveillance de l'état du système",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Charge moyenne",
         "minute": "{{minute}} minute",
-        "minutes": "{{minutes}} minutes"
-    },
-    "memory": {
-        "label": "Mémoire",
-        "totalMem": "Mémoire totale : {{total}}GB",
-        "available": "Disponible : {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Système de fichiers",
-        "available": "Disponible : {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Temps de disponibilité",
-        "updates": "Mises à jour",
-        "reboot": "Redémarrage"
-    },
-    "errors": {
-        "general": {
-            "title": "Impossible de trouver votre NAS",
-            "text": "Il y a eu un problème de connexion à votre NAS. Veuillez vérifier votre configuration ou intégration."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Aucun",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Stockage"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Charge moyenne",
+    "minute": "{{minute}} minute"
+  },
+  "memory": {
+    "label": "Mémoire",
+    "totalMem": "Mémoire totale : {{total}}GB",
+    "available": "Disponible : {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Système de fichiers",
+    "available": "Disponible : {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Temps de disponibilité",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Redémarrage"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Stockage"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nom",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Détails",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
