@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Zobraziť pomer zoznamu filtrovaných torrentov",
         "info": "Ak je vypnutý, zobrazí sa iba globálny pomer. Globálny pomer bude stále používať štítky, ak je nastavený"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Dole",
+          "up": "Hore",
+          "eta": "Odhad",
+          "progress": "Stav"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Vyskytla sa neočakávaná chyba",
         "text": "Nieje možné komunikovať s klientmi Torrent. Skontrolujte prosím svoju konfiguráciu"
       }
-    },
-    "loading": {
-      "title": "Načítavanie",
-      "description": "Nadväzovanie spojenia..."
     },
     "popover": {
       "introductionPrefix": "Spravovaný",
