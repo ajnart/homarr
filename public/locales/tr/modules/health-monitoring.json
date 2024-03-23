@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Sistem Sağlığı İzleme",
-    "description": "",
+    "description": "Sistem(ler)inizin sağlığını ve durumunu gösteren bilgileri görüntüler.",
     "settings": {
-      "title": "",
+      "title": "Sistem durumu izleme ayarları",
       "fahrenheit": {
-        "label": ""
+        "label": "Fahrenheit cinsinden CPU Sıcaklığı"
       },
       "cpu": {
-        "label": "",
+        "label": "CPU Bilgilerini Göster",
         "load": "Yük Ortalaması",
         "minute": "{{minute}} dakika",
-        "minutes": ""
+        "minutes": "{{minutes}} dakika"
       },
       "memory": {
-        "label": ""
+        "label": "Bellek Bilgilerini Göster"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Dosya Sistemi Bilgilerini Göster"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Node adına göre filtrele",
+        "info": "Yalnızca söz konusu node'e ilişkin ölçümleri göstermek için Proxmox node'nizin adını girin. Varsayılan olarak kümenin tamamı gösterilir."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Bölüm varsayılan olarak açık",
         "data": {
           "none": "Hiçbiri",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Node'lar",
+          "vm": "VM'ler",
+          "lxc": "LXC'ler",
           "storage": "Depolama"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Sekme varsayılan olarak açık",
+        "info": "Sekme varsayılan olarak açıktır. Yalnızca birden fazla entegrasyon mevcut olduğunda kullanılır.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Sistem",
+          "cluster": "Küme"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Özet bölümünü göster"
       },
       "showNode": {
-        "label": ""
+        "label": "Node bölümünü göster"
       },
       "showVM": {
-        "label": ""
+        "label": "VM bölümünü göster"
       },
       "showLXCs": {
-        "label": ""
+        "label": "LXC bölümünü göster"
       },
       "showStorage": {
-        "label": ""
+        "label": "Depolama bölümünü göster"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Bölüm durum göstergesinin 'Tamam' olması gerekliliği",
+        "info": "'Tümü' göstergenin yeşil olması için tüm öğelerin çevrimiçi olmasını gerektirir. 'Herhangi' en az bir öğenin çevrimiçi olmasını gerektirir.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Herhangi Aktif",
+          "all": "Tümü Aktif"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Sertifika Hatalarını Yoksay",
+        "info": "Etkinleştirilirse widget, Proxmox API'sine erişirken sertifika hatalarını yok sayar. Bu, Proxmox'a HTTPS aracılığıyla erişirken yararlı olabilir."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Çalışma süresi",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} gün, {{hours}} saat",
+    "updates": "Güncellemeler mevcut",
     "reboot": "Yeniden başlat"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Sistem(ler)iniz bulunamadı.",
+      "text": "Sisteminize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Sistem",
+    "cluster": "Küme"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Node'lar",
+        "vms": "VM'ler",
+        "lxcs": "LXC'ler",
         "storage": "Depolama"
       }
     },
@@ -118,24 +118,24 @@
         "name": "İsim",
         "cpu": "CPU",
         "ram": "Ram",
-        "node": ""
+        "node": "Node"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Node",
+      "vmid": "VMID",
       "details": "Detaylar",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Çekirdekler - {{maxCpu}}",
+      "memSize": "Bellek - {{maxMem}}",
+      "memRatio": "Bellek - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Çalışma süresi - {{uptime}}",
+      "plugin": "Eklenti",
+      "ha": "HA Durumu - {{haState}}",
+      "sharedStorage": "Paylaşılan depolama alanı",
+      "localStorage": "Yerel depolama",
+      "na": "Yok"
     }
   }
 }
