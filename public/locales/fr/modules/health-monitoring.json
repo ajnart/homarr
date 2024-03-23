@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Surveillance de l'état du système",
-    "description": "",
+    "description": "Affiche des informations sur l'état et la santé de votre (vos) système(s).",
     "settings": {
-      "title": "",
+      "title": "Paramètres de la surveillance d'état du système",
       "fahrenheit": {
-        "label": ""
+        "label": "Température du processeur en Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Afficher les infos du processeur",
         "load": "Charge moyenne",
         "minute": "{{minute}} minute",
-        "minutes": ""
+        "minutes": "{{minutes}} minutes"
       },
       "memory": {
-        "label": ""
+        "label": "Afficher les infos de la mémoire"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Afficher les infos sur le système de fichiers"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrer par nom de nœud",
+        "info": "Entrez le nom de votre nœud Proxmox pour n'afficher que les métriques de ce nœud. Par défaut, l'ensemble du cluster est affiché."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Section ouverte par défaut",
         "data": {
           "none": "Aucun",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Nœuds",
+          "vm": "Machines virtuelles",
+          "lxc": "LXCs",
           "storage": "Stockage"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Onglet ouvert par défaut",
+        "info": "Onglet ouvert par défaut. Utilisé uniquement lorsque plusieurs intégrations sont disponibles.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Système",
+          "cluster": "Cluster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Afficher la section de synthèse"
       },
       "showNode": {
-        "label": ""
+        "label": "Afficher la section des nœuds"
       },
       "showVM": {
-        "label": ""
+        "label": "Afficher la section des machines virtuelles"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Afficher la section des LXCs"
       },
       "showStorage": {
-        "label": ""
+        "label": "Afficher la section de stockage"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Nécessité que l'indicateur d'état de la section soit \"OK\"",
+        "info": "\"Tous\" exige que tous les éléments soient en ligne pour que l'indicateur soit vert. L'option \"Tous\" exige qu'au moins un élément soit en ligne.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Tout actifs",
+          "all": "Tous actifs"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorer les erreurs de certificat",
+        "info": "Si cette option est activée, le widget ignorera les erreurs de certificat lors de l'accès à l'API Proxmox. Cela peut être utile pour accéder à Proxmox via HTTPS."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Temps de disponibilité",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} jours, {{hours}} heures",
+    "updates": "Mises à jour disponibles",
     "reboot": "Redémarrage"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Impossible de trouver votre (vos) système(s).",
+      "text": "Il y a eu un problème de connexion à votre système. Veuillez vérifier votre configuration/intégration(s)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Système",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Nœuds",
+        "vms": "Machines virtuelles",
+        "lxcs": "LXCs",
         "storage": "Stockage"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Nom",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Nœuds"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Nœuds",
+      "vmid": "VMID",
       "details": "Détails",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Cœurs - {{maxCpu}}",
+      "memSize": "Mémoire - {{maxMem}}",
+      "memRatio": "Mémoire - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disque - {{maxDisk}}",
+      "diskRatio": "Disque - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Disponibilité - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "État HA - {{haState}}",
+      "sharedStorage": "Stockage partagé",
+      "localStorage": "Stockage local",
+      "na": "N/A"
     }
   }
 }
