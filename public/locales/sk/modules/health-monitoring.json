@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Monitorovanie stavu systému",
-        "description": "Informácie o vašom NAS",
-        "settings": {
-            "title": "Monitorovanie stavu systému",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Monitorovanie stavu systému",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Priemerná záťaž",
         "minute": "{minutes} min.",
-        "minutes": "{minutess} min"
-    },
-    "memory": {
-        "label": "Pamäť",
-        "totalMem": "Celková pamäť: {{total}}GB",
-        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Súborový systém",
-        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Čas prevádzky",
-        "updates": "Aktualizácie",
-        "reboot": "Reštartovať"
-    },
-    "errors": {
-        "general": {
-            "title": "Nemožno nájsť váš NAS",
-            "text": "Nastal problém s pripojením k vášmu NAS. Skontrolujte prosím svoju konfiguráciu/integráciu."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Žiadne",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Úložisko"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Priemerná záťaž",
+    "minute": "{minutes} min."
+  },
+  "memory": {
+    "label": "Pamäť",
+    "totalMem": "Celková pamäť: {{total}}GB",
+    "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Súborový systém",
+    "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Čas prevádzky",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Reštartovať"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Úložisko"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Názov",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detaily",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
