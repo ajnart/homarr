@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Überwachung des Systemzustands",
-    "description": "",
+    "description": "Zeigt Informationen zum Zustand und Status Ihres/Ihrer Systeme(s) an.",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für die Überwachung des Systemzustands",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-Temperatur in Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "CPU-Info anzeigen",
         "load": "Durchschnittliche Last",
         "minute": "{{minute}} Minuten",
-        "minutes": ""
+        "minutes": "{{minutes}} Minuten"
       },
       "memory": {
-        "label": ""
+        "label": "Speicher-Info anzeigen"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Dateisystem Info anzeigen"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Nach Knotennamen filtern",
+        "info": "Geben Sie den Namen Ihres Proxmox-Knotens ein, um nur Metriken für diesen Knoten anzuzeigen. Standardmäßig wird der gesamte Cluster angezeigt."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Abschnitt standardmäßig geöffnet",
         "data": {
           "none": "Keine",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Knoten",
+          "vm": "VMs",
+          "lxc": "LXCs",
           "storage": "Speicher"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Tab standardmäßig geöffnet",
+        "info": "Tab standardmäßig geöffnet. Wird nur verwendet, wenn mehrere Integrationen verfügbar sind.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "System",
+          "cluster": "Cluster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Abschnitt Zusammenfassung anzeigen"
       },
       "showNode": {
-        "label": ""
+        "label": "Abschnitt Knoten anzeigen"
       },
       "showVM": {
-        "label": ""
+        "label": "Abschnitt VMs anzeigen"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Abschnitt LXCs anzeigen"
       },
       "showStorage": {
-        "label": ""
+        "label": "Abschnitt Speicherbereich anzeigen"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Voraussetzung dafür, dass die Abschnittsstatusanzeige „OK“ ist",
+        "info": "Bei „Alle“ müssen alle Elemente online sein, damit die Anzeige grün ist. Für „Mindestens“ muss mindestens ein Artikel online sein.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Mindestens aktiv",
+          "all": "Alle aktiv"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Zertifikatfehler ignorieren",
+        "info": "Wenn aktiviert, ignoriert das Widget Zertifikatsfehler beim Zugriff auf die Proxmox-API. Dies kann hilfreich sein, wenn Sie über HTTPS auf Proxmox zugreifen."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Betriebszeit",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} Tage, {{hours}} Stunden",
+    "updates": "Updates verfügbar",
     "reboot": "Neustart"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Ihr(e) System(e) konnte nicht gefunden werden.",
+      "text": "Beim Herstellen der Verbindung zu Ihrem System ist ein Problem aufgetreten. Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "System",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Knoten",
+        "vms": "VMs",
+        "lxcs": "LXCs",
         "storage": "Speicher"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Name",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Knoten"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Knoten",
+      "vmid": "VMID",
       "details": "Details",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Kerne – {{maxCpu}}",
+      "memSize": "Speicher – {{maxMem}}",
+      "memRatio": "Speicher - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Festplatte – {{maxDisk}}",
+      "diskRatio": "Festplatte - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Betriebszeit – {{uptime}}",
+      "plugin": "Erweiterung",
+      "ha": "HA Status - {{haState}}",
+      "sharedStorage": "Geteilter Speicher",
+      "localStorage": "Lokaler Speicher",
+      "na": "nicht verfügbar"
     }
   }
 }
