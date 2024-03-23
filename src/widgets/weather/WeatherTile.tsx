@@ -67,7 +67,7 @@ function WeatherTile({ widget }: WeatherTileProps) {
     data: weather,
     isLoading,
     isError,
-  } = api.weather.at.useQuery(widget.properties.location, { refetchInterval: 1000 * 60 * 5 });
+  } = api.weather.at.useQuery(widget.properties.location, { refetchInterval: 1000 * 60 * 30 });
   const { width, ref } = useElementSize();
   const { t } = useTranslation('modules/weather');
 
