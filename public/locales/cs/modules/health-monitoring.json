@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Monitorování stavu systému",
-    "description": "",
+    "description": "Zobrazuje informace o stavu a kondici Vašeho systému (systémů).",
     "settings": {
-      "title": "",
+      "title": "Nastavení pro sledování stavu systému",
       "fahrenheit": {
-        "label": ""
+        "label": "Teplota CPU ve stupních Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Zobrazit info o CPU",
         "load": "Průměrné zatížení",
         "minute": "{{minute}} minut",
-        "minutes": ""
+        "minutes": "{{minutes}} minut/y"
       },
       "memory": {
-        "label": ""
+        "label": "Zobrazit informace o paměti"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Zobrazit informace o souborovém systému"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrovat podle názvu uzlu",
+        "info": "Zadejte název uzlu Proxmox, aby se zobrazovaly metriky pouze pro tento uzel. Ve výchozím nastavení se zobrazí celý cluster."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sekce bude otevřená ve výchozím nastavení",
         "data": {
           "none": "Žádný",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Uzly",
+          "vm": "Virtuální Stroje",
+          "lxc": "LXC",
           "storage": "Úložiště"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Karta je ve výchozím nastavení otevřena",
+        "info": "Karta je ve výchozím nastavení otevřená. Používá se pouze v případě, že je k dispozici více integrací.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Systém",
+          "cluster": "Cluster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Zobrazit sekci shrnutí"
       },
       "showNode": {
-        "label": ""
+        "label": "Zobrazit sekci uzlů"
       },
       "showVM": {
-        "label": ""
+        "label": "Zobrazit sekci virutálních strojů"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Zobrazit sekci s LXC"
       },
       "showStorage": {
-        "label": ""
+        "label": "Zobrazit sekci úložiště"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Požadavky, aby indikátor stavu sekce byl \"OK“",
+        "info": "'Vše' vyžaduje, aby všechny položky byly online, aby byl indikátor zelený. 'Cokoliv' vyžaduje, aby alespoň jedna položka byla online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Jakýkoli aktivní",
+          "all": "Všechny aktivní"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorovat chyby certifikátu",
+        "info": "Pokud je tato možnost povolena, bude widget při přístupu k rozhraní API Proxmox ignorovat chyby certifikátu. To může být užitečné při přístupu k Proxmoxu přes HTTPS."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Doba provozu",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} dny/ů, {{hours}} hodin/a/y",
+    "updates": "Dostupné aktualizace",
     "reboot": "Restartovat"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Nepodařilo se najít Váš systém/Vaše systémy.",
+      "text": "Došlo k problému s připojením k Vašemu systému. Ověřte prosím svou konfiguraci."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Systém",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Uzly",
+        "vms": "Virtuální Stroje",
+        "lxcs": "LXC",
         "storage": "Úložiště"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Název",
         "cpu": "Procesor",
         "ram": "RAM",
-        "node": ""
+        "node": "Uzel"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Uzel",
+      "vmid": "ID virtuálního stroje",
       "details": "Podrobnosti",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Jádra - {{maxCpu}}",
+      "memSize": "Paměť - {{maxMem}}",
+      "memRatio": "Paměť - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Doba provozu - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "Stav HA - {{haState}}",
+      "sharedStorage": "Sdílené úložiště",
+      "localStorage": "Místní úložiště",
+      "na": "N/A"
     }
   }
 }
