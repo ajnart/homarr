@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Παρακολούθηση της υγείας του συστήματος",
-        "description": "Πληροφορίες για το NAS σας",
-        "settings": {
-            "title": "Παρακολούθηση της υγείας του συστήματος",
-            "fahrenheit": {
-                "label": "Φαρενάιτ (°F)"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Παρακολούθηση της υγείας του συστήματος",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Μέσος Όρος Φόρτου",
         "minute": "{{minute}} λεπτό",
-        "minutes": "{{minutes}} λεπτά"
-    },
-    "memory": {
-        "label": "Μνήμη",
-        "totalMem": "Συνολική μνήμη: {{total}}GB",
-        "available": "Διαθέσιμα: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Σύστημα Αρχείων",
-        "available": "Διαθέσιμα: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Χρόνος Λειτουργίας",
-        "updates": "Ενημερώσεις",
-        "reboot": "Επανεκκίνηση"
-    },
-    "errors": {
-        "general": {
-            "title": "Δεν είναι δυνατή η εύρεση του NAS σας",
-            "text": "Υπήρξε πρόβλημα σύνδεσης με το NAS σας. Παρακαλούμε επαληθεύστε τις ρυθμίσεις/ενσωμάτωση(ες) σας."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Κανένα",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Αποθηκευτικός χώρος"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Μέσος Όρος Φόρτου",
+    "minute": "{{minute}} λεπτό"
+  },
+  "memory": {
+    "label": "Μνήμη",
+    "totalMem": "Συνολική μνήμη: {{total}}GB",
+    "available": "Διαθέσιμα: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Σύστημα Αρχείων",
+    "available": "Διαθέσιμα: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Χρόνος Λειτουργίας",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Επανεκκίνηση"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Αποθηκευτικός χώρος"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Όνομα",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Λεπτομέρειες",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
