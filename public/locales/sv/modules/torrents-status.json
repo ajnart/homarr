@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Visa filtrerade torrents listförhållande",
         "info": "Om inaktiverat visas endast det globala förhållandet. Det globala förhållandet kommer fortfarande att använda etiketterna om det är inställt"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Ned",
+          "up": "Upp",
+          "eta": "Beräknad sluttid",
+          "progress": "Förlopp"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Ett oväntat fel uppstod",
         "text": "Homarr kunde inte kommunicera med dina torrent-klienter. Vänligen kontrollera din konfiguration"
       }
-    },
-    "loading": {
-      "title": "Laddar",
-      "description": "Upprättar en anslutning"
     },
     "popover": {
       "introductionPrefix": "Förvaltas av",
