@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Sistem Sağlığı İzleme",
-        "description": "NAS'ınız hakkında bilgi",
-        "settings": {
-            "title": "Sistem Sağlığı İzleme",
-            "fahrenheit": {
-                "label": "Fahrenayt"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Sistem Sağlığı İzleme",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Yük Ortalaması",
         "minute": "{{minute}} dakika",
-        "minutes": "{{minutes}} dakika"
-    },
-    "memory": {
-        "label": "Bellek",
-        "totalMem": "Toplam bellek: {{total}}GB",
-        "available": "Mevcut: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Dosya Sistemi",
-        "available": "Mevcut: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Çalışma süresi",
-        "updates": "Güncellemeler",
-        "reboot": "Yeniden başlat"
-    },
-    "errors": {
-        "general": {
-            "title": "NAS'ınız bulunamıyor",
-            "text": "NAS'ınıza bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Hiçbiri",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Depolama"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Yük Ortalaması",
+    "minute": "{{minute}} dakika"
+  },
+  "memory": {
+    "label": "Bellek",
+    "totalMem": "Toplam bellek: {{total}}GB",
+    "available": "Mevcut: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Dosya Sistemi",
+    "available": "Mevcut: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Çalışma süresi",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Yeniden başlat"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "Ram"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Depolama"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "İsim",
+        "cpu": "CPU",
+        "ram": "Ram",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detaylar",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
