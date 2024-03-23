@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Visualizza il ratio dell'elenco dei torrent filtrati",
         "info": "Se disabilitato, verrà visualizzato solo il ratio globale. Il ratio globale utilizzerà comunque i label, se impostati"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Avanzamento"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Si è verificato un errore imprevisto",
         "text": "Impossibile comunicare con i client Torrent. Controllare la configurazione"
       }
-    },
-    "loading": {
-      "title": "Caricamento in corso",
-      "description": "Connessione in corso"
     },
     "popover": {
       "introductionPrefix": "Gestito da",
