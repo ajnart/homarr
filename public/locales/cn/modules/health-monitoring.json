@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "系统健康监测",
-        "description": "关于NAS的信息",
-        "settings": {
-            "title": "系统健康监测",
-            "fahrenheit": {
-                "label": "华氏度"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "系统健康监测",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "平均负载",
         "minute": "{{minute}} 分钟",
-        "minutes": "{{minutes}} 分钟"
-    },
-    "memory": {
-        "label": "内存",
-        "totalMem": "内存总量： {{total}}GB",
-        "available": "可用： {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "文件系统",
-        "available": "可用： {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "运行时间",
-        "updates": "更新",
-        "reboot": "重启"
-    },
-    "errors": {
-        "general": {
-            "title": "找不到您的 NAS",
-            "text": "连接到您的NAS时出现了问题。请验证您的配置/集成。"
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "不显示",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "存储"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "平均负载",
+    "minute": "{{minute}} 分钟"
+  },
+  "memory": {
+    "label": "内存",
+    "totalMem": "内存总量： {{total}}GB",
+    "available": "可用： {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "文件系统",
+    "available": "可用： {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "运行时间",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "重启"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "内存"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "存储"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "名称",
+        "cpu": "CPU",
+        "ram": "内存",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "详情",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
