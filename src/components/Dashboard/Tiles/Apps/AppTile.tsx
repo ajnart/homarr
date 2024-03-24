@@ -9,6 +9,7 @@ import { HomarrCardWrapper } from '../HomarrCardWrapper';
 import { BaseTileProps } from '../type';
 import { AppMenu } from './AppMenu';
 import { AppPing } from './AppPing';
+import { modals } from '@mantine/modals';
 
 interface AppTileProps extends BaseTileProps {
   app: AppType;
@@ -87,9 +88,37 @@ export const AppTile = ({ className, app }: AppTileProps) => {
       ) : (
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
-          component="a"
-          href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
-          target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
+          // component="a"
+          onClick={(e) =>
+            modals.open({
+              size: '100%',
+              withCloseButton: false,
+              id: app.url,
+              keepMounted: true,
+              transitionProps: {
+                keepMounted: true,
+                transition: 'scale',
+              },
+              overlayProps: {
+                opacity: 0.55,
+                blur: 3,
+              },
+              children: (
+                <iframe
+                  style={{
+                    overflow: 'hidden',
+                  }}
+                  frameBorder={0}
+                  height={window.innerHeight - 200}
+                  width="100%"
+                  src={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
+                  sandbox="allow-scripts allow-same-origin allow-fullscreen"
+                ></iframe>
+              ),
+            })
+          }
+          // href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
+          // target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >
           <Inner />
