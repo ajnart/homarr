@@ -31,7 +31,7 @@
         "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
       },
       "columns": {
-        "label": "",
+        "label": "Sélectionner les colonnes à afficher",
         "data": {
           "down": "Descendant",
           "up": "Montant",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Modifier la taille de la colonne des noms"
       }
     }
   },
