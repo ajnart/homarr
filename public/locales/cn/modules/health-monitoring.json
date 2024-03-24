@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "系统健康监测",
-    "description": "",
+    "description": "显示系统运行状况和状态的信息。",
     "settings": {
-      "title": "",
+      "title": "系统健康监测设置",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU 温度（华氏度）"
       },
       "cpu": {
-        "label": "",
+        "label": "显示CPU信息",
         "load": "平均负载",
         "minute": "{{minute}} 分钟",
-        "minutes": ""
+        "minutes": "{{minutes}} 分钟"
       },
       "memory": {
-        "label": ""
+        "label": "显示内存信息"
       },
       "fileSystem": {
-        "label": ""
+        "label": "显示文件系统信息"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "按节点名称过滤",
+        "info": "输入您的 Proxmox 节点名称以仅显示该节点的指标。默认情况下，显示整个集群。"
       },
       "defaultViewState": {
-        "label": "",
+        "label": "默认打开的部分",
         "data": {
           "none": "不显示",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "节点",
+          "vm": "虚拟机",
+          "lxc": "LXCs",
           "storage": "存储"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "默认打开选项卡",
+        "info": "默认打开选项卡。仅当多个集成可用时才使用。",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "系统",
+          "cluster": "集群"
         }
       },
       "summary": {
-        "label": ""
+        "label": "显示摘要部分"
       },
       "showNode": {
-        "label": ""
+        "label": "显示节点部分"
       },
       "showVM": {
-        "label": ""
+        "label": "显示虚拟机部分"
       },
       "showLXCs": {
-        "label": ""
+        "label": "显示 LXC 部分"
       },
       "showStorage": {
-        "label": ""
+        "label": "显示存储部分"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "要求部分状态指示器为“OK”",
+        "info": "全部 \"要求所有项目都在线，指标才会变为绿色。任意 \"要求至少有一个项目在线。",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "任意活动",
+          "all": "全部活动"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "忽略证书错误",
+        "info": "如果启用，小工具在访问 Proxmox API 时将忽略证书错误。这在通过 HTTPS 访问 Proxmox 时很有帮助。"
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "运行时间",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} 天， {{hours}} 小时",
+    "updates": "可用更新",
     "reboot": "重启"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "无法找到您的系统。",
+      "text": "连接到您的系统时出现问题。请验证您的配置/集成。"
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "系统",
+    "cluster": "集群"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "节点",
+        "vms": "虚拟机",
+        "lxcs": "LXCs",
         "storage": "存储"
       }
     },
@@ -118,24 +118,24 @@
         "name": "名称",
         "cpu": "CPU",
         "ram": "内存",
-        "node": ""
+        "node": "节点"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "节点",
+      "vmid": "VMID",
       "details": "详情",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "核心 - {{maxCpu}}",
+      "memSize": "内存 - {{maxMem}}",
+      "memRatio": "内存 - {{usedMem}} / {{maxMem}}",
+      "diskSize": "磁盘 - {{maxDisk}}",
+      "diskRatio": "磁盘 - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "运行时间 - {{uptime}}",
+      "plugin": "插件",
+      "ha": "状态 - {{haState}}",
+      "sharedStorage": "共享存储",
+      "localStorage": "本地存储",
+      "na": "不可用"
     }
   }
 }
