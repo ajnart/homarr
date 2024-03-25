@@ -123,19 +123,19 @@
     },
     "popover": {
       "node": "節點",
-      "vmid": "",
+      "vmid": "VMID",
       "details": "詳情",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "核心 - {{maxCpu}}",
+      "memSize": "記憶體 - {{maxMem}}",
+      "memRatio": "記憶體 - {{usedMem}} / {{maxMem}}",
+      "diskSize": "硬碟 - {{maxDisk}}",
+      "diskRatio": "硬碟 - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "運行時間 - {{uptime}}",
+      "plugin": "插件",
+      "ha": "狀態 - {{haState}}",
+      "sharedStorage": "共享儲存",
+      "localStorage": "本地儲存",
+      "na": "不可用"
     }
   }
 }
