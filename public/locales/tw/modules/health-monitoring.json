@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "系統健康監控",
-    "description": "",
+    "description": "顯示系統運行健康、狀態訊息",
     "settings": {
-      "title": "",
+      "title": "設定系統健康監測",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU溫度 (華氏度)"
       },
       "cpu": {
-        "label": "",
+        "label": "顯示 CPU 訊息",
         "load": "平均負載",
         "minute": "{{minute}} 分鐘",
-        "minutes": ""
+        "minutes": "{{minutes}} 分鐘"
       },
       "memory": {
-        "label": ""
+        "label": "顯示記憶體訊息"
       },
       "fileSystem": {
-        "label": ""
+        "label": "顯示檔案系統訊息"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "按節點名稱篩選",
+        "info": "輸入您的 Proxmox 節點名稱，預設顯示全部集群"
       },
       "defaultViewState": {
-        "label": "",
+        "label": "預設開啟",
         "data": {
           "none": "無",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "節點",
+          "vm": "虛擬機",
+          "lxc": "LXCs",
           "storage": "儲存設備"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "預設開啟",
+        "info": "預設開啟，當多個集成可用時才使用",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "系統",
+          "cluster": "集群"
         }
       },
       "summary": {
-        "label": ""
+        "label": "顯示摘要"
       },
       "showNode": {
-        "label": ""
+        "label": "顯示節點"
       },
       "showVM": {
-        "label": ""
+        "label": "顯示虛擬機"
       },
       "showLXCs": {
-        "label": ""
+        "label": "顯示 LXCs"
       },
       "showStorage": {
-        "label": ""
+        "label": "顯示儲存"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "要求部分指示器為\"OK\"",
+        "info": "需要全部項目都在線，指標才會成為綠色，至少需要一個項目在線",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "任何活動",
+          "all": "全部活動"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "忽略證書錯誤",
+        "info": "如果啟用，小工具在訪問 Proxmox API ，這對於 HTTPS 訪問 Proxmox 時很有幫助"
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "運行時間",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} 天，{{hours}} 小時",
+    "updates": "可用更新",
     "reboot": "重新啟動"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "無法找到系統",
+      "text": "連接系統時出現問題，請檢查配置/集成"
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "系統",
+    "cluster": "集群"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "節點",
+        "vms": "虛擬機",
+        "lxcs": "LXCs",
         "storage": "儲存設備"
       }
     },
@@ -118,11 +118,11 @@
         "name": "名稱",
         "cpu": "處理器",
         "ram": "記憶體",
-        "node": ""
+        "node": "節點"
       }
     },
     "popover": {
-      "node": "",
+      "node": "節點",
       "vmid": "",
       "details": "詳情",
       "cores": "",
