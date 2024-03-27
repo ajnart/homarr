@@ -4,6 +4,9 @@
     "description": "Displays the current weather information of a set location.",
     "settings": {
       "title": "Settings for weather widget",
+      "displayClock": {
+        "label": "Display clock"
+      },
       "displayInFahrenheit": {
         "label": "Display in Fahrenheit"
       },

@@ -1,4 +1,4 @@
-import { Card, Center, Flex, Group, Stack, Text, Title } from '@mantine/core';
+import { Card, Center, Flex, Group, Stack, Text, Title, createStyles } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconArrowDownRight,
@@ -6,6 +6,8 @@ import {
   IconCloudRain,
   IconMapPin,
 } from '@tabler/icons-react';
+import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Weather } from '~/server/api/routers/weather';
 import { api } from '~/utils/api';
@@ -15,10 +17,15 @@ import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { WeatherIcon } from './WeatherIcon';
 
+
 const definition = defineWidget({
   id: 'weather',
   icon: IconCloudRain,
   options: {
+    displayClock: {
+      type: 'switch',
+      defaultValue: false,
+    },
     displayInFahrenheit: {
       type: 'switch',
       defaultValue: false,
@@ -70,6 +77,16 @@ function WeatherTile({ widget }: WeatherTileProps) {
   } = api.weather.at.useQuery(widget.properties.location, { refetchInterval: 1000 * 60 * 30 });
   const { width, ref } = useElementSize();
   const { t } = useTranslation('modules/weather');
+  const { cx, classes } = useStyles();
+  const [now, setDate] = useState(new Date());
+
+  useEffect(() => {
+    // Refresh the time every second only when it display clock
+    if(widget.properties.displayClock) {
+      const interval = setInterval(() => setDate(new Date()), 1000);
+      return () => clearInterval(interval);
+    }
+  }, []);
 
   if (isLoading) {
     return <WidgetLoading />;
@@ -93,6 +110,11 @@ function WeatherTile({ widget }: WeatherTileProps) {
             justify={'center'}
             direction={'row'}
           >
+            {widget.properties.displayClock && (
+              <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
+                {dayjs(now).tz(weather.timezone).format('HH:mm')}
+              </Text>       
+            )}
             {widget.properties.displayCityName && (
               <Group noWrap spacing={5} align="center">
                 <IconMapPin color="blue" size={30} />
@@ -113,6 +135,18 @@ function WeatherTile({ widget }: WeatherTileProps) {
         </>
       )) || (
         <>
+          <Flex
+            align="center"
+            gap={width < 120 ? '0.25rem' : 'xs'}
+            justify={'center'}
+            direction={width < 200 ? 'column' : 'row'}
+          >
+            {widget.properties.displayClock && (
+              <Text className={cx(classes.clock, 'dashboard-tile-clock-hour')}>
+                {dayjs(now).tz(weather.timezone).format('HH:mm')}
+              </Text>
+            )}
+          </Flex>
           <Flex
             align="center"
             gap={width < 120 ? '0.25rem' : 'xs'}
@@ -192,5 +226,27 @@ function Forecast({ weather: { daily }, widget }: ForecastProps) {
     </Flex>
   );
 }
+
+
+const useStyles = createStyles(() => ({
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: '100%',
+    gap: 0,
+  },
+  clock: {
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
+    fontWeight: 700,
+    fontSize: '2.125rem',
+  },
+  extras: {
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
+  },
+}));
 
 export default definition;

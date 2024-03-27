@@ -23,6 +23,7 @@ const weatherSchema = z.object({
     temperature_2m_max: z.array(z.number()),
     temperature_2m_min: z.array(z.number()),
   }),
+  timezone: z.string()
 });
 
 export const weatherRouter = createTRPCRouter({
@@ -48,7 +49,7 @@ export const weatherRouter = createTRPCRouter({
     .output(weatherSchema)
     .query(async ({ input }) => {
       const res = await fetch(
-        `https://api.open-meteo.com/v1/forecast?latitude=${input.latitude}&longitude=${input.longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=Europe%2FLondon`
+        `https://api.open-meteo.com/v1/forecast?latitude=${input.latitude}&longitude=${input.longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min&current_weather=true&timezone=auto`
       );
       return res.json();
     }),
