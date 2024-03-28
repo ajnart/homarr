@@ -13,7 +13,7 @@
     "errors": {
         "general": {
             "title": "Nepodařilo se najít správce indexeru",
-            "text": "Došlo k problému s připojením k Vašemu správci indexeru. Ověřte prosím svou konfiguraci/integraci."
+            "text": "Došlo k problému s připojením k Vašemu správci indexeru. Ověřte prosím svou konfiguraci."
         }
     }
 }

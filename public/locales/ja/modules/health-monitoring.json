@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "",
         "minute": "",
         "minutes": ""
-    },
-    "memory": {
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
         "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
+        "info": ""
+      },
+      "defaultViewState": {
         "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+        "data": {
+          "none": "なし",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "ストレージ"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "",
+    "minute": ""
+  },
+  "memory": {
+    "label": "",
+    "totalMem": "",
+    "available": ""
+  },
+  "fileSystem": {
+    "label": "",
+    "available": ""
+  },
+  "info": {
+    "uptime": "",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": ""
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "メモリ"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "ストレージ"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "名称",
+        "cpu": "CPU",
+        "ram": "メモリ",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "詳細",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

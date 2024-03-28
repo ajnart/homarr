@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "다운로드",
+          "up": "업로드",
+          "eta": "남은 시간",
+          "progress": "진행률"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "예기치 않은 오류가 발생했습니다.",
         "text": "토렌트 클라이언트와 통신할 수 없습니다. 구성을 확인하세요."
       }
-    },
-    "loading": {
-      "title": "로드 중",
-      "description": "연결 설정하기"
     },
     "popover": {
       "introductionPrefix": "관리 주체",

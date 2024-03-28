@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Mostrar la relación de la lista de torrents filtrados",
         "info": "Si está deshabilitado, solo se mostrará la relación global. La relación global seguirá usando las etiquetas si están configuradas"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Descarga",
+          "up": "Subida",
+          "eta": "Tiempo restante",
+          "progress": "Completado %"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Ocurrió un error inesperado",
         "text": "No se puede comunicar con tus clientes de Torrent. Por favor, verifica tu configuración"
       }
-    },
-    "loading": {
-      "title": "Cargando",
-      "description": "Estableciendo una conexión"
     },
     "popover": {
       "introductionPrefix": "Gestionado por",

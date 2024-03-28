@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Rādīt filtrēto torentu saraksta attiecību",
         "info": "Ja ir atspējots, tiks parādīta tikai globālā attiecība. Globālā attiecība joprojām izmantos etiķetes, ja tā būs iestatītas"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Lejupielāde",
+          "up": "Augšupielāde",
+          "eta": "ETA",
+          "progress": "Progress"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Radās neparedzēta kļūda",
         "text": "Neizdevās sazināties ar jūsu Torrent klientiem. Lūdzu, pārbaudiet savu konfigurāciju"
       }
-    },
-    "loading": {
-      "title": "Notiek ielāde",
-      "description": "Savienojuma izveide"
     },
     "popover": {
       "introductionPrefix": "Pārvalda",

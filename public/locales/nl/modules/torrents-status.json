@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Voortgang"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Er is een onverwachte fout opgetreden",
         "text": "Kan niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
-    },
-    "loading": {
-      "title": "Laden",
-      "description": "Verbinding maken"
     },
     "popover": {
       "introductionPrefix": "Beheerd door",

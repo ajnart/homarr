@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Vis filtrerte torrents listeforhold",
         "info": "Hvis deaktivert, vil bare det globale forholdet vises. Det globale forholdet vil fortsatt bruke etikettene hvis angitt"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Ned",
+          "up": "Opp",
+          "eta": "Gjenstående tid (estimat)",
+          "progress": "Fremgang"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -47,7 +59,7 @@
         "size": "Størrelse",
         "download": "Ned",
         "upload": "Opp",
-        "estimatedTimeOfArrival": "Gjenstående tid (estimat)",
+        "estimatedTimeOfArrival": "ETA",
         "progress": "Fremgang",
         "totalUploaded": "Total opplasting",
         "totalDownloaded": "Totalt nedlasting",
@@ -83,10 +95,6 @@
         "title": "En uventet feil har oppstått",
         "text": "Kan ikke kommunisere med Torrent-klientene dine. Vennligst sjekk konfigurasjonen din"
       }
-    },
-    "loading": {
-      "title": "Laster",
-      "description": "Etablerer en forbindelse"
     },
     "popover": {
       "introductionPrefix": "Administrert av",

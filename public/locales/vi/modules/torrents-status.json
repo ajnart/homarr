@@ -29,6 +29,18 @@
       "displayRatioWithFilter": {
         "label": "Hiển thị tỷ lệ danh sách torrent sau lọc",
         "info": "Nếu tắt, chỉ tỉ lệ chung sẽ được hiển thị. Tỉ lệ chung sẽ vẫn sử dụng nhãn nếu được đặt"
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "Tải xuống",
+          "up": "Tải lên",
+          "eta": "Thời gian dự kiến",
+          "progress": "Tiến độ"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +95,6 @@
         "title": "Đã xảy ra lỗi không mong muốn",
         "text": "Không thể liên lạc với khách hàng Torrent của bạn. Vui lòng kiểm tra cấu hình của bạn"
       }
-    },
-    "loading": {
-      "title": "Đang tải",
-      "description": "Thiết lập kết nối"
     },
     "popover": {
       "introductionPrefix": "Quản lý bởi",

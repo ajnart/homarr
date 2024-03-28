@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Sistēmas Stāvokļa Uzraudzība",
-        "description": "Informācija par jūsu NAS",
-        "settings": {
-            "title": "Sistēmas Stāvokļa Uzraudzība",
-            "fahrenheit": {
-                "label": "Fārenheits"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Sistēmas Stāvokļa Uzraudzība",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Vidējā slodze",
         "minute": "{{minute}} minūte",
-        "minutes": "{{minutes}} minūtes"
-    },
-    "memory": {
-        "label": "Atmiņa",
-        "totalMem": "Kopējā atmiņa: {{total}}GB",
-        "available": "Pieejams: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Failu Sistēma",
-        "available": "Pieejams: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Darbības laiks",
-        "updates": "Atjaunojumi",
-        "reboot": "Pārstartēt"
-    },
-    "errors": {
-        "general": {
-            "title": "Nevarēja atrast Jūsu NAS",
-            "text": "Veidojot savienojumu ar Jūsu NAS radās problēma. Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Nekas",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Krātuve"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Vidējā slodze",
+    "minute": "{{minute}} minūte"
+  },
+  "memory": {
+    "label": "Atmiņa",
+    "totalMem": "Kopējā atmiņa: {{total}}GB",
+    "available": "Pieejams: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Failu Sistēma",
+    "available": "Pieejams: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Darbības laiks",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Pārstartēt"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Krātuve"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nosaukums",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detaļas",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

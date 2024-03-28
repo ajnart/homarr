@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Giám sát tình trạng hệ thống",
-        "description": "Cung cấp thông tin về NAS của bạn",
-        "settings": {
-            "title": "Giám sát tình trạng hệ thống",
-            "fahrenheit": {
-                "label": "Độ F"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Giám sát tình trạng hệ thống",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "Tải trung bình",
         "minute": "{{minute}} phút",
         "minutes": ""
-    },
-    "memory": {
-        "label": "Bộ nhớ",
-        "totalMem": "Tổng bộ nhớ: {{total}}GB",
-        "available": "Có sẵn: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Hệ thống tập tin",
-        "available": "Có sẵn: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Thời gian hoạt động",
-        "updates": "Cập nhật",
-        "reboot": "Khởi động lại"
-    },
-    "errors": {
-        "general": {
-            "title": "Không thể tìm thấy NAS của bạn",
-            "text": "Đã xảy ra sự cố khi kết nối với NAS của bạn. Vui lòng xác minh (các) cấu hình/tích hợp của bạn."
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Không hiển thị",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Bộ nhớ"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Tải trung bình",
+    "minute": "{{minute}} phút"
+  },
+  "memory": {
+    "label": "Bộ nhớ",
+    "totalMem": "Tổng bộ nhớ: {{total}}GB",
+    "available": "Có sẵn: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Hệ thống tập tin",
+    "available": "Có sẵn: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Thời gian hoạt động",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": "Khởi động lại"
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Bộ nhớ"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Tên",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Chi tiết",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }
