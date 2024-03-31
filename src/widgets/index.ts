@@ -1,3 +1,4 @@
+import bitcoin from './bitcoin/BitcoinWidgetTile';
 import bookmark from './bookmark/BookmarkWidgetTile';
 import calendar from './calendar/CalendarTile';
 import dashdot from './dashDot/DashDotTile';
@@ -21,6 +22,7 @@ import videoStream from './video/VideoStreamTile';
 import weather from './weather/WeatherTile';
 
 export default {
+  bitcoin,
   calendar,
   'indexer-manager': indexerManager,
   dashdot,

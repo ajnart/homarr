@@ -1,6 +1,7 @@
 import { createTRPCRouter } from '~/server/api/trpc';
 
 import { appRouter } from './routers/app';
+import { bitcoinRouter } from './routers/bitcoin/router';
 import { boardRouter } from './routers/board';
 import { calendarRouter } from './routers/calendar';
 import { configRouter } from './routers/config';
@@ -32,6 +33,7 @@ export const rootRouter = createTRPCRouter({
   app: appRouter,
   rss: rssRouter,
   user: userRouter,
+  bitcoin: bitcoinRouter,
   calendar: calendarRouter,
   indexerManager: indexerManagerRouter,
   config: configRouter,
