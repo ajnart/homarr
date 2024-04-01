@@ -31,7 +31,7 @@
         "info": "Se disabilitato, verrà visualizzato solo il ratio globale. Il ratio globale utilizzerà comunque i label, se impostati"
       },
       "columns": {
-        "label": "",
+        "label": "Seleziona colonne da visualizzare",
         "data": {
           "down": "Down",
           "up": "Up",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Cambia nome dimensione colonna"
       }
     }
   },
