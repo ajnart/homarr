@@ -1,11 +1,6 @@
-import { Blockquote, Badge, Center, Flex, Group, Stack, Text, Title } from '@mantine/core';
+import { Badge, Blockquote, Center, Flex, Stack, Text, Title } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
-import {
-
-  IconCurrencyBitcoin,
-  IconInfoCircle
-
-} from '@tabler/icons-react';
+import { IconCurrencyBitcoin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import { api } from '~/utils/api';
 
@@ -16,23 +11,9 @@ import { IWidget } from '../widgets';
 const definition = defineWidget({
   id: 'bitcoin',
   icon: IconCurrencyBitcoin,
-  options: {
-    dashName: {
-      type: 'text',
-      defaultValue: 'Bitcoin',
-    },
-    graphHeight: {
-      type: 'number',
-      defaultValue: 115,
-      inputProps: {
-        step: 5,
-        stepHoldDelay: 500,
-        stepHoldInterval: 100,
-      },
-    },
-  },
+  options: {},
   gridstack: {
-    minWidth: 2,
+    minWidth: 1,
     minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
@@ -55,15 +36,14 @@ const eurFormatter = new Intl.NumberFormat('en-US', {
   currency: 'EUR',
 });
 function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
-  /* hooks go here */
   const {
     data: bitcoin,
     isLoading,
     isError,
   } = api.bitcoin.getBTCPrice.useQuery(undefined, { refetchInterval: 1000 * 60 * 30 });
   const { t } = useTranslation('modules/bitcoin');
-  const { width, ref } = useElementSize();
-  const infoIcon = <IconInfoCircle/>;
+  const { ref } = useElementSize();
+
   if (isLoading) {
     return <WidgetLoading />;
   }
@@ -76,18 +56,17 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
   }
   /* return JSX */
   return (
-    <Stack w="100%" ref={ref} spacing={0}>
+    <Stack w="100%" h="100%" ref={ref} spacing={0}>
       <Flex justify="space-between">
-      <Title size={'h5'}>Bitcoin Prices</Title>
-      <Badge color="red">{new Date().toLocaleDateString()}</Badge>
+        <Title size={'h5'}>Bitcoin</Title>
+        <Badge color="red">{new Date().toLocaleDateString()}</Badge>
       </Flex>
       <Flex justify="flex-end">
-      <Blockquote cite="– Mempool">
+        <Blockquote icon={null} cite="– Mempool">
           <Text>{usDollarFormatter.format(bitcoin.USD)}</Text>
           <Text>{eurFormatter.format(bitcoin.EUR)}</Text>
         </Blockquote>
       </Flex>
-
     </Stack>
   );
 }
