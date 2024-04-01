@@ -1,26 +1,26 @@
 {
   "descriptor": {
     "name": "Monitoramento da integridade do sistema",
-    "description": "",
+    "description": "Exibe informações que mostram a saúde e status de seu(s) sistema(s).",
     "settings": {
-      "title": "",
+      "title": "Configurações para monitoramento de saúde do sistema",
       "fahrenheit": {
-        "label": ""
+        "label": "Temperatura da CPU em Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Mostrar informações da CPU",
         "load": "Carga Média",
         "minute": "{{minute}} minuto",
-        "minutes": ""
+        "minutes": "{{minutes}} minutos"
       },
       "memory": {
-        "label": ""
+        "label": "Mostrar informações da memória"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Mostrar informações do sistema de arquivos"
       },
       "node": {
-        "label": "",
+        "label": "Filtrar por nome do nó",
         "info": ""
       },
       "defaultViewState": {
