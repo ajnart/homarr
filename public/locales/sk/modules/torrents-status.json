@@ -31,7 +31,7 @@
         "info": "Ak je vypnutý, zobrazí sa iba globálny pomer. Globálny pomer bude stále používať štítky, ak je nastavený"
       },
       "columns": {
-        "label": "",
+        "label": "Vyberte stĺpce na zobrazenie",
         "data": {
           "down": "Dole",
           "up": "Hore",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Zmena veľkosti stĺpca s názvom"
       }
     }
   },
