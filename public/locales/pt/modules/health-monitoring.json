@@ -21,52 +21,52 @@
       },
       "node": {
         "label": "Filtrar por nome do nó",
-        "info": ""
+        "info": "Insira o nome do nó Proxmox para mostrar métricas desse nó. Por padrão, o cluster inteiro é mostrado."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Seção aberta por padrão",
         "data": {
           "none": "Nenhum",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Nós",
+          "vm": "VMs",
+          "lxc": "LXCs",
           "storage": "Armazenamento"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Aba aberta por padrão",
+        "info": "Aba aberta por padrão. Usado somente quando várias integrações estão disponíveis.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Sistema",
+          "cluster": "Cluster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Mostrar seção de resumo"
       },
       "showNode": {
-        "label": ""
+        "label": "Mostrar seção de nós"
       },
       "showVM": {
-        "label": ""
+        "label": "Mostrar seção de VMs"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Mostrar seção de LXCs"
       },
       "showStorage": {
-        "label": ""
+        "label": "Mostrar seção de armazenamento"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Requisito para o indicador de status de seção ser 'OK'",
+        "info": "'Todos' exige que todos os itens estejam online para que o indicador fique verde. 'Qualquer' requer que pelo menos um item esteja online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Qualquer ativo",
+          "all": "Todos ativos"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorar erros de certificado",
+        "info": "Se ativado, o widget irá ignorar os erros de certificado ao acessar a API do Proxmox. Isso pode ser útil ao acessar o Proxmox por meio de HTTPS."
       }
     }
   },
@@ -86,19 +86,19 @@
   },
   "info": {
     "uptime": "Tempo de Atividade",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} dias, {{hours}} horas",
+    "updates": "Atualizações disponíveis",
     "reboot": "Reiniciar"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Não foi possível localizar seu(s) sistema(s).",
+      "text": "Ocorreu um problema na conexão com seu sistema. Verifique sua(s) configuração(ões)/integração(ões)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Sistema",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Nós",
+        "vms": "VMs",
+        "lxcs": "LXCs",
         "storage": "Armazenamento"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Nome",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Nó"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Nó",
+      "vmid": "VMID",
       "details": "Detalhes",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Núcleos - {{maxCpu}}",
+      "memSize": "Memória - {{maxMem}}",
+      "memRatio": "Memória - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disco - {{maxDisk}}",
+      "diskRatio": "Disco - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Tempo de atividade - {{uptime}}",
+      "plugin": "Extensão",
+      "ha": "Estado HA - {{haState}}",
+      "sharedStorage": "Armazenamento Compartilhado",
+      "localStorage": "Armazenamento Local",
+      "na": "N/D"
     }
   }
 }
