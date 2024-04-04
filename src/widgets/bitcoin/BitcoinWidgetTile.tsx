@@ -1,4 +1,12 @@
-import { Badge, Blockquote, Center, Flex, Stack, Text, Title } from '@mantine/core';
+import {
+  Badge,
+  Blockquote,
+  Card,
+  Center,
+  Flex,
+  Image,
+  Text,
+} from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import { IconCurrencyBitcoin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
@@ -13,8 +21,8 @@ const definition = defineWidget({
   icon: IconCurrencyBitcoin,
   options: {},
   gridstack: {
-    minWidth: 1,
-    minHeight: 1,
+    minWidth: 2,
+    minHeight: 2,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -56,18 +64,25 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
   }
   /* return JSX */
   return (
-    <Stack w="100%" h="100%" ref={ref} spacing={0}>
-      <Flex justify="space-between">
-        <Title size={'h5'}>Bitcoin</Title>
-        <Badge color="red">{new Date().toLocaleDateString()}</Badge>
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Card.Section>
+        <Image
+          src="https://static.vecteezy.com/system/resources/previews/000/205/146/original/vector-bitcoin-symbol-on-orange-background.jpg"
+          height={160}
+          alt="Norway"
+        />
+      </Card.Section>
+
+      <Flex justify="flex-end" mt="xs">
+        <Badge color="pink">{new Date().toLocaleDateString()}</Badge>
       </Flex>
-      <Flex justify="flex-end">
+      <Flex justify="center">
         <Blockquote icon={null} cite="– Mempool">
           <Text>{usDollarFormatter.format(bitcoin.USD)}</Text>
           <Text>{eurFormatter.format(bitcoin.EUR)}</Text>
         </Blockquote>
       </Flex>
-    </Stack>
+    </Card>
   );
 }
 
