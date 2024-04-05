@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Box,
   Center,
   Flex,
@@ -8,11 +7,11 @@ import {
   Text,
   Title,
   UnstyledButton,
-  useMantineTheme,
+  useMantineTheme
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
