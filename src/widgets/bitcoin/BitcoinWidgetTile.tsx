@@ -1,13 +1,4 @@
-import {
-  Badge,
-  Blockquote,
-  Card,
-  Center,
-  Flex,
-  Image,
-  Text,
-} from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
+import { Badge, Center, Flex, Image, Text } from '@mantine/core';
 import { IconCurrencyBitcoin } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import { api } from '~/utils/api';
@@ -22,7 +13,7 @@ const definition = defineWidget({
   options: {},
   gridstack: {
     minWidth: 2,
-    minHeight: 2,
+    minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
   },
@@ -43,14 +34,12 @@ const eurFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'EUR',
 });
+
 function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
-  const {
-    data: bitcoin,
-    isLoading,
-    isError,
-  } = api.bitcoin.getBTCPrice.useQuery(undefined, { refetchInterval: 1000 * 60 * 30 });
+
+  const { data: initialData, isLoading, isError } = api.bitcoin.getInitialData.useQuery(undefined);
   const { t } = useTranslation('modules/bitcoin');
-  const { ref } = useElementSize();
+
 
   if (isLoading) {
     return <WidgetLoading />;
@@ -64,25 +53,33 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
   }
   /* return JSX */
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section>
+    <>
+      <Flex justify="space-between">
         <Image
-          src="https://static.vecteezy.com/system/resources/previews/000/205/146/original/vector-bitcoin-symbol-on-orange-background.jpg"
-          height={160}
-          alt="Norway"
+          width={25}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
         />
-      </Card.Section>
-
-      <Flex justify="flex-end" mt="xs">
-        <Badge color="pink">{new Date().toLocaleDateString()}</Badge>
+        <Badge color="orange">{new Date().toLocaleDateString()}</Badge>
       </Flex>
-      <Flex justify="center">
-        <Blockquote icon={null} cite="– Mempool">
-          <Text>{usDollarFormatter.format(bitcoin.USD)}</Text>
-          <Text>{eurFormatter.format(bitcoin.EUR)}</Text>
-        </Blockquote>
+      <Flex mt="md" direction="row" justify="space-between">
+        <Flex  direction="column" justify="flex-start">
+          <Text size="xs"  fw={700}>
+            {t('titles.recommended-fees')}
+          </Text>
+          <Text size="xs">{t('texts.fees.fastest')} {initialData.recommendedFees.fastestFee} {t('texts.fees.sats-vb')}</Text>
+          <Text size="xs">{t('texts.fees.half-hour')} {initialData.recommendedFees.halfHourFee} {t('texts.fees.sats-vb')}</Text>
+          <Text size="xs">{t('texts.fees.hour')} {initialData.recommendedFees.hourFee} {t('texts.fees.sats-vb')}</Text>
+          <Text size="xs">{t('texts.fees.minimum')} {initialData.recommendedFees.minimumFee} {t('texts.fees.sats-vb')}</Text>
+        </Flex>
+        <Flex direction="column" justify="flex-start">
+          <Text size="xs" fw={700}>
+          {t('titles.bitcoin-price')}
+          </Text>
+          <Text size="xs">{usDollarFormatter.format(initialData.price.USD)}</Text>
+          <Text size="xs">{eurFormatter.format(initialData.price.EUR)}</Text>
+        </Flex>
       </Flex>
-    </Card>
+    </>
   );
 }
 

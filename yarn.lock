@@ -1259,6 +1259,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mempool/mempool.js@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@mempool/mempool.js@npm:2.3.0"
+  dependencies:
+    axios: 0.24.0
+    ws: 8.3.0
+  checksum: 9fe21caad136497746b0d697a96c7e831454ed9c5a08cff957401931a562368c762f1e28cd45326c57a39a3957f968383bb8528dc1f3d6ee9dbc2d4af9a47be8
+  languageName: node
+  linkType: hard
+
 "@next/bundle-analyzer@npm:^13.0.0":
   version: 13.5.6
   resolution: "@next/bundle-analyzer@npm:13.5.6"
@@ -4351,6 +4361,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+  languageName: node
+  linkType: hard
+
 "axios@npm:^1.0.0":
   version: 1.6.2
   resolution: "axios@npm:1.6.2"
@@ -6737,6 +6756,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: a62c378dfc8c00f60b9c80cab158ba54e99ba0239a5dd7c81245e5a5b39d10f0c35e249c3379eae719ff0285fff88c365dd446fab19dee771f1d76252df1bbf5
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.15.0":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
@@ -7399,6 +7428,7 @@ __metadata:
     "@mantine/notifications": ^6.0.0
     "@mantine/prism": ^6.0.19
     "@mantine/tiptap": ^6.0.17
+    "@mempool/mempool.js": ^2.3.0
     "@next/bundle-analyzer": ^13.0.0
     "@next/eslint-plugin-next": ^13.4.5
     "@nivo/core": ^0.83.0
@@ -13066,6 +13096,21 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
+  languageName: node
+  linkType: hard
+
+"ws@npm:8.3.0":
+  version: 8.3.0
+  resolution: "ws@npm:8.3.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 71f6919e3cb2c60ae53e00b13d7782bb77005750641855153a1716c23b7011259fe3a29a432522a3044dc7c579a7e2f5a495bb79ba9f823ce6c2e763300ef99b
   languageName: node
   linkType: hard
 

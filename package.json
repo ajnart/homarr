@@ -43,6 +43,7 @@
     "@mantine/notifications": "^6.0.0",
     "@mantine/prism": "^6.0.19",
     "@mantine/tiptap": "^6.0.17",
+    "@mempool/mempool.js": "^2.3.0",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@t3-oss/env-nextjs": "^0.7.1",
