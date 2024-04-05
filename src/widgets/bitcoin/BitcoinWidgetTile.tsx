@@ -36,10 +36,8 @@ const eurFormatter = new Intl.NumberFormat('en-US', {
 });
 
 function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
-
   const { data: initialData, isLoading, isError } = api.bitcoin.getInitialData.useQuery(undefined);
   const { t } = useTranslation('modules/bitcoin');
-
 
   if (isLoading) {
     return <WidgetLoading />;
@@ -62,18 +60,29 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
         <Badge color="orange">{new Date().toLocaleDateString()}</Badge>
       </Flex>
       <Flex mt="md" direction="row" justify="space-between">
-        <Flex  direction="column" justify="flex-start">
-          <Text size="xs"  fw={700}>
+        <Flex direction="column" justify="flex-start">
+          <Text size="xs" fw={700}>
             {t('titles.recommended-fees')}
           </Text>
-          <Text size="xs">{t('texts.fees.fastest')} {initialData.recommendedFees.fastestFee} {t('texts.fees.sats-vb')}</Text>
-          <Text size="xs">{t('texts.fees.half-hour')} {initialData.recommendedFees.halfHourFee} {t('texts.fees.sats-vb')}</Text>
-          <Text size="xs">{t('texts.fees.hour')} {initialData.recommendedFees.hourFee} {t('texts.fees.sats-vb')}</Text>
-          <Text size="xs">{t('texts.fees.minimum')} {initialData.recommendedFees.minimumFee} {t('texts.fees.sats-vb')}</Text>
+          <Text size="xs">
+            {t('texts.fees.fastest')} {initialData.recommendedFees.fastestFee}{' '}
+            {t('texts.fees.sats-vb')}
+          </Text>
+          <Text size="xs">
+            {t('texts.fees.half-hour')} {initialData.recommendedFees.halfHourFee}{' '}
+            {t('texts.fees.sats-vb')}
+          </Text>
+          <Text size="xs">
+            {t('texts.fees.hour')} {initialData.recommendedFees.hourFee} {t('texts.fees.sats-vb')}
+          </Text>
+          <Text size="xs">
+            {t('texts.fees.minimum')} {initialData.recommendedFees.minimumFee}{' '}
+            {t('texts.fees.sats-vb')}
+          </Text>
         </Flex>
         <Flex direction="column" justify="flex-start">
           <Text size="xs" fw={700}>
-          {t('titles.bitcoin-price')}
+            {t('titles.bitcoin-price')}
           </Text>
           <Text size="xs">{usDollarFormatter.format(initialData.price.USD)}</Text>
           <Text size="xs">{eurFormatter.format(initialData.price.EUR)}</Text>
