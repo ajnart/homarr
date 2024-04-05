@@ -44,7 +44,7 @@ export const MainHeader = ({
     : headerBaseHeight;
 
   return (
-    <Header height={headerHeight} pb="sm" pt={0}>
+    <Header height={headerHeight} pb="sm" pt={0} style={{ zIndex: 200 }}>
       <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
         <Group noWrap style={{ flex: 1 }}>
           {leftIcon}
