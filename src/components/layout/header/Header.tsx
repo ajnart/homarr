@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Box,
   Center,
   Flex,
@@ -8,11 +7,11 @@ import {
   Text,
   Title,
   UnstyledButton,
-  useMantineTheme,
+  useMantineTheme
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 import { Logo } from '../Common/Logo';
 import { AvatarMenu } from './AvatarMenu';
@@ -44,7 +43,7 @@ export const MainHeader = ({
     : headerBaseHeight;
 
   return (
-    <Header height={headerHeight} pb="sm" pt={0}>
+    <Header height={headerHeight} pb="sm" pt={0} style={{ zIndex: 200 }}>
       <Group spacing="xl" mt="xs" px="md" position="apart" noWrap>
         <Group noWrap style={{ flex: 1 }}>
           {leftIcon}
