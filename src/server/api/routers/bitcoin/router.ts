@@ -1,9 +1,7 @@
-import mempoolJS from '@mempool/mempool.js';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '../../trpc';
 
-const apiHostname = 'mempool.space';
 const btcPriceSchema = z.object({
   time: z.number(),
   USD: z.number(),
@@ -39,14 +37,13 @@ export type BtcPrice = z.infer<typeof btcPriceSchema>;
 export type RecommendedFees = z.infer<typeof recommendedFeesSchema>;
 
 export const getRecommendedFees = async () => {
-  const {
-    bitcoin: { fees },
-  } = mempoolJS({
-    hostname: apiHostname,
-  });
-  return recommendedFeesSchema.parse(await fees.getFeesRecommended());
+  const res = await fetch(`https://mempool.space/api/v1//fees/recommended`);
+  return recommendedFeesSchema.parse(await res.json());
 };
-
+export const fetchHistoricalPrice = async (currency:string, timestamp: number) => {
+  const res = await fetch(`https://mempool.space/api/v1/historical-price?currency=${currency}&timestamp=${timestamp}`);
+  return btcPriceSchema.parse(await res.json());
+};
 export const fetchPrice = async () => {
   const res = await fetch(`https://mempool.space/api/v1/prices`);
   return btcPriceSchema.parse(await res.json());
