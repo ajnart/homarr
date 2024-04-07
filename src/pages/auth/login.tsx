@@ -70,7 +70,15 @@ export default function LoginPage({
   };
 
   useEffect(() => {
-    if (oidcAutoLogin) signIn('oidc');
+    if (oidcAutoLogin && !isError)
+      signIn('oidc', {
+        redirect: false,
+        callbackUrl: '/',
+      }).then((response) => {
+        if (!response?.ok) {
+          setIsError(true);
+        }
+      });
   }, [oidcAutoLogin]);
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
@@ -116,9 +124,19 @@ export default function LoginPage({
                 {t('title')}
               </Title>
 
-              <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
-                {t('text')}
-              </Text>
+              {(providers.length < 1 && (
+                <Alert
+                  icon={<IconAlertTriangle size="1rem" />}
+                  title={t('form.providersEmpty.title')}
+                  mt={5}
+                >
+                  {t('form.providersEmpty.message')}
+                </Alert>
+              )) || (
+                <Text color="dimmed" size="sm" align="center" mt={5} mb="md">
+                  {t('text')}
+                </Text>
+              )}
 
               {isError && (
                 <Alert icon={<IconAlertTriangle size="1rem" />} color="red">
@@ -186,7 +204,17 @@ export default function LoginPage({
                 <Divider label="OIDC" labelPosition="center" mt="xl" mb="md" />
               )}
               {providers.includes('oidc') && (
-                <Button mt="xs" variant="light" fullWidth onClick={() => signIn('oidc')}>
+                <Button
+                  mt="xs"
+                  variant="light"
+                  fullWidth
+                  onClick={() =>
+                    signIn('oidc', {
+                      redirect: false,
+                      callbackUrl: '/',
+                    })
+                  }
+                >
                   {t('form.buttons.submit')} - {oidcProviderName}
                 </Button>
               )}

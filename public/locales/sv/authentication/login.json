@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Logga in"
     },
-    "afterLoginRedirection": "Efter inloggningen kommer du att omdirigeras till {{url}}"
+    "afterLoginRedirection": "Efter inloggningen kommer du att omdirigeras till {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Dina autentiseringsuppgifter är felaktiga eller så finns inte det här kontot. Vänligen försök igen."
 }

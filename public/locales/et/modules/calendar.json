@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "radarrReleaseType": {
+        "label": "",
+        "data": {
+          "inCinemas": "",
+          "physicalRelease": "",
+          "digitalRelease": ""
+        }
+      },
+      "hideWeekDays": {
+        "label": ""
+      },
+      "showUnmonitored": {
+        "label": ""
+      },
+      "fontSize": {
+        "label": "",
+        "data": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+    "descriptor": {
+        "name": "Sistem Sağlığı İzleme",
+        "description": "NAS'ınız hakkında bilgi",
+        "settings": {
+            "title": "Sistem Sağlığı İzleme",
+            "fahrenheit": {
+                "label": "Fahrenayt"
+            }
+        }
+    },
+    "cpu": {
+        "label": "CPU",
+        "load": "Yük Ortalaması",
+        "minute": "{{minute}} dakika",
+        "minutes": "{{minutes}} dakika"
+    },
+    "memory": {
+        "label": "Bellek",
+        "totalMem": "Toplam bellek: {{total}}GB",
+        "available": "Mevcut: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "Dosya Sistemi",
+        "available": "Mevcut: {{available}} - {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Çalışma süresi",
+        "updates": "Güncellemeler",
+        "reboot": "Yeniden başlat"
+    },
+    "errors": {
+        "general": {
+            "title": "NAS'ınız bulunamıyor",
+            "text": "NAS'ınıza bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
+        }
+    }
+}

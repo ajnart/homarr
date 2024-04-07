@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Visualizza nome città"
       },
+      "displayWeekly": {
+        "label": "Visualizza Previsioni Settimanali"
+      },
+      "forecastDays": {
+        "label": "Giorni Da Mostrare"
+      },
       "location": {
         "label": "Località meteo"
       }

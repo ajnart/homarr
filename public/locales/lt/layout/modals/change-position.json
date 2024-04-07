@@ -1,0 +1,8 @@
+{
+	"xPosition": "X ašies padėtis",
+	"width": "Plotis",
+	"height": "Aukštis",
+	"yPosition": "Y ašies padėtis",
+	"zeroOrHigher": "0 arba daugiau",
+	"betweenXandY": "Tarp {{min}} ir {{max}}"
+}

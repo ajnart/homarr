@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Se connecter"
     },
-    "afterLoginRedirection": "Après la connexion, vous serez redirigé vers {{url}}"
+    "afterLoginRedirection": "Après la connexion, vous serez redirigé vers {{url}}",
+    "providersEmpty": {
+      "title": "Erreur de fournisseur d'authentification",
+      "message": "Le(s) fournisseur(s) n'est (ne sont) pas défini(s), veuillez vérifier les journaux pour plus d'informations."
+    }
   },
   "alert": "Vos identifiants sont incorrects ou ce compte n'existe pas. Veuillez réessayer."
 }

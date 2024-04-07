@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "DNS hole valdymas",
+    "description": "Valdykite PiHole arba AdGuard iš savo prietaisų skydelio",
+    "settings": {
+      "title": "DNS hole valdymo nustatymai",
+      "showToggleAllButtons": {
+        "label": "Rodyti mygtukus „Įjungti / išjungti “"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nepavyko rasti DNS hole",
+        "text": "Kilo problema jungiantis prie jūsų DNS hole. Patikrinkite savo konfigūraciją / integraciją (-as)."
+      }
+    }
+  }
+}

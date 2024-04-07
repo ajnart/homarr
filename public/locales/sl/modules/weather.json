@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Prikaži ime mesta"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Lokacija vremena"
       }

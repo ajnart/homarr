@@ -1,0 +1,38 @@
+{
+    "descriptor": {
+        "name": "Monitoraggio dello stato del sistema",
+        "description": "Informazioni sul tuo NAS",
+        "settings": {
+            "title": "Monitoraggio dello stato del sistema",
+            "fahrenheit": {
+                "label": "Fahrenheit"
+            }
+        }
+    },
+    "cpu": {
+        "label": "CPU",
+        "load": "Utilizzo medio",
+        "minute": "{{minute}} minuto",
+        "minutes": "{{minutes}} minuti"
+    },
+    "memory": {
+        "label": "Memoria",
+        "totalMem": "Memoria totale: {{total}}GB",
+        "available": "Disponibile: {{available}}GB - {{percentage}}%"
+    },
+    "fileSystem": {
+        "label": "File System",
+        "available": "Disponibile: {{available}}- {{percentage}}%"
+    },
+    "info": {
+        "uptime": "Uptime",
+        "updates": "Aggiornamenti",
+        "reboot": "Riavvio"
+    },
+    "errors": {
+        "general": {
+            "title": "Impossibile trovare il tuo NAS",
+            "text": "Si è verificato un problema di connessione al tuo NAS. Verifica la configurazione/integrazione."
+        }
+    }
+}

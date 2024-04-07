@@ -171,6 +171,15 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'multi-select':
+      const multiSelectItems = typeof option.data === 'function' ? option.data() : option.data;
+      const multiSelectData = multiSelectItems.map((dataType) => {
+        return !dataType.label
+          ? {
+              value: dataType.value,
+              label: t(`descriptor.settings.${key}.data.${dataType.value}`),
+            }
+          : dataType;
+      });
       return (
         <Stack spacing={0}>
           <Group align="center" spacing="sm">
@@ -180,9 +189,10 @@ const WidgetOptionTypeSwitch: FC<{
             {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
           </Group>
           <MultiSelect
-            data={option.data}
-            value={value as string[]}
+            searchable
             defaultValue={option.defaultValue}
+            data={multiSelectData}
+            value={value as string[]}
             onChange={(v) => handleChange(key, v)}
             withinPortal
             {...option.inputProps}
@@ -190,8 +200,8 @@ const WidgetOptionTypeSwitch: FC<{
         </Stack>
       );
     case 'select':
-      const items = typeof option.data === 'function' ? option.data() : option.data;
-      const data = items.map((dataType) => {
+      const selectItems = typeof option.data === 'function' ? option.data() : option.data;
+      const selectData = selectItems.map((dataType) => {
         return !dataType.label
           ? {
               value: dataType.value,
@@ -210,7 +220,7 @@ const WidgetOptionTypeSwitch: FC<{
           <Select
             searchable
             defaultValue={option.defaultValue}
-            data={data}
+            data={selectData}
             value={value as string}
             onChange={(v) => handleChange(key, v ?? option.defaultValue)}
             withinPortal

@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Atsisiuntimo greitis",
+    "description": "Rodo palaikomų integracijų atsisiuntimo ir išsiuntimo greitį."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Pavadinimas",
+        "size": "",
+        "download": "Žemyn",
+        "upload": "Aukštyn",
+        "estimatedTimeOfArrival": "",
+        "progress": ""
+      },
+      "body": {
+        "nothingFound": "Torrentų nerasta"
+      }
+    },
+    "lineChart": {
+      "title": "Dabartinis atsisiuntimo greitis",
+      "download": "Atsiuntimas: {{download}}",
+      "upload": "Įkelimas: {{upload}}",
+      "timeSpan": "Prieš {{seconds}} sekundžių",
+      "totalDownload": "Atsiuntimas: {{download}}/s",
+      "totalUpload": "Įkelimas: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": "Pridėti atsisiuntimo paslaugą, kad galėtumėte peržiūrėti dabartinius atsisiuntimus"
+      }
+    }
+  }
+}

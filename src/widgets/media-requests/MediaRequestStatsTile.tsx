@@ -156,6 +156,7 @@ function MediaRequestStatsTile({ widget }: MediaRequestStatsWidgetProps) {
                       left={8}
                       size={15}
                       ml={-5}
+                      zIndex={1}
                       color={user.app === 'overseerr' ? '#ECB000' : '#6677CC'}
                       processing={mediaFetching || usersFetching}
                       children

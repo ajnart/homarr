@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Vartotojo kvietimai",
+    "pageTitle": "Tvarkyti naudotojų kvietimus",
+    "description": "Naudodami kvietimus galite pakviesti naudotojus į savo \"Homarr\" instanciją. Kvietimas galioja tik tam tikrą laiką ir gali būti panaudotas tik vieną kartą. Kvietimo galiojimo laikas turi būti nuo 5 minučių iki 12 mėnesių nuo jo sukūrimo.",
+    "button": {
+        "createInvite": "Sukurti kvietimą",
+        "deleteInvite": "Ištrinti kvietimą"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Kūrėjas",
+            "expires": "Baigs galioti po",
+            "action": "Veiksmai"
+        },
+        "data": {
+            "expiresAt": "pasibaigė {{at}}",
+            "expiresIn": "po {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Sukurti kvietimą",
+            "description": "Pasibaigus galiojimo laikui, kvietimas nebegalios ir kvietimo gavėjas negalės sukurti paskyros.",
+            "form": {
+                "expires": "Galiojimo pasibaigimo data",
+                "submit": "Sukurti"
+            }
+        },
+        "copy": {
+            "title": "Nukopijuoti kvietimą",
+            "description": "Jūsų kvietimas sugeneruotas. Po to, kai šis modalinis langas užsidarys, <b>nebegalėsite nukopijuoti šios nuorodos</b>. Jei nebenorite pakviesti minėto asmens, bet kada galite ištrinti šį kvietimą.",
+            "invitationLink": "Kvietimo nuoroda",
+            "details": {
+                "id": "ID",
+                "token": "Žetonas"
+            },
+            "button": {
+                "close": "Kopijuoti ir atmesti"
+            }
+        },
+        "delete": {
+            "title": "Ištrinti kvietimą",
+            "description": "Ar tikrai norite ištrinti šį kvietimą? Naudotojai, turintys šią nuorodą, nebegalės sukurti paskyros naudodamiesi šia nuoroda."
+        }
+    },
+    "noInvites": "Kvietimų dar nėra."
+}

@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "로그인"
     },
-    "afterLoginRedirection": "로그인 후 {{url}}으로 리디렉션됩니다."
+    "afterLoginRedirection": "로그인 후 {{url}}으로 리디렉션됩니다.",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "자격 증명이 잘못되었거나 이 계정이 존재하지 않습니다. 다시 시도해 주세요."
 }

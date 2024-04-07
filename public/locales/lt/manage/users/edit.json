@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Vartotojas {{username}}",
+  "back": "Grįžti į vartotojų valdymą",
+  "sections": {
+    "general": {
+      "title": "Bendras",
+      "inputs": {
+        "username": {
+          "label": ""
+        },
+        "eMail": {
+          "label": "El. paštas"
+        }
+      }
+    },
+    "security": {
+      "title": "Apsauga",
+      "inputs": {
+        "password": {
+          "label": "Naujas slaptažodis"
+        },
+        "terminateExistingSessions": {
+          "label": "Nutraukti esamas sesijas",
+          "description": "Priverčia naudotoją dar kartą prisijungti prie savo įrenginių"
+        },
+        "confirm": {
+          "label": "",
+          "description": "Slaptažodis bus atnaujintas. Veiksmų atšaukti negalima."
+        }
+      }
+    },
+    "roles": {
+      "title": "Rolės",
+      "currentRole": "Dabartinė rolė: ",
+      "badges": {
+        "owner": "Savininkas",
+        "admin": "Administratorius",
+        "normal": "Įprastas"
+      }
+    },
+    "deletion": {
+      "title": "Paskyros ištrynimas",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Patvirtinkite vartotojo vardą",
+          "description": "Įveskite vartotojo vardą, kad patvirtintumėte ištrynimą"
+        },
+        "confirm": {
+          "label": "Ištrinti visam laikui",
+          "description": "Žinau, kad šis veiksmas yra negrįžtamas ir visi paskyros duomenys bus prarasti."
+        }
+      }
+    }
+  }
+}

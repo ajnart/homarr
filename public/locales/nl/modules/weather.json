@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Plaatsnaam weergeven"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Weerslocatie"
       }

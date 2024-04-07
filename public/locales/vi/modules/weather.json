@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Hiển thị tên thành phố"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Vị trí thời tiết"
       }

@@ -1,0 +1,103 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "",
+      "lastUpdated": "",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
+    },
+    "table": {
+      "header": {
+        "isCompleted": "",
+        "name": "Pavadinimas",
+        "dateAdded": "",
+        "size": "",
+        "download": "Žemyn",
+        "upload": "Aukštyn",
+        "estimatedTimeOfArrival": "",
+        "progress": "",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "Būsena",
+        "stateMessage": ""
+      },
+      "item": {
+        "text": ""
+      },
+      "body": {
+        "nothingFound": "Torrentų nerasta",
+        "filterHidingItems": ""
+      }
+    },
+    "lineChart": {
+      "title": "Dabartinis atsisiuntimo greitis",
+      "download": "Atsiuntimas: {{download}}",
+      "upload": "Įkelimas: {{upload}}",
+      "timeSpan": "Prieš {{seconds}} sekundžių",
+      "totalDownload": "Atsiuntimas: {{download}}/s",
+      "totalUpload": "Įkelimas: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
+      }
+    },
+    "loading": {
+      "title": "",
+      "description": ""
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
+    }
+  }
+}

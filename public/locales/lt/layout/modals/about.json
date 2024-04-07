@@ -1,0 +1,30 @@
+{
+	"description": "„Homarr“ yra <strong>aptakus</strong>, <strong>šiuolaikiškas</strong> prietaisų skydelis, kuriame visos jūsų programos ir paslaugos yra po ranka. Naudodami Homarr viską galite pasiekti ir valdyti vienoje patogioje vietoje. „Homarr“ sklandžiai integruojasi su jūsų pridėtomis programėlėmis, suteikdama jums vertingos informacijos ir suteikdama visišką valdymą. Diegimas yra lengvas, o „Homarr“ palaiko daugybę diegimo metodų.",
+	"addToDashboard": "Pridėti prie panelės",
+	"tip": "Mod reiškia jūsų modifikatoriaus klavišą, tai yra Ctrl ir Command / Super / Windows klavišas",
+	"key": "Spartusis klavišas",
+	"action": "Veiksmas",
+	"keybinds": "Klavišų priskyrimas",
+	"translators": "Vertėjai ({{count}})",
+	"translatorsDescription": "Šių žmonių dėka Homarr pasiekiamas {{languages}} kalbomis! Norite padėti išversti Homarr į savo kalbą? Skaitykite, kaip tai padaryti <a>čia</a>.",
+	"contributors": "Bendradarbiautojai ({{count}})",
+	"contributorsDescription": "Šie žmonės sukūrė kodą, dėl kurio veikia \"Homarr\"! Norite padėti kurti \"Homarr\"? Skaitykite, kaip tai padaryti <a>čia</a>",
+	"actions": {
+		"toggleTheme": "Perjungti šviesų / tamsų režimą",
+		"focusSearchBar": "Sutelkite dėmesį į paieškos juostą",
+		"openDocker": "Atidaryti \"Docker\" valdiklį",
+		"toggleEdit": "Perjungti redagavimo režimą"
+	},
+	"metrics": {
+		"configurationSchemaVersion": "Konfigūracijos schemos versija",
+		"version": "",
+		"nodeEnvironment": "Node aplinka",
+		"i18n": "Įkeltos I18n vertimo vardų erdvės",
+		"locales": "Sukonfigūruotos I18n lokalės",
+		"experimental_disableEditMode": "<b>EKSPERIMENTINIS</b>: Išjungti redagavimo režimą"
+	},
+	"version": {
+		"new": "Nauja: {{newVersion}}",
+		"dropdown": "Versija {{newVersion}} yra prieinama! Dabartinė versija yra {{currentVersion}}"
+	}
+}

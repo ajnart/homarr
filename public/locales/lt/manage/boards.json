@@ -1,0 +1,57 @@
+{
+    "metaTitle": "Lentos",
+    "pageTitle": "Lentos",
+    "cards": {
+        "statistics": {
+            "apps": "Programėlės",
+            "widgets": "Valdikliai",
+            "categories": "Kategorijos"
+        },
+        "buttons": {
+            "view": "Žiūrėti lentą"
+        },
+        "menu": {
+            "setAsDefault": "Nustatyti kaip numatytąją lentą",
+            "delete": {
+                "label": "Ištrinti visam laikui",
+                "disabled": "Ištrynimas išjungtas, nes senesni \"Homarr\" komponentai neleidžia ištrinti numatytosios konfigūracijos. Ištrinti bus galima ateityje."
+            },
+            "duplicate": "Sukurti kopiją",
+            "rename": {
+                "label": "Pervadinti",
+                "modal": {
+                    "title": "Pervadinti lentą {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Naujas pavadinimas",
+                            "placeholder": "Naujas lentos pavadinimas"
+                        }
+                    }
+                }
+            }
+        },
+        "badges": {
+            "fileSystem": "Failų sistema",
+            "default": "Numatytas"
+        }
+    },
+    "buttons": {
+        "create": "Kurti naują lentą"
+    },
+    "modals": {
+        "delete": {
+            "title": "Ištrinti lentą",
+            "text": "Ar tikrai norite ištrinti šią lentą? Šio veiksmo negalima atšaukti ir jūsų duomenys bus prarasti visam laikui."
+        },
+        "create": {
+            "title": "Sukurti lentą",
+            "text": "Sukūrus lentą, pavadinimo keisti negalima.",
+            "form": {
+                "name": {
+                    "label": "Pavadinimas"
+                },
+                "submit": "Sukurti"
+            }
+        }
+    }
+}

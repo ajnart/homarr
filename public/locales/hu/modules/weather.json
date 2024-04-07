@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Városnév megjelenítése"
       },
+      "displayWeekly": {
+        "label": ""
+      },
+      "forecastDays": {
+        "label": ""
+      },
       "location": {
         "label": "Időjárás helye"
       }

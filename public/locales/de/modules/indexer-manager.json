@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "Status des Indexer-Managers",
+        "description": "Status ihrer Indexer",
+        "settings": {
+            "title": "Status des Indexer-Managers"
+        }
+    },
+    "indexersStatus": {
+        "title": "Indexer-Manager",
+        "testAllButton": "Alle testen"
+    },
+    "errors": {
+        "general": {
+            "title": "Es konnte kein Indexer-Manager gefunden werden",
+            "text": "Beim Herstellen der Verbindung zu Ihrem Indexer-Manager ist ein Problem aufgetreten. Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
+        }
+    }
+}

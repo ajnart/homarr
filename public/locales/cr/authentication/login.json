@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "crwdns1876:0crwdne1876:0"
     },
-    "afterLoginRedirection": "crwdns3347:0{{url}}crwdne3347:0"
+    "afterLoginRedirection": "crwdns3347:0{{url}}crwdne3347:0",
+    "providersEmpty": {
+      "title": "crwdns4236:0crwdne4236:0",
+      "message": "crwdns4238:0crwdne4238:0"
+    }
   },
   "alert": "crwdns3349:0crwdne3349:0"
 }

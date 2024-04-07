@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "Nustatymai"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

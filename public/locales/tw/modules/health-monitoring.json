@@ -1,0 +1,38 @@
+{
+    "descriptor": {
+        "name": "系統健康監控",
+        "description": "關於 NAS 訊息",
+        "settings": {
+            "title": "系統健康監控",
+            "fahrenheit": {
+                "label": "華氏度"
+            }
+        }
+    },
+    "cpu": {
+        "label": "處理器",
+        "load": "平均負載",
+        "minute": "{{minute}} 分鐘",
+        "minutes": "{{minutes}} 分鐘"
+    },
+    "memory": {
+        "label": "記憶體",
+        "totalMem": "總記憶體: {{total}} GB",
+        "available": "可用: {{available}} GB - {{percentage}} %"
+    },
+    "fileSystem": {
+        "label": "檔案系統",
+        "available": "可用: {{available}} - {{percentage}} %"
+    },
+    "info": {
+        "uptime": "運行時間",
+        "updates": "更新",
+        "reboot": "重新啟動"
+    },
+    "errors": {
+        "general": {
+            "title": "找不到您的 NAS",
+            "text": "連接您的NAS時出現問題，請確認配置/集成"
+        }
+    }
+}

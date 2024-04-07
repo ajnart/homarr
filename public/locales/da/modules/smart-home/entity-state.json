@@ -9,12 +9,20 @@
                 "label": "Entitet ID",
                 "info": "Unikt entitets-id i Home Assistant. Kopier ved at klikke på entitet > Klik på tandhjulsikon > Klik på kopieringsknappen ved 'Entitets-ID'. Nogle brugerdefinerede entiteter understøttes muligvis ikke."
             },
+            "appendUnit": {
+                "label": "Tilføj måleenhed",
+                "info": "Føj måleenhedsattributten til enhedstilstanden."
+            },
             "automationId": {
                 "label": "Valgfrit automatiserings ID",
                 "info": "Dit unikke automatiserings ID. Starter altid med automatisering.XXXX. Hvis den ikke er indstillet, vil widget ikke være klikbar og kun vise tilstand. Efter klik vil enhedstilstand blive opdateret."
             },
             "displayName": {
                 "label": "Visningsnavn"
+            },
+            "displayFriendlyName": {
+                "label": "Vis brugervenligt navn",
+                "info": "Vis brugervenligt navn fra Home Assistant i stedet for visningsnavn"
             }
         }
     }

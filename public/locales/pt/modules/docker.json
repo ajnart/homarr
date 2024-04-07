@@ -4,7 +4,7 @@
     "description": "Permite-lhe ver e gerir facilmente todos os seus Docker Containers."
   },
   "search": {
-    "placeholder": "Procurar por conainer ou imagem"
+    "placeholder": "Procurar por container ou imagem"
   },
   "table": {
     "header": {

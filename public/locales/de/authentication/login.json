@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Anmelden"
     },
-    "afterLoginRedirection": "Nach der Anmeldung werden Sie zu {{url}} weitergeleitet"
+    "afterLoginRedirection": "Nach der Anmeldung werden Sie zu {{url}} weitergeleitet",
+    "providersEmpty": {
+      "title": "Fehler beim Authentifizierungsanbieter",
+      "message": "Der bzw. die Anbieter sind nicht eingestellt. Weitere Informationen finden Sie in Ihren Protokollen."
+    }
   },
   "alert": "Ihre Anmeldedaten sind falsch oder dieses Konto existiert nicht. Bitte versuchen Sie es erneut."
 }

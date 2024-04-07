@@ -14,7 +14,11 @@
     "buttons": {
       "submit": "Logg inn"
     },
-    "afterLoginRedirection": "Etter pålogging blir du omdirigert til {{url}}"
+    "afterLoginRedirection": "Etter pålogging blir du omdirigert til {{url}}",
+    "providersEmpty": {
+      "title": "",
+      "message": ""
+    }
   },
   "alert": "Påloggingsinformasjonen din er feil eller denne kontoen eksisterer ikke. Vennligst prøv på nytt."
 }

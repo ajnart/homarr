@@ -1,0 +1,29 @@
+{
+    "entityNotFound": "Subjektas nerastas",
+    "descriptor": {
+        "name": "Home Assistant subjektas",
+        "description": "Dabartinė \"Home Assistant\" subjekto būsena",
+        "settings": {
+            "title": "Subjekto būsena",
+            "entityId": {
+                "label": "Subjekto ID",
+                "info": "Unikalus subjekto ID programoje \"Home Assistant\". Kopijuokite spustelėdami ant subjekto > Spustelėkite piktogramą \"cog\" > Spustelėkite mygtuką \"Kopijuoti\" ties \"Subjekto ID\". Kai kurie pasirinktiniai subjektai gali būti nepalaikomi."
+            },
+            "appendUnit": {
+                "label": "Pridėti matavimo vienetą",
+                "info": "Prie esybės būsenos pridėti matavimo vieneto atributą."
+            },
+            "automationId": {
+                "label": "Neprivalomas automatizavimo ID",
+                "info": "Jūsų unikalus automatizavimo ID. Visada prasideda automation.XXXXX. Jei nenustatytas, valdiklis nebus paspaudžiamas ir bus rodoma tik būsena. Paspaudus, bus atnaujinta esybės būsena."
+            },
+            "displayName": {
+                "label": "Rodomas vardas"
+            },
+            "displayFriendlyName": {
+                "label": "Rodyti draugišką pavadinimą",
+                "info": "Rodyti draugišką vardą iš \"Home Assistant\", o ne rodomą vardą"
+            }
+        }
+    }
+}

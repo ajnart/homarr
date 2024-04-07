@@ -1,0 +1,28 @@
+{
+  "descriptor": {
+    "name": "DNS hole santrauka",
+    "description": "Rodomi svarbūs PiHole arba AdGuard duomenis",
+    "settings": {
+      "title": "DNS hole santraukos nustatymai",
+      "usePiHoleColors": {
+        "label": "Naudokite spalvas iš PiHole"
+      },
+      "layout": {
+        "label": "",
+        "data": {
+          "grid": "2 po 2",
+          "row": "Horizontalus",
+          "column": "Vertikalus"
+        }
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "Domenai adlistų sąrašuose",
+      "queriesToday": "Užklausos šiandien",
+      "queriesBlockedTodayPercentage": "Šiandien užblokuota",
+      "queriesBlockedToday": "Šiandien užblokuota"
+    }
+  }
+}

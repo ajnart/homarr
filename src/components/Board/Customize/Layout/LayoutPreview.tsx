@@ -114,6 +114,7 @@ const PlaceholderElement = ({ height, width, showPing, index }: PlaceholderEleme
         size={5}
         offset={10}
         color={index % 4 === 0 ? 'red' : 'green'}
+        zIndex={0}
       >
         <BaseElement width={width} height={height} />
       </Indicator>

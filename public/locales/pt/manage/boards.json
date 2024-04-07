@@ -16,15 +16,15 @@
                 "label": "Excluir permanentemente",
                 "disabled": "Exclusão desativada, pois os componentes Homarr mais antigos não permitem a exclusão da configuração padrão. A exclusão será possível no futuro."
             },
-            "duplicate": "",
+            "duplicate": "Duplicar",
             "rename": {
-                "label": "",
+                "label": "Renomear",
                 "modal": {
-                    "title": "",
+                    "title": "Renomear quadro {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Novo nome",
+                            "placeholder": "Nome do novo quadro"
                         }
                     }
                 }

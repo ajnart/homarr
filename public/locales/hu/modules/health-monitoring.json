@@ -1,0 +1,38 @@
+{
+    "descriptor": {
+        "name": "",
+        "description": "",
+        "settings": {
+            "title": "",
+            "fahrenheit": {
+                "label": ""
+            }
+        }
+    },
+    "cpu": {
+        "label": "Processzor",
+        "load": "",
+        "minute": "",
+        "minutes": ""
+    },
+    "memory": {
+        "label": "",
+        "totalMem": "",
+        "available": ""
+    },
+    "fileSystem": {
+        "label": "",
+        "available": ""
+    },
+    "info": {
+        "uptime": "",
+        "updates": "",
+        "reboot": ""
+    },
+    "errors": {
+        "general": {
+            "title": "",
+            "text": ""
+        }
+    }
+}

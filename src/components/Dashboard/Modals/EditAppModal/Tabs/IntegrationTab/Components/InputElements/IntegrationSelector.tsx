@@ -171,7 +171,7 @@ export const availableIntegrations = [
   {
     value: 'jellyfin',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/jellyfin.png',
-    label: 'Jellyfin',
+    label: 'Jellyfin (and Emby)',
   },
   {
     value: 'plex',
@@ -194,8 +194,18 @@ export const availableIntegrations = [
     label: 'Home Assistant',
   },
   {
+    value: 'openmediavault',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/openmediavault.png',
+    label: 'OpenMediaVault',
+  },
+  {
+    value: 'proxmox',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/proxmox.png',
+    label: 'Proxmox',
+  },
+  {
     value: 'tdarr',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png',
     label: 'Tdarr',
-  },
+  }
 ] as const satisfies Readonly<SelectItem[]>;

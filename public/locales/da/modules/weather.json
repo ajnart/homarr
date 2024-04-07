@@ -10,6 +10,12 @@
       "displayCityName": {
         "label": "Vis bynavn"
       },
+      "displayWeekly": {
+        "label": "Vis ugentlig vejrudsigt"
+      },
+      "forecastDays": {
+        "label": "Dage at vise"
+      },
       "location": {
         "label": "Vejr lokation"
       }

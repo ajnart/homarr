@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Koreguokite {{name}} Lentą",
+    "pageTitle": "{{name}} Lentos koregacija",
+    "backToBoard": "Atgal į lentą",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Pagrindinė spalva",
+            "secondaryColor": "Antrinė spalva"
+        }
+    },
+    "save": {
+        "button": "Išsaugoti pakeitimus",
+        "note": "Atsargiai, turite neišsaugotų pakeitimų!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Išsaugomi pakeitimai",
+            "message": "Palaukite, kol išsaugosime jūsų pakeitimus"
+        },
+        "success": {
+            "title": "Pakeitimai išsaugoti",
+            "message": "Jūsų pakeitimai sėkmingai išsaugotas"
+        },
+        "error": {
+            "title": "",
+            "message": "Nepavyko išsaugoti pakeitimų"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Rodo būsenos indikatorių, priklausomai nuo konkretaus URL adreso HTTP atsakymo kodo."
+  },
+  "states": {
+    "online": "Įjungtas {{response}}",
+    "offline": "Išjungtas {{response}}",
+    "loading": "Kraunama..."
+  }
+}
