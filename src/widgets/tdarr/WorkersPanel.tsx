@@ -11,7 +11,6 @@ import {
 import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { WidgetLoading } from '~/widgets/loading';
-import { Filename } from '~/widgets/tdarr/Filename';
 import { TdarrWorker } from '~/types/api/tdarr';
 
 interface WorkersPanelProps {
@@ -64,7 +63,7 @@ export function WorkersPanel(props: WorkersPanelProps) {
                       </Tooltip>
                     )}
                   </div>
-                  <Filename filePath={worker.filePath} />
+                  <Text lineClamp={1} size="xs">{worker.filePath.split('\\').pop()?.split('/').pop() ?? worker.filePath}</Text>
                 </Group>
               </td>
               <td>

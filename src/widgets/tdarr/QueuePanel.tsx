@@ -3,7 +3,6 @@ import { IconHeartbeat, IconTransform } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { humanFileSize } from '~/tools/humanFileSize';
 import { WidgetLoading } from '~/widgets/loading';
-import { Filename } from '~/widgets/tdarr/Filename';
 import { TdarrQueue } from '~/types/api/tdarr';
 
 interface QueuePanelProps {
@@ -55,7 +54,7 @@ export function QueuePanel(props: QueuePanelProps) {
                       </Tooltip>
                     )}
                   </div>
-                  <Filename filePath={item.filePath} />
+                  <Text lineClamp={1} size="xs">{item.filePath.split('\\').pop()?.split('/').pop() ?? item.filePath}</Text>
                 </Group>
               </td>
               <td>

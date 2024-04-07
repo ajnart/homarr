@@ -408,7 +408,7 @@ const WidgetOptionTypeSwitch: FC<{
           </Group>
           <AppSelector
             value={value}
-            onChange={(v) => handleChange(key, v ?? option.defaultValue)}
+            onChange={(value) => handleChange(key, value ?? option.defaultValue)}
             integrations={option.integrations}
             selectProps={{
               withinPortal: true,
