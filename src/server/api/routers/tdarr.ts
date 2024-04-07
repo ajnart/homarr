@@ -97,12 +97,13 @@ const getNodesResponseSchema = z.record(
         status: z.string(),
         lastPluginDetails: z
           .object({
-            number: z.string(),
+            number: z.string().optional(),
           })
           .optional(),
         originalfileSizeInGbytes: z.number(),
         estSize: z.number().optional(),
         outputFileSizeInGbytes: z.number().optional(),
+        workerType: z.string(),
       })
     ),
   })
@@ -143,7 +144,16 @@ export const tdarrRouter = createTRPCRouter({
       };
 
       const res = await axios.post(appUrl.toString(), body);
-      const data = getStatisticsSchema.parse(res.data);
+      const data: z.infer<typeof getStatisticsSchema> = res.data;
+
+      const zodRes = getStatisticsSchema.safeParse(data);
+      if (!zodRes.success) {
+        /*
+         * Tdarr's API is not documented and had to be reverse engineered. To account for mistakes in the type
+         * definitions, we assume the best case scenario and log any parsing errors to aid in fixing the types.
+         */
+        console.error(zodRes.error);
+      }
 
       return {
         totalFileCount: data.totalFileCount,
@@ -180,7 +190,16 @@ export const tdarrRouter = createTRPCRouter({
       const appUrl = new URL('api/v2/get-nodes', app.url);
 
       const res = await axios.get(appUrl.toString());
-      const data = getNodesResponseSchema.parse(res.data);
+      const data: z.infer<typeof getNodesResponseSchema> = res.data;
+
+      const zodRes = getNodesResponseSchema.safeParse(data);
+      if (!zodRes.success) {
+        /*
+         * Tdarr's API is not documented and had to be reverse engineered. To account for mistakes in the type
+         * definitions, we assume the best case scenario and log any parsing errors to aid in fixing the types.
+         */
+        console.error(zodRes.error);
+      }
 
       const nodes = Object.values(data);
       const workers = nodes.flatMap((node) => {
@@ -232,7 +251,16 @@ export const tdarrRouter = createTRPCRouter({
       };
 
       const transcodeQueueRes = await axios.post(appUrl.toString(), transcodeQueueBody);
-      const transcodeQueueData = getStatusTableSchema.parse(transcodeQueueRes.data);
+      const transcodeQueueData: z.infer<typeof getStatusTableSchema> = transcodeQueueRes.data;
+
+      const transcodeQueueZodRes = getStatusTableSchema.safeParse(transcodeQueueData);
+      if (!transcodeQueueZodRes.success) {
+        /*
+         * Tdarr's API is not documented and had to be reverse engineered. To account for mistakes in the type
+         * definitions, we assume the best case scenario and log any parsing errors to aid in fixing the types.
+         */
+        console.error(transcodeQueueZodRes.error);
+      }
 
       const transcodeQueueResult = {
         array: transcodeQueueData.array.map((item) => ({
@@ -268,7 +296,16 @@ export const tdarrRouter = createTRPCRouter({
       };
 
       const healthCheckQueueRes = await axios.post(appUrl.toString(), healthCheckQueueBody);
-      const healthCheckQueueData = getStatusTableSchema.parse(healthCheckQueueRes.data);
+      const healthCheckQueueData: z.infer<typeof getStatusTableSchema> = healthCheckQueueRes.data;
+
+      const healthCheckQueueZodRes = getStatusTableSchema.safeParse(healthCheckQueueData);
+      if (!healthCheckQueueZodRes.success) {
+        /*
+         * Tdarr's API is not documented and had to be reverse engineered. To account for mistakes in the type
+         * definitions, we assume the best case scenario and log any parsing errors to aid in fixing the types.
+         */
+        console.error(healthCheckQueueZodRes.error);
+      }
 
       const healthCheckResultArray = healthCheckQueueData.array.map((item) => ({
         id: item._id,
