@@ -1,4 +1,4 @@
-import bitcoin from './bitcoin/BitcoinWidgetTile';
+import bitcoin from './crypto-currencies/CryptoCurrenciesWidgetTile';
 import bookmark from './bookmark/BookmarkWidgetTile';
 import calendar from './calendar/CalendarTile';
 import dashdot from './dashDot/DashDotTile';

@@ -17,13 +17,13 @@ const definition = defineWidget({
     maxWidth: 12,
     maxHeight: 12,
   },
-  component: BitcoinWidgetTile,
+  component: CryptoCurrenciesWidgetTile,
 });
 
-export type IBitcoinWidget = IWidget<(typeof definition)['id'], typeof definition>;
+export type ICryptoCurrenciesWidget = IWidget<(typeof definition)['id'], typeof definition>;
 
-interface BitcoinWidgetTileProps {
-  widget: IBitcoinWidget;
+interface CryptoCurrenciesWidgetTileProps {
+  widget: ICryptoCurrenciesWidget;
 }
 
 const usDollarFormatter = new Intl.NumberFormat('en-US', {
@@ -35,9 +35,9 @@ const eurFormatter = new Intl.NumberFormat('en-US', {
   currency: 'EUR',
 });
 
-function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
-  const { data: initialData, isLoading, isError } = api.bitcoin.getInitialData.useQuery(undefined);
-  const { t } = useTranslation('modules/bitcoin');
+function CryptoCurrenciesWidgetTile({ widget }: CryptoCurrenciesWidgetTileProps) {
+  const { data: initialData, isLoading, isError } = api.cryptoCurrencies.getInitialData.useQuery(undefined, undefined);
+  const { t } = useTranslation('modules/crypto-currencies');
 
   if (isLoading) {
     return <WidgetLoading />;
@@ -55,7 +55,7 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
       <Flex justify="space-between">
         <Image
           width={25}
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
+          src={initialData.cryptoData.cryptoPrice.image.small}
         />
         <Badge color="orange">{new Date().toLocaleDateString()}</Badge>
       </Flex>
@@ -65,18 +65,18 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
             {t('titles.recommended-fees')}
           </Text>
           <Text size="xs">
-            {t('texts.fees.fastest')} {initialData.recommendedFees.fastestFee}{' '}
+            {t('texts.fees.fastest')} 1 {' '}
             {t('texts.fees.sats-vb')}
           </Text>
           <Text size="xs">
-            {t('texts.fees.half-hour')} {initialData.recommendedFees.halfHourFee}{' '}
+            {t('texts.fees.half-hour')} 1 {' '}
             {t('texts.fees.sats-vb')}
           </Text>
           <Text size="xs">
-            {t('texts.fees.hour')} {initialData.recommendedFees.hourFee} {t('texts.fees.sats-vb')}
+            {t('texts.fees.hour')} 1 {t('texts.fees.sats-vb')}
           </Text>
           <Text size="xs">
-            {t('texts.fees.minimum')} {initialData.recommendedFees.minimumFee}{' '}
+            {t('texts.fees.minimum')} 1 {' '}
             {t('texts.fees.sats-vb')}
           </Text>
         </Flex>
@@ -84,8 +84,8 @@ function BitcoinWidgetTile({ widget }: BitcoinWidgetTileProps) {
           <Text size="xs" fw={700}>
             {t('titles.bitcoin-price')}
           </Text>
-          <Text size="xs">{usDollarFormatter.format(initialData.price.USD)}</Text>
-          <Text size="xs">{eurFormatter.format(initialData.price.EUR)}</Text>
+          <Text size="xs">{usDollarFormatter.format(initialData.cryptoData.cryptoPrice.market_data.current_price.usd)}</Text>
+          <Text size="xs">{eurFormatter.format(initialData.cryptoData.cryptoPrice.market_data.current_price.eur)}</Text>
         </Flex>
       </Flex>
     </>
