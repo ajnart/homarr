@@ -1,0 +1,20 @@
+{
+    "descriptor": {
+      "name": "Bitcoin",
+      "description": "Displays the current bitcoin information."
+    },
+    "titles":{
+      "recommended-fees":"Recommended Fees",
+      "bitcoin-price":"Bitcoin Price"
+    },
+    "texts":{
+      "fees":{
+        "fastest": "Fastest:",
+        "hour": "Hour:",
+        "half-hour": "Half hour:",
+        "minimum": "Minimum:",
+        "sats-vb":"sats/vB"
+      }
+    },
+    "error": "An error occurred"
+  }
