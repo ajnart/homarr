@@ -36,11 +36,6 @@ const definition = defineWidget({
   id: 'media-transcoding',
   icon: IconTransform,
   options: {
-    appId: {
-      type: 'app-select',
-      defaultValue: '',
-      integrations: ['tdarr'],
-    },
     defaultView: {
       type: 'select',
       data: [
@@ -92,10 +87,10 @@ function MediaTranscodingTile({ widget }: TdarrQueueTileProps) {
   const { t } = useTranslation('modules/media-transcoding');
   const { config, name: configName } = useConfigContext();
 
-  const fallbackAppId = config?.apps.find(
+  const appId = config?.apps.find(
     (app) => app.integration.type === 'tdarr',
   )?.id;
-  const app = config?.apps.find((app) => app.id === widget.properties.appId || fallbackAppId);
+  const app = config?.apps.find((app) => app.id === appId);
   const { defaultView, showHealthCheck, showHealthChecksInQueue, queuePageSize, showAppIcon } =
     widget.properties;
 

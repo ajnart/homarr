@@ -42,7 +42,6 @@ export type IWidgetOptionValue = (
   | IDraggableEditableListInputValue<any>
   | IMultipleTextInputOptionValue
   | ILocationOptionValue
-  | IAppSelect
 ) &
   ICommonWidgetOptions;
 
@@ -141,14 +140,6 @@ export type IMultipleTextInputOptionValue = {
   type: 'multiple-text';
   defaultValue: string[];
   inputProps?: Partial<TextInputProps>;
-};
-
-// will show a combobox to select an app that has one of the given integrations
-export type IAppSelect = {
-  type: 'app-select';
-  defaultValue: string;
-  integrations: IntegrationType[];
-  inputProps?: Partial<SelectProps>;
 };
 
 // is used to type the widget definitions which will be used to display all widgets

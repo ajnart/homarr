@@ -18,7 +18,6 @@ import { ContextModalProps } from '@mantine/modals';
 import { IconAlertTriangle, IconPlaylistX, IconPlus } from '@tabler/icons-react';
 import { Trans, useTranslation } from 'next-i18next';
 import { FC, useState } from 'react';
-import { AppSelector } from '~/components/Dashboard/Tiles/Widgets/Inputs/AppSelector';
 import { useConfigContext } from '~/config/provider';
 import { useConfigStore } from '~/config/store';
 import { mapObject } from '~/tools/client/objects';
@@ -394,27 +393,6 @@ const WidgetOptionTypeSwitch: FC<{
               {translateDraggableList('buttonAdd')}
             </Button>
           </Flex>
-        </Stack>
-      );
-
-    case 'app-select':
-      return (
-        <Stack spacing={0}>
-          <Group align="center" spacing="sm">
-            <Text size="0.875rem" weight="500">
-              {t(`descriptor.settings.${key}.label`)}
-            </Text>
-            {info && <InfoCard message={t(`descriptor.settings.${key}.info`)} link={link} />}
-          </Group>
-          <AppSelector
-            value={value}
-            onChange={(value) => handleChange(key, value ?? option.defaultValue)}
-            integrations={option.integrations}
-            selectProps={{
-              withinPortal: true,
-              ...option.inputProps,
-            }}
-          />
         </Stack>
       );
 
