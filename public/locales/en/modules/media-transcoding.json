@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Tdarr Queue",
-    "description": "Displays the queue of an external Tdarr instance.",
+    "name": "Media Transcoding",
+    "description": "Displays information about media transcoding",
     "settings": {
-      "title": "Tdarr Queue Settings",
+      "title": "Media Transcoding Settings",
       "appId": {
         "label": "Select an app"
       },

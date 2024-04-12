@@ -15,7 +15,7 @@ import notebook from './notebook/NotebookWidgetTile';
 import rss from './rss/RssWidgetTile';
 import smartHomeEntityState from './smart-home/entity-state/entity-state.widget';
 import smartHomeTriggerAutomation from './smart-home/trigger-automation/trigger-automation.widget';
-import tdarrQueue from './tdarr/TdarrQueueTile';
+import mediaTranscoding from '~/widgets/media-transcoding/MediaTranscodingTile';
 import torrent from './torrent/TorrentTile';
 import usenet from './useNet/UseNetTile';
 import videoStream from './video/VideoStreamTile';
@@ -43,5 +43,5 @@ export default {
   'smart-home/entity-state': smartHomeEntityState,
   'smart-home/trigger-automation': smartHomeTriggerAutomation,
   'health-monitoring': healthMonitoring,
-  'tdarr-queue': tdarrQueue,
+  'media-transcoding': mediaTranscoding,
 };

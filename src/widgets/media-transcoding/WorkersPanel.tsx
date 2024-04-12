@@ -21,7 +21,7 @@ interface WorkersPanelProps {
 export function WorkersPanel(props: WorkersPanelProps) {
   const { workers, isLoading } = props;
 
-  const { t } = useTranslation('modules/tdarr-queue');
+  const { t } = useTranslation('modules/media-transcoding');
 
   if (isLoading) {
     return <WidgetLoading />;

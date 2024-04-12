@@ -32,7 +32,7 @@ interface StatisticsPanelProps {
 export function StatisticsPanel(props: StatisticsPanelProps) {
   const { statistics, isLoading } = props;
 
-  const { t } = useTranslation('modules/tdarr-queue');
+  const { t } = useTranslation('modules/media-transcoding');
 
   if (isLoading) {
     return <WidgetLoading />;

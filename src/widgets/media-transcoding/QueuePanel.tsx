@@ -13,7 +13,7 @@ interface QueuePanelProps {
 export function QueuePanel(props: QueuePanelProps) {
   const { queue, isLoading } = props;
 
-  const { t } = useTranslation('modules/tdarr-queue');
+  const { t } = useTranslation('modules/media-transcoding');
 
   if (isLoading) {
     return <WidgetLoading />;

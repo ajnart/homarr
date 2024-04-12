@@ -16,7 +16,7 @@ import {
   IconAlertCircle,
   IconClipboardList,
   IconCpu2,
-  IconReportAnalytics,
+  IconReportAnalytics, IconTransform,
 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
@@ -24,17 +24,17 @@ import { z } from 'zod';
 import { AppAvatar } from '~/components/AppAvatar';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
-import { HealthCheckStatus } from '~/widgets/tdarr/HealthCheckStatus';
-import { QueuePanel } from '~/widgets/tdarr/QueuePanel';
-import { StatisticsPanel } from '~/widgets/tdarr/StatisticsPanel';
-import { WorkersPanel } from '~/widgets/tdarr/WorkersPanel';
+import { HealthCheckStatus } from '~/widgets/media-transcoding/HealthCheckStatus';
+import { QueuePanel } from '~/widgets/media-transcoding/QueuePanel';
+import { StatisticsPanel } from '~/widgets/media-transcoding/StatisticsPanel';
+import { WorkersPanel } from '~/widgets/media-transcoding/WorkersPanel';
 
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
 const definition = defineWidget({
-  id: 'tdarr-queue',
-  icon: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png',
+  id: 'media-transcoding',
+  icon: IconTransform,
   options: {
     appId: {
       type: 'app-select',
@@ -79,7 +79,7 @@ const definition = defineWidget({
     maxWidth: 12,
     maxHeight: 6,
   },
-  component: TdarrQueueTile,
+  component: MediaTranscodingTile,
 });
 
 export type TdarrWidget = IWidget<(typeof definition)['id'], typeof definition>;
@@ -88,8 +88,8 @@ interface TdarrQueueTileProps {
   widget: TdarrWidget;
 }
 
-function TdarrQueueTile({ widget }: TdarrQueueTileProps) {
-  const { t } = useTranslation('modules/tdarr-queue');
+function MediaTranscodingTile({ widget }: TdarrQueueTileProps) {
+  const { t } = useTranslation('modules/media-transcoding');
   const { config, name: configName } = useConfigContext();
 
   const fallbackAppId = config?.apps.find(

@@ -22,7 +22,7 @@ export function HealthCheckStatus(props: StatisticsBadgeProps) {
   const { statistics } = props;
 
   const { colorScheme } = useColorScheme();
-  const { t } = useTranslation('modules/tdarr-queue');
+  const { t } = useTranslation('modules/media-transcoding');
 
   if (!statistics) {
     return <IconHeartbeat size={20} />;
