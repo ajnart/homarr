@@ -31,7 +31,7 @@
         "info": "Se estiver desativado, somente a proporção global será exibida. A proporção global ainda usará os rótulos se estiver definida"
       },
       "columns": {
-        "label": "",
+        "label": "Selecione colunas para exibir",
         "data": {
           "down": "Para baixo",
           "up": "Para cima",
@@ -40,7 +40,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Alterar o tamanho da coluna do nome"
       }
     }
   },
