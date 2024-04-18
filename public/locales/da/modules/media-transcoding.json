@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "Kø",
+          "statistics": ""
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "",
+          "eta": "ETA",
+          "progress": "Fremskridt"
+        },
+        "empty": "Tom",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "",
+          "size": "Størrelse"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "Tom",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Tom",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "Fejl",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "Kø",
+    "statistics": ""
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}
