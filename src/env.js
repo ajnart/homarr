@@ -12,6 +12,12 @@ const zodParsedBoolean = () =>
     .default('false')
     .transform((value) => trueStrings.includes(value));
 
+const numberSchema = z
+  .string()
+  .regex(/\d*/)
+  .transform((value) => (value === undefined ? undefined : Number(value)))
+  .optional()
+
 const portSchema = z
   .string()
   .regex(/\d*/)
@@ -90,6 +96,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
+          AUTH_OIDC_TIMEOUT: numberSchema.default(3500)
         }
       : {}),
   },
@@ -149,6 +156,7 @@ const env = createEnv({
     AUTH_OIDC_OWNER_GROUP: process.env.AUTH_OIDC_OWNER_GROUP,
     AUTH_OIDC_AUTO_LOGIN: process.env.AUTH_OIDC_AUTO_LOGIN,
     AUTH_OIDC_SCOPE_OVERWRITE: process.env.AUTH_OIDC_SCOPE_OVERWRITE,
+    AUTH_OIDC_TIMEOUT: process.env.AUTH_OIDC_TIMEOUT,
     DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

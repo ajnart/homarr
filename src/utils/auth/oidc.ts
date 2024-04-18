@@ -50,6 +50,9 @@ const createProvider = (headers: OidcRedirectCallbackHeaders): OAuthConfig<Profi
     },
   },
   idToken: true,
+  httpOptions: {
+    timeout: env.AUTH_OIDC_TIMEOUT,
+  },
   async profile(profile) {
     const user = await adapter.getUserByEmail!(profile.email);
 
