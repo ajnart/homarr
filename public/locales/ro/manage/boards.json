@@ -1,0 +1,57 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "cards": {
+        "statistics": {
+            "apps": "",
+            "widgets": "",
+            "categories": ""
+        },
+        "buttons": {
+            "view": ""
+        },
+        "menu": {
+            "setAsDefault": "",
+            "delete": {
+                "label": "",
+                "disabled": ""
+            },
+            "duplicate": "",
+            "rename": {
+                "label": "",
+                "modal": {
+                    "title": "",
+                    "fields": {
+                        "name": {
+                            "label": "",
+                            "placeholder": ""
+                        }
+                    }
+                }
+            }
+        },
+        "badges": {
+            "fileSystem": "",
+            "default": ""
+        }
+    },
+    "buttons": {
+        "create": ""
+    },
+    "modals": {
+        "delete": {
+            "title": "",
+            "text": ""
+        },
+        "create": {
+            "title": "",
+            "text": "",
+            "form": {
+                "name": {
+                    "label": ""
+                },
+                "submit": ""
+            }
+        }
+    }
+}
