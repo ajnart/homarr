@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "תור",
+          "statistics": ""
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "",
+          "eta": "זמן סיום משוער",
+          "progress": "התקדמות"
+        },
+        "empty": "ריק",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "",
+          "size": "גודל"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "ריק",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "ריק",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "שגיאה",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "תור",
+    "statistics": ""
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}
