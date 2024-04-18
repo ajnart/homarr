@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "crwdns4382:0crwdne4382:0",
+    "description": "crwdns4384:0crwdne4384:0",
+    "settings": {
+      "title": "crwdns4386:0crwdne4386:0",
+      "appId": {
+        "label": "crwdns4388:0crwdne4388:0"
+      },
+      "defaultView": {
+        "label": "crwdns4390:0crwdne4390:0",
+        "data": {
+          "workers": "crwdns4392:0crwdne4392:0",
+          "queue": "crwdns4394:0crwdne4394:0",
+          "statistics": "crwdns4396:0crwdne4396:0"
+        }
+      },
+      "showHealthCheck": {
+        "label": "crwdns4398:0crwdne4398:0"
+      },
+      "showHealthChecksInQueue": {
+        "label": "crwdns4400:0crwdne4400:0"
+      },
+      "queuePageSize": {
+        "label": "crwdns4402:0crwdne4402:0"
+      },
+      "showAppIcon": {
+        "label": "crwdns4404:0crwdne4404:0"
+      }
+    }
+  },
+  "noAppSelected": "crwdns4406:0crwdne4406:0",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "crwdns4408:0crwdne4408:0",
+          "eta": "crwdns4410:0crwdne4410:0",
+          "progress": "crwdns4412:0crwdne4412:0"
+        },
+        "empty": "crwdns4414:0crwdne4414:0",
+        "tooltip": {
+          "transcode": "crwdns4416:0crwdne4416:0",
+          "healthCheck": "crwdns4418:0crwdne4418:0"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "crwdns4420:0crwdne4420:0",
+          "size": "crwdns4422:0crwdne4422:0"
+        },
+        "footer": {
+          "currentIndex": "crwdns4424:0{{start}}crwdnd4424:0{{end}}crwdnd4424:0{{total}}crwdne4424:0"
+        },
+        "empty": "crwdns4426:0crwdne4426:0",
+        "tooltip": {
+          "transcode": "crwdns4428:0crwdne4428:0",
+          "healthCheck": "crwdns4430:0crwdne4430:0"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "crwdns4432:0crwdne4432:0",
+      "box": {
+        "transcodes": "crwdns4434:0{{value}}crwdne4434:0",
+        "healthChecks": "crwdns4436:0{{value}}crwdne4436:0",
+        "files": "crwdns4438:0{{value}}crwdne4438:0",
+        "spaceSaved": "crwdns4440:0{{value}}crwdne4440:0"
+      },
+      "pies": {
+        "transcodes": "crwdns4442:0crwdne4442:0",
+        "healthChecks": "crwdns4444:0crwdne4444:0",
+        "videoCodecs": "crwdns4446:0crwdne4446:0",
+        "videoContainers": "crwdns4448:0crwdne4448:0",
+        "videoResolutions": "crwdns4450:0crwdne4450:0"
+      }
+    }
+  },
+  "error": {
+    "title": "crwdns4452:0crwdne4452:0",
+    "message": "crwdns4454:0crwdne4454:0"
+  },
+  "tabs": {
+    "workers": "crwdns4456:0crwdne4456:0",
+    "queue": "crwdns4458:0crwdne4458:0",
+    "statistics": "crwdns4460:0crwdne4460:0"
+  },
+  "healthCheckStatus": {
+    "title": "crwdns4462:0crwdne4462:0",
+    "queued": "crwdns4464:0crwdne4464:0",
+    "healthy": "crwdns4466:0crwdne4466:0",
+    "unhealthy": "crwdns4468:0crwdne4468:0"
+  }
+}
