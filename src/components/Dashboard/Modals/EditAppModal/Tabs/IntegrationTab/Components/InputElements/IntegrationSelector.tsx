@@ -202,5 +202,10 @@ export const availableIntegrations = [
     value: 'proxmox',
     image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/proxmox.png',
     label: 'Proxmox',
+  },
+  {
+    value: 'tdarr',
+    image: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/tdarr.png',
+    label: 'Tdarr',
   }
 ] as const satisfies Readonly<SelectItem[]>;
