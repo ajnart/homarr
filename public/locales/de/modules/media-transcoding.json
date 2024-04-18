@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "Warteschlange",
+          "statistics": ""
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "",
+          "eta": "Voraussichtlicher Abschluss",
+          "progress": "Fortschritt"
+        },
+        "empty": "Leer",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "",
+          "size": "Größe"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "Leer",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Leer",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "Fehler",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "Warteschlange",
+    "statistics": ""
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}
