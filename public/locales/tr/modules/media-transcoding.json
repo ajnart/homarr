@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "Kuyruk",
+          "statistics": ""
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "",
+          "eta": "ETA (Kalan Süre)",
+          "progress": "İlerleme"
+        },
+        "empty": "Boş",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "",
+          "size": "Boyut"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "Boş",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Boş",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "Hata",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "Kuyruk",
+    "statistics": ""
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}
