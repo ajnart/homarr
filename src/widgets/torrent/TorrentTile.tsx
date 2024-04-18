@@ -17,7 +17,7 @@ import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { type MRT_ColumnDef, MRT_TableContainer, useMantineReactTable } from 'mantine-react-table';
 import { useTranslation } from 'next-i18next';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { MIN_WIDTH_MOBILE } from '~/constants/constants';
 import { calculateETA } from '~/tools/client/calculateEta';
 import { humanFileSize } from '~/tools/humanFileSize';
@@ -69,10 +69,24 @@ const definition = defineWidget({
       defaultValue: true,
       info: true,
     },
+    columnOrdering: {
+      type: 'switch',
+      defaultValue: true,
+    },
+    rowSorting: {
+      type: 'switch',
+      defaultValue: true,
+    },
     columns: {
       type: 'multi-select',
       defaultValue: ['up', 'down', 'eta', 'progress'],
-      data: [{ value: 'up' }, { value: 'down' }, { value: 'eta' }, { value: 'progress' }],
+      data: [
+        { value: 'up' },
+        { value: 'down' },
+        { value: 'eta' },
+        { value: 'progress' },
+        { value: 'date' },
+      ],
     },
     nameColumnSize: {
       type: 'slider',
@@ -127,12 +141,20 @@ function TorrentTile({ widget }: TorrentTileProps) {
   const ratioGlobal = getTorrentsRatio(widget, torrents, false);
   const ratioWithFilter = getTorrentsRatio(widget, torrents, true);
 
+  const [opened, setOpened] = useState<number>(-1);
+
   const columns = useMemo<MRT_ColumnDef<TorrentTotalDownload['torrents'][0]>[]>(
     () => [
       {
         id: 'dateAdded',
         accessorFn: (row) => new Date(row.dateAdded),
-        header: 'dateAdded',
+        Cell: ({ cell }) => (
+          <Stack spacing={0}>
+            <Text>{dayjs(cell.getValue() as Date).format('YYYY/MM/DD')}</Text>
+            <Text>{dayjs(cell.getValue() as Date).format('HH:mm')}</Text>
+          </Stack>
+        ),
+        header: t('card.table.header.dateAdded'),
         maxSize: 1,
       },
       {
@@ -147,6 +169,8 @@ function TorrentTile({ widget }: TorrentTileProps) {
             transitionProps={{
               transition: 'pop',
             }}
+            opened={opened === row.index}
+            onChange={(o) => setOpened(() => (o ? row.index : -1))}
           >
             <Popover.Target>
               <Text maw={'30vw'} size="xs" lineClamp={1}>
@@ -193,7 +217,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
         header: t('card.table.header.progress'),
         maxSize: 1,
         Cell: ({ cell, row }) => (
-          <Flex>
+          <Flex direction="column" w="100%">
             <Text className={useStyles().classes.noTextBreak}>
               {(Number(cell.getValue()) * 100).toPrecision(3)}%
             </Text>
@@ -207,15 +231,14 @@ function TorrentTile({ widget }: TorrentTileProps) {
                     : 'blue'
               }
               value={Number(cell.getValue()) * 100}
-              size="lg"
+              size="md"
             />
-            ,
           </Flex>
         ),
         sortDescFirst: true,
       },
     ],
-    []
+    [opened]
   );
 
   const torrentsTable = useMantineReactTable({
@@ -228,9 +251,19 @@ function TorrentTile({ widget }: TorrentTileProps) {
     enableColumnFilters: false,
     enableRowVirtualization: true,
     rowVirtualizerProps: { overscan: 20 },
-    mantineTableContainerProps: { sx: { scrollbarWidth: 'none' } },
-    enableColumnOrdering: true,
-    enableSorting: true,
+    mantineTableContainerProps: { sx: { scrollbarWidth: 'none', flex: '1', borderRadius: '0.5rem' } },
+    mantineTableBodyCellProps: { style: { background: 'transparent' } },
+    mantineTableHeadCellProps: {
+      style: { borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' },
+    },
+    mantineTableHeadRowProps: {
+      style: { borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem' },
+    },
+    mantineTableBodyRowProps: ({ row }) => ({
+      onClick: () => setOpened((o) => (o === row.index ? -1 : row.index)),
+    }),
+    enableColumnOrdering: widget.properties.columnOrdering,
+    enableSorting: widget.properties.rowSorting,
     initialState: {
       showColumnFilters: false,
       showGlobalFilter: false,
@@ -250,7 +283,7 @@ function TorrentTile({ widget }: TorrentTileProps) {
       density: 'xs',
       columnVisibility: {
         isCompleted: false,
-        dateAdded: false,
+        dateAdded: widget.properties.columns.includes('date') && width > MIN_WIDTH_MOBILE,
         uploadSpeed: widget.properties.columns.includes('up') && width > MIN_WIDTH_MOBILE,
         downloadSpeed: widget.properties.columns.includes('down') && width > MIN_WIDTH_MOBILE,
         eta: widget.properties.columns.includes('eta') && width > MIN_WIDTH_MOBILE,
