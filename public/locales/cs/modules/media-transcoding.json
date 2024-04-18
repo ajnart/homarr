@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "Fronta",
+          "statistics": ""
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "",
+          "eta": "Odhadovaný čas",
+          "progress": "Postup"
+        },
+        "empty": "Prázdné",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "",
+          "size": "Velikost"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "Prázdné",
+        "tooltip": {
+          "transcode": "",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Prázdné",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "Chyba",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "Fronta",
+    "statistics": ""
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}
