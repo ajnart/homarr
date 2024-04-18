@@ -98,10 +98,10 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
     >
       <Accordion.Item value={category.name}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
+          <Accordion.Control>
             <Title order={3}>{category.name}</Title>
           </Accordion.Control>
-          {!isEditMode && (
+          {!isEditMode ? (
             <Menu withArrow withinPortal>
               <Menu.Target>
                 <ActionIcon variant="light" mr="md">
@@ -114,7 +114,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
-          )}
+          ) : <CategoryEditMenu category={category} />}
         </Box>
         <Accordion.Panel>
           <div
