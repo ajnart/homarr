@@ -31,7 +31,7 @@ export async function makeProxmoxStatusAPICall(app: ConfigAppType, input: any) {
     })
     .catch((error) => {
       Consola.error(
-        `'proxmox': Error accessing service API: '${appUrl}'. Please check the configuration.`
+        `'proxmox': Error accessing service API: '${appUrl}'. The following error was returned: ${error}`
       );
       return null;
     })
