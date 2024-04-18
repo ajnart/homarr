@@ -1,0 +1,111 @@
+{
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "refreshInterval": {
+        "label": ""
+      },
+      "displayCompletedTorrents": {
+        "label": ""
+      },
+      "displayActiveTorrents": {
+        "label": ""
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": ""
+      },
+      "displayStaleTorrents": {
+        "label": ""
+      },
+      "labelFilterIsWhitelist": {
+        "label": ""
+      },
+      "labelFilter": {
+        "label": "",
+        "description": ""
+      },
+      "displayRatioWithFilter": {
+        "label": "",
+        "info": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "down": "",
+          "up": "",
+          "eta": "",
+          "progress": ""
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "",
+      "lastUpdated": "",
+      "ratioGlobal": "",
+      "ratioWithFilter": ""
+    },
+    "table": {
+      "header": {
+        "isCompleted": "",
+        "name": "",
+        "dateAdded": "",
+        "size": "",
+        "download": "",
+        "upload": "",
+        "estimatedTimeOfArrival": "",
+        "progress": "",
+        "totalUploaded": "",
+        "totalDownloaded": "",
+        "ratio": "",
+        "seeds": "",
+        "peers": "",
+        "label": "",
+        "state": "",
+        "stateMessage": ""
+      },
+      "item": {
+        "text": ""
+      },
+      "body": {
+        "nothingFound": "",
+        "filterHidingItems": ""
+      }
+    },
+    "lineChart": {
+      "title": "",
+      "download": "",
+      "upload": "",
+      "timeSpan": "",
+      "totalDownload": "",
+      "totalUpload": ""
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "",
+        "text": ""
+      },
+      "generic": {
+        "title": "",
+        "text": ""
+      }
+    },
+    "popover": {
+      "introductionPrefix": "",
+      "metrics": {
+        "queuePosition": "",
+        "progress": "",
+        "totalSelectedSize": "",
+        "state": "",
+        "ratio": "",
+        "completed": ""
+      }
+    }
+  }
+}
