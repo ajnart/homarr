@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Překódování médií",
+    "description": "Zobrazuje informace o překódování médií",
     "settings": {
-      "title": "",
+      "title": "Nastavení překódování médií",
       "appId": {
-        "label": ""
+        "label": "Vyberte aplikaci"
       },
       "defaultView": {
-        "label": "",
+        "label": "Výchozí zobrazení",
         "data": {
-          "workers": "",
+          "workers": "Stroje",
           "queue": "Fronta",
-          "statistics": ""
+          "statistics": "Statistiky"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Zobrazit indikátor kontroly stavu"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Zobrazit kontroly stavu ve frontě"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Fronta: Počet položek na stránku"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Zobrazovat ikonu aplikace v pravém dolním rohu"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Prosím vyberte aplikaci v nastavení widgetu",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Soubor",
           "eta": "Odhadovaný čas",
           "progress": "Postup"
         },
         "empty": "Prázdné",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Překódovat",
+          "healthCheck": "Kontrola stavu"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Soubor",
           "size": "Velikost"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} z {{total}}"
         },
         "empty": "Prázdné",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Překódovat",
+          "healthCheck": "Kontrola stavu"
         }
       }
     },
     "statistics": {
       "empty": "Prázdné",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Překódování: {{value}}",
+        "healthChecks": "Kontroly stavu: {{value}}",
+        "files": "Soubory: {{value}}",
+        "spaceSaved": "Uloženo: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Překódování",
+        "healthChecks": "Kontroly stavu",
+        "videoCodecs": "Kodeky",
+        "videoContainers": "Kontejnery",
+        "videoResolutions": "Rozlišení"
       }
     }
   },
   "error": {
     "title": "Chyba",
-    "message": ""
+    "message": "Při načítání dat z Tdarru došlo k chybě."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Stroje",
     "queue": "Fronta",
-    "statistics": ""
+    "statistics": "Statistiky"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Kontrola stavu",
+    "queued": "Ve frontě",
+    "healthy": "V pořádku",
+    "unhealthy": "Nastal problém"
   }
 }
