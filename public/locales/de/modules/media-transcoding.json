@@ -74,13 +74,13 @@
         "healthChecks": "Gesundheitscheck",
         "videoCodecs": "Codecs",
         "videoContainers": "Container",
-        "videoResolutions": ""
+        "videoResolutions": "Auflösungen"
       }
     }
   },
   "error": {
     "title": "Fehler",
-    "message": ""
+    "message": "Beim Laden der Daten von Tdarr ist ein Fehler aufgetreten."
   },
   "tabs": {
     "workers": "Workers",
@@ -89,8 +89,8 @@
   },
   "healthCheckStatus": {
     "title": "Gesundheitscheck",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "queued": "In der Warteschlange",
+    "healthy": "Gesund",
+    "unhealthy": "Fehlerhaft"
   }
 }
