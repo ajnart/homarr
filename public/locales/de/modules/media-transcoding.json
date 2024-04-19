@@ -1,79 +1,79 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medientranskodierung",
+    "description": "Zeigt Informationen zur Medientranskodierung an",
     "settings": {
-      "title": "",
+      "title": "Einstellungen für Medientranskodierung",
       "appId": {
-        "label": ""
+        "label": "Wähle eine App"
       },
       "defaultView": {
-        "label": "",
+        "label": "Standardansicht",
         "data": {
-          "workers": "",
+          "workers": "Workers",
           "queue": "Warteschlange",
-          "statistics": ""
+          "statistics": "Statistiken"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Indikator für Gesundheitscheck anzeigen"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Gesundheitschecks in Warteschlange anzeigen"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Warteschlange: Elemente pro Seite"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "App-Symbol in der unteren rechten Ecke anzeigen"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Bitte wählen Sie eine App in den Widget Einstellungen",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Datei",
           "eta": "Voraussichtlicher Abschluss",
           "progress": "Fortschritt"
         },
         "empty": "Leer",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkodieren",
+          "healthCheck": "Gesundheitscheck"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Datei",
           "size": "Größe"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}} - {{end}} von {{total}}"
         },
         "empty": "Leer",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkodieren",
+          "healthCheck": "Gesundheitscheck"
         }
       }
     },
     "statistics": {
       "empty": "Leer",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transkodierung: {{value}}",
+        "healthChecks": "Gesundheitscheck: {{value}}",
+        "files": "Dateien: {{value}}",
+        "spaceSaved": "Gespeichert: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
+        "transcodes": "Transkodieren",
+        "healthChecks": "Gesundheitscheck",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Container",
         "videoResolutions": ""
       }
     }
@@ -83,12 +83,12 @@
     "message": ""
   },
   "tabs": {
-    "workers": "",
+    "workers": "Workers",
     "queue": "Warteschlange",
-    "statistics": ""
+    "statistics": "Statistiken"
   },
   "healthCheckStatus": {
-    "title": "",
+    "title": "Gesundheitscheck",
     "queued": "",
     "healthy": "",
     "unhealthy": ""
