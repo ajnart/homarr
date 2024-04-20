@@ -30,9 +30,16 @@
         "label": "Prikaz razmerja filtriranega seznama torrentov",
         "info": "Če je onemogočeno, se prikaže samo globalno razmerje. Če je nastavljeno globalno razmerje, se bodo še vedno uporabljale oznake."
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Dol",
           "up": "Gor",
           "eta": "ETA",
