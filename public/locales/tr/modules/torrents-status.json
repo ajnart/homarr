@@ -30,9 +30,16 @@
         "label": "Filtrelenmiş torrent listesi ratio oranını görüntüle",
         "info": "Devre dışı bırakılırsa, yalnızca genel ratio görüntülenir. Genel ratio, ayarlanmışsa etiketleri kullanmaya devam edecektir"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Görüntülenecek sütunları seçin",
         "data": {
+          "date": "",
           "down": "İndirme",
           "up": "Yükleme",
           "eta": "ETA (Kalan Süre)",
