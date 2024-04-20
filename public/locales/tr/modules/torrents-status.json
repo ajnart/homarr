@@ -31,15 +31,15 @@
         "info": "Devre dışı bırakılırsa, yalnızca genel ratio görüntülenir. Genel ratio, ayarlanmışsa etiketleri kullanmaya devam edecektir"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Sütunların yeniden sıralanmasını etkinleştir"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Satırları sıralamayı etkinleştir"
       },
       "columns": {
         "label": "Görüntülenecek sütunları seçin",
         "data": {
-          "date": "",
+          "date": "Ekleme Tarihi",
           "down": "İndirme",
           "up": "Yükleme",
           "eta": "ETA (Kalan Süre)",
