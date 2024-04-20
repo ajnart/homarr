@@ -30,9 +30,16 @@
         "label": "Zobraziť pomer zoznamu filtrovaných torrentov",
         "info": "Ak je vypnutý, zobrazí sa iba globálny pomer. Globálny pomer bude stále používať štítky, ak je nastavený"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Vyberte stĺpce na zobrazenie",
         "data": {
+          "date": "",
           "down": "Dole",
           "up": "Hore",
           "eta": "Odhad",
