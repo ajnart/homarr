@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Gestionați",
     "hero": {
-        "title": "",
-        "fallbackUsername": "",
-        "subtitle": ""
+        "title": "Bine ai revenit, {{username}}",
+        "fallbackUsername": "Anonim",
+        "subtitle": "Bine ai venit la centrul dumneavoastră de aplicații. Organizați, optimizați și cuceriți!"
     },
     "quickActions": {
-        "title": "",
+        "title": "Acțiuni rapide",
         "boards": {
-            "title": "",
-            "subtitle": ""
+            "title": "Planșele dumneavoastră",
+            "subtitle": "Creați și gestionați planșele dumneavoastră"
         },
         "inviteUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Invitați un nou utilizator",
+            "subtitle": "Creați și trimiteți o invitație pentru înregistrare"
         },
         "manageUsers": {
-            "title": "",
-            "subtitle": ""
+            "title": "Gestionați utilizatorii",
+            "subtitle": "Ștergeți și gestionați utilizatorii"
         }
     }
 }
