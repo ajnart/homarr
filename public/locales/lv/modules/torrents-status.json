@@ -30,9 +30,16 @@
         "label": "Rādīt filtrēto torentu saraksta attiecību",
         "info": "Ja ir atspējots, tiks parādīta tikai globālā attiecība. Globālā attiecība joprojām izmantos etiķetes, ja tā būs iestatītas"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Lejupielāde",
           "up": "Augšupielāde",
           "eta": "ETA",
