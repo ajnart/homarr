@@ -30,9 +30,16 @@
         "label": "Verhältnis der gefilterten Torrents-Liste anzeigen",
         "info": "Ist diese Option deaktiviert, wird nur das globale Verhältnis angezeigt. Für das globale Verhältnis werden weiterhin die Beschriftungen verwendet, wenn diese eingestellt sind"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Spalten zur Anzeige auswählen",
         "data": {
+          "date": "",
           "down": "Down",
           "up": "Up",
           "eta": "Voraussichtlicher Abschluss",
