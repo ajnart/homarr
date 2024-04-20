@@ -30,9 +30,16 @@
         "label": "显示过滤后的 torrents 列表比例",
         "info": "如果禁用，则只显示全局比率。如果设置为 \"禁用\"，全局比率仍将使用标签。"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "选择要显示的列",
         "data": {
+          "date": "",
           "down": "下载",
           "up": "上传",
           "eta": "剩余时间",
