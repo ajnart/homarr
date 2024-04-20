@@ -30,9 +30,16 @@
         "label": "",
         "info": ""
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "",
           "up": "",
           "eta": "",
