@@ -3,7 +3,7 @@
   "back": "",
   "sections": {
     "general": {
-      "title": "",
+      "title": "General",
       "inputs": {
         "username": {
           "label": ""
