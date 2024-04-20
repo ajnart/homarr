@@ -2,29 +2,29 @@
 	"description": "",
 	"addToDashboard": "",
 	"tip": "",
-	"key": "",
-	"action": "",
-	"keybinds": "",
-	"translators": "",
-	"translatorsDescription": "",
-	"contributors": "",
-	"contributorsDescription": "",
+	"key": "Combinație taste pentru acces rapid",
+	"action": "Acțiune",
+	"keybinds": "Legături taste",
+	"translators": "Traducători ({{count}})",
+	"translatorsDescription": "Mulțumită acestor persoane, Homarr este disponibil în {{languages}} limbi! Vrei să ajuți să traduci Homarr în limba ta? Citește <a>aici</a> cum să faci acest lucru.",
+	"contributors": "Contribuitori ({{count}})",
+	"contributorsDescription": "Acești oameni au construit codul sursă care face ca Homarr să funcționeze! Vrei să ajuți la construirea lui Homarr? Citește <a>aici</a> cum să faci acest lucru",
 	"actions": {
 		"toggleTheme": "",
-		"focusSearchBar": "",
-		"openDocker": "",
-		"toggleEdit": ""
+		"focusSearchBar": "Accesați bara de căutare",
+		"openDocker": "Deschide widget-ul Docker",
+		"toggleEdit": "Comută în modul editare"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "",
 		"version": "",
-		"nodeEnvironment": "",
+		"nodeEnvironment": "Tipul sistemului",
 		"i18n": "",
 		"locales": "",
-		"experimental_disableEditMode": ""
+		"experimental_disableEditMode": "<b>EXPERIMENTAL</b>: Dezactivează modul editare"
 	},
 	"version": {
-		"new": "",
-		"dropdown": ""
+		"new": "Nou: {{newVersion}}",
+		"dropdown": "Versiunea {{newVersion}} este disponibilă! Versiunea curentă este {{currentVersion}}"
 	}
 }
