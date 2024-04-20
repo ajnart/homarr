@@ -1,12 +1,12 @@
 {
     "description": "",
     "button": {
-        "disabled": "",
-        "enabled": ""
+        "disabled": "Întrare in modul editare",
+        "enabled": "Salvați modificările și ieșiți"
     },
     "popover": {
-        "title": "",
-        "text": ""
+        "title": "Modul editare este activat pentru mărimea </1>{{size}}</1>",
+        "text": "Puteți ajusta și personaliza aplicațiile acum. Modificările <strong>nu sunt salvate</strong> până când ieșiți din modul editare"
     },
     "unloadEvent": ""
 }
