@@ -45,13 +45,13 @@
   },
   "seeMore": "",
   "position": {
-    "left": "",
+    "left": "Stânga",
     "center": "",
-    "right": ""
+    "right": "Dreapta"
   },
   "attributes": {
-    "width": "",
-    "height": ""
+    "width": "Lățime",
+    "height": "Înălțime"
   },
   "public": "",
   "restricted": ""
