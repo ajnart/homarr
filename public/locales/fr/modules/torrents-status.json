@@ -30,9 +30,16 @@
         "label": "Afficher le ratio de la liste des torrents filtrés",
         "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Sélectionner les colonnes à afficher",
         "data": {
+          "date": "",
           "down": "Descendant",
           "up": "Montant",
           "eta": "ETA",
