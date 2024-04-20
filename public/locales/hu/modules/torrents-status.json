@@ -30,9 +30,16 @@
         "label": "Szűrt torrentek listájának aránya",
         "info": "Ha letiltja, csak a globális arány jelenik meg. A globális arány továbbra is a címkéket használja, ha be van állítva"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Le",
           "up": "Fel",
           "eta": "Hátralévő idő",
