@@ -1,21 +1,21 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Utilizatori",
+    "pageTitle": "Gestionați utilizatorii",
     "buttons": {
-        "create": ""
+        "create": "Creează"
     },
     "filter": {
         "roles": {
             "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "normal": "Normal",
+            "admin": "Administrator",
+            "owner": "Proprietar"
         }
     },
     "table": {
         "header": {
             "user": "",
-            "email": ""
+            "email": "E-mail"
         }
     },
     "tooltips": {
