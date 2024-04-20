@@ -1,6 +1,6 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
+    "metaTitle": "Planșe",
+    "pageTitle": "Planșe",
     "cards": {
         "statistics": {
             "apps": "",
@@ -8,49 +8,49 @@
             "categories": "Categorii"
         },
         "buttons": {
-            "view": ""
+            "view": "Vezi planșa"
         },
         "menu": {
-            "setAsDefault": "",
+            "setAsDefault": "Alege planșa de bază",
             "delete": {
-                "label": "",
-                "disabled": ""
+                "label": "Șterge definitiv",
+                "disabled": "Ștergere dezactivată, deoarece componentele Homarr mai vechi nu permit ștergerea configurației implicite. Ștergerea va fi posibilă în viitor."
             },
-            "duplicate": "",
+            "duplicate": "Duplicare",
             "rename": {
-                "label": "",
+                "label": "Redenumire",
                 "modal": {
-                    "title": "",
+                    "title": "Redenumiți planșa {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nume nou",
+                            "placeholder": "Noul nume de planșă"
                         }
                     }
                 }
             }
         },
         "badges": {
-            "fileSystem": "",
-            "default": ""
+            "fileSystem": "Fișier de sistem",
+            "default": "Implicit"
         }
     },
     "buttons": {
-        "create": ""
+        "create": "Creează o nouă planșă"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Șterge planșa",
+            "text": "Sunteți sigur că doriți să ștergeți această planșă? Această acțiune nu poate fi anulată iar datele dvs. vor fi pierdute definitiv."
         },
         "create": {
-            "title": "",
-            "text": "",
+            "title": "Creează planșă",
+            "text": "Numele nu poate fi schimbat după ce planșa a fost creată.",
             "form": {
                 "name": {
                     "label": ""
                 },
-                "submit": ""
+                "submit": "Creează"
             }
         }
     }
