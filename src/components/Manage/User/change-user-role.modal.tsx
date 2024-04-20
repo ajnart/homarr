@@ -1,4 +1,4 @@
-import { Button, Group, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
@@ -48,12 +48,10 @@ export const openRoleChangeModal = (user: InnerProps) => {
   modals.openContextModal({
     modal: 'changeUserRoleModal',
     title: (
-      <Title order={4}>
-        <Trans
-          i18nKey={`manage/users:modals.change-role.${user.type}.title`}
-          values={{ name: user.name }}
-        />
-      </Title>
+      <Trans
+        i18nKey={`manage/users:modals.change-role.${user.type}.title`}
+        values={{ name: user.name }}
+      />
     ),
     innerProps: user,
   });
