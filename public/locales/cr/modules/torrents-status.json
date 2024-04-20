@@ -30,9 +30,16 @@
         "label": "crwdns4000:0crwdne4000:0",
         "info": "crwdns4002:0crwdne4002:0"
       },
+      "columnOrdering": {
+        "label": "crwdns4470:0crwdne4470:0"
+      },
+      "rowSorting": {
+        "label": "crwdns4472:0crwdne4472:0"
+      },
       "columns": {
         "label": "crwdns4370:0crwdne4370:0",
         "data": {
+          "date": "crwdns4474:0crwdne4474:0",
           "down": "crwdns4372:0crwdne4372:0",
           "up": "crwdns4374:0crwdne4374:0",
           "eta": "crwdns4376:0crwdne4376:0",
