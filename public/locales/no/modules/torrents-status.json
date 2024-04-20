@@ -30,9 +30,16 @@
         "label": "Vis filtrerte torrents listeforhold",
         "info": "Hvis deaktivert, vil bare det globale forholdet vises. Det globale forholdet vil fortsatt bruke etikettene hvis angitt"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Ned",
           "up": "Opp",
           "eta": "Gjenstående tid (estimat)",
