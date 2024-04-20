@@ -1,32 +1,32 @@
 {
     "navigation": {
         "home": {
-            "title": ""
+            "title": "Acasă"
         },
         "boards": {
-            "title": ""
+            "title": "Planșe"
         },
         "users": {
-            "title": "",
+            "title": "Utilizatori",
             "items": {
-                "manage": "",
-                "invites": ""
+                "manage": "Gestionați",
+                "invites": "Invitații"
             }
         },
         "help": {
-            "title": "",
+            "title": "Ajutor",
             "items": {
-                "documentation": "",
-                "report": "",
-                "discord": "",
-                "contribute": ""
+                "documentation": "Documentație",
+                "report": "Raportați o problemă / un bug",
+                "discord": "Comunitatea Discord",
+                "contribute": "Contribuie"
             }
         },
         "tools": {
-            "title": "",
+            "title": "Unelte",
             "items": {
                 "docker": "",
-                "api": ""
+                "api": "API"
             }
         },
         "about": {
