@@ -1,18 +1,18 @@
 {
 	"tabs": {
-		"general": "",
-		"behaviour": "",
+		"general": "General",
+		"behaviour": "Comportament",
 		"network": "",
-		"appearance": "",
-		"integration": ""
+		"appearance": "Aspect",
+		"integration": "Integrare"
 	},
 	"general": {
 		"appname": {
-			"label": "",
-			"description": ""
+			"label": "Numele aplicației",
+			"description": "Text folosit pentru a fi afișat numele aplicației pe planșă."
 		},
 		"internalAddress": {
-			"label": "",
+			"label": "Adresa internă",
 			"description": "",
 			"troubleshoot": {
 				"label": "",
@@ -30,37 +30,37 @@
 			}
 		},
 		"externalAddress": {
-			"label": "",
-			"description": ""
+			"label": "Adresa externă",
+			"description": "Adresa URL-ul care va fi deschisă atunci când faceți clic pe aplicație."
 		}
 	},
 	"behaviour": {
 		"isOpeningNewTab": {
-			"label": "",
-			"description": ""
+			"label": "Deschideți într-o pagină nouă",
+			"description": "Deschideți aplicația într-o pagină nouă in loc de pagina curentă."
 		},
 		"tooltipDescription": {
-			"label": "",
+			"label": "Descrierea aplicației",
 			"description": ""
 		},
 		"customProtocolWarning": ""
 	},
 	"network": {
 		"statusChecker": {
-			"label": "",
+			"label": "Verifică starea",
 			"description": ""
 		},
 		"statusCodes": {
-			"label": "",
+			"label": "Coduri de răspuns HTTP",
 			"description": ""
 		}
 	},
 	"appearance": {
 		"icon": {
-			"label": "",
+			"label": "Pictograma aplicației",
 			"description": "",
 			"autocomplete": {
-				"title": "",
+				"title": "Nici un rezultat găsit",
 				"text": ""
 			},
 			"noItems": {
@@ -69,26 +69,26 @@
 			}
 		},
 		"appNameFontSize": {
-			"label": "",
+			"label": "Mărimea textului numelui aplicației",
 			"description": ""
 		},
 		"appNameStatus": {
-			"label": "",
+			"label": "Starea numelui aplicației",
 			"description": "",
 			"dropdown": {
 				"normal": "",
 				"hover": "",
-				"hidden": ""
+				"hidden": "Nu arăta deloc"
 			}
 		},
 		"positionAppName": {
-			"label": "",
+			"label": "Poziționarea numelui aplicației",
 			"description": "",
 			"dropdown": {
-				"top": "",
-				"right": "",
-				"bottom": "",
-				"left": ""
+				"top": "Sus",
+				"right": "Dreapta",
+				"bottom": "Jos",
+				"left": "Stânga"
 			}
 		},
 		"lineClampAppName": {
