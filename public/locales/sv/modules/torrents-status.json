@@ -30,9 +30,16 @@
         "label": "Visa filtrerade torrents listförhållande",
         "info": "Om inaktiverat visas endast det globala förhållandet. Det globala förhållandet kommer fortfarande att använda etiketterna om det är inställt"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Ned",
           "up": "Upp",
           "eta": "Beräknad sluttid",
