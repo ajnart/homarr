@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medya Kod Dönüştürme",
+    "description": "Medya kod dönüştürmeyle ilgili bilgileri görüntüler",
     "settings": {
-      "title": "",
+      "title": "Medya Kod Dönüştürme Ayarları",
       "appId": {
-        "label": ""
+        "label": "Bir uygulama seçin"
       },
       "defaultView": {
-        "label": "",
+        "label": "Varsayılan görünüm",
         "data": {
-          "workers": "",
+          "workers": "İşçiler",
           "queue": "Kuyruk",
-          "statistics": ""
+          "statistics": "İstatistik"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Durum Kontrolü göstergesini göster"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Durum Denetimlerini kuyrukta göster"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Kuyruk: Sayfa başına öğe sayısı"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Uygulama simgesini sağ alt köşede göster"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Lütfen widget ayarlarından bir uygulama seçin",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Dosya",
           "eta": "ETA (Kalan Süre)",
           "progress": "İlerleme"
         },
         "empty": "Boş",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Kod dönüştürme",
+          "healthCheck": "Sağlık kontrolü"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Dosya",
           "size": "Boyut"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}} - {{end}} üzerinden {{total}}"
         },
         "empty": "Boş",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Kod dönüştürme",
+          "healthCheck": "Sağlık kontrolü"
         }
       }
     },
     "statistics": {
       "empty": "Boş",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Kod dönüştürmeler: {{value}}",
+        "healthChecks": "Sağlık Kontrolleri: {{value}}",
+        "files": "Dosyalar: {{value}}",
+        "spaceSaved": "Kaydedildi: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Kod dönüştürmeler",
+        "healthChecks": "Sağlık kontrolleri",
+        "videoCodecs": "Kodek'ler",
+        "videoContainers": "Konteyner",
+        "videoResolutions": "Çözünürlükler"
       }
     }
   },
   "error": {
     "title": "Hata",
-    "message": ""
+    "message": "Tdarr'dan veri alınırken bir hata oluştu."
   },
   "tabs": {
-    "workers": "",
+    "workers": "İşçiler",
     "queue": "Kuyruk",
-    "statistics": ""
+    "statistics": "İstatistik"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Sağlık kontrolü",
+    "queued": "Sıraya alındı",
+    "healthy": "Sağlıklı",
+    "unhealthy": "Sağlıksız"
   }
 }
