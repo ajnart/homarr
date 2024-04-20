@@ -31,15 +31,15 @@
         "info": "Hvis deaktiveret, vil kun den globale ratio blive vist. Den globale ratio vil stadig bruge etiketter hvis sat"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Aktiver reorganisering af kolonnerne"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Aktiver sortering af rækker"
       },
       "columns": {
         "label": "Vælg kolonner, der skal vises",
         "data": {
-          "date": "",
+          "date": "Dato tilføjet",
           "down": "Down",
           "up": "Up",
           "eta": "ETA",
