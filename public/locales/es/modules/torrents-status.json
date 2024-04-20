@@ -30,9 +30,16 @@
         "label": "Mostrar la relación de la lista de torrents filtrados",
         "info": "Si está deshabilitado, solo se mostrará la relación global. La relación global seguirá usando las etiquetas si están configuradas"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Descarga",
           "up": "Subida",
           "eta": "Tiempo restante",
