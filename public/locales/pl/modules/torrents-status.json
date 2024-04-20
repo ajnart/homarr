@@ -30,9 +30,16 @@
         "label": "Wyświetl współczynnik listy przefiltrowanych torrentów",
         "info": "Jeśli ta opcja jest wyłączona, wyświetlany będzie tylko współczynnik globalny. Współczynnik globalny będzie nadal używał etykiet, jeśli są ustawione"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Pobieranie",
           "up": "Udostępnianie",
           "eta": "ETA",
