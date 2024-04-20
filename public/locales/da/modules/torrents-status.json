@@ -30,9 +30,16 @@
         "label": "Vis filtrerede torrents liste ratio",
         "info": "Hvis deaktiveret, vil kun den globale ratio blive vist. Den globale ratio vil stadig bruge etiketter hvis sat"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Vælg kolonner, der skal vises",
         "data": {
+          "date": "",
           "down": "Down",
           "up": "Up",
           "eta": "ETA",
