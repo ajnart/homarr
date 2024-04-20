@@ -30,9 +30,16 @@
         "label": "",
         "info": ""
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "다운로드",
           "up": "업로드",
           "eta": "남은 시간",
