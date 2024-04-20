@@ -1,52 +1,52 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Creează utilizator",
     "steps": {
         "account": {
-            "title": "",
+            "title": "Pasul unu",
             "text": "Creare cont",
             "username": {
                 "label": ""
             },
             "email": {
-                "label": ""
+                "label": "E-mail"
             }
         },
         "security": {
-            "title": "",
+            "title": "Pasul doi",
             "text": "Parola",
             "password": {
                 "label": "Parola"
             }
         },
         "finish": {
-            "title": "",
-            "text": "",
+            "title": "Confirmare",
+            "text": "Salvați în baza de date",
             "card": {
-                "title": "",
-                "text": ""
+                "title": "Revizuiți datele introduse",
+                "text": "După înregistrarea datelor în baza de date utilizatorul se va putea conecta. Sunteți sigur că doriți să stocați acest utilizator în baza de date și să activați autentificarea?"
             },
             "table": {
                 "header": {
-                    "property": "",
-                    "value": "",
+                    "property": "Câmp",
+                    "value": "Valoare",
                     "username": "",
-                    "email": "",
+                    "email": "E-mail",
                     "password": "Parola"
                 },
-                "notSet": "",
-                "valid": ""
+                "notSet": "Nesetat",
+                "valid": "Valid"
             },
-            "failed": ""
+            "failed": "Crearea utilizatorului a eșuat: {{error}}"
         },
         "completed": {
             "alert": {
-                "title": "",
-                "text": ""
+                "title": "Utilizatorul a fost creat",
+                "text": "Utilizatorul a fost creat în baza de date. Acum se pot conecta."
             }
         }
     },
     "buttons": {
-        "generateRandomPassword": "",
-        "createAnother": ""
+        "generateRandomPassword": "Generează o parolă aleatorie",
+        "createAnother": "Creează un alt utilizator"
     }
 }
