@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Medietranskodning",
+    "description": "Viser information om medietranskoding",
     "settings": {
-      "title": "",
+      "title": "Indstillinger for medietranskodning",
       "appId": {
-        "label": ""
+        "label": "Vælg en app"
       },
       "defaultView": {
-        "label": "",
+        "label": "Standardvisning",
         "data": {
-          "workers": "",
+          "workers": "Arbejdere",
           "queue": "Kø",
-          "statistics": ""
+          "statistics": "Statistikker"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Vis indikator for sundhedstjek"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Vis sundhedstjek i kø"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Kø: Elementer pr. side"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Vis app-ikonet i nederste højre hjørne"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Vælg venligst en app i widgetindstillingerne",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fil",
           "eta": "ETA",
           "progress": "Fremskridt"
         },
         "empty": "Tom",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkod",
+          "healthCheck": "Sundhedstjek"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fil",
           "size": "Størrelse"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} af {{total}}"
         },
         "empty": "Tom",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkod",
+          "healthCheck": "Sundhedstjek"
         }
       }
     },
     "statistics": {
       "empty": "Tom",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transkodninger: {{value}}",
+        "healthChecks": "Sundhedstjek: {{value}}",
+        "files": "Filer: {{value}}",
+        "spaceSaved": "Gemt: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Transkoder",
+        "healthChecks": "Sundhedstjek",
+        "videoCodecs": "Kodeks",
+        "videoContainers": "Containere",
+        "videoResolutions": "Opløsninger"
       }
     }
   },
   "error": {
     "title": "Fejl",
-    "message": ""
+    "message": "Der opstod en fejl under hentning af data fra Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Arbejdere",
     "queue": "Kø",
-    "statistics": ""
+    "statistics": "Statistikker"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Sundhedstjek",
+    "queued": "I kø",
+    "healthy": "Sund",
+    "unhealthy": "Usund"
   }
 }
