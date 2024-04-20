@@ -31,15 +31,15 @@
         "info": "Pokud je vypnuto, zobrazí se pouze obecný poměr. Obecný poměr bude stále používat štítky, pokud jsou nastaveny"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Povolit změnu pořadí sloupců"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Povolit řazení řádků"
       },
       "columns": {
         "label": "Vyberte sloupce k zobrazení",
         "data": {
-          "date": "",
+          "date": "Datum přidání",
           "down": "Stahování",
           "up": "Nahrávání",
           "eta": "Odhadovaný čas",
