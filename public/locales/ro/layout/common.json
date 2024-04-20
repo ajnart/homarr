@@ -1,8 +1,8 @@
 {
   "modals": {
     "blockedPopups": {
-      "title": "",
-      "text": "",
+      "title": "Popup-uri blocate",
+      "text": "Browser-ul dumneavoastră a blocat Homarr in a accesa API-ului său. Acest lucru este cel mai frecvent cauzat de blocatoare de anunțuri (ca AdBlockers) sau permisiuni refuzate. Homarr nu poate solicita automat permisiuni.",
       "list": {
         "browserPermission": "",
         "adBlockers": "",
