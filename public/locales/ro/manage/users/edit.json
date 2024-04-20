@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Utilizator {{username}}",
+  "back": "Înapoi la gestionarea utilizatorilor",
   "sections": {
     "general": {
       "title": "General",
@@ -9,45 +9,45 @@
           "label": ""
         },
         "eMail": {
-          "label": ""
+          "label": "E-mail"
         }
       }
     },
     "security": {
-      "title": "",
+      "title": "Securitate",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Parolă nouă"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Închide sesiunile existente",
+          "description": "Forțează utilizatorul să se reconecteze pe dispozitivele sale"
         },
         "confirm": {
           "label": "",
-          "description": ""
+          "description": "Parola va fi actualizată. Această acțiune nu poate fi inversată."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Roluri",
+      "currentRole": "Rol curent: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Proprietar",
+        "admin": "Administrator",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Ștergerea contului",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Confirmă utilizatorul",
+          "description": "Scrie numele utilizatorului pentru a confirma ștergerea"
         },
         "confirm": {
-          "label": "",
-          "description": ""
+          "label": "Șterge definitiv",
+          "description": "Sunt conștient de faptul că această acțiune este permanentă și toate datele contului vor fi pierdute."
         }
       }
     }
