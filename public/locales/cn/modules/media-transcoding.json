@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "媒体转码",
+    "description": "显示有关媒体转码的信息",
     "settings": {
-      "title": "",
+      "title": "媒体转码设置",
       "appId": {
-        "label": ""
+        "label": "选择一个应用"
       },
       "defaultView": {
-        "label": "",
+        "label": "默认视图",
         "data": {
-          "workers": "",
+          "workers": "工作种",
           "queue": "队列",
-          "statistics": ""
+          "statistics": "统计"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "显示健康检查指示器"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "在队列中显示健康检查"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "队列：每页项目数"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "在右下角显示应用程序图标"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "请在小组件设置中选择一个应用程序",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "文件",
           "eta": "剩余时间",
           "progress": "进度"
         },
         "empty": "空",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "转码",
+          "healthCheck": "健康检查"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "文件",
           "size": "大小"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} 共 {{total}}"
         },
         "empty": "空",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "转码",
+          "healthCheck": "健康检查"
         }
       }
     },
     "statistics": {
       "empty": "空",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "转码： {{value}}",
+        "healthChecks": "健康检查： {{value}}",
+        "files": "文件： {{value}}",
+        "spaceSaved": "已保存： {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "转码",
+        "healthChecks": "健康检查",
+        "videoCodecs": "编码",
+        "videoContainers": "容器",
+        "videoResolutions": "分辨率"
       }
     }
   },
   "error": {
     "title": "错误",
-    "message": ""
+    "message": "从 Tdarr 获取数据时发生错误。"
   },
   "tabs": {
-    "workers": "",
+    "workers": "工作种",
     "queue": "队列",
-    "statistics": ""
+    "statistics": "统计"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "健康检查",
+    "queued": "排队中",
+    "healthy": "健康",
+    "unhealthy": "不良"
   }
 }
