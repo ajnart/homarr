@@ -1,4 +1,4 @@
-import { Button, Group, Select, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Select, Stack, Text } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
@@ -132,11 +132,7 @@ export const DockerSelectBoardModal = ({ id, innerProps }: ContextModalProps<Inn
 export const openDockerSelectBoardModal = (innerProps: InnerProps) => {
   modals.openContextModal({
     modal: 'dockerSelectBoardModal',
-    title: (
-      <Title order={4}>
-        <Trans i18nKey="tools/docker:modals.selectBoard.title" />
-      </Title>
-    ),
+    title: <Trans i18nKey="tools/docker:modals.selectBoard.title" />,
     innerProps,
   });
   umami.track('Add to homarr modal');

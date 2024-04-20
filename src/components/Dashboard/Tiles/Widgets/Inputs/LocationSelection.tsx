@@ -169,11 +169,7 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
   if (isError === true)
     return (
       <Modal
-        title={
-          <Title order={4}>
-            {t('modal.title')} - {query}
-          </Title>
-        }
+        title={t('modal.title') + ' - ' + query}
         size="xl"
         opened={opened}
         onClose={closeModal}
@@ -193,11 +189,7 @@ const CitySelectModal = ({ opened, closeModal, query, onCitySelected }: CitySele
 
   return (
     <Modal
-      title={
-        <Title order={4}>
-          {t('modal.title')} - {query}
-        </Title>
-      }
+      title={t('modal.title') + ' - ' + query}
       size="xl"
       opened={opened}
       onClose={closeModal}
