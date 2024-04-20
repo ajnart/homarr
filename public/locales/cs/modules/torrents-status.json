@@ -30,9 +30,16 @@
         "label": "Zobrazení filtrovaného poměru seznamu torrentů",
         "info": "Pokud je vypnuto, zobrazí se pouze obecný poměr. Obecný poměr bude stále používat štítky, pokud jsou nastaveny"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "Vyberte sloupce k zobrazení",
         "data": {
+          "date": "",
           "down": "Stahování",
           "up": "Nahrávání",
           "eta": "Odhadovaný čas",
