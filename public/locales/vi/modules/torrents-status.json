@@ -30,9 +30,16 @@
         "label": "Hiển thị tỷ lệ danh sách torrent sau lọc",
         "info": "Nếu tắt, chỉ tỉ lệ chung sẽ được hiển thị. Tỉ lệ chung sẽ vẫn sử dụng nhãn nếu được đặt"
       },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
       "columns": {
         "label": "",
         "data": {
+          "date": "",
           "down": "Tải xuống",
           "up": "Tải lên",
           "eta": "Thời gian dự kiến",
