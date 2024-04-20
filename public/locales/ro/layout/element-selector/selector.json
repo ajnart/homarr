@@ -4,7 +4,7 @@
     "text": ""
   },
   "widgetDescription": "",
-  "goBack": "",
+  "goBack": "Reveniți la pasul anterior",
   "actionIcon": {
     "tooltip": ""
   },
@@ -13,14 +13,14 @@
     "defaultName": ""
   },
   "widgets": "",
-  "categories": "",
+  "categories": "Categorii",
   "category": {
-    "newName": "",
-    "defaultName": "",
+    "newName": "Denumirea noi categorii",
+    "defaultName": "Categorie nouă",
     "created": {
-      "title": "",
-      "message": ""
+      "title": "Categorie creată",
+      "message": "Categoria {{name}} a fost creată cu succes"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importa din Docker"
 }
