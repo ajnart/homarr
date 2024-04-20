@@ -1,24 +1,24 @@
 {
-  "metaTitle": "",
-  "title": "",
-  "text": "",
+  "metaTitle": "Utilizator",
+  "title": "Bine ați revenit!",
+  "text": "Vă rugăm să introduceți datele de conectare",
   "form": {
     "fields": {
       "username": {
         "label": ""
       },
       "password": {
-        "label": ""
+        "label": "Parola"
       }
     },
     "buttons": {
-      "submit": ""
+      "submit": "Conectare"
     },
-    "afterLoginRedirection": "",
+    "afterLoginRedirection": "După conectare, veți fi redirecționat către {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Eroare autentificare cu furnizorul",
+      "message": "Furnizorul (furnizorii) nu sunt setați, vă rugăm să verificați log-urile pentru mai multe informații."
     }
   },
-  "alert": ""
+  "alert": "Datele de conectare sunt incorecte sau acest cont nu există. Vă rugăm să încercați din nou."
 }
