@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Situația cererilor media",
+    "description": "Statistici despre solicitările dvs. media",
     "settings": {
-      "title": "",
+      "title": "Situația cererilor media",
       "replaceLinksWithExternalHost": {
         "label": "Înlocuiți link-urile cu o gazdă externă"
       },
@@ -13,15 +13,15 @@
     }
   },
   "mediaStats": {
-    "title": "",
-    "pending": "",
-    "tvRequests": "",
-    "movieRequests": "",
-    "approved": "",
-    "totalRequests": ""
+    "title": "Situația media",
+    "pending": "În curs de aprobare",
+    "tvRequests": "Cereri seriale TV",
+    "movieRequests": "Cereri filme",
+    "approved": "Deja aprobat",
+    "totalRequests": "Total"
   },
   "userStats": {
-    "title": "",
-    "requests": ""
+    "title": "Top utilizatori",
+    "requests": "Cereri: {{number}}"
   }
 }
