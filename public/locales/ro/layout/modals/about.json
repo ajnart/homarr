@@ -17,7 +17,7 @@
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Versiunea schemei de configurare",
-		"version": "",
+		"version": "Versiune",
 		"nodeEnvironment": "Tipul sistemului",
 		"i18n": "Limbi pentru traduceri încărcate de tip I18n",
 		"locales": "Traduceri de tip I18n configurate",
