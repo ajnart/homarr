@@ -1,30 +1,30 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Bară de căutare",
+    "description": "O bară de căutare care vă permite să căutați motorul dvs. de căutare personalizat, YouTube, și integrări suportate."
   },
   "input": {
-    "placeholder": ""
+    "placeholder": "Căutați pe internet..."
   },
-  "switched-to": "",
+  "switched-to": "Comută la",
   "searchEngines": {
     "search": {
-      "name": "",
-      "description": ""
+      "name": "Internet",
+      "description": "Căutare..."
     },
     "youtube": {
-      "name": "",
-      "description": ""
+      "name": "YouTube",
+      "description": "Caută pe YouTube"
     },
     "torrents": {
-      "name": "",
-      "description": ""
+      "name": "Torrent",
+      "description": "Caută in torrente"
     },
     "overseerr": {
-      "name": "",
-      "description": ""
+      "name": "Overseerr",
+      "description": "Căutați filme și seriale TV in Overseerr"
     }
   },
-  "tip": "",
-  "switchedSearchEngine": ""
+  "tip": "Puteți selecta bara de căutare cu ajutorul comenzii rapide ",
+  "switchedSearchEngine": "A trecut la căutarea cu {{searchEngine}}"
 }
