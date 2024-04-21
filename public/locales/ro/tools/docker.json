@@ -1,5 +1,5 @@
 {
-    "title": "",
+    "title": "Docker",
     "alerts": {
         "notConfigured": {
             "text": "Instanța Homarr nu are configurat Docker sau nu a reușit să preia containere. Vă rugăm să verificați documentația privind modul de configurare a integrării."
