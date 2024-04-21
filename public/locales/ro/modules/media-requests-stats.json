@@ -5,10 +5,10 @@
     "settings": {
       "title": "",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Înlocuiți link-urile cu o gazdă externă"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Deschide link-ul într-o pagină nouă"
       }
     }
   },
