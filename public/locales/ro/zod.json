@@ -1,7 +1,7 @@
 {
     "errors": {
         "default": "Acest câmp nu este valid",
-        "required": "",
+        "required": "Acest câmp este obligatoriu",
         "string": {
             "startsWith": "Acest câmp trebuie să înceapă cu {{startsWith}}",
             "endsWith": "Acest câmp trebuie să se termine cu {{endsWith}}",
