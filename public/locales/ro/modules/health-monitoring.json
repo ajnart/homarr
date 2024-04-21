@@ -1,20 +1,20 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Monitorizarea sănătății sistemului",
+    "description": "Afișează informații care arată starea de sănătate și statistica sistemului (sistemelor) dumneavoastră.",
     "settings": {
-      "title": "",
+      "title": "Setări pentru monitorizarea sănătății sistemului",
       "fahrenheit": {
-        "label": ""
+        "label": "Temperatura procesorului în Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Afișare informații procesor",
         "load": "",
         "minute": "",
-        "minutes": ""
+        "minutes": "{{minutes}} minute"
       },
       "memory": {
-        "label": ""
+        "label": "Afișare informații memorie"
       },
       "fileSystem": {
         "label": ""
