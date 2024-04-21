@@ -3,8 +3,8 @@
     "pageTitle": "Planșe",
     "cards": {
         "statistics": {
-            "apps": "",
-            "widgets": "",
+            "apps": "Aplicații",
+            "widgets": "Widget-uri",
             "categories": "Categorii"
         },
         "buttons": {
