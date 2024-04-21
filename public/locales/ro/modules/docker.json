@@ -1,83 +1,83 @@
 {
   "descriptor": {
-    "name": "",
-    "description": ""
+    "name": "Docker",
+    "description": "Vă permite vizualizarea și gestionarea cu ușurință a tuturor containerele Docker."
   },
   "search": {
-    "placeholder": ""
+    "placeholder": "Căutare după numele containerului sau al imaginii"
   },
   "table": {
     "header": {
-      "name": "",
-      "image": "",
-      "ports": "",
-      "state": ""
+      "name": "Nume",
+      "image": "Imagine",
+      "ports": "Porturi",
+      "state": "Stare"
     },
     "body": {
-      "portCollapse": ""
+      "portCollapse": "{{ports}} mai multe"
     },
     "states": {
-      "running": "",
-      "created": "",
-      "stopped": "",
-      "unknown": ""
+      "running": "Rulează",
+      "created": "Creat",
+      "stopped": "Oprit",
+      "unknown": "Necunoscut"
     }
   },
   "actionBar": {
     "addService": {
-      "title": "",
-      "message": ""
+      "title": "Adaugă aplicație",
+      "message": "Adaugă aplicația în Homarr"
     },
     "restart": {
-      "title": ""
+      "title": "Repornește"
     },
     "stop": {
-      "title": ""
+      "title": "Opreşte"
     },
     "start": {
-      "title": ""
+      "title": "Pornește"
     },
     "refreshData": {
-      "title": ""
+      "title": "Actualizează datele"
     },
     "remove": {
-      "title": ""
+      "title": "Elimină"
     },
     "addToHomarr": {
-      "title": ""
+      "title": "Adaugă în Homarr"
     }
   },
   "actions": {
     "start": {
-      "start": "",
-      "end": ""
+      "start": "Începe",
+      "end": "A început"
     },
     "stop": {
-      "start": "",
-      "end": ""
+      "start": "Opresc",
+      "end": "Oprit"
     },
     "restart": {
-      "start": "",
-      "end": ""
+      "start": "Repornire",
+      "end": "Repornit"
     },
     "remove": {
-      "start": "",
-      "end": ""
+      "start": "Eliminare",
+      "end": "Eliminat"
     }
   },
   "errors": {
     "integrationFailed": {
-      "title": "",
-      "message": ""
+      "title": "Integrarea Docker a eșuat",
+      "message": "Ai uitat să asociați socket-ul de Docker?"
     },
     "unknownError": {
-      "title": ""
+      "title": "A apărut o eroare"
     },
     "oneServiceAtATime": {
-      "title": ""
+      "title": "Vă rugăm să adăugați o singură aplicație sau serviciu o dată!"
     }
   },
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Docker"
   }
 }
