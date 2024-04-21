@@ -28,7 +28,7 @@
             "text": "Contul tău a fost creat cu succes"
         },
         "error": {
-            "title": "",
+            "title": "Eroare",
             "text": "A apărut o eroare, ai primit următoarea eroare: {{error}}"
         }
     }
