@@ -40,8 +40,8 @@
         "label": "",
         "data": {
           "date": "",
-          "down": "",
-          "up": "",
+          "down": "În jos",
+          "up": "În sus",
           "eta": "",
           "progress": ""
         }
@@ -64,8 +64,8 @@
         "name": "Nume",
         "dateAdded": "",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "În jos",
+        "upload": "În sus",
         "estimatedTimeOfArrival": "",
         "progress": "",
         "totalUploaded": "",
