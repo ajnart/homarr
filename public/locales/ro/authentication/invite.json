@@ -5,7 +5,7 @@
     "form": {
         "fields": {
             "username": {
-                "label": ""
+                "label": "Utilizator"
             },
             "password": {
                 "label": "Parola"
