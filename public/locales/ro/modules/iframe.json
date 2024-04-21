@@ -1,45 +1,45 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "iFrame",
+    "description": "Încorporați orice conținut de pe internet. Unele site-uri web pot restricționa accesul.",
     "settings": {
-      "title": "",
+      "title": "Setări iFrame",
       "embedUrl": {
-        "label": ""
+        "label": "Încorporați adresa URL"
       },
       "allowFullScreen": {
-        "label": ""
+        "label": "Permiteți ecranul complet"
       },
       "allowTransparency": {
-        "label": ""
+        "label": "Permiteți transparența"
       },
       "allowScrolling": {
-        "label": ""
+        "label": "Permiteți derularea"
       },
       "allowPayment": {
-        "label": ""
+        "label": "Permiteți plata"
       },
       "allowAutoPlay": {
-        "label": ""
+        "label": "Permiteți redarea automată"
       },
       "allowMicrophone": {
-        "label": ""
+        "label": "Permiteți microfonul"
       },
       "allowCamera": {
-        "label": ""
+        "label": "Permiteți camera"
       },
       "allowGeolocation": {
-        "label": ""
+        "label": "Permiteți geolocalizarea"
       }
     }
   },
   "card": {
     "errors": {
       "noUrl": {
-        "title": "",
-        "text": ""
+        "title": "Adresă URL invalidă",
+        "text": "Asigurați-vă că ați introdus o adresă validă în configurația Widget-ului dvs"
       },
-      "browserSupport": ""
+      "browserSupport": "Browser-ul tău nu acceptă iFrames. Te rugăm să actualizezi browser-ul."
     }
   }
 }
