@@ -38,11 +38,11 @@
         },
         "autoFocus": {
             "label": "Focalizează bara de căutare la încărcarea paginii.",
-            "description": ""
+            "description": "Acest lucru va focaliza automat bara de căutare, atunci când navigați la paginile planșei. Funcționează doar pe dispozitive de tip desktop."
         },
         "template": {
-            "label": "",
-            "description": ""
+            "label": "Adresa URL a căutări",
+            "description": "Folosește %s ca înlocuitor pentru textul căutare"
         }
     }
 }
