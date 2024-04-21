@@ -9,96 +9,96 @@
       },
       "cpu": {
         "label": "Afișare informații procesor",
-        "load": "",
-        "minute": "",
+        "load": "Utilizare medie",
+        "minute": "{{minute}} minute",
         "minutes": "{{minutes}} minute"
       },
       "memory": {
         "label": "Afișare informații memorie"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Afișare informații despre sistemul de fișiere"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrați după numele nodului",
+        "info": "Introduceți numele nodului dvs. Proxmox pentru a afișa numai valorile acestui nod. În mod implicit, este afișat întregul grup."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Secțiune deschisă în mod implicit",
         "data": {
           "none": "Nimic",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Noduri",
+          "vm": "Masini Virtuale",
+          "lxc": "LXC-uri",
           "storage": "Spațiu de stocare"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Pagină deschisă implicit",
+        "info": "Pagină deschis implicit. Se utilizează numai atunci când sunt disponibile mai multe integrări.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Sistem",
+          "cluster": "Grupuri"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Afișare secțiune sumar"
       },
       "showNode": {
-        "label": ""
+        "label": "Afișare secțiune noduri"
       },
       "showVM": {
-        "label": ""
+        "label": "Afișare secțiune mașini virtuale"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Afișare secțiune LXC-uri"
       },
       "showStorage": {
-        "label": ""
+        "label": "Afișare secțiune de stocare"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Cerința ca indicatorul de stare a secțiunii să fie „OK”",
+        "info": "„Toate” necesită ca toate articolele să fie online pentru ca indicatorul să fie verde. „Orice” necesită ca cel puțin un articol să fie online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Oricare activ",
+          "all": "Toate active"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignoră erorile certificatului",
+        "info": "Dacă este activat, Widget-ul va ignora erorile de certificat la accesarea API-ului Proxmox. Acest lucru poate fi util când accesați Proxmox prin HTTPS."
       }
     }
   },
   "cpu": {
     "label": "Procesor",
-    "load": "",
-    "minute": ""
+    "load": "Utilizare medie",
+    "minute": "{{minute}} minute"
   },
   "memory": {
-    "label": "",
-    "totalMem": "",
-    "available": ""
+    "label": "Memorie RAM",
+    "totalMem": "Total memorie: {{total}}GB",
+    "available": "Disponibil: {{available}}GB - {{percentage}}%"
   },
   "fileSystem": {
-    "label": "",
-    "available": ""
+    "label": "Fișiere de sistem",
+    "available": "Disponibil: {{available}}- {{percentage}}%"
   },
   "info": {
-    "uptime": "",
-    "uptimeFormat": "",
-    "updates": "",
-    "reboot": ""
+    "uptime": "Timp de funcționare",
+    "uptimeFormat": "{{days}} zile, {{hours}} ore",
+    "updates": "Actualizări disponibile",
+    "reboot": "Repornire"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Nu a putut găsi sistemul (sistemele) dumneavoastră.",
+      "text": "A existat o problemă la conectarea la sistemul dvs. Vă rugăm să vă verificați configurația/integrarea (integrările)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Sistem",
+    "cluster": "Grupuri"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Noduri",
+        "vms": "Masini Virtuale",
+        "lxcs": "LXC-uri",
         "storage": "Spațiu de stocare"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Nume",
         "cpu": "Procesor",
         "ram": "Memorie RAM",
-        "node": ""
+        "node": "Nod"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Nod",
+      "vmid": "VMID",
       "details": "Detalii",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Nucelee - {{maxCpu}}",
+      "memSize": "Memorie RAM - {{maxMem}}",
+      "memRatio": "Memorie RAM - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disc - {{maxDisk}}",
+      "diskRatio": "Disc - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Timp de funcționare - {{uptime}}",
+      "plugin": "Extensii",
+      "ha": "Stare HA - {{haState}}",
+      "sharedStorage": "Stocare partajată",
+      "localStorage": "Stocare locală",
+      "na": "Indisponibil"
     }
   }
 }
