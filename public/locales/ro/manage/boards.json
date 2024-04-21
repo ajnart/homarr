@@ -48,7 +48,7 @@
             "text": "Numele nu poate fi schimbat după ce planșa a fost creată.",
             "form": {
                 "name": {
-                    "label": ""
+                    "label": "Nume"
                 },
                 "submit": "Creează"
             }
