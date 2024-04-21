@@ -31,15 +31,15 @@
         "info": "如果禁用，則只會顯示全局比率，而全局比率仍將使用標籤"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "啟用重新排序列"
       },
       "rowSorting": {
-        "label": ""
+        "label": "啟用行排列"
       },
       "columns": {
         "label": "選擇要顯示的列",
         "data": {
-          "date": "",
+          "date": "日期已添加",
           "down": "下載",
           "up": "上傳",
           "eta": "剩餘時間",
