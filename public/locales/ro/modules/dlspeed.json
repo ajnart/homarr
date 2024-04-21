@@ -7,11 +7,11 @@
     "table": {
       "header": {
         "name": "Nume",
-        "size": "",
+        "size": "Mărime",
         "download": "În jos",
         "upload": "În sus",
-        "estimatedTimeOfArrival": "",
-        "progress": ""
+        "estimatedTimeOfArrival": "Timp rămas estimat",
+        "progress": "Progres"
       },
       "body": {
         "nothingFound": "Nici un torrent găsit"
@@ -27,7 +27,7 @@
     },
     "errors": {
       "noDownloadClients": {
-        "title": "",
+        "title": "Nu au fost găsiți clienți de descărcare suportați!",
         "text": "Adăugați un serviciu de descărcare pentru a vizualiza descărcările curente"
       }
     }
