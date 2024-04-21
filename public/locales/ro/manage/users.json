@@ -6,7 +6,7 @@
     },
     "filter": {
         "roles": {
-            "all": "",
+            "all": "Tot",
             "normal": "Normal",
             "admin": "Administrator",
             "owner": "Proprietar"
@@ -19,26 +19,26 @@
         }
     },
     "tooltips": {
-        "deleteUser": "",
-        "demoteAdmin": "",
-        "promoteToAdmin": ""
+        "deleteUser": "Șterge utilizator",
+        "demoteAdmin": "Demiterea administratorului",
+        "promoteToAdmin": "Promovează ca administrator"
     },
     "modals": {
         "delete": {
-            "title": "",
-            "text": ""
+            "title": "Șterge utilizator {{name}}",
+            "text": "Sunteți sigur că doriți să ștergeți utilizatorul {{name}}? Acest lucru va șterge datele asociate cu acest cont, dar nu și planșele create de acest utilizator."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Promovați utilizatorul {{name}} ca administrator",
+                "text": "Sunteți sigur că doriți să promovați utilizatorul {{name}} la funcția de administrator? Acest lucru îi va oferi utilizatorului acces la toate resursele din instanța Homarr."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Demiterea utilizatorul {{name}} la funcția de utilizator",
+                "text": "Sunteți sigur că doriți să demiteți utilizatorul {{name}} la funcția de utilizator? Acest lucru va elimina accesul utilizatorului la toate resursele din instanța Homarr."
             },
             "confirm": ""
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Căutarea nu a întors nici un rezultat. Încercați cu un alt filtru."
 }
