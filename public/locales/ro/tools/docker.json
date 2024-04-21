@@ -2,30 +2,30 @@
     "title": "",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Instanța Homarr nu are configurat Docker sau nu a reușit să preia containere. Vă rugăm să verificați documentația privind modul de configurare a integrării."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Alege o planșă",
+            "text": "Alegeți planșa în care doriți să adăugați aplicațiile pentru containerele Docker selectate.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Planșă"
                 },
-                "submit": ""
+                "submit": "Adăugați aplicații"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Aplicații adăugate în planșă",
+                "message": "Aplicațiile pentru containerele Docker selectate au fost adăugate în planșă."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Nu s-a reușit adăugarea aplicațiilor in planșă",
+                "message": "Aplicațiile pentru containerele Docker selectate nu au putut fi adăugate în planșă."
             }
         }
     }
