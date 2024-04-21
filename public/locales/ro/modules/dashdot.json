@@ -1,117 +1,117 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Dash.",
+    "description": "Afișează elementele graficele ale Dash-ului extern. Instanță în interiorul Homarr.",
     "settings": {
-      "title": "",
+      "title": "Setări pentru Widget-ul Dash.",
       "dashName": {
-        "label": ""
+        "label": "Numele Dash."
       },
       "url": {
-        "label": ""
+        "label": "Adresa URL pentru Dash."
       },
       "usePercentages": {
-        "label": ""
+        "label": "Afișează procente"
       },
       "columns": {
-        "label": ""
+        "label": "Afişează coloanele"
       },
       "graphHeight": {
-        "label": ""
+        "label": "Înălțimea graficelor"
       },
       "graphsOrder": {
-        "label": "",
+        "label": "Grafice (Ordine)",
         "storage": {
-          "label": "",
+          "label": "Spațiu de stocare",
           "enabled": {
-            "label": ""
+            "label": "Afișați în Widget"
           },
           "span": {
-            "label": ""
+            "label": "Interval de coloană"
           },
           "compactView": {
-            "label": ""
+            "label": "Afișați ca text (compact)"
           },
           "multiView": {
-            "label": ""
+            "label": "Afișați ca multi-drive-view"
           }
         },
         "network": {
-          "label": "",
+          "label": "Rețea",
           "enabled": {
-            "label": ""
+            "label": "Afișați în Widget"
           },
           "span": {
-            "label": ""
+            "label": "Interval de coloană"
           },
           "compactView": {
-            "label": ""
+            "label": "Afișați ca text (compact)"
           }
         },
         "cpu": {
-          "label": "",
+          "label": "Procesor",
           "enabled": {
-            "label": ""
+            "label": "Afișați în Widget"
           },
           "span": {
-            "label": ""
+            "label": "Interval de coloană"
           },
           "multiView": {
-            "label": ""
+            "label": "Afișați ca multi-core-view"
           }
         },
         "ram": {
-          "label": "",
+          "label": "Memorie RAM",
           "enabled": {
-            "label": ""
+            "label": "Afișați în Widget"
           },
           "span": {
-            "label": ""
+            "label": "Interval de coloană"
           }
         },
         "gpu": {
-          "label": "",
+          "label": "Procesor grafic",
           "enabled": {
-            "label": ""
+            "label": "Afișați în Widget"
           },
           "span": {
-            "label": ""
+            "label": "Interval de coloană"
           }
         }
       }
     }
   },
   "card": {
-    "title": "",
+    "title": "Dash.",
     "errors": {
-      "noService": "",
-      "noInformation": "",
+      "noService": "Serviciul Dash. nu a fost găsit. Vă rugăm să adăugați unul in planșa dvs. sau setați un adresa URL a Dash.-ul în opțiunile modulului",
+      "noInformation": "Nu se pot obține informații de la Dash. - aveți cea mai recentă versiune?",
       "protocolDowngrade": {
-        "title": "",
-        "text": ""
+        "title": "S-a detectat o reducere de protocol",
+        "text": "Conexiunea cu instanța Dash. utilizează HTTP. Acest lucru reprezintă un risc de securitate, deoarece HTTP nu este criptat și atacatorii ar putea abuza de această conexiune. Asigurați-vă că Dash. utilizează HTTPS sau reduceți Homarr la HTTP (nerecomandat)."
       }
     },
     "graphs": {
       "storage": {
-        "title": "",
-        "label": ""
+        "title": "Spațiu de stocare",
+        "label": "Spațiu de stocare:"
       },
       "network": {
-        "title": "",
-        "label": "",
+        "title": "Rețea",
+        "label": "Rețea:",
         "metrics": {
-          "download": "",
-          "upload": ""
+          "download": "În jos",
+          "upload": "În sus"
         }
       },
       "cpu": {
-        "title": ""
+        "title": "Procesor"
       },
       "ram": {
-        "title": ""
+        "title": "Memorie RAM"
       },
       "gpu": {
-        "title": ""
+        "title": "Procesor grafic"
       }
     }
   }
