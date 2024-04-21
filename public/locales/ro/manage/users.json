@@ -14,7 +14,7 @@
     },
     "table": {
         "header": {
-            "user": "",
+            "user": "Utilizator",
             "email": "E-mail"
         }
     },
