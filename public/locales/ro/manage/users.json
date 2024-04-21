@@ -37,7 +37,7 @@
                 "title": "Demiterea utilizatorul {{name}} la funcția de utilizator",
                 "text": "Sunteți sigur că doriți să demiteți utilizatorul {{name}} la funcția de utilizator? Acest lucru va elimina accesul utilizatorului la toate resursele din instanța Homarr."
             },
-            "confirm": ""
+            "confirm": "Confirma"
         }
     },
     "searchDoesntMatch": "Căutarea nu a întors nici un rezultat. Încercați cu un alt filtru."
