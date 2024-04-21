@@ -1,12 +1,12 @@
 {
-  "text": "",
+  "text": "Personalizările vă permit să configurați și să ajustați experiența dumneavoastră cu Homarr în funcție de preferințele dumneavoastră.",
   "accordeon": {
     "layout": {
-      "name": "",
-      "description": ""
+      "name": "Aspect",
+      "description": "Activați și dezactivați elementele din antetul pagini și din indicatori planșei"
     },
     "gridstack": {
-      "name": "",
+      "name": "Grilaj",
       "description": ""
     },
     "pageMetadata": {
@@ -18,11 +18,11 @@
       "description": ""
     },
     "accessibility": {
-      "name": "",
-      "description": ""
+      "name": "Accesibilitate",
+      "description": "Configurați Homarr pentru utilizatorii cu dizabilități și persoane cu handicap"
     },
     "access": {
-      "name": "",
+      "name": "Acces",
       "description": ""
     }
   }
