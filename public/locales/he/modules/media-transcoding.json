@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "קידוד מדיה",
+    "description": "מציג מידע על המרת מדיה",
     "settings": {
-      "title": "",
+      "title": "הגדרות קידוד מדיה",
       "appId": {
-        "label": ""
+        "label": "בחר אפליקציה"
       },
       "defaultView": {
-        "label": "",
+        "label": "תצוגת ברירת מחדל",
         "data": {
-          "workers": "",
+          "workers": "עובדים",
           "queue": "תור",
-          "statistics": ""
+          "statistics": "סטָטִיסטִיקָה"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "הצג מחוון בדיקת בריאות"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "הצג בדיקות בריאות בתור"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "תור: פריטים בעמוד"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "הצג את סמל האפליקציה בפינה השמאלית התחתונה"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "אנא בחר אפליקציה בהגדרות הווידג'ט",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "קוֹבֶץ",
           "eta": "זמן סיום משוער",
           "progress": "התקדמות"
         },
         "empty": "ריק",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "קידוד",
+          "healthCheck": "בדיקת בריאות"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "קוֹבֶץ",
           "size": "גודל"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} מתוך {{total}}"
         },
         "empty": "ריק",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "קידוד",
+          "healthCheck": "בדיקת בריאות"
         }
       }
     },
     "statistics": {
       "empty": "ריק",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "קידודים: {{value}}",
+        "healthChecks": "בדיקות בריאות: {{value}}",
+        "files": "קבצים: {{value}}",
+        "spaceSaved": "נשמר: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "קידודים",
+        "healthChecks": "בדיקות בריאות",
+        "videoCodecs": "קודקים",
+        "videoContainers": "מיכלים",
+        "videoResolutions": "רזולוציות"
       }
     }
   },
   "error": {
     "title": "שגיאה",
-    "message": ""
+    "message": "אירעה שגיאה בעת שליפת נתונים מ-Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "עובדים",
     "queue": "תור",
-    "statistics": ""
+    "statistics": "סטָטִיסטִיקָה"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "בדיקת בריאות",
+    "queued": "בתור",
+    "healthy": "בָּרִיא",
+    "unhealthy": "לא בריא"
   }
 }
