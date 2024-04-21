@@ -9,30 +9,30 @@
     "configTip": ""
   },
   "credits": {
-    "madeWithLove": "",
-    "thirdPartyContent": "",
+    "madeWithLove": "Realizat cu ❤️ de @",
+    "thirdPartyContent": "Vezi conținutul terților",
     "thirdPartyContentTable": {
-      "dependencyName": "",
-      "dependencyVersion": ""
+      "dependencyName": "Dependență",
+      "dependencyVersion": "Versiune"
     }
   },
-  "grow": "",
+  "grow": "Mărește grilă (ocupă tot spațiul)",
   "layout": {
     "preview": {
-      "title": "",
-      "subtitle": ""
+      "title": "Previzualizare",
+      "subtitle": "Modificările vor fi salvate automat"
     },
-    "divider": "",
-    "main": "",
-    "sidebar": "",
-    "cannotturnoff": "",
-    "dashboardlayout": "",
-    "enablersidebar": "",
-    "enablelsidebar": "",
-    "enablesearchbar": "",
-    "enabledocker": "",
-    "enableping": "",
-    "enablelsidebardesc": "",
-    "enablersidebardesc": ""
+    "divider": "Opțiuni de aspect",
+    "main": "Principal",
+    "sidebar": "Bara laterală",
+    "cannotturnoff": "Nu se poate dezactiva",
+    "dashboardlayout": "Aspectul planșei",
+    "enablersidebar": "Activează bara laterală în dreapta",
+    "enablelsidebar": "Activează bara laterală în stânga",
+    "enablesearchbar": "Activează bara de căutare",
+    "enabledocker": "Activează integrarea cu Docker",
+    "enableping": "Activează ping",
+    "enablelsidebardesc": "Opțional. Poate fi folosit numai pentru aplicații și integrări",
+    "enablersidebardesc": "Opțional. Poate fi folosit numai pentru aplicații și integrări"
   }
 }
