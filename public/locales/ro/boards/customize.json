@@ -22,7 +22,7 @@
             "message": "Personalizări au fost salvate cu succes"
         },
         "error": {
-            "title": "",
+            "title": "Eroare",
             "message": "Schimbările nu au putut fi salvate"
         }
     }
