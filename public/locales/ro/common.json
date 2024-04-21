@@ -1,52 +1,52 @@
 {
-  "save": "",
-  "apply": "",
-  "insert": "",
-  "about": "",
+  "save": "Salvează",
+  "apply": "Aplică",
+  "insert": "Introdu",
+  "about": "Despre",
   "cancel": "",
-  "close": "",
-  "back": "",
-  "delete": "",
-  "ok": "",
-  "edit": "",
-  "next": "",
-  "previous": "",
-  "confirm": "",
-  "enabled": "",
+  "close": "Închide",
+  "back": "Înapoi",
+  "delete": "Șterge",
+  "ok": "OK",
+  "edit": "Editare",
+  "next": "Următorul",
+  "previous": "Anteriorul",
+  "confirm": "Confirma",
+  "enabled": "Activat",
   "duplicate": "Duplicare",
-  "disabled": "",
-  "enableAll": "",
-  "disableAll": "",
-  "version": "",
-  "changePosition": "",
+  "disabled": "Dezactivat",
+  "enableAll": "Activați toate",
+  "disableAll": "Dezactivaţi toate",
+  "version": "Versiune",
+  "changePosition": "Schimbă locația",
   "remove": "Elimină",
-  "removeConfirm": "",
-  "createItem": "",
+  "removeConfirm": "Sunteți sigur că doriți să eliminați {{item}}?",
+  "createItem": "+ creează {{item}}",
   "sections": {
     "settings": "Setări",
-    "dangerZone": ""
+    "dangerZone": "Zonă periculoasă"
   },
   "secrets": {
-    "apiKey": "",
-    "username": "",
+    "apiKey": "Cheie API",
+    "username": "Utilizator",
     "password": "Parola"
   },
-  "tip": "",
+  "tip": "Pont: ",
   "time": {
-    "seconds": "",
-    "minutes": "",
-    "hours": ""
+    "seconds": "secunde",
+    "minutes": "minute",
+    "hours": "ore"
   },
   "loading": "",
   "breakPoints": {
-    "small": "",
-    "medium": "",
-    "large": ""
+    "small": "mic",
+    "medium": "mediu",
+    "large": "mare"
   },
-  "seeMore": "",
+  "seeMore": "Vezi mai mult...",
   "position": {
     "left": "Stânga",
-    "center": "",
+    "center": "Centru",
     "right": "Dreapta"
   },
   "attributes": {
@@ -54,5 +54,5 @@
     "height": "Înălțime"
   },
   "public": "Public",
-  "restricted": ""
+  "restricted": "Restricţionat"
 }
