@@ -5,27 +5,27 @@
     "settings": {
       "title": "",
       "radarrReleaseType": {
-        "label": "",
+        "label": "Tip de evenimente ale Radarr",
         "data": {
-          "inCinemas": "",
-          "physicalRelease": "",
-          "digitalRelease": ""
+          "inCinemas": "În cinematografe",
+          "physicalRelease": "În format fizic",
+          "digitalRelease": "În format digital"
         }
       },
       "hideWeekDays": {
-        "label": ""
+        "label": "Ascunde zilele săptămânii"
       },
       "showUnmonitored": {
-        "label": ""
+        "label": "Arată elementele nemonitorizate"
       },
       "fontSize": {
-        "label": "",
+        "label": "Mărime textului",
         "data": {
-          "xs": "",
-          "sm": "",
-          "md": "",
-          "lg": "",
-          "xl": ""
+          "xs": "Foarte mic",
+          "sm": "Mic",
+          "md": "Mediu",
+          "lg": "Mare",
+          "xl": "Foarte mare"
         }
       }
     }
