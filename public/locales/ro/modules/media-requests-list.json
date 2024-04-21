@@ -1,35 +1,35 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Cereri media",
+    "description": "Vezi o listă cu toate cererile media de la instanțele Overseerr sau Jellyseerr",
     "settings": {
-      "title": "",
+      "title": "Listă cu cereri media",
       "replaceLinksWithExternalHost": {
-        "label": ""
+        "label": "Înlocuiți link-urile cu o gazdă externă"
       },
       "openInNewTab": {
-        "label": ""
+        "label": "Deschide link-ul într-o pagină nouă"
       }
     }
   },
-  "noRequests": "",
+  "noRequests": "Nici o cerere găsită. Asigurați-vă că ați configurat corect aplicațiile.",
   "state": {
-    "approved": "",
-    "pendingApproval": "",
-    "declined": "",
-    "available": "",
-    "partial": ""
+    "approved": "Aprobat",
+    "pendingApproval": "În curs de aprobare",
+    "declined": "Refuzat",
+    "available": "Disponibil",
+    "partial": "Parțial"
   },
   "tooltips": {
-    "approve": "",
-    "decline": "",
-    "approving": ""
+    "approve": "Aprobă cererile",
+    "decline": "Refuză cererile",
+    "approving": "Aprobă cererile..."
   },
   "mutation": {
-    "approving": "",
-    "declining": "",
-    "request": "",
-    "approved": "",
-    "declined": ""
+    "approving": "Aprobare",
+    "declining": "Refuz",
+    "request": "cerere...",
+    "approved": "Cererea a fost aprobata!",
+    "declined": "Cererea a fost refuzată!"
   }
 }
