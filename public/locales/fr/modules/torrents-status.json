@@ -31,15 +31,15 @@
         "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Permettre la réorganisation des colonnes"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Permettre l'organisation des lignes"
       },
       "columns": {
         "label": "Sélectionner les colonnes à afficher",
         "data": {
-          "date": "",
+          "date": "Date d’ajout",
           "down": "Descendant",
           "up": "Montant",
           "eta": "ETA",
