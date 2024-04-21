@@ -6,7 +6,7 @@
       "title": "General",
       "inputs": {
         "username": {
-          "label": ""
+          "label": "Utilizator"
         },
         "eMail": {
           "label": "E-mail"
@@ -24,7 +24,7 @@
           "description": "Forțează utilizatorul să se reconecteze pe dispozitivele sale"
         },
         "confirm": {
-          "label": "",
+          "label": "Confirma",
           "description": "Parola va fi actualizată. Această acțiune nu poate fi inversată."
         }
       }
