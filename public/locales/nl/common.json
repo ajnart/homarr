@@ -1,7 +1,7 @@
 {
   "save": "Opslaan",
-  "apply": "",
-  "insert": "",
+  "apply": "Toepassen",
+  "insert": "Invoegen",
   "about": "Over",
   "cancel": "Annuleer",
   "close": "Sluiten",
@@ -46,7 +46,7 @@
   "seeMore": "Zie meer...",
   "position": {
     "left": "Links",
-    "center": "",
+    "center": "Centreren",
     "right": "Rechts"
   },
   "attributes": {
@@ -54,5 +54,5 @@
     "height": "Hoogte"
   },
   "public": "Openbaar",
-  "restricted": ""
+  "restricted": "Beperkt"
 }
