@@ -8,8 +8,8 @@
       "header": {
         "name": "Nume",
         "size": "",
-        "download": "",
-        "upload": "",
+        "download": "În jos",
+        "upload": "În sus",
         "estimatedTimeOfArrival": "",
         "progress": ""
       },
