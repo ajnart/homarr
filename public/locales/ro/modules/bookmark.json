@@ -15,8 +15,8 @@
         "label": "Aspect",
         "data": {
           "autoGrid": "Grilă automată",
-          "horizontal": "",
-          "vertical": ""
+          "horizontal": "Orizontal",
+          "vertical": "Vertical"
         }
       }
     }
