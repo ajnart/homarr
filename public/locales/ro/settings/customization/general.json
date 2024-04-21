@@ -7,15 +7,15 @@
     },
     "gridstack": {
       "name": "Grilaj",
-      "description": ""
+      "description": "Personalizați comportamentul și coloanele din zona planșei"
     },
     "pageMetadata": {
-      "name": "",
-      "description": ""
+      "name": "Metadatele paginii",
+      "description": "Ajustați titlurile, sigla și PWA"
     },
     "appereance": {
       "name": "Aspect",
-      "description": ""
+      "description": "Personalizați aspectul fundalului, culorilor și aplicațiilor"
     },
     "accessibility": {
       "name": "Accesibilitate",
@@ -23,7 +23,7 @@
     },
     "access": {
       "name": "Acces",
-      "description": ""
+      "description": "Configurați cine are acces la planșa dvs."
     }
   }
 }
