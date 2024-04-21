@@ -2,7 +2,7 @@
 	"tabs": {
 		"general": "General",
 		"behaviour": "Comportament",
-		"network": "",
+		"network": "Rețea",
 		"appearance": "Aspect",
 		"integration": "Integrare"
 	},
@@ -22,11 +22,11 @@
 					"protocolCheck": "Asigurați-vă întotdeauna că adresa URL are prefixul de http sau https, și asigurați-vă că utilizați adresa corectă.",
 					"preferIP": "Este recomandat să utilizați IP-ul direct al echipamentului sau containerului cu care încercați să comunicați.",
 					"enablePings": "Verificați dacă IP-ul este corect prin activarea ping-urilor. Personalizați Planșă -> Aspect -> Activați ping. Un mic indicator roșu sau verde va apărea in imaginea aplicației iar la trecerea cu mouse-ul peste vă va arăta codul de răspuns (un indicator verde pentru cod 200 este de așteptat în majoritatea cazurilor).",
-					"wget": "",
-					"iframe": "",
-					"clearCache": ""
+					"wget": "Pentru a vă asigura că Homarr poate comunica cu celelalte aplicații, folosiți unelte ca wget/curl/ping cu destinația IP-ul aplicației:port-ul.",
+					"iframe": "Când vine vorba de iframe, acestea ar trebui sa folosească întotdeauna același protocol (http/s) ca Homarr.",
+					"clearCache": "Unele informații sunt înregistrate în memoria cache, astfel o integrare ar putea să nu funcționeze decât după ce ștergeți memoria cache în opțiunile generale ale Homarr."
 				},
-				"footer": ""
+				"footer": "Pentru ajutor și alte sugestii de depanări cereți ajutor pe {{discord}}."
 			}
 		},
 		"externalAddress": {
@@ -41,49 +41,49 @@
 		},
 		"tooltipDescription": {
 			"label": "Descrierea aplicației",
-			"description": ""
+			"description": "Textul pe care îl introduceți aici va apărea atunci când treceți cu mouse-ul peste aplicație.\nUtilizați acestă secțiune pentru a oferi utilizatorilor mai multe detalii despre aplicație sau lăsați câmpul gol pentru a nu avea nimic."
 		},
-		"customProtocolWarning": ""
+		"customProtocolWarning": "Utilizarea unui protocol non-standard. Acest lucru poate necesita aplicații preinstalate și poate introduce riscuri de securitate. Asigurați-vă că adresa dumneavoastră este sigură și de încredere."
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Verifică starea",
-			"description": ""
+			"description": "Verifică dacă aplicația ta este online folosind o simplă cerere de tip HTTP(S)."
 		},
 		"statusCodes": {
 			"label": "Coduri de răspuns HTTP",
-			"description": ""
+			"description": "Coduri de răspuns HTTP care sunt considerate a fi online."
 		}
 	},
 	"appearance": {
 		"icon": {
 			"label": "Pictograma aplicației",
-			"description": "",
+			"description": "Începeți să tastați pentru a găsi o pictogramă. De asemenea puteți introduce o adresă URL a unei imagini pentru a o utiliza ca pictogramă personalizată.",
 			"autocomplete": {
 				"title": "Nici un rezultat găsit",
-				"text": ""
+				"text": "Încercați să utilizați un termen de căutare mai specific. Dacă nu găsiți pictograma dorită, puteți introduce adresa URL a imaginii in bara de mai sus pentru a o utiliza ca pictogramă personalizată"
 			},
 			"noItems": {
-				"title": "",
-				"text": ""
+				"title": "Se încarcă pictograme externe",
+				"text": "Acestă activitate poate dura câteva secunde"
 			}
 		},
 		"appNameFontSize": {
 			"label": "Mărimea textului numelui aplicației",
-			"description": ""
+			"description": "Alegeți mărimea textului pentru când se afișează numele aplicației in indicator."
 		},
 		"appNameStatus": {
 			"label": "Starea numelui aplicației",
-			"description": "",
+			"description": "Alegeți unde doriți să apară numele aplicației, sau chiar deloc.",
 			"dropdown": {
-				"normal": "",
-				"hover": "",
+				"normal": "Afișați doar numele aplicației pe indicator",
+				"hover": "Afișați numele aplicației doar la trecerea mouse-ului peste",
 				"hidden": "Nu arăta deloc"
 			}
 		},
 		"positionAppName": {
 			"label": "Poziționarea numelui aplicației",
-			"description": "",
+			"description": "Poziționarea numelui aplicației in raport cu pictograma.",
 			"dropdown": {
 				"top": "Sus",
 				"right": "Dreapta",
@@ -92,37 +92,37 @@
 			}
 		},
 		"lineClampAppName": {
-			"label": "",
-			"description": ""
+			"label": "Liniile numelui aplicație",
+			"description": "Definește câte linii ar trebui să se potrivească numele aplicație ca maxim. Setați 0 pentru nelimitat."
 		}
 	},
 	"integration": {
 		"type": {
-			"label": "",
-			"description": "",
-			"placeholder": "",
-			"defined": "",
-			"undefined": "",
-			"public": "",
-			"private": "",
-			"explanationPrivate": "",
-			"explanationPublic": ""
+			"label": "Configurarea integrării",
+			"description": "Configurația de integrare care va fi utilizată pentru a se conecta la aplicația dumneavoastră.",
+			"placeholder": "Alegeți o integrare",
+			"defined": "Definit",
+			"undefined": "Nedefinit",
+			"public": "Public",
+			"private": "Privat",
+			"explanationPrivate": "Un secret privat va fi trimis către server o singură dată. Odată ce browser-ul a reîmprospătat pagina, aceasta nu va mai fi trimis niciodată.",
+			"explanationPublic": "Un secret public va fi întotdeauna trimis clientului și este accesibil prin API. Nu ar trebui să conțină valori confidențiale, cum ar fi nume de utilizatori, parole, tokens, certificate și altele similare!"
 		},
 		"secrets": {
-			"description": "",
-			"warning": "",
-			"clear": "",
-			"save": "",
-			"update": ""
+			"description": "Pentru a actualiza un secret, introduceți o valoare și faceți clic pe butonul de salvare. Pentru a elimina un secret, utilizați butonul de ștergere.",
+			"warning": "Datele dvs. de conectare acționează ca acces pentru integrările dvs. și nu ar trebui să e distribuiți <strong>niciodată</strong> cu nimeni altcineva. Echipa Homarr nu va cere niciodată datele dvs de conectare. Asigurați-vă că <strong>stocați și gestionați secretele în siguranță</strong>.",
+			"clear": "Ștergeți secretul",
+			"save": "Salvați secretul",
+			"update": "Actualizați secretul"
 		}
 	},
 	"validation": {
-		"popover": "",
-		"name": "",
-		"noUrl": "",
-		"invalidUrl": "",
-		"noIconUrl": "",
-		"noExternalUri": "",
-		"invalidExternalUri": ""
+		"popover": "Formularul conține date invalide. Prin urmare, acesta nu poate fi salvat. Vă rugăm să corectați toate problemele și să faceți din nou clic pe acest buton pentru a salva modificările",
+		"name": "Numele este obligatoriu",
+		"noUrl": "Adresa URL este obligatorie",
+		"invalidUrl": "Textul introdus nu este o adresă URL validă",
+		"noIconUrl": "Acest câmp este obligatoriu",
+		"noExternalUri": "Adresa URL externă este necesară",
+		"invalidExternalUri": "Adresa URL externă nu este validă"
 	}
 }
