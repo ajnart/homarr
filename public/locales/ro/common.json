@@ -3,7 +3,7 @@
   "apply": "Aplică",
   "insert": "Introdu",
   "about": "Despre",
-  "cancel": "",
+  "cancel": "Anulează",
   "close": "Închide",
   "back": "Înapoi",
   "delete": "Șterge",
@@ -37,7 +37,7 @@
     "minutes": "minute",
     "hours": "ore"
   },
-  "loading": "",
+  "loading": "Se încarcă...",
   "breakPoints": {
     "small": "mic",
     "medium": "mediu",
