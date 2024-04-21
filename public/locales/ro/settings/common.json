@@ -2,11 +2,11 @@
   "title": "Setări",
   "tooltip": "Setări",
   "tabs": {
-    "common": "",
-    "customizations": ""
+    "common": "Comun",
+    "customizations": "Personalizări"
   },
   "tips": {
-    "configTip": ""
+    "configTip": "Încărcați fișierul de configurare prin tragere și plasare acestuia pe pagină!"
   },
   "credits": {
     "madeWithLove": "Realizat cu ❤️ de @",
