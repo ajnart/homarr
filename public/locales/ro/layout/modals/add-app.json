@@ -13,15 +13,15 @@
 		},
 		"internalAddress": {
 			"label": "Adresa internă",
-			"description": "",
+			"description": "Adresa IP internă a aplicației.",
 			"troubleshoot": {
-				"label": "",
-				"header": "",
+				"label": "Întâmpinați probleme?",
+				"header": "Iată o listă de greșeli frecvente și sugestii de depanare:",
 				"lines": {
-					"nothingAfterPort": "",
-					"protocolCheck": "",
-					"preferIP": "",
-					"enablePings": "",
+					"nothingAfterPort": "Ar trebui, în cele mai multe cazuri, să nu introduceți nici o cale după port. (Chiar și '/admin' pentru Pi-hole sau '/web' pentru Plex)",
+					"protocolCheck": "Asigurați-vă întotdeauna că adresa URL are prefixul de http sau https, și asigurați-vă că utilizați adresa corectă.",
+					"preferIP": "Este recomandat să utilizați IP-ul direct al echipamentului sau containerului cu care încercați să comunicați.",
+					"enablePings": "Verificați dacă IP-ul este corect prin activarea ping-urilor. Personalizați Planșă -> Aspect -> Activați ping. Un mic indicator roșu sau verde va apărea in imaginea aplicației iar la trecerea cu mouse-ul peste vă va arăta codul de răspuns (un indicator verde pentru cod 200 este de așteptat în majoritatea cazurilor).",
 					"wget": "",
 					"iframe": "",
 					"clearCache": ""
