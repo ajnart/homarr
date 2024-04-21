@@ -30,7 +30,7 @@
           "node": "",
           "vm": "",
           "lxc": "",
-          "storage": ""
+          "storage": "Spațiu de stocare"
         }
       },
       "defaultTabState": {
@@ -71,7 +71,7 @@
     }
   },
   "cpu": {
-    "label": "",
+    "label": "Procesor",
     "load": "",
     "minute": ""
   },
@@ -102,22 +102,22 @@
   },
   "cluster": {
     "summary": {
-      "cpu": "",
-      "ram": ""
+      "cpu": "Procesor",
+      "ram": "Memorie RAM"
     },
     "accordion": {
       "title": {
         "nodes": "",
         "vms": "",
         "lxcs": "",
-        "storage": ""
+        "storage": "Spațiu de stocare"
       }
     },
     "table": {
       "header": {
         "name": "Nume",
-        "cpu": "",
-        "ram": "",
+        "cpu": "Procesor",
+        "ram": "Memorie RAM",
         "node": ""
       }
     },
