@@ -1,18 +1,18 @@
 {
   "modal": {
-    "title": "",
-    "text": ""
+    "title": "Adaugă un nou indicator",
+    "text": "Indicatoarele sunt elementul principal ale Homarr-ului. Acestea sunt folosite pentru a vă afișa aplicațiile și alte informații. Puteți adăuga câte indicatoare doriți."
   },
-  "widgetDescription": "",
+  "widgetDescription": "Widget-urile interacționează cu aplicațiile dvs., pentru a vă oferi mai mult control asupra aplicațiilor dvs. De obicei, acestea necesită o configurație suplimentară înainte de prima utilizare.",
   "goBack": "Reveniți la pasul anterior",
   "actionIcon": {
-    "tooltip": ""
+    "tooltip": "Adaugă un indicator"
   },
-  "apps": "",
+  "apps": "Aplicații",
   "app": {
-    "defaultName": ""
+    "defaultName": "Aplicația ta"
   },
-  "widgets": "",
+  "widgets": "Widget-uri",
   "categories": "Categorii",
   "category": {
     "newName": "Denumirea noi categorii",
