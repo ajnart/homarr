@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Rezumatul hole-DNS",
+    "description": "Afișează date importante de la PiHole sau AdGuard",
     "settings": {
-      "title": "",
+      "title": "Setări pentru rezumatul hole-DNS",
       "usePiHoleColors": {
-        "label": ""
+        "label": "Folosiți culori de la PiHole"
       },
       "layout": {
         "label": "Aspect",
         "data": {
-          "grid": "",
-          "row": "",
-          "column": ""
+          "grid": "2 pe 2",
+          "row": "Orizontal",
+          "column": "Vertical"
         }
       }
     }
   },
   "card": {
     "metrics": {
-      "domainsOnAdlist": "",
-      "queriesToday": "",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "domainsOnAdlist": "Domenii pe liste de anunțuri",
+      "queriesToday": "Interogări astăzi",
+      "queriesBlockedTodayPercentage": "Blocate astăzi",
+      "queriesBlockedToday": "Blocate astăzi"
     }
   }
 }
