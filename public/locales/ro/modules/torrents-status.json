@@ -61,7 +61,7 @@
     "table": {
       "header": {
         "isCompleted": "",
-        "name": "",
+        "name": "Nume",
         "dateAdded": "",
         "size": "",
         "download": "",
@@ -74,24 +74,24 @@
         "seeds": "",
         "peers": "",
         "label": "",
-        "state": "",
+        "state": "Stare",
         "stateMessage": ""
       },
       "item": {
         "text": ""
       },
       "body": {
-        "nothingFound": "",
+        "nothingFound": "Nici un torrent găsit",
         "filterHidingItems": ""
       }
     },
     "lineChart": {
-      "title": "",
-      "download": "",
-      "upload": "",
-      "timeSpan": "",
-      "totalDownload": "",
-      "totalUpload": ""
+      "title": "Viteza actuală de descărcare",
+      "download": "Descărcare: {{download}}",
+      "upload": "Încărcare: {{upload}}",
+      "timeSpan": "acum {{seconds}} secunde",
+      "totalDownload": "Descărcare: {{download}}/s",
+      "totalUpload": "Încărcare: {{upload}}/s"
     },
     "errors": {
       "noDownloadClients": {
