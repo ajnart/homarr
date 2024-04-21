@@ -5,7 +5,7 @@
             "title": "Pasul unu",
             "text": "Creare cont",
             "username": {
-                "label": ""
+                "label": "Utilizator"
             },
             "email": {
                 "label": "E-mail"
@@ -29,7 +29,7 @@
                 "header": {
                     "property": "Câmp",
                     "value": "Valoare",
-                    "username": "",
+                    "username": "Utilizator",
                     "email": "E-mail",
                     "password": "Parola"
                 },
