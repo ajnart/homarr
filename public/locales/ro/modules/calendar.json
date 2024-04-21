@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Calendar",
+    "description": "Afișează un calendar cu evenimente viitoare, din integrările acceptate.",
     "settings": {
-      "title": "",
+      "title": "Setări pentru Widget-ul Calendar",
       "radarrReleaseType": {
         "label": "Tip de evenimente ale Radarr",
         "data": {
