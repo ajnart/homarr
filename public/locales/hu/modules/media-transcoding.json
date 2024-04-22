@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Média átkódolás",
+    "description": "Megjeleníti a média átkódolásával kapcsolatos információkat",
     "settings": {
-      "title": "",
+      "title": "Média átkódolási beállítások",
       "appId": {
-        "label": ""
+        "label": "Válasszon egy alkalmazást"
       },
       "defaultView": {
-        "label": "",
+        "label": "Alapértelmezett nézet",
         "data": {
-          "workers": "",
+          "workers": "Munkások",
           "queue": "Várólista",
-          "statistics": ""
+          "statistics": "Statisztikák"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Az állapotfelmérés jelzője megjelenítése"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Az állapotfelmérés jelzője megjelenítése"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Sor: Elemek oldalanként"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Alkalmazásikon megjelenítése a jobb alsó sarokban"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Kérjük, válasszon egy alkalmazást a widget beállításainál",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fájl",
           "eta": "Hátralévő idő",
           "progress": "Folyamat"
         },
         "empty": "Üres",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Átkódolás",
+          "healthCheck": "Állapotfelmérés"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fájl",
           "size": "Méret"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} / {{total}}"
         },
         "empty": "Üres",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Átkódolás",
+          "healthCheck": "Állapotfelmérés"
         }
       }
     },
     "statistics": {
       "empty": "Üres",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Átkódol: {{value}}",
+        "healthChecks": "Egészségügyi ellenőrzések: {{value}}",
+        "files": "Fájlok: {{value}}",
+        "spaceSaved": "Mentve: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Átkódolás",
+        "healthChecks": "Egészségügyi ellenőrzések",
+        "videoCodecs": "Kodekek",
+        "videoContainers": "Tartály",
+        "videoResolutions": "Felbontás"
       }
     }
   },
   "error": {
     "title": "Hiba",
-    "message": ""
+    "message": "Hiba történt az adatok Tdarrból való lekérése közben."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Munkások",
     "queue": "Várólista",
-    "statistics": ""
+    "statistics": "Statisztikák"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Állapotfelmérés",
+    "queued": "Sorban áll",
+    "healthy": "Egészséges",
+    "unhealthy": "Egészségtelen"
   }
 }
