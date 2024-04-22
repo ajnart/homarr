@@ -1,7 +1,6 @@
 import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { AppType } from '~/types/app';
 
@@ -16,7 +15,6 @@ interface AppTileProps extends BaseTileProps {
 }
 
 export const AppTile = ({ className, app }: AppTileProps) => {
-  const router = useRouter();
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { cx, classes } = useStyles();
   const { colorScheme } = useMantineTheme();
