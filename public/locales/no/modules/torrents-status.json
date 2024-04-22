@@ -31,15 +31,15 @@
         "info": "Hvis deaktivert, vil bare det globale forholdet vises. Det globale forholdet vil fortsatt bruke etikettene hvis angitt"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Aktiver omorganisering av kolonnene"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Aktiver sortering av radene"
       },
       "columns": {
-        "label": "",
+        "label": "Velg kolonner som skal vises",
         "data": {
-          "date": "",
+          "date": "Dato lagt til",
           "down": "Ned",
           "up": "Opp",
           "eta": "Gjenstående tid (estimat)",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Endre størrelsen på navnekolonnen"
       }
     }
   },
