@@ -16,6 +16,7 @@ import Link from 'next/link';
 import { forwardRef } from 'react';
 import { useColorScheme } from '~/hooks/use-colorscheme';
 
+import { env } from '~/env';
 import { useBoardLink } from '../Templates/BoardLayout';
 
 export const AvatarMenu = () => {
@@ -69,7 +70,8 @@ export const AvatarMenu = () => {
               color="red"
               onClick={() =>
                 signOut({
-                  redirect: false,
+                  callbackUrl: env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL ?? "/",
+                  redirect: env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL != undefined,
                 }).then(() => window.location.reload())
               }
             >

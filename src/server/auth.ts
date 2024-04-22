@@ -10,10 +10,11 @@ import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
 import { colorSchemeParser } from '~/validations/user';
 
+import { env } from '~/env';
 import { db } from './db';
 import { users } from './db/schema';
 
-const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
+const sessionMaxAgeInSeconds = env.AUTH_SESSION_EXPIRY_TIME ?? 30 * 24 * 60 * 60; // 30 days
 
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.

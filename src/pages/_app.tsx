@@ -10,7 +10,7 @@ import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
-import { getSession, SessionProvider } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Script from 'next/script';
@@ -30,6 +30,7 @@ import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
+import { CustomSessionProvider } from '~/hooks/custom-session-provider';
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
 import '../styles/global.scss';
@@ -111,7 +112,7 @@ function App(
           strategy="lazyOnload"
         />
       )}
-      <SessionProvider session={pageProps.session}>
+      <CustomSessionProvider session={pageProps.session}>
         <ColorSchemeProvider {...pageProps}>
           {(colorScheme) => (
             <ColorTheme.Provider value={colorTheme}>
@@ -151,7 +152,7 @@ function App(
           )}
         </ColorSchemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
-      </SessionProvider>
+      </CustomSessionProvider>
     </>
   );
 }
