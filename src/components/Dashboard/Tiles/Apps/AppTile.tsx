@@ -30,8 +30,8 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   const isRow = app.appearance.positionAppName.includes('row');
   const externalUrl = useMemo(() => {
     if (app.behaviour.externalUrl.length > 0) {
-      if (app.behaviour.externalUrl.includes('://[homarr_domain]') && location.hostname) {
-        return app.behaviour.externalUrl.replace('[homarr_domain]', location.hostname);
+      if (app.behaviour.externalUrl.includes('://[homarr_domain]') && window.location.hostname) {
+        return app.behaviour.externalUrl.replace('[homarr_domain]', window.location.hostname);
       }
       return app.behaviour.externalUrl;
     }
