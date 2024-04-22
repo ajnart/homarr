@@ -1,7 +1,8 @@
-import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
+import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useMemo } from 'react';
 import { AppType } from '~/types/app';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -15,6 +16,7 @@ interface AppTileProps extends BaseTileProps {
 }
 
 export const AppTile = ({ className, app }: AppTileProps) => {
+  const router = useRouter();
   const isEditMode = useEditModeStore((x) => x.enabled);
   const { cx, classes } = useStyles();
   const { colorScheme } = useMantineTheme();
@@ -26,6 +28,15 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     .join(': ');
 
   const isRow = app.appearance.positionAppName.includes('row');
+  const externalUrl = useMemo(() => {
+    if (app.behaviour.externalUrl.length > 0) {
+      if (app.behaviour.externalUrl.includes('://[homarr_domain]') && location.hostname) {
+        return app.behaviour.externalUrl.replace('[homarr_domain]', location.hostname);
+      }
+      return app.behaviour.externalUrl;
+    }
+    return app.url;
+  }, [app.behaviour.externalUrl, app.url]);
 
   function Inner() {
     return (
@@ -88,7 +99,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component="a"
-          href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
+          href={externalUrl}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >
