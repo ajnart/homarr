@@ -100,7 +100,7 @@ export default Credentials({
 
       const ldapUser = (
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
-          filter: `(uid=${data.name})`,
+          filter: env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG ? `(&(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})${env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG})` : `(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})`,
           scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
           attributes: ['uid', 'mail'] as const,
@@ -115,7 +115,7 @@ export default Credentials({
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
           filter: `(&(objectclass=${env.AUTH_LDAP_GROUP_CLASS})(${
             env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE
-          }=${ldapUser[env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE as 'dn' | 'uid']}))`,
+          }=${ldapUser[env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE as 'dn' | 'uid']})${env.AUTH_LDAP_GROUP_FILTER_EXTRA_ARG ?? ''})`,
           scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
           attributes: 'cn',
