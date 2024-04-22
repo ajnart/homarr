@@ -61,6 +61,7 @@ const ldapSearch = async <
         reject('error: ' + err.message);
       });
       res.on('searchEntry', (entry) => {
+        console.log(entry.pojo);
         results.push(
           entry.pojo.attributes.reduce<Record<string, string | string[]>>(
             (obj, attr) => {
@@ -95,9 +96,10 @@ export default Credentials({
     try {
       const data = await signInSchema.parseAsync(credentials);
 
-      Consola.log(`user ${data.name} is trying to log in using LDAP. Signing in...`);
+      Consola.log(`user ${data.name} is trying to log in using LDAP. Connecting to LDAP server...`);
       const client = await ldapLogin(env.AUTH_LDAP_BIND_DN, env.AUTH_LDAP_BIND_PASSWORD);
 
+      Consola.log(`Connection established. Logging in User...`);
       const ldapUser = (
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
           filter: env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG ? `(&(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})${env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG})` : `(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})`,
@@ -109,6 +111,7 @@ export default Credentials({
 
       if (!ldapUser) throw new Error('User not found in LDAP');
 
+      Consola.log(`User logged in. Retrieving groups...`);
       await ldapLogin(ldapUser.dn, data.password).then((client) => client.destroy());
 
       const userGroups = (
