@@ -1,40 +1,40 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Systemhelseovervåking",
+    "description": "Viser informasjon som viser helsen og statusen til systemet(e).",
     "settings": {
-      "title": "",
+      "title": "Innstillinger for systemhelseovervåking",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-temp i Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Vis CPU-info",
         "load": "",
         "minute": "",
-        "minutes": ""
+        "minutes": "{{minutes}} minutter"
       },
       "memory": {
-        "label": ""
+        "label": "Vis minneinfo"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Vis filsysteminfo"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrer etter nodenavn",
+        "info": "Skriv inn Proxmox-nodenavnet ditt for kun å vise beregninger for den noden. Som standard vises hele klyngen."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Seksjon åpen som standard",
         "data": {
           "none": "Ingen",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Noder",
+          "vm": "VM-er",
+          "lxc": "LXC-er",
           "storage": "Lagring"
         }
       },
       "defaultTabState": {
-        "label": "",
+        "label": "Fane åpen som standard",
         "info": "",
         "data": {
           "system": "",
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Noder",
+        "vms": "VM-er",
+        "lxcs": "LXC-er",
         "storage": "Lagring"
       }
     },
