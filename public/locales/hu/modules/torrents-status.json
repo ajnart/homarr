@@ -31,15 +31,15 @@
         "info": "Ha letiltja, csak a globális arány jelenik meg. A globális arány továbbra is a címkéket használja, ha be van állítva"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Az oszlopok átrendezésének engedélyezése"
       },
       "rowSorting": {
-        "label": ""
+        "label": "A sorok rendezésének engedélyezése"
       },
       "columns": {
-        "label": "",
+        "label": "Megjelenítendő oszlopok kiválasztása",
         "data": {
-          "date": "",
+          "date": "Hozzáadás dátuma",
           "down": "Le",
           "up": "Fel",
           "eta": "Hátralévő idő",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "A névoszlop méretének módosítása"
       }
     }
   },
