@@ -85,7 +85,7 @@ export const WidgetsEditModal = ({
 
   return (
     <Stack>
-      {items.map(([key, _], index) => {
+      {items.map(([key], index) => {
         const option = (currentWidgetDefinition as any).options[key] as IWidgetOptionValue;
         const value = moduleProperties[key] ?? option.defaultValue;
 
@@ -395,6 +395,7 @@ const WidgetOptionTypeSwitch: FC<{
           </Flex>
         </Stack>
       );
+
     /* eslint-enable no-case-declarations */
     default:
       return null;

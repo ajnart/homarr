@@ -1,4 +1,4 @@
-import { Button, CopyButton, Mark, Stack, Text, Title } from '@mantine/core';
+import { Button, CopyButton, Mark, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
 import Link from 'next/link';
@@ -65,11 +65,7 @@ const useInviteUrl = (id: string, token: string) => {
 export const openCopyInviteModal = (data: InnerProps) => {
   modals.openContextModal({
     modal: 'copyInviteModal',
-    title: (
-      <Title order={4}>
-        <Trans i18nKey="manage/users/invites:modals.copy.title" />
-      </Title>
-    ),
+    title: <Trans i18nKey="manage/users/invites:modals.copy.title" />,
     innerProps: data,
   });
 };

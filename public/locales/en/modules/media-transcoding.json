@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Media Transcoding",
+    "description": "Displays information about media transcoding",
+    "settings": {
+      "title": "Media Transcoding Settings",
+      "appId": {
+        "label": "Select an app"
+      },
+      "defaultView": {
+        "label": "Default view",
+        "data": {
+          "workers": "Workers",
+          "queue": "Queue",
+          "statistics": "Statistics"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Show Health Check indicator"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Show Health Checks in queue"
+      },
+      "queuePageSize": {
+        "label": "Queue: Items per page"
+      },
+      "showAppIcon": {
+        "label": "Show app icon in the bottom right corner"
+      }
+    }
+  },
+  "noAppSelected": "Please select an app in the widget settings",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "File",
+          "eta": "ETA",
+          "progress": "Progress"
+        },
+        "empty": "Empty",
+        "tooltip": {
+          "transcode": "Transcode",
+          "healthCheck": "Health Check"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "File",
+          "size": "Size"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} of {{total}}"
+        },
+        "empty": "Empty",
+        "tooltip": {
+          "transcode": "Transcode",
+          "healthCheck": "Health Check"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Empty",
+      "box": {
+        "transcodes": "Transcodes: {{value}}",
+        "healthChecks": "Health Checks: {{value}}",
+        "files": "Files: {{value}}",
+        "spaceSaved": "Saved: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Transcodes",
+        "healthChecks": "Health Checks",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Containers",
+        "videoResolutions": "Resolutions"
+      }
+    }
+  },
+  "error": {
+    "title": "Error",
+    "message": "An error occurred while fetching data from Tdarr."
+  },
+  "tabs": {
+    "workers": "Workers",
+    "queue": "Queue",
+    "statistics": "Statistics"
+  },
+  "healthCheckStatus": {
+    "title": "Health Check",
+    "queued": "Queued",
+    "healthy": "Healthy",
+    "unhealthy": "Unhealthy"
+  }
+}

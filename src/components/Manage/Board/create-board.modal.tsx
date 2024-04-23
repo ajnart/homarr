@@ -1,4 +1,4 @@
-import { Button, Group, Stack, Text, TextInput, Title } from '@mantine/core';
+import { Button, Group, Stack, Text, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
@@ -80,11 +80,7 @@ export const CreateBoardModal = ({ id }: ContextModalProps<{}>) => {
 export const openCreateBoardModal = () => {
   modals.openContextModal({
     modal: 'createBoardModal',
-    title: (
-      <Title order={4}>
-        <Trans i18nKey="manage/boards:modals.create.title" />
-      </Title>
-    ),
+    title: <Trans i18nKey="manage/boards:modals.create.title" />,
     innerProps: {},
   });
 };

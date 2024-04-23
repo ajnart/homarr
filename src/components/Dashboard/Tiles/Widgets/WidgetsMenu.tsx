@@ -1,4 +1,3 @@
-import { Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { openContextModalGeneric } from '~/tools/mantineModalManagerExtensions';
 import { IWidget } from '~/widgets/widgets';
@@ -38,7 +37,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleDeleteClick = () => {
     openContextModalGeneric<WidgetsRemoveModalInnerProps>({
       modal: 'integrationRemove',
-      title: <Title order={4}>{t('common:remove')}</Title>,
+      title: t('common:remove'),
       innerProps: {
         widgetId: widget.id,
         widgetType: integration,
@@ -63,7 +62,7 @@ export const WidgetsMenu = ({ integration, widget }: WidgetsMenuProps) => {
   const handleEditClick = () => {
     openContextModalGeneric<WidgetEditModalInnerProps>({
       modal: 'integrationOptions',
-      title: <Title order={4}>{t('descriptor.settings.title')}</Title>,
+      title: t('descriptor.settings.title'),
       innerProps: {
         widgetId: widget.id,
         widgetType: integration,
