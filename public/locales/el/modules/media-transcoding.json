@@ -1,28 +1,28 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Μετακωδικοποίηση πολυμέσων",
+    "description": "Εμφανίζει πληροφορίες σχετικά με τη μετακωδικοποίηση πολυμέσων",
     "settings": {
-      "title": "",
+      "title": "Ρυθμίσεις μετακωδικοποίησης πολυμέσων",
       "appId": {
-        "label": ""
+        "label": "Επιλέξτε μια εφαρμογή"
       },
       "defaultView": {
-        "label": "",
+        "label": "Προεπιλεγμένη προβολή",
         "data": {
-          "workers": "",
+          "workers": "Εργάτες",
           "queue": "Ουρά",
-          "statistics": ""
+          "statistics": "Στατιστικά"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Εμφάνιση δείκτη ελέγχου υγείας"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Εμφάνιση ελέγχων υγείας στην ουρά"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Ουρά: Στοιχεία ανά σελίδα"
       },
       "showAppIcon": {
         "label": ""
@@ -83,9 +83,9 @@
     "message": ""
   },
   "tabs": {
-    "workers": "",
+    "workers": "Εργάτες",
     "queue": "Ουρά",
-    "statistics": ""
+    "statistics": "Στατιστικά"
   },
   "healthCheckStatus": {
     "title": "",
