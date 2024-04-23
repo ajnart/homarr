@@ -8,6 +8,7 @@ import {
 } from '@mantine/core';
 import { Icon } from '@tabler/icons-react';
 import React from 'react';
+import { IntegrationType } from '~/types/app';
 import { AreaType } from '~/types/area';
 import { ShapeType } from '~/types/shape';
 

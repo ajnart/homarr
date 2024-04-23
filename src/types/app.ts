@@ -59,7 +59,8 @@ export type IntegrationType =
   | 'adGuardHome'
   | 'homeAssistant'
   | 'openmediavault'
-  | 'proxmox';
+  | 'proxmox'
+  | 'tdarr';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -105,6 +106,7 @@ export const integrationFieldProperties: {
   homeAssistant: ['apiKey'],
   openmediavault: ['username', 'password'],
   proxmox: ['apiKey'],
+  tdarr: [],
 };
 
 export type IntegrationFieldDefinitionType = {

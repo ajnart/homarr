@@ -1,4 +1,4 @@
-import { Button, Group, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Stack, Text } from '@mantine/core';
 import { ContextModalProps, modals } from '@mantine/modals';
 import { Trans, useTranslation } from 'next-i18next';
 import { api } from '~/utils/api';
@@ -46,11 +46,7 @@ export const DeleteUserModal = ({ id, innerProps }: ContextModalProps<InnerProps
 export const openDeleteUserModal = (user: InnerProps) => {
   modals.openContextModal({
     modal: 'deleteUserModal',
-    title: (
-      <Title order={4}>
-        <Trans i18nKey="manage/users:modals.delete.title" values={{ name: user.name }} />
-      </Title>
-    ),
+    title: <Trans i18nKey="manage/users:modals.delete.title" values={{ name: user.name }} />,
     innerProps: user,
   });
 };
