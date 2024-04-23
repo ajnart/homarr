@@ -25,62 +25,62 @@
         "label": "Ουρά: Στοιχεία ανά σελίδα"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Εμφάνιση εικονιδίου εφαρμογής στην κάτω δεξιά γωνία"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Παρακαλούμε επιλέξτε μια εφαρμογή στις ρυθμίσεις του widget",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Αρχείο",
           "eta": "Εκτιμώμενος χρόνος αναμονής",
           "progress": "Πρόοδος"
         },
         "empty": "Άδειο",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Μετακωδικοποίηση",
+          "healthCheck": "Έλεγχος υγείας"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Αρχείο",
           "size": "Μέγεθος"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} από {{total}}"
         },
         "empty": "Άδειο",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Μετακωδικοποίηση",
+          "healthCheck": "Έλεγχος υγείας"
         }
       }
     },
     "statistics": {
       "empty": "Άδειο",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Κωδικοποιήσεις: {{value}}",
+        "healthChecks": "Έλεγχοι υγείας: {{value}}",
+        "files": "Αρχεία: {{value}}",
+        "spaceSaved": "Αποθηκεύτηκαν: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Μετακωδικοποιήσεις",
+        "healthChecks": "Έλεγχοι υγείας",
+        "videoCodecs": "Κωδικοποιητές",
+        "videoContainers": "Containers",
+        "videoResolutions": "Αναλύσεις"
       }
     }
   },
   "error": {
     "title": "Σφάλμα",
-    "message": ""
+    "message": "Παρουσιάστηκε σφάλμα κατά την ανάκτηση δεδομένων από το Tdarr."
   },
   "tabs": {
     "workers": "Εργάτες",
@@ -88,9 +88,9 @@
     "statistics": "Στατιστικά"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Έλεγχος υγείας",
+    "queued": "Στην ουρά",
+    "healthy": "Υγιές",
+    "unhealthy": "Μη υγιές"
   }
 }
