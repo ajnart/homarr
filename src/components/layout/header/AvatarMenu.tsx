@@ -14,9 +14,9 @@ import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { forwardRef } from 'react';
+import { env } from '~/env';
 import { useColorScheme } from '~/hooks/use-colorscheme';
 
-import { env } from '~/env';
 import { useBoardLink } from '../Templates/BoardLayout';
 
 export const AvatarMenu = () => {
@@ -65,12 +65,15 @@ export const AvatarMenu = () => {
           <Menu.Item
             icon={<IconLogout size="1rem" />}
             color="red"
-            onClick={() =>
+            onClick={() => {
               signOut({
-                callbackUrl: env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL ?? "/",
-                redirect: env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL != undefined,
-              }).then(() => window.location.reload())
-            }
+                redirect: false,
+              }).then(() =>
+                env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL
+                  ? window.location.assign(env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL)
+                  : window.location.reload()
+              );
+            }}
           >
             {t('actions.avatar.logout', {
               username: sessionData.user.name,
