@@ -1,10 +1,7 @@
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import { Session } from 'next-auth';
 import { SessionProvider, signIn } from 'next-auth/react';
 import { useEffect } from 'react';
-
-dayjs.extend(relativeTime);
 
 interface CustomSessionProviderProps {
   session: Session;
@@ -15,7 +12,7 @@ export const CustomSessionProvider = ({ session, children }: CustomSessionProvid
   //Automatically redirect to the login page after a session expires
   useEffect(() => {
     if (!session) return () => {};
-    const timeout = setTimeout(signIn, dayjs(session?.expires).diff(new Date()));
+    const timeout = setTimeout(signIn, dayjs(session?.expires).diff());
     return () => clearTimeout(timeout);
   }, [session]);
 

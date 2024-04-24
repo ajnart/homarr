@@ -16,7 +16,7 @@ const numberSchema = z
   .string()
   .regex(/\d*/)
   .transform((value) => (value === undefined ? undefined : Number(value)))
-  .optional()
+  .optional();
 
 const portSchema = z
   .string()
@@ -49,7 +49,11 @@ const env = createEnv({
     DEMO_MODE: z.string().optional(),
     HOSTNAME: z.string().optional(),
 
-    AUTH_SESSION_EXPIRY_TIME: numberSchema,
+    //regex allows number with extra letter as time multiplier, applied with secondsFromTimeString
+    AUTH_SESSION_EXPIRY_TIME: z
+      .string()
+      .regex(/^\d+[smhd]?$/)
+      .optional(),
 
     // Authentication
     AUTH_PROVIDER: z
@@ -98,7 +102,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
-          AUTH_OIDC_TIMEOUT: numberSchema.default(3500)
+          AUTH_OIDC_TIMEOUT: numberSchema.default(3500),
         }
       : {}),
   },
@@ -120,7 +124,7 @@ const env = createEnv({
       .optional()
       .default('light'),
     NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
-    NEXT_PUBLIC_LOGOUT_REDIRECT_URL: z.string().optional()
+    NEXT_PUBLIC_LOGOUT_REDIRECT_URL: z.string().optional(),
   },
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.

@@ -34,11 +34,7 @@ export const AvatarMenu = () => {
         </UnstyledButton>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item
-          closeMenuOnClick={false}
-          icon={<Icon size="1rem" />}
-          onClick={toggleColorScheme}
-        >
+        <Menu.Item closeMenuOnClick={false} icon={<Icon size="1rem" />} onClick={toggleColorScheme}>
           {t('actions.avatar.switchTheme')}
         </Menu.Item>
         {sessionData?.user && (
