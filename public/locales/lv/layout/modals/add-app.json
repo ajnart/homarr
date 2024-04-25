@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Ārējā adrese",
-			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes.",
-			"tooltip": "Jūs varat izmantot <b>[homarr_base]</b>, lai atsauktos uz jūsu Homarr instance pamata URL. Tas ir noderīgi atbilstošajiem šķērsvadu un citiem uzstādījumiem, kur pamata URL nav zināms iepriekš.<br><br>Piemērs: <b>[homarr_base]/myapp</b> tiks tulkojts uz <b>{current_base_url}/myapp</b>."
+			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes."
 		}
 	},
 	"behaviour": {

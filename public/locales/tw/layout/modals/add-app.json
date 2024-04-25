@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "外部網址",
-			"description": "點擊應用時開啟的網址",
-			"tooltip": "您可以使用 <b>[homarr_base]</b> 來參照您的 Homarr 實例的基本 URL。這對於反向代理和其他設置中基本 URL 未提前知道的情況非常有用。<br><br>範例: <b>[homarr_base]/myapp</b> 將被翻譯為 <b>{current_base_url}/myapp</b>。"
+			"description": "點擊應用時開啟的網址"
 		}
 	},
 	"behaviour": {

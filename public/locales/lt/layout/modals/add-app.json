@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Išorinis adresas",
-			"description": "URL adresas, kuris bus atidarytas spustelėjus programą.",
-			"tooltip": "Galite naudoti <b>[homarr_base]</b>, kad nurodytumėte savo Homarr instancijos pagrindinį URL. Tai naudinga atvirkštinėms proxy ir kitoms konfigūracijoms, kur pagrindinis URL nėra žinomas iš anksto.<br><br>Pavyzdys: <b>[homarr_base]/myapp</b> bus išverstas į <b>{current_base_url}/myapp</b>."
+			"description": "URL adresas, kuris bus atidarytas spustelėjus programą."
 		}
 	},
 	"behaviour": {

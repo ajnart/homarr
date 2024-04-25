@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Externá adresa",
-			"description": "URL, ktorá sa otvorí po kliknutí na aplikáciu.",
-			"tooltip": "Môžete použiť <b>[homarr_base]</b> na odkazovanie na základnú URL adresu vášho Homarr inštancie. Toto je užitočné pre reverzné servery a iné nastavenia, kde základná URL adresa nie je známa vopred.<br><br>Príklad: <b>[homarr_base]/myapp</b> sa preloží na <b>{current_base_url}/myapp</b>."
+			"description": "URL, ktorá sa otvorí po kliknutí na aplikáciu."
 		}
 	},
 	"behaviour": {

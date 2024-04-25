@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Extern adres",
-			"description": "URL die wordt geopend wanneer op de app wordt geklikt.",
-			"tooltip": "U kunt <b>[homarr_base]</b> gebruiken om te verwijzen naar de basis-URL van uw Homarr-instantie. Dit is handig voor omgekeerde proxies en andere configuraties waar de basis-URL niet van tevoren bekend is.<br><br>Voorbeeld: <b>[homarr_base]/myapp</b> zal worden vertaald naar <b>{current_base_url}/myapp</b>."
+			"description": "URL die wordt geopend wanneer op de app wordt geklikt."
 		}
 	},
 	"behaviour": {

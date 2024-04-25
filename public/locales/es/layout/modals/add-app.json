@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Dirección externa",
-			"description": "URL que se abrirá al hacer clic en la aplicación.",
-			"tooltip": "Puedes usar <b>[homarr_base]</b> para hacer referencia a la URL base de tu instancia de Homarr. Esto es útil para proxys inversos y otras configuraciones en las que la URL base no se conoce de antemano.<br><br>Ejemplo: <b>[homarr_base]/myapp</b> se traducirá a <b>{current_base_url}/myapp</b>."
+			"description": "URL que se abrirá al hacer clic en la aplicación."
 		}
 	},
 	"behaviour": {

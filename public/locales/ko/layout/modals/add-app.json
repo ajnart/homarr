@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "외부 주소",
-			"description": "앱을 클릭할 때 열리는 URL입니다.",
-			"tooltip": "Homarr 인스턴스의 기본 URL을 참조하려면 <b>[homarr_base]</b>를 사용할 수 있습니다.이는 역방향 프록시 및 기본 URL이 미리 알려지지 않은 다른 설정에 유용합니다.<br><br>예: <b>[homarr_base]/myapp</b>은 <b>{current_base_url}/myapp</b>로 번역됩니다."
+			"description": "앱을 클릭할 때 열리는 URL입니다."
 		}
 	},
 	"behaviour": {

@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Ekstern adresse",
-			"description": "URL-adresse, der åbnes, når du klikker på appen.",
-			"tooltip": "Du kan bruge <b>[homarr_base]</b> til at henvise til din Homarr-instans' grundlæggende URL. Dette er nyttigt for omvendte proxys og andre opstillinger, hvor den grundlæggende URL ikke er kendt på forhånd.<br><br>Eksempel: <b>[homarr_base]/myapp</b> vil blive oversat til <b>{current_base_url}/myapp</b>."
+			"description": "URL-adresse, der åbnes, når du klikker på appen."
 		}
 	},
 	"behaviour": {

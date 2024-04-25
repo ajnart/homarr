@@ -31,8 +31,7 @@
 		},
 		"externalAddress": {
 			"label": "Vanjska adresa",
-			"description": "URL koji će se otvoriti prilikom klika na aplikaciju.",
-			"tooltip": "Možete koristiti <b>[homarr_base]</b> kako biste se referirali na osnovnu URL adresu vaše instance Homarr. Ovo je korisno za reverzne proxyje i druge postavke gdje osnovna URL adresa nije poznata unaprijed.<br><br>Primjer: <b>[homarr_base]/myapp</b> će se prevesti u <b>{current_base_url}/myapp</b>."
+			"description": "URL koji će se otvoriti prilikom klika na aplikaciju."
 		}
 	},
 	"behaviour": {
