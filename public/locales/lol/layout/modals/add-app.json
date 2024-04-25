@@ -17,7 +17,8 @@
 		},
 		"externalAddress": {
 			"label": "External address",
-			"description": "URL Dat Will Be Opend When Clickin On Teh App."
+			"description": "URL Dat Will Be Opend When Clickin On Teh App.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

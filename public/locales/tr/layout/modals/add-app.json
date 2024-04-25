@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Harici adres",
-			"description": "Uygulamaya tıklandığında açılacak URL."
+			"description": "Uygulamaya tıklandığında açılacak URL.",
+			"tooltip": "Homarr örneğinizin ana URL'sine atıfta bulunmak için <b>[homarr_base]</b> kullanabilirsiniz. Bu, ana URL'nin önceden bilinmediği ters proxy'ler ve diğer kurulumlar için faydalıdır.<br><br>Örnek: <b>[homarr_base]/myapp</b>, <b>{current_base_url}/myapp</b> şekline çevrilecektir."
 		}
 	},
 	"behaviour": {

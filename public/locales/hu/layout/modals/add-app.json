@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Külső cím",
-			"description": "URL, amely az alkalmazásra kattintva megnyílik."
+			"description": "URL, amely az alkalmazásra kattintva megnyílik.",
+			"tooltip": "Használhatod a <b>[homarr_base]</b> kifejezést a Homarr példányod alap URL-jének hivatkozására. Ez hasznos a fordított proxyk és más beállítások esetén, ahol az alap URL nem ismert előre.<br><br>Példa: <b>[homarr_base]/myapp</b> az <b>{current_base_url}/myapp</b> címre fog fordítódni."
 		}
 	},
 	"behaviour": {

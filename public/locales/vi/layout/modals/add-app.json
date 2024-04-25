@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Địa chỉ bên ngoài",
-			"description": "Đường dẫn được mở khi nhấp vào ứng dụng."
+			"description": "Đường dẫn được mở khi nhấp vào ứng dụng.",
+			"tooltip": "Bạn có thể sử dụng <b>[homarr_base]</b> để tham chiếu đến URL cơ bản của phiên bản Homarr của bạn. Điều này hữu ích cho các proxy đảo ngược và cài đặt khác nơi URL cơ bản không được biết trước. <br><br>Ví dụ: <b>[homarr_base]/myapp</b> sẽ được dịch thành <b>{current_base_url}/myapp</b>."
 		}
 	},
 	"behaviour": {

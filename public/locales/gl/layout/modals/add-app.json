@@ -17,7 +17,8 @@
 		},
 		"externalAddress": {
 			"label": "",
-			"description": ""
+			"description": "",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

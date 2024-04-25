@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Zunanji naslov",
-			"description": "URL, ki se odpre ob kliku na aplikacijo."
+			"description": "URL, ki se odpre ob kliku na aplikacijo.",
+			"tooltip": "Za sklicevanje na osnovni URL vaše instance Homarr lahko uporabite <b>[homarr_base]</b>. To je uporabno za obrnjene proksije in druge nastavitve, kjer osnovni URL ni znan vnaprej.<br><br>Primer: <b>[homarr_base]/myapp</b> se bo prevedel v <b>{current_base_url}/myapp</b>."
 		}
 	},
 	"behaviour": {

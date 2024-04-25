@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Veřejná adresa",
-			"description": "URL která bude otevřena po kliknutí na aplikaci."
+			"description": "URL která bude otevřena po kliknutí na aplikaci.",
+			"tooltip": "Použijte <b>[homarr_base]</b> k odkazu na základní URL vaší instance Homarr. Je to užitečné pro reverzní servery a jiná nastavení, kde základní URL není známa předem.<br><br>Příklad: <b>[homarr_base]/myapp</b> se přeloží na <b>{current_base_url}/myapp</b>."
 		}
 	},
 	"behaviour": {

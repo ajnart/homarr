@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "外部アドレス",
-			"description": "アプリをクリックしたときに開くURL。"
+			"description": "アプリをクリックしたときに開くURL。",
+			"tooltip": "<b>[homarr_base]</b> を使用して、Homarr インスタンスのベース URL を参照できます。これは、ベース URL が事前に不明なリバース プロキシやその他の設定に役立ちます。<br><br>例: <b>[homarr_base]/myapp</b> は <b>{current_base_url}/myapp に変換されます。 </b> 。"
 		}
 	},
 	"behaviour": {
