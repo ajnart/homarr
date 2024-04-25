@@ -29,7 +29,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   const externalUrl = useMemo(() => {
     if (app.behaviour.externalUrl.length > 0) {
       if (app.behaviour.externalUrl.startsWith('[homarr_base]')) {
-        const baseUrl = `${window.location.protocol}://${window.location.hostname}`;
+        const baseUrl = `${window.location.protocol}//${window.location.hostname}`;
         return app.behaviour.externalUrl.replace('[homarr_base]', baseUrl);
       }
       return app.behaviour.externalUrl;
