@@ -56,7 +56,12 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
             <Text size="0.875rem" weight={500}>
               {t('general.externalAddress.label')}
             </Text>
-            <InfoCard message={t('general.externalAddress.tooltip')} />
+            <InfoCard
+              message={t('general.externalAddress.tooltip').replace(
+                '{current_base_url}',
+                `${window.location.protocol}//${window.location.hostname}`
+              )}
+            />
           </Group>
           <TextInput
             icon={<IconClick size={16} />}
