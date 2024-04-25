@@ -3,6 +3,7 @@ import { UseFormReturnType } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { IconClick, IconCursorText, IconLink } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
+import { InfoCard } from '~/components/InfoCard/InfoCard';
 import { AppType } from '~/types/app';
 
 import { EditAppModalTab } from '../type';
@@ -50,14 +51,21 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
             form.setFieldValue('url', e.target.value);
           }}
         />
-        <TextInput
-          icon={<IconClick size={16} />}
-          label={t('general.externalAddress.label')}
-          description={t('general.externalAddress.description')}
-          placeholder="https://homarr.mywebsite.com/"
-          variant="default"
-          {...form.getInputProps('behaviour.externalUrl')}
-        />
+        <Stack style={{ gap: 0 }}>
+          <Group style={{ gap: '0.25rem' }}>
+            <Text size="0.875rem" weight={500}>
+              {t('general.externalAddress.label')}
+            </Text>
+            <InfoCard message={t('general.externalAddress.tooltip')} />
+          </Group>
+          <TextInput
+            icon={<IconClick size={16} />}
+            description={t('general.externalAddress.description')}
+            placeholder="https://homarr.mywebsite.com/"
+            variant="default"
+            {...form.getInputProps('behaviour.externalUrl')}
+          />
+        </Stack>
 
         <Collapse in={opened}>
           <Card withBorder>
