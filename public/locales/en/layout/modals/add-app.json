@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "External address",
 			"description": "URL that will be opened when clicking on the app.",
-			"tooltip": "You can use <b>[homarr_base]</b> to refer to the base URL of your Homarr instance. This is useful for reverse proxies and other setups where the base URL is not known in advance."
+			"tooltip": "You can use <b>[homarr_base]</b> to refer to the base URL of your Homarr instance. This is useful for reverse proxies and other setups where the base URL is not known in advance.<br><br>Example: <b>[homarr_base]/myapp</b> will translate to <b>{current_base_url}/myapp</b>."
 		}
 	},
 	"behaviour": {
