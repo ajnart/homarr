@@ -81,7 +81,8 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
         </Collapse>
 
         {!form.values.behaviour.externalUrl.startsWith('https://') &&
-          !form.values.behaviour.externalUrl.startsWith('http://') && (
+          !form.values.behaviour.externalUrl.startsWith('http://') &&
+          !form.values.behaviour.externalUrl.startsWith('[homarr_base]') && (
             <Text color="red" mt="sm" size="sm">
               {t('behaviour.customProtocolWarning')}
             </Text>
