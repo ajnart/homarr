@@ -11,10 +11,10 @@
         "label": "Visa stadens namn"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Visa veckovis prognos"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Dagar att visa"
       },
       "location": {
         "label": "Plats för väder"
