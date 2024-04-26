@@ -16,7 +16,7 @@
     },
     "afterLoginRedirection": "Efter inloggningen kommer du att omdirigeras till {{url}}",
     "providersEmpty": {
-      "title": "",
+      "title": "Fel vid autentiseringsfel",
       "message": ""
     }
   },
