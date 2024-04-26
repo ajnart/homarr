@@ -24,6 +24,8 @@ export const AvatarMenu = () => {
   const { data: sessionData } = useSession();
   const { colorScheme, toggleColorScheme } = useColorScheme();
 
+  const redirectUrl = env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL;
+
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
   const defaultBoardHref = useBoardLink('/board');
 
@@ -69,9 +71,8 @@ export const AvatarMenu = () => {
               signOut({
                 redirect: false,
               }).then(() => {
-                alert(env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL ?? "this bish empty, yeet");
-                env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL
-                  ? window.location.assign(env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL)
+                redirectUrl
+                  ? window.location.assign(redirectUrl)
                   : window.location.reload();
               });
             }}
