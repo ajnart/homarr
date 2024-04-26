@@ -68,11 +68,12 @@ export const AvatarMenu = () => {
             onClick={() => {
               signOut({
                 redirect: false,
-              }).then(() =>
+              }).then(() => {
+                alert(env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL ?? "this bish empty, yeet");
                 env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL
                   ? window.location.assign(env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL)
-                  : window.location.reload()
-              );
+                  : window.location.reload();
+              });
             }}
           >
             {t('actions.avatar.logout', {
