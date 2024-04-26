@@ -1,21 +1,33 @@
 import {
+  ActionIcon,
   Badge,
   Box,
   Button,
   Card,
   Center,
+  Flex,
   Group,
   Image,
+  Modal,
+  NumberInput,
+  NumberInputHandlers,
   SimpleGrid,
   Stack,
   Text,
   Title,
   UnstyledButton,
+  rem,
 } from '@mantine/core';
-import { useElementSize } from '@mantine/hooks';
-import { IconDeviceGamepad, IconPlayerPlay, IconPlayerStop } from '@tabler/icons-react';
+import { useDisclosure, useElementSize } from '@mantine/hooks';
+import {
+  IconClockPause,
+  IconDeviceGamepad,
+  IconPlayerPlay,
+  IconPlayerStop,
+} from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
+import { useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
@@ -69,6 +81,11 @@ const dnsLightStatus = (
 
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { data: sessionData } = useSession();
+  const [opened, { close, open }] = useDisclosure(false);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const hoursHandlers = useRef<NumberInputHandlers>();
+  const minutesHandlers = useRef<NumberInputHandlers>();
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
@@ -124,10 +141,17 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
     return dnsList;
   };
 
-  const toggleDns = async (action: 'enable' | 'disable', appsToChange?: string[]) => {
+  const toggleDns = async (
+    action: 'enable' | 'disable',
+    appsToChange?: string[],
+    hours: number = 0,
+    minutes: number = 0
+  ) => {
+    const duration = hours * 3600 + minutes * 60;
     await mutateAsync(
       {
         action,
+        duration,
         configName,
         appsToChange,
       },
@@ -158,8 +182,100 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
           >
             {t('enableAll')}
           </Button>
+
+          <Modal
+            withinPortal
+            radius="lg"
+            shadow="sm"
+            size="sm"
+            opened={opened}
+            onClose={close}
+            title="Set disable duration time"
+          >
+            <Flex direction="column" align="center" justify="center">
+              <Stack align="flex-end">
+                <Group spacing={5}>
+                  <Text>Hours</Text>
+                  <ActionIcon
+                    size={35}
+                    variant="default"
+                    onClick={() => hoursHandlers.current?.decrement()}
+                  >
+                    –
+                  </ActionIcon>
+
+                  <NumberInput
+                    hideControls
+                    value={hours}
+                    onChange={(val) => setHours(Number(val))}
+                    handlersRef={hoursHandlers}
+                    max={23}
+                    min={0}
+                    step={1}
+                    styles={{ input: { width: rem(54), textAlign: 'center' } }}
+                  />
+
+                  <ActionIcon
+                    size={35}
+                    variant="default"
+                    onClick={() => hoursHandlers.current?.increment()}
+                  >
+                    +
+                  </ActionIcon>
+                </Group>
+                <Group spacing={5}>
+                  <Text>Minutes</Text>
+                  <ActionIcon
+                    size={35}
+                    variant="default"
+                    onClick={() => minutesHandlers.current?.decrement()}
+                  >
+                    –
+                  </ActionIcon>
+
+                  <NumberInput
+                    hideControls
+                    value={minutes}
+                    onChange={(val) => setMinutes(Number(val))}
+                    handlersRef={minutesHandlers}
+                    max={59}
+                    min={0}
+                    step={1}
+                    styles={{ input: { width: rem(54), textAlign: 'center' } }}
+                  />
+
+                  <ActionIcon
+                    size={35}
+                    variant="default"
+                    onClick={() => minutesHandlers.current?.increment()}
+                  >
+                    +
+                  </ActionIcon>
+                </Group>
+              </Stack>
+              <Text ta="center" c="dimmed" mb={5}>
+                leave empty for unlimited
+              </Text>
+              <Button
+                variant="light"
+                color="red"
+                leftIcon={<IconClockPause size={20} />}
+                h="2rem"
+                w="12rem"
+                onClick={() => {
+                  toggleDns('disable', getDnsStatus()?.enabled, hours, minutes);
+                  setHours(0);
+                  setMinutes(0);
+                  close();
+                }}
+              >
+                Set
+              </Button>
+            </Flex>
+          </Modal>
+
           <Button
-            onClick={() => toggleDns('disable', getDnsStatus()?.enabled)}
+            onClick={open}
             disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
             leftIcon={<IconPlayerStop size={20} />}
             variant="light"
@@ -204,9 +320,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={() =>
-                      toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
-                    }
+                    onClick={() => {
+                      dnsHole.status === 'enabled' ? open() : toggleDns('enable', [app.id]);
+                    }}
                     disabled={fetchingDnsSummary || changingStatus}
                     style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                   >
