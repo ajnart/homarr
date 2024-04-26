@@ -190,12 +190,12 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
             size="sm"
             opened={opened}
             onClose={close}
-            title="Set disable duration time"
+            title={t('modules/dns-hole-controls:durationModal.title')}
           >
             <Flex direction="column" align="center" justify="center">
               <Stack align="flex-end">
                 <Group spacing={5}>
-                  <Text>Hours</Text>
+                  <Text>{t('modules/dns-hole-controls:durationModal.hours')}</Text>
                   <ActionIcon
                     size={35}
                     variant="default"
@@ -224,7 +224,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   </ActionIcon>
                 </Group>
                 <Group spacing={5}>
-                  <Text>Minutes</Text>
+                  <Text>{t('modules/dns-hole-controls:durationModal.minutes')}</Text>
                   <ActionIcon
                     size={35}
                     variant="default"
@@ -254,7 +254,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 </Group>
               </Stack>
               <Text ta="center" c="dimmed" mb={5}>
-                leave empty for unlimited
+                {t('modules/dns-hole-controls:durationModal.unlimited')}
               </Text>
               <Button
                 variant="light"
@@ -269,7 +269,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   close();
                 }}
               >
-                Set
+                {t('modules/dns-hole-controls:durationModal.set')}
               </Button>
             </Flex>
           </Modal>
