@@ -8,18 +8,18 @@
         "label": "Show 'Enable/Disable All' Buttons"
       }
     },
-    "durationModal": {
-      "title": "Set disable duration time",
-      "hours": "Hours",
-      "minutes": "Minutes",
-      "unlimited": "leave empty for unlimited",
-      "set": "Set"
-    },
     "errors": {
       "general": {
         "title": "Unable to find a DNS hole",
         "text": "There was a problem connecting to your DNS Hole(s). Please verify your configuration/integration(s)."
       }
     }
+  },
+  "durationModal": {
+    "title": "Set disable duration time",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "unlimited": "leave empty for unlimited",
+    "set": "Set"
   }
 }

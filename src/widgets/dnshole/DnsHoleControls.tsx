@@ -86,6 +86,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const [minutes, setMinutes] = useState(0);
   const hoursHandlers = useRef<NumberInputHandlers>();
   const minutesHandlers = useRef<NumberInputHandlers>();
+  const [appId, setAppId] = useState('');
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
   const { width, ref } = useElementSize();
@@ -161,6 +162,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         },
       }
     );
+    setHours(0);
+    setMinutes(0);
+    setAppId('');
   };
 
   return (
@@ -203,7 +207,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   >
                     –
                   </ActionIcon>
-
                   <NumberInput
                     hideControls
                     value={hours}
@@ -214,7 +217,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                     step={1}
                     styles={{ input: { width: rem(54), textAlign: 'center' } }}
                   />
-
                   <ActionIcon
                     size={35}
                     variant="default"
@@ -232,7 +234,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   >
                     –
                   </ActionIcon>
-
                   <NumberInput
                     hideControls
                     value={minutes}
@@ -243,7 +244,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                     step={1}
                     styles={{ input: { width: rem(54), textAlign: 'center' } }}
                   />
-
                   <ActionIcon
                     size={35}
                     variant="default"
@@ -263,9 +263,9 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 h="2rem"
                 w="12rem"
                 onClick={() => {
-                  toggleDns('disable', getDnsStatus()?.enabled, hours, minutes);
-                  setHours(0);
-                  setMinutes(0);
+                  appId === ''
+                    ? toggleDns('disable', getDnsStatus()?.enabled, hours, minutes)
+                    : toggleDns('disable', [appId], hours, minutes);
                   close();
                 }}
               >
@@ -321,6 +321,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                   <Text>{app.name}</Text>
                   <UnstyledButton
                     onClick={() => {
+                      setAppId(app.id);
                       dnsHole.status === 'enabled' ? open() : toggleDns('enable', [app.id]);
                     }}
                     disabled={fetchingDnsSummary || changingStatus}
