@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Prekódovanie médií",
+    "description": "Zobrazí informácie o prekódovaní médií",
     "settings": {
-      "title": "",
+      "title": "Nastavenia prekódovania médií",
       "appId": {
-        "label": ""
+        "label": "Vyberte aplikáciu"
       },
       "defaultView": {
-        "label": "",
+        "label": "Predvolené zobrazenie",
         "data": {
-          "workers": "",
+          "workers": "Pracovníci",
           "queue": "Fronta",
-          "statistics": ""
+          "statistics": "Statistiky"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Zobraziť indikátor stavu"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Zobraziť kontroly stavu vo fronte"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Fronta: Položky na stránku"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Zobraziť ikonu aplikácie v pravom dolnom rohu"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Vyberte aplikáciu v nastaveniach miniaplikácie",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Súbor",
           "eta": "Odhad",
           "progress": "Stav"
         },
         "empty": "Prázdny",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkodér",
+          "healthCheck": "Kontrola stavu"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Súbor",
           "size": "Veľkosť"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} z {{total}}"
         },
         "empty": "Prázdny",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transkodér",
+          "healthCheck": "Kontrola stavu"
         }
       }
     },
     "statistics": {
       "empty": "Prázdny",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Prekódovanie: {{value}}",
+        "healthChecks": "Zdravotné kontroly: {{value}}",
+        "files": "Súbory: {{value}}",
+        "spaceSaved": "Uložené: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Transkodér",
+        "healthChecks": "Kontrola stavu",
+        "videoCodecs": "Kodeky",
+        "videoContainers": "Kontajnery",
+        "videoResolutions": "Rozlíšenie"
       }
     }
   },
   "error": {
     "title": "Chyba",
-    "message": ""
+    "message": "Pri načítavaní údajov z Tdarr došlo k chybe."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Pracovníci",
     "queue": "Fronta",
-    "statistics": ""
+    "statistics": "Statistiky"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Kontrola stavu",
+    "queued": "V poradí",
+    "healthy": "Zdravý",
+    "unhealthy": "Nezdravý"
   }
 }
