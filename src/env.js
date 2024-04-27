@@ -102,7 +102,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
-          AUTH_OIDC_TIMEOUT: numberSchema.default("3500"),
+          AUTH_OIDC_TIMEOUT: numberSchema.default('3500'),
         }
       : {}),
   },
@@ -124,7 +124,7 @@ const env = createEnv({
       .optional()
       .default('light'),
     NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
-    NEXT_PUBLIC_LOGOUT_REDIRECT_URL: z.string().optional(),
+    AUTH_LOGOUT_REDIRECT_URL: z.string().optional(),
   },
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
@@ -164,7 +164,7 @@ const env = createEnv({
     AUTH_OIDC_AUTO_LOGIN: process.env.AUTH_OIDC_AUTO_LOGIN,
     AUTH_OIDC_SCOPE_OVERWRITE: process.env.AUTH_OIDC_SCOPE_OVERWRITE,
     AUTH_OIDC_TIMEOUT: process.env.AUTH_OIDC_TIMEOUT,
-    NEXT_PUBLIC_LOGOUT_REDIRECT_URL: process.env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL,
+    AUTH_LOGOUT_REDIRECT_URL: process.env.AUTH_LOGOUT_REDIRECT_URL,
     AUTH_SESSION_EXPIRY_TIME: process.env.AUTH_SESSION_EXPIRY_TIME,
     DEMO_MODE: process.env.DEMO_MODE,
   },

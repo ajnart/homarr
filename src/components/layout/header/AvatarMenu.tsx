@@ -14,7 +14,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { forwardRef } from 'react';
-import { env } from '~/env';
+import { useLogoutUrl } from '~/hooks/custom-session-provider';
 import { useColorScheme } from '~/hooks/use-colorscheme';
 
 import { useBoardLink } from '../Templates/BoardLayout';
@@ -24,10 +24,10 @@ export const AvatarMenu = () => {
   const { data: sessionData } = useSession();
   const { colorScheme, toggleColorScheme } = useColorScheme();
 
-  const redirectUrl = env.NEXT_PUBLIC_LOGOUT_REDIRECT_URL;
-
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
   const defaultBoardHref = useBoardLink('/board');
+
+  const logoutUrl = useLogoutUrl();
 
   return (
     <Menu width={256}>
@@ -70,11 +70,9 @@ export const AvatarMenu = () => {
             onClick={() => {
               signOut({
                 redirect: false,
-              }).then(() => {
-                redirectUrl
-                  ? window.location.assign(redirectUrl)
-                  : window.location.reload();
-              });
+              }).then(() =>
+                logoutUrl ? window.location.assign(logoutUrl) : window.location.reload()
+              );
             }}
           >
             {t('actions.avatar.logout', {

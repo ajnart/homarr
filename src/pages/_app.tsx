@@ -19,18 +19,21 @@ import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
+import { CustomSessionProvider } from '~/hooks/custom-session-provider';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
-import { getServiceSidePackageAttributes, ServerSidePackageAttributesType } from '~/tools/server/getPackageVersion';
+import {
+  ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
+} from '~/tools/server/getPackageVersion';
 import { theme } from '~/tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
-import { CustomSessionProvider } from '~/hooks/custom-session-provider';
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
 import '../styles/global.scss';
@@ -45,6 +48,7 @@ function App(
     environmentColorScheme: MantineColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
+    logoutUrl?: string;
     analyticsEnabled: boolean;
     config?: ConfigType;
     primaryColor?: MantineTheme['primaryColor'];
@@ -112,7 +116,7 @@ function App(
           strategy="lazyOnload"
         />
       )}
-      <CustomSessionProvider session={pageProps.session}>
+      <CustomSessionProvider session={pageProps.session} logoutUrl={pageProps.logoutUrl}>
         <ColorSchemeProvider {...pageProps}>
           {(colorScheme) => (
             <ColorTheme.Provider value={colorTheme}>
@@ -178,6 +182,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     pageProps: {
       ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
+      logoutUrl: env.AUTH_LOGOUT_REDIRECT_URL,
       analyticsEnabled,
       session,
       locale: ctx.locale ?? 'en',
