@@ -75,7 +75,11 @@ export const EditAppModal = ({
             return t('validation.noExternalUri');
           }
 
-          if (!url.match(appUrlWithAnyProtocolRegex) && !url.startsWith('[homarr_base]')) {
+          if (
+            !url.match(appUrlWithAnyProtocolRegex) &&
+            !url.startsWith('[homarr_base]') &&
+            !url.startsWith('[homarr_protocol]://')
+          ) {
             return t('validation.invalidExternalUri');
           }
 

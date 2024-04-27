@@ -56,12 +56,7 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
             <Text size="0.875rem" weight={500}>
               {t('general.externalAddress.label')}
             </Text>
-            <InfoCard
-              message={t('general.externalAddress.tooltip').replace(
-                '{current_base_url}',
-                `${window.location.protocol}//${window.location.hostname}`
-              )}
-            />
+            <InfoCard message={t('general.externalAddress.tooltip')} />
           </Group>
           <TextInput
             icon={<IconClick size={16} />}
@@ -95,7 +90,8 @@ export const GeneralTab = ({ form, openTab }: GeneralTabProps) => {
 
         {!form.values.behaviour.externalUrl.startsWith('https://') &&
           !form.values.behaviour.externalUrl.startsWith('http://') &&
-          !form.values.behaviour.externalUrl.startsWith('[homarr_base]') && (
+          !form.values.behaviour.externalUrl.startsWith('[homarr_base]') &&
+          !form.values.behaviour.externalUrl.startsWith('[homarr_protocol]://') && (
             <Text color="red" mt="sm" size="sm">
               {t('behaviour.customProtocolWarning')}
             </Text>

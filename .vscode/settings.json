@@ -11,7 +11,7 @@
 		"layout.manage.navigation.**",
 	],
 	"editor.codeActionsOnSave": {
-		"source.organizeImports": true
+		"source.organizeImports": "explicit"
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"explorer.fileNesting.patterns": {

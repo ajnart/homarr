@@ -2,6 +2,7 @@ import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
+import * as tldts from 'tldts';
 import { AppType } from '~/types/app';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -25,17 +26,35 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     .filter((e) => e)
     .join(': ');
 
+  const parsedUrl = useMemo(() => {
+    try {
+      return tldts.parse(window.location.toString());
+    } catch {
+      return null;
+    }
+  }, [window.location]);
+
   const isRow = app.appearance.positionAppName.includes('row');
   const externalUrl = useMemo(() => {
     if (app.behaviour.externalUrl.length > 0) {
       if (app.behaviour.externalUrl.startsWith('[homarr_base]')) {
         const baseUrl = `${window.location.protocol}//${window.location.hostname}`;
         return app.behaviour.externalUrl.replace('[homarr_base]', baseUrl);
+      } else if (
+        ['[homarr_hostname]', '[homarr_domain]', '[homarr_protocol]'].some((e) =>
+          app.behaviour.externalUrl.includes(e)
+        ) &&
+        parsedUrl
+      ) {
+        return app.behaviour.externalUrl
+          .replace('[homarr_hostname]', parsedUrl.hostname ?? '')
+          .replace('[homarr_domain]', parsedUrl.domain ?? '')
+          .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
       }
       return app.behaviour.externalUrl;
     }
     return app.url;
-  }, [app.behaviour.externalUrl, app.url]);
+  }, [app.behaviour.externalUrl, app.url, parsedUrl]);
 
   function Inner() {
     return (
