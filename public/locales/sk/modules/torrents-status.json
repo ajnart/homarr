@@ -31,15 +31,15 @@
         "info": "Ak je vypnutý, zobrazí sa iba globálny pomer. Globálny pomer bude stále používať štítky, ak je nastavený"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Povoliť zmenu poradia stĺpcov"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Povoliť triedenie riadkov"
       },
       "columns": {
         "label": "Vyberte stĺpce na zobrazenie",
         "data": {
-          "date": "",
+          "date": "Dátum pridania",
           "down": "Dole",
           "up": "Hore",
           "eta": "Odhad",
