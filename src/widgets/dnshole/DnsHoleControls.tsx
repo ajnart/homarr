@@ -159,6 +159,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
       {
         onSettled: () => {
           trpcUtils.dnsHole.summary.invalidate();
+
+          setTimeout(
+            () => {
+              trpcUtils.dnsHole.summary.invalidate();
+            },
+            (duration + 3) * 1000
+          );
         },
       }
     );
@@ -263,9 +270,12 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 h="2rem"
                 w="12rem"
                 onClick={() => {
-                  appId === ''
-                    ? toggleDns('disable', getDnsStatus()?.enabled, hours, minutes)
-                    : toggleDns('disable', [appId], hours, minutes);
+                  toggleDns(
+                    'disable',
+                    appId !== '' ? [appId] : getDnsStatus()?.enabled,
+                    hours,
+                    minutes
+                  );
                   close();
                 }}
               >
@@ -317,13 +327,12 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 >
                   <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
-                <Stack spacing="0rem">
+                <Stack spacing="0rem" align="center">
                   <Text>{app.name}</Text>
                   <UnstyledButton
-                    onClick={() => {
-                      setAppId(app.id);
-                      dnsHole.status === 'enabled' ? open() : toggleDns('enable', [app.id]);
-                    }}
+                    onClick={() =>
+                      toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
+                    }
                     disabled={fetchingDnsSummary || changingStatus}
                     style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                   >
@@ -350,6 +359,18 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                       {t(dnsHole.status)}
                     </Badge>
                   </UnstyledButton>
+                  <ActionIcon
+                    size={20}
+                    w="5.5rem"
+                    radius="xl"
+                    variant="default"
+                    onClick={() => {
+                      setAppId(app.id);
+                      open();
+                    }}
+                  >
+                    <IconClockPause size={20} color="red" />
+                  </ActionIcon>
                 </Stack>
               </Group>
             </Card>
