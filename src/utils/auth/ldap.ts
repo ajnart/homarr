@@ -1,6 +1,7 @@
 import Consola from 'consola';
 import ldap from 'ldapjs';
 import Credentials from 'next-auth/providers/credentials';
+import { z } from 'zod';
 import { env } from '~/env';
 import { signInSchema } from '~/validations/user';
 
@@ -61,7 +62,6 @@ const ldapSearch = async <
         reject('error: ' + err.message);
       });
       res.on('searchEntry', (entry) => {
-        console.log(entry.pojo);
         results.push(
           entry.pojo.attributes.reduce<Record<string, string | string[]>>(
             (obj, attr) => {
@@ -99,26 +99,34 @@ export default Credentials({
       Consola.log(`user ${data.name} is trying to log in using LDAP. Connecting to LDAP server...`);
       const client = await ldapLogin(env.AUTH_LDAP_BIND_DN, env.AUTH_LDAP_BIND_PASSWORD);
 
-      Consola.log(`Connection established. Logging in User...`);
+      Consola.log(`Connection established. Searching User...`);
       const ldapUser = (
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
-          filter: env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG ? `(&(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})${env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG})` : `(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})`,
+          filter: env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG
+            ? `(&(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})${env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG})`
+            : `(${env.AUTH_LDAP_USERNAME_ATTRIBUTE}=${data.name})`,
           scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
-          attributes: ['uid', 'mail'] as const,
+          attributes: [
+            env.AUTH_LDAP_USERNAME_ATTRIBUTE,
+            env.AUTH_LDAP_USER_MAIL_ATTRIBUTE,
+          ] as const,
         })
       )[0];
 
       if (!ldapUser) throw new Error('User not found in LDAP');
 
-      Consola.log(`User logged in. Retrieving groups...`);
+      Consola.log(`User found. Logging in...`);
       await ldapLogin(ldapUser.dn, data.password).then((client) => client.destroy());
 
+      Consola.log(`User logged in. Retrieving groups...`);
       const userGroups = (
         await ldapSearch(client, env.AUTH_LDAP_BASE, {
-          filter: `(&(objectclass=${env.AUTH_LDAP_GROUP_CLASS})(${
+          filter: `(&(objectClass=${env.AUTH_LDAP_GROUP_CLASS})(${
             env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE
-          }=${ldapUser[env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE as 'dn' | 'uid']})${env.AUTH_LDAP_GROUP_FILTER_EXTRA_ARG ?? ''})`,
+          }=${ldapUser[env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE as 'dn' | 'uid']})${
+            env.AUTH_LDAP_GROUP_FILTER_EXTRA_ARG ?? ''
+          })`,
           scope: env.AUTH_LDAP_SEARCH_SCOPE,
           // as const for inference
           attributes: 'cn',
@@ -129,15 +137,25 @@ export default Credentials({
 
       Consola.log(`user ${data.name} successfully authorized`);
 
-      let user = await adapter.getUserByEmail!(ldapUser.mail);
+      try {
+        z.string().email().parse(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
+      } catch {
+        throw new Error(
+          `Invalid or non-existing Email. Not Supported: "${
+            ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE] ?? ' '
+          }"`
+        );
+      }
+
+      let user = await adapter.getUserByEmail!(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
       const isAdmin = userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP);
       const isOwner = userGroups.includes(env.AUTH_LDAP_OWNER_GROUP);
 
       if (!user) {
         // CreateUser will create settings in event
-        user = await adapter.createUser({
-          name: ldapUser.uid,
-          email: ldapUser.mail,
+        user = adapter.createUser({
+          name: ldapUser[env.AUTH_LDAP_USERNAME_ATTRIBUTE],
+          email: ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE],
           emailVerified: new Date(), // assume ldap email is verified
           isAdmin: isAdmin,
           isOwner: isOwner,
@@ -156,7 +174,7 @@ export default Credentials({
 
       return {
         id: user?.id || ldapUser.dn,
-        name: user?.name || ldapUser.uid,
+        name: user?.name || ldapUser[env.AUTH_LDAP_USERNAME_ATTRIBUTE],
         isAdmin: isAdmin,
         isOwner: isOwner,
       };

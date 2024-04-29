@@ -16,7 +16,7 @@ const numberSchema = z
   .string()
   .regex(/\d*/)
   .transform((value) => (value === undefined ? undefined : Number(value)))
-  .optional()
+  .optional();
 
 const portSchema = z
   .string()
@@ -77,6 +77,7 @@ const env = createEnv({
           AUTH_LDAP_BASE: z.string(),
           AUTH_LDAP_SEARCH_SCOPE: z.enum(['base', 'one', 'sub']).default('base'),
           AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
+          AUTH_LDAP_USER_MAIL_ATTRIBUTE: z.string().default('mail'),
           AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG: z.string().optional(),
           AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
           AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
@@ -98,7 +99,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
-          AUTH_OIDC_TIMEOUT: numberSchema.default(3500)
+          AUTH_OIDC_TIMEOUT: numberSchema.default(3500),
         }
       : {}),
   },
@@ -144,6 +145,7 @@ const env = createEnv({
     AUTH_LDAP_BASE: process.env.AUTH_LDAP_BASE,
     AUTH_LDAP_SEARCH_SCOPE: process.env.AUTH_LDAP_SEARCH_SCOPE?.toLowerCase(),
     AUTH_LDAP_USERNAME_ATTRIBUTE: process.env.AUTH_LDAP_USERNAME_ATTRIBUTE,
+    AUTH_LDAP_USER_MAIL_ATTRIBUTE: process.env.AUTH_LDAP_USER_MAIL_ATTRIBUTE,
     AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG: process.env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG,
     AUTH_LDAP_GROUP_CLASS: process.env.AUTH_LDAP_GROUP_CLASS,
     AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: process.env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE,
