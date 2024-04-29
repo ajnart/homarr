@@ -20,20 +20,30 @@ export const parseDuration = (time: number, t: TFunction): string => {
 };
 
 export const secondsFromTimeString = (time: string | undefined): number | undefined => {
-  if (!time) return undefined;
+  if (!time) {
+    return undefined;
+  }
   const lastChar = time[time.length - 1];
-  if (!isNaN(+lastChar)) return Number(time);
+  if (!isNaN(+lastChar)) {
+    return Number(time);
+  }
+
   const numTime = +time.substring(0, time.length - 1);
   switch (lastChar.toLowerCase()) {
-    case 's':
+    case 's': {
       return numTime;
-    case 'm':
+    }
+    case 'm': {
       return numTime * 60;
-    case 'h':
+    }
+    case 'h': {
       return numTime * 60 * 60;
-    case 'd':
+    }
+    case 'd': {
       return numTime * 24 * 60 * 60;
-    default:
+    }
+    default: {
       return undefined;
+    }
   }
 };

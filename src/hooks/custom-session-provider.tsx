@@ -17,6 +17,7 @@ export const CustomSessionProvider = ({
   //Automatically redirect to the login page after a session expires or after 24 days
   useEffect(() => {
     if (!session) return () => {};
+    //setTimeout doesn't allow for a number higher than 2147483647 (2³¹-1 , or roughly 24 days)
     const timeout = setTimeout(signIn, Math.min(dayjs(session.expires).diff(), 2147483647));
     return () => clearTimeout(timeout);
   }, [session]);
