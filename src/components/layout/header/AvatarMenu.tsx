@@ -88,10 +88,10 @@ type CurrentUserAvatarProps = {
   user: User | null;
 };
 
-const getGravatar = (email?: string | undefined | null) => {
+const getAvatarLink = (email?: string | undefined | null) => {
   if (!email) return null;
   const emailHash = createHash('sha256').update(email.trim().toLowerCase()).digest('hex');
-  return `https://gravatar.com/avatar/${emailHash}?d=null`;
+  return `https://seccdn.libravatar.org/avatar/${emailHash}?d=404`;
 };
 
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
@@ -100,18 +100,16 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
     const { fn } = useMantineTheme();
     const border = fn.variant({ variant: 'default' }).border;
 
-    if (!user)
-      return <Avatar ref={ref} styles={{ root: { border: `1px solid ${border}` } }} {...others} />;
-
     return (
       <Avatar
         ref={ref}
-        color={primaryColor}
-        src={getGravatar(user.email)}
-        styles={{ root: { border: `1px solid ${border}` } }}
+        color={user == null ? undefined : primaryColor}
+        src={getAvatarLink(user?.email)}
+        alt={user?.name?.slice(0, 2).toUpperCase() ?? "anon"}
+        styles={{ root: { border: `1px solid ${border}` }, image: {} }}
         {...others}
       >
-        {user.name?.slice(0, 2).toUpperCase()}
+        {user?.name?.slice(0, 2).toUpperCase()}
       </Avatar>
     );
   }
