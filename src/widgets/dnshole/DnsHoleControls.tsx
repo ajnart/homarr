@@ -11,10 +11,10 @@ import {
   Modal,
   NumberInput,
   NumberInputHandlers,
-  SimpleGrid,
   Stack,
   Text,
   Title,
+  Tooltip,
   UnstyledButton,
   rem,
 } from '@mantine/core';
@@ -175,127 +175,145 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   };
 
   return (
-    <Stack justify="space-between" h={'100%'} spacing="0.25rem">
+    <Stack w={'100%'} spacing="0.25rem">
       {enableControls && widget.properties.showToggleAllButtons && (
-        <SimpleGrid
-          ref={ref}
-          cols={width > 275 ? 2 : 1}
-          verticalSpacing="0.25rem"
-          spacing="0.25rem"
-        >
-          <Button
-            onClick={() => toggleDns('enable', getDnsStatus()?.disabled)}
-            disabled={getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus}
-            leftIcon={<IconPlayerPlay size={20} />}
-            variant="light"
-            color="green"
-            h="2rem"
-          >
-            {t('enableAll')}
-          </Button>
+        <Flex gap="xs">
+          <Tooltip label={t('enableAll')}>
+            <Button
+              onClick={() => toggleDns('enable', getDnsStatus()?.disabled)}
+              disabled={
+                getDnsStatus()?.disabled.length === 0 || fetchingDnsSummary || changingStatus
+              }
+              variant="light"
+              color="green"
+              fullWidth
+              h="2rem"
+            >
+              <IconPlayerPlay size={20} />
+            </Button>
+          </Tooltip>
 
-          <Modal
-            withinPortal
-            radius="lg"
-            shadow="sm"
-            size="sm"
-            opened={opened}
-            onClose={close}
-            title={t('modules/dns-hole-controls:durationModal.title')}
-          >
-            <Flex direction="column" align="center" justify="center">
-              <Stack align="flex-end">
-                <Group spacing={5}>
-                  <Text>{t('modules/dns-hole-controls:durationModal.hours')}</Text>
-                  <ActionIcon
-                    size={35}
-                    variant="default"
-                    onClick={() => hoursHandlers.current?.decrement()}
-                  >
-                    –
-                  </ActionIcon>
-                  <NumberInput
-                    hideControls
-                    value={hours}
-                    onChange={(val) => setHours(Number(val))}
-                    handlersRef={hoursHandlers}
-                    max={23}
-                    min={0}
-                    step={1}
-                    styles={{ input: { width: rem(54), textAlign: 'center' } }}
-                  />
-                  <ActionIcon
-                    size={35}
-                    variant="default"
-                    onClick={() => hoursHandlers.current?.increment()}
-                  >
-                    +
-                  </ActionIcon>
-                </Group>
-                <Group spacing={5}>
-                  <Text>{t('modules/dns-hole-controls:durationModal.minutes')}</Text>
-                  <ActionIcon
-                    size={35}
-                    variant="default"
-                    onClick={() => minutesHandlers.current?.decrement()}
-                  >
-                    –
-                  </ActionIcon>
-                  <NumberInput
-                    hideControls
-                    value={minutes}
-                    onChange={(val) => setMinutes(Number(val))}
-                    handlersRef={minutesHandlers}
-                    max={59}
-                    min={0}
-                    step={1}
-                    styles={{ input: { width: rem(54), textAlign: 'center' } }}
-                  />
-                  <ActionIcon
-                    size={35}
-                    variant="default"
-                    onClick={() => minutesHandlers.current?.increment()}
-                  >
-                    +
-                  </ActionIcon>
-                </Group>
-              </Stack>
-              <Text ta="center" c="dimmed" mb={5}>
-                {t('modules/dns-hole-controls:durationModal.unlimited')}
-              </Text>
-              <Button
-                variant="light"
-                color="red"
-                leftIcon={<IconClockPause size={20} />}
-                h="2rem"
-                w="12rem"
-                onClick={() => {
-                  toggleDns(
-                    'disable',
-                    appId !== '' ? [appId] : getDnsStatus()?.enabled,
-                    hours,
-                    minutes
-                  );
-                  close();
-                }}
+          <Tooltip label={t('setTimer')}>
+            <Button
+              onClick={open}
+              disabled={
+                getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus
+              }
+              variant="light"
+              color="yellow"
+              fullWidth
+              h="2rem"
+            >
+              <IconClockPause size={20} />
+            </Button>
+          </Tooltip>
+
+          <Tooltip label={t('disableAll')}>
+            <Button
+              onClick={() => toggleDns('disable', getDnsStatus()?.enabled)}
+              disabled={
+                getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus
+              }
+              variant="light"
+              color="red"
+              fullWidth
+              h="2rem"
+            >
+              <IconPlayerStop size={20} />
+            </Button>
+          </Tooltip>
+        </Flex>
+      )}
+
+      <Modal
+        withinPortal
+        radius="lg"
+        shadow="sm"
+        size="sm"
+        opened={opened}
+        onClose={close}
+        title={t('modules/dns-hole-controls:durationModal.title')}
+      >
+        <Flex direction="column" align="center" justify="center">
+          <Stack align="flex-end">
+            <Group spacing={5}>
+              <Text>{t('modules/dns-hole-controls:durationModal.hours')}</Text>
+              <ActionIcon
+                size={35}
+                variant="default"
+                onClick={() => hoursHandlers.current?.decrement()}
               >
-                {t('modules/dns-hole-controls:durationModal.set')}
-              </Button>
-            </Flex>
-          </Modal>
-
+                –
+              </ActionIcon>
+              <NumberInput
+                hideControls
+                value={hours}
+                onChange={(val) => setHours(Number(val))}
+                handlersRef={hoursHandlers}
+                max={23}
+                min={0}
+                step={1}
+                styles={{ input: { width: rem(54), textAlign: 'center' } }}
+              />
+              <ActionIcon
+                size={35}
+                variant="default"
+                onClick={() => hoursHandlers.current?.increment()}
+              >
+                +
+              </ActionIcon>
+            </Group>
+            <Group spacing={5}>
+              <Text>{t('modules/dns-hole-controls:durationModal.minutes')}</Text>
+              <ActionIcon
+                size={35}
+                variant="default"
+                onClick={() => minutesHandlers.current?.decrement()}
+              >
+                –
+              </ActionIcon>
+              <NumberInput
+                hideControls
+                value={minutes}
+                onChange={(val) => setMinutes(Number(val))}
+                handlersRef={minutesHandlers}
+                max={59}
+                min={0}
+                step={1}
+                styles={{ input: { width: rem(54), textAlign: 'center' } }}
+              />
+              <ActionIcon
+                size={35}
+                variant="default"
+                onClick={() => minutesHandlers.current?.increment()}
+              >
+                +
+              </ActionIcon>
+            </Group>
+          </Stack>
+          <Text ta="center" c="dimmed" mb={5}>
+            {t('modules/dns-hole-controls:durationModal.unlimited')}
+          </Text>
           <Button
-            onClick={open}
-            disabled={getDnsStatus()?.enabled.length === 0 || fetchingDnsSummary || changingStatus}
-            leftIcon={<IconPlayerStop size={20} />}
             variant="light"
             color="red"
+            leftIcon={<IconClockPause size={20} />}
             h="2rem"
+            w="12rem"
+            onClick={() => {
+              toggleDns(
+                'disable',
+                appId !== '' ? [appId] : getDnsStatus()?.enabled,
+                hours,
+                minutes
+              );
+              close();
+            }}
           >
-            {t('disableAll')}
+            {t('modules/dns-hole-controls:durationModal.set')}
           </Button>
-        </SimpleGrid>
-      )}
+        </Flex>
+      </Modal>
 
       <Stack
         spacing="0.25rem"
@@ -329,48 +347,49 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 </Box>
                 <Stack spacing="0rem" align="center">
                   <Text>{app.name}</Text>
-                  <UnstyledButton
-                    onClick={() =>
-                      toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
-                    }
-                    disabled={fetchingDnsSummary || changingStatus}
-                    style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
-                  >
-                    <Badge
-                      variant="dot"
-                      color={dnsLightStatus(fetchingDnsSummary || changingStatus, dnsHole.status)}
-                      styles={(theme) => ({
-                        root: {
-                          '&:hover': {
-                            background:
-                              theme.colorScheme === 'dark'
-                                ? theme.colors.dark[4]
-                                : theme.colors.gray[2],
-                          },
-                          '&:active': {
-                            background:
-                              theme.colorScheme === 'dark'
-                                ? theme.colors.dark[5]
-                                : theme.colors.gray[3],
-                          },
-                        },
-                      })}
+                  <Flex direction="row" gap="md">
+                    <UnstyledButton
+                      onClick={() =>
+                        toggleDns(dnsHole.status === 'enabled' ? 'disable' : 'enable', [app.id])
+                      }
+                      disabled={fetchingDnsSummary || changingStatus}
+                      style={{ pointerEvents: enableControls ? 'auto' : 'none' }}
                     >
-                      {t(dnsHole.status)}
-                    </Badge>
-                  </UnstyledButton>
-                  <ActionIcon
-                    size={20}
-                    w="5.5rem"
-                    radius="xl"
-                    variant="default"
-                    onClick={() => {
-                      setAppId(app.id);
-                      open();
-                    }}
-                  >
-                    <IconClockPause size={20} color="red" />
-                  </ActionIcon>
+                      <Badge
+                        variant="dot"
+                        color={dnsLightStatus(fetchingDnsSummary || changingStatus, dnsHole.status)}
+                        styles={(theme) => ({
+                          root: {
+                            '&:hover': {
+                              background:
+                                theme.colorScheme === 'dark'
+                                  ? theme.colors.dark[4]
+                                  : theme.colors.gray[2],
+                            },
+                            '&:active': {
+                              background:
+                                theme.colorScheme === 'dark'
+                                  ? theme.colors.dark[5]
+                                  : theme.colors.gray[3],
+                            },
+                          },
+                        })}
+                      >
+                        {t(dnsHole.status)}
+                      </Badge>
+                    </UnstyledButton>
+                    <ActionIcon
+                      size={20}
+                      radius="xl"
+                      variant="default"
+                      onClick={() => {
+                        setAppId(app.id);
+                        open();
+                      }}
+                    >
+                      <IconClockPause size={20} color="red" />
+                    </ActionIcon>
+                  </Flex>
                 </Stack>
               </Group>
             </Card>
