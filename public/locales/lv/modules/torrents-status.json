@@ -31,15 +31,15 @@
         "info": "Ja ir atspējots, tiks parādīta tikai globālā attiecība. Globālā attiecība joprojām izmantos etiķetes, ja tā būs iestatītas"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Iespējot kolonnu pārkārtošanu"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Iespējot rindu kārtošanu"
       },
       "columns": {
-        "label": "",
+        "label": "Atlasiet kolonnas, kuras vēlaties parādīt",
         "data": {
-          "date": "",
+          "date": "Pievienošanas datums",
           "down": "Lejupielāde",
           "up": "Augšupielāde",
           "eta": "ETA",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Mainiet nosaukuma kolonnas lielumu"
       }
     }
   },
