@@ -62,6 +62,15 @@ const ldapSearch = async <
         reject('error: ' + err.message);
       });
       res.on('searchEntry', (entry) => {
+        let userDn;
+        try {
+          //dn is the only attribute returned with special characters formatted in UTF-8 (Bad for any letters with an accent)
+          //Regex replaces any backslash followed by 2 hex characters with a percentage unless said backslash is preceded by another backslash.
+          //That can then be processed by decodeURIComponent which will turn back characters to normal.
+          userDn = decodeURIComponent(
+            entry.pojo.objectName.replace(/(?<!\\)\\([0-9a-fA-F]{2})/g, '%$1')
+          )
+        } catch { reject(new Error ('Cannot resolve distinguishedName for the user')) }
         results.push(
           entry.pojo.attributes.reduce<Record<string, string | string[]>>(
             (obj, attr) => {
@@ -71,7 +80,10 @@ const ldapSearch = async <
                 : attr.values[0];
               return obj;
             },
-            { dn: entry.pojo.objectName }
+            {
+              // Assume userDn since there's a reject if not set
+              dn: userDn!,
+            }
           ) as SearchResult<Attributes, ArrayAttributes>
         );
       });
