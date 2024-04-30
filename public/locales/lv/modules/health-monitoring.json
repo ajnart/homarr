@@ -1,35 +1,35 @@
 {
   "descriptor": {
     "name": "Sistēmas Stāvokļa Uzraudzība",
-    "description": "",
+    "description": "Tiek parādīta informācija par sistēmas(-u) stāvokli un stāvokli.",
     "settings": {
-      "title": "",
+      "title": "Sistēmas veselības stāvokļa uzraudzības iestatījumi",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU temperatūra pēc Fārenheita"
       },
       "cpu": {
-        "label": "",
+        "label": "Rādīt CPU informāciju",
         "load": "Vidējā slodze",
         "minute": "{{minute}} minūte",
-        "minutes": ""
+        "minutes": "{{minutes}} minūtes"
       },
       "memory": {
-        "label": ""
+        "label": "Rādīt atmiņas informāciju"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Rādīt failu sistēmas informāciju"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrēšana pēc mezgla nosaukuma",
+        "info": "Ievadiet savu Proxmox mezgla nosaukumu, lai rādītu tikai šā mezgla metriku. Pēc noklusējuma tiek rādīts viss klasteris."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sadaļa atvērta pēc noklusējuma",
         "data": {
           "none": "Nekas",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Mezgli",
+          "vm": "VM",
+          "lxc": "LXC",
           "storage": "Krātuve"
         }
       },
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Mezgli",
+        "vms": "VM",
+        "lxcs": "LXC",
         "storage": "Krātuve"
       }
     },
