@@ -116,6 +116,16 @@ export default Credentials({
 
       if (!ldapUser) throw new Error('User not found in LDAP');
 
+      try {
+        z.string().email().parse(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
+      } catch {
+        throw new Error(
+          `User found but with invalid or non-existing Email. Not Supported: "${
+            ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE] ?? ' '
+          }"`
+        );
+      }
+
       Consola.log(`User found. Logging in...`);
       await ldapLogin(ldapUser.dn, data.password).then((client) => client.destroy());
 
@@ -136,16 +146,6 @@ export default Credentials({
       client.destroy();
 
       Consola.log(`user ${data.name} successfully authorized`);
-
-      try {
-        z.string().email().parse(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
-      } catch {
-        throw new Error(
-          `Invalid or non-existing Email. Not Supported: "${
-            ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE] ?? ' '
-          }"`
-        );
-      }
 
       let user = await adapter.getUserByEmail!(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
       const isAdmin = userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP);
