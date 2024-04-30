@@ -148,8 +148,8 @@ export default Credentials({
       Consola.log(`user ${data.name} successfully authorized`);
 
       let user = await adapter.getUserByEmail!(ldapUser[env.AUTH_LDAP_USER_MAIL_ATTRIBUTE]);
-      const isAdmin = userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP);
       const isOwner = userGroups.includes(env.AUTH_LDAP_OWNER_GROUP);
+      const isAdmin = isOwner || userGroups.includes(env.AUTH_LDAP_ADMIN_GROUP);
 
       if (!user) {
         // CreateUser will create settings in event
