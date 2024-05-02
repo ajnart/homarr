@@ -118,8 +118,6 @@ RUN mv node_modules ./migrate/node_modules
 # Copy temp node_modules of app to app folder
 RUN mv _node_modules node_modules
 
-#RUN echo '#!/bin/bash\nnode /app/cli/cli.js "$@"' > /usr/bin/homarr
-#RUN chmod +x /usr/bin/homarr
 RUN cd /app/cli && yarn --immutable
 
 # Root is needed for supervisord
@@ -130,9 +128,6 @@ RUN chmod +x /usr/bin/homarr
 
 HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
-
-#VOLUME [ "/app/data/configs" ]
-#VOLUME [ "/data" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD []
