@@ -82,7 +82,7 @@
       },
       "body": {
         "nothingFound": "Geen torrents gevonden",
-        "filterHidingItems": "{{count}} items worden verborgen door uw filters"
+        "filterHidingItems": "{{count}} items worden verborgen door je filters"
       }
     },
     "lineChart": {
