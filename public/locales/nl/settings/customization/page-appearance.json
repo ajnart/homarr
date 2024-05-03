@@ -1,11 +1,11 @@
 {
   "pageTitle": {
     "label": "Paginatitel",
-    "description": "De titel van het dashboard linksboven"
+    "description": "De dashboard titel linksboven"
   },
   "metaTitle": {
-    "label": "Meta Titel",
-    "description": "De titel die wordt weergegeven in uw browsertabblad"
+    "label": "Meta titel",
+    "description": "De titel die wordt weergegeven in je browsertabblad"
   },
   "logo": {
     "label": "Logo",
@@ -13,7 +13,7 @@
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Het pictogram dat wordt weergegeven in uw browsertabblad"
+    "description": "Het pictogram dat wordt weergegeven in je browsertabblad"
   },
   "background": {
     "label": "Achtergrond"
@@ -26,9 +26,9 @@
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "Grootte achtergrondafbeelding",
     "options": {
-      "cover": "",
+      "cover": "Bedekken - Schaalt de afbeelding zo klein mogelijk om het hele venster te bedekken door overtollige ruimte bij te snijden. (aanbevolen)",
       "contain": ""
     }
   },
@@ -43,8 +43,8 @@
   },
   "customCSS": {
     "label": "Eigen CSS",
-    "description": "Pas uw dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
+    "description": "Pas je dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
-    "applying": "CSS toepassen..."
+    "applying": "CSS aan het toepassen..."
   }
 }
