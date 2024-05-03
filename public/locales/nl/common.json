@@ -3,15 +3,15 @@
   "apply": "Toepassen",
   "insert": "Invoegen",
   "about": "Over",
-  "cancel": "Annuleer",
+  "cancel": "Annuleren",
   "close": "Sluiten",
   "back": "Terug",
-  "delete": "Verwijder",
-  "ok": "OK",
-  "edit": "Wijzig",
+  "delete": "Verwijderen",
+  "ok": "OKÉ",
+  "edit": "Wijzigen",
   "next": "Volgende",
   "previous": "Vorige",
-  "confirm": "Bevestig",
+  "confirm": "Bevestigen",
   "enabled": "Ingeschakeld",
   "duplicate": "",
   "disabled": "Uitgeschakeld",
@@ -19,15 +19,15 @@
   "disableAll": "Alles uitschakelen",
   "version": "Versie",
   "changePosition": "Positie wijzigen",
-  "remove": "Verwijder",
+  "remove": "Verwijderen",
   "removeConfirm": "Weet u zeker dat u {{item}} wilt verwijderen?",
-  "createItem": "+ creëer {{item}}",
+  "createItem": "+ {{item}} aanmaken",
   "sections": {
     "settings": "Instellingen",
     "dangerZone": "Gevarenzone"
   },
   "secrets": {
-    "apiKey": "API sleutel",
+    "apiKey": "API-sleutel",
     "username": "Gebruikersnaam",
     "password": "Wachtwoord"
   },
@@ -40,7 +40,7 @@
   "loading": "Bezig met laden...",
   "breakPoints": {
     "small": "klein",
-    "medium": "gemiddeld",
+    "medium": "middel",
     "large": "groot"
   },
   "seeMore": "Zie meer...",
