@@ -1,9 +1,9 @@
 {
   "descriptor": {
     "name": "Transcodage multimédia",
-    "description": "",
+    "description": "Affiche des informations à propos du transcodage des médias",
     "settings": {
-      "title": "",
+      "title": "Paramètres de transcodage des médias",
       "appId": {
         "label": ""
       },
