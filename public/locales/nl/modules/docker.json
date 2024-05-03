@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Hiermee kunt u gemakkelijk al uw Docker Containers zien en beheren."
+    "description": "Geeft de mogelijkheid om al je Docker Containers gemakkelijk te zien en beheren."
   },
   "search": {
     "placeholder": "Zoek op container of afbeeldingsnaam"
@@ -41,7 +41,7 @@
       "title": "Gegevens vernieuwen"
     },
     "remove": {
-      "title": "Verwijder"
+      "title": "Verwijderen"
     },
     "addToHomarr": {
       "title": "Toevoegen aan Homarr"
@@ -53,7 +53,7 @@
       "end": "Gestart"
     },
     "stop": {
-      "start": "Bezig met Stoppen",
+      "start": "Bezig met stoppen",
       "end": "Gestopt"
     },
     "restart": {
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Docker integratie mislukt",
-      "message": "Bent u vergeten de dokter-socket te koppelen?"
+      "message": "Ben je vergeten de docker-socket te koppelen?"
     },
     "unknownError": {
       "title": "Er is een fout opgetreden"
