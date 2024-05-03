@@ -39,7 +39,7 @@
         "title": "Ongeldige URL",
         "text": "Zorg ervoor dat je een geldig adres hebt ingevoerd in de configuratie van je widget"
       },
-      "browserSupport": "Uw browser ondersteunt geen iframes. Update uw browser."
+      "browserSupport": "Je browser ondersteunt geen iframes. Update je browser."
     }
   }
 }
