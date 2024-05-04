@@ -8,17 +8,13 @@ import {
   Flex,
   Group,
   Image,
-  Modal,
-  NumberInput,
-  NumberInputHandlers,
   Stack,
   Text,
   Title,
   Tooltip,
   UnstyledButton,
-  rem,
 } from '@mantine/core';
-import { useDisclosure, useElementSize } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks';
 import {
   IconClockPause,
   IconDeviceGamepad,
@@ -27,7 +23,7 @@ import {
 } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
 
@@ -35,6 +31,7 @@ import { defineWidget } from '../helper';
 import { WidgetLoading } from '../loading';
 import { IWidget } from '../widgets';
 import { useDnsHoleSummeryQuery } from './DnsHoleSummary';
+import { TimerModal } from './TimerModal';
 
 const definition = defineWidget({
   id: 'dns-hole-controls',
@@ -82,14 +79,9 @@ const dnsLightStatus = (
 function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   const { data: sessionData } = useSession();
   const [opened, { close, open }] = useDisclosure(false);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const hoursHandlers = useRef<NumberInputHandlers>();
-  const minutesHandlers = useRef<NumberInputHandlers>();
   const [appId, setAppId] = useState('');
   const { isInitialLoading, data, isFetching: fetchingDnsSummary } = useDnsHoleSummeryQuery();
   const { mutateAsync, isLoading: changingStatus } = useDnsHoleControlMutation();
-  const { width, ref } = useElementSize();
   const { t } = useTranslation(['common', 'modules/dns-hole-controls']);
 
   const enableControls = sessionData?.user.isAdmin ?? false;
@@ -169,8 +161,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         },
       }
     );
-    setHours(0);
-    setMinutes(0);
     setAppId('');
   };
 
@@ -225,95 +215,13 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
         </Flex>
       )}
 
-      <Modal
-        withinPortal
-        radius="lg"
-        shadow="sm"
-        size="sm"
+      <TimerModal
+        toggleDns={toggleDns}
+        getDnsStatus={getDnsStatus}
         opened={opened}
-        onClose={close}
-        title={t('modules/dns-hole-controls:durationModal.title')}
-      >
-        <Flex direction="column" align="center" justify="center">
-          <Stack align="flex-end">
-            <Group spacing={5}>
-              <Text>{t('modules/dns-hole-controls:durationModal.hours')}</Text>
-              <ActionIcon
-                size={35}
-                variant="default"
-                onClick={() => hoursHandlers.current?.decrement()}
-              >
-                –
-              </ActionIcon>
-              <NumberInput
-                hideControls
-                value={hours}
-                onChange={(val) => setHours(Number(val))}
-                handlersRef={hoursHandlers}
-                max={23}
-                min={0}
-                step={1}
-                styles={{ input: { width: rem(54), textAlign: 'center' } }}
-              />
-              <ActionIcon
-                size={35}
-                variant="default"
-                onClick={() => hoursHandlers.current?.increment()}
-              >
-                +
-              </ActionIcon>
-            </Group>
-            <Group spacing={5}>
-              <Text>{t('modules/dns-hole-controls:durationModal.minutes')}</Text>
-              <ActionIcon
-                size={35}
-                variant="default"
-                onClick={() => minutesHandlers.current?.decrement()}
-              >
-                –
-              </ActionIcon>
-              <NumberInput
-                hideControls
-                value={minutes}
-                onChange={(val) => setMinutes(Number(val))}
-                handlersRef={minutesHandlers}
-                max={59}
-                min={0}
-                step={1}
-                styles={{ input: { width: rem(54), textAlign: 'center' } }}
-              />
-              <ActionIcon
-                size={35}
-                variant="default"
-                onClick={() => minutesHandlers.current?.increment()}
-              >
-                +
-              </ActionIcon>
-            </Group>
-          </Stack>
-          <Text ta="center" c="dimmed" mb={5}>
-            {t('modules/dns-hole-controls:durationModal.unlimited')}
-          </Text>
-          <Button
-            variant="light"
-            color="red"
-            leftIcon={<IconClockPause size={20} />}
-            h="2rem"
-            w="12rem"
-            onClick={() => {
-              toggleDns(
-                'disable',
-                appId !== '' ? [appId] : getDnsStatus()?.enabled,
-                hours,
-                minutes
-              );
-              close();
-            }}
-          >
-            {t('modules/dns-hole-controls:durationModal.set')}
-          </Button>
-        </Flex>
-      </Modal>
+        close={close}
+        appId={appId}
+      />
 
       <Stack
         spacing="0.25rem"
