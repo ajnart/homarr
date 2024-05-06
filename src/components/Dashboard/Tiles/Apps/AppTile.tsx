@@ -1,8 +1,7 @@
 import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
-import * as tldts from 'tldts';
+import { useExternalUrl } from '~/hooks/useExternalUrl';
 import { AppType } from '~/types/app';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -26,25 +25,8 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     .filter((e) => e)
     .join(': ');
 
-  const parsedUrl = useMemo(() => {
-    try {
-      return tldts.parse(window.location.toString());
-    } catch {
-      return null;
-    }
-  }, [window.location]);
-
   const isRow = app.appearance.positionAppName.includes('row');
-  const href = useMemo(() => {
-    if (app.behaviour.externalUrl.length > 0) {
-      return app.behaviour.externalUrl
-        .replace('[homarr_base]', `${window.location.protocol}//${window.location.hostname}`)
-        .replace('[homarr_hostname]', parsedUrl?.hostname ?? '')
-        .replace('[homarr_domain]', parsedUrl?.domain ?? '')
-        .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
-    }
-    return app.url;
-  }, [app.behaviour.externalUrl, app.url, parsedUrl]);
+  const href = useExternalUrl(app);
 
   function Inner() {
     return (
