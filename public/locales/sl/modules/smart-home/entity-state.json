@@ -23,7 +23,12 @@
             "displayFriendlyName": {
                 "label": "",
                 "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
