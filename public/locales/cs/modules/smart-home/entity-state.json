@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Zobrazovat čitelné jméno",
-                "info": ""
+                "info": "Zobrazovat friendly jméno z Home Assistantu místo display jména."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Přepínač entity",
+                "info": "Provést obecnou Home Assistant akci přepnutí na entitě po kliknutí."
             }
         }
     }
