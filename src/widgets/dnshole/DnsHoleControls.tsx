@@ -151,13 +151,6 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
       {
         onSettled: () => {
           trpcUtils.dnsHole.summary.invalidate();
-
-          setTimeout(
-            () => {
-              trpcUtils.dnsHole.summary.invalidate();
-            },
-            (duration + 3) * 1000
-          );
         },
       }
     );
@@ -165,7 +158,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   };
 
   return (
-    <Stack w={'100%'} spacing="0.25rem">
+    <Stack spacing="0.25rem">
       {enableControls && widget.properties.showToggleAllButtons && (
         <Flex gap="xs">
           <Tooltip label={t('enableAll')}>
@@ -253,7 +246,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                 >
                   <Image src={app.appearance.iconUrl} width={40} height={40} fit="contain" />
                 </Box>
-                <Stack spacing="0rem" align="center">
+                <Stack spacing="0rem">
                   <Text>{app.name}</Text>
                   <Flex direction="row" gap="md">
                     <UnstyledButton
@@ -289,6 +282,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                     <ActionIcon
                       size={20}
                       radius="xl"
+                      top="1px"
                       variant="default"
                       onClick={() => {
                         setAppId(app.id);

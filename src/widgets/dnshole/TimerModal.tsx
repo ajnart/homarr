@@ -36,7 +36,11 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
       shadow="sm"
       size="sm"
       opened={opened}
-      onClose={close}
+      onClose={() => {
+        close();
+        setHours(0);
+        setMinutes(0);
+      }}
       title={t('modules/dns-hole-controls:durationModal.title')}
     >
       <Flex direction="column" align="center" justify="center">
@@ -96,7 +100,7 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
             </ActionIcon>
           </Group>
         </Stack>
-        <Text ta="center" c="dimmed" mb={5}>
+        <Text ta="center" c="dimmed" my={5}>
           {t('modules/dns-hole-controls:durationModal.unlimited')}
         </Text>
         <Button
