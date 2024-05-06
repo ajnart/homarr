@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "crwdns4184:0crwdne4184:0",
-                "info": "crwdns4186:0crwdne4186:0"
+                "info": "crwdns4476:0crwdne4476:0"
+            },
+            "genericToggle": {
+                "label": "crwdns4478:0crwdne4478:0",
+                "info": "crwdns4480:0crwdne4480:0"
             }
         }
     }
 }
+
