@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "הצג שם ידידותי",
-                "info": "הצג שם ידידותי מ-Home Assistant במקום שם תצוגה"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
