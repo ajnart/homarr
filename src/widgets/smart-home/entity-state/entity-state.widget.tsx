@@ -21,6 +21,11 @@ const definition = defineWidget({
       defaultValue: false,
       info: true,
     },
+    genericToggle: {
+      type: 'switch',
+      defaultValue: false,
+      info: true,
+    },
     automationId: {
       type: 'text',
       info: true,
@@ -82,15 +87,26 @@ function EntityStateTile({ widget }: SmartHomeEntityStateWidgetProps) {
     },
   });
 
-  const handleClick = async () => {
-    if (!widget.properties.automationId) {
-      return;
-    }
+  const { mutateAsync: mutateTriggerToggleSync } = api.smartHomeEntityState.triggerToggle.useMutation({
+    onSuccess: () => {
+      void utils.smartHomeEntityState.invalidate();
+    },
+  });
 
-    await mutateTriggerAutomationAsync({
-      configName: configName as string,
-      widgetId: widget.id,
-    });
+  const handleClick = async () => {
+    if (widget.properties.genericToggle) {
+      await mutateTriggerToggleSync({
+        configName: configName as string,
+        widgetId: widget.id,
+      });
+    } 
+    
+    if (widget.properties.automationId) {
+      await mutateTriggerAutomationAsync({
+        configName: configName as string,
+        widgetId: widget.id,
+      });
+    }
   };
 
   let dataComponent = null;
