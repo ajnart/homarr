@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Kolay adı görüntüle",
-                "info": "Görünen ad yerine Home Assistant'ın kolay adını görüntüler"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
