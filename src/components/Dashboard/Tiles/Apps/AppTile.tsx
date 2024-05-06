@@ -35,12 +35,12 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   }, [window.location]);
 
   const isRow = app.appearance.positionAppName.includes('row');
-  const externalUrl = useMemo(() => {
+  const href = useMemo(() => {
     if (app.behaviour.externalUrl.length > 0) {
       return app.behaviour.externalUrl
         .replace('[homarr_base]', `${window.location.protocol}//${window.location.hostname}`)
-        .replace('[homarr_hostname]', parsedUrl.hostname ?? '')
-        .replace('[homarr_domain]', parsedUrl.domain ?? '')
+        .replace('[homarr_hostname]', parsedUrl?.hostname ?? '')
+        .replace('[homarr_domain]', parsedUrl?.domain ?? '')
         .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
     }
     return app.url;
@@ -107,7 +107,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component="a"
-          href={externalUrl}
+          href={href}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >
