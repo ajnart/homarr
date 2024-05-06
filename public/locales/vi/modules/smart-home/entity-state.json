@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Hiển thị tên thân thiện",
-                "info": "Hiển thị tên thân thiện từ Home Assistant thay vì tên hiển thị"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
