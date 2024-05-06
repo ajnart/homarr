@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Visualizza il nome descrittivo",
-                "info": "Visualizza il nome descrittivo di Home Assistant invece del nome visualizzato"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
