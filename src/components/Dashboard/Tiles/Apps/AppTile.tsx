@@ -37,21 +37,11 @@ export const AppTile = ({ className, app }: AppTileProps) => {
   const isRow = app.appearance.positionAppName.includes('row');
   const externalUrl = useMemo(() => {
     if (app.behaviour.externalUrl.length > 0) {
-      if (app.behaviour.externalUrl.startsWith('[homarr_base]')) {
-        const baseUrl = `${window.location.protocol}//${window.location.hostname}`;
-        return app.behaviour.externalUrl.replace('[homarr_base]', baseUrl);
-      } else if (
-        ['[homarr_hostname]', '[homarr_domain]', '[homarr_protocol]'].some((e) =>
-          app.behaviour.externalUrl.includes(e)
-        ) &&
-        parsedUrl
-      ) {
-        return app.behaviour.externalUrl
-          .replace('[homarr_hostname]', parsedUrl.hostname ?? '')
-          .replace('[homarr_domain]', parsedUrl.domain ?? '')
-          .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
-      }
-      return app.behaviour.externalUrl;
+      return app.behaviour.externalUrl
+        .replace('[homarr_base]', `${window.location.protocol}//${window.location.hostname}`)
+        .replace('[homarr_hostname]', parsedUrl.hostname ?? '')
+        .replace('[homarr_domain]', parsedUrl.domain ?? '')
+        .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
     }
     return app.url;
   }, [app.behaviour.externalUrl, app.url, parsedUrl]);
