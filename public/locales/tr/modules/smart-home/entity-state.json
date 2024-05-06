@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Kolay adı görüntüle",
-                "info": ""
+                "info": "Görünen ad yerine Home Assistant'ın kolay adını görüntüler."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Varlık geçişi",
+                "info": "Tıklandığında varlık üzerinde genel bir Home Assistant geçiş eylemi gerçekleştirir."
             }
         }
     }
