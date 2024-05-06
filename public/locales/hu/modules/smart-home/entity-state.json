@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Barátságos név megjelenítése",
-                "info": "Barátságos név megjelenítése az otthoni asszisztensből a kijelzőnév helyett"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
