@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Zobraziť priateľské meno",
-                "info": "Namiesto zobrazovaného mena zobraziť popisný názov z Home Assistant"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
