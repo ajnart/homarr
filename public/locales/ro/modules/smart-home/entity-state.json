@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Afișează un nume prietenos",
-                "info": "Afișează un nume prietenos din Home Assistant în loc de numele afișat"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+
