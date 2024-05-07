@@ -59,7 +59,7 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
               value={hours}
               onChange={(val) => setHours(Number(val))}
               handlersRef={hoursHandlers}
-              max={23}
+              max={999}
               min={0}
               step={1}
               styles={{ input: { width: rem(54), textAlign: 'center' } }}

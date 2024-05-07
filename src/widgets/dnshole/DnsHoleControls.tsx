@@ -282,7 +282,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                     <ActionIcon
                       size={20}
                       radius="xl"
-                      top="1px"
+                      top="2.67px"
                       variant="default"
                       onClick={() => {
                         setAppId(app.id);
