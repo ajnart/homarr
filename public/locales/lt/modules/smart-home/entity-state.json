@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Rodyti draugišką pavadinimą",
-                "info": "Rodyti draugišką vardą iš \"Home Assistant\", o ne rodomą vardą"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

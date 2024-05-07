@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "Ping",
+    "description": "Afișează un indicator de stare în funcție de codul de răspuns HTTP al unei adrese URL date."
+  },
+  "states": {
+    "online": "Online {{response}}",
+    "offline": "Offline {{response}}",
+    "loading": "Se încarcă..."
+  }
+}

@@ -20,9 +20,9 @@
   "card": {
     "metrics": {
       "domainsOnAdlist": "Domeinen op adlists",
-      "queriesToday": "Vragen vandaag",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesToday": "Queries vandaag",
+      "queriesBlockedTodayPercentage": "Vandaag geblokkeerd",
+      "queriesBlockedToday": "Vandaag geblokkeerd"
     }
   }
 }

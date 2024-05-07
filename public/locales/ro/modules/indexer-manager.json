@@ -1,0 +1,19 @@
+{
+    "descriptor": {
+        "name": "Starea managerului de clasificare",
+        "description": "Statistici despre clasificatoarele dvs.",
+        "settings": {
+            "title": "Starea managerului de clasificare"
+        }
+    },
+    "indexersStatus": {
+        "title": "Manager de clasificare",
+        "testAllButton": "Verifică toate"
+    },
+    "errors": {
+        "general": {
+            "title": "Nu s-a găsit nici un manager de clasificare",
+            "text": "A apărut o problemă la conectarea la managerul de clasificare. Vă rugăm să vă verificați configurația/integrarea (integrările)."
+        }
+    }
+}

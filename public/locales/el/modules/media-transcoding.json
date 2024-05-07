@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Μετακωδικοποίηση πολυμέσων",
+    "description": "Εμφανίζει πληροφορίες σχετικά με τη μετακωδικοποίηση πολυμέσων",
+    "settings": {
+      "title": "Ρυθμίσεις μετακωδικοποίησης πολυμέσων",
+      "appId": {
+        "label": "Επιλέξτε μια εφαρμογή"
+      },
+      "defaultView": {
+        "label": "Προεπιλεγμένη προβολή",
+        "data": {
+          "workers": "Εργάτες",
+          "queue": "Ουρά",
+          "statistics": "Στατιστικά"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Εμφάνιση δείκτη ελέγχου υγείας"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Εμφάνιση ελέγχων υγείας στην ουρά"
+      },
+      "queuePageSize": {
+        "label": "Ουρά: Στοιχεία ανά σελίδα"
+      },
+      "showAppIcon": {
+        "label": "Εμφάνιση εικονιδίου εφαρμογής στην κάτω δεξιά γωνία"
+      }
+    }
+  },
+  "noAppSelected": "Παρακαλούμε επιλέξτε μια εφαρμογή στις ρυθμίσεις του widget",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Αρχείο",
+          "eta": "Εκτιμώμενος χρόνος αναμονής",
+          "progress": "Πρόοδος"
+        },
+        "empty": "Άδειο",
+        "tooltip": {
+          "transcode": "Μετακωδικοποίηση",
+          "healthCheck": "Έλεγχος υγείας"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Αρχείο",
+          "size": "Μέγεθος"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} από {{total}}"
+        },
+        "empty": "Άδειο",
+        "tooltip": {
+          "transcode": "Μετακωδικοποίηση",
+          "healthCheck": "Έλεγχος υγείας"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Άδειο",
+      "box": {
+        "transcodes": "Κωδικοποιήσεις: {{value}}",
+        "healthChecks": "Έλεγχοι υγείας: {{value}}",
+        "files": "Αρχεία: {{value}}",
+        "spaceSaved": "Αποθηκεύτηκαν: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Μετακωδικοποιήσεις",
+        "healthChecks": "Έλεγχοι υγείας",
+        "videoCodecs": "Κωδικοποιητές",
+        "videoContainers": "Containers",
+        "videoResolutions": "Αναλύσεις"
+      }
+    }
+  },
+  "error": {
+    "title": "Σφάλμα",
+    "message": "Παρουσιάστηκε σφάλμα κατά την ανάκτηση δεδομένων από το Tdarr."
+  },
+  "tabs": {
+    "workers": "Εργάτες",
+    "queue": "Ουρά",
+    "statistics": "Στατιστικά"
+  },
+  "healthCheckStatus": {
+    "title": "Έλεγχος υγείας",
+    "queued": "Στην ουρά",
+    "healthy": "Υγιές",
+    "unhealthy": "Μη υγιές"
+  }
+}

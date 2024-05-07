@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "date": "",
+          "down": "",
+          "up": "",
+          "eta": "",
+          "progress": ""
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "",
         "text": ""
       }
-    },
-    "loading": {
-      "title": "",
-      "description": ""
     },
     "popover": {
       "introductionPrefix": "",

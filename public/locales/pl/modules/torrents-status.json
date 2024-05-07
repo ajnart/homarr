@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Wyświetl współczynnik listy przefiltrowanych torrentów",
         "info": "Jeśli ta opcja jest wyłączona, wyświetlany będzie tylko współczynnik globalny. Współczynnik globalny będzie nadal używał etykiet, jeśli są ustawione"
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "date": "",
+          "down": "Pobieranie",
+          "up": "Udostępnianie",
+          "eta": "ETA",
+          "progress": "Postęp"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Wystąpił nieoczekiwany błąd",
         "text": "Nie można połączyć się z klientami Torrent. Sprawdź konfigurację"
       }
-    },
-    "loading": {
-      "title": "Ładowanie",
-      "description": "Nawiązywanie połączenia"
     },
     "popover": {
       "introductionPrefix": "Zarządzany przez",

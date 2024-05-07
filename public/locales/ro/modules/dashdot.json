@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Dash.",
+    "description": "Afișează elementele graficele ale Dash-ului extern. Instanță în interiorul Homarr.",
+    "settings": {
+      "title": "Setări pentru Widget-ul Dash.",
+      "dashName": {
+        "label": "Numele Dash."
+      },
+      "url": {
+        "label": "Adresa URL pentru Dash."
+      },
+      "usePercentages": {
+        "label": "Afișează procente"
+      },
+      "columns": {
+        "label": "Afişează coloanele"
+      },
+      "graphHeight": {
+        "label": "Înălțimea graficelor"
+      },
+      "graphsOrder": {
+        "label": "Grafice (Ordine)",
+        "storage": {
+          "label": "Spațiu de stocare",
+          "enabled": {
+            "label": "Afișați în Widget"
+          },
+          "span": {
+            "label": "Interval de coloană"
+          },
+          "compactView": {
+            "label": "Afișați ca text (compact)"
+          },
+          "multiView": {
+            "label": "Afișați ca multi-drive-view"
+          }
+        },
+        "network": {
+          "label": "Rețea",
+          "enabled": {
+            "label": "Afișați în Widget"
+          },
+          "span": {
+            "label": "Interval de coloană"
+          },
+          "compactView": {
+            "label": "Afișați ca text (compact)"
+          }
+        },
+        "cpu": {
+          "label": "Procesor",
+          "enabled": {
+            "label": "Afișați în Widget"
+          },
+          "span": {
+            "label": "Interval de coloană"
+          },
+          "multiView": {
+            "label": "Afișați ca multi-core-view"
+          }
+        },
+        "ram": {
+          "label": "Memorie RAM",
+          "enabled": {
+            "label": "Afișați în Widget"
+          },
+          "span": {
+            "label": "Interval de coloană"
+          }
+        },
+        "gpu": {
+          "label": "Procesor grafic",
+          "enabled": {
+            "label": "Afișați în Widget"
+          },
+          "span": {
+            "label": "Interval de coloană"
+          }
+        }
+      }
+    }
+  },
+  "card": {
+    "title": "Dash.",
+    "errors": {
+      "noService": "Serviciul Dash. nu a fost găsit. Vă rugăm să adăugați unul in planșa dvs. sau setați un adresa URL a Dash.-ul în opțiunile modulului",
+      "noInformation": "Nu se pot obține informații de la Dash. - aveți cea mai recentă versiune?",
+      "protocolDowngrade": {
+        "title": "S-a detectat o reducere de protocol",
+        "text": "Conexiunea cu instanța Dash. utilizează HTTP. Acest lucru reprezintă un risc de securitate, deoarece HTTP nu este criptat și atacatorii ar putea abuza de această conexiune. Asigurați-vă că Dash. utilizează HTTPS sau reduceți Homarr la HTTP (nerecomandat)."
+      }
+    },
+    "graphs": {
+      "storage": {
+        "title": "Spațiu de stocare",
+        "label": "Spațiu de stocare:"
+      },
+      "network": {
+        "title": "Rețea",
+        "label": "Rețea:",
+        "metrics": {
+          "download": "În jos",
+          "upload": "În sus"
+        }
+      },
+      "cpu": {
+        "title": "Procesor"
+      },
+      "ram": {
+        "title": "Memorie RAM"
+      },
+      "gpu": {
+        "title": "Procesor grafic"
+      }
+    }
+  }
+}

@@ -31,13 +31,13 @@
     "validation": {
       "length": "De lengte moet tussen {{shortest}} en {{longest}}liggen.",
       "invalidLink": "Geen geldige link",
-      "errorMsg": "Niet opgeslagen omdat er validatiefouten waren. Herhaal uw invoer a.u.b."
+      "errorMsg": "Niet opgeslagen, omdat er validatiefouten waren. Pas je invoer aan"
     },
     "name": "Naam",
     "url": "URL",
     "newTab": "Open in nieuw tabblad",
     "hideHostname": "Hostnaam verbergen",
     "hideIcon": "Pictogram verbergen",
-    "delete": "Verwijder"
+    "delete": "Verwijderen"
   }
 }

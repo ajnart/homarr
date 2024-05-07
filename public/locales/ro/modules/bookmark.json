@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "Marcaj",
+    "description": "Afișează o listă statică de caractere sau link-uri",
+    "settings": {
+      "title": "Setări pentru marcaje",
+      "name": {
+        "label": "Titlu Widget",
+        "info": "Lăsați gol pentru a păstra titlul ascuns."
+      },
+      "items": {
+        "label": "Elemente"
+      },
+      "layout": {
+        "label": "Aspect",
+        "data": {
+          "autoGrid": "Grilă automată",
+          "horizontal": "Orizontal",
+          "vertical": "Vertical"
+        }
+      }
+    }
+  },
+  "card": {
+    "noneFound": {
+      "title": "Lista de marcaje este goală",
+      "text": "Adăugați noi elemente la această listă în modul de editare"
+    }
+  },
+  "item": {
+    "validation": {
+      "length": "Lungimea trebuie să fie între {{shortest}} și {{longest}}",
+      "invalidLink": "Nu este un link valid",
+      "errorMsg": "Nu s-a salvat, deoarece au existat erori de validare. Te rugăm să corectezi textele introduse"
+    },
+    "name": "Nume",
+    "url": "Adresa URL",
+    "newTab": "Deschideți într-o pagină nouă",
+    "hideHostname": "Ascunde numele de gazdă",
+    "hideIcon": "Ascunde pictograma",
+    "delete": "Șterge"
+  }
+}

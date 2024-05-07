@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Vis brukervennlig navn",
-                "info": "Vis brukervennlig navn fra Home Assistant i stedet for visningsnavn"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

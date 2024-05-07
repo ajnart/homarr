@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Vis brugervenligt navn",
-                "info": "Vis brugervenligt navn fra Home Assistant i stedet for visningsnavn"
+                "info": "Vis brugervenligt navn fra Home Assistant i stedet for visningsnavn."
+            },
+            "genericToggle": {
+                "label": "Entitetsskift",
+                "info": "Udfør en generisk Home Assistant-skiftehandling på entitet, når der klikkes på den."
             }
         }
     }
 }
+

@@ -25,6 +25,6 @@
       "description": "Zoek naar Films en TV-series op Overseerr"
     }
   },
-  "tip": "U kunt de zoekbalk selecteren met de sneltoets ",
+  "tip": "Je kan de zoekbalk selecteren met de sneltoets ",
   "switchedSearchEngine": "Omgeschakeld naar zoeken met {{searchEngine}}"
 }

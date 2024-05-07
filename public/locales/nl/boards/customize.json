@@ -19,7 +19,7 @@
         },
         "success": {
             "title": "Opgeslagen aanpassingen",
-            "message": "Uw aanpassing is succesvol opgeslagen"
+            "message": "Je aanpassing is succesvol opgeslagen"
         },
         "error": {
             "title": "Fout",

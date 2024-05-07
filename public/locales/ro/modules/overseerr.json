@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "Vă permite să căutați și să adăugați conținut media din aplicațiile Overseerr sau Jellyseerr."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "Cere {{title}}",
+        "cancel": "Anulează",
+        "request": "Cerere"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "Folosind cheia API",
+          "text": "Această solicitare va fi aprobată automat"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "Bifați sezonul pe care doriți să îl descărcați",
+      "table": {
+        "header": {
+          "season": "Sezon",
+          "numberOfEpisodes": "Număr de episoade"
+        }
+      }
+    }
+  }
+}

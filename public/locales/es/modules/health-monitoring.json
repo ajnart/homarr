@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Monitorización de Salud del Sistema",
+    "description": "Muestra información sobre la salud y el estado de tu(s) sistema(s).",
+    "settings": {
+      "title": "Configuración del sistema de control de salud",
+      "fahrenheit": {
+        "label": "Temperatura de la CPU en grados Fahrenheit"
+      },
+      "cpu": {
+        "label": "Mostrar información de la CPU",
         "load": "",
         "minute": "",
-        "minutes": ""
-    },
-    "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
-        "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+        "minutes": "{{minutes}} Minutos"
+      },
+      "memory": {
+        "label": "Mostrar información de la memoria"
+      },
+      "fileSystem": {
+        "label": "Mostrar información del sistema de archivos"
+      },
+      "node": {
+        "label": "Filtrar por nombre de nodo",
+        "info": "Ingrese el nombre de su nodo Proxmox para mostrar solo las métricas de ese nodo. De forma predeterminada, se muestra todo el clúster."
+      },
+      "defaultViewState": {
+        "label": "Sección abierta por defecto",
+        "data": {
+          "none": "Nada",
+          "node": "Nodos",
+          "vm": "VMs",
+          "lxc": "LXCs",
+          "storage": "Almacenamiento"
         }
+      },
+      "defaultTabState": {
+        "label": "Pestaña abierta por defecto",
+        "info": "Pestaña abierta por defecto. Solo se usa cuando hay múltiples integraciones disponibles.",
+        "data": {
+          "system": "Sistema",
+          "cluster": "Cluster"
+        }
+      },
+      "summary": {
+        "label": "Mostrar sección de resumen"
+      },
+      "showNode": {
+        "label": "Mostrar sección de nodos"
+      },
+      "showVM": {
+        "label": "Mostrar sección de VMs"
+      },
+      "showLXCs": {
+        "label": "Mostrar sección LXCs"
+      },
+      "showStorage": {
+        "label": "Mostrar sección de almacenamiento"
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "",
+    "minute": ""
+  },
+  "memory": {
+    "label": "",
+    "totalMem": "",
+    "available": ""
+  },
+  "fileSystem": {
+    "label": "",
+    "available": ""
+  },
+  "info": {
+    "uptime": "",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": ""
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "Sistema",
+    "cluster": "Cluster"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Nodos",
+        "vms": "VMs",
+        "lxcs": "LXCs",
+        "storage": "Almacenamiento"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nombre",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detalles",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

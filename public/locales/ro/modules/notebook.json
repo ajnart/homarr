@@ -1,0 +1,59 @@
+{
+	"descriptor": {
+		"name": "Agendă",
+		"description": "Un widget interactiv de tip markdown pentru a vă nota ideile dvs!",
+		"settings": {
+			"title": "Setări pentru widget-ul agendă",
+			"showToolbar": {
+				"label": "Arată bara de instrumente pentru a te ajuta să notezi în tip markdown"
+			},
+			"allowReadOnlyCheck": {
+				"label": "Permite verificarea în modul numai-citire"
+			},
+			"content": {
+				"label": "Conținutul agendei"
+			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "Îngroșat",
+			"italic": "Cursiv",
+			"strikethrough": "Tăiat cu o linie",
+			"underline": "Subliniat",
+			"colorText": "Culoare text",
+			"colorHighlight": "Text colorat pentru evidențiere",
+			"code": "Cod",
+			"clear": "Curăță formatul",
+			"heading": "Rubrica {{level}}",
+			"align": "Așezați textul: {{position}}",
+			"blockquote": "Citat",
+			"horizontalLine": "Linie orizontală",
+			"bulletList": "Listă cu puncte",
+			"orderedList": "Listă ordonată",
+			"checkList": "Lista de verificare cu bifă",
+			"increaseIndent": "Mărește spațierea",
+			"decreaseIndent": "Scade spațierea",
+			"link": "Link",
+			"unlink": "Șterge link-ul",
+			"image": "Încorporează imagine",
+			"addTable": "Adaugă tabelă",
+			"deleteTable": "Șterge tabelă",
+			"colorCell": "Culoare celulă",
+			"mergeCell": "Comută îmbinarea celulelor",
+			"addColumnLeft": "Adaugă o coloană în fată",
+			"addColumnRight": "Adaugă o coloană după",
+			"deleteColumn": "Șterge coloană",
+			"addRowTop": "Adaugă un rând înainte",
+			"addRowBelow": "Adaugă un rând după",
+			"deleteRow": "Șterge rând"
+		},
+		"modals": {
+			"clearColor": "Șterge culoarea",
+			"source": "Sursă",
+			"widthPlaceholder": "Valoare exprimată în % sau pixeli",
+			"columns": "Coloane",
+			"rows": "Rânduri"
+		}
+	}
+}

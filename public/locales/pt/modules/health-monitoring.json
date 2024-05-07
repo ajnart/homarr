@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Monitoramento da integridade do sistema",
-        "description": "Informações sobre o seu NAS",
-        "settings": {
-            "title": "Monitoramento da integridade do sistema",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Monitoramento da integridade do sistema",
+    "description": "Exibe informações que mostram a saúde e status de seu(s) sistema(s).",
+    "settings": {
+      "title": "Configurações para monitoramento de saúde do sistema",
+      "fahrenheit": {
+        "label": "Temperatura da CPU em Fahrenheit"
+      },
+      "cpu": {
+        "label": "Mostrar informações da CPU",
         "load": "Carga Média",
         "minute": "{{minute}} minuto",
-        "minutes": ""
-    },
-    "memory": {
-        "label": "Memória",
-        "totalMem": "Memória total: {{total}}GB",
-        "available": "Disponível: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Sistema de arquivos",
-        "available": "Disponível: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Tempo de Atividade",
-        "updates": "Atualizações",
-        "reboot": "Reiniciar"
-    },
-    "errors": {
-        "general": {
-            "title": "Não foi possível encontrar seu NAS",
-            "text": "Ocorreu um problema na conexão com seu NAS. Verifique sua(s) configuração(ões)/integração(ões)."
+        "minutes": "{{minutes}} minutos"
+      },
+      "memory": {
+        "label": "Mostrar informações da memória"
+      },
+      "fileSystem": {
+        "label": "Mostrar informações do sistema de arquivos"
+      },
+      "node": {
+        "label": "Filtrar por nome do nó",
+        "info": "Insira o nome do nó Proxmox para mostrar métricas desse nó. Por padrão, o cluster inteiro é mostrado."
+      },
+      "defaultViewState": {
+        "label": "Seção aberta por padrão",
+        "data": {
+          "none": "Nenhum",
+          "node": "Nós",
+          "vm": "VMs",
+          "lxc": "LXCs",
+          "storage": "Armazenamento"
         }
+      },
+      "defaultTabState": {
+        "label": "Aba aberta por padrão",
+        "info": "Aba aberta por padrão. Usado somente quando várias integrações estão disponíveis.",
+        "data": {
+          "system": "Sistema",
+          "cluster": "Cluster"
+        }
+      },
+      "summary": {
+        "label": "Mostrar seção de resumo"
+      },
+      "showNode": {
+        "label": "Mostrar seção de nós"
+      },
+      "showVM": {
+        "label": "Mostrar seção de VMs"
+      },
+      "showLXCs": {
+        "label": "Mostrar seção de LXCs"
+      },
+      "showStorage": {
+        "label": "Mostrar seção de armazenamento"
+      },
+      "sectionIndicatorColor": {
+        "label": "Requisito para o indicador de status de seção ser 'OK'",
+        "info": "'Todos' exige que todos os itens estejam online para que o indicador fique verde. 'Qualquer' requer que pelo menos um item esteja online.",
+        "data": {
+          "any": "Qualquer ativo",
+          "all": "Todos ativos"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignorar erros de certificado",
+        "info": "Se ativado, o widget irá ignorar os erros de certificado ao acessar a API do Proxmox. Isso pode ser útil ao acessar o Proxmox por meio de HTTPS."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Carga Média",
+    "minute": "{{minute}} minuto"
+  },
+  "memory": {
+    "label": "Memória",
+    "totalMem": "Memória total: {{total}}GB",
+    "available": "Disponível: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Sistema de arquivos",
+    "available": "Disponível: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Tempo de Atividade",
+    "uptimeFormat": "{{days}} dias, {{hours}} horas",
+    "updates": "Atualizações disponíveis",
+    "reboot": "Reiniciar"
+  },
+  "errors": {
+    "general": {
+      "title": "Não foi possível localizar seu(s) sistema(s).",
+      "text": "Ocorreu um problema na conexão com seu sistema. Verifique sua(s) configuração(ões)/integração(ões)."
+    }
+  },
+  "headings": {
+    "system": "Sistema",
+    "cluster": "Cluster"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Nós",
+        "vms": "VMs",
+        "lxcs": "LXCs",
+        "storage": "Armazenamento"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nome",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Nó"
+      }
+    },
+    "popover": {
+      "node": "Nó",
+      "vmid": "VMID",
+      "details": "Detalhes",
+      "cores": "Núcleos - {{maxCpu}}",
+      "memSize": "Memória - {{maxMem}}",
+      "memRatio": "Memória - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disco - {{maxDisk}}",
+      "diskRatio": "Disco - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Tempo de atividade - {{uptime}}",
+      "plugin": "Extensão",
+      "ha": "Estado HA - {{haState}}",
+      "sharedStorage": "Armazenamento Compartilhado",
+      "localStorage": "Armazenamento Local",
+      "na": "N/D"
+    }
+  }
 }

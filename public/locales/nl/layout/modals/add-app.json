@@ -61,7 +61,7 @@
 			"description": "Begin te typen om een pictogram te vinden. Je kunt ook een URL van een afbeelding plakken om een aangepast pictogram te gebruiken.",
 			"autocomplete": {
 				"title": "Geen resultaten gevonden",
-				"text": "Probeer een specifiekere zoekterm te gebruiken. Als u het gewenste pictogram niet kunt vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast pictogram"
+				"text": "Probeer een specifiekere zoekterm te gebruiken. Als je het gewenste pictogram niet kan vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast pictogram"
 			},
 			"noItems": {
 				"title": "Externe pictogrammen laden",
@@ -99,30 +99,30 @@
 	"integration": {
 		"type": {
 			"label": "Integratie configuratie",
-			"description": "De integratieconfiguratie die zal worden gebruikt om verbinding te maken met uw app.",
+			"description": "De integratie configuratie die zal worden gebruikt om verbinding te maken met je app.",
 			"placeholder": "Selecteer een integratie",
 			"defined": "Gedefinieerd",
 			"undefined": "Ongedefinieerd",
 			"public": "Openbaar",
 			"private": "Privé",
-			"explanationPrivate": "Een geheim wordt slechts eenmaal naar de server gestuurd. Zodra uw browser de pagina heeft ververst, wordt het nooit meer verzonden.",
+			"explanationPrivate": "Een geheim wordt slechts eenmaal naar de server gestuurd. Zodra je browser de pagina heeft ververst, wordt het nooit meer verzonden.",
 			"explanationPublic": "Een publiek geheim wordt altijd naar de client gestuurd en is toegankelijk via de API. Het mag geen vertrouwelijke waarden bevatten zoals gebruikersnamen, wachtwoorden, tokens, certificaten en dergelijke!"
 		},
 		"secrets": {
 			"description": "Om een geheim bij te werken, voert u een waarde in en klikt u op de knop Opslaan. Om een geheim te verwijderen, gebruikt u de knop wissen.",
-			"warning": "Uw referenties fungeren als de toegang tot uw integraties en u zou deze <strong>nooit</strong> hoeven delen met iemand anders. Het Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>uw geheimen veilig opslaat en beheert</strong>.",
+			"warning": "Je referenties fungeren als de toegang tot uw integraties en je zou deze <strong>nooit</strong> moeten delen met iemand anders. Het Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>je geheimen veilig opslaat en beheert</strong>.",
 			"clear": "Wis geheim",
 			"save": "Geheim opslaan",
-			"update": "Update geheim"
+			"update": "Geheim updaten"
 		}
 	},
 	"validation": {
-		"popover": "Uw formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om uw wijzigingen op te slaan",
+		"popover": "Je formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om je wijzigingen op te slaan",
 		"name": "Naam is vereist",
-		"noUrl": "Url is vereist",
+		"noUrl": "URL is vereist",
 		"invalidUrl": "Waarde is geen geldige url",
 		"noIconUrl": "Dit veld is verplicht",
-		"noExternalUri": "Externe URI is vereist",
-		"invalidExternalUri": "Externe URI is geen geldige uri"
+		"noExternalUri": "Externe URL is vereist",
+		"invalidExternalUri": "Externe URL is geen geldige uri"
 	}
 }

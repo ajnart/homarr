@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "Calendar",
+    "description": "Afișează un calendar cu evenimente viitoare, din integrările acceptate.",
+    "settings": {
+      "title": "Setări pentru Widget-ul Calendar",
+      "radarrReleaseType": {
+        "label": "Tip de evenimente ale Radarr",
+        "data": {
+          "inCinemas": "În cinematografe",
+          "physicalRelease": "În format fizic",
+          "digitalRelease": "În format digital"
+        }
+      },
+      "hideWeekDays": {
+        "label": "Ascunde zilele săptămânii"
+      },
+      "showUnmonitored": {
+        "label": "Arată elementele nemonitorizate"
+      },
+      "fontSize": {
+        "label": "Mărime textului",
+        "data": {
+          "xs": "Foarte mic",
+          "sm": "Mic",
+          "md": "Mediu",
+          "lg": "Mare",
+          "xl": "Foarte mare"
+        }
+      }
+    }
+  }
+}

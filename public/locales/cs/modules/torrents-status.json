@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Zobrazení filtrovaného poměru seznamu torrentů",
         "info": "Pokud je vypnuto, zobrazí se pouze obecný poměr. Obecný poměr bude stále používat štítky, pokud jsou nastaveny"
+      },
+      "columnOrdering": {
+        "label": "Povolit změnu pořadí sloupců"
+      },
+      "rowSorting": {
+        "label": "Povolit řazení řádků"
+      },
+      "columns": {
+        "label": "Vyberte sloupce k zobrazení",
+        "data": {
+          "date": "Datum přidání",
+          "down": "Stahování",
+          "up": "Nahrávání",
+          "eta": "Odhadovaný čas",
+          "progress": "Postup"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Změna velikosti sloupce s názvem"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Došlo k neočekávané chybě",
         "text": "Nelze komunikovat s Vašimi klienty Torrentu. Zkontrolujte prosím Vaši konfiguraci"
       }
-    },
-    "loading": {
-      "title": "Načítání",
-      "description": "Navazování spojení"
     },
     "popover": {
       "introductionPrefix": "Spravuje",

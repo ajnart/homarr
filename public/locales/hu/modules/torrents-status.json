@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Szűrt torrentek listájának aránya",
         "info": "Ha letiltja, csak a globális arány jelenik meg. A globális arány továbbra is a címkéket használja, ha be van állítva"
+      },
+      "columnOrdering": {
+        "label": "Az oszlopok átrendezésének engedélyezése"
+      },
+      "rowSorting": {
+        "label": "A sorok rendezésének engedélyezése"
+      },
+      "columns": {
+        "label": "Megjelenítendő oszlopok kiválasztása",
+        "data": {
+          "date": "Hozzáadás dátuma",
+          "down": "Le",
+          "up": "Fel",
+          "eta": "Hátralévő idő",
+          "progress": "Folyamat"
+        }
+      },
+      "nameColumnSize": {
+        "label": "A névoszlop méretének módosítása"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Váratlan hiba történt",
         "text": "Nem tud kommunikálni a Torrent kliensekkel. Kérjük, ellenőrizze a konfigurációt"
       }
-    },
-    "loading": {
-      "title": "Betöltés",
-      "description": "Kapcsolat létrehozása"
     },
     "popover": {
       "introductionPrefix": "Irányítja",

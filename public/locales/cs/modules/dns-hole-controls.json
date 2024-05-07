@@ -11,7 +11,7 @@
     "errors": {
       "general": {
         "title": "Nepodařilo se najít DNS hole",
-        "text": "Došlo k problému s připojením k Vaší DNS Hole. Ověřte prosím svou konfiguraci/integraci."
+        "text": "Došlo k problému s připojením k Vaší DNS Hole. Ověřte prosím svou konfiguraci."
       }
     }
   }

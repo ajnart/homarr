@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Transcodificação de mídia",
+    "description": "",
+    "settings": {
+      "title": "",
+      "appId": {
+        "label": ""
+      },
+      "defaultView": {
+        "label": "",
+        "data": {
+          "workers": "",
+          "queue": "Fila",
+          "statistics": "Estatísticas"
+        }
+      },
+      "showHealthCheck": {
+        "label": ""
+      },
+      "showHealthChecksInQueue": {
+        "label": ""
+      },
+      "queuePageSize": {
+        "label": ""
+      },
+      "showAppIcon": {
+        "label": ""
+      }
+    }
+  },
+  "noAppSelected": "",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Ficheiro",
+          "eta": "TED",
+          "progress": "Progresso"
+        },
+        "empty": "Vazio",
+        "tooltip": {
+          "transcode": "Transcodificar",
+          "healthCheck": ""
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Ficheiro",
+          "size": "Tamanho"
+        },
+        "footer": {
+          "currentIndex": ""
+        },
+        "empty": "Vazio",
+        "tooltip": {
+          "transcode": "Transcodificar",
+          "healthCheck": ""
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Vazio",
+      "box": {
+        "transcodes": "",
+        "healthChecks": "",
+        "files": "",
+        "spaceSaved": ""
+      },
+      "pies": {
+        "transcodes": "",
+        "healthChecks": "",
+        "videoCodecs": "Codecs",
+        "videoContainers": "",
+        "videoResolutions": ""
+      }
+    }
+  },
+  "error": {
+    "title": "Erro",
+    "message": ""
+  },
+  "tabs": {
+    "workers": "",
+    "queue": "Fila",
+    "statistics": "Estatísticas"
+  },
+  "healthCheckStatus": {
+    "title": "",
+    "queued": "",
+    "healthy": "",
+    "unhealthy": ""
+  }
+}

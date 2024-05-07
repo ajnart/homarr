@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Překódování médií",
+    "description": "Zobrazuje informace o překódování médií",
+    "settings": {
+      "title": "Nastavení překódování médií",
+      "appId": {
+        "label": "Vyberte aplikaci"
+      },
+      "defaultView": {
+        "label": "Výchozí zobrazení",
+        "data": {
+          "workers": "Stroje",
+          "queue": "Fronta",
+          "statistics": "Statistiky"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Zobrazit indikátor kontroly stavu"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Zobrazit kontroly stavu ve frontě"
+      },
+      "queuePageSize": {
+        "label": "Fronta: Počet položek na stránku"
+      },
+      "showAppIcon": {
+        "label": "Zobrazovat ikonu aplikace v pravém dolním rohu"
+      }
+    }
+  },
+  "noAppSelected": "Prosím vyberte aplikaci v nastavení widgetu",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Soubor",
+          "eta": "Odhadovaný čas",
+          "progress": "Postup"
+        },
+        "empty": "Prázdné",
+        "tooltip": {
+          "transcode": "Překódovat",
+          "healthCheck": "Kontrola stavu"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Soubor",
+          "size": "Velikost"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} z {{total}}"
+        },
+        "empty": "Prázdné",
+        "tooltip": {
+          "transcode": "Překódovat",
+          "healthCheck": "Kontrola stavu"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Prázdné",
+      "box": {
+        "transcodes": "Překódování: {{value}}",
+        "healthChecks": "Kontroly stavu: {{value}}",
+        "files": "Soubory: {{value}}",
+        "spaceSaved": "Uloženo: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Překódování",
+        "healthChecks": "Kontroly stavu",
+        "videoCodecs": "Kodeky",
+        "videoContainers": "Kontejnery",
+        "videoResolutions": "Rozlišení"
+      }
+    }
+  },
+  "error": {
+    "title": "Chyba",
+    "message": "Při načítání dat z Tdarru došlo k chybě."
+  },
+  "tabs": {
+    "workers": "Stroje",
+    "queue": "Fronta",
+    "statistics": "Statistiky"
+  },
+  "healthCheckStatus": {
+    "title": "Kontrola stavu",
+    "queued": "Ve frontě",
+    "healthy": "V pořádku",
+    "unhealthy": "Nastal problém"
+  }
+}

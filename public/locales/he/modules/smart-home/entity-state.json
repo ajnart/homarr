@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "הצג שם ידידותי",
-                "info": "הצג שם ידידותי מ-Home Assistant במקום שם תצוגה"
+                "info": "הצג שם ידידותי מ-Home Assistant במקום שם תצוגה."
+            },
+            "genericToggle": {
+                "label": "החלפת ישות",
+                "info": "בצע פעולת החלפה כללית של Home Assistant על ישות בעת לחיצה."
             }
         }
     }
 }
+

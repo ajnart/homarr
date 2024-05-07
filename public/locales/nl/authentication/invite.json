@@ -1,7 +1,7 @@
 {
     "metaTitle": "Account aanmaken",
     "title": "Account aanmaken",
-    "text": "Geef hieronder uw referenties aan",
+    "text": "Geef hieronder je inloggegevens op",
     "form": {
         "fields": {
             "username": {

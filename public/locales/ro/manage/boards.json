@@ -1,0 +1,57 @@
+{
+    "metaTitle": "Planșe",
+    "pageTitle": "Planșe",
+    "cards": {
+        "statistics": {
+            "apps": "Aplicații",
+            "widgets": "Widget-uri",
+            "categories": "Categorii"
+        },
+        "buttons": {
+            "view": "Vezi planșa"
+        },
+        "menu": {
+            "setAsDefault": "Alege planșa de bază",
+            "delete": {
+                "label": "Șterge definitiv",
+                "disabled": "Ștergere dezactivată, deoarece componentele Homarr mai vechi nu permit ștergerea configurației implicite. Ștergerea va fi posibilă în viitor."
+            },
+            "duplicate": "Duplicare",
+            "rename": {
+                "label": "Redenumire",
+                "modal": {
+                    "title": "Redenumiți planșa {{name}}",
+                    "fields": {
+                        "name": {
+                            "label": "Nume nou",
+                            "placeholder": "Noul nume de planșă"
+                        }
+                    }
+                }
+            }
+        },
+        "badges": {
+            "fileSystem": "Fișier de sistem",
+            "default": "Implicit"
+        }
+    },
+    "buttons": {
+        "create": "Creează o nouă planșă"
+    },
+    "modals": {
+        "delete": {
+            "title": "Șterge planșa",
+            "text": "Sunteți sigur că doriți să ștergeți această planșă? Această acțiune nu poate fi anulată iar datele dvs. vor fi pierdute definitiv."
+        },
+        "create": {
+            "title": "Creează planșă",
+            "text": "Numele nu poate fi schimbat după ce planșa a fost creată.",
+            "form": {
+                "name": {
+                    "label": "Nume"
+                },
+                "submit": "Creează"
+            }
+        }
+    }
+}

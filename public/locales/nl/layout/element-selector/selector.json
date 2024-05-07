@@ -3,14 +3,14 @@
     "title": "Nieuwe tegel toevoegen",
     "text": "Tegels zijn het belangrijkste element van Homarr. Ze worden gebruikt om je apps en andere informatie weer te geven. Je kunt zoveel tegels toevoegen als je wilt."
   },
-  "widgetDescription": "Widgets werken samen met uw apps, om u meer controle over uw toepassingen te geven. Ze vereisen meestal extra configuratie voor gebruik.",
+  "widgetDescription": "Widgets werken samen met je apps, om je meer controle over je applicaties te geven. Ze vereisen meestal extra configuratie voor gebruik.",
   "goBack": "Ga terug naar de vorige stap",
   "actionIcon": {
     "tooltip": "Tegel toevoegen"
   },
   "apps": "Apps",
   "app": {
-    "defaultName": "Uw app"
+    "defaultName": "Jouw app"
   },
   "widgets": "Widgets",
   "categories": "Categorieën",

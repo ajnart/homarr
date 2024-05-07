@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Sistem Sağlığı İzleme",
-        "description": "NAS'ınız hakkında bilgi",
-        "settings": {
-            "title": "Sistem Sağlığı İzleme",
-            "fahrenheit": {
-                "label": "Fahrenayt"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Sistem Sağlığı İzleme",
+    "description": "Sistem(ler)inizin sağlığını ve durumunu gösteren bilgileri görüntüler.",
+    "settings": {
+      "title": "Sistem durumu izleme ayarları",
+      "fahrenheit": {
+        "label": "Fahrenheit cinsinden CPU Sıcaklığı"
+      },
+      "cpu": {
+        "label": "CPU Bilgilerini Göster",
         "load": "Yük Ortalaması",
         "minute": "{{minute}} dakika",
         "minutes": "{{minutes}} dakika"
-    },
-    "memory": {
-        "label": "Bellek",
-        "totalMem": "Toplam bellek: {{total}}GB",
-        "available": "Mevcut: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Dosya Sistemi",
-        "available": "Mevcut: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Çalışma süresi",
-        "updates": "Güncellemeler",
-        "reboot": "Yeniden başlat"
-    },
-    "errors": {
-        "general": {
-            "title": "NAS'ınız bulunamıyor",
-            "text": "NAS'ınıza bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
+      },
+      "memory": {
+        "label": "Bellek Bilgilerini Göster"
+      },
+      "fileSystem": {
+        "label": "Dosya Sistemi Bilgilerini Göster"
+      },
+      "node": {
+        "label": "Node adına göre filtrele",
+        "info": "Yalnızca söz konusu node'e ilişkin ölçümleri göstermek için Proxmox node'nizin adını girin. Varsayılan olarak kümenin tamamı gösterilir."
+      },
+      "defaultViewState": {
+        "label": "Bölüm varsayılan olarak açık",
+        "data": {
+          "none": "Hiçbiri",
+          "node": "Node'lar",
+          "vm": "VM'ler",
+          "lxc": "LXC'ler",
+          "storage": "Depolama"
         }
+      },
+      "defaultTabState": {
+        "label": "Sekme varsayılan olarak açık",
+        "info": "Sekme varsayılan olarak açıktır. Yalnızca birden fazla entegrasyon mevcut olduğunda kullanılır.",
+        "data": {
+          "system": "Sistem",
+          "cluster": "Küme"
+        }
+      },
+      "summary": {
+        "label": "Özet bölümünü göster"
+      },
+      "showNode": {
+        "label": "Node bölümünü göster"
+      },
+      "showVM": {
+        "label": "VM bölümünü göster"
+      },
+      "showLXCs": {
+        "label": "LXC bölümünü göster"
+      },
+      "showStorage": {
+        "label": "Depolama bölümünü göster"
+      },
+      "sectionIndicatorColor": {
+        "label": "Bölüm durum göstergesinin 'Tamam' olması gerekliliği",
+        "info": "'Tümü' göstergenin yeşil olması için tüm öğelerin çevrimiçi olmasını gerektirir. 'Herhangi' en az bir öğenin çevrimiçi olmasını gerektirir.",
+        "data": {
+          "any": "Herhangi Aktif",
+          "all": "Tümü Aktif"
+        }
+      },
+      "ignoreCert": {
+        "label": "Sertifika Hatalarını Yoksay",
+        "info": "Etkinleştirilirse widget, Proxmox API'sine erişirken sertifika hatalarını yok sayar. Bu, Proxmox'a HTTPS aracılığıyla erişirken yararlı olabilir."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Yük Ortalaması",
+    "minute": "{{minute}} dakika"
+  },
+  "memory": {
+    "label": "Bellek",
+    "totalMem": "Toplam bellek: {{total}}GB",
+    "available": "Mevcut: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Dosya Sistemi",
+    "available": "Mevcut: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Çalışma süresi",
+    "uptimeFormat": "{{days}} gün, {{hours}} saat",
+    "updates": "Güncellemeler mevcut",
+    "reboot": "Yeniden başlat"
+  },
+  "errors": {
+    "general": {
+      "title": "Sistem(ler)iniz bulunamadı.",
+      "text": "Sisteminize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyonlarınızı kontrol edin."
+    }
+  },
+  "headings": {
+    "system": "Sistem",
+    "cluster": "Küme"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "Ram"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Node'lar",
+        "vms": "VM'ler",
+        "lxcs": "LXC'ler",
+        "storage": "Depolama"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "İsim",
+        "cpu": "CPU",
+        "ram": "Ram",
+        "node": "Node"
+      }
+    },
+    "popover": {
+      "node": "Node",
+      "vmid": "VMID",
+      "details": "Detaylar",
+      "cores": "Çekirdekler - {{maxCpu}}",
+      "memSize": "Bellek - {{maxMem}}",
+      "memRatio": "Bellek - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Çalışma süresi - {{uptime}}",
+      "plugin": "Eklenti",
+      "ha": "HA Durumu - {{haState}}",
+      "sharedStorage": "Paylaşılan depolama alanı",
+      "localStorage": "Yerel depolama",
+      "na": "Yok"
+    }
+  }
 }

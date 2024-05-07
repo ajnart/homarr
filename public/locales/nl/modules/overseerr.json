@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Hiermee kunt u media zoeken en toevoegen vanuit Overseerr of Jellyseerr."
+    "description": "Hiermee kan je media zoeken en toevoegen vanuit Overseerr of Jellyseerr."
   },
   "popup": {
     "item": {
       "buttons": {
         "askFor": "Vraag naar {{title}}",
-        "cancel": "Annuleer",
+        "cancel": "Annuleren",
         "request": "Aanvraag"
       },
       "alerts": {
@@ -18,7 +18,7 @@
       }
     },
     "seasonSelector": {
-      "caption": "Selecteer de seizoenen die u wilt downloaden",
+      "caption": "Selecteer de seizoenen die je wilt downloaden",
       "table": {
         "header": {
           "season": "Seizoen",

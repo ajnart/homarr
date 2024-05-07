@@ -1,0 +1,34 @@
+{
+    "entityNotFound": "Entitatea nu a fost găsită",
+    "descriptor": {
+        "name": "Entitate Home Assistant",
+        "description": "Starea actuală a unei entități în Home Assistant",
+        "settings": {
+            "title": "Starea entității",
+            "entityId": {
+                "label": "Identificator entitate",
+                "info": "Identificatorul unic al entității în Home Assistant. Copiați făcând clic pe entitate > Faceți clic pe pictograma cu rotiță > Faceți clic pe butonul de copiere la \"Entity ID\". Este posibil ca unele entități personalizate să nu fie acceptate."
+            },
+            "appendUnit": {
+                "label": "Adăugați unitatea de măsură",
+                "info": "Adăugați atributul unității de măsură la starea entității."
+            },
+            "automationId": {
+                "label": "Identificator automatizare opțional",
+                "info": "Identificatorul dvs. unic de automatizare. Întotdeauna începe cu automation.XXXXX. Dacă nu este setat, Widget-ul nu va putea fi accesat și va afișa doar starea. După ce se face clic, starea entității va fi reîmprospătată."
+            },
+            "displayName": {
+                "label": "Nume afișat"
+            },
+            "displayFriendlyName": {
+                "label": "Afișează un nume prietenos",
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
+            }
+        }
+    }
+}
+

@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "Monitorovanie stavu systému",
-        "description": "Informácie o vašom NAS",
-        "settings": {
-            "title": "Monitorovanie stavu systému",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Monitorovanie stavu systému",
+    "description": "Zobrazuje informácie o stave a kondícii vášho systému.",
+    "settings": {
+      "title": "Nastavenia pre monitorovanie stavu systému",
+      "fahrenheit": {
+        "label": "Teplota CPU v stupňoch Fahrenheita"
+      },
+      "cpu": {
+        "label": "Zobrazenie informácií o CPU",
         "load": "Priemerná záťaž",
         "minute": "{minutes} min.",
         "minutes": "{minutess} min"
-    },
-    "memory": {
-        "label": "Pamäť",
-        "totalMem": "Celková pamäť: {{total}}GB",
-        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Súborový systém",
-        "available": "K dispozícii: {{available}}GB - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Čas prevádzky",
-        "updates": "Aktualizácie",
-        "reboot": "Reštartovať"
-    },
-    "errors": {
-        "general": {
-            "title": "Nemožno nájsť váš NAS",
-            "text": "Nastal problém s pripojením k vášmu NAS. Skontrolujte prosím svoju konfiguráciu/integráciu."
+      },
+      "memory": {
+        "label": "Zobraziť informácie o pamäti"
+      },
+      "fileSystem": {
+        "label": "Zobraziť informácie o súborovom systéme"
+      },
+      "node": {
+        "label": "Filtrujte podľa názvu uzla",
+        "info": "Zadajte názov uzla Proxmox, aby sa zobrazili len metriky pre tento uzol. V predvolenom nastavení sa zobrazuje celý klaster."
+      },
+      "defaultViewState": {
+        "label": "Predvolene otvorená sekcia",
+        "data": {
+          "none": "Žiadne",
+          "node": "Uzly",
+          "vm": "VM",
+          "lxc": "LXCs",
+          "storage": "Úložisko"
         }
+      },
+      "defaultTabState": {
+        "label": "Predvolene otvorená karta",
+        "info": "Predvolene otvorená karta. Používa sa len vtedy, keď je k dispozícii viacero integrácií.",
+        "data": {
+          "system": "Systém",
+          "cluster": "Cluster"
+        }
+      },
+      "summary": {
+        "label": "Zobraziť sekciu súhrnu"
+      },
+      "showNode": {
+        "label": "Zobraziť sekciu uzlov"
+      },
+      "showVM": {
+        "label": "Zobraziť sekciu VM"
+      },
+      "showLXCs": {
+        "label": "Zobraziť sekciu LXC"
+      },
+      "showStorage": {
+        "label": "Zobraziť sekciu úložiska"
+      },
+      "sectionIndicatorColor": {
+        "label": "Požiadavka, aby bol indikátor stavu sekcie „OK“",
+        "info": "„Všetko“ vyžaduje, aby boli všetky položky online, aby bol indikátor zelený. Možnosť „Akýkoľvek“ vyžaduje, aby bola online aspoň jedna položka.",
+        "data": {
+          "any": "Akýkoľvek aktívny",
+          "all": "Všetky aktívne"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignorovať chyby certifikátu",
+        "info": "Ak je táto možnosť povolená, widget bude pri prístupe k rozhraniu API Proxmox ignorovať chyby certifikátu. To môže byť užitočné pri prístupe k Proxmox cez HTTPS."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Priemerná záťaž",
+    "minute": "{minutes} min."
+  },
+  "memory": {
+    "label": "Pamäť",
+    "totalMem": "Celková pamäť: {{total}}GB",
+    "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Súborový systém",
+    "available": "K dispozícii: {{available}}GB - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Čas prevádzky",
+    "uptimeFormat": "{{days}} dní, {{hours}} hodín",
+    "updates": "Dostupné aktualizácie",
+    "reboot": "Reštartovať"
+  },
+  "errors": {
+    "general": {
+      "title": "Nie je možné nájsť váš systém (systémy).",
+      "text": "Nastal problém s pripojením k vášmu systému. Skontrolujte prosím svoju konfiguráciu/integráciu."
+    }
+  },
+  "headings": {
+    "system": "Systém",
+    "cluster": "Cluster"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Uzly",
+        "vms": "VM",
+        "lxcs": "LXCs",
+        "storage": "Úložisko"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Názov",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Uzol"
+      }
+    },
+    "popover": {
+      "node": "Uzol",
+      "vmid": "VMID",
+      "details": "Detaily",
+      "cores": "Jadrá - {{maxCpu}}",
+      "memSize": "Pamäť - {{maxMem}}",
+      "memRatio": "Pamäť - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Prevádzková doba - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA Stav - {{haState}}",
+      "sharedStorage": "Zdieľané úložisko",
+      "localStorage": "Lokálne úložisko",
+      "na": "N/A"
+    }
+  }
 }

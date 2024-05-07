@@ -1,0 +1,34 @@
+{
+  "descriptor": {
+    "name": "Data și ora",
+    "description": "Afișează data și ora curentă.",
+    "settings": {
+      "title": "Setări pentru widget-ul Data și ora",
+      "timezone": {
+        "label": "Fus orar",
+        "info": "Selectați numele fusului orar, găsiți-l pe al dvs. aici: "
+      },
+      "customTitle": {
+        "label": "Numele orașului sau titlul personalizat"
+      },
+      "display24HourFormat": {
+        "label": "Afișează ora întreagă (24 de ore)"
+      },
+      "dateFormat": {
+        "label": "Tipul de afișare a datei",
+        "data": {
+          "hide": "Ascunde data"
+        }
+      },
+      "titleState": {
+        "label": "Titlul ceasului",
+        "info": "Titlul personalizat și codul fusului orar pot fi afișate pe widget.<br/>Poți, de asemenea, să arăți orașul singur, să nu afișezi nimic,<br/>sau chiar afișezi fusul orar singur atunci când ambele sunt selectate, dar nici un titlu nu este furnizat.",
+        "data": {
+          "both": "Titlu și fus orar",
+          "city": "Doar titlu",
+          "none": "Nimic"
+        }
+      }
+    }
+  }
+}

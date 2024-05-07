@@ -1,0 +1,35 @@
+{
+    "metaTitle": "Creare cont",
+    "title": "Creare cont",
+    "text": "Vă rugam să introduceți datele de conectare mai jos",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "Utilizator"
+            },
+            "password": {
+                "label": "Parola"
+            },
+            "passwordConfirmation": {
+                "label": "Confirmare parola"
+            }
+        },
+        "buttons": {
+            "submit": "Creare cont"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "Contul se creează",
+            "text": "Vă rugăm așteptați"
+        },
+        "success": {
+            "title": "Contul a fost creat",
+            "text": "Contul tău a fost creat cu succes"
+        },
+        "error": {
+            "title": "Eroare",
+            "text": "A apărut o eroare, ai primit următoarea eroare: {{error}}"
+        }
+    }
+}

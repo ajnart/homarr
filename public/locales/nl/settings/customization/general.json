@@ -1,5 +1,5 @@
 {
-  "text": "Met aanpassingen kunt u uw ervaring met Homarr configureren en aanpassen aan uw voorkeuren.",
+  "text": "Met aanpassingen kan je je ervaring met Homarr configureren en aanpassen aan jouw voorkeuren.",
   "accordeon": {
     "layout": {
       "name": "Indeling",
@@ -7,7 +7,7 @@
     },
     "gridstack": {
       "name": "Gridstack",
-      "description": "Het gedrag en de kolommen van uw dashboard aanpassen"
+      "description": "Pas het gedrag en de kolommen van uw dashboardgebied aan"
     },
     "pageMetadata": {
       "name": "Pagina metadata",

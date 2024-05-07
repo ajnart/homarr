@@ -1,0 +1,29 @@
+{
+    "metaTitle": "Personalizați planșa {{name}}",
+    "pageTitle": "Personalizări pentru planșa {{name}}",
+    "backToBoard": "Înapoi la planșă",
+    "settings": {
+        "appearance": {
+            "primaryColor": "Culoare de bază",
+            "secondaryColor": "Culoare secundară"
+        }
+    },
+    "save": {
+        "button": "Salvați schimbările",
+        "note": "Atenție, aveți schimbări nesalvate!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "Se salvează personalizările",
+            "message": "Vă rugăm să așteptați pană salvăm personalizările"
+        },
+        "success": {
+            "title": "Personalizările au fost salvate",
+            "message": "Personalizări au fost salvate cu succes"
+        },
+        "error": {
+            "title": "Eroare",
+            "message": "Schimbările nu au putut fi salvate"
+        }
+    }
+}

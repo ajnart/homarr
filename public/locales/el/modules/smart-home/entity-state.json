@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Εμφάνιση φιλικού ονόματος",
-                "info": "Εμφάνιση φιλικού ονόματος από το Home Assistant αντί για το εμφανιζόμενο όνομα"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

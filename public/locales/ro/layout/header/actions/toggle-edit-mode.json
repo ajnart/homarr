@@ -1,0 +1,12 @@
+{
+    "description": "În modul editare, puteți ajusta indicatorii și configura aplicații. Modificările nu sunt salvate până când nu ieșiți din modul editare.",
+    "button": {
+        "disabled": "Întrare in modul editare",
+        "enabled": "Salvați modificările și ieșiți"
+    },
+    "popover": {
+        "title": "Modul editare este activat pentru mărimea </1>{{size}}</1>",
+        "text": "Puteți ajusta și personaliza aplicațiile acum. Modificările <strong>nu sunt salvate</strong> până când ieșiți din modul editare"
+    },
+    "unloadEvent": "Ieșiți din modul editare pentru a salva schimbările"
+}

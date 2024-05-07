@@ -1,0 +1,38 @@
+{
+  "title": "Setări",
+  "tooltip": "Setări",
+  "tabs": {
+    "common": "Comun",
+    "customizations": "Personalizări"
+  },
+  "tips": {
+    "configTip": "Încărcați fișierul de configurare prin tragere și plasare acestuia pe pagină!"
+  },
+  "credits": {
+    "madeWithLove": "Realizat cu ❤️ de @",
+    "thirdPartyContent": "Vezi conținutul terților",
+    "thirdPartyContentTable": {
+      "dependencyName": "Dependență",
+      "dependencyVersion": "Versiune"
+    }
+  },
+  "grow": "Mărește grilă (ocupă tot spațiul)",
+  "layout": {
+    "preview": {
+      "title": "Previzualizare",
+      "subtitle": "Modificările vor fi salvate automat"
+    },
+    "divider": "Opțiuni de aspect",
+    "main": "Principal",
+    "sidebar": "Bara laterală",
+    "cannotturnoff": "Nu se poate dezactiva",
+    "dashboardlayout": "Aspectul planșei",
+    "enablersidebar": "Activează bara laterală în dreapta",
+    "enablelsidebar": "Activează bara laterală în stânga",
+    "enablesearchbar": "Activează bara de căutare",
+    "enabledocker": "Activează integrarea cu Docker",
+    "enableping": "Activează ping",
+    "enablelsidebardesc": "Opțional. Poate fi folosit numai pentru aplicații și integrări",
+    "enablersidebardesc": "Opțional. Poate fi folosit numai pentru aplicații și integrări"
+  }
+}

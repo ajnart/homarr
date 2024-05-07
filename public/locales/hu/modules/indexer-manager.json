@@ -1,19 +1,19 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Indexelő menedzser állapota",
+        "description": "Az indexelők állapota",
         "settings": {
-            "title": ""
+            "title": "Indexelő menedzser állapota"
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indexelő menedzser",
+        "testAllButton": "Teszteld az összeset"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nem található indexelő menedzser",
+            "text": "Probléma adódott a Dns-blokkoló(k) hoz való csatlakozással. Kérjük, ellenőrizze a konfigurációt/integráció(ka) t."
         }
     }
 }

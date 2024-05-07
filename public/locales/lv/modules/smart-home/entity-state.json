@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Draudzīgais nosaukums",
-                "info": "Draudzīgā nosaukuma vietā parādiet no Home Assistant izgulto draudzīgo nosaukumu"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

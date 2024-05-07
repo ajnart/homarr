@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "Acest câmp nu este valid",
+        "required": "Acest câmp este obligatoriu",
+        "string": {
+            "startsWith": "Acest câmp trebuie să înceapă cu {{startsWith}}",
+            "endsWith": "Acest câmp trebuie să se termine cu {{endsWith}}",
+            "includes": "Acest câmp trebuie să includă {{includes}}"
+        },
+        "tooSmall": {
+            "string": "Acest câmp trebuie să aibă cel puțin {{minimum}} caractere",
+            "number": "Acest câmp trebuie să fie mai mare sau egal cu {{minimum}}"
+        },
+        "tooBig": {
+            "string": "Acest câmp trebuie să aibă cel mult {{maximum}} caractere",
+            "number": "Acest câmp trebuie să fie mai mic sau egal cu {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "Parolele trebuie să fie identice"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "Widget RSS",
+    "description": "Widget-ul RSS vă permite să afișați feed-urile RSS pe planșă.",
+    "settings": {
+      "title": "Setări pentru Widget-ul RSS",
+      "rssFeedUrl": {
+        "label": "Adrese URL ale feed-urilor RSS",
+        "description": "Adresele URL ale feed-urilor RSS pe care doriți să le afișați."
+      },
+      "refreshInterval": {
+        "label": "Interval de actualizare (în minute)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "Permiteți formatarea de tip HTML (Periculos)",
+        "info": "Permiterea formatării de tip HTML din exterior ar putea fi periculoasă.<br/>Vă rugăm să vă asigurați că feed-ul provine dintr-o sursă de încredere."
+      },
+      "textLinesClamp": {
+        "label": "Fixarea liniilor de text"
+      },
+      "sortByPublishDateAscending": {
+        "label": "Sortează după data publicării (ascendent)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "Așează postări fără data publicării în partea de sus"
+      },
+      "maximumAmountOfPosts": {
+        "label": "Numărul maxim de postări"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "Nu se poate prelua feed-ul RSS",
+          "text": "A apărut o problemă la accesarea feed-ului RSS. Asigură-te că ai configurat corect feed-ul RSS folosind o adresa URL validă. Adresele URL-urile ar trebui să corespundă specificațiilor oficiale. După actualizarea feed-ului, ar putea fi necesar să reactualizați planșă."
+        }
+      }
+    }
+  }
+}

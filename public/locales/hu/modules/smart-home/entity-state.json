@@ -10,8 +10,8 @@
                 "info": "Egyedi egység ID a Home Assistantben. Másolás az egységre kattintva > Kattintson a fogaskerék ikonra > Kattintson a másolás gombra az „Egység ID”-nél. Előfordulhat, hogy egyes egyéni egységek nem támogatottak."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Mértékegység hozzáfűzése",
+                "info": "Adja hozzá a mértékegység attribútumot az entitás állapotához."
             },
             "automationId": {
                 "label": "Választható automatizálási azonosító",
@@ -21,9 +21,14 @@
                 "label": "Megjelenített név"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Barátságos név megjelenítése",
+                "info": "A Home Assistant barátságos nevet jelenítse meg a megjelenített név helyett."
+            },
+            "genericToggle": {
+                "label": "Entitás kapcsoló",
+                "info": "Ha rákattint, hajtson végre egy általános Home Assistant váltási műveletet az entitáson."
             }
         }
     }
 }
+

@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "label": "Setări"
+  },
+  "errors": {
+    "unmappedOptions": {
+      "text": ""
+    }
+  }
+}

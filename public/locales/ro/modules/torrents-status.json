@@ -1,0 +1,118 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "Afişează o listă de torente de la clienţii compatibili cu Torrente.",
+    "settings": {
+      "title": "Setări pentru Widget-ul Torrent",
+      "refreshInterval": {
+        "label": "Interval de actualizare (în secunde)"
+      },
+      "displayCompletedTorrents": {
+        "label": "Afișare torente finalizate"
+      },
+      "displayActiveTorrents": {
+        "label": "Afișare torente active"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "Viteza de încărcare pentru a considera un torent activ (kB/s)"
+      },
+      "displayStaleTorrents": {
+        "label": "Afișare torente fără surse"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "Lista de etichete este o listă albă (în loc de lista neagră)"
+      },
+      "labelFilter": {
+        "label": "Lista de etichete",
+        "description": "Când este bifat „listă albă”, aceasta va acționa ca o listă albă. Dacă nu este bifată, aceasta este o listă neagră. Nu va face nimic când este gol"
+      },
+      "displayRatioWithFilter": {
+        "label": "Afișează raportul listei de torente filtrate",
+        "info": "Dacă este dezactivat, va fi afișat doar raportul global. Raportul global va folosi în continuare etichetele dacă este setat"
+      },
+      "columnOrdering": {
+        "label": "Permite reordonarea coloanelor"
+      },
+      "rowSorting": {
+        "label": "Permiteți sortarea rândurilor"
+      },
+      "columns": {
+        "label": "Selectați coloanele pentru afișare",
+        "data": {
+          "date": "Data adăugării",
+          "down": "În jos",
+          "up": "În sus",
+          "eta": "Timp rămas estimat",
+          "progress": "Progres"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Schimbă dimensiunea coloanei pentru nume"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "Eroare",
+      "lastUpdated": "Ultima actualizare acum {{time}}",
+      "ratioGlobal": "Raport global",
+      "ratioWithFilter": "Raport cu filtru"
+    },
+    "table": {
+      "header": {
+        "isCompleted": "Descărcare",
+        "name": "Nume",
+        "dateAdded": "Adăugat la data",
+        "size": "Mărime",
+        "download": "În jos",
+        "upload": "În sus",
+        "estimatedTimeOfArrival": "Timp rămas estimat",
+        "progress": "Progres",
+        "totalUploaded": "Total încărcări",
+        "totalDownloaded": "Total descărcări",
+        "ratio": "Raport",
+        "seeds": "Seed-eri (conectat)",
+        "peers": "Parteneri (conectat)",
+        "label": "Etichetă",
+        "state": "Stare",
+        "stateMessage": "Mesaj de stare"
+      },
+      "item": {
+        "text": "Gestionat de {{appName}}, {{ratio}} raport"
+      },
+      "body": {
+        "nothingFound": "Nici un torrent găsit",
+        "filterHidingItems": "{{count}} intrări sunt ascunse de filtrele dvs."
+      }
+    },
+    "lineChart": {
+      "title": "Viteza actuală de descărcare",
+      "download": "Descărcare: {{download}}",
+      "upload": "Încărcare: {{upload}}",
+      "timeSpan": "acum {{seconds}} secunde",
+      "totalDownload": "Descărcare: {{download}}/s",
+      "totalUpload": "Încărcare: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nu au fost găsiți clienți de torente!",
+        "text": "Adaugă un client de Torrent acceptat pentru a vizualiza descărcările curente"
+      },
+      "generic": {
+        "title": "A apărut o eroare neașteptată",
+        "text": "Nu se poate comunica cu clienții dvs. Torrent. Vă rugăm să vă verificați configurația"
+      }
+    },
+    "popover": {
+      "introductionPrefix": "Gestionat de",
+      "metrics": {
+        "queuePosition": "Poziție în așteptare - {{position}}",
+        "progress": "Progres - {{progress}}%",
+        "totalSelectedSize": "Total - {{totalSize}}",
+        "state": "Stare - {{state}}",
+        "ratio": "Raport -",
+        "completed": "Finalizat"
+      }
+    }
+  }
+}

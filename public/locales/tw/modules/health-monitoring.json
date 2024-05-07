@@ -1,38 +1,141 @@
 {
-    "descriptor": {
-        "name": "系統健康監控",
-        "description": "關於 NAS 訊息",
-        "settings": {
-            "title": "系統健康監控",
-            "fahrenheit": {
-                "label": "華氏度"
-            }
-        }
-    },
-    "cpu": {
-        "label": "處理器",
+  "descriptor": {
+    "name": "系統健康監控",
+    "description": "顯示系統運行健康、狀態訊息",
+    "settings": {
+      "title": "設定系統健康監測",
+      "fahrenheit": {
+        "label": "CPU溫度 (華氏度)"
+      },
+      "cpu": {
+        "label": "顯示 CPU 訊息",
         "load": "平均負載",
         "minute": "{{minute}} 分鐘",
         "minutes": "{{minutes}} 分鐘"
-    },
-    "memory": {
-        "label": "記憶體",
-        "totalMem": "總記憶體: {{total}} GB",
-        "available": "可用: {{available}} GB - {{percentage}} %"
-    },
-    "fileSystem": {
-        "label": "檔案系統",
-        "available": "可用: {{available}} - {{percentage}} %"
-    },
-    "info": {
-        "uptime": "運行時間",
-        "updates": "更新",
-        "reboot": "重新啟動"
-    },
-    "errors": {
-        "general": {
-            "title": "找不到您的 NAS",
-            "text": "連接您的NAS時出現問題，請確認配置/集成"
+      },
+      "memory": {
+        "label": "顯示記憶體訊息"
+      },
+      "fileSystem": {
+        "label": "顯示檔案系統訊息"
+      },
+      "node": {
+        "label": "按節點名稱篩選",
+        "info": "輸入您的 Proxmox 節點名稱，預設顯示全部集群"
+      },
+      "defaultViewState": {
+        "label": "預設開啟",
+        "data": {
+          "none": "無",
+          "node": "節點",
+          "vm": "虛擬機",
+          "lxc": "LXCs",
+          "storage": "儲存設備"
         }
+      },
+      "defaultTabState": {
+        "label": "預設開啟",
+        "info": "預設開啟，當多個集成可用時才使用",
+        "data": {
+          "system": "系統",
+          "cluster": "集群"
+        }
+      },
+      "summary": {
+        "label": "顯示摘要"
+      },
+      "showNode": {
+        "label": "顯示節點"
+      },
+      "showVM": {
+        "label": "顯示虛擬機"
+      },
+      "showLXCs": {
+        "label": "顯示 LXCs"
+      },
+      "showStorage": {
+        "label": "顯示儲存"
+      },
+      "sectionIndicatorColor": {
+        "label": "要求部分指示器為\"OK\"",
+        "info": "需要全部項目都在線，指標才會成為綠色，至少需要一個項目在線",
+        "data": {
+          "any": "任何活動",
+          "all": "全部活動"
+        }
+      },
+      "ignoreCert": {
+        "label": "忽略證書錯誤",
+        "info": "如果啟用，小工具在訪問 Proxmox API ，這對於 HTTPS 訪問 Proxmox 時很有幫助"
+      }
     }
+  },
+  "cpu": {
+    "label": "處理器",
+    "load": "平均負載",
+    "minute": "{{minute}} 分鐘"
+  },
+  "memory": {
+    "label": "記憶體",
+    "totalMem": "總記憶體: {{total}} GB",
+    "available": "可用: {{available}} GB - {{percentage}} %"
+  },
+  "fileSystem": {
+    "label": "檔案系統",
+    "available": "可用: {{available}} - {{percentage}} %"
+  },
+  "info": {
+    "uptime": "運行時間",
+    "uptimeFormat": "{{days}} 天，{{hours}} 小時",
+    "updates": "可用更新",
+    "reboot": "重新啟動"
+  },
+  "errors": {
+    "general": {
+      "title": "無法找到系統",
+      "text": "連接系統時出現問題，請檢查配置/集成"
+    }
+  },
+  "headings": {
+    "system": "系統",
+    "cluster": "集群"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "處理器",
+      "ram": "記憶體"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "節點",
+        "vms": "虛擬機",
+        "lxcs": "LXCs",
+        "storage": "儲存設備"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "名稱",
+        "cpu": "處理器",
+        "ram": "記憶體",
+        "node": "節點"
+      }
+    },
+    "popover": {
+      "node": "節點",
+      "vmid": "VMID",
+      "details": "詳情",
+      "cores": "核心 - {{maxCpu}}",
+      "memSize": "記憶體 - {{maxMem}}",
+      "memRatio": "記憶體 - {{usedMem}} / {{maxMem}}",
+      "diskSize": "硬碟 - {{maxDisk}}",
+      "diskRatio": "硬碟 - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "運行時間 - {{uptime}}",
+      "plugin": "插件",
+      "ha": "狀態 - {{haState}}",
+      "sharedStorage": "共享儲存",
+      "localStorage": "本地儲存",
+      "na": "不可用"
+    }
+  }
 }

@@ -8,7 +8,7 @@
             "categories": "Categorieën"
         },
         "buttons": {
-            "view": "Bekijk bord"
+            "view": "Bord bekijken"
         },
         "menu": {
             "setAsDefault": "Instellen als standaardkaart",
@@ -40,7 +40,7 @@
     },
     "modals": {
         "delete": {
-            "title": "Verwijder bord",
+            "title": "Bord verwijderen",
             "text": "Weet je zeker dat je dit bord wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt en je gegevens zullen permanent verloren gaan."
         },
         "create": {

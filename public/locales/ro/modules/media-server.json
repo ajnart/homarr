@@ -1,0 +1,25 @@
+{
+  "descriptor": {
+    "name": "Server-ul media",
+    "description": "Interacționați cu server-ul dvs. media Jellyfin sau Plex",
+    "settings": {
+      "title": "Setări pentru widget-ul server-ului media"
+    }
+  },
+  "loading": "Se încarcă stream-urile",
+  "card": {
+    "table": {
+      "header": {
+        "session": "Sesiune",
+        "user": "Utilizator",
+        "currentlyPlaying": "În acest moment se redă"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nu se poate încărca conținutul",
+        "text": "Nu s-au putut obține informații de la server. Verificați log-urile pentru mai multe detalii"
+      }
+    }
+  }
+}
