@@ -56,4 +56,28 @@ export class HomeAssistant {
       return false;
     }
   }
+
+  /**
+   * Triggers a toggle action for a specific entity.
+   * 
+   * @param entityId - The ID of the entity to toggle.
+   * @returns A boolean indicating whether the toggle action was successful.
+   */
+  async triggerToggle(entityId: string) {
+    try {
+      const response = await fetch(appendPath(this.basePath, `/services/homeassistant/toggle`), {
+        headers: {
+          'Authorization': `Bearer ${this.token}`,
+        },
+        body: JSON.stringify({
+          'entity_id': entityId,
+        }),
+        method: 'POST'
+      });
+      return response.ok;
+    } catch (err) {
+      Consola.error(`Failed to fetch from '${this.basePath}': ${err}`);
+      return false;
+    }
+  }
 }

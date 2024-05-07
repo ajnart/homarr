@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Display friendly name",
-                "info": "Display friendly name from Home Assistant instead instead of display name"
+                "info": "Display friendly name from Home Assistant instead instead of display name."
+            },
+            "genericToggle": {
+                "label": "Entity toggle",
+                "info": "Perform a generic Home Assistant toggle action on entity when clicked."
             }
         }
     }
 }
+

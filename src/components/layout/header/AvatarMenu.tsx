@@ -14,6 +14,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { forwardRef } from 'react';
+import { useLogoutUrl } from '~/hooks/custom-session-provider';
 import { useColorScheme } from '~/hooks/use-colorscheme';
 
 import { useBoardLink } from '../Templates/BoardLayout';
@@ -25,6 +26,8 @@ export const AvatarMenu = () => {
 
   const Icon = colorScheme === 'dark' ? IconSun : IconMoonStars;
   const defaultBoardHref = useBoardLink('/board');
+
+  const logoutUrl = useLogoutUrl();
 
   return (
     <Menu width={256}>
@@ -64,11 +67,13 @@ export const AvatarMenu = () => {
           <Menu.Item
             icon={<IconLogout size="1rem" />}
             color="red"
-            onClick={() =>
+            onClick={() => {
               signOut({
                 redirect: false,
-              }).then(() => window.location.reload())
-            }
+              }).then(() =>
+                logoutUrl ? window.location.assign(logoutUrl) : window.location.reload()
+              );
+            }}
           >
             {t('actions.avatar.logout', {
               username: sessionData.user.name,
@@ -88,10 +93,10 @@ type CurrentUserAvatarProps = {
   user: User | null;
 };
 
-const getGravatar = (email?: string | undefined | null) => {
+const getAvatarLink = (email?: string | undefined | null) => {
   if (!email) return null;
   const emailHash = createHash('sha256').update(email.trim().toLowerCase()).digest('hex');
-  return `https://gravatar.com/avatar/${emailHash}?d=null`;
+  return `https://seccdn.libravatar.org/avatar/${emailHash}?d=404`;
 };
 
 const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
@@ -100,18 +105,16 @@ const CurrentUserAvatar = forwardRef<HTMLDivElement, CurrentUserAvatarProps>(
     const { fn } = useMantineTheme();
     const border = fn.variant({ variant: 'default' }).border;
 
-    if (!user)
-      return <Avatar ref={ref} styles={{ root: { border: `1px solid ${border}` } }} {...others} />;
-
     return (
       <Avatar
         ref={ref}
-        color={primaryColor}
-        src={getGravatar(user.email)}
-        styles={{ root: { border: `1px solid ${border}` } }}
+        color={user == null ? undefined : primaryColor}
+        src={getAvatarLink(user?.email)}
+        alt={user?.name?.slice(0, 2).toUpperCase() ?? "anon"}
+        styles={{ root: { border: `1px solid ${border}` }, image: {} }}
         {...others}
       >
-        {user.name?.slice(0, 2).toUpperCase()}
+        {user?.name?.slice(0, 2).toUpperCase()}
       </Avatar>
     );
   }

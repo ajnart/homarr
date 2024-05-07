@@ -90,4 +90,34 @@ export const smartHomeEntityStateRouter = createTRPCRouter({
 
       return false;
     }),
+  triggerToggle: protectedProcedure
+    .input(z.object({
+      widgetId: z.string(),
+      configName: z.string()
+    })).mutation(async ({ input }) => {
+      const config = getConfig(input.configName);
+      const widget = config.widgets.find(widget => widget.id === input.widgetId) as ISmartHomeEntityStateWidget | null;
+
+      if (!widget) {
+        Consola.error(`Referenced widget ${input.widgetId} does not exist on backend.`);
+        throw new TRPCError({
+          code: 'CONFLICT',
+          message: 'Referenced widget does not exist on backend',
+        });
+      }
+
+      const instances = config.apps.filter((app) => app.integration?.type == 'homeAssistant');
+
+      for (const instance of instances) {
+        const url = new URL(instance.url);
+        const client = HomeAssistantSingleton.getOrSet(url, findAppProperty(instance, 'apiKey'));
+        const state = await client.triggerToggle(widget.properties.entityId);
+
+        if (state) {
+          return true;
+        }
+      }
+
+      return false;
+    }),
 });
