@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "外部地址",
-			"description": "点击应用时打开的网址。"
+			"description": "点击应用时打开的网址。",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
