@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "כתובת חיצונית",
 			"description": "כתובת אינטרנט שתיפתח בעת לחיצה על האפליקציה.",
-			"tooltip": ""
+			"tooltip": "אתה יכול להשתמש במספר משתנים כדי ליצור כתובות דינמיות:<br><br><b>[homarr_base]</b> : כתובת מלאה לא כולל יציאה ונתיב. <i>(דוגמה: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : כתובת אתר בסיס מלאה כולל תת-הדומיין הנוכחי שלו. <i>(דוגמה: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : דומיין עם תת-דומיין מסונן. <i>(דוגמה: `homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>המשתנים האלה תלויים כולם בכתובת האתר הנוכחית."
 		}
 	},
 	"behaviour": {
