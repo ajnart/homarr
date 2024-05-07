@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Külső cím",
-			"description": "URL, amely az alkalmazásra kattintva megnyílik."
+			"description": "URL, amely az alkalmazásra kattintva megnyílik.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
