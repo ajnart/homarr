@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "外部網址",
-			"description": "點擊應用時開啟的網址"
+			"description": "點擊應用時開啟的網址",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
