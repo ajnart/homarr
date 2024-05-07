@@ -16,15 +16,15 @@
                 "label": "Eliminar permanentemente",
                 "disabled": "Eliminación deshabilitada, porque los componentes más antiguos de Homarr no permiten la eliminación de la configuración predeterminada. La eliminación será posible en el futuro."
             },
-            "duplicate": "",
+            "duplicate": "Duplicar",
             "rename": {
-                "label": "",
+                "label": "Renombrar",
                 "modal": {
-                    "title": "",
+                    "title": "Renombrar tablero {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nuevo nombre",
+                            "placeholder": "Nuevo nombre del tablero"
                         }
                     }
                 }
