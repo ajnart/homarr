@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Indirizzo esterno",
-			"description": "URL che verrà aperto nel browser al clic dell'app."
+			"description": "URL che verrà aperto nel browser al clic dell'app.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
