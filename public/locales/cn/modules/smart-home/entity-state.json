@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "显示友好名称",
-                "info": ""
+                "info": "显示来自家庭助理的友好名称，而不是显示名称."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "实体切换",
+                "info": "单击时对实体执行通用的家庭助理切换操作。"
             }
         }
     }
