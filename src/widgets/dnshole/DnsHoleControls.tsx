@@ -158,7 +158,7 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
   };
 
   return (
-    <Stack spacing="0.25rem">
+    <Stack h="100%" spacing="0.25rem">
       {enableControls && widget.properties.showToggleAllButtons && (
         <Flex gap="xs">
           <Tooltip label={t('enableAll')}>
