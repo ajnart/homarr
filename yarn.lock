@@ -7495,6 +7495,7 @@ __metadata:
     sabnzbd-api: ^1.5.0
     sass: ^1.56.1
     swagger-ui-react: ^5.11.0
+    tldts: ^6.1.18
     trpc-openapi: ^1.2.0
     ts-node: latest
     turbo: ^1.10.12
@@ -11882,6 +11883,24 @@ __metadata:
   dependencies:
     "@popperjs/core": ^2.9.0
   checksum: cac955318a65288e8d2dca05059878b003c6e66f92c94f7810f5bc5448eb6646abdf7dacc9bd00020e2611592598d0aae3a28ec9a45349a159603c3fdddce5fb
+  languageName: node
+  linkType: hard
+
+"tldts-core@npm:^6.1.18":
+  version: 6.1.18
+  resolution: "tldts-core@npm:6.1.18"
+  checksum: 392d490c04aca5b40f16666fb6cbc9d7ef6df42884b1ac196736ffdeeb378019962dbc04ee00a2a85ce61944a0692c1f1cd8b64896277949906991146830314f
+  languageName: node
+  linkType: hard
+
+"tldts@npm:^6.1.18":
+  version: 6.1.18
+  resolution: "tldts@npm:6.1.18"
+  dependencies:
+    tldts-core: ^6.1.18
+  bin:
+    tldts: bin/cli.js
+  checksum: 04ec7d6a5ad42ddedd9dd250d9cde37608b09bf28eecb94bad8c49d65225d861e0bddc6e1cea3253baf8fc96722e0d2fc1e926eb73b7a35396c77346efaf70f0
   languageName: node
   linkType: hard
 

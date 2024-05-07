@@ -1,7 +1,7 @@
-import { Affix, Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
+import { Box, Text, Tooltip, UnstyledButton } from '@mantine/core';
 import { createStyles, useMantineTheme } from '@mantine/styles';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useExternalUrl } from '~/hooks/useExternalUrl';
 import { AppType } from '~/types/app';
 
 import { useEditModeStore } from '../../Views/useEditModeStore';
@@ -26,6 +26,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
     .join(': ');
 
   const isRow = app.appearance.positionAppName.includes('row');
+  const href = useExternalUrl(app);
 
   function Inner() {
     return (
@@ -88,7 +89,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
         <UnstyledButton
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component="a"
-          href={app.behaviour.externalUrl.length > 0 ? app.behaviour.externalUrl : app.url}
+          href={href}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >
