@@ -1,0 +1,18 @@
+{
+  "descriptor": {
+    "name": "Comenzi de hole-DNS",
+    "description": "Controlați PiHole sau AdGuard din planșa dvs.",
+    "settings": {
+      "title": "Setări de control al hole-DNS",
+      "showToggleAllButtons": {
+        "label": "Afișați butoanele „Activați/Dezactivați toate”"
+      }
+    },
+    "errors": {
+      "general": {
+        "title": "Nu se poate găsi hole-DNS",
+        "text": "A apărut o problemă la conectarea la hole-DNS. Vă rugăm să verificați configurația/integrarea (integrările)."
+      }
+    }
+  }
+}

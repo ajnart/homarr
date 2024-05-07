@@ -10,8 +10,8 @@
                 "info": "ID de entidad única de Home Assistant. Copia haciendo clic en la entidad > Clic en el icono de engranaje > Clic en el botón copiar en 'ID de la entidad'. Algunas entidades personalizadas pueden no ser compatibles."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Añadir unidad de medida",
+                "info": "Añadir el atributo unidad de medida al estado de la entidad."
             },
             "automationId": {
                 "label": "ID de automatización opcional",
@@ -21,9 +21,14 @@
                 "label": "Nombre a mostrar"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Mostrar nombre descriptivo",
+                "info": "Mostrar el nombre descriptivo de Home Assistant en lugar del nombre para mostrar."
+            },
+            "genericToggle": {
+                "label": "Cambio de entidad",
+                "info": "Realizar una acción genérica de Home Assistant en la entidad cuando se hace clic."
             }
         }
     }
 }
+

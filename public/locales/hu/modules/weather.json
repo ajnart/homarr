@@ -11,10 +11,10 @@
         "label": "Városnév megjelenítése"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Heti előrejelzés megjelenítése"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Megjelenítendő napok"
       },
       "location": {
         "label": "Időjárás helye"

@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "Мониторинг состояния системы",
-        "description": "Информация о вашем NAS",
-        "settings": {
-            "title": "Мониторинг состояния системы",
-            "fahrenheit": {
-                "label": "По Фаренгейту"
-            }
-        }
-    },
-    "cpu": {
-        "label": "ЦПУ",
+  "descriptor": {
+    "name": "Мониторинг состояния системы",
+    "description": "Информация о вашем NAS",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": "По Фаренгейту"
+      },
+      "cpu": {
+        "label": "",
         "load": "Средняя загрузка",
-        "minute": "{{minute}} минута"
-    },
-    "memory": {
-        "label": "Память",
-        "totalMem": "Общий объем памяти: {{total}}Гб",
-        "available": "Доступно: {{available}}Гб - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Файловая система",
-        "available": "Доступно: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Время работы",
-        "updates": "Обновления",
-        "reboot": "Перезагрузка"
-    },
-    "errors": {
-        "general": {
-            "title": "Не удалось найти ваш NAS",
-            "text": "Проблема с подключением к вашему NAS. Пожалуйста, проверьте свою конфигурацию/интеграцию."
+        "minute": "{{minute}} минута",
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
+        "label": "",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "Ничего",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Хранилище"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "ЦПУ",
+    "load": "Средняя загрузка",
+    "minute": "{{minute}} минута"
+  },
+  "memory": {
+    "label": "Память",
+    "totalMem": "Общий объем памяти: {{total}}Гб",
+    "available": "Доступно: {{available}}Гб - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Файловая система",
+    "available": "Доступно: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Время работы",
+    "uptimeFormat": "",
+    "updates": "Обновления",
+    "reboot": "Перезагрузка"
+  },
+  "errors": {
+    "general": {
+      "title": "Не удалось найти ваш NAS",
+      "text": "Проблема с подключением к вашему NAS. Пожалуйста, проверьте свою конфигурацию/интеграцию."
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "ЦПУ",
+      "ram": "ОЗУ"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Хранилище"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Имя",
+        "cpu": "ЦПУ",
+        "ram": "ОЗУ",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Подробности",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

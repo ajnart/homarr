@@ -1,0 +1,27 @@
+{
+    "search": {
+        "label": "Caută",
+        "engines": {
+            "web": "Caută {{query}} pe web",
+            "youtube": "Caută {{query}} pe YouTube",
+            "torrent": "Caută {{query}} in torrente",
+            "movie": "Caută {{query}} in {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "Schimbă tema",
+            "preferences": "Preferințele utilizatorului",
+            "defaultBoard": "Planșa de bază",
+            "manage": "Gestionați",
+            "logout": "Deconectarea utilizatorului {{username}}",
+            "login": "Utilizator"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "Primele {{count}} rezultate pentru căutarea: <b>{{search}}</b>."
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "Automatizare Home Assistant",
+    "description": "Executați o automatizare",
+    "settings": {
+      "title": "Executați o automatizare",
+      "automationId": {
+        "label": "Identificator automatizare",
+        "info": "Identificatorul dvs. unic de automatizare. Întotdeauna începe cu automation.XXXXX."
+      },
+      "displayName": {
+        "label": "Nume afișat"
+      }
+    }
+  }
+}

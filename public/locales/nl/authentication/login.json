@@ -1,7 +1,7 @@
 {
   "metaTitle": "Inloggen",
   "title": "Welkom terug!",
-  "text": "Voer uw referenties in",
+  "text": "Voer je inloggegevens in",
   "form": {
     "fields": {
       "username": {

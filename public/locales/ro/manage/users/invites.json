@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Invitațiile utilizatorilor",
+    "pageTitle": "Gestionează invitațiile utilizatorului",
+    "description": "Folosind invitații, puteți invita utilizatorii la instanța dvs. Homarr. Invitația va fi valabilă numai pentru o anumită perioadă și poate fi utilizată o singură dată. Expirarea invitației poate să fie setată între 5 minute și 12 luni de la creare.",
+    "button": {
+        "createInvite": "Creați o invitație",
+        "deleteInvite": "Șterge invitație"
+    },
+    "table": {
+        "header": {
+            "id": "ID",
+            "creator": "Creator",
+            "expires": "Când expiră",
+            "action": "Acțiuni"
+        },
+        "data": {
+            "expiresAt": "a expirat {{at}}",
+            "expiresIn": "în {{in}}"
+        }
+    },
+    "modals": {
+        "create": {
+            "title": "Creați o invitație",
+            "description": "După expirare, invitația nu va mai fi valabilă iar destinatarul invitației nu va mai putea crea un cont.",
+            "form": {
+                "expires": "Data expirării",
+                "submit": "Creează"
+            }
+        },
+        "copy": {
+            "title": "Copiază invitația",
+            "description": "Invitația a fost generată. După închiderea acestei ferestre <b>nu veți mai putea copia acest link</b>. Dacă nu mai doriți să invitați persoana respectivă, puteți șterge această invitație oricând.",
+            "invitationLink": "Link de invitație",
+            "details": {
+                "id": "ID",
+                "token": "Token"
+            },
+            "button": {
+                "close": "Copiază si închide"
+            }
+        },
+        "delete": {
+            "title": "Șterge invitație",
+            "description": "Sunteți sigur că doriți să ștergeți această invitație? Utilizatorii care au acest link nu vor mai putea crea un cont folosind acest link."
+        }
+    },
+    "noInvites": "Nu aveți invitații încă."
+}

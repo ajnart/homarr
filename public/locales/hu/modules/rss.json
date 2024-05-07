@@ -22,10 +22,10 @@
         "label": "Rendezés a közzététel dátuma szerint (növekvő)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Tegye a tetejére a közzétételi dátum nélküli bejegyzéseket"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "A hozzászólások maximális száma"
       }
     },
     "card": {

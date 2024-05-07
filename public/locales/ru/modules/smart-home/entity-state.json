@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Показать собственное имя",
-                "info": "Показывать собственное имя Home Assistant вместо отображаемого имени"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

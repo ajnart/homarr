@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Transcodifica Multimediale",
+    "description": "Mostra informazioni sulla transcodifica multimediale",
+    "settings": {
+      "title": "Impostazioni Transcodifica Multimediale",
+      "appId": {
+        "label": "Seleziona un'app"
+      },
+      "defaultView": {
+        "label": "Vista predefinita",
+        "data": {
+          "workers": "Worker",
+          "queue": "Coda",
+          "statistics": "Statistiche"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Mostra l'indicatore del Controllo Integrità"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Mostra i Controlli Integrità in coda"
+      },
+      "queuePageSize": {
+        "label": "Coda: Elementi per pagina"
+      },
+      "showAppIcon": {
+        "label": "Mostra l'icona dell'app nell'angolo in basso a destra"
+      }
+    }
+  },
+  "noAppSelected": "Seleziona un'app nelle impostazioni del widget",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "File",
+          "eta": "ETA",
+          "progress": "Avanzamento"
+        },
+        "empty": "Vuoto",
+        "tooltip": {
+          "transcode": "Transcodifica",
+          "healthCheck": "Controllo Integrità"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "File",
+          "size": "Dimensione"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} di {{total}}"
+        },
+        "empty": "Vuoto",
+        "tooltip": {
+          "transcode": "Transcodifica",
+          "healthCheck": "Controllo Integrità"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Vuoto",
+      "box": {
+        "transcodes": "Transcodifiche: {{value}}",
+        "healthChecks": "Controlli Integrità: {{value}}",
+        "files": "File: {{value}}",
+        "spaceSaved": "Salvati: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Transcodifiche",
+        "healthChecks": "Controlli Integrità",
+        "videoCodecs": "Codec",
+        "videoContainers": "Container",
+        "videoResolutions": "Risoluzioni"
+      }
+    }
+  },
+  "error": {
+    "title": "Errore",
+    "message": "Si è verificato un errore durante il recupero dei dati da Tdarr."
+  },
+  "tabs": {
+    "workers": "Worker",
+    "queue": "Coda",
+    "statistics": "Statistiche"
+  },
+  "healthCheckStatus": {
+    "title": "Controllo Integrità",
+    "queued": "In coda",
+    "healthy": "Sano",
+    "unhealthy": "Non integro"
+  }
+}

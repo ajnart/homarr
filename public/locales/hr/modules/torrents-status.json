@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "date": "",
+          "down": "Isključeno",
+          "up": "Uključeno",
+          "eta": "ETA",
+          "progress": "Napredak"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Došlo je do neočekivane pogreške",
         "text": "Nije moguće komunicirati s vašim Torrent klijentima. Provjerite svoju konfiguraciju"
       }
-    },
-    "loading": {
-      "title": "Učitavam",
-      "description": "Uspostavljanje veze"
     },
     "popover": {
       "introductionPrefix": "Upravlja s",

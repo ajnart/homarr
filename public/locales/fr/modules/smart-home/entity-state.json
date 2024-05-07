@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Afficher le nom personnalisé",
-                "info": "Afficher le nom personnalisé de Home Assistant au lieu du nom d'affichage"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

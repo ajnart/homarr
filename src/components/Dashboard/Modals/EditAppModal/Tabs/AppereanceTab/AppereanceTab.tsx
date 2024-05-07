@@ -1,4 +1,4 @@
-import { Flex, NumberInput, Select, Stack, Switch, Tabs } from '@mantine/core';
+import { Flex, NumberInput, Select, Stack, Tabs } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 import { useDebouncedValue } from '@mantine/hooks';
 import { useTranslation } from 'next-i18next';
@@ -18,14 +18,13 @@ export const AppearanceTab = ({
   allowAppNamePropagation,
 }: AppearanceTabProps) => {
   const iconSelectorRef = useRef();
-  const [debouncedValue] = useDebouncedValue(form.values.name, 500);
+  const [debouncedValue] = useDebouncedValue(form.values.name, 2 * 1000); // 2 seconds debounce
   const { t } = useTranslation('layout/modals/add-app');
 
   useEffect(() => {
     if (allowAppNamePropagation !== true) {
       return;
     }
-
     if (!iconSelectorRef.current) {
       return;
     }

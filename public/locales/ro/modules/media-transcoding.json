@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Transcrieri media",
+    "description": "Afișează informații despre transcrierea media",
+    "settings": {
+      "title": "Setări ale transcrieri media",
+      "appId": {
+        "label": "Alegeți o aplicație"
+      },
+      "defaultView": {
+        "label": "Afișare implicită",
+        "data": {
+          "workers": "Lucrători",
+          "queue": "Listă de așteptare",
+          "statistics": "Statistici"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Afișați indicatorul Health Check"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Afișați indicatorul Stare de sănătate in așteptare"
+      },
+      "queuePageSize": {
+        "label": "În așteptare: elemente pe pagină"
+      },
+      "showAppIcon": {
+        "label": "Afișați pictograma aplicației în colțul din dreapta jos"
+      }
+    }
+  },
+  "noAppSelected": "Vă rugăm să selectați o aplicație în setările widget-ului",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Fișier",
+          "eta": "Timp rămas estimat",
+          "progress": "Progres"
+        },
+        "empty": "Gol",
+        "tooltip": {
+          "transcode": "Transcriere",
+          "healthCheck": "Stare de sănătate"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Fișier",
+          "size": "Mărime"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} din {{total}}"
+        },
+        "empty": "Gol",
+        "tooltip": {
+          "transcode": "Transcriere",
+          "healthCheck": "Stare de sănătate"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Gol",
+      "box": {
+        "transcodes": "Transcrieri: {{value}}",
+        "healthChecks": "Stări de sănătate: {{value}}",
+        "files": "Fișiere: {{value}}",
+        "spaceSaved": "Salvat: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Transcrieri",
+        "healthChecks": "Health Checks",
+        "videoCodecs": "Codec-uri",
+        "videoContainers": "Containere",
+        "videoResolutions": "Rezoluţie"
+      }
+    }
+  },
+  "error": {
+    "title": "Eroare",
+    "message": "A apărut o eroare la preluarea datelor de la aplicația Tdarr."
+  },
+  "tabs": {
+    "workers": "Lucrători",
+    "queue": "Listă de așteptare",
+    "statistics": "Statistici"
+  },
+  "healthCheckStatus": {
+    "title": "Stare de sănătate",
+    "queued": "Pus în așteptare",
+    "healthy": "Sănătos",
+    "unhealthy": "Nesănătos"
+  }
+}

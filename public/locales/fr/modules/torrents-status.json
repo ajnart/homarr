@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Afficher le ratio de la liste des torrents filtrés",
         "info": "Si désactivé, seul le ratio global sera affiché. Le ratio global utilisera toujours les labels si définis"
+      },
+      "columnOrdering": {
+        "label": "Permettre la réorganisation des colonnes"
+      },
+      "rowSorting": {
+        "label": "Permettre l'organisation des lignes"
+      },
+      "columns": {
+        "label": "Sélectionner les colonnes à afficher",
+        "data": {
+          "date": "Date d’ajout",
+          "down": "Descendant",
+          "up": "Montant",
+          "eta": "ETA",
+          "progress": "Progrès"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Modifier la taille de la colonne des noms"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Une erreur inattendue s'est produite",
         "text": "Impossible de communiquer avec vos clients Torrent. Veuillez vérifier votre configuration"
       }
-    },
-    "loading": {
-      "title": "Chargement",
-      "description": "Connexion en cours"
     },
     "popover": {
       "introductionPrefix": "Géré par",

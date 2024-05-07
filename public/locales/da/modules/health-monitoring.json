@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "Systemsundhedsovervågning",
-        "description": "Oplysninger om din NAS",
-        "settings": {
-            "title": "Systemsundhedsovervågning",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Systemsundhedsovervågning",
+    "description": "Viser oplysninger om dit/dine systems tilstand og status.",
+    "settings": {
+      "title": "Indstillinger for systemsundhedsovervågning",
+      "fahrenheit": {
+        "label": "CPU-temperatur i Fahrenheit"
+      },
+      "cpu": {
+        "label": "Vis CPU-info",
         "load": "Load Gennemsnit",
-        "minute": "{{minute}} minutter"
-    },
-    "memory": {
-        "label": "Hukommelse",
-        "totalMem": "Samlet hukommelse: {{total}}GB",
-        "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Filsystem",
-        "available": "Tilgængelig: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Oppetid",
-        "updates": "Opdateringer",
-        "reboot": "Genstart"
-    },
-    "errors": {
-        "general": {
-            "title": "Kan ikke finde din NAS",
-            "text": "Der opstod et problem med at oprette forbindelse til din NAS. Bekræft venligst din konfiguration/integration(er)."
+        "minute": "{{minute}} minutter",
+        "minutes": "{{minutes}} minutter"
+      },
+      "memory": {
+        "label": "Vis hukommelsesoplysninger"
+      },
+      "fileSystem": {
+        "label": "Vis information om filsystemet"
+      },
+      "node": {
+        "label": "Filtrer efter nodenavn",
+        "info": "Indtast navnet på din Proxmox-node for kun at vise metrikker for den node. Som standard vises hele klyngen."
+      },
+      "defaultViewState": {
+        "label": "Sektion åben som standard",
+        "data": {
+          "none": "Intet",
+          "node": "Noder",
+          "vm": "VM'er",
+          "lxc": "LXC'er",
+          "storage": "Lager"
         }
+      },
+      "defaultTabState": {
+        "label": "Fanen åben som standard",
+        "info": "Fanen åben som standard. Bruges kun, når flere integrationer er tilgængelige.",
+        "data": {
+          "system": "System",
+          "cluster": "Klynge"
+        }
+      },
+      "summary": {
+        "label": "Vis oversigtssektion"
+      },
+      "showNode": {
+        "label": "Vis nodesektion"
+      },
+      "showVM": {
+        "label": "Vis VM-sektion"
+      },
+      "showLXCs": {
+        "label": "Vis LXC sektion"
+      },
+      "showStorage": {
+        "label": "Vis lagerplads sektion"
+      },
+      "sectionIndicatorColor": {
+        "label": "Krav om, at sektionsstatusindikator skal være 'OK'",
+        "info": "\"Alle\" kræver, at alle elementer er online, for at indikatoren er grøn. 'Any' kræver, at mindst ét element er online.",
+        "data": {
+          "any": "Enhver aktiv",
+          "all": "Alle aktive"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignorer certifikatfejl",
+        "info": "Hvis den er aktiveret, vil widgetten ignorere certifikatfejl, når den tilgår Proxmox API. Dette kan være nyttigt, når du får adgang til Proxmox via HTTPS."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Load Gennemsnit",
+    "minute": "{{minute}} minutter"
+  },
+  "memory": {
+    "label": "Hukommelse",
+    "totalMem": "Samlet hukommelse: {{total}}GB",
+    "available": "Tilgængelig: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Filsystem",
+    "available": "Tilgængelig: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Oppetid",
+    "uptimeFormat": "{{days}} dage, {{hours}} timer",
+    "updates": "Opdateringer tilgængelige",
+    "reboot": "Genstart"
+  },
+  "errors": {
+    "general": {
+      "title": "Kan ikke finde dit/dine system(er).",
+      "text": "Der opstod et problem med at oprette forbindelse til dit system. Bekræft venligst din konfiguration/integration(er)."
+    }
+  },
+  "headings": {
+    "system": "System",
+    "cluster": "Klynge"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Noder",
+        "vms": "VM'er",
+        "lxcs": "LXC'er",
+        "storage": "Lager"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Navn",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Node"
+      }
+    },
+    "popover": {
+      "node": "Node",
+      "vmid": "VMID",
+      "details": "Detaljer",
+      "cores": "Kerner - {{maxCpu}}",
+      "memSize": "Hukommelse - {{maxMem}}",
+      "memRatio": "Hukommelse - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Oppetid - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA Tilstand - {{haState}}",
+      "sharedStorage": "Delt Lager",
+      "localStorage": "Lokalt lager",
+      "na": "Ikke tilgængelig"
+    }
+  }
 }

@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Benutzerdefinierten Namen anzeigen",
-                "info": "Zeige Zeige Benutzerdefinierten Namen statt Anzeigename vom Home-Assistenten an"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

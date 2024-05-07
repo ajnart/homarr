@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "date": "",
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Voortgang"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -63,7 +82,7 @@
       },
       "body": {
         "nothingFound": "Geen torrents gevonden",
-        "filterHidingItems": "{{count}} items worden verborgen door uw filters"
+        "filterHidingItems": "{{count}} items worden verborgen door je filters"
       }
     },
     "lineChart": {
@@ -83,10 +102,6 @@
         "title": "Er is een onverwachte fout opgetreden",
         "text": "Kan niet communiceren met je Torrent-clients. Controleer je configuratie"
       }
-    },
-    "loading": {
-      "title": "Laden",
-      "description": "Verbinding maken"
     },
     "popover": {
       "introductionPrefix": "Beheerd door",

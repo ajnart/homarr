@@ -11,10 +11,10 @@
         "label": "Vis bynavn"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Vis ukentlig Værmelding"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Dager å vise"
       },
       "location": {
         "label": "Vær plassering"

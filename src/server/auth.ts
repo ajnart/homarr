@@ -4,6 +4,8 @@ import { type GetServerSidePropsContext, type NextApiRequest, type NextApiRespon
 import { type NextAuthOptions, getServerSession } from 'next-auth';
 import { Adapter } from 'next-auth/adapters';
 import { decode, encode } from 'next-auth/jwt';
+import { env } from '~/env';
+import { secondsFromTimeString } from '~/tools/client/parseDuration';
 import { adapter, getProviders, onCreateUser } from '~/utils/auth';
 import { createRedirectUri } from '~/utils/auth/oidc';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
@@ -13,7 +15,8 @@ import { colorSchemeParser } from '~/validations/user';
 import { db } from './db';
 import { users } from './db/schema';
 
-const sessionMaxAgeInSeconds = 30 * 24 * 60 * 60; // 30 days
+const sessionMaxAgeInSeconds =
+  secondsFromTimeString(env.AUTH_SESSION_EXPIRY_TIME) ?? 30 * 24 * 60 * 60; // 30 days
 
 /**
  * Options for NextAuth.js used to configure adapters, providers, callbacks, etc.

@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "Monitoraggio dello stato del sistema",
-        "description": "Informazioni sul tuo NAS",
-        "settings": {
-            "title": "Monitoraggio dello stato del sistema",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Monitoraggio dello stato del sistema",
+    "description": "Visualizza informazioni sulla salute e stato dei tuoi sistemi.",
+    "settings": {
+      "title": "Impostazioni per il monitoring della salute di sistema",
+      "fahrenheit": {
+        "label": "Temperatura CPU in Fahrenheit"
+      },
+      "cpu": {
+        "label": "Mostra info CPU",
         "load": "Utilizzo medio",
-        "minute": "{{minute}} minuto"
-    },
-    "memory": {
-        "label": "Memoria",
-        "totalMem": "Memoria totale: {{total}}GB",
-        "available": "Disponibile: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "File System",
-        "available": "Disponibile: {{available}}- {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Uptime",
-        "updates": "Aggiornamenti",
-        "reboot": "Riavvio"
-    },
-    "errors": {
-        "general": {
-            "title": "Impossibile trovare il tuo NAS",
-            "text": "Si è verificato un problema di connessione al tuo NAS. Verifica la configurazione/integrazione."
+        "minute": "{{minute}} minuto",
+        "minutes": "{{minutes}} minuti"
+      },
+      "memory": {
+        "label": "Mostra Informazioni Memoria"
+      },
+      "fileSystem": {
+        "label": "Mostra Informazioni Filesystem"
+      },
+      "node": {
+        "label": "Filtra per nome nodo",
+        "info": "Inserisci il nome del tuo nodo Proxmox per mostrare solo le metriche per quel nodo/ Di default, viene mostrato l'intero cluster."
+      },
+      "defaultViewState": {
+        "label": "Sezione aperta di default",
+        "data": {
+          "none": "Niente",
+          "node": "Nodi",
+          "vm": "Macchine Virtuali",
+          "lxc": "LXC",
+          "storage": "Spazio di archiviazione"
         }
+      },
+      "defaultTabState": {
+        "label": "Scheda aperta di default",
+        "info": "Tab aperta di default. Usato solo quando più integrazioni sono disponibili.",
+        "data": {
+          "system": "Sistema",
+          "cluster": "Cluster"
+        }
+      },
+      "summary": {
+        "label": "Mostra sezione riepilogo"
+      },
+      "showNode": {
+        "label": "Mostra sezione nodi"
+      },
+      "showVM": {
+        "label": "Mostra sezione macchine virtuali"
+      },
+      "showLXCs": {
+        "label": "Mostra sezione LXC"
+      },
+      "showStorage": {
+        "label": "Mostra sezione archiviazione"
+      },
+      "sectionIndicatorColor": {
+        "label": "Requisito per la sezione indicatore stato per essere 'OK'",
+        "info": "'Tutto' richiede che tutti gli elementi siano online per far si' che l'indicatore sia verde. 'Qualunque' richiede almeno un elemento per essere online.",
+        "data": {
+          "any": "Qualsiasi Attivo",
+          "all": "Tutti attivi"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignora Errori Certificato",
+        "info": "Se abilitato, il widget ignorerà gli errori di certificato durante l'accesso all'API Proxmox. Questo può essere utile quando si accede a Proxmox tramite HTTPS."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Utilizzo medio",
+    "minute": "{{minute}} minuto"
+  },
+  "memory": {
+    "label": "Memoria",
+    "totalMem": "Memoria totale: {{total}}GB",
+    "available": "Disponibile: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "File System",
+    "available": "Disponibile: {{available}}- {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Uptime",
+    "uptimeFormat": "{{days}} giorni, {{hours}} ore",
+    "updates": "Aggiornamenti disponibili",
+    "reboot": "Riavvio"
+  },
+  "errors": {
+    "general": {
+      "title": "Impossibile trovare il tuo sistema",
+      "text": "Si è verificato un problema durante la connessione al tuo sistema. Verifica la tua configurazione/integrazione."
+    }
+  },
+  "headings": {
+    "system": "Sistema",
+    "cluster": "Cluster"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Nodi",
+        "vms": "Macchine Virtuali",
+        "lxcs": "LXC",
+        "storage": "Spazio di archiviazione"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nome",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Nodo"
+      }
+    },
+    "popover": {
+      "node": "Nodo",
+      "vmid": "VMID",
+      "details": "Dettagli",
+      "cores": "Cores - {{maxCpu}}",
+      "memSize": "Memoria - {{maxMem}}",
+      "memRatio": "Memoria: {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disco - {{maxDisk}}",
+      "diskRatio": "Disco - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Tempo di attività - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "Stato HA - {{haState}}",
+      "sharedStorage": "Archiviazione condivisa",
+      "localStorage": "Archiviazione locale",
+      "na": "N/A"
+    }
+  }
 }

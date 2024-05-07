@@ -75,7 +75,11 @@ export const EditAppModal = ({
             return t('validation.noExternalUri');
           }
 
-          if (!url.match(appUrlWithAnyProtocolRegex)) {
+          if (
+            !url.match(appUrlWithAnyProtocolRegex) &&
+            !url.startsWith('[homarr_base]') &&
+            !url.startsWith('[homarr_protocol]://')
+          ) {
             return t('validation.invalidExternalUri');
           }
 
@@ -110,7 +114,7 @@ export const EditAppModal = ({
 
     // also close the parent modal
     context.closeAll();
-    umami.track('Add app', { name:  values.name });
+    umami.track('Add app', { name: values.name });
   };
 
   const [activeTab, setActiveTab] = useState<EditAppModalTab>('general');

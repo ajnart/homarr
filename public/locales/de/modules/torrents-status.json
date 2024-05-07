@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Verhältnis der gefilterten Torrents-Liste anzeigen",
         "info": "Ist diese Option deaktiviert, wird nur das globale Verhältnis angezeigt. Für das globale Verhältnis werden weiterhin die Beschriftungen verwendet, wenn diese eingestellt sind"
+      },
+      "columnOrdering": {
+        "label": "Sortierung der Zeilen einschalten"
+      },
+      "rowSorting": {
+        "label": "Sortierung der Reihen einschalten"
+      },
+      "columns": {
+        "label": "Spalten zur Anzeige auswählen",
+        "data": {
+          "date": "Hinzugefügt am",
+          "down": "Down",
+          "up": "Up",
+          "eta": "Voraussichtlicher Abschluss",
+          "progress": "Fortschritt"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Ändern Sie die Größe der Namensspalte"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Ein unerwarteter Fehler ist aufgetreten",
         "text": "Homarr konnte nicht mit Ihren Torrent Clients kommunizieren. Bitte überprüfen Sie Ihre Konfiguration"
       }
-    },
-    "loading": {
-      "title": "Wird geladen...",
-      "description": "Herstellen der Verbindung"
     },
     "popover": {
       "introductionPrefix": "Verwaltet von",

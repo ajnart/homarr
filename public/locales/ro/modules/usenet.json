@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "Vă permite să vizualizați și să vă gestionați instanța dvs. Usenet."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nu au fost găsiți clienți de descărcare suportați!",
+        "text": "Adaugă un client de descărcare Usenet acceptat pentru a vizualiza descărcările curente"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "Listă de așteptare",
+    "history": "Istoric"
+  },
+  "info": {
+    "sizeLeft": "Rest",
+    "paused": "În pauză"
+  },
+  "queue": {
+    "header": {
+      "name": "Nume",
+      "size": "Mărime",
+      "eta": "Timp rămas estimat",
+      "progress": "Progres"
+    },
+    "empty": "Gol",
+    "error": {
+      "title": "Eroare",
+      "message": "A apărut o eroare"
+    },
+    "paused": "În pauză"
+  },
+  "history": {
+    "header": {
+      "name": "Nume",
+      "size": "Mărime",
+      "duration": "Durată"
+    },
+    "empty": "Gol",
+    "error": {
+      "title": "Eroare",
+      "message": "Eroare la încărcarea istoricului"
+    },
+    "paused": "În pauză"
+  }
+}

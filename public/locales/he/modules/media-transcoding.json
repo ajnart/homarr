@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "קידוד מדיה",
+    "description": "מציג מידע על המרת מדיה",
+    "settings": {
+      "title": "הגדרות קידוד מדיה",
+      "appId": {
+        "label": "בחר אפליקציה"
+      },
+      "defaultView": {
+        "label": "תצוגת ברירת מחדל",
+        "data": {
+          "workers": "עובדים",
+          "queue": "תור",
+          "statistics": "סטָטִיסטִיקָה"
+        }
+      },
+      "showHealthCheck": {
+        "label": "הצג מחוון בדיקת בריאות"
+      },
+      "showHealthChecksInQueue": {
+        "label": "הצג בדיקות בריאות בתור"
+      },
+      "queuePageSize": {
+        "label": "תור: פריטים בעמוד"
+      },
+      "showAppIcon": {
+        "label": "הצג את סמל האפליקציה בפינה השמאלית התחתונה"
+      }
+    }
+  },
+  "noAppSelected": "אנא בחר אפליקציה בהגדרות הווידג'ט",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "קוֹבֶץ",
+          "eta": "זמן סיום משוער",
+          "progress": "התקדמות"
+        },
+        "empty": "ריק",
+        "tooltip": {
+          "transcode": "קידוד",
+          "healthCheck": "בדיקת בריאות"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "קוֹבֶץ",
+          "size": "גודל"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} מתוך {{total}}"
+        },
+        "empty": "ריק",
+        "tooltip": {
+          "transcode": "קידוד",
+          "healthCheck": "בדיקת בריאות"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "ריק",
+      "box": {
+        "transcodes": "קידודים: {{value}}",
+        "healthChecks": "בדיקות בריאות: {{value}}",
+        "files": "קבצים: {{value}}",
+        "spaceSaved": "נשמר: {{value}}"
+      },
+      "pies": {
+        "transcodes": "קידודים",
+        "healthChecks": "בדיקות בריאות",
+        "videoCodecs": "קודקים",
+        "videoContainers": "מיכלים",
+        "videoResolutions": "רזולוציות"
+      }
+    }
+  },
+  "error": {
+    "title": "שגיאה",
+    "message": "אירעה שגיאה בעת שליפת נתונים מ-Tdarr."
+  },
+  "tabs": {
+    "workers": "עובדים",
+    "queue": "תור",
+    "statistics": "סטָטִיסטִיקָה"
+  },
+  "healthCheckStatus": {
+    "title": "בדיקת בריאות",
+    "queued": "בתור",
+    "healthy": "בָּרִיא",
+    "unhealthy": "לא בריא"
+  }
+}

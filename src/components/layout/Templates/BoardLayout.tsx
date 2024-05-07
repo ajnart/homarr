@@ -285,6 +285,7 @@ const BackgroundVideo = ({videoSource, videoFormat}: BackgroundVideoProps) => {
         autoPlay
         muted
         loop
+        playsInline
         style={{
           position: 'fixed',
           width: '100vw',

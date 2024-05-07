@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
+  "descriptor": {
+    "name": "Rendszerállapot-felügyelet",
+    "description": "Megjeleníti a rendszer(ek) állapotát és állapotát mutató információkat.",
+    "settings": {
+      "title": "A rendszer állapotfigyelésének beállításai",
+      "fahrenheit": {
+        "label": "CPU hőmérséklet Fahrenheitben"
+      },
+      "cpu": {
+        "label": "CPU-információk megjelenítése",
+        "load": "Átlagos terhelés",
+        "minute": "{{minute}} perc",
+        "minutes": "{{minutes}} percek"
+      },
+      "memory": {
+        "label": "Memóriainformációk megjelenítése"
+      },
+      "fileSystem": {
+        "label": "Fájlrendszer-információk megjelenítése"
+      },
+      "node": {
+        "label": "Szűrés a csomópont neve alapján",
+        "info": "Adja meg a Proxmox-csomópont nevét, hogy csak az adott csomópont metrikái jelenjenek meg. Alapértelmezés szerint a teljes fürt jelenik meg."
+      },
+      "defaultViewState": {
+        "label": "Alapértelmezés szerint nyitott szekció",
+        "data": {
+          "none": "Semmi",
+          "node": "Csomópont",
+          "vm": "Virtuális gépek",
+          "lxc": "Linux konténerek",
+          "storage": "Tárhely"
         }
-    },
-    "cpu": {
-        "label": "Processzor",
-        "load": "",
-        "minute": ""
-    },
-    "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
-        "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+      },
+      "defaultTabState": {
+        "label": "Alapértelmezés szerint nyitott lap",
+        "info": "Alapértelmezés szerint nyitott lap. Csak akkor használatos, ha több integráció is elérhető.",
+        "data": {
+          "system": "Rendszer",
+          "cluster": "Klaszter"
         }
+      },
+      "summary": {
+        "label": "Könyvtárak megjelenítése"
+      },
+      "showNode": {
+        "label": "Csomópontok szakasz megjelenítése"
+      },
+      "showVM": {
+        "label": "Virtuális gépek szakasz megjelenítése"
+      },
+      "showLXCs": {
+        "label": "Linux konténer szakasz megjelenítése"
+      },
+      "showStorage": {
+        "label": "Könyvtárak megjelenítése"
+      },
+      "sectionIndicatorColor": {
+        "label": "A szakasz állapotjelzőjének „OK” állapotának kell lennie",
+        "info": "Az \"Összes\" jelzőhöz az összes elemnek online kell lennie ahhoz, hogy a mutató zöld legyen. A \"Bármely\" jelzőhöz legalább egy elemnek online kell lennie.",
+        "data": {
+          "any": "Bármilyen aktív",
+          "all": "Minden aktív"
+        }
+      },
+      "ignoreCert": {
+        "label": "Tanúsítvány hibák figyelmen kívül hagyása",
+        "info": "Ha engedélyezve van, a widget figyelmen kívül hagyja a tanúsítvány hibáit a Proxmox API elérésekor. Ez hasznos lehet a Proxmox HTTPS-en keresztüli elérésekor."
+      }
     }
+  },
+  "cpu": {
+    "label": "Processzor",
+    "load": "Átlagos terhelés",
+    "minute": "{{minute}} perc"
+  },
+  "memory": {
+    "label": "Memória",
+    "totalMem": "Teljes memória: {{total}}GB",
+    "available": "Elérhető: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Fájlrendszer",
+    "available": "Elérhető: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Üzemidő",
+    "uptimeFormat": "{{days}} nap, {{hours}} óra",
+    "updates": "Frissítés elérhető",
+    "reboot": "Újraindítás"
+  },
+  "errors": {
+    "general": {
+      "title": "Nem találhatók a rendszer(ek).",
+      "text": "Probléma adódott a Dns-blokkoló(k) hoz való csatlakozással. Kérjük, ellenőrizze a konfigurációt/integráció(ka) t."
+    }
+  },
+  "headings": {
+    "system": "Rendszer",
+    "cluster": "Klaszter"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "Processzor",
+      "ram": "Memória"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Csomópont",
+        "vms": "Virtuális gépek",
+        "lxcs": "Linux konténerek",
+        "storage": "Tárhely"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Név",
+        "cpu": "Processzor",
+        "ram": "Memória",
+        "node": "Csomópont"
+      }
+    },
+    "popover": {
+      "node": "Csomópont",
+      "vmid": "VMID",
+      "details": "Részletek",
+      "cores": "Magok - {{maxCpu}}",
+      "memSize": "Memória - {{maxMem}}",
+      "memRatio": "Memória - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Lemez - {{maxDisk}}",
+      "diskRatio": "Lemez - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Üzemidő - {{uptime}}",
+      "plugin": "Bővítmény",
+      "ha": "Home Assistant állapot - {{haState}}",
+      "sharedStorage": "Megosztott tárhely",
+      "localStorage": "Helyi tárhely",
+      "na": "Nincs adat"
+    }
+  }
 }

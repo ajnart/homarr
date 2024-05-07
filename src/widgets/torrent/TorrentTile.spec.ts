@@ -24,6 +24,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: false,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -62,6 +64,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -100,6 +104,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -138,6 +144,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -192,6 +200,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -230,6 +240,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [
@@ -268,6 +280,8 @@ describe('TorrentTile', () => {
         speedLimitOfActiveTorrents: 10,
         displayStaleTorrents: true,
         displayRatioWithFilter: false,
+        columns: [],
+        nameColumnSize: 0,
       },
     };
     const torrents: NormalizedTorrent[] = [constructTorrent('HH', 'I am completed', true, 0, 0)];

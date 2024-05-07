@@ -1,12 +1,12 @@
 {
-    "description": "In de bewerkingsmodus kunt u tegels aanpassen en apps configureren. Wijzigingen worden niet opgeslagen totdat u de bewerkingsmodus afsluit.",
+    "description": "In de bewerkmodus kan je tegels aanpassen en apps configureren. Wijzigingen worden niet opgeslagen totdat je de bewerkingsmodus afsluit.",
     "button": {
-        "disabled": "Ga naar de bewerkingsmodus",
+        "disabled": "Ga naar bewerkmodus",
         "enabled": "Afsluiten en opslaan"
     },
     "popover": {
-        "title": "Bewerkingsmodus is ingeschakeld voor de <1>{{size}}</1> grootte",
-        "text": "U kunt uw apps nu aanpassen en configureren. Wijzigingen zijn <strong>niet opgeslagen</strong> totdat u de bewerkingsmodus verlaat"
+        "title": "Bewerkmodus is ingeschakeld voor de <1>{{size}}</1> grootte",
+        "text": "Je kan je apps nu aanpassen en configureren. Wijzigingen zijn <strong>niet opgeslagen</strong> totdat je de bewerkmodus verlaat"
     },
-    "unloadEvent": "Sluit de bewerkingsmodus af om uw wijzigingen op te slaan"
+    "unloadEvent": "Sluit de bewerkmodus af om je wijzigingen op te slaan"
 }

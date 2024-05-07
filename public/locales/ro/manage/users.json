@@ -1,0 +1,44 @@
+{
+    "metaTitle": "Utilizatori",
+    "pageTitle": "Gestionați utilizatorii",
+    "buttons": {
+        "create": "Creează"
+    },
+    "filter": {
+        "roles": {
+            "all": "Tot",
+            "normal": "Normal",
+            "admin": "Administrator",
+            "owner": "Proprietar"
+        }
+    },
+    "table": {
+        "header": {
+            "user": "Utilizator",
+            "email": "E-mail"
+        }
+    },
+    "tooltips": {
+        "deleteUser": "Șterge utilizator",
+        "demoteAdmin": "Demiterea administratorului",
+        "promoteToAdmin": "Promovează ca administrator"
+    },
+    "modals": {
+        "delete": {
+            "title": "Șterge utilizator {{name}}",
+            "text": "Sunteți sigur că doriți să ștergeți utilizatorul {{name}}? Acest lucru va șterge datele asociate cu acest cont, dar nu și planșele create de acest utilizator."
+        },
+        "change-role": {
+            "promote": {
+                "title": "Promovați utilizatorul {{name}} ca administrator",
+                "text": "Sunteți sigur că doriți să promovați utilizatorul {{name}} la funcția de administrator? Acest lucru îi va oferi utilizatorului acces la toate resursele din instanța Homarr."
+            },
+            "demote": {
+                "title": "Demiterea utilizatorul {{name}} la funcția de utilizator",
+                "text": "Sunteți sigur că doriți să demiteți utilizatorul {{name}} la funcția de utilizator? Acest lucru va elimina accesul utilizatorului la toate resursele din instanța Homarr."
+            },
+            "confirm": "Confirma"
+        }
+    },
+    "searchDoesntMatch": "Căutarea nu a întors nici un rezultat. Încercați cu un alt filtru."
+}

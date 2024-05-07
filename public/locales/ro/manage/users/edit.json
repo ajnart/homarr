@@ -1,0 +1,55 @@
+{
+  "metaTitle": "Utilizator {{username}}",
+  "back": "Înapoi la gestionarea utilizatorilor",
+  "sections": {
+    "general": {
+      "title": "General",
+      "inputs": {
+        "username": {
+          "label": "Utilizator"
+        },
+        "eMail": {
+          "label": "E-mail"
+        }
+      }
+    },
+    "security": {
+      "title": "Securitate",
+      "inputs": {
+        "password": {
+          "label": "Parolă nouă"
+        },
+        "terminateExistingSessions": {
+          "label": "Închide sesiunile existente",
+          "description": "Forțează utilizatorul să se reconecteze pe dispozitivele sale"
+        },
+        "confirm": {
+          "label": "Confirma",
+          "description": "Parola va fi actualizată. Această acțiune nu poate fi inversată."
+        }
+      }
+    },
+    "roles": {
+      "title": "Roluri",
+      "currentRole": "Rol curent: ",
+      "badges": {
+        "owner": "Proprietar",
+        "admin": "Administrator",
+        "normal": "Normal"
+      }
+    },
+    "deletion": {
+      "title": "Ștergerea contului",
+      "inputs": {
+        "confirmUsername": {
+          "label": "Confirmă utilizatorul",
+          "description": "Scrie numele utilizatorului pentru a confirma ștergerea"
+        },
+        "confirm": {
+          "label": "Șterge definitiv",
+          "description": "Sunt conștient de faptul că această acțiune este permanentă și toate datele contului vor fi pierdute."
+        }
+      }
+    }
+  }
+}

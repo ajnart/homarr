@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Medientranskodierung",
+    "description": "Zeigt Informationen zur Medientranskodierung an",
+    "settings": {
+      "title": "Einstellungen für Medientranskodierung",
+      "appId": {
+        "label": "Wähle eine App"
+      },
+      "defaultView": {
+        "label": "Standardansicht",
+        "data": {
+          "workers": "Workers",
+          "queue": "Warteschlange",
+          "statistics": "Statistiken"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Indikator für Gesundheitscheck anzeigen"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Gesundheitschecks in Warteschlange anzeigen"
+      },
+      "queuePageSize": {
+        "label": "Warteschlange: Elemente pro Seite"
+      },
+      "showAppIcon": {
+        "label": "App-Symbol in der unteren rechten Ecke anzeigen"
+      }
+    }
+  },
+  "noAppSelected": "Bitte wählen Sie eine App in den Widget Einstellungen",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Datei",
+          "eta": "Voraussichtlicher Abschluss",
+          "progress": "Fortschritt"
+        },
+        "empty": "Leer",
+        "tooltip": {
+          "transcode": "Transkodieren",
+          "healthCheck": "Gesundheitscheck"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Datei",
+          "size": "Größe"
+        },
+        "footer": {
+          "currentIndex": "{{start}} - {{end}} von {{total}}"
+        },
+        "empty": "Leer",
+        "tooltip": {
+          "transcode": "Transkodieren",
+          "healthCheck": "Gesundheitscheck"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Leer",
+      "box": {
+        "transcodes": "Transkodierung: {{value}}",
+        "healthChecks": "Gesundheitscheck: {{value}}",
+        "files": "Dateien: {{value}}",
+        "spaceSaved": "Gespeichert: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Transkodieren",
+        "healthChecks": "Gesundheitscheck",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Container",
+        "videoResolutions": "Auflösungen"
+      }
+    }
+  },
+  "error": {
+    "title": "Fehler",
+    "message": "Beim Laden der Daten von Tdarr ist ein Fehler aufgetreten."
+  },
+  "tabs": {
+    "workers": "Workers",
+    "queue": "Warteschlange",
+    "statistics": "Statistiken"
+  },
+  "healthCheckStatus": {
+    "title": "Gesundheitscheck",
+    "queued": "In der Warteschlange",
+    "healthy": "Gesund",
+    "unhealthy": "Fehlerhaft"
+  }
+}

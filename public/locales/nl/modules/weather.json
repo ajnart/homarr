@@ -11,10 +11,10 @@
         "label": "Plaatsnaam weergeven"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Wekelijkse voorspelling weergeven"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Dagen om weer te geven"
       },
       "location": {
         "label": "Weerslocatie"

@@ -58,7 +58,9 @@ export type IntegrationType =
   | 'pihole'
   | 'adGuardHome'
   | 'homeAssistant'
-  | 'openmediavault';
+  | 'openmediavault'
+  | 'proxmox'
+  | 'tdarr';
 
 export type AppIntegrationType = {
   type: IntegrationType | null;
@@ -103,6 +105,8 @@ export const integrationFieldProperties: {
   adGuardHome: ['username', 'password'],
   homeAssistant: ['apiKey'],
   openmediavault: ['username', 'password'],
+  proxmox: ['apiKey'],
+  tdarr: [],
 };
 
 export type IntegrationFieldDefinitionType = {

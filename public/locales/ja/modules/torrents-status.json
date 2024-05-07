@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "",
         "info": ""
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "",
+        "data": {
+          "date": "",
+          "down": "ダウンロード",
+          "up": "アップロード",
+          "eta": "ETA",
+          "progress": "進捗状況"
+        }
+      },
+      "nameColumnSize": {
+        "label": ""
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "予期せぬエラーが発生しました",
         "text": "Torrentクライアントと通信できません。設定を確認してください。"
       }
-    },
-    "loading": {
-      "title": "読み込み中",
-      "description": "接続中..."
     },
     "popover": {
       "introductionPrefix": "管理者：",

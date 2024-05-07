@@ -254,6 +254,14 @@ export const languages = [
     country: 'LT',
     locale: 'lt',
     dayJsLocale: 'lt'
+  },
+  {
+    shortName: 'ro',
+    originalName: 'Românesc',
+    translatedName: 'Romanian',
+    country: 'RO',
+    locale: 'ro',
+    dayJsLocale: 'ro'
   }
 ] as const satisfies Readonly<Language[]>;
 

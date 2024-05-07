@@ -1,0 +1,141 @@
+{
+  "descriptor": {
+    "name": "Monitorizarea sănătății sistemului",
+    "description": "Afișează informații care arată starea de sănătate și statistica sistemului (sistemelor) dumneavoastră.",
+    "settings": {
+      "title": "Setări pentru monitorizarea sănătății sistemului",
+      "fahrenheit": {
+        "label": "Temperatura procesorului în Fahrenheit"
+      },
+      "cpu": {
+        "label": "Afișare informații procesor",
+        "load": "Utilizare medie",
+        "minute": "{{minute}} minute",
+        "minutes": "{{minutes}} minute"
+      },
+      "memory": {
+        "label": "Afișare informații memorie"
+      },
+      "fileSystem": {
+        "label": "Afișare informații despre sistemul de fișiere"
+      },
+      "node": {
+        "label": "Filtrați după numele nodului",
+        "info": "Introduceți numele nodului dvs. Proxmox pentru a afișa numai valorile acestui nod. În mod implicit, este afișat întregul grup."
+      },
+      "defaultViewState": {
+        "label": "Secțiune deschisă în mod implicit",
+        "data": {
+          "none": "Nimic",
+          "node": "Noduri",
+          "vm": "Masini Virtuale",
+          "lxc": "LXC-uri",
+          "storage": "Spațiu de stocare"
+        }
+      },
+      "defaultTabState": {
+        "label": "Pagină deschisă implicit",
+        "info": "Pagină deschis implicit. Se utilizează numai atunci când sunt disponibile mai multe integrări.",
+        "data": {
+          "system": "Sistem",
+          "cluster": "Grupuri"
+        }
+      },
+      "summary": {
+        "label": "Afișare secțiune sumar"
+      },
+      "showNode": {
+        "label": "Afișare secțiune noduri"
+      },
+      "showVM": {
+        "label": "Afișare secțiune mașini virtuale"
+      },
+      "showLXCs": {
+        "label": "Afișare secțiune LXC-uri"
+      },
+      "showStorage": {
+        "label": "Afișare secțiune de stocare"
+      },
+      "sectionIndicatorColor": {
+        "label": "Cerința ca indicatorul de stare a secțiunii să fie „OK”",
+        "info": "„Toate” necesită ca toate articolele să fie online pentru ca indicatorul să fie verde. „Orice” necesită ca cel puțin un articol să fie online.",
+        "data": {
+          "any": "Oricare activ",
+          "all": "Toate active"
+        }
+      },
+      "ignoreCert": {
+        "label": "Ignoră erorile certificatului",
+        "info": "Dacă este activat, Widget-ul va ignora erorile de certificat la accesarea API-ului Proxmox. Acest lucru poate fi util când accesați Proxmox prin HTTPS."
+      }
+    }
+  },
+  "cpu": {
+    "label": "Procesor",
+    "load": "Utilizare medie",
+    "minute": "{{minute}} minute"
+  },
+  "memory": {
+    "label": "Memorie RAM",
+    "totalMem": "Total memorie: {{total}}GB",
+    "available": "Disponibil: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Fișiere de sistem",
+    "available": "Disponibil: {{available}}- {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Timp de funcționare",
+    "uptimeFormat": "{{days}} zile, {{hours}} ore",
+    "updates": "Actualizări disponibile",
+    "reboot": "Repornire"
+  },
+  "errors": {
+    "general": {
+      "title": "Nu a putut găsi sistemul (sistemele) dumneavoastră.",
+      "text": "A existat o problemă la conectarea la sistemul dvs. Vă rugăm să vă verificați configurația/integrarea (integrările)."
+    }
+  },
+  "headings": {
+    "system": "Sistem",
+    "cluster": "Grupuri"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "Procesor",
+      "ram": "Memorie RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Noduri",
+        "vms": "Masini Virtuale",
+        "lxcs": "LXC-uri",
+        "storage": "Spațiu de stocare"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Nume",
+        "cpu": "Procesor",
+        "ram": "Memorie RAM",
+        "node": "Nod"
+      }
+    },
+    "popover": {
+      "node": "Nod",
+      "vmid": "VMID",
+      "details": "Detalii",
+      "cores": "Nucelee - {{maxCpu}}",
+      "memSize": "Memorie RAM - {{maxMem}}",
+      "memRatio": "Memorie RAM - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disc - {{maxDisk}}",
+      "diskRatio": "Disc - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Timp de funcționare - {{uptime}}",
+      "plugin": "Extensii",
+      "ha": "Stare HA - {{haState}}",
+      "sharedStorage": "Stocare partajată",
+      "localStorage": "Stocare locală",
+      "na": "Indisponibil"
+    }
+  }
+}

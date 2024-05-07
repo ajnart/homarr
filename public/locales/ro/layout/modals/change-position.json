@@ -1,0 +1,8 @@
+{
+	"xPosition": "Poziționare pe axa X",
+	"width": "Lățime",
+	"height": "Înălțime",
+	"yPosition": "Poziționare pe axa Y",
+	"zeroOrHigher": "0 sau mai mare",
+	"betweenXandY": "Între {{min}} și {{max}}"
+}

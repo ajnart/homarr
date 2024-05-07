@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "Exibir nome amigável",
-                "info": "Exibir nome amigável do Home Assistant em vez do nome de exibição"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

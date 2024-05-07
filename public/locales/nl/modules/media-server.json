@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Media Server",
-    "description": "Interageer met uw Jellyfin of Plex mediaserver",
+    "description": "Interageer met je Jellyfin of Plex mediaserver",
     "settings": {
       "title": "Instellingen voor media server widget"
     }

@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "ניטור בריאות המערכת",
-        "description": "מידע על ה-NAS שלך",
-        "settings": {
-            "title": "ניטור בריאות המערכת",
-            "fahrenheit": {
-                "label": "פרנהייט"
-            }
-        }
-    },
-    "cpu": {
-        "label": "מעבד",
+  "descriptor": {
+    "name": "ניטור בריאות המערכת",
+    "description": "מציג מידע המציג את התקינות והסטטוס של המערכות שלך.",
+    "settings": {
+      "title": "הגדרות עבור מערכת ניטור תקינות",
+      "fahrenheit": {
+        "label": "טמפרטורת המעבד בפרנהייט"
+      },
+      "cpu": {
+        "label": "הצג מידע על המעבד",
         "load": "טעינה ממוצעת",
-        "minute": "{{minute}} דקה"
-    },
-    "memory": {
-        "label": "זיכרון",
-        "totalMem": "סך הזיכרון: {{total}}GB",
-        "available": "זמין: {{available}}GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "מערכת קבצים",
-        "available": "זמין: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "זמן פעילות",
-        "updates": "עדכונים",
-        "reboot": "אתחול מחדש"
-    },
-    "errors": {
-        "general": {
-            "title": "לא מצליח למצוא את ה-NAS שלך",
-            "text": "הייתה בעיה בחיבור ל-NAS שלך. נא ודא את התצורה/השילובים שלך."
+        "minute": "{{minute}} דקה",
+        "minutes": "{{minutes}} דקות"
+      },
+      "memory": {
+        "label": "הצג מידע זיכרון"
+      },
+      "fileSystem": {
+        "label": "הצג מידע על מערכת הקבצים"
+      },
+      "node": {
+        "label": "סנן לפי שם צומת",
+        "info": ""
+      },
+      "defaultViewState": {
+        "label": "",
+        "data": {
+          "none": "ללא",
+          "node": "צמתים",
+          "vm": "VMs",
+          "lxc": "LXCs",
+          "storage": "אחסון"
         }
+      },
+      "defaultTabState": {
+        "label": "כרטיסייה פתוחה כברירת מחדל",
+        "info": "כרטיסייה פתוחה כברירת מחדל. משמש רק כאשר זמינות אינטגרציות מרובות.",
+        "data": {
+          "system": "מערכת",
+          "cluster": "אֶשׁכּוֹל"
+        }
+      },
+      "summary": {
+        "label": "הצג קטע סיכום"
+      },
+      "showNode": {
+        "label": "הצג קטע צמתים"
+      },
+      "showVM": {
+        "label": "הצג את הקטע VMs"
+      },
+      "showLXCs": {
+        "label": "הצג את קטע LXCs"
+      },
+      "showStorage": {
+        "label": "הצג קטע אחסון"
+      },
+      "sectionIndicatorColor": {
+        "label": "דרישה שמחוון מצב הסעיף יהיה 'בסדר'",
+        "info": "'הכל' דורש שכל הפריטים יהיו מקוונים כדי שהמחוון יהיה ירוק. 'כל' דורש לפחות פריט אחד להיות מקוון.",
+        "data": {
+          "any": "אקטיבי",
+          "all": "הכל פעיל"
+        }
+      },
+      "ignoreCert": {
+        "label": "התעלם משגיאות אישור",
+        "info": "אם מופעל, הווידג'ט יתעלם משגיאות אישור בעת גישה ל-Proxmox API. זה יכול להיות מועיל בעת גישה ל-Proxmox דרך HTTPS."
+      }
     }
+  },
+  "cpu": {
+    "label": "מעבד",
+    "load": "טעינה ממוצעת",
+    "minute": "{{minute}} דקה"
+  },
+  "memory": {
+    "label": "זיכרון",
+    "totalMem": "סך הזיכרון: {{total}}GB",
+    "available": "זמין: {{available}}GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "מערכת קבצים",
+    "available": "זמין: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "זמן פעילות",
+    "uptimeFormat": "{{days}} ימים, {{hours}} שעות",
+    "updates": "עדכונים זמינים",
+    "reboot": "אתחול מחדש"
+  },
+  "errors": {
+    "general": {
+      "title": "לא ניתן למצוא את המערכת שלך.",
+      "text": "הייתה בעיה בחיבור למערכת שלך. נא ודא את התצורה/השילובים שלך."
+    }
+  },
+  "headings": {
+    "system": "מערכת",
+    "cluster": "אֶשׁכּוֹל"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "מעבד",
+      "ram": "זיכרון פנימי"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "צמתים",
+        "vms": "VMs",
+        "lxcs": "LXCs",
+        "storage": "אחסון"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "שם",
+        "cpu": "מעבד",
+        "ram": "זיכרון פנימי",
+        "node": "צוֹמֶת"
+      }
+    },
+    "popover": {
+      "node": "צוֹמֶת",
+      "vmid": "VMID",
+      "details": "פרטים",
+      "cores": "ליבות - {{maxCpu}}",
+      "memSize": "זיכרון - {{maxMem}}",
+      "memRatio": "זיכרון - {{usedMem}} / {{maxMem}}",
+      "diskSize": "דיסק - {{maxDisk}}",
+      "diskRatio": "דיסק - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "זמן פעילות - {{uptime}}",
+      "plugin": "תוסף",
+      "ha": "מצב - {{haState}}",
+      "sharedStorage": "אחסון משותף",
+      "localStorage": "אחסון מקומי",
+      "na": "לא זמין"
+    }
+  }
 }

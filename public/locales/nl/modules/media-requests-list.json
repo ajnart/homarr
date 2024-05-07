@@ -12,13 +12,13 @@
       }
     }
   },
-  "noRequests": "Geen verzoeken gevonden. Zorg ervoor dat u uw apps correct hebt geconfigureerd.",
+  "noRequests": "Geen verzoeken gevonden. Zorg ervoor dat je je apps correct hebt geconfigureerd.",
   "state": {
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
     "declined": "Afgewezen",
     "available": "",
-    "partial": ""
+    "partial": "Gedeeltelijk"
   },
   "tooltips": {
     "approve": "Verzoeken goedkeuren",

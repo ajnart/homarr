@@ -1,0 +1,52 @@
+{
+    "metaTitle": "Creează utilizator",
+    "steps": {
+        "account": {
+            "title": "Pasul unu",
+            "text": "Creare cont",
+            "username": {
+                "label": "Utilizator"
+            },
+            "email": {
+                "label": "E-mail"
+            }
+        },
+        "security": {
+            "title": "Pasul doi",
+            "text": "Parola",
+            "password": {
+                "label": "Parola"
+            }
+        },
+        "finish": {
+            "title": "Confirmare",
+            "text": "Salvați în baza de date",
+            "card": {
+                "title": "Revizuiți datele introduse",
+                "text": "După înregistrarea datelor în baza de date utilizatorul se va putea conecta. Sunteți sigur că doriți să stocați acest utilizator în baza de date și să activați autentificarea?"
+            },
+            "table": {
+                "header": {
+                    "property": "Câmp",
+                    "value": "Valoare",
+                    "username": "Utilizator",
+                    "email": "E-mail",
+                    "password": "Parola"
+                },
+                "notSet": "Nesetat",
+                "valid": "Valid"
+            },
+            "failed": "Crearea utilizatorului a eșuat: {{error}}"
+        },
+        "completed": {
+            "alert": {
+                "title": "Utilizatorul a fost creat",
+                "text": "Utilizatorul a fost creat în baza de date. Acum se pot conecta."
+            }
+        }
+    },
+    "buttons": {
+        "generateRandomPassword": "Generează o parolă aleatorie",
+        "createAnother": "Creează un alt utilizator"
+    }
+}

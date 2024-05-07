@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
-        }
-    },
-    "cpu": {
-        "label": "Процесор",
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "",
-        "minute": ""
-    },
-    "memory": {
+        "minute": "",
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
         "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
+        "info": ""
+      },
+      "defaultViewState": {
         "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+        "data": {
+          "none": "Нема",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "Диск"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "Процесор",
+    "load": "",
+    "minute": ""
+  },
+  "memory": {
+    "label": "",
+    "totalMem": "",
+    "available": ""
+  },
+  "fileSystem": {
+    "label": "",
+    "available": ""
+  },
+  "info": {
+    "uptime": "",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": ""
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "Процесор",
+      "ram": "Оперативна пам'ять"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "Диск"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Ім’я",
+        "cpu": "Процесор",
+        "ram": "Оперативна пам'ять",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Деталі",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

@@ -1,0 +1,48 @@
+{
+    "metaTitle": "Preferințe",
+    "pageTitle": "Preferințele dvs.",
+    "boards": {
+        "defaultBoard": {
+            "label": "Planșă de bază"
+        }
+    },
+    "accessibility": {
+        "title": "Accesibilitate",
+        "disablePulse": {
+            "label": "Dezactivați ping",
+            "description": "În mod implicit, indicatorii de ping din Homarr vor pulsa. Acest lucru poate fi iritant. Acest buton va dezactiva animația"
+        },
+        "replaceIconsWithDots": {
+            "label": "Înlocuiți punctele de ping cu pictograme",
+            "description": "Pentru utilizatorii daltoniști, punctele ping pot fi de nerecunoscut. Acest lucru va înlocui punctele cu pictograme"
+        }
+    },
+    "localization": {
+        "language": {
+            "label": "Limbă"
+        },
+        "firstDayOfWeek": {
+            "label": "Prima zi a săptămâni",
+            "options": {
+                "monday": "Luni",
+                "saturday": "Sâmbătă",
+                "sunday": "Duminică"
+            }
+        }
+    },
+    "searchEngine": {
+        "title": "Motor de căutare",
+        "custom": "Personalizat",
+        "newTab": {
+            "label": "Deschideți rezultatele căutării într-o pagina nouă"
+        },
+        "autoFocus": {
+            "label": "Focalizează bara de căutare la încărcarea paginii.",
+            "description": "Acest lucru va focaliza automat bara de căutare, atunci când navigați la paginile planșei. Funcționează doar pe dispozitive de tip desktop."
+        },
+        "template": {
+            "label": "Adresa URL a căutări",
+            "description": "Folosește %s ca înlocuitor pentru textul căutare"
+        }
+    }
+}

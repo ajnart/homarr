@@ -49,6 +49,7 @@ export default function LoginPage({
     validateInputOnChange: true,
     validateInputOnBlur: true,
     validate: i18nZodResolver(signInSchemaWithProvider),
+    initialValues: { name: '', password: '', provider: '' },
   });
 
   const handleSubmit = (values: z.infer<typeof signInSchemaWithProvider>) => {

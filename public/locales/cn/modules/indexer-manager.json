@@ -1,13 +1,13 @@
 {
     "descriptor": {
-        "name": "索引管理器状态",
+        "name": "索引器管理状态",
         "description": "有关索引器的状态",
         "settings": {
-            "title": "索引管理器状态"
+            "title": "索引器管理状态"
         }
     },
     "indexersStatus": {
-        "title": "索引管理器",
+        "title": "索引器管理",
         "testAllButton": "测试全部"
     },
     "errors": {

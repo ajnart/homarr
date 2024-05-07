@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "媒体转码",
+    "description": "显示有关媒体转码的信息",
+    "settings": {
+      "title": "媒体转码设置",
+      "appId": {
+        "label": "选择一个应用"
+      },
+      "defaultView": {
+        "label": "默认视图",
+        "data": {
+          "workers": "工作种",
+          "queue": "队列",
+          "statistics": "统计"
+        }
+      },
+      "showHealthCheck": {
+        "label": "显示健康检查指示器"
+      },
+      "showHealthChecksInQueue": {
+        "label": "在队列中显示健康检查"
+      },
+      "queuePageSize": {
+        "label": "队列：每页项目数"
+      },
+      "showAppIcon": {
+        "label": "在右下角显示应用程序图标"
+      }
+    }
+  },
+  "noAppSelected": "请在小组件设置中选择一个应用程序",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "文件",
+          "eta": "剩余时间",
+          "progress": "进度"
+        },
+        "empty": "空",
+        "tooltip": {
+          "transcode": "转码",
+          "healthCheck": "健康检查"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "文件",
+          "size": "大小"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} 共 {{total}}"
+        },
+        "empty": "空",
+        "tooltip": {
+          "transcode": "转码",
+          "healthCheck": "健康检查"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "空",
+      "box": {
+        "transcodes": "转码： {{value}}",
+        "healthChecks": "健康检查： {{value}}",
+        "files": "文件： {{value}}",
+        "spaceSaved": "已保存： {{value}}"
+      },
+      "pies": {
+        "transcodes": "转码",
+        "healthChecks": "健康检查",
+        "videoCodecs": "编码",
+        "videoContainers": "容器",
+        "videoResolutions": "分辨率"
+      }
+    }
+  },
+  "error": {
+    "title": "错误",
+    "message": "从 Tdarr 获取数据时发生错误。"
+  },
+  "tabs": {
+    "workers": "工作种",
+    "queue": "队列",
+    "statistics": "统计"
+  },
+  "healthCheckStatus": {
+    "title": "健康检查",
+    "queued": "排队中",
+    "healthy": "健康",
+    "unhealthy": "不良"
+  }
+}

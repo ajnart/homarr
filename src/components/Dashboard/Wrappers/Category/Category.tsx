@@ -14,6 +14,7 @@ import { modals } from '@mantine/modals';
 import { IconDotsVertical, IconShare3 } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
+import { useGetExternalUrl } from '~/hooks/useExternalUrl';
 import { CategoryType } from '~/types/category';
 
 import { useCardStyles } from '../../../layout/Common/useCardStyles';
@@ -33,6 +34,7 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const { classes: cardClasses, cx } = useCardStyles(true);
   const { classes } = useStyles();
   const { t } = useTranslation(['layout/common', 'common']);
+  const getAppUrl = useGetExternalUrl();
 
   const categoryList = config?.categories.map((x) => x.name) ?? [];
   const [toggledCategories, setToggledCategories] = useLocalStorage({
@@ -44,7 +46,8 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
   const handleMenuClick = () => {
     for (let i = 0; i < apps.length; i += 1) {
       const app = apps[i];
-      const popUp = window.open(app.url, app.id);
+      const appUrl = getAppUrl(app);
+      const popUp = window.open(appUrl, app.id);
 
       if (popUp === null) {
         modals.openConfirmModal({
@@ -98,10 +101,10 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
     >
       <Accordion.Item value={category.name}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Accordion.Control icon={isEditMode && <CategoryEditMenu category={category} />}>
+          <Accordion.Control>
             <Title order={3}>{category.name}</Title>
           </Accordion.Control>
-          {!isEditMode && (
+          {!isEditMode ? (
             <Menu withArrow withinPortal>
               <Menu.Target>
                 <ActionIcon variant="light" mr="md">
@@ -114,6 +117,8 @@ export const DashboardCategory = ({ category }: DashboardCategoryProps) => {
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
+          ) : (
+            <CategoryEditMenu category={category} />
           )}
         </Box>
         <Accordion.Panel>

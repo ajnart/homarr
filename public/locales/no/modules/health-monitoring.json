@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Systemhelseovervåking",
+    "description": "Viser informasjon som viser helsen og statusen til systemet(e).",
+    "settings": {
+      "title": "Innstillinger for systemhelseovervåking",
+      "fahrenheit": {
+        "label": "CPU-temp i Fahrenheit"
+      },
+      "cpu": {
+        "label": "Vis CPU-info",
         "load": "",
-        "minute": ""
-    },
-    "memory": {
-        "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
-        "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+        "minute": "",
+        "minutes": "{{minutes}} minutter"
+      },
+      "memory": {
+        "label": "Vis minneinfo"
+      },
+      "fileSystem": {
+        "label": "Vis filsysteminfo"
+      },
+      "node": {
+        "label": "Filtrer etter nodenavn",
+        "info": "Skriv inn Proxmox-nodenavnet ditt for kun å vise beregninger for den noden. Som standard vises hele klyngen."
+      },
+      "defaultViewState": {
+        "label": "Seksjon åpen som standard",
+        "data": {
+          "none": "Ingen",
+          "node": "Noder",
+          "vm": "VM-er",
+          "lxc": "LXC-er",
+          "storage": "Lagring"
         }
+      },
+      "defaultTabState": {
+        "label": "Fane åpen som standard",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "",
+    "minute": ""
+  },
+  "memory": {
+    "label": "",
+    "totalMem": "",
+    "available": ""
+  },
+  "fileSystem": {
+    "label": "",
+    "available": ""
+  },
+  "info": {
+    "uptime": "",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": ""
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Noder",
+        "vms": "VM-er",
+        "lxcs": "LXC-er",
+        "storage": "Lagring"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Navn",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "Detaljer",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

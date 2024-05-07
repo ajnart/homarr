@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Medya Kod Dönüştürme",
+    "description": "Medya kod dönüştürmeyle ilgili bilgileri görüntüler",
+    "settings": {
+      "title": "Medya Kod Dönüştürme Ayarları",
+      "appId": {
+        "label": "Bir uygulama seçin"
+      },
+      "defaultView": {
+        "label": "Varsayılan görünüm",
+        "data": {
+          "workers": "İşçiler",
+          "queue": "Kuyruk",
+          "statistics": "İstatistik"
+        }
+      },
+      "showHealthCheck": {
+        "label": "Durum Kontrolü göstergesini göster"
+      },
+      "showHealthChecksInQueue": {
+        "label": "Durum Denetimlerini kuyrukta göster"
+      },
+      "queuePageSize": {
+        "label": "Kuyruk: Sayfa başına öğe sayısı"
+      },
+      "showAppIcon": {
+        "label": "Uygulama simgesini sağ alt köşede göster"
+      }
+    }
+  },
+  "noAppSelected": "Lütfen widget ayarlarından bir uygulama seçin",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "Dosya",
+          "eta": "ETA (Kalan Süre)",
+          "progress": "İlerleme"
+        },
+        "empty": "Boş",
+        "tooltip": {
+          "transcode": "Kod dönüştürme",
+          "healthCheck": "Sağlık kontrolü"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "Dosya",
+          "size": "Boyut"
+        },
+        "footer": {
+          "currentIndex": "{{start}} - {{end}} üzerinden {{total}}"
+        },
+        "empty": "Boş",
+        "tooltip": {
+          "transcode": "Kod dönüştürme",
+          "healthCheck": "Sağlık kontrolü"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "Boş",
+      "box": {
+        "transcodes": "Kod dönüştürmeler: {{value}}",
+        "healthChecks": "Sağlık Kontrolleri: {{value}}",
+        "files": "Dosyalar: {{value}}",
+        "spaceSaved": "Kaydedildi: {{value}}"
+      },
+      "pies": {
+        "transcodes": "Kod dönüştürmeler",
+        "healthChecks": "Sağlık kontrolleri",
+        "videoCodecs": "Kodek'ler",
+        "videoContainers": "Konteyner",
+        "videoResolutions": "Çözünürlükler"
+      }
+    }
+  },
+  "error": {
+    "title": "Hata",
+    "message": "Tdarr'dan veri alınırken bir hata oluştu."
+  },
+  "tabs": {
+    "workers": "İşçiler",
+    "queue": "Kuyruk",
+    "statistics": "İstatistik"
+  },
+  "healthCheckStatus": {
+    "title": "Sağlık kontrolü",
+    "queued": "Sıraya alındı",
+    "healthy": "Sağlıklı",
+    "unhealthy": "Sağlıksız"
+  }
+}

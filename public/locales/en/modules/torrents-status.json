@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Display filtered torrents list ratio",
         "info": "If disabled, only the global ratio will be display. The global ratio will still use the labels if set"
+      },
+      "columnOrdering":{
+        "label": "Enable reordering the columns"
+      },
+      "rowSorting":{
+        "label": "Enable sorting the rows"
+      },
+      "columns": {
+        "label": "Select columns to display",
+        "data": {
+          "date": "Date Added",
+          "down": "Down",
+          "up": "Up",
+          "eta": "ETA",
+          "progress": "Progress"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Change the name column size"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "An unexpected error occurred",
         "text": "Unable to communicate with your Torrent clients. Please check your configuration"
       }
-    },
-    "loading": {
-      "title": "Loading",
-      "description": "Establishing a connection"
     },
     "popover": {
       "introductionPrefix": "Managed by",

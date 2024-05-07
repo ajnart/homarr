@@ -5,11 +5,11 @@
     "settings": {
       "title": "Instellingen voor datum en tijd widget",
       "timezone": {
-        "label": "",
-        "info": ""
+        "label": "Tijdzone",
+        "info": "Selecteer de naam van je tijdzone, vind de jouwe hier: "
       },
       "customTitle": {
-        "label": ""
+        "label": "Plaatsnaam of aangepaste titel"
       },
       "display24HourFormat": {
         "label": "Volledige tijd weergeven (24-uur)"
@@ -21,11 +21,11 @@
         }
       },
       "titleState": {
-        "label": "",
+        "label": "Klok titel",
         "info": "",
         "data": {
           "both": "",
-          "city": "",
+          "city": "Alleen titel",
           "none": "Geen"
         }
       }

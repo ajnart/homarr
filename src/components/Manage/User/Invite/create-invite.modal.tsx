@@ -1,4 +1,4 @@
-import { Button, Group, Stack, Text, Title } from '@mantine/core';
+import { Button, Group, Stack, Text } from '@mantine/core';
 import { DateTimePicker } from '@mantine/dates';
 import { useForm } from '@mantine/form';
 import { ContextModalProps, modals } from '@mantine/modals';
@@ -79,11 +79,7 @@ export const CreateInviteModal = ({ id }: ContextModalProps<{}>) => {
 export const openCreateInviteModal = () => {
   modals.openContextModal({
     modal: 'createInviteModal',
-    title: (
-      <Title order={4}>
-        <Trans i18nKey="manage/users/invites:modals.create.title" />
-      </Title>
-    ),
+    title: <Trans i18nKey="manage/users/invites:modals.create.title" />,
     innerProps: {},
   });
 };

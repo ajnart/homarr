@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "Meteo",
+    "description": "Afișează informațiile meteo curente ale unei locații stabilite.",
+    "settings": {
+      "title": "Setări pentru Widget-ul Meteo",
+      "displayInFahrenheit": {
+        "label": "Afișează în Fahrenheit"
+      },
+      "displayCityName": {
+        "label": "Afișează numele orașului"
+      },
+      "displayWeekly": {
+        "label": "Afișează prognoza săptămânală"
+      },
+      "forecastDays": {
+        "label": "Zile de afișat"
+      },
+      "location": {
+        "label": "Locație meteo"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "Senin",
+      "mainlyClear": "Parțial noros",
+      "fog": "Ceață",
+      "drizzle": "Burniță",
+      "freezingDrizzle": "Chiciură",
+      "rain": "Ploaie",
+      "freezingRain": "Polei",
+      "snowFall": "Ninsoare",
+      "snowGrains": "Fulgi de Zăpadă",
+      "rainShowers": "Averse de ploaie",
+      "snowShowers": "Averse de ninsoare",
+      "thunderstorm": "Furtună",
+      "thunderstormWithHail": "Furtună cu grindină",
+      "unknown": "Necunoscut"
+    }
+  },
+  "error": "A aparut o eroare"
+}

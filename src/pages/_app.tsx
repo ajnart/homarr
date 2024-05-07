@@ -10,7 +10,7 @@ import utc from 'dayjs/plugin/utc';
 import 'flag-icons/css/flag-icons.min.css';
 import { GetServerSidePropsContext } from 'next';
 import { Session } from 'next-auth';
-import { getSession, SessionProvider } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import Script from 'next/script';
@@ -19,12 +19,16 @@ import 'video.js/dist/video-js.css';
 import { CommonHead } from '~/components/layout/Meta/CommonHead';
 import { ConfigProvider } from '~/config/provider';
 import { env } from '~/env.js';
+import { CustomSessionProvider } from '~/hooks/custom-session-provider';
 import { ColorSchemeProvider } from '~/hooks/use-colorscheme';
 import { modals } from '~/modals';
 import { usePackageAttributesStore } from '~/tools/client/zustands/usePackageAttributesStore';
 import { ColorTheme } from '~/tools/color';
 import { getLanguageByCode } from '~/tools/language';
-import { getServiceSidePackageAttributes, ServerSidePackageAttributesType } from '~/tools/server/getPackageVersion';
+import {
+  ServerSidePackageAttributesType,
+  getServiceSidePackageAttributes,
+} from '~/tools/server/getPackageVersion';
 import { theme } from '~/tools/server/theme/theme';
 import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
@@ -44,6 +48,7 @@ function App(
     environmentColorScheme: MantineColorScheme;
     packageAttributes: ServerSidePackageAttributesType;
     editModeEnabled: boolean;
+    logoutUrl?: string;
     analyticsEnabled: boolean;
     config?: ConfigType;
     primaryColor?: MantineTheme['primaryColor'];
@@ -111,7 +116,7 @@ function App(
           strategy="lazyOnload"
         />
       )}
-      <SessionProvider session={pageProps.session}>
+      <CustomSessionProvider session={pageProps.session} logoutUrl={pageProps.logoutUrl}>
         <ColorSchemeProvider {...pageProps}>
           {(colorScheme) => (
             <ColorTheme.Provider value={colorTheme}>
@@ -151,7 +156,7 @@ function App(
           )}
         </ColorSchemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
-      </SessionProvider>
+      </CustomSessionProvider>
     </>
   );
 }
@@ -177,6 +182,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
     pageProps: {
       ...getActiveColorScheme(session, ctx),
       packageAttributes: getServiceSidePackageAttributes(),
+      logoutUrl: env.AUTH_LOGOUT_REDIRECT_URL,
       analyticsEnabled,
       session,
       locale: ctx.locale ?? 'en',

@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "",
-        "description": "",
-        "settings": {
-            "title": "",
-            "fahrenheit": {
-                "label": ""
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "",
+    "description": "",
+    "settings": {
+      "title": "",
+      "fahrenheit": {
+        "label": ""
+      },
+      "cpu": {
+        "label": "",
         "load": "",
-        "minute": ""
-    },
-    "memory": {
+        "minute": "",
+        "minutes": ""
+      },
+      "memory": {
+        "label": ""
+      },
+      "fileSystem": {
+        "label": ""
+      },
+      "node": {
         "label": "",
-        "totalMem": "",
-        "available": ""
-    },
-    "fileSystem": {
+        "info": ""
+      },
+      "defaultViewState": {
         "label": "",
-        "available": ""
-    },
-    "info": {
-        "uptime": "",
-        "updates": "",
-        "reboot": ""
-    },
-    "errors": {
-        "general": {
-            "title": "",
-            "text": ""
+        "data": {
+          "none": "없음",
+          "node": "",
+          "vm": "",
+          "lxc": "",
+          "storage": "저장소"
         }
+      },
+      "defaultTabState": {
+        "label": "",
+        "info": "",
+        "data": {
+          "system": "",
+          "cluster": ""
+        }
+      },
+      "summary": {
+        "label": ""
+      },
+      "showNode": {
+        "label": ""
+      },
+      "showVM": {
+        "label": ""
+      },
+      "showLXCs": {
+        "label": ""
+      },
+      "showStorage": {
+        "label": ""
+      },
+      "sectionIndicatorColor": {
+        "label": "",
+        "info": "",
+        "data": {
+          "any": "",
+          "all": ""
+        }
+      },
+      "ignoreCert": {
+        "label": "",
+        "info": ""
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "",
+    "minute": ""
+  },
+  "memory": {
+    "label": "",
+    "totalMem": "",
+    "available": ""
+  },
+  "fileSystem": {
+    "label": "",
+    "available": ""
+  },
+  "info": {
+    "uptime": "",
+    "uptimeFormat": "",
+    "updates": "",
+    "reboot": ""
+  },
+  "errors": {
+    "general": {
+      "title": "",
+      "text": ""
+    }
+  },
+  "headings": {
+    "system": "",
+    "cluster": ""
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "",
+        "vms": "",
+        "lxcs": "",
+        "storage": "저장소"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "이름",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": ""
+      }
+    },
+    "popover": {
+      "node": "",
+      "vmid": "",
+      "details": "세부 정보",
+      "cores": "",
+      "memSize": "",
+      "memRatio": "",
+      "diskSize": "",
+      "diskRatio": "",
+      "uptime": "",
+      "plugin": "",
+      "ha": "",
+      "sharedStorage": "",
+      "localStorage": "",
+      "na": ""
+    }
+  }
 }

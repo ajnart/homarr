@@ -1,0 +1,50 @@
+{
+  "pageTitle": {
+    "label": "Titlu pagină",
+    "description": "Numele planșei în stânga sus"
+  },
+  "metaTitle": {
+    "label": "Titlu Meta",
+    "description": "Titlul afișat în pagina browserului dvs"
+  },
+  "logo": {
+    "label": "Siglă",
+    "description": "Sigla afișată în stânga sus"
+  },
+  "favicon": {
+    "label": "Favicon",
+    "description": "Pictograma afișată în pagina browserului dvs"
+  },
+  "background": {
+    "label": "Fundal"
+  },
+  "backgroundImageAttachment": {
+    "label": "Atașare imagine de fundal",
+    "options": {
+      "fixed": "Fix - imaginea de fundal rămâne în aceeași poziție (recomandat)",
+      "scroll": "Derulare - derulează imaginea de fundal cu mouse-ul tău"
+    }
+  },
+  "backgroundImageSize": {
+    "label": "Dimensiunea imaginii de fundal",
+    "options": {
+      "cover": "Cover (Acoperire) - Redimensionează imaginea cât mai mult posibil pentru a acoperi întreaga fereastră prin decuparea spațiului excesiv. (recomandat)",
+      "contain": "Conținut - Redimensionează imaginea cât mai mare posibil în container, fără a decupa sau a întinde imaginea."
+    }
+  },
+  "backgroundImageRepeat": {
+    "label": "Atașare imagine de fundal",
+    "options": {
+      "repeat": "Repetare - Imaginea este repetată atât cât este necesar pentru a acoperi întreaga zonă de pictură a imaginii de fundal.",
+      "no-repeat": "Fără repetare - Imaginea nu se repetă și este posibil să nu umple întreg spațiul (recomandat)",
+      "repeat-x": "Repetă X - La fel ca „Repetă”, dar numai pe axa orizontală.",
+      "repeat-y": "Repetă Y - La fel ca „Repetă”, dar numai pe axa verticala."
+    }
+  },
+  "customCSS": {
+    "label": "CSS personalizat",
+    "description": "În plus, personalizați-vă planșa folosind CSS, recomandat doar pentru utilizatorii experimentați",
+    "placeholder": "Personalizare CSS va fi aplicată ultima",
+    "applying": "Se aplică CSS..."
+  }
+}

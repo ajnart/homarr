@@ -1,37 +1,141 @@
 {
-    "descriptor": {
-        "name": "Überwachung des Systemzustands",
-        "description": "Informationen zu Ihrem NAS",
-        "settings": {
-            "title": "Überwachung des Systemzustands",
-            "fahrenheit": {
-                "label": "Fahrenheit"
-            }
-        }
-    },
-    "cpu": {
-        "label": "CPU",
+  "descriptor": {
+    "name": "Überwachung des Systemzustands",
+    "description": "Zeigt Informationen zum Zustand und Status Ihres/Ihrer Systeme(s) an.",
+    "settings": {
+      "title": "Einstellungen für die Überwachung des Systemzustands",
+      "fahrenheit": {
+        "label": "CPU-Temperatur in Fahrenheit"
+      },
+      "cpu": {
+        "label": "CPU-Info anzeigen",
         "load": "Durchschnittliche Last",
-        "minute": "{{minute}} Minuten"
-    },
-    "memory": {
-        "label": "Arbeitsspeicher",
-        "totalMem": "Gesamtspeicher: {{total}} GB",
-        "available": "Verfügbar: {{available}} GB - {{percentage}}%"
-    },
-    "fileSystem": {
-        "label": "Dateisystem",
-        "available": "Verfügbar: {{available}} - {{percentage}}%"
-    },
-    "info": {
-        "uptime": "Betriebszeit",
-        "updates": "Aktualisierungen",
-        "reboot": "Neustart"
-    },
-    "errors": {
-        "general": {
-            "title": "Ihr NAS konnte nicht gefunden werden",
-            "text": "Es gab ein Problem bei der Verbindung zu Ihrem NAS. Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
+        "minute": "{{minute}} Minuten",
+        "minutes": "{{minutes}} Minuten"
+      },
+      "memory": {
+        "label": "Speicher-Info anzeigen"
+      },
+      "fileSystem": {
+        "label": "Dateisystem Info anzeigen"
+      },
+      "node": {
+        "label": "Nach Knotennamen filtern",
+        "info": "Geben Sie den Namen Ihres Proxmox-Knotens ein, um nur Metriken für diesen Knoten anzuzeigen. Standardmäßig wird der gesamte Cluster angezeigt."
+      },
+      "defaultViewState": {
+        "label": "Abschnitt standardmäßig geöffnet",
+        "data": {
+          "none": "Keine",
+          "node": "Knoten",
+          "vm": "VMs",
+          "lxc": "LXCs",
+          "storage": "Speicher"
         }
+      },
+      "defaultTabState": {
+        "label": "Tab standardmäßig geöffnet",
+        "info": "Tab standardmäßig geöffnet. Wird nur verwendet, wenn mehrere Integrationen verfügbar sind.",
+        "data": {
+          "system": "System",
+          "cluster": "Cluster"
+        }
+      },
+      "summary": {
+        "label": "Abschnitt Zusammenfassung anzeigen"
+      },
+      "showNode": {
+        "label": "Abschnitt Knoten anzeigen"
+      },
+      "showVM": {
+        "label": "Abschnitt VMs anzeigen"
+      },
+      "showLXCs": {
+        "label": "Abschnitt LXCs anzeigen"
+      },
+      "showStorage": {
+        "label": "Abschnitt Speicherbereich anzeigen"
+      },
+      "sectionIndicatorColor": {
+        "label": "Voraussetzung dafür, dass die Abschnittsstatusanzeige „OK“ ist",
+        "info": "Bei „Alle“ müssen alle Elemente online sein, damit die Anzeige grün ist. Für „Mindestens“ muss mindestens ein Artikel online sein.",
+        "data": {
+          "any": "Mindestens aktiv",
+          "all": "Alle aktiv"
+        }
+      },
+      "ignoreCert": {
+        "label": "Zertifikatfehler ignorieren",
+        "info": "Wenn aktiviert, ignoriert das Widget Zertifikatsfehler beim Zugriff auf die Proxmox-API. Dies kann hilfreich sein, wenn Sie über HTTPS auf Proxmox zugreifen."
+      }
     }
+  },
+  "cpu": {
+    "label": "CPU",
+    "load": "Durchschnittliche Last",
+    "minute": "{{minute}} Minuten"
+  },
+  "memory": {
+    "label": "Arbeitsspeicher",
+    "totalMem": "Gesamtspeicher: {{total}} GB",
+    "available": "Verfügbar: {{available}} GB - {{percentage}}%"
+  },
+  "fileSystem": {
+    "label": "Dateisystem",
+    "available": "Verfügbar: {{available}} - {{percentage}}%"
+  },
+  "info": {
+    "uptime": "Betriebszeit",
+    "uptimeFormat": "{{days}} Tage, {{hours}} Stunden",
+    "updates": "Updates verfügbar",
+    "reboot": "Neustart"
+  },
+  "errors": {
+    "general": {
+      "title": "Ihr(e) System(e) konnte nicht gefunden werden.",
+      "text": "Beim Herstellen der Verbindung zu Ihrem System ist ein Problem aufgetreten. Bitte überprüfen Sie Ihre Konfiguration/Integration(en)."
+    }
+  },
+  "headings": {
+    "system": "System",
+    "cluster": "Cluster"
+  },
+  "cluster": {
+    "summary": {
+      "cpu": "CPU",
+      "ram": "RAM"
+    },
+    "accordion": {
+      "title": {
+        "nodes": "Knoten",
+        "vms": "VMs",
+        "lxcs": "LXCs",
+        "storage": "Speicher"
+      }
+    },
+    "table": {
+      "header": {
+        "name": "Name",
+        "cpu": "CPU",
+        "ram": "RAM",
+        "node": "Knoten"
+      }
+    },
+    "popover": {
+      "node": "Knoten",
+      "vmid": "VMID",
+      "details": "Details",
+      "cores": "Kerne – {{maxCpu}}",
+      "memSize": "Speicher – {{maxMem}}",
+      "memRatio": "Speicher - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Festplatte – {{maxDisk}}",
+      "diskRatio": "Festplatte - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Betriebszeit – {{uptime}}",
+      "plugin": "Erweiterung",
+      "ha": "HA Status - {{haState}}",
+      "sharedStorage": "Geteilter Speicher",
+      "localStorage": "Lokaler Speicher",
+      "na": "nicht verfügbar"
+    }
+  }
 }

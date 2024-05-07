@@ -1,0 +1,25 @@
+{
+  "modals": {
+    "blockedPopups": {
+      "title": "Popup-uri blocate",
+      "text": "Browser-ul dumneavoastră a blocat Homarr in a accesa API-ului său. Acest lucru este cel mai frecvent cauzat de blocatoare de anunțuri (ca AdBlockers) sau permisiuni refuzate. Homarr nu poate solicita automat permisiuni.",
+      "list": {
+        "browserPermission": "Faceți clic pe pictogramă de lângă adresa URL și verificați permisiunile. Permiteți accesul la Popup-uri și ferestre noi",
+        "adBlockers": "Dezactivați blocatoarele de anunțuri și instrumentele de securitate din browser",
+        "otherBrowser": "Încercați un alt browser"
+      }
+    }
+  },
+  "actions": {
+    "category": {
+      "openAllInNewTab": "Deschide toate în pagină nouă"
+    }
+  },
+  "menu": {
+    "moveUp": "Mută în sus",
+    "moveDown": "Mută în jos",
+    "addCategory": "Adaugă categorie {{location}}",
+    "addAbove": "deasupra",
+    "addBelow": "dedesubt"
+  }
+}

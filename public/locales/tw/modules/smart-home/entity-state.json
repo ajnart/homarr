@@ -22,8 +22,13 @@
             },
             "displayFriendlyName": {
                 "label": "顯示友好名稱",
-                "info": "顯示來自 Home Assistant 的友好名稱，而不是顯示名稱"
+                "info": ""
+            },
+            "genericToggle": {
+                "label": "",
+                "info": ""
             }
         }
     }
 }
+

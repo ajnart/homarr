@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "Coloane cu dimensiunea {{size}}",
+    "descriptionPreset": "Numărul de coloane când ecranul este mai mic decât {{pixels}} pixeli lăţime",
+    "descriptionExceedsPreset": "Numărul de coloane când dimensiunea ecranului depășește {{pixels}} pixeli"
+  },
+  "unsavedChanges": "Aveți modificări nesalvate. Apăsați butonul Aplică modificările de mai jos pentru a aplica și salva.",
+  "applyChanges": "Aplică modificările",
+  "defaultValues": "Valori implicite"
+}

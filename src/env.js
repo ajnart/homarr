@@ -12,6 +12,12 @@ const zodParsedBoolean = () =>
     .default('false')
     .transform((value) => trueStrings.includes(value));
 
+const numberSchema = z
+  .string()
+  .regex(/\d*/)
+  .transform((value) => (value === undefined ? undefined : Number(value)))
+  .optional();
+
 const portSchema = z
   .string()
   .regex(/\d*/)
@@ -43,6 +49,12 @@ const env = createEnv({
     DEMO_MODE: z.string().optional(),
     HOSTNAME: z.string().optional(),
 
+    //regex allows number with extra letter as time multiplier, applied with secondsFromTimeString
+    AUTH_SESSION_EXPIRY_TIME: z
+      .string()
+      .regex(/^\d+[smhd]?$/)
+      .optional(),
+
     // Authentication
     AUTH_PROVIDER: z
       .string()
@@ -71,9 +83,12 @@ const env = createEnv({
           AUTH_LDAP_BASE: z.string(),
           AUTH_LDAP_SEARCH_SCOPE: z.enum(['base', 'one', 'sub']).default('base'),
           AUTH_LDAP_USERNAME_ATTRIBUTE: z.string().default('uid'),
+          AUTH_LDAP_USER_MAIL_ATTRIBUTE: z.string().default('mail'),
+          AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG: z.string().optional(),
           AUTH_LDAP_GROUP_CLASS: z.string().default('groupOfUniqueNames'),
           AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: z.string().default('member'),
           AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: z.string().default('dn'),
+          AUTH_LDAP_GROUP_FILTER_EXTRA_ARG: z.string().optional(),
           AUTH_LDAP_ADMIN_GROUP: z.string().default('admin'),
           AUTH_LDAP_OWNER_GROUP: z.string().default('admin'),
         }
@@ -90,6 +105,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
+          AUTH_OIDC_TIMEOUT: numberSchema.default(3500),
         }
       : {}),
   },
@@ -111,6 +127,7 @@ const env = createEnv({
       .optional()
       .default('light'),
     NEXT_PUBLIC_DOCKER_HOST: z.string().optional(),
+    AUTH_LOGOUT_REDIRECT_URL: z.string().optional(),
   },
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
@@ -135,9 +152,12 @@ const env = createEnv({
     AUTH_LDAP_BASE: process.env.AUTH_LDAP_BASE,
     AUTH_LDAP_SEARCH_SCOPE: process.env.AUTH_LDAP_SEARCH_SCOPE?.toLowerCase(),
     AUTH_LDAP_USERNAME_ATTRIBUTE: process.env.AUTH_LDAP_USERNAME_ATTRIBUTE,
+    AUTH_LDAP_USER_MAIL_ATTRIBUTE: process.env.AUTH_LDAP_USER_MAIL_ATTRIBUTE,
+    AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG: process.env.AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG,
     AUTH_LDAP_GROUP_CLASS: process.env.AUTH_LDAP_GROUP_CLASS,
     AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE: process.env.AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE,
     AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE: process.env.AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE,
+    AUTH_LDAP_GROUP_FILTER_EXTRA_ARG: process.env.AUTH_LDAP_GROUP_FILTER_EXTRA_ARG,
     AUTH_LDAP_ADMIN_GROUP: process.env.AUTH_LDAP_ADMIN_GROUP,
     AUTH_LDAP_OWNER_GROUP: process.env.AUTH_LDAP_OWNER_GROUP,
     AUTH_OIDC_CLIENT_ID: process.env.AUTH_OIDC_CLIENT_ID,
@@ -149,6 +169,9 @@ const env = createEnv({
     AUTH_OIDC_OWNER_GROUP: process.env.AUTH_OIDC_OWNER_GROUP,
     AUTH_OIDC_AUTO_LOGIN: process.env.AUTH_OIDC_AUTO_LOGIN,
     AUTH_OIDC_SCOPE_OVERWRITE: process.env.AUTH_OIDC_SCOPE_OVERWRITE,
+    AUTH_OIDC_TIMEOUT: process.env.AUTH_OIDC_TIMEOUT,
+    AUTH_LOGOUT_REDIRECT_URL: process.env.AUTH_LOGOUT_REDIRECT_URL,
+    AUTH_SESSION_EXPIRY_TIME: process.env.AUTH_SESSION_EXPIRY_TIME,
     DEMO_MODE: process.env.DEMO_MODE,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

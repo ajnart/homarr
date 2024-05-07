@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "顯示過濾後的 Torrents 列表比例",
         "info": "如果禁用，則只會顯示全局比率，而全局比率仍將使用標籤"
+      },
+      "columnOrdering": {
+        "label": "啟用重新排序列"
+      },
+      "rowSorting": {
+        "label": "啟用行排列"
+      },
+      "columns": {
+        "label": "選擇要顯示的列",
+        "data": {
+          "date": "日期已添加",
+          "down": "下載",
+          "up": "上傳",
+          "eta": "剩餘時間",
+          "progress": "進度"
+        }
+      },
+      "nameColumnSize": {
+        "label": "更改名稱列大小"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "發生一個意外的錯誤",
         "text": "無法與您的 Torrent 客戶端交互，請檢查您的設定"
       }
-    },
-    "loading": {
-      "title": "載入中",
-      "description": "建立連接中"
     },
     "popover": {
       "introductionPrefix": "管理方：",

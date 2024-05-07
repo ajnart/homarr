@@ -5,7 +5,7 @@
       "text": "Je browser heeft de toegang tot Homarr's API geblokkeerd. Dit wordt meestal veroorzaakt door AdBlockers of geweigerde toestemmingen. Homarr is niet in staat om automatisch rechten aan te vragen.",
       "list": {
         "browserPermission": "Klik op het pictogram naast de URL en controleer de toestemmingen. Pop-ups en vensters toestaan",
-        "adBlockers": "Schakel advertentieblokkers en beveiligingsprogramma's van uw browser uit",
+        "adBlockers": "Schakel advertentieblokkers en beveiligingsprogramma's van je browser uit",
         "otherBrowser": "Probeer een andere browser"
       }
     }

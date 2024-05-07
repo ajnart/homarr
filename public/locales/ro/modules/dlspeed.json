@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "Viteza de descărcare",
+    "description": "Afișează viteza de descărcare și încărcare a integrărilor care suportată această funcție."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "Nume",
+        "size": "Mărime",
+        "download": "În jos",
+        "upload": "În sus",
+        "estimatedTimeOfArrival": "Timp rămas estimat",
+        "progress": "Progres"
+      },
+      "body": {
+        "nothingFound": "Nici un torrent găsit"
+      }
+    },
+    "lineChart": {
+      "title": "Viteza actuală de descărcare",
+      "download": "Descărcare: {{download}}",
+      "upload": "Încărcare: {{upload}}",
+      "timeSpan": "acum {{seconds}} secunde",
+      "totalDownload": "Descărcare: {{download}}/s",
+      "totalUpload": "Încărcare: {{upload}}/s"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "Nu au fost găsiți clienți de descărcare suportați!",
+        "text": "Adăugați un serviciu de descărcare pentru a vizualiza descărcările curente"
+      }
+    }
+  }
+}

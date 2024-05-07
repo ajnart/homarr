@@ -34,6 +34,7 @@ export const boardNamespaces = [
   'modules/notebook',
   'modules/smart-home/entity-state',
   'modules/smart-home/trigger-automation',
+  'modules/media-transcoding',
   'widgets/error-boundary',
   'widgets/draggable-list',
   'widgets/location',

@@ -14,10 +14,10 @@
   },
   "mediaStats": {
     "title": "Medya İstatistikleri",
-    "pending": "Bekleyen Onaylar",
+    "pending": "Onay bekleyen",
     "tvRequests": "Dizi talepleri",
     "movieRequests": "Film talepleri",
-    "approved": "Zaten onaylandı",
+    "approved": "Onaylanan",
     "totalRequests": "Toplam"
   },
   "userStats": {

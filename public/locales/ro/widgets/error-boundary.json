@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "Hopa, a apărut o eroare!",
+    "buttons": {
+      "details": "Detalii",
+      "tryAgain": "Încearcă din nou"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "Eroare dvs.",
+    "reportButton": "Raportați această eroare"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "descriptor": {
+    "name": "Stream video",
+    "description": "Încorporează un steam video sau video-ul dintr-o cameră sau un site web",
+    "settings": {
+      "title": "Setări pentru Widget-ul Stream video",
+      "FeedUrl": {
+        "label": "Adresa URL a feed-ului"
+      },
+      "autoPlay": {
+        "label": "Redare automată"
+      },
+      "muted": {
+        "label": "Dezactivare sunet"
+      },
+      "controls": {
+        "label": "Comenzi player video"
+      }
+    }
+  },
+  "errors": {
+    "invalidStream": "Stream invalid"
+  }
+}

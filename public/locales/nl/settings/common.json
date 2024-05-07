@@ -6,7 +6,7 @@
     "customizations": "Aanpassingen"
   },
   "tips": {
-    "configTip": "Upload uw configuratiebestand door het naar de pagina te slepen!"
+    "configTip": "Upload je configuratiebestand door het naar de pagina te slepen!"
   },
   "credits": {
     "madeWithLove": "Gemaakt met ❤️ door @",
@@ -22,7 +22,7 @@
       "title": "Voorbeeld",
       "subtitle": "Wijzigingen worden automatisch opgeslagen"
     },
-    "divider": "Layout opties",
+    "divider": "Lay-out opties",
     "main": "Algemeen",
     "sidebar": "Zijbalk",
     "cannotturnoff": "Kan niet worden uitgeschakeld",

@@ -29,6 +29,25 @@
       "displayRatioWithFilter": {
         "label": "Exibir proporção da lista de torrents filtrados",
         "info": "Se estiver desativado, somente a proporção global será exibida. A proporção global ainda usará os rótulos se estiver definida"
+      },
+      "columnOrdering": {
+        "label": ""
+      },
+      "rowSorting": {
+        "label": ""
+      },
+      "columns": {
+        "label": "Selecione colunas para exibir",
+        "data": {
+          "date": "",
+          "down": "Para baixo",
+          "up": "Para cima",
+          "eta": "TED",
+          "progress": "Progresso"
+        }
+      },
+      "nameColumnSize": {
+        "label": "Alterar o tamanho da coluna do nome"
       }
     }
   },
@@ -83,10 +102,6 @@
         "title": "Ocorreu um erro inesperado",
         "text": "Não é possível se comunicar com seus clientes Torrent. Verifique sua configuração"
       }
-    },
-    "loading": {
-      "title": "Carregamento",
-      "description": "Estabelecimento de uma conexão"
     },
     "popover": {
       "introductionPrefix": "Gerido por",

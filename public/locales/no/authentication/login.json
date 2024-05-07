@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Etter pålogging blir du omdirigert til {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Feil ved Auth leverandør",
+      "message": "Leverandøren(e) er ikke angitt, sjekk loggene dine for mer informasjon."
     }
   },
   "alert": "Påloggingsinformasjonen din er feil eller denne kontoen eksisterer ikke. Vennligst prøv på nytt."
