@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Adresa externă",
-			"description": "Adresa URL-ul care va fi deschisă atunci când faceți clic pe aplicație."
+			"description": "Adresa URL-ul care va fi deschisă atunci când faceți clic pe aplicație.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
