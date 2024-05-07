@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Мониторинг состояния системы",
-    "description": "",
+    "description": "Информация о вашем NAS",
     "settings": {
       "title": "",
       "fahrenheit": {
-        "label": ""
+        "label": "По Фаренгейту"
       },
       "cpu": {
         "label": "",
@@ -87,13 +87,13 @@
   "info": {
     "uptime": "Время работы",
     "uptimeFormat": "",
-    "updates": "",
+    "updates": "Обновления",
     "reboot": "Перезагрузка"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Не удалось найти ваш NAS",
+      "text": "Проблема с подключением к вашему NAS. Пожалуйста, проверьте свою конфигурацию/интеграцию."
     }
   },
   "headings": {

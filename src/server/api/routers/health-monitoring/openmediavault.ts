@@ -67,11 +67,18 @@ export async function makeOpenMediaVaultCalls(app: ConfigAppType, input: any) {
     } else {
       const cookies = authResponse.headers['set-cookie'] || [];
       sessionId = cookies
-        .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-SESSIONID'))
+        .find(
+          (cookie: any) =>
+            cookie.includes('X-OPENMEDIAVAULT-SESSIONID') ||
+            cookie.includes('OPENMEDIAVAULT-SESSIONID')
+        )
         ?.split(';')[0];
 
       loginToken = cookies
-        .find((cookie: any) => cookie.includes('X-OPENMEDIAVAULT-LOGIN'))
+        .find(
+          (cookie: any) =>
+            cookie.includes('X-OPENMEDIAVAULT-LOGIN') || cookie.includes('OPENMEDIAVAULT-LOGIN')
+        )
         ?.split(';')[0];
     }
 
