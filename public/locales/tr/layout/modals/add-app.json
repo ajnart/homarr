@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Harici adres",
-			"description": "Uygulamaya tıklandığında açılacak URL."
+			"description": "Uygulamaya tıklandığında açılacak URL.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
