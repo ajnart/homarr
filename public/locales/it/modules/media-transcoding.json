@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "Transcodifica Multimediale",
-    "description": "Mostra informazioni sulla transcodifica multimediale",
+    "name": "Transcoding multimediale",
+    "description": "Mostra informazioni sul transcoding multimediale",
     "settings": {
-      "title": "Impostazioni Transcodifica Multimediale",
+      "title": "Impostazioni transcoding multimediale",
       "appId": {
         "label": "Seleziona un'app"
       },
@@ -40,7 +40,7 @@
         },
         "empty": "Vuoto",
         "tooltip": {
-          "transcode": "Transcodifica",
+          "transcode": "Transcode",
           "healthCheck": "Controllo Integrità"
         }
       }
@@ -56,7 +56,7 @@
         },
         "empty": "Vuoto",
         "tooltip": {
-          "transcode": "Transcodifica",
+          "transcode": "Transcode",
           "healthCheck": "Controllo Integrità"
         }
       }
@@ -64,16 +64,16 @@
     "statistics": {
       "empty": "Vuoto",
       "box": {
-        "transcodes": "Transcodifiche: {{value}}",
+        "transcodes": "Transcodes: {{value}}",
         "healthChecks": "Controlli Integrità: {{value}}",
         "files": "File: {{value}}",
         "spaceSaved": "Salvati: {{value}}"
       },
       "pies": {
-        "transcodes": "Transcodifiche",
+        "transcodes": "Transcodes",
         "healthChecks": "Controlli Integrità",
-        "videoCodecs": "Codec",
-        "videoContainers": "Container",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Containers",
         "videoResolutions": "Risoluzioni"
       }
     }
