@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Externe Adresse",
 			"description": "URL, die beim Anklicken der App geöffnet wird.",
-			"tooltip": ""
+			"tooltip": "Sie können einige Variablen verwenden, um dynamische Adressen zu erstellen:<br><br><b>[homarr_base]</b> : vollständige Adresse ohne Port und Pfad. <i>(Beispiel: „https://subdomain.homarr.dev“)</i><br><b>[homarr_hostname]</b> : vollständige Basis-URL einschließlich der aktuellen Subdomäne. <i>(Beispiel: „subdomain.homarr.dev“)</i><br><b>[homarr_domain]</b> : Domäne mit herausgefilterter Subdomäne. <i>(Beispiel: „homarr.dev“)</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>Diese Variablen hängen alle von der aktuellen URL ab."
 		}
 	},
 	"behaviour": {
