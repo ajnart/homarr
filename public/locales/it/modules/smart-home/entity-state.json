@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Visualizza il nome descrittivo",
-                "info": ""
+                "info": "Visualizza il nome descrittivo da Home Assistant invece del nome visualizzato."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Attiva/disattiva entità",
+                "info": "Esegue un'azione generica di attivazione/disattivazione di Home Assistant sull'entità quando clicchi."
             }
         }
     }
