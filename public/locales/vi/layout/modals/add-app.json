@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Địa chỉ bên ngoài",
-			"description": "Đường dẫn được mở khi nhấp vào ứng dụng."
+			"description": "Đường dẫn được mở khi nhấp vào ứng dụng.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
