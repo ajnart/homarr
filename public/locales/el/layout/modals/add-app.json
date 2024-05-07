@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Εξωτερική διεύθυνση",
-			"description": "URL που θα ανοίγει όταν κάνετε κλικ στην εφαρμογή."
+			"description": "URL που θα ανοίγει όταν κάνετε κλικ στην εφαρμογή.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
