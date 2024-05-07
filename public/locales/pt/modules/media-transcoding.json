@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "",
+    "name": "Transcodificação de mídia",
     "description": "",
     "settings": {
       "title": "",
@@ -12,7 +12,7 @@
         "data": {
           "workers": "",
           "queue": "Fila",
-          "statistics": ""
+          "statistics": "Estatísticas"
         }
       },
       "showHealthCheck": {
@@ -34,13 +34,13 @@
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Ficheiro",
           "eta": "TED",
           "progress": "Progresso"
         },
         "empty": "Vazio",
         "tooltip": {
-          "transcode": "",
+          "transcode": "Transcodificar",
           "healthCheck": ""
         }
       }
@@ -48,7 +48,7 @@
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Ficheiro",
           "size": "Tamanho"
         },
         "footer": {
@@ -56,7 +56,7 @@
         },
         "empty": "Vazio",
         "tooltip": {
-          "transcode": "",
+          "transcode": "Transcodificar",
           "healthCheck": ""
         }
       }
@@ -72,7 +72,7 @@
       "pies": {
         "transcodes": "",
         "healthChecks": "",
-        "videoCodecs": "",
+        "videoCodecs": "Codecs",
         "videoContainers": "",
         "videoResolutions": ""
       }
@@ -85,7 +85,7 @@
   "tabs": {
     "workers": "",
     "queue": "Fila",
-    "statistics": ""
+    "statistics": "Estatísticas"
   },
   "healthCheckStatus": {
     "title": "",
