@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Barátságos név megjelenítése",
-                "info": ""
+                "info": "A Home Assistant barátságos nevet jelenítse meg a megjelenített név helyett."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Entitás kapcsoló",
+                "info": "Ha rákattint, hajtson végre egy általános Home Assistant váltási műveletet az entitáson."
             }
         }
     }
