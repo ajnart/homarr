@@ -105,7 +105,7 @@ const env = createEnv({
           AUTH_OIDC_OWNER_GROUP: z.string().default('admin'),
           AUTH_OIDC_AUTO_LOGIN: zodParsedBoolean(),
           AUTH_OIDC_SCOPE_OVERWRITE: z.string().default('openid email profile groups'),
-          AUTH_OIDC_TIMEOUT: numberSchema.default(3500),
+          AUTH_OIDC_TIMEOUT: numberSchema.default('3500'),
         }
       : {}),
   },
