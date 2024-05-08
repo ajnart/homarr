@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Veřejná adresa",
 			"description": "URL která bude otevřena po kliknutí na aplikaci.",
-			"tooltip": ""
+			"tooltip": "Můžete použít několik proměnných k vytvoření dynamických adres:<br><br><b>[homarr_base]</b> : plná adresa bez portu a cesty. <i>(Příklad: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : plná základní url včetně její aktuální subdomény. <i>(Příklad: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : doména bez subdomény. <i>(Příklad: `homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>Všechny tyto proměnné závisejí na aktuální url adrese."
 		}
 	},
 	"behaviour": {
