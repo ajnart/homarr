@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "外部地址",
 			"description": "点击应用时打开的网址。",
-			"tooltip": ""
+			"tooltip": "您可以使用几个变量来创建动态地址：<br><br><b>[homarr_base]</b>: 不包括端口和路径的完整地址。<i>(例如：'https://subdomain.homarr.dev'）</i><br><b>[homarr_hostname]</b>: 完整的基本网址，包括当前的子域。<i>(例如：'</i><b>subdomain</b>.homarr<i>.dev'）</i><br><b>[homarr_domain]</b>: 域名，已过滤子域。<i>(例如：\"homarr.dev\"）</i><br><b>[homarr_protocol]</b>:<i>http/https</i><br><br>这些变量都取决于当前网址。"
 		}
 	},
 	"behaviour": {
