@@ -39,8 +39,8 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open the app in a new tab instead of the current one."
-		},
-    "noReferrer": {,
+		}, 
+    "noReferrer": {
       "label": "No Referrer",
       "description": "Prevent the referrer from being sent to the app."
     },
