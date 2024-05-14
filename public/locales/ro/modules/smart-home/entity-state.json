@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Afișează un nume prietenos",
-                "info": ""
+                "info": "Afișează un nume prietenos din Home Assistant în loc de numele afișat."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Schimbător de entități",
+                "info": "Efectuați o acțiune generala de comutare al Home Assistant-ului când faceți clic pe entitate."
             }
         }
     }
