@@ -16,6 +16,14 @@ export type Language = {
 };
 
 export const languages = [
+    {
+    shortName: 'ar',
+    originalName: 'العربية',
+    translatedName: 'Arabic',
+    country: 'BH',
+    locale: 'ar-bh',
+    dayJsLocale: 'ar'
+  },
   {
     shortName: 'en',
     originalName: 'English',
