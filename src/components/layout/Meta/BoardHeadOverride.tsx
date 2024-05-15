@@ -14,13 +14,13 @@ export const BoardHeadOverride = () => {
   return (
     <Head>
       <title>{title}</title>
-      <meta key="favicon" name="apple-mobile-web-app-title" content={title} />
+      <meta name="apple-mobile-web-app-title" content={title} />
 
       {faviconUrl && faviconUrl.length > 0 && (
         <>
-          <link rel="shortcut icon" href={faviconUrl} />
+          <link key="favicon" rel="shortcut icon" href={faviconUrl} />
 
-          <link rel="apple-touch-icon" href={faviconUrl} />
+          <link key="favicon-apple" rel="apple-touch-icon" href={faviconUrl} />
         </>
       )}
     </Head>
