@@ -1,0 +1,38 @@
+{
+  "title": "الإعدادات",
+  "tooltip": "الإعدادات",
+  "tabs": {
+    "common": "العامة",
+    "customizations": "التخصيصات"
+  },
+  "tips": {
+    "configTip": "قم بتحميل ملف الاعدادات الخاص بك عن طريق السحب والإفلات على الصفحة!"
+  },
+  "credits": {
+    "madeWithLove": "صُنع بـ ❤️ من قبل @",
+    "thirdPartyContent": "طرف ثالث",
+    "thirdPartyContentTable": {
+      "dependencyName": "الاعتمادية",
+      "dependencyVersion": "الإصدار"
+    }
+  },
+  "grow": "توسيع الشبكة (استخدام كل المساحة)",
+  "layout": {
+    "preview": {
+      "title": "معاينة",
+      "subtitle": "سيتم حفظ التغييرات تلقائيًا"
+    },
+    "divider": "خيارات التخطيط",
+    "main": "الرئيسي",
+    "sidebar": "الشريط الجانبي",
+    "cannotturnoff": "لا يمكن إيقافه",
+    "dashboardlayout": "تخطيط لوحة التحكم",
+    "enablersidebar": "تمكين الشريط الجانبي الأيمن",
+    "enablelsidebar": "تمكين الشريط الجانبي الأيسر",
+    "enablesearchbar": "تمكين شريط البحث",
+    "enabledocker": "تمكين تكامل دوكر",
+    "enableping": "تمكين البنج",
+    "enablelsidebardesc": "اختياري. يمكن استخدامه فقط للتطبيقات والتكاملات",
+    "enablersidebardesc": "اختياري. يمكن استخدامه فقط للتطبيقات والتكاملات"
+  }
+}

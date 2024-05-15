@@ -1,0 +1,33 @@
+{
+  "descriptor": {
+    "name": "التقويم",
+    "description": "يعرض تقويمًا بالإصدارات القادمة من التكاملات المدعومة.",
+    "settings": {
+      "title": "إعدادات ويدجت التقويم",
+      "radarrReleaseType": {
+        "label": "نوع الإصدار في Radarr",
+        "data": {
+          "inCinemas": "في السينما",
+          "physicalRelease": "نسخة فيزيائية",
+          "digitalRelease": "نسخة رقمية"
+        }
+      },
+      "hideWeekDays": {
+        "label": "إخفاء أيام الأسبوع"
+      },
+      "showUnmonitored": {
+        "label": "عرض العناصر غير المراقبة"
+      },
+      "fontSize": {
+        "label": "حجم الخط",
+        "data": {
+          "xs": "صغير جدا",
+          "sm": "صغير",
+          "md": "متوسط",
+          "lg": "كبير",
+          "xl": "كبير جدا"
+        }
+      }
+    }
+  }
+}

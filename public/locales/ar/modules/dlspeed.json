@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "سرعة التنزيل",
+    "description": "يعرض سرعة التنزيل والرفع للتكاملات المدعومة."
+  },
+  "card": {
+    "table": {
+      "header": {
+        "name": "الاسم",
+        "size": "الحجم",
+        "download": "تنزيل",
+        "upload": "رفع",
+        "estimatedTimeOfArrival": "الوقت المتوقع للوصول",
+        "progress": "التقدم"
+      },
+      "body": {
+        "nothingFound": "لم يتم العثور على ملفات تورنت"
+      }
+    },
+    "lineChart": {
+      "title": "سرعة التنزيل الحالية",
+      "download": "تنزيل: {{download}}",
+      "upload": "رفع: {{upload}}",
+      "timeSpan": "قبل {{seconds}} ثانية",
+      "totalDownload": "تنزيل: {{download}}/ث",
+      "totalUpload": "رفع: {{upload}}/ث"
+    },
+    "errors": {
+      "noDownloadClients": {
+        "title": "لم يتم العثور على عملاء تنزيل مدعومين!",
+        "text": "أضف خدمة تنزيل لعرض التنزيلات الحالية"
+      }
+    }
+  }
+}

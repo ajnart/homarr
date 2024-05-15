@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "شريط البحث",
+    "description": "شريط بحث يسمح لك بالبحث في محرك البحث المخصص الخاص بك، وYouTube، والتكاملات المدعومة."
+  },
+  "input": {
+    "placeholder": "ابحث في الويب..."
+  },
+  "switched-to": "تم التبديل إلى",
+  "searchEngines": {
+    "search": {
+      "name": "الويب",
+      "description": "البحث..."
+    },
+    "youtube": {
+      "name": "يوتيوب",
+      "description": "البحث على يوتيوب"
+    },
+    "torrents": {
+      "name": "تورنت",
+      "description": "البحث عن تورنت"
+    },
+    "overseerr": {
+      "name": "Overseerr",
+      "description": "البحث عن الأفلام والمسلسلات على Overseerr"
+    }
+  },
+  "tip": "يمكنك تحديد شريط البحث باستخدام الاختصار ",
+  "switchedSearchEngine": "تم التبديل إلى البحث باستخدام {{searchEngine}}"
+}

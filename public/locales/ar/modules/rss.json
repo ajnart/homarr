@@ -1,0 +1,40 @@
+{
+  "descriptor": {
+    "name": "عنصر واجهة مستخدم لتغذية RSS",
+    "description": "يسمح عنصر واجهة مستخدم تغذية RSS بعرض تغذيات RSS على لوحة التحكم الخاصة بك.",
+    "settings": {
+      "title": "إعدادات عنصر واجهة مستخدم تغذية RSS",
+      "rssFeedUrl": {
+        "label": "عناوين URL لتغذية RSS",
+        "description": "عناوين URL للتغذيات RSS التي ترغب في عرضها."
+      },
+      "refreshInterval": {
+        "label": "فترة التحديث (بالدقائق)"
+      },
+      "dangerousAllowSanitizedItemContent": {
+        "label": "السماح بتنسيق HTML (خطير)",
+        "info": "السماح بتنسيق HTML من خارج يمكن أن يكون خطيرًا.<br/>يرجى التأكد من أن التغذية من مصدر موثوق به."
+      },
+      "textLinesClamp": {
+        "label": "قيود الأسطر النصية"
+      },
+      "sortByPublishDateAscending": {
+        "label": "الترتيب حسب تاريخ النشر (تصاعدي)"
+      },
+      "sortPostsWithoutPublishDateToTheTop": {
+        "label": "وضع المشاركات بدون تاريخ نشر في الأعلى"
+      },
+      "maximumAmountOfPosts": {
+        "label": "الحد الأقصى لعدد المشاركات"
+      }
+    },
+    "card": {
+      "errors": {
+        "general": {
+          "title": "تعذر استرداد تغذية RSS",
+          "text": "كان هناك مشكلة في الوصول إلى تغذية RSS. تأكد من أنك قمت بتكوين تغذية RSS بشكل صحيح باستخدام عنوان URL صالح. يجب أن تتطابق العناوين URL مع المواصفات الرسمية. بعد تحديث التغذية، قد تحتاج إلى تحديث لوحة التحكم."
+        }
+      }
+    }
+  }
+}

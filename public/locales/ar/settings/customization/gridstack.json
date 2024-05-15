@@ -1,0 +1,10 @@
+{
+  "columnsCount": {
+    "labelPreset": "عناصر {{size}}",
+    "descriptionPreset": "عدد العناصر عندما يكون عرض الشاشة أقل من {{pixels}} بكسل",
+    "descriptionExceedsPreset": "عدد العناصر عندما يتجاوز حجم الشاشة {{pixels}} بكسل"
+  },
+  "unsavedChanges": " لديك تغييرات غير محفظة. انقر فوق الزر تطبيق التغييرات أدناه للتطبيق والحفظ.",
+  "applyChanges": "تطبيق التغييرات",
+  "defaultValues": "القيم الافتراضية"
+}

@@ -1,0 +1,14 @@
+{
+  "card": {
+    "title": "آه ، حدث خطأ!",
+    "buttons": {
+      "details": "تفاصيل",
+      "tryAgain": "حاول مرة أخرى"
+    }
+  },
+  "modal": {
+    "text": "",
+    "label": "خطأك",
+    "reportButton": "الإبلاغ عن هذا الخطأ"
+  }
+}

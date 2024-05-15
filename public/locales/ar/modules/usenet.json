@@ -1,0 +1,49 @@
+{
+  "descriptor": {
+    "name": "Usenet",
+    "description": "يتيح لك عرض وإدارة مثيل Usenet الخاص بك."
+  },
+  "card": {
+    "errors": {
+      "noDownloadClients": {
+        "title": "لم يتم العثور على عملاء التنزيل المدعومين!",
+        "text": "أضف عميل تنزيل Usenet مدعومًا لعرض التنزيلات الحالية الخاصة بك"
+      }
+    }
+  },
+  "tabs": {
+    "queue": "قائمة الانتظار",
+    "history": "السجل"
+  },
+  "info": {
+    "sizeLeft": "الحجم المتبقي",
+    "paused": "متوقف"
+  },
+  "queue": {
+    "header": {
+      "name": "الاسم",
+      "size": "الحجم",
+      "eta": "الوقت المتوقع",
+      "progress": "التقدم"
+    },
+    "empty": "فارغ",
+    "error": {
+      "title": "خطأ",
+      "message": "حدث خطأ"
+    },
+    "paused": "متوقف"
+  },
+  "history": {
+    "header": {
+      "name": "الاسم",
+      "size": "الحجم",
+      "duration": "المدة"
+    },
+    "empty": "فارغ",
+    "error": {
+      "title": "خطأ",
+      "message": "حدث خطأ أثناء تحميل السجل"
+    },
+    "paused": "متوقف"
+  }
+}

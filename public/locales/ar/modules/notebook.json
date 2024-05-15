@@ -1,0 +1,59 @@
+{
+	"descriptor": {
+		"name": "Notebook",
+		"description": "ويدجت تفاعلي يعتمد على تنسيق Markdown لتسجيل الملاحظات!",
+		"settings": {
+			"title": "إعدادات ويدجت المفكرة",
+			"showToolbar": {
+				"label": "عرض شريط الأدوات لمساعدتك في كتابة Markdown"
+			},
+			"allowReadOnlyCheck": {
+				"label": "السماح بالتحقق في وضع القراءة فقط"
+			},
+			"content": {
+				"label": "محتوى المفكرة"
+			}
+		}
+	},
+	"card": {
+		"controls": {
+			"bold": "عرض",
+			"italic": "مائل",
+			"strikethrough": "خط منخرط",
+			"underline": "تحت الخط",
+			"colorText": "تلوين النص",
+			"colorHighlight": "تلوين النص المميز",
+			"code": "شيفرة",
+			"clear": "مسح التنسيق",
+			"heading": "عنوان {{level}}",
+			"align": "محاذاة النص: {{position}}",
+			"blockquote": "اقتباس",
+			"horizontalLine": "خط أفقي",
+			"bulletList": "قائمة نقطية",
+			"orderedList": "قائمة مرقمة",
+			"checkList": "قائمة مراقبة",
+			"increaseIndent": "زيادة المسافة البادئة",
+			"decreaseIndent": "تقليل المسافة البادئة",
+			"link": "رابط",
+			"unlink": "إزالة الرابط",
+			"image": "تضمين صورة",
+			"addTable": "إضافة جدول",
+			"deleteTable": "حذف الجدول",
+			"colorCell": "تلوين الخلية",
+			"mergeCell": "تبديل دمج الخلية",
+			"addColumnLeft": "إضافة عمود قبل",
+			"addColumnRight": "إضافة عمود بعد",
+			"deleteColumn": "حذف العمود",
+			"addRowTop": "إضافة صف قبل",
+			"addRowBelow": "إضافة صف بعد",
+			"deleteRow": "حذف الصف"
+		},
+		"modals": {
+			"clearColor": "مسح اللون",
+			"source": "المصدر",
+			"widthPlaceholder": "القيمة في % أو بكسل",
+			"columns": "الأعمدة",
+			"rows": "الصفوف"
+		}
+	}
+}
