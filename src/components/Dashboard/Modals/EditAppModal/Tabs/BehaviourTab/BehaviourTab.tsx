@@ -31,12 +31,6 @@ export const BehaviourTab = ({ form }: BehaviourTabProps) => {
           styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
           {...form.getInputProps('behaviour.isOpeningNewTab', { type: 'checkbox' })}
         />
-        <Switch
-          label={t('behaviour.noReferrer.label')}
-          description={t('behaviour.noReferrer.description')}
-          styles={{ label: { fontWeight: 500 }, description: { marginTop: 0 } }}
-          {...form.getInputProps('behaviour.noReferrer', { type: 'checkbox' })}
-        />
         <Stack spacing="0.25rem">
           <Group>
             <Text size="0.875rem" weight={500}>

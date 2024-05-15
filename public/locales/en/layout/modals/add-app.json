@@ -39,11 +39,7 @@
 		"isOpeningNewTab": {
 			"label": "Open in new tab",
 			"description": "Open the app in a new tab instead of the current one."
-		},
-		"noReferrer": {
-			"label": "No Referrer",
-			"description": "Omits the referrer header from request."
-		},
+		},	
 		"tooltipDescription": {
 			"label": "Application Description",
 			"description": "The text you enter will appear when hovering over your app.\r\nUse this to give users more details about your app or leave empty to have nothing."
