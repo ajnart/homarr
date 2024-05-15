@@ -1,0 +1,22 @@
+{
+    "errors": {
+        "default": "هذا الحقل غير صالح",
+        "required": "هذا الحقل مطلوب",
+        "string": {
+            "startsWith": "يجب أن يبدأ هذا الحقل بـ {{startsWith}}",
+            "endsWith": "يجب أن ينتهي هذا الحقل بـ {{endsWith}}",
+            "includes": "يجب أن يتضمن هذا الحقل {{includes}}"
+        },
+        "tooSmall": {
+            "string": "يجب أن يكون طول هذا الحقل على الأقل {{minimum}} حرف",
+            "number": "يجب أن يكون هذا الحقل أكبر من أو يساوي {{minimum}}"
+        },
+        "tooBig": {
+            "string": "يجب أن يكون طول هذا الحقل على الأكثر {{maximum}} حرف",
+            "number": "يجب أن يكون هذا الحقل أقل من أو يساوي {{maximum}}"
+        },
+        "custom": {
+            "passwordMatch": "يجب أن تتطابق كلمات المرور"
+        }
+    }
+}

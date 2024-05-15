@@ -1,0 +1,29 @@
+{
+    "metaTitle": "تخصيص لوحة {{name}}",
+    "pageTitle": "تخصيص لوحة {{name}}",
+    "backToBoard": "العودة إلى اللوحة",
+    "settings": {
+        "appearance": {
+            "primaryColor": "اللون الأساسي",
+            "secondaryColor": "اللون الثانوي"
+        }
+    },
+    "save": {
+        "button": "حفظ التغييرات",
+        "note": "تنبيه ، لديك تغييرات غير محفوظة!"
+    },
+    "notifications": {
+        "pending": {
+            "title": "جاري حفظ التخصيص",
+            "message": "الرجاء الانتظار أثناء حفظ التخصيص الخاص بك"
+        },
+        "success": {
+            "title": "تم حفظ التخصيص",
+            "message": "تم حفظ تخصيصك بنجاح"
+        },
+        "error": {
+            "title": "خطأ",
+            "message": "تعذر حفظ التغييرات"
+        }
+    }
+}

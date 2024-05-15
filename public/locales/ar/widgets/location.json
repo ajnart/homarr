@@ -1,0 +1,37 @@
+{
+  "form": {
+    "field": {
+      "query": "المدينة / الرمز البريدي",
+      "latitude": "خط العرض",
+      "longitude": "خط الطول"
+    },
+    "button": {
+      "search": {
+        "label": "بحث",
+        "disabledTooltip": "الرجاء اختيار مدينة / رمز بريدي أولاً"
+      }
+    },
+    "empty": "موقع غير معروف"
+  },
+  "modal": {
+    "title": "اختر موقع",
+    "table": {
+      "header": {
+        "city": "مدينة",
+        "country": "بلد",
+        "coordinates": "إحداثيات",
+        "population": "عدد السكان"
+      },
+      "action": {
+        "select": "اختر {{city}}, {{countryCode}}"
+      },
+      "population": {
+        "fallback": "غير معروف"
+      },
+      "nothingFound": {
+        "title": "لم يتم العثور على شيء",
+        "description": "الرجاء تجربة مصطل بحث آخر"
+      }
+    }
+  }
+}

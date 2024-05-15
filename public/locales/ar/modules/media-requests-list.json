@@ -1,0 +1,35 @@
+{
+  "descriptor": {
+    "name": "طلبات الوسائط",
+    "description": "رؤية قائمة بجميع طلبات الوسائط من Overseerr أو Jellyseerr الخاص بك",
+    "settings": {
+      "title": "قائمة طلبات الوسائط",
+      "replaceLinksWithExternalHost": {
+        "label": "استبدال الروابط بمضيف خارجي"
+      },
+      "openInNewTab": {
+        "label": "فتح الروابط في علامة تبويب جديدة"
+      }
+    }
+  },
+  "noRequests": "لم يتم العثور على طلبات. يرجى التأكد من تكوين تطبيقاتك بشكل صحيح.",
+  "state": {
+    "approved": "تمت الموافقة",
+    "pendingApproval": "في انتظار الموافقة",
+    "declined": "تم الرفض",
+    "available": "متاح",
+    "partial": "جزئي"
+  },
+  "tooltips": {
+    "approve": "الموافقة على الطلبات",
+    "decline": "رفض الطلبات",
+    "approving": "جاري الموافقة على الطلب..."
+  },
+  "mutation": {
+    "approving": "جارٍ الموافقة",
+    "declining": "جارٍ الرفض",
+    "request": "الطلب...",
+    "approved": "تمت الموافقة على الطلب!",
+    "declined": "تم رفض الطلب!"
+  }
+}

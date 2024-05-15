@@ -1,0 +1,45 @@
+{
+  "descriptor": {
+    "name": "إطار مضمن",
+    "description": "تضمين أي محتوى من الإنترنت. قد تقيد بعض المواقع الوصول.",
+    "settings": {
+      "title": "إعدادات الإطار المضمن",
+      "embedUrl": {
+        "label": "رابط التضمين"
+      },
+      "allowFullScreen": {
+        "label": "السماح بالشاشة الكاملة"
+      },
+      "allowTransparency": {
+        "label": "السماح بالشفافية"
+      },
+      "allowScrolling": {
+        "label": "السماح بالتمرير"
+      },
+      "allowPayment": {
+        "label": "السماح بالدفع"
+      },
+      "allowAutoPlay": {
+        "label": "السماح بالتشغيل التلقائي"
+      },
+      "allowMicrophone": {
+        "label": "السماح بالميكروفون"
+      },
+      "allowCamera": {
+        "label": "السماح بالكاميرا"
+      },
+      "allowGeolocation": {
+        "label": "السماح بتحديد المواقع الجغرافية"
+      }
+    }
+  },
+  "card": {
+    "errors": {
+      "noUrl": {
+        "title": "رابط غير صالح",
+        "text": "تأكد من إدخال عنوان صالح في إعدادات الويدجت الخاص بك"
+      },
+      "browserSupport": "متصفحك لا يدعم الإطارات. يرجى تحديث متصفحك."
+    }
+  }
+}

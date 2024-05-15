@@ -1,0 +1,43 @@
+{
+  "descriptor": {
+    "name": "الطقس",
+    "description": "يعرض معلومات الطقس الحالية لموقع محدد.",
+    "settings": {
+      "title": "إعدادات ويدجت الطقس",
+      "displayInFahrenheit": {
+        "label": "عرض بالفهرنهايت"
+      },
+      "displayCityName": {
+        "label": "عرض اسم المدينة"
+      },
+      "displayWeekly": {
+        "label": "عرض التوقعات الأسبوعية"
+      },
+      "forecastDays": {
+        "label": "أيام العرض"
+      },
+      "location": {
+        "label": "موقع الطقس"
+      }
+    }
+  },
+  "card": {
+    "weatherDescriptions": {
+      "clear": "صافٍ",
+      "mainlyClear": "صافٍ بشكل رئيسي",
+      "fog": "ضباب",
+      "drizzle": "رذاذ",
+      "freezingDrizzle": "رذاذ متجمد",
+      "rain": "مطر",
+      "freezingRain": "مطر متجمد",
+      "snowFall": "تساقط الثلوج",
+      "snowGrains": "بلورات الثلوج",
+      "rainShowers": "زخات مطرية",
+      "snowShowers": "زخات ثلجية",
+      "thunderstorm": "عاصفة رعدية",
+      "thunderstormWithHail": "عاصفة رعدية مع برد",
+      "unknown": "غير معروف"
+    }
+  },
+  "error": "حدث خطأ"
+}

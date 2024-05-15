@@ -1,0 +1,30 @@
+{
+  "descriptor": {
+    "name": "Overseerr",
+    "description": "يسمح لك بالبحث وإضافة الوسائط من Overseerr أو Jellyseerr."
+  },
+  "popup": {
+    "item": {
+      "buttons": {
+        "askFor": "طلب {{title}}",
+        "cancel": "إلغاء",
+        "request": "طلب"
+      },
+      "alerts": {
+        "automaticApproval": {
+          "title": "استخدام مفتاح API",
+          "text": "سيتم الموافقة على هذا الطلب تلقائيًا"
+        }
+      }
+    },
+    "seasonSelector": {
+      "caption": "حدد المواسم التي ترغب في تنزيلها",
+      "table": {
+        "header": {
+          "season": "الموسم",
+          "numberOfEpisodes": "عدد الحلقات"
+        }
+      }
+    }
+  }
+}

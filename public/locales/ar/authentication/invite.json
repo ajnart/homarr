@@ -1,0 +1,35 @@
+{
+    "metaTitle": "إنشاء حساب",
+    "title": "إنشاء حساب",
+    "text": "يرجى تحديد بيانات اعتمادك أدناه",
+    "form": {
+        "fields": {
+            "username": {
+                "label": "اسم المستخدم"
+            },
+            "password": {
+                "label": "كلمة السر"
+            },
+            "passwordConfirmation": {
+                "label": "تأكيد كلمة المرور"
+            }
+        },
+        "buttons": {
+            "submit": "إنشاء حساب"
+        }
+    },
+    "notifications": {
+        "loading": {
+            "title": "جاري إنشاء الحساب",
+            "text": "الرجاء الانتظار"
+        },
+        "success": {
+            "title": "تم إنشاء الحساب",
+            "text": "تم إنشاء حسابك بنجاح"
+        },
+        "error": {
+            "title": "خطأ",
+            "text": "حدث خطأ ما ، حصلنا على الخطأ التالي: {{error}}"
+        }
+    }
+}

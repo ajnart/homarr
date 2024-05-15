@@ -1,0 +1,16 @@
+{
+  "descriptor": {
+    "name": "تشغيل الأتمتة في Home Assistant",
+    "description": "تنفيذ أتمتة",
+    "settings": {
+      "title": "تنفيذ أتمتة",
+      "automationId": {
+        "label": "معرف الأتمتة",
+        "info": "معرف الأتمتة الفريد الخاص بك. يبدأ دائمًا بـ automation.XXXXX."
+      },
+      "displayName": {
+        "label": "اسم العرض"
+      }
+    }
+  }
+}

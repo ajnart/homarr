@@ -1,0 +1,83 @@
+{
+  "descriptor": {
+    "name": "دوكر",
+    "description": "يتيح لك رؤية وإدارة جميع حاويات Docker بسهولة."
+  },
+  "search": {
+    "placeholder": "البحث حسب اسم الحاوية أو الصورة"
+  },
+  "table": {
+    "header": {
+      "name": "الاسم",
+      "image": "الصورة",
+      "ports": "المنافذ",
+      "state": "الحالة"
+    },
+    "body": {
+      "portCollapse": "{{ports}} أكثر"
+    },
+    "states": {
+      "running": "تشغيل",
+      "created": "تم الإنشاء",
+      "stopped": "توقف",
+      "unknown": "غير معروف"
+    }
+  },
+  "actionBar": {
+    "addService": {
+      "title": "إضافة تطبيق",
+      "message": "إضافة تطبيق إلى Homarr"
+    },
+    "restart": {
+      "title": "إعادة التشغيل"
+    },
+    "stop": {
+      "title": "إيقاف"
+    },
+    "start": {
+      "title": "تشغيل"
+    },
+    "refreshData": {
+      "title": "تحديث البيانات"
+    },
+    "remove": {
+      "title": "إزالة"
+    },
+    "addToHomarr": {
+      "title": "إضافة إلى Homarr"
+    }
+  },
+  "actions": {
+    "start": {
+      "start": "جارٍ التشغيل",
+      "end": "تم التشغيل"
+    },
+    "stop": {
+      "start": "جارٍ الإيقاف",
+      "end": "تم الإيقاف"
+    },
+    "restart": {
+      "start": "جاري إعادة التشغيل",
+      "end": "تمت إعادة التشغيل"
+    },
+    "remove": {
+      "start": "جارٍ الإزالة",
+      "end": "تمت الإزالة"
+    }
+  },
+  "errors": {
+    "integrationFailed": {
+      "title": "فشل تكامل Docker",
+      "message": "هل نسيت تثبيت مأخذ Docker؟"
+    },
+    "unknownError": {
+      "title": "حدث خطأ غير معروف"
+    },
+    "oneServiceAtATime": {
+      "title": "يرجى إضافة تطبيق أو خدمة واحدة في كل مرة!"
+    }
+  },
+  "actionIcon": {
+    "tooltip": "دوكر"
+  }
+}

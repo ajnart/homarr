@@ -1,0 +1,27 @@
+{
+    "search": {
+        "label": "البحث",
+        "engines": {
+            "web": "البحث عن {{query}} على الويب",
+            "youtube": "البحث عن {{query}} على YouTube",
+            "torrent": "البحث عن {{query}} تورنت",
+            "movie": "البحث عن {{query}} على {{app}}"
+        }
+    },
+    "actions": {
+        "avatar": {
+            "switchTheme": "تغيير السمة",
+            "preferences": "تفضيلات المستخدم",
+            "defaultBoard": "لوحة التحكم الافتراضية",
+            "manage": "إدارة",
+            "logout": "تسجيل الخروج من {{username}}",
+            "login": "تسجيل الدخول"
+        }
+    },
+    "modals": {
+        "movie": {
+            "title": "",
+            "topResults": "أفضل {{count}} نتائج لـ <b>{{search}}</b>."
+        }
+    }
+}

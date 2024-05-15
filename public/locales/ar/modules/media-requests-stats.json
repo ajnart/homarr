@@ -1,0 +1,27 @@
+{
+  "descriptor": {
+    "name": "إحصائيات طلبات الوسائط",
+    "description": "إحصائيات حول طلبات الوسائط الخاصة بك",
+    "settings": {
+      "title": "إحصائيات طلبات الوسائط",
+      "replaceLinksWithExternalHost": {
+        "label": "استبدال الروابط بمضيف خارجي"
+      },
+      "openInNewTab": {
+        "label": "فتح الروابط في علامة تبويب جديدة"
+      }
+    }
+  },
+  "mediaStats": {
+    "title": "إحصائيات الوسائط",
+    "pending": "الموافقات المعلقة",
+    "tvRequests": "طلبات البرامج التلفزيونية",
+    "movieRequests": "طلبات الأفلام",
+    "approved": "تمت الموافقة عليها بالفعل",
+    "totalRequests": "الإجمالي"
+  },
+  "userStats": {
+    "title": "أعلى المستخدمين",
+    "requests": "الطلبات: {{number}}"
+  }
+}

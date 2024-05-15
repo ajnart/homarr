@@ -1,0 +1,30 @@
+{
+	"description": "Homarr هو لوحة تحكم <strong>أنيقة</strong> و <strong>عصرية</strong> تضع جميع تطبيقاتك وخدماتك بين يديك. مع Homarr، يمكنك الوصول إلى كل شيء والتحكم فيه في مكان واحد مريح. يتكامل Homarr بسلاسة مع التطبيقات التي قمت بإضافتها، مما يوفر لك معلومات قيمة ويمنحك السيطرة الكاملة. التثبيت سهل للغاية، ويدعم Homarr مجموعة واسعة من طرق النشر.",
+	"addToDashboard": "أضف إلى لوحة التحكم",
+	"tip": "التعديل يشير إلى مفتاح التعديل الخاص بك، وهو مفتاح Ctrl و Command/Super/Windows",
+	"key": "مفتاح الاختصار",
+	"action": "الإجراء",
+	"keybinds": "مفاتيح الاختصار",
+	"translators": "المترجمون ({{count}})",
+	"translatorsDescription": "شكرًا لهؤلاء الأشخاص، Homarr متاح بـ {{languages}} لغات! هل ترغب في المساعدة في ترجمة Homarr إلى لغتك؟ اقرأ كيف يمكنك فعل ذلك <a>هنا</a>.",
+	"contributors": "المساهمون ({{count}})",
+	"contributorsDescription": "هؤلاء الأشخاص قاموا ببناء الشيفرة التي تجعل homarr يعمل! هل ترغب في المساعدة في بناء Homarr؟ اقرأ كيفية القيام بذلك <a>هنا</a>",
+	"actions": {
+		"toggleTheme": "تبديل وضع السمة (فاتح/داكن)",
+		"focusSearchBar": "التركيز على شريط البحث",
+		"openDocker": "فتح ويدج دوكر",
+		"toggleEdit": "تبديل وضع التحرير"
+	},
+	"metrics": {
+		"configurationSchemaVersion": "إصدار مخطط التكوين",
+		"version": "الإصدار",
+		"nodeEnvironment": "بيئة Node",
+		"i18n": "المساحات الفرعية المترجمة المحملة",
+		"locales": "المحليات المكونة لـ I18n",
+		"experimental_disableEditMode": "<b>تجريبي</b>: تعطيل وضع التحرير"
+	},
+	"version": {
+		"new": "جديد: {{newVersion}}",
+		"dropdown": "الإصدار {{newVersion}} متاح الآن! الإصدار الحالي هو {{currentVersion}}"
+	}
+}

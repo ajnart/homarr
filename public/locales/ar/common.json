@@ -1,0 +1,58 @@
+{
+  "save": "حفظ",
+  "apply": "تطبيق",
+  "insert": "إدراج",
+  "about": "حول",
+  "cancel": "إلغاء",
+  "close": "إغلاق",
+  "back": "عودة",
+  "delete": "حذف",
+  "ok": "موافق",
+  "edit": "تعديل",
+  "next": "التالي",
+  "previous": "السابق",
+  "confirm": "تأكيد",
+  "enabled": "مفعل",
+  "duplicate": "مكرر",
+  "disabled": "معطل",
+  "enableAll": "تفعيل الكل",
+  "disableAll": "تعطيل الكل",
+  "version": "الإصدار",
+  "changePosition": "تغيير الموقع",
+  "remove": "إزالة",
+  "removeConfirm": "هل أنت متأكد أنك تريد إزالة {{item}}؟",
+  "createItem": "+ إنشاء {{item}}",
+  "sections": {
+    "settings": "إعدادات",
+    "dangerZone": "منطقة الخطر"
+  },
+  "secrets": {
+    "apiKey": "مفتاح API",
+    "username": "اسم المستخدم",
+    "password": "كلمة السر"
+  },
+  "tip": "نصيحة: ",
+  "time": {
+    "seconds": "ثواني",
+    "minutes": "دقائق",
+    "hours": "ساعات"
+  },
+  "loading": "جار التحميل...",
+  "breakPoints": {
+    "small": "صغير",
+    "medium": "متوسط",
+    "large": "كبير"
+  },
+  "seeMore": "عرض المزيد...",
+  "position": {
+    "left": "يسار",
+    "center": "وسط",
+    "right": "يمين"
+  },
+  "attributes": {
+    "width": "العرض",
+    "height": "الارتفاع"
+  },
+  "public": "عام",
+  "restricted": "مقيّد"
+}

@@ -1,0 +1,55 @@
+{
+  "metaTitle": "المستخدم {{username}}",
+  "back": "العودة إلى القائمة",
+  "sections": {
+    "general": {
+      "title": "عام",
+      "inputs": {
+        "username": {
+          "label": "اسم المستخدم"
+        },
+        "eMail": {
+          "label": "البريد الإلكتروني"
+        }
+      }
+    },
+    "security": {
+      "title": "الأمان",
+      "inputs": {
+        "password": {
+          "label": "كلمة المرور"
+        },
+        "terminateExistingSessions": {
+          "label": "إنهاء الجلسات الحالية",
+          "description": "سيتم إنهاء جميع الجلسات الحالية بعد تحديث كلمة المرور."
+        },
+        "confirm": {
+          "label": "تحديث كلمة المرور",
+          "description": "تحديث كلمة المرور الخاصة بالمستخدم."
+        }
+      }
+    },
+    "roles": {
+      "title": "الأدوار",
+      "currentRole": "الدور الحالي",
+      "badges": {
+        "owner": "مالك",
+        "admin": "مدير",
+        "normal": "عادي"
+      }
+    },
+    "deletion": {
+      "title": "حذف الحساب",
+      "inputs": {
+        "confirmUsername": {
+          "label": "تأكيد اسم المستخدم",
+          "description": "الرجاء إدخال اسم المستخدم الخاص بالحساب لتأكيد الحذف."
+        },
+        "confirm": {
+          "label": "حذف الحساب",
+          "description": "حذف الحساب الخاص بالمستخدم."
+        }
+      }
+    }
+  }
+}

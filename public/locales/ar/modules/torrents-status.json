@@ -1,0 +1,122 @@
+{
+  "descriptor": {
+    "name": "Torrent",
+    "description": "يعرض قائمة من ملفات التورنت من عملاء التورنت المدعومة.",
+    "settings": {
+      "title": "إعدادات عنصر واجهة تورنت",
+      "refreshInterval": {
+        "label": "فاصل تحديث (بالثواني)"
+      },
+      "displayCompletedTorrents": {
+        "label": "عرض ملفات التورنت المكتملة"
+      },
+      "displayActiveTorrents": {
+        "label": "عرض ملفات التورنت النشطة"
+      },
+      "speedLimitOfActiveTorrents": {
+        "label": "سرعة الرفع لاعتبار ملف التورنت نشطًا (ك.ب/ثانية)"
+      },
+      "displayStaleTorrents": {
+        "label": "عرض ملفات التورنت القديمة"
+      },
+      "labelFilterIsWhitelist": {
+        "label": "قائمة العلامات هي قائمة بيضاء (بدلاً من قائمة سوداء)"
+      },
+      "labelFilter": {
+        "label": "قائمة العلامات",
+        "description": "عند التحقق من 'هي قائمة بيضاء'، ستعمل كقائمة بيضاء. إذا لم يتم التحقق، فهي قائمة سوداء. لن تفعل شيئًا عندما تكون فارغة"
+      },
+      "displayRatioWithFilter": {
+        "label": "عرض نسبة قائمة ملفات التورنت المصفاة",
+        "info": "إذا تم تعطيلها، سيتم عرض النسبة العامة فقط. ستستخدم النسبة العامة لا تزال العلامات إذا تم تعيينها"
+      },
+      "columnOrdering": {
+        "label": "تمكين إعادة ترتيب الأعمدة"
+      },
+      "rowSorting": {
+        "label": "تمكين فرز الصفوف"
+      },
+      "columns": {
+        "label": "حدد الأعمدة المراد عرضها",
+        "data": {
+          "date": "تاريخ الإضافة",
+          "down": "تحميل",
+          "up": "رفع",
+          "eta": "ETA",
+          "progress": "التقدم"
+        }
+      },
+      "nameColumnSize": {
+        "label": "تغيير حجم عمود الاسم"
+      }
+    }
+  },
+  "card": {
+    "footer": {
+      "error": "خطأ",
+      "lastUpdated": "آخر تحديث {{time}} مضت",
+      "ratioGlobal": "النسبة العامة",
+      "ratioWithFilter": "النسبة مع المصفاة"
+    },
+    "table": {
+      "header": {
+        "isCompleted": "التحميل",
+        "name": "الاسم",
+        "dateAdded": "تاريخ الإضافة",
+        "size": "الحجم",
+        "download": "تحميل",
+        "upload": "رفع",
+        "estimatedTimeOfArrival": "ETA",
+        "progress": "التقدم",
+        "totalUploaded": "الرفع الإجمالي",
+        "totalDownloaded": "التحميل الإجمالي",
+        "ratio": "النسبة",
+        "seeds": "البذور (متصلة)",
+        "peers": "الأقران (متصلة)",
+        "label": "العلامة",
+        "state": "الحالة",
+        "stateMessage": "رسالة الحالة"
+      },
+      "item": {
+        "text": "تم إدارتها بواسطة {{appName}}، نسبة النسبة {{ratio}}"
+      },
+      "body": {
+        "nothingFound": "لم يتم العثور على ملفات التورنت",
+        "filterHidingItems": "{{count}} إدخالات مخفية بواسطة مرشحاتك"
+      }
+    },
+    "lineChart": {
+      "title": "سرعة التنزيل الحالية",
+      "download": "تحميل: {{download}}",
+      "upload": "رفع: {{upload}}",
+      "timeSpan": "قبل {{seconds}} ثواني",
+      "totalDownload": "تحميل: {{download
+      }
+    }/ث","totalUpload": "رفع: {
+      {upload
+      }
+    }/ث"
+  },
+  "errors": {
+    "noDownloadClients": {
+      "title": "لم يتم العثور على عملاء التنزيل التورنت المدعومين!",
+      "text": "أضف عميل تنزيل تورنت مدعومًا لعرض التنزيلات الحالية الخاصة بك"
+    },
+    "generic": {
+      "title": "حدث خطأ غير متوقع",
+      "text": "تعذر التواصل مع عملاء التنزيل التورنت الخاصة بك. يرجى التحقق من تكوينك"
+    }
+  },
+  "popover": {
+    "introductionPrefix": "تم إدارتها بواسطة",
+    "metrics": {
+      "queuePosition": "موقف الانتظار - {{position}}",
+      "progress": "التقدم - {{progress}}%",
+      "totalSelectedSize": "المجموع - {{totalSize}}",
+      "state": "الحالة - {{state}}",
+      "ratio": "النسبة -",
+      "completed": "تم الاكتمال"
+    }
+  }
+}
+}

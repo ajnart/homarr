@@ -1,0 +1,28 @@
+{
+  "descriptor": {
+    "name": "ملخص حفرة DNS",
+    "description": "يعرض بيانات مهمة من PiHole أو AdGuard",
+    "settings": {
+      "title": "إعدادات ملخص حفرة DNS",
+      "usePiHoleColors": {
+        "label": "استخدم الألوان من PiHole"
+      },
+      "layout": {
+        "label": "التخطيط",
+        "data": {
+          "grid": "2 في 2",
+          "row": "أفقي",
+          "column": "عمودي"
+        }
+      }
+    }
+  },
+  "card": {
+    "metrics": {
+      "domainsOnAdlist": "مجالات في قوائم الحظر",
+      "queriesToday": "استعلامات اليوم",
+      "queriesBlockedTodayPercentage": "تم حظره اليوم",
+      "queriesBlockedToday": "تم حظره اليوم"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "navigation": {
+        "home": {
+            "title": "الصفحة الرئيسية"
+        },
+        "boards": {
+            "title": "اللوحات"
+        },
+        "users": {
+            "title": "المستخدمين",
+            "items": {
+                "manage": "إدارة",
+                "invites": "دعوات"
+            }
+        },
+        "help": {
+            "title": "المساعدة",
+            "items": {
+                "documentation": "الوثائق",
+                "report": "الإبلاغ عن مشكلة / خلل",
+                "discord": "Discord المجتمع",
+                "contribute": "المساهمة"
+            }
+        },
+        "tools": {
+            "title": "الأدوات",
+            "items": {
+                "docker": "دوكر",
+                "api": "API"
+            }
+        },
+        "about": {
+            "title": "حول"
+        }
+    }
+}

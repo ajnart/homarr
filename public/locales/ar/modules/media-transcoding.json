@@ -1,0 +1,96 @@
+{
+  "descriptor": {
+    "name": "Media Transcoding",
+    "description": "يعرض معلومات حول تحويل الوسائط",
+    "settings": {
+      "title": "إعدادات تحويل الوسائط",
+      "appId": {
+        "label": "حدد تطبيقًا"
+      },
+      "defaultView": {
+        "label": "العرض الافتراضي",
+        "data": {
+          "workers": "العمال",
+          "queue": "الطابور",
+          "statistics": "الإحصائيات"
+        }
+      },
+      "showHealthCheck": {
+        "label": "عرض مؤشر فحص الصحة"
+      },
+      "showHealthChecksInQueue": {
+        "label": "عرض فحوصات الصحة في الطابور"
+      },
+      "queuePageSize": {
+        "label": "طابور: عناصر لكل صفحة"
+      },
+      "showAppIcon": {
+        "label": "عرض أيقونة التطبيق في الزاوية السفلية اليمنى"
+      }
+    }
+  },
+  "noAppSelected": "يرجى تحديد تطبيق في إعدادات الويدجت",
+  "views": {
+    "workers": {
+      "table": {
+        "header": {
+          "name": "الملف",
+          "eta": "ETA",
+          "progress": "التقدم"
+        },
+        "empty": "فارغ",
+        "tooltip": {
+          "transcode": "تحويل",
+          "healthCheck": "فحص الصحة"
+        }
+      }
+    },
+    "queue": {
+      "table": {
+        "header": {
+          "name": "الملف",
+          "size": "الحجم"
+        },
+        "footer": {
+          "currentIndex": "{{start}}-{{end}} من {{total}}"
+        },
+        "empty": "فارغ",
+        "tooltip": {
+          "transcode": "تحويل",
+          "healthCheck": "فحص الصحة"
+        }
+      }
+    },
+    "statistics": {
+      "empty": "فارغ",
+      "box": {
+        "transcodes": "تحويلات: {{value}}",
+        "healthChecks": "فحوصات الصحة: {{value}}",
+        "files": "الملفات: {{value}}",
+        "spaceSaved": "تم حفظه: {{value}}"
+      },
+      "pies": {
+        "transcodes": "تحويلات",
+        "healthChecks": "فحوصات الصحة",
+        "videoCodecs": "الترميزات الفيديو",
+        "videoContainers": "حاويات الفيديو",
+        "videoResolutions": "الدقة"
+      }
+    }
+  },
+  "error": {
+    "title": "خطأ",
+    "message": "حدث خطأ أثناء جلب البيانات من Tdarr."
+  },
+  "tabs": {
+    "workers": "العمال",
+    "queue": "الطابور",
+    "statistics": "الإحصائيات"
+  },
+  "healthCheckStatus": {
+    "title": "فحص الصحة",
+    "queued": "في الانتظار",
+    "healthy": "صحي",
+    "unhealthy": "غير صحي"
+  }
+}

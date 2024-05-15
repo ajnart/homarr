@@ -1,0 +1,11 @@
+{
+  "descriptor": {
+    "name": "البحث",
+    "description": "يعرض مؤشر حالة اعتمادًا على رمز استجابة HTTP لعنوان URL معين."
+  },
+  "states": {
+    "online": "متصل {{response}}",
+    "offline": "غير متصل {{response}}",
+    "loading": "جاري التحميل..."
+  }
+}
