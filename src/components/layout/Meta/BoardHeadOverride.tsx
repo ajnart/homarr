@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 import { useConfigContext } from '~/config/provider';
 import { firstUpperCase } from '~/tools/shared/strings';
 
@@ -15,7 +14,7 @@ export const BoardHeadOverride = () => {
   return (
     <Head>
       <title>{title}</title>
-      <meta name="apple-mobile-web-app-title" content={title} />
+      <meta key="favicon" name="apple-mobile-web-app-title" content={title} />
 
       {faviconUrl && faviconUrl.length > 0 && (
         <>

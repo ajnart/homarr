@@ -7,7 +7,7 @@ export const CommonHead = () => {
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <link rel="shortcut icon" href="/imgs/favicon/favicon.svg" />
+      <link key="favicon" rel="shortcut icon" href="/imgs/favicon/favicon.svg" />
 
       <link crossOrigin="use-credentials" rel="manifest" href="/site.webmanifest" />
 
