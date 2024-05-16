@@ -19,6 +19,7 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "SKIP_ENV_VALIDATION=1 vitest",
+    "test:docker": "yarn run turbo build && yarn test:run && docker build . -t homarr:local-dev && docker run -p 7575:7575 --name homarr-dev homarr:local-dev",
     "test:ui": "SKIP_ENV_VALIDATION=1 vitest --ui",
     "test:run": "SKIP_ENV_VALIDATION=1 vitest run",
     "test:coverage": "SKIP_ENV_VALIDATION=1 vitest run --coverage",
