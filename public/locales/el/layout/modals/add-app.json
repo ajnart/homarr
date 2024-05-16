@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Εξωτερική διεύθυνση",
 			"description": "URL που θα ανοίγει όταν κάνετε κλικ στην εφαρμογή.",
-			"tooltip": ""
+			"tooltip": "Μπορείτε να χρησιμοποιήσετε μερικές μεταβλητές για να δημιουργήσετε δυναμικές διευθύνσεις:<br><br><b>[homarr_base]</b>: πλήρης διεύθυνση χωρίς τη πόρτα και τη διαδρομή. <i>(Παράδειγμα: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b>: πλήρες url βάσης συμπεριλαμβανομένου του τρέχοντος subdomain. <i>(Παράδειγμα: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>: domain χωρίς το subdomoain. <i>(Παράδειγμα: `homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Όλες αυτές οι μεταβλητές εξαρτώνται από το τρέχον url."
 		}
 	},
 	"behaviour": {
