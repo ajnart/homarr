@@ -14,5 +14,12 @@
         "text": "Si è verificato un problema di connessione ai vostri DNS hole. Verificate la vostra configurazione/integrazione."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
