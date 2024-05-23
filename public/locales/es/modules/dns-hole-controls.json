@@ -14,5 +14,12 @@
         "text": "Hubo un problema al conectarse a tus agujeros DNS. Verifica tu configuración/integración(es)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
