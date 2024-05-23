@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Ārējā adrese",
-			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes."
+			"description": "URL, kas tiks atvērts, noklikšķinot uz lietotnes.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

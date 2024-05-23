@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "外部網址",
-			"description": "點擊應用時開啟的網址"
+			"description": "點擊應用時開啟的網址",
+			"tooltip": "你可以使用變量來創建動態網址:<br><br><b>[homarr_base]</b>:不包括端口和路徑的完整網址。<i>(例如:'https://subdomain.homarr.dve')</i><br><b>[homarr_hostname]</b>:完整的基本網址，包括當前的子網域。<i>(例如:'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>:已過濾之網域。<i>(例如:'homarr.dev')</i><br><b>[homarr_protocol]</b>:<i>http/https</i><br><br>這些變量絕於當前網址"
 		}
 	},
 	"behaviour": {

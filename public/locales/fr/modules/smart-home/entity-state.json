@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Afficher le nom personnalisé",
-                "info": ""
+                "info": "Afficher le nom personnalisé de Home Assistant au lieu du nom d'affichage."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Activer/Désactiver l'entité",
+                "info": "Effectuez une activation/désactivation de Home Assistant sur l'entité lorsque vous cliquez dessus."
             }
         }
     }

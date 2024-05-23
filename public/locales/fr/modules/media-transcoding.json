@@ -5,92 +5,92 @@
     "settings": {
       "title": "Paramètres de transcodage des médias",
       "appId": {
-        "label": ""
+        "label": "Sélectionner une application"
       },
       "defaultView": {
-        "label": "",
+        "label": "Affichage par défaut",
         "data": {
-          "workers": "",
+          "workers": "Travailleurs",
           "queue": "File d'attente",
-          "statistics": ""
+          "statistics": "Statistiques"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Afficher l'indicateur de bilan de santé"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Afficher les diagnostics dans la file d'attente"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "File d'attente : éléments par page"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Afficher l'icône de l'application dans le coin inférieur droit"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Sélectionnez une application dans les paramètres du widget",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fichier",
           "eta": "ETA",
           "progress": "Progrès"
         },
         "empty": "Vide",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcodeur",
+          "healthCheck": "État des services"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fichier",
           "size": "Taille"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} de {{total}}"
         },
         "empty": "Vide",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcodeur",
+          "healthCheck": "État des services"
         }
       }
     },
     "statistics": {
       "empty": "Vide",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transcodes : {{value}}",
+        "healthChecks": "Diagnostiques complets : {{value}}",
+        "files": "Fichiers : {{value}}",
+        "spaceSaved": "Sauvegardé : {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Transcodeur",
+        "healthChecks": "Diagnostics",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Conteneurs",
+        "videoResolutions": "Résolutions"
       }
     }
   },
   "error": {
     "title": "Erreur",
-    "message": ""
+    "message": "Une erreur s'est produite lors de la récupération des données depuis Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Travailleurs",
     "queue": "File d'attente",
-    "statistics": ""
+    "statistics": "Statistiques"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "État des services",
+    "queued": "En file d’attente",
+    "healthy": "Sain",
+    "unhealthy": "Dysfonctionnement"
   }
 }

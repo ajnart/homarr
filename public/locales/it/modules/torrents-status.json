@@ -31,10 +31,10 @@
         "info": "Se disabilitato, verrà visualizzato solo il ratio globale. Il ratio globale utilizzerà comunque i label, se impostati"
       },
       "columnOrdering": {
-        "label": "Abilita il riordinamento delle colonne"
+        "label": "Abilita riordinamento colonne"
       },
       "rowSorting": {
-        "label": "Abilita l'ordinamento delle righe"
+        "label": "Abilita ordinamento righe"
       },
       "columns": {
         "label": "Seleziona colonne da visualizzare",

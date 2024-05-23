@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Zunanji naslov",
-			"description": "URL, ki se odpre ob kliku na aplikacijo."
+			"description": "URL, ki se odpre ob kliku na aplikacijo.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Extern adress",
-			"description": "URL som öppnas när du klickar på appen."
+			"description": "URL som öppnas när du klickar på appen.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

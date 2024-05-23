@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Harici adres",
-			"description": "Uygulamaya tıklandığında açılacak URL."
+			"description": "Uygulamaya tıklandığında açılacak URL.",
+			"tooltip": "Dinamik adresler oluşturmak için birkaç değişken kullanabilirsiniz:<br><br><b>[homarr_base]</b> : port ve yol hariç tam adres. <i>(Örnek: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : geçerli alt alan adını da içeren tam temel URL. <i>(Örnek: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : alt alan adının filtrelendiği alan adı. <i>(Örnek: `homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>Bu değişkenlerin tümü geçerli URL'ye bağlıdır."
 		}
 	},
 	"behaviour": {

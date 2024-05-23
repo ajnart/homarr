@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "외부 주소",
-			"description": "앱을 클릭할 때 열리는 URL입니다."
+			"description": "앱을 클릭할 때 열리는 URL입니다.",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {

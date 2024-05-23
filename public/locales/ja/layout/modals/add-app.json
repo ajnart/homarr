@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "外部アドレス",
-			"description": "アプリをクリックしたときに開くURL。"
+			"description": "アプリをクリックしたときに開くURL。",
+			"tooltip": ""
 		}
 	},
 	"behaviour": {
