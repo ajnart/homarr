@@ -14,5 +14,12 @@
         "text": "Došlo k problému s připojením k Vaší DNS Hole. Ověřte prosím svou konfiguraci."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
