@@ -14,5 +14,12 @@
         "text": "DNS 홀에 연결하는 동안 문제가 발생했습니다. 구성/연동을 확인하세요."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
