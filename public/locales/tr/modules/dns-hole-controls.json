@@ -14,5 +14,12 @@
         "text": "DNS Çözümleyici(leri)nize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyon(ları)nızı kontrol edin."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
