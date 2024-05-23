@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "הגדר את משך זמן ההשבתה",
+    "hours": "שעות",
+    "minutes": "דקות",
+    "unlimited": "להשאיר ריק ללא הגבלה",
+    "set": "הגדר"
   }
 }
