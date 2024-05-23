@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Nastavit dobu trvání deaktivace",
+    "hours": "Hodin",
+    "minutes": "Minut",
+    "unlimited": "ponechte prázdne pro neomezenou dobu",
+    "set": "Nastavit"
   }
 }
