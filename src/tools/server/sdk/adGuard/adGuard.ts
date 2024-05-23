@@ -59,8 +59,8 @@ export class AdGuard {
       .reduce((sum, filter) => filter.rules_count + sum, 0);
   }
 
-  async disable() {
-    await this.changeProtectionStatus(false);
+  async disable(duration: number) {
+    await this.changeProtectionStatus(false, duration);
   }
   async enable() {
     await this.changeProtectionStatus(true);
@@ -69,7 +69,7 @@ export class AdGuard {
   /**
    * Make a post request to the AdGuard API to change the protection status based on the value of newStatus
    * @param {boolean} newStatus - The new status of the protection
-   * @param {number} duration - Duration of a pause, in milliseconds. Enabled should be false.
+   * @param {number} duration - Duration of a pause, in seconds. Enabled should be false.
    * @returns {string} - The response from the AdGuard API
    */
   private async changeProtectionStatus(newStatus: boolean, duration = 0) {
@@ -78,7 +78,7 @@ export class AdGuard {
         `${this.baseHostName}/control/protection`,
         {
           enabled: newStatus,
-          duration,
+          duration: duration * 1000,
         },
         {
           headers: {
