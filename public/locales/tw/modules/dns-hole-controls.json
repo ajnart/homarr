@@ -14,5 +14,12 @@
         "text": "到 DNS 漏洞的聯結有問題，請驗證您的設定/集成配置"
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
