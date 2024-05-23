@@ -14,5 +14,12 @@
         "text": "Vyskytol sa problém s pripojením k vašim dieram DNS. Skontrolujte prosím svoju konfiguráciu/integráciu."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
