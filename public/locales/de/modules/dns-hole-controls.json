@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Deaktivierungsdauer festlegen",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "unlimited": "leer lassen für unbegrenzt",
+    "set": "Speichern"
   }
 }
