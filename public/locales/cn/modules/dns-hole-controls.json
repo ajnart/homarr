@@ -14,5 +14,12 @@
         "text": "到DNS漏洞的连接有问题。请验证您的配置/集成设置。"
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }
