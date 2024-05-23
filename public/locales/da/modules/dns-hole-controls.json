@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Indstil varighed af deaktivering",
+    "hours": "Timer",
+    "minutes": "Minutter",
+    "unlimited": "lad være tom for ubegrænset",
+    "set": "Indstil"
   }
 }
