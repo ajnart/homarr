@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Devre dışı bırakma süresini ayarla",
+    "hours": "Saat",
+    "minutes": "Dakika",
+    "unlimited": "sınırsız için boş bırakın",
+    "set": "Ayarla"
   }
 }
