@@ -1,4 +1,13 @@
-import { Anchor, Button, Card, Flex, Group, ScrollArea, Text } from '@mantine/core';
+import {
+  Anchor,
+  Button,
+  Card,
+  Flex,
+  Group,
+  ScrollArea,
+  Text,
+  useMantineTheme,
+} from '@mantine/core';
 import { IconCircleCheck, IconCircleX, IconReportSearch, IconTestPipe } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -12,7 +21,12 @@ import { IWidget } from '../widgets';
 const definition = defineWidget({
   id: 'indexer-manager',
   icon: IconReportSearch,
-  options: {},
+  options: {
+    openIndexerSiteInNewTab: {
+      type: 'switch',
+      defaultValue: true,
+    },
+  },
   gridstack: {
     minWidth: 1,
     minHeight: 1,
@@ -30,6 +44,7 @@ interface IndexerManagerWidgetProps {
 
 function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
   const { t } = useTranslation('modules/indexer-manager');
+  const mantineTheme = useMantineTheme();
   const { data: sessionData } = useSession();
   const { name: configName } = useConfigContext();
   const utils = api.useUtils();
@@ -63,7 +78,11 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         <ScrollArea h="100%">
           {indexersData.map((indexer: any) => (
             <Group key={indexer.id} position="apart">
-              <Anchor href={indexer.indexerUrls[0]} target="_blank">
+              <Anchor
+                href={indexer.indexerUrls[0]}
+                target={widget.properties.openIndexerSiteInNewTab ? '_blank' : '_self'}
+                c={mantineTheme.colorScheme === 'dark' ? 'gray.3' : 'gray.8'}
+              >
                 <Text color="dimmed" align="center" size="xs">
                   {indexer.name}
                 </Text>
