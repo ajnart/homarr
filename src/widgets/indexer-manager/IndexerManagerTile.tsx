@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Group, ScrollArea, Text } from '@mantine/core';
+import { Anchor, Button, Card, Flex, Group, ScrollArea, Text } from '@mantine/core';
 import { IconCircleCheck, IconCircleX, IconReportSearch, IconTestPipe } from '@tabler/icons-react';
 import { useSession } from 'next-auth/react';
 import { useTranslation } from 'next-i18next';
@@ -49,7 +49,7 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         configName: configName!,
       },
       {
-        staleTime: 1000 * 60 * 2,
+        refetchInterval: 1000 * 60 * 2,
       }
     );
   if (indexersLoading || !indexersData || statusesLoading) {
@@ -63,9 +63,11 @@ function IndexerManagerWidgetTile({ widget }: IndexerManagerWidgetProps) {
         <ScrollArea h="100%">
           {indexersData.map((indexer: any) => (
             <Group key={indexer.id} position="apart">
-              <Text color="dimmed" align="center" size="xs">
-                {indexer.name}
-              </Text>
+              <Anchor href={indexer.indexerUrls[0]} target="_blank">
+                <Text color="dimmed" align="center" size="xs">
+                  {indexer.name}
+                </Text>
+              </Anchor>
               {!statusesData.find((status: any) => indexer.id === status.indexerId) &&
               indexer.enable ? (
                 <IconCircleCheck color="#2ecc71" />
