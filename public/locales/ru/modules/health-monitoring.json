@@ -118,24 +118,24 @@
         "name": "Имя",
         "cpu": "ЦПУ",
         "ram": "ОЗУ",
-        "node": ""
+        "node": "Узел"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Узел",
+      "vmid": "VMID",
       "details": "Подробности",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Ядра - {{maxCpu}}",
+      "memSize": "Память - {{maxMem}}",
+      "memRatio": "Память - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Диск - {{maxDisk}}",
+      "diskRatio": "Диск - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Время работы - {{uptime}}",
+      "plugin": "Плагин",
+      "ha": "Состояние HA - {{haState}}",
+      "sharedStorage": "Общее хранилище",
+      "localStorage": "Локальное хранилище",
+      "na": "Н/Д"
     }
   }
 }
