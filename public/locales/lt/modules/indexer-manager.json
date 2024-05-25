@@ -3,7 +3,10 @@
         "name": "Indeksavimo tvarkytuvo būsena",
         "description": "Būsena apie jūsų indeksavimo įrenginius",
         "settings": {
-            "title": "Indeksavimo tvarkytuvo būsena"
+            "title": "Indeksavimo tvarkytuvo būsena",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {
