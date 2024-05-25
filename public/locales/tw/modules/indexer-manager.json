@@ -3,7 +3,10 @@
         "name": "索引管理器狀態",
         "description": "有關索引器的狀態",
         "settings": {
-            "title": "索引管理器狀態"
+            "title": "索引管理器狀態",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {
