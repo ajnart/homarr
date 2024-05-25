@@ -3,7 +3,10 @@
         "name": "Starea managerului de clasificare",
         "description": "Statistici despre clasificatoarele dvs.",
         "settings": {
-            "title": "Starea managerului de clasificare"
+            "title": "Starea managerului de clasificare",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {
