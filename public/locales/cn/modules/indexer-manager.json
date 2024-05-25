@@ -3,7 +3,10 @@
         "name": "索引器管理状态",
         "description": "有关索引器的状态",
         "settings": {
-            "title": "索引器管理状态"
+            "title": "索引器管理状态",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {
