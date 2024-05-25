@@ -5,7 +5,7 @@
         "settings": {
             "title": "סטטוס מנהל אינדקס",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "פתח את אתר האינדקס בכרטיסייה חדשה"
             }
         }
     },
