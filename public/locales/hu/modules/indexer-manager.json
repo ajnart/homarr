@@ -3,7 +3,10 @@
         "name": "Indexelő menedzser állapota",
         "description": "Az indexelők állapota",
         "settings": {
-            "title": "Indexelő menedzser állapota"
+            "title": "Indexelő menedzser állapota",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {
