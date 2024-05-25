@@ -5,7 +5,7 @@
         "settings": {
             "title": "Status des Indexer-Managers",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Indexer in neuem Tab öffnen"
             }
         }
     },
