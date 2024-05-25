@@ -20,6 +20,7 @@ export type ConfigAppType = Omit<AppType, 'integration'> & {
 interface AppBehaviourType {
   externalUrl: string;
   isOpeningNewTab: boolean;
+  noReferrer: boolean;
   tooltipDescription?: string;
 }
 

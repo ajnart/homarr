@@ -18,7 +18,8 @@
       "behaviour": {
         "onClickUrl": "https://homarr.dev",
         "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
+        "isOpeningNewTab": true,
+        "noReferrer": true
       },
       "network": {
         "enabledStatusChecker": false,

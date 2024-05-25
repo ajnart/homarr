@@ -90,6 +90,7 @@ export const AppTile = ({ className, app }: AppTileProps) => {
           style={{ pointerEvents: isEditMode ? 'none' : 'auto' }}
           component="a"
           href={href}
+          rel={app.behaviour.noReferrer ? 'noreferrer' : undefined}
           target={app.behaviour.isOpeningNewTab ? '_blank' : '_self'}
           className={`${classes.button} ${classes.base}`}
         >

@@ -21,6 +21,7 @@ export const generateDefaultApp = (wrapperId: string): AppType =>
     behaviour: {
       isOpeningNewTab: true,
       externalUrl: 'https://homarr.dev',
+      noReferrer: true,
     },
     area: {
       type: 'wrapper',
