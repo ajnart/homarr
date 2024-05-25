@@ -5,7 +5,7 @@
         "settings": {
             "title": "Indekserings manager status",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Åbn Indekseringswebsted I Nyt Faneblad"
             }
         }
     },
