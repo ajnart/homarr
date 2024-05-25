@@ -3,7 +3,10 @@
       "name": "Indexer manager status",
       "description": "Status about your indexers",
       "settings": {
-        "title": "Indexer manager status"
+        "title": "Indexer manager status",
+        "openIndexerSiteInNewTab": {
+          "label": "Open Indexer Site In New Tab"
+          }
         }
       },
       "indexersStatus": {
