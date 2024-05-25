@@ -5,7 +5,7 @@
         "settings": {
             "title": "Статус менеджера индексаторов",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Открыть сайт индексатора в новой вкладке"
             }
         }
     },
