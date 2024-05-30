@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Imposta tempo di disattivazione",
+    "hours": "Ore",
+    "minutes": "Minuti",
+    "unlimited": "Lasciare vuoto per nessun limite",
+    "set": "Imposta"
   }
 }
