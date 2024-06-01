@@ -5,7 +5,7 @@
         "settings": {
             "title": "索引管理器狀態",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "在新頁面中打開索引器站點"
             }
         }
     },
