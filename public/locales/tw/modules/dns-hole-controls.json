@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "設定禁用時長",
+    "hours": "時",
+    "minutes": "分",
+    "unlimited": "留空表示無限制",
+    "set": "設定"
   }
 }
