@@ -5,7 +5,7 @@
         "settings": {
             "title": "Statut du gestionnaire d’indexeur",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Ouvrir le site de l'indexeur dans un nouvel onglet"
             }
         }
     },
