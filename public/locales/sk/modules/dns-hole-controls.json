@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Nastavenie času trvania zákazu",
+    "hours": "Hodiny",
+    "minutes": "Minúty",
+    "unlimited": "nechajte prázdne pre neobmedzené",
+    "set": "Nastaviť"
   }
 }
