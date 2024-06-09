@@ -5,7 +5,7 @@
         "settings": {
             "title": "Stav správcu indexovača",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Otvorenie stránky Indexer v novej karte"
             }
         }
     },
