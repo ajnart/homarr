@@ -5,7 +5,7 @@
         "settings": {
             "title": "Κατάσταση διαχειριστή indexer",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Άνοιγμα του Indexer ιστότοπου σε νέα καρτέλα"
             }
         }
     },
