@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Ρύθμιση χρόνου απενεργοποίησης",
+    "hours": "Ώρες",
+    "minutes": "Λεπτά",
+    "unlimited": "αφήστε κενό για απεριόριστο",
+    "set": "Ορισμός"
   }
 }
