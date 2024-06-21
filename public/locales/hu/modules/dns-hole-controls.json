@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Letiltási időtartam beállítása",
+    "hours": "Óra",
+    "minutes": "Perc",
+    "unlimited": "a korlátlanhoz hagyja üresen",
+    "set": "Beállít"
   }
 }
