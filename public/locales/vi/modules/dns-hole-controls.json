@@ -14,5 +14,12 @@
         "text": "Đã xảy ra sự cố khi kết nối với (các) Lỗ DNS của bạn. Vui lòng xác minh (các) cấu hình/tích hợp của bạn."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

@@ -14,5 +14,12 @@
         "text": "Er is een probleem opgetreden bij de verbinding met uw DNS-gat(en). Controleer uw configuratie/integratie(s)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

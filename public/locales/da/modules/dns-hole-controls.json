@@ -14,5 +14,12 @@
         "text": "Der opstod et problem med at oprette forbindelse til dit/dine DNS-hul(ler). Bekræft venligst din(e) konfiguration(er)/integration(er)."
       }
     }
+  },
+  "durationModal": {
+    "title": "Indstil varighed af deaktivering",
+    "hours": "Timer",
+    "minutes": "Minutter",
+    "unlimited": "lad være tom for ubegrænset",
+    "set": "Indstil"
   }
 }

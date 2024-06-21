@@ -3,7 +3,10 @@
         "name": "Stato del gestore dell'indicizzatore",
         "description": "Stato dei tuoi indicizzatori",
         "settings": {
-            "title": "Stato del gestore dell'indicizzatore"
+            "title": "Stato del gestore dell'indicizzatore",
+            "openIndexerSiteInNewTab": {
+                "label": "Apri il sito dell'indexer in una nuova scheda"
+            }
         }
     },
     "indexersStatus": {

@@ -14,5 +14,12 @@
         "text": "Il y a un problème de connexion à votre/vos DNS hole(s). Veuillez vérifier votre/vos configuration/iintégration(s)."
       }
     }
+  },
+  "durationModal": {
+    "title": "Définir la durée de désactivation",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "unlimited": "laisser vide pour illimité",
+    "set": "Définir"
   }
 }

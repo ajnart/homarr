@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Внешний адрес",
 			"description": "URL-адрес, который будет открыт при нажатии на приложение.",
-			"tooltip": ""
+			"tooltip": "Вы можете использовать несколько переменных для создания динамических адресов:<br><br><b>[homarr_base]</b>: полный адрес без порта и пути. <i>(Пример: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b>: полный базовый URL, включая текущий поддомен. <i>(Пример: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>: домен без поддомена. <i>(Пример: 'homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Эти переменные зависят от текущего URL."
 		}
 	},
 	"behaviour": {

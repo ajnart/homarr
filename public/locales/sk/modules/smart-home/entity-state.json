@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Zobraziť priateľské meno",
-                "info": ""
+                "info": "Zobrazenie priateľského názvu z aplikácie Home Assistant namiesto zobrazenia názvu."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Prepínanie entít",
+                "info": "Vykonanie všeobecnej akcie prepínania asistenta Domov na entitu po kliknutí."
             }
         }
     }

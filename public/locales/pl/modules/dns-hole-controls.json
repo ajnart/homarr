@@ -14,5 +14,12 @@
         "text": "Wystąpił problem z połączeniem się z pułapką DNS. Sprawdź konfigurację/integrację."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

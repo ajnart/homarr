@@ -14,5 +14,12 @@
         "text": "Vyskytol sa problém s pripojením k vašim dieram DNS. Skontrolujte prosím svoju konfiguráciu/integráciu."
       }
     }
+  },
+  "durationModal": {
+    "title": "Nastavenie času trvania zákazu",
+    "hours": "Hodiny",
+    "minutes": "Minúty",
+    "unlimited": "nechajte prázdne pre neobmedzené",
+    "set": "Nastaviť"
   }
 }

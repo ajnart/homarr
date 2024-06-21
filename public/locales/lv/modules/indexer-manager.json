@@ -3,7 +3,10 @@
         "name": "Indeksētāja pārvaldnieka statuss",
         "description": "Statuss par jūsu indeksētājiem",
         "settings": {
-            "title": "Indeksētāja pārvaldnieka statuss"
+            "title": "Indeksētāja pārvaldnieka statuss",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {

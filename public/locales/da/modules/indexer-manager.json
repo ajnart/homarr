@@ -3,7 +3,10 @@
         "name": "Indekserings manager status",
         "description": "Status for dine indekser",
         "settings": {
-            "title": "Indekserings manager status"
+            "title": "Indekserings manager status",
+            "openIndexerSiteInNewTab": {
+                "label": "Åbn Indekseringswebsted I Nyt Faneblad"
+            }
         }
     },
     "indexersStatus": {

@@ -3,7 +3,10 @@
         "name": "Indekserings-behandler status",
         "description": "Status om indeksererne dine",
         "settings": {
-            "title": "Indekserings-behandler status"
+            "title": "Indekserings-behandler status",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {

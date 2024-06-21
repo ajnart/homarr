@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Транскодирование медиа",
+    "description": "Отображает информацию о транскодировании медиа",
     "settings": {
-      "title": "",
+      "title": "Настройки транскодирования медиа",
       "appId": {
-        "label": ""
+        "label": "Выберите приложение"
       },
       "defaultView": {
-        "label": "",
+        "label": "Вид по умолчанию",
         "data": {
-          "workers": "",
+          "workers": "Рабочие процессы",
           "queue": "Очередь",
-          "statistics": ""
+          "statistics": "Статистика"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Показать индикатор проверки состояния"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Показывать проверки состояния в очереди"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Очередь: элементов на странице"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Показывать иконку приложения в правом нижнем углу"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Пожалуйста, выберите приложение в настройках виджета",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Файл",
           "eta": "Осталось",
           "progress": "Прогресс"
         },
         "empty": "Пусто",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Транскодирование",
+          "healthCheck": "Проверка состояния"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Файл",
           "size": "Размер"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} из {{total}}"
         },
         "empty": "Пусто",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Транскодирование",
+          "healthCheck": "Проверка состояния"
         }
       }
     },
     "statistics": {
       "empty": "Пусто",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Транскодирование: {{value}}",
+        "healthChecks": "Проверки состояния: {{value}}",
+        "files": "Файлы: {{value}}",
+        "spaceSaved": "Сохранено: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Транскодирование",
+        "healthChecks": "Проверки состояния",
+        "videoCodecs": "Кодеки",
+        "videoContainers": "Контейнеры",
+        "videoResolutions": "Разрешения"
       }
     }
   },
   "error": {
     "title": "Ошибка",
-    "message": ""
+    "message": "Произошла ошибка при получении данных из Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Рабочие процессы",
     "queue": "Очередь",
-    "statistics": ""
+    "statistics": "Статистика"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Проверка состояния",
+    "queued": "Очередь",
+    "healthy": "Исправен",
+    "unhealthy": "Неисправен"
   }
 }

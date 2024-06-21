@@ -14,5 +14,12 @@
         "text": "Radās problēma, savienojoties ar jūsu DNS caurumu(-iem). Lūdzu, pārbaudiet savu konfigurāciju/integrāciju(-as)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

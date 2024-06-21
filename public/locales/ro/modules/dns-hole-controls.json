@@ -14,5 +14,12 @@
         "text": "A apărut o problemă la conectarea la hole-DNS. Vă rugăm să verificați configurația/integrarea (integrările)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

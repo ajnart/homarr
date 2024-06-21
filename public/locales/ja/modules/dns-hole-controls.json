@@ -14,5 +14,12 @@
         "text": "DNSホールへの接続に問題が発生しました。設定/統合を確認してください。"
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

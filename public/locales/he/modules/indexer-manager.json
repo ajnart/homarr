@@ -3,7 +3,10 @@
         "name": "סטטוס מנהל אינדקס",
         "description": "סטטוס לגבי האינדקסים שלך",
         "settings": {
-            "title": "סטטוס מנהל אינדקס"
+            "title": "סטטוס מנהל אינדקס",
+            "openIndexerSiteInNewTab": {
+                "label": "פתח את אתר האינדקס בכרטיסייה חדשה"
+            }
         }
     },
     "indexersStatus": {
