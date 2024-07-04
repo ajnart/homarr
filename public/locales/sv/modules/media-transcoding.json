@@ -72,15 +72,15 @@
       "pies": {
         "transcodes": "",
         "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "videoCodecs": "Codecs",
+        "videoContainers": "Containers",
+        "videoResolutions": "Upplösningar"
       }
     }
   },
   "error": {
     "title": "Fel",
-    "message": ""
+    "message": "Ett fel uppstod när data hämtades från Tdarr."
   },
   "tabs": {
     "workers": "",
@@ -89,8 +89,8 @@
   },
   "healthCheckStatus": {
     "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "queued": "Köad",
+    "healthy": "Hälsosam",
+    "unhealthy": "Ohälsosam"
   }
 }
