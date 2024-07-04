@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Ställ in inaktiveringstid",
+    "hours": "Timmar",
+    "minutes": "Minuter",
+    "unlimited": "lämna tomt för obegränsat",
+    "set": "Ställ in"
   }
 }
