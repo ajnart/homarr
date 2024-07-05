@@ -1,77 +1,77 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Omkodning av media",
+    "description": "Visar information om omkodning av media",
     "settings": {
-      "title": "",
+      "title": "Inställningar för omkodning av media",
       "appId": {
-        "label": ""
+        "label": "Välj en app"
       },
       "defaultView": {
-        "label": "",
+        "label": "Standardvy",
         "data": {
-          "workers": "",
+          "workers": "Arbetare",
           "queue": "Kö",
-          "statistics": ""
+          "statistics": "Statistik"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Visa hälsokontrollindikator"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Visa hälsokontroller i kö"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Kö: Objekt per sida"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Visa appikonen i det nedre högra hörnet"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Välj en app i widgetinställningarna",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fil",
           "eta": "Beräknad sluttid",
           "progress": "Förlopp"
         },
         "empty": "Tom",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Omkoda",
+          "healthCheck": "Hälsokontroll"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Fil",
           "size": "Storlek"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} av {{total}}"
         },
         "empty": "Tom",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Omkoda",
+          "healthCheck": "Hälsokontroll"
         }
       }
     },
     "statistics": {
       "empty": "Tom",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Omkodar: {{value}}",
+        "healthChecks": "Hälsokontroller: {{value}}",
+        "files": "Filer: {{value}}",
+        "spaceSaved": "Sparat: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
+        "transcodes": "Omkodning",
+        "healthChecks": "Hälsokontroller",
         "videoCodecs": "Codecs",
         "videoContainers": "Containers",
         "videoResolutions": "Upplösningar"
@@ -83,12 +83,12 @@
     "message": "Ett fel uppstod när data hämtades från Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Arbetare",
     "queue": "Kö",
-    "statistics": ""
+    "statistics": "Statistik"
   },
   "healthCheckStatus": {
-    "title": "",
+    "title": "Hälsokontroll",
     "queued": "Köad",
     "healthy": "Hälsosam",
     "unhealthy": "Ohälsosam"
