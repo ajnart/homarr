@@ -9,11 +9,11 @@
     "configTip": "Yapılandırma dosyanı sayfaya sürükleyip bırakarak yükleyebilirsin!"
   },
   "credits": {
-    "madeWithLove": " @ tarafından ❤️ ile yapılmıştır",
+    "madeWithLove": "Şu kişilerce ❤️ ile yapılmıştır: ",
     "thirdPartyContent": "Üçüncü şahıs içeriğine bakın",
     "thirdPartyContentTable": {
       "dependencyName": "Bağımlılık",
-      "dependencyVersion": "Versiyon"
+      "dependencyVersion": "Sürüm"
     }
   },
   "grow": "Izgarayı büyütün (tüm alanı kapla)",
