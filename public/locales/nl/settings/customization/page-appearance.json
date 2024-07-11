@@ -45,6 +45,6 @@
     "label": "Eigen CSS",
     "description": "Pas je dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
-    "applying": "CSS aan het toepassen…"
+    "applying": "Bezig met CSS toepassen…"
   }
 }
