@@ -1,9 +1,9 @@
 {
   "descriptor": {
-    "name": "DNS-gat samenvatting",
+    "name": "DNS-hole samenvatting",
     "description": "Toont belangrijke gegevens van PiHole of AdGuard",
     "settings": {
-      "title": "Instellingen voor DNS-gatenoverzicht",
+      "title": "Instellingen voor DNS-hole overzicht",
       "usePiHoleColors": {
         "label": "Gebruik kleuren van PiHole"
       },
