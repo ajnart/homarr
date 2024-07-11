@@ -14,7 +14,7 @@
     },
     "notifications": {
         "pending": {
-            "title": "Aanpassingen opslaan",
+            "title": "Bezig met aanpassingen opslaan",
             "message": "Even geduld terwijl we je aanpassing opslaan"
         },
         "success": {
