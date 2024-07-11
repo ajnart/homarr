@@ -5,7 +5,7 @@
         "string": {
             "startsWith": "Dit veld moet beginnen met {{startsWith}}",
             "endsWith": "Dit veld moet eindigen op {{endsWith}}",
-            "includes": "Dit veld moet {{includes}}bevatten."
+            "includes": "Dit veld moet {{includes}} bevatten."
         },
         "tooSmall": {
             "string": "Dit veld moet minstens {{minimum}} tekens lang zijn",
