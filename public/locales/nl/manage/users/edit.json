@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Gebruiker {{username}}",
+  "back": "Terug naar gebruikersbeheer",
   "sections": {
     "general": {
       "title": "Algemeen",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Beveiliging",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nieuw wachtwoord"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Bestaande sessies beëindigen",
+          "description": "Dwingt gebruikers om opnieuw in te loggen op hun apparaten"
         },
         "confirm": {
           "label": "Bevestigen",
-          "description": ""
+          "description": "Wachtwoord wordt bijgewerkt. De actie kan niet worden teruggedraaid."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Rollen",
+      "currentRole": "Huidige rol: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Eigenaar",
+        "admin": "Beheerder",
+        "normal": "Normaal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Account verwijdering",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Gebruikersnaam bevestigen",
+          "description": "Typ gebruikersnaam om verwijdering te bevestigen"
         },
         "confirm": {
           "label": "Permanent verwijderen",
-          "description": ""
+          "description": "Ik ben me ervan bewust dat deze actie permanent is en dat alle accountgegevens verloren zullen gaan."
         }
       }
     }
