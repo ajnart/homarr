@@ -1,104 +1,104 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Systeem gezondheidsmonitoring",
+    "description": "Toont informatie over de gezondheid en status van je systeem(en).",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor systeem gezondheidsmonitoring",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-temperatuur in fahrenheit"
       },
       "cpu": {
-        "label": "",
-        "load": "",
-        "minute": "",
-        "minutes": ""
+        "label": "CPU-info weergeven",
+        "load": "Gemiddelde laden",
+        "minute": "{{minute}} minuut",
+        "minutes": "{{minutes}} minuten"
       },
       "memory": {
-        "label": ""
+        "label": "Werkgeheugen info weergeven"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Bestandssysteem info weergeven"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filter op node-naam",
+        "info": "Voer de naam van je Proxmox node in om alleen de statistieken voor die node te tonen. Standaard wordt het gehele cluster getoond."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sectie standaard geopend",
         "data": {
           "none": "Geen",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Onderdelen",
+          "vm": "VM's",
+          "lxc": "LXC's",
           "storage": "Opslagruimte"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Tabblad standaard geopend",
+        "info": "Tabblad standaard geopend. Wordt alleen gebruikt als er meerdere integraties beschikbaar zijn.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "Systeem",
+          "cluster": "Cluster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Samenvatting-sectie weergeven"
       },
       "showNode": {
-        "label": ""
+        "label": "Nodes-sectie weergeven"
       },
       "showVM": {
-        "label": ""
+        "label": "VM's weergeven"
       },
       "showLXCs": {
-        "label": ""
+        "label": "LXC’s-sectie weergeven"
       },
       "showStorage": {
-        "label": ""
+        "label": "Opslag-sectie weergeven"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Sectiestatusindicator moet ‘Oké’ zijn",
+        "info": "voor ‘Alle’ moeten alle items online zijn om de indicator groen te krijgen. voor ‘Elke’ moet ten minste één item online zijn.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Elke actieve",
+          "all": "Alle actieve"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Fouten in certificaten negeren",
+        "info": "Als deze optie is ingeschakeld, negeert de widget certificaatfouten bij toegang tot de Proxmox API. Dit kan handig zijn bij toegang tot Proxmox via HTTPS."
       }
     }
   },
   "cpu": {
     "label": "CPU",
-    "load": "",
-    "minute": ""
+    "load": "Gemiddelde laden",
+    "minute": "{{minute}} minuut"
   },
   "memory": {
-    "label": "",
-    "totalMem": "",
-    "available": ""
+    "label": "Geheugen",
+    "totalMem": "Totaal werkgeheugen: {{total}}GB",
+    "available": "Beschikbaar: {{available}}GB - {{percentage}}%"
   },
   "fileSystem": {
-    "label": "",
-    "available": ""
+    "label": "Bestandssysteem",
+    "available": "Beschikbaar: {{available}} - {{percentage}}%"
   },
   "info": {
-    "uptime": "",
-    "uptimeFormat": "",
-    "updates": "",
-    "reboot": ""
+    "uptime": "Uptime",
+    "uptimeFormat": "{{days}} dagen, {{hours}} uren",
+    "updates": "Updates beschikbaar",
+    "reboot": "Opnieuw opstarten"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Kan je systeem(en) niet vinden.",
+      "text": "Er is een probleem opgetreden bij de verbinding met je systeem. Controleer je configuratie/integratie(s)."
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "Systeem",
+    "cluster": "Cluster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Onderdelen",
+        "vms": "VM's",
+        "lxcs": "LXC's",
         "storage": "Opslagruimte"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Naam",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Systeem"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Systeem",
+      "vmid": "VMID",
       "details": "Beschrijving",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Cores - {{maxCpu}}",
+      "memSize": "Werkgeheugen - {{maxMem}}",
+      "memRatio": "Werkgeheugen - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Schijf - {{maxDisk}}",
+      "diskRatio": "Schijf - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Uptime - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA-status - {{haState}}",
+      "sharedStorage": "Gedeelde opslag",
+      "localStorage": "Lokale opslag",
+      "na": "N.v.t."
     }
   }
 }
