@@ -17,11 +17,11 @@
   "disabled": "Uitgeschakeld",
   "enableAll": "Alles inschakelen",
   "disableAll": "Alles uitschakelen",
-  "setTimer": "",
+  "setTimer": "Timer instellen",
   "version": "Versie",
   "changePosition": "Positie wijzigen",
   "remove": "Verwijderen",
-  "removeConfirm": "Weet u zeker dat u {{item}} wilt verwijderen?",
+  "removeConfirm": "Weet je zeker dat je {{item}} wilt verwijderen?",
   "createItem": "+ {{item}} aanmaken",
   "sections": {
     "settings": "Instellingen",
