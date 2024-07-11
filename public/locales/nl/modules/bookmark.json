@@ -3,7 +3,7 @@
     "name": "Bladwijzer",
     "description": "Een statische lijst met strings of links weergeven",
     "settings": {
-      "title": "Bladwijze instellingen",
+      "title": "Bladwijzer instellingen",
       "name": {
         "label": "Widget titel",
         "info": "Laat leeg om de titel verborgen te houden."
