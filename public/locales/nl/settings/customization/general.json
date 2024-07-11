@@ -19,11 +19,11 @@
     },
     "accessibility": {
       "name": "Toegankelijkheid",
-      "description": "Homarr configureren voor gehandicapte gebruikers"
+      "description": "Homarr configureren voor beperkte en gehandicapte gebruikers"
     },
     "access": {
-      "name": "",
-      "description": "Configureren wie toegang heeft tot je board"
+      "name": "Toegang",
+      "description": "Configureren wie toegang heeft tot je bord"
     }
   }
 }
