@@ -20,7 +20,7 @@
     },
     "notifications": {
         "loading": {
-            "title": "Account aanmaken",
+            "title": "Bezig met account aanmaken",
             "text": "Even geduld"
         },
         "success": {
