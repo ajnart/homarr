@@ -1,16 +1,16 @@
 {
   "descriptor": {
     "name": "Zoekbalk",
-    "description": "Een zoekbalk waarmee u uw aangepaste zoekmachine, YouTube en ondersteunde integraties kunt doorzoeken."
+    "description": "Een zoekbalk waarmee je je aangepaste zoekmachine, YouTube en ondersteunde integraties kunt doorzoeken."
   },
   "input": {
-    "placeholder": "Zoek op het web..."
+    "placeholder": "Zoek op het web…"
   },
   "switched-to": "Omgeschakeld naar",
   "searchEngines": {
     "search": {
       "name": "Web",
-      "description": "Zoeken..."
+      "description": "Zoeken…"
     },
     "youtube": {
       "name": "YouTube",
@@ -18,11 +18,11 @@
     },
     "torrents": {
       "name": "Torrents",
-      "description": "Zoek naar Torrents"
+      "description": "Zoek naar torrents"
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Zoek naar Films en TV-series op Overseerr"
+      "description": "Zoek naar films en TV-series op Overseerr"
     }
   },
   "tip": "Je kan de zoekbalk selecteren met de sneltoets ",
