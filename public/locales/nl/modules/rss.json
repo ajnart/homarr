@@ -1,12 +1,12 @@
 {
   "descriptor": {
-    "name": "RSS Widget",
-    "description": "Met de rss-widget kun je RSS-feeds weergeven op je dashboard.",
+    "name": "RSS-widget",
+    "description": "Met de RSS-widget kun je RSS-feeds weergeven op je dashboard.",
     "settings": {
       "title": "Instellingen voor RSS widget",
       "rssFeedUrl": {
-        "label": "RSS feed URL's",
-        "description": "De URL's van de RSS-feeds die u wilt weergeven."
+        "label": "RSS-feed URL's",
+        "description": "De URL's van de RSS-feeds die je wilt weergeven."
       },
       "refreshInterval": {
         "label": "Verversingsinterval (in minuten)"
@@ -16,23 +16,23 @@
         "info": "HTML-opmaak van buitenaf toestaan kan gevaarlijk zijn.<br/>Zorg ervoor dat de feed afkomstig is van een betrouwbare bron."
       },
       "textLinesClamp": {
-        "label": "Tekstregels klem"
+        "label": "Tekstregels clamp"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Sorteren op publicatiedatum (oplopend)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Zet berichten zonder publicatiedatum bovenaan"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Maximum aantal berichten"
       }
     },
     "card": {
       "errors": {
         "general": {
-          "title": "Kan RSS feed niet ophalen",
-          "text": "Er was een probleem met het bereiken van de RSS feed. Zorg ervoor dat u de RSS-feed correct hebt geconfigureerd met een geldige URL. URL's moeten overeenkomen met de officiële specificatie. Na het bijwerken van de feed, moet u mogelijk het dashboard vernieuwen."
+          "title": "Kan RSS-feed niet ophalen",
+          "text": "Er was een probleem met het bereiken van de RSS-feed. Zorg ervoor dat je de RSS-feed correct hebt geconfigureerd met een geldige URL. URL's moeten overeenkomen met de officiële specificatie. Na het bijwerken van de feed, moet je mogelijk het dashboard vernieuwen."
         }
       }
     }
