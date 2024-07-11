@@ -7,7 +7,7 @@
   "close": "Sluiten",
   "back": "Terug",
   "delete": "Verwijderen",
-  "ok": "OKÉ",
+  "ok": "Oké",
   "edit": "Wijzigen",
   "next": "Volgende",
   "previous": "Vorige",
@@ -38,7 +38,7 @@
     "minutes": "minuten",
     "hours": "uren"
   },
-  "loading": "Bezig met laden...",
+  "loading": "Bezig met laden…",
   "breakPoints": {
     "small": "klein",
     "medium": "middel",
