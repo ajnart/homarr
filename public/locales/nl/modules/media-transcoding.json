@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Media transcodering",
+    "description": "Informatie over media transcodering weergeven",
     "settings": {
-      "title": "",
+      "title": "Instellingen voor media transcodering",
       "appId": {
-        "label": ""
+        "label": "Selecteer een app"
       },
       "defaultView": {
-        "label": "",
+        "label": "Standaardweergave",
         "data": {
-          "workers": "",
+          "workers": "Workers",
           "queue": "Wachtrij",
-          "statistics": ""
+          "statistics": "Statistieken"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Indicator voor gezondheidscontrole weergeven"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Gezondheidscontroles in wachtrij weergeven"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Wachtrij: items per pagina"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "App-icoon in de rechterbenedenhoek weergeven"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Selecteer een app in de widget instellingen",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Bestand",
           "eta": "ETA",
           "progress": "Voortgang"
         },
         "empty": "Leeg",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcoderen",
+          "healthCheck": "Gezondheidscontrole"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Bestand",
           "size": "Grootte"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} van {{total}}"
         },
         "empty": "Leeg",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcoderen",
+          "healthCheck": "Gezondheidscontrole"
         }
       }
     },
     "statistics": {
       "empty": "Leeg",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transcodes: {{value}}",
+        "healthChecks": "Gezondheidstests: {{value}}",
+        "files": "Bestanden: {{value}}",
+        "spaceSaved": "Opgeslagen: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Transcodes",
+        "healthChecks": "Gezondheidscontroles",
+        "videoCodecs": "Codecs",
+        "videoContainers": "Containers",
+        "videoResolutions": "Resoluties"
       }
     }
   },
   "error": {
     "title": "Fout",
-    "message": ""
+    "message": "Er is een fout opgetreden tijdens het ophalen van gegevens uit Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Workers",
     "queue": "Wachtrij",
-    "statistics": ""
+    "statistics": "Statistieken"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Gezondheidscontrole",
+    "queued": "In wachtrij",
+    "healthy": "Gezond",
+    "unhealthy": "Ongezond"
   }
 }
