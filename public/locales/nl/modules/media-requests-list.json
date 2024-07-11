@@ -23,7 +23,7 @@
   "tooltips": {
     "approve": "Verzoeken goedkeuren",
     "decline": "Verzoeken afwijzen",
-    "approving": "Verzoek goedkeuren…"
+    "approving": "Bezig met verzoek goedkeuren…"
   },
   "mutation": {
     "approving": "Bezig met goedkeuren",
