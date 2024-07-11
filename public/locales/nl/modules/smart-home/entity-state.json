@@ -25,7 +25,7 @@
                 "info": "Vriendelijke naam van Home Assistant weergeven in plaats van weergavenaam."
             },
             "genericToggle": {
-                "label": "Toggle entiteit",
+                "label": "Entiteit toggle",
                 "info": "Voer een algemene Home Assistant toggle-actie uit op een entiteit wanneer erop wordt geklikt."
             }
         }
