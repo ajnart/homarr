@@ -33,7 +33,7 @@
             "label": "Weergeven als tekst (compact)"
           },
           "multiView": {
-            "label": "Weergeven als multi-drive weergave"
+            "label": "Weergeven als multi-drive-weergave"
           }
         },
         "network": {
@@ -57,7 +57,7 @@
             "label": "Kolombreedte"
           },
           "multiView": {
-            "label": "Weergeven als multi-core weergave"
+            "label": "Weergeven als multi-core-weergave"
           }
         },
         "ram": {
@@ -85,10 +85,10 @@
     "title": "Dash.",
     "errors": {
       "noService": "Geen Dash. service gevonden. Voeg er een toe aan je Homarr dashboard of stel een Dash. URL in in de module opties",
-      "noInformation": "Kan geen informatie verkrijgen van dash. - gebruik je de laatste versie?",
+      "noInformation": "Kan geen informatie verkrijgen van Dash. - gebruik je de laatste versie?",
       "protocolDowngrade": {
         "title": "Protocol downgrade gedetecteerd",
-        "text": "De verbinding met uw Dash. instantie gebruikt HTTP. Dit is een veiligheidsrisico, want HTTP is niet gecodeerd en aanvallers zouden deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. HTTPS gebruikt, of downgrade Homarr naar HTTP (niet aanbevolen)."
+        "text": "De verbinding met je Dash. instantie gebruikt HTTP. Dit is een veiligheidsrisico, want HTTP is niet gecodeerd en aanvallers zouden deze verbinding kunnen misbruiken. Zorg ervoor dat Dash. HTTPS gebruikt, of downgrade Homarr naar HTTP (niet aanbevolen)."
       }
     },
     "graphs": {
