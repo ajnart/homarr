@@ -1,6 +1,6 @@
 {
   "descriptor": {
-    "name": "Media verzoek statistieken",
+    "name": "Mediaverzoek statistieken",
     "description": "Statistieken over je mediaverzoeken",
     "settings": {
       "title": "Mediaverzoeken statistieken",
@@ -14,14 +14,14 @@
   },
   "mediaStats": {
     "title": "Media statistieken",
-    "pending": "Wachtende goedkeuringen",
+    "pending": "In afwachting van goedkeuringen",
     "tvRequests": "TV verzoeken",
     "movieRequests": "Film verzoeken",
     "approved": "Reeds goedgekeurd",
     "totalRequests": "Totaal"
   },
   "userStats": {
-    "title": "Top gebruikers",
+    "title": "Grootste gebruikers",
     "requests": "Verzoeken: {{number}}"
   }
 }
