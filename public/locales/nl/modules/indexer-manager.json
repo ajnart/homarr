@@ -1,22 +1,22 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Indexeer beheerder status",
+        "description": "Status over je indexers",
         "settings": {
-            "title": "",
+            "title": "Indexeer beheerder status",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Indexeringssite openen in nieuw tabblad"
             }
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indexeer beheerder",
+        "testAllButton": "Alles testen"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Kan geen indexer beheerder vinden",
+            "text": "Er is een probleem opgetreden bij het verbinden met je indexer beheerder. Controleer je configuratie/integratie(s)."
         }
     }
 }
