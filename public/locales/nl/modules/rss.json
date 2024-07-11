@@ -3,7 +3,7 @@
     "name": "RSS-widget",
     "description": "Met de RSS-widget kun je RSS-feeds weergeven op je dashboard.",
     "settings": {
-      "title": "Instellingen voor RSS widget",
+      "title": "Instellingen voor RSS-widget",
       "rssFeedUrl": {
         "label": "RSS-feed URL's",
         "description": "De URL's van de RSS-feeds die je wilt weergeven."
