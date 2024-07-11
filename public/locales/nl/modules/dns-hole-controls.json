@@ -1,25 +1,25 @@
 {
   "descriptor": {
-    "name": "Controle DNS-gat",
+    "name": "DNS-hole bedieningen",
     "description": "Bedien PiHole of AdGuard vanaf je dashboard",
     "settings": {
-      "title": "Instellingen DNS-gatcontrole",
+      "title": "Instellingen DNS-hole bedieningen",
       "showToggleAllButtons": {
-        "label": "Toon de knoppen 'Alles inschakelen/uitschakelen"
+        "label": "Toon de knoppen 'Alles in-/uitschakelen"
       }
     },
     "errors": {
       "general": {
-        "title": "Kan geen DNS-gat vinden",
-        "text": "Er is een probleem opgetreden bij de verbinding met uw DNS-gat(en). Controleer uw configuratie/integratie(s)."
+        "title": "Kan geen DNS-hole vinden",
+        "text": "Er is een probleem opgetreden bij de verbinding met uw DNS-gat(en). Controleer je configuratie/integratie(s)."
       }
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Duur uitschakelen instellen",
+    "hours": "Uren",
+    "minutes": "Minuten",
+    "unlimited": "laat leeg voor onbeperkt",
+    "set": "Instellen"
   }
 }
