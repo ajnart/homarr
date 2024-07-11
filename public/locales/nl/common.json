@@ -13,7 +13,7 @@
   "previous": "Vorige",
   "confirm": "Bevestigen",
   "enabled": "Ingeschakeld",
-  "duplicate": "",
+  "duplicate": "Dupliceren",
   "disabled": "Uitgeschakeld",
   "enableAll": "Alles inschakelen",
   "disableAll": "Alles uitschakelen",
@@ -38,7 +38,7 @@
     "minutes": "minuten",
     "hours": "uren"
   },
-  "loading": "Bezig met laden…",
+  "loading": "Zie meer…",
   "breakPoints": {
     "small": "klein",
     "medium": "middel",
