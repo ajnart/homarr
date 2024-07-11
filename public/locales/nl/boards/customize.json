@@ -1,7 +1,7 @@
 {
     "metaTitle": "{{name}} bord aanpassen",
-    "pageTitle": "Aanpassing voor {{name}} Board",
-    "backToBoard": "Terug naar bestuur",
+    "pageTitle": "Aanpassing voor {{name}} bord",
+    "backToBoard": "Terug naar bord",
     "settings": {
         "appearance": {
             "primaryColor": "Primaire kleur",
@@ -18,7 +18,7 @@
             "message": "Even geduld terwijl we je aanpassing opslaan"
         },
         "success": {
-            "title": "Opgeslagen aanpassingen",
+            "title": "Aanpassing opgeslagen",
             "message": "Je aanpassing is succesvol opgeslagen"
         },
         "error": {
