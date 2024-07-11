@@ -6,6 +6,6 @@
   "states": {
     "online": "Online {{response}}",
     "offline": "Offline {{response}}",
-    "loading": "Bezig met laden…"
+    "loading": "Zie meer…"
   }
 }
