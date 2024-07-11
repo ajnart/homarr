@@ -1,7 +1,7 @@
 {
   "descriptor": {
-    "name": "Media Verzoeken",
-    "description": "Bekijk een lijst met alle mediaverzoeken van uw Overseerr of Jellyseerr instantie",
+    "name": "Mediaverzoeken",
+    "description": "Bekijk een lijst met alle mediaverzoeken van je Overseerr of Jellyseerr instantie",
     "settings": {
       "title": "Lijst met mediaverzoeken",
       "replaceLinksWithExternalHost": {
@@ -17,18 +17,18 @@
     "approved": "Goedgekeurd",
     "pendingApproval": "In afwachting van goedkeuring",
     "declined": "Afgewezen",
-    "available": "",
+    "available": "Beschikbaar",
     "partial": "Gedeeltelijk"
   },
   "tooltips": {
     "approve": "Verzoeken goedkeuren",
-    "decline": "Verzoeken weigeren",
-    "approving": "Verzoek goedkeuren..."
+    "decline": "Verzoeken afwijzen",
+    "approving": "Verzoek goedkeuren…"
   },
   "mutation": {
-    "approving": "Goedkeuring",
-    "declining": "Afnemend",
-    "request": "verzoek...",
+    "approving": "Bezig met goedkeuren",
+    "declining": "Bezig met afwijzen",
+    "request": "verzoek…",
     "approved": "Aanvraag goedgekeurd!",
     "declined": "Verzoek afgewezen!"
   }
