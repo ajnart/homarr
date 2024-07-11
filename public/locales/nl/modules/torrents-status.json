@@ -73,7 +73,7 @@
         "ratio": "Verhouding",
         "seeds": "Seeds (Verbonden)",
         "peers": "Peers (Verbonden)",
-        "label": "",
+        "label": "Label",
         "state": "Status",
         "stateMessage": "Status bericht"
       },
