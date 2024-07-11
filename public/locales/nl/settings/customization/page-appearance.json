@@ -13,38 +13,38 @@
   },
   "favicon": {
     "label": "Favicon",
-    "description": "Het pictogram dat wordt weergegeven in je browsertabblad"
+    "description": "Het icoon dat wordt weergegeven in je browsertabblad"
   },
   "background": {
     "label": "Achtergrond"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Achtergrondafbeelding bijlage",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "Vastgezet - Achtergrond blijft op dezelfde positie (aanbevolen)",
+      "scroll": "Scrollen - De achtergrond scrolt met je muis"
     }
   },
   "backgroundImageSize": {
-    "label": "Grootte achtergrondafbeelding",
+    "label": "Achtergrondafbeelding grootte",
     "options": {
       "cover": "Bedekken - Schaalt de afbeelding zo klein mogelijk om het hele venster te bedekken door overtollige ruimte bij te snijden. (aanbevolen)",
-      "contain": ""
+      "contain": "Bevatten - Schaalt de afbeelding zo groot mogelijk binnen de container zonder de afbeelding bij te snijden of uit te rekken."
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Achtergrondafbeelding bijlage",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Herhalen - De afbeelding wordt zoveel herhaald als nodig is om het hele achtergrondafbeelding gebied te bedekken.",
+      "no-repeat": "Geen herhaling - De afbeelding wordt niet herhaald en mag niet de hele ruimte vullen (aanbevolen)",
+      "repeat-x": "Herhaal X - Hetzelfde als 'Herhaal' maar alleen op de horizontale as.",
+      "repeat-y": "Herhaal Y - Hetzelfde als 'Herhaal' maar alleen op de verticale as."
     }
   },
   "customCSS": {
     "label": "Eigen CSS",
     "description": "Pas je dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
     "placeholder": "Eigen CSS wordt als laatste toegepast",
-    "applying": "CSS aan het toepassen..."
+    "applying": "CSS aan het toepassen…"
   }
 }
