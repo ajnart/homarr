@@ -1,15 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Home Assistant automatisering",
+    "description": "Een automatisering uitvoeren",
     "settings": {
-      "title": "",
+      "title": "Een automatisering uitvoeren",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "Automatiserings-ID",
+        "info": "Je unieke automatiserings-ID. Begint altijd met automation.XXXXX."
       },
       "displayName": {
-        "label": ""
+        "label": "Weergavenaam"
       }
     }
   }
