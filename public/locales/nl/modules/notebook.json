@@ -1,14 +1,14 @@
 {
 	"descriptor": {
-		"name": "Notebook",
+		"name": "Notitieboek",
 		"description": "Een op markdown gebaseerde interactieve widget om je notities op te schrijven!",
 		"settings": {
-			"title": "Instellingen voor de notebook widget",
+			"title": "Instellingen voor de notitieboek widget",
 			"showToolbar": {
 				"label": "Toon de werkbalk om je te helpen markdown te schrijven"
 			},
 			"allowReadOnlyCheck": {
-				"label": ""
+				"label": "Controle in alleen-lezen modus toestaan"
 			},
 			"content": {
 				"label": "De inhoud van het notitieboek"
@@ -22,38 +22,38 @@
 			"strikethrough": "Doorgestreept",
 			"underline": "Onderstreept",
 			"colorText": "Kleur tekst",
-			"colorHighlight": "",
-			"code": "",
-			"clear": "",
-			"heading": "",
-			"align": "",
-			"blockquote": "",
-			"horizontalLine": "",
+			"colorHighlight": "Gekleurde tekst markeren",
+			"code": "Code",
+			"clear": "Opmaak wissen",
+			"heading": "Koptekst {{level}}",
+			"align": "Tekst uitlijnen: {{position}}",
+			"blockquote": "Blokquote",
+			"horizontalLine": "Horizontale lijn",
 			"bulletList": "Opsommingslijst",
-			"orderedList": "",
-			"checkList": "",
-			"increaseIndent": "",
-			"decreaseIndent": "",
+			"orderedList": "Geordende lijst",
+			"checkList": "Controlelijst",
+			"increaseIndent": "Inspringen vergroten",
+			"decreaseIndent": "Inspringen verminderen",
 			"link": "Link",
 			"unlink": "Link verwijderen",
 			"image": "Afbeelding insluiten",
 			"addTable": "Tabel toevoegen",
 			"deleteTable": "Tabel verwijderen",
 			"colorCell": "Kleur cel",
-			"mergeCell": "",
-			"addColumnLeft": "",
-			"addColumnRight": "",
-			"deleteColumn": "",
-			"addRowTop": "",
-			"addRowBelow": "",
-			"deleteRow": ""
+			"mergeCell": "Toggle cellen samenvoegen",
+			"addColumnLeft": "Kolom toevoegen vóór",
+			"addColumnRight": "Kolom toevoegen ná",
+			"deleteColumn": "Kolom verwijderen",
+			"addRowTop": "Rij toevoegen vóór",
+			"addRowBelow": "Rij toevoegen ná",
+			"deleteRow": "Rij verwijderen"
 		},
 		"modals": {
-			"clearColor": "",
-			"source": "",
-			"widthPlaceholder": "",
-			"columns": "",
-			"rows": ""
+			"clearColor": "Kleur wissen",
+			"source": "Bron",
+			"widthPlaceholder": "Waarde in % or pixels",
+			"columns": "Kolommen",
+			"rows": "Rijen"
 		}
 	}
 }
