@@ -1,4 +1,4 @@
-import { Accordion, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
+import { Card, Accordion, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
 import {
   IconBrain,
   IconCpu,
@@ -6,19 +6,18 @@ import {
   IconDatabase,
   IconDeviceLaptop,
   IconServer,
+  IconAlertTriangle,
+  IconCloudDownload,
+  IconHeartRateMonitor,
+  IconInfoSquare,
+  IconStatusChange,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import { ResourceData, ResourceSummary } from '~/widgets/health-monitoring/cluster/types';
 
 import { ResourceType } from './HealthMonitoringClusterResourceRow';
 
-export const ClusterStatusTile = ({
-  data,
-  properties,
-}: {
-  data: ResourceSummary;
-  properties: any;
-}) => {
+export const ClusterStatusTile = ({ data, properties }: { data: any; properties: any }) => {
   const { t } = useTranslation('modules/health-monitoring');
 
   const running = (total: number, current: ResourceData) => {
@@ -50,14 +49,35 @@ export const ClusterStatusTile = ({
   const cpuPercent = (usedCpu / maxCpu) * 100;
   const memPercent = (usedMem / maxMem) * 100;
 
+  
+  const formatUptime = (uptime: number) => {
+    const days = Math.floor(uptime / (60 * 60 * 24));
+    const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
+    return t('info.uptimeFormat', { days: days, hours: remainingHours})
+  };
+
+
   return (
     <Stack h="100%">
+       <Card>
+        <Group position="center">
+         <IconInfoSquare size={40} />
+          {data.nodes.map((item: ResourceData, index: number) => (
+          <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
+          {t('info.uptime')}:
+          <br />
+          {formatUptime(item.uptime)}
+        </Text>
+      ))}
+        </Group>
+      </Card>
       <SummaryHeader cpu={cpuPercent} memory={memPercent} include={properties.summary} />
       <Accordion
         variant="contained"
         chevronPosition="right"
         defaultValue={properties.defaultViewState}
       >
+        
         <ResourceType
           item={{
             data: data.nodes,
