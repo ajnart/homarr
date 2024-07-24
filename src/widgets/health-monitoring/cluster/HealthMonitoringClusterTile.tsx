@@ -1,19 +1,15 @@
-import { Card, Accordion, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
+import { Accordion, Card, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
 import {
   IconBrain,
   IconCpu,
   IconCube,
   IconDatabase,
   IconDeviceLaptop,
-  IconServer,
-  IconAlertTriangle,
-  IconCloudDownload,
-  IconHeartRateMonitor,
   IconInfoSquare,
-  IconStatusChange,
+  IconServer,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { ResourceData, ResourceSummary } from '~/widgets/health-monitoring/cluster/types';
+import { ResourceData } from '~/widgets/health-monitoring/cluster/types';
 
 import { ResourceType } from './HealthMonitoringClusterResourceRow';
 
@@ -45,30 +41,35 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
     (sum: number, item: ResourceData) => (item.running ? item.cpu * item.maxCpu + sum : sum),
     0
   );
+  const uptime = data.nodes.reduce(
+    (sum: number, item: ResourceData) => (item.running ? item.uptime + sum : sum),
+    0
+  );
 
   const cpuPercent = (usedCpu / maxCpu) * 100;
   const memPercent = (usedMem / maxMem) * 100;
 
-  
   const formatUptime = (uptime: number) => {
     const days = Math.floor(uptime / (60 * 60 * 24));
     const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    return t('info.uptimeFormat', { days: days, hours: remainingHours})
+    const remainingMinutes = Math.floor((uptime % 3600) / 60);
+    return t('info.uptimeFormat', {
+      days: days,
+      hours: remainingHours,
+      minutes: remainingMinutes,
+    });
   };
-
 
   return (
     <Stack h="100%">
-       <Card>
+      <Card>
         <Group position="center">
-         <IconInfoSquare size={40} />
-          {data.nodes.map((item: ResourceData, index: number) => (
+          <IconInfoSquare size={40} />
           <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
-          {t('info.uptime')}:
-          <br />
-          {formatUptime(item.uptime)}
-        </Text>
-      ))}
+            {t('info.uptime')}:
+            <br />
+            {formatUptime(uptime)}
+          </Text>
         </Group>
       </Card>
       <SummaryHeader cpu={cpuPercent} memory={memPercent} include={properties.summary} />
@@ -77,7 +78,6 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
         chevronPosition="right"
         defaultValue={properties.defaultViewState}
       >
-        
         <ResourceType
           item={{
             data: data.nodes,
@@ -143,9 +143,8 @@ interface SummaryHeaderProps {
 
 const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
   const { t } = useTranslation('modules/health-monitoring');
-  if (!include) {
-    return null;
-  }
+  if (!include) return null;
+
   return (
     <Center>
       <Group noWrap>
@@ -162,7 +161,7 @@ const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
             sections={[{ value: cpu, color: cpu > 75 ? 'orange' : 'green' }]}
           />
           <Stack align="center" justify="center" spacing={0}>
-            <Text>{t('cluster.summary.cpu')}</Text>
+            <Text weight={500}>{t('cluster.summary.cpu')}</Text>
             <Text>{cpu.toFixed(1)}%</Text>
           </Stack>
         </Flex>
@@ -179,7 +178,7 @@ const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
             sections={[{ value: memory, color: memory > 75 ? 'orange' : 'green' }]}
           />
           <Stack align="center" justify="center" spacing={0}>
-            <Text>{t('cluster.summary.ram')}</Text>
+            <Text weight={500}>{t('cluster.summary.ram')}</Text>
             <Text>{memory.toFixed(1)}%</Text>
           </Stack>
         </Flex>
