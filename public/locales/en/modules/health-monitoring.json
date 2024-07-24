@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Uptime",
-    "uptimeFormat": "{{days}} days, {{hours}} hours",
+    "uptimeFormat": "{{days}} days, {{hours}} hours, {{minutes}} minutes",
     "updates": "Updates Available",
     "reboot": "Reboot"
   },

@@ -189,7 +189,8 @@ const SystemStatusTile = ({ data, properties }: { data: any; properties: any }) 
   const formatUptime = (uptime: number) => {
     const days = Math.floor(uptime / (60 * 60 * 24));
     const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    return t('info.uptimeFormat', { days: days, hours: remainingHours})
+    const remainingMinutes = Math.floor((uptime % 3600) / 60);
+    return t('info.uptimeFormat', { days: days, hours: remainingHours, minutes: remainingMinutes });
   };
 
   return (
