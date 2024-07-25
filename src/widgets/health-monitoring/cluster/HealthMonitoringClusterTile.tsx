@@ -49,16 +49,15 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
   const cpuPercent = (usedCpu / maxCpu) * 100;
   const memPercent = (usedMem / maxMem) * 100;
 
-  const formatUptime = (uptime: number) => {
-    const days = Math.floor(uptime / (60 * 60 * 24));
-    const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    const remainingMinutes = Math.floor((uptime % 3600) / 60);
-    return t('info.uptimeFormat', {
-      days: days,
-      hours: remainingHours,
-      minutes: remainingMinutes,
-    });
-  };
+  const days = Math.floor(uptime / (60 * 60 * 24));
+  const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
+  const remainingMinutes = Math.floor((uptime % 3600) / 60);
+
+  const formattedUptime = t('info.uptimeFormat', {
+    days: days,
+    hours: remainingHours,
+    minutes: remainingMinutes,
+  });
 
   return (
     <Stack h="100%">
@@ -68,7 +67,7 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
           <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
             {t('info.uptime')}:
             <br />
-            {formatUptime(uptime)}
+            {formattedUptime}
           </Text>
         </Group>
       </Card>
