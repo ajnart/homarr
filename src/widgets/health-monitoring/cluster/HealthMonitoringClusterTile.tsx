@@ -11,6 +11,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { ResourceData } from '~/widgets/health-monitoring/cluster/types';
 
+import { formatUptime } from '../HealthMonitoringTile';
 import { ResourceType } from './HealthMonitoringClusterResourceRow';
 
 export const ClusterStatusTile = ({ data, properties }: { data: any; properties: any }) => {
@@ -49,16 +50,6 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
   const cpuPercent = (usedCpu / maxCpu) * 100;
   const memPercent = (usedMem / maxMem) * 100;
 
-  const days = Math.floor(uptime / (60 * 60 * 24));
-  const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-  const remainingMinutes = Math.floor((uptime % 3600) / 60);
-
-  const formattedUptime = t('info.uptimeFormat', {
-    days: days,
-    hours: remainingHours,
-    minutes: remainingMinutes,
-  });
-
   return (
     <Stack h="100%">
       <Card>
@@ -67,7 +58,7 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
           <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
             {t('info.uptime')}:
             <br />
-            {formattedUptime}
+            {formatUptime(uptime)}
           </Text>
         </Group>
       </Card>

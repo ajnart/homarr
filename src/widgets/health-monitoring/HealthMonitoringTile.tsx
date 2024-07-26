@@ -186,13 +186,6 @@ function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
 const SystemStatusTile = ({ data, properties }: { data: any; properties: any }) => {
   const { t } = useTranslation('modules/health-monitoring');
 
-  const formatUptime = (uptime: number) => {
-    const days = Math.floor(uptime / (60 * 60 * 24));
-    const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    const remainingMinutes = Math.floor((uptime % 3600) / 60);
-    return t('info.uptimeFormat', { days: days, hours: remainingHours, minutes: remainingMinutes });
-  };
-
   return (
     <Stack>
       <Card>
@@ -269,3 +262,11 @@ const useStatusQuery = (node: string, ignoreCerts: boolean) => {
 };
 
 export default definition;
+
+export const formatUptime = (uptime: number) => {
+  const { t } = useTranslation('modules/health-monitoring');
+  const days = Math.floor(uptime / (60 * 60 * 24));
+  const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
+  const remainingMinutes = Math.floor((uptime % 3600) / 60);
+  return t('info.uptimeFormat', { days: days, hours: remainingHours, minutes: remainingMinutes });
+};
