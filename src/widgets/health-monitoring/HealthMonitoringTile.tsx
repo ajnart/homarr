@@ -8,7 +8,6 @@ import {
 } from '@tabler/icons-react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
