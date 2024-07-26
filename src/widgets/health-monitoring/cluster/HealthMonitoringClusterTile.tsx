@@ -43,7 +43,7 @@ export const ClusterStatusTile = ({ data, properties }: { data: any; properties:
     0
   );
   const uptime = data.nodes.reduce(
-    (sum: number, item: ResourceData) => (item.running ? item.uptime + sum : sum),
+    (sum: number, { uptime }: { uptime: number }) => (sum > uptime ? sum : uptime),
     0
   );
 
