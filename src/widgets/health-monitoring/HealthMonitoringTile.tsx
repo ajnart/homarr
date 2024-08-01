@@ -6,6 +6,8 @@ import {
   IconInfoSquare,
   IconStatusChange,
 } from '@tabler/icons-react';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
 import { useTranslation } from 'next-i18next';
 import { useConfigContext } from '~/config/provider';
 import { api } from '~/utils/api';
@@ -17,6 +19,8 @@ import HealthMonitoringCpu from './HealthMonitoringCpu';
 import HealthMonitoringFileSystem from './HealthMonitoringFileSystem';
 import HealthMonitoringMemory from './HealthMonitoringMemory';
 import { ClusterStatusTile } from './cluster/HealthMonitoringClusterTile';
+
+dayjs.extend(duration);
 
 const defaultViewStates = ['none', 'node', 'vm', 'lxc', 'storage'] as const;
 type DefaultViewState = (typeof defaultViewStates)[number];
@@ -186,12 +190,6 @@ function HealthMonitoringWidgetTile({ widget }: HealthMonitoringWidgetProps) {
 const SystemStatusTile = ({ data, properties }: { data: any; properties: any }) => {
   const { t } = useTranslation('modules/health-monitoring');
 
-  const formatUptime = (uptime: number) => {
-    const days = Math.floor(uptime / (60 * 60 * 24));
-    const remainingHours = Math.floor((uptime % (60 * 60 * 24)) / 3600);
-    return t('info.uptimeFormat', { days: days, hours: remainingHours})
-  };
-
   return (
     <Stack>
       <Card>
@@ -268,3 +266,13 @@ const useStatusQuery = (node: string, ignoreCerts: boolean) => {
 };
 
 export default definition;
+
+export const formatUptime = (uptime: number) => {
+  const { t } = useTranslation('modules/health-monitoring');
+  const time = dayjs.duration(uptime, 's');
+  return t('info.uptimeFormat', {
+    days: Math.floor(time.asDays()),
+    hours: time.hours(),
+    minutes: time.minutes(),
+  });
+};

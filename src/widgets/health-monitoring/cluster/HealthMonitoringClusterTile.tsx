@@ -1,24 +1,20 @@
-import { Accordion, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
+import { Accordion, Card, Center, Flex, Group, RingProgress, Stack, Text } from '@mantine/core';
 import {
   IconBrain,
   IconCpu,
   IconCube,
   IconDatabase,
   IconDeviceLaptop,
+  IconInfoSquare,
   IconServer,
 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
-import { ResourceData, ResourceSummary } from '~/widgets/health-monitoring/cluster/types';
+import { ResourceData } from '~/widgets/health-monitoring/cluster/types';
 
+import { formatUptime } from '../HealthMonitoringTile';
 import { ResourceType } from './HealthMonitoringClusterResourceRow';
 
-export const ClusterStatusTile = ({
-  data,
-  properties,
-}: {
-  data: ResourceSummary;
-  properties: any;
-}) => {
+export const ClusterStatusTile = ({ data, properties }: { data: any; properties: any }) => {
   const { t } = useTranslation('modules/health-monitoring');
 
   const running = (total: number, current: ResourceData) => {
@@ -46,12 +42,26 @@ export const ClusterStatusTile = ({
     (sum: number, item: ResourceData) => (item.running ? item.cpu * item.maxCpu + sum : sum),
     0
   );
+  const uptime = data.nodes.reduce(
+    (sum: number, { uptime }: ResourceData) => (sum > uptime ? sum : uptime),
+    0
+  );
 
   const cpuPercent = (usedCpu / maxCpu) * 100;
   const memPercent = (usedMem / maxMem) * 100;
 
   return (
     <Stack h="100%">
+      <Card>
+        <Group position="center">
+          <IconInfoSquare size={40} />
+          <Text fz="lg" tt="uppercase" fw={700} c="dimmed" align="center">
+            {t('info.uptime')}:
+            <br />
+            {formatUptime(uptime)}
+          </Text>
+        </Group>
+      </Card>
       <SummaryHeader cpu={cpuPercent} memory={memPercent} include={properties.summary} />
       <Accordion
         variant="contained"
@@ -123,9 +133,8 @@ interface SummaryHeaderProps {
 
 const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
   const { t } = useTranslation('modules/health-monitoring');
-  if (!include) {
-    return null;
-  }
+  if (!include) return null;
+
   return (
     <Center>
       <Group noWrap>
@@ -142,7 +151,7 @@ const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
             sections={[{ value: cpu, color: cpu > 75 ? 'orange' : 'green' }]}
           />
           <Stack align="center" justify="center" spacing={0}>
-            <Text>{t('cluster.summary.cpu')}</Text>
+            <Text weight={500}>{t('cluster.summary.cpu')}</Text>
             <Text>{cpu.toFixed(1)}%</Text>
           </Stack>
         </Flex>
@@ -159,7 +168,7 @@ const SummaryHeader = ({ cpu, memory, include }: SummaryHeaderProps) => {
             sections={[{ value: memory, color: memory > 75 ? 'orange' : 'green' }]}
           />
           <Stack align="center" justify="center" spacing={0}>
-            <Text>{t('cluster.summary.ram')}</Text>
+            <Text weight={500}>{t('cluster.summary.ram')}</Text>
             <Text>{memory.toFixed(1)}%</Text>
           </Stack>
         </Flex>
