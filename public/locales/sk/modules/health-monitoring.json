@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Čas prevádzky",
-    "uptimeFormat": "{{days}} dní, {{hours}} hodín",
+    "uptimeFormat": "",
     "updates": "Dostupné aktualizácie",
     "reboot": "Reštartovať"
   },
