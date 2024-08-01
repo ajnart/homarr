@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "crwdns4226:0crwdne4226:0",
-    "uptimeFormat": "crwdns4310:0{{days}}crwdnd4310:0{{hours}}crwdne4310:0",
+    "uptimeFormat": "crwdns4498:0{{days}}crwdnd4498:0{{hours}}crwdnd4498:0{{minutes}}crwdne4498:0",
     "updates": "crwdns4312:0crwdne4312:0",
     "reboot": "crwdns4230:0crwdne4230:0"
   },
