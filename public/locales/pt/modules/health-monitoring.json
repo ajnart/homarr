@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Tempo de Atividade",
-    "uptimeFormat": "{{days}} dias, {{hours}} horas",
+    "uptimeFormat": "",
     "updates": "Atualizações disponíveis",
     "reboot": "Reiniciar"
   },
