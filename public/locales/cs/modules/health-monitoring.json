@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Doba provozu",
-    "uptimeFormat": "{{days}} dny/ů, {{hours}} hodin/a/y",
+    "uptimeFormat": "",
     "updates": "Dostupné aktualizace",
     "reboot": "Restartovat"
   },
