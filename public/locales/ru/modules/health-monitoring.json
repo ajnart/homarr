@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Время работы",
-    "uptimeFormat": "",
+    "uptimeFormat": "{{days}} дней, {{hours}} часов, {{minutes}} минут",
     "updates": "Доступны обновления",
     "reboot": "Перезагрузка"
   },
