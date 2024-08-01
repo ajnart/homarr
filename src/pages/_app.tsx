@@ -1,4 +1,5 @@
-import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
+import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme, Alert } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -100,6 +101,11 @@ function App(
     setInitialPackageAttributes(props.pageProps.packageAttributes);
   }, []);
 
+  const [alertDismissed, setAlertDismissed] = useLocalStorage({
+    key: 'homarr-v1.0-alert-dismissed',
+    defaultValue: false,
+  });
+
   return (
     <>
       <CommonHead />
@@ -148,6 +154,16 @@ function App(
                 <ConfigProvider {...props.pageProps}>
                   <Notifications limit={4} position="bottom-left" />
                   <ModalsProvider modals={modals}>
+                    {!alertDismissed && (
+                      <Alert
+                        title="Homarr v1.0"
+                        color="blue"
+                        withCloseButton
+                        onClose={() => setAlertDismissed(true)}
+                      >
+                        We are building a new version of Homarr, stay tuned!
+                      </Alert>
+                    )}
                     <Component {...pageProps} />
                   </ModalsProvider>
                 </ConfigProvider>

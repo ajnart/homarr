@@ -1,4 +1,4 @@
-import { Box, Card, createStyles, Group, Image, SimpleGrid, Stack, Text, Title, UnstyledButton } from '@mantine/core';
+import { Box, Card, createStyles, Group, Image, SimpleGrid, Stack, Text, Title, UnstyledButton, Alert } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/react';
@@ -10,6 +10,7 @@ import { useScreenLargerThan } from '~/hooks/useScreenLargerThan';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { OnlyKeysWithStructure } from '~/types/helpers';
+import { useLocalStorage } from '@mantine/hooks';
 
 import { type quickActions } from '../../../public/locales/en/manage/index.json';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
@@ -19,6 +20,10 @@ const ManagementPage = () => {
   const { classes } = useStyles();
   const largerThanMd = useScreenLargerThan('md');
   const { data: sessionData } = useSession();
+  const [alertDismissed, setAlertDismissed] = useLocalStorage({
+    key: 'homarr-v1.0-alert-dismissed',
+    defaultValue: false,
+  });
 
   const metaTitle = `${t('metaTitle')} • Homarr`;
   return (
@@ -26,6 +31,16 @@ const ManagementPage = () => {
       <Head>
         <title>{metaTitle}</title>
       </Head>
+      {!alertDismissed && (
+        <Alert
+          title="Homarr v1.0"
+          color="blue"
+          withCloseButton
+          onClose={() => setAlertDismissed(true)}
+        >
+          We are building a new version of Homarr, stay tuned!
+        </Alert>
+      )}
       <Box className={classes.box} w="100%" mih={150} p="xl" mb={50}>
         <Group position="apart" noWrap>
           <Stack spacing={15}>
