@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Χρόνος Λειτουργίας",
-    "uptimeFormat": "{{days}} ημέρες, {{hours}} ώρες",
+    "uptimeFormat": "",
     "updates": "Διαθέσιμες ενημερώσεις",
     "reboot": "Επανεκκίνηση"
   },
