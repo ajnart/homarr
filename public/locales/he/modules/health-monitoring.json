@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "זמן פעילות",
-    "uptimeFormat": "{{days}} ימים, {{hours}} שעות",
+    "uptimeFormat": "",
     "updates": "עדכונים זמינים",
     "reboot": "אתחול מחדש"
   },
