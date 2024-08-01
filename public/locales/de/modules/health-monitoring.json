@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Betriebszeit",
-    "uptimeFormat": "{{days}} Tage, {{hours}} Stunden",
+    "uptimeFormat": "",
     "updates": "Updates verfügbar",
     "reboot": "Neustart"
   },
