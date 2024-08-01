@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Çalışma süresi",
-    "uptimeFormat": "{{days}} gün, {{hours}} saat",
+    "uptimeFormat": "",
     "updates": "Güncellemeler mevcut",
     "reboot": "Yeniden başlat"
   },
