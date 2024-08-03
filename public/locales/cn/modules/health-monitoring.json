@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "运行时间",
-    "uptimeFormat": "",
+    "uptimeFormat": "{{days}} 天， {{hours}} 小时， {{minutes}} 分钟",
     "updates": "可用更新",
     "reboot": "重启"
   },
