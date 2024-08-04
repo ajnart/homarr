@@ -20,7 +20,7 @@ export const signInSchema = z.object({
 export const signUpFormSchema = z
   .object({
     username: z.string().min(3),
-    password: z.string().min(minPasswordLength),
+    password: passwordSchema,
     passwordConfirmation: z.string().min(minPasswordLength),
   })
   .refine((data) => data.password === data.passwordConfirmation, {
