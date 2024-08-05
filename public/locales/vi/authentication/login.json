@@ -16,8 +16,8 @@
     },
     "afterLoginRedirection": "Sau khi đăng nhập, bạn sẽ được chuyển hướng đến {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Lỗi nhà cung cấp xác thực",
+      "message": "(Các) nhà cung cấp chưa được đặt, vui lòng kiểm tra nhật ký để biết thêm thông tin."
     }
   },
   "alert": "Thông tin xác thực của bạn không chính xác hoặc tài khoản này không tồn tại. Vui lòng thử lại."
