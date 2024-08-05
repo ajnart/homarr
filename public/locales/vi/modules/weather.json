@@ -11,10 +11,10 @@
         "label": "Hiển thị tên thành phố"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "Hiển thị dự báo hàng tuần"
       },
       "forecastDays": {
-        "label": ""
+        "label": "Số ngày hiển thị"
       },
       "location": {
         "label": "Vị trí thời tiết"
