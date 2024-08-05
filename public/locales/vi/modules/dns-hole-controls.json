@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Đặt thời gian vô hiệu hóa",
+    "hours": "Giờ",
+    "minutes": "Phút",
+    "unlimited": "để trống cho không giới hạn",
+    "set": "Đặt"
   }
 }
