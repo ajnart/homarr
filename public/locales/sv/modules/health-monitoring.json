@@ -1,41 +1,41 @@
 {
   "descriptor": {
     "name": "Övervakning av systemhälsan",
-    "description": "",
+    "description": "Visar information som visar hälsa och status för ditt/dina system.",
     "settings": {
-      "title": "",
+      "title": "Inställningar för övervakning av systemhälsa",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-temperatur i Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Visa CPU-information",
         "load": "Genomsnittlig belastning",
         "minute": "{{minute}} minut",
-        "minutes": ""
+        "minutes": "{{minutes}} minuter"
       },
       "memory": {
-        "label": ""
+        "label": "Visa minnesinformation"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Visa information om filsystemet"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrera efter nodnamn",
+        "info": "Ange namnet på din Proxmox-nod för att endast visa mätvärden för den noden. Som standard visas hela klustret."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sektion öppen som standard",
         "data": {
           "none": "Ingen",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Noder",
+          "vm": "VMs",
+          "lxc": "LXC:er",
           "storage": "Lagring"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Flik öppen som standard",
+        "info": "Flik öppen som standard. Används endast när flera integrationer är tillgängliga.",
         "data": {
           "system": "",
           "cluster": ""
@@ -57,8 +57,8 @@
         "label": "Visa lagringssektion"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Krav på att indikatorn för sektionsstatus ska vara \"OK",
+        "info": "\"Alla\" kräver att alla objekt är online för att indikatorn ska vara grön. \"Någon\" kräver att minst en artikel är online.",
         "data": {
           "any": "Någon aktiv",
           "all": "Alla aktiva"
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Noder",
+        "vms": "VMs",
+        "lxcs": "LXC:er",
         "storage": "Lagring"
       }
     },
