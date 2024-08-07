@@ -23,26 +23,26 @@
             "title": "Skapa inbjudan",
             "description": "Efter utgångsdatumet är en inbjudan inte längre giltig och mottagaren av inbjudan kan inte skapa ett konto.",
             "form": {
-                "expires": "",
+                "expires": "Utgångsdatum",
                 "submit": "Skapa"
             }
         },
         "copy": {
-            "title": "",
-            "description": "",
-            "invitationLink": "",
+            "title": "Kopiera inbjudan",
+            "description": "Din inbjudan har genererats. Efter att denna modal stängs <b>kommer du inte att kunna kopiera den här länken längre.</b> Om du inte längre vill bjuda in personen i fråga kan du när som helst ta bort inbjudan.",
+            "invitationLink": "Inbjudningslänk",
             "details": {
                 "id": "ID",
-                "token": ""
+                "token": "Token"
             },
             "button": {
-                "close": ""
+                "close": "Kopiera och avfärda"
             }
         },
         "delete": {
             "title": "Ta bort inbjudan",
-            "description": ""
+            "description": "Är du säker på att du vill ta bort den här inbjudan? Användare med den här länken kommer inte längre att kunna skapa ett konto med hjälp av den länken."
         }
     },
-    "noInvites": ""
+    "noInvites": "Det finns inga inbjudningar ännu."
 }
