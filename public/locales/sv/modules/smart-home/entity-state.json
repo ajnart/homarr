@@ -1,32 +1,32 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Entitet hittades inte",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistant-enhet",
+        "description": "Aktuellt tillstånd för en entitet i Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Entitetens tillstånd",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "Enhets-ID",
+                "info": "Unik entitets-ID i Home Assistant. Kopiera genom att klicka på entitet > Klicka på kugghjulsikonen > Klicka på kopieringsknappen vid \"Entitet-ID\". Vissa anpassade entiteter kanske inte stöds."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Lägg till måttenhet",
+                "info": "Lägg till attributet för måttenhet till entitetens tillstånd."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "Valfritt automations-ID",
+                "info": "Ditt unika automations-ID. Börjar alltid med automation.XXXXX. Om den inte är inställd är widgeten inte klickbar och visar bara status. Efter klick uppdateras entitetens tillstånd."
             },
             "displayName": {
-                "label": ""
+                "label": "Visningsnamn"
             },
             "displayFriendlyName": {
                 "label": "",
                 "info": ""
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Växla entitet",
+                "info": "Utför en generisk Home Assistant-växlingsåtgärd på entitet när du klickar på den."
             }
         }
     }
