@@ -1,15 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Home Assistant automation",
+    "description": "Utför en automatisering",
     "settings": {
-      "title": "",
+      "title": "Utför en automatisering",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "Automations-ID",
+        "info": "Ditt unika automations-ID. Börjar alltid med automation.XXXXX."
       },
       "displayName": {
-        "label": ""
+        "label": "Visningsnamn"
       }
     }
   }
