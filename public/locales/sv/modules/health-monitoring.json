@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Drifttid",
-    "uptimeFormat": "",
+    "uptimeFormat": "{{days}} dagar, {{hours}} timmar, {{minutes}} minuter",
     "updates": "Uppdateringar är tillgängliga",
     "reboot": "Omstart"
   },
