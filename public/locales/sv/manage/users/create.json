@@ -1,14 +1,14 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Skapa användare",
     "steps": {
         "account": {
-            "title": "",
+            "title": "Första steget",
             "text": "Skapa konto",
             "username": {
                 "label": "Användarnamn"
             },
             "email": {
-                "label": ""
+                "label": "E-post"
             }
         },
         "security": {
@@ -30,7 +30,7 @@
                     "property": "Egenskap",
                     "value": "Värde",
                     "username": "Användarnamn",
-                    "email": "",
+                    "email": "E-post",
                     "password": "Lösenord"
                 },
                 "notSet": "Inte anget",
