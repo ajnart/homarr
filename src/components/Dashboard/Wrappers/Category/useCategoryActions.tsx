@@ -187,6 +187,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
       (previous) => {
         const currentItem = previous.categories.find((x) => x.id === category.id);
         if (!currentItem) return previous;
+
+        const currentWrapper = previous.wrappers.find((x) => x.position === currentItem?.position);
+        if (!currentWrapper) return previous;
+
         // Find the main wrapper
         const mainWrapper = previous.wrappers.find((x) => x.position === 0);
         const mainWrapperId = mainWrapper?.id ?? 'default';
@@ -196,7 +200,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          if (app.area.type !== 'category') {
+          if (app.area.type === 'sidebar') {
             return false;
           }
 
@@ -204,7 +208,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return app.area.properties.id === currentItem.id;
+          return (
+            app.area.properties.id === currentItem.id ||
+            app.area.properties.id === currentWrapper.id
+          );
         };
 
         const isWidgetAffectedFilter = (widget: IWidget<string, any>): boolean => {
@@ -212,7 +219,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          if (widget.area.type !== 'category') {
+          if (widget.area.type === 'sidebar') {
             return false;
           }
 
@@ -220,7 +227,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return widget.area.properties.id === currentItem.id;
+          return (
+            widget.area.properties.id === currentItem.id ||
+            widget.area.properties.id === currentWrapper.id
+          );
         };
 
         return {
