@@ -185,10 +185,20 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     updateConfig(
       configName,
       (previous) => {
-        const currentItem = previous.categories.find((category) => category.id === category.id);
+        const currentItem = previous.categories.find(
+          (previousCategory) => previousCategory.id === category.id
+        );
         if (!currentItem) return previous;
+
+        const currentWrapper = previous.wrappers.find(
+          (previousWrapper) => previousWrapper.position === currentItem?.position
+        );
+        if (!currentWrapper) return previous;
+
         // Find the main wrapper
-        const mainWrapper = previous.wrappers.find((wrapper) => wrapper.position === 0);
+        const mainWrapper = previous.wrappers.find(
+          (previousWrapper) => previousWrapper.position === 0
+        );
         const mainWrapperId = mainWrapper?.id ?? 'default';
 
         const isAppAffectedFilter = (app: AppType): boolean => {
@@ -196,7 +206,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          if (app.area.type !== 'category') {
+          if (app.area.type === 'sidebar') {
             return false;
           }
 
@@ -204,7 +214,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return app.area.properties.id === currentItem.id;
+          return (
+            app.area.properties.id === currentItem.id ||
+            app.area.properties.id === currentWrapper.id
+          );
         };
 
         const isWidgetAffectedFilter = (widget: IWidget<string, any>): boolean => {
@@ -212,7 +225,7 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          if (widget.area.type !== 'category') {
+          if (widget.area.type === 'sidebar') {
             return false;
           }
 
@@ -220,7 +233,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
             return false;
           }
 
-          return widget.area.properties.id === currentItem.id;
+          return (
+            widget.area.properties.id === currentItem.id ||
+            widget.area.properties.id === currentWrapper.id
+          );
         };
 
         return {
@@ -261,9 +277,11 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
                 })
               ),
           ],
-          categories: previous.categories.filter((category) => category.id !== category.id),
+          categories: previous.categories.filter(
+            (previousCategory) => previousCategory.id !== category.id
+          ),
           wrappers: previous.wrappers.filter(
-            (wrapper) => wrapper.position !== currentItem.position
+            (previousWrapper) => previousWrapper.position !== currentItem.position
           ),
         };
       },
