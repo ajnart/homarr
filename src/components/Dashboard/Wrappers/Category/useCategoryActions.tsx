@@ -185,14 +185,20 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     updateConfig(
       configName,
       (previous) => {
-        const currentItem = previous.categories.find((x) => x.id === category.id);
+        const currentItem = previous.categories.find(
+          (previousCategory) => previousCategory.id === category.id
+        );
         if (!currentItem) return previous;
 
-        const currentWrapper = previous.wrappers.find((x) => x.position === currentItem?.position);
+        const currentWrapper = previous.wrappers.find(
+          (previousWrapper) => previousWrapper.position === currentItem?.position
+        );
         if (!currentWrapper) return previous;
 
         // Find the main wrapper
-        const mainWrapper = previous.wrappers.find((x) => x.position === 0);
+        const mainWrapper = previous.wrappers.find(
+          (previousWrapper) => previousWrapper.position === 0
+        );
         const mainWrapperId = mainWrapper?.id ?? 'default';
 
         const isAppAffectedFilter = (app: AppType): boolean => {
@@ -271,8 +277,12 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
                 })
               ),
           ],
-          categories: previous.categories.filter((x) => x.id !== category.id),
-          wrappers: previous.wrappers.filter((x) => x.position !== currentItem.position),
+          categories: previous.categories.filter(
+            (previousCategory) => previousCategory.id !== category.id
+          ),
+          wrappers: previous.wrappers.filter(
+            (previousWrapper) => previousWrapper.position !== currentItem.position
+          ),
         };
       },
       true
