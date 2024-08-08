@@ -185,10 +185,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
     updateConfig(
       configName,
       (previous) => {
-        const currentItem = previous.categories.find((x) => x.id === category.id);
+        const currentItem = previous.categories.find((category) => category.id === category.id);
         if (!currentItem) return previous;
         // Find the main wrapper
-        const mainWrapper = previous.wrappers.find((x) => x.position === 0);
+        const mainWrapper = previous.wrappers.find((wrapper) => wrapper.position === 0);
         const mainWrapperId = mainWrapper?.id ?? 'default';
 
         const isAppAffectedFilter = (app: AppType): boolean => {
@@ -261,8 +261,10 @@ export const useCategoryActions = (configName: string | undefined, category: Cat
                 })
               ),
           ],
-          categories: previous.categories.filter((x) => x.id !== category.id),
-          wrappers: previous.wrappers.filter((x) => x.position !== currentItem.position),
+          categories: previous.categories.filter((category) => category.id !== category.id),
+          wrappers: previous.wrappers.filter(
+            (wrapper) => wrapper.position !== currentItem.position
+          ),
         };
       },
       true
