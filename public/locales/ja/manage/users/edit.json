@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "ユーザー {{username}}",
+  "back": "ユーザー管理に戻る",
   "sections": {
     "general": {
       "title": "一般",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "セキュリティ",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "新しいパスワード"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "既存のセッションを終了する",
+          "description": "ユーザーのデバイスで再ログインを強制する"
         },
         "confirm": {
           "label": "確認",
-          "description": ""
+          "description": "パスワードが更新されます。操作を元に戻すことはできません。"
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": " ロール",
+      "currentRole": "現在のロール: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "所有者",
+        "admin": "管理者",
+        "normal": "通常"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "アカウント削除",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "ユーザー名を確認",
+          "description": "削除するにはユーザー名を入力してください"
         },
         "confirm": {
           "label": "永久削除",
-          "description": ""
+          "description": "この操作は永続的であり、すべてのアカウント データが失われることを理解しています。"
         }
       }
     }
