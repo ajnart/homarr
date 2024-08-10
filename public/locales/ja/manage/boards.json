@@ -16,15 +16,15 @@
                 "label": "永久削除",
                 "disabled": "古いHomarrコンポーネントはデフォルト設定の削除を許可していないため、削除は無効です。将来的には削除できるようになるでしょう。"
             },
-            "duplicate": "",
+            "duplicate": "複製",
             "rename": {
-                "label": "",
+                "label": "名前を変更",
                 "modal": {
-                    "title": "",
+                    "title": "ボード名の変更 {{name}}",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "新しい名前",
+                            "placeholder": "新しいボード名"
                         }
                     }
                 }
