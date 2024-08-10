@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "無効化期間を設定する",
+    "hours": "時間",
+    "minutes": "分",
+    "unlimited": "無制限の場合は空白にする",
+    "set": "設定"
   }
 }
