@@ -1,32 +1,32 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "エンティティが見つかりません",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistant エンティティ",
+        "description": "Home Assistant のエンティティの現在の状態",
         "settings": {
-            "title": "",
+            "title": "エンティティの状態",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "エンティティID",
+                "info": "Home Assistant の一意のエンティティ ID。エンティティをクリックしてコピー > 歯車アイコンをクリック > 「エンティティ ID」のコピー ボタンをクリックします。一部のカスタム エンティティはサポートされていない場合があります。"
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "測定単位を追加",
+                "info": "エンティティ状態に測定単位属性を追加します。"
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "オプションのオートメーションID",
+                "info": "あなた固有のオートメーションID。常にautomation.XXXXXで始まります。設定されていない場合、ウィジェットはクリックされず、状態のみが表示されます。クリック後、エンティティの状態はリフレッシュされます。"
             },
             "displayName": {
-                "label": ""
+                "label": "表示名"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "フレンドリーネームを表示",
+                "info": "表示名の代わりに、Home Assistant からのフレンドリ名を表示します。"
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "エンティティの切り替え",
+                "info": "クリックすると、エンティティに対して一般的な Home Assistant トグル アクションを実行します。"
             }
         }
     }
