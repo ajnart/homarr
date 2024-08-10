@@ -17,8 +17,8 @@
     "approved": "承認済み",
     "pendingApproval": "承認待ち",
     "declined": "拒否",
-    "available": "",
-    "partial": ""
+    "available": "利用可能",
+    "partial": "一部"
   },
   "tooltips": {
     "approve": "リクエスト承認",
