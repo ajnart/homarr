@@ -19,7 +19,7 @@
         "label": "テキスト行クランプ"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "公開日で並べ替え（昇順）"
       },
       "sortPostsWithoutPublishDateToTheTop": {
         "label": ""
