@@ -1,22 +1,22 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "インデックス・マネージャーのステータス",
+        "description": "インデクサーのステータス",
         "settings": {
-            "title": "",
+            "title": "インデックス・マネージャーのステータス",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "インデクサーサイトを新しいタブで開く"
             }
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "インデクサーマネージャー",
+        "testAllButton": "すべてのテスト"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "インデクサー マネージャーが見つかりません",
+            "text": "インデクサー マネージャーへの接続中に問題が発生しました。構成/統合を確認してください。"
         }
     }
 }
