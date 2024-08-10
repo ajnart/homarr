@@ -22,10 +22,10 @@
         "label": "公開日で並べ替え（昇順）"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "公開日のない投稿を一番上に表示する"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "投稿の最大数"
       }
     },
     "card": {
