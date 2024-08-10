@@ -22,5 +22,5 @@
       "message": "カテゴリ \"{{name}}\" が作成されました"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Dockerからのインポート"
 }
