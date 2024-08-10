@@ -11,10 +11,10 @@
         "label": "完了したトレントを表示する"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "アクティブな Torrent を表示"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Torrent をアクティブとするアップロード速度 (kB/s)"
       },
       "displayStaleTorrents": {
         "label": "古くなったトレントを表示する"
@@ -27,19 +27,19 @@
         "description": "「ホワイトリスト」にチェックされている場合、これはホワイトリストとして機能する。チェックされていない場合、これはブラックリストとなる。空の場合は何もしません。"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "フィルタリングされたTorrent リストの比率を表示",
+        "info": "無効にすると、グローバル比率のみが表示されます。グローバル比率が設定されている場合でも、ラベルは使用されます。"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "列の並べ替えを有効にします"
       },
       "rowSorting": {
-        "label": ""
+        "label": "行の並べ替えを有効にします"
       },
       "columns": {
-        "label": "",
+        "label": "表示する列を選択",
         "data": {
-          "date": "",
+          "date": "追加日",
           "down": "ダウンロード",
           "up": "アップロード",
           "eta": "ETA",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "名前の列のサイズを変更する"
       }
     }
   },
@@ -55,27 +55,27 @@
     "footer": {
       "error": "エラー",
       "lastUpdated": "最終更新 {{time}} 前",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "グローバル比率",
+      "ratioWithFilter": "フィルタによる比率"
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "ダウンロード中",
         "name": "名称",
-        "dateAdded": "",
+        "dateAdded": "追加日",
         "size": "サイズ",
         "download": "ダウンロード",
         "upload": "アップロード",
         "estimatedTimeOfArrival": "ETA",
         "progress": "進捗状況",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "合計アップロード",
+        "totalDownloaded": "合計ダウンロード",
+        "ratio": "比率",
+        "seeds": "シード（接続済）",
+        "peers": "ピア（接続済み）",
+        "label": "ラベル",
         "state": "状態",
-        "stateMessage": ""
+        "stateMessage": "状態メッセージ"
       },
       "item": {
         "text": "運営： {{appName}}, {{ratio}} 比率"
