@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "すべて",
+            "normal": "通常",
+            "admin": "管理者",
+            "owner": "所有者"
         }
     },
     "table": {
