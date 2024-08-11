@@ -73,8 +73,8 @@ Homarr will integrate with the following applications:
 - [NZBGet](https://homarr.dev/docs/integrations/usenet#nzbget)
 
 📺 Media servers
-- [Plex](https://homarr.dev/docs/integrations/usenet#nzbget)
-- [Jellyfin](https://homarr.dev/docs/integrations/usenet#nzbget)
+- [Plex](https://homarr.dev/docs/integrations/media-server/#plex)
+- [Jellyfin](https://homarr.dev/docs/integrations/media-server#jellyfin-and-emby)
 
 📚 Media collection managers
 - [Sonarr](https://homarr.dev/docs/integrations/servarr#sonarr)
