@@ -16,7 +16,7 @@
     },
     "afterLoginRedirection": "Po zalogowaniu nastąpi przekierowanie na stronę {{url}}",
     "providersEmpty": {
-      "title": "",
+      "title": "Błąd dostawcy uwierzytelniania",
       "message": ""
     }
   },
