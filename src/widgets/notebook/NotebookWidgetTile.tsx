@@ -27,7 +27,7 @@ const definition = defineWidget({
     },
   },
   gridstack: {
-    minWidth: 2,
+    minWidth: 1,
     minHeight: 1,
     maxWidth: 12,
     maxHeight: 12,
