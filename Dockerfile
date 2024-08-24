@@ -1,4 +1,4 @@
-FROM node:20.2.0-slim as compiler
+FROM --platform=linux/amd64 node:20.2.0-slim as compiler
 
 #RUN apt-get update && apt-get -y install git wget openssl
 
