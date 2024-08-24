@@ -16,12 +16,29 @@ type Profile = {
 export type OidcRedirectCallbackHeaders = {
   'x-forwarded-proto'?: string;
   'x-forwarded-host'?: string;
+  referer?: string;
   host?: string;
+};
+
+const getProtocolFromReferer = (referer: string | undefined) => {
+  if (!referer) return referer;
+  const url = new URL(referer);
+  return url.protocol.replace(':', '');
 };
 
 // The redirect_uri is constructed to work behind a reverse proxy. It is constructed from the headers x-forwarded-proto and x-forwarded-host.
 export const createRedirectUri = (headers: OidcRedirectCallbackHeaders, pathname: string) => {
-  let protocol = headers['x-forwarded-proto'] ?? 'http';
+  let protocol = headers['x-forwarded-proto'] ?? getProtocolFromReferer(headers.referer) ?? 'http';
+
+  Consola.log(
+    `Constructing redirect uri protocol="${protocol}" source=${
+      headers['x-forwarded-proto']
+        ? 'x-forwarded-proto'
+        : headers.referer
+          ? 'referer'
+          : 'fallback http'
+    }`
+  );
 
   // @see https://support.glitch.com/t/x-forwarded-proto-contains-multiple-protocols/17219
   if (protocol.includes(',')) {
@@ -31,7 +48,6 @@ export const createRedirectUri = (headers: OidcRedirectCallbackHeaders, pathname
   const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
 
   const host = headers['x-forwarded-host'] ?? headers.host;
-
 
   return `${protocol}://${host}${path}`;
 };
