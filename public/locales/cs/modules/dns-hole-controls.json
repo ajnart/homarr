@@ -14,5 +14,12 @@
         "text": "Došlo k problému s připojením k Vaší DNS Hole. Ověřte prosím svou konfiguraci."
       }
     }
+  },
+  "durationModal": {
+    "title": "Nastavit dobu trvání deaktivace",
+    "hours": "Hodin",
+    "minutes": "Minut",
+    "unlimited": "ponechte prázdne pro neomezenou dobu",
+    "set": "Nastavit"
   }
 }

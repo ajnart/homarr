@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Användare {{username}}",
+  "back": "Tillbaka till användarhantering",
   "sections": {
     "general": {
       "title": "Allmänt",
@@ -9,45 +9,45 @@
           "label": "Användarnamn"
         },
         "eMail": {
-          "label": ""
+          "label": "E-post"
         }
       }
     },
     "security": {
-      "title": "",
+      "title": "Säkerhet",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Nytt lösenord"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Avsluta befintliga sessioner",
+          "description": "Tvingar användaren att logga in igen på sina enheter"
         },
         "confirm": {
           "label": "Bekräfta",
-          "description": ""
+          "description": "Lösenordet kommer att uppdateras. Åtgärden kan inte återställas."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Roller",
+      "currentRole": "Nuvarande roll: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Ägare",
+        "admin": "Admin",
+        "normal": "Normal"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Radering av konto",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Bekräfta användarnamn",
+          "description": "Skriv användarnamn för att bekräfta borttagningen"
         },
         "confirm": {
           "label": "Radera permanent",
-          "description": ""
+          "description": "Jag är medveten om att denna åtgärd är permanent och att alla kontouppgifter kommer att gå förlorade."
         }
       }
     }

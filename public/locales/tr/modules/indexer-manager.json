@@ -3,7 +3,10 @@
         "name": "Dizin oluşturucu yöneticisi statüsü",
         "description": "Dizin oluşturucularınızın statüsü",
         "settings": {
-            "title": "Dizin oluşturucu yöneticisi statüsü"
+            "title": "Dizin oluşturucu yöneticisi statüsü",
+            "openIndexerSiteInNewTab": {
+                "label": "Dizin Oluşturucu Sitesini Yeni Sekmede Aç"
+            }
         }
     },
     "indexersStatus": {

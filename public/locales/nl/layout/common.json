@@ -2,9 +2,9 @@
   "modals": {
     "blockedPopups": {
       "title": "Pop-ups geblokkeerd",
-      "text": "Je browser heeft de toegang tot Homarr's API geblokkeerd. Dit wordt meestal veroorzaakt door AdBlockers of geweigerde toestemmingen. Homarr is niet in staat om automatisch rechten aan te vragen.",
+      "text": "Je browser heeft de toegang tot Homarr's API geblokkeerd. Dit wordt meestal veroorzaakt door AdBlockers of geweigerde rechten. Homarr is niet in staat om automatisch rechten aan te vragen.",
       "list": {
-        "browserPermission": "Klik op het pictogram naast de URL en controleer de toestemmingen. Pop-ups en vensters toestaan",
+        "browserPermission": "Klik op het icoon naast de URL en controleer de rechten. Pop-ups en vensters toestaan",
         "adBlockers": "Schakel advertentieblokkers en beveiligingsprogramma's van je browser uit",
         "otherBrowser": "Probeer een andere browser"
       }
@@ -17,8 +17,8 @@
   },
   "menu": {
     "moveUp": "Omhoog",
-    "moveDown": "Naar beneden",
-    "addCategory": "Categorie {{location}}toevoegen",
+    "moveDown": "Omlaag",
+    "addCategory": "Categorie {{location}} toevoegen",
     "addAbove": "boven",
     "addBelow": "onder"
   }

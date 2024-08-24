@@ -14,5 +14,12 @@
         "text": "Si è verificato un problema di connessione ai vostri DNS hole. Verificate la vostra configurazione/integrazione."
       }
     }
+  },
+  "durationModal": {
+    "title": "Imposta tempo di disattivazione",
+    "hours": "Ore",
+    "minutes": "Minuti",
+    "unlimited": "Lasciare vuoto per nessun limite",
+    "set": "Imposta"
   }
 }

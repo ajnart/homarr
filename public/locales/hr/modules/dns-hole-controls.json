@@ -14,5 +14,12 @@
         "text": "Došlo je do problema pri povezivanju s vašim DNS rupama. Provjerite svoju konfiguraciju/integraciju(e)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

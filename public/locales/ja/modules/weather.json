@@ -11,10 +11,10 @@
         "label": "都市名の表示"
       },
       "displayWeekly": {
-        "label": ""
+        "label": "週間予報を表示する"
       },
       "forecastDays": {
-        "label": ""
+        "label": "表示する日数"
       },
       "location": {
         "label": "天候の場所"

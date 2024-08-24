@@ -1,32 +1,32 @@
 {
-    "entityNotFound": "",
+    "entityNotFound": "Entiteit niet gevonden",
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Home Assistent entiteit",
+        "description": "Huidige status van een entiteit in Home Assistant",
         "settings": {
-            "title": "",
+            "title": "Status entiteit",
             "entityId": {
-                "label": "",
-                "info": ""
+                "label": "Entiteit-ID",
+                "info": "Unieke entiteit-ID in Home Assistant. Kopieer door te klikken op entiteit > Klik op tandwielicoon > Klik op de kopieerknop bij 'Entiteit ID'. Sommige aangepaste entiteiten worden mogelijk niet ondersteund."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Maateenheid toevoegen",
+                "info": "Voeg het attribuut van de maateenheid toe aan de status van de entiteit."
             },
             "automationId": {
-                "label": "",
-                "info": ""
+                "label": "Optionele automatiserings-ID",
+                "info": "Je unieke automatiserings-ID. Begint altijd met automation.XXXXX. Als dit niet is ingesteld, kan er niet op de widget worden geklikt en wordt alleen de status weergegeven. Na een klik wordt de status van de entiteit vernieuwd."
             },
             "displayName": {
-                "label": ""
+                "label": "Weergavenaam"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Vriendelijke naam weergeven",
+                "info": "Vriendelijke naam van Home Assistant weergeven in plaats van weergavenaam."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Entiteit toggle",
+                "info": "Voer een algemene Home Assistant toggle-actie uit op een entiteit wanneer erop wordt geklikt."
             }
         }
     }

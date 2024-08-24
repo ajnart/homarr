@@ -3,7 +3,7 @@
     "name": "Kalender",
     "description": "Toont een kalender met komende releases, van ondersteunde integraties.",
     "settings": {
-      "title": "Instellingen voor Kalender widget",
+      "title": "Instellingen voor kalender widget",
       "radarrReleaseType": {
         "label": "Radarr release type",
         "data": {
@@ -13,19 +13,19 @@
         }
       },
       "hideWeekDays": {
-        "label": "Verberg weekdagen"
+        "label": "Weekdagen verbergen"
       },
       "showUnmonitored": {
-        "label": "Toon niet-bewaakte items"
+        "label": "Niet-bewaakte items weergeven"
       },
       "fontSize": {
         "label": "Lettergrootte",
         "data": {
-          "xs": "Extra Klein",
+          "xs": "Extra klein",
           "sm": "Klein",
-          "md": "Medium",
+          "md": "Middel",
           "lg": "Groot",
-          "xl": "Extra Groot"
+          "xl": "Extra groot"
         }
       }
     }

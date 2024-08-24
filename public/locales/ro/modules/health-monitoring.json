@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Timp de funcționare",
-    "uptimeFormat": "{{days}} zile, {{hours}} ore",
+    "uptimeFormat": "",
     "updates": "Actualizări disponibile",
     "reboot": "Repornire"
   },

@@ -22,7 +22,7 @@
       "description": "障害のあるユーザーのためのHomarr設定"
     },
     "access": {
-      "name": "",
+      "name": "アクセス",
       "description": "ボードにアクセスできる人を設定する"
     }
   }

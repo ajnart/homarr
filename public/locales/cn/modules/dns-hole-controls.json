@@ -14,5 +14,12 @@
         "text": "到DNS漏洞的连接有问题。请验证您的配置/集成设置。"
       }
     }
+  },
+  "durationModal": {
+    "title": "设置禁用时长",
+    "hours": "时",
+    "minutes": "分",
+    "unlimited": "留空表示无限制",
+    "set": "设置"
   }
 }

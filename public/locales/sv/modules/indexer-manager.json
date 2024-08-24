@@ -1,19 +1,22 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Status för indexeringshanteraren",
+        "description": "Status för dina indexerare",
         "settings": {
-            "title": ""
+            "title": "Status för indexeringshanteraren",
+            "openIndexerSiteInNewTab": {
+                "label": "Öppna indexeringssidan i ny flik"
+            }
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Indexeringshanterare",
+        "testAllButton": "Testa alla"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Det gick inte att hitta en indexeringshanterare",
+            "text": "Det gick inte att ansluta till din indexeringshanterare. Vänligen verifiera din konfiguration/integration(er)."
         }
     }
 }

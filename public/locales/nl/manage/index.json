@@ -1,15 +1,15 @@
 {
-    "metaTitle": "Beheer",
+    "metaTitle": "Beheren",
     "hero": {
         "title": "Welkom terug, {{username}}",
-        "fallbackUsername": "Anonieme",
-        "subtitle": "Welkom bij Your Application Hub. Organiseer, optimaliseer en overwin!"
+        "fallbackUsername": "Anoniem",
+        "subtitle": "Welkom bij je applicatie hub. Organiseer, optimaliseer en overwin!"
     },
     "quickActions": {
         "title": "Snelle acties",
         "boards": {
             "title": "Jouw borden",
-            "subtitle": "Uw borden maken en beheren"
+            "subtitle": "Je borden aanmaken en beheren"
         },
         "inviteUsers": {
             "title": "Een nieuwe gebruiker uitnodigen",

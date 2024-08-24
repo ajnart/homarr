@@ -1,6 +1,6 @@
 {
     "search": {
-        "label": "Zoek op",
+        "label": "Zoeken",
         "engines": {
             "web": "Zoek naar {{query}} op het web",
             "youtube": "Zoek naar {{query}} op YouTube",
@@ -13,8 +13,8 @@
             "switchTheme": "Thema omschakelen",
             "preferences": "Gebruikersvoorkeuren",
             "defaultBoard": "Standaard dashboard",
-            "manage": "Beheer",
-            "logout": "Afmelden bij {{username}}",
+            "manage": "Beheren",
+            "logout": "Uitloggen van {{username}}",
             "login": "Inloggen"
         }
     },

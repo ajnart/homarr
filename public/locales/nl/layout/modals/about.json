@@ -1,19 +1,19 @@
 {
 	"description": "Homarr is een <strong>sterk</strong>, <strong>modern</strong> dashboard dat al je apps en diensten binnen handbereik brengt. Met Homarr heb je toegang tot en controle over alles op één handige locatie. Homarr integreert naadloos met de apps die je hebt toegevoegd en geeft je waardevolle informatie en volledige controle. Installatie is een fluitje van een cent en Homarr ondersteunt een breed scala aan implementatiemethoden.",
-	"addToDashboard": "Aan dashboard toevoegen",
+	"addToDashboard": "Toevoegen aan dashboard",
 	"tip": "Mod verwijst naar je modifier toets, dat zijn de Ctrl en Commando/Super/Windows toets",
 	"key": "Sneltoets",
 	"action": "Actie",
 	"keybinds": "Sneltoetsen",
-	"translators": "",
-	"translatorsDescription": "",
-	"contributors": "",
-	"contributorsDescription": "",
+	"translators": "Vertalers ({{count}})",
+	"translatorsDescription": "Dankzij deze mensen is Homarr beschikbaar in {{languages}} talen! Wil je helpen om Homarr in jouw taal te vertalen? Lees <a>hier</a> hoe je dat kunt doen.",
+	"contributors": "Bijdragers ({{count}})",
+	"contributorsDescription": "Deze mensen hebben de code gebouwd waardoor Homarr werkt! Wil je meebouwen aan Homarr? Lees <a>hier</a> hoe je dat kunt doen",
 	"actions": {
-		"toggleTheme": "Schakelen tussen licht en donker",
+		"toggleTheme": "Lichte/donkere modus togglen",
 		"focusSearchBar": "Focus op zoekbalk",
-		"openDocker": "Open Docker Widget",
-		"toggleEdit": "De bewerkingsmodus schakelen"
+		"openDocker": "Open Docker widget",
+		"toggleEdit": "Bewerkingsmodus togglen"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Configuratieschema versie",
@@ -21,7 +21,7 @@
 		"nodeEnvironment": "Node environment",
 		"i18n": "I18n vertaling namespaces geladen",
 		"locales": "I18n talen geconfigureerd",
-		"experimental_disableEditMode": "<b>EXPERIMENTEEL</b>: Bewerkmodus uitschakelen"
+		"experimental_disableEditMode": "<b>EXPERIMENTEEL</b>: bewerkmodus uitschakelen"
 	},
 	"version": {
 		"new": "Nieuw: {{newVersion}}",

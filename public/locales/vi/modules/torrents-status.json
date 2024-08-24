@@ -31,15 +31,15 @@
         "info": "Nếu tắt, chỉ tỉ lệ chung sẽ được hiển thị. Tỉ lệ chung sẽ vẫn sử dụng nhãn nếu được đặt"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Bật sắp xếp lại các cột"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Bật sắp xếp các hàng"
       },
       "columns": {
-        "label": "",
+        "label": "Chọn cột để hiển thị",
         "data": {
-          "date": "",
+          "date": "Ngày thêm",
           "down": "Tải xuống",
           "up": "Tải lên",
           "eta": "Thời gian dự kiến",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Thay đổi kích thước cột tên"
       }
     }
   },

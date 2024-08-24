@@ -11,35 +11,35 @@
         "label": "Afgeronde torrents weergeven"
       },
       "displayActiveTorrents": {
-        "label": ""
+        "label": "Actieve torrents weergeven"
       },
       "speedLimitOfActiveTorrents": {
-        "label": ""
+        "label": "Uploadsnelheid om een torrent als actief te beschouwen (kB/s)"
       },
       "displayStaleTorrents": {
-        "label": "Toon verouderde torrents"
+        "label": "Verouderde torrents weergeven"
       },
       "labelFilterIsWhitelist": {
         "label": "Label lijst is een whitelist (in plaats van blacklist)"
       },
       "labelFilter": {
         "label": "Label lijst",
-        "description": "Als \"is whitelist\" is aangevinkt, is dit een witte lijst. Indien niet aangevinkt, is dit een zwarte lijst. Doet niets als hij leeg is"
+        "description": "Als \"is whitelist\" is aangevinkt, is dit een insluitingslijst. Indien niet aangevinkt, is dit een uitsluitingslijst. Zal niets doen wanneer leeg"
       },
       "displayRatioWithFilter": {
-        "label": "",
-        "info": ""
+        "label": "Toon gefilterde torrents lijst verhouding",
+        "info": "Als deze optie is uitgeschakeld, wordt alleen de globale verhouding weergegeven. De globale verhouding zal nog steeds de labels gebruiken indien ingesteld"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Volgorde van de kolommen wijzigen inschakelen"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Rijen sorteren inschakelen"
       },
       "columns": {
-        "label": "",
+        "label": "Selecteer kolommen om weer te geven",
         "data": {
-          "date": "",
+          "date": "Datum toegevoegd",
           "down": "Down",
           "up": "Up",
           "eta": "ETA",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Grootte van de naamkolom wijzigen"
       }
     }
   },
@@ -55,27 +55,27 @@
     "footer": {
       "error": "Fout",
       "lastUpdated": "Laatst bijgewerkt {{time}} geleden",
-      "ratioGlobal": "",
-      "ratioWithFilter": ""
+      "ratioGlobal": "Globale verhouding",
+      "ratioWithFilter": "Verhouding met filter"
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Bezig met downloaden",
         "name": "Naam",
-        "dateAdded": "",
+        "dateAdded": "Toegevoegd op",
         "size": "Grootte",
         "download": "Down",
         "upload": "Up",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Voortgang",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Totale upload",
+        "totalDownloaded": "Totale download",
+        "ratio": "Verhouding",
+        "seeds": "Seeds (Verbonden)",
+        "peers": "Peers (Verbonden)",
+        "label": "Label",
         "state": "Status",
-        "stateMessage": ""
+        "stateMessage": "Status bericht"
       },
       "item": {
         "text": "Beheerd door {{appName}}, {{ratio}} verhouding"
@@ -96,11 +96,11 @@
     "errors": {
       "noDownloadClients": {
         "title": "Geen ondersteunde Torrent clients gevonden!",
-        "text": "Voeg een ondersteunde Torrent-client toe om je huidige downloads te bekijken"
+        "text": "Voeg een ondersteunde Torrent client toe om je huidige downloads te bekijken"
       },
       "generic": {
         "title": "Er is een onverwachte fout opgetreden",
-        "text": "Kan niet communiceren met je Torrent-clients. Controleer je configuratie"
+        "text": "Kan niet communiceren met je Torrent clients. Controleer je configuratie"
       }
     },
     "popover": {

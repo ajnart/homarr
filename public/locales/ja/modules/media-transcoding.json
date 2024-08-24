@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "メディアトランスコーディング",
+    "description": "メディアトランスコーディングに関する情報を表示します",
     "settings": {
-      "title": "",
+      "title": "メディアトランスコーディング設定",
       "appId": {
-        "label": ""
+        "label": "アプリを選択"
       },
       "defaultView": {
-        "label": "",
+        "label": "デフォルト表示",
         "data": {
-          "workers": "",
+          "workers": "ワーカー",
           "queue": "キュー",
-          "statistics": ""
+          "statistics": "統計"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "ヘルスチェックインジケーターを表示"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "キュー内のヘルスチェックを表示"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "キュー: ページあたりのアイテム数"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "右下にアプリアイコンを表示する"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "ウィジェット設定でアプリを選択してください",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "ファイル",
           "eta": "ETA",
           "progress": "進捗状況"
         },
         "empty": "空",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "トランスコード",
+          "healthCheck": "ヘルスチェック"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "ファイル",
           "size": "サイズ"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} / {{total}}"
         },
         "empty": "空",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "トランスコード",
+          "healthCheck": "ヘルスチェック"
         }
       }
     },
     "statistics": {
       "empty": "空",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "トランスコード: {{value}}",
+        "healthChecks": "ヘルスチェック： {{value}}",
+        "files": "ファイル: {{value}}",
+        "spaceSaved": "保存しました: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "トランスコード",
+        "healthChecks": "ヘルスチェック",
+        "videoCodecs": "コーデック",
+        "videoContainers": "コンテナ",
+        "videoResolutions": "解像度"
       }
     }
   },
   "error": {
     "title": "エラー",
-    "message": ""
+    "message": "Tdarr からデータを取得中にエラーが発生しました。"
   },
   "tabs": {
-    "workers": "",
+    "workers": "ワーカー",
     "queue": "キュー",
-    "statistics": ""
+    "statistics": "統計"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "ヘルスチェック",
+    "queued": "処理待ち",
+    "healthy": "正常",
+    "unhealthy": "異常"
   }
 }

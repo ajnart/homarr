@@ -31,15 +31,15 @@
         "info": "Om inaktiverat visas endast det globala förhållandet. Det globala förhållandet kommer fortfarande att använda etiketterna om det är inställt"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Aktivera omsortering av kolumner"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Aktivera sortering av rader"
       },
       "columns": {
-        "label": "",
+        "label": "Välj kolumner som ska visas",
         "data": {
-          "date": "",
+          "date": "Datum tillagt",
           "down": "Ned",
           "up": "Upp",
           "eta": "Beräknad sluttid",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Ändra storlek på namnkolumnen"
       }
     }
   },

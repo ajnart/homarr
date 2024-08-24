@@ -17,6 +17,7 @@
   "disabled": "crwdns2885:0crwdne2885:0",
   "enableAll": "crwdns2887:0crwdne2887:0",
   "disableAll": "crwdns2889:0crwdne2889:0",
+  "setTimer": "crwdns4484:0crwdne4484:0",
   "version": "crwdns2023:0crwdne2023:0",
   "changePosition": "crwdns2025:0crwdne2025:0",
   "remove": "crwdns2027:0crwdne2027:0",

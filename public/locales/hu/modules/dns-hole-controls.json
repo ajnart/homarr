@@ -14,5 +14,12 @@
         "text": "Probléma adódott a DNS-blokkoló(k)hoz való csatlakozással. Kérjük, ellenőrizze a konfigurációt/integráció(ka)t."
       }
     }
+  },
+  "durationModal": {
+    "title": "Letiltási időtartam beállítása",
+    "hours": "Óra",
+    "minutes": "Perc",
+    "unlimited": "a korlátlanhoz hagyja üresen",
+    "set": "Beállít"
   }
 }

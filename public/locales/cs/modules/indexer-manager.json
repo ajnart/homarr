@@ -3,7 +3,10 @@
         "name": "Stav správce indexeru",
         "description": "Stav Vašich indexerů",
         "settings": {
-            "title": "Stav správce indexeru"
+            "title": "Stav správce indexeru",
+            "openIndexerSiteInNewTab": {
+                "label": "Otevírat stránku indexeru na nové kartě"
+            }
         }
     },
     "indexersStatus": {

@@ -14,5 +14,12 @@
         "text": "Houve um problema na conexão com seu(s) buraco(s) DNS. Verifique sua(s) configuração(ões)/integração(ões)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

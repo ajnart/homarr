@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "外部アドレス",
 			"description": "アプリをクリックしたときに開くURL。",
-			"tooltip": ""
+			"tooltip": "いくつかの変数を使用して動的アドレスを作成できます:<br><br><b>[homarr_base]</b> : ポートとパスを除いた完全なアドレス。 <i>(例: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : 現在のサブドメインを含む完全なベース Url。 <i>(例: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : サブドメインがフィルターされたドメイン。 <i>(例: `homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>これらの変数はすべて現在の Url に依存します。"
 		}
 	},
 	"behaviour": {

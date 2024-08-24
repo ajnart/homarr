@@ -14,5 +14,12 @@
         "text": "crwdns3862:0crwdne3862:0"
       }
     }
+  },
+  "durationModal": {
+    "title": "crwdns4486:0crwdne4486:0",
+    "hours": "crwdns4488:0crwdne4488:0",
+    "minutes": "crwdns4490:0crwdne4490:0",
+    "unlimited": "crwdns4492:0crwdne4492:0",
+    "set": "crwdns4494:0crwdne4494:0"
   }
 }

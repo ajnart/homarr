@@ -9,8 +9,8 @@
         "users": {
             "title": "Gebruikers",
             "items": {
-                "manage": "Beheer",
-                "invites": "Nodigt  uit"
+                "manage": "Beheren",
+                "invites": "Uitnodigingen"
             }
         },
         "help": {
@@ -19,14 +19,14 @@
                 "documentation": "Documentatie",
                 "report": "Een probleem / bug melden",
                 "discord": "Community Discord",
-                "contribute": "Draag bij"
+                "contribute": "Bijdragen"
             }
         },
         "tools": {
-            "title": "Gereedschap",
+            "title": "Gereedschappen",
             "items": {
                 "docker": "Docker",
-                "api": ""
+                "api": "API"
             }
         },
         "about": {
