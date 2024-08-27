@@ -11,7 +11,7 @@
     "errors": {
       "general": {
         "title": "Impossible de trouver un DNS hole",
-        "text": "Il y a un problème de connexion à votre/vos DNS hole(s). Veuillez vérifier votre/vos configuration/iintégration(s)."
+        "text": "Il y a un problème de connexion à votre/vos DNS hole(s). Veuillez vérifier votre/vos configuration/intégration(s)."
       }
     }
   },
