@@ -42,7 +42,7 @@ ENV NODE_ENV production
 ENV NODE_OPTIONS '--no-experimental-fetch'
 
 # App environment variables
-ENV DATABASE_URL "file:/app/data/db.sqlite"
+ENV DATABASE_URL "file:/data/db.sqlite"
 ENV NEXTAUTH_URL "http://localhost:7575"
 ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
 
