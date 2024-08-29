@@ -21,6 +21,8 @@ groupmod -g $PGID homarr
 
 DOCKER_GID=$(stat -c %g /var/run/docker.sock 2>/dev/null)
 if [[ $? -eq 0 ]]; then
-	echo "SETTING DOCKER GID TO ${DOCKER_GID}"
-	groupmod -g $DOCKER_GID docker
+	if [[ $DOCKER_GID -ne 0 ]]; then
+		echo "SETTING DOCKER GID TO ${DOCKER_GID}"
+		groupmod -g $DOCKER_GID docker
+	fi
 fi
