@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOMARR_USER_PATHS="/app/data /app/public/icons"
+HOMARR_USER_PATHS="/app/data /app/public/icons /data"
 
 for path in $HOMARR_USER_PATHS
 do
