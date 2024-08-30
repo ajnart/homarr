@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOMARR_USER_PATHS="/app/data /app/public/icons"
+HOMARR_USER_PATHS="/app/data /app/public/icons /data"
 
 for path in $HOMARR_USER_PATHS
 do
@@ -21,6 +21,8 @@ groupmod -g $PGID homarr
 
 DOCKER_GID=$(stat -c %g /var/run/docker.sock 2>/dev/null)
 if [[ $? -eq 0 ]]; then
-	echo "SETTING DOCKER GID TO ${DOCKER_GID}"
-	groupmod -g $DOCKER_GID docker
+	if [[ $DOCKER_GID -ne 0 ]]; then
+		echo "SETTING DOCKER GID TO ${DOCKER_GID}"
+		groupmod -g $DOCKER_GID docker
+	fi
 fi
