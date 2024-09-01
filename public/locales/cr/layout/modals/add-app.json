@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "crwdns2067:0crwdne2067:0",
-			"description": "crwdns2309:0crwdne2309:0"
+			"description": "crwdns2309:0crwdne2309:0",
+			"tooltip": "crwdns4482:0crwdne4482:0"
 		}
 	},
 	"behaviour": {

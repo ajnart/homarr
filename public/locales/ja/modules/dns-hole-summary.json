@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "アドリスト上のドメイン",
       "queriesToday": "今日のクエリ",
-      "queriesBlockedTodayPercentage": "",
-      "queriesBlockedToday": ""
+      "queriesBlockedTodayPercentage": "今日のブロック",
+      "queriesBlockedToday": "今日のブロック"
     }
   }
 }

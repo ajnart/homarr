@@ -14,5 +14,12 @@
         "text": "Det oppsto et problem med å koble til ditt DNS-hole. Vennligst bekreft konfigurasjonen/integrasjonen(e)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

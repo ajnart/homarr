@@ -18,12 +18,12 @@
 				"label": "Heb je problemen?",
 				"header": "Hier is een lijst met veelgemaakte fouten en probleemoplossing:",
 				"lines": {
-					"nothingAfterPort": "In de meeste, zo niet alle gevallen, moet je geen pad invoeren na de poort. (Zelfs de '/admin' voor pihole of '/web' voor plex)",
+					"nothingAfterPort": "In de meeste, zo niet alle gevallen, moet je geen pad invoeren na de poort. (Zelfs de '/admin' voor Pi-hole of '/web' voor Plex)",
 					"protocolCheck": "Controleer altijd of de URL wordt voorafgegaan door http of https en of je de juiste URL gebruikt.",
-					"preferIP": "Het wordt aanbevolen om het directe ip te gebruiken van de machine of container waarmee je probeert te communiceren.",
-					"enablePings": "Controleer of het IP correct is door pings in te schakelen. Pas bord aan -> Lay-out -> Pings inschakelen. Er verschijnt een rood of groen bubbeltje op de app-tegels en als je er met de muis overheen gaat, zie je de responscode (in de meeste gevallen wordt een groen bubbeltje met code 200 verwacht).",
-					"wget": "Om er zeker van te zijn dat homarr kan communiceren met de andere apps, moet je wget/curl/ping doen naar de IP:poort van de app.",
-					"iframe": "Iframes moeten altijd hetzelfde protocol (http/s) gebruiken als Homarr.",
+					"preferIP": "Het wordt aanbevolen om het directe IP te gebruiken van de machine of container waarmee je probeert te communiceren.",
+					"enablePings": "Controleer of het IP correct is door pings in te schakelen. Pas bord aan -> Lay-out -> Pings inschakelen. Er verschijnt een rood of groen bubbeltje op de app-tegels en als je er met de muis overheen gaat, zie je de response code (in de meeste gevallen wordt een groen bubbeltje met code 200 verwacht).",
+					"wget": "Om er zeker van te zijn dat Homarr kan communiceren met de andere apps, moet je wget/curl/ping doen naar de IP:poort van de app.",
+					"iframe": "Als het gaat om iframes, moeten deze altijd hetzelfde protocol (http/s) gebruiken als Homarr.",
 					"clearCache": "Sommige informatie wordt geregistreerd in de cache, dus een integratie werkt misschien niet tenzij je de cache leegmaakt in de algemene opties van Homarr."
 				},
 				"footer": "Neem voor meer probleemoplossing contact op met onze {{discord}}."
@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Extern adres",
-			"description": "URL die wordt geopend wanneer op de app wordt geklikt."
+			"description": "URL die wordt geopend wanneer op de app wordt geklikt.",
+			"tooltip": "Je kunt een paar variabelen gebruiken om dynamische adressen te maken:<br><br><b>[homarr_base]</b>: volledig adres zonder poort en pad. <i>(Voorbeeld: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b>: volledige basis URL inclusief het huidige subdomein. <i>(Voorbeeld: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>: domein met uitgefilterd subdomein. <i>(Voorbeeld: `homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Deze variabelen zijn allemaal afhankelijk van de huidige URL."
 		}
 	},
 	"behaviour": {
@@ -40,15 +41,15 @@
 			"description": "Open de app in een nieuw tabblad in plaats van de huidige."
 		},
 		"tooltipDescription": {
-			"label": "Toepassing Beschrijving",
-			"description": "De tekst die je invoert verschijnt wanneer je met de muis over je app beweegt.\r\nGebruik dit om gebruikers meer details over je app te geven of laat het leeg om niets te hebben."
+			"label": "Applicatie beschrijving",
+			"description": "De tekst die je invoert verschijnt wanneer je met de muis over je app beweegt.\nGebruik dit om gebruikers meer details over je app te geven of laat het leeg om niets te hebben."
 		},
-		"customProtocolWarning": "Een niet-standaard protocol gebruiken. Dit kan vooraf geïnstalleerde toepassingen vereisen en veiligheidsrisico's met zich meebrengen. Zorg ervoor dat je adres veilig en vertrouwd is."
+		"customProtocolWarning": "Een niet-standaard protocol gebruiken. Dit kan vooraf geïnstalleerde applicaties vereisen en veiligheidsrisico's met zich meebrengen. Zorg ervoor dat je adres veilig en vertrouwd is."
 	},
 	"network": {
 		"statusChecker": {
 			"label": "Status checker",
-			"description": "Controleert of uw app online is met een eenvoudig HTTP(S)-verzoek."
+			"description": "Controleert of je app online is met een eenvoudig HTTP(S)-verzoek."
 		},
 		"statusCodes": {
 			"label": "HTTP-statuscodes",
@@ -58,42 +59,42 @@
 	"appearance": {
 		"icon": {
 			"label": "App icoon",
-			"description": "Begin te typen om een pictogram te vinden. Je kunt ook een URL van een afbeelding plakken om een aangepast pictogram te gebruiken.",
+			"description": "Begin te typen om een icoon te vinden. Je kunt ook een URL van een afbeelding plakken om een aangepast icoon te gebruiken.",
 			"autocomplete": {
 				"title": "Geen resultaten gevonden",
-				"text": "Probeer een specifiekere zoekterm te gebruiken. Als je het gewenste pictogram niet kan vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast pictogram"
+				"text": "Probeer een specifiekere zoekterm te gebruiken. Als je het gewenste icoon niet kan vinden, plak dan de bovenstaande URL van de afbeelding voor een aangepast icoon"
 			},
 			"noItems": {
-				"title": "Externe pictogrammen laden",
+				"title": "Bezig met externe iconen laden",
 				"text": "Dit kan enkele seconden duren"
 			}
 		},
 		"appNameFontSize": {
-			"label": "Lettergrootte app naam",
+			"label": "App naam lettergrootte",
 			"description": "Stel de lettergrootte in voor wanneer de app-naam wordt weergegeven op de tegel."
 		},
 		"appNameStatus": {
-			"label": "App Naam Status",
+			"label": "App naam status",
 			"description": "Kies waar je de titel wilt weergeven, als dat al gebeurt.",
 			"dropdown": {
-				"normal": "Toon titel alleen op tegel",
-				"hover": "Titel alleen tonen bij zweven over tooltip",
+				"normal": "Titel alleen op tegel weergeven",
+				"hover": "Titel alleen bij tooltip hoveren weergeven",
 				"hidden": "Helemaal niet laten zien"
 			}
 		},
 		"positionAppName": {
-			"label": "App Naam Positie",
-			"description": "Positie van de naam van de app ten opzichte van het pictogram.",
+			"label": "App naam positie",
+			"description": "Positie van de naam van de app ten opzichte van het icoon.",
 			"dropdown": {
-				"top": "Top",
+				"top": "Bovenkant",
 				"right": "Rechts",
-				"bottom": "Bodem",
+				"bottom": "Onderkant",
 				"left": "Links"
 			}
 		},
 		"lineClampAppName": {
-			"label": "App naam Lijnklem",
-			"description": "Bepaalt op hoeveel regels uw titel maximaal moet passen. Stel 0 in voor onbeperkt."
+			"label": "App naam regel clamp",
+			"description": "Bepaalt op hoeveel regels je titel maximaal moet passen. Stel 0 in voor onbeperkt."
 		}
 	},
 	"integration": {
@@ -109,9 +110,9 @@
 			"explanationPublic": "Een publiek geheim wordt altijd naar de client gestuurd en is toegankelijk via de API. Het mag geen vertrouwelijke waarden bevatten zoals gebruikersnamen, wachtwoorden, tokens, certificaten en dergelijke!"
 		},
 		"secrets": {
-			"description": "Om een geheim bij te werken, voert u een waarde in en klikt u op de knop Opslaan. Om een geheim te verwijderen, gebruikt u de knop wissen.",
-			"warning": "Je referenties fungeren als de toegang tot uw integraties en je zou deze <strong>nooit</strong> moeten delen met iemand anders. Het Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>je geheimen veilig opslaat en beheert</strong>.",
-			"clear": "Wis geheim",
+			"description": "Om een geheim bij te werken, voer je een waarde in en klikt je op de knop Opslaan. Om een geheim te verwijderen, gebruik je de knop Wissen.",
+			"warning": "Je referenties fungeren als de toegang tot je integraties en je zou deze <strong>nooit</strong> moeten delen met iemand anders. Het Homarr team zal nooit om inloggegevens vragen. Zorg ervoor dat <strong>je geheimen veilig opslaat en beheert</strong>.",
+			"clear": "Geheim wissen",
 			"save": "Geheim opslaan",
 			"update": "Geheim updaten"
 		}
@@ -120,7 +121,7 @@
 		"popover": "Je formulier bevat ongeldige gegevens. Daarom kan het niet worden opgeslagen. Los alle problemen op en klik opnieuw op deze knop om je wijzigingen op te slaan",
 		"name": "Naam is vereist",
 		"noUrl": "URL is vereist",
-		"invalidUrl": "Waarde is geen geldige url",
+		"invalidUrl": "Waarde is geen geldige URL",
 		"noIconUrl": "Dit veld is verplicht",
 		"noExternalUri": "Externe URL is vereist",
 		"invalidExternalUri": "Externe URL is geen geldige uri"

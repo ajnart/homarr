@@ -22,8 +22,8 @@
             "title": "Bevestiging",
             "text": "Opslaan in database",
             "card": {
-                "title": "Uw invoer controleren",
-                "text": "Nadat je je gegevens naar de database hebt gestuurd, kan de gebruiker inloggen. Weet je zeker dat je deze gebruiker wilt opslaan in de database en de aanmelding wilt activeren?"
+                "title": "Controleer je invoeringen",
+                "text": "Nadat je je gegevens naar de database hebt gestuurd, kan de gebruiker inloggen. Weet je zeker dat je deze gebruiker wilt opslaan in de database en de login wilt activeren?"
             },
             "table": {
                 "header": {
@@ -47,6 +47,6 @@
     },
     "buttons": {
         "generateRandomPassword": "Willekeurig genereren",
-        "createAnother": "Maak een andere"
+        "createAnother": "Andere aanmaken"
     }
 }

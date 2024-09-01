@@ -7,15 +7,15 @@
     "filter": {
         "roles": {
             "all": "Alla",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "normal": "Normal",
+            "admin": "Admin",
+            "owner": "Ägare"
         }
     },
     "table": {
         "header": {
             "user": "Användare",
-            "email": ""
+            "email": "E-post"
         }
     },
     "tooltips": {
@@ -26,19 +26,19 @@
     "modals": {
         "delete": {
             "title": "Ta bort användare {{name}}",
-            "text": ""
+            "text": "Är du säker att du vill ta bort användaren {{name}}? Detta kommer att radera data som är associerade med detta konto, men inte några skapade instrumentpaneler av den här användaren."
         },
         "change-role": {
             "promote": {
-                "title": "",
-                "text": ""
+                "title": "Befordra användaren {{name}} till admin",
+                "text": "Är du säker på att du vill befordra användaren {{name}} till admin? Detta ger användaren tillgång till alla resurser på din Homarr-instans."
             },
             "demote": {
-                "title": "",
-                "text": ""
+                "title": "Degradera användare {{name}} till användare",
+                "text": "Är du säker på att du vill degradera användaren {{name}} till användare? Detta kommer att ta bort användarens åtkomst till alla resurser på din Homarr-instans."
             },
             "confirm": "Bekräfta"
         }
     },
-    "searchDoesntMatch": ""
+    "searchDoesntMatch": "Din sökning matchar inte några poster. Vänligen justera ditt filter."
 }

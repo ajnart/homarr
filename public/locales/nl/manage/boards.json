@@ -11,20 +11,20 @@
             "view": "Bord bekijken"
         },
         "menu": {
-            "setAsDefault": "Instellen als standaardkaart",
+            "setAsDefault": "Instellen als standaard bord",
             "delete": {
                 "label": "Permanent verwijderen",
-                "disabled": "Verwijderen uitgeschakeld, omdat oudere Homarr-componenten het verwijderen van de standaardconfiguratie niet toestaan. Verwijdering zal in de toekomst mogelijk zijn."
+                "disabled": "Verwijderen uitgeschakeld, omdat oudere Homarr componenten het verwijderen van de standaardconfiguratie niet toestaan. Verwijdering zal in de toekomst mogelijk zijn."
             },
-            "duplicate": "",
+            "duplicate": "Dupliceren",
             "rename": {
-                "label": "",
+                "label": "Hernoemen",
                 "modal": {
-                    "title": "",
+                    "title": "{{name}} bord hernoemen",
                     "fields": {
                         "name": {
-                            "label": "",
-                            "placeholder": ""
+                            "label": "Nieuwe naam",
+                            "placeholder": "Nieuw bord naam"
                         }
                     }
                 }
@@ -36,7 +36,7 @@
         }
     },
     "buttons": {
-        "create": "Nieuw bord maken"
+        "create": "Nieuw bord aanmaken"
     },
     "modals": {
         "delete": {
@@ -44,13 +44,13 @@
             "text": "Weet je zeker dat je dit bord wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt en je gegevens zullen permanent verloren gaan."
         },
         "create": {
-            "title": "Maak bord",
+            "title": "Bord aanmaken",
             "text": "De naam kan niet worden gewijzigd nadat een bord is aangemaakt.",
             "form": {
                 "name": {
                     "label": "Naam"
                 },
-                "submit": "Maak"
+                "submit": "Aanmaken"
             }
         }
     }

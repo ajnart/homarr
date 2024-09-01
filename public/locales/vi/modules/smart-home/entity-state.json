@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Hiển thị tên thân thiện",
-                "info": ""
+                "info": "Hiển thị tên thân thiện từ Home Assistant thay vì tên hiển thị."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Chuyển đổi thực thể",
+                "info": "Thực hiện hành động chuyển đổi Home Assistant thông thường trên một thực thể khi được nhấp vào."
             }
         }
     }

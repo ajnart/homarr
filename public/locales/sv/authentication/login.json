@@ -17,7 +17,7 @@
     "afterLoginRedirection": "Efter inloggningen kommer du att omdirigeras till {{url}}",
     "providersEmpty": {
       "title": "Fel vid autentiseringsfel",
-      "message": ""
+      "message": "Leverantören/leverantörerna är inte inställda, kontrollera dina loggar för mer information."
     }
   },
   "alert": "Dina autentiseringsuppgifter är felaktiga eller så finns inte det här kontot. Vänligen försök igen."

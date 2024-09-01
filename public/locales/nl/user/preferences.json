@@ -3,18 +3,18 @@
     "pageTitle": "Jouw voorkeuren",
     "boards": {
         "defaultBoard": {
-            "label": "Standaardkaart"
+            "label": "Standaard bord"
         }
     },
     "accessibility": {
         "title": "Toegankelijkheid",
         "disablePulse": {
             "label": "Ping-puls uitschakelen",
-            "description": "Standaard pingen de ping-indicatoren in Homarr. Dit kan irritant zijn. Deze schuifknop deactiveert de animatie"
+            "description": "Standaard pulseren de ping-indicatoren in Homarr. Dit kan irritant zijn. Deze schuifregelaar deactiveert de animatie"
         },
         "replaceIconsWithDots": {
             "label": "Ping-punten vervangen door pictogrammen",
-            "description": "Voor kleurenblinde gebruikers kunnen ping-punten onherkenbaar zijn. Dit vervangt indicatoren door pictogrammen"
+            "description": "Voor kleurenblinde gebruikers kunnen ping-punten onherkenbaar zijn. Dit vervangt indicatoren door iconen"
         }
     },
     "localization": {

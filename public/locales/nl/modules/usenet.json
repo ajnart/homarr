@@ -1,13 +1,13 @@
 {
   "descriptor": {
     "name": "Usenet",
-    "description": "Maakt het mogelijk om je Usenet installatie te bekijken en te beheren."
+    "description": "Geef de mogelijkheid om je Usenet installatie te bekijken en te beheren."
   },
   "card": {
     "errors": {
       "noDownloadClients": {
         "title": "Geen ondersteunde download clients gevonden!",
-        "text": "Voeg een ondersteunde Usenet Download Client toe om uw huidige downloads te bekijken"
+        "text": "Voeg een ondersteunde Usenet download client toe om je huidige downloads te bekijken"
       }
     }
   },
@@ -42,7 +42,7 @@
     "empty": "Leeg",
     "error": {
       "title": "Fout",
-      "message": "Fout bij het laden van de geschiedenis"
+      "message": "Fout bij laden van geschiedenis"
     },
     "paused": "Gepauzeerd"
   }

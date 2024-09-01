@@ -1,72 +1,72 @@
 {
   "descriptor": {
     "name": "Övervakning av systemhälsan",
-    "description": "",
+    "description": "Visar information som visar hälsa och status för ditt/dina system.",
     "settings": {
-      "title": "",
+      "title": "Inställningar för övervakning av systemhälsa",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU-temperatur i Fahrenheit"
       },
       "cpu": {
-        "label": "",
+        "label": "Visa CPU-information",
         "load": "Genomsnittlig belastning",
         "minute": "{{minute}} minut",
-        "minutes": ""
+        "minutes": "{{minutes}} minuter"
       },
       "memory": {
-        "label": ""
+        "label": "Visa minnesinformation"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Visa information om filsystemet"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtrera efter nodnamn",
+        "info": "Ange namnet på din Proxmox-nod för att endast visa mätvärden för den noden. Som standard visas hela klustret."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sektion öppen som standard",
         "data": {
           "none": "Ingen",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Noder",
+          "vm": "VMs",
+          "lxc": "LXC:er",
           "storage": "Lagring"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Flik öppen som standard",
+        "info": "Flik öppen som standard. Används endast när flera integrationer är tillgängliga.",
         "data": {
           "system": "",
           "cluster": ""
         }
       },
       "summary": {
-        "label": ""
+        "label": "Visa sammanfattningssektion"
       },
       "showNode": {
-        "label": ""
+        "label": "Visa sektion för noder"
       },
       "showVM": {
-        "label": ""
+        "label": "Visa sektion för VMs"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Visa sektion för LXC"
       },
       "showStorage": {
-        "label": ""
+        "label": "Visa lagringssektion"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Krav på att indikatorn för sektionsstatus ska vara \"OK",
+        "info": "\"Alla\" kräver att alla objekt är online för att indikatorn ska vara grön. \"Någon\" kräver att minst en artikel är online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Någon aktiv",
+          "all": "Alla aktiva"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorera certifikatfel",
+        "info": "Om aktiverad, kommer widgeten att ignorera certifikatfel när du öppnar Proxmox API. Detta kan vara till hjälp när du öppnar Proxmox via HTTPS."
       }
     }
   },
@@ -86,14 +86,14 @@
   },
   "info": {
     "uptime": "Drifttid",
-    "uptimeFormat": "",
-    "updates": "",
+    "uptimeFormat": "{{days}} dagar, {{hours}} timmar, {{minutes}} minuter",
+    "updates": "Uppdateringar är tillgängliga",
     "reboot": "Omstart"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Det går inte att hitta ditt/dina system.",
+      "text": "Det uppstod ett problem vid anslutningen till ditt system. Vänligen verifiera din konfiguration/integration(er)."
     }
   },
   "headings": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Noder",
+        "vms": "VMs",
+        "lxcs": "LXC:er",
         "storage": "Lagring"
       }
     },
@@ -118,24 +118,24 @@
         "name": "Namn",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Nod"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Nod",
+      "vmid": "VMID",
       "details": "Detaljer",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Kärnor - {{maxCpu}}",
+      "memSize": "Minne - {{maxMem}}",
+      "memRatio": "Minne - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disk - {{maxDisk}}",
+      "diskRatio": "Disk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Drifttid - {{uptime}}",
+      "plugin": "Plugin",
+      "ha": "HA-tillstånd - {{haState}}",
+      "sharedStorage": "Delad lagring",
+      "localStorage": "Lokal lagring",
+      "na": "Ej tillgängligt"
     }
   }
 }

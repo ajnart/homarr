@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Indirizzo esterno",
-			"description": "URL che verrà aperto nel browser al clic dell'app."
+			"description": "URL che verrà aperto nel browser al clic dell'app.",
+			"tooltip": "È possibile utilizzare alcune variabili per creare indirizzi dinamici:<br><br><b>[homarr_base]</b> : indirizzo completo escludendo porta e percorso. <i>(Esempio: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : url di base completo compreso il suo attuale sottodominio. <i>(Esempio: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : dominio con sottodominio filtrato. <i>(Esempio: `homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>Queste variabili dipendono dall'url corrente."
 		}
 	},
 	"behaviour": {

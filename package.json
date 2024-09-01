@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.15.3",
+  "version": "0.15.4",
   "description": "Homarr - A homepage for your server.",
   "license": "MIT",
   "repository": {
@@ -19,6 +19,7 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "SKIP_ENV_VALIDATION=1 vitest",
+    "test:docker": "yarn run turbo build && yarn test:run && docker build . -t homarr:local-dev && docker run -p 7575:7575 --name homarr-dev homarr:local-dev",
     "test:ui": "SKIP_ENV_VALIDATION=1 vitest --ui",
     "test:run": "SKIP_ENV_VALIDATION=1 vitest run",
     "test:coverage": "SKIP_ENV_VALIDATION=1 vitest run --coverage",
@@ -71,6 +72,7 @@
     "@trpc/server": "^10.37.1",
     "@types/bcryptjs": "^2.4.2",
     "@vitejs/plugin-react": "^4.0.0",
+    "adm-zip": "^0.5.15",
     "axios": "^1.0.0",
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^8.6.0",
@@ -119,6 +121,7 @@
     "@next/eslint-plugin-next": "^13.4.5",
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/adm-zip": "^0.5.5",
     "@types/better-sqlite3": "^7.6.5",
     "@types/cookies": "^0.7.7",
     "@types/dockerode": "^3.3.9",

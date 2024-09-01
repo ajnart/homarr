@@ -22,5 +22,5 @@
       "message": "De categorie \"{{name}}\" is aangemaakt"
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Importeren vanuit docker"
 }

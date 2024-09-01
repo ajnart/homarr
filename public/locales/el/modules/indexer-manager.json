@@ -3,7 +3,10 @@
         "name": "Κατάσταση διαχειριστή indexer",
         "description": "Κατάσταση σχετικά με τους indexers σας",
         "settings": {
-            "title": "Κατάσταση διαχειριστή indexer"
+            "title": "Κατάσταση διαχειριστή indexer",
+            "openIndexerSiteInNewTab": {
+                "label": "Άνοιγμα του Indexer ιστότοπου σε νέα καρτέλα"
+            }
         }
     },
     "indexersStatus": {

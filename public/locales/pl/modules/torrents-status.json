@@ -31,15 +31,15 @@
         "info": "Jeśli ta opcja jest wyłączona, wyświetlany będzie tylko współczynnik globalny. Współczynnik globalny będzie nadal używał etykiet, jeśli są ustawione"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Włącz zmianę kolejności kolumn"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Włącz sortowanie wierszy"
       },
       "columns": {
-        "label": "",
+        "label": "Wybierz kolumny do wyświetlenia",
         "data": {
-          "date": "",
+          "date": "Data dodania",
           "down": "Pobieranie",
           "up": "Udostępnianie",
           "eta": "ETA",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Zmień rozmiar kolumny nazwy"
       }
     }
   },
@@ -60,20 +60,20 @@
     },
     "table": {
       "header": {
-        "isCompleted": "",
+        "isCompleted": "Pobieranie",
         "name": "Nazwa",
-        "dateAdded": "",
+        "dateAdded": "Dodano",
         "size": "Rozmiar",
         "download": "Pobieranie",
         "upload": "Udostępnianie",
         "estimatedTimeOfArrival": "ETA",
         "progress": "Postęp",
-        "totalUploaded": "",
-        "totalDownloaded": "",
-        "ratio": "",
-        "seeds": "",
-        "peers": "",
-        "label": "",
+        "totalUploaded": "Suma Przesyłania",
+        "totalDownloaded": "Suma pobierania",
+        "ratio": "Proporcja",
+        "seeds": "Seedy (połączone)",
+        "peers": "Peery (połączone)",
+        "label": "Etykieta",
         "state": "Status",
         "stateMessage": ""
       },

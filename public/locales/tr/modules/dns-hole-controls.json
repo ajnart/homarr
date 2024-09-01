@@ -14,5 +14,12 @@
         "text": "DNS Çözümleyici(leri)nize bağlanırken bir sorun oluştu. Lütfen yapılandırmanızı/entegrasyon(ları)nızı kontrol edin."
       }
     }
+  },
+  "durationModal": {
+    "title": "Devre dışı bırakma süresini ayarla",
+    "hours": "Saat",
+    "minutes": "Dakika",
+    "unlimited": "sınırsız için boş bırakın",
+    "set": "Ayarla"
   }
 }

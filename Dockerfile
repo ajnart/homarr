@@ -32,16 +32,14 @@ RUN apt update && apt install -y openssl wget
 # Move node_modules to temp location to avoid overwriting
 RUN mv node_modules _node_modules
 RUN rm package.json
-
 # Install dependencies for migration
 RUN cp ./migrate/package.json ./package.json
 RUN yarn
-
 # Copy better_sqlite3 build for current platform
 RUN cp /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/_node_modules/better-sqlite3/build/Release/better_sqlite3.node
-
 # Copy node_modules for migration to migrate folder for migration script
 RUN mv node_modules ./migrate/node_modules
+
 # Copy temp node_modules of app to app folder
 RUN mv _node_modules node_modules
 

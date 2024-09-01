@@ -2,30 +2,30 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Din Homarr-instans har inte Docker konfigurerad eller så har den misslyckats med att hämta containers. Kontrollera dokumentationen om hur du ställer in integrationen."
         }
     },
     "modals": {
         "selectBoard": {
-            "title": "",
-            "text": "",
+            "title": "Välj en tavla",
+            "text": "Välj den tavla där du vill lägga till appar för de valda Docker-containrarna.",
             "form": {
                 "board": {
-                    "label": ""
+                    "label": "Tavla"
                 },
-                "submit": ""
+                "submit": "Lägg till appar"
             }
         }
     },
     "notifications": {
         "selectBoard": {
             "success": {
-                "title": "",
-                "message": ""
+                "title": "Lade till appar på tavlan",
+                "message": "Apparna för de valda Docker-containrarna har lagts till på tavlan."
             },
             "error": {
-                "title": "",
-                "message": ""
+                "title": "Misslyckades med att lägga till appar på tavlan",
+                "message": "Apparna för de valda Docker-containrarna kunde inte läggas till på tavlan."
             }
         }
     }

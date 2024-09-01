@@ -19,26 +19,26 @@
     "label": "背景"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "背景画像の添付ファイル",
     "options": {
-      "fixed": "",
-      "scroll": ""
+      "fixed": "固定 - 背景は同じ位置に留まります (推奨)",
+      "scroll": "スクロール - マウスで背景をスクロールします"
     }
   },
   "backgroundImageSize": {
-    "label": "",
+    "label": "背景画像サイズ",
     "options": {
-      "cover": "",
-      "contain": ""
+      "cover": "Cover - 画像を可能な限り小さく拡大縮小し、余分なスペースをトリミングしてウィンドウ全体を覆います。(推奨)",
+      "contain": "Contain - 画像を切り取ったり引き伸ばしたりすることなく、コンテナ内で可能な限り大きく拡大縮小します。"
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "背景画像の添付ファイル",
     "options": {
-      "repeat": "",
-      "no-repeat": "",
-      "repeat-x": "",
-      "repeat-y": ""
+      "repeat": "Repeat - 背景画像の描画領域全体をカバーするために必要なだけ画像を繰り返します。",
+      "no-repeat": "No repeat - 画像は繰り返されず、スペース全体を埋めないこともある（推奨）",
+      "repeat-x": "Repeat X - 'Repeat'と同じだが、横軸のみ。",
+      "repeat-y": "Repeat Y - 'Repeat'と同じだが、縦軸のみ。"
     }
   },
   "customCSS": {

@@ -1,104 +1,104 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "システムヘルスモニタリング",
+    "description": "システムの健全性とステータスを示す情報を表示します。",
     "settings": {
-      "title": "",
+      "title": "システムヘルス監視の設定",
       "fahrenheit": {
-        "label": ""
+        "label": "CPU温度（華氏）"
       },
       "cpu": {
-        "label": "",
-        "load": "",
-        "minute": "",
-        "minutes": ""
+        "label": "CPU 情報を表示",
+        "load": "システム平均負荷",
+        "minute": "{{minute}} 分",
+        "minutes": "{{minutes}} 分"
       },
       "memory": {
-        "label": ""
+        "label": "メモリー情報を表示"
       },
       "fileSystem": {
-        "label": ""
+        "label": "ファイルシステム情報を表示"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "ノード名で絞り込む",
+        "info": "Proxmox ノード名を入力すると、そのノードのメトリックのみが表示されます。デフォルトでは、クラスター全体が表示されます。"
       },
       "defaultViewState": {
-        "label": "",
+        "label": "デフォルトで開いているセクション",
         "data": {
           "none": "なし",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "ノード",
+          "vm": "VMs",
+          "lxc": "LXCs",
           "storage": "ストレージ"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "デフォルトでタブが開く",
+        "info": "デフォルトでタブが開きます。複数の統合が利用可能な場合にのみ使用されます。",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "システム",
+          "cluster": "クラスター"
         }
       },
       "summary": {
-        "label": ""
+        "label": "概要セクションを表示"
       },
       "showNode": {
-        "label": ""
+        "label": "ノードセクションを表示"
       },
       "showVM": {
-        "label": ""
+        "label": "VMセクションを表示"
       },
       "showLXCs": {
-        "label": ""
+        "label": "LXCセクションを表示"
       },
       "showStorage": {
-        "label": ""
+        "label": "ストレージセクションを表示"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "セクションステータスインジケーターが「OK」であることの要件",
+        "info": "「すべて」の場合、インジケーターが緑色になるにはすべてのアイテムがオンラインである必要があります。「いずれか」の場合、少なくとも 1 つのアイテムがオンラインである必要があります。",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "任意のアクティブ",
+          "all": "すべてアクティブ"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "証明書エラーを無視する",
+        "info": "有効にすると、ウィジェットは Proxmox API にアクセスするときに証明書エラーを無視します。これは、HTTPS 経由で Proxmox にアクセスする場合に役立ちます。"
       }
     }
   },
   "cpu": {
     "label": "CPU",
-    "load": "",
-    "minute": ""
+    "load": "システム平均負荷",
+    "minute": "{{minute}} 分"
   },
   "memory": {
-    "label": "",
-    "totalMem": "",
-    "available": ""
+    "label": "メモリ",
+    "totalMem": "合計メモリ: {{total}}GB",
+    "available": "利用可能: {{available}}GB - {{percentage}}%"
   },
   "fileSystem": {
-    "label": "",
-    "available": ""
+    "label": "ファイルシステム",
+    "available": "利用可能: {{available}} - {{percentage}}%"
   },
   "info": {
-    "uptime": "",
-    "uptimeFormat": "",
-    "updates": "",
-    "reboot": ""
+    "uptime": "稼働時間",
+    "uptimeFormat": "{{days}} 日、 {{hours}} 時間、 {{minutes}} 分",
+    "updates": "利用可能な更新",
+    "reboot": "再起動"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "システムが見つかりません。",
+      "text": "システムへの接続中に問題が発生しました。設定/統合を確認してください。"
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "システム",
+    "cluster": "クラスター"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "ノード",
+        "vms": "VMs",
+        "lxcs": "LXCs",
         "storage": "ストレージ"
       }
     },
@@ -118,24 +118,24 @@
         "name": "名称",
         "cpu": "CPU",
         "ram": "メモリ",
-        "node": ""
+        "node": "ノード"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "ノード",
+      "vmid": "VMID",
       "details": "詳細",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "コア - {{maxCpu}}",
+      "memSize": "メモリ - {{maxMem}}",
+      "memRatio": "メモリ - {{usedMem}} / {{maxMem}}",
+      "diskSize": "ディスク - {{maxDisk}}",
+      "diskRatio": "ディスク - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "稼働時間 - {{uptime}}",
+      "plugin": "プラグイン",
+      "ha": "HA 状態 - {{haState}}",
+      "sharedStorage": "共有ストレージ",
+      "localStorage": "ローカルストレージ",
+      "na": "利用不可"
     }
   }
 }

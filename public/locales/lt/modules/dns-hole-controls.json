@@ -14,5 +14,12 @@
         "text": "Kilo problema jungiantis prie jūsų DNS hole. Patikrinkite savo konfigūraciją / integraciją (-as)."
       }
     }
+  },
+  "durationModal": {
+    "title": "",
+    "hours": "",
+    "minutes": "",
+    "unlimited": "",
+    "set": ""
   }
 }

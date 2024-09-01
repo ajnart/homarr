@@ -14,5 +14,12 @@
         "text": "Det gick inte att ansluta till ditt(dina) DNS-hål. Vänligen verifiera dina konfiguration/integration(er)."
       }
     }
+  },
+  "durationModal": {
+    "title": "Ställ in inaktiveringstid",
+    "hours": "Timmar",
+    "minutes": "Minuter",
+    "unlimited": "lämna tomt för obegränsat",
+    "set": "Ställ in"
   }
 }

@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Adresa externă",
-			"description": "Adresa URL-ul care va fi deschisă atunci când faceți clic pe aplicație."
+			"description": "Adresa URL-ul care va fi deschisă atunci când faceți clic pe aplicație.",
+			"tooltip": "Puteți utiliza câteva variabile pentru a crea adrese dinamice:<br><br><b>[homarr_base]</b>: adresa completă, excluzând portul și calea. <i>(Exemplu: \"https://subdomain.homarr.dev\")</i><br><b>[homarr_hostname]</b>: adresa completă a bazei, inclusiv subdomeniul curent. <i>(Exemplu: \"subdomain.homarr.dev\")</i><br><b>[homarr_domain]</b>: domeniu cu subdomeniul filtrat. <i>(Exemplu: `homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Toate aceste variabile depind de URL-ul curent."
 		}
 	},
 	"behaviour": {

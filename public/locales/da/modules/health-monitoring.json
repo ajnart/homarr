@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Oppetid",
-    "uptimeFormat": "{{days}} dage, {{hours}} timer",
+    "uptimeFormat": "{{days}} dage, {{hours}} timer, {{minutes}} minutter",
     "updates": "Opdateringer tilgængelige",
     "reboot": "Genstart"
   },

@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Benutzerdefinierten Namen anzeigen",
-                "info": ""
+                "info": "Zeige Benutzerdefinierten Namen anstatt des Anzeigenamen vom Home-Assistent an."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Entität umschalten",
+                "info": "Führen Sie beim Klicken eine Home Assistant-Umschaltaktion für die Entität aus."
             }
         }
     }

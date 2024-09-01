@@ -4,7 +4,7 @@
     "description": "Geeft de mogelijkheid om al je Docker Containers gemakkelijk te zien en beheren."
   },
   "search": {
-    "placeholder": "Zoek op container of afbeeldingsnaam"
+    "placeholder": "Zoek op container- of afbeeldingsnaam"
   },
   "table": {
     "header": {
@@ -26,7 +26,7 @@
   "actionBar": {
     "addService": {
       "title": "App toevoegen",
-      "message": "Toevoegen aan Homarr"
+      "message": "App toevoegen aan Homarr"
     },
     "restart": {
       "title": "Herstart"

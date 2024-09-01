@@ -1,15 +1,15 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Home Assistant 自動化",
+    "description": "オートメーションを実行",
     "settings": {
-      "title": "",
+      "title": "オートメーションを実行",
       "automationId": {
-        "label": "",
-        "info": ""
+        "label": "オートメーションID",
+        "info": "あなた固有のオートメーションID。常に automation.XXXXX で始まる。"
       },
       "displayName": {
-        "label": ""
+        "label": "表示名"
       }
     }
   }

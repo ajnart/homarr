@@ -19,7 +19,7 @@
         "label": "Maksymalna ilość linii tekstu"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Sortuj według daty publikacji (rosnąco)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
         "label": ""

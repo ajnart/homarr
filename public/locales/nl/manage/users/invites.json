@@ -1,16 +1,16 @@
 {
-    "metaTitle": "Gebruiker nodigt uit",
-    "pageTitle": "Uitnodigingen voor gebruikers beheren",
-    "description": "Met behulp van uitnodigingen kun je gebruikers uitnodigen voor je Homarr instance. Een uitnodiging is slechts een bepaalde tijd geldig en kan eenmalig gebruikt worden. De geldigheidsduur moet bij het aanmaken tussen 5 minuten en 12 maanden liggen.",
+    "metaTitle": "Gebruikersuitnodigingen",
+    "pageTitle": "Gebruikersuitnodigingen beheren",
+    "description": "Met behulp van uitnodigingen kun je gebruikers uitnodigen voor je Homarr instantie. Een uitnodiging is slechts een bepaalde tijd geldig en kan eenmalig gebruikt worden. De geldigheidsduur moet bij het aanmaken tussen 5 minuten en 12 maanden liggen.",
     "button": {
-        "createInvite": "Uitnodiging maken",
+        "createInvite": "Uitnodiging aanmaken",
         "deleteInvite": "Uitnodiging verwijderen"
     },
     "table": {
         "header": {
             "id": "ID",
-            "creator": "Schepper",
-            "expires": "Verloopt op",
+            "creator": "Maker",
+            "expires": "Verloopt",
             "action": "Acties"
         },
         "data": {
@@ -20,17 +20,17 @@
     },
     "modals": {
         "create": {
-            "title": "Uitnodiging maken",
+            "title": "Uitnodiging aanmaken",
             "description": "Na de vervaldatum is een uitnodiging niet langer geldig en kan de ontvanger van de uitnodiging geen account meer aanmaken.",
             "form": {
                 "expires": "Vervaldatum",
-                "submit": "Maak"
+                "submit": "Aanmaken"
             }
         },
         "copy": {
             "title": "Uitnodiging kopiëren",
             "description": "Je uitnodiging is gegenereerd. Nadat deze modal is gesloten, <b>kun je deze link niet meer kopiëren</b>. Als je deze persoon niet langer wilt uitnodigen, kun je deze uitnodiging op elk gewenst moment verwijderen.",
-            "invitationLink": "Uitnodiging link",
+            "invitationLink": "Uitnodigingslink",
             "details": {
                 "id": "ID",
                 "token": "Penning"

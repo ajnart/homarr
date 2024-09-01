@@ -3,7 +3,10 @@
         "name": "Statut du gestionnaire d’indexeur",
         "description": "Statuts de vos indexeurs",
         "settings": {
-            "title": "Statut du gestionnaire d’indexeur"
+            "title": "Statut du gestionnaire d’indexeur",
+            "openIndexerSiteInNewTab": {
+                "label": "Ouvrir le site de l'indexeur dans un nouvel onglet"
+            }
         }
     },
     "indexersStatus": {

@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Külső cím",
-			"description": "URL, amely az alkalmazásra kattintva megnyílik."
+			"description": "URL, amely az alkalmazásra kattintva megnyílik.",
+			"tooltip": "A dinamikus címek létrehozásához néhány változót használhat:<br><br><b>[homarr_base]</b>: teljes cím a port és az elérési út nélkül. <i>(Példa: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b>: teljes alap url, beleértve az aktuális aldomain-t is. <i>(Példa: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>: domain az aldomainek kiszűrésével. <i>(Példa: `homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Ezek a változók mind az aktuális url-től függnek."
 		}
 	},
 	"behaviour": {

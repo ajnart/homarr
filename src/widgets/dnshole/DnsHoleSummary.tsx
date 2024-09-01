@@ -1,4 +1,4 @@
-import { Box, Card, Center, Container, Flex, Text } from '@mantine/core';
+import { Card, Center, Container, Flex, Text } from '@mantine/core';
 import { useElementSize } from '@mantine/hooks';
 import {
   IconAd,
@@ -112,7 +112,7 @@ export const useDnsHoleSummeryQuery = () => {
       configName: configName!,
     },
     {
-      staleTime: 1000 * 60 * 2,
+      refetchInterval: 1000 * 60 * 2,
     }
   );
 };

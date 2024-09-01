@@ -3,7 +3,10 @@
         "name": "Status do Gerenciador de Indexadores",
         "description": "Estado dos seus indexadores",
         "settings": {
-            "title": "Status do Gerenciador de Indexadores"
+            "title": "Status do Gerenciador de Indexadores",
+            "openIndexerSiteInNewTab": {
+                "label": ""
+            }
         }
     },
     "indexersStatus": {

@@ -31,7 +31,8 @@
 		},
 		"externalAddress": {
 			"label": "Địa chỉ bên ngoài",
-			"description": "Đường dẫn được mở khi nhấp vào ứng dụng."
+			"description": "Đường dẫn được mở khi nhấp vào ứng dụng.",
+			"tooltip": "Bạn có thể sử dụng một số biến để tạo địa chỉ động: <br><br><b>[homarr_base]</b>: địa chỉ đầy đủ không bao gồm cổng và đường dẫn. <i>(Ví dụ: 'https://tênmiềnphụ.homarr.dev')</i><br><b>[homarr_hostname]</b>: URL cơ sở hoàn chỉnh, bao gồm cả tên miền phụ hiện tại. <i>(Ví dụ: 'tênmiềnphụ.homarr.dev')</i><br><b>[homarr_domain]</b>: tên miền với tên miền phụ được lọc ra. <i>(Ví dụ: \"homarr.dev\")</i><br><b>[homarr_protocol]</b>:<i>http/https</i><br><br>Các biến này phụ thuộc vào URL hiện tại."
 		}
 	},
 	"behaviour": {

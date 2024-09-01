@@ -2,7 +2,7 @@
     "title": "Docker",
     "alerts": {
         "notConfigured": {
-            "text": ""
+            "text": "Je Homarr instantie heeft Docker niet geconfigureerd of het is mislukt om containers op te halen. Raadpleeg de documentatie over het instellen van de integratie."
         }
     },
     "modals": {
@@ -11,7 +11,7 @@
             "text": "Kies het bord waar je de apps voor de geselecteerde Docker-containers wilt toevoegen.",
             "form": {
                 "board": {
-                    "label": "Raad van bestuur"
+                    "label": "Bord"
                 },
                 "submit": "Apps toevoegen"
             }

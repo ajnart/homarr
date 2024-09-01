@@ -28,7 +28,7 @@
     "errors": {
       "noDownloadClients": {
         "title": "Geen ondersteunde download clients gevonden!",
-        "text": "Voeg een downloadservice toe om uw huidige downloads weer te geven"
+        "text": "Voeg een downloadservice toe om je huidige downloads weer te geven"
       }
     }
   }

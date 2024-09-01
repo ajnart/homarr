@@ -14,11 +14,11 @@
     "buttons": {
       "submit": "Inloggen"
     },
-    "afterLoginRedirection": "Na het inloggen wordt u doorgestuurd naar {{url}}",
+    "afterLoginRedirection": "Na het inloggen word je doorgestuurd naar {{url}}",
     "providersEmpty": {
-      "title": "",
-      "message": ""
+      "title": "Auth provider fout",
+      "message": "De provider(s) zijn niet ingesteld, controleer je logs voor meer informatie."
     }
   },
-  "alert": "Je gegevens zijn onjuist of deze account bestaat niet. Probeer het opnieuw."
+  "alert": "Je gegevens zijn onjuist of bestaat niet. Probeer het opnieuw."
 }

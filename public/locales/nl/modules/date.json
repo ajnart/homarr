@@ -22,9 +22,9 @@
       },
       "titleState": {
         "label": "Klok titel",
-        "info": "",
+        "info": "De aangepaste titel en de tijdzonecode kunnen worden getoond op je widget.<br/>Je kunt ook alleen de stad tonen, geen enkele tonen,<br/>of zelfs alleen de tijdzone tonen als beide zijn geselecteerd maar er geen titel is gegeven.",
         "data": {
-          "both": "",
+          "both": "Titel en tijdzone",
           "city": "Alleen titel",
           "none": "Geen"
         }

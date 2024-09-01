@@ -1,11 +1,11 @@
 {
   "descriptor": {
     "name": "Bladwijzer",
-    "description": "Een statische lijst met strings of koppelingen weergeven",
+    "description": "Een statische lijst met strings of links weergeven",
     "settings": {
-      "title": "Bladwijzerinstellingen",
+      "title": "Bladwijzer instellingen",
       "name": {
-        "label": "Widget Titel",
+        "label": "Widget titel",
         "info": "Laat leeg om de titel verborgen te houden."
       },
       "items": {
@@ -29,7 +29,7 @@
   },
   "item": {
     "validation": {
-      "length": "De lengte moet tussen {{shortest}} en {{longest}}liggen.",
+      "length": "De lengte moet tussen {{shortest}} en {{longest}} liggen.",
       "invalidLink": "Geen geldige link",
       "errorMsg": "Niet opgeslagen, omdat er validatiefouten waren. Pas je invoer aan"
     },
@@ -37,7 +37,7 @@
     "url": "URL",
     "newTab": "Open in nieuw tabblad",
     "hideHostname": "Hostnaam verbergen",
-    "hideIcon": "Pictogram verbergen",
+    "hideIcon": "Icoon verbergen",
     "delete": "Verwijderen"
   }
 }

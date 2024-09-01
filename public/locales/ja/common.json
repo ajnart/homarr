@@ -1,7 +1,7 @@
 {
   "save": "保存",
-  "apply": "",
-  "insert": "",
+  "apply": "適用する",
+  "insert": "挿入",
   "about": "About",
   "cancel": "キャンセル",
   "close": "閉じる",
@@ -13,10 +13,11 @@
   "previous": "前へ",
   "confirm": "確認",
   "enabled": "有効",
-  "duplicate": "",
+  "duplicate": "複製",
   "disabled": "無効",
   "enableAll": "すべてを有効にする",
   "disableAll": "すべてを無効にする",
+  "setTimer": "タイマーを設定する",
   "version": "バージョン",
   "changePosition": "ポジションを変更する",
   "remove": "削除",
@@ -46,7 +47,7 @@
   "seeMore": "もっと見る...",
   "position": {
     "left": "左",
-    "center": "",
+    "center": "中央寄せ",
     "right": "右"
   },
   "attributes": {
@@ -54,5 +55,5 @@
     "height": "高さ"
   },
   "public": "公開",
-  "restricted": ""
+  "restricted": "制限付き"
 }

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 import { useConfigContext } from '~/config/provider';
 import { firstUpperCase } from '~/tools/shared/strings';
 
@@ -19,9 +18,9 @@ export const BoardHeadOverride = () => {
 
       {faviconUrl && faviconUrl.length > 0 && (
         <>
-          <link rel="shortcut icon" href={faviconUrl} />
+          <link key="favicon" rel="shortcut icon" href={faviconUrl} />
 
-          <link rel="apple-touch-icon" href={faviconUrl} />
+          <link key="favicon-apple" rel="apple-touch-icon" href={faviconUrl} />
         </>
       )}
     </Head>

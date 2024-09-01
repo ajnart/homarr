@@ -86,7 +86,7 @@
   },
   "info": {
     "uptime": "Üzemidő",
-    "uptimeFormat": "{{days}} nap, {{hours}} óra",
+    "uptimeFormat": "{{days}} nap, {{hours}} óra, {{minutes}} perc",
     "updates": "Frissítés elérhető",
     "reboot": "Újraindítás"
   },
