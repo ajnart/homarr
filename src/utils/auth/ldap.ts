@@ -38,9 +38,9 @@ const ldapLogin = (username: string, password: string) =>
     const client = ldap.createClient({
       url: env.AUTH_LDAP_URI,
     });
-    client.bind(username, password, (error, res) => {
+    client.bind(username, password, (error) => {
       if (error) {
-        reject('Invalid username or password');
+        reject(`Invalid username or password. ${error.code}-${error.name}:${error.message}`);
       } else {
         resolve(client);
       }
