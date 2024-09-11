@@ -3,6 +3,10 @@ import * as tldts from 'tldts';
 import { AppType } from '~/types/app';
 
 export const useGetExternalUrl = () => {
+  if (typeof window === 'undefined') {
+    return (appType: AppType) => appType.behaviour.externalUrl || appType.url;
+  }
+
   const parsedUrl = useMemo(() => {
     try {
       return tldts.parse(window.location.toString());
