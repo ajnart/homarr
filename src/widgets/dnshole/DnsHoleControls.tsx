@@ -279,18 +279,20 @@ function DnsHoleControlsWidgetTile({ widget }: DnsHoleControlsWidgetProps) {
                         {t(dnsHole.status)}
                       </Badge>
                     </UnstyledButton>
-                    <ActionIcon
-                      size={20}
-                      radius="xl"
-                      top="2.67px"
-                      variant="default"
-                      onClick={() => {
-                        setAppId(app.id);
-                        open();
-                      }}
-                    >
-                      <IconClockPause size={20} color="red" />
-                    </ActionIcon>
+                    {enableControls && (
+                      <ActionIcon
+                        size={20}
+                        radius="xl"
+                        top="2.67px"
+                        variant="default"
+                        onClick={() => {
+                          setAppId(app.id);
+                          open();
+                        }}
+                      >
+                        <IconClockPause size={20} color="red" />
+                      </ActionIcon>
+                    )}
                   </Flex>
                 </Stack>
               </Group>
