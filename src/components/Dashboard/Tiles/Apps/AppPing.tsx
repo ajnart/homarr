@@ -108,18 +108,11 @@ const usePing = (app: AppType) => {
       configName: name ?? '',
     },
     {
-      retry: true,
+      retry: false,
       enabled: isActive,
       refetchOnWindowFocus: false,
       refetchInterval: 1000 * 60,
-      retryDelay(failureCount, error) {
-        console.error(`Unable to retry app ping for app '${app.name}' (${app.id})`, error);
-        if (failureCount > 3) {
-          return 60 * 1000;
-        }
-        return 3 * 1000;
-      },
-      cacheTime: 1000 * 60,
+      cacheTime: 1000 * 30,
       retryOnMount: true,
       select: (data) => {
         const isOk = isStatusOk(app, data.status);
