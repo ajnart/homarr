@@ -11,7 +11,7 @@
     "dev": "next dev",
     "build": "NEXTAUTH_SECRET=WILL_BE_OVERWRITTEN next build",
     "analyze": "ANALYZE=true next build",
-    "turbo": "DATABASE_URL=file:WILL_BE_OVERWRITTEN.sqlite NEXTAUTH_URL=http://WILL_BE_OVERWRITTEN turbo build",
+    "turbo": "DATABASE_URL=file:WILL_BE_OVERWRITTEN.sqlite turbo build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "export": "next build && next export",
