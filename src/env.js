@@ -37,13 +37,6 @@ const env = createEnv({
     DATABASE_URL: z.string().url().default('file:../database/db.sqlite'),
     NEXTAUTH_SECRET:
       process.env.NODE_ENV === 'production' ? z.string().min(1) : z.string().min(1).optional(),
-    NEXTAUTH_URL: z.preprocess(
-      // This makes Vercel deployments not fail if you don't set NEXTAUTH_URL
-      // Since NextAuth.js automatically uses the VERCEL_URL if present.
-      (str) => process.env.VERCEL_URL ?? str,
-      // VERCEL_URL doesn't include `https` so it cant be validated as a URL
-      process.env.VERCEL ? z.string().min(1) : z.string().url()
-    ),
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
     DEMO_MODE: z.string().optional(),
@@ -136,7 +129,6 @@ const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     NEXT_PUBLIC_DISABLE_ANALYTICS: process.env.DISABLE_ANALYTICS,
     DOCKER_HOST: process.env.DOCKER_HOST,
     DOCKER_PORT: process.env.DOCKER_PORT,
