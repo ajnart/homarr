@@ -106,6 +106,17 @@ export const constructAuthOptions = async (
   },
   adapter: adapter as Adapter,
   providers: [...(await getProviders(req.headers)), EmptyNextAuthProvider()],
+  cookies: {
+    sessionToken: {
+      name: 'next-auth.session-token',
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        path: '/',
+        secure: true,
+      },
+    },
+  },
   jwt: {
     async encode(params) {
       if (!isCredentialsRequest(req)) {
