@@ -9,7 +9,7 @@ export const useGetExternalUrl = () => {
 
   const parsedUrl = useMemo(() => {
     try {
-      return tldts.parse(window.location.toString());
+      return tldts.parse(window.location.toString(), { allowPrivateDomains: true });
     } catch {
       return null;
     }
@@ -21,7 +21,7 @@ export const useGetExternalUrl = () => {
         return appType.behaviour.externalUrl
           .replace('[homarr_base]', `${window.location.protocol}//${window.location.hostname}`)
           .replace('[homarr_hostname]', parsedUrl?.hostname ?? '')
-          .replace('[homarr_domain]', parsedUrl?.domain ?? '')
+          .replace('[homarr_domain]', parsedUrl?.publicSuffix ?? '')
           .replace('[homarr_protocol]', window.location.protocol.replace(':', ''));
       }
       return appType.url;
