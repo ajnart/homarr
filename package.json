@@ -1,6 +1,6 @@
 {
   "name": "homarr",
-  "version": "0.15.5",
+  "version": "0.15.6",
   "description": "Homarr - A homepage for your server.",
   "license": "MIT",
   "repository": {
@@ -25,7 +25,7 @@
     "test:coverage": "SKIP_ENV_VALIDATION=1 vitest run --coverage",
     "docker:build": "turbo build && docker build . -t homarr:local-dev",
     "docker:start": "docker run -p 7575:7575 --name homarr-development homarr:local-dev",
-    "db:migrate": "dotenv ts-node drizzle/migrate/migrate.ts ./drizzle"
+    "db:migrate": "dotenv tsx drizzle/migrate/migrate.ts ./drizzle"
   },
   "dependencies": {
     "@ctrl/deluge": "^4.1.0",
@@ -151,7 +151,7 @@
     "node-mocks-http": "^1.12.2",
     "prettier": "^3.0.0",
     "sass": "^1.56.1",
-    "ts-node": "latest",
+    "tsx": "4.19.1",
     "turbo": "^1.10.12",
     "typescript": "5.1.6",
     "video.js": "^8.0.3",
