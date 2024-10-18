@@ -13,6 +13,7 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { ReactNode, forwardRef, useMemo, useRef, useState } from 'react';
 import { useConfigContext } from '~/config/provider';
+import { useGetExternalUrl } from '~/hooks/useExternalUrl';
 import { api } from '~/utils/api';
 
 import { MovieModal } from './Search/MovieModal';
@@ -141,6 +142,7 @@ const getItemComponent = (icon: SearchAutoCompleteItem['icon']) => {
 
 const useConfigApps = (search: string) => {
   const { config } = useConfigContext();
+  const getHref = useGetExternalUrl();
   return useMemo(() => {
     if (search.trim().length === 0) return [];
     const apps = config?.apps.filter((app) =>
@@ -153,7 +155,7 @@ const useConfigApps = (search: string) => {
         value: app.name,
         sort: 'app',
         metaData: {
-          url: app.behaviour.externalUrl,
+          url: getHref(app),
         },
       })) ?? []
     );

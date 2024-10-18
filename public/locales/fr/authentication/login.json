@@ -16,7 +16,7 @@
     },
     "afterLoginRedirection": "Après la connexion, vous serez redirigé vers {{url}}",
     "providersEmpty": {
-      "title": "Erreur de fournisseur d'authentification",
+      "title": "Erreur du fournisseur d'authentification",
       "message": "Le(s) fournisseur(s) n'est (ne sont) pas défini(s), veuillez vérifier les journaux pour plus d'informations."
     }
   },
