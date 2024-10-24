@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Зовнішня адреса",
 			"description": "URL-адреса відкриється в браузері при натисканні на додаток.",
-			"tooltip": ""
+			"tooltip": "Ви можете використовувати декілька змінних для створення динамічних адрес:<br><br><b>[homarr_base]</b>: повна адреса, за винятком порту і шляху. <i>(Приклад: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b>: повна базова адреса, включаючи поточний субдомен. <i>(Приклад: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b>: домен з відфільтрованим субдоменом. <i>(Приклад: `homarr.dev')</i><br><b>[homarr_protocol]</b>: <i>http/https</i><br><br>Всі ці змінні залежать від поточного url."
 		}
 	},
 	"behaviour": {
