@@ -22,5 +22,5 @@
       "message": "Створено категорію \"{{name}}\""
     }
   },
-  "importFromDocker": ""
+  "importFromDocker": "Імпортувати з docker"
 }
