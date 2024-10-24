@@ -19,7 +19,7 @@
     "label": "Фон"
   },
   "backgroundImageAttachment": {
-    "label": "",
+    "label": "Прикріплене фонове зображення",
     "options": {
       "fixed": "",
       "scroll": ""
@@ -33,7 +33,7 @@
     }
   },
   "backgroundImageRepeat": {
-    "label": "",
+    "label": "Прикріплене фонове зображення",
     "options": {
       "repeat": "",
       "no-repeat": "",
