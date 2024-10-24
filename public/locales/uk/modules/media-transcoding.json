@@ -1,96 +1,96 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Перекодування медіа",
+    "description": "Відображає інформацію про перекодування медіа",
     "settings": {
-      "title": "",
+      "title": "Налаштування перекодування мультимедіа",
       "appId": {
-        "label": ""
+        "label": "Виберіть програму"
       },
       "defaultView": {
-        "label": "",
+        "label": "Вигляд за замовчуванням",
         "data": {
-          "workers": "",
+          "workers": "Робітники",
           "queue": "Черга",
-          "statistics": ""
+          "statistics": "Статистика"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Показувати індикатор перевірки працездатності"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Показувати перевірки працездатності в черзі"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Черга: Елементи на сторінку"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Показати іконку програми в правому нижньому куті"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Будь ласка, оберіть додаток у налаштуваннях віджету",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Файл",
           "eta": "Залишилося",
           "progress": "Прогрес"
         },
         "empty": "Пусто",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Перекодувати",
+          "healthCheck": "Перевірка працездатності"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Файл",
           "size": "Розмір"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} від {{total}}"
         },
         "empty": "Пусто",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Перекодувати",
+          "healthCheck": "Перевірка працездатності"
         }
       }
     },
     "statistics": {
       "empty": "Пусто",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Перекодує: {{value}}",
+        "healthChecks": "Перевірки працездатності: {{value}}",
+        "files": "Файли: {{value}}",
+        "spaceSaved": "Збережено: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Перекодує",
+        "healthChecks": "Перевірка працездатності",
+        "videoCodecs": "Кодеки",
+        "videoContainers": "Контейнери",
+        "videoResolutions": "Роздільна здатність"
       }
     }
   },
   "error": {
     "title": "Помилка",
-    "message": ""
+    "message": "Виникла помилка при отриманні даних з Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Робітники",
     "queue": "Черга",
-    "statistics": ""
+    "statistics": "Статистика"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Перевірка працездатності",
+    "queued": "У черзі",
+    "healthy": "Здоровий",
+    "unhealthy": "Нездоровий"
   }
 }

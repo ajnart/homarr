@@ -6,10 +6,10 @@
     },
     "filter": {
         "roles": {
-            "all": "",
-            "normal": "",
-            "admin": "",
-            "owner": ""
+            "all": "Усе",
+            "normal": "Нормально",
+            "admin": "Адміністратор",
+            "owner": "Власник"
         }
     },
     "table": {

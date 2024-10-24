@@ -1,7 +1,7 @@
 {
   "save": "Зберегти",
-  "apply": "",
-  "insert": "",
+  "apply": "Застосувати",
+  "insert": "Вставити",
   "about": "Про програму",
   "cancel": "Скасувати",
   "close": "Закрити",
@@ -13,11 +13,11 @@
   "previous": "Попередній",
   "confirm": "Підтвердити",
   "enabled": "Увімкнено",
-  "duplicate": "",
+  "duplicate": "Дублікат",
   "disabled": "Вимкнено",
   "enableAll": "Увімкнути все",
   "disableAll": "Вимкнути усе",
-  "setTimer": "",
+  "setTimer": "Встановити таймер",
   "version": "Версія",
   "changePosition": "Змінити положення",
   "remove": "Видалити",
@@ -47,7 +47,7 @@
   "seeMore": "Побачити більше...",
   "position": {
     "left": "Ліворуч.",
-    "center": "",
+    "center": "Центр",
     "right": "Так."
   },
   "attributes": {
@@ -55,5 +55,5 @@
     "height": "Висота"
   },
   "public": "Публічний",
-  "restricted": ""
+  "restricted": "Обмежено"
 }

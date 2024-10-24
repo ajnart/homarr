@@ -1,6 +1,6 @@
 {
-  "metaTitle": "",
-  "back": "",
+  "metaTitle": "Користувач {{username}}",
+  "back": "Повернутися до керування користувачами",
   "sections": {
     "general": {
       "title": "Загальне",
@@ -14,40 +14,40 @@
       }
     },
     "security": {
-      "title": "",
+      "title": "Безпека",
       "inputs": {
         "password": {
-          "label": ""
+          "label": "Новий пароль"
         },
         "terminateExistingSessions": {
-          "label": "",
-          "description": ""
+          "label": "Завершити поточні сесії",
+          "description": "Змушує користувача повторно входити в систему на своїх пристроях"
         },
         "confirm": {
           "label": "Підтвердити",
-          "description": ""
+          "description": "Пароль буде оновлено. Дію не можна скасувати."
         }
       }
     },
     "roles": {
-      "title": "",
-      "currentRole": "",
+      "title": "Ролі",
+      "currentRole": "Поточна роль: ",
       "badges": {
-        "owner": "",
-        "admin": "",
-        "normal": ""
+        "owner": "Власник",
+        "admin": "Адміністратор",
+        "normal": "Нормально"
       }
     },
     "deletion": {
-      "title": "",
+      "title": "Видалення облікового запису",
       "inputs": {
         "confirmUsername": {
-          "label": "",
-          "description": ""
+          "label": "Підтвердіть ім'я користувача",
+          "description": "Введіть ім'я користувача для підтвердження видалення"
         },
         "confirm": {
           "label": "Видалити назавжди",
-          "description": ""
+          "description": "Я усвідомлюю, що ця дія є безстроковою і всі дані облікового запису будуть втрачені."
         }
       }
     }
