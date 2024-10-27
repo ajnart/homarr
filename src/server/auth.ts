@@ -1,3 +1,4 @@
+import Consola from 'consola';
 import Cookies from 'cookies';
 import { eq } from 'drizzle-orm';
 import { type GetServerSidePropsContext, type NextApiRequest, type NextApiResponse } from 'next';
@@ -62,18 +63,27 @@ export const constructAuthOptions = async (
       return session;
     },
     async signIn({ user }) {
+      Consola.info('User sign in');
+
       // Check if this sign in callback is being called in the credentials authentication flow.
       // If so, use the next-auth adapter to create a session entry in the database
       // (SignIn is called after authorize so we can safely assume the user is valid and already authenticated).
-      if (!isCredentialsRequest(req)) return true;
+      if (!isCredentialsRequest(req)) {
+        Consola.error('Not credentials request');
+        return true;
+      }
 
-      if (!user) return true;
+      if (!user) {
+        Consola.error('No user');
+        return true;
+      }
 
       const sessionToken = generateSessionToken();
       const sessionExpiry = fromDate(sessionMaxAgeInSeconds);
 
       // https://github.com/nextauthjs/next-auth/issues/6106
       if (!adapter?.createSession) {
+        Consola.error('Adapter does not have createSession method');
         return false;
       }
 
@@ -88,11 +98,14 @@ export const constructAuthOptions = async (
         expires: sessionExpiry,
       });
 
+      Consola.info('Session created');
+
       return true;
     },
     async redirect({ url, baseUrl }) {
       const pathname = new URL(url, baseUrl).pathname;
       const redirectUrl = createRedirectUri(req.headers, pathname);
+      Consola.info(`Redirecting to ${redirectUrl}`);
       return redirectUrl;
     },
   },

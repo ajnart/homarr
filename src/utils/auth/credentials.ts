@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import Consola from 'consola';
 import { eq } from 'drizzle-orm';
 import Credentials from 'next-auth/providers/credentials';
-import { colorSchemeParser, signInSchema } from '~/validations/user';
+import { signInSchema } from '~/validations/user';
 
 import { db } from '../../server/db';
 import { users } from '../../server/db/schema';
@@ -17,7 +17,10 @@ export default Credentials({
     password: { label: 'Password', type: 'password' },
   },
   async authorize(credentials) {
+    Consola.info("Authorizing user's credentials...");
     const data = await signInSchema.parseAsync(credentials);
+
+    Consola.info(`Checking if user ${data.name} exists...`);
 
     const user = await db.query.users.findFirst({
       with: {
@@ -33,6 +36,7 @@ export default Credentials({
     });
 
     if (!user || !user.password) {
+      Consola.info(`user ${data.name} does not exist`);
       return null;
     }
 
