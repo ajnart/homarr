@@ -7,6 +7,7 @@ import { decode, encode } from 'next-auth/jwt';
 import { env } from '~/env';
 import { secondsFromTimeString } from '~/tools/client/parseDuration';
 import { adapter, getProviders, onCreateUser } from '~/utils/auth';
+import { createCookiesWithDefaultOptions } from '~/utils/auth/cookies';
 import { createRedirectUri } from '~/utils/auth/oidc';
 import EmptyNextAuthProvider from '~/utils/empty-provider';
 import { fromDate, generateSessionToken } from '~/utils/session';
@@ -106,17 +107,7 @@ export const constructAuthOptions = async (
   },
   adapter: adapter as Adapter,
   providers: [...(await getProviders(req.headers)), EmptyNextAuthProvider()],
-  cookies: {
-    sessionToken: {
-      name: 'next-auth.session-token',
-      options: {
-        httpOnly: true,
-        sameSite: 'lax',
-        path: '/',
-        secure: true,
-      },
-    },
-  },
+  cookies: createCookiesWithDefaultOptions(req.url?.startsWith('https:') ?? false),
   jwt: {
     async encode(params) {
       if (!isCredentialsRequest(req)) {
