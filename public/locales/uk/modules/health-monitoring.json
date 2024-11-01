@@ -131,11 +131,11 @@
       "diskSize": "",
       "diskRatio": "",
       "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "plugin": "Плагін",
+      "ha": "Стан HA - {{haState}}",
+      "sharedStorage": "Спільне сховище",
+      "localStorage": "Локальне сховище",
+      "na": "Н/Д"
     }
   }
 }
