@@ -144,7 +144,20 @@ const constructAvatarUrl = (appUrl: string, avatar: string) => {
     return avatar;
   }
 
-  return `${appUrl}/${avatar}`;
+  const avatarUrl = `${appUrl}/${avatar}`;
+
+  try {
+    const response = fetch(avatarUrl, { method: 'HEAD' });
+
+    if (response.ok) {
+      //version without /avatarproxy
+      return avatarUrl;
+    } else {
+      return `${appUrl}/avatarproxy/${avatar}`;
+    }
+  } catch (error) {
+    return `${appUrl}/avatarproxy/${avatar}`;
+  }
 };
 
 const retrieveDetailsForItem = async (
