@@ -1,54 +1,54 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Transcodificación de Medios",
+    "description": "Muestra información sobre la transcodificación de medios",
     "settings": {
-      "title": "",
+      "title": "Configuraciones de Transcodificación de Medios",
       "appId": {
-        "label": ""
+        "label": "Seleccionar una aplicación"
       },
       "defaultView": {
-        "label": "",
+        "label": "Vista predeterminada",
         "data": {
-          "workers": "",
+          "workers": "Trabajadores",
           "queue": "Cola",
-          "statistics": ""
+          "statistics": "Estadísticas"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Mostrar indicador de Verificación de Salud"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Mostrar Verificaciones de Salud en cola"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Cola: Elementos por página"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Mostrar icono de aplicación en la esquina inferior derecha"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Por favor selecciona una aplicación en la configuración del widget",
   "views": {
     "workers": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Archivo",
           "eta": "Tiempo restante",
           "progress": "Completado %"
         },
         "empty": "Vacío",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcodificar",
+          "healthCheck": "Verificación de Salud"
         }
       }
     },
     "queue": {
       "table": {
         "header": {
-          "name": "",
+          "name": "Archivo",
           "size": "Tamaño"
         },
         "footer": {
@@ -56,8 +56,8 @@
         },
         "empty": "Vacío",
         "tooltip": {
-          "transcode": "",
-          "healthCheck": ""
+          "transcode": "Transcodificar",
+          "healthCheck": "Verificación de Salud"
         }
       }
     },
@@ -83,12 +83,12 @@
     "message": ""
   },
   "tabs": {
-    "workers": "",
+    "workers": "Trabajadores",
     "queue": "Cola",
-    "statistics": ""
+    "statistics": "Estadísticas"
   },
   "healthCheckStatus": {
-    "title": "",
+    "title": "Verificación de Salud",
     "queued": "",
     "healthy": "",
     "unhealthy": ""
