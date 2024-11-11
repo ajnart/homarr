@@ -31,15 +31,15 @@
         "info": "Si está deshabilitado, solo se mostrará la relación global. La relación global seguirá usando las etiquetas si están configuradas"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Habilitar el reordenamiento de las columnas"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Habilitar la clasificación de las filas"
       },
       "columns": {
-        "label": "",
+        "label": "Seleccionar columnas para mostrar",
         "data": {
-          "date": "",
+          "date": "Fecha Agregada",
           "down": "Descarga",
           "up": "Subida",
           "eta": "Tiempo restante",
@@ -47,7 +47,7 @@
         }
       },
       "nameColumnSize": {
-        "label": ""
+        "label": "Cambiar el tamaño de la columna del nombre"
       }
     }
   },
