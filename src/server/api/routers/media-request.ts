@@ -113,7 +113,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
         const versionBody = await versionResponse.json();
         const version = versionBody.version || '0.0.0';
-        const isVersionValid = compareVersions(version, '2.0.1') >= 0;
+        const shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
         return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
           headers,
         })
@@ -129,7 +129,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   app: app.integration?.type ?? 'overseerr',
                   id: user.id,
                   userName: user.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar, isVersionValid),
+                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar, shouldUseV2ApiCall),
                   userLink: `${appUrl}/users/${user.id}`,
                   userRequestCount: user.requestCount,
                 };
