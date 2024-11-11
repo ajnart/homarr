@@ -33,7 +33,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
         const versionBody = await versionResponse.json();
         const version = versionBody.version || '0.0.0';
-        const isVersionValid = compareVersions(version, '2.0.1') >= 0;
+        const shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
 
         return fetch(`${app.url}/api/v1/request?take=25&skip=0&sort=added`, {
           headers,
@@ -64,7 +64,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   type: item.type,
                   name: genericItem.name,
                   userName: item.requestedBy.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar, isVersionValid),
+                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar, shouldUseV2ApiCall),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
                   userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
@@ -112,7 +112,7 @@ export const mediaRequestsRouter = createTRPCRouter({
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
         const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
         const versionBody = await versionResponse.json();
-        const version = versionBody.version || '0.0.0';
+        const version = versionBody.version;
         const shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
         return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
           headers,
@@ -148,7 +148,7 @@ export const mediaRequestsRouter = createTRPCRouter({
     }),
 });
 
-const constructAvatarUrl = (appUrl: string, avatar: string, isVersionValid: boolean) => {
+const constructAvatarUrl = (appUrl: string, avatar: string, shouldUseV2ApiCall: boolean) => {
   const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
@@ -156,19 +156,19 @@ const constructAvatarUrl = (appUrl: string, avatar: string, isVersionValid: bool
   }
 
 
-  return isVersionValid
+  return shouldUseV2ApiCall
     ? `${appUrl}/avatarproxy/${avatar}`
     : `${appUrl}/${avatar}`;
 };
 
 const compareVersions = (currentVersion: string, targetVersion: string): number => {
-  const v1Parts = currentVersion.split('.').map(Number);
-  const v2Parts = targetVersion.split('.').map(Number);
-  for (let i = 0; i < Math.max(v1Parts.length, v2Parts.length); i++) {
-    const v1Part = v1Parts[i] || 0;
-    const v2Part = v2Parts[i] || 0;
-    if (v1Part !== v2Part) {
-      return v1Part - v2Part;
+  const currentVersionParts = currentVersion.split('.').map(Number);
+  const targetVersionParts = targetVersion.split('.').map(Number);
+  for (let i = 0; i < Math.max(currentVersionParts.length, targetVersionParts.length); i++) {
+    const currentVersionPart = currentVersionParts[i] || 0;
+    const targetVersionPart = targetVersionParts[i] || 0;
+    if (currentVersionPart !== targetVersionPart) {
+      return currentVersionPart - targetVersionPart;
     }
   }
   return 0;
