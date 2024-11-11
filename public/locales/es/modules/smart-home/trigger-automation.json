@@ -6,7 +6,7 @@
       "title": "Ejecutar una automatización",
       "automationId": {
         "label": "ID de automatización",
-        "info": "Su ID de automatización única. Siempre empieza por automation.XXXXX."
+        "info": "Tu ID de automatización único. Siempre empieza con automation.XXXXX."
       },
       "displayName": {
         "label": "Nombre a mostrar"
