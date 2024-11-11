@@ -52,7 +52,7 @@
           "size": "Tamaño"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} de {{total}}"
         },
         "empty": "Vacío",
         "tooltip": {
@@ -64,23 +64,23 @@
     "statistics": {
       "empty": "Vacío",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transcodificaciones: {{value}}",
+        "healthChecks": "Verificaciones de Salud: {{value}}",
+        "files": "Archivos: {{value}}",
+        "spaceSaved": "Guardado: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
-        "videoCodecs": "",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "transcodes": "Transcodificaciones",
+        "healthChecks": "Verificaciones de Salud",
+        "videoCodecs": "Códecs",
+        "videoContainers": "Contenedores",
+        "videoResolutions": "Resoluciones"
       }
     }
   },
   "error": {
     "title": "Error",
-    "message": ""
+    "message": "Ocurrió un error al obtener datos de Tdarr."
   },
   "tabs": {
     "workers": "Trabajadores",
@@ -89,8 +89,8 @@
   },
   "healthCheckStatus": {
     "title": "Verificación de Salud",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "queued": "En cola",
+    "healthy": "Saludable",
+    "unhealthy": "No saludable"
   }
 }
