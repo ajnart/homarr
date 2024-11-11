@@ -24,10 +24,17 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      const promises = apps.map((app): Promise<MediaRequest[]> => {
+      const promises = apps.map(async (app): Promise<MediaRequest[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
+
+        // Get Version
+        const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
+        const versionBody = await versionResponse.json();
+        const version = versionBody.version || '0.0.0';
+        const isVersionValid = compareVersions(version, '2.0.1') >= 0;
+
         return fetch(`${app.url}/api/v1/request?take=25&skip=0&sort=added`, {
           headers,
         })
@@ -57,7 +64,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   type: item.type,
                   name: genericItem.name,
                   userName: item.requestedBy.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar),
+                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar, isVersionValid),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
                   userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
@@ -99,10 +106,14 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      const promises = apps.map((app): Promise<Users[]> => {
+      const promises = apps.map(async (app): Promise<Users[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
+        const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
+        const versionBody = await versionResponse.json();
+        const version = versionBody.version || '0.0.0';
+        const isVersionValid = compareVersions(version, '2.0.1') >= 0;
         return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
           headers,
         })
@@ -118,7 +129,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   app: app.integration?.type ?? 'overseerr',
                   id: user.id,
                   userName: user.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
+                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar, isVersionValid),
                   userLink: `${appUrl}/users/${user.id}`,
                   userRequestCount: user.requestCount,
                 };
@@ -137,27 +148,30 @@ export const mediaRequestsRouter = createTRPCRouter({
     }),
 });
 
-const constructAvatarUrl = (appUrl: string, avatar: string) => {
+const constructAvatarUrl = (appUrl: string, avatar: string, isVersionValid: boolean) => {
   const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
     return avatar;
   }
 
-  const avatarUrl = `${appUrl}/${avatar}`;
 
-  try {
-    const response = fetch(avatarUrl, { method: 'HEAD' });
+  return isVersionValid
+    ? `${appUrl}/avatarproxy/${avatar}`
+    : `${appUrl}/${avatar}`;
+};
 
-    if (response.ok) {
-      //version without /avatarproxy
-      return avatarUrl;
-    } else {
-      return `${appUrl}/avatarproxy/${avatar}`;
+const compareVersions = (v1: string, v2: string): number => {
+  const v1Parts = v1.split('.').map(Number);
+  const v2Parts = v2.split('.').map(Number);
+  for (let i = 0; i < Math.max(v1Parts.length, v2Parts.length); i++) {
+    const v1Part = v1Parts[i] || 0;
+    const v2Part = v2Parts[i] || 0;
+    if (v1Part !== v2Part) {
+      return v1Part - v2Part;
     }
-  } catch (error) {
-    return `${appUrl}/avatarproxy/${avatar}`;
   }
+  return 0;
 };
 
 const retrieveDetailsForItem = async (
