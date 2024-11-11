@@ -28,12 +28,20 @@ export const mediaRequestsRouter = createTRPCRouter({
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
-
-        // Get Version
-        const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
-        const versionBody = await versionResponse.json();
-        const version = versionBody.version || '0.0.0';
-        const shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
+        //isUseV2ApiCall Check
+        let shouldUseV2ApiCall = false;
+        try {
+          const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
+          if (!versionResponse.ok) {
+            throw new Error(`HTTP error! status: ${versionResponse.status}`);
+          }
+          const versionBody = await versionResponse.json();
+          const version = versionBody.version;
+          shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
+        } catch (error) {
+          Consola.warn(`Failed to fetch version from ${app.url}: ${error}`);
+          shouldUseV2ApiCall = false;
+        }
 
         return fetch(`${app.url}/api/v1/request?take=25&skip=0&sort=added`, {
           headers,
@@ -110,10 +118,20 @@ export const mediaRequestsRouter = createTRPCRouter({
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
-        const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
-        const versionBody = await versionResponse.json();
-        const version = versionBody.version;
-        const shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
+        ////isUseV2ApiCall Check
+        let shouldUseV2ApiCall = false;
+        try {
+          const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
+          if (!versionResponse.ok) {
+            throw new Error(`HTTP error! status: ${versionResponse.status}`);
+          }
+          const versionBody = await versionResponse.json();
+          const version = versionBody.version;
+          shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
+        } catch (error) {
+          Consola.warn(`Failed to fetch version from ${app.url}: ${error}`);
+          shouldUseV2ApiCall = false;
+        }
         return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
           headers,
         })
