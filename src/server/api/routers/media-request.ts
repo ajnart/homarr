@@ -24,25 +24,10 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      const promises = apps.map(async (app): Promise<MediaRequest[]> => {
+      const promises = apps.map((app): Promise<MediaRequest[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
-        //isUseV2ApiCall Check
-        let shouldUseV2ApiCall = false;
-        try {
-          const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
-          if (!versionResponse.ok) {
-            throw new Error(`HTTP error! status: ${versionResponse.status}`);
-          }
-          const versionBody = await versionResponse.json();
-          const version = versionBody.version;
-          shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
-        } catch (error) {
-          Consola.warn(`Failed to fetch version from ${app.url}: ${error}`);
-          shouldUseV2ApiCall = false;
-        }
-
         return fetch(`${app.url}/api/v1/request?take=25&skip=0&sort=added`, {
           headers,
         })
@@ -72,7 +57,8 @@ export const mediaRequestsRouter = createTRPCRouter({
                   type: item.type,
                   name: genericItem.name,
                   userName: item.requestedBy.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar, shouldUseV2ApiCall),
+                  userProfilePicture: constructAvatarUrl(appUrl, item.requestedBy.avatar),
+                  fallbackUserProfilePicture: constructfallbackAvatarUrl(appUrl, item.requestedBy.avatar),
                   userLink: `${appUrl}/users/${item.requestedBy.id}`,
                   userRequestCount: item.requestedBy.requestCount,
                   airDate: genericItem.airDate,
@@ -114,24 +100,10 @@ export const mediaRequestsRouter = createTRPCRouter({
         checkIntegrationsType(app.integration, ['overseerr', 'jellyseerr'])
       );
 
-      const promises = apps.map(async (app): Promise<Users[]> => {
+      const promises = apps.map((app): Promise<Users[]> => {
         const apiKey =
           app.integration?.properties.find((prop) => prop.field === 'apiKey')?.value ?? '';
         const headers: HeadersInit = { 'X-Api-Key': apiKey };
-        ////isUseV2ApiCall Check
-        let shouldUseV2ApiCall = false;
-        try {
-          const versionResponse = await fetch(`${app.url}/api/v1/status`, { headers });
-          if (!versionResponse.ok) {
-            throw new Error(`HTTP error! status: ${versionResponse.status}`);
-          }
-          const versionBody = await versionResponse.json();
-          const version = versionBody.version;
-          shouldUseV2ApiCall = compareVersions(version, '2.0.1') >= 0;
-        } catch (error) {
-          Consola.warn(`Failed to fetch version from ${app.url}: ${error}`);
-          shouldUseV2ApiCall = false;
-        }
         return fetch(`${app.url}/api/v1/user?take=25&skip=0&sort=requests`, {
           headers,
         })
@@ -147,7 +119,8 @@ export const mediaRequestsRouter = createTRPCRouter({
                   app: app.integration?.type ?? 'overseerr',
                   id: user.id,
                   userName: user.displayName,
-                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar, shouldUseV2ApiCall),
+                  userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
+                  fallbackUserProfilePicture: constructfallbackAvatarUrl(appUrl, user.avatar),
                   userLink: `${appUrl}/users/${user.id}`,
                   userRequestCount: user.requestCount,
                 };
@@ -166,30 +139,24 @@ export const mediaRequestsRouter = createTRPCRouter({
     }),
 });
 
-const constructAvatarUrl = (appUrl: string, avatar: string, shouldUseV2ApiCall: boolean) => {
+const constructAvatarUrl = (appUrl: string, avatar: string) => {
   const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
 
   if (isAbsolute) {
     return avatar;
   }
 
-
-  return shouldUseV2ApiCall
-    ? `${appUrl}/avatarproxy/${avatar}`
-    : `${appUrl}/${avatar}`;
+  return `${appUrl}/${avatar}`;
 };
 
-const compareVersions = (currentVersion: string, targetVersion: string): number => {
-  const currentVersionParts = currentVersion.split('.').map(Number);
-  const targetVersionParts = targetVersion.split('.').map(Number);
-  for (let i = 0; i < Math.max(currentVersionParts.length, targetVersionParts.length); i++) {
-    const currentVersionPart = currentVersionParts[i] || 0;
-    const targetVersionPart = targetVersionParts[i] || 0;
-    if (currentVersionPart !== targetVersionPart) {
-      return currentVersionPart - targetVersionPart;
-    }
+const constructfallbackAvatarUrl = (appUrl: string, avatar: string) => {
+  const isAbsolute = avatar.startsWith('http://') || avatar.startsWith('https://');
+
+  if (isAbsolute) {
+    return avatar;
   }
-  return 0;
+
+  return `${appUrl}/avatarproxy/${avatar}`;
 };
 
 const retrieveDetailsForItem = async (
