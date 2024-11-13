@@ -255,9 +255,9 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
 }
 
 const MediaRequestStatusBadge = ({
-                                   status,
-                                   availability,
-                                 }: {
+  status,
+  availability,
+}: {
   status: MediaRequestStatus;
   availability: MediaRequestAvailability;
 }) => {
