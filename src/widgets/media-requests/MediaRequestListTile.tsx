@@ -180,8 +180,6 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
                     <Image
                       src={item.fallbackUserProfilePicture}
                       alt="requester avatar"
-                      radius="xl"
-                      withPlaceholder
                     />
                   </Avatar>
                   <Anchor
