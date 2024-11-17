@@ -120,7 +120,7 @@ export const mediaRequestsRouter = createTRPCRouter({
                   id: user.id,
                   userName: user.displayName,
                   userProfilePicture: constructAvatarUrl(appUrl, user.avatar),
-                  fallbackUserProfilePicture: constructAvatarUrl(appUrl, user.avatar),
+                  fallbackUserProfilePicture: constructAvatarUrl(appUrl, user.avatar,'avatarproxy'),
                   userLink: `${appUrl}/users/${user.id}`,
                   userRequestCount: user.requestCount,
                 };
