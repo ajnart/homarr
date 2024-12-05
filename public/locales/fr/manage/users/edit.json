@@ -47,7 +47,7 @@
         },
         "confirm": {
           "label": "Supprimer définitivement",
-          "description": "J'ai conscience que cette action est permanente et que toutes les données du compte seront perdues."
+          "description": "Je suis conscient que cette action est permanente et que toutes les données du compte seront perdues."
         }
       }
     }
