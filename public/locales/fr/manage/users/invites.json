@@ -1,7 +1,7 @@
 {
     "metaTitle": "Invitations des utilisateurs",
     "pageTitle": "Gérer les invitations des utilisateurs",
-    "description": "Avec les invitations, vous pouvez convier des utilisateurs sur votre instance Homarr. Une invitation ne sera valide que pendant un certain temps et ne peut être utilisée qu'une fois. L'expiration doit être définie entre 5 minutes et 12 mois.",
+    "description": "Avec les invitations, vous pouvez convier des utilisateurs sur votre instance Homarr. Une invitation ne sera valide que pendant un certain temps et ne peut être utilisée qu'une seule fois. L'expiration doit être définie entre 5 minutes et 12 mois.",
     "button": {
         "createInvite": "Créer une invitation",
         "deleteInvite": "Supprimer une invitation"
@@ -9,7 +9,7 @@
     "table": {
         "header": {
             "id": "ID",
-            "creator": "Créé par",
+            "creator": "Créateur",
             "expires": "Date d'expiration",
             "action": "Actions"
         },
@@ -36,7 +36,7 @@
                 "token": "Jeton"
             },
             "button": {
-                "close": "Copier et fermer"
+                "close": "Copier et rejeter"
             }
         },
         "delete": {
