@@ -14,11 +14,13 @@ export const migrateRouter = createTRPCRouter({
       const id = v4();
       const token = randomBytes(32).toString('hex');
 
-      db.insert(migrateTokens).values({
+      await db.insert(migrateTokens).values({
         id,
         token,
         ...input,
         expires: dayjs().add(5, 'minutes').toDate(),
       });
+
+      return token;
     }),
 });

@@ -1,10 +1,12 @@
-import { Alert, Button, Checkbox, Group, Stack, Text, Title } from '@mantine/core';
+import { Alert, Button, Checkbox, Input, Stack, Text, Title } from '@mantine/core';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
 import { ManageLayout } from '~/components/layout/Templates/ManageLayout';
 import { getServerAuthSession } from '~/server/auth';
 import { getServerSideTranslations } from '~/tools/server/getServerSideTranslations';
 import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
+import { api } from '~/utils/api';
 
 /**
  * 1. Send selected options to the server
@@ -15,6 +17,28 @@ import { checkForSessionOrAskForLogin } from '~/tools/server/loginBuilder';
 
 const ManagementPage = () => {
   const metaTitle = `Migration • Homarr`;
+  const { mutateAsync } = api.migrate.createToken.useMutation();
+  const [options, setOptions] = useState({
+    boards: true,
+    integrations: true,
+    users: true,
+  });
+  const onClick = async () => {
+    await mutateAsync(options, {
+      onSuccess: (token) => {
+        console.log(token);
+
+        // Download ZIP file
+        const link = document.createElement('a');
+        const baseUrl = window.location.origin;
+        link.href = `${baseUrl}/api/migrate?token=${token}`;
+        console.log(link.href);
+        link.download = 'migration.zip';
+        link.click();
+      },
+    });
+  };
+
   return (
     <ManageLayout>
       <Head>
@@ -34,15 +58,38 @@ const ManagementPage = () => {
           with anyone.
         </Alert>
 
-        <Checkbox.Group label="Select everything you want to export">
-          <Group>
-            <Checkbox label="Export boards" />
-            <Checkbox label="Export users" />
-            <Checkbox label="Export integrations" />
-          </Group>
-        </Checkbox.Group>
+        <Input.Wrapper label="Select everything you want to export">
+          <Stack ml="md" mt="md">
+            <Checkbox
+              label="Export boards"
+              checked={options.boards}
+              onChange={(event) =>
+                setOptions((prev) => ({
+                  ...prev,
+                  boards: event.target.checked,
+                  integrations: false,
+                }))
+              }
+            />
+            <Checkbox
+              label="Export integrations"
+              disabled={!options.boards}
+              checked={options.integrations}
+              onChange={(event) =>
+                setOptions((prev) => ({ ...prev, integrations: event.target.checked }))
+              }
+              description="This will include encrypted credentials for integrations. Only available when exporting boards"
+            />
+            <Checkbox
+              label="Export users"
+              checked={options.users}
+              onChange={(event) => setOptions((prev) => ({ ...prev, users: event.target.checked }))}
+              description="This will only export credential users, passwords hash and salt are encrypted"
+            />
+          </Stack>
+        </Input.Wrapper>
 
-        <Button>Export</Button>
+        <Button onClick={onClick}>Export</Button>
       </Stack>
     </ManageLayout>
   );

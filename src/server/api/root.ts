@@ -1,3 +1,4 @@
+import { tdarrRouter } from '~/server/api/routers/tdarr';
 import { createTRPCRouter } from '~/server/api/trpc';
 
 import { appRouter } from './routers/app';
@@ -14,6 +15,7 @@ import { indexerManagerRouter } from './routers/indexer-manager';
 import { inviteRouter } from './routers/invite/invite-router';
 import { mediaRequestsRouter } from './routers/media-request';
 import { mediaServerRouter } from './routers/media-server';
+import { migrateRouter } from './routers/migrate';
 import { notebookRouter } from './routers/notebook';
 import { overseerrRouter } from './routers/overseerr';
 import { passwordRouter } from './routers/password';
@@ -22,7 +24,6 @@ import { smartHomeEntityStateRouter } from './routers/smart-home/entity-state';
 import { usenetRouter } from './routers/usenet/router';
 import { userRouter } from './routers/user';
 import { weatherRouter } from './routers/weather';
-import { tdarrRouter } from '~/server/api/routers/tdarr';
 
 /**
  * This is the primary router for your server.
@@ -53,6 +54,7 @@ export const rootRouter = createTRPCRouter({
   smartHomeEntityState: smartHomeEntityStateRouter,
   healthMonitoring: healthMonitoringRouter,
   tdarr: tdarrRouter,
+  migrate: migrateRouter,
 });
 
 // export type definition of API
