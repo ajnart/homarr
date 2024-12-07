@@ -105,7 +105,7 @@ export const boardRouter = createTRPCRouter({
       const targetPath = `data/configs/${input.boardName}.json`;
       fs.writeFileSync(targetPath, JSON.stringify(newConfig, null, 2), 'utf8');
     }),
-  renameBoard: protectedProcedure
+  renameBoard: adminProcedure
     .meta({ openapi: { method: 'PUT', path: '/boards/rename', tags: ['board'] } })
     .input(
       z.object({
@@ -147,7 +147,7 @@ export const boardRouter = createTRPCRouter({
       fs.unlinkSync(targetPath);
       Consola.info(`Deleted ${input.oldName} from file system`);
     }),
-  duplicateBoard: protectedProcedure
+  duplicateBoard: adminProcedure
     .meta({ openapi: { method: 'POST', path: '/boards/duplicate', tags: ['board'] } })
     .input(
       z.object({
