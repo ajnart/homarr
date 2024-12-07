@@ -116,7 +116,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
   return (
     <Container h="100%" w="100%" maw="initial" mah="initial" p={0}>
       <iframe
-        sandbox="" // Disables js execution see TODO: add link
+        sandbox="" // Disables js execution see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox
         className={classes.iframe}
         src={widget.properties.embedUrl}
         title="widget iframe"
