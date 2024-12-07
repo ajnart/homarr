@@ -7,6 +7,7 @@ export type MediaRequest = {
   name: string;
   userName: string;
   userProfilePicture: string;
+  fallbackUserProfilePicture: string;
   userLink: string;
   userRequestCount: number;
   airDate?: string;
@@ -22,6 +23,7 @@ export type Users = {
   id: number;
   userName: string;
   userProfilePicture: string;
+  fallbackUserProfilePicture: string;
   userLink: string;
   userRequestCount: number;
 };

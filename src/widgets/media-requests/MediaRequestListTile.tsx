@@ -11,6 +11,7 @@ import {
   Stack,
   Text,
   Tooltip,
+  Avatar,
   useMantineTheme,
 } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
@@ -170,14 +171,17 @@ function MediaRequestListTile({ widget }: MediaRequestListWidgetProps) {
               </Flex>
               <Stack justify="center">
                 <Flex gap="xs">
-                  <Image
+                  <Avatar
                     src={item.userProfilePicture}
-                    width={25}
-                    height={25}
+                    size={25}
                     alt="requester avatar"
                     radius="xl"
-                    withPlaceholder
-                  />
+                  >
+                    <Image
+                      src={item.fallbackUserProfilePicture}
+                      alt="requester avatar"
+                    />
+                  </Avatar>
                   <Anchor
                     href={item.userLink}
                     target={widget.properties.openInNewTab ? '_blank' : '_self'}
