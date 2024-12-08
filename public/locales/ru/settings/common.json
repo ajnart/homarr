@@ -3,16 +3,16 @@
   "tooltip": "Настройки",
   "tabs": {
     "common": "Общие",
-    "customizations": "Оформление"
+    "customizations": "Персонализация"
   },
   "tips": {
-    "configTip": "Загрузите свой файл конфигурации, перетащив его на страницу!"
+    "configTip": "Загрузите ваш файл конфигурации, перетащив его на страницу!"
   },
   "credits": {
     "madeWithLove": "Сделано с ❤️ от @",
-    "thirdPartyContent": "Посмотреть контент от третьих сторон",
+    "thirdPartyContent": "Посмотреть стороннее содержимое",
     "thirdPartyContentTable": {
-      "dependencyName": "Зависимости",
+      "dependencyName": "Зависимость",
       "dependencyVersion": "Версия"
     }
   },
