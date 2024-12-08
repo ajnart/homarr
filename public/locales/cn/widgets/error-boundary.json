@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "您的错误",
-    "reportButton": "报告该错误"
+    "label": "",
+    "reportButton": ""
   }
 }

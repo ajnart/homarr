@@ -3,13 +3,13 @@
     "name": "Календарь",
     "description": "Отображает календарь с предстоящими релизами из поддерживаемых интеграций.",
     "settings": {
-      "title": "Настройки для виджета календаря",
+      "title": "Настройки виджета календаря",
       "radarrReleaseType": {
-        "label": "Тип релиза в Radarr",
+        "label": "Тип релиза Radarr",
         "data": {
-          "inCinemas": "В кино",
-          "physicalRelease": "Физический носитель",
-          "digitalRelease": "Цифровой релиз"
+          "inCinemas": "В кинотеатрах",
+          "physicalRelease": "Физический",
+          "digitalRelease": "Цифровой"
         }
       },
       "hideWeekDays": {

@@ -1,20 +1,20 @@
 {
   "descriptor": {
     "name": "Docker",
-    "description": "Позволяет легко видеть и управлять всеми вашими контейнерами Docker."
+    "description": "Позволяет легко просматривать и управлять всеми вашими контейнерами Docker."
   },
   "search": {
-    "placeholder": "Поиск по контейнеру или имени образа"
+    "placeholder": "Поиск по названию контейнера или образа"
   },
   "table": {
     "header": {
-      "name": "Имя",
+      "name": "Название",
       "image": "Образ",
       "ports": "Порты",
       "state": "Состояние"
     },
     "body": {
-      "portCollapse": "Ещё {{ports}}"
+      "portCollapse": "ещё {{ports}}"
     },
     "states": {
       "running": "Работает",
@@ -68,7 +68,7 @@
   "errors": {
     "integrationFailed": {
       "title": "Сбой интеграции Docker",
-      "message": "Вы забыли смонтировать сокет Docker?"
+      "message": "Возможно, вы забыли подключить сокет Docker?"
     },
     "unknownError": {
       "title": "Произошла ошибка"

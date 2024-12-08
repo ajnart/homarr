@@ -22,7 +22,7 @@
       },
       "titleState": {
         "label": "Título del reloj",
-        "info": "El título personalizado y el código de zona horaria se pueden mostrar en tu widget.<br/>También puedes mostrar solo la ciudad, no mostrar ninguna<br/>o incluso mostrar solo la zona horaria cuando ambas están seleccionadas y no se proporcione ningún título.",
+        "info": "El título personalizado y el código de zona horaria se pueden mostrar en tu widget.<br/>También puedes mostrar solo la ciudad, no mostrar nada,<br/>o incluso mostrar solo la zona horaria cuando ambos están seleccionados pero no se proporciona un título.",
         "data": {
           "both": "Título y zona horaria",
           "city": "Solo título",

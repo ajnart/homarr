@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "Az Ön hibája",
-    "reportButton": "Hiba jelentése"
+    "label": "",
+    "reportButton": ""
   }
 }
