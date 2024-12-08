@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "Vaše chyba",
-    "reportButton": "Nahlásit tuto chybu"
+    "label": "",
+    "reportButton": ""
   }
 }
