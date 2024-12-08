@@ -8,9 +8,9 @@
   "back": "Назад",
   "delete": "Удалить",
   "ok": "ОК",
-  "edit": "Изменить",
+  "edit": "Редактировать",
   "next": "Далее",
-  "previous": "Предыдущий",
+  "previous": "Назад",
   "confirm": "Подтвердить",
   "enabled": "Включено",
   "duplicate": "Создать копию",
@@ -25,14 +25,14 @@
   "createItem": "+ создать {{item}}",
   "sections": {
     "settings": "Настройки",
-    "dangerZone": "Зона опасности"
+    "dangerZone": "Опасная зона"
   },
   "secrets": {
     "apiKey": "API-ключ",
     "username": "Имя пользователя",
     "password": "Пароль"
   },
-  "tip": "Совет: ",
+  "tip": "Подсказка: ",
   "time": {
     "seconds": "секунд",
     "minutes": "минут",
@@ -44,7 +44,7 @@
     "medium": "среднего",
     "large": "большого"
   },
-  "seeMore": "Узнать больше...",
+  "seeMore": "Подробнее...",
   "position": {
     "left": "Слева",
     "center": "По центру",
