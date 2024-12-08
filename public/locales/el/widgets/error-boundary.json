@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "Το σφάλμα σας",
-    "reportButton": "Αναφέρετε αυτό το σφάλμα"
+    "label": "",
+    "reportButton": ""
   }
 }
