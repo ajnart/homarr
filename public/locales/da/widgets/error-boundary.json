@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Widgetten crashede uventet. Læs venligst dokumentationen og ret stavefejl.",
+    "label": "Opstod en fejl",
+    "reportButton": "Rapporter denne fejl på GitHub"
   }
 }
