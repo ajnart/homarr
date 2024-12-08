@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "오류",
-    "reportButton": "이 오류 신고하기"
+    "label": "",
+    "reportButton": ""
   }
 }
