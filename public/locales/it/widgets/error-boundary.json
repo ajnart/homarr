@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "Il tuo errore",
-    "reportButton": "Segnala questo errore"
+    "label": "",
+    "reportButton": ""
   }
 }
