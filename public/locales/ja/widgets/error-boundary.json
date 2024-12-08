@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "あなたのエラー",
-    "reportButton": "このエラーを報告する"
+    "label": "",
+    "reportButton": ""
   }
 }
