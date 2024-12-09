@@ -19,13 +19,13 @@
         "label": "Límite de líneas de texto"
       },
       "sortByPublishDateAscending": {
-        "label": ""
+        "label": "Ordenar por fecha de publicación (ascendente)"
       },
       "sortPostsWithoutPublishDateToTheTop": {
-        "label": ""
+        "label": "Colocar publicaciones sin fecha de publicación en la parte superior"
       },
       "maximumAmountOfPosts": {
-        "label": ""
+        "label": "Cantidad máxima de publicaciones"
       }
     },
     "card": {

@@ -1,7 +1,7 @@
 {
   "descriptor": {
     "name": "Строка поиска",
-    "description": "Строка поиска, позволяющая искать в пользовательской поисковой системе, YouTube и поддерживаемых интеграциях."
+    "description": "Строка поиска, позволяющая искать в вашей поисковой системе, YouTube и поддерживаемых интеграциях."
   },
   "input": {
     "placeholder": "Поиск в интернете..."
@@ -22,9 +22,9 @@
     },
     "overseerr": {
       "name": "Overseerr",
-      "description": "Поиск фильмов и телешоу на Overseerr"
+      "description": "Поиск фильмов и сериалов в Overseerr"
     }
   },
   "tip": "Вы можете выбрать строку поиска с помощью сочетания клавиш ",
-  "switchedSearchEngine": "Переключено на поиск по {{searchEngine}}"
+  "switchedSearchEngine": "Переключено на поиск в {{searchEngine}}"
 }

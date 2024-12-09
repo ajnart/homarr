@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Karşılaştığın Hata",
-    "reportButton": "Hatayı bildir"
+    "text": "Widget beklenmedik bir şekilde çöktü. Lütfen dokümantasyonu okuyun ve yazım hatalarını düzeltin.",
+    "label": "Oluşan hata",
+    "reportButton": "Bu hatayı GitHub'da bildirin"
   }
 }

@@ -1,28 +1,28 @@
 {
   "descriptor": {
     "name": "Overseerr",
-    "description": "Позволяет искать и добавлять медиафайлы из Overseerr или Jellyseerr."
+    "description": "Позволяет искать и добавлять медиаконтент из Overseerr или Jellyseerr."
   },
   "popup": {
     "item": {
       "buttons": {
         "askFor": "Запросить {{title}}",
         "cancel": "Отмена",
-        "request": "Запрос"
+        "request": "Запросить"
       },
       "alerts": {
         "automaticApproval": {
-          "title": "Используемый API-ключ",
-          "text": "Этот запрос будет автоматически одобрен"
+          "title": "Использование API-ключа",
+          "text": "Этот запрос будет одобрен автоматически"
         }
       }
     },
     "seasonSelector": {
-      "caption": "Выберите сезоны, которые хотите скачать",
+      "caption": "Отметьте сезоны, которые вы хотите загрузить",
       "table": {
         "header": {
           "season": "Сезон",
-          "numberOfEpisodes": "Количество эпизодов"
+          "numberOfEpisodes": "Количество серий"
         }
       }
     }

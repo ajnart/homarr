@@ -17,7 +17,7 @@
     "afterLoginRedirection": "Después de iniciar sesión, serás redirigido a {{url}}",
     "providersEmpty": {
       "title": "Error del proveedor de autenticación",
-      "message": "Los proveedor(es) no están configurados; consulte sus registros para obtener más información."
+      "message": "El/Los Proveedor(es) no están configurados, por favor, revisa tus registros para obtener más información."
     }
   },
   "alert": "Tus credenciales son incorrectas o esta cuenta no existe. Por favor, inténtalo de nuevo."

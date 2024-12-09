@@ -11,22 +11,22 @@
             },
             "appendUnit": {
                 "label": "Añadir unidad de medida",
-                "info": "Añadir el atributo unidad de medida al estado de la entidad."
+                "info": "Añadir el atributo de unidad de medida al estado de la entidad."
             },
             "automationId": {
                 "label": "ID de automatización opcional",
-                "info": "Su ID de automatización única. Siempre empieza por automation.XXXXX. Si no está establecida, no se podrá hacer clic en el widget, y solo se mostrará el estado. Al hacer clic, la entidad se refrescará."
+                "info": "Tu ID de automatización único. Siempre empieza con automation.XXXXX. Si no está configurado, el widget no será clicable y solo mostrará el estado. Después de hacer clic, el estado de la entidad se actualizará."
             },
             "displayName": {
                 "label": "Nombre a mostrar"
             },
             "displayFriendlyName": {
-                "label": "Mostrar nombre descriptivo",
-                "info": "Mostrar el nombre descriptivo de Home Assistant en lugar del nombre para mostrar."
+                "label": "Mostrar nombre amigable",
+                "info": "Mostrar el nombre amigable de Home Assistant en lugar del nombre de visualización."
             },
             "genericToggle": {
-                "label": "Cambio de entidad",
-                "info": "Realizar una acción genérica de Home Assistant en la entidad cuando se hace clic."
+                "label": "Interruptor de entidad",
+                "info": "Realizar una acción genérica de alternar de Home Assistant en la entidad al hacer clic."
             }
         }
     }

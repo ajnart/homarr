@@ -1,18 +1,18 @@
 {
   "descriptor": {
-    "name": "Сводка по фильтрующим DNS",
+    "name": "Сводка DNS-фильтра",
     "description": "Отображает важные данные из PiHole или AdGuard",
     "settings": {
-      "title": "Настройки для сводки фильтрующих DNS",
+      "title": "Настройки сводки DNS-фильтра",
       "usePiHoleColors": {
-        "label": "Использовать цвета из PiHole"
+        "label": "Использовать цвета PiHole"
       },
       "layout": {
         "label": "Макет",
         "data": {
-          "grid": "2 на 2",
-          "row": "Горизонтальный",
-          "column": "Вертикальный"
+          "grid": "Сетка 2x2",
+          "row": "Горизонтально",
+          "column": "Вертикально"
         }
       }
     }
@@ -21,8 +21,8 @@
     "metrics": {
       "domainsOnAdlist": "доменов в списке блокировок",
       "queriesToday": "запросов сегодня",
-      "queriesBlockedTodayPercentage": "Заблокировано сегодня",
-      "queriesBlockedToday": "Заблокировано сегодня"
+      "queriesBlockedTodayPercentage": "заблокировано сегодня",
+      "queriesBlockedToday": "заблокировано сегодня"
     }
   }
 }

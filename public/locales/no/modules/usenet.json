@@ -16,7 +16,7 @@
     "history": "Logg"
   },
   "info": {
-    "sizeLeft": "Størrelse til venstre",
+    "sizeLeft": "Resterende datamengde",
     "paused": "Pauset"
   },
   "queue": {

@@ -9,8 +9,8 @@
       },
       "cpu": {
         "label": "Mostrar información de la CPU",
-        "load": "",
-        "minute": "",
+        "load": "Promedio de Carga",
+        "minute": "{{minute}} minutos",
         "minutes": "{{minutes}} Minutos"
       },
       "memory": {
@@ -57,43 +57,43 @@
         "label": "Mostrar sección de almacenamiento"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Requisito para que el indicador de estado de la sección sea 'OK'",
+        "info": "'Todos' requiere que todos los elementos estén en línea para que el indicador sea verde. 'Cualquiera' requiere que al menos un elemento esté en línea.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Cualquiera Activo",
+          "all": "Todos Activos"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignorar Errores de Certificado",
+        "info": "Si está habilitado, el widget ignorará los errores de certificado al acceder a la API de Proxmox. Esto puede ser útil al acceder a Proxmox a través de HTTPS."
       }
     }
   },
   "cpu": {
     "label": "CPU",
-    "load": "",
-    "minute": ""
+    "load": "Promedio de Carga",
+    "minute": "{{minute}} minutos"
   },
   "memory": {
-    "label": "",
-    "totalMem": "",
-    "available": ""
+    "label": "Memoria",
+    "totalMem": "Espacio total: {{total}}GB",
+    "available": "Disponible: {{available}}GB - {{percentage}}%"
   },
   "fileSystem": {
-    "label": "",
-    "available": ""
+    "label": "Archivo de Sistema",
+    "available": "Disponible: {{available}} - {{percentage}}%"
   },
   "info": {
-    "uptime": "",
-    "uptimeFormat": "",
-    "updates": "",
-    "reboot": ""
+    "uptime": "Tiempo de Actividad",
+    "uptimeFormat": "{{days}} días, {{hours}} horas, {{minutes}} minutos",
+    "updates": "Actualización disponible",
+    "reboot": "Reiniciar"
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "No se puede encontrar tu(s) sistema(s).",
+      "text": "Hubo un problema al conectarse a tu sistema. Por favor verifica tu configuración/integración(es)."
     }
   },
   "headings": {
@@ -118,24 +118,24 @@
         "name": "Nombre",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Nodo"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Nodo",
+      "vmid": "VMID",
       "details": "Detalles",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Núcleos - {{maxCpu}}",
+      "memSize": "Memoria - {{maxMem}}",
+      "memRatio": "Memoria - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Disco - {{maxDisk}}",
+      "diskRatio": "Disco - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Tiempo de actividad - {{uptime}}",
+      "plugin": "Complemento",
+      "ha": "Estado de HA - {{haState}}",
+      "sharedStorage": "Almacenamiento Compartido",
+      "localStorage": "Almacenamiento Local",
+      "na": "N/D"
     }
   }
 }

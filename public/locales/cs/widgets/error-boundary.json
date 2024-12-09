@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Vaše chyba",
-    "reportButton": "Nahlásit tuto chybu"
+    "text": "Widget se nečekaně zhroutil. Přečtěte si prosím dokumentaci a opravte případné překlepy.",
+    "label": "Vyskytlá chyba",
+    "reportButton": "Nahlásit tuto chybu na GitHubu"
   }
 }
