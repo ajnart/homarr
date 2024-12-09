@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "组件意外崩溃，请阅读文档并修改错误的输入。",
+    "label": "发生错误",
+    "reportButton": "在 GitHub 上报告此错误"
   }
 }
