@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Az Ön hibája",
-    "reportButton": "Hiba jelentése"
+    "text": "A widget váratlanul összeomlott. Kérjük, olvassa el a dokumentációt, és javítsa ki a gépelési hibákat.",
+    "label": "Hiba történt",
+    "reportButton": "Hiba jelentése a GitHubon"
   }
 }

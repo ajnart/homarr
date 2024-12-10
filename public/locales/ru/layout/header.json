@@ -2,20 +2,20 @@
     "search": {
         "label": "Поиск",
         "engines": {
-            "web": "Поиск {{query}} в интернете",
-            "youtube": "Поиск {{query}} на YouTube",
-            "torrent": "Поиск {{query}} по торрентам",
-            "movie": "Поиск {{query}} в приложении {{app}}"
+            "web": "Искать «{{query}}» в интернете",
+            "youtube": "Искать «{{query}}» на YouTube",
+            "torrent": "Искать торренты «{{query}}»",
+            "movie": "Искать «{{query}}» в {{app}}"
         }
     },
     "actions": {
         "avatar": {
             "switchTheme": "Переключить тему",
-            "preferences": "Пользовательские настройки",
+            "preferences": "Настройки пользователя",
             "defaultBoard": "Панель по умолчанию",
             "manage": "Управление",
-            "logout": "Выйти как {{username}}",
-            "login": "Вход в систему"
+            "logout": "Выйти ({{username}})",
+            "login": "Вход"
         }
     },
     "modals": {

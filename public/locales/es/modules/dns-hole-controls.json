@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Establecer tiempo de desactivación",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "unlimited": "Dejar vacío para ilimitado",
+    "set": "Establecer"
   }
 }

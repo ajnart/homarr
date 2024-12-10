@@ -12,15 +12,15 @@
 	"actions": {
 		"toggleTheme": "Aydınlık/karanlık mod",
 		"focusSearchBar": "Arama çubuğuna odaklan",
-		"openDocker": "Docker Widget'ını açın",
+		"openDocker": "Docker Sayfası",
 		"toggleEdit": "Düzenleme Modunu Değiştir"
 	},
 	"metrics": {
 		"configurationSchemaVersion": "Yapılandırma şeması sürümü",
-		"version": "Versiyon",
+		"version": "Sürüm",
 		"nodeEnvironment": "Node ortamı",
-		"i18n": "Yüklenen I18n çeviri ad alanları",
-		"locales": "Yapılandırılmış I18n yerelleri",
+		"i18n": "Kullanılan l18n dil yapılandırması",
+		"locales": "Kurulan l18n dil yapılandırması",
 		"experimental_disableEditMode": "<b>DENEYSEL</b>: Düzenleme modunu devre dışı bırak"
 	},
 	"version": {

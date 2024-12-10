@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Il tuo errore",
-    "reportButton": "Segnala questo errore"
+    "text": "Il widget è crashato inaspettatamente. Leggere la documentazione e correggere eventuali errori di battitura.",
+    "label": "Si è verificato un errore",
+    "reportButton": "Segnala questo errore su GitHub"
   }
 }

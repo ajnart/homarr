@@ -8,7 +8,7 @@
     "modals": {
         "selectBoard": {
             "title": "Choisir un tableau de bord",
-            "text": "Choisissez le tableau sur lequel vous souhaiyez ajouter les applications pour les conteneurs Docker sélectionnés.",
+            "text": "Choisissez le tableau sur lequel vous souhaitez ajouter les applications pour les conteneurs Docker sélectionnés.",
             "form": {
                 "board": {
                     "label": "Tableau de bord"
@@ -24,7 +24,7 @@
                 "message": "Les applications pour les conteneurs Docker sélectionnés ont bien été ajoutées au tableau de bord."
             },
             "error": {
-                "title": "Impossible d'ajouter des applications au tableau de bord",
+                "title": "Échec de l'ajout d'applications au tableau de bord",
                 "message": "Les applications pour les conteneurs Docker sélectionnés n'ont pas pu être ajoutées au tableau de bord."
             }
         }
