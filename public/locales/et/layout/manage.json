@@ -26,7 +26,8 @@
             "title": "",
             "items": {
                 "docker": "",
-                "api": ""
+                "api": "",
+                "migrate": ""
             }
         },
         "about": {
