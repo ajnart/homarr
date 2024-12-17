@@ -26,7 +26,8 @@
             "title": "Værktøjer",
             "items": {
                 "docker": "Docker",
-                "api": "API"
+                "api": "API",
+                "migrate": "Migrer til 1.0"
             }
         },
         "about": {

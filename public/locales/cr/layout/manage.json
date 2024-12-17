@@ -26,7 +26,8 @@
             "title": "crwdns3525:0crwdne3525:0",
             "items": {
                 "docker": "crwdns3527:0crwdne3527:0",
-                "api": "crwdns4172:0crwdne4172:0"
+                "api": "crwdns4172:0crwdne4172:0",
+                "migrate": "crwdns4536:0crwdne4536:0"
             }
         },
         "about": {

@@ -1,22 +1,22 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Estado del Administrador de Índices",
+        "description": "Estado sobre tus índices",
         "settings": {
-            "title": "",
+            "title": "Estado del Administrador de Índices",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Abrir el Sitio del Indexador en una Nueva Pestaña"
             }
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Administrador de Índices",
+        "testAllButton": "Probar todo"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "No se puede encontrar un administrador de índices",
+            "text": "Hubo un problema al conectarse a tu administrador de índices. Por favor verifica tu configuración/integración(es)."
         }
     }
 }

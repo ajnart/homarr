@@ -26,7 +26,8 @@
             "title": "Araçlar",
             "items": {
                 "docker": "Docker",
-                "api": "API"
+                "api": "API",
+                "migrate": ""
             }
         },
         "about": {

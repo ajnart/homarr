@@ -109,6 +109,17 @@ export const invites = sqliteTable('invite', {
 
 export type Invite = InferSelectModel<typeof invites>;
 
+export const migrateTokens = sqliteTable('migrate_token', {
+  id: text('id').notNull().primaryKey(),
+  token: text('token').notNull().unique(),
+  boards: int('boards', { mode: 'boolean' }).notNull(),
+  users: int('users', { mode: 'boolean' }).notNull(),
+  integrations: int('integrations', { mode: 'boolean' }).notNull(),
+  expires: int('expires', {
+    mode: 'timestamp',
+  }).notNull(),
+});
+
 export const accountRelations = relations(accounts, ({ one }) => ({
   user: one(users, {
     fields: [accounts.userId],

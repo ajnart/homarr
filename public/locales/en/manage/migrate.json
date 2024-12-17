@@ -1,0 +1,33 @@
+{
+    "metaTitle": "Migrate to 1.0",
+    "pageTitle": "Migrate boards, integrations and users",
+    "description": "Exports your boards and users to a ZIP-Archive to migrate them to Homarr after version 1.0.0",
+    "securityNote": {
+        "title": "Security Note",
+        "text": "When exporting users and integrations it will also open a modal with an encryption key. This key is required to import the data into Homarr. Keep it safe and do not share it with anyone."
+    },
+    "form": {
+        "label": "Select everything you want to export",
+        "option": {
+            "boards": {
+                "label": "Export boards"
+            },
+            "integrations": {
+                "label": "Export integrations",
+                "description": "This will include encrypted credentials for integrations. Only available when exporting boards"
+            },
+            "users": {
+                "label": "Export users",
+                "description": "This will only export credential users, passwords hash and salt are encrypted"
+            }
+        }
+    },
+    "action": {
+        "export": "Export data"
+    },
+    "modal": {
+        "title": "Encryption key",
+        "description": "Your data has been exported. Keep this key safe and do not share it with anyone. You will need this key to import the data into Homarr.",
+        "copyDismiss": "Copy & dismiss"
+    }
+}

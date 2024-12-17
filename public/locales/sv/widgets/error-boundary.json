@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Dina fel",
-    "reportButton": "Rapportera fel"
+    "text": "Widet kraschade oväntat. Läs igenom dokumentationen och åtgärda eventuella skrivfel.",
+    "label": "",
+    "reportButton": ""
   }
 }

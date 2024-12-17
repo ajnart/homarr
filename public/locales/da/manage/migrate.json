@@ -1,0 +1,33 @@
+{
+    "metaTitle": "Migrer til 1.0",
+    "pageTitle": "Migrér tavler, integrationer og brugere",
+    "description": "Eksporterer dine tavler og brugere til et ZIP-arkiv for at migrere dem til Homarr efter version 1.0.0",
+    "securityNote": {
+        "title": "Sikkerhedsnote",
+        "text": "Når du eksporterer brugere og integrationer, åbnes der også en modal med en krypteringsnøgle. Denne nøgle er nødvendig for at importere data til Homarr. Opbevar den sikkert, og del den ikke med nogen."
+    },
+    "form": {
+        "label": "Vælg alt, hvad du vil eksportere",
+        "option": {
+            "boards": {
+                "label": "Eksporter tavler"
+            },
+            "integrations": {
+                "label": "Eksporter integrationer",
+                "description": "Dette inkluderer krypterede legitimationsoplysninger til integrationer. Kun tilgængelig ved eksport af tavler"
+            },
+            "users": {
+                "label": "Eksporter brugere",
+                "description": "Dette vil kun eksportere brugere med legitimiation, adgangskoders hash og salt er krypteret"
+            }
+        }
+    },
+    "action": {
+        "export": "Eksport af data"
+    },
+    "modal": {
+        "title": "Krypteringsnøgle",
+        "description": "Dine data er blevet eksporteret. Opbevar denne nøgle sikkert, og del den ikke med nogen. Du skal bruge denne nøgle for at importere dataene til Homarr.",
+        "copyDismiss": "Kopiér og afvis"
+    }
+}

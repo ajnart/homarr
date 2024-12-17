@@ -4,5 +4,5 @@
 	"height": "Высота",
 	"yPosition": "Позиция по оси Y",
 	"zeroOrHigher": "0 или больше",
-	"betweenXandY": "Между {{min}} и {{max}}"
+	"betweenXandY": "От {{min}} до {{max}}"
 }

@@ -14,10 +14,10 @@
             }
         },
         "help": {
-            "title": "Помощь",
+            "title": "Справка",
             "items": {
                 "documentation": "Документация",
-                "report": "Сообщить о проблеме / ошибке",
+                "report": "Сообщить о проблеме",
                 "discord": "Сообщество Discord",
                 "contribute": "Внести вклад"
             }
@@ -26,7 +26,8 @@
             "title": "Инструменты",
             "items": {
                 "docker": "Docker",
-                "api": "API"
+                "api": "API",
+                "migrate": "Миграция на версию 1.0"
             }
         },
         "about": {

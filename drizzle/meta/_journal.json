@@ -8,6 +8,13 @@
       "when": 1695874816934,
       "tag": "0000_supreme_the_captain",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1730643218521,
+      "tag": "0001_brave_mimic",
+      "breakpoints": true
     }
   ]
 }

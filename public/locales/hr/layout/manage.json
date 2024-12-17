@@ -26,7 +26,8 @@
             "title": "Alati",
             "items": {
                 "docker": "Docker",
-                "api": ""
+                "api": "",
+                "migrate": ""
             }
         },
         "about": {

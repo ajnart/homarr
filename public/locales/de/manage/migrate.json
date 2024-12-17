@@ -1,0 +1,33 @@
+{
+    "metaTitle": "Auf 1.0 migrieren",
+    "pageTitle": "Boards, Integrationen und Benutzer migrieren",
+    "description": "Exportiert deine Boards und Benutzer in ein ZIP-Archiv, um sie nach Version 1.0.0 nach Homarr zu migrieren",
+    "securityNote": {
+        "title": "Sicherheitshinweis",
+        "text": "Beim Exportieren von Benutzern und Integrationen wird ein Modalfenster mit einem Verschlüsselungsschlüssel geöffnet. Dieser Schlüssel ist erforderlich, um Daten in Homarr zu importieren. Bewahren Sie ihn sicher auf und geben Sie ihn nicht an Dritte weiter."
+    },
+    "form": {
+        "label": "Wählen Sie alles aus, was Sie exportieren möchten",
+        "option": {
+            "boards": {
+                "label": "Boards exportieren"
+            },
+            "integrations": {
+                "label": "Integrationen exportieren",
+                "description": "Dies beinhaltet verschlüsselte Anmeldeinformationen für Integrationen. Nur verfügbar beim Exportieren von Boards"
+            },
+            "users": {
+                "label": "Benutzer exportieren",
+                "description": "Damit werden nur die Anmeldeinformationen der Benutzer exportiert, Hash und Salt der Passwörter werden verschlüsselt"
+            }
+        }
+    },
+    "action": {
+        "export": "Exportieren von Daten"
+    },
+    "modal": {
+        "title": "Verschlüsselungsschlüssel",
+        "description": "Ihre Daten wurden exportiert. Bewahren Sie diesen Schlüssel sicher auf und geben Sie ihn nicht an Dritte weiter. Sie benötigen diesen Schlüssel, um die Daten in Homarr zu importieren.",
+        "copyDismiss": "Kopieren & Verwerfen"
+    }
+}

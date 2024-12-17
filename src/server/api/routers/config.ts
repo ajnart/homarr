@@ -23,7 +23,7 @@ export const configRouter = createTRPCRouter({
     )
     .output(z.object({ message: z.string() }))
     .mutation(async ({ input }) => {
-      if (input.name.toLowerCase() === 'default') {
+      if (input.name === 'default') {
         Consola.error("Rejected config deletion because default configuration can't be deleted");
         throw new TRPCError({
           code: 'FORBIDDEN',
