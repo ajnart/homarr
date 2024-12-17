@@ -5274,7 +5274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css.escape@npm:1.5.1, css.escape@npm:^1.5.1":
+"css.escape@npm:1.5.1":
   version: 1.5.1
   resolution: "css.escape@npm:1.5.1"
   checksum: f6d38088d870a961794a2580b2b2af1027731bb43261cfdce14f19238a88664b351cc8978abc20f06cc6bbde725699dec8deb6fe9816b139fc3f2af28719e774
@@ -7449,17 +7449,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^10.0.0":
-  version: 10.11.2
-  resolution: "happy-dom@npm:10.11.2"
+"happy-dom@npm:^15.0.0":
+  version: 15.10.1
+  resolution: "happy-dom@npm:15.10.1"
   dependencies:
-    css.escape: ^1.5.1
     entities: ^4.5.0
-    iconv-lite: ^0.6.3
     webidl-conversions: ^7.0.0
-    whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 5781985c594f216fc8c6ae1d673aec2ef8c2eaa57b79036775ce42a55537486321bed9e1e3fc994a6a7ee9cc8729097486877f39d796ab9e440a7ba6e82e2401
+  checksum: f3fd3c900dd64928e83d210fb8c584b39e3cf84fafc991e511a97c60117ed513461df0425a7c6df600712e879cffb52f260296af9326da9e8018a3bc5c35f1ab
   languageName: node
   linkType: hard
 
@@ -7663,7 +7660,7 @@ __metadata:
     flag-icons: ^6.9.2
     framer-motion: ^10.0.0
     generate-password: ^1.7.0
-    happy-dom: ^10.0.0
+    happy-dom: ^15.0.0
     html-entities: ^2.3.3
     i18next: ^22.5.1
     immer: ^10.0.2
@@ -7862,7 +7859,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iconv-lite@npm:0.6.3, iconv-lite@npm:^0.6.2, iconv-lite@npm:^0.6.3":
+"iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
   dependencies:
@@ -13100,15 +13097,6 @@ __metadata:
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
   checksum: 4ce3b379c61ce16b2219756843407cc99f2b82cd191f653043f1b705a3e32b3af03834af0dfded98ab852313a892a148bed1a8effaacd6440f028c19f41581f3
-  languageName: node
-  linkType: hard
-
-"whatwg-encoding@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "whatwg-encoding@npm:2.0.0"
-  dependencies:
-    iconv-lite: 0.6.3
-  checksum: 7087810c410aa9b689cbd6af8773341a53cdc1f3aae2a882c163bd5522ec8ca4cdfc269aef417a5792f411807d5d77d50df4c24e3abb00bb60192858a40cc675
   languageName: node
   linkType: hard
 
