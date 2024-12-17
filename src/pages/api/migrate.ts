@@ -90,21 +90,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     zip.addFile('checksum.txt', Buffer.from(content, 'utf-8'));
   }
 
-  zip.addFile(
-    'export/settings.json',
-    Buffer.from(
-      JSON.stringify(
-        {
-          boards: dbToken.boards,
-          integrations: dbToken.integrations,
-          users: dbToken.users,
-        },
-        null,
-        2
-      )
-    )
-  );
-
   const zipBuffer = zip.toBuffer();
   res.setHeader('Content-Type', 'application/zip');
   res.setHeader('Content-Disposition', 'attachment; filename=migrate-homarr.zip');
