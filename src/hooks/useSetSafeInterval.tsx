@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 export function useSetSafeInterval() {
-  const timers = useRef<NodeJS.Timer[]>([]);
+  const timers = useRef<NodeJS.Timeout[]>([]);
 
   function setSafeInterval(callback: () => void, delay: number) {
     const newInterval = setInterval(callback, delay);
