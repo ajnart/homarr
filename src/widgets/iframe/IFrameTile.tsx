@@ -5,6 +5,20 @@ import { useTranslation } from 'next-i18next';
 import { defineWidget } from '../helper';
 import { IWidget } from '../widgets';
 
+function sanitizeUrl(url: string) {
+  let parsedUrl: URL;
+  try {
+    parsedUrl = new URL(url);
+  } catch (e) {
+    return 'about:blank';
+  }
+  if (['http:', 'https:'].includes(parsedUrl.protocol)) {
+    return parsedUrl.href;
+  } else {
+    throw new Error(`Protocol '${parsedUrl.protocol}' is not supported. Use HTTP or HTTPS.`);
+  }
+}
+
 const definition = defineWidget({
   id: 'iframe',
   icon: IconBrowser,
@@ -117,7 +131,7 @@ function IFrameTile({ widget }: IFrameTileProps) {
     <Container h="100%" w="100%" maw="initial" mah="initial" p={0}>
       <iframe
         className={classes.iframe}
-        src={widget.properties.embedUrl}
+        src={sanitizeUrl(widget.properties.embedUrl)}
         title="widget iframe"
         allow={allowedPermissions.join(' ')}
       >

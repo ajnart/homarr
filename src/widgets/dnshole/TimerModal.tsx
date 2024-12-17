@@ -41,12 +41,12 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
         setHours(0);
         setMinutes(0);
       }}
-      title={t('modules/dns-hole-controls:durationModal.title')}
+      title={t('durationModal.title')}
     >
       <Flex direction="column" align="center" justify="center">
         <Stack align="flex-end">
           <Group spacing={5}>
-            <Text>{t('modules/dns-hole-controls:durationModal.hours')}</Text>
+            <Text>{t('durationModal.hours')}</Text>
             <ActionIcon
               size={35}
               variant="default"
@@ -73,7 +73,7 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
             </ActionIcon>
           </Group>
           <Group spacing={5}>
-            <Text>{t('modules/dns-hole-controls:durationModal.minutes')}</Text>
+            <Text>{t('durationModal.minutes')}</Text>
             <ActionIcon
               size={35}
               variant="default"
@@ -101,7 +101,7 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
           </Group>
         </Stack>
         <Text ta="center" c="dimmed" my={5}>
-          {t('modules/dns-hole-controls:durationModal.unlimited')}
+          {t('durationModal.unlimited')}
         </Text>
         <Button
           variant="light"
@@ -116,7 +116,7 @@ export function TimerModal({ toggleDns, getDnsStatus, opened, close, appId }: Ti
             close();
           }}
         >
-          {t('modules/dns-hole-controls:durationModal.set')}
+          {t('durationModal.set')}
         </Button>
       </Flex>
     </Modal>
