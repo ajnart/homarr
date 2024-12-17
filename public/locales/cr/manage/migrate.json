@@ -1,0 +1,33 @@
+{
+    "metaTitle": "crwdns4506:0crwdne4506:0",
+    "pageTitle": "crwdns4508:0crwdne4508:0",
+    "description": "crwdns4510:0crwdne4510:0",
+    "securityNote": {
+        "title": "crwdns4512:0crwdne4512:0",
+        "text": "crwdns4514:0crwdne4514:0"
+    },
+    "form": {
+        "label": "crwdns4516:0crwdne4516:0",
+        "option": {
+            "boards": {
+                "label": "crwdns4518:0crwdne4518:0"
+            },
+            "integrations": {
+                "label": "crwdns4520:0crwdne4520:0",
+                "description": "crwdns4522:0crwdne4522:0"
+            },
+            "users": {
+                "label": "crwdns4524:0crwdne4524:0",
+                "description": "crwdns4526:0crwdne4526:0"
+            }
+        }
+    },
+    "action": {
+        "export": "crwdns4528:0crwdne4528:0"
+    },
+    "modal": {
+        "title": "crwdns4530:0crwdne4530:0",
+        "description": "crwdns4532:0crwdne4532:0",
+        "copyDismiss": "crwdns4534:0crwdne4534:0"
+    }
+}

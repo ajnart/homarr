@@ -26,7 +26,8 @@
             "title": "Narzędzia",
             "items": {
                 "docker": "Docker",
-                "api": "API"
+                "api": "API",
+                "migrate": ""
             }
         },
         "about": {

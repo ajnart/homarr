@@ -1,0 +1,33 @@
+{
+    "metaTitle": "",
+    "pageTitle": "",
+    "description": "",
+    "securityNote": {
+        "title": "",
+        "text": ""
+    },
+    "form": {
+        "label": "",
+        "option": {
+            "boards": {
+                "label": ""
+            },
+            "integrations": {
+                "label": "",
+                "description": ""
+            },
+            "users": {
+                "label": "",
+                "description": ""
+            }
+        }
+    },
+    "action": {
+        "export": ""
+    },
+    "modal": {
+        "title": "",
+        "description": "",
+        "copyDismiss": ""
+    }
+}
