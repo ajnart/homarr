@@ -6,7 +6,7 @@ import { getConfig } from '~/tools/config/getConfig';
 import { BackendConfigType } from '~/types/config';
 import { INotebookWidget } from '~/widgets/notebook/NotebookWidgetTile';
 
-import { adminProcedure, createTRPCRouter, publicProcedure } from '../trpc';
+import { adminProcedure, createTRPCRouter } from '../trpc';
 
 export const notebookRouter = createTRPCRouter({
   update: adminProcedure

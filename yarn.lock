@@ -3509,13 +3509,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.17.8":
-  version: 18.17.8
-  resolution: "@types/node@npm:18.17.8"
-  checksum: ebb71526368c9c58f03e2c2408bfda4aa686c13d84226e2c9b48d9c4aee244fb82e672aaf4aa8ccb6e4993b4274d5f4b2b3d52d0a2e57ab187ae653903376411
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^16.10.2":
   version: 16.18.61
   resolution: "@types/node@npm:16.18.61"
@@ -3529,6 +3522,15 @@ __metadata:
   dependencies:
     undici-types: ~5.26.4
   checksum: 629ce20357586144031cb43d601617eef45e59460dea6b1e123f708e6885664f44d54f65e5b72b2614af5b8613f3652ced832649c0b991accbc6a85139befa51
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.6.0":
+  version: 20.17.6
+  resolution: "@types/node@npm:20.17.6"
+  dependencies:
+    undici-types: ~6.19.2
+  checksum: d51dbb9881c94d0310b32b5fd8013e3261595c61bc888fa27258469c93c3dc0b3c4d20a9f28f3f5f79562f6737e28e7f3dd04940dc8b4d966d34aaf318f7f69b
   languageName: node
   linkType: hard
 
@@ -7622,7 +7624,7 @@ __metadata:
     "@types/cookies": ^0.7.7
     "@types/dockerode": ^3.3.9
     "@types/ldapjs": ^3.0.2
-    "@types/node": 18.17.8
+    "@types/node": ^20.6.0
     "@types/prismjs": ^1.26.0
     "@types/react": ^18.2.11
     "@types/swagger-ui-react": ^4.18.3
@@ -12564,6 +12566,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.2":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: de51f1b447d22571cf155dfe14ff6d12c5bdaec237c765085b439c38ca8518fc360e88c70f99469162bf2e14188a7b0bcb06e1ed2dc031042b984b0bb9544017
   languageName: node
   linkType: hard
 
