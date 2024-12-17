@@ -26,7 +26,8 @@
             "title": "כלים",
             "items": {
                 "docker": "דוקר",
-                "api": "ממשק API"
+                "api": "ממשק API",
+                "migrate": ""
             }
         },
         "about": {
