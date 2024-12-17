@@ -26,7 +26,8 @@
             "title": "Orodja",
             "items": {
                 "docker": "Docker",
-                "api": ""
+                "api": "",
+                "migrate": ""
             }
         },
         "about": {
