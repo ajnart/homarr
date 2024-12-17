@@ -8,7 +8,7 @@
 	"translators": "Übersetzer ({{count}})",
 	"translatorsDescription": "Dank dieser Leute ist Homarr in {{languages}} Sprachen verfügbar! Möchten Sie helfen, Homarr in Ihre Sprache zu übersetzen? Lesen Sie <a>hier</a>, wie das geht.",
 	"contributors": "Mitwirkende ({{count}})",
-	"contributorsDescription": "Diese Leute haben den Code erstellt, der Homarr zum Laufen bringt! Möchten Sie beim Aufbau von Homarr helfen? Lesen Sie <a>hier</a>wie das geht",
+	"contributorsDescription": "Diese Leute haben den Code entwickelt, der Homarr zum Laufen bringt! Möchten Sie beim Aufbau von Homarr helfen? Lesen Sie <a>hier</a>, wie Sie das tun können",
 	"actions": {
 		"toggleTheme": "Umschalten zwischen Hell- und Dunkelmodus",
 		"focusSearchBar": "Suchleiste fokussieren",

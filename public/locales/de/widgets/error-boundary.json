@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "Dein Fehler",
-    "reportButton": "Fehler melden"
+    "text": "Das Widet ist unerwartet abgestürzt. Bitte lesen Sie die Dokumentation und beheben Sie etwaige Tippfehler.",
+    "label": "Fehler aufgetreten",
+    "reportButton": "Diesen Fehler auf GitHub melden"
   }
 }

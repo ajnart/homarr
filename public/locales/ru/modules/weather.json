@@ -1,20 +1,20 @@
 {
   "descriptor": {
     "name": "Погода",
-    "description": "Отображает текущую информацию о погоде для заданного местоположения.",
+    "description": "Отображает текущую информацию о погоде для указанного местоположения.",
     "settings": {
       "title": "Настройки виджета погоды",
       "displayInFahrenheit": {
-        "label": "Показать в градусах Фаренгейта"
+        "label": "Отображать в градусах Фаренгейта"
       },
       "displayCityName": {
         "label": "Отобразить название города"
       },
       "displayWeekly": {
-        "label": "Показать прогноз погоды на неделю"
+        "label": "Отображать прогноз на неделю"
       },
       "forecastDays": {
-        "label": "Число дней для отображения"
+        "label": "Количество дней прогноза"
       },
       "location": {
         "label": "Местоположение"
@@ -24,14 +24,14 @@
   "card": {
     "weatherDescriptions": {
       "clear": "Ясно",
-      "mainlyClear": "Малооблачно",
+      "mainlyClear": "Преимущественно ясно",
       "fog": "Туман",
       "drizzle": "Морось",
-      "freezingDrizzle": "Изморозь, возможен гололёд",
+      "freezingDrizzle": "Ледяная морось",
       "rain": "Дождь",
-      "freezingRain": "Моросящий дождь",
+      "freezingRain": "Ледяной дождь",
       "snowFall": "Снегопад",
-      "snowGrains": "Снежные зерна",
+      "snowGrains": "Снежная крупа",
       "rainShowers": "Ливень",
       "snowShowers": "Снегопад",
       "thunderstorm": "Гроза",
