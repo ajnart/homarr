@@ -18,16 +18,16 @@
             },
             "users": {
                 "label": "Kullanıcıları Dışa aktar",
-                "description": ""
+                "description": "Yalnızca kimlik bilgilerini dışa aktarır, karma ve tuzlama parolar şifrelenir"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Verileri dışa aktar"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Şifreleme anahtarı",
+        "description": "Verileriniz dışarı aktarıldı. Anahtarı güvende tutun ve kimseyle paylaşmayın. Verileri Homarr'a aktarmak için bu anahtara ihtiyacınız olacak.",
+        "copyDismiss": "Kopyala & Kapat"
     }
 }
