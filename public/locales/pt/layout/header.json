@@ -15,7 +15,7 @@
             "defaultBoard": "Painel de controle padrão",
             "manage": "Gerenciar",
             "logout": "Sair do site {{username}}",
-            "login": "Login"
+            "login": "“Login”"
         }
     },
     "modals": {

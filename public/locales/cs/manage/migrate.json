@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Přechod na verzi 1.0",
+    "pageTitle": "Migrace ploch, integrací a uživatelů",
+    "description": "Exportujete své plochy a uživatele do ZIP-Archivu, aby jste je mohli migrovat do Homarru po verzi 1.0.0",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "Bezpečnostní poznámka",
+        "text": "Při exportování uživatelů a integrací se otevře okno s šifrovacím klíčem. Tento klíč je vyžadován pro následovný import dat do Homarru. Uchovejte jej na bezpečném místě a s nikým jej nesdílejte."
     },
     "form": {
-        "label": "",
+        "label": "Vyberte vše, co chcete exportovat",
         "option": {
             "boards": {
-                "label": ""
+                "label": "Exportovat plochy"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "Exportovat integrace",
+                "description": "Toto bude obsahovat pouze zašifrované údaje pro integrace. Tato možnost je dostupná pouze při exportování ploch"
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "Exportovat uživatele",
+                "description": "Toto exportuje pouze údaje uživatelů, hesla, hash a salt jsou zašifrovány"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Exportovat data"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Šifrovací klíč",
+        "description": "Vaše data byla exportována. Uchovejte tento klíč v bezpečí a s nikým jej nesdílejte. Tento klíč budete potřebovat pro import dat do Homarru.",
+        "copyDismiss": "Zkopírovat a zavřít"
     }
 }
