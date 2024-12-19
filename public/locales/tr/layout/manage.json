@@ -27,7 +27,7 @@
             "items": {
                 "docker": "Docker",
                 "api": "API",
-                "migrate": ""
+                "migrate": "1.0'a geçiş yapın"
             }
         },
         "about": {

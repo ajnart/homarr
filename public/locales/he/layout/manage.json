@@ -27,7 +27,7 @@
             "items": {
                 "docker": "דוקר",
                 "api": "ממשק API",
-                "migrate": ""
+                "migrate": "הגירה ל- 1.0"
             }
         },
         "about": {
