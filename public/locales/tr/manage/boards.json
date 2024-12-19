@@ -45,7 +45,7 @@
         },
         "create": {
             "title": "Panel oluştur",
-            "text": "Bir pano oluşturulduktan sonra isim değiştirilemez.",
+            "text": "Bir panel oluşturulduktan sonra isim değiştirilemez.",
             "form": {
                 "name": {
                     "label": "İsim"
