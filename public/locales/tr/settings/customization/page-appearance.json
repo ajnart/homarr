@@ -19,7 +19,7 @@
     "label": "Arkaplan"
   },
   "backgroundImageAttachment": {
-    "label": "Arkaplan görseli ekle",
+    "label": "Arkaplan görsel yerleştirme",
     "options": {
       "fixed": "Sabit - Arka plan aynı konumda kalır (önerilir)",
       "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
@@ -33,7 +33,7 @@
     }
   },
   "backgroundImageRepeat": {
-    "label": "Arkaplan görseli ekle",
+    "label": "Arkaplan görsel yerleştirme",
     "options": {
       "repeat": "Tekrarla - Görsel, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
       "no-repeat": "Tekrarsız - Görsel tekrarlanmaz ve tüm alanı doldurmayabilir (önerilir)",
