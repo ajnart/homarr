@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "1.0'a geçiş yapın",
+    "pageTitle": "Panelleri, entegrasyonları ve kullanıcıları taşıyın",
+    "description": "Panolarınızı ve kullanıcılarınızı 1.0.0 sürümünden sonra Homarr'a taşımak için bir ZIP Arşivine aktarır",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "Güvenlik Notu",
+        "text": "Kullanıcıları ve entegrasyonları dışa aktarırken, bir şifreleme anahtarıyla bir modal da açacaktır. Bu anahtar, verileri Homarr'a içe aktarmak için gereklidir. Bunu güvende tutun ve kimseyle paylaşmayın."
     },
     "form": {
-        "label": "",
+        "label": "Dışa aktarmak istediğinizlerini seçin",
         "option": {
             "boards": {
-                "label": ""
+                "label": "Panelleri Dışa Aktar"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "Entegrasyonları Dışa aktar",
+                "description": "Buna entegrasyonlar için şifrelenmiş kimlik bilgileri de dahildir. Yalnızca panelleri dışa aktarırken kullanılabilir"
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "Kullanıcıları Dışa aktar",
+                "description": "Yalnızca kimlik bilgilerini dışa aktarır, karma ve tuzlama parolar şifrelenir"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Verileri dışa aktar"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Şifreleme anahtarı",
+        "description": "Verileriniz dışarı aktarıldı. Anahtarı güvende tutun ve kimseyle paylaşmayın. Verileri Homarr'a aktarmak için bu anahtara ihtiyacınız olacak.",
+        "copyDismiss": "Kopyala & Kapat"
     }
 }

@@ -19,31 +19,31 @@
     "label": "Arkaplan"
   },
   "backgroundImageAttachment": {
-    "label": "Arkaplan resim ekle",
+    "label": "Arkaplan görsel yerleştirme",
     "options": {
       "fixed": "Sabit - Arka plan aynı konumda kalır (önerilir)",
       "scroll": "Kaydırma - Arka plan farenizle kaydırılır"
     }
   },
   "backgroundImageSize": {
-    "label": "Arkaplan resim boyutu",
+    "label": "Arkaplan görsel boyutu",
     "options": {
       "cover": "Kapak - Fazla alanı kırparak tüm pencereyi kaplamak için görüntüyü mümkün olduğunca küçük ölçeklendirir. (tavsiye edilen)",
       "contain": "Kapsam - Görüntüyü kırpmadan veya genişletmeden, kapsayıcısı içinde mümkün olduğu kadar büyük ölçeklendirir."
     }
   },
   "backgroundImageRepeat": {
-    "label": "Arkaplan resim ekle",
+    "label": "Arkaplan görsel yerleştirme",
     "options": {
-      "repeat": "Tekrarla - Resim, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
-      "no-repeat": "Tekrarsız - Resim tekrarlanmaz ve tüm alanı doldurmayabilir (önerilir)",
+      "repeat": "Tekrarla - Görsel, arka plan görüntü alanının tamamını kapsayacak şekilde gerektiği kadar tekrarlanır.",
+      "no-repeat": "Tekrarsız - Görsel tekrarlanmaz ve tüm alanı doldurmayabilir (önerilir)",
       "repeat-x": "Tekrarla X - 'Tekrarla' ile aynıdır ancak yalnızca yatay eksende.",
       "repeat-y": "Tekrar Y - 'Tekrarla' ile aynıdır, ancak yalnızca dikey eksende."
     }
   },
   "customCSS": {
     "label": "Özel CSS",
-    "description": "Ayrıca, yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak kontrol panelinizi özelleştirin",
+    "description": "Kontrol panelinizi yalnızca deneyimli kullanıcılar için önerilen CSS kullanarak özelleştirin",
     "placeholder": "Özel CSS en son uygulanacaktır",
     "applying": "CSS uygulanıyor..."
   }

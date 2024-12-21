@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Migrácia na verziu 1.0",
+    "pageTitle": "Migrácia tabúľ, integrácií a používateľov",
+    "description": "Exportuje vaše nástenky a používateľov do archívu ZIP, aby ste ich mohli migrovať do systému Homarr po verzii 1.0.0",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "Bezpečnostná poznámka",
+        "text": "Pri exporte používateľov a integrácií sa tiež otvorí modálne okno so šifrovacím kľúčom. Tento kľúč je potrebný na import údajov do systému Homarr. Uchovávajte ho v bezpečí a s nikým ho nezdieľajte."
     },
     "form": {
-        "label": "",
+        "label": "Vyberte všetko, čo chcete exportovať",
         "option": {
             "boards": {
-                "label": ""
+                "label": "Export dosiek"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "Integrácie pre export",
+                "description": "To bude zahŕňať zašifrované poverenia pre integrácie. K dispozícii len pri exporte tabúľ"
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "Export používateľov",
+                "description": "Týmto spôsobom sa exportujú len poverenia používateľov, heslá sú zašifrované"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Exportovať dáta"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Šifrovací kľúč",
+        "description": "Vaše údaje boli exportované. Tento kľúč uchovávajte v bezpečí a nikomu ho neposkytujte. Tento kľúč budete potrebovať na import údajov do systému Homarr.",
+        "copyDismiss": "Kopírovať a zavrieť"
     }
 }

@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "迁移到 1.0",
+    "pageTitle": "迁移面板、组件和用户",
+    "description": "将您的面板和用户导出到 ZIP 压缩包，以便在 1.0.0 版本之后将其迁移到 Homarr",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "安全说明",
+        "text": "导出用户和组件时，它还会打开一个带有加密密钥的窗口。此密钥是将数据导入 Homarr 所必需的。请妥善保管，不要与任何人分享。"
     },
     "form": {
-        "label": "",
+        "label": "选择要导出的所有内容",
         "option": {
             "boards": {
-                "label": ""
+                "label": "导出面板"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "导出组件",
+                "description": "这将包括用于组件的加密凭据。仅在导出面板时可用"
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "导出用户",
+                "description": "这只会导出凭据用户，密码 hash 和 salt 已加密"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "导出数据"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "加密密钥",
+        "description": "您的数据已导出。请妥善保管此密钥，不要与任何人共享。您需要此密钥才能将数据导入 Homarr。",
+        "copyDismiss": "复制并关闭"
     }
 }

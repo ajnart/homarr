@@ -1,9 +1,9 @@
 {
-    "metaTitle": "",
+    "metaTitle": "Migrare alla 1.0",
     "pageTitle": "",
-    "description": "",
+    "description": "Esporta le tue bacheche e gli utenti in un archivio ZIP per migrarli su Homarr dopo la versione 1.0.0",
     "securityNote": {
-        "title": "",
+        "title": "Note di sicurezza",
         "text": ""
     },
     "form": {

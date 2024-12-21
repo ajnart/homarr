@@ -11,7 +11,7 @@
     "errors": {
       "general": {
         "title": "Nie można znaleźć pułapki DNS",
-        "text": "Wystąpił problem z połączeniem się z pułapką DNS. Sprawdź konfigurację/integrację."
+        "text": "Wystąpił problem z połączeniem z Twoimi lukami DNS. Sprawdź swoją konfigurację/integrację."
       }
     }
   },
