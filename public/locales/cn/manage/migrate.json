@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
+    "metaTitle": "迁移到 1.0",
     "pageTitle": "",
-    "description": "",
+    "description": "将您的面板和用户导出到 ZIP 压缩包，以便在 1.0.0 版本之后将其迁移到 Homarr",
     "securityNote": {
-        "title": "",
+        "title": "安全说明",
         "text": ""
     },
     "form": {
-        "label": "",
+        "label": "选择要导出的所有内容",
         "option": {
             "boards": {
-                "label": ""
+                "label": "导出面板"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "导出集成",
+                "description": "这将包括集成的加密凭据。仅在导出面板时可用"
             },
             "users": {
-                "label": "",
+                "label": "导出用户",
                 "description": ""
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "导出数据"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "加密密钥",
+        "description": "您的数据已导出。请妥善保管此密钥，不要与任何人共享。您需要此密钥才能将数据导入 Homarr。",
+        "copyDismiss": "复制并关闭"
     }
 }
