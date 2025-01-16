@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "widet が予期せずクラッシュしました。ドキュメントを読み、誤字を修正してください。",
+    "label": "エラーが発生しました",
+    "reportButton": "GitHubでこのエラーを報告する"
   }
 }
