@@ -8,7 +8,7 @@
   },
   "modal": {
     "text": "",
-    "label": "",
-    "reportButton": ""
+    "label": "Виникла помилка",
+    "reportButton": "Повідомити про цю помилку на GitHub"
   }
 }
