@@ -15,7 +15,7 @@
   "mediaStats": {
     "title": "Медіа-статистика",
     "pending": "Очікує схвалення",
-    "tvRequests": "Запити на ТБ",
+    "tvRequests": "Запити на серіали",
     "movieRequests": "Запити на фільми",
     "approved": "Вже затверджено",
     "totalRequests": "Всього"
