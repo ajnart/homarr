@@ -10,8 +10,8 @@
                 "info": "Unikalne ID obiektu w Asystencie Domu. Kopiuj klikając na obiekt > Kliknij ikonę koła zębatego > Kliknij na przycisk kopiuj na 'ID obiektu'. Niektóre niestandardowe obiekty mogą nie być obsługiwane."
             },
             "appendUnit": {
-                "label": "",
-                "info": ""
+                "label": "Dodaj jednostkę miary",
+                "info": "Dodaj atrybut jednostki miary do stanu encji."
             },
             "automationId": {
                 "label": "Opcjonalne ID automatyzacji",
@@ -21,12 +21,12 @@
                 "label": "Nazwa wyświetlana"
             },
             "displayFriendlyName": {
-                "label": "",
-                "info": ""
+                "label": "Wyświetl przyjazną nazwę",
+                "info": "Wyświetlaj przyjazną nazwę z Home Assistant zamiast nazwy wyświetlanej."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Przełącznik encji",
+                "info": "Wykonaj ogólną akcję przełączania Home Assistant na encji po kliknięciu."
             }
         }
     }
