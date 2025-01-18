@@ -10,24 +10,24 @@
         "label": "",
         "option": {
             "boards": {
-                "label": ""
+                "label": "Eksportuj tablice"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "Eksportuj integracje",
+                "description": "Obejmie zaszyfrowane dane logowania do integracji. Dostępne tylko podczas eksportowania tablic."
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "Eksportuj użytkowników",
+                "description": "Spowoduje to wyeksportowanie tylko poświadczeń użytkowników, hash haseł, które są zaszyfrowane"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Eksport danych"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Klucz szyfrowania",
+        "description": "Twoje dane zostały wyeksportowane. Zachowaj ten klucz w bezpiecznym miejscu i nie udostępniaj go nikomu. Będziesz potrzebować tego klucza, aby zaimportować dane do Homarr.",
+        "copyDismiss": "Kopiuj i zamknij"
     }
 }
