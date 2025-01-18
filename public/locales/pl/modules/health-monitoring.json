@@ -1,94 +1,94 @@
 {
   "descriptor": {
-    "name": "",
-    "description": "",
+    "name": "Monitorowanie zdrowia  systemu",
+    "description": "Wyświetla informacje o kondycji i stanie systemu(ów).",
     "settings": {
-      "title": "",
+      "title": "Ustawienia monitorowania kondycji systemu",
       "fahrenheit": {
-        "label": ""
+        "label": "Temperatura procesora w Fahrenheit"
       },
       "cpu": {
-        "label": "",
-        "load": "",
-        "minute": "",
-        "minutes": ""
+        "label": "Temperatura CPU w stopniach Fahrenheita.",
+        "load": "Średnie obciążenie",
+        "minute": "{{minute}} minuta",
+        "minutes": "{{minutes}} minuty"
       },
       "memory": {
-        "label": ""
+        "label": "Pokaż informacje o pamięci"
       },
       "fileSystem": {
-        "label": ""
+        "label": "Pokaż informacje o systemie plików"
       },
       "node": {
-        "label": "",
-        "info": ""
+        "label": "Filtruj według nazwy węzła",
+        "info": "Wprowadź nazwę węzła Proxmox, aby wyświetlić tylko metryki dla tego węzła. Domyślnie wyświetlane są metryki dla całego klastra."
       },
       "defaultViewState": {
-        "label": "",
+        "label": "Sekcja otwarta domyślnie",
         "data": {
           "none": "Żaden",
-          "node": "",
-          "vm": "",
-          "lxc": "",
+          "node": "Węzły",
+          "vm": "Maszyny wirtualne",
+          "lxc": "LXCs",
           "storage": "Pamięć"
         }
       },
       "defaultTabState": {
-        "label": "",
-        "info": "",
+        "label": "Domyślnie otwarta karta",
+        "info": "Domyślnie otwarta karta. Używana tylko wtedy, gdy dostępnych jest wiele integracji.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "System",
+          "cluster": "Klaster"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Pokaż sekcję podsumowania"
       },
       "showNode": {
-        "label": ""
+        "label": "Pokaż sekcję węzłów"
       },
       "showVM": {
-        "label": ""
+        "label": "Pokaż sekcję maszyn wirtualnych"
       },
       "showLXCs": {
-        "label": ""
+        "label": "Pokaż sekcję LXC"
       },
       "showStorage": {
-        "label": ""
+        "label": "Pokaż sekcję pamięci"
       },
       "sectionIndicatorColor": {
-        "label": "",
-        "info": "",
+        "label": "Wymaganie, aby wskaźnik stanu sekcji był ustawiony na \"OK\"",
+        "info": "Opcja „Wszystkie” wymaga, aby wszystkie elementy były online, aby wskaźnik świecił na zielono. Opcja „Dowolny” wymaga, aby co najmniej jeden element był online.",
         "data": {
-          "any": "",
-          "all": ""
+          "any": "Dowolny aktywny",
+          "all": "Wszystkie aktywne"
         }
       },
       "ignoreCert": {
-        "label": "",
-        "info": ""
+        "label": "Ignoruj błędy certyfikatu",
+        "info": "Jeśli ta opcja jest włączona, widżet będzie ignorował błędy certyfikatu podczas uzyskiwania dostępu do interfejsu API Proxmox. Może to być przydatne podczas uzyskiwania dostępu do Proxmox przez HTTPS."
       }
     }
   },
   "cpu": {
     "label": "CPU",
-    "load": "",
-    "minute": ""
+    "load": "Średnie obciążenie",
+    "minute": "{{minute}} minuta"
   },
   "memory": {
-    "label": "",
-    "totalMem": "",
-    "available": ""
+    "label": "Pamięć",
+    "totalMem": "Całkowita pamięć: {{total}}GB",
+    "available": "Dostępne: {{available}}GB - {{percentage}}%"
   },
   "fileSystem": {
-    "label": "",
-    "available": ""
+    "label": "System plików",
+    "available": "Dostępne: {{available}} - {{percentage}}%"
   },
   "info": {
-    "uptime": "",
-    "uptimeFormat": "",
-    "updates": "",
-    "reboot": ""
+    "uptime": "Czas pracy",
+    "uptimeFormat": "{{days}} dni, {{hours}} godzin, {{minutes}} minut",
+    "updates": "Dostępne aktualizacje",
+    "reboot": "Uruchom ponownie"
   },
   "errors": {
     "general": {
@@ -97,8 +97,8 @@
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "System",
+    "cluster": "Klaster"
   },
   "cluster": {
     "summary": {
@@ -107,9 +107,9 @@
     },
     "accordion": {
       "title": {
-        "nodes": "",
-        "vms": "",
-        "lxcs": "",
+        "nodes": "Węzły",
+        "vms": "Maszyny wirtualne",
+        "lxcs": "LXCs",
         "storage": "Pamięć"
       }
     },
