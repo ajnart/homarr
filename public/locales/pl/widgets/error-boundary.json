@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Widżet uległ nieoczekiwanej awarii. Przeczytaj dokumentację i popraw wszelkie literówki.",
+    "label": "Wystąpił błąd",
+    "reportButton": "Zgłoś ten błąd w serwisie GitHub"
   }
 }
