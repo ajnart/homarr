@@ -17,7 +17,7 @@
     "afterLoginRedirection": "Po zalogowaniu nastąpi przekierowanie na stronę {{url}}",
     "providersEmpty": {
       "title": "Błąd dostawcy uwierzytelniania",
-      "message": ""
+      "message": "Dostawcy nie są ustawieni, sprawdź logi, aby uzyskać więcej informacji."
     }
   },
   "alert": "Twoje dane uwierzytelniające są nieprawidłowe lub to konto nie istnieje. Proszę spróbować ponownie."
