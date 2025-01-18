@@ -6,7 +6,7 @@
     },
     "filter": {
         "roles": {
-            "all": "",
+            "all": "Wszystkie",
             "normal": "Zwykły",
             "admin": "Admin",
             "owner": "Właściciel"
