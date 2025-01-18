@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Ustaw czas trwania wyłączenia",
+    "hours": "Godziny",
+    "minutes": "Minuty",
+    "unlimited": "Pozostaw puste, aby ustawić na nieograniczone",
+    "set": "Ustaw"
   }
 }
