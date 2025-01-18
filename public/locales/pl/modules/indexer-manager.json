@@ -1,22 +1,22 @@
 {
     "descriptor": {
-        "name": "",
-        "description": "",
+        "name": "Status menedżera indeksu",
+        "description": "Status Twoich indeksów",
         "settings": {
-            "title": "",
+            "title": "Status menedżera indeksu",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Otwórz stronę indeksowania w nowej karcie"
             }
         }
     },
     "indexersStatus": {
-        "title": "",
-        "testAllButton": ""
+        "title": "Menedżer indeksów",
+        "testAllButton": "Przetestuj wszystkie"
     },
     "errors": {
         "general": {
-            "title": "",
-            "text": ""
+            "title": "Nie można znaleźć menedżera indeksowania",
+            "text": "Wystąpił problem z połączeniem z menedżerem indeksowania. Sprawdź konfigurację/integracje."
         }
     }
 }
