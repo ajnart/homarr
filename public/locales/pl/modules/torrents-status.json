@@ -75,7 +75,7 @@
         "peers": "Peery (połączone)",
         "label": "Etykieta",
         "state": "Status",
-        "stateMessage": ""
+        "stateMessage": "Wiadomość o stanie"
       },
       "item": {
         "text": "Zarządzany przez {{appName}}, {{ratio}} stosunek"
