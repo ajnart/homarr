@@ -1,13 +1,13 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Migracja do wersji 1.0",
+    "pageTitle": "Migracja tablic, integracji i użytkowników",
+    "description": "Eksportuje tablice i użytkowników do archiwum ZIP w celu migracji do Homarr po wersji 1.0.0",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "Uwaga dotycząca bezpieczeństwa",
+        "text": "Podczas eksportowania użytkowników i integracji otworzy się również okno dialogowe z kluczem szyfrowania. Klucz ten jest wymagany do zaimportowania danych do Homarr. Przechowuj go bezpiecznie i nie udostępniaj nikomu."
     },
     "form": {
-        "label": "",
+        "label": "Zaznacz wszystko, co chcesz wyeksportować",
         "option": {
             "boards": {
                 "label": "Eksportuj tablice"
