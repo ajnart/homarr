@@ -92,8 +92,8 @@
   },
   "errors": {
     "general": {
-      "title": "",
-      "text": ""
+      "title": "Nie można znaleźć systemu(ów).",
+      "text": "Wystąpił problem z połączeniem z systemem. Sprawdź konfigurację/integrację(e)."
     }
   },
   "headings": {
@@ -118,24 +118,24 @@
         "name": "Nazwa",
         "cpu": "CPU",
         "ram": "RAM",
-        "node": ""
+        "node": "Węzeł"
       }
     },
     "popover": {
-      "node": "",
-      "vmid": "",
+      "node": "Węzeł",
+      "vmid": "Identyfikator maszyny wirtualnej",
       "details": "Szczegóły",
-      "cores": "",
-      "memSize": "",
-      "memRatio": "",
-      "diskSize": "",
-      "diskRatio": "",
-      "uptime": "",
-      "plugin": "",
-      "ha": "",
-      "sharedStorage": "",
-      "localStorage": "",
-      "na": ""
+      "cores": "Rdzenie - {{maxCpu}}",
+      "memSize": "Pamięć - {{maxMem}}",
+      "memRatio": "Pamięć - {{usedMem}} / {{maxMem}}",
+      "diskSize": "Dysk - {{maxDisk}}",
+      "diskRatio": "Dysk - {{usedDisk}} / {{maxDisk}}",
+      "uptime": "Czas pracy - {{uptime}}",
+      "plugin": "Wtyczka",
+      "ha": "Status HA - {{haState}}",
+      "sharedStorage": "Pamięć współdzielona",
+      "localStorage": "Pamięć lokalna",
+      "na": "Nie dotyczy"
     }
   }
 }
