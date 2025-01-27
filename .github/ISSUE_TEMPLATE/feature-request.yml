@@ -3,6 +3,11 @@ description: Request a feature to help improve Homarr!
 title: '<title>'
 labels: ['✨ Feature']
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]  
+        > If you want to request a feature for 1.0, please open it on the new [repository](https://github.com/homarr-labs/homarr/issues/new/choose).
   - type: textarea
     id: feature
     attributes:

@@ -3,6 +3,11 @@ description: Report something that's broken, or not working like intented!
 title: '<title>'
 labels: ['🐛 Bug']
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]  
+        > If you want to report a bug for 1.0, please open it on the new [repository](https://github.com/homarr-labs/homarr/issues/new/choose).
   - type: dropdown
     id: environment
     attributes:

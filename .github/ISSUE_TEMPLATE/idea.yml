@@ -3,6 +3,11 @@ description: Tell us your idea! We may implement it.
 title: '<title>'
 labels: ['🤔 Idea']
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]  
+        > If you have an idea for 1.0, please open it on the new [repository](https://github.com/homarr-labs/homarr/issues/new/choose).
   - type: textarea
     id: feature
     attributes:

@@ -2,6 +2,11 @@ name: 🏗️ Module request
 description: Request for a module to be added / an integration with you favourite service !
 title: '<title>'
 body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]  
+        > If you want to request a new integration for 1.0, please open it on the new [repository](https://github.com/homarr-labs/homarr/issues/new/choose).
   - type: textarea
     id: name
     attributes:
