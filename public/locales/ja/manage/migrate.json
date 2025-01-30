@@ -1,23 +1,23 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "1.0に移行",
+    "pageTitle": "ボード、統合、ユーザーを移行する",
+    "description": "ボードとユーザーをZIPアーカイブにエクスポートしてバージョン1.0.0以降のHomarrに移行します。",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "セキュリティノート",
+        "text": "ユーザーと統合をエクスポートすると暗号化キーを含むモーダルも開きます。このキーはデータをHomarrにインポートするために必要です。安全に保管し誰とも共有しないでください。"
     },
     "form": {
-        "label": "",
+        "label": "エクスポートしたいものをすべて選択してください",
         "option": {
             "boards": {
-                "label": ""
+                "label": "ボードをエクスポート"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "エクスポート統合",
+                "description": "これには統合用の暗号化された認証情報が含まれます。ボードをエクスポートする場合のみ利用可能です。"
             },
             "users": {
-                "label": "",
+                "label": "ユーザーをエクスポート",
                 "description": ""
             }
         }
