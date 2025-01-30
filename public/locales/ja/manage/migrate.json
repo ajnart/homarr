@@ -18,16 +18,16 @@
             },
             "users": {
                 "label": "ユーザーをエクスポート",
-                "description": ""
+                "description": "これにより資格情報ユーザーのみがエクスポートされ、パスワードハッシュとソルトは暗号化されます。"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "データをエクスポート"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "暗号化キー",
+        "description": "データがエクスポートされました。このキーは安全に保管し誰とも共有しないでください。このキーはデータをHomarrにインポートするために必要になります。",
+        "copyDismiss": "コピーして閉じる"
     }
 }
