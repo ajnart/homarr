@@ -1,35 +1,35 @@
 {
   "descriptor": {
     "name": "Transcodificação de mídia",
-    "description": "",
+    "description": "Exibe informações sobre transcodificação de mídia",
     "settings": {
-      "title": "",
+      "title": "Configurações de transcodificação de mídia",
       "appId": {
-        "label": ""
+        "label": "Selecione um app"
       },
       "defaultView": {
-        "label": "",
+        "label": "Visualização padrão",
         "data": {
-          "workers": "",
+          "workers": "Trabalhadores",
           "queue": "Fila",
           "statistics": "Estatísticas"
         }
       },
       "showHealthCheck": {
-        "label": ""
+        "label": "Mostrar indicador de verificação de saúde"
       },
       "showHealthChecksInQueue": {
-        "label": ""
+        "label": "Mostrar verificações de saúde na fila"
       },
       "queuePageSize": {
-        "label": ""
+        "label": "Fila: Itens por página"
       },
       "showAppIcon": {
-        "label": ""
+        "label": "Mostrar o ícone do aplicativo no canto inferior direito"
       }
     }
   },
-  "noAppSelected": "",
+  "noAppSelected": "Por favor, selecione um aplicativo nas configurações de widget",
   "views": {
     "workers": {
       "table": {
@@ -41,7 +41,7 @@
         "empty": "Vazio",
         "tooltip": {
           "transcode": "Transcodificar",
-          "healthCheck": ""
+          "healthCheck": "Verificação de Saúde"
         }
       }
     },
@@ -52,45 +52,45 @@
           "size": "Tamanho"
         },
         "footer": {
-          "currentIndex": ""
+          "currentIndex": "{{start}}-{{end}} de {{total}}"
         },
         "empty": "Vazio",
         "tooltip": {
           "transcode": "Transcodificar",
-          "healthCheck": ""
+          "healthCheck": "Verificação de Saúde"
         }
       }
     },
     "statistics": {
       "empty": "Vazio",
       "box": {
-        "transcodes": "",
-        "healthChecks": "",
-        "files": "",
-        "spaceSaved": ""
+        "transcodes": "Transcodificações: {{value}}",
+        "healthChecks": "Verificações de saúde: {{value}}",
+        "files": "Arquivos: {{value}}",
+        "spaceSaved": "Salvo: {{value}}"
       },
       "pies": {
-        "transcodes": "",
-        "healthChecks": "",
+        "transcodes": "Transcodificações",
+        "healthChecks": "Verificações de saúde",
         "videoCodecs": "Codecs",
-        "videoContainers": "",
-        "videoResolutions": ""
+        "videoContainers": "Contêineres",
+        "videoResolutions": "Resoluções"
       }
     }
   },
   "error": {
     "title": "Erro",
-    "message": ""
+    "message": "Ocorreu um erro ao buscar dados do Tdarr."
   },
   "tabs": {
-    "workers": "",
+    "workers": "Trabalhadores",
     "queue": "Fila",
     "statistics": "Estatísticas"
   },
   "healthCheckStatus": {
-    "title": "",
-    "queued": "",
-    "healthy": "",
-    "unhealthy": ""
+    "title": "Verificação de Saúde",
+    "queued": "Na fila",
+    "healthy": "Saudável",
+    "unhealthy": "Não saudável"
   }
 }
