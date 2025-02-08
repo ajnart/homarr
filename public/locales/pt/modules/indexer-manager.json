@@ -5,7 +5,7 @@
         "settings": {
             "title": "Status do Gerenciador de Indexadores",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Abrir o site do Indexer em uma nova guia"
             }
         }
     },
