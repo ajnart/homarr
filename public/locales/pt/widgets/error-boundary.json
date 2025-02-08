@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "O widet travou inesperadamente. Por favor, leia a documentação e corrija quaisquer erros de digitação.",
+    "label": "Ocorreu um erro",
+    "reportButton": "Reportar este erro no GitHub"
   }
 }
