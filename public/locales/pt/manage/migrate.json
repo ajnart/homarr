@@ -1,33 +1,33 @@
 {
-    "metaTitle": "",
-    "pageTitle": "",
-    "description": "",
+    "metaTitle": "Migrar para 1.0",
+    "pageTitle": "Migrar painéis, integrações e usuários",
+    "description": "Exporta seus painéis e usuários para um arquivo ZIP para migrá-los para o Homarr após a versão 1.0.0",
     "securityNote": {
-        "title": "",
-        "text": ""
+        "title": "Nota de segurança",
+        "text": "Ao exportar usuários e integrações, também será aberto um modal com uma chave de criptografia. Essa chave é necessária para importar os dados para a Homarr. Mantenha-a em segurança e não a compartilhe com ninguém."
     },
     "form": {
-        "label": "",
+        "label": "Selecione tudo o que deseja exportar",
         "option": {
             "boards": {
-                "label": ""
+                "label": "Exportar painéis"
             },
             "integrations": {
-                "label": "",
-                "description": ""
+                "label": "Exportar integrações",
+                "description": "Isso incluirá credenciais criptografadas para integrações. Disponível somente ao exportar painéis"
             },
             "users": {
-                "label": "",
-                "description": ""
+                "label": "Exportar usuários",
+                "description": "Isso exportará apenas usuários de credenciais, senhas hash e salt são criptografadas"
             }
         }
     },
     "action": {
-        "export": ""
+        "export": "Exportar dados"
     },
     "modal": {
-        "title": "",
-        "description": "",
-        "copyDismiss": ""
+        "title": "Chave Criptográfica",
+        "description": "Seus dados foram exportados. Mantenha essa chave em segurança e não a compartilhe com ninguém. Você precisará dessa chave para importar os dados para a Homarr.",
+        "copyDismiss": "Copiar e dispensar"
     }
 }
