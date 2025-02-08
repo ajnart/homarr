@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Definir tempo de duração da desativação",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "unlimited": "deixe em branco para ilimitado",
+    "set": "Definir"
   }
 }
