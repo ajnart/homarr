@@ -31,15 +31,15 @@
         "info": "Se estiver desativado, somente a proporção global será exibida. A proporção global ainda usará os rótulos se estiver definida"
       },
       "columnOrdering": {
-        "label": ""
+        "label": "Habilitar reordenação das colunas"
       },
       "rowSorting": {
-        "label": ""
+        "label": "Permitir a ordenação das linhas"
       },
       "columns": {
         "label": "Selecione colunas para exibir",
         "data": {
-          "date": "",
+          "date": "Data adicionada",
           "down": "Para baixo",
           "up": "Para cima",
           "eta": "TED",
