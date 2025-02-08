@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Exibir nome amigável",
-                "info": ""
+                "info": "Exibir nome amigável do Home Assistant em vez do nome de exibição."
             },
             "genericToggle": {
                 "label": "",
-                "info": ""
+                "info": "Executa uma ação genérica de alternância do Home Assistant na entidade quando clicada."
             }
         }
     }
