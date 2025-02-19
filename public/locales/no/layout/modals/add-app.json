@@ -32,7 +32,7 @@
 		"externalAddress": {
 			"label": "Ekstern adresse",
 			"description": "URL som vil åpnes når du klikker på appen.",
-			"tooltip": ""
+			"tooltip": "Du kan bruke noen variabler for å opprette dynamiske adresser:<br><br><b>[homarr_base]</b> : full adresse uten port og sti. <i>(Eksempel: 'https://subdomain.homarr.dev')</i><br><b>[homarr_hostname]</b> : full base-Url inkludert gjeldende subdomene. <i>(Eksempel: 'subdomain.homarr.dev')</i><br><b>[homarr_domain]</b> : domenet med subdomenet filtrert bort. <i>(Eksempel: 'homarr.dev')</i><br><b>[homarr_protocol]</b> : <i>http/https</i><br><br>Disse variablene avhenger av den nåværende Url-en."
 		}
 	},
 	"behaviour": {
