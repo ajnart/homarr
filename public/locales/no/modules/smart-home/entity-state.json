@@ -22,11 +22,11 @@
             },
             "displayFriendlyName": {
                 "label": "Vis brukervennlig navn",
-                "info": ""
+                "info": "Vis brukervennlig navn fra Home Assistant i stedet for visningsnavn."
             },
             "genericToggle": {
-                "label": "",
-                "info": ""
+                "label": "Entitetsveksling",
+                "info": "Utfør en generisk Home Assistant veksle handling på enheten når du klikker."
             }
         }
     }
