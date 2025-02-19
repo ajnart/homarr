@@ -5,7 +5,7 @@
 
 
 <!-- Project Title -->
-![Banner](docs/banner.png)
+[![Banner](docs/banner.png)](https://homarr.dev/)
 
 <!-- Badges -->
 <p align="center">
@@ -46,7 +46,7 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-![Features Section](docs/section-features.png)
+[![Features Section](docs/section-features.png)](https://homarr.dev/)
 
 - 🖌️ Highly customizable with an extensive drag and drop grid system
 - ✨ Integrates seamlessly with your favorite self-hosted applications
@@ -62,7 +62,7 @@ Simplify the management of your server with Homarr - a sleek, modern dashboard t
 <br/>
 <br/>
 
-![Widgets & Integrations Section](docs/section-widgets-and-integrations.png)
+[![Widgets & Integrations Section](docs/section-widgets-and-integrations.png)](https://homarr.dev/docs/category/widgets)
 
 Homarr has a [built-in collection of widgets and integrations](https://homarr.dev/docs/category/integrations), that connect to your applications and enable you to control them directly from the dashboard.
 Each widget and integration has a comprehensive documentation
@@ -104,25 +104,25 @@ We're constantly adding new integrations and widgets, which will enhance your ex
 <br/>
 <br/>
 
-![Preview Section](docs/section-preview.png)
+[![Preview Section](docs/section-preview.png)](https://demo.homarr.dev/)
 
 https://user-images.githubusercontent.com/30572287/217098893-5880e7de-13d0-42c5-b505-f7921593396f.mp4
 
 <br/>
 <br/>
 
-![Installation Section](docs/section-installation.png)
+[![Installation Section](docs/section-installation.png)](https://homarr.dev/docs/category/installation-1)
 
 Since we are updating Homarr very frequently, we recommend reading our official installation guides:
 
-<a href="https://homarr.dev/docs/getting-started/installation/">
+<a href="https://homarr.dev/docs/category/installation-1">
   <img src="docs/installation-button.png" width="200" />
 </a>
 
 <br/>
 <br/>
 
-![Contribute Section](docs/section-contribute.png)
+[![Contribute Section](docs/section-contribute.png)](https://github.com/ajnart/homarr/blob/dev/CONTRIBUTING.md)
 Homarr is maintained by motivated developers in their free-time.
 We work for fun and learning on this project.
 
