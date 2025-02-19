@@ -5,7 +5,7 @@
         "settings": {
             "title": "Indekserings-behandler status",
             "openIndexerSiteInNewTab": {
-                "label": ""
+                "label": "Åpne indekseringsside i ny fane"
             }
         }
     },
