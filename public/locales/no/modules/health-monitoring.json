@@ -35,14 +35,14 @@
       },
       "defaultTabState": {
         "label": "Fane åpen som standard",
-        "info": "",
+        "info": "Fane åpnes som standard. Brukes bare når flere integrasjoner er tilgjengelige.",
         "data": {
-          "system": "",
-          "cluster": ""
+          "system": "System",
+          "cluster": "Klynge"
         }
       },
       "summary": {
-        "label": ""
+        "label": "Vis sammendragsdel"
       },
       "showNode": {
         "label": ""
@@ -97,8 +97,8 @@
     }
   },
   "headings": {
-    "system": "",
-    "cluster": ""
+    "system": "System",
+    "cluster": "Klynge"
   },
   "cluster": {
     "summary": {
