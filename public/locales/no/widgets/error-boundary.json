@@ -7,8 +7,8 @@
     }
   },
   "modal": {
-    "text": "",
-    "label": "",
-    "reportButton": ""
+    "text": "Widget hadde et krasj. Les dokumentasjonen og rett opp skrivefeil.",
+    "label": "Oppstod feil",
+    "reportButton": "Rapporter denne feilen på GitHub"
   }
 }
