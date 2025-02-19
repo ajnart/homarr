@@ -16,10 +16,10 @@
     }
   },
   "durationModal": {
-    "title": "",
-    "hours": "",
-    "minutes": "",
-    "unlimited": "",
-    "set": ""
+    "title": "Angi varighet for deaktivering",
+    "hours": "Timer",
+    "minutes": "Minutter",
+    "unlimited": "la stå tomt for ubegrenset",
+    "set": "Sett"
   }
 }
