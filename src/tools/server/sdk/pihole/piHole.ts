@@ -14,7 +14,7 @@ export class PiHoleClient {
 
   async getSummary() {
     const response = await fetch(
-      new URL(`${this.baseHostName}/admin/api.php?summaryRaw&auth=${this.apiToken}`)
+      new URL(`${this.baseHostName}/api.php?summaryRaw&auth=${this.apiToken}`)
     );
 
     if (response.status !== 200) {
@@ -48,8 +48,8 @@ export class PiHoleClient {
   ): Promise<PiHoleApiStatusChangeResponse> {
     const response = await fetch(
       duration !== 0
-        ? `${this.baseHostName}/admin/api.php?${action}=${duration}&auth=${this.apiToken}`
-        : `${this.baseHostName}/admin/api.php?${action}&auth=${this.apiToken}`
+        ? `${this.baseHostName}/api.php?${action}=${duration}&auth=${this.apiToken}`
+        : `${this.baseHostName}/api.php?${action}&auth=${this.apiToken}`
     );
 
     if (response.status !== 200) {
