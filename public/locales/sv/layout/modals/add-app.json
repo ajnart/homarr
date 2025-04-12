@@ -22,7 +22,7 @@
 					"protocolCheck": "Kontrollera alltid att webbadressen föregås av http eller https, och att du använder rätt URL.",
 					"preferIP": "Vi rekommenderar att du använder det direkta ip-numret för den maskin eller container du försöker kommunicera med.",
 					"enablePings": "Kontrollera att IP är rätt genom att aktivera pings. Anpassa tavla -> Layout -> Aktivera pings. En liten röd eller grön bubbla kommer att visas på din app och om du håller muspekaren över den får du svarskoden (en grön bubbla med kod 200 förväntas i de flesta fall).",
-					"wget": "För att se till att homarr kan kommunicera med de andra apparna, se till att wget/curl/ping appens IP:port.",
+					"wget": "För att se till att Homarr kan kommunicera med de andra apparna, se till att wget/curl/ping appens IP:port.",
 					"iframe": "När det gäller iframes ska dessa alltid använda samma protokoll (http/s) som Homarr.",
 					"clearCache": "Viss information registreras i cacheminnet, så en integration kanske inte fungerar om du inte rensar cacheminnet i Homarrs allmänna alternativ."
 				},
