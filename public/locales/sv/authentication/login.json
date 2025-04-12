@@ -1,7 +1,7 @@
 {
   "metaTitle": "Logga in",
   "title": "Välkommen tillbaka!",
-  "text": "Ange dina autentiseringsuppgifter",
+  "text": "Ange dina inloggningsuppgifter",
   "form": {
     "fields": {
       "username": {
@@ -16,9 +16,9 @@
     },
     "afterLoginRedirection": "Efter inloggningen kommer du att omdirigeras till {{url}}",
     "providersEmpty": {
-      "title": "Fel vid autentiseringsfel",
+      "title": "Fel vid inloggning",
       "message": "Leverantören/leverantörerna är inte inställda, kontrollera dina loggar för mer information."
     }
   },
-  "alert": "Dina autentiseringsuppgifter är felaktiga eller så finns inte det här kontot. Vänligen försök igen."
+  "alert": "Dina uppgifter är felaktiga eller så saknas det här kontot. Vänligen försök igen."
 }
