@@ -1,6 +1,6 @@
 {
-    "metaTitle": "Skapa Konto",
-    "title": "Skapa Konto",
+    "metaTitle": "Skapa ett konto",
+    "title": "Skapa ett konto",
     "text": "Vänligen ange dina uppgifter nedan",
     "form": {
         "fields": {
@@ -11,7 +11,7 @@
                 "label": "Lösenord"
             },
             "passwordConfirmation": {
-                "label": "Bekräfta lösenord"
+                "label": "Bekräfta lösenordet"
             }
         },
         "buttons": {
@@ -24,12 +24,12 @@
             "text": "Vänligen vänta"
         },
         "success": {
-            "title": "Konto skapat",
+            "title": "Kontot har skapats",
             "text": "Ditt konto har skapats utan problem"
         },
         "error": {
             "title": "Fel",
-            "text": "Något gick fel, fick följande fel: {{error}}"
+            "text": "Något gick fel, på grund av följande orsak: {{error}}"
         }
     }
 }
