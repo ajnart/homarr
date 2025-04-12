@@ -1,7 +1,7 @@
 {
   "pageTitle": {
-    "label": "Sidotitel",
-    "description": "Titeln på instrumentpanelen längst upp till vänster"
+    "label": "Titel på sidan",
+    "description": "Titel på instrumentpanelen längst upp till vänster"
   },
   "metaTitle": {
     "label": "Metatitel",
