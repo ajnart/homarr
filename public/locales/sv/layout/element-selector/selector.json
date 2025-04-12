@@ -3,7 +3,7 @@
     "title": "Lägg till en ny ruta",
     "text": "Rutor är det viktigaste elementet i Homarr. De används för att visa dina appar och annan information. Du kan lägga till så många rutor som du vill."
   },
-  "widgetDescription": "Widgetar interagerar med dina appar, för att ge dig mer kontroll över dina applikationer. De kräver vanligtvis ytterligare konfiguration innan användning.",
+  "widgetDescription": "Widgetar interagerar med dina appar, för att ge dig mer kontroll över dina applikationer. De kräver vanligtvis ytterligare konfiguration innan de kan användas.",
   "goBack": "Gå tillbaka till föregående steg",
   "actionIcon": {
     "tooltip": "Lägg till en ruta"
@@ -18,9 +18,9 @@
     "newName": "Namn på ny kategori",
     "defaultName": "Ny kategori",
     "created": {
-      "title": "Kategori skapad",
+      "title": "Kategorin har skapats",
       "message": "Kategorin \"{{name}}\" har skapats"
     }
   },
-  "importFromDocker": "Importera från docker"
+  "importFromDocker": "Importera från Docker"
 }
