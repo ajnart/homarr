@@ -6,9 +6,9 @@
 	"action": "Åtgärd",
 	"keybinds": "Knapptilldelning",
 	"translators": "Översättare ({{count}})",
-	"translatorsDescription": "Tack vare dessa personer finns Homarr tillgängligt på {{languages}} språk! Vill du hjälpa till att översätta Homarr till ditt språk? Läs hur du gör <a>här</a>.",
+	"translatorsDescription": "Tack vare dessa personer finns Homarr tillgängligt på {{languages}} språk! Vill du hjälpa till att översätta Homarr till ditt språk? Läs hur du gör genom att klicka <a>här</a>.",
 	"contributors": "Medverkande ({{count}})",
-	"contributorsDescription": "Dessa människor har byggt koden som får homarr att fungera! Vill du hjälpa till att bygga Homarr? Läs hur du gör <a>här</a>",
+	"contributorsDescription": "Dessa människor har utvecklat koden som får homarr att fungera! Vill du hjälpa till att utveckla Homarr? Läs hur du gör genom att klicka <a>här</a>",
 	"actions": {
 		"toggleTheme": "Växla mellan ljus- och mörkerläge",
 		"focusSearchBar": "Fokusera på sökruta",
