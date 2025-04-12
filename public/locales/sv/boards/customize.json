@@ -1,7 +1,7 @@
 {
-    "metaTitle": "Anpassa {{name}} Board",
-    "pageTitle": "Anpassning för {{name}} Board",
-    "backToBoard": "Tillbaka till tavla",
+    "metaTitle": "Anpassa tavlan {{name}}",
+    "pageTitle": "Anpassning för tavlan {{name}}",
+    "backToBoard": "Tillbaka till tavlan",
     "settings": {
         "appearance": {
             "primaryColor": "Primärfärg",
@@ -9,21 +9,21 @@
         }
     },
     "save": {
-        "button": "Spara ändringar",
-        "note": "Var försiktig, du har osparade ändringar!"
+        "button": "Spara ändringarna",
+        "note": "Var försiktig, du har ändringar som ej sparats!"
     },
     "notifications": {
         "pending": {
-            "title": "Sparar anpassning",
-            "message": "Vänligen vänta medan vi sparar din anpassning"
+            "title": "Sparar anpassningar",
+            "message": "Vänligen vänta medan vi sparar dina anpassningar"
         },
         "success": {
-            "title": "Anpassning sparad",
-            "message": "Din anpassning har sparats"
+            "title": "Anpassningar sparade",
+            "message": "Dina anpassningar har sparats"
         },
         "error": {
             "title": "Fel",
-            "message": "Det gick inte att spara ändringar"
+            "message": "Det gick inte att spara ändringarna"
         }
     }
 }
