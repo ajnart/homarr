@@ -1,11 +1,11 @@
 {
-    "description": "I redigeringsläge kan du justera rutor och konfigurera appar. Ändringar sparas inte förrän du avslutar redigeringsläget.",
+    "description": "I redigeringsläget kan du justera rutor och konfigurera appar. Ändringar sparas inte förrän du avslutar redigeringsläget.",
     "button": {
-        "disabled": "Gå till redigeringsläge",
+        "disabled": "Gå till redigeringsläget",
         "enabled": "Avsluta och spara"
     },
     "popover": {
-        "title": "Redigeringsläget är aktiverat för  <1>{{size}}</1> storlek",
+        "title": "Redigeringsläget är aktiverat för storleken  <1>{{size}}</1>",
         "text": "Du kan justera och konfigurera dina appar nu. Ändringarna <strong>sparas inte</strong> förrän du lämnar redigeringsläget"
     },
     "unloadEvent": "Avsluta redigeringsläget för att spara dina ändringar"
