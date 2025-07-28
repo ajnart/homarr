@@ -24,7 +24,7 @@
     <strong>Demo ✨</strong>
   </a>
   •
-  <a href="https://homarr.dev/docs/getting-started/installation/">
+  <a href="https://homarr.dev/docs/getting-started/">
     <strong>Install 💻</strong>
   </a> •
   <a href="https://translate.homarr.dev/">
