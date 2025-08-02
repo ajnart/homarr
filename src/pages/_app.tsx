@@ -1,4 +1,4 @@
-import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
+import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme, Global } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -37,6 +37,7 @@ import { colorSchemeParser } from '~/validations/user';
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
 import '../styles/global.scss';
+import { CheckUpgradeModal } from '~/components/UpgradeModal/CheckUpgradeModal';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
@@ -103,6 +104,7 @@ function App(
   return (
     <>
       <CommonHead />
+      <CheckUpgradeModal />
       {pageProps.session && pageProps.session.user.language === 'cr' && (
         <>
           <Script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js" />

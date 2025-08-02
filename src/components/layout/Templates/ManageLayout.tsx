@@ -9,7 +9,7 @@ import {
   NavLink,
   Navbar,
   Text,
-  ThemeIcon,
+  ThemeIcon, Alert, Anchor,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -44,6 +44,7 @@ import { ConditionalWrapper } from '~/utils/security';
 import { REPO_URL } from '../../../../data/constants';
 import { type navigation } from '../../../../public/locales/en/layout/manage.json';
 import { MainHeader } from '../header/Header';
+import { deleteCookie } from "cookies-next";
 
 interface ManageLayoutProps {
   children: ReactNode;
@@ -61,6 +62,7 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
       }).then((res) => res.json()),
   });
   const { attributes } = usePackageAttributesStore();
+  const router = useRouter();
   const newVersionAvailable =
     newVersion?.tag_name > `v${attributes.packageVersion}` ? newVersion?.tag_name : undefined;
 
@@ -247,6 +249,11 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
   const burgerMenu = screenLargerThanMd ? undefined : (
     <Burger opened={burgerMenuOpen} onClick={toggleBurgerMenu} />
   );
+  
+  const showUpgradeInfo = () => {
+    deleteCookie('dismissed-upgrade-modal');
+    router.reload();
+  }
 
   return (
     <>
@@ -255,6 +262,11 @@ export const ManageLayout = ({ children }: ManageLayoutProps) => {
           <Navbar width={{ base: !screenLargerThanMd ? 0 : 220 }} hidden={!screenLargerThanMd}>
             <Navbar.Section pt="xs" grow>
               {navigationLinkComponents}
+            </Navbar.Section>
+            <Navbar.Section p={"sm"}>
+              <Alert>
+                This old version of Homarr no longer receives updates. Migrate for updates. <Anchor onClick={showUpgradeInfo}>Click here for further details</Anchor>
+              </Alert>
             </Navbar.Section>
           </Navbar>
         }
