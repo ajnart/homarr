@@ -40,6 +40,7 @@ const env = createEnv({
     DOCKER_HOST: z.string().optional(),
     DOCKER_PORT: portSchema,
     DEMO_MODE: z.string().optional(),
+    DISABLE_UPGRADE_MODAL: zodParsedBoolean().default('false'),
     HOSTNAME: z.string().optional(),
 
     //regex allows number with extra letter as time multiplier, applied with secondsFromTimeString
@@ -165,6 +166,7 @@ const env = createEnv({
     AUTH_LOGOUT_REDIRECT_URL: process.env.AUTH_LOGOUT_REDIRECT_URL,
     AUTH_SESSION_EXPIRY_TIME: process.env.AUTH_SESSION_EXPIRY_TIME,
     DEMO_MODE: process.env.DEMO_MODE,
+    DISABLE_UPGRADE_MODAL: process.env.DISABLE_UPGRADE_MODAL,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

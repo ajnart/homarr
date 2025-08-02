@@ -1,4 +1,4 @@
-import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme, Global } from '@mantine/core';
+import { ColorScheme as MantineColorScheme, MantineProvider, MantineTheme } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -34,10 +34,10 @@ import { ConfigType } from '~/types/config';
 import { api } from '~/utils/api';
 import { colorSchemeParser } from '~/validations/user';
 
+import { CheckUpgradeModal } from '~/components/UpgradeModal/CheckUpgradeModal';
 import { COOKIE_COLOR_SCHEME_KEY, COOKIE_LOCALE_KEY } from '../../data/constants';
 import nextI18nextConfig from '../../next-i18next.config.js';
 import '../styles/global.scss';
-import { CheckUpgradeModal } from '~/components/UpgradeModal/CheckUpgradeModal';
 
 dayjs.extend(locale);
 dayjs.extend(utc);
@@ -51,6 +51,7 @@ function App(
     editModeEnabled: boolean;
     logoutUrl?: string;
     analyticsEnabled: boolean;
+    disableUpgradeModal: boolean;
     config?: ConfigType;
     primaryColor?: MantineTheme['primaryColor'];
     secondaryColor?: MantineTheme['primaryColor'];
@@ -104,7 +105,7 @@ function App(
   return (
     <>
       <CommonHead />
-      <CheckUpgradeModal />
+      {!pageProps.disableUpgradeModal && <CheckUpgradeModal />}
       {pageProps.session && pageProps.session.user.language === 'cr' && (
         <>
           <Script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js" />
@@ -186,6 +187,7 @@ App.getInitialProps = async ({ ctx }: { ctx: GetServerSidePropsContext }) => {
       packageAttributes: getServiceSidePackageAttributes(),
       logoutUrl: env.AUTH_LOGOUT_REDIRECT_URL,
       analyticsEnabled,
+      disableUpgradeModal: env.DISABLE_UPGRADE_MODAL,
       session,
       locale: ctx.locale ?? 'en',
     },

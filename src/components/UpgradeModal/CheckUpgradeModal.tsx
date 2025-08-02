@@ -1,5 +1,5 @@
-import { Modal, Image, Button, Group, Title, Text, List, ThemeIcon, Anchor } from '@mantine/core';
-import { IconLock, IconPlug, IconTestPipe, IconBrandAbstract } from '@tabler/icons-react';
+import { Anchor, Button, Group, Image, List, Modal, Text, ThemeIcon, Title } from '@mantine/core';
+import { IconBrandAbstract, IconLock, IconPlug, IconTestPipe } from '@tabler/icons-react';
 import { getCookie, setCookie } from 'cookies-next';
 import localFont from 'next/font/local';
 import { useState } from 'react';
@@ -72,6 +72,10 @@ export const CheckUpgradeModal = () => {
           migration
           guide</Button>
       </Group>
+
+      <Text mt="lg" size="sm" color="dimmed" align="center">
+        You can permanently disable this message by setting the <b>DISABLE_UPGRADE_MODAL</b> environment variable to <b>true</b>.
+      </Text>
     </Modal>
   );
 };
