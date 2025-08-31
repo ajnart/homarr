@@ -7,7 +7,7 @@
     }
   },
   "modal": {
-    "text": "El widget ha fallado inesperadamente. Lea la documentación y corrija los errores tipográficos.",
+    "text": "El widget se bloqueó inesperadamente. Por favor, lee la documentación y corrige cualquier error tipográfico.",
     "label": "Ha ocurrido un error",
     "reportButton": "Informar de este error en GitHub"
   }
