@@ -1,0 +1,2 @@
+ALTER TABLE `user` ADD `default_search_engine_id` varchar(64);--> statement-breakpoint
+ALTER TABLE `user` ADD CONSTRAINT `user_default_search_engine_id_search_engine_id_fk` FOREIGN KEY (`default_search_engine_id`) REFERENCES `search_engine`(`id`) ON DELETE set null ON UPDATE no action;

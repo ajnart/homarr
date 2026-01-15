@@ -1,0 +1,31 @@
+name: "[Crowdin] Upload translations"
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "packages/translation/src/lang/**"
+    branches: [dev]
+
+jobs:
+  upload-crowdin-translations:
+    # Don't run this action if the downloaded translations are being pushed
+    if: "!contains(github.event.head_commit.message, 'chore(lang)')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Upload Crowdin translations
+        uses: crowdin/github-action@v2
+        with:
+          upload_sources: true
+          upload_translations: true
+          download_translations: false
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}

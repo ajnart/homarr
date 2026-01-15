@@ -1,0 +1,21 @@
+{
+  "name": "@homarr/prettier-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.mjs",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "prettier": "^3.7.4"
+  },
+  "devDependencies": {
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "prettier-plugin-packagejson": "^2.5.20",
+    "typescript": "^5.9.3"
+  }
+}

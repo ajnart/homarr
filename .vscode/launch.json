@@ -1,28 +1,87 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "Next.js: debug server-side",
-			"type": "node-terminal",
-			"request": "launch",
-			"command": "yarn dev"
-		},
-		{
-			"name": "Next.js: debug client-side",
-			"type": "chrome",
-			"request": "launch",
-			"url": "http://localhost:3000"
-		},
-		{
-			"name": "Next.js: debug full stack",
-			"type": "node-terminal",
-			"request": "launch",
-			"command": "yarn dev",
-			"serverReadyAction": {
-				"pattern": "started server on .+, url: (https?://.+)",
-				"uriFormat": "%s",
-				"action": "debugWithChrome"
-			}
-		}
-	]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dev",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "docker dev",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm docker:dev",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "lint fix",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm lint:fix",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "format fix",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm format:fix",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "db push",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm db:push",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "db studio",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm db:studio",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "db migration run",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm db:migration:run",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "test",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm test",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "test ui",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm test:ui",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
 }

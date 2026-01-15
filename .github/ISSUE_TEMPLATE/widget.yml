@@ -1,0 +1,30 @@
+name: 🛠 Widget request
+description: Request a new widget (eg. Clock, Calendar, ...)
+title: "feat: "
+labels: ["needs triage"]
+body:
+  - type: input
+    attributes:
+      label: Compatible integrations
+      description: Post a list of the integrations that should be compatible with this widget. Divide using comma. Leave empty if no integration is needed.
+      placeholder: ex. Sonarr, Radarr, Lidarr, Readarr, Nextcloud
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Describe what data should be displayed
+      description: Please describe what data Homarr should display. Describe how elements should be intractable and what actions the user can perform.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Add any other information related to the widget.
+  - type: dropdown
+    attributes:
+      label: Are you willing to contribute this yourself?
+      options:
+        - Yes
+        - No
+    validations:
+      required: true

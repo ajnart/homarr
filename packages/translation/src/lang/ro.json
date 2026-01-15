@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "action": {
+          "scratch": "",
+          "importOldmarr": ""
+        }
+      },
+      "import": {
+        "title": "",
+        "subtitle": "",
+        "dropzone": {
+          "title": "",
+          "description": ""
+        },
+        "fileInfo": {
+          "action": {
+            "change": ""
+          }
+        },
+        "importSettings": {
+          "title": "",
+          "description": ""
+        },
+        "boardSelection": {
+          "title": "",
+          "description": "",
+          "action": {
+            "selectAll": "",
+            "unselectAll": ""
+          }
+        },
+        "summary": {
+          "title": "",
+          "description": "",
+          "action": {
+            "import": ""
+          },
+          "entities": {
+            "apps": "Aplicații",
+            "boards": "Planșe",
+            "integrations": "",
+            "credentialUsers": ""
+          }
+        },
+        "tokenModal": {
+          "title": "",
+          "field": {
+            "token": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "",
+        "subtitle": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": ""
+          }
+        }
+      },
+      "group": {
+        "title": "",
+        "subtitle": "",
+        "form": {
+          "name": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "settings": {
+        "title": "Setări",
+        "subtitle": ""
+      },
+      "finish": {
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "action": {
+          "goToBoard": "",
+          "createBoard": "",
+          "inviteUser": "",
+          "docs": ""
+        }
+      }
+    },
+    "backToStart": ""
+  },
+  "user": {
+    "title": "Utilizatori",
+    "name": "Utilizator",
+    "page": {
+      "login": {
+        "title": "",
+        "subtitle": ""
+      },
+      "invite": {
+        "title": "",
+        "subtitle": "",
+        "description": ""
+      },
+      "init": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
+    "field": {
+      "email": {
+        "label": "E-mail",
+        "verified": ""
+      },
+      "username": {
+        "label": "Utilizator"
+      },
+      "password": {
+        "label": "Parola",
+        "requirement": {
+          "length": "",
+          "lowercase": "Să includă litere mici",
+          "uppercase": "Să includă litere mari",
+          "number": "Să includă cifre",
+          "special": ""
+        }
+      },
+      "passwordConfirm": {
+        "label": "Confirmare parola"
+      },
+      "previousPassword": {
+        "label": ""
+      },
+      "homeBoard": {
+        "label": ""
+      },
+      "pingIconsEnabled": {
+        "label": ""
+      },
+      "defaultSearchEngine": {
+        "label": ""
+      },
+      "openSearchInNewTab": {
+        "label": ""
+      }
+    },
+    "error": {
+      "usernameTaken": ""
+    },
+    "action": {
+      "login": {
+        "label": "Utilizator",
+        "labelWith": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "forgotPassword": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "register": {
+        "label": "Creare cont",
+        "notification": {
+          "success": {
+            "title": "Contul a fost creat",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "create": "Creează utilizator",
+      "changePassword": {
+        "label": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "",
+          "notification": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            },
+            "toLarge": {
+              "title": "",
+              "message": ""
+            }
+          }
+        },
+        "removeImage": {
+          "label": "",
+          "confirm": "",
+          "notification": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "label": "",
+        "description": "",
+        "confirm": ""
+      },
+      "select": {
+        "label": "",
+        "notFound": ""
+      },
+      "transfer": {
+        "label": ""
+      }
+    }
+  },
+  "group": {
+    "title": "",
+    "name": "",
+    "search": "",
+    "field": {
+      "name": "Nume",
+      "members": "",
+      "homeBoard": {
+        "label": "",
+        "description": ""
+      },
+      "mobileBoard": {
+        "label": "",
+        "description": ""
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Administrator",
+        "item": {
+          "admin": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "app": {
+        "title": "Aplicații",
+        "item": {
+          "create": {
+            "label": "",
+            "description": ""
+          },
+          "use-all": {
+            "label": "",
+            "description": ""
+          },
+          "modify-all": {
+            "label": "",
+            "description": ""
+          },
+          "full-all": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "board": {
+        "title": "Planșe",
+        "item": {
+          "create": {
+            "label": "",
+            "description": ""
+          },
+          "view-all": {
+            "label": "",
+            "description": ""
+          },
+          "modify-all": {
+            "label": "",
+            "description": ""
+          },
+          "full-all": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "integration": {
+        "title": "",
+        "item": {
+          "create": {
+            "label": "",
+            "description": ""
+          },
+          "use-all": {
+            "label": "",
+            "description": ""
+          },
+          "interact-all": {
+            "label": "",
+            "description": ""
+          },
+          "full-all": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "media": {
+        "title": "",
+        "item": {
+          "upload": {
+            "label": "",
+            "description": ""
+          },
+          "view-all": {
+            "label": "",
+            "description": ""
+          },
+          "full-all": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "other": {
+        "title": "",
+        "item": {
+          "view-logs": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "search-engine": {
+        "title": "",
+        "item": {
+          "create": {
+            "label": "",
+            "description": ""
+          },
+          "modify-all": {
+            "label": "",
+            "description": ""
+          },
+          "full-all": {
+            "label": "",
+            "description": ""
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "",
+      "external": ""
+    },
+    "reservedNotice": {
+      "message": ""
+    },
+    "action": {
+      "create": {
+        "label": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "transfer": {
+        "label": "",
+        "description": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "addMember": {
+        "label": ""
+      },
+      "removeMember": {
+        "label": "",
+        "confirm": ""
+      },
+      "delete": {
+        "label": "",
+        "description": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "select": {
+        "label": "",
+        "notFound": ""
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "",
+      "description": ""
+    }
+  },
+  "app": {
+    "search": "",
+    "page": {
+      "list": {
+        "title": "Aplicații",
+        "noResults": {
+          "title": "",
+          "action": ""
+        }
+      },
+      "create": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "edit": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nume"
+      },
+      "description": {
+        "label": ""
+      },
+      "url": {
+        "label": ""
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "",
+        "notFound": "",
+        "search": "",
+        "noResults": "",
+        "action": "",
+        "title": ""
+      },
+      "create": {
+        "title": "",
+        "description": "",
+        "action": ""
+      },
+      "add": ""
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "",
+        "search": "",
+        "noResults": {
+          "title": ""
+        }
+      },
+      "create": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "",
+              "label": ""
+            },
+            "new": {
+              "title": "",
+              "url": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "app": {
+          "action": {
+            "add": "",
+            "remove": "",
+            "select": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nume"
+      },
+      "url": {
+        "label": ""
+      },
+      "attemptSearchEngineCreation": {
+        "label": "",
+        "description": ""
+      },
+      "app": {
+        "sectionTitle": ""
+      },
+      "createApp": {
+        "label": "",
+        "description": ""
+      },
+      "appHref": {
+        "placeholder": ""
+      }
+    },
+    "action": {
+      "create": ""
+    },
+    "testConnection": {
+      "action": {
+        "create": "",
+        "edit": ""
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": ""
+          }
+        },
+        "unknown": {
+          "title": "",
+          "description": ""
+        },
+        "parse": {
+          "title": "",
+          "description": ""
+        },
+        "authorization": {
+          "title": "",
+          "description": ""
+        },
+        "statusCode": {
+          "title": "",
+          "description": "",
+          "otherDescription": "",
+          "reason": {
+            "badRequest": "",
+            "notFound": "",
+            "tooManyRequests": "",
+            "internalServerError": "",
+            "serviceUnavailable": "",
+            "gatewayTimeout": ""
+          }
+        },
+        "certificate": {
+          "title": "",
+          "description": {
+            "expired": "",
+            "notYetValid": "",
+            "untrusted": "",
+            "hostnameMismatch": ""
+          },
+          "alert": {
+            "permission": {
+              "title": "",
+              "message": ""
+            },
+            "hostnameMismatch": {
+              "title": "",
+              "message": ""
+            },
+            "extract": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "action": {
+            "retry": {
+              "label": ""
+            },
+            "trust": {
+              "label": ""
+            },
+            "upload": {
+              "label": ""
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "details": {
+            "title": "",
+            "description": "",
+            "content": {
+              "action": "",
+              "title": ""
+            }
+          }
+        },
+        "request": {
+          "title": "",
+          "description": {
+            "connection": {
+              "hostUnreachable": "",
+              "networkUnreachable": "",
+              "refused": "",
+              "reset": ""
+            },
+            "dns": {
+              "notFound": "",
+              "timeout": "",
+              "noAnswer": ""
+            },
+            "timeout": {
+              "aborted": "",
+              "timeout": ""
+            }
+          }
+        }
+      },
+      "alertNotice": "",
+      "notification": {
+        "success": {
+          "title": "",
+          "message": ""
+        },
+        "invalidUrl": {
+          "title": "Adresă URL invalidă",
+          "message": ""
+        },
+        "secretNotDefined": {
+          "title": "",
+          "message": ""
+        },
+        "invalidCredentials": {
+          "title": "",
+          "message": ""
+        },
+        "commonError": {
+          "title": "",
+          "message": ""
+        },
+        "badRequest": {
+          "title": "",
+          "message": ""
+        },
+        "unauthorized": {
+          "title": "",
+          "message": ""
+        },
+        "forbidden": {
+          "title": "",
+          "message": ""
+        },
+        "notFound": {
+          "title": "",
+          "message": ""
+        },
+        "internalServerError": {
+          "title": "",
+          "message": ""
+        },
+        "serviceUnavailable": {
+          "title": "",
+          "message": ""
+        },
+        "connectionAborted": {
+          "title": "",
+          "message": ""
+        },
+        "domainNotFound": {
+          "title": "",
+          "message": ""
+        },
+        "connectionRefused": {
+          "title": "",
+          "message": ""
+        },
+        "invalidJson": {
+          "title": "",
+          "message": ""
+        },
+        "wrongPath": {
+          "title": "",
+          "message": ""
+        },
+        "tooManyRequests": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "secrets": {
+      "title": "",
+      "lastUpdated": "",
+      "notSet": {
+        "label": "",
+        "tooltip": ""
+      },
+      "secureNotice": "",
+      "reset": {
+        "title": "",
+        "message": ""
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "",
+        "text": ""
+      },
+      "kind": {
+        "username": {
+          "label": "Utilizator",
+          "newLabel": ""
+        },
+        "apiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "password": {
+          "label": "Parola",
+          "newLabel": "Parolă nouă"
+        },
+        "tokenId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "realm": {
+          "label": "",
+          "newLabel": ""
+        },
+        "personalAccessToken": {
+          "label": "",
+          "newLabel": ""
+        },
+        "topic": {
+          "label": "",
+          "newLabel": ""
+        },
+        "url": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiSecret": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubAppId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubInstallationId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "privateKey": {
+          "label": "",
+          "newLabel": ""
+        }
+      }
+    },
+    "permission": {
+      "use": "",
+      "interact": "",
+      "full": ""
+    }
+  },
+  "media": {
+    "plural": "",
+    "search": "",
+    "field": {
+      "name": "Nume",
+      "size": "Mărime",
+      "creator": ""
+    },
+    "action": {
+      "upload": {
+        "label": "",
+        "file": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "label": "",
+        "description": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "copy": {
+        "label": ""
+      },
+      "open": {
+        "label": ""
+      }
+    }
+  },
+  "common": {
+    "success": "",
+    "beta": "",
+    "error": "Eroare",
+    "action": {
+      "add": "Adaugă",
+      "apply": "Aplică",
+      "backToOverview": "",
+      "change": "",
+      "create": "Creează",
+      "createAnother": "",
+      "edit": "Editare",
+      "import": "",
+      "insert": "Introdu",
+      "remove": "Elimină",
+      "save": "Salvează",
+      "saveChanges": "Salvați schimbările",
+      "cancel": "Anulează",
+      "delete": "Șterge",
+      "discard": "",
+      "close": "",
+      "confirm": "Confirma",
+      "continue": "",
+      "previous": "Anteriorul",
+      "next": "Următorul",
+      "checkoutDocs": "",
+      "checkLogs": "",
+      "tryAgain": "Încearcă din nou",
+      "loading": ""
+    },
+    "here": "",
+    "iconPicker": {
+      "label": "",
+      "header": ""
+    },
+    "colorScheme": {
+      "options": {
+        "light": "",
+        "dark": ""
+      }
+    },
+    "information": {
+      "min": "",
+      "max": "",
+      "days": "",
+      "hours": "",
+      "minutes": ""
+    },
+    "notification": {
+      "create": {
+        "success": "",
+        "error": ""
+      },
+      "delete": {
+        "success": "",
+        "error": ""
+      },
+      "update": {
+        "success": "",
+        "error": ""
+      },
+      "transfer": {
+        "success": "",
+        "error": ""
+      }
+    },
+    "multiSelect": {
+      "placeholder": ""
+    },
+    "multiText": {
+      "placeholder": "",
+      "addLabel": ""
+    },
+    "select": {
+      "placeholder": "",
+      "badge": {
+        "recommended": ""
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "",
+        "switchToLightMode": "",
+        "management": "",
+        "preferences": "Preferințele dvs.",
+        "logout": "",
+        "login": "Utilizator",
+        "homeBoard": "",
+        "loggedOut": "",
+        "updateAvailable": ""
+      }
+    },
+    "dangerZone": "Zonă periculoasă",
+    "noResults": "Nici un rezultat găsit",
+    "unsavedChanges": "",
+    "preview": {
+      "show": "",
+      "hide": ""
+    },
+    "zod": {
+      "errors": {
+        "default": "Acest câmp nu este valid",
+        "required": "Acest câmp este obligatoriu",
+        "string": {
+          "startsWith": "Acest câmp trebuie să înceapă cu {startsWith}",
+          "endsWith": "Acest câmp trebuie să se termine cu {endsWith}",
+          "includes": "Acest câmp trebuie să includă {includes}",
+          "invalidEmail": ""
+        },
+        "tooSmall": {
+          "string": "Acest câmp trebuie să aibă cel puțin {minimum} caractere",
+          "number": "Acest câmp trebuie să fie mai mare sau egal cu {minimum}"
+        },
+        "tooBig": {
+          "string": "Acest câmp trebuie să aibă cel mult {maximum} caractere",
+          "number": "Acest câmp trebuie să fie mai mic sau egal cu {maximum}"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "",
+          "passwordRequirements": "",
+          "boardAlreadyExists": "",
+          "invalidFileType": "",
+          "invalidFileName": "",
+          "fileTooLarge": "",
+          "invalidConfiguration": "",
+          "groupNameTaken": ""
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "",
+        "milesPerHour": ""
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "",
+        "remove": ""
+      },
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "Nume"
+        }
+      },
+      "action": {
+        "create": "",
+        "edit": "",
+        "remove": "",
+        "moveUp": "Mută în sus",
+        "moveDown": "Mută în jos",
+        "createAbove": "",
+        "createBelow": "",
+        "openAllInNewTabs": ""
+      },
+      "create": {
+        "title": "",
+        "submit": ""
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      },
+      "edit": {
+        "title": "",
+        "submit": ""
+      },
+      "menu": {
+        "label": {
+          "create": "",
+          "changePosition": "Schimbă locația"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "",
+        "text": ""
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "",
+      "import": "",
+      "edit": "",
+      "moveResize": "",
+      "duplicate": "",
+      "remove": ""
+    },
+    "menu": {
+      "label": {
+        "settings": "Setări"
+      }
+    },
+    "create": {
+      "title": "",
+      "search": "",
+      "addToBoard": ""
+    },
+    "moveResize": {
+      "title": "",
+      "field": {
+        "width": {
+          "label": "Lățime"
+        },
+        "height": {
+          "label": "Înălțime"
+        },
+        "xOffset": {
+          "label": ""
+        },
+        "yOffset": {
+          "label": ""
+        }
+      }
+    },
+    "edit": {
+      "title": "",
+      "advancedOptions": {
+        "label": "",
+        "title": ""
+      },
+      "field": {
+        "integrations": {
+          "label": ""
+        },
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      }
+    },
+    "remove": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "",
+      "description": "",
+      "option": {
+        "appId": {
+          "label": ""
+        },
+        "openInNewTab": {
+          "label": "Deschideți într-o pagină nouă"
+        },
+        "showTitle": {
+          "label": ""
+        },
+        "pingEnabled": {
+          "label": ""
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": "",
+            "row-reverse": "",
+            "column": "",
+            "column-reverse": ""
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "",
+          "description": "",
+          "option": {
+            "normal": "",
+            "tooltip": "",
+            "hidden": ""
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "",
+          "tooltip": ""
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "layout": {
+          "label": "Aspect",
+          "option": {
+            "row": {
+              "label": "Orizontal"
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            },
+            "gridHorizontal": {
+              "label": ""
+            }
+          }
+        },
+        "hideTitle": {
+          "label": ""
+        },
+        "hideIcon": {
+          "label": ""
+        },
+        "hideHostname": {
+          "label": ""
+        },
+        "openNewTab": {
+          "label": ""
+        },
+        "items": {
+          "label": "",
+          "add": ""
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "Aspect",
+          "option": {
+            "row": {
+              "label": "Orizontal"
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": "",
+        "integrationsDisconnected": ""
+      },
+      "data": {
+        "adsBlockedToday": "Blocate astăzi",
+        "adsBlockedTodayPercentage": "Blocate astăzi",
+        "dnsQueriesToday": "Interogări astăzi",
+        "domainsBeingBlocked": ""
+      },
+      "domainsTooltip": ""
+    },
+    "dnsHoleControls": {
+      "name": "",
+      "description": "Controlați PiHole sau AdGuard din planșa dvs.",
+      "option": {
+        "layout": {
+          "label": "Aspect",
+          "option": {
+            "row": {
+              "label": "Orizontal"
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "controls": {
+        "enableAll": "",
+        "disableAll": "",
+        "setTimer": "",
+        "set": "",
+        "enabled": "Activat",
+        "disabled": "Dezactivat",
+        "processing": "",
+        "disconnected": "",
+        "hours": "",
+        "minutes": "",
+        "unlimited": ""
+      }
+    },
+    "clock": {
+      "name": "",
+      "description": "Afișează data și ora curentă.",
+      "option": {
+        "customTitleToggle": {
+          "label": "",
+          "description": ""
+        },
+        "customTitle": {
+          "label": ""
+        },
+        "is24HourFormat": {
+          "label": "",
+          "description": ""
+        },
+        "showSeconds": {
+          "label": ""
+        },
+        "useCustomTimezone": {
+          "label": ""
+        },
+        "timezone": {
+          "label": "Fus orar",
+          "description": ""
+        },
+        "showDate": {
+          "label": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customTimeFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customDateFormat": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "domain": {
+          "label": ""
+        },
+        "isBedrockServer": {
+          "label": ""
+        }
+      },
+      "status": {
+        "online": "",
+        "offline": ""
+      }
+    },
+    "notebook": {
+      "name": "Agendă",
+      "description": "",
+      "option": {
+        "showToolbar": {
+          "label": "Arată bara de instrumente pentru a te ajuta să notezi în tip markdown"
+        },
+        "allowReadOnlyCheck": {
+          "label": "Permite verificarea în modul numai-citire"
+        },
+        "content": {
+          "label": "Conținutul agendei"
+        }
+      },
+      "controls": {
+        "bold": "Îngroșat",
+        "italic": "Cursiv",
+        "strikethrough": "Tăiat cu o linie",
+        "underline": "Subliniat",
+        "colorText": "Culoare text",
+        "colorHighlight": "Text colorat pentru evidențiere",
+        "code": "Cod",
+        "clear": "Curăță formatul",
+        "heading": "Rubrica {level}",
+        "align": "Așezați textul: {position}",
+        "blockquote": "Citat",
+        "horizontalLine": "Linie orizontală",
+        "bulletList": "Listă cu puncte",
+        "orderedList": "Listă ordonată",
+        "checkList": "Lista de verificare cu bifă",
+        "increaseIndent": "Mărește spațierea",
+        "decreaseIndent": "Scade spațierea",
+        "link": "",
+        "unlink": "Șterge link-ul",
+        "image": "Încorporează imagine",
+        "addTable": "Adaugă tabelă",
+        "deleteTable": "Șterge tabelă",
+        "colorCell": "Culoare celulă",
+        "mergeCell": "Comută îmbinarea celulelor",
+        "addColumnLeft": "Adaugă o coloană în fată",
+        "addColumnRight": "Adaugă o coloană după",
+        "deleteColumn": "Șterge coloană",
+        "addRowTop": "Adaugă un rând înainte",
+        "addRowBelow": "Adaugă un rând după",
+        "deleteRow": "Șterge rând"
+      },
+      "align": {
+        "left": "Stânga",
+        "center": "Centru",
+        "right": "Dreapta"
+      },
+      "popover": {
+        "clearColor": "Șterge culoarea",
+        "source": "Sursă",
+        "widthPlaceholder": "Valoare exprimată în % sau pixeli",
+        "columns": "Coloane",
+        "rows": "Rânduri",
+        "width": "Lățime",
+        "height": "Înălțime"
+      },
+      "placeholder": "",
+      "dismiss": {
+        "title": "",
+        "message": "",
+        "action": {
+          "discard": "",
+          "keepEditing": ""
+        }
+      }
+    },
+    "iframe": {
+      "name": "",
+      "description": "Încorporați orice conținut de pe internet. Unele site-uri web pot restricționa accesul.",
+      "option": {
+        "embedUrl": {
+          "label": "Încorporați adresa URL"
+        },
+        "allowFullScreen": {
+          "label": "Permiteți ecranul complet"
+        },
+        "allowTransparency": {
+          "label": "Permiteți transparența"
+        },
+        "allowScrolling": {
+          "label": "Permiteți derularea"
+        },
+        "allowPayment": {
+          "label": "Permiteți plata"
+        },
+        "allowAutoPlay": {
+          "label": "Permiteți redarea automată"
+        },
+        "allowMicrophone": {
+          "label": "Permiteți microfonul"
+        },
+        "allowCamera": {
+          "label": "Permiteți camera"
+        },
+        "allowGeolocation": {
+          "label": "Permiteți geolocalizarea"
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "unsupportedProtocol": "",
+        "noBrowerSupport": "Browser-ul tău nu acceptă iFrames. Te rugăm să actualizezi browser-ul."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "",
+      "description": "",
+      "option": {
+        "entityId": {
+          "label": "Identificator entitate"
+        },
+        "displayName": {
+          "label": ""
+        },
+        "entityUnit": {
+          "label": ""
+        },
+        "clickable": {
+          "label": ""
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "",
+      "description": "",
+      "option": {
+        "displayName": {
+          "label": "Nume afișat"
+        },
+        "automationId": {
+          "label": "Identificator automatizare"
+        }
+      },
+      "spotlightAction": {
+        "run": ""
+      }
+    },
+    "stockPrice": {
+      "name": "",
+      "description": "",
+      "option": {
+        "stock": {
+          "label": ""
+        },
+        "timeRange": {
+          "label": "",
+          "option": {
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            },
+            "3mo": {
+              "label": ""
+            },
+            "6mo": {
+              "label": ""
+            },
+            "ytd": {
+              "label": ""
+            },
+            "1y": {
+              "label": ""
+            },
+            "2y": {
+              "label": ""
+            },
+            "5y": {
+              "label": ""
+            },
+            "10y": {
+              "label": ""
+            },
+            "max": {
+              "label": ""
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "",
+          "option": {
+            "5m": {
+              "label": ""
+            },
+            "15m": {
+              "label": ""
+            },
+            "30m": {
+              "label": ""
+            },
+            "1h": {
+              "label": ""
+            },
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1wk": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "",
+      "description": "",
+      "duration": {
+        "allDay": ""
+      },
+      "option": {
+        "releaseType": {
+          "label": "Tip de evenimente ale Radarr",
+          "options": {
+            "inCinemas": "",
+            "digitalRelease": "",
+            "physicalRelease": ""
+          }
+        },
+        "filterPastMonths": {
+          "label": ""
+        },
+        "filterFutureMonths": {
+          "label": ""
+        },
+        "showUnmonitored": {
+          "label": ""
+        }
+      }
+    },
+    "weather": {
+      "name": "Meteo",
+      "description": "Afișează informațiile meteo curente ale unei locații stabilite.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": ""
+        },
+        "disableTemperatureDecimals": {
+          "label": ""
+        },
+        "showCurrentWindSpeed": {
+          "label": "",
+          "description": ""
+        },
+        "useImperialSpeed": {
+          "label": ""
+        },
+        "location": {
+          "label": "Locație meteo"
+        },
+        "showCity": {
+          "label": ""
+        },
+        "hasForecast": {
+          "label": ""
+        },
+        "forecastDayCount": {
+          "label": "",
+          "description": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "currentWindSpeed": "",
+      "dailyForecast": {
+        "sunrise": "",
+        "sunset": "",
+        "maxWindSpeed": "",
+        "maxWindGusts": ""
+      },
+      "kind": {
+        "clear": "Senin",
+        "mainlyClear": "Parțial noros",
+        "fog": "Ceață",
+        "drizzle": "Burniță",
+        "freezingDrizzle": "Chiciură",
+        "rain": "Ploaie",
+        "freezingRain": "Polei",
+        "snowFall": "Ninsoare",
+        "snowGrains": "Fulgi de Zăpadă",
+        "rainShowers": "Averse de ploaie",
+        "snowShowers": "Averse de ninsoare",
+        "thunderstorm": "Furtună",
+        "thunderstormWithHail": "Furtună cu grindină",
+        "unknown": "Necunoscut"
+      }
+    },
+    "indexerManager": {
+      "name": "Starea managerului de clasificare",
+      "description": "",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": ""
+        }
+      },
+      "title": "Manager de clasificare",
+      "testAll": "Verifică toate",
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "healthMonitoring": {
+      "name": "Monitorizarea sănătății sistemului",
+      "description": "Afișează informații care arată starea de sănătate și statistica sistemului (sistemelor) dumneavoastră.",
+      "tab": {
+        "system": "",
+        "cluster": ""
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "Temperatura procesorului în Fahrenheit"
+        },
+        "cpu": {
+          "label": "Afișare informații procesor"
+        },
+        "memory": {
+          "label": "Afișare informații memorie"
+        },
+        "showUptime": {
+          "label": ""
+        },
+        "fileSystem": {
+          "label": "Afișare informații despre sistemul de fișiere"
+        },
+        "defaultTab": {
+          "label": ""
+        },
+        "visibleClusterSections": {
+          "label": ""
+        },
+        "sectionIndicatorRequirement": {
+          "label": ""
+        }
+      },
+      "popover": {
+        "information": "",
+        "processor": "",
+        "memory": "",
+        "memoryAvailable": "",
+        "version": "",
+        "uptime": "",
+        "loadAverage": "",
+        "minute": "",
+        "minutes": "",
+        "used": "",
+        "available": "Disponibil",
+        "lastSeen": ""
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": ""
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "",
+          "memory": ""
+        },
+        "resource": {
+          "node": {
+            "name": ""
+          },
+          "qemu": {
+            "name": ""
+          },
+          "lxc": {
+            "name": ""
+          },
+          "storage": {
+            "name": ""
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "",
+            "vmId": "",
+            "plugin": ""
+          },
+          "detail": {
+            "cpu": "",
+            "memory": "",
+            "storage": "",
+            "uptime": "",
+            "haState": "",
+            "storageType": {
+              "local": "",
+              "shared": ""
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "",
+            "cpu": "",
+            "memory": "",
+            "node": ""
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "",
+      "description": "",
+      "option": {
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": "",
+          "option": {
+            "name": "",
+            "state": "",
+            "cpuUsage": "",
+            "memoryUsage": ""
+          }
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "common": {
+      "location": {
+        "query": "",
+        "latitude": "",
+        "longitude": "",
+        "disabledTooltip": "",
+        "unknownLocation": "",
+        "search": "Caută",
+        "table": {
+          "header": {
+            "city": "",
+            "country": "",
+            "coordinates": "",
+            "population": ""
+          },
+          "action": {
+            "select": ""
+          },
+          "population": {
+            "fallback": "Necunoscut"
+          }
+        }
+      },
+      "integration": {
+        "noData": "",
+        "description": ""
+      },
+      "app": {
+        "noData": "",
+        "description": "",
+        "quickCreate": ""
+      },
+      "error": {
+        "noIntegration": "",
+        "noData": ""
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "Stream video",
+      "description": "Încorporează un steam video sau video-ul dintr-o cameră sau un site web",
+      "option": {
+        "feedUrl": {
+          "label": "Adresa URL a feed-ului"
+        },
+        "hasAutoPlay": {
+          "label": "Redare automată",
+          "description": ""
+        },
+        "isMuted": {
+          "label": ""
+        },
+        "hasControls": {
+          "label": ""
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "forYoutubeUseIframe": ""
+      }
+    },
+    "mediaServer": {
+      "name": "",
+      "description": "",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "items": {
+        "currentlyPlaying": "",
+        "user": "",
+        "name": "",
+        "id": "",
+        "metadata": {
+          "title": "",
+          "video": {
+            "title": "",
+            "resolution": ""
+          },
+          "audio": {
+            "title": "",
+            "channelCount": "",
+            "codec": ""
+          },
+          "transcoding": {
+            "title": "",
+            "container": "",
+            "resolution": "",
+            "target": ""
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "",
+      "description": "",
+      "option": {
+        "columns": {
+          "label": ""
+        },
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": ""
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        },
+        "showCompletedUsenet": {
+          "label": ""
+        },
+        "showCompletedTorrent": {
+          "label": ""
+        },
+        "showCompletedHttp": {
+          "label": ""
+        },
+        "activeTorrentThreshold": {
+          "label": ""
+        },
+        "categoryFilter": {
+          "label": ""
+        },
+        "filterIsWhitelist": {
+          "label": ""
+        },
+        "applyFilterToRatio": {
+          "label": ""
+        },
+        "limitPerIntegration": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "errors": {
+        "noColumns": "",
+        "noCommunications": ""
+      },
+      "items": {
+        "actions": {
+          "columnTitle": ""
+        },
+        "added": {
+          "columnTitle": "",
+          "detailsTitle": "Data adăugării"
+        },
+        "category": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "downSpeed": {
+          "columnTitle": "În jos",
+          "detailsTitle": "Viteza de descărcare"
+        },
+        "index": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "id": {
+          "columnTitle": ""
+        },
+        "integration": {
+          "columnTitle": "Integrare"
+        },
+        "name": {
+          "columnTitle": ""
+        },
+        "progress": {
+          "columnTitle": "Progres",
+          "detailsTitle": ""
+        },
+        "ratio": {
+          "columnTitle": "Raport",
+          "detailsTitle": ""
+        },
+        "received": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "sent": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "size": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "state": {
+          "columnTitle": "Stare",
+          "detailsTitle": ""
+        },
+        "time": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "type": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "upSpeed": {
+          "columnTitle": "În sus",
+          "detailsTitle": ""
+        }
+      },
+      "states": {
+        "downloading": "Descărcare",
+        "queued": "Pus în așteptare",
+        "paused": "În pauză",
+        "completed": "Finalizat",
+        "failed": "",
+        "processing": "",
+        "leeching": "",
+        "stalled": "",
+        "unknown": "Necunoscut",
+        "seeding": ""
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "",
+          "pause": "",
+          "resume": ""
+        },
+        "client": {
+          "pause": "",
+          "resume": ""
+        },
+        "item": {
+          "pause": "",
+          "resume": "",
+          "delete": {
+            "title": "",
+            "modalTitle": "",
+            "entry": "",
+            "entryAndFiles": ""
+          }
+        }
+      },
+      "globalRatio": ""
+    },
+    "mediaReleases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "backdrop": {
+              "label": ""
+            },
+            "poster": {
+              "label": ""
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": ""
+        },
+        "showType": {
+          "label": ""
+        },
+        "showSource": {
+          "label": ""
+        }
+      },
+      "length": {
+        "duration": ""
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "",
+      "description": "Vezi o listă cu toate cererile media de la instanțele Overseerr sau Jellyseerr",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "Deschide link-ul într-o pagină nouă"
+        }
+      },
+      "pending": {
+        "approve": "",
+        "approving": "",
+        "decline": ""
+      },
+      "availability": {
+        "unknown": "Necunoscut",
+        "pending": "",
+        "processing": "",
+        "requested": "",
+        "partiallyAvailable": "Parțial",
+        "available": "Disponibil",
+        "blacklisted": "",
+        "deleted": ""
+      },
+      "status": {
+        "pending": "",
+        "approved": "",
+        "declined": "",
+        "failed": "",
+        "completed": ""
+      },
+      "toBeDetermined": ""
+    },
+    "mediaRequests-requestStats": {
+      "name": "",
+      "description": "Statistici despre solicitările dvs. media",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "Situația media",
+          "approved": "Deja aprobat",
+          "pending": "În curs de aprobare",
+          "processing": "",
+          "declined": "",
+          "available": "",
+          "tv": "Cereri seriale TV",
+          "movie": "Cereri filme",
+          "total": ""
+        },
+        "users": {
+          "main": "Top utilizatori",
+          "requests": ""
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "",
+      "description": "",
+      "option": {
+        "defaultView": {
+          "label": "Afișare implicită"
+        },
+        "queuePageSize": {
+          "label": ""
+        }
+      },
+      "tab": {
+        "workers": "Lucrători",
+        "queue": "Listă de așteptare",
+        "statistics": "Statistici"
+      },
+      "currentIndex": "",
+      "healthCheck": {
+        "title": "",
+        "queued": "Pus în așteptare",
+        "status": {
+          "healthy": "Sănătos",
+          "unhealthy": "Nesănătos"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "Gol",
+          "transcodes": "Transcrieri",
+          "transcodesCount": "",
+          "healthChecksCount": "",
+          "filesCount": "",
+          "savedSpace": "",
+          "healthChecks": "",
+          "videoCodecs": "Codec-uri",
+          "videoContainers": "Containere",
+          "videoResolutions": "Rezoluţie"
+        },
+        "workers": {
+          "empty": "Gol",
+          "table": {
+            "file": "Fișier",
+            "eta": "Timp rămas estimat",
+            "progress": "Progres",
+            "transcode": "Transcriere",
+            "healthCheck": ""
+          }
+        },
+        "queue": {
+          "empty": "Gol",
+          "table": {
+            "file": "Fișier",
+            "size": "Mărime",
+            "transcode": "Transcriere",
+            "healthCheck": ""
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "",
+      "description": "",
+      "option": {
+        "feedUrls": {
+          "label": ""
+        },
+        "enableRtl": {
+          "label": ""
+        },
+        "textLinesClamp": {
+          "label": ""
+        },
+        "maximumAmountPosts": {
+          "label": ""
+        },
+        "hideDescription": {
+          "label": ""
+        }
+      }
+    },
+    "releases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "newReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "staleReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "showOnlyHighlighted": {
+          "label": "",
+          "description": ""
+        },
+        "showDetails": {
+          "label": ""
+        },
+        "showOnlyIcon": {
+          "label": ""
+        },
+        "topReleases": {
+          "label": "",
+          "description": ""
+        },
+        "repositories": {
+          "label": "",
+          "addRepository": {
+            "label": ""
+          },
+          "importRepositories": {
+            "label": "",
+            "loading": "",
+            "noImagesFound": "",
+            "listFoundImages": "",
+            "listAlreadyImportedImages": "",
+            "allImagesAlreadyImported": "",
+            "onlyAdminCanImport": "",
+            "selectAll": "",
+            "deselectAll": ""
+          },
+          "provider": {
+            "label": ""
+          },
+          "identifier": {
+            "label": "",
+            "placeholder": ""
+          },
+          "name": {
+            "label": ""
+          },
+          "versionFilter": {
+            "label": "",
+            "prefix": {
+              "label": ""
+            },
+            "precision": {
+              "label": "",
+              "options": {
+                "none": ""
+              }
+            },
+            "suffix": {
+              "label": ""
+            },
+            "regex": {
+              "label": ""
+            }
+          },
+          "edit": {
+            "label": ""
+          },
+          "editForm": {
+            "title": "",
+            "cancel": {
+              "label": ""
+            },
+            "confirm": {
+              "label": ""
+            }
+          },
+          "importForm": {
+            "title": ""
+          },
+          "example": {
+            "label": ""
+          },
+          "invalid": "",
+          "noProvider": {
+            "label": "",
+            "tooltip": ""
+          }
+        }
+      },
+      "not-found": "",
+      "pre-release": "",
+      "archived": "",
+      "forked": "",
+      "starsCount": "",
+      "forksCount": "",
+      "issuesCount": "",
+      "markViewed": "",
+      "openProjectPage": "",
+      "openReleasePage": "",
+      "releaseDescription": "",
+      "projectDescription": "",
+      "created": "",
+      "error": {
+        "label": "",
+        "messages": {
+          "invalidIdentifier": "",
+          "noMatchingVersion": "",
+          "noReleasesFound": "",
+          "noProviderSeleceted": "",
+          "noProviderResponse": ""
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": ""
+          },
+          "wifi": {
+            "name": ""
+          }
+        },
+        "users": {
+          "label": ""
+        },
+        "guests": {
+          "label": ""
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": ""
+            },
+            "wired": {
+              "label": ""
+            }
+          },
+          "label": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "firewall": {
+      "name": "",
+      "description": "",
+      "tab": {
+        "system": "",
+        "interfaces": ""
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "option": {
+        "interfaces": ""
+      },
+      "widget": {
+        "fwname": "",
+        "version": "",
+        "versiontitle": "",
+        "cputitle": "",
+        "memorytitle": "",
+        "cpu": "",
+        "memory": "",
+        "interfaces": {
+          "name": "",
+          "trans": "",
+          "recv": "",
+          "title": ""
+        }
+      }
+    },
+    "notifications": {
+      "name": "",
+      "description": "",
+      "noItems": "",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "",
+      "description": "",
+      "option": {
+        "hasShadow": {
+          "label": ""
+        },
+        "visibleCharts": {
+          "label": "",
+          "description": "",
+          "option": {
+            "cpu": "",
+            "memory": "",
+            "network": ""
+          }
+        },
+        "labelDisplayMode": {
+          "label": "",
+          "option": {
+            "textWithIcon": "",
+            "text": "",
+            "icon": "",
+            "hidden": ""
+          }
+        }
+      },
+      "card": {
+        "cpu": "",
+        "memory": "",
+        "network": "",
+        "up": "",
+        "down": ""
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "dimensions": {
+      "title": ""
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "confirmLeave": {
+          "title": "",
+          "message": ""
+        }
+      },
+      "oldImport": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "form": {
+          "file": {
+            "label": "",
+            "invalidError": ""
+          },
+          "apps": {
+            "label": "Aplicații",
+            "avoidDuplicates": {
+              "label": "",
+              "description": ""
+            },
+            "onlyImportApps": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "name": {
+            "label": ""
+          },
+          "screenSize": {
+            "label": "",
+            "description": "",
+            "option": {
+              "sm": "Mic",
+              "md": "Mediu",
+              "lg": "Mare"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "",
+            "description": "",
+            "option": {
+              "lastSection": {
+                "label": "",
+                "description": ""
+              },
+              "removeItems": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "",
+          "createAndUse": ""
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": ""
+      },
+      "metaTitle": {
+        "label": ""
+      },
+      "logoImageUrl": {
+        "label": ""
+      },
+      "faviconImageUrl": {
+        "label": ""
+      },
+      "backgroundImageUrl": {
+        "label": "",
+        "placeholder": "",
+        "group": {
+          "your": "",
+          "other": ""
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "Atașare imagine de fundal",
+        "option": {
+          "fixed": {
+            "label": "",
+            "description": ""
+          },
+          "scroll": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "",
+        "option": {
+          "repeat": {
+            "label": "",
+            "description": ""
+          },
+          "no-repeat": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-x": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-y": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "Dimensiunea imaginii de fundal",
+        "option": {
+          "cover": {
+            "label": "",
+            "description": ""
+          },
+          "contain": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "Culoare de bază"
+      },
+      "secondaryColor": {
+        "label": "Culoare secundară"
+      },
+      "opacity": {
+        "label": ""
+      },
+      "iconColor": {
+        "label": ""
+      },
+      "clearColor": {
+        "label": ""
+      },
+      "customCss": {
+        "label": "",
+        "description": "În plus, personalizați-vă planșa folosind CSS, recomandat doar pentru utilizatorii experimentați",
+        "customClassesAlert": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "disableStatus": {
+        "label": "",
+        "description": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "itemRadius": {
+        "label": "",
+        "description": "",
+        "option": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      },
+      "name": {
+        "label": "Nume"
+      },
+      "isPublic": {
+        "label": "",
+        "description": ""
+      }
+    },
+    "content": {
+      "metaTitle": ""
+    },
+    "setting": {
+      "title": "",
+      "section": {
+        "general": {
+          "title": "",
+          "unrecognizedLink": ""
+        },
+        "layout": {
+          "title": "Aspect",
+          "responsive": {
+            "title": "",
+            "action": {
+              "add": ""
+            }
+          }
+        },
+        "background": {
+          "title": "Fundal"
+        },
+        "appearance": {
+          "title": ""
+        },
+        "customCss": {
+          "title": ""
+        },
+        "behavior": {
+          "title": ""
+        },
+        "access": {
+          "title": "",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "Vezi planșa"
+              },
+              "modify": {
+                "label": ""
+              },
+              "full": {
+                "label": ""
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "Zonă periculoasă",
+          "action": {
+            "rename": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "modal": {
+                "title": ""
+              }
+            },
+            "visibility": {
+              "label": "",
+              "description": {
+                "public": "",
+                "private": ""
+              },
+              "button": {
+                "public": "",
+                "private": ""
+              },
+              "confirm": {
+                "public": {
+                  "title": "",
+                  "description": ""
+                },
+                "private": {
+                  "title": "",
+                  "description": ""
+                }
+              }
+            },
+            "delete": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "confirm": {
+                "title": "Șterge planșa",
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": ""
+      },
+      "notFound": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": ""
+      },
+      "homeBoard": {
+        "title": "",
+        "admin": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "user": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "anonymous": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "breakpoint": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "",
+    "title": {
+      "morning": "",
+      "afternoon": "",
+      "evening": ""
+    },
+    "notFound": {
+      "title": "",
+      "text": ""
+    },
+    "navbar": {
+      "items": {
+        "home": "Acasă",
+        "boards": "Planșe",
+        "apps": "Aplicații",
+        "integrations": "",
+        "searchEngies": "",
+        "medias": "",
+        "users": {
+          "label": "Utilizatori",
+          "items": {
+            "manage": "Gestionați",
+            "invites": "Invitații",
+            "groups": ""
+          }
+        },
+        "tools": {
+          "label": "Unelte",
+          "items": {
+            "docker": "",
+            "kubernetes": "",
+            "logs": "",
+            "api": "",
+            "certificates": "",
+            "tasks": ""
+          }
+        },
+        "settings": "Setări",
+        "help": {
+          "label": "Ajutor",
+          "items": {
+            "documentation": "Documentație",
+            "submitIssue": "",
+            "discord": "Comunitatea Discord",
+            "sourceCode": ""
+          }
+        },
+        "about": "Despre"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "Planșe",
+          "user": "Utilizatori",
+          "invite": "Invitații",
+          "integration": "",
+          "app": "Aplicații",
+          "group": "",
+          "searchEngine": "",
+          "media": ""
+        },
+        "statisticLabel": {
+          "boards": "Planșe",
+          "resources": "",
+          "authentication": "",
+          "authorization": ""
+        },
+        "heroBanner": {
+          "title": "",
+          "subtitle": ""
+        }
+      },
+      "board": {
+        "title": "Planșele dumneavoastră",
+        "action": {
+          "new": {
+            "label": ""
+          },
+          "open": {
+            "label": ""
+          },
+          "settings": {
+            "label": "Setări"
+          },
+          "setHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "Acasă",
+              "tooltip": ""
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "",
+              "tooltip": ""
+            }
+          },
+          "duplicate": {
+            "label": ""
+          },
+          "delete": {
+            "label": "Șterge definitiv",
+            "confirm": {
+              "title": "Șterge planșa",
+              "description": ""
+            }
+          }
+        },
+        "visibility": {
+          "public": "",
+          "private": ""
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "Nume"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": ""
+      },
+      "user": {
+        "back": "",
+        "fieldsDisabledExternalProvider": "",
+        "setting": {
+          "general": {
+            "title": "",
+            "item": {
+              "language": "",
+              "board": {
+                "title": "",
+                "type": {
+                  "general": "",
+                  "mobile": ""
+                }
+              },
+              "search": "",
+              "firstDayOfWeek": "Prima zi a săptămâni",
+              "accessibility": "Accesibilitate"
+            }
+          },
+          "security": {
+            "title": "Securitate"
+          },
+          "board": {
+            "title": "Planșe"
+          }
+        },
+        "list": {
+          "metaTitle": "Gestionați utilizatorii",
+          "title": "Utilizatori"
+        },
+        "edit": {
+          "metaTitle": ""
+        },
+        "create": {
+          "metaTitle": "Creează utilizator",
+          "title": "",
+          "step": {
+            "personalInformation": {
+              "label": ""
+            },
+            "security": {
+              "label": "Securitate"
+            },
+            "groups": {
+              "label": "",
+              "title": "",
+              "description": ""
+            },
+            "review": {
+              "label": ""
+            },
+            "completed": {
+              "title": ""
+            },
+            "error": {
+              "title": ""
+            }
+          },
+          "action": {
+            "createAnother": "",
+            "back": ""
+          }
+        },
+        "invite": {
+          "title": "Gestionează invitațiile utilizatorului",
+          "action": {
+            "new": {
+              "title": "",
+              "description": "După expirare, invitația nu va mai fi valabilă iar destinatarul invitației nu va mai putea crea un cont."
+            },
+            "copy": {
+              "title": "",
+              "description": "",
+              "link": "Link de invitație",
+              "button": ""
+            },
+            "delete": {
+              "title": "Șterge invitație",
+              "description": "Sunteți sigur că doriți să ștergeți această invitație? Utilizatorii care au acest link nu vor mai putea crea un cont folosind acest link."
+            }
+          },
+          "field": {
+            "id": {
+              "label": ""
+            },
+            "creator": {
+              "label": ""
+            },
+            "expirationDate": {
+              "label": "Data expirării"
+            },
+            "token": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "",
+        "setting": {
+          "general": {
+            "title": "",
+            "owner": "Proprietar",
+            "ownerOfGroup": "",
+            "ownerOfGroupDeleted": ""
+          },
+          "setting": {
+            "title": "",
+            "alert": "",
+            "board": {
+              "title": ""
+            }
+          },
+          "members": {
+            "title": "",
+            "search": "",
+            "notFound": ""
+          },
+          "permissions": {
+            "title": "",
+            "form": {
+              "unsavedChanges": ""
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Setări",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "",
+            "general": {
+              "title": "",
+              "text": ""
+            },
+            "widgetData": {
+              "title": "",
+              "text": ""
+            },
+            "integrationData": {
+              "title": "",
+              "text": ""
+            },
+            "usersData": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "",
+            "warning": "",
+            "noIndex": {
+              "title": "",
+              "text": ""
+            },
+            "noFollow": {
+              "title": "",
+              "text": ""
+            },
+            "noTranslate": {
+              "title": "",
+              "text": ""
+            },
+            "noSiteLinksSearchBox": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "board": {
+            "title": "Planșe",
+            "homeBoard": {
+              "label": "",
+              "mobileLabel": "",
+              "description": ""
+            },
+            "status": {
+              "title": "",
+              "enableStatusByDefault": {
+                "label": "",
+                "description": ""
+              },
+              "forceDisableStatus": {
+                "label": "",
+                "description": ""
+              }
+            }
+          },
+          "search": {
+            "title": "",
+            "defaultSearchEngine": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "appearance": {
+            "title": "Aspect",
+            "defaultColorScheme": {
+              "label": "",
+              "options": {
+                "light": "",
+                "dark": ""
+              }
+            }
+          },
+          "culture": {
+            "title": "",
+            "defaultLocale": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "",
+          "status": {
+            "idle": "",
+            "running": "Rulează",
+            "error": "Eroare",
+            "disabled": ""
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": ""
+            },
+            "iconsUpdater": {
+              "label": ""
+            },
+            "analytics": {
+              "label": ""
+            },
+            "smartHomeEntityState": {
+              "label": ""
+            },
+            "ping": {
+              "label": ""
+            },
+            "mediaServer": {
+              "label": "Server-ul media"
+            },
+            "mediaOrganizer": {
+              "label": ""
+            },
+            "downloads": {
+              "label": ""
+            },
+            "mediaRequestStats": {
+              "label": ""
+            },
+            "mediaRequestList": {
+              "label": ""
+            },
+            "rssFeeds": {
+              "label": ""
+            },
+            "indexerManager": {
+              "label": ""
+            },
+            "healthMonitoring": {
+              "label": ""
+            },
+            "dnsHole": {
+              "label": ""
+            },
+            "updateChecker": {
+              "label": ""
+            },
+            "mediaTranscoding": {
+              "label": ""
+            },
+            "networkController": {
+              "label": ""
+            },
+            "refreshNotifications": {
+              "label": ""
+            },
+            "dockerContainers": {
+              "label": ""
+            },
+            "firewallCpu": {
+              "label": ""
+            },
+            "firewallMemory": {
+              "label": ""
+            },
+            "firewallVersion": {
+              "label": ""
+            },
+            "firewallInterfaces": {
+              "label": ""
+            },
+            "weather": {
+              "label": ""
+            }
+          },
+          "interval": {
+            "seconds": "",
+            "minutes": "",
+            "hours": "",
+            "midnight": "",
+            "weeklyMonday": "",
+            "update": {
+              "success": {
+                "message": ""
+              },
+              "error": {
+                "message": ""
+              }
+            }
+          },
+          "settings": {
+            "title": ""
+          },
+          "field": {
+            "name": {
+              "label": ""
+            },
+            "interval": {
+              "label": ""
+            },
+            "lastExecution": {
+              "label": ""
+            },
+            "actions": {
+              "label": ""
+            }
+          },
+          "table": {
+            "search": ""
+          },
+          "action": {
+            "refresh": {
+              "label": ""
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "enable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "disable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": ""
+            }
+          }
+        },
+        "api": {
+          "title": "",
+          "modal": {
+            "createApiToken": {
+              "title": "",
+              "description": "",
+              "button": ""
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "Documentație"
+            },
+            "apiKey": {
+              "label": "",
+              "title": "",
+              "button": {
+                "createApiToken": ""
+              },
+              "modal": {
+                "delete": {
+                  "title": "",
+                  "text": ""
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "",
+                  "createdBy": "",
+                  "actions": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "",
+        "text": "",
+        "accordion": {
+          "contributors": {
+            "title": "",
+            "subtitle": ""
+          },
+          "translators": {
+            "title": "",
+            "subtitle": ""
+          },
+          "libraries": {
+            "title": "",
+            "subtitle": ""
+          },
+          "hotkeys": {
+            "title": "",
+            "subtitle": "",
+            "field": {
+              "shortcut": "",
+              "action": ""
+            },
+            "action": {
+              "toggleBoardEdit": "",
+              "toggleColorScheme": "",
+              "saveNotebook": "",
+              "openSpotlight": ""
+            },
+            "note": ""
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "Containere",
+    "table": {
+      "updated": "",
+      "search": "",
+      "selected": "",
+      "footer": ""
+    },
+    "field": {
+      "name": {
+        "label": "Nume"
+      },
+      "state": {
+        "label": "Stare",
+        "option": {
+          "created": "Creat",
+          "running": "Rulează",
+          "paused": "În pauză",
+          "restarting": "Repornire",
+          "exited": "",
+          "removing": "Eliminare",
+          "dead": ""
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        }
+      },
+      "containerImage": {
+        "label": "Imagine"
+      },
+      "ports": {
+        "label": "Porturi"
+      }
+    },
+    "action": {
+      "title": "",
+      "start": {
+        "label": "Pornește",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "stop": {
+        "label": "Opreşte",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "restart": {
+        "label": "Repornește",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "Elimină",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "refresh": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "modal": {
+          "title": ""
+        }
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "",
+      "label": "",
+      "providers": "",
+      "version": "",
+      "architecture": "",
+      "capacity": {
+        "title": "",
+        "resource": {
+          "reserved": "",
+          "used": ""
+        }
+      },
+      "resources": {
+        "title": "",
+        "nodes": "",
+        "namespaces": "",
+        "ingresses": "",
+        "services": "",
+        "pods": "",
+        "configmaps": "",
+        "secrets": "",
+        "volumes": ""
+      }
+    },
+    "nodes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "ready": "",
+            "NotReady": ""
+          }
+        },
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        },
+        "pods": {
+          "label": ""
+        },
+        "operatingSystem": {
+          "label": ""
+        },
+        "architecture": {
+          "label": ""
+        },
+        "kubernetesVersion": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "namespaces": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "active": "",
+            "terminating": ""
+          }
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "ingresses": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "className": {
+          "label": ""
+        },
+        "rulesAndPaths": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "services": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "ports": {
+          "label": ""
+        },
+        "targetPorts": {
+          "label": ""
+        },
+        "clusterIP": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "pods": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "image": {
+          "label": ""
+        },
+        "applicationType": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "secrets": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "configmaps": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "volumes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "accessModes": {
+          "label": ""
+        },
+        "storage": {
+          "label": ""
+        },
+        "storageClassName": {
+          "label": ""
+        },
+        "volumeMode": {
+          "label": ""
+        },
+        "volumeName": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "permission": {
+    "title": "",
+    "userSelect": {
+      "title": ""
+    },
+    "groupSelect": {
+      "title": ""
+    },
+    "tab": {
+      "user": "Utilizatori",
+      "group": "",
+      "inherited": ""
+    },
+    "field": {
+      "user": {
+        "label": "Utilizator"
+      },
+      "group": {
+        "label": ""
+      },
+      "permission": {
+        "label": ""
+      }
+    },
+    "action": {
+      "saveUser": "",
+      "saveGroup": ""
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "Gestionați",
+      "boards": {
+        "label": "Planșe"
+      },
+      "integrations": {
+        "label": "",
+        "edit": {
+          "label": "Editare"
+        },
+        "new": {
+          "label": ""
+        }
+      },
+      "search-engines": {
+        "label": "",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Editare"
+        }
+      },
+      "medias": {
+        "label": ""
+      },
+      "apps": {
+        "label": "Aplicații",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Editare"
+        }
+      },
+      "users": {
+        "label": "Utilizatori",
+        "create": {
+          "label": "Creează"
+        },
+        "general": "",
+        "security": "Securitate",
+        "board": "Planșe",
+        "groups": {
+          "label": ""
+        },
+        "invites": {
+          "label": "Invitații"
+        }
+      },
+      "tools": {
+        "label": "Unelte",
+        "tasks": {
+          "label": ""
+        },
+        "docker": {
+          "label": ""
+        },
+        "kubernetes": {
+          "label": "",
+          "nodes": {
+            "label": ""
+          },
+          "namespaces": {
+            "label": ""
+          },
+          "ingresses": {
+            "label": ""
+          },
+          "services": {
+            "label": ""
+          },
+          "pods": {
+            "label": ""
+          },
+          "configmaps": {
+            "label": ""
+          },
+          "secrets": {
+            "label": ""
+          },
+          "volumes": {
+            "label": ""
+          }
+        },
+        "logs": {
+          "label": ""
+        },
+        "certificates": {
+          "label": "",
+          "hostnames": {
+            "label": ""
+          }
+        }
+      },
+      "settings": {
+        "label": "Setări"
+      },
+      "about": {
+        "label": "Despre"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "",
+    "nothingFound": "",
+    "error": {
+      "fetch": ""
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "",
+        "group": {
+          "app": {
+            "title": "Aplicații",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "edit": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "board": {
+            "title": "Planșe",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "homeBoard": {
+                  "label": ""
+                },
+                "mobileBoard": {
+                  "label": ""
+                },
+                "settings": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "integration": {
+            "title": ""
+          }
+        }
+      },
+      "command": {
+        "help": "",
+        "group": {
+          "localCommand": {
+            "title": ""
+          },
+          "globalCommand": {
+            "title": "",
+            "option": {
+              "colorScheme": {
+                "light": "",
+                "dark": ""
+              },
+              "language": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newBoard": {
+                "label": ""
+              },
+              "importBoard": {
+                "label": ""
+              },
+              "newApp": {
+                "label": ""
+              },
+              "newIntegration": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newUser": {
+                "label": ""
+              },
+              "newInvite": {
+                "label": ""
+              },
+              "newGroup": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "",
+        "requestSeries": "",
+        "openIn": ""
+      },
+      "external": {
+        "help": "",
+        "group": {
+          "searchEngine": {
+            "title": "",
+            "children": {
+              "action": {
+                "search": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              },
+              "searchResults": {
+                "title": ""
+              }
+            },
+            "option": {
+              "google": {
+                "name": "",
+                "description": ""
+              },
+              "bing": {
+                "name": "",
+                "description": ""
+              },
+              "duckduckgo": {
+                "name": "",
+                "description": ""
+              },
+              "torrent": {
+                "name": "Torrent",
+                "description": ""
+              },
+              "youTube": {
+                "name": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": ""
+          },
+          "help": {
+            "title": "Ajutor",
+            "option": {
+              "documentation": {
+                "label": "Documentație"
+              },
+              "submitIssue": {
+                "label": ""
+              },
+              "discord": {
+                "label": "Comunitatea Discord"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "",
+            "option": {
+              "other": {
+                "label": ""
+              },
+              "no-default": {
+                "label": "",
+                "description": ""
+              },
+              "search": {
+                "label": ""
+              },
+              "from-integration": {
+                "description": ""
+              }
+            }
+          },
+          "local": {
+            "title": ""
+          }
+        }
+      },
+      "page": {
+        "help": "",
+        "group": {
+          "page": {
+            "title": "",
+            "option": {
+              "manageHome": {
+                "label": ""
+              },
+              "manageBoard": {
+                "label": ""
+              },
+              "manageApp": {
+                "label": ""
+              },
+              "manageIntegration": {
+                "label": ""
+              },
+              "manageSearchEngine": {
+                "label": ""
+              },
+              "manageMedia": {
+                "label": ""
+              },
+              "manageUser": {
+                "label": "Gestionați utilizatorii"
+              },
+              "manageInvite": {
+                "label": ""
+              },
+              "manageGroup": {
+                "label": ""
+              },
+              "manageDocker": {
+                "label": ""
+              },
+              "manageApi": {
+                "label": ""
+              },
+              "manageLog": {
+                "label": ""
+              },
+              "manageTask": {
+                "label": ""
+              },
+              "manageSettings": {
+                "label": ""
+              },
+              "about": {
+                "label": "Despre"
+              },
+              "homeBoard": {
+                "label": ""
+              },
+              "preferences": {
+                "label": "Preferințele dvs."
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "",
+        "group": {
+          "user": {
+            "title": "Utilizatori",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "group": {
+            "title": "",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                },
+                "manageMember": {
+                  "label": ""
+                },
+                "managePermission": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "",
+      "field": {
+        "name": {
+          "label": "Nume"
+        },
+        "short": {
+          "label": ""
+        },
+        "urlTemplate": {
+          "label": ""
+        },
+        "description": {
+          "label": ""
+        }
+      },
+      "page": {
+        "list": {
+          "title": "",
+          "noResults": {
+            "title": "",
+            "action": ""
+          },
+          "interactive": ""
+        },
+        "create": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        },
+        "edit": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "configControl": "",
+          "searchEngineType": {
+            "generic": "",
+            "fromIntegration": ""
+          }
+        },
+        "delete": {
+          "title": "",
+          "message": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "",
+            "table": {
+              "header": {
+                "season": "",
+                "episodes": ""
+              }
+            },
+            "button": {
+              "send": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": ""
+      },
+      "subject": {
+        "label": ""
+      },
+      "issuer": {
+        "label": ""
+      },
+      "validFrom": {
+        "label": ""
+      },
+      "validTo": {
+        "label": ""
+      },
+      "serialNumber": {
+        "label": ""
+      },
+      "fingerprint": {
+        "label": ""
+      }
+    },
+    "page": {
+      "list": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "invalid": {
+          "title": "",
+          "description": ""
+        },
+        "expires": "",
+        "toHostnames": ""
+      },
+      "hostnames": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "toCertificates": ""
+      }
+    },
+    "action": {
+      "create": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "",
+        "info": "",
+        "warn": "",
+        "error": ""
+      }
+    }
+  }
+}

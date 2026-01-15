@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "Welkom bij Homarr",
+        "subtitle": "Laten we beginnen met het opzetten van je Homarr instantie.",
+        "description": "Selecteer om te beginnen hoe je je Homarr instantie wilt instellen.",
+        "action": {
+          "scratch": "Vanaf nul beginnen",
+          "importOldmarr": "Importeren uit Homarr vóór 1.0"
+        }
+      },
+      "import": {
+        "title": "Gegevens importeren",
+        "subtitle": "Je kunt gegevens importeren uit een bestaande Homarr instantie.",
+        "dropzone": {
+          "title": "Sleep het ZIP-bestand hierheen of klik om te bladeren",
+          "description": "De geüploade ZIP wordt verwerkt en je kunt selecteren wat je wilt importeren"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "Bestand veranderen"
+          }
+        },
+        "importSettings": {
+          "title": "Instellingen importeren",
+          "description": "Het importgedrag configureren"
+        },
+        "boardSelection": {
+          "title": "{count} borden gevonden",
+          "description": "Kies alle borden met hun grootte die je wilt importeren",
+          "action": {
+            "selectAll": "Alles selecteren",
+            "unselectAll": "Alles deselecteren"
+          }
+        },
+        "summary": {
+          "title": "Overzicht importeren",
+          "description": "In het onderstaande overzicht kun je zien wat er wordt geïmporteerd",
+          "action": {
+            "import": "Import bevestigen en doorgaan"
+          },
+          "entities": {
+            "apps": "Apps",
+            "boards": "Borden",
+            "integrations": "Integraties",
+            "credentialUsers": "Inloggegevens gebruikers"
+          }
+        },
+        "tokenModal": {
+          "title": "Importeertoken invoeren",
+          "field": {
+            "token": {
+              "label": "Penning",
+              "description": "Voer het getoonde importeertoken van je vorige Homarr instantie in"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "Ongeldig token",
+              "message": "Het ingevoerde token is ongeldig"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "Beheerder gebruiker",
+        "subtitle": "Geef de inloggegevens op voor de administrator gebruiker.",
+        "notification": {
+          "success": {
+            "title": "Gebruiker aangemaakt",
+            "message": "De gebruiker is succesvol aangemaakt"
+          },
+          "error": {
+            "title": "Gebruiker aanmaken mislukt"
+          }
+        }
+      },
+      "group": {
+        "title": "Externe groep",
+        "subtitle": "Geef de groep op die moet worden gebruikt voor externe gebruikers.",
+        "form": {
+          "name": {
+            "label": "Groepsnaam",
+            "description": "De naam moet overeenkomen met de beheerdersgroep van de externe provider"
+          }
+        }
+      },
+      "settings": {
+        "title": "Instellingen",
+        "subtitle": "Serverinstellingen configureren."
+      },
+      "finish": {
+        "title": "Instellen voltooien",
+        "subtitle": "Je bent er klaar voor!",
+        "description": "Je hebt het installatieproces succesvol afgerond. Je kunt Homarr nu gaan gebruiken. Selecteer je volgende actie:",
+        "action": {
+          "goToBoard": "Ga naar {name} bord",
+          "createBoard": "Je eerste bord aanmaken",
+          "inviteUser": "Andere gebruikers uitnodigen",
+          "docs": "Lees de documentatie"
+        }
+      }
+    },
+    "backToStart": "Terug naar start"
+  },
+  "user": {
+    "title": "Gebruikers",
+    "name": "Gebruiker",
+    "page": {
+      "login": {
+        "title": "Log in op je account",
+        "subtitle": "Welkom terug! Voer je inloggegevens in"
+      },
+      "invite": {
+        "title": "Deelnemen aan Homarr",
+        "subtitle": "Welkom bij Homarr! Maak een account aan",
+        "description": "Je bent uitgenodigd door {username}"
+      },
+      "init": {
+        "title": "Nieuwe Homarr installatie",
+        "subtitle": "Maak de eerste beheerdersgebruiker aan"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "E-mail",
+        "verified": "Geverifiëerd"
+      },
+      "username": {
+        "label": "Gebruikersnaam"
+      },
+      "password": {
+        "label": "Wachtwoord",
+        "requirement": {
+          "length": "Bevat ten minste 8 tekens",
+          "lowercase": "Inclusief kleine letter",
+          "uppercase": "Inclusief hoofdletter",
+          "number": "Inclusief getal",
+          "special": "Inclusief speciaal teken"
+        }
+      },
+      "passwordConfirm": {
+        "label": "Wachtwoord bevestigen"
+      },
+      "previousPassword": {
+        "label": "Vorig wachtwoord"
+      },
+      "homeBoard": {
+        "label": "Home-bord"
+      },
+      "pingIconsEnabled": {
+        "label": "Gebruik iconen voor pings"
+      },
+      "defaultSearchEngine": {
+        "label": "Standaard zoekmachine"
+      },
+      "openSearchInNewTab": {
+        "label": "Zoekresultaten openen in nieuw tabblad"
+      }
+    },
+    "error": {
+      "usernameTaken": "Gebruikersnaam is al in gebruik"
+    },
+    "action": {
+      "login": {
+        "label": "Inloggen",
+        "labelWith": "Login met {provider}",
+        "notification": {
+          "success": {
+            "title": "Login succesvol",
+            "message": "Je bent nu ingelogd"
+          },
+          "error": {
+            "title": "Login mislukt",
+            "message": "Je login is mislukt"
+          }
+        },
+        "forgotPassword": {
+          "label": "Wachtwoord vergeten?",
+          "description": "Een beheerder kan het volgende commando gebruiken om je wachtwoord opnieuw in te stellen:"
+        }
+      },
+      "register": {
+        "label": "Account aanmaken",
+        "notification": {
+          "success": {
+            "title": "Account aangemaakt",
+            "message": "Login om door te gaan"
+          },
+          "error": {
+            "title": "Account aanmaken mislukt",
+            "message": "Je account kon niet worden aangemaakt"
+          }
+        }
+      },
+      "create": "Gebruiker aanmaken",
+      "changePassword": {
+        "label": "Wachtwoord wijzigen",
+        "notification": {
+          "success": {
+            "message": "Wachtwoord is succesvol gewijzigd"
+          },
+          "error": {
+            "message": "Kan wachtwoord niet wijzigen"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "Home-bord succesvol gewijzigd"
+          },
+          "error": {
+            "message": "Kan startpagina niet wijzigen"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "Zoekvoorkeuren succesvol gewijzigd"
+          },
+          "error": {
+            "message": "Kan zoekvoorkeuren niet wijzigen"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "Eerste dag van de week succesvol gewijzigd"
+          },
+          "error": {
+            "message": "Kan eerste dag van week niet wijzigen"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "Ping-iconen succesvol omgeschakeld"
+          },
+          "error": {
+            "message": "Ping-iconen kunnen niet worden omgeschakeld"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "Afbeelding veranderen",
+          "notification": {
+            "success": {
+              "message": "De afbeelding is succesvol gewijzigd"
+            },
+            "error": {
+              "message": "Kan afbeelding niet wijzigen"
+            },
+            "toLarge": {
+              "title": "Afbeelding is te groot",
+              "message": "Maximale afbeeldingsgrootte is {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "Afbeelding verwijderen",
+          "confirm": "Weet je zeker dat je de afbeelding wilt verwijderen?",
+          "notification": {
+            "success": {
+              "message": "Afbeelding succesvol verwijderd"
+            },
+            "error": {
+              "message": "Kan afbeelding niet verwijderen"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "Profiel succesvol bijgewerkt"
+          },
+          "error": {
+            "message": "Kan profiel niet bijwerken"
+          }
+        }
+      },
+      "delete": {
+        "label": "Gebruiker permanent verwijderen",
+        "description": "Verwijdert deze gebruiker inclusief zijn voorkeuren. Verwijdert geen enkele borden. Gebruiker krijgt geen melding.",
+        "confirm": "Weet je zeker dat je de gebruiker {username} met zijn voorkeuren wilt verwijderen?"
+      },
+      "select": {
+        "label": "Gebruiker selecteren",
+        "notFound": "Geen gebruiker gevonden"
+      },
+      "transfer": {
+        "label": "Nieuwe eigenaar selecteren"
+      }
+    }
+  },
+  "group": {
+    "title": "Groepen",
+    "name": "Groep",
+    "search": "Vind een groep",
+    "field": {
+      "name": "Naam",
+      "members": "Leden",
+      "homeBoard": {
+        "label": "Home-bord",
+        "description": "Alleen borden die toegankelijk zijn voor de groep kunnen worden geselecteerd"
+      },
+      "mobileBoard": {
+        "label": "Mobiel bord",
+        "description": "Alleen borden die toegankelijk zijn voor de groep kunnen worden geselecteerd"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Beheerder",
+        "item": {
+          "admin": {
+            "label": "Beheerder",
+            "description": "Leden met deze machtiging hebben volledige toegang tot alle functies en instellingen"
+          }
+        }
+      },
+      "app": {
+        "title": "Apps",
+        "item": {
+          "create": {
+            "label": "Apps aanmaken",
+            "description": "Laat leden apps aanmaken"
+          },
+          "use-all": {
+            "label": "Alle apps gebruiken",
+            "description": "Laat leden apps aan hun borden toevoegen"
+          },
+          "modify-all": {
+            "label": "Alle apps aanpassen",
+            "description": "Laat leden alle apps aanpassen"
+          },
+          "full-all": {
+            "label": "Volledige app-toegang",
+            "description": "Laat leden elke app beheren, gebruiken en verwijderen"
+          }
+        }
+      },
+      "board": {
+        "title": "Borden",
+        "item": {
+          "create": {
+            "label": "Borden aanmaken",
+            "description": "Laat leden borden aanmaken"
+          },
+          "view-all": {
+            "label": "Alle borden bekijken",
+            "description": "Laat leden alle borden bekijken"
+          },
+          "modify-all": {
+            "label": "Alle borden aanpassen",
+            "description": "Laat leden alle borden wijzigen (exclusief toegangscontrole en gevarenzone)"
+          },
+          "full-all": {
+            "label": "Toegang aan bord",
+            "description": "Laat leden alle borden bekijken, wijzigen en verwijderen (inclusief toegangscontrole en gevarenzone)"
+          }
+        }
+      },
+      "integration": {
+        "title": "Integraties",
+        "item": {
+          "create": {
+            "label": "Integraties aanmaken",
+            "description": "Laat leden integraties aanmaken"
+          },
+          "use-all": {
+            "label": "Alle integraties gebruiken",
+            "description": "Laat leden integraties toevoegen aan hun borden"
+          },
+          "interact-all": {
+            "label": "Interactie met elke integratie",
+            "description": "Laat leden communiceren met elke integratie"
+          },
+          "full-all": {
+            "label": "Volledige integratietoegang",
+            "description": "Laat leden elke integratie te beheren, gebruiken en ermee werken"
+          }
+        }
+      },
+      "media": {
+        "title": "Media",
+        "item": {
+          "upload": {
+            "label": "Media uploaden",
+            "description": "Laat leden media uploaden"
+          },
+          "view-all": {
+            "label": "Alle media bekijken",
+            "description": "Laat leden alle media bekijken"
+          },
+          "full-all": {
+            "label": "Volledige mediatoegang",
+            "description": "Laat leden alle media beheren en verwijderen"
+          }
+        }
+      },
+      "other": {
+        "title": "Andere",
+        "item": {
+          "view-logs": {
+            "label": "Logs bekijken",
+            "description": "Laat leden logs bekijken"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "Zoekmachines",
+        "item": {
+          "create": {
+            "label": "Zoekmachines aanmaken",
+            "description": "Laat leden zoekmachines aanmaken"
+          },
+          "modify-all": {
+            "label": "Alle zoekmachines aanpassen",
+            "description": "Laat leden alle zoekmachines aanpassen"
+          },
+          "full-all": {
+            "label": "Volledige zoekmachinetoegang",
+            "description": "Laat leden elke zoekmachine beheren en verwijderen"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "Sommige leden zijn van externe providers en kunnen hier niet worden beheerd",
+      "external": "Alle leden zijn van externe providers en kunnen hier niet worden beheerd"
+    },
+    "reservedNotice": {
+      "message": "Deze groep is gereserveerd voor systeemgebruik en beperkt sommige acties. <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "Nieuwe groep",
+        "notification": {
+          "success": {
+            "message": "De groep is succesvol aangemaakt"
+          },
+          "error": {
+            "message": "De groep kon niet worden aangemaakt"
+          }
+        }
+      },
+      "transfer": {
+        "label": "Eigendom overdragen",
+        "description": "Eigendom van deze groep overdragen aan een andere gebruiker.",
+        "confirm": "Weet je zeker dat je het eigendom voor de groep {name} wilt overdragen aan {username}?",
+        "notification": {
+          "success": {
+            "message": "Groep {group} succesvol overgezet naar {user}"
+          },
+          "error": {
+            "message": "Kan eigendom niet overdragen"
+          }
+        }
+      },
+      "addMember": {
+        "label": "Lid toevoegen"
+      },
+      "removeMember": {
+        "label": "Lid verwijderen",
+        "confirm": "Weet je zeker dat je {user} uit deze groep wilt verwijderen?"
+      },
+      "delete": {
+        "label": "Groep verwijderen",
+        "description": "Als je eenmaal een groep hebt verwijderd, kun je niet meer terug. Wees er zeker van.",
+        "confirm": "Weet je zeker dat je de groep {name} wilt verwijderen?",
+        "notification": {
+          "success": {
+            "message": "Groep {name} succesvol verwijderd"
+          },
+          "error": {
+            "message": "Kan groep {name} niet verwijderen"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "Machtigingen opgeslagen",
+            "message": "Machtigingen zijn succesvol opgeslagen"
+          },
+          "error": {
+            "title": "Machtigingen niet opgeslagen",
+            "message": "Machtigingen zijn niet opgeslagen"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "De groep {name} is succesvol opgeslagen"
+          },
+          "error": {
+            "message": "Kan groep {name} niet opslaan"
+          }
+        }
+      },
+      "select": {
+        "label": "Groep selecteren",
+        "notFound": "Geen groep gevonden"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "Instellingen zijn opgeslagen",
+              "message": "Bord instellingen succesvol opgeslagen"
+            },
+            "error": {
+              "title": "Instellingen opslaan mislukt",
+              "message": "Kan bordinstellingen niet opslaan"
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": "Positie succesvol gewijzigd"
+          },
+          "error": {
+            "message": "Kan positie niet veranderen"
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "Standaard groep",
+      "description": "{name} - Alle ingelogde gebruikers"
+    }
+  },
+  "app": {
+    "search": "Vind een app",
+    "page": {
+      "list": {
+        "title": "Apps",
+        "noResults": {
+          "title": "Er zijn nog geen apps",
+          "action": "Je eerste app aanmaken"
+        }
+      },
+      "create": {
+        "title": "Nieuwe app",
+        "notification": {
+          "success": {
+            "title": "Succesvol aangemaakt",
+            "message": "De app is succesvol aangemaakt"
+          },
+          "error": {
+            "title": "Aanmaken mislukt",
+            "message": "De app kon niet worden aangemaakt"
+          }
+        }
+      },
+      "edit": {
+        "title": "App bewerken",
+        "notification": {
+          "success": {
+            "title": "Wijzigingen succesvol toegepast",
+            "message": "De app is succesvol opgeslagen"
+          },
+          "error": {
+            "title": "Kan wijzigingen niet toepassen",
+            "message": "De app kon niet worden opgeslagen"
+          }
+        }
+      },
+      "delete": {
+        "title": "App verwijderen",
+        "message": "Weet je zeker dat je de app {name} wilt verwijderen?",
+        "notification": {
+          "success": {
+            "title": "Succesvol verwijderd",
+            "message": "De app is succesvol verwijderd"
+          },
+          "error": {
+            "title": "Verwijderen mislukt",
+            "message": "Kan de app niet verwijderen"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Naam"
+      },
+      "description": {
+        "label": "Beschrijving"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "Gebruik andere URL voor ping",
+          "description": "Handig als Homarr direct toegang kan krijgen via een interne hostnaam of netwerk om bandbreedtegebruik van ISP te vermijden"
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "App selecteren",
+        "notFound": "Geen app gevonden",
+        "search": "Zoek naar een app",
+        "noResults": "Geen resultaten",
+        "action": "{app} selecteren",
+        "title": "Selecteer een app om aan dit bord toe te voegen"
+      },
+      "create": {
+        "title": "Nieuwe app aanmaken",
+        "description": "Een nieuwe app aanmaken ",
+        "action": "App aanmaken openen"
+      },
+      "add": "Een app toevoegen"
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "Integraties",
+        "search": "Integraties zoeken",
+        "noResults": {
+          "title": "Er zijn nog geen integraties"
+        }
+      },
+      "create": {
+        "title": "Nieuwe {name} integratie",
+        "notification": {
+          "success": {
+            "title": "Succesvol aangemaakt",
+            "message": "De integratie is succesvol aangemaakt"
+          },
+          "error": {
+            "title": "Aanmaken mislukt",
+            "message": "De integratie kon niet worden aangemaakt"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "Bestaand",
+              "label": "Bestaande app selecteren"
+            },
+            "new": {
+              "title": "Nieuw",
+              "url": {
+                "label": "App URL",
+                "description": "De URL die de app opent als deze wordt geopend vanaf het dashboard"
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "{name} integratie bewerken",
+        "notification": {
+          "success": {
+            "title": "Wijzigingen succesvol toegepast",
+            "message": "De integratie is succesvol opgeslagen"
+          },
+          "error": {
+            "title": "Kan wijzigingen niet toepassen",
+            "message": "De integratie kon niet worden opgeslagen"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "Een app koppelen",
+            "remove": "Ontkoppelen",
+            "select": "Selecteer een app om te koppelen"
+          }
+        }
+      },
+      "delete": {
+        "title": "Integratie verwijderen",
+        "message": "Weet je zeker dat je de integratie {name} wilt verwijderen?",
+        "notification": {
+          "success": {
+            "title": "Succesvol verwijderd",
+            "message": "De integratie is succesvol verwijderd"
+          },
+          "error": {
+            "title": "Verwijderen mislukt",
+            "message": "Kan de integratie niet verwijderen"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Naam"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "attemptSearchEngineCreation": {
+        "label": "Zoekmachine aanmaken",
+        "description": "Integratie \"{kind}\" kan worden gebruikt met de zoekmachines. Controleer dit om automatisch de zoekmachine te configureren."
+      },
+      "app": {
+        "sectionTitle": "Gekoppelde app"
+      },
+      "createApp": {
+        "label": "App aanmaken",
+        "description": "Maak een app n met dezelfde naam en icoon als de integratie. Laat het invoerveld hieronder leeg om de app te maken met de integratie-URL."
+      },
+      "appHref": {
+        "placeholder": "Aangepaste app-URL"
+      }
+    },
+    "action": {
+      "create": "Nieuwe integratie"
+    },
+    "testConnection": {
+      "action": {
+        "create": "Verbinding testen en aanmaken",
+        "edit": "Verbinding testen en opslaan"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": "Reden met meer details"
+          }
+        },
+        "unknown": {
+          "title": "Onbekende fout",
+          "description": "Er is een onbekende fout opgetreden, open de reden hieronder om meer details te zien"
+        },
+        "parse": {
+          "title": "Parser fout",
+          "description": "Het antwoord kon niet worden verwerkt. Controleer of de URL verwijst naar de basis-URL van de service."
+        },
+        "authorization": {
+          "title": "Autorisatie fout",
+          "description": "Het verzoek is niet geautoriseerd. Controleer of de referenties correct zijn en of je ze hebt geconfigureerd met voldoende rechten."
+        },
+        "statusCode": {
+          "title": "Antwoord fout",
+          "description": "Onverwachte {statusCode} ({reason}) reactie van <url></url>. Controleer of de URL wijst naar de basis-URL van de integratie.",
+          "otherDescription": "Onverwachte statuscode {statusCode} ontvangen van <url></url>. Controleer of de URL verwijst naar de basis-URL van de integratie.",
+          "reason": {
+            "badRequest": "Onjuist verzoek",
+            "notFound": "Niet gevonden",
+            "tooManyRequests": "Te veel verzoeken",
+            "internalServerError": "Interne server fout",
+            "serviceUnavailable": "Dienst niet beschikbaar",
+            "gatewayTimeout": "Gateway time-out"
+          }
+        },
+        "certificate": {
+          "title": "Certificaat fout",
+          "description": {
+            "expired": "Het certificaat is verlopen.",
+            "notYetValid": "Het certificaat is nog niet geldig.",
+            "untrusted": "Het certificaat wordt niet vertrouwd.",
+            "hostnameMismatch": ""
+          },
+          "alert": {
+            "permission": {
+              "title": "Onvoldoende rechten",
+              "message": ""
+            },
+            "hostnameMismatch": {
+              "title": "Hostnaam komt niet overeen",
+              "message": ""
+            },
+            "extract": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "action": {
+            "retry": {
+              "label": "Opnieuw aanmaken proberen"
+            },
+            "trust": {
+              "label": "Certificaat vertrouwen"
+            },
+            "upload": {
+              "label": "Certificaat uploaden"
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "Vertrouwd certificaat",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "",
+              "message": "Weet je zeker dat je dit zelfondertekende certificaat wilt vertrouwen?"
+            },
+            "notification": {
+              "success": {
+                "title": "Vertrouwd certificaat",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "details": {
+            "title": "Details",
+            "description": "",
+            "content": {
+              "action": "Inhoud weergeven",
+              "title": "PEM-certificaat"
+            }
+          }
+        },
+        "request": {
+          "title": "Aanvraag fout",
+          "description": {
+            "connection": {
+              "hostUnreachable": "",
+              "networkUnreachable": "",
+              "refused": "",
+              "reset": ""
+            },
+            "dns": {
+              "notFound": "",
+              "timeout": "",
+              "noAnswer": ""
+            },
+            "timeout": {
+              "aborted": "",
+              "timeout": ""
+            }
+          }
+        }
+      },
+      "alertNotice": "De opslaan knop wordt ingeschakeld zodra er een succesvolle verbinding tot stand is gebracht",
+      "notification": {
+        "success": {
+          "title": "Verbinding geslaagd",
+          "message": "De verbinding is tot stand gebracht"
+        },
+        "invalidUrl": {
+          "title": "Ongeldige URL",
+          "message": "De URL is ongeldig"
+        },
+        "secretNotDefined": {
+          "title": "Ontbrekende inloggegevens",
+          "message": "Niet alle inloggegevens werden verstrekt"
+        },
+        "invalidCredentials": {
+          "title": "Ongeldige inloggegevens",
+          "message": "De inloggegevens zijn ongeldig"
+        },
+        "commonError": {
+          "title": "Verbinding mislukt",
+          "message": "De verbinding kon niet tot stand worden gebracht"
+        },
+        "badRequest": {
+          "title": "Bad request",
+          "message": "De aanvraag was onjuist"
+        },
+        "unauthorized": {
+          "title": "Niet-geautoriseerd",
+          "message": "Waarschijnlijk verkeerde inloggegevens"
+        },
+        "forbidden": {
+          "title": "Verboden",
+          "message": "Waarschijnlijk ontbrekende machtigingen"
+        },
+        "notFound": {
+          "title": "Niet gevonden",
+          "message": "Waarschijnlijk verkeerde URL of pad"
+        },
+        "internalServerError": {
+          "title": "Interne serverfout",
+          "message": "Er is een fout opgetreden bij de server"
+        },
+        "serviceUnavailable": {
+          "title": "Service niet beschikbaar",
+          "message": "De server is momenteel niet beschikbaar"
+        },
+        "connectionAborted": {
+          "title": "Verbinding afgebroken",
+          "message": "De verbinding is afgebroken"
+        },
+        "domainNotFound": {
+          "title": "Domein niet gevonden",
+          "message": "Het domein kon niet worden gevonden"
+        },
+        "connectionRefused": {
+          "title": "Verbinding geweigerd",
+          "message": "De verbinding werd geweigerd"
+        },
+        "invalidJson": {
+          "title": "Ongeldige JSON",
+          "message": "Het antwoord was geen geldige JSON"
+        },
+        "wrongPath": {
+          "title": "Verkeerde pad",
+          "message": "Het pad is waarschijnlijk niet juist"
+        },
+        "tooManyRequests": {
+          "title": "Te veel verzoeken in een bepaalde tijd",
+          "message": "Er waren te veel aanvragen. Je wordt waarschijnlijk beperkt in snelheid of afgewezen door het doelsysteem"
+        }
+      }
+    },
+    "secrets": {
+      "title": "Geheimen",
+      "lastUpdated": "Laatst bijgewerkt {date}",
+      "notSet": {
+        "label": "Geen waarde ingesteld",
+        "tooltip": "Dit vereiste geheim is nog niet ingesteld"
+      },
+      "secureNotice": "Dit geheim kan niet worden opgehaald na aanmaken",
+      "reset": {
+        "title": "Geheim resetten",
+        "message": "Weet je zeker dat je dit geheim wilt resetten?"
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "Geen geheimen",
+        "text": "Geen geheimen nodig voor deze integratie"
+      },
+      "kind": {
+        "username": {
+          "label": "Gebruikersnaam",
+          "newLabel": "Nieuwe gebruikersnaam"
+        },
+        "apiKey": {
+          "label": "API-sleutel",
+          "newLabel": "Nieuwe API-sleutel"
+        },
+        "password": {
+          "label": "Wachtwoord",
+          "newLabel": "Nieuw wachtwoord"
+        },
+        "tokenId": {
+          "label": "Token ID",
+          "newLabel": "Nieuwe token ID"
+        },
+        "realm": {
+          "label": "Realm",
+          "newLabel": "Nieuwe Realm"
+        },
+        "personalAccessToken": {
+          "label": "Personal Access Token",
+          "newLabel": "Nieuwe Personal Access Token"
+        },
+        "topic": {
+          "label": "Onderwerp",
+          "newLabel": "Nieuw onderwerp"
+        },
+        "url": {
+          "label": "URL",
+          "newLabel": "Nieuwe URL"
+        },
+        "opnsenseApiKey": {
+          "label": "API-sleutel (Key)",
+          "newLabel": "Nieuwe API-sleutel (Key)"
+        },
+        "opnsenseApiSecret": {
+          "label": "API-sleutel (geheim)",
+          "newLabel": "Nieuwe API-sleutel (geheim)"
+        },
+        "githubAppId": {
+          "label": "App ID",
+          "newLabel": "Nieuwe App ID"
+        },
+        "githubInstallationId": {
+          "label": "Installatie ID",
+          "newLabel": "Nieuwe installatie ID"
+        },
+        "privateKey": {
+          "label": "Privésleutel",
+          "newLabel": "Nieuwe privésleutel"
+        }
+      }
+    },
+    "permission": {
+      "use": "Integraties selecteren in items",
+      "interact": "Interactie met integraties",
+      "full": "Volledige integratietoegang"
+    }
+  },
+  "media": {
+    "plural": "Media",
+    "search": "Vind een media",
+    "field": {
+      "name": "Naam",
+      "size": "Grootte",
+      "creator": "Maker"
+    },
+    "action": {
+      "upload": {
+        "label": "Media uploaden",
+        "file": "Bestand selecteren",
+        "notification": {
+          "success": {
+            "message": "De media is succesvol geüpload"
+          },
+          "error": {
+            "message": "De media konden niet worden geüpload"
+          }
+        }
+      },
+      "delete": {
+        "label": "Media verwijderen",
+        "description": "Weet je zeker dat je de media <bName></bName> wilt verwijderen?",
+        "notification": {
+          "success": {
+            "message": "De media is succesvol verwijderd"
+          },
+          "error": {
+            "message": "De media konden niet worden verwijderd"
+          }
+        }
+      },
+      "copy": {
+        "label": "URL kopiëren"
+      },
+      "open": {
+        "label": "Media openen"
+      }
+    }
+  },
+  "common": {
+    "success": "Succes",
+    "beta": "Beta",
+    "error": "Fout",
+    "action": {
+      "add": "Toevoegen",
+      "apply": "Toepassen",
+      "backToOverview": "Terug naar overzicht",
+      "change": "Wijzigen",
+      "create": "Aanmaken",
+      "createAnother": "Aanmaken en opnieuw beginnen",
+      "edit": "Bewerken",
+      "import": "Importeren",
+      "insert": "Invoegen",
+      "remove": "Verwijderen",
+      "save": "Opslaan",
+      "saveChanges": "Wijzigingen opslaan",
+      "cancel": "Annuleren",
+      "delete": "Verwijderen",
+      "discard": "Negeren",
+      "close": "Sluiten",
+      "confirm": "Bevestigen",
+      "continue": "Doorgaan",
+      "previous": "Vorige",
+      "next": "Volgende",
+      "checkoutDocs": "De documentatie bekijken",
+      "checkLogs": "Controleer logs voor meer details",
+      "tryAgain": "Probeer opnieuw",
+      "loading": "Laden"
+    },
+    "here": "hier",
+    "iconPicker": {
+      "label": "Icoon-URL",
+      "header": "Typ naam of objecten om te filteren op iconen… Homarr doorzoekt {countIcons} iconen voor je."
+    },
+    "colorScheme": {
+      "options": {
+        "light": "Licht",
+        "dark": "Donker"
+      }
+    },
+    "information": {
+      "min": "Min.",
+      "max": "Max.",
+      "days": "Dagen",
+      "hours": "Uren",
+      "minutes": "Minuten"
+    },
+    "notification": {
+      "create": {
+        "success": "Succesvol aangemaakt",
+        "error": "Aanmaken mislukt"
+      },
+      "delete": {
+        "success": "Succesvol verwijderd",
+        "error": "Verwijderen mislukt"
+      },
+      "update": {
+        "success": "Wijzigingen succesvol toegepast",
+        "error": "Kan wijzigingen niet toepassen"
+      },
+      "transfer": {
+        "success": "Overdracht succesvol",
+        "error": "Overdracht mislukt"
+      }
+    },
+    "multiSelect": {
+      "placeholder": "Kies één of meer waarden"
+    },
+    "multiText": {
+      "placeholder": "Meer waarden toevoegen",
+      "addLabel": "{value} toevoegen"
+    },
+    "select": {
+      "placeholder": "Waarde kiezen",
+      "badge": {
+        "recommended": "Aanbevolen"
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "Schakel naar donkere modus",
+        "switchToLightMode": "Schakel naar lichte modus",
+        "management": "Beheer",
+        "preferences": "Jouw voorkeuren",
+        "logout": "Uitloggen",
+        "login": "Inloggen",
+        "homeBoard": "Je home-bord",
+        "loggedOut": "Uitgelogd",
+        "updateAvailable": "{countUpdates} updates beschikbaar: {tag}"
+      }
+    },
+    "dangerZone": "Gevarenzone",
+    "noResults": "Geen resultaten gevonden",
+    "unsavedChanges": "Er zijn niet-opgeslagen wijzigingen!",
+    "preview": {
+      "show": "Voorbeeld weergeven",
+      "hide": "Voorbeeld verbergen"
+    },
+    "zod": {
+      "errors": {
+        "default": "Dit veld is ongeldig",
+        "required": "Dit veld is verplicht",
+        "string": {
+          "startsWith": "Dit veld moet beginnen met {startsWith}",
+          "endsWith": "Dit veld moet eindigen met {endsWith}",
+          "includes": "Dit veld moet {includes} bevatten.",
+          "invalidEmail": "Dit veld moet een geldig e-mailadres zijn"
+        },
+        "tooSmall": {
+          "string": "Dit veld moet minimaal {minimum} tekens lang zijn",
+          "number": "Dit veld moet groter of gelijk zijn aan {minimum}"
+        },
+        "tooBig": {
+          "string": "Dit veld mag maximaal {maximum} tekens lang zijn",
+          "number": "Dit veld moet kleiner of gelijk zijn aan {maximum}"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "Wachtwoorden komen niet overeen",
+          "passwordRequirements": "Wachtwoord voldoet niet aan de eisen",
+          "boardAlreadyExists": "Er bestaat al een bord met deze naam",
+          "invalidFileType": "Ongeldig bestandstype, verwachtte {expected}",
+          "invalidFileName": "Ongeldige bestandsnaam",
+          "fileTooLarge": "Bestand is te groot, maximale grootte is {maxSize}",
+          "invalidConfiguration": "Ongeldige configuratie",
+          "groupNameTaken": "Groepsnaam al in gebruik"
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "km/u",
+        "milesPerHour": "mph"
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "Nieuwe dynamische sectie",
+        "remove": "Dynamische sectie verwijderen"
+      },
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "customCssClasses": {
+          "label": "Aangepaste CSS-classes"
+        },
+        "borderColor": {
+          "label": "Randkleur"
+        }
+      },
+      "remove": {
+        "title": "Dynamische sectie verwijderen",
+        "message": "Weet je zeker dat je deze dynamische sectie wilt verwijderen? Items worden verplaatst naar dezelfde locatie in de bovenliggende sectie."
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "Naam"
+        }
+      },
+      "action": {
+        "create": "Nieuwe categorie",
+        "edit": "Categorie hernoemen",
+        "remove": "Categorie verwijderen",
+        "moveUp": "Omhoog",
+        "moveDown": "Omlaag",
+        "createAbove": "Nieuwe categorie hierboven",
+        "createBelow": "Nieuwe categorie hieronder",
+        "openAllInNewTabs": "Alles openen in tabbladen"
+      },
+      "create": {
+        "title": "Nieuwe categorie",
+        "submit": "Categorie toevoegen"
+      },
+      "remove": {
+        "title": "Categorie verwijderen",
+        "message": "Weet je zeker dat je de categorie {name} wilt verwijderen?"
+      },
+      "edit": {
+        "title": "Categorie hernoemen",
+        "submit": "Categorie hernoemen"
+      },
+      "menu": {
+        "label": {
+          "create": "Nieuwe categorie",
+          "changePosition": "Positie wijzigen"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "Alles openen in tabbladen",
+        "text": "Sommige browsers blokkeren om veiligheidsredenen het bulk openen van tabbladen. Homarr kon niet alle vensters openen, omdat je browser deze actie blokkeerde. Sta \"Pop-upvensters openen\" toe en probeer het opnieuw."
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "Nieuw item",
+      "import": "Item importeren",
+      "edit": "Item bewerken",
+      "moveResize": "Item verplaatsen / formaat wijzigen",
+      "duplicate": "Item dupliceren",
+      "remove": "Item verwijderen"
+    },
+    "menu": {
+      "label": {
+        "settings": "Instellingen"
+      }
+    },
+    "create": {
+      "title": "Kies een item om toe te voegen",
+      "search": "Items filteren",
+      "addToBoard": "Toevoegen aan bord"
+    },
+    "moveResize": {
+      "title": "Item verplaatsen / formaat wijzigen",
+      "field": {
+        "width": {
+          "label": "Breedte"
+        },
+        "height": {
+          "label": "Hoogte"
+        },
+        "xOffset": {
+          "label": "X offset"
+        },
+        "yOffset": {
+          "label": "Y offset"
+        }
+      }
+    },
+    "edit": {
+      "title": "Item bewerken",
+      "advancedOptions": {
+        "label": "Geavanceerde opties",
+        "title": "Geavanceerde itemopties"
+      },
+      "field": {
+        "integrations": {
+          "label": "Integraties"
+        },
+        "title": {
+          "label": "Titel"
+        },
+        "customCssClasses": {
+          "label": "Aangepaste CSS-classes"
+        },
+        "borderColor": {
+          "label": "Randkleur"
+        }
+      }
+    },
+    "remove": {
+      "title": "Item verwijderen",
+      "message": "Weet je zeker dat je dit item wilt verwijderen?"
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "App",
+      "description": "Een app insluiten op het bord.",
+      "option": {
+        "appId": {
+          "label": "App kiezen"
+        },
+        "openInNewTab": {
+          "label": "In nieuw tabblad openen"
+        },
+        "showTitle": {
+          "label": "App naam weergeven"
+        },
+        "pingEnabled": {
+          "label": "Statuscontrole inschakelen"
+        },
+        "layout": {
+          "label": "Lay-out",
+          "option": {
+            "row": "Horizontaal",
+            "row-reverse": "Horizontaal (omgekeerd)",
+            "column": "Verticaal",
+            "column-reverse": "Verticaal (omgekeerd)"
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "Beschrijving weergavemodus",
+          "description": "",
+          "option": {
+            "normal": "Binnen widget",
+            "tooltip": "Als tooltip",
+            "hidden": "Verborgen"
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "Geen app",
+          "tooltip": "Je hebt geen geldige app geselecteerd"
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "Bladwijzers",
+      "description": "Toont meerdere app-links",
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "layout": {
+          "label": "Lay-out",
+          "option": {
+            "row": {
+              "label": "Horizontaal"
+            },
+            "column": {
+              "label": "Verticaal"
+            },
+            "grid": {
+              "label": "Raster"
+            },
+            "gridHorizontal": {
+              "label": "Raster horizontaal"
+            }
+          }
+        },
+        "hideTitle": {
+          "label": "Titel verbergen"
+        },
+        "hideIcon": {
+          "label": "Iconen verbergen"
+        },
+        "hideHostname": {
+          "label": "Hostnamen verbergen"
+        },
+        "openNewTab": {
+          "label": "In nieuw tabblad openen"
+        },
+        "items": {
+          "label": "Bladwijzers",
+          "add": "Bladwijzer toevoegen"
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "DNS-hole overzicht",
+      "description": "Toont het overzicht van je DNS-hole",
+      "option": {
+        "layout": {
+          "label": "Lay-out",
+          "option": {
+            "row": {
+              "label": "Horizontaal"
+            },
+            "column": {
+              "label": "Verticaal"
+            },
+            "grid": {
+              "label": "Raster"
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": "Gebruik Pi-Hole kleuren"
+        }
+      },
+      "error": {
+        "internalServerError": "DNS-hole overzicht ophalen mislukt",
+        "integrationsDisconnected": "Geen gegevens beschikbaar, alle integraties verbroken"
+      },
+      "data": {
+        "adsBlockedToday": "Vandaag geblokkeerd",
+        "adsBlockedTodayPercentage": "Vandaag geblokkeerd",
+        "dnsQueriesToday": "Aanvragen vandaag",
+        "domainsBeingBlocked": "Domeinen op blokkadelijst"
+      },
+      "domainsTooltip": "Vanwege meerdere integraties kan Homarr het exacte aantal geblokkeerde domeinen niet berekenen"
+    },
+    "dnsHoleControls": {
+      "name": "DNS-hole bedieningen",
+      "description": "Bedien PiHole of AdGuard vanaf je dashboard",
+      "option": {
+        "layout": {
+          "label": "Lay-out",
+          "option": {
+            "row": {
+              "label": "Horizontaal"
+            },
+            "column": {
+              "label": "Verticaal"
+            },
+            "grid": {
+              "label": "Raster"
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": "Alles omschakelen knoppen weergeven"
+        }
+      },
+      "error": {
+        "internalServerError": "DNS-hole besturen mislukt"
+      },
+      "controls": {
+        "enableAll": "Alles inschakelen",
+        "disableAll": "Alles uitschakelen",
+        "setTimer": "Timer instellen",
+        "set": "Instellen",
+        "enabled": "Ingeschakeld",
+        "disabled": "Uitgeschakeld",
+        "processing": "Verwerken",
+        "disconnected": "Verbinding verbroken",
+        "hours": "Uren",
+        "minutes": "Minuten",
+        "unlimited": "Laat leeg voor onbeperkt"
+      }
+    },
+    "clock": {
+      "name": "Datum en tijd",
+      "description": "Toont de huidige datum en tijd.",
+      "option": {
+        "customTitleToggle": {
+          "label": "Aangepaste titel-/plaatsweergave",
+          "description": "Aangepaste titel of de naam van de stad/het land boven de klok weergeven."
+        },
+        "customTitle": {
+          "label": "Titel"
+        },
+        "is24HourFormat": {
+          "label": "24-uursnotatie",
+          "description": "Gebruik de 24-uursnotatie in plaats van de 12-uursnotatie"
+        },
+        "showSeconds": {
+          "label": "Seconden weergeven"
+        },
+        "useCustomTimezone": {
+          "label": "Gebruik een vaste tijdzone"
+        },
+        "timezone": {
+          "label": "Tijdzone",
+          "description": "Kies de tijdzone volgens de IANA-standaard"
+        },
+        "showDate": {
+          "label": "De datum weergeven"
+        },
+        "dateFormat": {
+          "label": "Datumnotatie",
+          "description": "Hoe de datum eruit moet zien"
+        },
+        "customTimeFormat": {
+          "label": "Aangepast tijdformaat",
+          "description": "Gebruik ISO 8601 om de tijd op te maken (dit overschrijft andere opties)"
+        },
+        "customDateFormat": {
+          "label": "Aangepast datumformaat",
+          "description": "Gebruik ISO 8601 om datum op te maken (dit overschrijft andere opties)"
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "Minecraft server status",
+      "description": "Geeft de status van een Minecraft server weer",
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "domain": {
+          "label": "Serveradres"
+        },
+        "isBedrockServer": {
+          "label": "Bedrock server"
+        }
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline"
+      }
+    },
+    "notebook": {
+      "name": "Notitieboek",
+      "description": "Een eenvoudige notitie widget die markdown ondersteunt",
+      "option": {
+        "showToolbar": {
+          "label": "De werkbalk weergeven om je te helpen markdown te schrijven"
+        },
+        "allowReadOnlyCheck": {
+          "label": "Controle in alleen-lezen modus toestaan"
+        },
+        "content": {
+          "label": "De inhoud van het notitieboek"
+        }
+      },
+      "controls": {
+        "bold": "Vetgedrukt",
+        "italic": "Schuingedrukt",
+        "strikethrough": "Doorgestreept",
+        "underline": "Onderstreept",
+        "colorText": "Tekstkleur",
+        "colorHighlight": "Gekleurde tekst markeren",
+        "code": "Code",
+        "clear": "Opmaak wissen",
+        "heading": "Koptekst {level}",
+        "align": "Tekst uitlijnen: {position}",
+        "blockquote": "Blokquote",
+        "horizontalLine": "Horizontale lijn",
+        "bulletList": "Opsommingslijst",
+        "orderedList": "Gerangschikte lijst",
+        "checkList": "Controlelijst",
+        "increaseIndent": "Inspringing vergroten",
+        "decreaseIndent": "Inspringen verminderen",
+        "link": "Link",
+        "unlink": "Link verwijderen",
+        "image": "Afbeelding insluiten",
+        "addTable": "Tabel toevoegen",
+        "deleteTable": "Tabel verwijderen",
+        "colorCell": "Celkleur",
+        "mergeCell": "Cellen samenvoegen schakelen",
+        "addColumnLeft": "Kolom ervoor toevoegen",
+        "addColumnRight": "Kolom erna toevoegen",
+        "deleteColumn": "Kolom verwijderen",
+        "addRowTop": "Rij toevoegen vóór",
+        "addRowBelow": "Rij toevoegen ná",
+        "deleteRow": "Rij verwijderen"
+      },
+      "align": {
+        "left": "Links",
+        "center": "Centreren",
+        "right": "Rechts"
+      },
+      "popover": {
+        "clearColor": "Kleur wissen",
+        "source": "Bron",
+        "widthPlaceholder": "Waarde in % or pixels",
+        "columns": "Kolommen",
+        "rows": "Rijen",
+        "width": "Breedte",
+        "height": "Hoogte"
+      },
+      "placeholder": "",
+      "dismiss": {
+        "title": "Wijzigingen weggooien?",
+        "message": "",
+        "action": {
+          "discard": "Aanpassingen weggooien",
+          "keepEditing": "Blijven bewerken"
+        }
+      }
+    },
+    "iframe": {
+      "name": "iFrame",
+      "description": "Elke inhoud van het internet insluiten. Sommige websites kunnen de toegang beperken.",
+      "option": {
+        "embedUrl": {
+          "label": "URL insluiten"
+        },
+        "allowFullScreen": {
+          "label": "Volledig scherm toestaan"
+        },
+        "allowTransparency": {
+          "label": "Transparantie toestaan"
+        },
+        "allowScrolling": {
+          "label": "Scrollen toestaan"
+        },
+        "allowPayment": {
+          "label": "Betaling toestaan"
+        },
+        "allowAutoPlay": {
+          "label": "Automatisch afspelen toestaan"
+        },
+        "allowMicrophone": {
+          "label": "Microfoon toestaan"
+        },
+        "allowCamera": {
+          "label": "Camera toestaan"
+        },
+        "allowGeolocation": {
+          "label": "Geolocatie toestaan"
+        }
+      },
+      "error": {
+        "noUrl": "Geen iFrame URL opgegeven",
+        "unsupportedProtocol": "De opgegeven URL gebruikt een niet-ondersteund protocol. Gebruik een van ({supportedProtocols})",
+        "noBrowerSupport": "Je browser ondersteunt geen iframes. Update je browser."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "Entiteitsstatus",
+      "description": "Status van een entiteit weergeven en optioneel omschakelen",
+      "option": {
+        "entityId": {
+          "label": "Entiteits-ID"
+        },
+        "displayName": {
+          "label": "Weergavenaam"
+        },
+        "entityUnit": {
+          "label": "Entiteitseenheid"
+        },
+        "clickable": {
+          "label": "Klikbaar"
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "Automatisering uitvoeren",
+      "description": "Activeer een automatisering met één klik",
+      "option": {
+        "displayName": {
+          "label": "Weergavenaam"
+        },
+        "automationId": {
+          "label": "Automatiserings-ID"
+        }
+      },
+      "spotlightAction": {
+        "run": "{name} uitvoeren"
+      }
+    },
+    "stockPrice": {
+      "name": "Aandelen prijs",
+      "description": "Toont de huidige aandelenprijs van een bedrijf",
+      "option": {
+        "stock": {
+          "label": "Aandelen symbool"
+        },
+        "timeRange": {
+          "label": "Tijdsbereik",
+          "option": {
+            "1d": {
+              "label": "1 dag"
+            },
+            "5d": {
+              "label": "5 dagen"
+            },
+            "1mo": {
+              "label": "1 maand"
+            },
+            "3mo": {
+              "label": "3 maanden"
+            },
+            "6mo": {
+              "label": "6 maanden"
+            },
+            "ytd": {
+              "label": "Jaar tot nu toe"
+            },
+            "1y": {
+              "label": "1 jaar"
+            },
+            "2y": {
+              "label": "2 jaar"
+            },
+            "5y": {
+              "label": "5 jaar"
+            },
+            "10y": {
+              "label": "10 jaar"
+            },
+            "max": {
+              "label": "Max."
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "Tijdsinterval",
+          "option": {
+            "5m": {
+              "label": "5 minuten"
+            },
+            "15m": {
+              "label": "15 minuten"
+            },
+            "30m": {
+              "label": "30 minuten"
+            },
+            "1h": {
+              "label": "1 uur"
+            },
+            "1d": {
+              "label": "1 dag"
+            },
+            "5d": {
+              "label": "5 dagen"
+            },
+            "1wk": {
+              "label": "1 week"
+            },
+            "1mo": {
+              "label": "1 maand"
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "Kalender",
+      "description": "Gebeurtenissen van je integraties weergeven in een kalenderweergave binnen een bepaalde relatieve tijdsperiode",
+      "duration": {
+        "allDay": "Gehele dag"
+      },
+      "option": {
+        "releaseType": {
+          "label": "Radarr uitgavetype",
+          "options": {
+            "inCinemas": "In bioscopen",
+            "digitalRelease": "Digitale uitgave",
+            "physicalRelease": "Fysieke uitgave"
+          }
+        },
+        "filterPastMonths": {
+          "label": "Starten vanaf"
+        },
+        "filterFutureMonths": {
+          "label": "Eindig bij"
+        },
+        "showUnmonitored": {
+          "label": "Niet-bewaakte items weergeven"
+        }
+      }
+    },
+    "weather": {
+      "name": "Weer",
+      "description": "Toont de huidige weersinformatie van een ingestelde locatie.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": "Temperatuur in fahrenheit"
+        },
+        "disableTemperatureDecimals": {
+          "label": "Temperatuur-decimalen uitschakelen"
+        },
+        "showCurrentWindSpeed": {
+          "label": "Toon huidige windsnelheid",
+          "description": "Alleen op het huidige weer"
+        },
+        "useImperialSpeed": {
+          "label": "Gebruik mph voor windsnelheid"
+        },
+        "location": {
+          "label": "Weerlocatie"
+        },
+        "showCity": {
+          "label": "Stad weergeven"
+        },
+        "hasForecast": {
+          "label": "Weersverwachting weergeven"
+        },
+        "forecastDayCount": {
+          "label": "Aantal weersverwachting-dagen",
+          "description": "Als de widget niet breed genoeg is, worden er minder dagen getoond"
+        },
+        "dateFormat": {
+          "label": "Datumnotatie",
+          "description": "Hoe de datum eruit moet zien"
+        }
+      },
+      "currentWindSpeed": "{currentWindSpeed} {unit}",
+      "dailyForecast": {
+        "sunrise": "Zonsopgang",
+        "sunset": "Zonsondergang",
+        "maxWindSpeed": "Max. windsnelheid: {maxWindSpeed} {unit}",
+        "maxWindGusts": "Max. windstoten: {maxWindGusts} {unit}"
+      },
+      "kind": {
+        "clear": "Wissen",
+        "mainlyClear": "Overwegend helder",
+        "fog": "Mist",
+        "drizzle": "Motregen",
+        "freezingDrizzle": "IJzel",
+        "rain": "Regen",
+        "freezingRain": "Natte sneeuw",
+        "snowFall": "Sneeuwval",
+        "snowGrains": "Sneeuw",
+        "rainShowers": "Regenbuien",
+        "snowShowers": "Sneeuwbuien",
+        "thunderstorm": "Onweersbui",
+        "thunderstormWithHail": "Onweer met hagel",
+        "unknown": "Onbekend"
+      }
+    },
+    "indexerManager": {
+      "name": "Indexeringsbeheerder status",
+      "description": "Status van je indexers",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": "Indexersite in nieuw tabblad openen"
+        }
+      },
+      "title": "Indexeringsbeheerder",
+      "testAll": "Alles testen",
+      "error": {
+        "internalServerError": "Indexersstatus ophalen mislukt"
+      }
+    },
+    "healthMonitoring": {
+      "name": "Systeem gezondheidsmonitoring",
+      "description": "Toont informatie over de gezondheid en status van je systeem(en).",
+      "tab": {
+        "system": "Systeem",
+        "cluster": "Cluster"
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "CPU-temperatuur in fahrenheit"
+        },
+        "cpu": {
+          "label": "CPU-info weergeven"
+        },
+        "memory": {
+          "label": "Werkgeheugen info weergeven"
+        },
+        "showUptime": {
+          "label": "Uptime weergeven"
+        },
+        "fileSystem": {
+          "label": "Bestandssysteem info weergeven"
+        },
+        "defaultTab": {
+          "label": "Standaard tab"
+        },
+        "visibleClusterSections": {
+          "label": "Zichtbare cluster secties"
+        },
+        "sectionIndicatorRequirement": {
+          "label": "Sectie indicator vereiste"
+        }
+      },
+      "popover": {
+        "information": "Informatie",
+        "processor": "Processor: {cpuModelName}",
+        "memory": "Geheugen: {memory}GiB",
+        "memoryAvailable": "Beschikbaar: {memoryAvailable}GiB ({percent}%)",
+        "version": "Versie: {version}",
+        "uptime": "Uptime: {months} maanden, {days} dagen, {hours} uren, {minutes} minuten",
+        "loadAverage": "Gemiddelde belasting:",
+        "minute": "1 minuut",
+        "minutes": "{count} minuten",
+        "used": "Gebruikt",
+        "available": "Beschikbaar",
+        "lastSeen": "Laatste statusupdate: {lastSeen}"
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": "Gezondheidsstatus ophalen mislukt"
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "CPU",
+          "memory": "RAM"
+        },
+        "resource": {
+          "node": {
+            "name": "Nodes"
+          },
+          "qemu": {
+            "name": "VM's"
+          },
+          "lxc": {
+            "name": "LXC's"
+          },
+          "storage": {
+            "name": "Opslagruimte"
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "Node",
+            "vmId": "VM ID",
+            "plugin": "Plugin"
+          },
+          "detail": {
+            "cpu": "Cores",
+            "memory": "Geheugen",
+            "storage": "Opslagruimte",
+            "uptime": "Uptime",
+            "haState": "HA status",
+            "storageType": {
+              "local": "Lokale opslag",
+              "shared": "Gedeelde opslag"
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "Naam",
+            "cpu": "CPU",
+            "memory": "RAM",
+            "node": "Node"
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "Docker statistieken",
+      "description": "",
+      "option": {
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": "",
+          "option": {
+            "name": "",
+            "state": "",
+            "cpuUsage": "",
+            "memoryUsage": ""
+          }
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "common": {
+      "location": {
+        "query": "Stad / postcode",
+        "latitude": "Breedtegraad",
+        "longitude": "Lengtegraad",
+        "disabledTooltip": "Voer een stad of postcode in",
+        "unknownLocation": "Onbekende locatie",
+        "search": "Zoeken",
+        "table": {
+          "header": {
+            "city": "Stad",
+            "country": "Land",
+            "coordinates": "Coördinaten",
+            "population": "Populatie"
+          },
+          "action": {
+            "select": "{city}, {countryCode} selecteren"
+          },
+          "population": {
+            "fallback": "Onbekend"
+          }
+        }
+      },
+      "integration": {
+        "noData": "Geen integratie gevonden",
+        "description": "Klik <here></here> om een nieuwe integratie aan te maken"
+      },
+      "app": {
+        "noData": "Geen app gevonden",
+        "description": "Klik <here></here> om een nieuwe app aan te maken",
+        "quickCreate": "App onmiddellijk maken"
+      },
+      "error": {
+        "noIntegration": "Geen integratie geselecteerd",
+        "noData": "Geen integratiegegevens beschikbaar"
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "Video stream",
+      "description": "Een videostream of video van een camera of website insluiten",
+      "option": {
+        "feedUrl": {
+          "label": "Feed-URL"
+        },
+        "hasAutoPlay": {
+          "label": "Automatisch afspelen",
+          "description": "Automatisch afspelen werkt alleen als het gedempt is vanwege browserbeperkingen"
+        },
+        "isMuted": {
+          "label": "Gedempt"
+        },
+        "hasControls": {
+          "label": "Besturingen weergeven"
+        }
+      },
+      "error": {
+        "noUrl": "Geen video-URL opgegeven",
+        "forYoutubeUseIframe": "Voor YouTube video's gebruik je de iframe-optie"
+      }
+    },
+    "mediaServer": {
+      "name": "Huidige mediaserver streams",
+      "description": "De huidige streams op je mediaservers weergeven",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "Alleen huidig spelende weergeven",
+          "description": ""
+        }
+      },
+      "items": {
+        "currentlyPlaying": "Momenteel aan het afspelen",
+        "user": "Gebruiker",
+        "name": "Naam",
+        "id": "Id",
+        "metadata": {
+          "title": "Statistieken voor nerds",
+          "video": {
+            "title": "Video",
+            "resolution": "Resolutie"
+          },
+          "audio": {
+            "title": "Audio",
+            "channelCount": "Audio kanalen",
+            "codec": "Audio codec"
+          },
+          "transcoding": {
+            "title": "Transcodering",
+            "container": "Container",
+            "resolution": "Resolutie",
+            "target": "Doel codec"
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "Client downloaden",
+      "description": "Geeft je de mogelijkheid om downloads van torrent- en usenet-clients te bekijken en beheren.",
+      "option": {
+        "columns": {
+          "label": "Kolommen om te laten zien"
+        },
+        "enableRowSorting": {
+          "label": "Items sorteren inschakelen"
+        },
+        "defaultSort": {
+          "label": "Kolom die standaard wordt gebruikt voor sorteren"
+        },
+        "descendingDefaultSort": {
+          "label": "Sorteren omkeren"
+        },
+        "showCompletedUsenet": {
+          "label": "Usenet-items weergeven die zijn gemarkeerd als voltooid"
+        },
+        "showCompletedTorrent": {
+          "label": "Torrentvermeldingen weergeven die zijn gemarkeerd als voltooid"
+        },
+        "showCompletedHttp": {
+          "label": "Diverse items gemarkeerd als voltooid weergeven"
+        },
+        "activeTorrentThreshold": {
+          "label": "Voltooide torrent verbergen onder deze drempel (in kiB/s)"
+        },
+        "categoryFilter": {
+          "label": "Categorieën/labels om te filteren"
+        },
+        "filterIsWhitelist": {
+          "label": "Filteren als witte lijst"
+        },
+        "applyFilterToRatio": {
+          "label": "Gebruik filter om ratio te berekenen"
+        },
+        "limitPerIntegration": {
+          "label": "Beperk items per integratie",
+          "description": ""
+        }
+      },
+      "errors": {
+        "noColumns": "Kolommen selecteren in items",
+        "noCommunications": "Kan geen gegevens laden van integratie"
+      },
+      "items": {
+        "actions": {
+          "columnTitle": "Bedieningen"
+        },
+        "added": {
+          "columnTitle": "Toegevoegd",
+          "detailsTitle": "Datum toegevoegd"
+        },
+        "category": {
+          "columnTitle": "Extra’s",
+          "detailsTitle": "Categorieën (of extra informatie)"
+        },
+        "downSpeed": {
+          "columnTitle": "Omlaag",
+          "detailsTitle": "Downloadsnelheid"
+        },
+        "index": {
+          "columnTitle": "#",
+          "detailsTitle": "Huidige index binnen client"
+        },
+        "id": {
+          "columnTitle": "ID"
+        },
+        "integration": {
+          "columnTitle": "Integratie"
+        },
+        "name": {
+          "columnTitle": "Taaknaam"
+        },
+        "progress": {
+          "columnTitle": "Voortgang",
+          "detailsTitle": "Downloadvoortgang"
+        },
+        "ratio": {
+          "columnTitle": "Verhouding",
+          "detailsTitle": "Torrent ratio (ontvangen/verzonden)"
+        },
+        "received": {
+          "columnTitle": "Totaal down",
+          "detailsTitle": "Totaal gedownload"
+        },
+        "sent": {
+          "columnTitle": "Totaal up",
+          "detailsTitle": "Totaal geüpload"
+        },
+        "size": {
+          "columnTitle": "Bestandsgrootte",
+          "detailsTitle": "Totale grootte van selectie/bestanden"
+        },
+        "state": {
+          "columnTitle": "Status",
+          "detailsTitle": "Taakstatus"
+        },
+        "time": {
+          "columnTitle": "Eindtijd",
+          "detailsTitle": "Tijd sinds/tot voltooiing"
+        },
+        "type": {
+          "columnTitle": "Type",
+          "detailsTitle": "Client type downloaden"
+        },
+        "upSpeed": {
+          "columnTitle": "Omhoog",
+          "detailsTitle": "Uploadsnelheid"
+        }
+      },
+      "states": {
+        "downloading": "Downloaden",
+        "queued": "In wachtrij",
+        "paused": "Gepauzeerd",
+        "completed": "Voltooid",
+        "failed": "Mislukt",
+        "processing": "Verwerken",
+        "leeching": "Leeching",
+        "stalled": "Stilgevallen",
+        "unknown": "Onbekend",
+        "seeding": "Seeding"
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "Client lijst downloaden",
+          "pause": "Alle clients/items pauzeren",
+          "resume": "Alle clients/items hervatten"
+        },
+        "client": {
+          "pause": "Client pauzeren",
+          "resume": "Client hervatten"
+        },
+        "item": {
+          "pause": "Item pauzeren",
+          "resume": "Item hervatten",
+          "delete": {
+            "title": "Bestand verwijderen",
+            "modalTitle": "Weet je zeker dat je deze taak wilt verwijderen?",
+            "entry": "Item verwijderen",
+            "entryAndFiles": "Item en bestand(en) verwijderen"
+          }
+        }
+      },
+      "globalRatio": "Globale verhouding"
+    },
+    "mediaReleases": {
+      "name": "Media uitgaves",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "Lay-out",
+          "option": {
+            "backdrop": {
+              "label": "Achtergrond"
+            },
+            "poster": {
+              "label": "Poster"
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": "Beschrijving tooltip weergeven"
+        },
+        "showType": {
+          "label": "Mediatype badge weergeven"
+        },
+        "showSource": {
+          "label": "Bronintegratie weergeven"
+        }
+      },
+      "length": {
+        "duration": "{length}min."
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "Media-aanvragen lijst",
+      "description": "Bekijk een lijst met alle media-aanvragen van je Overseerr of Jellyseerr instantie",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "Links in nieuw tabblad openen"
+        }
+      },
+      "pending": {
+        "approve": "Aanvraag goedkeuren",
+        "approving": "Aanvraag goedkeuren…",
+        "decline": "Aanvraag weigeren"
+      },
+      "availability": {
+        "unknown": "Onbekend",
+        "pending": "In afwachting",
+        "processing": "Verwerken",
+        "requested": "Aangevraagd",
+        "partiallyAvailable": "Gedeeltelijk",
+        "available": "Beschikbaar",
+        "blacklisted": "Geblacklist",
+        "deleted": "Verwijderd"
+      },
+      "status": {
+        "pending": "In afwachting",
+        "approved": "Goedgekeurd",
+        "declined": "Afgewezen",
+        "failed": "Mislukt",
+        "completed": "Voltooid"
+      },
+      "toBeDetermined": "TBD"
+    },
+    "mediaRequests-requestStats": {
+      "name": "Media-aanvragen statistieken",
+      "description": "Statistieken over je media-aanvragen",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "Mediastatistieken",
+          "approved": "Reeds goedgekeurd",
+          "pending": "In afwachting van goedkeuring",
+          "processing": "Wordt verwerkt",
+          "declined": "Reeds geweigerd",
+          "available": "Reeds beschikbaar",
+          "tv": "TV aanvragen",
+          "movie": "Film aanvragen",
+          "total": "Totaal"
+        },
+        "users": {
+          "main": "Grootste gebruikers",
+          "requests": "Aanvragen"
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "Mediatranscodering",
+      "description": "Statistieken, huidige wachtrij en worker-status van je media transcodering",
+      "option": {
+        "defaultView": {
+          "label": "Standaardweergave"
+        },
+        "queuePageSize": {
+          "label": "Wachtrij paginagrootte"
+        }
+      },
+      "tab": {
+        "workers": "Workers",
+        "queue": "Wachtrij",
+        "statistics": "Statistieken"
+      },
+      "currentIndex": "{start}-{end} van {total}",
+      "healthCheck": {
+        "title": "Gezondheidscontrole",
+        "queued": "In wachtrij",
+        "status": {
+          "healthy": "Gezond",
+          "unhealthy": "Niet-gezond"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "Leeg",
+          "transcodes": "Transcodes",
+          "transcodesCount": "Transcodes: {value}",
+          "healthChecksCount": "Gezondheidscontroles: {value}",
+          "filesCount": "Bestanden: {value}",
+          "savedSpace": "Bespaarde ruimte: {value}",
+          "healthChecks": "Gezondheidscontroles",
+          "videoCodecs": "Codecs",
+          "videoContainers": "Containers",
+          "videoResolutions": "Resoluties"
+        },
+        "workers": {
+          "empty": "Leeg",
+          "table": {
+            "file": "Bestand",
+            "eta": "ETA",
+            "progress": "Voortgang",
+            "transcode": "Transcoderen",
+            "healthCheck": "Gezondheidscontrole"
+          }
+        },
+        "queue": {
+          "empty": "Leeg",
+          "table": {
+            "file": "Bestand",
+            "size": "Grootte",
+            "transcode": "Transcoderen",
+            "healthCheck": "Gezondheidscontrole"
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "RSS-feeds",
+      "description": "Eén of meer algemene RSS-, ATOM- of JSON-feeds monitoren en weergeven",
+      "option": {
+        "feedUrls": {
+          "label": "Feed URL's"
+        },
+        "enableRtl": {
+          "label": "RTL inschakelen"
+        },
+        "textLinesClamp": {
+          "label": "Beschrijving regel-clamp"
+        },
+        "maximumAmountPosts": {
+          "label": "Aantal berichtenlimiet"
+        },
+        "hideDescription": {
+          "label": "Beschrijving verbergen"
+        }
+      }
+    },
+    "releases": {
+      "name": "Uitgaves",
+      "description": "",
+      "option": {
+        "newReleaseWithin": {
+          "label": "Nieuwe uitgave binnen",
+          "description": ""
+        },
+        "staleReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "showOnlyHighlighted": {
+          "label": "Alleen gemarkeerde weergeven",
+          "description": "Alleen nieuwe of oude uitgaves weergeven. Zoals hierboven."
+        },
+        "showDetails": {
+          "label": "Details weergeven"
+        },
+        "showOnlyIcon": {
+          "label": "Alleen icoon weergeven"
+        },
+        "topReleases": {
+          "label": "Top uitgaven",
+          "description": ""
+        },
+        "repositories": {
+          "label": "Repositories",
+          "addRepository": {
+            "label": "Repository toevoegen"
+          },
+          "importRepositories": {
+            "label": "Importeren vanuit Docker",
+            "loading": "Docker images laden",
+            "noImagesFound": "Geen Docker images gevonden",
+            "listFoundImages": "Lijst van gevonden afbeeldingen",
+            "listAlreadyImportedImages": "Lijst van reeds geïmporteerde afbeeldingen",
+            "allImagesAlreadyImported": "Alle afbeeldingen al geïmporteerd",
+            "onlyAdminCanImport": "",
+            "selectAll": "Alles selecteren",
+            "deselectAll": "Alles deselecteren"
+          },
+          "provider": {
+            "label": "Aanbieder"
+          },
+          "identifier": {
+            "label": "Identificator",
+            "placeholder": "Naam of Eigenaar/naam"
+          },
+          "name": {
+            "label": "Naam"
+          },
+          "versionFilter": {
+            "label": "Versie filter",
+            "prefix": {
+              "label": "Voorvoegsel"
+            },
+            "precision": {
+              "label": "Precisie",
+              "options": {
+                "none": "Geen"
+              }
+            },
+            "suffix": {
+              "label": "Achtervoegsel"
+            },
+            "regex": {
+              "label": "Reguliere expressie"
+            }
+          },
+          "edit": {
+            "label": "Bewerken"
+          },
+          "editForm": {
+            "title": "Archief bewerken",
+            "cancel": {
+              "label": "Annuleren"
+            },
+            "confirm": {
+              "label": "Bevestigen"
+            }
+          },
+          "importForm": {
+            "title": "Importeren vanuit Docker"
+          },
+          "example": {
+            "label": "Voorbeeld"
+          },
+          "invalid": "",
+          "noProvider": {
+            "label": "Geen aanbieder",
+            "tooltip": ""
+          }
+        }
+      },
+      "not-found": "Niet gevonden",
+      "pre-release": "Pre-release",
+      "archived": "Gearchiveerd",
+      "forked": "Geforked",
+      "starsCount": "Sterren",
+      "forksCount": "Forks",
+      "issuesCount": "Openstaande issues",
+      "markViewed": "Markeren als bekeken",
+      "openProjectPage": "Projectpagina openen",
+      "openReleasePage": "Uitgavepagina openen",
+      "releaseDescription": "Uitgave beschrijving",
+      "projectDescription": "Project beschrijving",
+      "created": "Aangemaakt",
+      "error": {
+        "label": "Fout",
+        "messages": {
+          "invalidIdentifier": "Ongeldige identificator",
+          "noMatchingVersion": "Geen overeenkomende versie gevonden",
+          "noReleasesFound": "Geen uitgaves gevonden",
+          "noProviderSeleceted": "Geen aanbieder geselecteerd",
+          "noProviderResponse": "Geen reactie van aanbieder"
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": "{count} verbonden"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "Geen gegevens beschikbaar, alle integraties verbroken",
+        "unknownContentOption": "Onbekende inhoudsoptie voor netwerkcontroller samenvatting widget: "
+      },
+      "name": "Netwerkcontroller samenvatting",
+      "description": "Geeft de samenvatting weer van een netwerkcontroller (zoals UniFi Controller)"
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": "Bedraad"
+          },
+          "wifi": {
+            "name": "Wi-Fi"
+          }
+        },
+        "users": {
+          "label": "Gebruikers"
+        },
+        "guests": {
+          "label": "Gasten"
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": "Wi-Fi"
+            },
+            "wired": {
+              "label": "Bedraad"
+            }
+          },
+          "label": "Widget inhoud"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "Geen gegevens beschikbaar, alle integraties verbroken",
+        "unknownContentOption": "Onbekende inhoudsoptie voor netwerkstatus widget: "
+      },
+      "name": "Netwerkstatus",
+      "description": "Verbonden apparaten op een netwerk weergeven"
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": "Netwerkcontroller samenvatting ophalen mislukt"
+      }
+    },
+    "firewall": {
+      "name": "Firewall bewaking",
+      "description": "Een overzicht van firewalls weergeven",
+      "tab": {
+        "system": "Systeem",
+        "interfaces": "Interfaces"
+      },
+      "error": {
+        "internalServerError": "Kan geen gegevens van firewall krijgen"
+      },
+      "option": {
+        "interfaces": "Netwerkinterfaces om weer te geven"
+      },
+      "widget": {
+        "fwname": "Naam",
+        "version": "Versie",
+        "versiontitle": "Versies",
+        "cputitle": "CPU-gebruik",
+        "memorytitle": "Geheugen gebruik",
+        "cpu": "Processor",
+        "memory": "Geheugen",
+        "interfaces": {
+          "name": "naam",
+          "trans": "Uitgezonden",
+          "recv": "Ontvangen",
+          "title": "Netwerkinterfaces"
+        }
+      }
+    },
+    "notifications": {
+      "name": "Meldingen",
+      "description": "",
+      "noItems": "Geen meldingen om weer te geven.",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "Systeembronnen",
+      "description": "CPU, geheugen, schijf en ander hardwaregebruik van je systeem",
+      "option": {
+        "hasShadow": {
+          "label": "Grafiekschaduw inschakelen"
+        },
+        "visibleCharts": {
+          "label": "Zichtbare grafieken",
+          "description": "Selecteer de grafieken die je zichtbaar wilt maken.",
+          "option": {
+            "cpu": "Processor",
+            "memory": "Geheugen",
+            "network": "Netwerk"
+          }
+        },
+        "labelDisplayMode": {
+          "label": "Weergavemodus label",
+          "option": {
+            "textWithIcon": "Tekst met icoon weergeven",
+            "text": "Alleen tekst weergeven",
+            "icon": "Alleen icoon weergeven",
+            "hidden": "Label verbergen"
+          }
+        }
+      },
+      "card": {
+        "cpu": "CPU",
+        "memory": "MEM",
+        "network": "NET",
+        "up": "OMHOOG",
+        "down": "OMLAAG"
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "Bewerkingsmodus ingeschakeld",
+      "disabled": "Bewerkingsmodus uitgeschakeld"
+    },
+    "dimensions": {
+      "title": "Afmetingen wijzigen"
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "Bord dupliceren",
+        "message": "Dit zal het bord {name} dupliceren met al zijn inhoud. Als widgets refereren aan integraties, die je niet mag gebruiken, zullen ze worden verwijderd.",
+        "notification": {
+          "success": {
+            "title": "Bord gedupliceerd",
+            "message": "Het bord is succesvol gedupliceerd"
+          },
+          "error": {
+            "title": "Kan board niet dupliceren",
+            "message": "Het bord kon niet worden gedupliceerd"
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "Wijzigingen succesvol toegepast",
+            "message": "Het bord is succesvol opgeslagen"
+          },
+          "error": {
+            "title": "Kan wijzigingen niet toepassen",
+            "message": "Het bord kon niet worden opgeslagen"
+          }
+        },
+        "confirmLeave": {
+          "title": "Niet-opgeslagen wijzigingen",
+          "message": "Je hebt niet-opgeslagen wijzigingen, weet je zeker dat je weg wilt?"
+        }
+      },
+      "oldImport": {
+        "label": "Importeren uit Homarr vóór 1.0.0",
+        "notification": {
+          "success": {
+            "title": "Succesvol geimporteerd",
+            "message": "Het bord is succesvol geïmporteerd"
+          },
+          "error": {
+            "title": "Importeren mislukt",
+            "message": "Het bord kon niet worden geïmporteerd, controleer de logs voor meer informatie"
+          }
+        },
+        "form": {
+          "file": {
+            "label": "JSON-bestand selecteren",
+            "invalidError": "Ongeldig configuratiebestand"
+          },
+          "apps": {
+            "label": "Apps",
+            "avoidDuplicates": {
+              "label": "Duplicaten vermijden",
+              "description": "Negeert apps waar al een app met dezelfde href bestaat"
+            },
+            "onlyImportApps": {
+              "label": "Alleen apps importeren",
+              "description": "Voegt alleen de apps toe, het bord moet handmatig opnieuw worden aangemaakt"
+            }
+          },
+          "name": {
+            "label": "Bord naam"
+          },
+          "screenSize": {
+            "label": "Schermgrootte",
+            "description": "In versies vóór 1.0 bestonden drie verschillende modi, zodat je het aantal kolommen voor elke schermgrootte kon kiezen.",
+            "option": {
+              "sm": "Klein",
+              "md": "Gemiddeld",
+              "lg": "Groot"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "Zijbalk-gedrag",
+            "description": "Zijbalken zijn verwijderd in 1.0, je kunt kiezen wat er moet gebeuren met de items erin.",
+            "option": {
+              "lastSection": {
+                "label": "Laatste sectie",
+                "description": "De zijbalk wordt onder de laatste sectie weergegeven"
+              },
+              "removeItems": {
+                "label": "Items verwijderen",
+                "description": "Items in de zijbalk worden verwijderd"
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "App onmiddellijk maken",
+          "createAndUse": "Aanmaken en gebruiken"
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": "Paginatitel"
+      },
+      "metaTitle": {
+        "label": "Meta titel"
+      },
+      "logoImageUrl": {
+        "label": "Logo afbeeldings-URL"
+      },
+      "faviconImageUrl": {
+        "label": "Favicon afbeeldings-URL"
+      },
+      "backgroundImageUrl": {
+        "label": "Achtergrondafbeelding URL",
+        "placeholder": "Begin met typen om lokale afbeeldingen te zoeken",
+        "group": {
+          "your": "Jouw afbeeldingen",
+          "other": "Andere afbeeldingen"
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "Achtergrondafbeelding bijlage",
+        "option": {
+          "fixed": {
+            "label": "Vastgezet",
+            "description": "Achtergrond blijft op dezelfde positie."
+          },
+          "scroll": {
+            "label": "Scrollen",
+            "description": "Achtergrond scrolt met je muis."
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "Achtergrondafbeelding herhalen",
+        "option": {
+          "repeat": {
+            "label": "Herhalen",
+            "description": "De afbeelding wordt zoveel herhaald als nodig is om het hele achtergrondafbeelding gebied te bedekken."
+          },
+          "no-repeat": {
+            "label": "Niet herhalen",
+            "description": "De afbeelding wordt niet herhaald en vult mogelijk niet de hele ruimte."
+          },
+          "repeat-x": {
+            "label": "X herhalen",
+            "description": "Hetzelfde als ‘herhaal', maar alleen op de horizontale as."
+          },
+          "repeat-y": {
+            "label": "Y herhalen",
+            "description": "Hetzelfde als ‘herhaal', maar alleen op de verticale as."
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "Achtergrondafbeelding grootte",
+        "option": {
+          "cover": {
+            "label": "Bedekken",
+            "description": "Schaalt de afbeelding zo klein mogelijk om het hele venster te bedekken door overtollige ruimte bij te snijden."
+          },
+          "contain": {
+            "label": "Insluiten",
+            "description": "Schaalt de afbeelding zo groot mogelijk binnen de container zonder de afbeelding bij te snijden of uit te rekken."
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "Primaire kleur"
+      },
+      "secondaryColor": {
+        "label": "Secundaire kleur"
+      },
+      "opacity": {
+        "label": "Dekking"
+      },
+      "iconColor": {
+        "label": "Icoon kleur"
+      },
+      "clearColor": {
+        "label": "Kleur wissen"
+      },
+      "customCss": {
+        "label": "Aangepaste CSS voor dit bord",
+        "description": "Pas je dashboard verder aan met behulp van CSS, alleen aanbevolen voor ervaren gebruikers",
+        "customClassesAlert": {
+          "title": "Aangepaste classes",
+          "description": "Je kunt aangepaste classes toevoegen aan je borditems in de geavanceerde opties van elk item en ze gebruiken in de aangepaste CSS hierboven."
+        }
+      },
+      "disableStatus": {
+        "label": "App-status uitschakelen",
+        "description": "Schakelt de statuscontrole uit voor alle apps op dit bord"
+      },
+      "columnCount": {
+        "label": "Kolom aantal"
+      },
+      "itemRadius": {
+        "label": "Item radius",
+        "description": "Verandert de rondheid van tegels op je bord",
+        "option": {
+          "xs": "Zeer klein",
+          "sm": "Klein",
+          "md": "Gemiddeld",
+          "lg": "Groot",
+          "xl": "Zeer groot"
+        }
+      },
+      "name": {
+        "label": "Naam"
+      },
+      "isPublic": {
+        "label": "Openbaar",
+        "description": "Openbare borden zijn voor iedereen toegankelijk, zelfs zonder account."
+      }
+    },
+    "content": {
+      "metaTitle": "{boardName} bord"
+    },
+    "setting": {
+      "title": "Instellingen voor {boardName} bord",
+      "section": {
+        "general": {
+          "title": "Algemeen",
+          "unrecognizedLink": "De opgegeven link wordt niet herkend en geeft geen voorbeeld, maar werkt misschien nog wel."
+        },
+        "layout": {
+          "title": "Lay-out",
+          "responsive": {
+            "title": "Responsive lay-outs",
+            "action": {
+              "add": "Lay-out toevoegen"
+            }
+          }
+        },
+        "background": {
+          "title": "Achtergrond"
+        },
+        "appearance": {
+          "title": "Weergave"
+        },
+        "customCss": {
+          "title": "Aangepaste CSS"
+        },
+        "behavior": {
+          "title": "Gedrag"
+        },
+        "access": {
+          "title": "Toegangsbeheer",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "Bord bekijken"
+              },
+              "modify": {
+                "label": "Bord aanpassen"
+              },
+              "full": {
+                "label": "Volledige toegang"
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "Gevarenzone",
+          "action": {
+            "rename": {
+              "label": "Bord hernoemen",
+              "description": "Als je de naam verandert, worden alle links naar dit bord verbroken.",
+              "button": "Naam wijzigen",
+              "modal": {
+                "title": "Bord hernoemen"
+              }
+            },
+            "visibility": {
+              "label": "Bord-zichtbaarheid wijzigen",
+              "description": {
+                "public": "Dit bord is momenteel openbaar.",
+                "private": "Dit bord is momenteel privé."
+              },
+              "button": {
+                "public": "Privé maken",
+                "private": "Openbaar maken"
+              },
+              "confirm": {
+                "public": {
+                  "title": "Bord privé maken",
+                  "description": "Weet je zeker dat je dit bord privé wilt maken? Dit verbergt het bord voor het publiek. Links voor gastgebruikers worden verbroken."
+                },
+                "private": {
+                  "title": "Bord openbaar maken",
+                  "description": "Weet je zeker dat je dit bord openbaar wilt maken? Dit maakt het bord toegankelijk voor iedereen."
+                }
+              }
+            },
+            "delete": {
+              "label": "Dit bord verwijderen",
+              "description": "Als je eenmaal een bord hebt verwijderd, kun je niet meer terug. Wees er zeker van.",
+              "button": "Dit bord verwijderen",
+              "confirm": {
+                "title": "Bord verwijderen",
+                "description": "Weet je zeker dat je dit bord wilt verwijderen? Hiermee verwijder je het bord en alle inhoud definitief."
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "Welkom bij Homarr",
+        "description": "Een strak, modern dashboard waarmee je al je apps en diensten binnen handbereik hebt.",
+        "link": "Je eerste bord aanmaken",
+        "notice": "Om deze pagina te laten verdwijnen, maak je een bord aan en stel je het in als home-bord"
+      },
+      "notFound": {
+        "title": "Bord niet gevonden",
+        "description": "Het opgegeven bord is niet gevonden of je hebt er geen toegang toe.",
+        "link": "Alle borden bekijken",
+        "notice": "Controleer de link of neem contact op met een beheerder als je denkt dat deze toegankelijk moet zijn"
+      },
+      "homeBoard": {
+        "title": "Geen home-bord",
+        "admin": {
+          "description": "Je hebt nog geen home-bord ingesteld voor de server.",
+          "link": "Serverwijd home-bord configureren",
+          "notice": "Om deze pagina voor alle gebruikers te laten verdwijnen, stel je een home-bord in voor de server"
+        },
+        "user": {
+          "description": "Je hebt nog geen home-bord ingesteld.",
+          "link": "Je home-bord configureren",
+          "notice": "Om deze pagina te laten verdwijnen, geef je het home-bord op in je voorkeuren"
+        },
+        "anonymous": {
+          "description": "De serverbeheerder heeft nog geen home-bord ingesteld.",
+          "link": "Openbare borden bekijken",
+          "notice": "Om deze pagina te laten verdwijnen, vraag je de serverbeheerder om een home-bord in te stellen voor de server"
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": "Naam"
+      },
+      "columnCount": {
+        "label": "Kolom aantal"
+      },
+      "breakpoint": {
+        "label": "Breakpoint",
+        "description": "Lay-out wordt gebruikt op alle schermen die groter zijn dan deze breakpoint tot de volgende grotere breakpoint."
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "Beheer",
+    "title": {
+      "morning": "Goedemorgen, {username}",
+      "afternoon": "Goedemiddag, {username}",
+      "evening": "Goedenavond, {username}"
+    },
+    "notFound": {
+      "title": "Niet gevonden",
+      "text": "Kon de aangevraagde bron niet vinden"
+    },
+    "navbar": {
+      "items": {
+        "home": "Home",
+        "boards": "Borden",
+        "apps": "Apps",
+        "integrations": "Integraties",
+        "searchEngies": "Zoekmachines",
+        "medias": "Media",
+        "users": {
+          "label": "Gebruikers",
+          "items": {
+            "manage": "Beheren",
+            "invites": "Uitnodigingen",
+            "groups": "Groepen"
+          }
+        },
+        "tools": {
+          "label": "Gereedschappen",
+          "items": {
+            "docker": "Docker",
+            "kubernetes": "Kubernetes",
+            "logs": "Logs",
+            "api": "API",
+            "certificates": "Certificaten",
+            "tasks": "Taken"
+          }
+        },
+        "settings": "Instellingen",
+        "help": {
+          "label": "Help",
+          "items": {
+            "documentation": "Documentatie",
+            "submitIssue": "Een probleem melden",
+            "discord": "Community Discord",
+            "sourceCode": "Broncode"
+          }
+        },
+        "about": "Over"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "Borden",
+          "user": "Gebruikers",
+          "invite": "Uitnodigingen",
+          "integration": "Integraties",
+          "app": "Apps",
+          "group": "Groepen",
+          "searchEngine": "Zoekmachines",
+          "media": "Media"
+        },
+        "statisticLabel": {
+          "boards": "Borden",
+          "resources": "Bronnen",
+          "authentication": "Authenticatie",
+          "authorization": "Authorisatie"
+        },
+        "heroBanner": {
+          "title": "Welkom terug bij je",
+          "subtitle": "{app} bord"
+        }
+      },
+      "board": {
+        "title": "Jouw borden",
+        "action": {
+          "new": {
+            "label": "Nieuw bord"
+          },
+          "open": {
+            "label": "Bord openen"
+          },
+          "settings": {
+            "label": "Instellingen"
+          },
+          "setHomeBoard": {
+            "label": "Instellen als je home-bord",
+            "badge": {
+              "label": "Home",
+              "tooltip": "Dit bord wordt weergegeven als je home-bord"
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "Instellen als je mobiele bord",
+            "badge": {
+              "label": "Mobiel",
+              "tooltip": "Dit bord zal getoond worden als je mobiele bord"
+            }
+          },
+          "duplicate": {
+            "label": "Bord dupliceren"
+          },
+          "delete": {
+            "label": "Permanent verwijderen",
+            "confirm": {
+              "title": "Bord verwijderen",
+              "description": "Weet je zeker dat je het {name} bord wilt verwijderen?"
+            }
+          }
+        },
+        "visibility": {
+          "public": "Dit bord is openbaar",
+          "private": "Dit bord is privé"
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "Naam"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": "Media opnemen van alle gebruikers"
+      },
+      "user": {
+        "back": "Terug naar gebruikers",
+        "fieldsDisabledExternalProvider": "Bepaalde velden zijn uitgeschakeld omdat ze worden beheerd door een externe authenticatieprovider.",
+        "setting": {
+          "general": {
+            "title": "Algemeen",
+            "item": {
+              "language": "Taal & regio",
+              "board": {
+                "title": "Home bord",
+                "type": {
+                  "general": "Algemeen",
+                  "mobile": "Mobiel"
+                }
+              },
+              "search": "Zoeken",
+              "firstDayOfWeek": "Eerste dag van de week",
+              "accessibility": "Toegankelijkheid"
+            }
+          },
+          "security": {
+            "title": "Beveiliging"
+          },
+          "board": {
+            "title": "Borden"
+          }
+        },
+        "list": {
+          "metaTitle": "Gebruikers beheren",
+          "title": "Gebruikers"
+        },
+        "edit": {
+          "metaTitle": "Gebruiker {username} bewerken"
+        },
+        "create": {
+          "metaTitle": "Gebruiker aanmaken",
+          "title": "Nieuwe gebruiker aanmaken",
+          "step": {
+            "personalInformation": {
+              "label": "Persoonlijke gegevens"
+            },
+            "security": {
+              "label": "Beveiliging"
+            },
+            "groups": {
+              "label": "Groepen",
+              "title": "Selecteer alle groepen waar gebruikers lid van moeten zijn",
+              "description": "De groep {everyoneGroup} wordt aan alle gebruikers toegewezen en kan niet worden verwijderd."
+            },
+            "review": {
+              "label": "Beoordelen"
+            },
+            "completed": {
+              "title": "Gebruiker aangemaakt"
+            },
+            "error": {
+              "title": "Gebruiker aanmaken mislukt"
+            }
+          },
+          "action": {
+            "createAnother": "Andere gebruiker aanmaken",
+            "back": "Terug naar de gebruikerslijst"
+          }
+        },
+        "invite": {
+          "title": "Gebruikersuitnodigingen beheren",
+          "action": {
+            "new": {
+              "title": "Nieuwe uitnodiging",
+              "description": "Na de vervaldatum is een uitnodiging niet langer geldig en kan de ontvanger van de uitnodiging geen account meer aanmaken."
+            },
+            "copy": {
+              "title": "Uitnodiging kopiëren",
+              "description": "Je uitnodiging is gegenereerd. Na het sluiten van dit venster <b>kun je deze link niet meer kopiëren.</b> Als je deze persoon niet langer wilt uitnodigen, kun je deze uitnodiging op elk moment verwijderen.",
+              "link": "Uitnodigingslink",
+              "button": "Kopiëren en sluiten"
+            },
+            "delete": {
+              "title": "Uitnodiging verwijderen",
+              "description": "Weet je zeker dat je deze uitnodiging wilt verwijderen? Gebruikers met deze link kunnen niet langer een account aanmaken met deze link."
+            }
+          },
+          "field": {
+            "id": {
+              "label": "ID"
+            },
+            "creator": {
+              "label": "Maker"
+            },
+            "expirationDate": {
+              "label": "Vervaldatum"
+            },
+            "token": {
+              "label": "Penning"
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "Terug naar groepen",
+        "setting": {
+          "general": {
+            "title": "Algemeen",
+            "owner": "Eigenaar",
+            "ownerOfGroup": "Eigenaar van deze groep",
+            "ownerOfGroupDeleted": "De eigenaar van deze groep is verwijderd. Het heeft momenteel geen eigenaar."
+          },
+          "setting": {
+            "title": "Instellingen",
+            "alert": "Groepsinstellingen krijgen voorrang op basis van de volgorde van de groepen in de lijst. De bovenste instellingen overschrijven de onderste.",
+            "board": {
+              "title": "Borden"
+            }
+          },
+          "members": {
+            "title": "Leden",
+            "search": "Vind een lid",
+            "notFound": "Geen leden gevonden"
+          },
+          "permissions": {
+            "title": "Machtigingen",
+            "form": {
+              "unsavedChanges": "Er zijn niet-opgeslagen wijzigingen!"
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Instellingen",
+        "notification": {
+          "success": {
+            "message": "Instellingen opgeslagen"
+          },
+          "error": {
+            "message": "Instellingen opslaan mislukt"
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "Analytics",
+            "general": {
+              "title": "Anonieme analyses sturen",
+              "text": "Homarr verstuurt geanonimiseerde analyses met behulp van de open source software Umami. Het verzamelt nooit persoonlijke informatie en is daarom volledig GDPR & CCPA compliant. We moedigen je aan om analytics in te schakelen omdat het ons open source team helpt bij het identificeren van problemen en het prioriteren van onze backlog."
+            },
+            "widgetData": {
+              "title": "Widgetgegevens",
+              "text": "Stuur welke widgets (en hun aantal) je hebt geconfigureerd. Bevat geen URL's, namen of andere gegevens."
+            },
+            "integrationData": {
+              "title": "Integratiegegevens",
+              "text": "Stuur welke integraties (en het aantal) je hebt geconfigureerd. Bevat geen URL's, namen of andere gegevens."
+            },
+            "usersData": {
+              "title": "Gebruikersgegevens",
+              "text": "Stuur het aantal gebruikers en of je SSO hebt geactiveerd"
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "Crawlen en indexeren",
+            "warning": "Het in- of uitschakelen van instellingen hier heeft grote invloed op hoe zoekmachines je pagina zullen indexeren en crawlen. Elke instelling is een aanvraag en het is aan de crawler om deze instellingen toe te passen. Het kan meerdere dagen of weken duren voordat elke wijziging is toegepast. Sommige instellingen kunnen zoekmachinespecifiek zijn.",
+            "noIndex": {
+              "title": "Geen index",
+              "text": "De website niet indexeren in zoekmachines en niet weergeven in zoekresultaten"
+            },
+            "noFollow": {
+              "title": "Niet volgen",
+              "text": "Geen enkele links volgen tijdens het indexeren. Als je dit uitschakelt, zullen crawlers proberen alle links op Homarr te volgen."
+            },
+            "noTranslate": {
+              "title": "Geen vertaling",
+              "text": "Als de taal van de site waarschijnlijk niet de taal is die de gebruiker wil lezen, zal Google een vertaallink tonen in de zoekresultaten"
+            },
+            "noSiteLinksSearchBox": {
+              "title": "Geen sitelinks zoekvak",
+              "text": "Google bouwt een zoekvak met de gecrawlde links samen met andere directe links. Als je dit inschakelt, vraagt Google om dat vak uit te schakelen."
+            }
+          },
+          "board": {
+            "title": "Borden",
+            "homeBoard": {
+              "label": "Globaal home-bord",
+              "mobileLabel": "Globaal mobiel bord",
+              "description": "Alleen openbare borden zijn beschikbaar voor selectie"
+            },
+            "status": {
+              "title": "App status",
+              "enableStatusByDefault": {
+                "label": "Status standaard inschakelen",
+                "description": "Bij het toevoegen van een app-item wordt de status standaard ingeschakeld"
+              },
+              "forceDisableStatus": {
+                "label": "Status geforceerd uitschakelen",
+                "description": "Status voor apps wordt uitgeschakeld voor alle gebruikers en kan niet worden ingeschakeld"
+              }
+            }
+          },
+          "search": {
+            "title": "Zoeken",
+            "defaultSearchEngine": {
+              "label": "Globale standaard zoekmachine",
+              "description": "Integratie zoekmachines kunnen hier niet geselecteerd worden"
+            }
+          },
+          "appearance": {
+            "title": "Weergave",
+            "defaultColorScheme": {
+              "label": "Standaard kleurenschema",
+              "options": {
+                "light": "Licht",
+                "dark": "Donker"
+              }
+            }
+          },
+          "culture": {
+            "title": "Cultuur",
+            "defaultLocale": {
+              "label": "Standaard taal"
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "Taken",
+          "status": {
+            "idle": "Niet actief",
+            "running": "Actief",
+            "error": "Fout",
+            "disabled": "Uitgeschakeld"
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": "Minecraft server status"
+            },
+            "iconsUpdater": {
+              "label": "Icoon updater"
+            },
+            "analytics": {
+              "label": "Analytics"
+            },
+            "smartHomeEntityState": {
+              "label": "Smart home entiteitstatus"
+            },
+            "ping": {
+              "label": "Pings"
+            },
+            "mediaServer": {
+              "label": "Mediaserver"
+            },
+            "mediaOrganizer": {
+              "label": "Media organisatoren"
+            },
+            "downloads": {
+              "label": "Downloads"
+            },
+            "mediaRequestStats": {
+              "label": "Media-aanvraag statistieken"
+            },
+            "mediaRequestList": {
+              "label": "Media-aanvraag lijst"
+            },
+            "rssFeeds": {
+              "label": "RSS-feeds"
+            },
+            "indexerManager": {
+              "label": "Indexeringsbeheerder"
+            },
+            "healthMonitoring": {
+              "label": "Gezondheidsmonitoring"
+            },
+            "dnsHole": {
+              "label": "DNS-hole gegevens"
+            },
+            "updateChecker": {
+              "label": "Update checker"
+            },
+            "mediaTranscoding": {
+              "label": "Mediatranscodering"
+            },
+            "networkController": {
+              "label": "Netwerkcontroller"
+            },
+            "refreshNotifications": {
+              "label": "Melding updater"
+            },
+            "dockerContainers": {
+              "label": "Docker containers"
+            },
+            "firewallCpu": {
+              "label": "Firewall CPU"
+            },
+            "firewallMemory": {
+              "label": "Firewall geheugen"
+            },
+            "firewallVersion": {
+              "label": "Firewall versie"
+            },
+            "firewallInterfaces": {
+              "label": "Firewall interfaces"
+            },
+            "weather": {
+              "label": "Weer"
+            }
+          },
+          "interval": {
+            "seconds": "Elke {interval, plural, one {}=1 {seconde} other {# seconden}}",
+            "minutes": "Elke {interval, plural, one {}=1 {minuut} other {# minuten}}",
+            "hours": "Elk {interval, plural, one {}=1 {uur} other {# uren}}",
+            "midnight": "Elke dag om middernacht",
+            "weeklyMonday": "Elke week op maandag",
+            "update": {
+              "success": {
+                "message": "Interval succesvol bijgewerkt"
+              },
+              "error": {
+                "message": "Kon interval niet bijwerken"
+              }
+            }
+          },
+          "settings": {
+            "title": "Taakinstellingen voor {jobName}"
+          },
+          "field": {
+            "name": {
+              "label": "Naam"
+            },
+            "interval": {
+              "label": "Interval plannen"
+            },
+            "lastExecution": {
+              "label": "Laatste uitvoering"
+            },
+            "actions": {
+              "label": "Acties"
+            }
+          },
+          "table": {
+            "search": "{count} taken zoeken…"
+          },
+          "action": {
+            "refresh": {
+              "label": "Vernieuwen"
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": "Taken succesvol vernieuwd"
+            },
+            "error": {
+              "message": "Kon taak niet vernieuwen"
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": "Taak succesvol geactiveerd"
+            },
+            "error": {
+              "message": "Kon taak niet activeren"
+            }
+          },
+          "enable": {
+            "success": {
+              "message": "Taak succesvol ingeschakeld"
+            }
+          },
+          "disable": {
+            "success": {
+              "message": "Taak succesvol uitgeschakeld"
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": "Kon taakstatus niet togglen"
+            }
+          }
+        },
+        "api": {
+          "title": "API",
+          "modal": {
+            "createApiToken": {
+              "title": "API-token aangemaakt",
+              "description": "API-token is aangemaakt. Wees voorzichtig, dit token is versleuteld in de database en zal nooit meer aan jou worden overgedragen. Als je dit token verliest, kun je dit specifieke token niet meer opvragen.",
+              "button": "Kopiëren en sluiten"
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "Documentatie"
+            },
+            "apiKey": {
+              "label": "Authenticatie",
+              "title": "API-sleutels",
+              "button": {
+                "createApiToken": "API-token aanmaken"
+              },
+              "modal": {
+                "delete": {
+                  "title": "API-token verwijderen",
+                  "text": "Hierdoor wordt het API-token permanent verwijderd. API-clients die dit token gebruiken, kunnen zich niet langer authenticeren en API-verzoeken uitvoeren. Deze actie kan niet ongedaan worden gemaakt."
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "ID",
+                  "createdBy": "Aangemaakt door",
+                  "actions": "Acties"
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "Versie {version}",
+        "text": "Homarr is een open source project dat wordt onderhouden door vrijwilligers. Dankzij deze mensen is Homarr sinds 2021 een groeiend project. Ons team werkt volledig op afstand vanuit veel verschillende landen aan Homarr in hun vrije tijd zonder compensatie.",
+        "accordion": {
+          "contributors": {
+            "title": "Bijdragers",
+            "subtitle": "{count} onderhouden code & Homarr"
+          },
+          "translators": {
+            "title": "Vertalers",
+            "subtitle": "{count} bijdragen aan vertalingen in vele talen"
+          },
+          "libraries": {
+            "title": "Bibliotheken",
+            "subtitle": "{count} gebruikt in de code van Homarr"
+          },
+          "hotkeys": {
+            "title": "Sneltoetsen",
+            "subtitle": "Sneltoetsen om je workflow te verbeteren",
+            "field": {
+              "shortcut": "Snelkoppeling",
+              "action": "Actie"
+            },
+            "action": {
+              "toggleBoardEdit": "Bord berwerkingsmodus togglen",
+              "toggleColorScheme": "Lichte/donkere modus togglen",
+              "saveNotebook": "Notitieblok opslaan (alleen in widget notitieblok)",
+              "openSpotlight": "Zoeken openen"
+            },
+            "note": "Tip: Mod verwijst naar zowel de Ctrl-toets als de ⌘ toets op macOS"
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "Containers",
+    "table": {
+      "updated": "{when} bijgewerkt",
+      "search": "{count} containers zoeken",
+      "selected": "{selectCount} van {totalCount} containers geselecteerd",
+      "footer": "Totaal {count} containers"
+    },
+    "field": {
+      "name": {
+        "label": "Naam"
+      },
+      "state": {
+        "label": "Status",
+        "option": {
+          "created": "Aangemaakt",
+          "running": "Actief",
+          "paused": "Gepauzeerd",
+          "restarting": "Herstarten",
+          "exited": "Beëindigd",
+          "removing": "Verwijderen",
+          "dead": "Dood"
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": "Processor"
+        },
+        "memory": {
+          "label": "Geheugen"
+        }
+      },
+      "containerImage": {
+        "label": "Image"
+      },
+      "ports": {
+        "label": "Poorten"
+      }
+    },
+    "action": {
+      "title": "Acties",
+      "start": {
+        "label": "Starten",
+        "notification": {
+          "success": {
+            "title": "Containers gestart",
+            "message": "De containers werden succesvol gestart"
+          },
+          "error": {
+            "title": "Containers niet gestart",
+            "message": "De containers konden niet worden gestart"
+          }
+        }
+      },
+      "stop": {
+        "label": "Stoppen",
+        "notification": {
+          "success": {
+            "title": "Containers gestopt",
+            "message": "De containers werden succesvol gestopt"
+          },
+          "error": {
+            "title": "Containers niet gestopt",
+            "message": "De containers konden niet worden gestopt"
+          }
+        }
+      },
+      "restart": {
+        "label": "Herstarten",
+        "notification": {
+          "success": {
+            "title": "Containers herstart",
+            "message": "De containers werden succesvol herstart"
+          },
+          "error": {
+            "title": "Containers niet opnieuw opgestart",
+            "message": "De containers konden niet worden herstart"
+          }
+        }
+      },
+      "remove": {
+        "label": "Verwijderen",
+        "notification": {
+          "success": {
+            "title": "Containers verwijderd",
+            "message": "De containers werden succesvol verwijderd"
+          },
+          "error": {
+            "title": "Containers niet verwijderd",
+            "message": "De containers konden niet worden verwijderd"
+          }
+        }
+      },
+      "refresh": {
+        "label": "Verversen",
+        "notification": {
+          "success": {
+            "title": "Containers ververst",
+            "message": "Je bekijkt nu de meest recente gegevens"
+          },
+          "error": {
+            "title": "Containers worden niet ververst",
+            "message": "Er is iets misgegaan tijdens het verversen van de containers"
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "Toevoegen aan Homarr",
+        "notification": {
+          "success": {
+            "title": "Toegevoegd aan Homarr",
+            "message": "Geselecteerde apps zijn toegevoegd aan Homarr"
+          },
+          "error": {
+            "title": "Kon niet toevoegen aan Homarr",
+            "message": "Geselecteerde apps konden niet worden toegevoegd aan Homarr"
+          }
+        },
+        "modal": {
+          "title": "Docker container('s) toevoegen aan Homarr"
+        }
+      }
+    },
+    "error": {
+      "internalServerError": "Docker-containers zijn niet opgehaald"
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "Cluster dashboard",
+      "label": "Cluster",
+      "providers": "Aanbieders",
+      "version": "Versie",
+      "architecture": "Architectuur",
+      "capacity": {
+        "title": "Capaciteit",
+        "resource": {
+          "reserved": "Gereserveerd",
+          "used": "Gebruikt"
+        }
+      },
+      "resources": {
+        "title": "Bronnen",
+        "nodes": "Nodes",
+        "namespaces": "Namespaces",
+        "ingresses": "Ingresses",
+        "services": "Diensten",
+        "pods": "Pods",
+        "configmaps": "ConfigMaps",
+        "secrets": "Geheimen",
+        "volumes": "Volumes"
+      }
+    },
+    "nodes": {
+      "label": "Nodes",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "state": {
+          "label": "Status",
+          "option": {
+            "ready": "Gereed",
+            "NotReady": "Niet gereed"
+          }
+        },
+        "cpu": {
+          "label": "CPU"
+        },
+        "memory": {
+          "label": "RAM"
+        },
+        "pods": {
+          "label": "Pods"
+        },
+        "operatingSystem": {
+          "label": "OS"
+        },
+        "architecture": {
+          "label": "Architectuur"
+        },
+        "kubernetesVersion": {
+          "label": "Kubernetes versie"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} nodes zoeken"
+      }
+    },
+    "namespaces": {
+      "label": "Namespaces",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "state": {
+          "label": "Status",
+          "option": {
+            "active": "Actief",
+            "terminating": "Beëindigen"
+          }
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} namespaces zoeken"
+      }
+    },
+    "ingresses": {
+      "label": "Ingresses",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "Namespace"
+        },
+        "className": {
+          "label": "Class naam"
+        },
+        "rulesAndPaths": {
+          "label": "Regels & paden"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} ingresses zoeken"
+      }
+    },
+    "services": {
+      "label": "Diensten",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "Namespace"
+        },
+        "type": {
+          "label": "Type"
+        },
+        "ports": {
+          "label": "Poorten"
+        },
+        "targetPorts": {
+          "label": "Doel poorten"
+        },
+        "clusterIP": {
+          "label": "Cluster IP"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} diensten zoeken"
+      }
+    },
+    "pods": {
+      "label": "Pods",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "Namespace"
+        },
+        "image": {
+          "label": "Afbeelding"
+        },
+        "applicationType": {
+          "label": "Applicatietype"
+        },
+        "status": {
+          "label": "Status"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} pods zoeken"
+      }
+    },
+    "secrets": {
+      "label": "Geheimen",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "namespace"
+        },
+        "type": {
+          "label": "type"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} geheimen zoeken"
+      }
+    },
+    "configmaps": {
+      "label": "ConfigMaps",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "namespace"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} configMaps zoeken"
+      }
+    },
+    "volumes": {
+      "label": "Volumes",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "namespace": {
+          "label": "Namespace"
+        },
+        "accessModes": {
+          "label": "Toegangsmodi"
+        },
+        "storage": {
+          "label": "Opslag"
+        },
+        "storageClassName": {
+          "label": "Opslag class naam"
+        },
+        "volumeMode": {
+          "label": "Volume modus"
+        },
+        "volumeName": {
+          "label": "Volume naam"
+        },
+        "status": {
+          "label": "Status"
+        },
+        "creationTimestamp": {
+          "label": "Aangemaakt"
+        }
+      },
+      "table": {
+        "search": "{count} volumes zoeken"
+      }
+    },
+    "error": {
+      "internalServerError": "Kubernetes gegevens ophalen mislukt"
+    }
+  },
+  "permission": {
+    "title": "Machtigingen",
+    "userSelect": {
+      "title": "Gebruikersmachtiging toevoegen"
+    },
+    "groupSelect": {
+      "title": "Groepsmachtiging toevoegen"
+    },
+    "tab": {
+      "user": "Gebruikers",
+      "group": "Groepen",
+      "inherited": "Geërfde groepen"
+    },
+    "field": {
+      "user": {
+        "label": "Gebruiker"
+      },
+      "group": {
+        "label": "Groep"
+      },
+      "permission": {
+        "label": "Machtiging"
+      }
+    },
+    "action": {
+      "saveUser": "Gebruikersmachtiging opslaan",
+      "saveGroup": "Groepsmachtiging opslaan"
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "Beheren",
+      "boards": {
+        "label": "Borden"
+      },
+      "integrations": {
+        "label": "Integraties",
+        "edit": {
+          "label": "Bewerken"
+        },
+        "new": {
+          "label": "Nieuw"
+        }
+      },
+      "search-engines": {
+        "label": "Zoekmachines",
+        "new": {
+          "label": "Nieuw"
+        },
+        "edit": {
+          "label": "Bewerken"
+        }
+      },
+      "medias": {
+        "label": "Media"
+      },
+      "apps": {
+        "label": "Apps",
+        "new": {
+          "label": "Nieuw"
+        },
+        "edit": {
+          "label": "Bewerken"
+        }
+      },
+      "users": {
+        "label": "Gebruikers",
+        "create": {
+          "label": "Aanmaken"
+        },
+        "general": "Algemeen",
+        "security": "Beveiliging",
+        "board": "Borden",
+        "groups": {
+          "label": "Groepen"
+        },
+        "invites": {
+          "label": "Uitnodigingen"
+        }
+      },
+      "tools": {
+        "label": "Gereedschappen",
+        "tasks": {
+          "label": "Taken"
+        },
+        "docker": {
+          "label": "Docker"
+        },
+        "kubernetes": {
+          "label": "Kubernetes",
+          "nodes": {
+            "label": "Nodes"
+          },
+          "namespaces": {
+            "label": "Namespaces"
+          },
+          "ingresses": {
+            "label": "Ingresses"
+          },
+          "services": {
+            "label": "Diensten"
+          },
+          "pods": {
+            "label": "pods"
+          },
+          "configmaps": {
+            "label": "ConfigMaps"
+          },
+          "secrets": {
+            "label": "Geheimen"
+          },
+          "volumes": {
+            "label": "Volumes"
+          }
+        },
+        "logs": {
+          "label": "Logs"
+        },
+        "certificates": {
+          "label": "Certificaten",
+          "hostnames": {
+            "label": "Hostnamen"
+          }
+        }
+      },
+      "settings": {
+        "label": "Instellingen"
+      },
+      "about": {
+        "label": "Over"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "Zoeken naar alles",
+    "nothingFound": "Niets gevonden",
+    "error": {
+      "fetch": "Er is een fout opgetreden tijdens het ophalen van gegevens"
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "Zoeken naar apps, integraties of borden",
+        "group": {
+          "app": {
+            "title": "Apps",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "Open app URL"
+                },
+                "edit": {
+                  "label": "App bewerken"
+                }
+              },
+              "detail": {
+                "title": "Selecteer een actie voor de app"
+              }
+            }
+          },
+          "board": {
+            "title": "Borden",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "Bord openen"
+                },
+                "homeBoard": {
+                  "label": "Instellen als home-bord"
+                },
+                "mobileBoard": {
+                  "label": "Instellen als mobiel bord"
+                },
+                "settings": {
+                  "label": "Instellingen openen"
+                }
+              },
+              "detail": {
+                "title": "Selecteer een actie voor het bord"
+              }
+            }
+          },
+          "integration": {
+            "title": "Integraties"
+          }
+        }
+      },
+      "command": {
+        "help": "Commandomodus activeren",
+        "group": {
+          "localCommand": {
+            "title": "Lokale commando’s"
+          },
+          "globalCommand": {
+            "title": "Globale commando's",
+            "option": {
+              "colorScheme": {
+                "light": "Schakel naar lichte modus",
+                "dark": "Schakel naar donkere modus"
+              },
+              "language": {
+                "label": "Taal wijzigen",
+                "children": {
+                  "detail": {
+                    "title": "Selecteer je voorkeurstaal"
+                  }
+                }
+              },
+              "newBoard": {
+                "label": "Een nieuw bord aanmaken"
+              },
+              "importBoard": {
+                "label": "Een bord importeren"
+              },
+              "newApp": {
+                "label": "Een nieuwe app aanmaken"
+              },
+              "newIntegration": {
+                "label": "Een nieuwe integratie aanmaken",
+                "children": {
+                  "detail": {
+                    "title": "Selecteer het integratietype dat je wilt aanmaken"
+                  }
+                }
+              },
+              "newUser": {
+                "label": "Een nieuwe gebruiker aanmaken"
+              },
+              "newInvite": {
+                "label": "Een nieuwe uitnodiging aanmaken"
+              },
+              "newGroup": {
+                "label": "Een nieuwe groep aanmaken"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "Film aanvragen",
+        "requestSeries": "Series aanvragen",
+        "openIn": "Openen in {kind}"
+      },
+      "external": {
+        "help": "Gebruik een externe zoekmachine",
+        "group": {
+          "searchEngine": {
+            "title": "Zoekmachines",
+            "children": {
+              "action": {
+                "search": {
+                  "label": "Zoeken met {name}"
+                }
+              },
+              "detail": {
+                "title": "Selecteer een actie voor de zoekmachine"
+              },
+              "searchResults": {
+                "title": "Selecteer een zoekresultaat voor acties"
+              }
+            },
+            "option": {
+              "google": {
+                "name": "Google",
+                "description": "Zoeken op het web met Google"
+              },
+              "bing": {
+                "name": "Bing",
+                "description": "Zoeken op het web met Bing"
+              },
+              "duckduckgo": {
+                "name": "DuckDuckGo",
+                "description": "Zoeken op het web met DuckDuckGo"
+              },
+              "torrent": {
+                "name": "Verouderde torrents weergeven",
+                "description": "Zoeken naar torrents op torrentdownloads.pro"
+              },
+              "youTube": {
+                "name": "YouTube",
+                "description": "Zoeken naar video's op YouTube"
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": "Modi"
+          },
+          "help": {
+            "title": "Help",
+            "option": {
+              "documentation": {
+                "label": "Documentatie"
+              },
+              "submitIssue": {
+                "label": "Een probleem melden"
+              },
+              "discord": {
+                "label": "Community Discord"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "Zoeken",
+            "option": {
+              "other": {
+                "label": "Zoeken met andere zoekmachine"
+              },
+              "no-default": {
+                "label": "Geen standaard zoekmachine",
+                "description": "Stel een standaard zoekmachine in in voorkeuren"
+              },
+              "search": {
+                "label": "Zoeken naar \"{query}\" met {name}"
+              },
+              "from-integration": {
+                "description": "Typ om te zoeken"
+              }
+            }
+          },
+          "local": {
+            "title": "Lokale resultaten"
+          }
+        }
+      },
+      "page": {
+        "help": "Zoeken naar pagina’s",
+        "group": {
+          "page": {
+            "title": "Pagina’s",
+            "option": {
+              "manageHome": {
+                "label": "Startpagina beheren"
+              },
+              "manageBoard": {
+                "label": "Borden beheren"
+              },
+              "manageApp": {
+                "label": "Apps beheren"
+              },
+              "manageIntegration": {
+                "label": "Integraties beheren"
+              },
+              "manageSearchEngine": {
+                "label": "Zoekmachines beheren"
+              },
+              "manageMedia": {
+                "label": "Media beheren"
+              },
+              "manageUser": {
+                "label": "Gebruikers beheren"
+              },
+              "manageInvite": {
+                "label": "Uitnodigingen beheren"
+              },
+              "manageGroup": {
+                "label": "Groepen beheren"
+              },
+              "manageDocker": {
+                "label": "Docker beheren"
+              },
+              "manageApi": {
+                "label": "Swagger API"
+              },
+              "manageLog": {
+                "label": "Logs bekijken"
+              },
+              "manageTask": {
+                "label": "Taken beheren"
+              },
+              "manageSettings": {
+                "label": "Globale instellingen"
+              },
+              "about": {
+                "label": "Over"
+              },
+              "homeBoard": {
+                "label": "Home-bord"
+              },
+              "preferences": {
+                "label": "Jouw voorkeuren"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "Zoeken naar gebruikers of groepen",
+        "group": {
+          "user": {
+            "title": "Gebruikers",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "Gebruikersgegevens weergeven"
+                }
+              },
+              "detail": {
+                "title": "Selecteer een actie voor de gebruiker"
+              }
+            }
+          },
+          "group": {
+            "title": "Groepen",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "Groepdetails weergeven"
+                },
+                "manageMember": {
+                  "label": "Leden beheren"
+                },
+                "managePermission": {
+                  "label": "Machtigingen beheren"
+                }
+              },
+              "detail": {
+                "title": "Selecteer een actie voor de groep"
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "Vind een zoekmachine",
+      "field": {
+        "name": {
+          "label": "Naam"
+        },
+        "short": {
+          "label": "Kort"
+        },
+        "urlTemplate": {
+          "label": "URL zoektemplate"
+        },
+        "description": {
+          "label": "Beschrijving"
+        }
+      },
+      "page": {
+        "list": {
+          "title": "Zoekmachines",
+          "noResults": {
+            "title": "Er zijn nog geen zoekmachines",
+            "action": "Je eerste zoekmachine aanmaken"
+          },
+          "interactive": "Interactief, gebruikt een integratie"
+        },
+        "create": {
+          "title": "Nieuwe zoekmachine",
+          "notification": {
+            "success": {
+              "title": "Zoekmachine aangemaakt",
+              "message": "De zoekmachine is succesvol aangemaakt"
+            },
+            "error": {
+              "title": "Zoekmachine niet aangemaakt",
+              "message": "De zoekmachine kon niet worden aangemaakt"
+            }
+          }
+        },
+        "edit": {
+          "title": "Zoekmachine bewerken",
+          "notification": {
+            "success": {
+              "title": "Wijzigingen succesvol toegepast",
+              "message": "De zoekmachine is succesvol opgeslagen"
+            },
+            "error": {
+              "title": "Kan wijzigingen niet toepassen",
+              "message": "De zoekmachine kon niet worden opgeslagen"
+            }
+          },
+          "configControl": "Instellingen",
+          "searchEngineType": {
+            "generic": "Algemeen",
+            "fromIntegration": "Van integratie"
+          }
+        },
+        "delete": {
+          "title": "Zoekmachine verwijderen",
+          "message": "Weet je zeker dat je de zoekmachine '{name}' wilt verwijderen?",
+          "notification": {
+            "success": {
+              "title": "Zoekmachine verwijderd",
+              "message": "De zoekmachine is succesvol verwijderd"
+            },
+            "error": {
+              "title": "Zoekmachine niet verwijderd",
+              "message": "De zoekmachine kon niet worden verwijderd"
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "\"{name}\" aanvragen",
+            "table": {
+              "header": {
+                "season": "Seizoen",
+                "episodes": "Afleveringen"
+              }
+            },
+            "button": {
+              "send": "Aanvraag versturen"
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": "Hostnaam"
+      },
+      "subject": {
+        "label": "Onderwerp"
+      },
+      "issuer": {
+        "label": "Uitgever"
+      },
+      "validFrom": {
+        "label": "Geldig vanaf"
+      },
+      "validTo": {
+        "label": "Geldig tot"
+      },
+      "serialNumber": {
+        "label": "Serienummer"
+      },
+      "fingerprint": {
+        "label": "Vingerafdruk"
+      }
+    },
+    "page": {
+      "list": {
+        "title": "Vertrouwde certificaten",
+        "description": "Gebruikt door Homarr om gegevens op te vragen van integraties.",
+        "noResults": {
+          "title": "Er zijn nog geen certificaten"
+        },
+        "invalid": {
+          "title": "Ongeldig certificaat",
+          "description": "Certificaat kon niet worden opgehaald"
+        },
+        "expires": "Verloopt {when}",
+        "toHostnames": "Vertrouwde hostnamen"
+      },
+      "hostnames": {
+        "title": "Hostnamen van vertrouwde certificaten",
+        "description": "Sommige certificaten staan het specifieke domein dat Homarr gebruikt niet toe om ze op te vragen, hierdoor worden alle vertrouwde hostnamen met hun certificaat-thumbprints gebruikt om deze beperkingen te omzeilen.",
+        "noResults": {
+          "title": "Er zijn nog geen hostnamen"
+        },
+        "toCertificates": "Certificaten"
+      }
+    },
+    "action": {
+      "create": {
+        "label": "Certificaat toevoegen",
+        "notification": {
+          "success": {
+            "title": "Certificaat toegevoegd",
+            "message": "Het certificaat is succesvol toegevoegd"
+          },
+          "error": {
+            "title": "Certificaat toevoegen mislukt",
+            "message": "Het certificaat kon niet worden toegevoegd"
+          }
+        }
+      },
+      "remove": {
+        "label": "Certificaten verwijderen",
+        "confirm": "Weet je zeker dat je het certificaat wilt verwijderen?",
+        "notification": {
+          "success": {
+            "title": "Certificaat verwijderd",
+            "message": "Het certificaat is succesvol verwijderd"
+          },
+          "error": {
+            "title": "Certificaat niet verwijderd",
+            "message": "Certificaat kon niet worden verwijderd"
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "Vertrouwde hostnaam verwijderen",
+        "confirm": "Weet je zeker dat je deze vertrouwde hostnaam wilt verwijderen? Dit kan ervoor zorgen dat sommige integraties niet meer werken.",
+        "notification": {
+          "success": {
+            "title": "Hostnaam verwijderd",
+            "message": "De hostnaam is succesvol verwijderd"
+          },
+          "error": {
+            "title": "Hostnaam niet verwijderd",
+            "message": "De hostnaam kon niet worden verwijderd"
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "Debug",
+        "info": "Informatie",
+        "warn": "Waarschuwing",
+        "error": "Fout"
+      }
+    }
+  }
+}

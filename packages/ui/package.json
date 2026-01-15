@@ -1,0 +1,53 @@
+{
+  "name": "@homarr/ui",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./styles.css": "./src/styles.css",
+    "./hooks": "./src/hooks/index.ts",
+    "./icons": "./src/icons/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/definitions": "workspace:^0.1.0",
+    "@homarr/settings": "workspace:^0.1.0",
+    "@homarr/translation": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "@mantine/core": "^8.3.10",
+    "@mantine/dates": "^8.3.10",
+    "@mantine/hooks": "^8.3.10",
+    "@tabler/icons-react": "^3.36.1",
+    "crypto-js": "^4.2.0",
+    "mantine-react-table": "2.0.0-beta.9",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "svgson": "^5.3.1"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/css-modules": "^1.0.5",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  }
+}

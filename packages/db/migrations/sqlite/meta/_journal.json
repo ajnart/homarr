@@ -1,0 +1,251 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1715334238443,
+      "tag": "0000_talented_ben_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1715871797713,
+      "tag": "0001_mixed_titanium_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1715973963014,
+      "tag": "0002_cooing_sumo",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1716148434186,
+      "tag": "0003_adorable_raider",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1720036615408,
+      "tag": "0004_peaceful_red_ghost",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1722014142492,
+      "tag": "0005_lean_random",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1722517033483,
+      "tag": "0006_windy_doctor_faustus",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1723746828385,
+      "tag": "0007_known_ultragirl",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1727526190343,
+      "tag": "0008_third_thor",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1728074724956,
+      "tag": "0009_stale_roulette",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1728142590232,
+      "tag": "0010_gorgeous_stingray",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1728490026154,
+      "tag": "0011_classy_angel",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "6",
+      "when": 1729348200091,
+      "tag": "0012_ambiguous_black_panther",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "6",
+      "when": 1729369389386,
+      "tag": "0013_faithful_hex",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "6",
+      "when": 1729524387583,
+      "tag": "0014_colorful_cargill",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "6",
+      "when": 1730653336134,
+      "tag": "0015_superb_psylocke",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "6",
+      "when": 1732210918783,
+      "tag": "0016_change_all_to_snake_case",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "6",
+      "when": 1733777395703,
+      "tag": "0017_small_rumiko_fujikawa",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "6",
+      "when": 1735593831501,
+      "tag": "0018_cheerful_tattoo",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "6",
+      "when": 1735651175378,
+      "tag": "0019_steady_darkhawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "6",
+      "when": 1736510755691,
+      "tag": "0020_empty_hellfire_club",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "6",
+      "when": 1737883733050,
+      "tag": "0021_famous_bruce_banner",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "6",
+      "when": 1737927609085,
+      "tag": "0022_modern_sunfire",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "6",
+      "when": 1738686324915,
+      "tag": "0023_fix_on_delete_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "6",
+      "when": 1738961178990,
+      "tag": "0024_bitter_scrambler",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "6",
+      "when": 1739468826756,
+      "tag": "0025_add-group-home-board-settings",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "6",
+      "when": 1739907755789,
+      "tag": "0026_add-border-radius",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "6",
+      "when": 1739915486467,
+      "tag": "0027_wooden_blizzard",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "6",
+      "when": 1740086746417,
+      "tag": "0028_add_app_ping_url",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "6",
+      "when": 1740255687392,
+      "tag": "0029_add_layouts",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "6",
+      "when": 1740255968549,
+      "tag": "0030_migrate_item_and_section_for_layouts",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "6",
+      "when": 1740784849045,
+      "tag": "0031_add_dynamic_section_options",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "6",
+      "when": 1746821779051,
+      "tag": "0032_add_trusted_certificate_hostnames",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "6",
+      "when": 1750014001941,
+      "tag": "0033_add_cron_job_configuration",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "6",
+      "when": 1760968503571,
+      "tag": "0034_add_app_reference_to_integration",
+      "breakpoints": true
+    }
+  ]
+}

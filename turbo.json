@@ -1,11 +1,79 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"pipeline": {
-		"build": {
-			"outputs": [
-				".next/**",
-				"!.next/cache/**"
-			]
-		}
-	}
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/.env"],
+  "globalEnv": [
+    "AUTH_LDAP_BASE",
+    "AUTH_LDAP_BIND_DN",
+    "AUTH_LDAP_BIND_PASSWORD",
+    "AUTH_LDAP_GROUP_CLASS",
+    "AUTH_LDAP_GROUP_FILTER_EXTRA_ARG",
+    "AUTH_LDAP_GROUP_MEMBER_ATTRIBUTE",
+    "AUTH_LDAP_GROUP_MEMBER_USER_ATTRIBUTE",
+    "AUTH_LDAP_SEARCH_SCOPE",
+    "AUTH_LDAP_URI",
+    "AUTH_OIDC_CLIENT_ID",
+    "AUTH_OIDC_CLIENT_NAME",
+    "AUTH_OIDC_CLIENT_SECRET",
+    "AUTH_OIDC_FORCE_USERINFO",
+    "AUTH_OIDC_ISSUER",
+    "AUTH_OIDC_SCOPE_OVERWRITE",
+    "AUTH_OIDC_GROUPS_ATTRIBUTE",
+    "AUTH_OIDC_NAME_ATTRIBUTE_OVERWRITE",
+    "AUTH_LDAP_USERNAME_ATTRIBUTE",
+    "AUTH_LDAP_USER_MAIL_ATTRIBUTE",
+    "AUTH_LDAP_USERNAME_FILTER_EXTRA_ARG",
+    "AUTH_OIDC_AUTO_LOGIN",
+    "AUTH_LOGOUT_REDIRECT_URL",
+    "AUTH_PROVIDERS",
+    "AUTH_SESSION_EXPIRY_TIME",
+    "CI",
+    "DISABLE_REDIS_LOGS",
+    "DB_URL",
+    "DB_HOST",
+    "DB_USER",
+    "DB_PASSWORD",
+    "DB_NAME",
+    "DB_PORT",
+    "DB_DRIVER",
+    "DOCKER_HOSTNAMES",
+    "DOCKER_PORTS",
+    "NODE_ENV",
+    "PORT",
+    "LOCAL_CERTIFICATE_PATH",
+    "LOG_LEVEL",
+    "SECRET_ENCRYPTION_KEY",
+    "SKIP_ENV_VALIDATION"
+  ],
+  "ui": "stream",
+  "tasks": {
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts", ".output/**", ".vercel/output/**"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "lint": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    }
+  }
 }

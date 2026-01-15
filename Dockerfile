@@ -1,64 +1,71 @@
-FROM node:20.2.0-slim
+FROM node:24.12.0-alpine AS base
+
+FROM base AS builder
+RUN apk add --no-cache libc6-compat
+RUN apk update
+
+# Set working directory
+WORKDIR /app
+RUN apk add --no-cache libc6-compat curl bash
+RUN apk update
+COPY . .
+
+RUN corepack enable pnpm && pnpm install --recursive --frozen-lockfile
+
+# Copy static data as it is not part of the build
+COPY static-data ./static-data
+ARG SKIP_ENV_VALIDATION='true'
+ARG CI='true'
+ARG DISABLE_REDIS_LOGS='true'
+
+RUN corepack enable pnpm && pnpm build
+
+FROM base AS runner
 WORKDIR /app
 
-# Define node.js environment variables
-ARG PORT=7575
+# gettext is required for envsubst, openssl for generating AUTH_SECRET, su-exec for running application as non-root
+RUN apk add --no-cache redis nginx bash gettext su-exec openssl
+RUN mkdir /appdata
+VOLUME /appdata
 
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV NODE_ENV production
-ENV NODE_OPTIONS '--no-experimental-fetch'
+# Enable homarr cli
+COPY --from=builder /app/packages/cli/cli.cjs /app/apps/cli/cli.cjs
+RUN echo $'#!/bin/bash\ncd /app/apps/cli && node ./cli.cjs "$@"' > /usr/bin/homarr
+RUN chmod +x /usr/bin/homarr
 
-COPY next.config.js ./
-COPY public ./public
-COPY package.json ./temp_package.json
-COPY yarn.lock ./temp_yarn.lock
+# Don't run production as root
+RUN mkdir -p /var/cache/nginx && \
+    mkdir -p /var/log/nginx && \
+    mkdir -p /var/lib/nginx && \
+    touch /run/nginx/nginx.pid && \
+    mkdir -p /etc/nginx/templates /etc/nginx/ssl/certs
+
+COPY --from=builder /app/apps/nextjs/next.config.ts .
+COPY --from=builder /app/apps/nextjs/package.json .
+
+COPY --from=builder /app/apps/tasks/tasks.cjs ./apps/tasks/tasks.cjs
+COPY --from=builder /app/apps/websocket/wssServer.cjs ./apps/websocket/wssServer.cjs
+COPY --from=builder /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/build/better_sqlite3.node
+
+COPY --from=builder /app/packages/db/migrations ./db/migrations
+
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY .next/standalone ./
-COPY .next/static ./.next/static
-COPY ./scripts/run.sh ./scripts/run.sh
-RUN chmod +x ./scripts/run.sh
-COPY ./drizzle ./drizzle
+COPY --from=builder /app/apps/nextjs/.next/standalone ./
+COPY --from=builder /app/apps/nextjs/.next/static ./apps/nextjs/.next/static
+COPY --from=builder /app/apps/nextjs/public ./apps/nextjs/public
+COPY scripts/run.sh ./run.sh
+COPY --chmod=755 scripts/entrypoint.sh ./entrypoint.sh
+COPY packages/redis/redis.conf /app/redis.conf
+COPY nginx.conf /etc/nginx/templates/nginx.conf
 
-COPY ./drizzle/migrate ./migrate
-COPY ./tsconfig.json ./migrate/tsconfig.json
-COPY ./cli ./cli
 
-RUN mkdir /data
+ENV DB_URL='/appdata/db/db.sqlite'
+ENV DB_DIALECT='sqlite'
+ENV DB_DRIVER='better-sqlite3'
+ENV AUTH_PROVIDERS='credentials'
+ENV REDIS_IS_EXTERNAL='false'
+ENV NODE_ENV='production'
 
-# Install dependencies
-RUN apt update && apt install -y openssl wget
-
-# Move node_modules to temp location to avoid overwriting
-RUN mv node_modules _node_modules
-RUN rm package.json
-# Install dependencies for migration
-RUN cp ./migrate/package.json ./package.json
-RUN yarn
-# Copy better_sqlite3 build for current platform
-RUN cp /app/node_modules/better-sqlite3/build/Release/better_sqlite3.node /app/_node_modules/better-sqlite3/build/Release/better_sqlite3.node
-# Copy node_modules for migration to migrate folder for migration script
-RUN mv node_modules ./migrate/node_modules
-
-# Copy temp node_modules of app to app folder
-RUN mv _node_modules node_modules
-
-RUN echo '#!/bin/bash\nnode /app/cli/cli.js "$@"' > /usr/bin/homarr
-RUN chmod +x /usr/bin/homarr
-RUN cd /app/cli && yarn --immutable
-
-# Expose the default application port
-EXPOSE $PORT
-ENV PORT=${PORT}
-
-ENV DATABASE_URL "file:/data/db.sqlite"
-ENV AUTH_TRUST_HOST="true"
-ENV PORT 7575
-ENV NEXTAUTH_SECRET NOT_IN_USE_BECAUSE_JWTS_ARE_UNUSED
-
-HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=3 \
-    CMD wget --no-verbose --tries=1 --spider http://localhost:${PORT} || exit 1
-
-VOLUME [ "/app/data/configs" ]
-VOLUME [ "/data" ]
-ENTRYPOINT ["sh", "./scripts/run.sh"]
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+CMD ["sh", "run.sh"]

@@ -1,0 +1,10 @@
+.cardContainer {
+  transition:
+    box-shadow 150ms ease,
+    transform 100ms ease;
+
+  @mixin hover {
+    box-shadow: var(--mantine-shadow-md);
+    transform: scale(1.02);
+  }
+}

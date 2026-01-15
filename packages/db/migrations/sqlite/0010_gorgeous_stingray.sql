@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `firstDayOfWeek` integer DEFAULT 1 NOT NULL;

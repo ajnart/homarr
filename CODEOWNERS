@@ -1,0 +1,9 @@
+# ── CODEOWNERS ───────────────────────────────────────
+* @homarr-labs/maintainers
+
+# Exempt Renovate‑managed files (no owners)
+package.json
+package-lock.json
+pnpm-lock.yaml
+Dockerfile
+docker-compose.yml

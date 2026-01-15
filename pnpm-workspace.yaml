@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+  - tooling/*
+minimumReleaseAge: 4320 # Only download deps if they are at least 3 days old (in minutes)
+minimumReleaseAgeExclude:
+  - next
+  - "@next/*"

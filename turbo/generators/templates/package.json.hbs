@@ -1,0 +1,31 @@
+{
+  "name": "@homarr/{{name}}",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3"
+  },
+  "prettier": "@homarr/prettier-config"
+}

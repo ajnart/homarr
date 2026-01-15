@@ -1,0 +1,11 @@
+.badge {
+  @mixin light {
+    --badge-bg: rgba(30, 34, 39, 0.08);
+    --badge-color: var(--mantine-color-black);
+  }
+
+  @mixin dark {
+    --badge-bg: #363c44;
+    --badge-color: var(--mantine-color-white);
+  }
+}

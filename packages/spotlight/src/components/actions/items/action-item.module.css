@@ -1,0 +1,7 @@
+.spotlightAction:hover {
+  background-color: alpha(var(--mantine-primary-color-filled), 0.1);
+}
+
+.spotlightAction[data-selected="true"] {
+  background-color: alpha(var(--mantine-primary-color-filled), 0.3);
+}

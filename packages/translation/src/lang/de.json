@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "Willkommen bei Homarr",
+        "subtitle": "Lass uns mit der Einrichtung deiner Homarr-Instanz beginnen.",
+        "description": "Um loszulegen, wähle bitte wie du deine Homarr Instanz einrichten möchtest.",
+        "action": {
+          "scratch": "Von vorne beginnen",
+          "importOldmarr": "Import von Homarr vor 1.0"
+        }
+      },
+      "import": {
+        "title": "Daten importieren",
+        "subtitle": "Sie können Daten aus einer bestehenden Homarr-Instanz importieren.",
+        "dropzone": {
+          "title": "Ziehen Sie die Zip-Datei hierher oder klicken Sie zum Durchsuchen",
+          "description": "Die hochgeladene Zip-Datei wird bearbeitet und Sie können wählen, was Sie importieren möchten"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "Datei ändern"
+          }
+        },
+        "importSettings": {
+          "title": "Einstellungen Importieren",
+          "description": "Importverhalten konfigurieren"
+        },
+        "boardSelection": {
+          "title": "{count} Boards gefunden",
+          "description": "Wählen Sie alle Boards mit der Größe aus, die Sie importieren möchten",
+          "action": {
+            "selectAll": "Alles auswählen",
+            "unselectAll": "Gesamte Auswahl aufheben"
+          }
+        },
+        "summary": {
+          "title": "Zusammenfassung des Imports",
+          "description": "In der folgenden Zusammenfassung sehen Sie, was importiert wird",
+          "action": {
+            "import": "Import bestätigen und fortfahren"
+          },
+          "entities": {
+            "apps": "Applikationen",
+            "boards": "Boards",
+            "integrations": "Integrationen",
+            "credentialUsers": "Benutzer mit Zugangsdaten"
+          }
+        },
+        "tokenModal": {
+          "title": "Importschlüssel eingeben",
+          "field": {
+            "token": {
+              "label": "Schlüssel",
+              "description": "Gib den angezeigten Importschlüssel von der vorherigen Homarr-Instanz ein"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "Ungültiger Schlüssel",
+              "message": "Der eingegebene Schlüssel ist ungültig"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "Administrator",
+        "subtitle": "Geben Sie die Zugangsdaten für Ihren Administrator-Benutzer an.",
+        "notification": {
+          "success": {
+            "title": "Benutzer erstellt",
+            "message": "Der Benutzer wurde erfolgreich erstellt"
+          },
+          "error": {
+            "title": "Erstellung des Benutzers fehlgeschlagen"
+          }
+        }
+      },
+      "group": {
+        "title": "Externe Gruppe",
+        "subtitle": "Gebe die Gruppe an, welche für externe Benutzer verwendet werden soll.",
+        "form": {
+          "name": {
+            "label": "Gruppenname",
+            "description": "Name muss mit der Admin-Gruppe des externen Anbieters übereinstimmen"
+          }
+        }
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "subtitle": "Server-Einstellungen konfigurieren."
+      },
+      "finish": {
+        "title": "Einrichtung abschließen",
+        "subtitle": "Es kann losgehen!",
+        "description": "Du hast die Einrichtung erfolgreich abgeschlossen. Du kannst jetzt mit der Nutzung von Homarr beginnen. Wähle deine nächste Aktion:",
+        "action": {
+          "goToBoard": "Gehe zu {name} Board",
+          "createBoard": "Erstelle dein erstes Board",
+          "inviteUser": "Andere Benutzer einladen",
+          "docs": "Lese die Dokumentation"
+        }
+      }
+    },
+    "backToStart": "Zurück zum Anfang"
+  },
+  "user": {
+    "title": "Benutzer",
+    "name": "Benutzer",
+    "page": {
+      "login": {
+        "title": "Melde dich bei deinem Konto an",
+        "subtitle": "Willkommen zurück! Bitte gib deine Zugangsdaten ein"
+      },
+      "invite": {
+        "title": "Homarr beitreten",
+        "subtitle": "Willkommen bei Homarr! Bitte erstelle dein Konto",
+        "description": "Du wurdest von {username} eingeladen"
+      },
+      "init": {
+        "title": "Neue Homarr Installation",
+        "subtitle": "Bitte erstelle den initialen Administrator"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "E-Mail",
+        "verified": "Verifiziert"
+      },
+      "username": {
+        "label": "Benutzername"
+      },
+      "password": {
+        "label": "Passwort",
+        "requirement": {
+          "length": "Enthält mindestens 8 Zeichen",
+          "lowercase": "Enthält Kleinbuchstaben",
+          "uppercase": "Enthält Großbuchstaben",
+          "number": "Enthält Ziffern",
+          "special": "Enthält Sonderzeichen"
+        }
+      },
+      "passwordConfirm": {
+        "label": "Passwort bestätigen"
+      },
+      "previousPassword": {
+        "label": "Vorheriges Passwort"
+      },
+      "homeBoard": {
+        "label": "Home Board"
+      },
+      "pingIconsEnabled": {
+        "label": "Symbole für Pings verwenden"
+      },
+      "defaultSearchEngine": {
+        "label": "Standard Suchmaschine"
+      },
+      "openSearchInNewTab": {
+        "label": "Suchergebnisse in neuem Tab öffnen"
+      }
+    },
+    "error": {
+      "usernameTaken": "Benutzername schon vergeben"
+    },
+    "action": {
+      "login": {
+        "label": "Anmelden",
+        "labelWith": "Mit {provider} anmelden",
+        "notification": {
+          "success": {
+            "title": "Anmeldung erfolgreich",
+            "message": "Du bist jetzt angemeldet"
+          },
+          "error": {
+            "title": "Anmeldung fehlgeschlagen",
+            "message": "Deine Anmeldung ist fehlgeschlagen"
+          }
+        },
+        "forgotPassword": {
+          "label": "Hast du dein Passwort vergessen?",
+          "description": "Ein Administrator kann den folgenden Befehl verwenden, um dein Passwort zurückzusetzen:"
+        }
+      },
+      "register": {
+        "label": "Account erstellen",
+        "notification": {
+          "success": {
+            "title": "Account erstellt",
+            "message": "Bitte melde dich an um fortzufahren"
+          },
+          "error": {
+            "title": "Kontoerstellung fehlgeschlagen",
+            "message": "Dein Benutzerkonto konnte nicht erstellt werden"
+          }
+        }
+      },
+      "create": "Benutzer erstellen",
+      "changePassword": {
+        "label": "Passwort ändern",
+        "notification": {
+          "success": {
+            "message": "Passwort erfolgreich geändert"
+          },
+          "error": {
+            "message": "Passwort konnte nicht geändert werden"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "Home Board erfolgreich geändert"
+          },
+          "error": {
+            "message": "Home Board konnte nicht geändert werden"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "Sucheinstellungen erfolgreich geändert"
+          },
+          "error": {
+            "message": "Sucheinstellungen konnten nicht geändert werden"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "Erster Wochentag erfolgreich geändert"
+          },
+          "error": {
+            "message": "Konnte den ersten Wochentag nicht ändern"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "Ping Icons erfolgreich umgeschaltet"
+          },
+          "error": {
+            "message": "Konnte Ping-Icons nicht umschalten"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "Bild ändern",
+          "notification": {
+            "success": {
+              "message": "Der Name wurde erfolgreich geändert"
+            },
+            "error": {
+              "message": "Bild konnte nicht geändert werden"
+            },
+            "toLarge": {
+              "title": "Bild ist zu groß",
+              "message": "Maximale Bildgröße ist {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "Bild entfernen",
+          "confirm": "Wollen Sie wirklich dieses Bild entfernen?",
+          "notification": {
+            "success": {
+              "message": "Bild erfolgreich entfernt"
+            },
+            "error": {
+              "message": "Bild kann nicht entfernt werden"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "Profil wurde aktualisiert"
+          },
+          "error": {
+            "message": "Aktualisierung des Profils fehlgeschlagen"
+          }
+        }
+      },
+      "delete": {
+        "label": "Benutzer dauerhaft löschen",
+        "description": "Löscht diesen Benutzer einschließlich seiner Einstellungen. Wird keine Boards löschen. Benutzer wird nicht benachrichtigt.",
+        "confirm": "Sind Sie sicher, dass Sie den Benutzer {username} mit seinen Einstellungen löschen möchten?"
+      },
+      "select": {
+        "label": "Benutzer auswählen",
+        "notFound": "Kein Benutzer gefunden"
+      },
+      "transfer": {
+        "label": "Neuen Eigentümer auswählen"
+      }
+    }
+  },
+  "group": {
+    "title": "Benutzergruppen",
+    "name": "Benutzergruppe",
+    "search": "Gruppe suchen",
+    "field": {
+      "name": "Name",
+      "members": "Mitglieder",
+      "homeBoard": {
+        "label": "Home Board",
+        "description": "Nur Boards welche für die Gruppe zugänglich sind, können ausgewählt werden"
+      },
+      "mobileBoard": {
+        "label": "Mobiles Board",
+        "description": "Nur Boards, welche für die Gruppe zugänglich sind, können ausgewählt werden"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Admin",
+        "item": {
+          "admin": {
+            "label": "Administrator",
+            "description": "Mitglieder mit dieser Berechtigung haben vollen Zugriff auf alle Funktionen und Einstellungen"
+          }
+        }
+      },
+      "app": {
+        "title": "Apps",
+        "item": {
+          "create": {
+            "label": "Apps erstellen",
+            "description": "Mitgliedern das Erstellen von Apps erlauben"
+          },
+          "use-all": {
+            "label": "Alle Apps verwenden",
+            "description": "Mitgliedern erlauben, Apps zu ihren Boards hinzuzufügen"
+          },
+          "modify-all": {
+            "label": "Alle Apps ändern",
+            "description": "Mitgliedern das Erstellen von Apps erlauben"
+          },
+          "full-all": {
+            "label": "Voller App Zugriff",
+            "description": "Mitgliedern das Benutzen, Verwalten und Löschen von Apps erlauben"
+          }
+        }
+      },
+      "board": {
+        "title": "Boards",
+        "item": {
+          "create": {
+            "label": "Boards erstellen",
+            "description": "Mitgliedern das Erstellen von Boards erlauben"
+          },
+          "view-all": {
+            "label": "Alle Boards anzeigen",
+            "description": "Mitgliedern das Ansehen von Boards erlauben"
+          },
+          "modify-all": {
+            "label": "Alle Boards ändern",
+            "description": "Mitgliedern erlauben, alle Boards zu ändern (beinhaltet keine Zugangskontrolle und Gefahrenbereich)"
+          },
+          "full-all": {
+            "label": "Voller Board Zugriff",
+            "description": "Mitgliedern erlauben, alle Boards (einschließlich Zugriffskontrolle und Gefahrenbereich) anzuzeigen, zu ändern und zu löschen"
+          }
+        }
+      },
+      "integration": {
+        "title": "Integrationen",
+        "item": {
+          "create": {
+            "label": "Integrationen erstellen",
+            "description": "Mitgliedern erlauben, Integrationen zu erstellen"
+          },
+          "use-all": {
+            "label": "Alle Integrationen nutzen",
+            "description": "Mitgliedern erlauben, alle Integrationen zu ihren Boards hinzuzufügen"
+          },
+          "interact-all": {
+            "label": "Mit jeder Integration interagieren",
+            "description": "Mitgliedern erlauben, mit jeder Integration zu interagieren"
+          },
+          "full-all": {
+            "label": "Voller Zugriff auf Integrationen",
+            "description": "Mitgliedern erlauben, jede Integration zu verwalten, zu nutzen und mit ihnen zu interagieren"
+          }
+        }
+      },
+      "media": {
+        "title": "Medien",
+        "item": {
+          "upload": {
+            "label": "Medien Hochladen",
+            "description": "Erlaube Mitgliedern Medien hochzuladen"
+          },
+          "view-all": {
+            "label": "Alle Medien anzeigen",
+            "description": "Mitgliedern erlauben, alle Medien anzuzeigen"
+          },
+          "full-all": {
+            "label": "Vollständiger Medienzugriff",
+            "description": "Mitgliedern das Verwalten und Löschen von Medien erlauben"
+          }
+        }
+      },
+      "other": {
+        "title": "Andere",
+        "item": {
+          "view-logs": {
+            "label": "Logs anzeigen",
+            "description": "Mitgliedern erlauben, Logs anzuzeigen"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "Suchmaschinen",
+        "item": {
+          "create": {
+            "label": "Suchmaschinen anlegen",
+            "description": "Erlaubt es Mitgliedern Suchmaschinen anzulegen"
+          },
+          "modify-all": {
+            "label": "Alle Suchmaschinen ändern",
+            "description": "Mitgliedern erlauben alle Suchmaschinen zu ändern"
+          },
+          "full-all": {
+            "label": "Voller Zugriff auf Suchmaschinen",
+            "description": "Mitgliedern das Verwalten und Löschen von Suchmaschinen erlauben"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "Einige Mitglieder haben externe Anmeldeoptionen genutzt und können von hier aus nicht verwaltet werden",
+      "external": "Alle Mitglieder haben externe Anmeldeoptionen genutzt und können von hier aus nicht verwaltet werden"
+    },
+    "reservedNotice": {
+      "message": "Diese Gruppe ist für die Systemnutzung reserviert und beschränkt einige Aktionen. <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "Neue Gruppe",
+        "notification": {
+          "success": {
+            "message": "Die Gruppe wurde erfolgreich erstellt"
+          },
+          "error": {
+            "message": "Die Gruppe konnte nicht erstellt werden"
+          }
+        }
+      },
+      "transfer": {
+        "label": "Eigentum übertragen",
+        "description": "Den Eigentümer dieser Gruppe an einen anderen Benutzer übertragen.",
+        "confirm": "Bist du sicher, dass du das Eigentum für die Gruppe {name} an {username} übertragen möchtest?",
+        "notification": {
+          "success": {
+            "message": "Gruppe {group} erfolgreich an {user} übertragen"
+          },
+          "error": {
+            "message": "Übertragung des Eigentums nicht möglich"
+          }
+        }
+      },
+      "addMember": {
+        "label": "Mitglied hinzufügen"
+      },
+      "removeMember": {
+        "label": "Mitglied entfernen",
+        "confirm": "Bist du sicher, dass du {user} aus dieser Gruppe entfernen möchtest?"
+      },
+      "delete": {
+        "label": "Gruppe löschen",
+        "description": "Sobald Sie einen Arbeitsbereich löschen, gibt es keinen Weg sie wiederherzustellen. Bitte seien Sie sich dessen bewusst.",
+        "confirm": "Sind Sie sicher, dass Sie die Gruppe {name} löschen möchten?",
+        "notification": {
+          "success": {
+            "message": "Gruppe {name} erfolgreich gelöscht"
+          },
+          "error": {
+            "message": "Gruppe {name} konnte nicht gelöscht werden"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "Berechtigungen gespeichert",
+            "message": "Berechtigungen wurden erfolgreich gespeichert"
+          },
+          "error": {
+            "title": "Berechtigungen nicht gespeichert",
+            "message": "Berechtigungen wurden nicht gespeichert"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "Die Gruppe {name} wurde erfolgreich gespeichert"
+          },
+          "error": {
+            "message": "Gruppe {name} konnte nicht gespeichert werden"
+          }
+        }
+      },
+      "select": {
+        "label": "Gruppe auswählen",
+        "notFound": "Keine Gruppe gefunden"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "Einstellungen gespeichert",
+              "message": "Board Einstellungen erfolgreich gespeichert"
+            },
+            "error": {
+              "title": "Einstellungen konnten nicht gespeichert werden",
+              "message": "Board Einstellungen konnten nicht gespeichert werden"
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": "Position erfolgreich geändert"
+          },
+          "error": {
+            "message": "Position konnte nicht geändert werden"
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "Standardgruppe",
+      "description": "{name} - Alle angemeldeten Benutzer"
+    }
+  },
+  "app": {
+    "search": "App suchen",
+    "page": {
+      "list": {
+        "title": "Apps",
+        "noResults": {
+          "title": "Noch keine Apps vorhanden",
+          "action": "Erstelle deine erste App"
+        }
+      },
+      "create": {
+        "title": "Neue App",
+        "notification": {
+          "success": {
+            "title": "Erstellung erfolgreich",
+            "message": "Die App wurde erfolgreich erstellt"
+          },
+          "error": {
+            "title": "Erstellung fehlgeschlagen",
+            "message": "Die App konnte nicht angelegt werden"
+          }
+        }
+      },
+      "edit": {
+        "title": "App bearbeiten",
+        "notification": {
+          "success": {
+            "title": "Änderungen erfolgreich angewendet",
+            "message": "Die App wurde erfolgreich gespeichert"
+          },
+          "error": {
+            "title": "Änderungen konnten nicht angewendet werden",
+            "message": "Die App konnte nicht gespeichert werden"
+          }
+        }
+      },
+      "delete": {
+        "title": "App löschen",
+        "message": "Sind Sie sicher, dass Sie die App {name} löschen möchten?",
+        "notification": {
+          "success": {
+            "title": "Löschen erfolgreich",
+            "message": "Die App wurde erfolgreich gelöscht"
+          },
+          "error": {
+            "title": "Löschen fehlgeschlagen",
+            "message": "App konnte nicht gelöscht werden"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Name"
+      },
+      "description": {
+        "label": "Beschreibung"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "Eine andere URL für Ping verwenden",
+          "description": "Nützlich, wenn Homarr direkt auf einen internen Hostnamen oder Netzwerk zugreifen kann, um die Bandbreitennutzung des ISP zu minimieren"
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "App auswählen",
+        "notFound": "Keine App gefunden",
+        "search": "Nach einer App suchen",
+        "noResults": "Keine Ergebnisse",
+        "action": "{app} auswählen",
+        "title": "Wählen Sie eine App, die diesem Board hinzugefügt werden soll"
+      },
+      "create": {
+        "title": "Neue App erstellen",
+        "description": "Eine neue App erstellen",
+        "action": "App-Erstellung öffnen"
+      },
+      "add": "App hinzufügen"
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "Integrationen",
+        "search": "Integrationen durchsuchen",
+        "noResults": {
+          "title": "Es gibt noch keine Integrationen"
+        }
+      },
+      "create": {
+        "title": "Neue {name} Integration",
+        "notification": {
+          "success": {
+            "title": "Erstellung erfolgreich",
+            "message": "Die Integration wurde erfolgreich erstellt"
+          },
+          "error": {
+            "title": "Erstellung fehlgeschlagen",
+            "message": "Die Integration konnte nicht erstellt werden"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "Vorhanden",
+              "label": "Vorhandene App auswählen"
+            },
+            "new": {
+              "title": "Neu",
+              "url": {
+                "label": "App URL",
+                "description": "Die URL, welche die App öffnet, sobald sie vom Dashboard aus aufgerufen wird"
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "{name} Integration bearbeiten",
+        "notification": {
+          "success": {
+            "title": "Änderungen erfolgreich angewendet",
+            "message": "Die Integration wurde erfolgreich gespeichert"
+          },
+          "error": {
+            "title": "Änderungen konnten nicht angewendet werden",
+            "message": "Die Integration konnte nicht gespeichert werden"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "Eine App verknüpfen",
+            "remove": "Verknüpfung aufheben",
+            "select": "Wählen Sie eine App zum Verknüpfen aus"
+          }
+        }
+      },
+      "delete": {
+        "title": "Integration löschen",
+        "message": "Sind Sie sicher, dass Sie die Integration {name} löschen möchten?",
+        "notification": {
+          "success": {
+            "title": "Löschen erfolgreich",
+            "message": "Die Integration wurde erfolgreich erstellt"
+          },
+          "error": {
+            "title": "Löschen fehlgeschlagen",
+            "message": "Integration konnte nicht gelöscht werden"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Name"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "attemptSearchEngineCreation": {
+        "label": "Suchmaschinen anlegen",
+        "description": "Integration \"{kind}\" kann mit den Suchmaschinen verwendet werden. Wählen Sie dies, um die Suchmaschine automatisch zu konfigurieren."
+      },
+      "app": {
+        "sectionTitle": "Verknüpfte App"
+      },
+      "createApp": {
+        "label": "App erstellen",
+        "description": "Eine App mit dem gleichen Namen und Symbol wie die Integration erstellen. Lassen Sie das Eingabefeld unter leer, um die App mit der Integrations URL zu erstellen."
+      },
+      "appHref": {
+        "placeholder": "Benutzerdefinierte App URL"
+      }
+    },
+    "action": {
+      "create": "Neue Integration"
+    },
+    "testConnection": {
+      "action": {
+        "create": "Verbindung erstellen und testen",
+        "edit": "Verbindung erstellen und speichern"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": "Mehr Details zur Ursache"
+          }
+        },
+        "unknown": {
+          "title": "Unbekannter Fehler",
+          "description": "Ein unbekannter Fehler ist aufgetreten, öffne die Ursache unten, um mehr Details zu sehen"
+        },
+        "parse": {
+          "title": "Fehler beim Parsen",
+          "description": "Die Antwort konnte nicht analysiert werden. Bitte stellen Sie sicher, dass die URL auf die Basis-URL des Dienstes zeigt."
+        },
+        "authorization": {
+          "title": "Autorisierungsfehler",
+          "description": "Die Anfrage wurde nicht autorisiert. Bitte überprüfen Sie, ob die Anmeldedaten korrekt sind und Sie diese mit den entsprechenden Berechtigungen konfiguriert haben."
+        },
+        "statusCode": {
+          "title": "Antwort-Fehler",
+          "description": "Unerwartete {statusCode} ({reason}) Antwort von <url></url>erhalten. Bitte überprüfen Sie, ob die URL auf die Basis-URL der Integration verweist.",
+          "otherDescription": "Unerwartete {statusCode} Antwort von <url></url>erhalten. Bitte stellen Sie sicher, dass die URL auf die Basis-URL der Integration zeigt.",
+          "reason": {
+            "badRequest": "Fehlerhafte Anfrage",
+            "notFound": "Nicht gefunden",
+            "tooManyRequests": "Zu viele Anfragen",
+            "internalServerError": "Interner Serverfehler",
+            "serviceUnavailable": "Dienst nicht verfügbar",
+            "gatewayTimeout": "Gateway-Zeitüberschreitung"
+          }
+        },
+        "certificate": {
+          "title": "Zertifikatfehler",
+          "description": {
+            "expired": "Das Zertifikat ist abgelaufen.",
+            "notYetValid": "Das Zertifikat ist noch nicht gültig.",
+            "untrusted": "Dem Zertifikat wird nicht vertraut.",
+            "hostnameMismatch": "Der Hostname des Zertifikats entspricht nicht der URL."
+          },
+          "alert": {
+            "permission": {
+              "title": "Nicht genügend Berechtigungen",
+              "message": "Sie sind nicht berechtigt Zertifikate zu vertrauen oder hochzuladen. Bitte kontaktieren Sie Ihren Administrator, um das notwendige Root-Zertifikat hochzuladen."
+            },
+            "hostnameMismatch": {
+              "title": "Hostname stimmt nicht überein",
+              "message": "Der Hostname im Zertifikat stimmt nicht mit dem Hostnamen überein, mit dem Sie probieren sich zu verbinden. Dies könnte auf ein Sicherheitsrisiko hindeuten, Sie können trotzdem diesem Zertifikat vertrauen."
+            },
+            "extract": {
+              "title": "CA-Zertifikatextraktion fehlgeschlagen",
+              "message": "Nur selbstsignierte Zertifikate ohne Kette können automatisch abgerufen werden. Falls Sie ein selbst signiertes Zertifikat verwenden, stellen Sie bitte sicher, dass Sie das CA-Zertifikat manuell hochladen. Hier finden Sie Anweisungen, wie man das <docsLink></docsLink> macht."
+            }
+          },
+          "action": {
+            "retry": {
+              "label": "Erstellung wiederholen"
+            },
+            "trust": {
+              "label": "Zertifikat vertrauen"
+            },
+            "upload": {
+              "label": "Zertifikat hochladen"
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "Der Nichtübereinstimmung der Hostnamen zustimmen",
+              "message": "Sind Sie sicher, dass Sie dem Zertifikat mit einer Nichtübereinstimmung des Hostnamens vertrauen möchten?"
+            },
+            "notification": {
+              "success": {
+                "title": "Vertrauenswürdige Zertifikate",
+                "message": "Hostname zu vertrauenswürdiger Zertifikatsliste hinzugefügt"
+              },
+              "error": {
+                "title": "Ein Fehler ist beim vertrauen des Zertifikats aufgetreten",
+                "message": "Dem Zertifikat mit einer Nichtübereinstimmung des Hostnamens konnte nicht vertraut werden"
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "Selbstsigniertem Zertifikat vertrauen",
+              "message": "Sind Sie sicher, dass Sie diesem selbst signierten Zertifikat vertrauen möchten?"
+            },
+            "notification": {
+              "success": {
+                "title": "Vertrauenswürdige Zertifikate",
+                "message": "Zertifikat zur vertrauenswürdigen Zertifikatsliste hinzugefügt"
+              },
+              "error": {
+                "title": "Ein Fehler ist beim vertrauen des Zertifikats aufgetreten",
+                "message": "Das Zertifikat konnte nicht zur vertrauenswürdigen Zertifikatsliste hinzugefügt werden"
+              }
+            }
+          },
+          "details": {
+            "title": "Details",
+            "description": "Überprüfen Sie die Zertifikatsinformationen, bevor Sie sich dazu entschließen, ihr zu vertrauen.",
+            "content": {
+              "action": "Inhalt anzeigen",
+              "title": "PEM Zertifikat"
+            }
+          }
+        },
+        "request": {
+          "title": "Anfrage Fehler",
+          "description": {
+            "connection": {
+              "hostUnreachable": "Der Server konnte nicht erreicht werden. Dies bedeutet in der Regel, dass der Host offline oder nicht von Ihrem Netzwerk aus erreichbar ist.",
+              "networkUnreachable": "Das Netzwerk ist nicht erreichbar. Bitte überprüfen Sie Ihre Internetverbindung oder die Netzwerkkonfiguration.",
+              "refused": "Der Server hat die Verbindung abgelehnt. Er läuft möglicherweise nicht oder lehnt Anfragen auf dem angegebenen Port ab.",
+              "reset": "Die Verbindung wurde unerwartet vom Server getrennt. Dies kann passieren, wenn der Server instabil ist oder neu gestartet wurde."
+            },
+            "dns": {
+              "notFound": "Die Serveradresse konnte nicht gefunden werden. Bitte überprüfen Sie die URL auf Tippfehler oder ungültige Domainnamen.",
+              "timeout": "Zeitüberschreitung bei der DNS Anfrage. Dies kann ein temporäres Problem sein – bitte versuchen Sie es in ein paar Augenblicken erneut.",
+              "noAnswer": "Der DNS-Server hat keine gültige Antwort zurückgegeben. Die Domain existiert vielleicht, hat jedoch keine gültigen Datensätze."
+            },
+            "timeout": {
+              "aborted": "Die Anfrage wurde abgebrochen, bevor sie abgeschlossen werden konnte. Dies könnte auf eine Benutzeraktion oder einen System Timeout zurückzuführen sein.",
+              "timeout": "Die Anfrage zu bearbeiten hat zu lange gedauert, sie ist damit abgelaufen. Überprüfe dein Netzwerk oder versuche es später erneut."
+            }
+          }
+        }
+      },
+      "alertNotice": "Der Speichern Button ist verfügbar, sobald eine erfolgreiche Verbindung hergestellt wurde",
+      "notification": {
+        "success": {
+          "title": "Verbindung hergestellt",
+          "message": "Die Verbindung wurde erfolgreich hergestellt"
+        },
+        "invalidUrl": {
+          "title": "Ungültige URL",
+          "message": "Die Adresse ist ungültig"
+        },
+        "secretNotDefined": {
+          "title": "Fehlende Anmeldedaten",
+          "message": "Nicht alle Zugangsdaten wurden angegeben"
+        },
+        "invalidCredentials": {
+          "title": "Ungültige Zugangsdaten",
+          "message": "Die Zugangsdaten sind ungültig"
+        },
+        "commonError": {
+          "title": "Verbindungsaufbau fehlgeschlagen",
+          "message": "Die Verbindung konnte nicht hergestellt werden"
+        },
+        "badRequest": {
+          "title": "Fehlerhafte Anfrage",
+          "message": "Die Anfrage war fehlerhaft"
+        },
+        "unauthorized": {
+          "title": "Nicht autorisiert",
+          "message": "Wahrscheinlich falsche Anmeldeinformationen"
+        },
+        "forbidden": {
+          "title": "Verweigert",
+          "message": "Vermutlich fehlende Berechtigungen"
+        },
+        "notFound": {
+          "title": "Nicht gefunden",
+          "message": "Wahrscheinlich falsche URL oder Pfad"
+        },
+        "internalServerError": {
+          "title": "Interner Serverfehler",
+          "message": "Auf dem Server ist ein Fehler aufgetreten"
+        },
+        "serviceUnavailable": {
+          "title": "Dienst nicht verfügbar",
+          "message": "Der Server ist derzeit nicht erreichbar"
+        },
+        "connectionAborted": {
+          "title": "Verbindung abgebrochen",
+          "message": "Die Verbindung wurde abgebrochen"
+        },
+        "domainNotFound": {
+          "title": "Domain nicht gefunden",
+          "message": "Die Domain konnte nicht gefunden werden"
+        },
+        "connectionRefused": {
+          "title": "Verbindung verweigert",
+          "message": "Die Verbindung wurde abgelehnt"
+        },
+        "invalidJson": {
+          "title": "Ungültiges JSON",
+          "message": "Die Antwort war ungültig JSON"
+        },
+        "wrongPath": {
+          "title": "Falscher Pfad",
+          "message": "Der Pfad ist vermutlich nicht korrekt"
+        },
+        "tooManyRequests": {
+          "title": "Zu viele Anfragen innerhalb einer bestimmten Zeit",
+          "message": "Es gab zu viele Anfragen. Sie werden wahrscheinlich vom Zielsystem begrenzt oder abgelehnt"
+        }
+      }
+    },
+    "secrets": {
+      "title": "Secrets",
+      "lastUpdated": "Zuletzt aktualisiert am {date}",
+      "notSet": {
+        "label": "Kein Wert festgelegt",
+        "tooltip": "Das erforderliche Secret wurde noch nicht festgelegt"
+      },
+      "secureNotice": "Das Secret kann nicht nach der Erstellung abgerufen werden",
+      "reset": {
+        "title": "Secret zurücksetzen",
+        "message": "Bist du sicher, dass du dieses Secret zurücksetzen möchtest?"
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "Keine Secrets",
+        "text": "Kein Secret für diese Integration erforderlich"
+      },
+      "kind": {
+        "username": {
+          "label": "Benutzername",
+          "newLabel": "Neuer Benutzername"
+        },
+        "apiKey": {
+          "label": "API Schlüssel",
+          "newLabel": "neuer API Schlüssel"
+        },
+        "password": {
+          "label": "Passwort",
+          "newLabel": "Neues Passwort"
+        },
+        "tokenId": {
+          "label": "Token ID",
+          "newLabel": "Neue Token ID"
+        },
+        "realm": {
+          "label": "Bereich",
+          "newLabel": "Neuer Bereich"
+        },
+        "personalAccessToken": {
+          "label": "Persönlicher Zugangs-Token",
+          "newLabel": "Neuer persönlicher Zugangs-Token"
+        },
+        "topic": {
+          "label": "Thema",
+          "newLabel": "Neues Thema erstellen"
+        },
+        "url": {
+          "label": "URL",
+          "newLabel": "Neue URL"
+        },
+        "opnsenseApiKey": {
+          "label": "API-Schlüssel (Schlüssel)",
+          "newLabel": "Neuer API-Schlüssel (Schlüssel)"
+        },
+        "opnsenseApiSecret": {
+          "label": "API-Schlüssel (Secret)",
+          "newLabel": "Neuer API-Schlüssel (Secret)"
+        },
+        "githubAppId": {
+          "label": "App ID",
+          "newLabel": "Neue App ID"
+        },
+        "githubInstallationId": {
+          "label": "Installations ID",
+          "newLabel": "Neue Installations ID"
+        },
+        "privateKey": {
+          "label": "Privater Schlüssel",
+          "newLabel": "Neuer privater Schlüssel"
+        }
+      }
+    },
+    "permission": {
+      "use": "Integrationen in Elementen auswählen",
+      "interact": "Mit Integrationen interagieren",
+      "full": "Voller Zugriff auf Integrationen"
+    }
+  },
+  "media": {
+    "plural": "Medien",
+    "search": "Medien suchen",
+    "field": {
+      "name": "Name",
+      "size": "Größe",
+      "creator": "Ersteller"
+    },
+    "action": {
+      "upload": {
+        "label": "Medien Hochladen",
+        "file": "Datei auswählen",
+        "notification": {
+          "success": {
+            "message": "Das Medium wurde erfolgreich hochgeladen"
+          },
+          "error": {
+            "message": "Das Medium konnte nicht hochgeladen werden"
+          }
+        }
+      },
+      "delete": {
+        "label": "Medium löschen",
+        "description": "Sind Sie sicher, dass Sie die Medien <bName></bName> löschen möchten?",
+        "notification": {
+          "success": {
+            "message": "Das Medium wurde erfolgreich gelöscht"
+          },
+          "error": {
+            "message": "Die Medien konnten nicht gelöscht werden"
+          }
+        }
+      },
+      "copy": {
+        "label": "URL in Zwischenablage kopieren"
+      },
+      "open": {
+        "label": "Medium öffnen"
+      }
+    }
+  },
+  "common": {
+    "success": "Erfolgreich",
+    "beta": "Beta",
+    "error": "Fehler",
+    "action": {
+      "add": "Hinzufügen",
+      "apply": "Übernehmen",
+      "backToOverview": "Zurück zur Übersicht",
+      "change": "Verändern",
+      "create": "Erstellen",
+      "createAnother": "Erstellen und neu starten",
+      "edit": "Bearbeiten",
+      "import": "Import",
+      "insert": "Einfügen",
+      "remove": "Entfernen",
+      "save": "Speichern",
+      "saveChanges": "Änderungen speichern",
+      "cancel": "Abbrechen",
+      "delete": "Löschen",
+      "discard": "Verwerfen",
+      "close": "Schließen",
+      "confirm": "Bestätigen",
+      "continue": "Fortfahren",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "checkoutDocs": "Die Dokumentation ansehen",
+      "checkLogs": "Logs für weitere Details prüfen",
+      "tryAgain": "Erneut versuchen",
+      "loading": "Wird geladen"
+    },
+    "here": "Hier",
+    "iconPicker": {
+      "label": "Icon URL",
+      "header": "Geben Sie Namen oder Objekte ein, um nach Symbolen zu filtern... Homarr sucht nach {countIcons} Icons für Sie."
+    },
+    "colorScheme": {
+      "options": {
+        "light": "Hell",
+        "dark": "Dunkel"
+      }
+    },
+    "information": {
+      "min": "Min",
+      "max": "Max",
+      "days": "Tage",
+      "hours": "Stunden",
+      "minutes": "Minuten"
+    },
+    "notification": {
+      "create": {
+        "success": "Erstellung erfolgreich",
+        "error": "Erstellung fehlgeschlagen"
+      },
+      "delete": {
+        "success": "Löschen erfolgreich",
+        "error": "Löschen fehlgeschlagen"
+      },
+      "update": {
+        "success": "Änderungen erfolgreich angewendet",
+        "error": "Änderungen konnten nicht angewendet werden"
+      },
+      "transfer": {
+        "success": "Übertragung erfolgreich",
+        "error": "Übertragung ist fehlgeschlagen"
+      }
+    },
+    "multiSelect": {
+      "placeholder": "Wählen Sie einen oder mehrere Werte"
+    },
+    "multiText": {
+      "placeholder": "Weitere Werte hinzufügen",
+      "addLabel": "{value} hinzufügen"
+    },
+    "select": {
+      "placeholder": "Wert auswählen",
+      "badge": {
+        "recommended": "Empfohlen"
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "Zum dunklen Design wechseln",
+        "switchToLightMode": "Zum hellen Design wechseln",
+        "management": "Verwaltung",
+        "preferences": "Ihre Einstellungen",
+        "logout": "Abmelden",
+        "login": "Anmelden",
+        "homeBoard": "Ihr Home Board",
+        "loggedOut": "Abgemeldet",
+        "updateAvailable": "{countUpdates} Updates verfügbar: {tag}"
+      }
+    },
+    "dangerZone": "Gefahrenbereich",
+    "noResults": "Die Suche ergab keine Treffer",
+    "unsavedChanges": "Sie haben ungespeicherte Änderungen!",
+    "preview": {
+      "show": "Vorschau ansehen",
+      "hide": "Vorschau ausblenden"
+    },
+    "zod": {
+      "errors": {
+        "default": "Dieses Feld ist ungültig",
+        "required": "Dieses Feld ist erforderlich",
+        "string": {
+          "startsWith": "Dieses Feld muss mit {startsWith} beginnen",
+          "endsWith": "Dieses Feld muss mit {endsWith} enden",
+          "includes": "Dieses Feld muss {includes} beinhalten",
+          "invalidEmail": "Dieses Feld beinhaltet keine gültige E-Mail-Adresse"
+        },
+        "tooSmall": {
+          "string": "Dieses Feld muss mindestens {minimum} Zeichen lang sein",
+          "number": "Dieses Feld muss größer oder gleich {minimum} sein"
+        },
+        "tooBig": {
+          "string": "Dieses Feld muss mindestens {maximum} Zeichen lang sein",
+          "number": "Dieses Feld muss größer oder gleich {maximum} sein"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "Passwörter stimmen nicht überein",
+          "passwordRequirements": "Passwort erfüllt nicht alle Anforderungen",
+          "boardAlreadyExists": "Ein Board mit diesem Namen existiert bereits",
+          "invalidFileType": "Ungültiger Dateityp, erwartete {expected}",
+          "invalidFileName": "Ungültiger Dateiname",
+          "fileTooLarge": "Datei ist zu groß, maximale Größe ist {maxSize}",
+          "invalidConfiguration": "Ungültige Konfiguration",
+          "groupNameTaken": "Gruppenname bereits vergeben"
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "km/h",
+        "milesPerHour": "mph"
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "Neuer dynamischer Abschnitt",
+        "remove": "Dynamischen Abschnitt entfernen"
+      },
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "customCssClasses": {
+          "label": "Benutzerdefinierte CSS Klassen"
+        },
+        "borderColor": {
+          "label": "Rahmenfarbe"
+        }
+      },
+      "remove": {
+        "title": "Dynamischen Abschnitt entfernen",
+        "message": "Möchten Sie diesen dynamischen Abschnitt wirklich entfernen? Die Elemente werden an die gleiche Position im übergeordneten Abschnitt verschoben."
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "Name"
+        }
+      },
+      "action": {
+        "create": "Neue Kategorie",
+        "edit": "Kategorie umbenennen",
+        "remove": "Kategorie entfernen",
+        "moveUp": "Nach oben bewegen",
+        "moveDown": "Nach unten bewegen",
+        "createAbove": "Neue Kategorie oben",
+        "createBelow": "Neue Kategorie unten",
+        "openAllInNewTabs": "Alle in Tabs öffnen"
+      },
+      "create": {
+        "title": "Neue Kategorie",
+        "submit": "Kategorie hinzufügen"
+      },
+      "remove": {
+        "title": "Kategorie entfernen",
+        "message": "Möchten Sie die Kategorie {name} wirklich entfernen?"
+      },
+      "edit": {
+        "title": "Kategorie umbenennen",
+        "submit": "Kategorie umbenennen"
+      },
+      "menu": {
+        "label": {
+          "create": "Neue Kategorie",
+          "changePosition": "Position wechseln"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "Alle in tabs öffnen",
+        "text": "Einige Browser können aus Sicherheitsgründen das gleichzeitige Öffnen von mehreren Tabs blockieren. Homarr konnte nicht alle Fenster öffnen, weil Ihr Browser diese Aktion blockiert hat. Bitte erlauben Sie \"Pop-up Fenster öffnen\" und versuchen Sie es erneut."
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "Neues Element",
+      "import": "Element importieren",
+      "edit": "Element bearbeiten",
+      "moveResize": "Element verschieben/Größe ändern",
+      "duplicate": "Element duplizieren",
+      "remove": "Element löschen"
+    },
+    "menu": {
+      "label": {
+        "settings": "Einstellungen"
+      }
+    },
+    "create": {
+      "title": "Wählen Sie das hinzuzufügende Element aus",
+      "search": "Gegenstände filtern",
+      "addToBoard": "Zum Board hinzufügen"
+    },
+    "moveResize": {
+      "title": "Element verschieben/Größe ändern",
+      "field": {
+        "width": {
+          "label": "Breite"
+        },
+        "height": {
+          "label": "Höhe"
+        },
+        "xOffset": {
+          "label": "X Versatz"
+        },
+        "yOffset": {
+          "label": "Y Versatz"
+        }
+      }
+    },
+    "edit": {
+      "title": "Element bearbeiten",
+      "advancedOptions": {
+        "label": "Erweiterte Einstellungen",
+        "title": "Erweiterte Einstellungen Optionen"
+      },
+      "field": {
+        "integrations": {
+          "label": "Integrationen"
+        },
+        "title": {
+          "label": "Titel"
+        },
+        "customCssClasses": {
+          "label": "Benutzerdefinierte CSS Klassen"
+        },
+        "borderColor": {
+          "label": "Rahmenfarbe"
+        }
+      }
+    },
+    "remove": {
+      "title": "Element entfernen",
+      "message": "Soll dieses Element wirklich entfernt werden?"
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "App",
+      "description": "Bettet eine App in das Board ein.",
+      "option": {
+        "appId": {
+          "label": "App auswählen"
+        },
+        "openInNewTab": {
+          "label": "In neuem Tab öffnen"
+        },
+        "showTitle": {
+          "label": "App Namen anzeigen"
+        },
+        "pingEnabled": {
+          "label": "Statusüberprüfung aktivieren"
+        },
+        "layout": {
+          "label": "Ansicht",
+          "option": {
+            "row": "Horizontal",
+            "row-reverse": "Horizontal (invertiert)",
+            "column": "Vertikal",
+            "column-reverse": "Vertikal (invertiert)"
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "Beschreibung des Anzeigemodus",
+          "description": "Wählen Sie, wie die App-Beschreibung angezeigt werden soll",
+          "option": {
+            "normal": "Innerhalb des Widgets",
+            "tooltip": "Als Tooltip",
+            "hidden": "Versteckt"
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "Keine App",
+          "tooltip": "Sie haben keine gültige App ausgewählt"
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "Lesezeichen",
+      "description": "Mehrere App Links anzeigen",
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "layout": {
+          "label": "Ansicht",
+          "option": {
+            "row": {
+              "label": "Horizontal"
+            },
+            "column": {
+              "label": "Vertikal"
+            },
+            "grid": {
+              "label": "Raster"
+            },
+            "gridHorizontal": {
+              "label": "Gitter horizontal"
+            }
+          }
+        },
+        "hideTitle": {
+          "label": "Titel ausblenden"
+        },
+        "hideIcon": {
+          "label": "Symbole verbergen"
+        },
+        "hideHostname": {
+          "label": "Hostnamen ausblenden"
+        },
+        "openNewTab": {
+          "label": "In neuem Tab öffnen"
+        },
+        "items": {
+          "label": "Lesezeichen",
+          "add": "Lesezeichen hinzufügen"
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "DNS Hole Zusammenfassung",
+      "description": "Zeigt die Zusammenfassung deines DNS Holes an",
+      "option": {
+        "layout": {
+          "label": "Ansicht",
+          "option": {
+            "row": {
+              "label": "Horizontal"
+            },
+            "column": {
+              "label": "Vertikal"
+            },
+            "grid": {
+              "label": "Raster"
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": "Pi Hole Farben verwenden"
+        }
+      },
+      "error": {
+        "internalServerError": "Fehler beim Abrufen der DNS Hole Zusammenfassung",
+        "integrationsDisconnected": "Keine Daten verfügbar, alle Integrationen getrennt"
+      },
+      "data": {
+        "adsBlockedToday": "Heute blockiert",
+        "adsBlockedTodayPercentage": "Heute blockiert",
+        "dnsQueriesToday": "Abfragen heute",
+        "domainsBeingBlocked": "Domänen auf der Sperrliste"
+      },
+      "domainsTooltip": "Aufgrund mehrerer Integrationen kann Homarr die genaue Anzahl der blockierten Domains nicht berechnen"
+    },
+    "dnsHoleControls": {
+      "name": "DNS Hole Steuerung",
+      "description": "Steuern Sie PiHole oder AdGuard von Ihrem Dashboard aus",
+      "option": {
+        "layout": {
+          "label": "Ansicht",
+          "option": {
+            "row": {
+              "label": "Horizontal"
+            },
+            "column": {
+              "label": "Vertikal"
+            },
+            "grid": {
+              "label": "Raster"
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": "Alle Schaltflächen anzeigen"
+        }
+      },
+      "error": {
+        "internalServerError": "Fehler bei der Kontrolle des DNS Holes"
+      },
+      "controls": {
+        "enableAll": "Alle aktivieren",
+        "disableAll": "Alle deaktivieren",
+        "setTimer": "Timer setzen",
+        "set": "Übernehmen",
+        "enabled": "Aktiviert",
+        "disabled": "Deaktiviert",
+        "processing": "Wird verarbeitet",
+        "disconnected": "Verbindung getrennt",
+        "hours": "Stunden",
+        "minutes": "Minuten",
+        "unlimited": "Freilassen für unbegrenzt"
+      }
+    },
+    "clock": {
+      "name": "Datum und Uhrzeit",
+      "description": "Zeigt das aktuelle Datum und die Uhrzeit an.",
+      "option": {
+        "customTitleToggle": {
+          "label": "Eigene Titel/Stadt Anzeige",
+          "description": "Zeige einen benutzerdefinierten Titel oder den Namen der Stadt oder des Landes oben auf der Uhr."
+        },
+        "customTitle": {
+          "label": "Titel"
+        },
+        "is24HourFormat": {
+          "label": "24-Stunden Format",
+          "description": "24-Stunden Format anstelle von 12-Stunden Format verwenden"
+        },
+        "showSeconds": {
+          "label": "Sekunden anzeigen"
+        },
+        "useCustomTimezone": {
+          "label": "Eine feste Zeitzone verwenden"
+        },
+        "timezone": {
+          "label": "Zeitzone",
+          "description": "Wählen Sie die Zeitzone nach dem IANA-Standard"
+        },
+        "showDate": {
+          "label": "Datum anzeigen"
+        },
+        "dateFormat": {
+          "label": "Datumsformat",
+          "description": "Wie das Datum aussehen sollte"
+        },
+        "customTimeFormat": {
+          "label": "Benutzerdefiniertes Zeitformat",
+          "description": "ISO 8601 Standard benutzen um die Zeit zu formatieren (dies wird andere Optionen überschreiben)"
+        },
+        "customDateFormat": {
+          "label": "Benutzerdefiniertes Datumsformat",
+          "description": "ISO 8601 Standard benutzen um das Datum zu formatieren (dies wird andere Optionen überschreiben)"
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "Status des Minecraft Servers",
+      "description": "Status des Minecraft Servers anzeigen",
+      "option": {
+        "title": {
+          "label": "Titel"
+        },
+        "domain": {
+          "label": "Server Adresse"
+        },
+        "isBedrockServer": {
+          "label": "Bedrock Server"
+        }
+      },
+      "status": {
+        "online": "Online",
+        "offline": "Offline"
+      }
+    },
+    "notebook": {
+      "name": "Notizbuch",
+      "description": "Ein einfaches Notizbuch Widget, das Markdown unterstützt",
+      "option": {
+        "showToolbar": {
+          "label": "Zeigt die Symbolleiste an, um Ihnen beim Schreiben der Markdown zu assistieren"
+        },
+        "allowReadOnlyCheck": {
+          "label": "Prüfung im Nur-Lese-Modus zulassen"
+        },
+        "content": {
+          "label": "Der Inhalt des Notizbuchs"
+        }
+      },
+      "controls": {
+        "bold": "Fett",
+        "italic": "Kursiv",
+        "strikethrough": "Durchgestrichen",
+        "underline": "Unterstrichen",
+        "colorText": "Farbiger Text",
+        "colorHighlight": "Farbig hervorgehobener Text",
+        "code": "Code",
+        "clear": "Formatierung entfernen",
+        "heading": "Überschrift {level}",
+        "align": "Text ausrichten: {position}",
+        "blockquote": "Blockzitat",
+        "horizontalLine": "Horizontale Linie",
+        "bulletList": "Aufzählung",
+        "orderedList": "Geordnete Liste",
+        "checkList": "Checkliste",
+        "increaseIndent": "Einzug vergrößern",
+        "decreaseIndent": "Einzug verkleinern",
+        "link": "Verknüpfung",
+        "unlink": "Link entfernen",
+        "image": "Bild einbetten",
+        "addTable": "Tabelle hinzufügen",
+        "deleteTable": "Tabelle entfernen",
+        "colorCell": "Farbe der Tabellen Zelle",
+        "mergeCell": "Zellen-Zusammenführung umschalten",
+        "addColumnLeft": "Spalte davor hinzufügen",
+        "addColumnRight": "Spalte danach hinzufügen",
+        "deleteColumn": "Spalte löschen",
+        "addRowTop": "Zeile davor hinzufügen",
+        "addRowBelow": "Zeile danach hinzufügen",
+        "deleteRow": "Zeile löschen"
+      },
+      "align": {
+        "left": "Links",
+        "center": "Mittig",
+        "right": "Rechts"
+      },
+      "popover": {
+        "clearColor": "Farbe entfernen",
+        "source": "Quelle",
+        "widthPlaceholder": "Wert in % oder Pixel",
+        "columns": "Spalten",
+        "rows": "Zeilen",
+        "width": "Breite",
+        "height": "Höhe"
+      },
+      "placeholder": "Mit dem Schreiben von Notizen beginnen",
+      "dismiss": {
+        "title": "Änderungen verwerfen?",
+        "message": "Sie haben ungespeicherte Änderungen in Ihrem Notizbuch. Sind Sie sicher, dass Sie diese verwerfen möchten?",
+        "action": {
+          "discard": "Änderungen verwerfen",
+          "keepEditing": "Bearbeitung fortsetzen"
+        }
+      }
+    },
+    "iframe": {
+      "name": "iFrame",
+      "description": "Einbetten von Inhalten aus dem Internet. Einige Websites können den Zugriff einschränken.",
+      "option": {
+        "embedUrl": {
+          "label": "URL einbetten"
+        },
+        "allowFullScreen": {
+          "label": "Vollbildmodus zulassen"
+        },
+        "allowTransparency": {
+          "label": "Erlaube Transparenz"
+        },
+        "allowScrolling": {
+          "label": "Scrollen zulassen"
+        },
+        "allowPayment": {
+          "label": "Zahlung zulassen"
+        },
+        "allowAutoPlay": {
+          "label": "Automatische Wiedergabe zulassen"
+        },
+        "allowMicrophone": {
+          "label": "Mikrofonzugriff erlauben"
+        },
+        "allowCamera": {
+          "label": "Kamera freigeben"
+        },
+        "allowGeolocation": {
+          "label": "Geolokalisierung zulassen"
+        }
+      },
+      "error": {
+        "noUrl": "Keine iFrame URL angegeben",
+        "unsupportedProtocol": "Die angegebene URL verwendet ein nicht unterstütztes Protokoll. Bitte verwenden Sie eines von ({supportedProtocols})",
+        "noBrowerSupport": "Ihr Browser unterstützt keine iframes. Bitte aktualisieren Sie Ihren Browser."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "Zustand der Entität",
+      "description": "Zeigt den Status einer Entität an und schaltet ihn optional ein",
+      "option": {
+        "entityId": {
+          "label": "Eintrag-ID"
+        },
+        "displayName": {
+          "label": "Anzeigename"
+        },
+        "entityUnit": {
+          "label": "Einheit der Entität"
+        },
+        "clickable": {
+          "label": "Anklickbar"
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "Automatisierung ausführen",
+      "description": "Automatisierung mit einem Klick auslösen",
+      "option": {
+        "displayName": {
+          "label": "Anzeigename"
+        },
+        "automationId": {
+          "label": "Automatisierungs-ID"
+        }
+      },
+      "spotlightAction": {
+        "run": "{name} ausführen"
+      }
+    },
+    "stockPrice": {
+      "name": "Aktienpreis",
+      "description": "Zeigt den aktuellen Aktienkurs einer Firma an",
+      "option": {
+        "stock": {
+          "label": "Aktiensymbol"
+        },
+        "timeRange": {
+          "label": "Zeitraum",
+          "option": {
+            "1d": {
+              "label": "1 Tag"
+            },
+            "5d": {
+              "label": "5 Tage"
+            },
+            "1mo": {
+              "label": "1 Monat"
+            },
+            "3mo": {
+              "label": "3 Monate"
+            },
+            "6mo": {
+              "label": "6 Monate"
+            },
+            "ytd": {
+              "label": "Bisheriger Jahresverlauf"
+            },
+            "1y": {
+              "label": "1 Jahr"
+            },
+            "2y": {
+              "label": "2 Jahre"
+            },
+            "5y": {
+              "label": "5 Jahre"
+            },
+            "10y": {
+              "label": "10 Jahre"
+            },
+            "max": {
+              "label": "Max"
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "Zeitintervall",
+          "option": {
+            "5m": {
+              "label": "5 Minuten"
+            },
+            "15m": {
+              "label": "15 Minuten"
+            },
+            "30m": {
+              "label": "30 Minuten"
+            },
+            "1h": {
+              "label": "1 Stunde"
+            },
+            "1d": {
+              "label": "1 Tag"
+            },
+            "5d": {
+              "label": "5 Tage"
+            },
+            "1wk": {
+              "label": "1 Woche"
+            },
+            "1mo": {
+              "label": "1 Monat"
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "Kalender",
+      "description": "Zeigt Ereignisse aus Ihren Integrationen in einer Kalenderansicht innerhalb eines bestimmten Zeitraums an",
+      "duration": {
+        "allDay": "Ganztägig"
+      },
+      "option": {
+        "releaseType": {
+          "label": "Radarr Veröffentlichungs Typ",
+          "options": {
+            "inCinemas": "In Kinos",
+            "digitalRelease": "Digitale Veröffentlichung",
+            "physicalRelease": "Physische Veröffentlichung"
+          }
+        },
+        "filterPastMonths": {
+          "label": "Start von"
+        },
+        "filterFutureMonths": {
+          "label": "Endet am"
+        },
+        "showUnmonitored": {
+          "label": "Nicht überwachte anzeigen"
+        }
+      }
+    },
+    "weather": {
+      "name": "Wetter",
+      "description": "Zeigt die aktuellen Wetterinformationen für einen bestimmten Ort an.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": "Temperatur in Fahrenheit"
+        },
+        "disableTemperatureDecimals": {
+          "label": "Deaktivieren der Temperatur Dezimalstellen"
+        },
+        "showCurrentWindSpeed": {
+          "label": "Aktuelle Windgeschwindigkeit anzeigen",
+          "description": "Nur bei aktuellem Wetter"
+        },
+        "useImperialSpeed": {
+          "label": "Verwende miles per hour für die Windgeschwindigkeit"
+        },
+        "location": {
+          "label": "Wetterstandort"
+        },
+        "showCity": {
+          "label": "Stadt anzeigen"
+        },
+        "hasForecast": {
+          "label": "Prognose anzeigen"
+        },
+        "forecastDayCount": {
+          "label": "Anzahl der Prognose Tage",
+          "description": "Wenn das Widget nicht breit genug ist, werden weniger Tage angezeigt"
+        },
+        "dateFormat": {
+          "label": "Datumsformat",
+          "description": "Wie das Datum aussehen sollte"
+        }
+      },
+      "currentWindSpeed": "{currentWindSpeed} {unit}",
+      "dailyForecast": {
+        "sunrise": "Sonnenaufgang",
+        "sunset": "Sonnenuntergang",
+        "maxWindSpeed": "Maximale Windgeschwindigkeit: {maxWindSpeed} {unit}",
+        "maxWindGusts": "Maximale Windböen: {maxWindGusts} {unit}"
+      },
+      "kind": {
+        "clear": "Klar",
+        "mainlyClear": "Überwiegend klar",
+        "fog": "Nebel",
+        "drizzle": "Niesel",
+        "freezingDrizzle": "Eisiger Nieselregen",
+        "rain": "Regen",
+        "freezingRain": "Eisiger Regen",
+        "snowFall": "Schneefall",
+        "snowGrains": "Schneekörner",
+        "rainShowers": "Regenschauer",
+        "snowShowers": "Schneeschauer",
+        "thunderstorm": "Gewitter",
+        "thunderstormWithHail": "Gewitter mit Hagel",
+        "unknown": "Unbekannt"
+      }
+    },
+    "indexerManager": {
+      "name": "Status des Index Managers",
+      "description": "Status des Indexer",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": "Indexer Seite in neuem Tab öffnen"
+        }
+      },
+      "title": "Index Manager",
+      "testAll": "Alle testen",
+      "error": {
+        "internalServerError": "Fehler beim Abrufen des Indexer Status"
+      }
+    },
+    "healthMonitoring": {
+      "name": "Überwachung des Systemzustands",
+      "description": "Zeigt Informationen zum Zustand und Status Ihres/Ihrer Systeme(s) an.",
+      "tab": {
+        "system": "System",
+        "cluster": "Gruppe"
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "CPU-Temperatur in Fahrenheit"
+        },
+        "cpu": {
+          "label": "CPU-Info anzeigen"
+        },
+        "memory": {
+          "label": "Speicher-Info anzeigen"
+        },
+        "showUptime": {
+          "label": "Laufzeit anzeigen"
+        },
+        "fileSystem": {
+          "label": "Dateisystem Info anzeigen"
+        },
+        "defaultTab": {
+          "label": "Standard Tab"
+        },
+        "visibleClusterSections": {
+          "label": "Sichtbare Cluster-Abschnitte"
+        },
+        "sectionIndicatorRequirement": {
+          "label": "Anforderung der Sektionsindikatoren"
+        }
+      },
+      "popover": {
+        "information": "Informationen",
+        "processor": "Prozessor: {cpuModelName}",
+        "memory": "Speicher: {memory}GiB",
+        "memoryAvailable": "Verfügbar: {memoryAvailable} GiB ({percent}%)",
+        "version": "Version: {version}",
+        "uptime": "Laufzeit: {months} Monate, {days} Tage, {hours} Stunden, {minutes} Minuten",
+        "loadAverage": "Durchschnittliche Last:",
+        "minute": "1 Minute",
+        "minutes": "{count} Minuten",
+        "used": "Belegt",
+        "available": "Verfügbar",
+        "lastSeen": "Letzte Statusaktualisierung: {lastSeen}"
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": "Fehler beim Abrufen des Gesundheitsstatus"
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "CPU",
+          "memory": "RAM"
+        },
+        "resource": {
+          "node": {
+            "name": "Nodes"
+          },
+          "qemu": {
+            "name": "VMs"
+          },
+          "lxc": {
+            "name": "LXCs"
+          },
+          "storage": {
+            "name": "Speicher"
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "Node",
+            "vmId": "VM ID",
+            "plugin": "Plugin"
+          },
+          "detail": {
+            "cpu": "Kerne",
+            "memory": "Speicher",
+            "storage": "Speicher",
+            "uptime": "Laufzeit",
+            "haState": "HA Status",
+            "storageType": {
+              "local": "Lokaler Speicher",
+              "shared": "Geteilter Speicher"
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "Name",
+            "cpu": "CPU",
+            "memory": "RAM",
+            "node": "Node"
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "Docker Statistiken",
+      "description": "Statistiken Ihrer Container (Dieses Widget kann nur mit Administratorrechten hinzugefügt werden)",
+      "option": {
+        "enableRowSorting": {
+          "label": "Sortierung von Elementen aktivieren"
+        },
+        "defaultSort": {
+          "label": "Standardmäßig verwendete Spalte zur Sortierung",
+          "option": {
+            "name": "Name",
+            "state": "Status",
+            "cpuUsage": "CPU-Auslastung",
+            "memoryUsage": "Speichernutzung"
+          }
+        },
+        "descendingDefaultSort": {
+          "label": "Sortierung umkehren"
+        }
+      },
+      "error": {
+        "internalServerError": "Fehler beim Abrufen der Container Statistiken"
+      }
+    },
+    "common": {
+      "location": {
+        "query": "Stadt / Postleitzahl",
+        "latitude": "Breitengrad",
+        "longitude": "Längengrad",
+        "disabledTooltip": "Gib eine Stadt oder Postleitzahl an",
+        "unknownLocation": "Unbekannter Ort",
+        "search": "Suche",
+        "table": {
+          "header": {
+            "city": "Stadt",
+            "country": "Land",
+            "coordinates": "Koordinaten",
+            "population": "Bevölkerung"
+          },
+          "action": {
+            "select": "Wähle {city}, {countryCode}"
+          },
+          "population": {
+            "fallback": "Unbekannt"
+          }
+        }
+      },
+      "integration": {
+        "noData": "Keine Integration gefunden",
+        "description": "Klicken Sie <here></here> um eine neue Integration zu erstellen"
+      },
+      "app": {
+        "noData": "Keine App gefunden",
+        "description": "Klicken Sie <here></here> um eine neue App zu erstellen",
+        "quickCreate": "Jetzt eine App erstellen"
+      },
+      "error": {
+        "noIntegration": "Keine Integration ausgewählt",
+        "noData": "Keine Integrationsdaten verfügbar"
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "Videostream",
+      "description": "Einbetten eines Videostreams oder eines Videos von einer Kamera oder einer Website",
+      "option": {
+        "feedUrl": {
+          "label": "Feed URL"
+        },
+        "hasAutoPlay": {
+          "label": "Automatische Wiedergabe",
+          "description": "Autoplay funktioniert nur bei Stummschaltung aufgrund von Browser Einschränkungen"
+        },
+        "isMuted": {
+          "label": "Stumm geschaltet"
+        },
+        "hasControls": {
+          "label": "Steuerelemente anzeigen"
+        }
+      },
+      "error": {
+        "noUrl": "Keine Video URL angegeben",
+        "forYoutubeUseIframe": "Für YouTube Videos verwenden Sie die iframe Option"
+      }
+    },
+    "mediaServer": {
+      "name": "Aktuelle Media Server Streams",
+      "description": "Zeige die aktuellen Streams auf deinen Medienservern an",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "Nur aktuelle Wiedergabe anzeigen",
+          "description": "Diese Einstellung zu deaktivieren wird für Plex nicht funktionieren"
+        }
+      },
+      "items": {
+        "currentlyPlaying": "Aktuelle Wiedergabe",
+        "user": "Benutzer",
+        "name": "Name",
+        "id": "Id",
+        "metadata": {
+          "title": "Statistiken für Nerds",
+          "video": {
+            "title": "Video",
+            "resolution": "Auflösung"
+          },
+          "audio": {
+            "title": "Audio",
+            "channelCount": "Audio Kanäle",
+            "codec": "Audio Codec"
+          },
+          "transcoding": {
+            "title": "Transkodierung",
+            "container": "Container",
+            "resolution": "Auflösung",
+            "target": "Ziel Codec"
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "Download Client",
+      "description": "Ermöglicht es Ihnen, Ihre Downloads sowohl von Torrent- als auch von Usenet-Clients anzusehen und zu verwalten.",
+      "option": {
+        "columns": {
+          "label": "Anzuzeigende Spalten"
+        },
+        "enableRowSorting": {
+          "label": "Sortierung von Elementen aktivieren"
+        },
+        "defaultSort": {
+          "label": "Standardmäßig verwendete Spalte zur Sortierung"
+        },
+        "descendingDefaultSort": {
+          "label": "Sortierung umkehren"
+        },
+        "showCompletedUsenet": {
+          "label": "Usenet Einträge anzeigen die abgeschlossen wurden"
+        },
+        "showCompletedTorrent": {
+          "label": "Torrent Einträge anzeigen die abgeschlossen wurden"
+        },
+        "showCompletedHttp": {
+          "label": "Andere Einträge als abgeschlossen anzeigen"
+        },
+        "activeTorrentThreshold": {
+          "label": "Abgeschlossene Torrents unter diesem Schwellenwert ausblenden (in kiB/s)"
+        },
+        "categoryFilter": {
+          "label": "Kategorien/Labels zum Filtern"
+        },
+        "filterIsWhitelist": {
+          "label": "Als Whitelist filtern"
+        },
+        "applyFilterToRatio": {
+          "label": "Filter zur Berechnung des Verhältnisses verwenden"
+        },
+        "limitPerIntegration": {
+          "label": "Elemente pro Integration begrenzen",
+          "description": "Dies begrenzt die Anzahl der Elemente pro Integration, jedoch nicht global"
+        }
+      },
+      "errors": {
+        "noColumns": "Spalten in Elementen auswählen",
+        "noCommunications": "Kann keine Daten von der Integration laden"
+      },
+      "items": {
+        "actions": {
+          "columnTitle": "Steuerung"
+        },
+        "added": {
+          "columnTitle": "Hinzugefügt",
+          "detailsTitle": "Hinzugefügt am"
+        },
+        "category": {
+          "columnTitle": "Extras",
+          "detailsTitle": "Kategorien (Oder zusätzliche Informationen)"
+        },
+        "downSpeed": {
+          "columnTitle": "Download",
+          "detailsTitle": "Download Geschwindigkeit"
+        },
+        "index": {
+          "columnTitle": "#",
+          "detailsTitle": "Aktueller Index im Client"
+        },
+        "id": {
+          "columnTitle": "ID"
+        },
+        "integration": {
+          "columnTitle": "Integration"
+        },
+        "name": {
+          "columnTitle": "Job Name"
+        },
+        "progress": {
+          "columnTitle": "Fortschritt",
+          "detailsTitle": "Download Fortschritt"
+        },
+        "ratio": {
+          "columnTitle": "Verhältnis",
+          "detailsTitle": "Torrent Verhältnis (Empfangen/Gesendet)"
+        },
+        "received": {
+          "columnTitle": "Download gesamt",
+          "detailsTitle": "Insgesamt heruntergeladen"
+        },
+        "sent": {
+          "columnTitle": "Upload gesamt",
+          "detailsTitle": "Insgesamt hochgeladen"
+        },
+        "size": {
+          "columnTitle": "Dateigröße",
+          "detailsTitle": "Gesamtgröße der Auswahl/Dateien"
+        },
+        "state": {
+          "columnTitle": "Staat",
+          "detailsTitle": "Jobstatus"
+        },
+        "time": {
+          "columnTitle": "Endzeit",
+          "detailsTitle": "Zeit danach/zur Fertigstellung"
+        },
+        "type": {
+          "columnTitle": "Typ",
+          "detailsTitle": "Download Client"
+        },
+        "upSpeed": {
+          "columnTitle": "Upload",
+          "detailsTitle": "Upload Geschwindigkeit"
+        }
+      },
+      "states": {
+        "downloading": "Wird heruntergeladen",
+        "queued": "In der Warteschlange",
+        "paused": "Pausiert",
+        "completed": "Abgeschlossen",
+        "failed": "Fehlgeschlagen",
+        "processing": "Wird verarbeitet",
+        "leeching": "Leeching",
+        "stalled": "Angehalten",
+        "unknown": "Unbekannt",
+        "seeding": "Seede"
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "Liste der Download Clients",
+          "pause": "Alle Clients/Elemente pausieren",
+          "resume": "Alle Clients/Elemente fortsetzen"
+        },
+        "client": {
+          "pause": "Client pausieren",
+          "resume": "Client fortsetzen"
+        },
+        "item": {
+          "pause": "Element pausieren",
+          "resume": "Element fortsetzen",
+          "delete": {
+            "title": "Element löschen",
+            "modalTitle": "Sind Sie sicher, dass Sie diesen Auftrag löschen möchten?",
+            "entry": "Eintrag löschen",
+            "entryAndFiles": "Eintrag und Datei(en) löschen"
+          }
+        }
+      },
+      "globalRatio": "Globales Verhältnis"
+    },
+    "mediaReleases": {
+      "name": "Medien Veröffentlichungen",
+      "description": "Zeige neu hinzugefügte Medien oder kommende Versionen von verschiedenen Integrationen",
+      "option": {
+        "layout": {
+          "label": "Darstellung",
+          "option": {
+            "backdrop": {
+              "label": "Hintergrund"
+            },
+            "poster": {
+              "label": "Poster"
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": "Beschreibungs des Tooltips anzeigen"
+        },
+        "showType": {
+          "label": "Medientyp Abzeichen anzeigen"
+        },
+        "showSource": {
+          "label": "Integration der Quelle anzeigen"
+        }
+      },
+      "length": {
+        "duration": "{length}Minuten"
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "Liste der Medienanfragen",
+      "description": "Sehen Sie eine Liste aller Medienanfragen von Ihrer Overseerr- oder Jellyseerr-Instanz",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "Links in neuem Tab öffnen"
+        }
+      },
+      "pending": {
+        "approve": "Anfrage annehmen",
+        "approving": "Anfrage wird bestätigt...",
+        "decline": "Antrag ablehnen"
+      },
+      "availability": {
+        "unknown": "Unbekannt",
+        "pending": "Ausstehend",
+        "processing": "In Bearbeitung",
+        "requested": "Angefordert",
+        "partiallyAvailable": "Teilweise",
+        "available": "Verfügbar",
+        "blacklisted": "Gesperrt",
+        "deleted": "Gelöscht"
+      },
+      "status": {
+        "pending": "Ausstehend",
+        "approved": "Bestätigt",
+        "declined": "Abgelehnt",
+        "failed": "Fehlgeschlagen",
+        "completed": "Abgeschlossen"
+      },
+      "toBeDetermined": "Noch Festzulegen"
+    },
+    "mediaRequests-requestStats": {
+      "name": "Statistik der Medienanfragen",
+      "description": "Statistiken über Ihre Medienanfragen",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "Medien Statistiken",
+          "approved": "Bereits genehmigt",
+          "pending": "Ausstehende Freigaben",
+          "processing": "Wird verarbeitet",
+          "declined": "Bereits abgelehnt",
+          "available": "Bereits verfügbar",
+          "tv": "TV Anfragen",
+          "movie": "Film Anfragen",
+          "total": "Gesamt"
+        },
+        "users": {
+          "main": "Top Nutzer",
+          "requests": "Anfragen"
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "Medien Transkodierung",
+      "description": "Statistiken, aktuelle Warteschlange und Status Ihrer Medien Transkordierung",
+      "option": {
+        "defaultView": {
+          "label": "Standardansicht"
+        },
+        "queuePageSize": {
+          "label": "Größe der Warteschlange"
+        }
+      },
+      "tab": {
+        "workers": "Arbeiter",
+        "queue": "Warteschlange",
+        "statistics": "Statistiken"
+      },
+      "currentIndex": "{start}-{end} von {total}",
+      "healthCheck": {
+        "title": "Gesundheitscheck",
+        "queued": "In der Warteschlange",
+        "status": {
+          "healthy": "Gesund",
+          "unhealthy": "Fehlerhaft"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "Leer",
+          "transcodes": "Transkodieren",
+          "transcodesCount": "Transkodierungen",
+          "healthChecksCount": "Health Check",
+          "filesCount": "Dateien",
+          "savedSpace": "Belegter Speicherplatz",
+          "healthChecks": "Gesundheitscheck",
+          "videoCodecs": "Codecs",
+          "videoContainers": "Container",
+          "videoResolutions": "Auflösungen"
+        },
+        "workers": {
+          "empty": "Leer",
+          "table": {
+            "file": "Datei",
+            "eta": "Voraussichtlicher Abschluss",
+            "progress": "Fortschritt",
+            "transcode": "Transkodieren",
+            "healthCheck": "Gesundheitscheck"
+          }
+        },
+        "queue": {
+          "empty": "Leer",
+          "table": {
+            "file": "Datei",
+            "size": "Größe",
+            "transcode": "Transkodieren",
+            "healthCheck": "Gesundheitscheck"
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "RSS Feeds",
+      "description": "Einen oder mehrere generische RSS, ATOM oder JSON-Feeds überwachen und anzeigen",
+      "option": {
+        "feedUrls": {
+          "label": "Feed URLs"
+        },
+        "enableRtl": {
+          "label": "RTL aktivieren"
+        },
+        "textLinesClamp": {
+          "label": "Beschreibung line clamp"
+        },
+        "maximumAmountPosts": {
+          "label": "Limit für Beiträge"
+        },
+        "hideDescription": {
+          "label": "Beschreibung ausblenden"
+        }
+      }
+    },
+    "releases": {
+      "name": "Veröffentlichungen",
+      "description": "Zeigt eine Liste der aktuellen Version der angegebenen Repositories mit der angegebenen Version regex an.",
+      "option": {
+        "newReleaseWithin": {
+          "label": "Neue Version innerhalb",
+          "description": "Anwendungsbeispiel: 1w (1 Woche), 10M (10 Monate). Akzeptierte Einheiten h (Stunden), d (Tage), w (Wochen), M (Monate), y (Jahre). Leer lassen für keine Hervorhebung neuer Releases."
+        },
+        "staleReleaseWithin": {
+          "label": "Veraltete Version innerhalb",
+          "description": "Anwendungsbeispiel: 1w (1 Woche), 10M (10 Monate). Akzeptierte Einheiten h (Stunden), d (Tage), w (Wochen), M (Monate), y (Jahre). Leer lassen für keine Hervorhebung von veralteten Releases."
+        },
+        "showOnlyHighlighted": {
+          "label": "Nur markierte anzeigen",
+          "description": "Nur neue oder veraltete Versionen anzeigen. Wie oben beschrieben."
+        },
+        "showDetails": {
+          "label": "Details anzeigen"
+        },
+        "showOnlyIcon": {
+          "label": "Nur Symbole anzeigen"
+        },
+        "topReleases": {
+          "label": "Top Releases",
+          "description": "Die maximale Anzahl der neuesten Versionen, die angezeigt werden sollen. Null bedeutet kein Limit."
+        },
+        "repositories": {
+          "label": "Repositories",
+          "addRepository": {
+            "label": "Repository hinzufügen"
+          },
+          "importRepositories": {
+            "label": "Von Docker importieren",
+            "loading": "Lade Docker Images",
+            "noImagesFound": "Keine Docker Images gefunden",
+            "listFoundImages": "Liste der gefundenen Images",
+            "listAlreadyImportedImages": "Liste der bereits importierten Images",
+            "allImagesAlreadyImported": "Alle Images wurden bereits importiert",
+            "onlyAdminCanImport": "Nur Administratoren können vom Docker importieren",
+            "selectAll": "Alles auswählen",
+            "deselectAll": "Alle abwählen"
+          },
+          "provider": {
+            "label": "Anbieter"
+          },
+          "identifier": {
+            "label": "Identifier",
+            "placeholder": "Name oder Eigentümer/Name"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "versionFilter": {
+            "label": "Versionsfilter",
+            "prefix": {
+              "label": "Präfix"
+            },
+            "precision": {
+              "label": "Präzision",
+              "options": {
+                "none": "Keine"
+              }
+            },
+            "suffix": {
+              "label": "Suffix"
+            },
+            "regex": {
+              "label": "Regulärer Ausdruck"
+            }
+          },
+          "edit": {
+            "label": "Bearbeiten"
+          },
+          "editForm": {
+            "title": "Repository bearbeiten",
+            "cancel": {
+              "label": "Abbrechen"
+            },
+            "confirm": {
+              "label": "Bestätigen"
+            }
+          },
+          "importForm": {
+            "title": "Von Docker importieren"
+          },
+          "example": {
+            "label": "Beispiel"
+          },
+          "invalid": "Ungültige Repository Definition, bitte überprüfen Sie die Werte",
+          "noProvider": {
+            "label": "Keine Anbieter",
+            "tooltip": "Der Anbieter konnte nicht festgestellt werden, bitte manuell nach dem Import der Bilder festlegen"
+          }
+        }
+      },
+      "not-found": "Nicht gefunden",
+      "pre-release": "Vorveröffentlichung",
+      "archived": "Archiviert",
+      "forked": "Forked",
+      "starsCount": "Sterne",
+      "forksCount": "Ableger",
+      "issuesCount": "Offene Tickets",
+      "markViewed": "Als gelesen markieren",
+      "openProjectPage": "Projektseite öffnen",
+      "openReleasePage": "Release Seite öffnen",
+      "releaseDescription": "Release Beschreibung",
+      "projectDescription": "Projektbeschreibung",
+      "created": "Erstellt",
+      "error": {
+        "label": "Fehler",
+        "messages": {
+          "invalidIdentifier": "Ungültige Kennung",
+          "noMatchingVersion": "Keine passende Version gefunden",
+          "noReleasesFound": "Keine Veröffentlichungen gefunden",
+          "noProviderSeleceted": "Kein Anbieter ausgewählt",
+          "noProviderResponse": "Keine Antwort vom Anbieter"
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": "{count} verbunden"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "Keine Daten verfügbar, alle Integrationen getrennt",
+        "unknownContentOption": "Unbekannte Inhaltsoption für das Widget der Netzwerk Controller Zusammenfassung: "
+      },
+      "name": "Netzwerk Controller Zusammenfassung",
+      "description": "Zeigt die Zusammenfassung eines Netzwerk Controller (wie UniFi-Controller) an"
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": "Kabel"
+          },
+          "wifi": {
+            "name": "WLAN"
+          }
+        },
+        "users": {
+          "label": "Benutzer"
+        },
+        "guests": {
+          "label": "Gäste"
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": "WLAN"
+            },
+            "wired": {
+              "label": "Kabel"
+            }
+          },
+          "label": "Widget Inhalt"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "Keine Daten verfügbar, alle Integrationen getrennt",
+        "unknownContentOption": "Unbekannte Inhaltsoption für das Netzwerkstatus Widget: "
+      },
+      "name": "Netzwerkstatus",
+      "description": "Angeschlossene Geräte in einem Netzwerk anzeigen"
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": "Fehler beim Abrufen der Netzwerk Controller Zusammenfassung"
+      }
+    },
+    "firewall": {
+      "name": "Überwachung der Firewall",
+      "description": "Zeigt eine Zusammenfassung der Firewalls an",
+      "tab": {
+        "system": "System",
+        "interfaces": "Schnittstellen"
+      },
+      "error": {
+        "internalServerError": "Daten von der Firewall konnten nicht abgerufen werden"
+      },
+      "option": {
+        "interfaces": "Netzwerkschnittstellen anzeigen"
+      },
+      "widget": {
+        "fwname": "Name",
+        "version": "Version",
+        "versiontitle": "Versionen",
+        "cputitle": "CPU-Nutzung",
+        "memorytitle": "Speichernutzung",
+        "cpu": "CPU",
+        "memory": "Speicher",
+        "interfaces": {
+          "name": "Name",
+          "trans": "Übertragen",
+          "recv": "Empfangen",
+          "title": "Netzwerkschnittstellen"
+        }
+      }
+    },
+    "notifications": {
+      "name": "Benachrichtigungen",
+      "description": "Benachrichtigungshistorie von einer Integration anzeigen",
+      "noItems": "Keine Benachrichtigungen zum Anzeigen.",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "Systemressourcen",
+      "description": "CPU, Arbeitsspeicher, Festplatte und andere Hardware-Nutzung Ihres Systems",
+      "option": {
+        "hasShadow": {
+          "label": "Schattierung der Diagramme aktivieren"
+        },
+        "visibleCharts": {
+          "label": "Sichtbare Diagramme",
+          "description": "Wählen Sie die Diagramme aus, die angezeigt werden sollen.",
+          "option": {
+            "cpu": "CPU",
+            "memory": "Speicher",
+            "network": "Netzwerk"
+          }
+        },
+        "labelDisplayMode": {
+          "label": "Anzeigemodus der Beschriftung",
+          "option": {
+            "textWithIcon": "Text mit Symbol anzeigen",
+            "text": "Nur Text anzeigen",
+            "icon": "Nur das Symbol anzeigen",
+            "hidden": "Beschriftung ausblenden"
+          }
+        }
+      },
+      "card": {
+        "cpu": "CPU",
+        "memory": "Arbeitsspeicher",
+        "network": "Netzwerk",
+        "up": "OBEN",
+        "down": "UNTEN"
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "Bearbeitungsmodus aktiviert",
+      "disabled": "Bearbeitungsmodus deaktiviert"
+    },
+    "dimensions": {
+      "title": "Dimensionen ändern"
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "Board duplizieren",
+        "message": "Dies wird das Board {name} mit all seinen Inhalten duplizieren. Wenn Widgets Integrationen, hinterlegt sind die Sie nicht verwenden dürfen, werden diese entfernt.",
+        "notification": {
+          "success": {
+            "title": "Board dupliziert",
+            "message": "Das Board wurde erfolgreich dupliziert"
+          },
+          "error": {
+            "title": "Board konnte nicht dupliziert werden",
+            "message": "Das Board konnte nicht dupliziert werden"
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "Änderungen erfolgreich angewendet",
+            "message": "Das Board wurde erfolgreich gespeichert"
+          },
+          "error": {
+            "title": "Änderungen konnten nicht angewendet werden",
+            "message": "Das Board konnte nicht gespeichert werden"
+          }
+        },
+        "confirmLeave": {
+          "title": "Nicht gespeicherte Änderungen",
+          "message": "Sie haben ungespeicherte Änderungen, sind sie sicher dass sie abbrechen möchten?"
+        }
+      },
+      "oldImport": {
+        "label": "Import von Homarr vor Version 1.0.0",
+        "notification": {
+          "success": {
+            "title": "Import erfolgreich",
+            "message": "Das Board wurde erfolgreich importiert"
+          },
+          "error": {
+            "title": "Import fehlgeschlagen",
+            "message": "Das Board konnte nicht importiert werden, überprüfen Sie die Protokolle für weitere Details"
+          }
+        },
+        "form": {
+          "file": {
+            "label": "Wähle eine JSON-Datei",
+            "invalidError": "Ungültige Konfigurationsdatei"
+          },
+          "apps": {
+            "label": "Apps",
+            "avoidDuplicates": {
+              "label": "Duplikate vermeiden",
+              "description": "Ignoriert Apps, bei denen eine App mit dem gleichen href bereits existiert"
+            },
+            "onlyImportApps": {
+              "label": "Nur Apps importieren",
+              "description": "Fügt nur die Apps hinzu. Das Board selbst muss manuell neu erstellt werden"
+            }
+          },
+          "name": {
+            "label": "Board Name"
+          },
+          "screenSize": {
+            "label": "Bildschirmgröße",
+            "description": "In Versionen vor 1.0 gab es drei verschiedene Modi, so dass Sie die Anzahl der Spalten für jede Bildschirmgröße festlegen konnten.",
+            "option": {
+              "sm": "Klein",
+              "md": "Mittel",
+              "lg": "Groß"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "Verhalten der Seitenleiste",
+            "description": "Seitenleisten wurden in 1.0 entfernt, Sie können wählen, was mit den Elementen in ihnen passieren soll.",
+            "option": {
+              "lastSection": {
+                "label": "Letzter Abschnitt",
+                "description": "Seitenleiste wird unterhalb des letzten Abschnitts angezeigt"
+              },
+              "removeItems": {
+                "label": "Elemente entfernen",
+                "description": "Elemente in der Seitenleiste werden entfernt"
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "Jetzt eine App erstellen",
+          "createAndUse": "Erstellen und verwenden"
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": "Seitentitel"
+      },
+      "metaTitle": {
+        "label": "Metatitel"
+      },
+      "logoImageUrl": {
+        "label": "URL des Logos"
+      },
+      "faviconImageUrl": {
+        "label": "URL des Favicons"
+      },
+      "backgroundImageUrl": {
+        "label": "URL des Hintergrundbildes",
+        "placeholder": "Tippen, um nach lokale Bilder zu suchen",
+        "group": {
+          "your": "Ihre Bilder",
+          "other": "Andere Bilder"
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "Anhang des Hintergrundbildes",
+        "option": {
+          "fixed": {
+            "label": "Fixiert",
+            "description": "Hintergrund bleibt in der gleichen Position."
+          },
+          "scroll": {
+            "label": "Scrollen",
+            "description": "Hintergrund scrollt mit der Maus mit."
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "Hintergrundbild wiederholen",
+        "option": {
+          "repeat": {
+            "label": "Wiederholen",
+            "description": "Das Bild wird so oft wiederholt, wie nötig, um den gesamten Bildbereich des Hintergrundbildes abzudecken."
+          },
+          "no-repeat": {
+            "label": "Nicht wiederholen",
+            "description": "Das Bild wird nicht wiederholt und kann nicht den gesamten Raum füllen."
+          },
+          "repeat-x": {
+            "label": "X Wiederholen",
+            "description": "Wie 'Wiederholen', nur auf der horizontalen Achse."
+          },
+          "repeat-y": {
+            "label": "Y Wiederholen",
+            "description": "Wie 'Wiederholen', nur auf der horizontalen Achse."
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "Hintergrundbild-Größe",
+        "option": {
+          "cover": {
+            "label": "Cover",
+            "description": "Skaliert das Bild so klein wie möglich, um das gesamte Fenster zu bedecken, indem der überschüssige Bereich zugeschnitten wird."
+          },
+          "contain": {
+            "label": "Enthält",
+            "description": "Skaliert das Bild so groß wie möglich innerhalb seines Behälters, ohne das Bild zu schneiden oder zu dehnen."
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "Primärfarbe"
+      },
+      "secondaryColor": {
+        "label": "Sekundärfarbe"
+      },
+      "opacity": {
+        "label": "Transparenz"
+      },
+      "iconColor": {
+        "label": "Symbolfarbe"
+      },
+      "clearColor": {
+        "label": "Farbe entfernen"
+      },
+      "customCss": {
+        "label": "Benutzerdefinierte css für dieses Board",
+        "description": "Außerdem können Sie Ihr Dashboard mittels CSS anpassen, dies wird nur für erfahrene Benutzer empfohlen",
+        "customClassesAlert": {
+          "title": "Benutzerdefinierte Klassen",
+          "description": "Sie können in den erweiterten Optionen jedes Elements eigene Klassen zu Ihren Board-Elementen hinzufügen und diese in dem benutzerdefinierten CSS oben verwenden."
+        }
+      },
+      "disableStatus": {
+        "label": "App Status deaktivieren",
+        "description": "Deaktiviert die Statusüberprüfung für alle Apps auf diesem Board"
+      },
+      "columnCount": {
+        "label": "Anzahl der Spalten"
+      },
+      "itemRadius": {
+        "label": "Elementradius",
+        "description": "Ändert den Grad der Rundung ihrer Kacheln auf dem Board",
+        "option": {
+          "xs": "Sehr klein",
+          "sm": "Klein",
+          "md": "Mittel",
+          "lg": "Groß",
+          "xl": "Sehr groß"
+        }
+      },
+      "name": {
+        "label": "Name"
+      },
+      "isPublic": {
+        "label": "Öffentlich",
+        "description": "Öffentliche Boards sind für jedermann zugänglich, auch ohne Benutzerkonto."
+      }
+    },
+    "content": {
+      "metaTitle": "{boardName} Board"
+    },
+    "setting": {
+      "title": "Einstellungen für {boardName} Board",
+      "section": {
+        "general": {
+          "title": "Allgemein",
+          "unrecognizedLink": "Der angegebene Link wird nicht erkannt und wird nicht in der Vorschau angezeigt, er könnte jedoch trotzdem funktionieren."
+        },
+        "layout": {
+          "title": "Ansicht",
+          "responsive": {
+            "title": "Reaktive Layouts",
+            "action": {
+              "add": "Layout hinzufügen"
+            }
+          }
+        },
+        "background": {
+          "title": "Hintergrund"
+        },
+        "appearance": {
+          "title": "Aussehen"
+        },
+        "customCss": {
+          "title": "Benutzerdefiniertes CSS"
+        },
+        "behavior": {
+          "title": "Verhalten"
+        },
+        "access": {
+          "title": "Zugriffskontrolle",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "Board anzeigen"
+              },
+              "modify": {
+                "label": "Board bearbeiten"
+              },
+              "full": {
+                "label": "Voller Zugriff"
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "Gefahrenbereich",
+          "action": {
+            "rename": {
+              "label": "Board umbenennen",
+              "description": "Das Ändern des Namens wird alle Links zu diesem Board aufheben.",
+              "button": "Namen ändern",
+              "modal": {
+                "title": "Board umbenennen"
+              }
+            },
+            "visibility": {
+              "label": "Sichtbarkeit des Boards ändern",
+              "description": {
+                "public": "Dieses Board ist derzeit öffentlich.",
+                "private": "Dieses Board ist derzeit privat."
+              },
+              "button": {
+                "public": "Als privat festlegen",
+                "private": "Als öffentlich festlegen"
+              },
+              "confirm": {
+                "public": {
+                  "title": "Board auf privat schalten",
+                  "description": "Sind Sie sicher, dass Sie dieses Board privat machen möchten? Dies wird das Board vor der Öffentlichkeit ausblenden. Links für Gastbenutzer werden unbrauchbar."
+                },
+                "private": {
+                  "title": "Board auf öffentlich schalten",
+                  "description": "Sind Sie sicher, dass Sie dieses Board öffentlich machen möchten? Dies wird das Board für alle zugänglich machen."
+                }
+              }
+            },
+            "delete": {
+              "label": "Board löschen",
+              "description": "Sobald Sie ein Board löschen, gibt es kein zurück mehr. Bitte seien sie sich dessen bewusst.",
+              "button": "Board löschen",
+              "confirm": {
+                "title": "Board löschen",
+                "description": "Sind Sie sicher, dass Sie dieses Board löschen möchten? Dies wird das Board und seinen gesamten Inhalt permanent löschen."
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "Willkommen bei Homarr",
+        "description": "Ein schlankes, modernes Dashboard, das alle Ihre Apps und Dienste bereitstellt.",
+        "link": "Erstellen Sie Ihr erstes Board",
+        "notice": "Um diese Seite verschwinden zu lassen, erstellen Sie ein Board und setzen es als Home Board"
+      },
+      "notFound": {
+        "title": "Board nicht gefunden",
+        "description": "Das angegebene Board wurde entweder nicht gefunden oder Sie haben keinen Zugriff darauf.",
+        "link": "Alle Boards anzeigen",
+        "notice": "Überprüfen Sie den Link oder wenden Sie sich an einen Administrator, wenn Sie glauben, dass er zugänglich sein sollte"
+      },
+      "homeBoard": {
+        "title": "Kein Home Board",
+        "admin": {
+          "description": "Es wurde noch kein Home Board für den Server festgelegt.",
+          "link": "Serverweites Home Board konfigurieren",
+          "notice": "Um diese Seite für alle Benutzer verschwinden zu lassen, legen sie ein Home-Board für den Server fest"
+        },
+        "user": {
+          "description": "Es wurde noch kein Home Board festgelegt.",
+          "link": "Home Board konfigurieren",
+          "notice": "Um diese Seite verschwinden zu lassen, geben Sie das Home Board in Ihren Einstellungen ein"
+        },
+        "anonymous": {
+          "description": "Der Server-Administrator hat noch kein Home Board eingerichtet.",
+          "link": "Öffentliche Boards anzeigen",
+          "notice": "Um diese Seite verschwinden zu lassen, bitten sie den Server Administrator, ein Home Board für den Server festzulegen"
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": "Name"
+      },
+      "columnCount": {
+        "label": "Anzahl der Spalten"
+      },
+      "breakpoint": {
+        "label": "Breakpoint",
+        "description": "Das Layout wird auf allen Bildschirmen, die größer als dieser breakpoint sind, bis zum nächsten größeren breakpoint verwendet."
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "Verwaltung",
+    "title": {
+      "morning": "Guten Morgen, {username}",
+      "afternoon": "Guten Nachmittag, {username}",
+      "evening": "Guten Abend, {username}"
+    },
+    "notFound": {
+      "title": "Nicht gefunden",
+      "text": "Konnte die angeforderte Ressource nicht finden"
+    },
+    "navbar": {
+      "items": {
+        "home": "Startseite",
+        "boards": "Boards",
+        "apps": "Apps",
+        "integrations": "Integrationen",
+        "searchEngies": "Suchmaschinen",
+        "medias": "Medien",
+        "users": {
+          "label": "Benutzer",
+          "items": {
+            "manage": "Verwalten",
+            "invites": "Einladungen",
+            "groups": "Gruppen"
+          }
+        },
+        "tools": {
+          "label": "Werkzeuge",
+          "items": {
+            "docker": "Docker",
+            "kubernetes": "Kubernetes",
+            "logs": "Logs",
+            "api": "API",
+            "certificates": "Zertifikate",
+            "tasks": "Aufgaben"
+          }
+        },
+        "settings": "Einstellungen",
+        "help": {
+          "label": "Hilfe",
+          "items": {
+            "documentation": "Dokumentation",
+            "submitIssue": "Ein Problem melden",
+            "discord": "Community Discord",
+            "sourceCode": "Quellcode"
+          }
+        },
+        "about": "Über"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "Boards",
+          "user": "Benutzer",
+          "invite": "Einladungen",
+          "integration": "Integrationen",
+          "app": "Apps",
+          "group": "Gruppen",
+          "searchEngine": "Suchmaschinen",
+          "media": "Medien"
+        },
+        "statisticLabel": {
+          "boards": "Boards",
+          "resources": "Ressourcen",
+          "authentication": "Authentifizierung",
+          "authorization": "Autorisierung"
+        },
+        "heroBanner": {
+          "title": "Willkommen zurück zu Ihrem",
+          "subtitle": "{app} Board"
+        }
+      },
+      "board": {
+        "title": "Deine Boards",
+        "action": {
+          "new": {
+            "label": "Neues Board"
+          },
+          "open": {
+            "label": "Board öffnen"
+          },
+          "settings": {
+            "label": "Einstellungen"
+          },
+          "setHomeBoard": {
+            "label": "Als Home Board festlegen",
+            "badge": {
+              "label": "Startseite",
+              "tooltip": "Dieses Board wird als Startboard angezeigt"
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "Als Mobiles Board festlegen",
+            "badge": {
+              "label": "Mobil",
+              "tooltip": "Dieses Board wird als Ihr mobiles Board angezeigt"
+            }
+          },
+          "duplicate": {
+            "label": "Board duplizieren"
+          },
+          "delete": {
+            "label": "Dauerhaft löschen",
+            "confirm": {
+              "title": "Board löschen",
+              "description": "Sind Sie sicher, dass Sie das Board {name} löschen möchten?"
+            }
+          }
+        },
+        "visibility": {
+          "public": "Dieses Board ist öffentlich",
+          "private": "Dieses Board ist privat"
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "Name"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": "Medien von allen Benutzern einbeziehen"
+      },
+      "user": {
+        "back": "Zurück zu den Benutzern",
+        "fieldsDisabledExternalProvider": "Bestimmte Felder sind deaktiviert, da sie von einem externen Authentifizierungsanbieter verwaltet werden.",
+        "setting": {
+          "general": {
+            "title": "Allgemein",
+            "item": {
+              "language": "Sprache und Region",
+              "board": {
+                "title": "Home Board",
+                "type": {
+                  "general": "Allgemein",
+                  "mobile": "Mobil"
+                }
+              },
+              "search": "Suchen",
+              "firstDayOfWeek": "Erster Tag der Woche",
+              "accessibility": "Barrierefreiheit"
+            }
+          },
+          "security": {
+            "title": "Sicherheit"
+          },
+          "board": {
+            "title": "Boards"
+          }
+        },
+        "list": {
+          "metaTitle": "Verwaltung von Benutzern",
+          "title": "Benutzer"
+        },
+        "edit": {
+          "metaTitle": "Benutzer bearbeiten: {username}"
+        },
+        "create": {
+          "metaTitle": "Benutzer erstellen",
+          "title": "Neuen Benutzer erstellen",
+          "step": {
+            "personalInformation": {
+              "label": "Persönliche Information"
+            },
+            "security": {
+              "label": "Sicherheit"
+            },
+            "groups": {
+              "label": "Gruppen",
+              "title": "Wählen Sie alle Gruppen aus, wessen Benutzer Mitglieder sein sollen",
+              "description": "Die {everyoneGroup} Gruppe ist allen Benutzern zugewiesen und kann nicht entfernt werden."
+            },
+            "review": {
+              "label": "Überprüfen"
+            },
+            "completed": {
+              "title": "Benutzer erstellt"
+            },
+            "error": {
+              "title": "Erstellung des Benutzers fehlgeschlagen"
+            }
+          },
+          "action": {
+            "createAnother": "Weiteren Benutzer erstellen",
+            "back": "Zurück zur Benutzerliste"
+          }
+        },
+        "invite": {
+          "title": "Verwalten von Benutzereinladungen",
+          "action": {
+            "new": {
+              "title": "Neue Einladung",
+              "description": "Nach Ablauf der Frist ist die Einladung nicht mehr gültig und der Empfänger der Einladung kann kein Konto mehr erstellen."
+            },
+            "copy": {
+              "title": "Einladung kopieren",
+              "description": "Ihre Einladung wurde angelegt. Nach dem dieses Dialogfenster geschlossen wurde <b> ist es nicht mehr möglich diesen Link zu kopieren.</b> Falls Sie nicht mehr wünschen die entsprechende Person einzuladen können sie diese Einladung jederzeit löschen.",
+              "link": "Link zur Einladung",
+              "button": "Kopieren und schließen"
+            },
+            "delete": {
+              "title": "Einladung löschen",
+              "description": "Sind Sie sicher, dass Sie diese Einladung löschen möchten? Benutzer mit diesem Link können dann kein Konto mehr über diesen Link erstellen."
+            }
+          },
+          "field": {
+            "id": {
+              "label": "ID"
+            },
+            "creator": {
+              "label": "Ersteller"
+            },
+            "expirationDate": {
+              "label": "Ablaufdatum"
+            },
+            "token": {
+              "label": "Token"
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "Zurück zu den Gruppen",
+        "setting": {
+          "general": {
+            "title": "Allgemein",
+            "owner": "Eigentümer",
+            "ownerOfGroup": "Eigentümer dieser Gruppe",
+            "ownerOfGroupDeleted": "Der Eigentümer dieser Gruppe wurde gelöscht. Derzeit hat sie keinen Besitzer."
+          },
+          "setting": {
+            "title": "Einstellungen",
+            "alert": "Gruppeneinstellungen werden nach der Reihenfolge der Gruppen in der Liste priorisiert. Die oberen Einstellungen überschreiben die unteren Einstellungen.",
+            "board": {
+              "title": "Boards"
+            }
+          },
+          "members": {
+            "title": "Mitglieder",
+            "search": "Mitglied suchen",
+            "notFound": "Keine Mitglieder gefunden"
+          },
+          "permissions": {
+            "title": "Berechtigungen",
+            "form": {
+              "unsavedChanges": "Du hast noch ungespeicherte Änderungen!"
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "notification": {
+          "success": {
+            "message": "Einstellungen gespeichert"
+          },
+          "error": {
+            "message": "Einstellungen konnten nicht gespeichert werden"
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "Nutzungsdaten",
+            "general": {
+              "title": "Anonymisierte Nutzungsdaten senden",
+              "text": "Homarr schickt anonymisierte Nutzungsdaten mit der Open-Source-Software Umami. Es sammelt zu keinem Zeitpunkt personenbezogene Daten und ist daher vollständig DPR & CCPA konform. Wir empfehlen diese Nutzungsdaten zu aktivieren, da es unserem Open-Source-Team hilft Probleme zu identifizieren und unserem Backlog ermöglicht Priorität einzuräumen."
+            },
+            "widgetData": {
+              "title": "Widget Daten",
+              "text": "Senden Sie die Widgets (und deren Anzahl) die Sie konfiguriert haben. Enthält keine URLs, Namen oder andere Daten."
+            },
+            "integrationData": {
+              "title": "Integrationsdaten",
+              "text": "Senden Sie die Intregrationen (und deren Anzahl) die Sie konfiguriert haben. Enthält keine URLs, Namen oder andere Daten."
+            },
+            "usersData": {
+              "title": "Benutzerdaten",
+              "text": "Senden Sie die Anzahl der Benutzer und ob Sie SSO aktiviert haben"
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "Suche und Indexiere",
+            "warning": "Das Aktivieren oder Deaktivieren von Einstellungen hier wird schwerwiegende Auswirkungen haben, wie Suchmaschinen Ihre Seite suchen und indizieren. Jede Einstellung startet eine Anforderung und es ist die Aufgabe des Crawlers, diese Einstellungen zu übernehmen. Änderungen können mehrere Tage oder Wochen dauern. Einige Einstellungen können Suchmaschinenspezifisch sein.",
+            "noIndex": {
+              "title": "Kein Index",
+              "text": "Die Webseite nicht in Suchmaschinen indizieren und in keinem Suchergebnis anzeigen"
+            },
+            "noFollow": {
+              "title": "Keine Folgen",
+              "text": "Folgen Sie keine Links während der Indexierung. Deaktivieren kann dazu führen, dass Crawler versuchen, allen Links auf Homarr zu folgen."
+            },
+            "noTranslate": {
+              "title": "Nicht Übersetzen",
+              "text": "Wenn die Sprache der Seite wahrscheinlich nicht zu lesen ist wird der Benutzer höchstwahrscheinlich wollen das Google einen Übersetzungslink in den Suchergebnissen zeigt"
+            },
+            "noSiteLinksSearchBox": {
+              "title": "Kein Suchfeld für Seitenlinks",
+              "text": "Google baut ein Suchfeld mit den gecrawlten Links zusammen mit anderen direkten Links auf. Durch das Aktivieren dieser Option wird Google aufgefordert, dieses Feld zu deaktivieren."
+            }
+          },
+          "board": {
+            "title": "Boards",
+            "homeBoard": {
+              "label": "Globales Home Board",
+              "mobileLabel": "Globales Mobil Board",
+              "description": "Nur öffentliche Boards stehen zur Auswahl"
+            },
+            "status": {
+              "title": "App Status",
+              "enableStatusByDefault": {
+                "label": "Status standardmäßig aktivieren",
+                "description": "Beim Hinzufügen eines App-Elements wird der Status standardmäßig aktiviert"
+              },
+              "forceDisableStatus": {
+                "label": "Status deaktivieren erzwingen",
+                "description": "Status für Apps wird für alle Benutzer deaktiviert und kann nicht aktiviert werden"
+              }
+            }
+          },
+          "search": {
+            "title": "Suche",
+            "defaultSearchEngine": {
+              "label": "Standard Suchmaschine",
+              "description": "Integrations Suchmaschinen können hier nicht ausgewählt werden"
+            }
+          },
+          "appearance": {
+            "title": "Aussehen",
+            "defaultColorScheme": {
+              "label": "Standard Farbschema",
+              "options": {
+                "light": "Hell",
+                "dark": "Dunkel"
+              }
+            }
+          },
+          "culture": {
+            "title": "Kultur",
+            "defaultLocale": {
+              "label": "Standardsprache"
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "Aufgaben",
+          "status": {
+            "idle": "Inaktiv",
+            "running": "Wird ausgeführt",
+            "error": "Fehler",
+            "disabled": "Deaktiviert"
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": "Status des Minecraft Servers"
+            },
+            "iconsUpdater": {
+              "label": "Symbol Updater"
+            },
+            "analytics": {
+              "label": "Nutzungsdaten"
+            },
+            "smartHomeEntityState": {
+              "label": "Status der Smart Home Entitäten"
+            },
+            "ping": {
+              "label": "Pings"
+            },
+            "mediaServer": {
+              "label": "Medien Server"
+            },
+            "mediaOrganizer": {
+              "label": "Medienorganisatoren"
+            },
+            "downloads": {
+              "label": "Downloads"
+            },
+            "mediaRequestStats": {
+              "label": "Statistik der Medienanfragen"
+            },
+            "mediaRequestList": {
+              "label": "Liste der Medienanfragen"
+            },
+            "rssFeeds": {
+              "label": "RSS Feeds"
+            },
+            "indexerManager": {
+              "label": "Index Manager"
+            },
+            "healthMonitoring": {
+              "label": "Überwachung des Zustandes"
+            },
+            "dnsHole": {
+              "label": "DNS Hole Daten"
+            },
+            "updateChecker": {
+              "label": "Updateprüfer"
+            },
+            "mediaTranscoding": {
+              "label": "Medien Transkodierung"
+            },
+            "networkController": {
+              "label": "Netzwerk Controller"
+            },
+            "refreshNotifications": {
+              "label": "Benachrichtigungs Updater"
+            },
+            "dockerContainers": {
+              "label": "Docker Container"
+            },
+            "firewallCpu": {
+              "label": "Firewall CPU"
+            },
+            "firewallMemory": {
+              "label": "Firewall Speicher"
+            },
+            "firewallVersion": {
+              "label": "Firewall Version"
+            },
+            "firewallInterfaces": {
+              "label": "Firewall Schnittstellen"
+            },
+            "weather": {
+              "label": "Wetter"
+            }
+          },
+          "interval": {
+            "seconds": "Jeweils {interval, plural, =1 {Sekunde} other {# Sekunden}}",
+            "minutes": "Jeweils {interval, plural, =1 {Minute} other {# Minuten}}",
+            "hours": "Jeweils {interval, plural, =1 {Stunde} other {# Stunden}}",
+            "midnight": "Jeden Tag um Mitternacht",
+            "weeklyMonday": "Jede Woche am Montag",
+            "update": {
+              "success": {
+                "message": "Intervall erfolgreich aktualisiert"
+              },
+              "error": {
+                "message": "Fehler beim Aktualisieren des Intervalls"
+              }
+            }
+          },
+          "settings": {
+            "title": "Einstellungen der Aufgabe für {jobName}"
+          },
+          "field": {
+            "name": {
+              "label": "Name"
+            },
+            "interval": {
+              "label": "Intervall des Zeitplans"
+            },
+            "lastExecution": {
+              "label": "Letzte Ausführung"
+            },
+            "actions": {
+              "label": "Aktionen"
+            }
+          },
+          "table": {
+            "search": "{count} Aufgaben suchen..."
+          },
+          "action": {
+            "refresh": {
+              "label": "Neu laden"
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": "Aufgaben erfolgreich aktualisiert"
+            },
+            "error": {
+              "message": "Fehler beim Aktualisieren der Aufgaben"
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": "Aufgabe erfolgreich ausgelöst"
+            },
+            "error": {
+              "message": "Fehler beim Auslösen der Aufgabe"
+            }
+          },
+          "enable": {
+            "success": {
+              "message": "Aufgabe erfolgreich aktiviert"
+            }
+          },
+          "disable": {
+            "success": {
+              "message": "Aufgabe erfolgreich deaktiviert"
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": "Fehler beim Umschalten des Aufgabenstatus"
+            }
+          }
+        },
+        "api": {
+          "title": "API",
+          "modal": {
+            "createApiToken": {
+              "title": "API Token erstellt",
+              "description": "API Token wurde erstellt. Seien Sie vorsichtig, dieser Token wird in der Datenbank verschlüsselt und nie wieder an Sie übertragen. Wenn Sie diesen Token verlegen, können Sie ihn nicht mehr abrufen.",
+              "button": "Kopieren und schließen"
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "Dokumentation"
+            },
+            "apiKey": {
+              "label": "Authentifizierung",
+              "title": "API Schlüssel",
+              "button": {
+                "createApiToken": "API Token erstellen"
+              },
+              "modal": {
+                "delete": {
+                  "title": "API Token löschen",
+                  "text": "Dies wird den API Token permanent löschen. API-Clients mit diesem Token können sich nicht mehr authentifizieren und API Anfragen durchführen. Diese Aktion kann nicht rückgängig gemacht werden."
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "ID",
+                  "createdBy": "Erstellt von",
+                  "actions": "Aktionen"
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "Version {version}",
+        "text": "Homarr ist ein gemeinschaftsorientiertes Open-Source-Projekt, das von Freiwilligen betreut wird. Dank dieser Menschen ist Homarr seit 2021 ein wachsendes Projekt. Unser Team, dessen Mitglieder in vielen verschiedenen Ländern ansässig sind, arbeitet in seiner Freizeit und ohne Vergütung.",
+        "accordion": {
+          "contributors": {
+            "title": "Mitwirkende",
+            "subtitle": "{count} Wartung von Code & Homarr"
+          },
+          "translators": {
+            "title": "Übersetzer",
+            "subtitle": "{count} tragen Übersetzungen in viele Sprachen bei"
+          },
+          "libraries": {
+            "title": "Bibliotheken",
+            "subtitle": "{count} im Code von Homarr verwendet"
+          },
+          "hotkeys": {
+            "title": "Tastenkürzel",
+            "subtitle": "Tastenkürzel zur Verbesserung Ihres Workflows",
+            "field": {
+              "shortcut": "Verknüpfung",
+              "action": "Aktion"
+            },
+            "action": {
+              "toggleBoardEdit": "Bearbeitungsmodus des Boardes umschalten",
+              "toggleColorScheme": "Hell/Dunkelmodus umschalten",
+              "saveNotebook": "Notizbuch speichern (nur innerhalb des Notizbuch Widgets)",
+              "openSpotlight": "Suche öffnen"
+            },
+            "note": "Tipp: Mod bezieht sich sowohl auf die Strg-Taste als auch auf die ⌘ Taste auf macOS"
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "Container",
+    "table": {
+      "updated": "Aktualisiert {when}",
+      "search": "{count} Container durchsuchen",
+      "selected": "{selectCount} von {totalCount} ausgewählten Containern",
+      "footer": "Insgesamt {count} Container"
+    },
+    "field": {
+      "name": {
+        "label": "Name"
+      },
+      "state": {
+        "label": "Status",
+        "option": {
+          "created": "Erstellt",
+          "running": "Aktiv",
+          "paused": "Pausiert",
+          "restarting": "Startet neu",
+          "exited": "Beendet",
+          "removing": "Wird entfernt",
+          "dead": "Tot"
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": "CPU"
+        },
+        "memory": {
+          "label": "Speicher"
+        }
+      },
+      "containerImage": {
+        "label": "Image"
+      },
+      "ports": {
+        "label": "Ports"
+      }
+    },
+    "action": {
+      "title": "Aktionen",
+      "start": {
+        "label": "Starten",
+        "notification": {
+          "success": {
+            "title": "Container gestartet",
+            "message": "Die Container wurden erfolgreich gestartet"
+          },
+          "error": {
+            "title": "Container nicht gestartet",
+            "message": "Die Container konnten nicht gestartet werden"
+          }
+        }
+      },
+      "stop": {
+        "label": "Stopp",
+        "notification": {
+          "success": {
+            "title": "Container gestoppt",
+            "message": "Die Container wurden erfolgreich gestoppt"
+          },
+          "error": {
+            "title": "Container nicht gestoppt",
+            "message": "Die Container konnten nicht gestoppt werden"
+          }
+        }
+      },
+      "restart": {
+        "label": "Neustarten",
+        "notification": {
+          "success": {
+            "title": "Container neu gestartet",
+            "message": "Die Container wurden erfolgreich neu gestartet"
+          },
+          "error": {
+            "title": "Container nicht neu gestartet",
+            "message": "Die Container konnten nicht neu gestartet werden"
+          }
+        }
+      },
+      "remove": {
+        "label": "Entfernen",
+        "notification": {
+          "success": {
+            "title": "Container entfernt",
+            "message": "Die Container wurden erfolgreich entfernt"
+          },
+          "error": {
+            "title": "Container nicht entfernt",
+            "message": "Die Behälter konnten nicht entfernt werden"
+          }
+        }
+      },
+      "refresh": {
+        "label": "Aktualisieren",
+        "notification": {
+          "success": {
+            "title": "Container aktualisiert",
+            "message": "Sie sehen jetzt die neuesten Daten"
+          },
+          "error": {
+            "title": "Container nicht aktualisiert",
+            "message": "Beim Aktualisieren der Container ist ein Fehler aufgetreten"
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "Zu Homarr hinzufügen",
+        "notification": {
+          "success": {
+            "title": "Zu Homarr hinzufügen",
+            "message": "Ausgewählte Apps wurden zu Homarr hinzugefügt"
+          },
+          "error": {
+            "title": "Konnte nicht zu Homarr hinzugefügt werden",
+            "message": "Ausgewählte Apps konnten nicht zu Homarr hinzugefügt werden"
+          }
+        },
+        "modal": {
+          "title": "Docker Container zu Homarr hinzufügen"
+        }
+      }
+    },
+    "error": {
+      "internalServerError": "Fehler beim Abrufen der Docker Container"
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "Cluster Dashboard",
+      "label": "Cluster",
+      "providers": "Anbieter",
+      "version": "Version",
+      "architecture": "Architektur",
+      "capacity": {
+        "title": "Kapazität",
+        "resource": {
+          "reserved": "Reserviert",
+          "used": "Benutzt"
+        }
+      },
+      "resources": {
+        "title": "Ressourcen",
+        "nodes": "Nodes",
+        "namespaces": "Namensräume",
+        "ingresses": "Ingresse",
+        "services": "Dienste",
+        "pods": "Pods",
+        "configmaps": "ConfigMaps",
+        "secrets": "Secrets",
+        "volumes": "Laufwerke"
+      }
+    },
+    "nodes": {
+      "label": "Nodes",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "state": {
+          "label": "Zustand",
+          "option": {
+            "ready": "Bereit",
+            "NotReady": "Nicht Bereit"
+          }
+        },
+        "cpu": {
+          "label": "CPU"
+        },
+        "memory": {
+          "label": "RAM"
+        },
+        "pods": {
+          "label": "Pods"
+        },
+        "operatingSystem": {
+          "label": "OS"
+        },
+        "architecture": {
+          "label": "Architektur"
+        },
+        "kubernetesVersion": {
+          "label": "Kubernetes Version"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Nodes durchsuchen"
+      }
+    },
+    "namespaces": {
+      "label": "Namensräume",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "state": {
+          "label": "Zustand",
+          "option": {
+            "active": "Aktiv",
+            "terminating": "Beendet"
+          }
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Namensräume durchsuchen"
+      }
+    },
+    "ingresses": {
+      "label": "Ingresse",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "Namensraum"
+        },
+        "className": {
+          "label": "Klassenname"
+        },
+        "rulesAndPaths": {
+          "label": "Regeln & Pfade"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Ingresse durchsuchen"
+      }
+    },
+    "services": {
+      "label": "Dienste",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "Namensraum"
+        },
+        "type": {
+          "label": "Typ"
+        },
+        "ports": {
+          "label": "Ports"
+        },
+        "targetPorts": {
+          "label": "Zielports"
+        },
+        "clusterIP": {
+          "label": "Cluster IP"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Services durchsuchen"
+      }
+    },
+    "pods": {
+      "label": "Pods",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "Namensraum"
+        },
+        "image": {
+          "label": "Image"
+        },
+        "applicationType": {
+          "label": "Typ der Anwendung"
+        },
+        "status": {
+          "label": "Status"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Pods durchsuchen"
+      }
+    },
+    "secrets": {
+      "label": "Secrets",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "namensraum"
+        },
+        "type": {
+          "label": "typ"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Secrets durchsuchen"
+      }
+    },
+    "configmaps": {
+      "label": "ConfigMaps",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "namensraum"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} configMaps durchsuchen"
+      }
+    },
+    "volumes": {
+      "label": "Laufwerke",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "namespace": {
+          "label": "Namensraum"
+        },
+        "accessModes": {
+          "label": "Zugriffsmodi"
+        },
+        "storage": {
+          "label": "Speicher"
+        },
+        "storageClassName": {
+          "label": "Name der Speicherklasse"
+        },
+        "volumeMode": {
+          "label": "Laufwerksmodus"
+        },
+        "volumeName": {
+          "label": "Laufwerkname"
+        },
+        "status": {
+          "label": "Status"
+        },
+        "creationTimestamp": {
+          "label": "Erstellt"
+        }
+      },
+      "table": {
+        "search": "{count} Laufwerke durchsuchen"
+      }
+    },
+    "error": {
+      "internalServerError": "Fehler beim Abrufen der Kubernetes Daten"
+    }
+  },
+  "permission": {
+    "title": "Berechtigungen",
+    "userSelect": {
+      "title": "Benutzerberechtigung hinzufügen"
+    },
+    "groupSelect": {
+      "title": "Gruppenberechtigung hinzufügen"
+    },
+    "tab": {
+      "user": "Benutzer",
+      "group": "Gruppen",
+      "inherited": "Vererbte Gruppen"
+    },
+    "field": {
+      "user": {
+        "label": "Benutzer"
+      },
+      "group": {
+        "label": "Gruppe"
+      },
+      "permission": {
+        "label": "Berechtigung"
+      }
+    },
+    "action": {
+      "saveUser": "Benutzerberechtigung hinzufügen",
+      "saveGroup": "Gruppenberechtigung speichern"
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "Verwalten",
+      "boards": {
+        "label": "Boards"
+      },
+      "integrations": {
+        "label": "Integrationen",
+        "edit": {
+          "label": "Bearbeiten"
+        },
+        "new": {
+          "label": "Neu"
+        }
+      },
+      "search-engines": {
+        "label": "Suchmaschinen",
+        "new": {
+          "label": "Neu"
+        },
+        "edit": {
+          "label": "Bearbeiten"
+        }
+      },
+      "medias": {
+        "label": "Medien"
+      },
+      "apps": {
+        "label": "Apps",
+        "new": {
+          "label": "Neu"
+        },
+        "edit": {
+          "label": "Bearbeiten"
+        }
+      },
+      "users": {
+        "label": "Benutzer",
+        "create": {
+          "label": "Erstellen"
+        },
+        "general": "Allgemein",
+        "security": "Sicherheit",
+        "board": "Boards",
+        "groups": {
+          "label": "Gruppen"
+        },
+        "invites": {
+          "label": "Einladungen"
+        }
+      },
+      "tools": {
+        "label": "Werkzeuge",
+        "tasks": {
+          "label": "Aufgaben"
+        },
+        "docker": {
+          "label": "Docker"
+        },
+        "kubernetes": {
+          "label": "Kubernetes",
+          "nodes": {
+            "label": "Nodes"
+          },
+          "namespaces": {
+            "label": "Namensräume"
+          },
+          "ingresses": {
+            "label": "Ingresse"
+          },
+          "services": {
+            "label": "Dienste"
+          },
+          "pods": {
+            "label": "pods"
+          },
+          "configmaps": {
+            "label": "ConfigMaps"
+          },
+          "secrets": {
+            "label": "Secrets"
+          },
+          "volumes": {
+            "label": "Laufwerke"
+          }
+        },
+        "logs": {
+          "label": "Logs"
+        },
+        "certificates": {
+          "label": "Zertifikate",
+          "hostnames": {
+            "label": "Hostnamen"
+          }
+        }
+      },
+      "settings": {
+        "label": "Einstellungen"
+      },
+      "about": {
+        "label": "Über"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "Nach allem suchen",
+    "nothingFound": "Keine Treffer",
+    "error": {
+      "fetch": "Beim Abrufen der Daten ist ein Fehler aufgetreten"
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "Nach Apps, Integrationen oder Boards suchen",
+        "group": {
+          "app": {
+            "title": "Apps",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "App URL öffnen"
+                },
+                "edit": {
+                  "label": "App bearbeiten"
+                }
+              },
+              "detail": {
+                "title": "Wählen Sie eine Aktion für die App"
+              }
+            }
+          },
+          "board": {
+            "title": "Boards",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "Board öffnen"
+                },
+                "homeBoard": {
+                  "label": "Als Home Board festlegen"
+                },
+                "mobileBoard": {
+                  "label": "Als mobiles Board festlegen"
+                },
+                "settings": {
+                  "label": "Einstellungen öffnen"
+                }
+              },
+              "detail": {
+                "title": "Wählen Sie eine Aktion für die App"
+              }
+            }
+          },
+          "integration": {
+            "title": "Integrationen"
+          }
+        }
+      },
+      "command": {
+        "help": "Befehlsmodus aktivieren",
+        "group": {
+          "localCommand": {
+            "title": "Lokale Befehle"
+          },
+          "globalCommand": {
+            "title": "Globale Befehle",
+            "option": {
+              "colorScheme": {
+                "light": "Zum hellen Design wechseln",
+                "dark": "Zum dunklen Design wechseln"
+              },
+              "language": {
+                "label": "Sprache ändern",
+                "children": {
+                  "detail": {
+                    "title": "Bitte wählen Sie Ihre Sprache aus"
+                  }
+                }
+              },
+              "newBoard": {
+                "label": "Erstellen Sie ein neues Board"
+              },
+              "importBoard": {
+                "label": "Ein Board importieren"
+              },
+              "newApp": {
+                "label": "Neue App erstellen"
+              },
+              "newIntegration": {
+                "label": "Neue Integration erstellen",
+                "children": {
+                  "detail": {
+                    "title": "Wählen Sie den Integrationstyp aus, den Sie erstellen möchten"
+                  }
+                }
+              },
+              "newUser": {
+                "label": "Neuen Benutzer erstellen"
+              },
+              "newInvite": {
+                "label": "Neue Einladung erstellen"
+              },
+              "newGroup": {
+                "label": "Neue Gruppe erstellen"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "Einen Film anfordern",
+        "requestSeries": "Eine Serie anfordern",
+        "openIn": "In {kind} öffnen"
+      },
+      "external": {
+        "help": "Externe Suchmaschine verwenden",
+        "group": {
+          "searchEngine": {
+            "title": "Suchmaschinen",
+            "children": {
+              "action": {
+                "search": {
+                  "label": "Suche mit {name}"
+                }
+              },
+              "detail": {
+                "title": "Eine Aktion für die Suchmaschine auswählen"
+              },
+              "searchResults": {
+                "title": "Wählen Sie ein Suchergebnis für weitere Aktionen"
+              }
+            },
+            "option": {
+              "google": {
+                "name": "Google",
+                "description": "Das Web mit Google durchsuchen"
+              },
+              "bing": {
+                "name": "Bing",
+                "description": "Das Web mit Bing durchsuchen"
+              },
+              "duckduckgo": {
+                "name": "DuckDuckGo",
+                "description": "Das Web mit DuckDuckGo durchsuchen"
+              },
+              "torrent": {
+                "name": "Torrents",
+                "description": "Suche nach Torrents auf torrentdownloads.pro"
+              },
+              "youTube": {
+                "name": "YouTube",
+                "description": "Suche nach Videos auf YouTube"
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": "Modi"
+          },
+          "help": {
+            "title": "Hilfe",
+            "option": {
+              "documentation": {
+                "label": "Dokumentation"
+              },
+              "submitIssue": {
+                "label": "Ein Problem melden"
+              },
+              "discord": {
+                "label": "Community Discord"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "Suchen",
+            "option": {
+              "other": {
+                "label": "Mit einer anderen Suchmaschine suchen"
+              },
+              "no-default": {
+                "label": "Keine Standard Suchmaschine festgelegt",
+                "description": "Eine Standard Suchmaschine in den Einstellungen festlegen"
+              },
+              "search": {
+                "label": "Suche nach \"{query}\" mit {name}"
+              },
+              "from-integration": {
+                "description": "Tippen um zu Suchen"
+              }
+            }
+          },
+          "local": {
+            "title": "Lokale Ergebnisse"
+          }
+        }
+      },
+      "page": {
+        "help": "Nach Seiten suchen",
+        "group": {
+          "page": {
+            "title": "Seiten",
+            "option": {
+              "manageHome": {
+                "label": "Home Board verwalten"
+              },
+              "manageBoard": {
+                "label": "Boards verwalten"
+              },
+              "manageApp": {
+                "label": "Apps verwalten"
+              },
+              "manageIntegration": {
+                "label": "Integrationen verwalten"
+              },
+              "manageSearchEngine": {
+                "label": "Suchmaschinen verwalten"
+              },
+              "manageMedia": {
+                "label": "Medien verwalten"
+              },
+              "manageUser": {
+                "label": "Verwaltung von Benutzern"
+              },
+              "manageInvite": {
+                "label": "Einladungen verwalten"
+              },
+              "manageGroup": {
+                "label": "Gruppen verwalten"
+              },
+              "manageDocker": {
+                "label": "Docker verwalten"
+              },
+              "manageApi": {
+                "label": "Swagger API"
+              },
+              "manageLog": {
+                "label": "Logs anzeigen"
+              },
+              "manageTask": {
+                "label": "Aufgaben verwalten"
+              },
+              "manageSettings": {
+                "label": "Allgemeine Einstellungen"
+              },
+              "about": {
+                "label": "Über"
+              },
+              "homeBoard": {
+                "label": "Home Board"
+              },
+              "preferences": {
+                "label": "Ihre Einstellungen"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "Nach Benutzer oder Gruppe suchen",
+        "group": {
+          "user": {
+            "title": "Benutzer",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "Benutzerdetails anzeigen"
+                }
+              },
+              "detail": {
+                "title": "Eine Aktion für den Benutzer auswählen"
+              }
+            }
+          },
+          "group": {
+            "title": "Gruppen",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "Gruppendetails anzeigen"
+                },
+                "manageMember": {
+                  "label": "Mitglieder verwalten"
+                },
+                "managePermission": {
+                  "label": "Berechtigungen verwalten"
+                }
+              },
+              "detail": {
+                "title": "Wählen Sie eine Aktion für diese Gruppe"
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "Nach einer Suchmaschine suchen",
+      "field": {
+        "name": {
+          "label": "Name"
+        },
+        "short": {
+          "label": "Kurz"
+        },
+        "urlTemplate": {
+          "label": "URL Suchvorlage"
+        },
+        "description": {
+          "label": "Beschreibung"
+        }
+      },
+      "page": {
+        "list": {
+          "title": "Suchmaschinen",
+          "noResults": {
+            "title": "Noch keine Suchmaschinen vorhanden",
+            "action": "Erstelle deine erste Suchmaschine"
+          },
+          "interactive": "Interaktiv, verwendet eine Integration"
+        },
+        "create": {
+          "title": "Neue Suchmaschine",
+          "notification": {
+            "success": {
+              "title": "Suchmaschine angelegt",
+              "message": "Die Suchmaschine wurde erfolgreich angelegt"
+            },
+            "error": {
+              "title": "Die Suchmaschine wurde nicht angelegt",
+              "message": "Die Suchmaschine konnte nicht erstellt werden"
+            }
+          }
+        },
+        "edit": {
+          "title": "Suchmaschine bearbeiten",
+          "notification": {
+            "success": {
+              "title": "Änderungen erfolgreich angewendet",
+              "message": "Suchmaschine wurde erfolgreich gespeichert"
+            },
+            "error": {
+              "title": "Änderungen konnten nicht angewendet werden",
+              "message": "Die Suchmaschine konnte nicht gespeichert werden"
+            }
+          },
+          "configControl": "Konfiguration",
+          "searchEngineType": {
+            "generic": "Allgemein",
+            "fromIntegration": "Aus der Integration"
+          }
+        },
+        "delete": {
+          "title": "Suchmaschine löschen",
+          "message": "Sind Sie sicher, dass Sie die Suchmaschine {name} löschen möchten?",
+          "notification": {
+            "success": {
+              "title": "Suchmaschine gelöscht",
+              "message": "Die Suchmaschine wurde erfolgreich gelöscht"
+            },
+            "error": {
+              "title": "Die Suchmaschine wurde nicht gelöscht",
+              "message": "Die Suchmaschine konnte nicht gelöscht werden"
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "\"{name} \" anfordern",
+            "table": {
+              "header": {
+                "season": "Staffel",
+                "episodes": "Episoden"
+              }
+            },
+            "button": {
+              "send": "Anfrage senden"
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": "Hostname"
+      },
+      "subject": {
+        "label": "Thema"
+      },
+      "issuer": {
+        "label": "Ersteller"
+      },
+      "validFrom": {
+        "label": "Gültig ab"
+      },
+      "validTo": {
+        "label": "Gültig bis"
+      },
+      "serialNumber": {
+        "label": "Seriennummer"
+      },
+      "fingerprint": {
+        "label": "Fingerabdruck"
+      }
+    },
+    "page": {
+      "list": {
+        "title": "Vertrauenswürdige Zertifikate",
+        "description": "Wird von Homarr verwendet, um Daten von Integrationen anzufordern.",
+        "noResults": {
+          "title": "Es gibt noch keine Zertifikate"
+        },
+        "invalid": {
+          "title": "Ungültiges Zertifikat",
+          "description": "Fehler beim Analysieren des Zertifikats"
+        },
+        "expires": "Gültig bis {when}",
+        "toHostnames": "Vertrauenswürdige Hostnamen"
+      },
+      "hostnames": {
+        "title": "Hostnamen der vertrauten Zertifikate",
+        "description": "Einige Zertifikate erlauben es der spezifischen Domäne von Homarr nicht, sie anzufordern. Um diese Einschränkungen zu umgehen werden alle vertrauenswürdigen Hostnamen mit ihrem Zertifikats Fingerabdruck verwendet.",
+        "noResults": {
+          "title": "Noch keine Hostnamen vorhanden"
+        },
+        "toCertificates": "Zertifikate"
+      }
+    },
+    "action": {
+      "create": {
+        "label": "Zertifikat hinzufügen",
+        "notification": {
+          "success": {
+            "title": "Zertifikat hinzugefügt",
+            "message": "Das Zertifikat wurde erfolgreich hinzugefügt"
+          },
+          "error": {
+            "title": "Ein Fehler ist beim hinzufügen des Zertifikats aufgetreten",
+            "message": "Das Zertifikat konnte nicht hinzugefügt werden"
+          }
+        }
+      },
+      "remove": {
+        "label": "Zertifikat entfernen",
+        "confirm": "Sind Sie sicher, dass Sie das Zertifikat entfernen möchten?",
+        "notification": {
+          "success": {
+            "title": "Zertifikat entfernt",
+            "message": "Das Zertifikat wurde erfolgreich entfernt"
+          },
+          "error": {
+            "title": "Zertifikat nicht entfernt",
+            "message": "Das Zertifikat konnte nicht entfernt werden"
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "Vertrauenswürdigen Hostnamen entfernen",
+        "confirm": "Sind Sie sicher, dass Sie diesen vertrauenswürdigen Hostnamen entfernen wollen? Dies kann dazu führen, dass einige Integrationen nicht mehr funktionieren.",
+        "notification": {
+          "success": {
+            "title": "Hostname entfernt",
+            "message": "Der Hostname wurde erfolgreich entfernt"
+          },
+          "error": {
+            "title": "Hostname nicht entfernt",
+            "message": "Der Hostname konnte nicht entfernt werden"
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "Debug",
+        "info": "Info",
+        "warn": "Hinweis",
+        "error": "Fehler"
+      }
+    }
+  }
+}

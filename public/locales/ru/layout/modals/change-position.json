@@ -1,8 +1,0 @@
-{
-	"xPosition": "Позиция по оси X",
-	"width": "Ширина",
-	"height": "Высота",
-	"yPosition": "Позиция по оси Y",
-	"zeroOrHigher": "0 или больше",
-	"betweenXandY": "От {{min}} до {{max}}"
-}

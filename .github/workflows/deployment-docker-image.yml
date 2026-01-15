@@ -1,0 +1,270 @@
+name: "[Deployment] Release"
+
+on:
+  push:
+    branches:
+      - main
+      - beta
+      - dev
+  workflow_dispatch:
+    inputs:
+      send-notifications:
+        type: boolean
+        required: false
+        default: true
+        description: Send notifications
+
+permissions:
+  contents: write # Required to update package.json version
+  packages: write # Required for pushing to GHCR
+
+env:
+  SKIP_ENV_VALIDATION: true
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  GHCR_REPO: ghcr.io/${{ github.repository }}
+  TURBO_TELEMETRY_DISABLED: 1
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+
+jobs:
+  release:
+    name: Create tag and release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SKIP_RELEASE: ${{ github.event_name == 'workflow_dispatch' || github.ref_name == 'dev' }}
+    outputs:
+      version: ${{ steps.read-semver.outputs.version || steps.version-fallback.outputs.version }}
+      git_ref: ${{ steps.read-git-ref.outputs.ref || github.ref }}
+      skipped: ${{ env.SKIP_RELEASE }}
+    steps:
+      - run: echo "Skipping release for workflow_dispatch event"
+        if: env.SKIP_RELEASE == 'true'
+        # The below generated version fallback represents a normalized branch name, for example "feature/branch-name" -> "feature-branch-name"
+      - run: echo "version="$(echo ${{github.ref_name}} | sed 's/[^a-zA-Z0-9\-]/-/g') >> "$GITHUB_OUTPUT"
+        id: version-fallback
+        if: env.SKIP_RELEASE == 'true' && github.ref_name != 'main' && github.ref_name != 'beta'
+
+      - name: Obtain token
+        if: env.SKIP_RELEASE == 'false'
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.RENOVATE_MERGE_PRIVATE_KEY }}
+          app-id: ${{ secrets.RENOVATE_MERGE_APP_ID }}
+          permission-contents: write # required to commit package.json & changelog changes, merge them to dev and publish the release
+
+      - uses: actions/checkout@v6
+        if: env.SKIP_RELEASE == 'false'
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        if: env.SKIP_RELEASE == 'false'
+      - uses: actions/setup-node@v6
+        if: env.SKIP_RELEASE == 'false'
+        with:
+          node-version: 24.12.0
+          cache: "pnpm"
+      - run: npm i -g pnpm
+        if: env.SKIP_RELEASE == 'false'
+      - name: Install dependencies
+        if: env.SKIP_RELEASE == 'false'
+        run: |
+          pnpm install
+      - name: Run Semantic Release
+        if: env.SKIP_RELEASE == 'false'
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+          GIT_AUTHOR_NAME: "Releases Homarr"
+          GIT_AUTHOR_EMAIL: "175486441+homarr-releases[bot]@users.noreply.github.com"
+          GIT_COMMITTER_NAME: "Releases Homarr"
+          GIT_COMMITTER_EMAIL: "175486441+homarr-releases[bot]@users.noreply.github.com"
+        run: |
+          pnpm release
+      - name: Read semver output
+        # We read the last tag either from the created release or from the current branch, this is to rerun the deployment job for the currently released version when it failed
+        if: env.SKIP_RELEASE == 'false' || github.ref_name == 'main' || github.ref_name == 'beta'
+        id: read-semver
+        run: |
+          git fetch --tags
+          echo "version=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+      - name: Read git ref
+        if: env.SKIP_RELEASE == 'false'
+        id: read-git-ref
+        run: |
+          echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Update dev branch
+        if: env.SKIP_RELEASE == 'false'
+        continue-on-error: true # Prevent pipeline from failing when merge fails
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          git config user.name "Releases Homarr"
+          git config user.email "175486441+homarr-releases[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ steps.obtainToken.outputs.token }}@github.com/${{ github.repository }}.git
+          git fetch origin dev
+          git checkout dev
+          git pull origin dev
+          git rebase ${{ github.ref_name }}
+          git push origin dev
+  build-amd64:
+    name: Build docker image for amd64
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      digest: ${{ steps.build.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.release.outputs.git_ref }}
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: "${{ env.GHCR_REPO }}"
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push by digest
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          network: host
+          platforms: linux/amd64
+          labels: ${{ steps.meta.outputs.labels }}
+          outputs: type=image,"name=${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
+        env:
+          SKIP_ENV_VALIDATION: true
+  build-arm64:
+    name: Build docker image for arm64
+    needs: release
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 20
+    outputs:
+      digest: ${{ steps.build.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.release.outputs.git_ref }}
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: "${{ env.GHCR_REPO }}"
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push by digest
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          network: host
+          platforms: linux/arm64
+          labels: ${{ steps.meta.outputs.labels }}
+          outputs: type=image,"name=${{ env.GHCR_REPO }}",push-by-digest=true,name-canonical=true,push=true
+        env:
+          SKIP_ENV_VALIDATION: true
+  extract-asset-amd64:
+    name: Extract amd64 asset from docker image
+    needs: [release, build-amd64]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Extract amd64
+        if: needs.release.outputs.skipped == 'false'
+        uses: homarr-labs/homarr/.github/actions/extract-build-artifact@dev
+        with:
+          digest: "${{ env.GHCR_REPO }}@${{ needs.build-amd64.outputs.digest }}"
+          architecture: amd64
+          release-tag: ${{ needs.release.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+
+  extract-asset-arm64:
+    name: Extract arm64 asset from docker image
+    needs: [release, build-arm64]
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 2
+    steps:
+      - name: Extract arm64
+        if: needs.release.outputs.skipped == 'false'
+        uses: homarr-labs/homarr/.github/actions/extract-build-artifact@dev
+        with:
+          digest: "${{ env.GHCR_REPO }}@${{ needs.build-arm64.outputs.digest }}"
+          architecture: arm64
+          release-tag: ${{ needs.release.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+  publish:
+    name: Complete deployment and notify
+    needs: [release, build-amd64, build-arm64, extract-asset-amd64, extract-asset-arm64]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      NEXT_VERSION: ${{ needs.release.outputs.version }}
+      DEPLOY_LATEST: ${{ github.ref_name == 'main' }}
+      DEPLOY_BETA: ${{ github.ref_name == 'beta' }}
+    steps:
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish beta
+        if: env.DEPLOY_BETA == 'true'
+        run: |
+          docker buildx imagetools create -t ${{ env.GHCR_REPO }}:beta \
+            ${{ env.GHCR_REPO }}@${{ needs.build-amd64.outputs.digest }} \
+            ${{ env.GHCR_REPO }}@${{ needs.build-arm64.outputs.digest }}
+
+      - name: Publish latest
+        if: env.DEPLOY_LATEST == 'true'
+        run: |
+          docker buildx imagetools create -t ${{ env.GHCR_REPO }}:latest \
+            ${{ env.GHCR_REPO }}@${{ needs.build-amd64.outputs.digest }} \
+            ${{ env.GHCR_REPO }}@${{ needs.build-arm64.outputs.digest }}
+
+      - name: Publish version
+        run: |
+          docker buildx imagetools create -t ${{ env.GHCR_REPO }}:${{ env.NEXT_VERSION }} \
+            ${{ env.GHCR_REPO }}@${{ needs.build-amd64.outputs.digest }} \
+            ${{ env.GHCR_REPO }}@${{ needs.build-arm64.outputs.digest }}
+
+      - name: Publish release
+        if: needs.release.outputs.skipped == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release edit --repo ${{ github.repository }} ${{ needs.release.outputs.version }} --draft=false
+
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "Successfully deployed images for branch **${{ github.ref_name }}**. Tagged as **${{env.NEXT_VERSION}}**."

@@ -1,0 +1,36 @@
+.root {
+  border-radius: var(--mantine-radius-lg);
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+.item {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 0;
+  transition: transform 150ms ease;
+  overflow: hidden;
+
+  &[data-first="true"] {
+    border-radius: var(--mantine-radius-lg) var(--mantine-radius-lg) 0 0;
+  }
+
+  &[data-last="true"] {
+    border-radius: 0 0 var(--mantine-radius-lg) var(--mantine-radius-lg);
+  }
+
+  &[data-active] {
+    transform: scale(1.01);
+    z-index: 1;
+    background-color: var(--mantine-color-body);
+    border-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+    box-shadow: var(--mantine-shadow-md);
+    border-radius: var(--mantine-radius-lg);
+  }
+}
+
+.chevron {
+  &[data-rotate] {
+    transform: rotate(180deg);
+  }
+}

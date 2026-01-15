@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "Us donem la benvinguda a Homarr",
+        "subtitle": "Comencem configurant la vostra instància de Homarr.",
+        "description": "Per començar, seleccioneu com voleu configurar la vostra instància de Homarr.",
+        "action": {
+          "scratch": "Comença des de zero",
+          "importOldmarr": "Importa des d'una versió de Homarr anterior a 1.0"
+        }
+      },
+      "import": {
+        "title": "Importa dades",
+        "subtitle": "Pot importar dades des d'una instància de Homarr existent.",
+        "dropzone": {
+          "title": "Arrossegueu el fitxer zip aquí o feu clic per navegar",
+          "description": "El fitxer zip carregat es processarà i podreu seleccionar què voleu importar"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "Canvia el fitzer"
+          }
+        },
+        "importSettings": {
+          "title": "Importa la configuració",
+          "description": "Configura el comportament d'importació"
+        },
+        "boardSelection": {
+          "title": "S'han trobat {count} taulers",
+          "description": "Escolliu tots els taulers amb la mida que voleu importar",
+          "action": {
+            "selectAll": "Seleccionar-ho tot",
+            "unselectAll": "Anul·la la selecció"
+          }
+        },
+        "summary": {
+          "title": "Resum de la importació",
+          "description": "En el resum següent podeu veure el que s'importarà",
+          "action": {
+            "import": "Confirma la importació i continua"
+          },
+          "entities": {
+            "apps": "Aplicacions",
+            "boards": "Tauler",
+            "integrations": "Integracions",
+            "credentialUsers": "Credencials d'usuari"
+          }
+        },
+        "tokenModal": {
+          "title": "Introduïu el token d'importació",
+          "field": {
+            "token": {
+              "label": "Token",
+              "description": "Introduïu el token d'importació mostrat a la instància prèvia de Homarr"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "Token invàlid",
+              "message": "El token que heu introduït no és vàlid"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "Usuari administrador",
+        "subtitle": "Especifiqueu les credencials del vostre usuari administrador.",
+        "notification": {
+          "success": {
+            "title": "S'ha creat l'usuari",
+            "message": "L'usuari s'ha creat correctament"
+          },
+          "error": {
+            "title": "S'ha produït un error al crear l'usuari"
+          }
+        }
+      },
+      "group": {
+        "title": "Grup extern",
+        "subtitle": "Especifiqueu el grup que s'ha d'utilitzar per als usuaris externs.",
+        "form": {
+          "name": {
+            "label": "Nom del grup",
+            "description": "El nom ha de coincidir amb el grup d'Administradors del proveïdor extern"
+          }
+        }
+      },
+      "settings": {
+        "title": "Configuració",
+        "subtitle": "Configureu els paràmetres del servidor."
+      },
+      "finish": {
+        "title": "Finalitza la configuració",
+        "subtitle": "Ja està tot llest!",
+        "description": "El procés de configuració s'ha completat correctament. Podeu començar a utilitzar Homarr. Escolliu la vostra propera acció:",
+        "action": {
+          "goToBoard": "Ves al tauler {name}",
+          "createBoard": "Creeu el vostre primer tauler",
+          "inviteUser": "Convideu altres usuaris",
+          "docs": "Llegiu la documentació"
+        }
+      }
+    },
+    "backToStart": "Torna a l'inici"
+  },
+  "user": {
+    "title": "Usuaris",
+    "name": "Usuari",
+    "page": {
+      "login": {
+        "title": "Entreu al vostre compte",
+        "subtitle": "Benvingut de nou! Si us plau, introduïu les credencials"
+      },
+      "invite": {
+        "title": "Uneix-te a Homarr",
+        "subtitle": "Benvingut a Homarr! Si us plau, crea el teu compte",
+        "description": "Has sigut invitat per {username}"
+      },
+      "init": {
+        "title": "Nova instal·lació de Homarr",
+        "subtitle": "Creeu l'usuari administrador inicial"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "Adreça electrònica",
+        "verified": "Verificat"
+      },
+      "username": {
+        "label": "Nom d’usuari"
+      },
+      "password": {
+        "label": "Contrasenya",
+        "requirement": {
+          "length": "Inclou com a mínim 8 caràcters",
+          "lowercase": "Inclou minúscules",
+          "uppercase": "Inclou majúscules",
+          "number": "Inclou nombres",
+          "special": "Inclou símbols especials"
+        }
+      },
+      "passwordConfirm": {
+        "label": "Confiremeu la contrasenya"
+      },
+      "previousPassword": {
+        "label": "Contrasenya anterior"
+      },
+      "homeBoard": {
+        "label": "Tauler principal"
+      },
+      "pingIconsEnabled": {
+        "label": "Utilitza icones pels pings"
+      },
+      "defaultSearchEngine": {
+        "label": "Motor de cerca principal"
+      },
+      "openSearchInNewTab": {
+        "label": "Obre els resultats de la cerca en una pestanya nova"
+      }
+    },
+    "error": {
+      "usernameTaken": "El nom d’usuari ja està en ús"
+    },
+    "action": {
+      "login": {
+        "label": "Inicia la sessió",
+        "labelWith": "Inicia la sessió amb {provider}",
+        "notification": {
+          "success": {
+            "title": "Inici de sessió correcte",
+            "message": "Heu iniciat sessió"
+          },
+          "error": {
+            "title": "No s'ha pogut iniciar sessió",
+            "message": "No s'ha pogut iniciar la sessió"
+          }
+        },
+        "forgotPassword": {
+          "label": "Heu oblidat la contrasenya?",
+          "description": "Un administrador pot utilitzar el següent comandament per reinicialitzar la teva contrasenya"
+        }
+      },
+      "register": {
+        "label": "Crear un compte",
+        "notification": {
+          "success": {
+            "title": "S'ha creat el compte",
+            "message": "Inicieu la sessió per continuar"
+          },
+          "error": {
+            "title": "La creació del compte ha fallat",
+            "message": "No s'ha pogut crear el compte"
+          }
+        }
+      },
+      "create": "Crea un usuari",
+      "changePassword": {
+        "label": "Canvia la contrasenya",
+        "notification": {
+          "success": {
+            "message": "La contrasenya s'ha canviat correctament"
+          },
+          "error": {
+            "message": "No s'ha pogut canviar la contrasenya"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "El tauler d'inici s'ha canviat correctament"
+          },
+          "error": {
+            "message": "No 'ha pogut canviar el tauler d'inici"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "Els paràmetres de cerca s'han canviat correctament"
+          },
+          "error": {
+            "message": "No s'han pogut canviar els paràmetres de cerca"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "Primer dia de la setmana establert correctament"
+          },
+          "error": {
+            "message": "No s'ha pogut canviar el primer dia de la setmana"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "Icones de ping alternats correctament"
+          },
+          "error": {
+            "message": "Impossible d'alternar les icones de ping"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "Canvia la imatge",
+          "notification": {
+            "success": {
+              "message": "La imatge s'ha canviat correctament"
+            },
+            "error": {
+              "message": "No s'ha pogut canviar la imatge"
+            },
+            "toLarge": {
+              "title": "La imatge és massa gran",
+              "message": "La mida màxima de la imatge és {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "Elimina la imatge",
+          "confirm": "Esteu segur que voleu eliminar la imatge?",
+          "notification": {
+            "success": {
+              "message": "La imatge s'ha eliminat correctament"
+            },
+            "error": {
+              "message": "No s'ha pogut eliminar la imatge"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "El perfil s'ha actualitzat correctament"
+          },
+          "error": {
+            "message": "No s'ha pogut actualitzar el perfil"
+          }
+        }
+      },
+      "delete": {
+        "label": "Eliminar l'usuari permanentment",
+        "description": "Elimina l'usuari incloent les seves configuracions. Això no esborrarà cap tauler. No es notificarà l'usuari.",
+        "confirm": "Esteu segur que voleu eliminar l'usuari {username} i les seves configuracions?"
+      },
+      "select": {
+        "label": "Seleccioneu l'usuari",
+        "notFound": "No s'ha trobat l'usuari"
+      },
+      "transfer": {
+        "label": "Seleccioneu un nou propietari"
+      }
+    }
+  },
+  "group": {
+    "title": "Grups",
+    "name": "Grup",
+    "search": "Troba un grup",
+    "field": {
+      "name": "Nom",
+      "members": "Membres",
+      "homeBoard": {
+        "label": "Panell d'inici",
+        "description": "Només els panells accessibles al grup es pot seleccionar"
+      },
+      "mobileBoard": {
+        "label": "Panell mòbil",
+        "description": "Només els panells accessibles al grup es pot seleccionar"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Administrador",
+        "item": {
+          "admin": {
+            "label": "Administrador",
+            "description": "Els membres amb aquest permís tenen accés complet a totes les funcions i configuracions"
+          }
+        }
+      },
+      "app": {
+        "title": "Aplicacions",
+        "item": {
+          "create": {
+            "label": "Crear aplicacions",
+            "description": "Permet que els membres crein aplicacions"
+          },
+          "use-all": {
+            "label": "Utilitzar totes les aplicacions",
+            "description": "Permet que els membres afegeixin qualsevol aplicació als seus taulers"
+          },
+          "modify-all": {
+            "label": "Modificar totes les aplicacions",
+            "description": "Permet que els memebres modifiquin totes les aplicacions"
+          },
+          "full-all": {
+            "label": "Accés complet a les aplicacions",
+            "description": "Permet que els membres gestionin, utilitzin i eliminin qualsevol aplicació"
+          }
+        }
+      },
+      "board": {
+        "title": "Taulers",
+        "item": {
+          "create": {
+            "label": "Crear taulers",
+            "description": "Permet que els membres crein taulers"
+          },
+          "view-all": {
+            "label": "Visualitzar tots els taulers",
+            "description": "Permet que els membres visualitzin tots els taulers"
+          },
+          "modify-all": {
+            "label": "Modificar tots els taulers",
+            "description": "Permet que els membres modifiquin tots els taulers (No inclou control d'accés ni zona de perill)"
+          },
+          "full-all": {
+            "label": "Accés total a tots els taulers",
+            "description": "Permet que els membres visualitzin, modifiquin i esborrin tots els taulers (incloent-hi control d'accés i zona de perill)"
+          }
+        }
+      },
+      "integration": {
+        "title": "Integracions",
+        "item": {
+          "create": {
+            "label": "Crear integracions",
+            "description": "Permet que els membres crein integracions"
+          },
+          "use-all": {
+            "label": "Utilitzar totes les integracions",
+            "description": "Permet que els membres afegeixin qualsevol integració als seus taulers"
+          },
+          "interact-all": {
+            "label": "Interactuar amb qualsevol integració",
+            "description": "Permet que els usuaris interaccionin amb qualsevol integració"
+          },
+          "full-all": {
+            "label": "Accés total a les integracions",
+            "description": "Permetre que els membres gestionin, utilitzin i interactuïn amb cada integració"
+          }
+        }
+      },
+      "media": {
+        "title": "Medis",
+        "item": {
+          "upload": {
+            "label": "Pujar medis",
+            "description": "Permetre als membres puja medis"
+          },
+          "view-all": {
+            "label": "Veure medis",
+            "description": "Permet que els membres vegin tots els continguts multimèdia"
+          },
+          "full-all": {
+            "label": "Accés complet als medis",
+            "description": "Permet als membres gestionar i esborrar tots els continguts multimèdia"
+          }
+        }
+      },
+      "other": {
+        "title": "Altres",
+        "item": {
+          "view-logs": {
+            "label": "Veure registres",
+            "description": "Permet que els membres visualitzin els registres"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "Motors de cerca",
+        "item": {
+          "create": {
+            "label": "Crea motors de cerca",
+            "description": "Permet que els membres crein motors de cerca"
+          },
+          "modify-all": {
+            "label": "Modifica tots els motors de cerca",
+            "description": "Permet que els membres modifiquin tots els motors de cerca"
+          },
+          "full-all": {
+            "label": "Accés complet a la cerca",
+            "description": "Permet als membres gestionar i esborrar els motors de cerca"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "Alguns membres de proveïdors externs no es poden gestionar aquí",
+      "external": "Tots els membres de proveïdors externs no es poden gestionar aquí"
+    },
+    "reservedNotice": {
+      "message": "Aquest grup està reservat pel sistema i restringeix algunes accions <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "Nou grup",
+        "notification": {
+          "success": {
+            "message": "El grup s'ha creat satisfactòriament"
+          },
+          "error": {
+            "message": "El grup no es pot crear"
+          }
+        }
+      },
+      "transfer": {
+        "label": "Transferir propietari",
+        "description": "Transferir la propietat del grup a altre usuari.",
+        "confirm": "Segur que vols transferir el propietari de {name} a {username}?",
+        "notification": {
+          "success": {
+            "message": "Transferència del {group} a {user} satisfactòria"
+          },
+          "error": {
+            "message": "No ha sigut possible transferir la propietat"
+          }
+        }
+      },
+      "addMember": {
+        "label": "Afegir usuari"
+      },
+      "removeMember": {
+        "label": "Esborrar usuari",
+        "confirm": "Segur que vols esborrar {user} d'aquest grup?"
+      },
+      "delete": {
+        "label": "Esborrar grup",
+        "description": "Un cop esborris el grup, no el podràs recuperar. ",
+        "confirm": "Segur que desitges esborrar el grup {name}?",
+        "notification": {
+          "success": {
+            "message": "S'ha esborrat el grup {name}"
+          },
+          "error": {
+            "message": "Impossible esborrar el grup {name}"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "Privilegis guardats",
+            "message": "Els privilegis s'han guardat satisfactòriament"
+          },
+          "error": {
+            "title": "Privilegis no guardats",
+            "message": "Els privilegis no s'han guardat"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "El grup {name} s'ha guardat satisfactòriament"
+          },
+          "error": {
+            "message": "No s'ha pogut guardar el grup {name}"
+          }
+        }
+      },
+      "select": {
+        "label": "Seleccionar grup",
+        "notFound": "No s'ha trobat el grup"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "Configuració guardada",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "",
+      "description": ""
+    }
+  },
+  "app": {
+    "search": "",
+    "page": {
+      "list": {
+        "title": "",
+        "noResults": {
+          "title": "",
+          "action": ""
+        }
+      },
+      "create": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "Creació correcta",
+            "message": "L'aplicació s'ha creat correctament"
+          },
+          "error": {
+            "title": "Creació fallida",
+            "message": "No s'ha pogut crear l'aplicació"
+          }
+        }
+      },
+      "edit": {
+        "title": "Edita l'aplicació",
+        "notification": {
+          "success": {
+            "title": "Els canvis s'han aplicat correctament",
+            "message": "L'aplicació s'ha desat correctament"
+          },
+          "error": {
+            "title": "No s'han pogut aplicar els canvis",
+            "message": "L'aplicació no s'ha pogut desar"
+          }
+        }
+      },
+      "delete": {
+        "title": "Elimina l'aplicació",
+        "message": "Esteu segur que voleu eliminar l'aplicació {name}?",
+        "notification": {
+          "success": {
+            "title": "Eliminació correcta",
+            "message": "L'aplicació s'ha eliminat correctament"
+          },
+          "error": {
+            "title": "Eliminació fallida",
+            "message": "No s'ha pogut eliminar l'aplicació"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nom"
+      },
+      "description": {
+        "label": "Descripció"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "Seleccioneu l'aplicació",
+        "notFound": "No s'ha trobat cap aplicació",
+        "search": "",
+        "noResults": "",
+        "action": "",
+        "title": ""
+      },
+      "create": {
+        "title": "",
+        "description": "",
+        "action": ""
+      },
+      "add": ""
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "Integracions",
+        "search": "Cercar integracions",
+        "noResults": {
+          "title": "Encara no hi ha cap integració"
+        }
+      },
+      "create": {
+        "title": "Nova integració de {name}",
+        "notification": {
+          "success": {
+            "title": "Creació correcta",
+            "message": "La integració s'ha creat correctament"
+          },
+          "error": {
+            "title": "Creació fallida",
+            "message": "No s'ha pogut crear la integració"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "",
+              "label": ""
+            },
+            "new": {
+              "title": "",
+              "url": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "Edita la integració de {name}",
+        "notification": {
+          "success": {
+            "title": "Els canvis s'han aplicat correctament",
+            "message": "La integració s'ha desat correctament"
+          },
+          "error": {
+            "title": "No s'han pogut aplicar els canvis",
+            "message": "No s'ha pogut desar la integració"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "",
+            "remove": "",
+            "select": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "Elimina la integració",
+        "message": "Esteu segur que voleu eliminar la integració {name}?",
+        "notification": {
+          "success": {
+            "title": "Eliminació correcta",
+            "message": "La integració s'ha eliminat correctament"
+          },
+          "error": {
+            "title": "Eliminació fallida",
+            "message": "No s'ha pogut eliminar la integració"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nom"
+      },
+      "url": {
+        "label": "URL"
+      },
+      "attemptSearchEngineCreation": {
+        "label": "Crea un motor de cerca",
+        "description": "La integració \"{kind}\" es pot utilitzar amb els motors de cerca. Seleccioneu aquesta opció per configurar el motor de cerca automàticament."
+      },
+      "app": {
+        "sectionTitle": ""
+      },
+      "createApp": {
+        "label": "",
+        "description": ""
+      },
+      "appHref": {
+        "placeholder": ""
+      }
+    },
+    "action": {
+      "create": "Nova integració"
+    },
+    "testConnection": {
+      "action": {
+        "create": "Comprova la connexió i crea",
+        "edit": "Comprova la connexió i desa"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": ""
+          }
+        },
+        "unknown": {
+          "title": "",
+          "description": ""
+        },
+        "parse": {
+          "title": "",
+          "description": ""
+        },
+        "authorization": {
+          "title": "",
+          "description": ""
+        },
+        "statusCode": {
+          "title": "",
+          "description": "",
+          "otherDescription": "",
+          "reason": {
+            "badRequest": "",
+            "notFound": "",
+            "tooManyRequests": "",
+            "internalServerError": "",
+            "serviceUnavailable": "",
+            "gatewayTimeout": ""
+          }
+        },
+        "certificate": {
+          "title": "",
+          "description": {
+            "expired": "",
+            "notYetValid": "",
+            "untrusted": "",
+            "hostnameMismatch": ""
+          },
+          "alert": {
+            "permission": {
+              "title": "",
+              "message": ""
+            },
+            "hostnameMismatch": {
+              "title": "",
+              "message": ""
+            },
+            "extract": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "action": {
+            "retry": {
+              "label": ""
+            },
+            "trust": {
+              "label": ""
+            },
+            "upload": {
+              "label": ""
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "details": {
+            "title": "",
+            "description": "",
+            "content": {
+              "action": "",
+              "title": ""
+            }
+          }
+        },
+        "request": {
+          "title": "",
+          "description": {
+            "connection": {
+              "hostUnreachable": "",
+              "networkUnreachable": "",
+              "refused": "",
+              "reset": ""
+            },
+            "dns": {
+              "notFound": "",
+              "timeout": "",
+              "noAnswer": ""
+            },
+            "timeout": {
+              "aborted": "",
+              "timeout": ""
+            }
+          }
+        }
+      },
+      "alertNotice": "El botó \"Desa\" s'habilita quan la connexió s'estableix correctament",
+      "notification": {
+        "success": {
+          "title": "S'ha connectat",
+          "message": "S'ha connectat correctament"
+        },
+        "invalidUrl": {
+          "title": "Adreça URL no vàlida",
+          "message": "L'adreça URL no és vàlida"
+        },
+        "secretNotDefined": {
+          "title": "",
+          "message": ""
+        },
+        "invalidCredentials": {
+          "title": "",
+          "message": ""
+        },
+        "commonError": {
+          "title": "",
+          "message": ""
+        },
+        "badRequest": {
+          "title": "",
+          "message": ""
+        },
+        "unauthorized": {
+          "title": "",
+          "message": ""
+        },
+        "forbidden": {
+          "title": "",
+          "message": ""
+        },
+        "notFound": {
+          "title": "",
+          "message": ""
+        },
+        "internalServerError": {
+          "title": "",
+          "message": ""
+        },
+        "serviceUnavailable": {
+          "title": "",
+          "message": ""
+        },
+        "connectionAborted": {
+          "title": "",
+          "message": ""
+        },
+        "domainNotFound": {
+          "title": "",
+          "message": ""
+        },
+        "connectionRefused": {
+          "title": "",
+          "message": ""
+        },
+        "invalidJson": {
+          "title": "",
+          "message": ""
+        },
+        "wrongPath": {
+          "title": "",
+          "message": ""
+        },
+        "tooManyRequests": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "secrets": {
+      "title": "",
+      "lastUpdated": "",
+      "notSet": {
+        "label": "",
+        "tooltip": ""
+      },
+      "secureNotice": "",
+      "reset": {
+        "title": "",
+        "message": ""
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "",
+        "text": ""
+      },
+      "kind": {
+        "username": {
+          "label": "",
+          "newLabel": ""
+        },
+        "apiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "password": {
+          "label": "",
+          "newLabel": ""
+        },
+        "tokenId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "realm": {
+          "label": "",
+          "newLabel": ""
+        },
+        "personalAccessToken": {
+          "label": "",
+          "newLabel": ""
+        },
+        "topic": {
+          "label": "",
+          "newLabel": ""
+        },
+        "url": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiSecret": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubAppId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubInstallationId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "privateKey": {
+          "label": "",
+          "newLabel": ""
+        }
+      }
+    },
+    "permission": {
+      "use": "",
+      "interact": "",
+      "full": ""
+    }
+  },
+  "media": {
+    "plural": "",
+    "search": "",
+    "field": {
+      "name": "",
+      "size": "",
+      "creator": ""
+    },
+    "action": {
+      "upload": {
+        "label": "",
+        "file": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "label": "",
+        "description": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "copy": {
+        "label": ""
+      },
+      "open": {
+        "label": ""
+      }
+    }
+  },
+  "common": {
+    "success": "",
+    "beta": "",
+    "error": "",
+    "action": {
+      "add": "",
+      "apply": "",
+      "backToOverview": "",
+      "change": "",
+      "create": "",
+      "createAnother": "",
+      "edit": "",
+      "import": "",
+      "insert": "",
+      "remove": "",
+      "save": "",
+      "saveChanges": "",
+      "cancel": "",
+      "delete": "",
+      "discard": "",
+      "close": "",
+      "confirm": "",
+      "continue": "",
+      "previous": "",
+      "next": "",
+      "checkoutDocs": "",
+      "checkLogs": "",
+      "tryAgain": "",
+      "loading": ""
+    },
+    "here": "",
+    "iconPicker": {
+      "label": "",
+      "header": ""
+    },
+    "colorScheme": {
+      "options": {
+        "light": "",
+        "dark": ""
+      }
+    },
+    "information": {
+      "min": "",
+      "max": "",
+      "days": "",
+      "hours": "",
+      "minutes": ""
+    },
+    "notification": {
+      "create": {
+        "success": "",
+        "error": ""
+      },
+      "delete": {
+        "success": "",
+        "error": ""
+      },
+      "update": {
+        "success": "",
+        "error": ""
+      },
+      "transfer": {
+        "success": "",
+        "error": ""
+      }
+    },
+    "multiSelect": {
+      "placeholder": ""
+    },
+    "multiText": {
+      "placeholder": "",
+      "addLabel": ""
+    },
+    "select": {
+      "placeholder": "",
+      "badge": {
+        "recommended": ""
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "",
+        "switchToLightMode": "",
+        "management": "",
+        "preferences": "",
+        "logout": "",
+        "login": "",
+        "homeBoard": "",
+        "loggedOut": "",
+        "updateAvailable": ""
+      }
+    },
+    "dangerZone": "",
+    "noResults": "",
+    "unsavedChanges": "",
+    "preview": {
+      "show": "",
+      "hide": ""
+    },
+    "zod": {
+      "errors": {
+        "default": "",
+        "required": "",
+        "string": {
+          "startsWith": "",
+          "endsWith": "",
+          "includes": "",
+          "invalidEmail": ""
+        },
+        "tooSmall": {
+          "string": "",
+          "number": ""
+        },
+        "tooBig": {
+          "string": "",
+          "number": ""
+        },
+        "custom": {
+          "passwordsDoNotMatch": "",
+          "passwordRequirements": "",
+          "boardAlreadyExists": "",
+          "invalidFileType": "",
+          "invalidFileName": "",
+          "fileTooLarge": "",
+          "invalidConfiguration": "",
+          "groupNameTaken": ""
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "",
+        "milesPerHour": ""
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "",
+        "remove": ""
+      },
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": ""
+        }
+      },
+      "action": {
+        "create": "",
+        "edit": "",
+        "remove": "",
+        "moveUp": "",
+        "moveDown": "",
+        "createAbove": "",
+        "createBelow": "",
+        "openAllInNewTabs": ""
+      },
+      "create": {
+        "title": "",
+        "submit": ""
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      },
+      "edit": {
+        "title": "",
+        "submit": ""
+      },
+      "menu": {
+        "label": {
+          "create": "",
+          "changePosition": ""
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "",
+        "text": ""
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "",
+      "import": "",
+      "edit": "",
+      "moveResize": "",
+      "duplicate": "",
+      "remove": ""
+    },
+    "menu": {
+      "label": {
+        "settings": ""
+      }
+    },
+    "create": {
+      "title": "",
+      "search": "",
+      "addToBoard": ""
+    },
+    "moveResize": {
+      "title": "",
+      "field": {
+        "width": {
+          "label": ""
+        },
+        "height": {
+          "label": ""
+        },
+        "xOffset": {
+          "label": ""
+        },
+        "yOffset": {
+          "label": ""
+        }
+      }
+    },
+    "edit": {
+      "title": "",
+      "advancedOptions": {
+        "label": "",
+        "title": ""
+      },
+      "field": {
+        "integrations": {
+          "label": ""
+        },
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      }
+    },
+    "remove": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "",
+      "description": "",
+      "option": {
+        "appId": {
+          "label": ""
+        },
+        "openInNewTab": {
+          "label": ""
+        },
+        "showTitle": {
+          "label": ""
+        },
+        "pingEnabled": {
+          "label": ""
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": "",
+            "row-reverse": "",
+            "column": "",
+            "column-reverse": ""
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "",
+          "description": "",
+          "option": {
+            "normal": "",
+            "tooltip": "",
+            "hidden": ""
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "",
+          "tooltip": ""
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            },
+            "gridHorizontal": {
+              "label": ""
+            }
+          }
+        },
+        "hideTitle": {
+          "label": ""
+        },
+        "hideIcon": {
+          "label": ""
+        },
+        "hideHostname": {
+          "label": ""
+        },
+        "openNewTab": {
+          "label": ""
+        },
+        "items": {
+          "label": "",
+          "add": ""
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": "",
+        "integrationsDisconnected": ""
+      },
+      "data": {
+        "adsBlockedToday": "",
+        "adsBlockedTodayPercentage": "",
+        "dnsQueriesToday": "",
+        "domainsBeingBlocked": ""
+      },
+      "domainsTooltip": ""
+    },
+    "dnsHoleControls": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "controls": {
+        "enableAll": "",
+        "disableAll": "",
+        "setTimer": "",
+        "set": "",
+        "enabled": "",
+        "disabled": "",
+        "processing": "",
+        "disconnected": "",
+        "hours": "",
+        "minutes": "",
+        "unlimited": ""
+      }
+    },
+    "clock": {
+      "name": "",
+      "description": "",
+      "option": {
+        "customTitleToggle": {
+          "label": "",
+          "description": ""
+        },
+        "customTitle": {
+          "label": ""
+        },
+        "is24HourFormat": {
+          "label": "",
+          "description": ""
+        },
+        "showSeconds": {
+          "label": ""
+        },
+        "useCustomTimezone": {
+          "label": ""
+        },
+        "timezone": {
+          "label": "",
+          "description": ""
+        },
+        "showDate": {
+          "label": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customTimeFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customDateFormat": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "domain": {
+          "label": ""
+        },
+        "isBedrockServer": {
+          "label": ""
+        }
+      },
+      "status": {
+        "online": "",
+        "offline": ""
+      }
+    },
+    "notebook": {
+      "name": "",
+      "description": "",
+      "option": {
+        "showToolbar": {
+          "label": ""
+        },
+        "allowReadOnlyCheck": {
+          "label": ""
+        },
+        "content": {
+          "label": ""
+        }
+      },
+      "controls": {
+        "bold": "",
+        "italic": "",
+        "strikethrough": "",
+        "underline": "",
+        "colorText": "",
+        "colorHighlight": "",
+        "code": "",
+        "clear": "",
+        "heading": "",
+        "align": "",
+        "blockquote": "",
+        "horizontalLine": "",
+        "bulletList": "",
+        "orderedList": "",
+        "checkList": "",
+        "increaseIndent": "",
+        "decreaseIndent": "",
+        "link": "",
+        "unlink": "",
+        "image": "",
+        "addTable": "",
+        "deleteTable": "",
+        "colorCell": "",
+        "mergeCell": "",
+        "addColumnLeft": "",
+        "addColumnRight": "",
+        "deleteColumn": "",
+        "addRowTop": "",
+        "addRowBelow": "",
+        "deleteRow": ""
+      },
+      "align": {
+        "left": "",
+        "center": "",
+        "right": ""
+      },
+      "popover": {
+        "clearColor": "",
+        "source": "",
+        "widthPlaceholder": "",
+        "columns": "",
+        "rows": "",
+        "width": "",
+        "height": ""
+      },
+      "placeholder": "",
+      "dismiss": {
+        "title": "",
+        "message": "",
+        "action": {
+          "discard": "",
+          "keepEditing": ""
+        }
+      }
+    },
+    "iframe": {
+      "name": "",
+      "description": "",
+      "option": {
+        "embedUrl": {
+          "label": ""
+        },
+        "allowFullScreen": {
+          "label": ""
+        },
+        "allowTransparency": {
+          "label": ""
+        },
+        "allowScrolling": {
+          "label": ""
+        },
+        "allowPayment": {
+          "label": ""
+        },
+        "allowAutoPlay": {
+          "label": ""
+        },
+        "allowMicrophone": {
+          "label": ""
+        },
+        "allowCamera": {
+          "label": ""
+        },
+        "allowGeolocation": {
+          "label": ""
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "unsupportedProtocol": "",
+        "noBrowerSupport": ""
+      }
+    },
+    "smartHome-entityState": {
+      "name": "",
+      "description": "",
+      "option": {
+        "entityId": {
+          "label": ""
+        },
+        "displayName": {
+          "label": ""
+        },
+        "entityUnit": {
+          "label": ""
+        },
+        "clickable": {
+          "label": ""
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "",
+      "description": "",
+      "option": {
+        "displayName": {
+          "label": ""
+        },
+        "automationId": {
+          "label": ""
+        }
+      },
+      "spotlightAction": {
+        "run": ""
+      }
+    },
+    "stockPrice": {
+      "name": "",
+      "description": "",
+      "option": {
+        "stock": {
+          "label": ""
+        },
+        "timeRange": {
+          "label": "",
+          "option": {
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            },
+            "3mo": {
+              "label": ""
+            },
+            "6mo": {
+              "label": ""
+            },
+            "ytd": {
+              "label": ""
+            },
+            "1y": {
+              "label": ""
+            },
+            "2y": {
+              "label": ""
+            },
+            "5y": {
+              "label": ""
+            },
+            "10y": {
+              "label": ""
+            },
+            "max": {
+              "label": ""
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "",
+          "option": {
+            "5m": {
+              "label": ""
+            },
+            "15m": {
+              "label": ""
+            },
+            "30m": {
+              "label": ""
+            },
+            "1h": {
+              "label": ""
+            },
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1wk": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "",
+      "description": "",
+      "duration": {
+        "allDay": ""
+      },
+      "option": {
+        "releaseType": {
+          "label": "",
+          "options": {
+            "inCinemas": "",
+            "digitalRelease": "",
+            "physicalRelease": ""
+          }
+        },
+        "filterPastMonths": {
+          "label": ""
+        },
+        "filterFutureMonths": {
+          "label": ""
+        },
+        "showUnmonitored": {
+          "label": ""
+        }
+      }
+    },
+    "weather": {
+      "name": "",
+      "description": "",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": ""
+        },
+        "disableTemperatureDecimals": {
+          "label": ""
+        },
+        "showCurrentWindSpeed": {
+          "label": "",
+          "description": ""
+        },
+        "useImperialSpeed": {
+          "label": ""
+        },
+        "location": {
+          "label": ""
+        },
+        "showCity": {
+          "label": ""
+        },
+        "hasForecast": {
+          "label": ""
+        },
+        "forecastDayCount": {
+          "label": "",
+          "description": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "currentWindSpeed": "",
+      "dailyForecast": {
+        "sunrise": "",
+        "sunset": "",
+        "maxWindSpeed": "",
+        "maxWindGusts": ""
+      },
+      "kind": {
+        "clear": "",
+        "mainlyClear": "",
+        "fog": "",
+        "drizzle": "",
+        "freezingDrizzle": "",
+        "rain": "",
+        "freezingRain": "",
+        "snowFall": "",
+        "snowGrains": "",
+        "rainShowers": "",
+        "snowShowers": "",
+        "thunderstorm": "",
+        "thunderstormWithHail": "",
+        "unknown": ""
+      }
+    },
+    "indexerManager": {
+      "name": "",
+      "description": "",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": ""
+        }
+      },
+      "title": "",
+      "testAll": "",
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "healthMonitoring": {
+      "name": "",
+      "description": "",
+      "tab": {
+        "system": "",
+        "cluster": ""
+      },
+      "option": {
+        "fahrenheit": {
+          "label": ""
+        },
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        },
+        "showUptime": {
+          "label": ""
+        },
+        "fileSystem": {
+          "label": ""
+        },
+        "defaultTab": {
+          "label": ""
+        },
+        "visibleClusterSections": {
+          "label": ""
+        },
+        "sectionIndicatorRequirement": {
+          "label": ""
+        }
+      },
+      "popover": {
+        "information": "",
+        "processor": "",
+        "memory": "",
+        "memoryAvailable": "",
+        "version": "",
+        "uptime": "",
+        "loadAverage": "",
+        "minute": "",
+        "minutes": "",
+        "used": "",
+        "available": "",
+        "lastSeen": ""
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": ""
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "",
+          "memory": ""
+        },
+        "resource": {
+          "node": {
+            "name": ""
+          },
+          "qemu": {
+            "name": ""
+          },
+          "lxc": {
+            "name": ""
+          },
+          "storage": {
+            "name": ""
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "",
+            "vmId": "",
+            "plugin": ""
+          },
+          "detail": {
+            "cpu": "",
+            "memory": "",
+            "storage": "",
+            "uptime": "",
+            "haState": "",
+            "storageType": {
+              "local": "",
+              "shared": ""
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "",
+            "cpu": "",
+            "memory": "",
+            "node": ""
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "",
+      "description": "",
+      "option": {
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": "",
+          "option": {
+            "name": "",
+            "state": "",
+            "cpuUsage": "",
+            "memoryUsage": ""
+          }
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "common": {
+      "location": {
+        "query": "",
+        "latitude": "",
+        "longitude": "",
+        "disabledTooltip": "",
+        "unknownLocation": "",
+        "search": "",
+        "table": {
+          "header": {
+            "city": "",
+            "country": "",
+            "coordinates": "",
+            "population": ""
+          },
+          "action": {
+            "select": ""
+          },
+          "population": {
+            "fallback": ""
+          }
+        }
+      },
+      "integration": {
+        "noData": "",
+        "description": ""
+      },
+      "app": {
+        "noData": "",
+        "description": "",
+        "quickCreate": ""
+      },
+      "error": {
+        "noIntegration": "",
+        "noData": ""
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "",
+      "description": "",
+      "option": {
+        "feedUrl": {
+          "label": ""
+        },
+        "hasAutoPlay": {
+          "label": "",
+          "description": ""
+        },
+        "isMuted": {
+          "label": ""
+        },
+        "hasControls": {
+          "label": ""
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "forYoutubeUseIframe": ""
+      }
+    },
+    "mediaServer": {
+      "name": "",
+      "description": "",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "items": {
+        "currentlyPlaying": "",
+        "user": "",
+        "name": "",
+        "id": "",
+        "metadata": {
+          "title": "",
+          "video": {
+            "title": "",
+            "resolution": ""
+          },
+          "audio": {
+            "title": "",
+            "channelCount": "",
+            "codec": ""
+          },
+          "transcoding": {
+            "title": "",
+            "container": "",
+            "resolution": "",
+            "target": ""
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "",
+      "description": "",
+      "option": {
+        "columns": {
+          "label": ""
+        },
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": ""
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        },
+        "showCompletedUsenet": {
+          "label": ""
+        },
+        "showCompletedTorrent": {
+          "label": ""
+        },
+        "showCompletedHttp": {
+          "label": ""
+        },
+        "activeTorrentThreshold": {
+          "label": ""
+        },
+        "categoryFilter": {
+          "label": ""
+        },
+        "filterIsWhitelist": {
+          "label": ""
+        },
+        "applyFilterToRatio": {
+          "label": ""
+        },
+        "limitPerIntegration": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "errors": {
+        "noColumns": "",
+        "noCommunications": ""
+      },
+      "items": {
+        "actions": {
+          "columnTitle": ""
+        },
+        "added": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "category": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "downSpeed": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "index": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "id": {
+          "columnTitle": ""
+        },
+        "integration": {
+          "columnTitle": ""
+        },
+        "name": {
+          "columnTitle": ""
+        },
+        "progress": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "ratio": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "received": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "sent": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "size": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "state": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "time": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "type": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "upSpeed": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        }
+      },
+      "states": {
+        "downloading": "",
+        "queued": "",
+        "paused": "",
+        "completed": "",
+        "failed": "",
+        "processing": "",
+        "leeching": "",
+        "stalled": "",
+        "unknown": "",
+        "seeding": ""
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "",
+          "pause": "",
+          "resume": ""
+        },
+        "client": {
+          "pause": "",
+          "resume": ""
+        },
+        "item": {
+          "pause": "",
+          "resume": "",
+          "delete": {
+            "title": "",
+            "modalTitle": "",
+            "entry": "",
+            "entryAndFiles": ""
+          }
+        }
+      },
+      "globalRatio": ""
+    },
+    "mediaReleases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "backdrop": {
+              "label": ""
+            },
+            "poster": {
+              "label": ""
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": ""
+        },
+        "showType": {
+          "label": ""
+        },
+        "showSource": {
+          "label": ""
+        }
+      },
+      "length": {
+        "duration": ""
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "",
+      "description": "",
+      "option": {
+        "linksTargetNewTab": {
+          "label": ""
+        }
+      },
+      "pending": {
+        "approve": "",
+        "approving": "",
+        "decline": ""
+      },
+      "availability": {
+        "unknown": "",
+        "pending": "",
+        "processing": "",
+        "requested": "",
+        "partiallyAvailable": "",
+        "available": "",
+        "blacklisted": "",
+        "deleted": ""
+      },
+      "status": {
+        "pending": "",
+        "approved": "",
+        "declined": "",
+        "failed": "",
+        "completed": ""
+      },
+      "toBeDetermined": ""
+    },
+    "mediaRequests-requestStats": {
+      "name": "",
+      "description": "",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "",
+          "approved": "",
+          "pending": "",
+          "processing": "",
+          "declined": "",
+          "available": "",
+          "tv": "",
+          "movie": "",
+          "total": ""
+        },
+        "users": {
+          "main": "",
+          "requests": ""
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "",
+      "description": "",
+      "option": {
+        "defaultView": {
+          "label": ""
+        },
+        "queuePageSize": {
+          "label": ""
+        }
+      },
+      "tab": {
+        "workers": "",
+        "queue": "",
+        "statistics": ""
+      },
+      "currentIndex": "",
+      "healthCheck": {
+        "title": "",
+        "queued": "",
+        "status": {
+          "healthy": "",
+          "unhealthy": ""
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "",
+          "transcodes": "",
+          "transcodesCount": "",
+          "healthChecksCount": "",
+          "filesCount": "",
+          "savedSpace": "",
+          "healthChecks": "",
+          "videoCodecs": "",
+          "videoContainers": "",
+          "videoResolutions": ""
+        },
+        "workers": {
+          "empty": "",
+          "table": {
+            "file": "",
+            "eta": "",
+            "progress": "",
+            "transcode": "",
+            "healthCheck": ""
+          }
+        },
+        "queue": {
+          "empty": "",
+          "table": {
+            "file": "",
+            "size": "",
+            "transcode": "",
+            "healthCheck": ""
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "",
+      "description": "",
+      "option": {
+        "feedUrls": {
+          "label": ""
+        },
+        "enableRtl": {
+          "label": ""
+        },
+        "textLinesClamp": {
+          "label": ""
+        },
+        "maximumAmountPosts": {
+          "label": ""
+        },
+        "hideDescription": {
+          "label": ""
+        }
+      }
+    },
+    "releases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "newReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "staleReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "showOnlyHighlighted": {
+          "label": "",
+          "description": ""
+        },
+        "showDetails": {
+          "label": ""
+        },
+        "showOnlyIcon": {
+          "label": ""
+        },
+        "topReleases": {
+          "label": "",
+          "description": ""
+        },
+        "repositories": {
+          "label": "",
+          "addRepository": {
+            "label": ""
+          },
+          "importRepositories": {
+            "label": "",
+            "loading": "",
+            "noImagesFound": "",
+            "listFoundImages": "",
+            "listAlreadyImportedImages": "",
+            "allImagesAlreadyImported": "",
+            "onlyAdminCanImport": "",
+            "selectAll": "",
+            "deselectAll": ""
+          },
+          "provider": {
+            "label": ""
+          },
+          "identifier": {
+            "label": "",
+            "placeholder": ""
+          },
+          "name": {
+            "label": ""
+          },
+          "versionFilter": {
+            "label": "",
+            "prefix": {
+              "label": ""
+            },
+            "precision": {
+              "label": "",
+              "options": {
+                "none": ""
+              }
+            },
+            "suffix": {
+              "label": ""
+            },
+            "regex": {
+              "label": ""
+            }
+          },
+          "edit": {
+            "label": ""
+          },
+          "editForm": {
+            "title": "",
+            "cancel": {
+              "label": ""
+            },
+            "confirm": {
+              "label": ""
+            }
+          },
+          "importForm": {
+            "title": ""
+          },
+          "example": {
+            "label": ""
+          },
+          "invalid": "",
+          "noProvider": {
+            "label": "",
+            "tooltip": ""
+          }
+        }
+      },
+      "not-found": "",
+      "pre-release": "",
+      "archived": "",
+      "forked": "",
+      "starsCount": "",
+      "forksCount": "",
+      "issuesCount": "",
+      "markViewed": "",
+      "openProjectPage": "",
+      "openReleasePage": "",
+      "releaseDescription": "",
+      "projectDescription": "",
+      "created": "",
+      "error": {
+        "label": "",
+        "messages": {
+          "invalidIdentifier": "",
+          "noMatchingVersion": "",
+          "noReleasesFound": "",
+          "noProviderSeleceted": "",
+          "noProviderResponse": ""
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": ""
+          },
+          "wifi": {
+            "name": ""
+          }
+        },
+        "users": {
+          "label": ""
+        },
+        "guests": {
+          "label": ""
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": ""
+            },
+            "wired": {
+              "label": ""
+            }
+          },
+          "label": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "firewall": {
+      "name": "",
+      "description": "",
+      "tab": {
+        "system": "",
+        "interfaces": ""
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "option": {
+        "interfaces": ""
+      },
+      "widget": {
+        "fwname": "",
+        "version": "",
+        "versiontitle": "",
+        "cputitle": "",
+        "memorytitle": "",
+        "cpu": "",
+        "memory": "",
+        "interfaces": {
+          "name": "",
+          "trans": "",
+          "recv": "",
+          "title": ""
+        }
+      }
+    },
+    "notifications": {
+      "name": "",
+      "description": "",
+      "noItems": "",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "",
+      "description": "",
+      "option": {
+        "hasShadow": {
+          "label": ""
+        },
+        "visibleCharts": {
+          "label": "",
+          "description": "",
+          "option": {
+            "cpu": "",
+            "memory": "",
+            "network": ""
+          }
+        },
+        "labelDisplayMode": {
+          "label": "",
+          "option": {
+            "textWithIcon": "",
+            "text": "",
+            "icon": "",
+            "hidden": ""
+          }
+        }
+      },
+      "card": {
+        "cpu": "",
+        "memory": "",
+        "network": "",
+        "up": "",
+        "down": ""
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "dimensions": {
+      "title": ""
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "confirmLeave": {
+          "title": "",
+          "message": ""
+        }
+      },
+      "oldImport": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "form": {
+          "file": {
+            "label": "",
+            "invalidError": ""
+          },
+          "apps": {
+            "label": "",
+            "avoidDuplicates": {
+              "label": "",
+              "description": ""
+            },
+            "onlyImportApps": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "name": {
+            "label": ""
+          },
+          "screenSize": {
+            "label": "",
+            "description": "",
+            "option": {
+              "sm": "",
+              "md": "",
+              "lg": ""
+            }
+          },
+          "sidebarBehavior": {
+            "label": "",
+            "description": "",
+            "option": {
+              "lastSection": {
+                "label": "",
+                "description": ""
+              },
+              "removeItems": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "",
+          "createAndUse": ""
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": ""
+      },
+      "metaTitle": {
+        "label": ""
+      },
+      "logoImageUrl": {
+        "label": ""
+      },
+      "faviconImageUrl": {
+        "label": ""
+      },
+      "backgroundImageUrl": {
+        "label": "",
+        "placeholder": "",
+        "group": {
+          "your": "",
+          "other": ""
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "",
+        "option": {
+          "fixed": {
+            "label": "",
+            "description": ""
+          },
+          "scroll": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "",
+        "option": {
+          "repeat": {
+            "label": "",
+            "description": ""
+          },
+          "no-repeat": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-x": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-y": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "",
+        "option": {
+          "cover": {
+            "label": "",
+            "description": ""
+          },
+          "contain": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "primaryColor": {
+        "label": ""
+      },
+      "secondaryColor": {
+        "label": ""
+      },
+      "opacity": {
+        "label": ""
+      },
+      "iconColor": {
+        "label": ""
+      },
+      "clearColor": {
+        "label": ""
+      },
+      "customCss": {
+        "label": "",
+        "description": "",
+        "customClassesAlert": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "disableStatus": {
+        "label": "",
+        "description": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "itemRadius": {
+        "label": "",
+        "description": "",
+        "option": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      },
+      "name": {
+        "label": ""
+      },
+      "isPublic": {
+        "label": "",
+        "description": ""
+      }
+    },
+    "content": {
+      "metaTitle": ""
+    },
+    "setting": {
+      "title": "",
+      "section": {
+        "general": {
+          "title": "",
+          "unrecognizedLink": ""
+        },
+        "layout": {
+          "title": "",
+          "responsive": {
+            "title": "",
+            "action": {
+              "add": ""
+            }
+          }
+        },
+        "background": {
+          "title": ""
+        },
+        "appearance": {
+          "title": ""
+        },
+        "customCss": {
+          "title": ""
+        },
+        "behavior": {
+          "title": ""
+        },
+        "access": {
+          "title": "",
+          "permission": {
+            "item": {
+              "view": {
+                "label": ""
+              },
+              "modify": {
+                "label": ""
+              },
+              "full": {
+                "label": ""
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "",
+          "action": {
+            "rename": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "modal": {
+                "title": ""
+              }
+            },
+            "visibility": {
+              "label": "",
+              "description": {
+                "public": "",
+                "private": ""
+              },
+              "button": {
+                "public": "",
+                "private": ""
+              },
+              "confirm": {
+                "public": {
+                  "title": "",
+                  "description": ""
+                },
+                "private": {
+                  "title": "",
+                  "description": ""
+                }
+              }
+            },
+            "delete": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "confirm": {
+                "title": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": ""
+      },
+      "notFound": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": ""
+      },
+      "homeBoard": {
+        "title": "",
+        "admin": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "user": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "anonymous": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "breakpoint": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "",
+    "title": {
+      "morning": "",
+      "afternoon": "",
+      "evening": ""
+    },
+    "notFound": {
+      "title": "",
+      "text": ""
+    },
+    "navbar": {
+      "items": {
+        "home": "",
+        "boards": "",
+        "apps": "",
+        "integrations": "",
+        "searchEngies": "",
+        "medias": "",
+        "users": {
+          "label": "",
+          "items": {
+            "manage": "",
+            "invites": "",
+            "groups": ""
+          }
+        },
+        "tools": {
+          "label": "",
+          "items": {
+            "docker": "",
+            "kubernetes": "",
+            "logs": "",
+            "api": "",
+            "certificates": "",
+            "tasks": ""
+          }
+        },
+        "settings": "",
+        "help": {
+          "label": "",
+          "items": {
+            "documentation": "",
+            "submitIssue": "",
+            "discord": "",
+            "sourceCode": ""
+          }
+        },
+        "about": ""
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "",
+          "user": "",
+          "invite": "",
+          "integration": "",
+          "app": "",
+          "group": "",
+          "searchEngine": "",
+          "media": ""
+        },
+        "statisticLabel": {
+          "boards": "",
+          "resources": "",
+          "authentication": "",
+          "authorization": ""
+        },
+        "heroBanner": {
+          "title": "",
+          "subtitle": ""
+        }
+      },
+      "board": {
+        "title": "",
+        "action": {
+          "new": {
+            "label": ""
+          },
+          "open": {
+            "label": ""
+          },
+          "settings": {
+            "label": ""
+          },
+          "setHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "",
+              "tooltip": ""
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "",
+              "tooltip": ""
+            }
+          },
+          "duplicate": {
+            "label": ""
+          },
+          "delete": {
+            "label": "",
+            "confirm": {
+              "title": "",
+              "description": ""
+            }
+          }
+        },
+        "visibility": {
+          "public": "",
+          "private": ""
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": ""
+      },
+      "user": {
+        "back": "",
+        "fieldsDisabledExternalProvider": "",
+        "setting": {
+          "general": {
+            "title": "",
+            "item": {
+              "language": "",
+              "board": {
+                "title": "",
+                "type": {
+                  "general": "",
+                  "mobile": ""
+                }
+              },
+              "search": "",
+              "firstDayOfWeek": "",
+              "accessibility": ""
+            }
+          },
+          "security": {
+            "title": ""
+          },
+          "board": {
+            "title": ""
+          }
+        },
+        "list": {
+          "metaTitle": "",
+          "title": ""
+        },
+        "edit": {
+          "metaTitle": ""
+        },
+        "create": {
+          "metaTitle": "",
+          "title": "",
+          "step": {
+            "personalInformation": {
+              "label": ""
+            },
+            "security": {
+              "label": ""
+            },
+            "groups": {
+              "label": "",
+              "title": "",
+              "description": ""
+            },
+            "review": {
+              "label": ""
+            },
+            "completed": {
+              "title": ""
+            },
+            "error": {
+              "title": ""
+            }
+          },
+          "action": {
+            "createAnother": "",
+            "back": ""
+          }
+        },
+        "invite": {
+          "title": "",
+          "action": {
+            "new": {
+              "title": "",
+              "description": ""
+            },
+            "copy": {
+              "title": "",
+              "description": "",
+              "link": "",
+              "button": ""
+            },
+            "delete": {
+              "title": "",
+              "description": ""
+            }
+          },
+          "field": {
+            "id": {
+              "label": ""
+            },
+            "creator": {
+              "label": ""
+            },
+            "expirationDate": {
+              "label": ""
+            },
+            "token": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "",
+        "setting": {
+          "general": {
+            "title": "",
+            "owner": "",
+            "ownerOfGroup": "",
+            "ownerOfGroupDeleted": ""
+          },
+          "setting": {
+            "title": "",
+            "alert": "",
+            "board": {
+              "title": ""
+            }
+          },
+          "members": {
+            "title": "",
+            "search": "",
+            "notFound": ""
+          },
+          "permissions": {
+            "title": "",
+            "form": {
+              "unsavedChanges": ""
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "",
+            "general": {
+              "title": "",
+              "text": ""
+            },
+            "widgetData": {
+              "title": "",
+              "text": ""
+            },
+            "integrationData": {
+              "title": "",
+              "text": ""
+            },
+            "usersData": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "",
+            "warning": "",
+            "noIndex": {
+              "title": "",
+              "text": ""
+            },
+            "noFollow": {
+              "title": "",
+              "text": ""
+            },
+            "noTranslate": {
+              "title": "",
+              "text": ""
+            },
+            "noSiteLinksSearchBox": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "board": {
+            "title": "",
+            "homeBoard": {
+              "label": "",
+              "mobileLabel": "",
+              "description": ""
+            },
+            "status": {
+              "title": "",
+              "enableStatusByDefault": {
+                "label": "",
+                "description": ""
+              },
+              "forceDisableStatus": {
+                "label": "",
+                "description": ""
+              }
+            }
+          },
+          "search": {
+            "title": "",
+            "defaultSearchEngine": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "appearance": {
+            "title": "",
+            "defaultColorScheme": {
+              "label": "",
+              "options": {
+                "light": "",
+                "dark": ""
+              }
+            }
+          },
+          "culture": {
+            "title": "",
+            "defaultLocale": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "",
+          "status": {
+            "idle": "",
+            "running": "",
+            "error": "",
+            "disabled": ""
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": ""
+            },
+            "iconsUpdater": {
+              "label": ""
+            },
+            "analytics": {
+              "label": ""
+            },
+            "smartHomeEntityState": {
+              "label": ""
+            },
+            "ping": {
+              "label": ""
+            },
+            "mediaServer": {
+              "label": ""
+            },
+            "mediaOrganizer": {
+              "label": ""
+            },
+            "downloads": {
+              "label": ""
+            },
+            "mediaRequestStats": {
+              "label": ""
+            },
+            "mediaRequestList": {
+              "label": ""
+            },
+            "rssFeeds": {
+              "label": ""
+            },
+            "indexerManager": {
+              "label": ""
+            },
+            "healthMonitoring": {
+              "label": ""
+            },
+            "dnsHole": {
+              "label": ""
+            },
+            "updateChecker": {
+              "label": ""
+            },
+            "mediaTranscoding": {
+              "label": ""
+            },
+            "networkController": {
+              "label": ""
+            },
+            "refreshNotifications": {
+              "label": ""
+            },
+            "dockerContainers": {
+              "label": ""
+            },
+            "firewallCpu": {
+              "label": ""
+            },
+            "firewallMemory": {
+              "label": ""
+            },
+            "firewallVersion": {
+              "label": ""
+            },
+            "firewallInterfaces": {
+              "label": ""
+            },
+            "weather": {
+              "label": ""
+            }
+          },
+          "interval": {
+            "seconds": "",
+            "minutes": "",
+            "hours": "",
+            "midnight": "",
+            "weeklyMonday": "",
+            "update": {
+              "success": {
+                "message": ""
+              },
+              "error": {
+                "message": ""
+              }
+            }
+          },
+          "settings": {
+            "title": ""
+          },
+          "field": {
+            "name": {
+              "label": ""
+            },
+            "interval": {
+              "label": ""
+            },
+            "lastExecution": {
+              "label": ""
+            },
+            "actions": {
+              "label": ""
+            }
+          },
+          "table": {
+            "search": ""
+          },
+          "action": {
+            "refresh": {
+              "label": ""
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "enable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "disable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": ""
+            }
+          }
+        },
+        "api": {
+          "title": "",
+          "modal": {
+            "createApiToken": {
+              "title": "",
+              "description": "",
+              "button": ""
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": ""
+            },
+            "apiKey": {
+              "label": "",
+              "title": "",
+              "button": {
+                "createApiToken": ""
+              },
+              "modal": {
+                "delete": {
+                  "title": "",
+                  "text": ""
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "",
+                  "createdBy": "",
+                  "actions": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "",
+        "text": "",
+        "accordion": {
+          "contributors": {
+            "title": "",
+            "subtitle": ""
+          },
+          "translators": {
+            "title": "",
+            "subtitle": ""
+          },
+          "libraries": {
+            "title": "",
+            "subtitle": ""
+          },
+          "hotkeys": {
+            "title": "",
+            "subtitle": "",
+            "field": {
+              "shortcut": "",
+              "action": ""
+            },
+            "action": {
+              "toggleBoardEdit": "",
+              "toggleColorScheme": "",
+              "saveNotebook": "",
+              "openSpotlight": ""
+            },
+            "note": ""
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "",
+    "table": {
+      "updated": "",
+      "search": "",
+      "selected": "",
+      "footer": ""
+    },
+    "field": {
+      "name": {
+        "label": ""
+      },
+      "state": {
+        "label": "",
+        "option": {
+          "created": "",
+          "running": "",
+          "paused": "",
+          "restarting": "",
+          "exited": "",
+          "removing": "",
+          "dead": ""
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        }
+      },
+      "containerImage": {
+        "label": ""
+      },
+      "ports": {
+        "label": ""
+      }
+    },
+    "action": {
+      "title": "",
+      "start": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "stop": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "restart": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "refresh": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "modal": {
+          "title": ""
+        }
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "",
+      "label": "",
+      "providers": "",
+      "version": "",
+      "architecture": "",
+      "capacity": {
+        "title": "",
+        "resource": {
+          "reserved": "",
+          "used": ""
+        }
+      },
+      "resources": {
+        "title": "",
+        "nodes": "",
+        "namespaces": "",
+        "ingresses": "",
+        "services": "",
+        "pods": "",
+        "configmaps": "",
+        "secrets": "",
+        "volumes": ""
+      }
+    },
+    "nodes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "ready": "",
+            "NotReady": ""
+          }
+        },
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        },
+        "pods": {
+          "label": ""
+        },
+        "operatingSystem": {
+          "label": ""
+        },
+        "architecture": {
+          "label": ""
+        },
+        "kubernetesVersion": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "namespaces": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "active": "",
+            "terminating": ""
+          }
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "ingresses": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "className": {
+          "label": ""
+        },
+        "rulesAndPaths": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "services": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "ports": {
+          "label": ""
+        },
+        "targetPorts": {
+          "label": ""
+        },
+        "clusterIP": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "pods": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "image": {
+          "label": ""
+        },
+        "applicationType": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "secrets": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "configmaps": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "volumes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "accessModes": {
+          "label": ""
+        },
+        "storage": {
+          "label": ""
+        },
+        "storageClassName": {
+          "label": ""
+        },
+        "volumeMode": {
+          "label": ""
+        },
+        "volumeName": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "permission": {
+    "title": "",
+    "userSelect": {
+      "title": ""
+    },
+    "groupSelect": {
+      "title": ""
+    },
+    "tab": {
+      "user": "",
+      "group": "",
+      "inherited": ""
+    },
+    "field": {
+      "user": {
+        "label": ""
+      },
+      "group": {
+        "label": ""
+      },
+      "permission": {
+        "label": ""
+      }
+    },
+    "action": {
+      "saveUser": "",
+      "saveGroup": ""
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "",
+      "boards": {
+        "label": ""
+      },
+      "integrations": {
+        "label": "",
+        "edit": {
+          "label": ""
+        },
+        "new": {
+          "label": ""
+        }
+      },
+      "search-engines": {
+        "label": "",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": ""
+        }
+      },
+      "medias": {
+        "label": ""
+      },
+      "apps": {
+        "label": "",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": ""
+        }
+      },
+      "users": {
+        "label": "",
+        "create": {
+          "label": ""
+        },
+        "general": "",
+        "security": "",
+        "board": "",
+        "groups": {
+          "label": ""
+        },
+        "invites": {
+          "label": ""
+        }
+      },
+      "tools": {
+        "label": "",
+        "tasks": {
+          "label": ""
+        },
+        "docker": {
+          "label": ""
+        },
+        "kubernetes": {
+          "label": "",
+          "nodes": {
+            "label": ""
+          },
+          "namespaces": {
+            "label": ""
+          },
+          "ingresses": {
+            "label": ""
+          },
+          "services": {
+            "label": ""
+          },
+          "pods": {
+            "label": ""
+          },
+          "configmaps": {
+            "label": ""
+          },
+          "secrets": {
+            "label": ""
+          },
+          "volumes": {
+            "label": ""
+          }
+        },
+        "logs": {
+          "label": ""
+        },
+        "certificates": {
+          "label": "",
+          "hostnames": {
+            "label": ""
+          }
+        }
+      },
+      "settings": {
+        "label": ""
+      },
+      "about": {
+        "label": ""
+      }
+    }
+  },
+  "search": {
+    "placeholder": "",
+    "nothingFound": "",
+    "error": {
+      "fetch": ""
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "",
+        "group": {
+          "app": {
+            "title": "",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "edit": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "board": {
+            "title": "",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "homeBoard": {
+                  "label": ""
+                },
+                "mobileBoard": {
+                  "label": ""
+                },
+                "settings": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "integration": {
+            "title": ""
+          }
+        }
+      },
+      "command": {
+        "help": "",
+        "group": {
+          "localCommand": {
+            "title": ""
+          },
+          "globalCommand": {
+            "title": "",
+            "option": {
+              "colorScheme": {
+                "light": "",
+                "dark": ""
+              },
+              "language": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newBoard": {
+                "label": ""
+              },
+              "importBoard": {
+                "label": ""
+              },
+              "newApp": {
+                "label": ""
+              },
+              "newIntegration": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newUser": {
+                "label": ""
+              },
+              "newInvite": {
+                "label": ""
+              },
+              "newGroup": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "",
+        "requestSeries": "",
+        "openIn": ""
+      },
+      "external": {
+        "help": "",
+        "group": {
+          "searchEngine": {
+            "title": "",
+            "children": {
+              "action": {
+                "search": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              },
+              "searchResults": {
+                "title": ""
+              }
+            },
+            "option": {
+              "google": {
+                "name": "",
+                "description": ""
+              },
+              "bing": {
+                "name": "",
+                "description": ""
+              },
+              "duckduckgo": {
+                "name": "",
+                "description": ""
+              },
+              "torrent": {
+                "name": "",
+                "description": ""
+              },
+              "youTube": {
+                "name": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": ""
+          },
+          "help": {
+            "title": "",
+            "option": {
+              "documentation": {
+                "label": ""
+              },
+              "submitIssue": {
+                "label": ""
+              },
+              "discord": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "",
+            "option": {
+              "other": {
+                "label": ""
+              },
+              "no-default": {
+                "label": "",
+                "description": ""
+              },
+              "search": {
+                "label": ""
+              },
+              "from-integration": {
+                "description": ""
+              }
+            }
+          },
+          "local": {
+            "title": ""
+          }
+        }
+      },
+      "page": {
+        "help": "",
+        "group": {
+          "page": {
+            "title": "",
+            "option": {
+              "manageHome": {
+                "label": ""
+              },
+              "manageBoard": {
+                "label": ""
+              },
+              "manageApp": {
+                "label": ""
+              },
+              "manageIntegration": {
+                "label": ""
+              },
+              "manageSearchEngine": {
+                "label": ""
+              },
+              "manageMedia": {
+                "label": ""
+              },
+              "manageUser": {
+                "label": ""
+              },
+              "manageInvite": {
+                "label": ""
+              },
+              "manageGroup": {
+                "label": ""
+              },
+              "manageDocker": {
+                "label": ""
+              },
+              "manageApi": {
+                "label": ""
+              },
+              "manageLog": {
+                "label": ""
+              },
+              "manageTask": {
+                "label": ""
+              },
+              "manageSettings": {
+                "label": ""
+              },
+              "about": {
+                "label": ""
+              },
+              "homeBoard": {
+                "label": ""
+              },
+              "preferences": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "",
+        "group": {
+          "user": {
+            "title": "",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "group": {
+            "title": "",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                },
+                "manageMember": {
+                  "label": ""
+                },
+                "managePermission": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "short": {
+          "label": ""
+        },
+        "urlTemplate": {
+          "label": ""
+        },
+        "description": {
+          "label": ""
+        }
+      },
+      "page": {
+        "list": {
+          "title": "",
+          "noResults": {
+            "title": "",
+            "action": ""
+          },
+          "interactive": ""
+        },
+        "create": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        },
+        "edit": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "configControl": "",
+          "searchEngineType": {
+            "generic": "",
+            "fromIntegration": ""
+          }
+        },
+        "delete": {
+          "title": "",
+          "message": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "",
+            "table": {
+              "header": {
+                "season": "",
+                "episodes": ""
+              }
+            },
+            "button": {
+              "send": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": ""
+      },
+      "subject": {
+        "label": ""
+      },
+      "issuer": {
+        "label": ""
+      },
+      "validFrom": {
+        "label": ""
+      },
+      "validTo": {
+        "label": ""
+      },
+      "serialNumber": {
+        "label": ""
+      },
+      "fingerprint": {
+        "label": ""
+      }
+    },
+    "page": {
+      "list": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "invalid": {
+          "title": "",
+          "description": ""
+        },
+        "expires": "",
+        "toHostnames": ""
+      },
+      "hostnames": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "toCertificates": ""
+      }
+    },
+    "action": {
+      "create": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "",
+        "info": "",
+        "warn": "",
+        "error": ""
+      }
+    }
+  }
+}

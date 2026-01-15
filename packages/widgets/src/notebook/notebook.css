@@ -1,0 +1,72 @@
+.tiptap hr {
+  border-top-style: double;
+}
+
+.tiptap ul[data-type="taskList"] {
+  padding-left: 17px;
+}
+
+.tiptap ul[data-type="taskList"] li {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+}
+
+.tiptap img {
+  max-width: 100%;
+}
+
+.tiptap img.ProseMirror-selectednode {
+  outline: 3px solid rgba(0, 65, 198, 0.8);
+}
+
+.tiptap table {
+  border-collapse: collapse;
+  margin: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.tiptap table td {
+  border-color: var(--mantine-color-gray-5) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 3px 5px;
+  position: relative;
+  vertical-align: top;
+}
+
+.tiptap table td > * {
+  margin-bottom: 0;
+}
+
+.tiptap table .selectedCell:after {
+  background: hsla(0, 0%, 78%, 0.4);
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.tiptap table p {
+  margin: 0;
+}
+
+.tiptap[contenteditable="true"].resize-cursor {
+  cursor: ew-resize;
+}
+
+.tiptap[contenteditable="false"].resize-cursor {
+  pointer-events: none;
+}
+
+.ProseMirror {
+  height: 100%;
+}

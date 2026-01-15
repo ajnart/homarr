@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "欢迎使用 Homarr",
+        "subtitle": "让我们开始设置您的 Homarr 实例。",
+        "description": "首先，请选择您想要如何设置您的 Homarr 实例。",
+        "action": {
+          "scratch": "从零开始",
+          "importOldmarr": "从 1.0 之前的 Homarr 导入"
+        }
+      },
+      "import": {
+        "title": "导入数据",
+        "subtitle": "您可以从已有的 Homarr 实例导入数据。",
+        "dropzone": {
+          "title": "将 zip 文件拖到此处或单击浏览",
+          "description": "上传的压缩包将被处理，您可以选择要导入的内容"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "更改文件"
+          }
+        },
+        "importSettings": {
+          "title": "导入设置",
+          "description": "配置导入方式"
+        },
+        "boardSelection": {
+          "title": "找到 {count} 个面板",
+          "description": "选择您想要导入的所有面板",
+          "action": {
+            "selectAll": "选择全部",
+            "unselectAll": "取消全选"
+          }
+        },
+        "summary": {
+          "title": "导入概况",
+          "description": "在下面的概况中，您可以看到将要导入的内容",
+          "action": {
+            "import": "确认导入并继续"
+          },
+          "entities": {
+            "apps": "应用",
+            "boards": "面板",
+            "integrations": "集成",
+            "credentialUsers": "用户凭证"
+          }
+        },
+        "tokenModal": {
+          "title": "输入导入密钥",
+          "field": {
+            "token": {
+              "label": "秘钥",
+              "description": "输入您之前的 homarr 实例中显示的导入秘钥"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "无效秘钥",
+              "message": "您输入的秘钥无效"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "管理员用户",
+        "subtitle": "指定您的管理员用户的凭证。",
+        "notification": {
+          "success": {
+            "title": "创建用户",
+            "message": "用户已成功创建"
+          },
+          "error": {
+            "title": "用户创建失败"
+          }
+        }
+      },
+      "group": {
+        "title": "外部用户组",
+        "subtitle": "指定应该用于外部用户的用户组。",
+        "form": {
+          "name": {
+            "label": "用户组名称",
+            "description": "名称必须与外部提供商的管理组匹配"
+          }
+        }
+      },
+      "settings": {
+        "title": "设置",
+        "subtitle": "配置服务器的设置"
+      },
+      "finish": {
+        "title": "完成设置",
+        "subtitle": "你已设置完成！",
+        "description": "您已成功完成设置过程。现在您可以开始使用 Homarr 了。选择下一步操作：",
+        "action": {
+          "goToBoard": "转到 {name} 面板",
+          "createBoard": "创建您的第一个面板",
+          "inviteUser": "邀请其他用户",
+          "docs": "阅读文档"
+        }
+      }
+    },
+    "backToStart": "返回起点"
+  },
+  "user": {
+    "title": "用户",
+    "name": "用户",
+    "page": {
+      "login": {
+        "title": "登录你的账户",
+        "subtitle": "欢迎回来！请输入您的凭证"
+      },
+      "invite": {
+        "title": "加入 Homarr",
+        "subtitle": "欢迎来到 Homarr！请创建您的账户",
+        "description": "您受到了 {username} 的邀请。"
+      },
+      "init": {
+        "title": "新建 Homarr 安装",
+        "subtitle": "请创建初始管理员用户"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "邮箱",
+        "verified": "已验证"
+      },
+      "username": {
+        "label": "用户名"
+      },
+      "password": {
+        "label": "密码",
+        "requirement": {
+          "length": "至少包含 8 个字符",
+          "lowercase": "包含小写字母",
+          "uppercase": "包含大写字母",
+          "number": "包含数字",
+          "special": "包含特殊符号"
+        }
+      },
+      "passwordConfirm": {
+        "label": "确认密码"
+      },
+      "previousPassword": {
+        "label": "以前的密码"
+      },
+      "homeBoard": {
+        "label": "主面板"
+      },
+      "pingIconsEnabled": {
+        "label": "为 ping 使用图标"
+      },
+      "defaultSearchEngine": {
+        "label": "默认搜索引擎"
+      },
+      "openSearchInNewTab": {
+        "label": "在新标签页中打开搜索结果"
+      }
+    },
+    "error": {
+      "usernameTaken": "用户名已存在"
+    },
+    "action": {
+      "login": {
+        "label": "登录",
+        "labelWith": "使用 {provider} 登录",
+        "notification": {
+          "success": {
+            "title": "登录成功",
+            "message": "您已登录"
+          },
+          "error": {
+            "title": "登录失败",
+            "message": "您的登录失败了"
+          }
+        },
+        "forgotPassword": {
+          "label": "忘记了你的密码？",
+          "description": "管理员可以使用以下命令重置密码："
+        }
+      },
+      "register": {
+        "label": "创建账号",
+        "notification": {
+          "success": {
+            "title": "账号已创建",
+            "message": "请登录后继续"
+          },
+          "error": {
+            "title": "账户创建失败",
+            "message": "无法创建您的账户"
+          }
+        }
+      },
+      "create": "创建用户",
+      "changePassword": {
+        "label": "修改密码",
+        "notification": {
+          "success": {
+            "message": "密码修改成功"
+          },
+          "error": {
+            "message": "无法修改密码"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "主面板修改成功"
+          },
+          "error": {
+            "message": "无法修改主面板"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "搜索首选项更改成功"
+          },
+          "error": {
+            "message": "无法更改搜索首选项"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "成功修改一周的第一天"
+          },
+          "error": {
+            "message": "无法修改一周的第一天"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "Ping 图标切换成功"
+          },
+          "error": {
+            "message": "无法切换 ping 图标"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "更改头像",
+          "notification": {
+            "success": {
+              "message": "头像修改成功"
+            },
+            "error": {
+              "message": "无法更改图像"
+            },
+            "toLarge": {
+              "title": "图片太大",
+              "message": "最大图像尺寸为 {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "删除头像",
+          "confirm": "确定要移除这张图片吗？",
+          "notification": {
+            "success": {
+              "message": "图像删除成功"
+            },
+            "error": {
+              "message": "无法删除头像"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "资料更新成功"
+          },
+          "error": {
+            "message": "资料更新失败"
+          }
+        }
+      },
+      "delete": {
+        "label": "永久删除用户",
+        "description": "删除此用户（包括其偏好设置）。这不会删除任何面板。用户不会收到通知。",
+        "confirm": "您确定要删除用户 {username} 及其偏好设置吗？"
+      },
+      "select": {
+        "label": "选择用户",
+        "notFound": "找不到用户"
+      },
+      "transfer": {
+        "label": "选择新的所有者"
+      }
+    }
+  },
+  "group": {
+    "title": "群组",
+    "name": "组",
+    "search": "查找群组",
+    "field": {
+      "name": "名称",
+      "members": "成员",
+      "homeBoard": {
+        "label": "首页",
+        "description": "只能选择可以访问的面板"
+      },
+      "mobileBoard": {
+        "label": "移动端面板",
+        "description": "只能选择可以访问的面板"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "管理员",
+        "item": {
+          "admin": {
+            "label": "管理员",
+            "description": "拥有此权限的成员可完全访问所有功能和设置"
+          }
+        }
+      },
+      "app": {
+        "title": "应用",
+        "item": {
+          "create": {
+            "label": "创建应用",
+            "description": "允许成员创建应用"
+          },
+          "use-all": {
+            "label": "使用全部应用",
+            "description": "允许成员将任意应用添加到他们的面板"
+          },
+          "modify-all": {
+            "label": "修改所有应用",
+            "description": "允许成员修改全部应用"
+          },
+          "full-all": {
+            "label": "完整应用访问权限",
+            "description": "允许成员管理、使用和删除任意应用"
+          }
+        }
+      },
+      "board": {
+        "title": "面板",
+        "item": {
+          "create": {
+            "label": "创建面板",
+            "description": "允许成员创建面板"
+          },
+          "view-all": {
+            "label": "查看全部面板",
+            "description": "允许成员查看全部面板"
+          },
+          "modify-all": {
+            "label": "修改全部面板",
+            "description": "允许成员修改全部面板 (不包括访问控制和危险区域)"
+          },
+          "full-all": {
+            "label": "完整的面板访问权限",
+            "description": "允许成员查看、修改和删除全部面板 (包括访问控制和危险区域)"
+          }
+        }
+      },
+      "integration": {
+        "title": "集成",
+        "item": {
+          "create": {
+            "label": "创建集成",
+            "description": "允许成员创建集成"
+          },
+          "use-all": {
+            "label": "使用全部集成",
+            "description": "允许成员将任意集成添加到他们的面板"
+          },
+          "interact-all": {
+            "label": "与任意集成进行互动",
+            "description": "允许成员与任意集成进行交互"
+          },
+          "full-all": {
+            "label": "完整的集成访问权限",
+            "description": "允许成员管理、使用并与任意集成交互"
+          }
+        }
+      },
+      "media": {
+        "title": "媒体",
+        "item": {
+          "upload": {
+            "label": "上传媒体",
+            "description": "允许成员上传媒体"
+          },
+          "view-all": {
+            "label": "查看全部媒体",
+            "description": "允许成员查看全部媒体"
+          },
+          "full-all": {
+            "label": "完全的媒体访问权限",
+            "description": "允许成员管理和删除任意媒体"
+          }
+        }
+      },
+      "other": {
+        "title": "其它",
+        "item": {
+          "view-logs": {
+            "label": "查看日志",
+            "description": "允许成员查看日志"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "搜索引擎",
+        "item": {
+          "create": {
+            "label": "创建搜索引擎",
+            "description": "允许成员创建搜索引擎"
+          },
+          "modify-all": {
+            "label": "修改全部搜索引擎",
+            "description": "允许成员修改全部搜索引擎"
+          },
+          "full-all": {
+            "label": "完整的搜索引擎访问权限",
+            "description": "允许成员管理和删除任何搜索引擎"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "部分成员来自外部提供者，无法在此处管理",
+      "external": "所有成员都来自外部提供者，无法在此处管理"
+    },
+    "reservedNotice": {
+      "message": "此用户组保留供系统使用并限制部分操作 <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "新建群组",
+        "notification": {
+          "success": {
+            "message": "群组已成功创建"
+          },
+          "error": {
+            "message": "无法创建群组"
+          }
+        }
+      },
+      "transfer": {
+        "label": "转移所有权",
+        "description": "将此用户组的所有权转移给另一个用户。",
+        "confirm": "确定将用户组 {name} 的所有权转移给 {username} 吗?",
+        "notification": {
+          "success": {
+            "message": "成功将用户组 {group} 的所有权转移给 {user}"
+          },
+          "error": {
+            "message": "无法转移所有权"
+          }
+        }
+      },
+      "addMember": {
+        "label": "添加成员"
+      },
+      "removeMember": {
+        "label": "删除成员",
+        "confirm": "确定将 {user} 从此用户组移除吗?"
+      },
+      "delete": {
+        "label": "删除用户组",
+        "description": "用户组一旦删除就无法恢复. 请谨慎操作.",
+        "confirm": "确认删除用户组 {name} 吗?",
+        "notification": {
+          "success": {
+            "message": "成功删除用户组 {name}"
+          },
+          "error": {
+            "message": "无法删除用户组 {name}"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "权限已保存",
+            "message": "权限保存成功"
+          },
+          "error": {
+            "title": "权限未保存",
+            "message": "权限尚未保存"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "用户组 {name} 保存成功"
+          },
+          "error": {
+            "message": "无法保存用户组 {name}"
+          }
+        }
+      },
+      "select": {
+        "label": "选择用户组",
+        "notFound": "未找到用户组"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "设置已保存",
+              "message": "面板设置保存成功"
+            },
+            "error": {
+              "title": "无法保存设置",
+              "message": "无法保存面板设置"
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": "位置更改成功！"
+          },
+          "error": {
+            "message": "无法更改位置"
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "默认组",
+      "description": "{name} - 所有已登录用户"
+    }
+  },
+  "app": {
+    "search": "查找应用",
+    "page": {
+      "list": {
+        "title": "应用",
+        "noResults": {
+          "title": "尚无应用",
+          "action": "创建您的第一个应用"
+        }
+      },
+      "create": {
+        "title": "新建应用",
+        "notification": {
+          "success": {
+            "title": "创建成功",
+            "message": "应用已成功创建"
+          },
+          "error": {
+            "title": "创建失败",
+            "message": "无法创建应用"
+          }
+        }
+      },
+      "edit": {
+        "title": "编辑应用",
+        "notification": {
+          "success": {
+            "title": "成功应用更改",
+            "message": "应用保存成功"
+          },
+          "error": {
+            "title": "无法应用更改",
+            "message": "应用无法保存"
+          }
+        }
+      },
+      "delete": {
+        "title": "删除应用",
+        "message": "确认删除应用 {name} 吗?",
+        "notification": {
+          "success": {
+            "title": "删除成功",
+            "message": "应用已成功删除"
+          },
+          "error": {
+            "title": "删除失败",
+            "message": "无法删除应用"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "名称"
+      },
+      "description": {
+        "label": "描述"
+      },
+      "url": {
+        "label": "Url"
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "为ping使用不同的 URL",
+          "description": "Homarr 可以使用内部主机名或网络直接访问以避免ISP的带宽使用"
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "选择应用",
+        "notFound": "未找到应用",
+        "search": "搜索应用",
+        "noResults": "没有结果",
+        "action": "选择 {app}",
+        "title": "选择一个应用程序添加到此面板"
+      },
+      "create": {
+        "title": "创建应用",
+        "description": "创建应用 ",
+        "action": "打开应用创建"
+      },
+      "add": "添加应用"
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "集成",
+        "search": "搜索集成",
+        "noResults": {
+          "title": "尚无集成"
+        }
+      },
+      "create": {
+        "title": "新的集成 {name}",
+        "notification": {
+          "success": {
+            "title": "创建成功",
+            "message": "组件已成功创建"
+          },
+          "error": {
+            "title": "创建失败",
+            "message": "无法创建组件"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "现有",
+              "label": "选择现有应用"
+            },
+            "new": {
+              "title": "新建",
+              "url": {
+                "label": "应用网址",
+                "description": "当从面板访问时应用将打开的网址"
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "编辑集成 {name}",
+        "notification": {
+          "success": {
+            "title": "成功应用更改",
+            "message": "集成已成功保存"
+          },
+          "error": {
+            "title": "无法应用更改",
+            "message": "无法保存此集成"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "链接应用",
+            "remove": "取消连接",
+            "select": "选择要链接的应用"
+          }
+        }
+      },
+      "delete": {
+        "title": "删除集成",
+        "message": "确认删除集成 {name} 吗?",
+        "notification": {
+          "success": {
+            "title": "删除成功",
+            "message": "集成已成功删除"
+          },
+          "error": {
+            "title": "删除失败",
+            "message": "无法删除集成"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "名称"
+      },
+      "url": {
+        "label": "Url"
+      },
+      "attemptSearchEngineCreation": {
+        "label": "创建搜索引擎",
+        "description": "集成“{kind}”可以与搜索引擎一起使用。勾选此项可自动配置搜索引擎。"
+      },
+      "app": {
+        "sectionTitle": "关联的应用"
+      },
+      "createApp": {
+        "label": "创建应用",
+        "description": "创建一个具有与集成相同名称和图标的应用程序。 留空下面的输入字段使用集成URL创建应用程序。"
+      },
+      "appHref": {
+        "placeholder": "自定义应用URL"
+      }
+    },
+    "action": {
+      "create": "新建集成"
+    },
+    "testConnection": {
+      "action": {
+        "create": "测试连接并创建",
+        "edit": "测试连接并保存"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": "更多详情"
+          }
+        },
+        "unknown": {
+          "title": "未知错误",
+          "description": "发生未知错误，打开下面的原因以查看更多详情"
+        },
+        "parse": {
+          "title": "解析错误",
+          "description": "无法解析该响应。请确认URL指向服务的基本URL。"
+        },
+        "authorization": {
+          "title": "授权错误",
+          "description": "请求未被授权。请验证凭据是否正确，并且您拥有足够的权限。"
+        },
+        "statusCode": {
+          "title": "响应错误",
+          "description": "收到来自<url></url>的意外{statusCode} （{reason}）响应。请验证URL是否指向集成的基本URL。",
+          "otherDescription": "从<url></url>收到意外的{statusCode}响应。请验证URL是否指向集成的基本URL。",
+          "reason": {
+            "badRequest": "错误请求",
+            "notFound": "未找到",
+            "tooManyRequests": "请求过于频繁",
+            "internalServerError": "服务器内部错误",
+            "serviceUnavailable": "服务暂时不可用",
+            "gatewayTimeout": "网关超时"
+          }
+        },
+        "certificate": {
+          "title": "证书错误",
+          "description": {
+            "expired": "此证书已经过期。",
+            "notYetValid": "此证书尚未生效。",
+            "untrusted": "此证书不受信任。",
+            "hostnameMismatch": "证书主机名与 URL 不匹配。"
+          },
+          "alert": {
+            "permission": {
+              "title": "权限不足",
+              "message": "您无权信任或上传证书。请与您的管理员联系上传必要的根证书。"
+            },
+            "hostnameMismatch": {
+              "title": "主机名不匹配",
+              "message": "证书中的主机名与您连接的主机名不匹配。 这可能会显示安全风险，但您仍然可以选择信任此证书。"
+            },
+            "extract": {
+              "title": "CA证书提取失败",
+              "message": "只有自签署证书链可以自动获取。如果使用的是自签名证书，请确保手动上传CA证书。您可以找到有关如何执行此操作的说明<docsLink></docsLink>。"
+            }
+          },
+          "action": {
+            "retry": {
+              "label": "重试创建"
+            },
+            "trust": {
+              "label": "信任证书"
+            },
+            "upload": {
+              "label": "上传证书"
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "信任主机名不匹配",
+              "message": "您确定要信任主机名不匹配的证书吗？"
+            },
+            "notification": {
+              "success": {
+                "title": "可信证书",
+                "message": "将主机名添加到受信任证书列表中"
+              },
+              "error": {
+                "title": "信任证书失败",
+                "message": "主机名不匹配的证书不可信"
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "信任自签名证书",
+              "message": "您确定要信任此自签名证书吗？"
+            },
+            "notification": {
+              "success": {
+                "title": "可信证书",
+                "message": "已添加证书到可信证书列表"
+              },
+              "error": {
+                "title": "信任证书失败",
+                "message": "向受信任证书列表添加证书失败"
+              }
+            }
+          },
+          "details": {
+            "title": "详情",
+            "description": "在决定信任证书信息之前，请检查该证书信息。",
+            "content": {
+              "action": "显示内容",
+              "title": "PEM 证书"
+            }
+          }
+        },
+        "request": {
+          "title": "错误请求",
+          "description": {
+            "connection": {
+              "hostUnreachable": "无法连接到服务器。这通常意味着主机离线或无法从您的网络访问。",
+              "networkUnreachable": "网络不可达。请检查网络连接或网络配置。",
+              "refused": "服务器拒绝连接。它可能没有运行或正在拒绝指定端口上的请求。",
+              "reset": "服务器意外关闭了连接。如果服务器不稳定或重新启动，就会发生这种情况。"
+            },
+            "dns": {
+              "notFound": "找不到服务器地址。请检查URL是否有拼写错误或无效的域名。",
+              "timeout": "DNS查找超时。这可能是暂时的问题，请稍后再试。",
+              "noAnswer": "DNS服务器没有返回有效的响应。域可能存在，但没有有效记录。"
+            },
+            "timeout": {
+              "aborted": "请求在完成之前被中止。这可能是由于用户操作或系统超时造成的。",
+              "timeout": "请求耗时太长。请检查您的网络或稍后再试。"
+            }
+          }
+        }
+      },
+      "alertNotice": "成功建立连接后保存按钮将启用",
+      "notification": {
+        "success": {
+          "title": "连接成功",
+          "message": "已成功建立连接"
+        },
+        "invalidUrl": {
+          "title": "无效链接",
+          "message": "URL 无效"
+        },
+        "secretNotDefined": {
+          "title": "缺少凭证",
+          "message": "并非所有凭证都已提供"
+        },
+        "invalidCredentials": {
+          "title": "凭证无效",
+          "message": "凭证无效"
+        },
+        "commonError": {
+          "title": "连接失败",
+          "message": "无法建立连接"
+        },
+        "badRequest": {
+          "title": "错误请求",
+          "message": "请求格式不正确"
+        },
+        "unauthorized": {
+          "title": "未授权",
+          "message": "可能错误的凭证"
+        },
+        "forbidden": {
+          "title": "禁止",
+          "message": "可能缺少权限"
+        },
+        "notFound": {
+          "title": "未找到",
+          "message": "可能错误的 URL 或路径"
+        },
+        "internalServerError": {
+          "title": "服务器内部错误",
+          "message": "服务器遇到一个错误"
+        },
+        "serviceUnavailable": {
+          "title": "服务暂时不可用",
+          "message": "服务器当前不可用"
+        },
+        "connectionAborted": {
+          "title": "连接被中止",
+          "message": "连接被终止"
+        },
+        "domainNotFound": {
+          "title": "找不到域",
+          "message": "找不到该域"
+        },
+        "connectionRefused": {
+          "title": "连接被拒绝",
+          "message": "连接被拒绝"
+        },
+        "invalidJson": {
+          "title": "无效的 JSON",
+          "message": "无效的JSON响应"
+        },
+        "wrongPath": {
+          "title": "路径错误",
+          "message": "该路径可能不正确"
+        },
+        "tooManyRequests": {
+          "title": "指定时间内请求过多",
+          "message": "请求太多了。您可能会受到速率限制或被目标系统拒绝"
+        }
+      }
+    },
+    "secrets": {
+      "title": "秘钥",
+      "lastUpdated": "最后更新于 {date}",
+      "notSet": {
+        "label": "未设置值",
+        "tooltip": "尚未设置此必填的密钥"
+      },
+      "secureNotice": "创建后无法再次获取此密钥",
+      "reset": {
+        "title": "重置密钥",
+        "message": "您确定要重置此秘钥吗？"
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "没有密钥",
+        "text": "此集成不需要密钥"
+      },
+      "kind": {
+        "username": {
+          "label": "用户名",
+          "newLabel": "新用户名"
+        },
+        "apiKey": {
+          "label": "API 密钥",
+          "newLabel": "新 API 密钥"
+        },
+        "password": {
+          "label": "密码",
+          "newLabel": "新密码"
+        },
+        "tokenId": {
+          "label": "令牌ID",
+          "newLabel": "新令牌 ID"
+        },
+        "realm": {
+          "label": "领域",
+          "newLabel": "新领域"
+        },
+        "personalAccessToken": {
+          "label": "个人访问令牌",
+          "newLabel": "新建个人访问令牌"
+        },
+        "topic": {
+          "label": "主题",
+          "newLabel": "新主题"
+        },
+        "url": {
+          "label": "网址",
+          "newLabel": "新建网址"
+        },
+        "opnsenseApiKey": {
+          "label": "API 密钥 (密钥)",
+          "newLabel": "新建API密钥（密钥）"
+        },
+        "opnsenseApiSecret": {
+          "label": "API 密钥 (机密)",
+          "newLabel": "新建API密钥（机密）"
+        },
+        "githubAppId": {
+          "label": "应用 ID",
+          "newLabel": "新应用 ID"
+        },
+        "githubInstallationId": {
+          "label": "安装 Id",
+          "newLabel": "新建安装ID"
+        },
+        "privateKey": {
+          "label": "私钥",
+          "newLabel": "新建私钥"
+        }
+      }
+    },
+    "permission": {
+      "use": "选择项目中的集成",
+      "interact": "与集成进行互动",
+      "full": "完整的组件访问权限"
+    }
+  },
+  "media": {
+    "plural": "媒体",
+    "search": "查找媒体",
+    "field": {
+      "name": "名称",
+      "size": "大小",
+      "creator": "创建者"
+    },
+    "action": {
+      "upload": {
+        "label": "上传媒体",
+        "file": "选择文件",
+        "notification": {
+          "success": {
+            "message": "上传媒体成功"
+          },
+          "error": {
+            "message": "无法上传媒体"
+          }
+        }
+      },
+      "delete": {
+        "label": "删除媒体",
+        "description": "您确定要删除媒体 <bName></bName>?",
+        "notification": {
+          "success": {
+            "message": "媒体已成功删除"
+          },
+          "error": {
+            "message": "无法删除该媒体"
+          }
+        }
+      },
+      "copy": {
+        "label": "复制 URL"
+      },
+      "open": {
+        "label": "打开媒体"
+      }
+    }
+  },
+  "common": {
+    "success": "成功",
+    "beta": "测试版",
+    "error": "错误",
+    "action": {
+      "add": "添加",
+      "apply": "应用",
+      "backToOverview": "返回概览",
+      "change": "更改",
+      "create": "创建",
+      "createAnother": "创建并重新开始",
+      "edit": "编辑",
+      "import": "导入",
+      "insert": "插入",
+      "remove": "删除",
+      "save": "保存",
+      "saveChanges": "保存更改",
+      "cancel": "取消",
+      "delete": "删除",
+      "discard": "Discard",
+      "close": "关闭",
+      "confirm": "确认",
+      "continue": "继续",
+      "previous": "上一步",
+      "next": "下一步",
+      "checkoutDocs": "查阅文档",
+      "checkLogs": "检查日志获取更多详情",
+      "tryAgain": "重试",
+      "loading": "正在加载"
+    },
+    "here": "这里",
+    "iconPicker": {
+      "label": "图标 URL",
+      "header": "输入名称或对象来筛选图标… Homarr 将为您搜索 {countIcons} 图标。"
+    },
+    "colorScheme": {
+      "options": {
+        "light": "日间",
+        "dark": "暗黑"
+      }
+    },
+    "information": {
+      "min": "最小",
+      "max": "最大",
+      "days": "天",
+      "hours": "时",
+      "minutes": "分"
+    },
+    "notification": {
+      "create": {
+        "success": "创建成功",
+        "error": "创建失败"
+      },
+      "delete": {
+        "success": "删除成功",
+        "error": "删除失败"
+      },
+      "update": {
+        "success": "成功应用更改",
+        "error": "无法应用更改"
+      },
+      "transfer": {
+        "success": "传输成功",
+        "error": "传输失败"
+      }
+    },
+    "multiSelect": {
+      "placeholder": "选择一个或多个值"
+    },
+    "multiText": {
+      "placeholder": "添加更多值",
+      "addLabel": "添加 {value}"
+    },
+    "select": {
+      "placeholder": "选择值",
+      "badge": {
+        "recommended": "推荐"
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "切换到暗黑模式",
+        "switchToLightMode": "切换到日间模式",
+        "management": "管理中心",
+        "preferences": "偏好设置",
+        "logout": "退出登录",
+        "login": "登录",
+        "homeBoard": "您的首页",
+        "loggedOut": "已注销",
+        "updateAvailable": "{countUpdates} 可用更新：{tag}"
+      }
+    },
+    "dangerZone": "危险",
+    "noResults": "未找到结果",
+    "unsavedChanges": "你有未保存的更改 ！",
+    "preview": {
+      "show": "显示预览",
+      "hide": "隐藏预览"
+    },
+    "zod": {
+      "errors": {
+        "default": "该字段无效",
+        "required": "此字段为必填",
+        "string": {
+          "startsWith": "该字段必须以 {startsWith} 开头",
+          "endsWith": "该字段必须以 {endsWith} 结尾",
+          "includes": "该字段必须包含 {includes}",
+          "invalidEmail": "此字段必须是一个有效的电子邮件"
+        },
+        "tooSmall": {
+          "string": "该字段长度必须至少为 {minimum} 个字符",
+          "number": "该字段必须大于或等于 {minimum}"
+        },
+        "tooBig": {
+          "string": "该字段的长度不得超过 {maximum} 个字符",
+          "number": "该字段必须小于或等于 {maximum}"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "两次输入的密码不一致",
+          "passwordRequirements": "密码不符合要求",
+          "boardAlreadyExists": "具有此名称的面板已存在",
+          "invalidFileType": "无效的文件类型，例如 {expected}",
+          "invalidFileName": "文件名无效",
+          "fileTooLarge": "文件太大，最大大小为 {maxSize}",
+          "invalidConfiguration": "无效配置",
+          "groupNameTaken": "用户组名称已存在"
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "千米/时",
+        "milesPerHour": "英里/时"
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "新建动态部分",
+        "remove": "删除动态部分"
+      },
+      "option": {
+        "title": {
+          "label": "标题"
+        },
+        "customCssClasses": {
+          "label": "自定义 CSS 类"
+        },
+        "borderColor": {
+          "label": "边界颜色"
+        }
+      },
+      "remove": {
+        "title": "删除动态部分",
+        "message": "你确定你要删除这个动态部分？项目将被移动到父节的相同位置。"
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "名称"
+        }
+      },
+      "action": {
+        "create": "新建分类",
+        "edit": "重命名分类",
+        "remove": "删除分类",
+        "moveUp": "上移",
+        "moveDown": "下移",
+        "createAbove": "上方新建分类",
+        "createBelow": "下方新建分类",
+        "openAllInNewTabs": "在标签中打开全部"
+      },
+      "create": {
+        "title": "新建分类",
+        "submit": "添加分类"
+      },
+      "remove": {
+        "title": "删除分类",
+        "message": "您确定要删除分类 {name} 吗？"
+      },
+      "edit": {
+        "title": "重命名分类",
+        "submit": "重命名分类"
+      },
+      "menu": {
+        "label": {
+          "create": "新建分类",
+          "changePosition": "换位"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "在标签中打开全部",
+        "text": "某些浏览器可能出于安全原因阻止大批打开标签页。 Homarr 无法打开所有窗口，因为您的浏览器屏蔽了此操作。请允许“打开弹出窗口”并重试。"
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "新建项目",
+      "import": "导入项目",
+      "edit": "编辑项目",
+      "moveResize": "移动/调整项目大小",
+      "duplicate": "复制项目",
+      "remove": "删除项目"
+    },
+    "menu": {
+      "label": {
+        "settings": "设置"
+      }
+    },
+    "create": {
+      "title": "选择要添加的项目",
+      "search": "筛选项目",
+      "addToBoard": "添加到面板"
+    },
+    "moveResize": {
+      "title": "移动/调整项目大小",
+      "field": {
+        "width": {
+          "label": "宽度"
+        },
+        "height": {
+          "label": "高度"
+        },
+        "xOffset": {
+          "label": "X 偏移"
+        },
+        "yOffset": {
+          "label": "Y 偏移"
+        }
+      }
+    },
+    "edit": {
+      "title": "编辑项目",
+      "advancedOptions": {
+        "label": "高级选项",
+        "title": "高级项目选项"
+      },
+      "field": {
+        "integrations": {
+          "label": "集成"
+        },
+        "title": {
+          "label": "标题"
+        },
+        "customCssClasses": {
+          "label": "自定义 CSS 类"
+        },
+        "borderColor": {
+          "label": "边框颜色"
+        }
+      }
+    },
+    "remove": {
+      "title": "删除项目",
+      "message": "你确定要删除这个项目吗？"
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "应用",
+      "description": "将应用嵌入到面板中。",
+      "option": {
+        "appId": {
+          "label": "选择应用"
+        },
+        "openInNewTab": {
+          "label": "在新标签页中打开"
+        },
+        "showTitle": {
+          "label": "显示应用名称"
+        },
+        "pingEnabled": {
+          "label": "启用状态检查"
+        },
+        "layout": {
+          "label": "布局",
+          "option": {
+            "row": "水平",
+            "row-reverse": "水平(反向)",
+            "column": "垂直",
+            "column-reverse": "垂直(反向)"
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "描述显示模式",
+          "description": "选择应用描述的显示方式",
+          "option": {
+            "normal": "窗口组件内",
+            "tooltip": "在工具提示中显示",
+            "hidden": "隐藏"
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "没有应用",
+          "tooltip": "您没有选择有效的应用"
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "书签",
+      "description": "显示多个应用链接",
+      "option": {
+        "title": {
+          "label": "标题"
+        },
+        "layout": {
+          "label": "显示布局",
+          "option": {
+            "row": {
+              "label": "横向"
+            },
+            "column": {
+              "label": "垂直"
+            },
+            "grid": {
+              "label": "网格"
+            },
+            "gridHorizontal": {
+              "label": "水平网格"
+            }
+          }
+        },
+        "hideTitle": {
+          "label": "隐藏标题"
+        },
+        "hideIcon": {
+          "label": "隐藏图标"
+        },
+        "hideHostname": {
+          "label": "隐藏主机名"
+        },
+        "openNewTab": {
+          "label": "在新标签页中打开"
+        },
+        "items": {
+          "label": "书签",
+          "add": "添加书签"
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "DNS Hole 摘要",
+      "description": "显示 DNS Hole 的摘要",
+      "option": {
+        "layout": {
+          "label": "显示布局",
+          "option": {
+            "row": {
+              "label": "横向"
+            },
+            "column": {
+              "label": "垂直"
+            },
+            "grid": {
+              "label": "网格"
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": "使用 Pi-Hole 颜色"
+        }
+      },
+      "error": {
+        "internalServerError": "获取 DNS Hole 摘要失败",
+        "integrationsDisconnected": "没有可用的数据，所有集成已断开"
+      },
+      "data": {
+        "adsBlockedToday": "今日屏蔽",
+        "adsBlockedTodayPercentage": "今日屏蔽",
+        "dnsQueriesToday": "今日查询",
+        "domainsBeingBlocked": "黑名单上的域"
+      },
+      "domainsTooltip": "由于多个集成，Homarr 无法计算被阻止的域的准确数量"
+    },
+    "dnsHoleControls": {
+      "name": "DNS Hole 控制",
+      "description": "从您的面板控制 PiHole 或 AdGuard",
+      "option": {
+        "layout": {
+          "label": "显示布局",
+          "option": {
+            "row": {
+              "label": "横向"
+            },
+            "column": {
+              "label": "垂直"
+            },
+            "grid": {
+              "label": "网格"
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": "显示全部按钮"
+        }
+      },
+      "error": {
+        "internalServerError": "无法控制 DNS Hole"
+      },
+      "controls": {
+        "enableAll": "全部启用",
+        "disableAll": "全部禁用",
+        "setTimer": "设置计时",
+        "set": "设置",
+        "enabled": "已启用",
+        "disabled": "已禁用",
+        "processing": "处理中",
+        "disconnected": "网络连线中断",
+        "hours": "时",
+        "minutes": "分",
+        "unlimited": "留空表示无限制"
+      }
+    },
+    "clock": {
+      "name": "日期和时间",
+      "description": "显示当前的日期和时间。",
+      "option": {
+        "customTitleToggle": {
+          "label": "自定义标题/城市显示",
+          "description": "在时钟上显示自定义的标题或城市/国家的名称。"
+        },
+        "customTitle": {
+          "label": "标题"
+        },
+        "is24HourFormat": {
+          "label": "24 小时制",
+          "description": "使用24小时格式代替12小时格式"
+        },
+        "showSeconds": {
+          "label": "显示秒数"
+        },
+        "useCustomTimezone": {
+          "label": "使用固定时区"
+        },
+        "timezone": {
+          "label": "时区",
+          "description": "选择遵循 IANA 标准的时区"
+        },
+        "showDate": {
+          "label": "显示日期"
+        },
+        "dateFormat": {
+          "label": "日期格式",
+          "description": "日期应该是什么样的"
+        },
+        "customTimeFormat": {
+          "label": "自定义时间格式",
+          "description": "使用 ISO 8601 格式化时间 (这将覆盖其他选项)"
+        },
+        "customDateFormat": {
+          "label": "自定义日期格式",
+          "description": "使用 ISO 8601 格式化日期(这将覆盖其他选项)"
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "Minecraft 服务状态",
+      "description": "显示 Minecraft 服务器状态",
+      "option": {
+        "title": {
+          "label": "标题"
+        },
+        "domain": {
+          "label": "服务器地址"
+        },
+        "isBedrockServer": {
+          "label": "Bedrock 服务器"
+        }
+      },
+      "status": {
+        "online": "在线",
+        "offline": "离线"
+      }
+    },
+    "notebook": {
+      "name": "笔记",
+      "description": "支持 Markdown 的简单笔记本小部件",
+      "option": {
+        "showToolbar": {
+          "label": "显示帮助您写下 Markdown 的工具栏"
+        },
+        "allowReadOnlyCheck": {
+          "label": "允许在只读模式中检查"
+        },
+        "content": {
+          "label": "笔记的内容"
+        }
+      },
+      "controls": {
+        "bold": "粗体",
+        "italic": "斜体",
+        "strikethrough": "删除线",
+        "underline": "下划线",
+        "colorText": "文字颜色",
+        "colorHighlight": "彩色高亮文字",
+        "code": "代码",
+        "clear": "清除格式",
+        "heading": "标题 {level}",
+        "align": "对齐文本： {position}",
+        "blockquote": "引用",
+        "horizontalLine": "横线",
+        "bulletList": "符号列表",
+        "orderedList": "顺序列表",
+        "checkList": "检查列表",
+        "increaseIndent": "增加缩进",
+        "decreaseIndent": "减小缩进",
+        "link": "链接",
+        "unlink": "删除链接",
+        "image": "嵌入图片",
+        "addTable": "添加表格",
+        "deleteTable": "删除表格",
+        "colorCell": "单元格颜色",
+        "mergeCell": "切换单元格合并",
+        "addColumnLeft": "在前面添加列",
+        "addColumnRight": "在后面添加列",
+        "deleteColumn": "删除整列",
+        "addRowTop": "在前面添加行",
+        "addRowBelow": "在后面添加行",
+        "deleteRow": "删除整行"
+      },
+      "align": {
+        "left": "左边",
+        "center": "居中",
+        "right": "右边"
+      },
+      "popover": {
+        "clearColor": "清除颜色",
+        "source": "来源",
+        "widthPlaceholder": "百分比或像素值",
+        "columns": "列数",
+        "rows": "行数",
+        "width": "宽度",
+        "height": "高度"
+      },
+      "placeholder": "开始写笔记",
+      "dismiss": {
+        "title": "放弃更改？",
+        "message": "您的笔记中有未保存的更改。确定要放弃这些更改吗？",
+        "action": {
+          "discard": "放弃修改",
+          "keepEditing": "继续编辑"
+        }
+      }
+    },
+    "iframe": {
+      "name": "iFrame",
+      "description": "嵌入互联网上的任何内容。某些网站可能限制访问。",
+      "option": {
+        "embedUrl": {
+          "label": "嵌入地址"
+        },
+        "allowFullScreen": {
+          "label": "允许全屏"
+        },
+        "allowTransparency": {
+          "label": "允许透明"
+        },
+        "allowScrolling": {
+          "label": "允许滚动"
+        },
+        "allowPayment": {
+          "label": "允许支付"
+        },
+        "allowAutoPlay": {
+          "label": "允许自动播放"
+        },
+        "allowMicrophone": {
+          "label": "允许麦克风"
+        },
+        "allowCamera": {
+          "label": "允许摄像头"
+        },
+        "allowGeolocation": {
+          "label": "允许地理位置"
+        }
+      },
+      "error": {
+        "noUrl": "没有提供 iFrame 网址",
+        "unsupportedProtocol": "提供的URL使用了不支持的协议。请使用（{supportedProtocols}）中的一个",
+        "noBrowerSupport": "您的浏览器不支持 iframe。请更新您的浏览器。"
+      }
+    },
+    "smartHome-entityState": {
+      "name": "实体状态",
+      "description": "显示实体状态并可选切换",
+      "option": {
+        "entityId": {
+          "label": "实体 ID"
+        },
+        "displayName": {
+          "label": "显示名称"
+        },
+        "entityUnit": {
+          "label": "实体单位"
+        },
+        "clickable": {
+          "label": "可单击"
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "执行自动化",
+      "description": "一键触发自动化操作",
+      "option": {
+        "displayName": {
+          "label": "显示名称"
+        },
+        "automationId": {
+          "label": "自动化 ID"
+        }
+      },
+      "spotlightAction": {
+        "run": "运行 {name}"
+      }
+    },
+    "stockPrice": {
+      "name": "股票价格",
+      "description": "显示公司的当前股价",
+      "option": {
+        "stock": {
+          "label": "股票代码"
+        },
+        "timeRange": {
+          "label": "时间范围",
+          "option": {
+            "1d": {
+              "label": "1天"
+            },
+            "5d": {
+              "label": "5天"
+            },
+            "1mo": {
+              "label": "1个月"
+            },
+            "3mo": {
+              "label": "3 个月"
+            },
+            "6mo": {
+              "label": "6 个月"
+            },
+            "ytd": {
+              "label": "年初至今"
+            },
+            "1y": {
+              "label": "1 年"
+            },
+            "2y": {
+              "label": "2 年"
+            },
+            "5y": {
+              "label": "5 年"
+            },
+            "10y": {
+              "label": "10 年"
+            },
+            "max": {
+              "label": "最大"
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "时间间隔",
+          "option": {
+            "5m": {
+              "label": "5 分钟"
+            },
+            "15m": {
+              "label": "15 分钟"
+            },
+            "30m": {
+              "label": "30 分钟"
+            },
+            "1h": {
+              "label": "1 小时"
+            },
+            "1d": {
+              "label": "1 天"
+            },
+            "5d": {
+              "label": "5 天"
+            },
+            "1wk": {
+              "label": "1 周"
+            },
+            "1mo": {
+              "label": "1 个月"
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "日历",
+      "description": "在日历视图中显示某个相对时间段内的集成事件",
+      "duration": {
+        "allDay": "全天"
+      },
+      "option": {
+        "releaseType": {
+          "label": "Radarr 发布类型",
+          "options": {
+            "inCinemas": "院线放映中",
+            "digitalRelease": "数字发行",
+            "physicalRelease": "物理发布"
+          }
+        },
+        "filterPastMonths": {
+          "label": "开始于"
+        },
+        "filterFutureMonths": {
+          "label": "结束于"
+        },
+        "showUnmonitored": {
+          "label": "显示未监视的"
+        }
+      }
+    },
+    "weather": {
+      "name": "天气",
+      "description": "显示指定位置的当前天气信息。",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": "华氏温度"
+        },
+        "disableTemperatureDecimals": {
+          "label": "禁用温度小数"
+        },
+        "showCurrentWindSpeed": {
+          "label": "显示当前风速",
+          "description": "仅在当前天气时"
+        },
+        "useImperialSpeed": {
+          "label": "风速使用英里/时"
+        },
+        "location": {
+          "label": "天气位置"
+        },
+        "showCity": {
+          "label": "显示城市"
+        },
+        "hasForecast": {
+          "label": "显示预报"
+        },
+        "forecastDayCount": {
+          "label": "预报天数",
+          "description": "当小部件不够宽时，显示的天数减少"
+        },
+        "dateFormat": {
+          "label": "日期格式",
+          "description": "日期应该是什么样的"
+        }
+      },
+      "currentWindSpeed": "{currentWindSpeed} {unit}",
+      "dailyForecast": {
+        "sunrise": "日出",
+        "sunset": "日落",
+        "maxWindSpeed": "最大风速：{maxWindSpeed} {unit}",
+        "maxWindGusts": "最大阵风：{maxWindGusts} {unit}"
+      },
+      "kind": {
+        "clear": "晴朗",
+        "mainlyClear": "晴朗为主",
+        "fog": "雾",
+        "drizzle": "细雨",
+        "freezingDrizzle": "冻毛毛雨",
+        "rain": "雨",
+        "freezingRain": "冻雨",
+        "snowFall": "降雪",
+        "snowGrains": "霰",
+        "rainShowers": "阵雨",
+        "snowShowers": "阵雪",
+        "thunderstorm": "雷暴",
+        "thunderstormWithHail": "雷暴夹冰雹",
+        "unknown": "未知"
+      }
+    },
+    "indexerManager": {
+      "name": "索引器管理状态",
+      "description": "索引器状态",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": "在新标签中打开索引器站点"
+        }
+      },
+      "title": "索引器管理",
+      "testAll": "测试全部",
+      "error": {
+        "internalServerError": "获取索引器状态失败"
+      }
+    },
+    "healthMonitoring": {
+      "name": "系统健康监测",
+      "description": "显示系统运行状况和状态的信息。",
+      "tab": {
+        "system": "系统",
+        "cluster": "集群"
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "CPU 温度（华氏度）"
+        },
+        "cpu": {
+          "label": "显示 CPU 信息"
+        },
+        "memory": {
+          "label": "显示内存信息"
+        },
+        "showUptime": {
+          "label": "显示运行时间"
+        },
+        "fileSystem": {
+          "label": "显示文件系统信息"
+        },
+        "defaultTab": {
+          "label": "默认标签"
+        },
+        "visibleClusterSections": {
+          "label": "可见集群部分"
+        },
+        "sectionIndicatorRequirement": {
+          "label": "部分指标要求"
+        }
+      },
+      "popover": {
+        "information": "信息",
+        "processor": "处理器：{cpuModelName}",
+        "memory": "内存：{memory} GiB",
+        "memoryAvailable": "可用：{memoryAvailable}GiB ({percent}%)",
+        "version": "版本：{version}",
+        "uptime": "运行时间：{months} 月，{days} 天，{hours} 时，{minutes} 分",
+        "loadAverage": "平均负载：",
+        "minute": "1 分钟",
+        "minutes": "{count} 分钟",
+        "used": "已使用",
+        "available": "可用",
+        "lastSeen": "最近状态更新：{lastSeen}"
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": "获取健康状态失败"
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "处理器",
+          "memory": "内存"
+        },
+        "resource": {
+          "node": {
+            "name": "节点"
+          },
+          "qemu": {
+            "name": "虚拟机"
+          },
+          "lxc": {
+            "name": "LXCs"
+          },
+          "storage": {
+            "name": "存储"
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "节点",
+            "vmId": "虚拟 ID",
+            "plugin": "插件"
+          },
+          "detail": {
+            "cpu": "核心",
+            "memory": "内存",
+            "storage": "存储",
+            "uptime": "运行时间",
+            "haState": "HA 状态",
+            "storageType": {
+              "local": "本地存储",
+              "shared": "共享存储"
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "名称",
+            "cpu": "处理器",
+            "memory": "内存",
+            "node": "节点"
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "Docker 状态",
+      "description": "您的容器状态 (这个小部件只能用管理员权限添加)",
+      "option": {
+        "enableRowSorting": {
+          "label": "启用项目排序"
+        },
+        "defaultSort": {
+          "label": "默认排序列",
+          "option": {
+            "name": "名称",
+            "state": "状态",
+            "cpuUsage": "CPU 利用率",
+            "memoryUsage": "内存占用率"
+          }
+        },
+        "descendingDefaultSort": {
+          "label": "倒序"
+        }
+      },
+      "error": {
+        "internalServerError": "获取容器统计信息失败"
+      }
+    },
+    "common": {
+      "location": {
+        "query": "城市/邮编",
+        "latitude": "纬度",
+        "longitude": "经度",
+        "disabledTooltip": "请输入城市或邮编",
+        "unknownLocation": "未知位置",
+        "search": "搜索",
+        "table": {
+          "header": {
+            "city": "城市",
+            "country": "国家",
+            "coordinates": "坐标",
+            "population": "人口"
+          },
+          "action": {
+            "select": "选择 {city}，{countryCode}"
+          },
+          "population": {
+            "fallback": "未知"
+          }
+        }
+      },
+      "integration": {
+        "noData": "没有找到集成",
+        "description": "点击 <here></here> 创建一个新的集成"
+      },
+      "app": {
+        "noData": "未找到应用",
+        "description": "点击 <here></here> 创建一个新的应用",
+        "quickCreate": "在运行时创建应用"
+      },
+      "error": {
+        "noIntegration": "未选择集成",
+        "noData": "没有可用的集成数据"
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "视频流",
+      "description": "嵌入来自相机或网站的视频流或视频",
+      "option": {
+        "feedUrl": {
+          "label": "订阅网址"
+        },
+        "hasAutoPlay": {
+          "label": "自动播放",
+          "description": "自动播放仅在因浏览器限制而被静音时生效"
+        },
+        "isMuted": {
+          "label": "静音"
+        },
+        "hasControls": {
+          "label": "显示控件"
+        }
+      },
+      "error": {
+        "noUrl": "没有提供视频 URL",
+        "forYoutubeUseIframe": "YouTube 视频使用 iframe 选项"
+      }
+    },
+    "mediaServer": {
+      "name": "当前媒体服务流",
+      "description": "显示媒体服务器上的当前流",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "只显示当前正在播放",
+          "description": "禁用此功能对plex不起作用"
+        }
+      },
+      "items": {
+        "currentlyPlaying": "正在播放",
+        "user": "用户",
+        "name": "名称",
+        "id": "ID",
+        "metadata": {
+          "title": "技术统计",
+          "video": {
+            "title": "视频",
+            "resolution": "分辨率"
+          },
+          "audio": {
+            "title": "音频",
+            "channelCount": "音频声道",
+            "codec": "音频编码"
+          },
+          "transcoding": {
+            "title": "转码",
+            "container": "容器",
+            "resolution": "分辨率",
+            "target": "目标编解码器"
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "下载客户端",
+      "description": "允许您查看和管理来自Torrent 和 Usenet 客户端的下载。",
+      "option": {
+        "columns": {
+          "label": "显示的列"
+        },
+        "enableRowSorting": {
+          "label": "启用项目排序"
+        },
+        "defaultSort": {
+          "label": "默认排序列"
+        },
+        "descendingDefaultSort": {
+          "label": "倒序"
+        },
+        "showCompletedUsenet": {
+          "label": "显示标记为已完成的 usenet 条目"
+        },
+        "showCompletedTorrent": {
+          "label": "显示标记为已完成的 Torrent 条目"
+        },
+        "showCompletedHttp": {
+          "label": "显示标记为已完成的杂项"
+        },
+        "activeTorrentThreshold": {
+          "label": "隐藏在此阈值下已完成的 Torrent (kiB/s)"
+        },
+        "categoryFilter": {
+          "label": "要过滤的分类/标签"
+        },
+        "filterIsWhitelist": {
+          "label": "以白名单过滤"
+        },
+        "applyFilterToRatio": {
+          "label": "使用过滤器来计算比率"
+        },
+        "limitPerIntegration": {
+          "label": "限制每个集成的项目",
+          "description": "这将限制每个集成显示的项目数量，而不是全局项目"
+        }
+      },
+      "errors": {
+        "noColumns": "在项目中选择列",
+        "noCommunications": "无法从集成中加载数据"
+      },
+      "items": {
+        "actions": {
+          "columnTitle": "控制"
+        },
+        "added": {
+          "columnTitle": "已添加",
+          "detailsTitle": "添加日期"
+        },
+        "category": {
+          "columnTitle": "扩展的",
+          "detailsTitle": "分类(额外信息)"
+        },
+        "downSpeed": {
+          "columnTitle": "下载",
+          "detailsTitle": "下载速度"
+        },
+        "index": {
+          "columnTitle": "#",
+          "detailsTitle": "客户端中的当前索引"
+        },
+        "id": {
+          "columnTitle": "ID"
+        },
+        "integration": {
+          "columnTitle": "集成"
+        },
+        "name": {
+          "columnTitle": "作业名称"
+        },
+        "progress": {
+          "columnTitle": "进度",
+          "detailsTitle": "下载进度"
+        },
+        "ratio": {
+          "columnTitle": "分享率",
+          "detailsTitle": "Torrent 比率(接收/发送)"
+        },
+        "received": {
+          "columnTitle": "总下载",
+          "detailsTitle": "总下载量"
+        },
+        "sent": {
+          "columnTitle": "总上传",
+          "detailsTitle": "总上传量"
+        },
+        "size": {
+          "columnTitle": "文件大小",
+          "detailsTitle": "文件大小"
+        },
+        "state": {
+          "columnTitle": "状态",
+          "detailsTitle": "作业状态"
+        },
+        "time": {
+          "columnTitle": "完成时间",
+          "detailsTitle": "完成时间"
+        },
+        "type": {
+          "columnTitle": "类型",
+          "detailsTitle": "下载客户端类型"
+        },
+        "upSpeed": {
+          "columnTitle": "上传",
+          "detailsTitle": "上传速度"
+        }
+      },
+      "states": {
+        "downloading": "正在下载",
+        "queued": "排队中",
+        "paused": "已暂停",
+        "completed": "已完成",
+        "failed": "已失败",
+        "processing": "处理中",
+        "leeching": "吸血",
+        "stalled": "已暂停",
+        "unknown": "未知",
+        "seeding": "做种中"
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "下载客户列表",
+          "pause": "暂停所有客户端/项目",
+          "resume": "恢复所有客户端/项目"
+        },
+        "client": {
+          "pause": "暂停客户端",
+          "resume": "恢复客户端"
+        },
+        "item": {
+          "pause": "暂停项目",
+          "resume": "恢复项目",
+          "delete": {
+            "title": "删除项目",
+            "modalTitle": "确定要删除此作业？",
+            "entry": "删除条目",
+            "entryAndFiles": "删除条目和文件(s)"
+          }
+        }
+      },
+      "globalRatio": "全局比率"
+    },
+    "mediaReleases": {
+      "name": "媒体发布",
+      "description": "显示来自不同集成的新添加介质或即将发布的版本",
+      "option": {
+        "layout": {
+          "label": "布局",
+          "option": {
+            "backdrop": {
+              "label": "背景"
+            },
+            "poster": {
+              "label": "海报"
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": "显示描述提示"
+        },
+        "showType": {
+          "label": "显示媒体类型徽章"
+        },
+        "showSource": {
+          "label": "显示来源集成"
+        }
+      },
+      "length": {
+        "duration": "{length} 分钟"
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "媒体请求列表",
+      "description": "查看 Overr 或 Jellyseerr 实例中的所有媒体请求列表",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "在新标签页中打开链接"
+        }
+      },
+      "pending": {
+        "approve": "批准请求",
+        "approving": "正在批准请求...",
+        "decline": "拒绝请求"
+      },
+      "availability": {
+        "unknown": "未知",
+        "pending": "等待处理",
+        "processing": "处理中",
+        "requested": "已请求",
+        "partiallyAvailable": "部分",
+        "available": "可用",
+        "blacklisted": "已列入黑名单",
+        "deleted": "已删除"
+      },
+      "status": {
+        "pending": "待处理",
+        "approved": "已批准",
+        "declined": "已拒绝",
+        "failed": "失败",
+        "completed": "已完成"
+      },
+      "toBeDetermined": "待定"
+    },
+    "mediaRequests-requestStats": {
+      "name": "媒体请求状态",
+      "description": "您的媒体请求统计",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "媒体统计",
+          "approved": "已经批准",
+          "pending": "等待批准",
+          "processing": "处理中",
+          "declined": "已拒绝",
+          "available": "已可用",
+          "tv": "电视请求",
+          "movie": "电影请求",
+          "total": "请求总计"
+        },
+        "users": {
+          "main": "用户排行",
+          "requests": "请求"
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "媒体转码",
+      "description": "您的媒体转码的统计、当前队列和工作状态",
+      "option": {
+        "defaultView": {
+          "label": "默认视图"
+        },
+        "queuePageSize": {
+          "label": "队列页面大小"
+        }
+      },
+      "tab": {
+        "workers": "工作中",
+        "queue": "队列",
+        "statistics": "统计"
+      },
+      "currentIndex": "{total} 的 {start}-{end}",
+      "healthCheck": {
+        "title": "健康检查",
+        "queued": "排队中",
+        "status": {
+          "healthy": "健康",
+          "unhealthy": "不良"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "空",
+          "transcodes": "转码",
+          "transcodesCount": "转码",
+          "healthChecksCount": "健康检查",
+          "filesCount": "文件",
+          "savedSpace": "节省空间",
+          "healthChecks": "健康检查",
+          "videoCodecs": "编码",
+          "videoContainers": "容器",
+          "videoResolutions": "分辨率"
+        },
+        "workers": {
+          "empty": "空",
+          "table": {
+            "file": "文件",
+            "eta": "剩余时间",
+            "progress": "进度",
+            "transcode": "转码",
+            "healthCheck": "健康检查"
+          }
+        },
+        "queue": {
+          "empty": "空",
+          "table": {
+            "file": "文件",
+            "size": "大小",
+            "transcode": "转码",
+            "healthCheck": "健康检查"
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "RSS 订阅",
+      "description": "监视和显示一个或多个通用 RSS、ATOM 或 JSON 源",
+      "option": {
+        "feedUrls": {
+          "label": "订阅网址"
+        },
+        "enableRtl": {
+          "label": "启用 RTL"
+        },
+        "textLinesClamp": {
+          "label": "描述线条"
+        },
+        "maximumAmountPosts": {
+          "label": "帖子数量限制"
+        },
+        "hideDescription": {
+          "label": "隐藏描述"
+        }
+      }
+    },
+    "releases": {
+      "name": "发布",
+      "description": "显示特定版本正则表达式中当前版本的列表。",
+      "option": {
+        "newReleaseWithin": {
+          "label": "内部新版本",
+          "description": "使用示例：1w（1周），10M（10个月）。支持单位类型h（小时），d（天），w（周），M（月），y（年）。留空不突出显示新版本。"
+        },
+        "staleReleaseWithin": {
+          "label": "内部过期发布",
+          "description": "使用示例：1w（1周），10M（10个月）。支持单位类型h（小时），d（天），w（周），M（月），y（年）。留空不突出显示过时的版本。"
+        },
+        "showOnlyHighlighted": {
+          "label": "只显示高亮显示",
+          "description": "只显示新的或过时的版本。如上所述。"
+        },
+        "showDetails": {
+          "label": "展开详情"
+        },
+        "showOnlyIcon": {
+          "label": "仅显示图标"
+        },
+        "topReleases": {
+          "label": "热门发布",
+          "description": "要显示的最新版本的最大数量。零表示没有限制。"
+        },
+        "repositories": {
+          "label": "仓库",
+          "addRepository": {
+            "label": "添加仓库"
+          },
+          "importRepositories": {
+            "label": "从 Docker 导入",
+            "loading": "正在加载 docker 映像",
+            "noImagesFound": "没有找到 docker 映像",
+            "listFoundImages": "找到的映像列表",
+            "listAlreadyImportedImages": "已导入的映像列表",
+            "allImagesAlreadyImported": "所有映像已导入",
+            "onlyAdminCanImport": "只有管理员才能从 docker 导入",
+            "selectAll": "全选",
+            "deselectAll": "反选"
+          },
+          "provider": {
+            "label": "提供者"
+          },
+          "identifier": {
+            "label": "标识符",
+            "placeholder": "姓名或所有者名称"
+          },
+          "name": {
+            "label": "名称"
+          },
+          "versionFilter": {
+            "label": "版本过滤器",
+            "prefix": {
+              "label": "前缀"
+            },
+            "precision": {
+              "label": "精度",
+              "options": {
+                "none": "空"
+              }
+            },
+            "suffix": {
+              "label": "后缀"
+            },
+            "regex": {
+              "label": "正则表达式"
+            }
+          },
+          "edit": {
+            "label": "编辑"
+          },
+          "editForm": {
+            "title": "编辑仓库",
+            "cancel": {
+              "label": "取消"
+            },
+            "confirm": {
+              "label": "确认"
+            }
+          },
+          "importForm": {
+            "title": "从 Docker 导入"
+          },
+          "example": {
+            "label": "示例"
+          },
+          "invalid": "仓库定义无效，请检查值",
+          "noProvider": {
+            "label": "没有提供者",
+            "tooltip": "无法解析该提供者，请在导入镜像后手动设置"
+          }
+        }
+      },
+      "not-found": "未找到",
+      "pre-release": "预发行",
+      "archived": "已归档",
+      "forked": "复刻成功",
+      "starsCount": "星",
+      "forksCount": "复刻",
+      "issuesCount": "打开问题",
+      "markViewed": "标记已读",
+      "openProjectPage": "打开项目页面",
+      "openReleasePage": "打开发布页面",
+      "releaseDescription": "发布说明",
+      "projectDescription": "项目描述",
+      "created": "已创建",
+      "error": {
+        "label": "错误",
+        "messages": {
+          "invalidIdentifier": "无效标识符",
+          "noMatchingVersion": "没有找到匹配的版本",
+          "noReleasesFound": "没有发现发布信息",
+          "noProviderSeleceted": "没有选择提供者",
+          "noProviderResponse": "提供者没有响应"
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": "{count} 已连接"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "没有可用的数据，所有集成已断开",
+        "unknownContentOption": "网络控制器摘要小部件的未知内容选项： "
+      },
+      "name": "网络控制器概述",
+      "description": "显示网络控制器摘要(如Unifi Controller)"
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": "有线"
+          },
+          "wifi": {
+            "name": "Wi-Fi"
+          }
+        },
+        "users": {
+          "label": "用户数"
+        },
+        "guests": {
+          "label": "游客"
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": "Wi-Fi"
+            },
+            "wired": {
+              "label": "有线"
+            }
+          },
+          "label": "小部件内容"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "没有可用的数据，所有集成已断开",
+        "unknownContentOption": "网络状态小部件的未知内容选项： "
+      },
+      "name": "网络状态",
+      "description": "在网络上显示已连接的设备"
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": "获取网络控制器概述失败"
+      }
+    },
+    "firewall": {
+      "name": "防火墙监测",
+      "description": "显示防火墙摘要",
+      "tab": {
+        "system": "系统",
+        "interfaces": "接口"
+      },
+      "error": {
+        "internalServerError": "无法从防火墙获取数据"
+      },
+      "option": {
+        "interfaces": "要显示的网络接口"
+      },
+      "widget": {
+        "fwname": "名称",
+        "version": "版本",
+        "versiontitle": "版本",
+        "cputitle": "CPU 利用率",
+        "memorytitle": "内存占用率",
+        "cpu": "CPU",
+        "memory": "内存",
+        "interfaces": {
+          "name": "名称",
+          "trans": "已传输",
+          "recv": "已接收",
+          "title": "网络接口"
+        }
+      }
+    },
+    "notifications": {
+      "name": "通知",
+      "description": "在集成中显示通知历史",
+      "noItems": "没有可显示的通知。",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "系统资源",
+      "description": "您系统的 CPU、内存、磁盘及其他硬件使用情况",
+      "option": {
+        "hasShadow": {
+          "label": "启用图表阴影"
+        },
+        "visibleCharts": {
+          "label": "可见图表",
+          "description": "选择您希望显示的图表。",
+          "option": {
+            "cpu": "CPU",
+            "memory": "内存",
+            "network": "网络"
+          }
+        },
+        "labelDisplayMode": {
+          "label": "标签显示模式",
+          "option": {
+            "textWithIcon": "显示图标和文本",
+            "text": "仅显示文本",
+            "icon": "仅显示图标",
+            "hidden": "隐藏标签"
+          }
+        }
+      },
+      "card": {
+        "cpu": "CPU",
+        "memory": "内存",
+        "network": "网络",
+        "up": "上传",
+        "down": "下载"
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "启用编辑模式",
+      "disabled": "禁用编辑模式"
+    },
+    "dimensions": {
+      "title": "更改尺寸"
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "复制面板",
+        "message": "这将复制面板{name}及其所有内容。如果组件引用了不允许使用的集成，它们将被删除。",
+        "notification": {
+          "success": {
+            "title": "面板已复制",
+            "message": "面板已成功复制"
+          },
+          "error": {
+            "title": "无法复制面板",
+            "message": "无法复制面板"
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "成功应用更改",
+            "message": "面板保存成功"
+          },
+          "error": {
+            "title": "无法应用更改",
+            "message": "面板无法保存"
+          }
+        },
+        "confirmLeave": {
+          "title": "未保存更改",
+          "message": "您有尚未保存的更改。您确定要离开吗？"
+        }
+      },
+      "oldImport": {
+        "label": "从 1.0.0 之前的 Homarr 导入",
+        "notification": {
+          "success": {
+            "title": "导入成功",
+            "message": "面板导入成功"
+          },
+          "error": {
+            "title": "导入失败",
+            "message": "无法导入面板，请检查日志以获取更多详情"
+          }
+        },
+        "form": {
+          "file": {
+            "label": "选择 JSON 文件",
+            "invalidError": "无效的配置文件"
+          },
+          "apps": {
+            "label": "应用",
+            "avoidDuplicates": {
+              "label": "避免重复",
+              "description": "忽略已经存在具有相同链接的应用"
+            },
+            "onlyImportApps": {
+              "label": "仅导入应用",
+              "description": "只添加应用，面板需要手动重新创建"
+            }
+          },
+          "name": {
+            "label": "面板名称"
+          },
+          "screenSize": {
+            "label": "屏幕大小",
+            "description": "在1.0之前的版本中，有三种不同的模式，所以你可以根据屏幕大小选择列的数量。",
+            "option": {
+              "sm": "小号",
+              "md": "中号",
+              "lg": "大号"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "侧边栏行为",
+            "description": "侧边栏在1.0中被删除了，您可以选择其中的项目应该发生什么。",
+            "option": {
+              "lastSection": {
+                "label": "最后部分",
+                "description": "侧边栏将显示在最后一部分的下方"
+              },
+              "removeItems": {
+                "label": "删除项目",
+                "description": "侧边栏中包含的项目将被删除"
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "在运行时创建应用",
+          "createAndUse": "创建并使用"
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": "页面标题"
+      },
+      "metaTitle": {
+        "label": "Meta 标题"
+      },
+      "logoImageUrl": {
+        "label": "Logo 图像 URL"
+      },
+      "faviconImageUrl": {
+        "label": "Favicon 图像 URL"
+      },
+      "backgroundImageUrl": {
+        "label": "背景图片 URL",
+        "placeholder": "开始输入以搜索本地映像",
+        "group": {
+          "your": "你的映像",
+          "other": "其他映像"
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "背景图片附件",
+        "option": {
+          "fixed": {
+            "label": "固定",
+            "description": "背景保持不变。"
+          },
+          "scroll": {
+            "label": "滚动",
+            "description": "用鼠标滚动背景。"
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "背景图片重复",
+        "option": {
+          "repeat": {
+            "label": "重复",
+            "description": "为了覆盖整个背景图像绘画区域，所需的图像会被重复使用。"
+          },
+          "no-repeat": {
+            "label": "不重复",
+            "description": "图像不重复，无法填充整个空间。"
+          },
+          "repeat-x": {
+            "label": "水平重复",
+            "description": "与“重复”相同，但仅在水平轴上。"
+          },
+          "repeat-y": {
+            "label": "垂直重复",
+            "description": "与“重复”相同，但仅在垂直轴上。"
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "背景图像大小",
+        "option": {
+          "cover": {
+            "label": "封面",
+            "description": "通过裁剪过多的空间，将图像缩放得尽可能小以覆盖整个窗口。"
+          },
+          "contain": {
+            "label": "包含",
+            "description": "将图像缩放在容器内，但不裁剪或拉伸图像。"
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "主体色"
+      },
+      "secondaryColor": {
+        "label": "辅助色"
+      },
+      "opacity": {
+        "label": "不透明度"
+      },
+      "iconColor": {
+        "label": "图标颜色"
+      },
+      "clearColor": {
+        "label": "清除颜色"
+      },
+      "customCss": {
+        "label": "自定义此面板的 css",
+        "description": "只推荐有经验的用户使用 CSS 自定义面板",
+        "customClassesAlert": {
+          "title": "自定义类别",
+          "description": "您可以在每个项目的高级选项中添加自定义类别到您的面板项目并在上面的自定义 CSS 中使用它们。"
+        }
+      },
+      "disableStatus": {
+        "label": "禁用应用状态",
+        "description": "禁用此面板上所有应用的状态检查"
+      },
+      "columnCount": {
+        "label": "列数"
+      },
+      "itemRadius": {
+        "label": "项目圆角",
+        "description": "更改面板上磁贴的圆角",
+        "option": {
+          "xs": "极小",
+          "sm": "小号",
+          "md": "中号",
+          "lg": "大号",
+          "xl": "极大"
+        }
+      },
+      "name": {
+        "label": "名称"
+      },
+      "isPublic": {
+        "label": "公开",
+        "description": "每个人都可以访问公共面板，即使没有账户。"
+      }
+    },
+    "content": {
+      "metaTitle": "{boardName} 面板"
+    },
+    "setting": {
+      "title": "{boardName} 面板设置",
+      "section": {
+        "general": {
+          "title": "通用",
+          "unrecognizedLink": "提供的链接未被识别，无法预览，但它可能仍然有效。"
+        },
+        "layout": {
+          "title": "布局",
+          "responsive": {
+            "title": "响应式布局",
+            "action": {
+              "add": "添加布局"
+            }
+          }
+        },
+        "background": {
+          "title": "背景"
+        },
+        "appearance": {
+          "title": "外观"
+        },
+        "customCss": {
+          "title": "自定义 css"
+        },
+        "behavior": {
+          "title": "行为"
+        },
+        "access": {
+          "title": "访问控制",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "查看面板"
+              },
+              "modify": {
+                "label": "修改面板"
+              },
+              "full": {
+                "label": "完全访问"
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "危险",
+          "action": {
+            "rename": {
+              "label": "重命名面板",
+              "description": "更改名称将会破坏到此面板的任何链接。",
+              "button": "更改名字",
+              "modal": {
+                "title": "重命名面板"
+              }
+            },
+            "visibility": {
+              "label": "更改面板可见性",
+              "description": {
+                "public": "此面板目前是公开的。",
+                "private": "此面板目前是私有的。"
+              },
+              "button": {
+                "public": "设为私有",
+                "private": "设为公开"
+              },
+              "confirm": {
+                "public": {
+                  "title": "设为私有面板",
+                  "description": "您确定要将此面板设置为私有吗？这将隐藏在公众面前的面板。方可的链接将会断开。"
+                },
+                "private": {
+                  "title": "设为公开面板",
+                  "description": "您确定要公开这个面板吗？这将使所有人都可以访问面板。"
+                }
+              }
+            },
+            "delete": {
+              "label": "删除面板",
+              "description": "面板一旦删除就无法恢复. 请谨慎操作.",
+              "button": "删除面板",
+              "confirm": {
+                "title": "删除面板",
+                "description": "您确定要删除此面板吗？这将永久删除面板及其所有内容。"
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "欢迎使用 Homarr",
+        "description": "一个时尚、现代的仪表盘，让你的所有应用和服务触手可及。",
+        "link": "创建您的第一个面板",
+        "notice": "要使这个页面消失，请创建一个面板并将其设置为主面板"
+      },
+      "notFound": {
+        "title": "找不到面板",
+        "description": "未找到指定的面板，或者您没有访问权限。",
+        "link": "查看全部面板",
+        "notice": "如果您认为链接应该可以访问，请检查链接或联系管理员"
+      },
+      "homeBoard": {
+        "title": "没有主面板",
+        "admin": {
+          "description": "您还没有为服务器设置主面板。",
+          "link": "配置服务器主面板",
+          "notice": "要使此页面消失，请为服务器设置主面板"
+        },
+        "user": {
+          "description": "您尚未设置主面板。",
+          "link": "配置您的首页",
+          "notice": "要使此页面消失，请在您的偏好设置中指定主面板"
+        },
+        "anonymous": {
+          "description": "服务器管理员尚未设置主面板。",
+          "link": "查看公共面板",
+          "notice": "要使这个页面消失，请服务器管理员为服务器设置一个主面板"
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": "名称"
+      },
+      "columnCount": {
+        "label": "列数"
+      },
+      "breakpoint": {
+        "label": "断点",
+        "description": "布局将在大于此断点的所有屏幕上使用，直到下一个较大的断点。"
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "管理中心",
+    "title": {
+      "morning": "{username}，早上好呀 ！",
+      "afternoon": "{username}，下午好呀 ！",
+      "evening": "{username}，晚上好呀 ！"
+    },
+    "notFound": {
+      "title": "未找到",
+      "text": "找不到请求的资源"
+    },
+    "navbar": {
+      "items": {
+        "home": "首页",
+        "boards": "面板",
+        "apps": "应用",
+        "integrations": "集成",
+        "searchEngies": "搜索",
+        "medias": "媒体",
+        "users": {
+          "label": "用户",
+          "items": {
+            "manage": "管理",
+            "invites": "邀请",
+            "groups": "群组"
+          }
+        },
+        "tools": {
+          "label": "工具",
+          "items": {
+            "docker": "Docker",
+            "kubernetes": "Kubernetes",
+            "logs": "日志",
+            "api": "API",
+            "certificates": "证书",
+            "tasks": "任务"
+          }
+        },
+        "settings": "设置",
+        "help": {
+          "label": "帮助",
+          "items": {
+            "documentation": "帮助文档",
+            "submitIssue": "提交问题",
+            "discord": "Discord 社区",
+            "sourceCode": "源码仓库"
+          }
+        },
+        "about": "关于"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "面板",
+          "user": "用户",
+          "invite": "邀请",
+          "integration": "集成",
+          "app": "应用",
+          "group": "群组",
+          "searchEngine": "搜索引擎",
+          "media": "媒体"
+        },
+        "statisticLabel": {
+          "boards": "面板",
+          "resources": "资源",
+          "authentication": "认证",
+          "authorization": "认证"
+        },
+        "heroBanner": {
+          "title": "欢迎回到您的",
+          "subtitle": "{app} 面板"
+        }
+      },
+      "board": {
+        "title": "您的面板",
+        "action": {
+          "new": {
+            "label": "新建面板"
+          },
+          "open": {
+            "label": "打开面板"
+          },
+          "settings": {
+            "label": "设置"
+          },
+          "setHomeBoard": {
+            "label": "设置为您的首页",
+            "badge": {
+              "label": "首页",
+              "tooltip": "此面板将显示为您的主面板"
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "设置为您的手机面板",
+            "badge": {
+              "label": "手机",
+              "tooltip": "此面板将显示为您的手机面板"
+            }
+          },
+          "duplicate": {
+            "label": "复制面板"
+          },
+          "delete": {
+            "label": "永久删除",
+            "confirm": {
+              "title": "删除面板",
+              "description": "确认删除面板 {name} 吗?"
+            }
+          }
+        },
+        "visibility": {
+          "public": "此面板是公开的",
+          "private": "此面板是私有的"
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "名称"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": "包含来自所有用户的媒体"
+      },
+      "user": {
+        "back": "返回用户",
+        "fieldsDisabledExternalProvider": "某些字段被禁用，因为它们是由外部认证提供者管理的。",
+        "setting": {
+          "general": {
+            "title": "通用",
+            "item": {
+              "language": "语言与地区",
+              "board": {
+                "title": "主面板",
+                "type": {
+                  "general": "通用",
+                  "mobile": "手机"
+                }
+              },
+              "search": "搜索",
+              "firstDayOfWeek": "一周的第一天",
+              "accessibility": "无障碍服务"
+            }
+          },
+          "security": {
+            "title": "安全"
+          },
+          "board": {
+            "title": "面板"
+          }
+        },
+        "list": {
+          "metaTitle": "管理用户",
+          "title": "用户"
+        },
+        "edit": {
+          "metaTitle": "编辑用户 {username}"
+        },
+        "create": {
+          "metaTitle": "创建用户",
+          "title": "创建新用户",
+          "step": {
+            "personalInformation": {
+              "label": "个人资料"
+            },
+            "security": {
+              "label": "安全"
+            },
+            "groups": {
+              "label": "群组",
+              "title": "选择用户应该属于的用户组",
+              "description": "{everyoneGroup} 用户组被分配给所有用户，不能被删除。"
+            },
+            "review": {
+              "label": "预览"
+            },
+            "completed": {
+              "title": "创建用户"
+            },
+            "error": {
+              "title": "用户创建失败"
+            }
+          },
+          "action": {
+            "createAnother": "创建另一个用户",
+            "back": "返回用户列表"
+          }
+        },
+        "invite": {
+          "title": "管理用户邀请",
+          "action": {
+            "new": {
+              "title": "新建邀请",
+              "description": "过期后，邀请会失效，被邀请的收件人将无法创建账号。"
+            },
+            "copy": {
+              "title": "复制邀请",
+              "description": "您的邀请已生成。在此模式关闭后，<b>您将无法再复制此链接</b>。如果你不想再邀请这个人，你可以随时删除这个邀请。",
+              "link": "邀请链接",
+              "button": "复制并关闭"
+            },
+            "delete": {
+              "title": "删除邀请",
+              "description": "你确定要删除这个邀请吗? 使用此链接的用户将不能再使用该链接创建账号。"
+            }
+          },
+          "field": {
+            "id": {
+              "label": "ID"
+            },
+            "creator": {
+              "label": "创建者"
+            },
+            "expirationDate": {
+              "label": "过期时间"
+            },
+            "token": {
+              "label": "秘钥"
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "返回用户组",
+        "setting": {
+          "general": {
+            "title": "通用",
+            "owner": "所有者",
+            "ownerOfGroup": "该组的所有者",
+            "ownerOfGroupDeleted": "此用户组的所有者已被删除。它目前没有所有者。"
+          },
+          "setting": {
+            "title": "设置",
+            "alert": "分组设置按列表中组的顺序排列。顶部设置覆盖底部设置。",
+            "board": {
+              "title": "面板"
+            }
+          },
+          "members": {
+            "title": "成员",
+            "search": "查找成员",
+            "notFound": "没有找到成员"
+          },
+          "permissions": {
+            "title": "权限",
+            "form": {
+              "unsavedChanges": "你有未保存的更改 ！"
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "设置",
+        "notification": {
+          "success": {
+            "message": "设置保存成功"
+          },
+          "error": {
+            "message": "无法保存设置"
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "分析",
+            "general": {
+              "title": "发送匿名分析",
+              "text": "Homarr 将使用开源软件 Umami 发送匿名分析。它从不收集任何个人信息，因此完全符合 GDPR 和 CCPA 要求。我们鼓励您启用分析，因为它可以帮助我们的开源团队识别问题并确定待办事项的优先级。"
+            },
+            "widgetData": {
+              "title": "组件数据",
+              "text": "发送您已配置的组件（及其数量）。不包括URL、名称或任何其他数据。"
+            },
+            "integrationData": {
+              "title": "集成数据",
+              "text": "发送您已配置的集成（及其数量）。不包括URL、名称或任何其他数据。"
+            },
+            "usersData": {
+              "title": "用户数据",
+              "text": "发送用户数量以及您是否激活了SSO"
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "爬取和索引",
+            "warning": "启用或禁用这里的任何设置将严重影响搜索引擎如何索引和抓取你的页面。任何设置都是一个请求，是否应用这些设置取决于爬虫。任何修改可能需要数天或数周才能申请。一些设置可能是搜索引擎特定的。",
+            "noIndex": {
+              "title": "不要索引",
+              "text": "不要在搜索引擎上索引网站，也不要在任何搜索结果中显示。"
+            },
+            "noFollow": {
+              "title": "不要追踪",
+              "text": "索引时不要追踪任何链接。禁用此功能将导致爬虫程序试图跟踪Homarr上的所有链接。"
+            },
+            "noTranslate": {
+              "title": "不要翻译",
+              "text": "当站点语言可能不是用户想要阅读的语言时，谷歌将在搜索结果中显示一个翻译链接"
+            },
+            "noSiteLinksSearchBox": {
+              "title": "没有站点链接搜索框",
+              "text": "谷歌将与爬取的链接以及其他直接链接构建一个搜索框。启用此功能将要求谷歌禁用该框。"
+            }
+          },
+          "board": {
+            "title": "面板",
+            "homeBoard": {
+              "label": "全局主面板",
+              "mobileLabel": "全局手机面板",
+              "description": "只有公共面板可供选择"
+            },
+            "status": {
+              "title": "应用状态",
+              "enableStatusByDefault": {
+                "label": "启用默认状态",
+                "description": "添加应用项目时，默认将启用状态"
+              },
+              "forceDisableStatus": {
+                "label": "强制禁用状态",
+                "description": "所有用户的应用状态将被禁用，无法启用"
+              }
+            }
+          },
+          "search": {
+            "title": "搜索",
+            "defaultSearchEngine": {
+              "label": "全局默认搜索引擎",
+              "description": "无法在这里选择集成搜索引擎"
+            }
+          },
+          "appearance": {
+            "title": "外观",
+            "defaultColorScheme": {
+              "label": "默认配色方案",
+              "options": {
+                "light": "日间",
+                "dark": "暗黑"
+              }
+            }
+          },
+          "culture": {
+            "title": "区域",
+            "defaultLocale": {
+              "label": "默认语言"
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "任务",
+          "status": {
+            "idle": "空闲",
+            "running": "运行中",
+            "error": "错误",
+            "disabled": "禁用"
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": "Minecraft 服务状态"
+            },
+            "iconsUpdater": {
+              "label": "图标更新"
+            },
+            "analytics": {
+              "label": "分析"
+            },
+            "smartHomeEntityState": {
+              "label": "智能家居实体状态"
+            },
+            "ping": {
+              "label": "Pings"
+            },
+            "mediaServer": {
+              "label": "媒体服务"
+            },
+            "mediaOrganizer": {
+              "label": "媒体组织者"
+            },
+            "downloads": {
+              "label": "正在下载"
+            },
+            "mediaRequestStats": {
+              "label": "媒体请求统计"
+            },
+            "mediaRequestList": {
+              "label": "媒体请求列表"
+            },
+            "rssFeeds": {
+              "label": "RSS订阅"
+            },
+            "indexerManager": {
+              "label": "索引器管理"
+            },
+            "healthMonitoring": {
+              "label": "健康监测"
+            },
+            "dnsHole": {
+              "label": "DNS Hole 数据"
+            },
+            "updateChecker": {
+              "label": "更新检查"
+            },
+            "mediaTranscoding": {
+              "label": "媒体转码"
+            },
+            "networkController": {
+              "label": "网络控制器"
+            },
+            "refreshNotifications": {
+              "label": "更新通知"
+            },
+            "dockerContainers": {
+              "label": "Docker 容器"
+            },
+            "firewallCpu": {
+              "label": "防火墙 CPU"
+            },
+            "firewallMemory": {
+              "label": "防火墙内存"
+            },
+            "firewallVersion": {
+              "label": "防火墙版本"
+            },
+            "firewallInterfaces": {
+              "label": "防火墙接口"
+            },
+            "weather": {
+              "label": "天气"
+            }
+          },
+          "interval": {
+            "seconds": "每 {interval, plural, =1 {秒} other {# 秒}}",
+            "minutes": "每 {interval, plural, =1 {分钟} other {# 分钟}}",
+            "hours": "每 {interval, plural, =1 {小时} other {# 小时}}",
+            "midnight": "每日午夜",
+            "weeklyMonday": "每周一",
+            "update": {
+              "success": {
+                "message": "间隔已成功更新"
+              },
+              "error": {
+                "message": "更新间隔失败"
+              }
+            }
+          },
+          "settings": {
+            "title": "{jobName} 任务设置"
+          },
+          "field": {
+            "name": {
+              "label": "名称"
+            },
+            "interval": {
+              "label": "计划时间间隔"
+            },
+            "lastExecution": {
+              "label": "上次执行"
+            },
+            "actions": {
+              "label": "操作"
+            }
+          },
+          "table": {
+            "search": "在 {count} 个任务中搜索……"
+          },
+          "action": {
+            "refresh": {
+              "label": "刷新"
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": "任务已成功刷新"
+            },
+            "error": {
+              "message": "刷新任务失败"
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": "任务已成功触发"
+            },
+            "error": {
+              "message": "触发任务失败"
+            }
+          },
+          "enable": {
+            "success": {
+              "message": "任务已成功启用"
+            }
+          },
+          "disable": {
+            "success": {
+              "message": "任务已成功禁用"
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": "切换任务状态失败"
+            }
+          }
+        },
+        "api": {
+          "title": "API",
+          "modal": {
+            "createApiToken": {
+              "title": "API 令牌已创建",
+              "description": "已创建API令牌。小心，这个令牌在数据库中是加密的，永远不会再传输给您。如果您丢失了这个令牌，您将无法再检索这个特定的令牌。",
+              "button": "复制并关闭"
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "文档"
+            },
+            "apiKey": {
+              "label": "认证",
+              "title": "API 密钥",
+              "button": {
+                "createApiToken": "创建 API 令牌"
+              },
+              "modal": {
+                "delete": {
+                  "title": "删除 API 令牌",
+                  "text": "这将永久删除 API 令牌。使用此令牌的 API 客户端无法再进行身份验证并执行 API 请求。此操作无法撤消。"
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "ID",
+                  "createdBy": "创建者",
+                  "actions": "操作"
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "版本 {version}",
+        "text": "Homarr 是一个由社区驱动的开源项目，由志愿者们维护。多亏了这些人，自2021年以来，Homarr 一直是一个不断发展的项目。我们的团队完全远程工作，来自许多不同的国家，在闲暇时间无偿地为 Homarr 贡献力量。",
+        "accordion": {
+          "contributors": {
+            "title": "贡献人员",
+            "subtitle": "{count} 维护代码和 Homarr"
+          },
+          "translators": {
+            "title": "翻译人员",
+            "subtitle": "在许多语言中，有{count}人贡献了翻译"
+          },
+          "libraries": {
+            "title": "相关的库",
+            "subtitle": "{count} 用于 Homarr 代码中"
+          },
+          "hotkeys": {
+            "title": "快捷键",
+            "subtitle": "用于增强工作流的键盘快捷键",
+            "field": {
+              "shortcut": "快捷键",
+              "action": "操作"
+            },
+            "action": {
+              "toggleBoardEdit": "切换面板编辑模式",
+              "toggleColorScheme": "切换 亮色/暗色 模式",
+              "saveNotebook": "保存笔记（仅在笔记小工具内有效）",
+              "openSpotlight": "打开搜索"
+            },
+            "note": "提示：Mod 键在 macOS 上指 Ctrl 键和 ⌘ 键"
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "容器",
+    "table": {
+      "updated": "已更新 {when}",
+      "search": "搜索 {count} 容器",
+      "selected": "{totalCount} 容器的 {selectCount}",
+      "footer": "总计 {count} 容器"
+    },
+    "field": {
+      "name": {
+        "label": "名称"
+      },
+      "state": {
+        "label": "状态",
+        "option": {
+          "created": "已创建",
+          "running": "运行中",
+          "paused": "已暂停",
+          "restarting": "正在重启",
+          "exited": "已退出",
+          "removing": "删除中",
+          "dead": "废弃"
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": "CPU"
+        },
+        "memory": {
+          "label": "内存"
+        }
+      },
+      "containerImage": {
+        "label": "镜像"
+      },
+      "ports": {
+        "label": "端口"
+      }
+    },
+    "action": {
+      "title": "操作",
+      "start": {
+        "label": "开始",
+        "notification": {
+          "success": {
+            "title": "容器已启动",
+            "message": "容器已成功启动"
+          },
+          "error": {
+            "title": "容器未启动",
+            "message": "容器无法启动"
+          }
+        }
+      },
+      "stop": {
+        "label": "停止",
+        "notification": {
+          "success": {
+            "title": "容器已停止",
+            "message": "容器已成功停止"
+          },
+          "error": {
+            "title": "容器未停止",
+            "message": "容器无法停止"
+          }
+        }
+      },
+      "restart": {
+        "label": "重启",
+        "notification": {
+          "success": {
+            "title": "容器已重启",
+            "message": "容器已成功重启"
+          },
+          "error": {
+            "title": "容器未重启",
+            "message": "容器无法重启"
+          }
+        }
+      },
+      "remove": {
+        "label": "删除",
+        "notification": {
+          "success": {
+            "title": "容器已删除",
+            "message": "容器已成功删除"
+          },
+          "error": {
+            "title": "容器未删除",
+            "message": "容器无法删除"
+          }
+        }
+      },
+      "refresh": {
+        "label": "刷新",
+        "notification": {
+          "success": {
+            "title": "容器已刷新",
+            "message": "您正在查看最新数据"
+          },
+          "error": {
+            "title": "容器未刷新",
+            "message": "刷新容器时出现错误"
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "添加到 Homarr",
+        "notification": {
+          "success": {
+            "title": "已添加到 Homarr",
+            "message": "所选应用已被添加到 Homarr"
+          },
+          "error": {
+            "title": "无法添加到 Homarr",
+            "message": "所选应用无法添加到 Homarr"
+          }
+        },
+        "modal": {
+          "title": "将 docker 容器添加到 Homarr"
+        }
+      }
+    },
+    "error": {
+      "internalServerError": "获取 Docker 容器失败"
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "集群面板",
+      "label": "集群",
+      "providers": "提供者",
+      "version": "版本",
+      "architecture": "架构",
+      "capacity": {
+        "title": "容量",
+        "resource": {
+          "reserved": "已预留",
+          "used": "已用"
+        }
+      },
+      "resources": {
+        "title": "资源",
+        "nodes": "节点",
+        "namespaces": "命名空间",
+        "ingresses": "入口",
+        "services": "服务",
+        "pods": "Pods",
+        "configmaps": "配置映射",
+        "secrets": "秘钥",
+        "volumes": "卷"
+      }
+    },
+    "nodes": {
+      "label": "节点",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "state": {
+          "label": "状态",
+          "option": {
+            "ready": "就绪",
+            "NotReady": "尚未就绪"
+          }
+        },
+        "cpu": {
+          "label": "处理器"
+        },
+        "memory": {
+          "label": "内存"
+        },
+        "pods": {
+          "label": "Pods"
+        },
+        "operatingSystem": {
+          "label": "系统"
+        },
+        "architecture": {
+          "label": "架构"
+        },
+        "kubernetesVersion": {
+          "label": "Kubernetes 版本"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 节点"
+      }
+    },
+    "namespaces": {
+      "label": "命名空间",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "state": {
+          "label": "状态",
+          "option": {
+            "active": "活动",
+            "terminating": "中止"
+          }
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 命名空间"
+      }
+    },
+    "ingresses": {
+      "label": "入口",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "className": {
+          "label": "类名"
+        },
+        "rulesAndPaths": {
+          "label": "规则和路径"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 入口"
+      }
+    },
+    "services": {
+      "label": "服务",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "type": {
+          "label": "类型"
+        },
+        "ports": {
+          "label": "端口"
+        },
+        "targetPorts": {
+          "label": "目标端口"
+        },
+        "clusterIP": {
+          "label": "集群IP"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 服务"
+      }
+    },
+    "pods": {
+      "label": "Pods",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "image": {
+          "label": "镜像"
+        },
+        "applicationType": {
+          "label": "应用类型"
+        },
+        "status": {
+          "label": "状态"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} pods"
+      }
+    },
+    "secrets": {
+      "label": "秘钥",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "type": {
+          "label": "类型"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 秘钥"
+      }
+    },
+    "configmaps": {
+      "label": "配置映射",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 配置映射"
+      }
+    },
+    "volumes": {
+      "label": "卷",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "namespace": {
+          "label": "命名空间"
+        },
+        "accessModes": {
+          "label": "访问模式"
+        },
+        "storage": {
+          "label": "存储"
+        },
+        "storageClassName": {
+          "label": "存储类名称"
+        },
+        "volumeMode": {
+          "label": "卷模式"
+        },
+        "volumeName": {
+          "label": "卷名称"
+        },
+        "status": {
+          "label": "状态"
+        },
+        "creationTimestamp": {
+          "label": "已创建"
+        }
+      },
+      "table": {
+        "search": "搜索 {count} 卷"
+      }
+    },
+    "error": {
+      "internalServerError": "获取 Kubernetes 数据失败"
+    }
+  },
+  "permission": {
+    "title": "权限",
+    "userSelect": {
+      "title": "添加用户权限"
+    },
+    "groupSelect": {
+      "title": "添加用户组权限"
+    },
+    "tab": {
+      "user": "用户",
+      "group": "群组",
+      "inherited": "继承的用户组"
+    },
+    "field": {
+      "user": {
+        "label": "用户"
+      },
+      "group": {
+        "label": "群组"
+      },
+      "permission": {
+        "label": "权限"
+      }
+    },
+    "action": {
+      "saveUser": "保存用户权限",
+      "saveGroup": "保存用户组权限"
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "管理中心",
+      "boards": {
+        "label": "面板"
+      },
+      "integrations": {
+        "label": "集成",
+        "edit": {
+          "label": "编辑"
+        },
+        "new": {
+          "label": "新建"
+        }
+      },
+      "search-engines": {
+        "label": "搜索引擎",
+        "new": {
+          "label": "新建"
+        },
+        "edit": {
+          "label": "编辑"
+        }
+      },
+      "medias": {
+        "label": "媒体"
+      },
+      "apps": {
+        "label": "应用",
+        "new": {
+          "label": "新建"
+        },
+        "edit": {
+          "label": "编辑"
+        }
+      },
+      "users": {
+        "label": "用户",
+        "create": {
+          "label": "创建"
+        },
+        "general": "通用",
+        "security": "安全",
+        "board": "面板",
+        "groups": {
+          "label": "群组"
+        },
+        "invites": {
+          "label": "邀请"
+        }
+      },
+      "tools": {
+        "label": "工具",
+        "tasks": {
+          "label": "任务"
+        },
+        "docker": {
+          "label": "Docker"
+        },
+        "kubernetes": {
+          "label": "Kubernetes",
+          "nodes": {
+            "label": "节点"
+          },
+          "namespaces": {
+            "label": "命名空间"
+          },
+          "ingresses": {
+            "label": "入口"
+          },
+          "services": {
+            "label": "服务"
+          },
+          "pods": {
+            "label": "pods"
+          },
+          "configmaps": {
+            "label": "配置映射"
+          },
+          "secrets": {
+            "label": "秘钥"
+          },
+          "volumes": {
+            "label": "卷"
+          }
+        },
+        "logs": {
+          "label": "日志"
+        },
+        "certificates": {
+          "label": "证书",
+          "hostnames": {
+            "label": "主机名"
+          }
+        }
+      },
+      "settings": {
+        "label": "设置"
+      },
+      "about": {
+        "label": "关于"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "搜索任意内容",
+    "nothingFound": "没有找到",
+    "error": {
+      "fetch": "获取数据时发生错误。"
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "搜索应用、集成或面板",
+        "group": {
+          "app": {
+            "title": "应用",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "打开应用网址"
+                },
+                "edit": {
+                  "label": "编辑应用"
+                }
+              },
+              "detail": {
+                "title": "为应用选择一个动作"
+              }
+            }
+          },
+          "board": {
+            "title": "面板",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "打开面板"
+                },
+                "homeBoard": {
+                  "label": "设置为主面板"
+                },
+                "mobileBoard": {
+                  "label": "设置为手机面板"
+                },
+                "settings": {
+                  "label": "打开设置"
+                }
+              },
+              "detail": {
+                "title": "为面板选择一个动作"
+              }
+            }
+          },
+          "integration": {
+            "title": "集成"
+          }
+        }
+      },
+      "command": {
+        "help": "启用命令模式",
+        "group": {
+          "localCommand": {
+            "title": "本地命令"
+          },
+          "globalCommand": {
+            "title": "全局命令",
+            "option": {
+              "colorScheme": {
+                "light": "切换到日间模式",
+                "dark": "切换到暗黑模式"
+              },
+              "language": {
+                "label": "更改语言",
+                "children": {
+                  "detail": {
+                    "title": "选择你的首选语言"
+                  }
+                }
+              },
+              "newBoard": {
+                "label": "创建面板"
+              },
+              "importBoard": {
+                "label": "导入面板"
+              },
+              "newApp": {
+                "label": "创建应用"
+              },
+              "newIntegration": {
+                "label": "创建集成",
+                "children": {
+                  "detail": {
+                    "title": "选择您想要创建的集成类型"
+                  }
+                }
+              },
+              "newUser": {
+                "label": "创建新用户"
+              },
+              "newInvite": {
+                "label": "创建新邀请"
+              },
+              "newGroup": {
+                "label": "创建新用户组"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "请求电影",
+        "requestSeries": "请求电视节目",
+        "openIn": "在 {kind} 中打开"
+      },
+      "external": {
+        "help": "使用外部搜索引擎",
+        "group": {
+          "searchEngine": {
+            "title": "搜索引擎",
+            "children": {
+              "action": {
+                "search": {
+                  "label": "使用“{name}”搜索"
+                }
+              },
+              "detail": {
+                "title": "为搜索引起选择一个动作"
+              },
+              "searchResults": {
+                "title": "选择搜索结果进行操作"
+              }
+            },
+            "option": {
+              "google": {
+                "name": "谷歌",
+                "description": "使用 Google 搜索网络"
+              },
+              "bing": {
+                "name": "Bing",
+                "description": "使用 Bing 搜索网络"
+              },
+              "duckduckgo": {
+                "name": "DuckDuckGo",
+                "description": "用 DuckDuckGo 搜索网络"
+              },
+              "torrent": {
+                "name": "种子",
+                "description": "在 Torrentdownloads.pro 上搜索种子。"
+              },
+              "youTube": {
+                "name": "YouTube",
+                "description": "在 YouTube 上搜索视频"
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": "模式"
+          },
+          "help": {
+            "title": "帮助",
+            "option": {
+              "documentation": {
+                "label": "文档"
+              },
+              "submitIssue": {
+                "label": "提交问题"
+              },
+              "discord": {
+                "label": "Discord 社区"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "搜索",
+            "option": {
+              "other": {
+                "label": "使用另一个搜索引擎搜索"
+              },
+              "no-default": {
+                "label": "没有默认的搜索引擎",
+                "description": "在首选项中设置默认搜索引擎"
+              },
+              "search": {
+                "label": "用{name}搜索“{query}”"
+              },
+              "from-integration": {
+                "description": "输入内容以搜索"
+              }
+            }
+          },
+          "local": {
+            "title": "本地结果"
+          }
+        }
+      },
+      "page": {
+        "help": "搜索页面",
+        "group": {
+          "page": {
+            "title": "页",
+            "option": {
+              "manageHome": {
+                "label": "管理首页"
+              },
+              "manageBoard": {
+                "label": "管理面板"
+              },
+              "manageApp": {
+                "label": "管理应用"
+              },
+              "manageIntegration": {
+                "label": "管理集成"
+              },
+              "manageSearchEngine": {
+                "label": "管理搜索引擎"
+              },
+              "manageMedia": {
+                "label": "管理媒体"
+              },
+              "manageUser": {
+                "label": "管理用户"
+              },
+              "manageInvite": {
+                "label": "管理邀请"
+              },
+              "manageGroup": {
+                "label": "管理用户组"
+              },
+              "manageDocker": {
+                "label": "管理 docker"
+              },
+              "manageApi": {
+                "label": "Swagger API"
+              },
+              "manageLog": {
+                "label": "查看日志"
+              },
+              "manageTask": {
+                "label": "管理任务"
+              },
+              "manageSettings": {
+                "label": "全局设置"
+              },
+              "about": {
+                "label": "关于"
+              },
+              "homeBoard": {
+                "label": "主面板"
+              },
+              "preferences": {
+                "label": "偏好设置"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "搜索用户或用户组",
+        "group": {
+          "user": {
+            "title": "用户",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "显示用户详情"
+                }
+              },
+              "detail": {
+                "title": "为用户选择一个动作"
+              }
+            }
+          },
+          "group": {
+            "title": "群组",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "显示用户组详情"
+                },
+                "manageMember": {
+                  "label": "管理成员"
+                },
+                "managePermission": {
+                  "label": "管理权限"
+                }
+              },
+              "detail": {
+                "title": "为用户组选择一个动作"
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "查找搜索引擎",
+      "field": {
+        "name": {
+          "label": "名称"
+        },
+        "short": {
+          "label": "短的"
+        },
+        "urlTemplate": {
+          "label": "URL搜索模板"
+        },
+        "description": {
+          "label": "描述"
+        }
+      },
+      "page": {
+        "list": {
+          "title": "搜索引擎",
+          "noResults": {
+            "title": "还没有搜索引擎",
+            "action": "创建您的第一个搜索引擎"
+          },
+          "interactive": "交互，使用集成"
+        },
+        "create": {
+          "title": "创建搜索引擎",
+          "notification": {
+            "success": {
+              "title": "搜索引擎已创建",
+              "message": "搜索引擎已成功创建"
+            },
+            "error": {
+              "title": "没有创建搜索引擎",
+              "message": "这个搜索引擎不能被创建"
+            }
+          }
+        },
+        "edit": {
+          "title": "编辑搜索引擎",
+          "notification": {
+            "success": {
+              "title": "成功应用更改",
+              "message": "搜索引擎已成功保存"
+            },
+            "error": {
+              "title": "无法应用更改",
+              "message": "无法保存搜索引擎"
+            }
+          },
+          "configControl": "配置",
+          "searchEngineType": {
+            "generic": "通用",
+            "fromIntegration": "来自集成"
+          }
+        },
+        "delete": {
+          "title": "删除搜索引擎",
+          "message": "您确定要删除搜索引擎 {name} 吗？",
+          "notification": {
+            "success": {
+              "title": "搜索引擎已删除",
+              "message": "搜索引擎已成功删除"
+            },
+            "error": {
+              "title": "搜索引擎没有删除",
+              "message": "这个搜索引擎不能被删除"
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "请求 “{name}”",
+            "table": {
+              "header": {
+                "season": "季",
+                "episodes": "集"
+              }
+            },
+            "button": {
+              "send": "发送请求"
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": "主机名"
+      },
+      "subject": {
+        "label": "主题"
+      },
+      "issuer": {
+        "label": "发行者"
+      },
+      "validFrom": {
+        "label": "有效期自"
+      },
+      "validTo": {
+        "label": "有效期至"
+      },
+      "serialNumber": {
+        "label": "序号"
+      },
+      "fingerprint": {
+        "label": "指纹"
+      }
+    },
+    "page": {
+      "list": {
+        "title": "可信证书",
+        "description": "Homarr 用于从集成请求数据。",
+        "noResults": {
+          "title": "还没有证书"
+        },
+        "invalid": {
+          "title": "无效证书",
+          "description": "解析证书失败"
+        },
+        "expires": "到期时间 {when}",
+        "toHostnames": "信任的主机名"
+      },
+      "hostnames": {
+        "title": "信任的证书主机名",
+        "description": "某些证书不允许指定域名使用 Homarr 请求他们， 由于这个原因，所有信任的主机名及其证书缩略图都被用来绕过这些限制。",
+        "noResults": {
+          "title": "还没有主机名"
+        },
+        "toCertificates": "证书"
+      }
+    },
+    "action": {
+      "create": {
+        "label": "添加证书",
+        "notification": {
+          "success": {
+            "title": "已添加证书",
+            "message": "已成功添加证书"
+          },
+          "error": {
+            "title": "添加证书失败",
+            "message": "无法添加证书"
+          }
+        }
+      },
+      "remove": {
+        "label": "删除证书",
+        "confirm": "您确定要删除证书吗？",
+        "notification": {
+          "success": {
+            "title": "证书已删除",
+            "message": "证书删除成功"
+          },
+          "error": {
+            "title": "证书未删除",
+            "message": "无法删除证书"
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "删除受信任的主机名",
+        "confirm": "您确定要删除此受信任的主机名吗？这可能会导致一些集成停止工作。",
+        "notification": {
+          "success": {
+            "title": "主机名已删除",
+            "message": "主机名已成功删除"
+          },
+          "error": {
+            "title": "主机名未删除",
+            "message": "无法删除主机名"
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "调试",
+        "info": "信息",
+        "warn": "警告",
+        "error": "错误"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `search_engine` ADD CONSTRAINT `search_engine_short_unique` UNIQUE(`short`);

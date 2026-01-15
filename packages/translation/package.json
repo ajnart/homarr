@@ -1,0 +1,47 @@
+{
+  "name": "@homarr/translation",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./client": "./src/client/index.ts",
+    "./server": "./src/server.ts",
+    "./middleware": "./src/middleware.ts",
+    "./request": "./src/request.ts",
+    "./dayjs": "./src/dayjs.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/definitions": "workspace:^0.1.0",
+    "dayjs": "^1.11.19",
+    "deepmerge": "4.3.1",
+    "mantine-react-table": "2.0.0-beta.9",
+    "next": "16.1.1",
+    "next-intl": "4.7.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  }
+}

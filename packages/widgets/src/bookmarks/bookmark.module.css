@@ -1,0 +1,15 @@
+.card:hover {
+  background-color: var(--mantine-color-primaryColor-light-hover);
+}
+
+[data-mantine-color-scheme="light"] .card-grid {
+  background-color: var(--mantine-color-gray-1);
+}
+
+[data-mantine-color-scheme="dark"] .card-grid {
+  background-color: var(--mantine-color-dark-7);
+}
+
+.card:hover > div > div.bookmarkIcon {
+  background-color: var(--mantine-color-iconColor-filled-hover);
+}

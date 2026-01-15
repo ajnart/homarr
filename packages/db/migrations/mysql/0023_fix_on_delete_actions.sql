@@ -1,0 +1,2 @@
+-- Custom SQL migration file, put your code below! --
+-- This file is empty as there was a bug in the migration script of sqlite, missing on delete actions. See https://github.com/homarr-labs/homarr/pull/2211 --

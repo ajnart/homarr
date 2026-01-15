@@ -1,0 +1,41 @@
+{
+  "name": "@homarr/cli",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=cli.cjs --external:bcrypt --external:cpu-features --loader:.html=text --loader:.node=text",
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@drizzle-team/brocli": "^0.11.0",
+    "@homarr/auth": "workspace:^0.1.0",
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/db": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  }
+}

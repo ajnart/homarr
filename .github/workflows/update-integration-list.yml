@@ -1,0 +1,65 @@
+name: Update integration list
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - packages/definitions/src/integration.ts
+    branches:
+      - dev
+
+permissions:
+  pull-requests: write
+
+jobs:
+  update-readme:
+    concurrency:
+      group: update-integration
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Obtain token
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.HOMARR_UPDATE_CONTRIBUTORS_PRIVATE_KEY }}
+          app-id: ${{ vars.HOMARR_UPDATE_CONTRIBUTORS_APP_ID }}
+          permission-contents: write # required to commit to branch
+          permission-pull-requests: write # required to create pr & enable automerge
+      - name: Checkout code
+        uses: actions/checkout@v6
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+      - name: Setup
+        uses: ./tooling/github/setup
+      - run: pnpm run scripts:update-readme-integrations
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          git config --global user.email "210161987+homarr-update-contributors[bot]@users.noreply.github.com"
+          git config --global user.name "Homarr Update Contributors"
+          git add .
+          git commit -m "chore: update integrations list readme"
+
+      - name: Create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.obtainToken.outputs.token }}
+          branch: update-integrations-readme
+          base: dev
+          title: "chore: update integrations list readme"
+          delete-branch: true
+          body: |
+            This PR automatically updates the list of integrations of Homarr in the README.md
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Enable auto-merge
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          gh pr merge ${{steps.create-pull-request.outputs.pull-request-number}} --auto --squash

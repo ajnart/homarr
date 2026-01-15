@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `pingIconsEnabled` boolean DEFAULT false NOT NULL;

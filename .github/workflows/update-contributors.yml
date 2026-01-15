@@ -1,0 +1,74 @@
+name: Update Contributors
+
+on:
+  schedule:
+    - cron: "0 12 * * FRI" # At 12:00 on Friday.
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  CROWDIN_TOKEN: "${{ secrets.CROWDIN_UPDATE_CONTRIBUTORS_TOKEN }}"
+
+permissions:
+  contents: read
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    strategy:
+      matrix:
+        node-version: [22]
+    steps:
+      - name: Obtain token
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.HOMARR_UPDATE_CONTRIBUTORS_PRIVATE_KEY }}
+          app-id: ${{ vars.HOMARR_UPDATE_CONTRIBUTORS_APP_ID }}
+          permission-contents: write # required to commit to branch
+          permission-pull-requests: write # required to create pr & enable automerge
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+
+      - uses: pnpm/action-setup@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Run update script
+        run: node ./scripts/update-contributors.mjs
+
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          git config --global user.email "210161987+homarr-update-contributors[bot]@users.noreply.github.com"
+          git config --global user.name "Homarr Update Contributors"
+          git add .
+          git commit -m "chore: update contributors"
+
+      - name: Create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.obtainToken.outputs.token }}
+          branch: update-contributors
+          base: dev
+          title: "chore: update contributors"
+          delete-branch: true
+          body: |
+            This PR updates the contributors list in the static-data directory.
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Enable auto-merge
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          gh pr merge ${{steps.create-pull-request.outputs.pull-request-number}} --auto --squash

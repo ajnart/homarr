@@ -1,0 +1,2 @@
+ALTER TABLE `user` ADD `homeBoardId` varchar(64);--> statement-breakpoint
+ALTER TABLE `user` ADD CONSTRAINT `user_homeBoardId_board_id_fk` FOREIGN KEY (`homeBoardId`) REFERENCES `board`(`id`) ON DELETE set null ON UPDATE no action;

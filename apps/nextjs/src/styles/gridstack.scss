@@ -1,0 +1,114 @@
+@import "@homarr/gridstack/dist/gridstack.min.css";
+
+:root {
+  --gridstack-column-count: 12;
+  --gridstack-row-count: 1;
+  --gridstack-cell-size: 0;
+}
+
+.ui-resizable-handle {
+  // Override default z-index of 100 to prevent it from being on top of the header.
+  // See https://github.com/homarr-labs/homarr/issues/1999
+  z-index: 1 !important;
+}
+
+.grid-stack-placeholder > .placeholder-content {
+  background-color: rgb(248, 249, 250) !important;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-stack-placeholder > .placeholder-content {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+// Define min size for gridstack items
+.grid-stack > .grid-stack-item {
+  min-width: calc(100% / var(--gridstack-column-count));
+  min-height: calc(100% / var(--gridstack-row-count));
+}
+
+.grid-stack > .grid-stack-item.ui-draggable-dragging {
+  min-width: calc(var(--gridstack-cell-size) * 1px) !important;
+  min-height: calc(var(--gridstack-cell-size) * 1px) !important;
+}
+
+// Define fix size while dragging
+@for $i from 1 to 96 {
+  .grid-stack > .grid-stack-item.ui-draggable-dragging[gs-w="#{$i}"] {
+    width: calc(var(--gridstack-cell-size) * #{$i} * 1px) !important;
+  }
+
+  .grid-stack > .grid-stack-item.ui-draggable-dragging[gs-h="#{$i}"] {
+    height: calc(var(--gridstack-cell-size) * #{$i} * 1px) !important;
+  }
+}
+
+// Styling for grid-stack main area
+@for $i from 1 to 96 {
+  .grid-stack > .grid-stack-item[gs-w="#{$i}"] {
+    width: calc(100% / #{var(--gridstack-column-count)} * #{$i});
+  }
+  .grid-stack > .grid-stack-item[gs-min-w="#{$i}"] {
+    min-width: calc(100% / #{var(--gridstack-column-count)} * #{$i});
+  }
+  .grid-stack > .grid-stack-item[gs-max-w="#{$i}"] {
+    max-width: calc(100% / #{var(--gridstack-column-count)} * #{$i});
+  }
+}
+
+@for $i from 1 to 96 {
+  .grid-stack > .grid-stack-item[gs-h="#{$i}"] {
+    height: calc(100% / var(--gridstack-row-count) * #{$i});
+  }
+  .grid-stack > .grid-stack-item[gs-min-h="#{$i}"] {
+    min-height: calc(100% / var(--gridstack-row-count) * #{$i});
+  }
+  .grid-stack > .grid-stack-item[gs-max-h="#{$i}"] {
+    max-height: calc(100% / var(--gridstack-row-count) * #{$i});
+  }
+}
+
+@for $i from 1 to 96 {
+  .grid-stack > .grid-stack-item[gs-x="#{$i}"] {
+    left: calc(100% / #{var(--gridstack-column-count)} * #{$i});
+  }
+}
+
+@for $i from 1 to 96 {
+  .grid-stack > .grid-stack-item[gs-y="#{$i}"] {
+    top: calc(100% / var(--gridstack-row-count) * #{$i});
+  }
+}
+
+.grid-stack[data-kind="dynamic"] {
+  height: 100% !important;
+}
+
+// General gridstack styling
+.grid-stack > .grid-stack-item > .grid-stack-item-content,
+.grid-stack > .grid-stack-item > .placeholder-content {
+  inset: 10px;
+}
+
+.grid-stack > .grid-stack-item > .ui-resizable-se {
+  bottom: 10px;
+  right: 10px;
+}
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+  overflow-y: auto;
+}
+
+.grid-stack.grid-stack-animate {
+  transition: none;
+}
+
+/**
+ * Hide empty wrapper (class is used when no items are inside and not in edit mode)
+ */
+.grid-stack-empty-wrapper {
+  display: none !important;
+}

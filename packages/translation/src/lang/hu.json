@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "Üdvözöljük a Homarrban",
+        "subtitle": "Kezdjük el a Homarr-példány beállítását.",
+        "description": "A kezdéshez válassza ki, hogyan szeretné beállítani a Homarr-példányt.",
+        "action": {
+          "scratch": "Kezdjük a legelejétől",
+          "importOldmarr": "Importálás Homarr 1.0 előtti verzióból"
+        }
+      },
+      "import": {
+        "title": "Importálás",
+        "subtitle": "Importálhat adatokat egy meglévő Homarr-példányból.",
+        "dropzone": {
+          "title": "Húzza ide a zip fájlt, vagy kattintson a böngészéshez",
+          "description": "A feltöltött zip fájlt feldolgozzuk, és kiválaszthatja, hogy mit szeretne importálni"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "Fájl módosítása"
+          }
+        },
+        "importSettings": {
+          "title": "Beállítások importálása",
+          "description": "Az importálási viselkedés konfigurálása"
+        },
+        "boardSelection": {
+          "title": "Talált {count} táblák",
+          "description": "Válassza ki az összes olyan méretű táblát, amelyet importálni szeretne",
+          "action": {
+            "selectAll": "Összes kijelölése",
+            "unselectAll": "Kijelölés megszüntetése"
+          }
+        },
+        "summary": {
+          "title": "Import összefoglaló",
+          "description": "Az alábbi összefoglalóban láthatja, hogy mi lesz importálva",
+          "action": {
+            "import": "Importálás megerősítése és folytatás"
+          },
+          "entities": {
+            "apps": "Alkalmazások",
+            "boards": "Táblák",
+            "integrations": "Integrációk",
+            "credentialUsers": "Hitelesített felhasználók"
+          }
+        },
+        "tokenModal": {
+          "title": "Import token megadása",
+          "field": {
+            "token": {
+              "label": "",
+              "description": "Írja be a megjelenített import tokent az előző homarr példányból"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "Érvénytelen token",
+              "message": "A megadott token érvénytelen"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "Admin felhasználó",
+        "subtitle": "Adja meg a rendszergazda felhasználó hitelesítő adatait.",
+        "notification": {
+          "success": {
+            "title": "Létrejött a felhasználó",
+            "message": "A felhasználót sikeresen létrehoztuk"
+          },
+          "error": {
+            "title": "A felhasználó létrehozása sikertelen"
+          }
+        }
+      },
+      "group": {
+        "title": "Külső csoport",
+        "subtitle": "Adja meg a külső felhasználók számára használandó csoportot.",
+        "form": {
+          "name": {
+            "label": "Csoportnév",
+            "description": "A névnek meg kell egyeznie a külső szolgáltató admin csoportjával"
+          }
+        }
+      },
+      "settings": {
+        "title": "Beállítások",
+        "subtitle": "Szerver beállítások konfigurálása."
+      },
+      "finish": {
+        "title": "Beállítás befejezése",
+        "subtitle": "Készen állsz!",
+        "description": "Sikeresen befejezte a beállítási folyamatot. Most már használhatja a Homarr-t. Válassza ki a következő műveletet:",
+        "action": {
+          "goToBoard": "Tovább a {name} oldalra",
+          "createBoard": "Az első tábla létrehozása",
+          "inviteUser": "Más felhasználók meghívása",
+          "docs": "Olvassa el a dokumentációt"
+        }
+      }
+    },
+    "backToStart": "Vissza a starthoz"
+  },
+  "user": {
+    "title": "Felhasználók",
+    "name": "Felhasználó",
+    "page": {
+      "login": {
+        "title": "Jelentkezzen be a fiókjába",
+        "subtitle": "Üdvözöljük újra! Kérjük, adja meg hitelesítő adatait"
+      },
+      "invite": {
+        "title": "Csatlakozz Homarrhoz",
+        "subtitle": "Üdvözöljük a Homarrban! Kérjük, hozza létre fiókját",
+        "description": "{username} meghívott"
+      },
+      "init": {
+        "title": "Új Homarr telepítés",
+        "subtitle": "Kérjük, hozza létre a kezdeti rendszergazda felhasználót"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "Email cím",
+        "verified": "Ellenőrzött"
+      },
+      "username": {
+        "label": "Felhasználónév"
+      },
+      "password": {
+        "label": "Jelszó",
+        "requirement": {
+          "length": "Tartalmazzon legalább 8 karaktert",
+          "lowercase": "Tartalmazzon kisbetűt",
+          "uppercase": "Tartalmazzon nagybetűt",
+          "number": "Tartalmazzon számot",
+          "special": "Különleges szimbólumot tartalmaz"
+        }
+      },
+      "passwordConfirm": {
+        "label": "Jelszó megerősítése"
+      },
+      "previousPassword": {
+        "label": "Előző jelszó"
+      },
+      "homeBoard": {
+        "label": "Főoldal"
+      },
+      "pingIconsEnabled": {
+        "label": "Ikonok használata a pingekhez"
+      },
+      "defaultSearchEngine": {
+        "label": ""
+      },
+      "openSearchInNewTab": {
+        "label": ""
+      }
+    },
+    "error": {
+      "usernameTaken": "A felhasználónév már foglalt"
+    },
+    "action": {
+      "login": {
+        "label": "Bejelentkezés",
+        "labelWith": "Bejelentkezés {provider} fiókkal",
+        "notification": {
+          "success": {
+            "title": "Belépés sikeres",
+            "message": "Be van jelentkezve"
+          },
+          "error": {
+            "title": "Belépés sikertelen",
+            "message": "Belépés sikertelen"
+          }
+        },
+        "forgotPassword": {
+          "label": "Elfelejtette a jelszavát?",
+          "description": "A rendszergazda a következő paranccsal állíthatja vissza a jelszavát:"
+        }
+      },
+      "register": {
+        "label": "Fiók létrehozása",
+        "notification": {
+          "success": {
+            "title": "Fiók létrehozva",
+            "message": "Kérjük, jelentkezzen be a folytatáshoz"
+          },
+          "error": {
+            "title": "Fiók létrehozása sikertelen",
+            "message": "Fiókját nem sikerült létrehozni"
+          }
+        }
+      },
+      "create": "Felhasználó létrehozása",
+      "changePassword": {
+        "label": "Jelszó módosítása",
+        "notification": {
+          "success": {
+            "message": "Jelszó sikeresen megváltozott"
+          },
+          "error": {
+            "message": "Nem lehet megváltoztatni a jelszót"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "A kezdőlap sikeresen cserélve"
+          },
+          "error": {
+            "message": "A kezdőlap cseréje nem lehetséges"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "A hét első napja sikeresen megváltozott"
+          },
+          "error": {
+            "message": "A hét első napja nem módosítható"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "A ping ikonok sikeresen váltakoztak"
+          },
+          "error": {
+            "message": "Nem lehet ping ikonokat megváltoztatni"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "Képcsere",
+          "notification": {
+            "success": {
+              "message": "A kép sikeresen megváltozott"
+            },
+            "error": {
+              "message": "A kép nem módosítható"
+            },
+            "toLarge": {
+              "title": "A kép túl nagy",
+              "message": "A maximális képméret {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "Kép eltávolítása",
+          "confirm": "Valóban törölni szeretnéd ezt a képet?",
+          "notification": {
+            "success": {
+              "message": "Kép sikeresen eltávolítva"
+            },
+            "error": {
+              "message": "Nem sikerült eltávolítani a képet"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "A profil sikeresen frissítve"
+          },
+          "error": {
+            "message": "Nem sikerült frissíteni a profilt"
+          }
+        }
+      },
+      "delete": {
+        "label": "Felhasználó végleges törlése",
+        "description": "Törli ezt a felhasználót, beleértve a beállításait. Nem töröl egyetlen táblát sem. A felhasználó nem kap értesítést.",
+        "confirm": "Biztos benne, hogy törli a {username} felhasználót a beállításaival együtt?"
+      },
+      "select": {
+        "label": "Felhasználó kiválasztása",
+        "notFound": "Felhasználó nem található"
+      },
+      "transfer": {
+        "label": "Válasszon új tulajdonost"
+      }
+    }
+  },
+  "group": {
+    "title": "Csoportok",
+    "name": "Csoport",
+    "search": "Csoport keresése",
+    "field": {
+      "name": "Név",
+      "members": "Tagok",
+      "homeBoard": {
+        "label": "",
+        "description": ""
+      },
+      "mobileBoard": {
+        "label": "",
+        "description": ""
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Adminisztrátor",
+        "item": {
+          "admin": {
+            "label": "Admin",
+            "description": "Az ezzel az engedéllyel rendelkező tagok teljes hozzáféréssel rendelkeznek az összes funkcióhoz és beállításhoz"
+          }
+        }
+      },
+      "app": {
+        "title": "Alkalmazások",
+        "item": {
+          "create": {
+            "label": "Alkalmazások létrehozása",
+            "description": "Alkalmazások létrehozásának engedélyezése a tagoknak"
+          },
+          "use-all": {
+            "label": "Minden alkalmazás használata",
+            "description": "Lehetővé teszi a tagok számára, hogy bármilyen alkalmazást hozzáadjanak a tábláikhoz"
+          },
+          "modify-all": {
+            "label": "Minden alkalmazás módosítása",
+            "description": "A tagok módosíthatják az összes alkalmazást"
+          },
+          "full-all": {
+            "label": "Teljes alkalmazás hozzáférés",
+            "description": "Lehetővé teszi a tagoknak, hogy kezeljék, használják és töröljék az alkalmazásokat"
+          }
+        }
+      },
+      "board": {
+        "title": "Táblák",
+        "item": {
+          "create": {
+            "label": "Tábla létrehozása",
+            "description": "A tagok táblákat hozhatnak létre"
+          },
+          "view-all": {
+            "label": "Az összes tábla megtekintése",
+            "description": "A tagok megtekinthetik az összes táblát"
+          },
+          "modify-all": {
+            "label": "Az összes tábla módosítása",
+            "description": "Lehetővé teszi a tagoknak, hogy módosítsák az összes táblát (Nem tartalmazza a beléptetést és a veszélyes zónát)"
+          },
+          "full-all": {
+            "label": "Teljes alkalmazás hozzáférés",
+            "description": "Lehetővé teszi a tagoknak az összes tábla megtekintését, módosítását és törlését (beleértve a beléptetést és a veszélyzónát)"
+          }
+        }
+      },
+      "integration": {
+        "title": "Integrációk",
+        "item": {
+          "create": {
+            "label": "Integrációk létrehozása",
+            "description": "A tagok integrációkat hozhatnak létre"
+          },
+          "use-all": {
+            "label": "Használja az összes integrációt",
+            "description": "Lehetővé teszi a tagok számára, hogy bármilyen integrációt hozzáadjanak a tábláikhoz"
+          },
+          "interact-all": {
+            "label": "Interakció bármely integrációval",
+            "description": "Lehetővé teszi a tagoknak, hogy bármilyen integrációval kapcsolatba lépjenek"
+          },
+          "full-all": {
+            "label": "Teljes integrációs hozzáférés",
+            "description": "Lehetővé teszi a tagoknak, hogy kezeljék, használhassák és kapcsolatba lépjenek bármilyen integrációval"
+          }
+        }
+      },
+      "media": {
+        "title": "Média",
+        "item": {
+          "upload": {
+            "label": "Média feltöltése",
+            "description": "Engedélyezze a tagok számára a médiák feltöltését"
+          },
+          "view-all": {
+            "label": "Az összes média megtekintése",
+            "description": "Engedélyezze a tagok számára az összes média megtekintését"
+          },
+          "full-all": {
+            "label": "Teljes médiahozzáférés",
+            "description": "Lehetővé teszi a tagoknak, hogy kezeljék és töröljék a médiatartalmakat"
+          }
+        }
+      },
+      "other": {
+        "title": "Egyéb",
+        "item": {
+          "view-logs": {
+            "label": "Naplók megtekintése",
+            "description": "A tagok megtekinthetik a naplókat"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "Keresőmotorok",
+        "item": {
+          "create": {
+            "label": "Egyéni keresőmotor",
+            "description": "A tagok egyéni keresőmotorokat hozhatnak létre"
+          },
+          "modify-all": {
+            "label": "Módosítsa az összes keresőmotort",
+            "description": "A tagok módosíthatják az összes a keresőmotorokat"
+          },
+          "full-all": {
+            "label": "Teljes hozzáférés a keresőmotorokhoz",
+            "description": "Lehetővé teszi a tagoknak, hogy kezeljék és töröljék a keresőmotorokat"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "Egyes tagok külső szolgáltatóktól származnak, és itt nem kezelhetők",
+      "external": "Minden tag külső szolgáltatótól származik, és itt nem kezelhetők"
+    },
+    "reservedNotice": {
+      "message": "Ez a csoport a rendszer használatára van fenntartva, és korlátoz bizonyos műveleteket. <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "Új csoport",
+        "notification": {
+          "success": {
+            "message": "A csoport sikeresen létrejött"
+          },
+          "error": {
+            "message": "A csoport létrehozása nem sikerült"
+          }
+        }
+      },
+      "transfer": {
+        "label": "Tulajdonos megváltoztatása",
+        "description": "A csoport tulajdonjogának átadása másik felhasználónak.",
+        "confirm": "Biztosan át akarja adni a {name} csoport tulajdonjogát {username}felhasználónak?",
+        "notification": {
+          "success": {
+            "message": "A {group} csoport sikeresen áthelyezve {user} felhasználó tulajdonába"
+          },
+          "error": {
+            "message": "Nem lehet átruházni a tulajdonjogot"
+          }
+        }
+      },
+      "addMember": {
+        "label": "Tag hozzáadása"
+      },
+      "removeMember": {
+        "label": "Tag eltávolítása",
+        "confirm": "Biztos, hogy el akarod távolítani a {user} felhasználót ebből a csoportból?"
+      },
+      "delete": {
+        "label": "Csoport törlése",
+        "description": "Ha töröl egy csoportot, az végleges. Kérjük, legyen biztos benne.",
+        "confirm": "Biztosan törli a {name} csoportot?",
+        "notification": {
+          "success": {
+            "message": "A {name} csoport sikeresen törölve"
+          },
+          "error": {
+            "message": "A {name} csoport nem törölhető"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "Engedélyek mentve",
+            "message": "Engedélyek mentése sikeresen megtörtént"
+          },
+          "error": {
+            "title": "Engedélyek nincsenek mentve",
+            "message": "Engedélyek nem kerültek mentésre"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "A {name} csoport mentése sikeresen megtörtént"
+          },
+          "error": {
+            "message": "Nem sikerült menteni a {name} csoportot"
+          }
+        }
+      },
+      "select": {
+        "label": "Csoport kiválasztása",
+        "notFound": "Nem található csoport"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "",
+      "description": ""
+    }
+  },
+  "app": {
+    "search": "",
+    "page": {
+      "list": {
+        "title": "Alkalmazások",
+        "noResults": {
+          "title": "Még nincsenek alkalmazások",
+          "action": "Hozza létre első alkalmazását"
+        }
+      },
+      "create": {
+        "title": "Új alkalmazás",
+        "notification": {
+          "success": {
+            "title": "Sikeres létrehozás",
+            "message": "Az alkalmazás sikeresen létrejött"
+          },
+          "error": {
+            "title": "A létrehozás nem sikerült",
+            "message": "Az alkalmazást nem sikerült létrehozni"
+          }
+        }
+      },
+      "edit": {
+        "title": "Alkalmazás szerkesztése",
+        "notification": {
+          "success": {
+            "title": "A módosítások sikeresen alkalmazva",
+            "message": "Az alkalmazás sikeresen mentve"
+          },
+          "error": {
+            "title": "Nem sikerült alkalmazni a változtatásokat",
+            "message": "Az alkalmazást nem sikerült menteni"
+          }
+        }
+      },
+      "delete": {
+        "title": "Törölje az alkalmazást",
+        "message": "Biztosan törli a {name} alkalmazást?",
+        "notification": {
+          "success": {
+            "title": "Sikeres törlés",
+            "message": "Az alkalmazás sikeresen törölve"
+          },
+          "error": {
+            "title": "Törlés sikertelen",
+            "message": "Nem lehet törölni az alkalmazást"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Név"
+      },
+      "description": {
+        "label": "Leírás"
+      },
+      "url": {
+        "label": ""
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "Alkalmazás kiválasztása",
+        "notFound": "Nem található alkalmazás",
+        "search": "",
+        "noResults": "",
+        "action": "",
+        "title": ""
+      },
+      "create": {
+        "title": "",
+        "description": "",
+        "action": ""
+      },
+      "add": ""
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "Integrációk",
+        "search": "Integrációk közötti keresés",
+        "noResults": {
+          "title": "Még nincsenek integrációk"
+        }
+      },
+      "create": {
+        "title": "Új {name} integráció",
+        "notification": {
+          "success": {
+            "title": "Sikeres létrehozás",
+            "message": "Az integráció sikeresen létrejött"
+          },
+          "error": {
+            "title": "A létrehozás nem sikerült",
+            "message": "Az integráció nem hozható létre"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "",
+              "label": ""
+            },
+            "new": {
+              "title": "",
+              "url": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "A {name} integráció szerkesztése",
+        "notification": {
+          "success": {
+            "title": "A módosítások sikeresen alkalmazva",
+            "message": "Az integráció sikeresen mentve"
+          },
+          "error": {
+            "title": "Nem sikerült alkalmazni a változtatásokat",
+            "message": "Az integrációt nem sikerült menteni"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "",
+            "remove": "",
+            "select": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "Integráció törlése",
+        "message": "Biztosan törli a {name} integrációt?",
+        "notification": {
+          "success": {
+            "title": "Sikeres törlés",
+            "message": "Az integráció sikeresen törölve"
+          },
+          "error": {
+            "title": "Törlés sikertelen",
+            "message": "Az integráció nem törölhető"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Név"
+      },
+      "url": {
+        "label": ""
+      },
+      "attemptSearchEngineCreation": {
+        "label": "",
+        "description": ""
+      },
+      "app": {
+        "sectionTitle": ""
+      },
+      "createApp": {
+        "label": "",
+        "description": ""
+      },
+      "appHref": {
+        "placeholder": ""
+      }
+    },
+    "action": {
+      "create": "Új integráció"
+    },
+    "testConnection": {
+      "action": {
+        "create": "Tesztelje a kapcsolatot és hozzon létre",
+        "edit": "Tesztelje a kapcsolatot és mentsen"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": ""
+          }
+        },
+        "unknown": {
+          "title": "",
+          "description": ""
+        },
+        "parse": {
+          "title": "",
+          "description": ""
+        },
+        "authorization": {
+          "title": "",
+          "description": ""
+        },
+        "statusCode": {
+          "title": "",
+          "description": "",
+          "otherDescription": "",
+          "reason": {
+            "badRequest": "",
+            "notFound": "",
+            "tooManyRequests": "",
+            "internalServerError": "",
+            "serviceUnavailable": "",
+            "gatewayTimeout": ""
+          }
+        },
+        "certificate": {
+          "title": "",
+          "description": {
+            "expired": "",
+            "notYetValid": "",
+            "untrusted": "",
+            "hostnameMismatch": ""
+          },
+          "alert": {
+            "permission": {
+              "title": "",
+              "message": ""
+            },
+            "hostnameMismatch": {
+              "title": "",
+              "message": ""
+            },
+            "extract": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "action": {
+            "retry": {
+              "label": ""
+            },
+            "trust": {
+              "label": ""
+            },
+            "upload": {
+              "label": ""
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "details": {
+            "title": "",
+            "description": "",
+            "content": {
+              "action": "",
+              "title": ""
+            }
+          }
+        },
+        "request": {
+          "title": "",
+          "description": {
+            "connection": {
+              "hostUnreachable": "",
+              "networkUnreachable": "",
+              "refused": "",
+              "reset": ""
+            },
+            "dns": {
+              "notFound": "",
+              "timeout": "",
+              "noAnswer": ""
+            },
+            "timeout": {
+              "aborted": "",
+              "timeout": ""
+            }
+          }
+        }
+      },
+      "alertNotice": "A Mentés gomb a sikeres kapcsolat létrehozása után aktiválódik",
+      "notification": {
+        "success": {
+          "title": "Sikeres csatlakozás",
+          "message": "A kapcsolat sikeresen létrejött"
+        },
+        "invalidUrl": {
+          "title": "Érvénytelen URL",
+          "message": "Az URL érvénytelen"
+        },
+        "secretNotDefined": {
+          "title": "Hiányzó hitelesítő adatok",
+          "message": "Nem adtak meg minden hitelesítő adatot"
+        },
+        "invalidCredentials": {
+          "title": "Érvénytelen hitelesítő adatok",
+          "message": "A hitelesítő adatok érvénytelenek"
+        },
+        "commonError": {
+          "title": "Sikertelen kapcsolódás",
+          "message": "A kapcsolat nem hozható létre"
+        },
+        "badRequest": {
+          "title": "Hibás kérés",
+          "message": "A kérés hibás volt"
+        },
+        "unauthorized": {
+          "title": "Jogosulatlan",
+          "message": "Valószínűleg rossz hitelesítő adatok"
+        },
+        "forbidden": {
+          "title": "Elutasítva",
+          "message": "Valószínűleg hiányoznak az engedélyek"
+        },
+        "notFound": {
+          "title": "Nem található",
+          "message": "Valószínűleg rossz url vagy elérési útvonal"
+        },
+        "internalServerError": {
+          "title": "Belső szerverhiba",
+          "message": "A szerver hibát észlelt"
+        },
+        "serviceUnavailable": {
+          "title": "A szolgáltatás nem elérhető",
+          "message": "A szerver jelenleg nem elérhető"
+        },
+        "connectionAborted": {
+          "title": "A kapcsolat megszakadt",
+          "message": "A kapcsolat megszakadt"
+        },
+        "domainNotFound": {
+          "title": "A domain nem található",
+          "message": "A domain nem található"
+        },
+        "connectionRefused": {
+          "title": "Csatlakozás elutasítva",
+          "message": "Csatlakozás elutasítva"
+        },
+        "invalidJson": {
+          "title": "Hibás JSON",
+          "message": "A válasz nem érvényes JSON"
+        },
+        "wrongPath": {
+          "title": "Rossz útvonal",
+          "message": "Az útvonal valószínűleg nem helyes"
+        },
+        "tooManyRequests": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "secrets": {
+      "title": "Titkok",
+      "lastUpdated": "Utoljára frissítve: {date}",
+      "notSet": {
+        "label": "Nincs beállítva érték",
+        "tooltip": "Ez a szükséges titok még nincs beállítva"
+      },
+      "secureNotice": "Ezt a titkot a létrehozás után nem lehet visszakeresni",
+      "reset": {
+        "title": "Titok visszaállítása",
+        "message": "Biztosan valaphelyzetbe állítja ezt a titkot?"
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "Nincsenek titkok",
+        "text": "Ehhez az integrációhoz nincs szükség titkokra"
+      },
+      "kind": {
+        "username": {
+          "label": "Felhasználónév",
+          "newLabel": "Új felhasználónév"
+        },
+        "apiKey": {
+          "label": "API Kulcs",
+          "newLabel": "Új API kulcs"
+        },
+        "password": {
+          "label": "Jelszó",
+          "newLabel": "Új jelszó"
+        },
+        "tokenId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "realm": {
+          "label": "",
+          "newLabel": ""
+        },
+        "personalAccessToken": {
+          "label": "",
+          "newLabel": ""
+        },
+        "topic": {
+          "label": "",
+          "newLabel": ""
+        },
+        "url": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiSecret": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubAppId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubInstallationId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "privateKey": {
+          "label": "",
+          "newLabel": ""
+        }
+      }
+    },
+    "permission": {
+      "use": "Válassza ki az integrációkat az elemekben",
+      "interact": "Interakció az integrációkkal",
+      "full": "Teljes integrációs hozzáférés"
+    }
+  },
+  "media": {
+    "plural": "Média",
+    "search": "Média keresése",
+    "field": {
+      "name": "Név",
+      "size": "Méret",
+      "creator": "Létrehozó"
+    },
+    "action": {
+      "upload": {
+        "label": "Média feltöltése",
+        "file": "Fájl kiválasztása",
+        "notification": {
+          "success": {
+            "message": "A média sikeresen feltöltve"
+          },
+          "error": {
+            "message": "A médiát nem lehetett feltölteni"
+          }
+        }
+      },
+      "delete": {
+        "label": "Média törlése",
+        "description": "Biztos, hogy törölni akarja a médiát <bName></bName>?",
+        "notification": {
+          "success": {
+            "message": "A média sikeresen törölve"
+          },
+          "error": {
+            "message": "A médiát nem lehetett törölni"
+          }
+        }
+      },
+      "copy": {
+        "label": "URL másolása"
+      },
+      "open": {
+        "label": ""
+      }
+    }
+  },
+  "common": {
+    "success": "",
+    "beta": "Béta",
+    "error": "Hiba",
+    "action": {
+      "add": "Hozzáadás",
+      "apply": "Alkalmaz",
+      "backToOverview": "Vissza az áttekintéshez",
+      "change": "",
+      "create": "Létrehozás",
+      "createAnother": "",
+      "edit": "Szerkesztés",
+      "import": "Importálás",
+      "insert": "Beillesztés",
+      "remove": "Eltávolítás",
+      "save": "Mentés",
+      "saveChanges": "Változások mentése",
+      "cancel": "Mégse",
+      "delete": "Törlés",
+      "discard": "Elvetés",
+      "close": "",
+      "confirm": "Megerősít",
+      "continue": "Folytatás",
+      "previous": "Előző",
+      "next": "Következő",
+      "checkoutDocs": "Tekintse meg a dokumentációt",
+      "checkLogs": "További részletekért ellenőrizze a naplókat",
+      "tryAgain": "Próbálja újra",
+      "loading": "Töltés"
+    },
+    "here": "itt",
+    "iconPicker": {
+      "label": "Ikonhivatkozás",
+      "header": "Írjon be nevet vagy objektumokat az ikonok szűréséhez... A Homarr a {countIcons} ikonok között keres."
+    },
+    "colorScheme": {
+      "options": {
+        "light": "Világos",
+        "dark": "Sötét"
+      }
+    },
+    "information": {
+      "min": "Legalább",
+      "max": "Legfeljebb",
+      "days": "",
+      "hours": "Óra",
+      "minutes": "Perc"
+    },
+    "notification": {
+      "create": {
+        "success": "Sikeres létrehozás",
+        "error": "A létrehozás nem sikerült"
+      },
+      "delete": {
+        "success": "Sikeres törlés",
+        "error": "Törlés sikertelen"
+      },
+      "update": {
+        "success": "A módosítások sikeresen alkalmazva",
+        "error": "Nem sikerült alkalmazni a változtatásokat"
+      },
+      "transfer": {
+        "success": "",
+        "error": ""
+      }
+    },
+    "multiSelect": {
+      "placeholder": ""
+    },
+    "multiText": {
+      "placeholder": "",
+      "addLabel": ""
+    },
+    "select": {
+      "placeholder": "",
+      "badge": {
+        "recommended": ""
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "",
+        "switchToLightMode": "",
+        "management": "",
+        "preferences": "Saját preferenciák",
+        "logout": "",
+        "login": "Bejelentkezés",
+        "homeBoard": "",
+        "loggedOut": "",
+        "updateAvailable": ""
+      }
+    },
+    "dangerZone": "Veszélyzóna",
+    "noResults": "Nincs eredmény",
+    "unsavedChanges": "",
+    "preview": {
+      "show": "",
+      "hide": ""
+    },
+    "zod": {
+      "errors": {
+        "default": "Ez a mező érvénytelen",
+        "required": "Ez a mező kötelező",
+        "string": {
+          "startsWith": "Ennek a mezőnek a {startsWith} kell kezdődnie",
+          "endsWith": "Ennek a mezőnek a {endsWith} kell végződnie",
+          "includes": "Ennek a mezőnek tartalmaznia kell a {includes} értéket",
+          "invalidEmail": ""
+        },
+        "tooSmall": {
+          "string": "Ennek a mezőnek legalább {minimum} karakter hosszúságúnak kell lennie",
+          "number": "Ennek a mezőnek nagyobbnak vagy egyenlőnek kell lennie a {minimum} értékkel"
+        },
+        "tooBig": {
+          "string": "Ez a mező legfeljebb {maximum} karakter hosszúságú lehet",
+          "number": "Ennek a mezőnek kisebbnek vagy egyenlőnek kell lennie a {maximum} értékkel"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "",
+          "passwordRequirements": "",
+          "boardAlreadyExists": "",
+          "invalidFileType": "",
+          "invalidFileName": "",
+          "fileTooLarge": "",
+          "invalidConfiguration": "",
+          "groupNameTaken": ""
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "",
+        "milesPerHour": ""
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "",
+        "remove": ""
+      },
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "Név"
+        }
+      },
+      "action": {
+        "create": "",
+        "edit": "",
+        "remove": "",
+        "moveUp": "Felfelé mozgatás",
+        "moveDown": "Mozgatás le",
+        "createAbove": "",
+        "createBelow": "",
+        "openAllInNewTabs": ""
+      },
+      "create": {
+        "title": "",
+        "submit": ""
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      },
+      "edit": {
+        "title": "",
+        "submit": ""
+      },
+      "menu": {
+        "label": {
+          "create": "",
+          "changePosition": "Pozíció módosítása"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "",
+        "text": ""
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "",
+      "import": "",
+      "edit": "",
+      "moveResize": "",
+      "duplicate": "",
+      "remove": ""
+    },
+    "menu": {
+      "label": {
+        "settings": "Beállítások"
+      }
+    },
+    "create": {
+      "title": "Válassza ki a hozzáadni kívánt elemet",
+      "search": "",
+      "addToBoard": "Hozzáadás a táblához"
+    },
+    "moveResize": {
+      "title": "",
+      "field": {
+        "width": {
+          "label": "Szélesség"
+        },
+        "height": {
+          "label": "Magasság"
+        },
+        "xOffset": {
+          "label": "X eltolás"
+        },
+        "yOffset": {
+          "label": "Y eltolás"
+        }
+      }
+    },
+    "edit": {
+      "title": "",
+      "advancedOptions": {
+        "label": "Haladó beállítások",
+        "title": "Speciális tételbeállítások"
+      },
+      "field": {
+        "integrations": {
+          "label": "Integrációk"
+        },
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": "Egyedi css osztályok"
+        },
+        "borderColor": {
+          "label": ""
+        }
+      }
+    },
+    "remove": {
+      "title": "",
+      "message": "Biztosan eltávolítja ezt az elemet?"
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "Alkalmazás",
+      "description": "Alkalmazást ágyaz be a táblába.",
+      "option": {
+        "appId": {
+          "label": "Válasszon alkalmazást"
+        },
+        "openInNewTab": {
+          "label": "Megnyitás új lapon"
+        },
+        "showTitle": {
+          "label": "Alkalmazás nevének megjelenítése"
+        },
+        "pingEnabled": {
+          "label": "Egyszerű ping engedélyezése"
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": "",
+            "row-reverse": "",
+            "column": "",
+            "column-reverse": ""
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "",
+          "description": "",
+          "option": {
+            "normal": "",
+            "tooltip": "",
+            "hidden": ""
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "Nincs alkalmazás",
+          "tooltip": "Nem választott ki érvényes alkalmazást"
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "Könyjelzők",
+      "description": "Több alkalmazáshivatkozást jelenít meg",
+      "option": {
+        "title": {
+          "label": "Cím"
+        },
+        "layout": {
+          "label": "Elrendezés",
+          "option": {
+            "row": {
+              "label": "Vízszintes"
+            },
+            "column": {
+              "label": "Függőleges"
+            },
+            "grid": {
+              "label": "Rács"
+            },
+            "gridHorizontal": {
+              "label": ""
+            }
+          }
+        },
+        "hideTitle": {
+          "label": ""
+        },
+        "hideIcon": {
+          "label": ""
+        },
+        "hideHostname": {
+          "label": ""
+        },
+        "openNewTab": {
+          "label": ""
+        },
+        "items": {
+          "label": "Könyjelzők",
+          "add": "Könyvjelző hozzáadása"
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "DNS Blokkoló Összefoglaló",
+      "description": "Megjeleníti a DNS Blokkoló összefoglalóját",
+      "option": {
+        "layout": {
+          "label": "Elrendezés",
+          "option": {
+            "row": {
+              "label": "Vízszintes"
+            },
+            "column": {
+              "label": "Függőleges"
+            },
+            "grid": {
+              "label": "Rács"
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": "Használjon Pi-Hole színeket"
+        }
+      },
+      "error": {
+        "internalServerError": "Nem sikerült lekérni a DNS Hole összefoglalóját",
+        "integrationsDisconnected": "Nem állnak rendelkezésre adatok, minden integráció megszakadt"
+      },
+      "data": {
+        "adsBlockedToday": "Mai blokkolások",
+        "adsBlockedTodayPercentage": "Mai blokkolások",
+        "dnsQueriesToday": "Mai lekérdezések",
+        "domainsBeingBlocked": "Domainek a tiltólistán"
+      },
+      "domainsTooltip": ""
+    },
+    "dnsHoleControls": {
+      "name": "DNS blokkolók ellenőrzése",
+      "description": "A PiHole vagy az AdGuard vezérlése a műszerfalról",
+      "option": {
+        "layout": {
+          "label": "Elrendezés",
+          "option": {
+            "row": {
+              "label": "Vízszintes"
+            },
+            "column": {
+              "label": "Függőleges"
+            },
+            "grid": {
+              "label": "Rács"
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": "Összes gomb megjelenítése"
+        }
+      },
+      "error": {
+        "internalServerError": "Nem sikerült vezérelni a DNS Blokkolót"
+      },
+      "controls": {
+        "enableAll": "Az összes engedélyezése",
+        "disableAll": "Az összes tiltása",
+        "setTimer": "Időzítő beállítása",
+        "set": "Beállít",
+        "enabled": "Engedélyezve",
+        "disabled": "Letiltva",
+        "processing": "Feldolgozás",
+        "disconnected": "Szétkapcsolt",
+        "hours": "Óra",
+        "minutes": "Perc",
+        "unlimited": "Hagyja üresen a korlátlanhoz"
+      }
+    },
+    "clock": {
+      "name": "Dátum és idő",
+      "description": "Megjeleníti az aktuális dátumot és időt.",
+      "option": {
+        "customTitleToggle": {
+          "label": "Egyedi cím/város megjelenítése",
+          "description": "Mutasson egy egyéni címet vagy a város/ország nevét az óra tetején."
+        },
+        "customTitle": {
+          "label": "Cím"
+        },
+        "is24HourFormat": {
+          "label": "24 órás formátum",
+          "description": "12 órás formátum helyett 24 órás formátumot használjon"
+        },
+        "showSeconds": {
+          "label": "Másodpercek kijelzése"
+        },
+        "useCustomTimezone": {
+          "label": "Használjon rögzített időzónát"
+        },
+        "timezone": {
+          "label": "Időzóna",
+          "description": "Válassza ki az IANA szabványnak megfelelő időzónát"
+        },
+        "showDate": {
+          "label": "Mutasd a dátumot"
+        },
+        "dateFormat": {
+          "label": "Dátum formátum",
+          "description": "Hogyan nézzen ki a dátum"
+        },
+        "customTimeFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customDateFormat": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "domain": {
+          "label": ""
+        },
+        "isBedrockServer": {
+          "label": ""
+        }
+      },
+      "status": {
+        "online": "",
+        "offline": ""
+      }
+    },
+    "notebook": {
+      "name": "Jegyzettömb",
+      "description": "Egy egyszerű notebook widget, amely támogatja a leértékelést",
+      "option": {
+        "showToolbar": {
+          "label": "A markdown írást segítő eszköztár megjelenítése"
+        },
+        "allowReadOnlyCheck": {
+          "label": "Csak olvasási módban történő ellenőrzés engedélyezése"
+        },
+        "content": {
+          "label": "A jegyzetfüzet tartalma"
+        }
+      },
+      "controls": {
+        "bold": "Félkövér",
+        "italic": "Dőlt",
+        "strikethrough": "Áthúzott",
+        "underline": "Aláhúzott",
+        "colorText": "Szövegszín",
+        "colorHighlight": "Színesen kiemelt szöveg",
+        "code": "Kód",
+        "clear": "Formázás törlése",
+        "heading": "Címsor {level}",
+        "align": "Szöveg igazítása: {position}",
+        "blockquote": "Idézet",
+        "horizontalLine": "Vízszintes vonal",
+        "bulletList": "Lista",
+        "orderedList": "Sorkizárt",
+        "checkList": "Jelölőnégyzetes lista",
+        "increaseIndent": "Behúzás növelése",
+        "decreaseIndent": "Behúzás csökkentése",
+        "link": "Hivatkozás",
+        "unlink": "Hivatkozás eltávolítása",
+        "image": "Kép beágyazása",
+        "addTable": "Táblázat hozzáadása",
+        "deleteTable": "Táblázat törlése",
+        "colorCell": "Színes cella",
+        "mergeCell": "Cellák összevonása",
+        "addColumnLeft": "Oszlop hozzáadása előtte",
+        "addColumnRight": "Oszlop hozzáadása utána",
+        "deleteColumn": "Oszlop törlése",
+        "addRowTop": "Sor hozzáadása előtte",
+        "addRowBelow": "Sor hozzáadása utána",
+        "deleteRow": "Sor törlése"
+      },
+      "align": {
+        "left": "Bal",
+        "center": "Középre",
+        "right": "Jobb"
+      },
+      "popover": {
+        "clearColor": "Szín törlése",
+        "source": "Forrás",
+        "widthPlaceholder": "Érték %-ban vagy képpontban",
+        "columns": "Oszlopok",
+        "rows": "Sorok",
+        "width": "Szélesség",
+        "height": "Magasság"
+      },
+      "placeholder": "",
+      "dismiss": {
+        "title": "",
+        "message": "",
+        "action": {
+          "discard": "",
+          "keepEditing": ""
+        }
+      }
+    },
+    "iframe": {
+      "name": "Beágyazott keret (iFrame)",
+      "description": "Bármilyen tartalom beágyazása az internetről. Egyes webhelyek korlátozhatják a hozzáférést.",
+      "option": {
+        "embedUrl": {
+          "label": "Beágyazási URL"
+        },
+        "allowFullScreen": {
+          "label": "Teljes képernyő engedélyezése"
+        },
+        "allowTransparency": {
+          "label": "Engedélyezze az átláthatóságot"
+        },
+        "allowScrolling": {
+          "label": "Görgetés engedélyezése"
+        },
+        "allowPayment": {
+          "label": "Fizetés engedélyezése"
+        },
+        "allowAutoPlay": {
+          "label": "Automatikus lejátszás engedélyezése"
+        },
+        "allowMicrophone": {
+          "label": "Mikrofon engedélyezése"
+        },
+        "allowCamera": {
+          "label": "Kamera engedélyezése"
+        },
+        "allowGeolocation": {
+          "label": "Geolokáció engedélyezése"
+        }
+      },
+      "error": {
+        "noUrl": "Nincs megadva iFrame URL",
+        "unsupportedProtocol": "",
+        "noBrowerSupport": "Az Ön böngészője nem támogatja a beágyazott kereteket. Kérjük, frissítse böngészőjét."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "Egység állapota",
+      "description": "",
+      "option": {
+        "entityId": {
+          "label": "Egység azonosító"
+        },
+        "displayName": {
+          "label": ""
+        },
+        "entityUnit": {
+          "label": ""
+        },
+        "clickable": {
+          "label": ""
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "",
+      "description": "",
+      "option": {
+        "displayName": {
+          "label": "Megjelenített név"
+        },
+        "automationId": {
+          "label": "Automatizálási azonosító"
+        }
+      },
+      "spotlightAction": {
+        "run": ""
+      }
+    },
+    "stockPrice": {
+      "name": "",
+      "description": "",
+      "option": {
+        "stock": {
+          "label": ""
+        },
+        "timeRange": {
+          "label": "",
+          "option": {
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            },
+            "3mo": {
+              "label": ""
+            },
+            "6mo": {
+              "label": ""
+            },
+            "ytd": {
+              "label": ""
+            },
+            "1y": {
+              "label": ""
+            },
+            "2y": {
+              "label": ""
+            },
+            "5y": {
+              "label": ""
+            },
+            "10y": {
+              "label": ""
+            },
+            "max": {
+              "label": ""
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "",
+          "option": {
+            "5m": {
+              "label": ""
+            },
+            "15m": {
+              "label": ""
+            },
+            "30m": {
+              "label": ""
+            },
+            "1h": {
+              "label": ""
+            },
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1wk": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "Naptár",
+      "description": "",
+      "duration": {
+        "allDay": ""
+      },
+      "option": {
+        "releaseType": {
+          "label": "Radarr kiadás típusa",
+          "options": {
+            "inCinemas": "",
+            "digitalRelease": "",
+            "physicalRelease": ""
+          }
+        },
+        "filterPastMonths": {
+          "label": ""
+        },
+        "filterFutureMonths": {
+          "label": ""
+        },
+        "showUnmonitored": {
+          "label": ""
+        }
+      }
+    },
+    "weather": {
+      "name": "Időjárás",
+      "description": "Megjeleníti egy meghatározott hely aktuális időjárási adatait.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": ""
+        },
+        "disableTemperatureDecimals": {
+          "label": ""
+        },
+        "showCurrentWindSpeed": {
+          "label": "",
+          "description": ""
+        },
+        "useImperialSpeed": {
+          "label": ""
+        },
+        "location": {
+          "label": "Időjárás helye"
+        },
+        "showCity": {
+          "label": ""
+        },
+        "hasForecast": {
+          "label": ""
+        },
+        "forecastDayCount": {
+          "label": "",
+          "description": ""
+        },
+        "dateFormat": {
+          "label": "Dátum formátum",
+          "description": "Hogyan nézzen ki a dátum"
+        }
+      },
+      "currentWindSpeed": "",
+      "dailyForecast": {
+        "sunrise": "",
+        "sunset": "",
+        "maxWindSpeed": "",
+        "maxWindGusts": ""
+      },
+      "kind": {
+        "clear": "Tiszta",
+        "mainlyClear": "Főként tiszta",
+        "fog": "Köd",
+        "drizzle": "Ködszitálás",
+        "freezingDrizzle": "Ónos szitálás",
+        "rain": "Eső",
+        "freezingRain": "Ónos eső",
+        "snowFall": "Hóesés",
+        "snowGrains": "Hószemcsék",
+        "rainShowers": "Záporok",
+        "snowShowers": "Hózáporok",
+        "thunderstorm": "Vihar",
+        "thunderstormWithHail": "Zivatar jégesővel",
+        "unknown": "Ismeretlen"
+      }
+    },
+    "indexerManager": {
+      "name": "Indexelő menedzser állapota",
+      "description": "",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": ""
+        }
+      },
+      "title": "Indexelő menedzser",
+      "testAll": "Teszteld az összeset",
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "healthMonitoring": {
+      "name": "Rendszerállapot-felügyelet",
+      "description": "Megjeleníti a rendszer(ek) állapotát és állapotát mutató információkat.",
+      "tab": {
+        "system": "",
+        "cluster": ""
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "CPU hőmérséklet Fahrenheitben"
+        },
+        "cpu": {
+          "label": "CPU-információk megjelenítése"
+        },
+        "memory": {
+          "label": "Memóriainformációk megjelenítése"
+        },
+        "showUptime": {
+          "label": ""
+        },
+        "fileSystem": {
+          "label": "Fájlrendszer-információk megjelenítése"
+        },
+        "defaultTab": {
+          "label": ""
+        },
+        "visibleClusterSections": {
+          "label": ""
+        },
+        "sectionIndicatorRequirement": {
+          "label": ""
+        }
+      },
+      "popover": {
+        "information": "",
+        "processor": "",
+        "memory": "",
+        "memoryAvailable": "",
+        "version": "",
+        "uptime": "",
+        "loadAverage": "",
+        "minute": "",
+        "minutes": "",
+        "used": "",
+        "available": "Elérhető",
+        "lastSeen": ""
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": ""
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "",
+          "memory": ""
+        },
+        "resource": {
+          "node": {
+            "name": ""
+          },
+          "qemu": {
+            "name": ""
+          },
+          "lxc": {
+            "name": ""
+          },
+          "storage": {
+            "name": ""
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "",
+            "vmId": "",
+            "plugin": ""
+          },
+          "detail": {
+            "cpu": "",
+            "memory": "",
+            "storage": "",
+            "uptime": "",
+            "haState": "",
+            "storageType": {
+              "local": "",
+              "shared": ""
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "",
+            "cpu": "",
+            "memory": "",
+            "node": ""
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "",
+      "description": "",
+      "option": {
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": "",
+          "option": {
+            "name": "",
+            "state": "",
+            "cpuUsage": "",
+            "memoryUsage": ""
+          }
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "common": {
+      "location": {
+        "query": "",
+        "latitude": "",
+        "longitude": "",
+        "disabledTooltip": "",
+        "unknownLocation": "",
+        "search": "Keresés",
+        "table": {
+          "header": {
+            "city": "",
+            "country": "",
+            "coordinates": "",
+            "population": ""
+          },
+          "action": {
+            "select": ""
+          },
+          "population": {
+            "fallback": "Ismeretlen"
+          }
+        }
+      },
+      "integration": {
+        "noData": "",
+        "description": ""
+      },
+      "app": {
+        "noData": "Nem található alkalmazás",
+        "description": "",
+        "quickCreate": ""
+      },
+      "error": {
+        "noIntegration": "",
+        "noData": ""
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "Videófolyam",
+      "description": "Videófolyam vagy videó beágyazása egy kameráról vagy weboldalról",
+      "option": {
+        "feedUrl": {
+          "label": "Hírcsatorna URL"
+        },
+        "hasAutoPlay": {
+          "label": "Automatikus lejátszás",
+          "description": ""
+        },
+        "isMuted": {
+          "label": ""
+        },
+        "hasControls": {
+          "label": ""
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "forYoutubeUseIframe": ""
+      }
+    },
+    "mediaServer": {
+      "name": "",
+      "description": "",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "items": {
+        "currentlyPlaying": "",
+        "user": "",
+        "name": "",
+        "id": "",
+        "metadata": {
+          "title": "",
+          "video": {
+            "title": "",
+            "resolution": ""
+          },
+          "audio": {
+            "title": "",
+            "channelCount": "",
+            "codec": ""
+          },
+          "transcoding": {
+            "title": "",
+            "container": "",
+            "resolution": "",
+            "target": ""
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "",
+      "description": "",
+      "option": {
+        "columns": {
+          "label": ""
+        },
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": ""
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        },
+        "showCompletedUsenet": {
+          "label": ""
+        },
+        "showCompletedTorrent": {
+          "label": ""
+        },
+        "showCompletedHttp": {
+          "label": ""
+        },
+        "activeTorrentThreshold": {
+          "label": ""
+        },
+        "categoryFilter": {
+          "label": ""
+        },
+        "filterIsWhitelist": {
+          "label": ""
+        },
+        "applyFilterToRatio": {
+          "label": ""
+        },
+        "limitPerIntegration": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "errors": {
+        "noColumns": "",
+        "noCommunications": ""
+      },
+      "items": {
+        "actions": {
+          "columnTitle": ""
+        },
+        "added": {
+          "columnTitle": "",
+          "detailsTitle": "Hozzáadás dátuma"
+        },
+        "category": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "downSpeed": {
+          "columnTitle": "Le",
+          "detailsTitle": "Letöltési sebesség"
+        },
+        "index": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "id": {
+          "columnTitle": ""
+        },
+        "integration": {
+          "columnTitle": "Integráció"
+        },
+        "name": {
+          "columnTitle": ""
+        },
+        "progress": {
+          "columnTitle": "Folyamat",
+          "detailsTitle": ""
+        },
+        "ratio": {
+          "columnTitle": "Arány",
+          "detailsTitle": ""
+        },
+        "received": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "sent": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "size": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "state": {
+          "columnTitle": "Állapot",
+          "detailsTitle": ""
+        },
+        "time": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "type": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "upSpeed": {
+          "columnTitle": "Fel",
+          "detailsTitle": ""
+        }
+      },
+      "states": {
+        "downloading": "Letöltés",
+        "queued": "Sorban áll",
+        "paused": "Szünet",
+        "completed": "Kész",
+        "failed": "",
+        "processing": "Feldolgozás",
+        "leeching": "",
+        "stalled": "",
+        "unknown": "Ismeretlen",
+        "seeding": ""
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "",
+          "pause": "",
+          "resume": ""
+        },
+        "client": {
+          "pause": "",
+          "resume": ""
+        },
+        "item": {
+          "pause": "",
+          "resume": "",
+          "delete": {
+            "title": "",
+            "modalTitle": "",
+            "entry": "",
+            "entryAndFiles": ""
+          }
+        }
+      },
+      "globalRatio": ""
+    },
+    "mediaReleases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "backdrop": {
+              "label": ""
+            },
+            "poster": {
+              "label": ""
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": ""
+        },
+        "showType": {
+          "label": ""
+        },
+        "showSource": {
+          "label": ""
+        }
+      },
+      "length": {
+        "duration": ""
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "",
+      "description": "Az Overseerr vagy Jellyseerr példány összes médiakérelmének listájának megtekintése",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "Linkek megnyitása új fülön"
+        }
+      },
+      "pending": {
+        "approve": "",
+        "approving": "",
+        "decline": ""
+      },
+      "availability": {
+        "unknown": "Ismeretlen",
+        "pending": "",
+        "processing": "Feldolgozás",
+        "requested": "",
+        "partiallyAvailable": "Részleges",
+        "available": "Elérhető",
+        "blacklisted": "",
+        "deleted": ""
+      },
+      "status": {
+        "pending": "",
+        "approved": "",
+        "declined": "",
+        "failed": "",
+        "completed": ""
+      },
+      "toBeDetermined": ""
+    },
+    "mediaRequests-requestStats": {
+      "name": "",
+      "description": "Statisztikák az Ön médiakéréseiről",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "Média statisztikák",
+          "approved": "Már jóváhagyva",
+          "pending": "Várakozás jóváhagyásra",
+          "processing": "",
+          "declined": "",
+          "available": "",
+          "tv": "TV kérések",
+          "movie": "Filmkérések",
+          "total": "Összesen"
+        },
+        "users": {
+          "main": "Legnépszerűbb felhasználók",
+          "requests": ""
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "",
+      "description": "",
+      "option": {
+        "defaultView": {
+          "label": "Alapértelmezett nézet"
+        },
+        "queuePageSize": {
+          "label": ""
+        }
+      },
+      "tab": {
+        "workers": "Munkások",
+        "queue": "Várólista",
+        "statistics": "Statisztikák"
+      },
+      "currentIndex": "",
+      "healthCheck": {
+        "title": "",
+        "queued": "Sorban áll",
+        "status": {
+          "healthy": "Egészséges",
+          "unhealthy": "Egészségtelen"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "Üres",
+          "transcodes": "Átkódolás",
+          "transcodesCount": "",
+          "healthChecksCount": "",
+          "filesCount": "",
+          "savedSpace": "",
+          "healthChecks": "",
+          "videoCodecs": "Kodekek",
+          "videoContainers": "Tartály",
+          "videoResolutions": "Felbontás"
+        },
+        "workers": {
+          "empty": "Üres",
+          "table": {
+            "file": "Fájl",
+            "eta": "Hátralévő idő",
+            "progress": "Folyamat",
+            "transcode": "Átkódolás",
+            "healthCheck": ""
+          }
+        },
+        "queue": {
+          "empty": "Üres",
+          "table": {
+            "file": "Fájl",
+            "size": "Méret",
+            "transcode": "Átkódolás",
+            "healthCheck": ""
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "",
+      "description": "",
+      "option": {
+        "feedUrls": {
+          "label": ""
+        },
+        "enableRtl": {
+          "label": ""
+        },
+        "textLinesClamp": {
+          "label": ""
+        },
+        "maximumAmountPosts": {
+          "label": ""
+        },
+        "hideDescription": {
+          "label": ""
+        }
+      }
+    },
+    "releases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "newReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "staleReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "showOnlyHighlighted": {
+          "label": "",
+          "description": ""
+        },
+        "showDetails": {
+          "label": ""
+        },
+        "showOnlyIcon": {
+          "label": ""
+        },
+        "topReleases": {
+          "label": "",
+          "description": ""
+        },
+        "repositories": {
+          "label": "",
+          "addRepository": {
+            "label": ""
+          },
+          "importRepositories": {
+            "label": "",
+            "loading": "",
+            "noImagesFound": "",
+            "listFoundImages": "",
+            "listAlreadyImportedImages": "",
+            "allImagesAlreadyImported": "",
+            "onlyAdminCanImport": "",
+            "selectAll": "",
+            "deselectAll": ""
+          },
+          "provider": {
+            "label": ""
+          },
+          "identifier": {
+            "label": "",
+            "placeholder": ""
+          },
+          "name": {
+            "label": ""
+          },
+          "versionFilter": {
+            "label": "",
+            "prefix": {
+              "label": ""
+            },
+            "precision": {
+              "label": "",
+              "options": {
+                "none": ""
+              }
+            },
+            "suffix": {
+              "label": ""
+            },
+            "regex": {
+              "label": ""
+            }
+          },
+          "edit": {
+            "label": ""
+          },
+          "editForm": {
+            "title": "",
+            "cancel": {
+              "label": ""
+            },
+            "confirm": {
+              "label": ""
+            }
+          },
+          "importForm": {
+            "title": ""
+          },
+          "example": {
+            "label": ""
+          },
+          "invalid": "",
+          "noProvider": {
+            "label": "",
+            "tooltip": ""
+          }
+        }
+      },
+      "not-found": "",
+      "pre-release": "",
+      "archived": "",
+      "forked": "",
+      "starsCount": "",
+      "forksCount": "",
+      "issuesCount": "",
+      "markViewed": "",
+      "openProjectPage": "",
+      "openReleasePage": "",
+      "releaseDescription": "",
+      "projectDescription": "",
+      "created": "",
+      "error": {
+        "label": "",
+        "messages": {
+          "invalidIdentifier": "",
+          "noMatchingVersion": "",
+          "noReleasesFound": "",
+          "noProviderSeleceted": "",
+          "noProviderResponse": ""
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": ""
+          },
+          "wifi": {
+            "name": ""
+          }
+        },
+        "users": {
+          "label": ""
+        },
+        "guests": {
+          "label": ""
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": ""
+            },
+            "wired": {
+              "label": ""
+            }
+          },
+          "label": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "firewall": {
+      "name": "",
+      "description": "",
+      "tab": {
+        "system": "",
+        "interfaces": ""
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "option": {
+        "interfaces": ""
+      },
+      "widget": {
+        "fwname": "",
+        "version": "",
+        "versiontitle": "",
+        "cputitle": "",
+        "memorytitle": "",
+        "cpu": "",
+        "memory": "",
+        "interfaces": {
+          "name": "",
+          "trans": "",
+          "recv": "",
+          "title": ""
+        }
+      }
+    },
+    "notifications": {
+      "name": "",
+      "description": "",
+      "noItems": "",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "",
+      "description": "",
+      "option": {
+        "hasShadow": {
+          "label": ""
+        },
+        "visibleCharts": {
+          "label": "",
+          "description": "",
+          "option": {
+            "cpu": "",
+            "memory": "",
+            "network": ""
+          }
+        },
+        "labelDisplayMode": {
+          "label": "",
+          "option": {
+            "textWithIcon": "",
+            "text": "",
+            "icon": "",
+            "hidden": ""
+          }
+        }
+      },
+      "card": {
+        "cpu": "",
+        "memory": "",
+        "network": "",
+        "up": "",
+        "down": ""
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "dimensions": {
+      "title": ""
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "A módosítások sikeresen alkalmazva",
+            "message": ""
+          },
+          "error": {
+            "title": "Nem sikerült alkalmazni a változtatásokat",
+            "message": ""
+          }
+        },
+        "confirmLeave": {
+          "title": "",
+          "message": ""
+        }
+      },
+      "oldImport": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "form": {
+          "file": {
+            "label": "",
+            "invalidError": ""
+          },
+          "apps": {
+            "label": "Alkalmazások",
+            "avoidDuplicates": {
+              "label": "",
+              "description": ""
+            },
+            "onlyImportApps": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "name": {
+            "label": ""
+          },
+          "screenSize": {
+            "label": "",
+            "description": "",
+            "option": {
+              "sm": "Kicsi",
+              "md": "Közepes",
+              "lg": "Nagy"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "",
+            "description": "",
+            "option": {
+              "lastSection": {
+                "label": "",
+                "description": ""
+              },
+              "removeItems": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "",
+          "createAndUse": ""
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": ""
+      },
+      "metaTitle": {
+        "label": ""
+      },
+      "logoImageUrl": {
+        "label": ""
+      },
+      "faviconImageUrl": {
+        "label": ""
+      },
+      "backgroundImageUrl": {
+        "label": "",
+        "placeholder": "",
+        "group": {
+          "your": "",
+          "other": ""
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "Háttérkép csatolása",
+        "option": {
+          "fixed": {
+            "label": "",
+            "description": ""
+          },
+          "scroll": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "",
+        "option": {
+          "repeat": {
+            "label": "",
+            "description": ""
+          },
+          "no-repeat": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-x": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-y": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "Háttér kép mérete",
+        "option": {
+          "cover": {
+            "label": "",
+            "description": ""
+          },
+          "contain": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "Elsődleges szín"
+      },
+      "secondaryColor": {
+        "label": "Másodlagos szín"
+      },
+      "opacity": {
+        "label": ""
+      },
+      "iconColor": {
+        "label": ""
+      },
+      "clearColor": {
+        "label": ""
+      },
+      "customCss": {
+        "label": "",
+        "description": "Továbbá, testreszabhatja műszerfalát CSS segítségével, csak tapasztalt felhasználóknak ajánlott",
+        "customClassesAlert": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "disableStatus": {
+        "label": "",
+        "description": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "itemRadius": {
+        "label": "",
+        "description": "",
+        "option": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      },
+      "name": {
+        "label": "Név"
+      },
+      "isPublic": {
+        "label": "Nyilvános",
+        "description": ""
+      }
+    },
+    "content": {
+      "metaTitle": ""
+    },
+    "setting": {
+      "title": "",
+      "section": {
+        "general": {
+          "title": "Általános",
+          "unrecognizedLink": ""
+        },
+        "layout": {
+          "title": "Elrendezés",
+          "responsive": {
+            "title": "",
+            "action": {
+              "add": ""
+            }
+          }
+        },
+        "background": {
+          "title": "Háttér"
+        },
+        "appearance": {
+          "title": ""
+        },
+        "customCss": {
+          "title": ""
+        },
+        "behavior": {
+          "title": ""
+        },
+        "access": {
+          "title": "",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "Tábla megtekintése"
+              },
+              "modify": {
+                "label": ""
+              },
+              "full": {
+                "label": ""
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "Veszélyzóna",
+          "action": {
+            "rename": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "modal": {
+                "title": ""
+              }
+            },
+            "visibility": {
+              "label": "",
+              "description": {
+                "public": "",
+                "private": ""
+              },
+              "button": {
+                "public": "",
+                "private": ""
+              },
+              "confirm": {
+                "public": {
+                  "title": "",
+                  "description": ""
+                },
+                "private": {
+                  "title": "",
+                  "description": ""
+                }
+              }
+            },
+            "delete": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "confirm": {
+                "title": "Tábla törlése",
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "Üdvözöljük a Homarrban",
+        "description": "",
+        "link": "Az első tábla létrehozása",
+        "notice": ""
+      },
+      "notFound": {
+        "title": "",
+        "description": "",
+        "link": "Az összes tábla megtekintése",
+        "notice": ""
+      },
+      "homeBoard": {
+        "title": "",
+        "admin": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "user": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "anonymous": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "breakpoint": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "",
+    "title": {
+      "morning": "",
+      "afternoon": "",
+      "evening": ""
+    },
+    "notFound": {
+      "title": "",
+      "text": ""
+    },
+    "navbar": {
+      "items": {
+        "home": "Nyitólap",
+        "boards": "Táblák",
+        "apps": "Alkalmazások",
+        "integrations": "Integrációk",
+        "searchEngies": "Keresőmotorok",
+        "medias": "Média",
+        "users": {
+          "label": "Felhasználók",
+          "items": {
+            "manage": "Kezelés",
+            "invites": "Meghívók",
+            "groups": "Csoportok"
+          }
+        },
+        "tools": {
+          "label": "Eszközök",
+          "items": {
+            "docker": "",
+            "kubernetes": "",
+            "logs": "",
+            "api": "",
+            "certificates": "",
+            "tasks": ""
+          }
+        },
+        "settings": "Beállítások",
+        "help": {
+          "label": "Segítség",
+          "items": {
+            "documentation": "Dokumentáció",
+            "submitIssue": "",
+            "discord": "Discord-szerverünk",
+            "sourceCode": ""
+          }
+        },
+        "about": "Névjegy"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "Táblák",
+          "user": "Felhasználók",
+          "invite": "Meghívók",
+          "integration": "Integrációk",
+          "app": "Alkalmazások",
+          "group": "Csoportok",
+          "searchEngine": "",
+          "media": ""
+        },
+        "statisticLabel": {
+          "boards": "Táblák",
+          "resources": "",
+          "authentication": "",
+          "authorization": ""
+        },
+        "heroBanner": {
+          "title": "",
+          "subtitle": ""
+        }
+      },
+      "board": {
+        "title": "Az Ön táblái",
+        "action": {
+          "new": {
+            "label": ""
+          },
+          "open": {
+            "label": ""
+          },
+          "settings": {
+            "label": "Beállítások"
+          },
+          "setHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "Nyitólap",
+              "tooltip": ""
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "",
+              "tooltip": ""
+            }
+          },
+          "duplicate": {
+            "label": ""
+          },
+          "delete": {
+            "label": "Végleges törlés",
+            "confirm": {
+              "title": "Tábla törlése",
+              "description": ""
+            }
+          }
+        },
+        "visibility": {
+          "public": "",
+          "private": ""
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "Név"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": ""
+      },
+      "user": {
+        "back": "",
+        "fieldsDisabledExternalProvider": "",
+        "setting": {
+          "general": {
+            "title": "Általános",
+            "item": {
+              "language": "",
+              "board": {
+                "title": "",
+                "type": {
+                  "general": "",
+                  "mobile": ""
+                }
+              },
+              "search": "",
+              "firstDayOfWeek": "A hét első napja",
+              "accessibility": "Kisegítő lehetőségek"
+            }
+          },
+          "security": {
+            "title": "Biztonság"
+          },
+          "board": {
+            "title": "Táblák"
+          }
+        },
+        "list": {
+          "metaTitle": "Felhasználók kezelése",
+          "title": "Felhasználók"
+        },
+        "edit": {
+          "metaTitle": ""
+        },
+        "create": {
+          "metaTitle": "Felhasználó létrehozása",
+          "title": "",
+          "step": {
+            "personalInformation": {
+              "label": ""
+            },
+            "security": {
+              "label": "Biztonság"
+            },
+            "groups": {
+              "label": "Csoportok",
+              "title": "",
+              "description": ""
+            },
+            "review": {
+              "label": ""
+            },
+            "completed": {
+              "title": "Létrejött a felhasználó"
+            },
+            "error": {
+              "title": "A felhasználó létrehozása sikertelen"
+            }
+          },
+          "action": {
+            "createAnother": "",
+            "back": ""
+          }
+        },
+        "invite": {
+          "title": "Felhasználói meghívók kezelése",
+          "action": {
+            "new": {
+              "title": "",
+              "description": "A lejárat után a meghívó már nem lesz érvényes, és a meghívó címzettje nem tud fiókot létrehozni."
+            },
+            "copy": {
+              "title": "",
+              "description": "",
+              "link": "Meghívó link",
+              "button": ""
+            },
+            "delete": {
+              "title": "Meghívó törlése",
+              "description": "Biztos, hogy törölni szeretné ezt a meghívót? Az ezzel a linkkel rendelkező felhasználók többé nem tudnak fiókot létrehozni a link használatával."
+            }
+          },
+          "field": {
+            "id": {
+              "label": "Azonosító"
+            },
+            "creator": {
+              "label": "Létrehozó"
+            },
+            "expirationDate": {
+              "label": "Lejárati idő"
+            },
+            "token": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "",
+        "setting": {
+          "general": {
+            "title": "Általános",
+            "owner": "Tulajdonos",
+            "ownerOfGroup": "",
+            "ownerOfGroupDeleted": ""
+          },
+          "setting": {
+            "title": "",
+            "alert": "",
+            "board": {
+              "title": ""
+            }
+          },
+          "members": {
+            "title": "Tagok",
+            "search": "",
+            "notFound": ""
+          },
+          "permissions": {
+            "title": "",
+            "form": {
+              "unsavedChanges": ""
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Beállítások",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "",
+            "general": {
+              "title": "",
+              "text": ""
+            },
+            "widgetData": {
+              "title": "",
+              "text": ""
+            },
+            "integrationData": {
+              "title": "",
+              "text": ""
+            },
+            "usersData": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "",
+            "warning": "",
+            "noIndex": {
+              "title": "",
+              "text": ""
+            },
+            "noFollow": {
+              "title": "",
+              "text": ""
+            },
+            "noTranslate": {
+              "title": "",
+              "text": ""
+            },
+            "noSiteLinksSearchBox": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "board": {
+            "title": "Táblák",
+            "homeBoard": {
+              "label": "",
+              "mobileLabel": "",
+              "description": ""
+            },
+            "status": {
+              "title": "",
+              "enableStatusByDefault": {
+                "label": "",
+                "description": ""
+              },
+              "forceDisableStatus": {
+                "label": "",
+                "description": ""
+              }
+            }
+          },
+          "search": {
+            "title": "",
+            "defaultSearchEngine": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "appearance": {
+            "title": "Megjelenés",
+            "defaultColorScheme": {
+              "label": "",
+              "options": {
+                "light": "Világos",
+                "dark": "Sötét"
+              }
+            }
+          },
+          "culture": {
+            "title": "",
+            "defaultLocale": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "",
+          "status": {
+            "idle": "",
+            "running": "Fut",
+            "error": "Hiba",
+            "disabled": ""
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": ""
+            },
+            "iconsUpdater": {
+              "label": ""
+            },
+            "analytics": {
+              "label": ""
+            },
+            "smartHomeEntityState": {
+              "label": ""
+            },
+            "ping": {
+              "label": ""
+            },
+            "mediaServer": {
+              "label": "Médiakiszolgáló"
+            },
+            "mediaOrganizer": {
+              "label": ""
+            },
+            "downloads": {
+              "label": "Letöltések"
+            },
+            "mediaRequestStats": {
+              "label": ""
+            },
+            "mediaRequestList": {
+              "label": ""
+            },
+            "rssFeeds": {
+              "label": ""
+            },
+            "indexerManager": {
+              "label": ""
+            },
+            "healthMonitoring": {
+              "label": ""
+            },
+            "dnsHole": {
+              "label": ""
+            },
+            "updateChecker": {
+              "label": ""
+            },
+            "mediaTranscoding": {
+              "label": ""
+            },
+            "networkController": {
+              "label": ""
+            },
+            "refreshNotifications": {
+              "label": ""
+            },
+            "dockerContainers": {
+              "label": ""
+            },
+            "firewallCpu": {
+              "label": ""
+            },
+            "firewallMemory": {
+              "label": ""
+            },
+            "firewallVersion": {
+              "label": ""
+            },
+            "firewallInterfaces": {
+              "label": ""
+            },
+            "weather": {
+              "label": ""
+            }
+          },
+          "interval": {
+            "seconds": "",
+            "minutes": "",
+            "hours": "",
+            "midnight": "",
+            "weeklyMonday": "",
+            "update": {
+              "success": {
+                "message": ""
+              },
+              "error": {
+                "message": ""
+              }
+            }
+          },
+          "settings": {
+            "title": ""
+          },
+          "field": {
+            "name": {
+              "label": ""
+            },
+            "interval": {
+              "label": ""
+            },
+            "lastExecution": {
+              "label": ""
+            },
+            "actions": {
+              "label": ""
+            }
+          },
+          "table": {
+            "search": ""
+          },
+          "action": {
+            "refresh": {
+              "label": ""
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "enable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "disable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": ""
+            }
+          }
+        },
+        "api": {
+          "title": "",
+          "modal": {
+            "createApiToken": {
+              "title": "",
+              "description": "",
+              "button": ""
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "Dokumentáció"
+            },
+            "apiKey": {
+              "label": "",
+              "title": "",
+              "button": {
+                "createApiToken": ""
+              },
+              "modal": {
+                "delete": {
+                  "title": "",
+                  "text": ""
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "Azonosító",
+                  "createdBy": "",
+                  "actions": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "",
+        "text": "",
+        "accordion": {
+          "contributors": {
+            "title": "",
+            "subtitle": ""
+          },
+          "translators": {
+            "title": "",
+            "subtitle": ""
+          },
+          "libraries": {
+            "title": "",
+            "subtitle": ""
+          },
+          "hotkeys": {
+            "title": "",
+            "subtitle": "",
+            "field": {
+              "shortcut": "",
+              "action": ""
+            },
+            "action": {
+              "toggleBoardEdit": "",
+              "toggleColorScheme": "",
+              "saveNotebook": "",
+              "openSpotlight": ""
+            },
+            "note": ""
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "Tartály",
+    "table": {
+      "updated": "",
+      "search": "",
+      "selected": "",
+      "footer": ""
+    },
+    "field": {
+      "name": {
+        "label": "Név"
+      },
+      "state": {
+        "label": "Állapot",
+        "option": {
+          "created": "Létrehozva",
+          "running": "Fut",
+          "paused": "Szünet",
+          "restarting": "Újraindítás",
+          "exited": "",
+          "removing": "Eltávolítás",
+          "dead": ""
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        }
+      },
+      "containerImage": {
+        "label": "Kép"
+      },
+      "ports": {
+        "label": "Portok"
+      }
+    },
+    "action": {
+      "title": "",
+      "start": {
+        "label": "Indítás",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "stop": {
+        "label": "Megállítás",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "restart": {
+        "label": "Újraindítás",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "Eltávolítás",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "refresh": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "modal": {
+          "title": ""
+        }
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "",
+      "label": "",
+      "providers": "",
+      "version": "",
+      "architecture": "",
+      "capacity": {
+        "title": "",
+        "resource": {
+          "reserved": "",
+          "used": ""
+        }
+      },
+      "resources": {
+        "title": "",
+        "nodes": "",
+        "namespaces": "",
+        "ingresses": "",
+        "services": "",
+        "pods": "",
+        "configmaps": "",
+        "secrets": "",
+        "volumes": ""
+      }
+    },
+    "nodes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "ready": "",
+            "NotReady": ""
+          }
+        },
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        },
+        "pods": {
+          "label": ""
+        },
+        "operatingSystem": {
+          "label": ""
+        },
+        "architecture": {
+          "label": ""
+        },
+        "kubernetesVersion": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "namespaces": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "active": "",
+            "terminating": ""
+          }
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "ingresses": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "className": {
+          "label": ""
+        },
+        "rulesAndPaths": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "services": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "ports": {
+          "label": ""
+        },
+        "targetPorts": {
+          "label": ""
+        },
+        "clusterIP": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "pods": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "image": {
+          "label": ""
+        },
+        "applicationType": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "secrets": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "configmaps": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "volumes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "accessModes": {
+          "label": ""
+        },
+        "storage": {
+          "label": ""
+        },
+        "storageClassName": {
+          "label": ""
+        },
+        "volumeMode": {
+          "label": ""
+        },
+        "volumeName": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "permission": {
+    "title": "",
+    "userSelect": {
+      "title": ""
+    },
+    "groupSelect": {
+      "title": ""
+    },
+    "tab": {
+      "user": "Felhasználók",
+      "group": "Csoportok",
+      "inherited": ""
+    },
+    "field": {
+      "user": {
+        "label": "Felhasználó"
+      },
+      "group": {
+        "label": "Csoport"
+      },
+      "permission": {
+        "label": ""
+      }
+    },
+    "action": {
+      "saveUser": "",
+      "saveGroup": ""
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "Kezelés",
+      "boards": {
+        "label": "Táblák"
+      },
+      "integrations": {
+        "label": "Integrációk",
+        "edit": {
+          "label": "Szerkesztés"
+        },
+        "new": {
+          "label": ""
+        }
+      },
+      "search-engines": {
+        "label": "Keresőmotorok",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Szerkesztés"
+        }
+      },
+      "medias": {
+        "label": "Média"
+      },
+      "apps": {
+        "label": "Alkalmazások",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Szerkesztés"
+        }
+      },
+      "users": {
+        "label": "Felhasználók",
+        "create": {
+          "label": "Létrehozás"
+        },
+        "general": "Általános",
+        "security": "Biztonság",
+        "board": "Táblák",
+        "groups": {
+          "label": "Csoportok"
+        },
+        "invites": {
+          "label": "Meghívók"
+        }
+      },
+      "tools": {
+        "label": "Eszközök",
+        "tasks": {
+          "label": ""
+        },
+        "docker": {
+          "label": ""
+        },
+        "kubernetes": {
+          "label": "",
+          "nodes": {
+            "label": ""
+          },
+          "namespaces": {
+            "label": ""
+          },
+          "ingresses": {
+            "label": ""
+          },
+          "services": {
+            "label": ""
+          },
+          "pods": {
+            "label": ""
+          },
+          "configmaps": {
+            "label": ""
+          },
+          "secrets": {
+            "label": ""
+          },
+          "volumes": {
+            "label": ""
+          }
+        },
+        "logs": {
+          "label": ""
+        },
+        "certificates": {
+          "label": "",
+          "hostnames": {
+            "label": ""
+          }
+        }
+      },
+      "settings": {
+        "label": "Beállítások"
+      },
+      "about": {
+        "label": "Névjegy"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "",
+    "nothingFound": "",
+    "error": {
+      "fetch": ""
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "",
+        "group": {
+          "app": {
+            "title": "Alkalmazások",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "edit": {
+                  "label": "Alkalmazás szerkesztése"
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "board": {
+            "title": "Táblák",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "homeBoard": {
+                  "label": ""
+                },
+                "mobileBoard": {
+                  "label": ""
+                },
+                "settings": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "integration": {
+            "title": "Integrációk"
+          }
+        }
+      },
+      "command": {
+        "help": "",
+        "group": {
+          "localCommand": {
+            "title": ""
+          },
+          "globalCommand": {
+            "title": "",
+            "option": {
+              "colorScheme": {
+                "light": "",
+                "dark": ""
+              },
+              "language": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newBoard": {
+                "label": ""
+              },
+              "importBoard": {
+                "label": ""
+              },
+              "newApp": {
+                "label": ""
+              },
+              "newIntegration": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newUser": {
+                "label": ""
+              },
+              "newInvite": {
+                "label": ""
+              },
+              "newGroup": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "",
+        "requestSeries": "",
+        "openIn": ""
+      },
+      "external": {
+        "help": "",
+        "group": {
+          "searchEngine": {
+            "title": "Keresőmotorok",
+            "children": {
+              "action": {
+                "search": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              },
+              "searchResults": {
+                "title": ""
+              }
+            },
+            "option": {
+              "google": {
+                "name": "",
+                "description": ""
+              },
+              "bing": {
+                "name": "",
+                "description": ""
+              },
+              "duckduckgo": {
+                "name": "",
+                "description": ""
+              },
+              "torrent": {
+                "name": "Torrentek",
+                "description": ""
+              },
+              "youTube": {
+                "name": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": ""
+          },
+          "help": {
+            "title": "Segítség",
+            "option": {
+              "documentation": {
+                "label": "Dokumentáció"
+              },
+              "submitIssue": {
+                "label": ""
+              },
+              "discord": {
+                "label": "Discord-szerverünk"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "",
+            "option": {
+              "other": {
+                "label": ""
+              },
+              "no-default": {
+                "label": "",
+                "description": ""
+              },
+              "search": {
+                "label": ""
+              },
+              "from-integration": {
+                "description": ""
+              }
+            }
+          },
+          "local": {
+            "title": ""
+          }
+        }
+      },
+      "page": {
+        "help": "",
+        "group": {
+          "page": {
+            "title": "",
+            "option": {
+              "manageHome": {
+                "label": ""
+              },
+              "manageBoard": {
+                "label": ""
+              },
+              "manageApp": {
+                "label": ""
+              },
+              "manageIntegration": {
+                "label": ""
+              },
+              "manageSearchEngine": {
+                "label": ""
+              },
+              "manageMedia": {
+                "label": ""
+              },
+              "manageUser": {
+                "label": "Felhasználók kezelése"
+              },
+              "manageInvite": {
+                "label": ""
+              },
+              "manageGroup": {
+                "label": ""
+              },
+              "manageDocker": {
+                "label": ""
+              },
+              "manageApi": {
+                "label": ""
+              },
+              "manageLog": {
+                "label": "Naplók megtekintése"
+              },
+              "manageTask": {
+                "label": ""
+              },
+              "manageSettings": {
+                "label": ""
+              },
+              "about": {
+                "label": "Névjegy"
+              },
+              "homeBoard": {
+                "label": "Főoldal"
+              },
+              "preferences": {
+                "label": "Saját preferenciák"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "",
+        "group": {
+          "user": {
+            "title": "Felhasználók",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "group": {
+            "title": "Csoportok",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                },
+                "manageMember": {
+                  "label": ""
+                },
+                "managePermission": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "",
+      "field": {
+        "name": {
+          "label": "Név"
+        },
+        "short": {
+          "label": ""
+        },
+        "urlTemplate": {
+          "label": ""
+        },
+        "description": {
+          "label": "Leírás"
+        }
+      },
+      "page": {
+        "list": {
+          "title": "Keresőmotorok",
+          "noResults": {
+            "title": "",
+            "action": ""
+          },
+          "interactive": ""
+        },
+        "create": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        },
+        "edit": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "A módosítások sikeresen alkalmazva",
+              "message": ""
+            },
+            "error": {
+              "title": "Nem sikerült alkalmazni a változtatásokat",
+              "message": ""
+            }
+          },
+          "configControl": "",
+          "searchEngineType": {
+            "generic": "",
+            "fromIntegration": ""
+          }
+        },
+        "delete": {
+          "title": "",
+          "message": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "",
+            "table": {
+              "header": {
+                "season": "",
+                "episodes": ""
+              }
+            },
+            "button": {
+              "send": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": ""
+      },
+      "subject": {
+        "label": ""
+      },
+      "issuer": {
+        "label": ""
+      },
+      "validFrom": {
+        "label": ""
+      },
+      "validTo": {
+        "label": ""
+      },
+      "serialNumber": {
+        "label": ""
+      },
+      "fingerprint": {
+        "label": ""
+      }
+    },
+    "page": {
+      "list": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "invalid": {
+          "title": "",
+          "description": ""
+        },
+        "expires": "",
+        "toHostnames": ""
+      },
+      "hostnames": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "toCertificates": ""
+      }
+    },
+    "action": {
+      "create": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "",
+        "info": "",
+        "warn": "",
+        "error": ""
+      }
+    }
+  }
+}

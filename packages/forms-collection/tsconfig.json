@@ -1,0 +1,8 @@
+{
+  "extends": "@homarr/tsconfig/base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "include": ["*.ts", "src", "index.tsx"],
+  "exclude": ["node_modules"]
+}

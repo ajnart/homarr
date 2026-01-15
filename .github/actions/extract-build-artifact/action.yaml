@@ -1,0 +1,64 @@
+name: Extract Build Artifact
+description: Extracts artifacts from an existing Docker image to be used for from source installation
+inputs:
+  digest:
+    description: Digest of Docker image to use
+    required: true
+  architecture:
+    description: Name of architecture, will be used to build artifact content (amd64 or arm64)
+    required: true
+  release-tag:
+    description: Tag of the release to which the artifact will be attached
+    required: true
+  repository:
+    description: Repository to which the release belongs, e.g. owner/repo
+    required: true
+  token:
+    description: GitHub token with permissions to upload release assets
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Prebuilt debian dependencies
+      uses: homarr-labs/homarr/.github/actions/prebuilt-debian@dev
+      id: prebuilt-debian
+      with:
+        architecture: ${{ inputs.architecture }}
+    - name: Start docker container for ${{ inputs.architecture }}
+      run: |
+        docker run --name homarr \
+          -e "SECRET_ENCRYPTION_KEY=0000000000000000000000000000000000000000000000000000000000000000" \
+          --detach --rm ${{ inputs.digest }}
+      shell: bash
+    - name: Prepare extraction
+      run: |
+        docker exec homarr cp /etc/nginx/templates/nginx.conf /app && \
+        mkdir -p ${{ runner.temp }}/extraction/${{ inputs.architecture }}
+      shell: bash
+    - name: Extract source from ${{ inputs.architecture }} container (alpine)
+      run: |
+        docker exec homarr tar -czf extraction-alpine.tar.gz -C /app . && \
+        docker cp homarr:/app/extraction-alpine.tar.gz ${{ runner.temp }}/extraction/${{ inputs.architecture }}/build-alpine-${{ inputs.architecture }}.tar.gz && \
+        docker exec homarr rm /app/extraction-alpine.tar.gz
+      shell: bash
+    - name: Extract source from ${{ inputs.architecture }} container (debian)
+      run: |
+        docker cp ${{ steps.prebuilt-debian.outputs.path }}/. homarr:/app/build && \
+        docker cp ${{ steps.prebuilt-debian.outputs.path }}/. homarr:/app/node_modules/better-sqlite3/build/Release && \
+        docker exec homarr tar -czf extraction-debian.tar.gz -C /app . && \
+        docker cp homarr:/app/extraction-debian.tar.gz ${{ runner.temp }}/extraction/${{ inputs.architecture }}/build-debian-${{ inputs.architecture }}.tar.gz
+      shell: bash
+    - name: Stop ${{ inputs.architecture }} container
+      if: always()
+      run: docker container remove --force --volumes homarr
+      shell: bash
+    - name: Add build archive to release (alpine)
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+      run: gh release upload --repo ${{ inputs.repository }} ${{ inputs.release-tag }} ${{ runner.temp }}/extraction/${{ inputs.architecture }}/build-alpine-${{ inputs.architecture }}.tar.gz --clobber
+      shell: bash
+    - name: Add build archive to release (debian)
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+      run: gh release upload --repo ${{ inputs.repository }} ${{ inputs.release-tag }} ${{ runner.temp }}/extraction/${{ inputs.architecture }}/build-debian-${{ inputs.architecture }}.tar.gz --clobber
+      shell: bash

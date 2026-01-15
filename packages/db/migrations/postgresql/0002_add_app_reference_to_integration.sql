@@ -1,0 +1,2 @@
+ALTER TABLE "integration" ADD COLUMN "app_id" varchar(128);--> statement-breakpoint
+ALTER TABLE "integration" ADD CONSTRAINT "integration_app_id_app_id_fk" FOREIGN KEY ("app_id") REFERENCES "public"."app"("id") ON DELETE set null ON UPDATE no action;

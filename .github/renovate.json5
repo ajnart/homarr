@@ -1,0 +1,41 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:recommended"],
+  packageRules: [
+    {
+      matchPackageNames: ["^@homarr/"],
+      enabled: false,
+    },
+    // Reenable once https://github.com/privatenumber/tsx/issues/737 is fixed
+    {
+      matchPackageNames: ["tsx"],
+      enabled: false,
+    },
+    {
+      matchUpdateTypes: ["minor", "patch", "pin", "digest"],
+      automerge: true,
+    },
+    {
+      // disallow automerge for onlyBuiltDependencies
+      matchPackageNames: [
+        "@tree-sitter-grammars/tree-sitter-yaml",
+        "bcrypt",
+        "better-sqlite3",
+        "cpu-features",
+        "esbuild",
+        "sharp",
+        "ssh2",
+        "tree-sitter",
+        "tree-sitter-json",
+      ],
+      automerge: false,
+    },
+  ],
+  updateInternalDeps: true,
+  rangeStrategy: "bump",
+  automerge: false,
+  baseBranches: ["dev"],
+  dependencyDashboard: false,
+  // prevent special characters in branch names (otherwise git errors occur on windows)
+  branchNameStrict: true,
+}

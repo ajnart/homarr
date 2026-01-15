@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "Bem-vindo ao Homarr",
+        "subtitle": "Vamos começar configurando a sua instância Homarr.",
+        "description": "Para começar, por favor selecione como você deseja configurar sua instância Homarr.",
+        "action": {
+          "scratch": "Começar do zero",
+          "importOldmarr": "Importe de uma instância Homarr anterior a 1.0"
+        }
+      },
+      "import": {
+        "title": "Importar dados",
+        "subtitle": "Você pode importar dados de uma instância existente do Homarr.",
+        "dropzone": {
+          "title": "Arraste o arquivo zip aqui ou clique para procurar",
+          "description": "O arquivo zip enviado será processado e você poderá selecionar o que deseja importar"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "Alterar arquivo"
+          }
+        },
+        "importSettings": {
+          "title": "Importar configurações",
+          "description": "Configure o comportamento da importação"
+        },
+        "boardSelection": {
+          "title": "{count} quadros encontrados",
+          "description": "Escolha todos os quadros com o tamanho que você deseja importar",
+          "action": {
+            "selectAll": "Selecionar todos",
+            "unselectAll": "Desmarcar Todos"
+          }
+        },
+        "summary": {
+          "title": "Resumo da importação",
+          "description": "No resumo abaixo, você pode ver o que será importado",
+          "action": {
+            "import": "Confirmar a importação e continuar"
+          },
+          "entities": {
+            "apps": "Aplicativos",
+            "boards": "Placas",
+            "integrations": "Integrações",
+            "credentialUsers": "Usuários credenciados"
+          }
+        },
+        "tokenModal": {
+          "title": "Insira o token de importação",
+          "field": {
+            "token": {
+              "label": "Token",
+              "description": "Insira o token de importação mostrado em sua instância homarr anterior"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "Token inválido",
+              "message": "O token que você inseriu é inválido"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "Usuário Administrador",
+        "subtitle": "Especifique as credenciais para seu usuário administrador.",
+        "notification": {
+          "success": {
+            "title": "Usuário criado",
+            "message": "O usuário foi criado com sucesso"
+          },
+          "error": {
+            "title": "Falha ao criar usuário"
+          }
+        }
+      },
+      "group": {
+        "title": "Grupo externo",
+        "subtitle": "Especifique o grupo que deve ser usado para usuários externos.",
+        "form": {
+          "name": {
+            "label": "Nome do grupo",
+            "description": "O nome tem que coincidir com o grupo administrador do provedor externo"
+          }
+        }
+      },
+      "settings": {
+        "title": "Configurações",
+        "subtitle": "Definir as configurações do servidor."
+      },
+      "finish": {
+        "title": "Concluir configuração",
+        "subtitle": "Você está pronto para começar!",
+        "description": "Você concluiu com sucesso o processo de configuração. Agora você pode começar a usar o Homarr. Selecione sua próxima ação:",
+        "action": {
+          "goToBoard": "Ir para o quadro {name}",
+          "createBoard": "Crie seu primeiro quadro",
+          "inviteUser": "Convidar outros usuários",
+          "docs": "Ler a documentação"
+        }
+      }
+    },
+    "backToStart": "Voltar ao início"
+  },
+  "user": {
+    "title": "Usuários",
+    "name": "Usuário",
+    "page": {
+      "login": {
+        "title": "Acesse a sua conta",
+        "subtitle": "Bem-vindo(a) de volta! Por favor, insira suas credenciais"
+      },
+      "invite": {
+        "title": "Junte-se ao Homarr",
+        "subtitle": "Bem-vindo ao Homarr! Por favor, crie sua conta",
+        "description": "Você foi convidado(a) por {username}"
+      },
+      "init": {
+        "title": "Nova instalação do Homarr",
+        "subtitle": "Por favor, crie o usuário administrador inicial"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "E-mail",
+        "verified": "Verificado"
+      },
+      "username": {
+        "label": "Usuário"
+      },
+      "password": {
+        "label": "Senha",
+        "requirement": {
+          "length": "Inclua pelo menos 8 caracteres",
+          "lowercase": "Inclui letras minúsculas",
+          "uppercase": "Inclui letras maiúsculas",
+          "number": "Inclui número",
+          "special": "Inclua um caractere especial"
+        }
+      },
+      "passwordConfirm": {
+        "label": "Confirmar senha"
+      },
+      "previousPassword": {
+        "label": "Senha anterior"
+      },
+      "homeBoard": {
+        "label": "Quadro inicial"
+      },
+      "pingIconsEnabled": {
+        "label": "Usar ícone para pings"
+      },
+      "defaultSearchEngine": {
+        "label": "Mecanismo de pesquisa padrão"
+      },
+      "openSearchInNewTab": {
+        "label": "Abrir resultados da busca em uma nova aba"
+      }
+    },
+    "error": {
+      "usernameTaken": "Nome de usuário já em uso"
+    },
+    "action": {
+      "login": {
+        "label": "“Login”",
+        "labelWith": "Iniciar sessão com {provider}",
+        "notification": {
+          "success": {
+            "title": "Início de sessão bem-sucedido",
+            "message": "Agora você está conectado"
+          },
+          "error": {
+            "title": "Falha ao iniciar sessão",
+            "message": "Seu acesso falhou"
+          }
+        },
+        "forgotPassword": {
+          "label": "Esqueceu sua senha?",
+          "description": "Um administrador pode usar o seguinte comando para redefinir sua senha:"
+        }
+      },
+      "register": {
+        "label": "Criar conta",
+        "notification": {
+          "success": {
+            "title": "Conta criada",
+            "message": "Por favor, entre para continuar"
+          },
+          "error": {
+            "title": "Criação da conta falhou",
+            "message": "Sua conta não pode ser criada"
+          }
+        }
+      },
+      "create": "Criar usuário",
+      "changePassword": {
+        "label": "Alterar senha",
+        "notification": {
+          "success": {
+            "message": "Senha alterada com sucesso"
+          },
+          "error": {
+            "message": "Não é possível alterar a senha"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "Quadro inicial alterado com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível alterar o quadro inicial"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "Preferências de busca alteradas com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível alterar as preferências de busca"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "Primeiro dia da semana alterado com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível alterar o primeiro dia da semana"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "Ícones de ping alterados com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível alternar ícones de ping"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "Alterar imagem",
+          "notification": {
+            "success": {
+              "message": "A imagem foi alterada com sucesso"
+            },
+            "error": {
+              "message": "Não é possível alterar a imagem"
+            },
+            "toLarge": {
+              "title": "A imagem é muito grande",
+              "message": "O tamanho máximo da imagem é {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "Remover imagem",
+          "confirm": "Tem certeza de que deseja remover esta imagem?",
+          "notification": {
+            "success": {
+              "message": "Imagem removida com sucesso"
+            },
+            "error": {
+              "message": "Não é possível remover a imagem"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "Perfil atualizado com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível atualizar o perfil"
+          }
+        }
+      },
+      "delete": {
+        "label": "Excluir usuário permanentemente",
+        "description": "Exclui esse usuário incluindo suas preferências. Isso não removerá nenhum quadro. O usuário não sera notificado.",
+        "confirm": "Tem certeza que deseja excluir o usuário {username} e suas preferências?"
+      },
+      "select": {
+        "label": "Selecionar usuário",
+        "notFound": "Nenhum usuário encontrado"
+      },
+      "transfer": {
+        "label": "Selecionar novo proprietário"
+      }
+    }
+  },
+  "group": {
+    "title": "Grupos",
+    "name": "Grupo",
+    "search": "Encontrar um grupo",
+    "field": {
+      "name": "Nome",
+      "members": "Membros",
+      "homeBoard": {
+        "label": "Quadro inicial",
+        "description": "Somente quadros acessíveis ao grupo podem ser selecionados"
+      },
+      "mobileBoard": {
+        "label": "Quadro para celular",
+        "description": "Somente quadros acessíveis ao grupo podem ser selecionados"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "Administrador",
+        "item": {
+          "admin": {
+            "label": "Administrador",
+            "description": "Membros com essa permissão têm acesso total a todos os recursos e configurações"
+          }
+        }
+      },
+      "app": {
+        "title": "Aplicativos",
+        "item": {
+          "create": {
+            "label": "Criar aplicativo",
+            "description": "Permitir que membros criem aplicativos"
+          },
+          "use-all": {
+            "label": "Usar todas aplicações",
+            "description": "Permitir que os membros adicionem qualquer aplicativo aos seus quadros"
+          },
+          "modify-all": {
+            "label": "Modificar todos os aplicativos",
+            "description": ""
+          },
+          "full-all": {
+            "label": "Acesso completo a aplicativos",
+            "description": "Permitir que membros gerenciem, usem e excluam qualquer aplicativo"
+          }
+        }
+      },
+      "board": {
+        "title": "Placas",
+        "item": {
+          "create": {
+            "label": "Criar painel",
+            "description": "Permitir que membros criem painéis"
+          },
+          "view-all": {
+            "label": "Ver todos os painéis",
+            "description": "Permitir que membros visualizem todos os painéis"
+          },
+          "modify-all": {
+            "label": "Modificar todos os painéis",
+            "description": "Permitir que membros modifiquem todos os painéis (Não inclui o controle de acesso e a zona de perigo)"
+          },
+          "full-all": {
+            "label": "Acesso total ao painel",
+            "description": "Permitir que membros vejam, modifiquem e deletem todos os painéis (Incluindo o controle de acesso e a zona de perigo)"
+          }
+        }
+      },
+      "integration": {
+        "title": "Integrações",
+        "item": {
+          "create": {
+            "label": "Criar integração",
+            "description": "Permitir que membros criem integrações"
+          },
+          "use-all": {
+            "label": "Usar todas as integrações",
+            "description": "Permitir que membros adicionem qualquer integração aos seus painéis"
+          },
+          "interact-all": {
+            "label": "Interagir com qualquer integração",
+            "description": "Permitir que membros interajam com qualquer integração"
+          },
+          "full-all": {
+            "label": "Acesso total às integrações",
+            "description": "Permitir que membros gerenciem, usem e interajam com qualquer integração"
+          }
+        }
+      },
+      "media": {
+        "title": "Mídias",
+        "item": {
+          "upload": {
+            "label": "Adicionar Mídia",
+            "description": "Permitir que membros adicionem mídias"
+          },
+          "view-all": {
+            "label": "Visualizar todas as mídias",
+            "description": "Permitir que membros visualizem todas as mídias"
+          },
+          "full-all": {
+            "label": "Acesso total às mídias",
+            "description": "Permitir que membros gerenciem e deletem qualquer mídia"
+          }
+        }
+      },
+      "other": {
+        "title": "Outras",
+        "item": {
+          "view-logs": {
+            "label": "Visualizar registros",
+            "description": "Permitir que os membros visualizem os registros"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "Ferramentas de busca",
+        "item": {
+          "create": {
+            "label": "Criar ferramenta de busca",
+            "description": "Permitir que os membros criem mecanismos de busca"
+          },
+          "modify-all": {
+            "label": "Modificar todas as ferramentas de busca",
+            "description": "Permitir que membros modifiquem todas as ferramentas de busca"
+          },
+          "full-all": {
+            "label": "Acesso total às ferramentas de busca",
+            "description": "Permitir que membros modifiquem e deletem qualquer ferramenta de busca"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "Alguns membros são de provedores externos e não podem ser gerenciados aqui",
+      "external": "Todos os membros são de provedores externos e não podem ser gerenciados aqui"
+    },
+    "reservedNotice": {
+      "message": "Esse grupo é reservado para uso do sistema e restringe algumas ações. <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "Novo grupo",
+        "notification": {
+          "success": {
+            "message": "O grupo foi criado com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível criar o grupo"
+          }
+        }
+      },
+      "transfer": {
+        "label": "Transferir propriedade",
+        "description": "Transferir propriedade deste grupo para outro usuário.",
+        "confirm": "Tem certeza de que deseja transferir a propriedade do grupo {name} para {username}?",
+        "notification": {
+          "success": {
+            "message": "Grupo {group} transferido para {user} com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível transferir a propriedade"
+          }
+        }
+      },
+      "addMember": {
+        "label": "Adicionar membro"
+      },
+      "removeMember": {
+        "label": "Remover membro",
+        "confirm": "Você tem certeza que deseja remover {user} desse grupo?"
+      },
+      "delete": {
+        "label": "Deletar grupo",
+        "description": "Uma vez deletado o grupo não há como reverter. Tenha cuidado.",
+        "confirm": "Você tem certeza que deseja deletar o grupo {name}?",
+        "notification": {
+          "success": {
+            "message": "Grupo {name} deletado com sucesso"
+          },
+          "error": {
+            "message": "Não foi possível deletar o grupo {name}"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "Permissões salvas",
+            "message": "Permissões foram salvas com sucesso"
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "select": {
+        "label": "",
+        "notFound": ""
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "Configurações salvas",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "Grupo padrão",
+      "description": ""
+    }
+  },
+  "app": {
+    "search": "",
+    "page": {
+      "list": {
+        "title": "Aplicativos",
+        "noResults": {
+          "title": "",
+          "action": "Crie seu primeiro aplicativo"
+        }
+      },
+      "create": {
+        "title": "Novo Aplicativo",
+        "notification": {
+          "success": {
+            "title": "Criado com sucesso",
+            "message": "O aplicativo foi criado com sucesso"
+          },
+          "error": {
+            "title": "Falha ao criar",
+            "message": "Não foi possível criar o aplicativo"
+          }
+        }
+      },
+      "edit": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nome"
+      },
+      "description": {
+        "label": ""
+      },
+      "url": {
+        "label": ""
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "",
+        "notFound": "",
+        "search": "",
+        "noResults": "",
+        "action": "",
+        "title": ""
+      },
+      "create": {
+        "title": "Criar  aplicativo",
+        "description": "Criar um aplicativo",
+        "action": "Abrir criação de aplicativo"
+      },
+      "add": ""
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "",
+        "search": "",
+        "noResults": {
+          "title": ""
+        }
+      },
+      "create": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "Existente",
+              "label": "Selecione um aplicativo existente"
+            },
+            "new": {
+              "title": "Novo",
+              "url": {
+                "label": "URL da aplicação",
+                "description": "A URL do aplicativo será aberta quando acessada a partir do painel de controle"
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "app": {
+          "action": {
+            "add": "",
+            "remove": "",
+            "select": ""
+          }
+        }
+      },
+      "delete": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "Nome"
+      },
+      "url": {
+        "label": ""
+      },
+      "attemptSearchEngineCreation": {
+        "label": "",
+        "description": ""
+      },
+      "app": {
+        "sectionTitle": ""
+      },
+      "createApp": {
+        "label": "Criar aplicativo",
+        "description": "Crie um aplicativo com o mesmo nome e ícone da integração. Deixe o campo de entrada abaixo vazio para criar o aplicativo com a URL de integração."
+      },
+      "appHref": {
+        "placeholder": ""
+      }
+    },
+    "action": {
+      "create": ""
+    },
+    "testConnection": {
+      "action": {
+        "create": "",
+        "edit": ""
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": ""
+          }
+        },
+        "unknown": {
+          "title": "",
+          "description": ""
+        },
+        "parse": {
+          "title": "",
+          "description": ""
+        },
+        "authorization": {
+          "title": "",
+          "description": ""
+        },
+        "statusCode": {
+          "title": "",
+          "description": "",
+          "otherDescription": "",
+          "reason": {
+            "badRequest": "",
+            "notFound": "",
+            "tooManyRequests": "",
+            "internalServerError": "",
+            "serviceUnavailable": "",
+            "gatewayTimeout": ""
+          }
+        },
+        "certificate": {
+          "title": "",
+          "description": {
+            "expired": "",
+            "notYetValid": "",
+            "untrusted": "",
+            "hostnameMismatch": ""
+          },
+          "alert": {
+            "permission": {
+              "title": "",
+              "message": ""
+            },
+            "hostnameMismatch": {
+              "title": "",
+              "message": ""
+            },
+            "extract": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "action": {
+            "retry": {
+              "label": ""
+            },
+            "trust": {
+              "label": ""
+            },
+            "upload": {
+              "label": ""
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "",
+              "message": ""
+            },
+            "notification": {
+              "success": {
+                "title": "",
+                "message": ""
+              },
+              "error": {
+                "title": "",
+                "message": ""
+              }
+            }
+          },
+          "details": {
+            "title": "",
+            "description": "",
+            "content": {
+              "action": "",
+              "title": ""
+            }
+          }
+        },
+        "request": {
+          "title": "",
+          "description": {
+            "connection": {
+              "hostUnreachable": "",
+              "networkUnreachable": "",
+              "refused": "",
+              "reset": ""
+            },
+            "dns": {
+              "notFound": "",
+              "timeout": "",
+              "noAnswer": ""
+            },
+            "timeout": {
+              "aborted": "",
+              "timeout": ""
+            }
+          }
+        }
+      },
+      "alertNotice": "",
+      "notification": {
+        "success": {
+          "title": "",
+          "message": ""
+        },
+        "invalidUrl": {
+          "title": "URL inválido",
+          "message": ""
+        },
+        "secretNotDefined": {
+          "title": "",
+          "message": ""
+        },
+        "invalidCredentials": {
+          "title": "",
+          "message": ""
+        },
+        "commonError": {
+          "title": "",
+          "message": ""
+        },
+        "badRequest": {
+          "title": "",
+          "message": ""
+        },
+        "unauthorized": {
+          "title": "",
+          "message": ""
+        },
+        "forbidden": {
+          "title": "",
+          "message": ""
+        },
+        "notFound": {
+          "title": "",
+          "message": ""
+        },
+        "internalServerError": {
+          "title": "",
+          "message": ""
+        },
+        "serviceUnavailable": {
+          "title": "",
+          "message": ""
+        },
+        "connectionAborted": {
+          "title": "",
+          "message": ""
+        },
+        "domainNotFound": {
+          "title": "",
+          "message": ""
+        },
+        "connectionRefused": {
+          "title": "",
+          "message": ""
+        },
+        "invalidJson": {
+          "title": "",
+          "message": ""
+        },
+        "wrongPath": {
+          "title": "",
+          "message": ""
+        },
+        "tooManyRequests": {
+          "title": "",
+          "message": ""
+        }
+      }
+    },
+    "secrets": {
+      "title": "",
+      "lastUpdated": "",
+      "notSet": {
+        "label": "",
+        "tooltip": ""
+      },
+      "secureNotice": "",
+      "reset": {
+        "title": "",
+        "message": ""
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "",
+        "text": ""
+      },
+      "kind": {
+        "username": {
+          "label": "Usuário",
+          "newLabel": ""
+        },
+        "apiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "password": {
+          "label": "Senha",
+          "newLabel": "Nova senha"
+        },
+        "tokenId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "realm": {
+          "label": "",
+          "newLabel": ""
+        },
+        "personalAccessToken": {
+          "label": "",
+          "newLabel": ""
+        },
+        "topic": {
+          "label": "",
+          "newLabel": ""
+        },
+        "url": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiKey": {
+          "label": "",
+          "newLabel": ""
+        },
+        "opnsenseApiSecret": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubAppId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "githubInstallationId": {
+          "label": "",
+          "newLabel": ""
+        },
+        "privateKey": {
+          "label": "",
+          "newLabel": ""
+        }
+      }
+    },
+    "permission": {
+      "use": "",
+      "interact": "",
+      "full": ""
+    }
+  },
+  "media": {
+    "plural": "",
+    "search": "",
+    "field": {
+      "name": "Nome",
+      "size": "Tamanho",
+      "creator": "Criador"
+    },
+    "action": {
+      "upload": {
+        "label": "",
+        "file": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "delete": {
+        "label": "",
+        "description": "",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        }
+      },
+      "copy": {
+        "label": ""
+      },
+      "open": {
+        "label": ""
+      }
+    }
+  },
+  "common": {
+    "success": "",
+    "beta": "",
+    "error": "Erro",
+    "action": {
+      "add": "Adicionar",
+      "apply": "Aplicar",
+      "backToOverview": "",
+      "change": "",
+      "create": "Criar",
+      "createAnother": "",
+      "edit": "Editar",
+      "import": "",
+      "insert": "Inserir",
+      "remove": "Excluir",
+      "save": "Salvar",
+      "saveChanges": "Salvar alterações",
+      "cancel": "Cancelar",
+      "delete": "Apagar",
+      "discard": "",
+      "close": "",
+      "confirm": "Confirme",
+      "continue": "",
+      "previous": "Anterior",
+      "next": "Próximo",
+      "checkoutDocs": "",
+      "checkLogs": "",
+      "tryAgain": "Tente novamente",
+      "loading": ""
+    },
+    "here": "",
+    "iconPicker": {
+      "label": "",
+      "header": ""
+    },
+    "colorScheme": {
+      "options": {
+        "light": "",
+        "dark": ""
+      }
+    },
+    "information": {
+      "min": "",
+      "max": "",
+      "days": "",
+      "hours": "",
+      "minutes": ""
+    },
+    "notification": {
+      "create": {
+        "success": "",
+        "error": ""
+      },
+      "delete": {
+        "success": "",
+        "error": ""
+      },
+      "update": {
+        "success": "",
+        "error": ""
+      },
+      "transfer": {
+        "success": "",
+        "error": ""
+      }
+    },
+    "multiSelect": {
+      "placeholder": ""
+    },
+    "multiText": {
+      "placeholder": "",
+      "addLabel": ""
+    },
+    "select": {
+      "placeholder": "",
+      "badge": {
+        "recommended": ""
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "",
+        "switchToLightMode": "",
+        "management": "",
+        "preferences": "Suas preferências",
+        "logout": "",
+        "login": "“Login”",
+        "homeBoard": "",
+        "loggedOut": "",
+        "updateAvailable": ""
+      }
+    },
+    "dangerZone": "Zona de risco",
+    "noResults": "Nenhum resultado encontrado",
+    "unsavedChanges": "",
+    "preview": {
+      "show": "",
+      "hide": ""
+    },
+    "zod": {
+      "errors": {
+        "default": "Esse campo é inválido",
+        "required": "Este campo é obrigatório",
+        "string": {
+          "startsWith": "Esse campo deve começar com {startsWith}",
+          "endsWith": "Esse campo deve terminar com {endsWith}",
+          "includes": "Esse campo deve incluir {includes}",
+          "invalidEmail": ""
+        },
+        "tooSmall": {
+          "string": "Esse campo deve ter pelo menos {minimum} caracteres",
+          "number": "Esse campo deve ser maior ou igual a {minimum}"
+        },
+        "tooBig": {
+          "string": "Esse campo deve ter no máximo {maximum} caracteres",
+          "number": "Esse campo deve ser menor ou igual a {maximum}"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "",
+          "passwordRequirements": "",
+          "boardAlreadyExists": "",
+          "invalidFileType": "",
+          "invalidFileName": "",
+          "fileTooLarge": "",
+          "invalidConfiguration": "",
+          "groupNameTaken": ""
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "",
+        "milesPerHour": ""
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "",
+        "remove": ""
+      },
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "Nome"
+        }
+      },
+      "action": {
+        "create": "",
+        "edit": "",
+        "remove": "",
+        "moveUp": "Subir",
+        "moveDown": "Mover para baixo",
+        "createAbove": "",
+        "createBelow": "",
+        "openAllInNewTabs": ""
+      },
+      "create": {
+        "title": "",
+        "submit": ""
+      },
+      "remove": {
+        "title": "",
+        "message": ""
+      },
+      "edit": {
+        "title": "",
+        "submit": ""
+      },
+      "menu": {
+        "label": {
+          "create": "",
+          "changePosition": "Mudar de posição"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "",
+        "text": ""
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "",
+      "import": "",
+      "edit": "",
+      "moveResize": "",
+      "duplicate": "",
+      "remove": ""
+    },
+    "menu": {
+      "label": {
+        "settings": "Configurações"
+      }
+    },
+    "create": {
+      "title": "",
+      "search": "",
+      "addToBoard": ""
+    },
+    "moveResize": {
+      "title": "",
+      "field": {
+        "width": {
+          "label": "Largura"
+        },
+        "height": {
+          "label": "Altura"
+        },
+        "xOffset": {
+          "label": ""
+        },
+        "yOffset": {
+          "label": ""
+        }
+      }
+    },
+    "edit": {
+      "title": "",
+      "advancedOptions": {
+        "label": "",
+        "title": ""
+      },
+      "field": {
+        "integrations": {
+          "label": ""
+        },
+        "title": {
+          "label": ""
+        },
+        "customCssClasses": {
+          "label": ""
+        },
+        "borderColor": {
+          "label": ""
+        }
+      }
+    },
+    "remove": {
+      "title": "",
+      "message": ""
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "",
+      "description": "",
+      "option": {
+        "appId": {
+          "label": ""
+        },
+        "openInNewTab": {
+          "label": "Abrir em novo separador"
+        },
+        "showTitle": {
+          "label": ""
+        },
+        "pingEnabled": {
+          "label": ""
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": "",
+            "row-reverse": "",
+            "column": "",
+            "column-reverse": ""
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "",
+          "description": "",
+          "option": {
+            "normal": "",
+            "tooltip": "",
+            "hidden": ""
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "",
+          "tooltip": ""
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            },
+            "gridHorizontal": {
+              "label": ""
+            }
+          }
+        },
+        "hideTitle": {
+          "label": ""
+        },
+        "hideIcon": {
+          "label": ""
+        },
+        "hideHostname": {
+          "label": ""
+        },
+        "openNewTab": {
+          "label": ""
+        },
+        "items": {
+          "label": "",
+          "add": ""
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": "",
+        "integrationsDisconnected": ""
+      },
+      "data": {
+        "adsBlockedToday": "Bloqueado hoje",
+        "adsBlockedTodayPercentage": "Bloqueado hoje",
+        "dnsQueriesToday": "Consultas hoje",
+        "domainsBeingBlocked": ""
+      },
+      "domainsTooltip": ""
+    },
+    "dnsHoleControls": {
+      "name": "",
+      "description": "Controle o PiHole ou o AdGuard em seu painel de controle",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "row": {
+              "label": ""
+            },
+            "column": {
+              "label": ""
+            },
+            "grid": {
+              "label": ""
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "controls": {
+        "enableAll": "",
+        "disableAll": "",
+        "setTimer": "",
+        "set": "",
+        "enabled": "Ativado",
+        "disabled": "Desativado",
+        "processing": "",
+        "disconnected": "",
+        "hours": "",
+        "minutes": "",
+        "unlimited": ""
+      }
+    },
+    "clock": {
+      "name": "",
+      "description": "Apresenta a data e hora actuais.",
+      "option": {
+        "customTitleToggle": {
+          "label": "",
+          "description": ""
+        },
+        "customTitle": {
+          "label": ""
+        },
+        "is24HourFormat": {
+          "label": "",
+          "description": ""
+        },
+        "showSeconds": {
+          "label": ""
+        },
+        "useCustomTimezone": {
+          "label": ""
+        },
+        "timezone": {
+          "label": "Fuso-horário",
+          "description": ""
+        },
+        "showDate": {
+          "label": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customTimeFormat": {
+          "label": "",
+          "description": ""
+        },
+        "customDateFormat": {
+          "label": "",
+          "description": ""
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "",
+      "description": "",
+      "option": {
+        "title": {
+          "label": ""
+        },
+        "domain": {
+          "label": ""
+        },
+        "isBedrockServer": {
+          "label": ""
+        }
+      },
+      "status": {
+        "online": "",
+        "offline": ""
+      }
+    },
+    "notebook": {
+      "name": "Caderno de anotações",
+      "description": "",
+      "option": {
+        "showToolbar": {
+          "label": "Mostrar a barra de ferramentas para ajudá-lo a escrever markdown"
+        },
+        "allowReadOnlyCheck": {
+          "label": "Permitir a verificação no modo de leitura"
+        },
+        "content": {
+          "label": "O conteúdo do notebook"
+        }
+      },
+      "controls": {
+        "bold": "Negrito",
+        "italic": "Itálico",
+        "strikethrough": "Riscar",
+        "underline": "Sublinhar",
+        "colorText": "Cor do texto",
+        "colorHighlight": "Texto colorido em destaque",
+        "code": "Código",
+        "clear": "Limpar formatação",
+        "heading": "Cabeçalho {level}",
+        "align": "Alinhar texto: {position}",
+        "blockquote": "Bloco de Citação",
+        "horizontalLine": "Linha horizontal",
+        "bulletList": "Lista de marcadores",
+        "orderedList": "Lista ordenada",
+        "checkList": "Lista de verificação",
+        "increaseIndent": "Aumentar recuo",
+        "decreaseIndent": "Diminuir recuo",
+        "link": "",
+        "unlink": "Remover link",
+        "image": "Incorporar imagem",
+        "addTable": "Adicionar tabela",
+        "deleteTable": "Excluir tabela",
+        "colorCell": "Cor da Célula",
+        "mergeCell": "Ativar/desativar mesclagem de células",
+        "addColumnLeft": "Adicionar coluna antes",
+        "addColumnRight": "Adicionar coluna depois",
+        "deleteColumn": "Excluir coluna",
+        "addRowTop": "Adicionar linha antes",
+        "addRowBelow": "Adicionar linha depois",
+        "deleteRow": "Excluir linha"
+      },
+      "align": {
+        "left": "Esquerda",
+        "center": "Centralizado",
+        "right": "Certo"
+      },
+      "popover": {
+        "clearColor": "Limpar cor",
+        "source": "Fonte",
+        "widthPlaceholder": "Valor em % ou pixels",
+        "columns": "Colunas",
+        "rows": "Linhas",
+        "width": "Largura",
+        "height": "Altura"
+      },
+      "placeholder": "",
+      "dismiss": {
+        "title": "",
+        "message": "",
+        "action": {
+          "discard": "",
+          "keepEditing": ""
+        }
+      }
+    },
+    "iframe": {
+      "name": "",
+      "description": "Incorporar qualquer conteúdo da internet. Alguns sites podem restringir o acesso.",
+      "option": {
+        "embedUrl": {
+          "label": "Incorporar URL"
+        },
+        "allowFullScreen": {
+          "label": "Permitir tela cheia"
+        },
+        "allowTransparency": {
+          "label": "Permitir transparência"
+        },
+        "allowScrolling": {
+          "label": "Permitir rolagem"
+        },
+        "allowPayment": {
+          "label": "Permitir pagamento"
+        },
+        "allowAutoPlay": {
+          "label": "Permitir reprodução automática"
+        },
+        "allowMicrophone": {
+          "label": "Permitir microfone"
+        },
+        "allowCamera": {
+          "label": "Permitir câmera"
+        },
+        "allowGeolocation": {
+          "label": "Permitir geolocalização"
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "unsupportedProtocol": "",
+        "noBrowerSupport": "Seu navegador não suporta iframes. Atualize seu navegador."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "",
+      "description": "",
+      "option": {
+        "entityId": {
+          "label": "ID da entidade"
+        },
+        "displayName": {
+          "label": ""
+        },
+        "entityUnit": {
+          "label": ""
+        },
+        "clickable": {
+          "label": ""
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "",
+      "description": "",
+      "option": {
+        "displayName": {
+          "label": "Nome de exibição"
+        },
+        "automationId": {
+          "label": "ID da automação"
+        }
+      },
+      "spotlightAction": {
+        "run": ""
+      }
+    },
+    "stockPrice": {
+      "name": "",
+      "description": "",
+      "option": {
+        "stock": {
+          "label": ""
+        },
+        "timeRange": {
+          "label": "",
+          "option": {
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            },
+            "3mo": {
+              "label": ""
+            },
+            "6mo": {
+              "label": ""
+            },
+            "ytd": {
+              "label": ""
+            },
+            "1y": {
+              "label": ""
+            },
+            "2y": {
+              "label": ""
+            },
+            "5y": {
+              "label": ""
+            },
+            "10y": {
+              "label": ""
+            },
+            "max": {
+              "label": ""
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "",
+          "option": {
+            "5m": {
+              "label": ""
+            },
+            "15m": {
+              "label": ""
+            },
+            "30m": {
+              "label": ""
+            },
+            "1h": {
+              "label": ""
+            },
+            "1d": {
+              "label": ""
+            },
+            "5d": {
+              "label": ""
+            },
+            "1wk": {
+              "label": ""
+            },
+            "1mo": {
+              "label": ""
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "Calendário",
+      "description": "",
+      "duration": {
+        "allDay": ""
+      },
+      "option": {
+        "releaseType": {
+          "label": "Tipo de libertação de Radarr",
+          "options": {
+            "inCinemas": "",
+            "digitalRelease": "",
+            "physicalRelease": ""
+          }
+        },
+        "filterPastMonths": {
+          "label": ""
+        },
+        "filterFutureMonths": {
+          "label": ""
+        },
+        "showUnmonitored": {
+          "label": ""
+        }
+      }
+    },
+    "weather": {
+      "name": "Tempo",
+      "description": "Apresenta a informação meteorológica actual de um local definido.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": ""
+        },
+        "disableTemperatureDecimals": {
+          "label": ""
+        },
+        "showCurrentWindSpeed": {
+          "label": "",
+          "description": ""
+        },
+        "useImperialSpeed": {
+          "label": ""
+        },
+        "location": {
+          "label": "Localização do tempo"
+        },
+        "showCity": {
+          "label": ""
+        },
+        "hasForecast": {
+          "label": ""
+        },
+        "forecastDayCount": {
+          "label": "",
+          "description": ""
+        },
+        "dateFormat": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "currentWindSpeed": "",
+      "dailyForecast": {
+        "sunrise": "",
+        "sunset": "",
+        "maxWindSpeed": "",
+        "maxWindGusts": ""
+      },
+      "kind": {
+        "clear": "Limpar",
+        "mainlyClear": "Principalmente claro",
+        "fog": "Névoa",
+        "drizzle": "Chuvisco",
+        "freezingDrizzle": "Chuvisco de congelação",
+        "rain": "Chuva",
+        "freezingRain": "Chuva gelada",
+        "snowFall": "Queda de neve",
+        "snowGrains": "Grãos de neve",
+        "rainShowers": "Duches de chuva",
+        "snowShowers": "Aguaceiros de neve",
+        "thunderstorm": "Tempestade",
+        "thunderstormWithHail": "Tempestade com granizo",
+        "unknown": "Desconhecido"
+      }
+    },
+    "indexerManager": {
+      "name": "Status do Gerenciador de Indexadores",
+      "description": "",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": ""
+        }
+      },
+      "title": "Gerenciador de indexadores",
+      "testAll": "Testar todos",
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "healthMonitoring": {
+      "name": "Monitoramento da integridade do sistema",
+      "description": "Exibe informações que mostram a saúde e status de seu(s) sistema(s).",
+      "tab": {
+        "system": "",
+        "cluster": ""
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "Temperatura da CPU em Fahrenheit"
+        },
+        "cpu": {
+          "label": "Mostrar informações da CPU"
+        },
+        "memory": {
+          "label": "Mostrar informações da memória"
+        },
+        "showUptime": {
+          "label": ""
+        },
+        "fileSystem": {
+          "label": "Mostrar informações do sistema de arquivos"
+        },
+        "defaultTab": {
+          "label": ""
+        },
+        "visibleClusterSections": {
+          "label": ""
+        },
+        "sectionIndicatorRequirement": {
+          "label": ""
+        }
+      },
+      "popover": {
+        "information": "",
+        "processor": "",
+        "memory": "",
+        "memoryAvailable": "",
+        "version": "",
+        "uptime": "",
+        "loadAverage": "",
+        "minute": "",
+        "minutes": "",
+        "used": "",
+        "available": "Disponível",
+        "lastSeen": ""
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": ""
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "",
+          "memory": ""
+        },
+        "resource": {
+          "node": {
+            "name": ""
+          },
+          "qemu": {
+            "name": ""
+          },
+          "lxc": {
+            "name": ""
+          },
+          "storage": {
+            "name": ""
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "",
+            "vmId": "",
+            "plugin": ""
+          },
+          "detail": {
+            "cpu": "",
+            "memory": "",
+            "storage": "",
+            "uptime": "",
+            "haState": "",
+            "storageType": {
+              "local": "",
+              "shared": ""
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "",
+            "cpu": "",
+            "memory": "",
+            "node": ""
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "",
+      "description": "",
+      "option": {
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": "",
+          "option": {
+            "name": "",
+            "state": "",
+            "cpuUsage": "",
+            "memoryUsage": ""
+          }
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        }
+      },
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "common": {
+      "location": {
+        "query": "",
+        "latitude": "",
+        "longitude": "",
+        "disabledTooltip": "",
+        "unknownLocation": "",
+        "search": "Pesquisa",
+        "table": {
+          "header": {
+            "city": "",
+            "country": "",
+            "coordinates": "",
+            "population": ""
+          },
+          "action": {
+            "select": ""
+          },
+          "population": {
+            "fallback": "Desconhecido"
+          }
+        }
+      },
+      "integration": {
+        "noData": "",
+        "description": ""
+      },
+      "app": {
+        "noData": "",
+        "description": "Clique <here></here> para criar um aplicativo",
+        "quickCreate": "Criar aplicativo em tempo real"
+      },
+      "error": {
+        "noIntegration": "",
+        "noData": ""
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "Transmissão de vídeo",
+      "description": "Incorporar um stream de vídeo ou vídeo de uma câmera ou de um site",
+      "option": {
+        "feedUrl": {
+          "label": "URL do feed"
+        },
+        "hasAutoPlay": {
+          "label": "Reprodução automática",
+          "description": ""
+        },
+        "isMuted": {
+          "label": ""
+        },
+        "hasControls": {
+          "label": ""
+        }
+      },
+      "error": {
+        "noUrl": "",
+        "forYoutubeUseIframe": ""
+      }
+    },
+    "mediaServer": {
+      "name": "",
+      "description": "",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "items": {
+        "currentlyPlaying": "",
+        "user": "",
+        "name": "",
+        "id": "",
+        "metadata": {
+          "title": "",
+          "video": {
+            "title": "",
+            "resolution": ""
+          },
+          "audio": {
+            "title": "",
+            "channelCount": "",
+            "codec": ""
+          },
+          "transcoding": {
+            "title": "",
+            "container": "",
+            "resolution": "",
+            "target": ""
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "",
+      "description": "",
+      "option": {
+        "columns": {
+          "label": ""
+        },
+        "enableRowSorting": {
+          "label": ""
+        },
+        "defaultSort": {
+          "label": ""
+        },
+        "descendingDefaultSort": {
+          "label": ""
+        },
+        "showCompletedUsenet": {
+          "label": ""
+        },
+        "showCompletedTorrent": {
+          "label": ""
+        },
+        "showCompletedHttp": {
+          "label": ""
+        },
+        "activeTorrentThreshold": {
+          "label": ""
+        },
+        "categoryFilter": {
+          "label": ""
+        },
+        "filterIsWhitelist": {
+          "label": ""
+        },
+        "applyFilterToRatio": {
+          "label": ""
+        },
+        "limitPerIntegration": {
+          "label": "",
+          "description": ""
+        }
+      },
+      "errors": {
+        "noColumns": "",
+        "noCommunications": ""
+      },
+      "items": {
+        "actions": {
+          "columnTitle": ""
+        },
+        "added": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "category": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "downSpeed": {
+          "columnTitle": "Para baixo",
+          "detailsTitle": "Velocidade de Transferência"
+        },
+        "index": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "id": {
+          "columnTitle": ""
+        },
+        "integration": {
+          "columnTitle": "Integração"
+        },
+        "name": {
+          "columnTitle": ""
+        },
+        "progress": {
+          "columnTitle": "Progresso",
+          "detailsTitle": ""
+        },
+        "ratio": {
+          "columnTitle": "Razão",
+          "detailsTitle": ""
+        },
+        "received": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "sent": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "size": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "state": {
+          "columnTitle": "Estado",
+          "detailsTitle": ""
+        },
+        "time": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "type": {
+          "columnTitle": "",
+          "detailsTitle": ""
+        },
+        "upSpeed": {
+          "columnTitle": "Para cima",
+          "detailsTitle": ""
+        }
+      },
+      "states": {
+        "downloading": "Baixando",
+        "queued": "",
+        "paused": "Pausado",
+        "completed": "Concluído",
+        "failed": "",
+        "processing": "",
+        "leeching": "",
+        "stalled": "",
+        "unknown": "Desconhecido",
+        "seeding": ""
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "",
+          "pause": "",
+          "resume": ""
+        },
+        "client": {
+          "pause": "",
+          "resume": ""
+        },
+        "item": {
+          "pause": "",
+          "resume": "",
+          "delete": {
+            "title": "",
+            "modalTitle": "",
+            "entry": "",
+            "entryAndFiles": ""
+          }
+        }
+      },
+      "globalRatio": ""
+    },
+    "mediaReleases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "layout": {
+          "label": "",
+          "option": {
+            "backdrop": {
+              "label": ""
+            },
+            "poster": {
+              "label": ""
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": ""
+        },
+        "showType": {
+          "label": ""
+        },
+        "showSource": {
+          "label": ""
+        }
+      },
+      "length": {
+        "duration": ""
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "",
+      "description": "Veja uma lista de todas as solicitações de mídia da sua instância do Overseerr ou Jellyseerr",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "Abrir links em uma nova guia"
+        }
+      },
+      "pending": {
+        "approve": "",
+        "approving": "",
+        "decline": ""
+      },
+      "availability": {
+        "unknown": "Desconhecido",
+        "pending": "",
+        "processing": "",
+        "requested": "",
+        "partiallyAvailable": "Parcial",
+        "available": "Disponível",
+        "blacklisted": "",
+        "deleted": ""
+      },
+      "status": {
+        "pending": "",
+        "approved": "",
+        "declined": "",
+        "failed": "",
+        "completed": ""
+      },
+      "toBeDetermined": ""
+    },
+    "mediaRequests-requestStats": {
+      "name": "",
+      "description": "Estatísticas sobre suas solicitações de mídia",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "Estatísticas de mídia",
+          "approved": "Já aprovado",
+          "pending": "Aprovações pendentes",
+          "processing": "",
+          "declined": "",
+          "available": "",
+          "tv": "Solicitações de TV",
+          "movie": "Solicitações de filmes",
+          "total": ""
+        },
+        "users": {
+          "main": "Principais usuários",
+          "requests": ""
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "",
+      "description": "",
+      "option": {
+        "defaultView": {
+          "label": ""
+        },
+        "queuePageSize": {
+          "label": ""
+        }
+      },
+      "tab": {
+        "workers": "",
+        "queue": "Fila",
+        "statistics": "Estatísticas"
+      },
+      "currentIndex": "",
+      "healthCheck": {
+        "title": "",
+        "queued": "",
+        "status": {
+          "healthy": "",
+          "unhealthy": ""
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "Vazio",
+          "transcodes": "",
+          "transcodesCount": "",
+          "healthChecksCount": "",
+          "filesCount": "",
+          "savedSpace": "",
+          "healthChecks": "",
+          "videoCodecs": "",
+          "videoContainers": "",
+          "videoResolutions": ""
+        },
+        "workers": {
+          "empty": "Vazio",
+          "table": {
+            "file": "Ficheiro",
+            "eta": "TED",
+            "progress": "Progresso",
+            "transcode": "Transcodificar",
+            "healthCheck": ""
+          }
+        },
+        "queue": {
+          "empty": "Vazio",
+          "table": {
+            "file": "Ficheiro",
+            "size": "Tamanho",
+            "transcode": "Transcodificar",
+            "healthCheck": ""
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "",
+      "description": "",
+      "option": {
+        "feedUrls": {
+          "label": ""
+        },
+        "enableRtl": {
+          "label": ""
+        },
+        "textLinesClamp": {
+          "label": ""
+        },
+        "maximumAmountPosts": {
+          "label": ""
+        },
+        "hideDescription": {
+          "label": ""
+        }
+      }
+    },
+    "releases": {
+      "name": "",
+      "description": "",
+      "option": {
+        "newReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "staleReleaseWithin": {
+          "label": "",
+          "description": ""
+        },
+        "showOnlyHighlighted": {
+          "label": "",
+          "description": ""
+        },
+        "showDetails": {
+          "label": ""
+        },
+        "showOnlyIcon": {
+          "label": ""
+        },
+        "topReleases": {
+          "label": "",
+          "description": ""
+        },
+        "repositories": {
+          "label": "",
+          "addRepository": {
+            "label": ""
+          },
+          "importRepositories": {
+            "label": "",
+            "loading": "",
+            "noImagesFound": "",
+            "listFoundImages": "",
+            "listAlreadyImportedImages": "",
+            "allImagesAlreadyImported": "",
+            "onlyAdminCanImport": "",
+            "selectAll": "",
+            "deselectAll": ""
+          },
+          "provider": {
+            "label": ""
+          },
+          "identifier": {
+            "label": "",
+            "placeholder": ""
+          },
+          "name": {
+            "label": ""
+          },
+          "versionFilter": {
+            "label": "",
+            "prefix": {
+              "label": ""
+            },
+            "precision": {
+              "label": "",
+              "options": {
+                "none": ""
+              }
+            },
+            "suffix": {
+              "label": ""
+            },
+            "regex": {
+              "label": ""
+            }
+          },
+          "edit": {
+            "label": ""
+          },
+          "editForm": {
+            "title": "",
+            "cancel": {
+              "label": ""
+            },
+            "confirm": {
+              "label": ""
+            }
+          },
+          "importForm": {
+            "title": ""
+          },
+          "example": {
+            "label": ""
+          },
+          "invalid": "",
+          "noProvider": {
+            "label": "",
+            "tooltip": ""
+          }
+        }
+      },
+      "not-found": "",
+      "pre-release": "",
+      "archived": "",
+      "forked": "",
+      "starsCount": "",
+      "forksCount": "",
+      "issuesCount": "",
+      "markViewed": "",
+      "openProjectPage": "",
+      "openReleasePage": "",
+      "releaseDescription": "",
+      "projectDescription": "",
+      "created": "",
+      "error": {
+        "label": "",
+        "messages": {
+          "invalidIdentifier": "",
+          "noMatchingVersion": "",
+          "noReleasesFound": "",
+          "noProviderSeleceted": "",
+          "noProviderResponse": ""
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": ""
+          },
+          "wifi": {
+            "name": ""
+          }
+        },
+        "users": {
+          "label": ""
+        },
+        "guests": {
+          "label": ""
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": ""
+            },
+            "wired": {
+              "label": ""
+            }
+          },
+          "label": ""
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "",
+        "unknownContentOption": ""
+      },
+      "name": "",
+      "description": ""
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": ""
+      }
+    },
+    "firewall": {
+      "name": "",
+      "description": "",
+      "tab": {
+        "system": "",
+        "interfaces": ""
+      },
+      "error": {
+        "internalServerError": ""
+      },
+      "option": {
+        "interfaces": ""
+      },
+      "widget": {
+        "fwname": "",
+        "version": "",
+        "versiontitle": "",
+        "cputitle": "",
+        "memorytitle": "",
+        "cpu": "",
+        "memory": "",
+        "interfaces": {
+          "name": "",
+          "trans": "",
+          "recv": "",
+          "title": ""
+        }
+      }
+    },
+    "notifications": {
+      "name": "",
+      "description": "",
+      "noItems": "",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "",
+      "description": "",
+      "option": {
+        "hasShadow": {
+          "label": ""
+        },
+        "visibleCharts": {
+          "label": "",
+          "description": "",
+          "option": {
+            "cpu": "",
+            "memory": "",
+            "network": ""
+          }
+        },
+        "labelDisplayMode": {
+          "label": "",
+          "option": {
+            "textWithIcon": "",
+            "text": "",
+            "icon": "",
+            "hidden": ""
+          }
+        }
+      },
+      "card": {
+        "cpu": "",
+        "memory": "",
+        "network": "",
+        "up": "",
+        "down": ""
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "",
+      "disabled": ""
+    },
+    "dimensions": {
+      "title": ""
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "",
+        "message": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "confirmLeave": {
+          "title": "",
+          "message": ""
+        }
+      },
+      "oldImport": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "form": {
+          "file": {
+            "label": "",
+            "invalidError": ""
+          },
+          "apps": {
+            "label": "Aplicativos",
+            "avoidDuplicates": {
+              "label": "",
+              "description": ""
+            },
+            "onlyImportApps": {
+              "label": "",
+              "description": "Só adiciona os aplicativos, o quadro precisa ser recriado manualmente"
+            }
+          },
+          "name": {
+            "label": ""
+          },
+          "screenSize": {
+            "label": "",
+            "description": "",
+            "option": {
+              "sm": "Pequeno",
+              "md": "Médio",
+              "lg": "Grande"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "",
+            "description": "",
+            "option": {
+              "lastSection": {
+                "label": "",
+                "description": ""
+              },
+              "removeItems": {
+                "label": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "Criar aplicativo em tempo real",
+          "createAndUse": "Criar e utilizar"
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": ""
+      },
+      "metaTitle": {
+        "label": ""
+      },
+      "logoImageUrl": {
+        "label": ""
+      },
+      "faviconImageUrl": {
+        "label": ""
+      },
+      "backgroundImageUrl": {
+        "label": "",
+        "placeholder": "",
+        "group": {
+          "your": "",
+          "other": ""
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "Anexo de imagem de fundo",
+        "option": {
+          "fixed": {
+            "label": "",
+            "description": ""
+          },
+          "scroll": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "",
+        "option": {
+          "repeat": {
+            "label": "",
+            "description": ""
+          },
+          "no-repeat": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-x": {
+            "label": "",
+            "description": ""
+          },
+          "repeat-y": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "Tamanho da imagem de fundo",
+        "option": {
+          "cover": {
+            "label": "",
+            "description": ""
+          },
+          "contain": {
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "Cor primária"
+      },
+      "secondaryColor": {
+        "label": "Cor secundária"
+      },
+      "opacity": {
+        "label": ""
+      },
+      "iconColor": {
+        "label": ""
+      },
+      "clearColor": {
+        "label": ""
+      },
+      "customCss": {
+        "label": "",
+        "description": "Além disso, personalize seu painel usando CSS, recomendado apenas para usuários experientes",
+        "customClassesAlert": {
+          "title": "",
+          "description": ""
+        }
+      },
+      "disableStatus": {
+        "label": "",
+        "description": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "itemRadius": {
+        "label": "",
+        "description": "",
+        "option": {
+          "xs": "",
+          "sm": "",
+          "md": "",
+          "lg": "",
+          "xl": ""
+        }
+      },
+      "name": {
+        "label": "Nome"
+      },
+      "isPublic": {
+        "label": "Público",
+        "description": ""
+      }
+    },
+    "content": {
+      "metaTitle": ""
+    },
+    "setting": {
+      "title": "",
+      "section": {
+        "general": {
+          "title": "Geral",
+          "unrecognizedLink": ""
+        },
+        "layout": {
+          "title": "",
+          "responsive": {
+            "title": "",
+            "action": {
+              "add": ""
+            }
+          }
+        },
+        "background": {
+          "title": "Antecedentes"
+        },
+        "appearance": {
+          "title": ""
+        },
+        "customCss": {
+          "title": ""
+        },
+        "behavior": {
+          "title": ""
+        },
+        "access": {
+          "title": "",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "Exibir quadro"
+              },
+              "modify": {
+                "label": ""
+              },
+              "full": {
+                "label": ""
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "Zona de risco",
+          "action": {
+            "rename": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "modal": {
+                "title": ""
+              }
+            },
+            "visibility": {
+              "label": "",
+              "description": {
+                "public": "",
+                "private": ""
+              },
+              "button": {
+                "public": "",
+                "private": ""
+              },
+              "confirm": {
+                "public": {
+                  "title": "",
+                  "description": ""
+                },
+                "private": {
+                  "title": "",
+                  "description": ""
+                }
+              }
+            },
+            "delete": {
+              "label": "",
+              "description": "",
+              "button": "",
+              "confirm": {
+                "title": "Excluir quadro",
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": "Para fazer esta página desaparecer, crie um quadro e defina-o como quadro inicial"
+      },
+      "notFound": {
+        "title": "",
+        "description": "",
+        "link": "",
+        "notice": ""
+      },
+      "homeBoard": {
+        "title": "",
+        "admin": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "user": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        },
+        "anonymous": {
+          "description": "",
+          "link": "",
+          "notice": ""
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": ""
+      },
+      "columnCount": {
+        "label": ""
+      },
+      "breakpoint": {
+        "label": "",
+        "description": ""
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "",
+    "title": {
+      "morning": "",
+      "afternoon": "",
+      "evening": ""
+    },
+    "notFound": {
+      "title": "",
+      "text": ""
+    },
+    "navbar": {
+      "items": {
+        "home": "Início",
+        "boards": "Placas",
+        "apps": "Aplicativos",
+        "integrations": "",
+        "searchEngies": "",
+        "medias": "",
+        "users": {
+          "label": "Usuários",
+          "items": {
+            "manage": "Gerenciar",
+            "invites": "Convites",
+            "groups": ""
+          }
+        },
+        "tools": {
+          "label": "Ferramentas",
+          "items": {
+            "docker": "",
+            "kubernetes": "",
+            "logs": "",
+            "api": "",
+            "certificates": "",
+            "tasks": ""
+          }
+        },
+        "settings": "Configurações",
+        "help": {
+          "label": "Ajuda",
+          "items": {
+            "documentation": "Documentação",
+            "submitIssue": "",
+            "discord": "Discórdia da comunidade",
+            "sourceCode": ""
+          }
+        },
+        "about": "Sobre"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "Placas",
+          "user": "Usuários",
+          "invite": "Convites",
+          "integration": "",
+          "app": "Aplicativos",
+          "group": "",
+          "searchEngine": "",
+          "media": ""
+        },
+        "statisticLabel": {
+          "boards": "Placas",
+          "resources": "",
+          "authentication": "",
+          "authorization": ""
+        },
+        "heroBanner": {
+          "title": "",
+          "subtitle": ""
+        }
+      },
+      "board": {
+        "title": "Suas placas",
+        "action": {
+          "new": {
+            "label": ""
+          },
+          "open": {
+            "label": ""
+          },
+          "settings": {
+            "label": "Configurações"
+          },
+          "setHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "Início",
+              "tooltip": ""
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "",
+            "badge": {
+              "label": "",
+              "tooltip": ""
+            }
+          },
+          "duplicate": {
+            "label": ""
+          },
+          "delete": {
+            "label": "Excluir permanentemente",
+            "confirm": {
+              "title": "Excluir quadro",
+              "description": ""
+            }
+          }
+        },
+        "visibility": {
+          "public": "",
+          "private": ""
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "Nome"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": ""
+      },
+      "user": {
+        "back": "",
+        "fieldsDisabledExternalProvider": "",
+        "setting": {
+          "general": {
+            "title": "Geral",
+            "item": {
+              "language": "",
+              "board": {
+                "title": "",
+                "type": {
+                  "general": "",
+                  "mobile": ""
+                }
+              },
+              "search": "",
+              "firstDayOfWeek": "Primeiro dia da semana",
+              "accessibility": "Acessibilidade"
+            }
+          },
+          "security": {
+            "title": "Segurança"
+          },
+          "board": {
+            "title": "Placas"
+          }
+        },
+        "list": {
+          "metaTitle": "Gerenciar usuários",
+          "title": "Usuários"
+        },
+        "edit": {
+          "metaTitle": ""
+        },
+        "create": {
+          "metaTitle": "Criar usuário",
+          "title": "",
+          "step": {
+            "personalInformation": {
+              "label": ""
+            },
+            "security": {
+              "label": "Segurança"
+            },
+            "groups": {
+              "label": "",
+              "title": "",
+              "description": ""
+            },
+            "review": {
+              "label": ""
+            },
+            "completed": {
+              "title": ""
+            },
+            "error": {
+              "title": ""
+            }
+          },
+          "action": {
+            "createAnother": "",
+            "back": ""
+          }
+        },
+        "invite": {
+          "title": "Gerenciar convites de usuários",
+          "action": {
+            "new": {
+              "title": "",
+              "description": "Após a expiração, um convite não será mais válido e o destinatário do convite não poderá criar uma conta."
+            },
+            "copy": {
+              "title": "",
+              "description": "",
+              "link": "Link do convite",
+              "button": ""
+            },
+            "delete": {
+              "title": "Excluir convite",
+              "description": "Tem certeza de que deseja excluir este convite? Os usuários com esse link não poderão mais criar uma conta usando esse link."
+            }
+          },
+          "field": {
+            "id": {
+              "label": ""
+            },
+            "creator": {
+              "label": "Criador"
+            },
+            "expirationDate": {
+              "label": "Data de expiração"
+            },
+            "token": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "",
+        "setting": {
+          "general": {
+            "title": "Geral",
+            "owner": "Dono",
+            "ownerOfGroup": "",
+            "ownerOfGroupDeleted": ""
+          },
+          "setting": {
+            "title": "",
+            "alert": "",
+            "board": {
+              "title": ""
+            }
+          },
+          "members": {
+            "title": "",
+            "search": "",
+            "notFound": ""
+          },
+          "permissions": {
+            "title": "",
+            "form": {
+              "unsavedChanges": ""
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Configurações",
+        "notification": {
+          "success": {
+            "message": ""
+          },
+          "error": {
+            "message": ""
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "",
+            "general": {
+              "title": "",
+              "text": ""
+            },
+            "widgetData": {
+              "title": "",
+              "text": ""
+            },
+            "integrationData": {
+              "title": "",
+              "text": ""
+            },
+            "usersData": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "",
+            "warning": "",
+            "noIndex": {
+              "title": "",
+              "text": ""
+            },
+            "noFollow": {
+              "title": "",
+              "text": ""
+            },
+            "noTranslate": {
+              "title": "",
+              "text": ""
+            },
+            "noSiteLinksSearchBox": {
+              "title": "",
+              "text": ""
+            }
+          },
+          "board": {
+            "title": "Placas",
+            "homeBoard": {
+              "label": "",
+              "mobileLabel": "",
+              "description": ""
+            },
+            "status": {
+              "title": "",
+              "enableStatusByDefault": {
+                "label": "",
+                "description": ""
+              },
+              "forceDisableStatus": {
+                "label": "",
+                "description": ""
+              }
+            }
+          },
+          "search": {
+            "title": "",
+            "defaultSearchEngine": {
+              "label": "",
+              "description": ""
+            }
+          },
+          "appearance": {
+            "title": "Aparência",
+            "defaultColorScheme": {
+              "label": "",
+              "options": {
+                "light": "",
+                "dark": ""
+              }
+            }
+          },
+          "culture": {
+            "title": "",
+            "defaultLocale": {
+              "label": ""
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "",
+          "status": {
+            "idle": "",
+            "running": "Em execução",
+            "error": "Erro",
+            "disabled": ""
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": ""
+            },
+            "iconsUpdater": {
+              "label": ""
+            },
+            "analytics": {
+              "label": ""
+            },
+            "smartHomeEntityState": {
+              "label": ""
+            },
+            "ping": {
+              "label": ""
+            },
+            "mediaServer": {
+              "label": "Servidor de Mídia"
+            },
+            "mediaOrganizer": {
+              "label": ""
+            },
+            "downloads": {
+              "label": ""
+            },
+            "mediaRequestStats": {
+              "label": ""
+            },
+            "mediaRequestList": {
+              "label": ""
+            },
+            "rssFeeds": {
+              "label": ""
+            },
+            "indexerManager": {
+              "label": ""
+            },
+            "healthMonitoring": {
+              "label": ""
+            },
+            "dnsHole": {
+              "label": ""
+            },
+            "updateChecker": {
+              "label": ""
+            },
+            "mediaTranscoding": {
+              "label": ""
+            },
+            "networkController": {
+              "label": ""
+            },
+            "refreshNotifications": {
+              "label": ""
+            },
+            "dockerContainers": {
+              "label": ""
+            },
+            "firewallCpu": {
+              "label": ""
+            },
+            "firewallMemory": {
+              "label": ""
+            },
+            "firewallVersion": {
+              "label": ""
+            },
+            "firewallInterfaces": {
+              "label": ""
+            },
+            "weather": {
+              "label": ""
+            }
+          },
+          "interval": {
+            "seconds": "",
+            "minutes": "",
+            "hours": "",
+            "midnight": "",
+            "weeklyMonday": "",
+            "update": {
+              "success": {
+                "message": ""
+              },
+              "error": {
+                "message": ""
+              }
+            }
+          },
+          "settings": {
+            "title": ""
+          },
+          "field": {
+            "name": {
+              "label": ""
+            },
+            "interval": {
+              "label": ""
+            },
+            "lastExecution": {
+              "label": ""
+            },
+            "actions": {
+              "label": ""
+            }
+          },
+          "table": {
+            "search": ""
+          },
+          "action": {
+            "refresh": {
+              "label": ""
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": ""
+            },
+            "error": {
+              "message": ""
+            }
+          },
+          "enable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "disable": {
+            "success": {
+              "message": ""
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": ""
+            }
+          }
+        },
+        "api": {
+          "title": "",
+          "modal": {
+            "createApiToken": {
+              "title": "",
+              "description": "",
+              "button": ""
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "Documentação"
+            },
+            "apiKey": {
+              "label": "",
+              "title": "",
+              "button": {
+                "createApiToken": ""
+              },
+              "modal": {
+                "delete": {
+                  "title": "",
+                  "text": ""
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "",
+                  "createdBy": "",
+                  "actions": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "",
+        "text": "",
+        "accordion": {
+          "contributors": {
+            "title": "",
+            "subtitle": ""
+          },
+          "translators": {
+            "title": "",
+            "subtitle": ""
+          },
+          "libraries": {
+            "title": "",
+            "subtitle": ""
+          },
+          "hotkeys": {
+            "title": "",
+            "subtitle": "",
+            "field": {
+              "shortcut": "",
+              "action": ""
+            },
+            "action": {
+              "toggleBoardEdit": "",
+              "toggleColorScheme": "",
+              "saveNotebook": "",
+              "openSpotlight": ""
+            },
+            "note": ""
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "",
+    "table": {
+      "updated": "",
+      "search": "",
+      "selected": "",
+      "footer": ""
+    },
+    "field": {
+      "name": {
+        "label": "Nome"
+      },
+      "state": {
+        "label": "Estado",
+        "option": {
+          "created": "Criado",
+          "running": "Em execução",
+          "paused": "Pausado",
+          "restarting": "Recomeço",
+          "exited": "",
+          "removing": "Remoção",
+          "dead": ""
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        }
+      },
+      "containerImage": {
+        "label": "Imagem"
+      },
+      "ports": {
+        "label": "Portas"
+      }
+    },
+    "action": {
+      "title": "",
+      "start": {
+        "label": "Iniciar",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "stop": {
+        "label": "Parar",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "restart": {
+        "label": "Reiniciar",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "Excluir",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "refresh": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        },
+        "modal": {
+          "title": ""
+        }
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "",
+      "label": "",
+      "providers": "",
+      "version": "",
+      "architecture": "",
+      "capacity": {
+        "title": "",
+        "resource": {
+          "reserved": "",
+          "used": ""
+        }
+      },
+      "resources": {
+        "title": "",
+        "nodes": "",
+        "namespaces": "",
+        "ingresses": "",
+        "services": "",
+        "pods": "",
+        "configmaps": "",
+        "secrets": "",
+        "volumes": ""
+      }
+    },
+    "nodes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "ready": "",
+            "NotReady": ""
+          }
+        },
+        "cpu": {
+          "label": ""
+        },
+        "memory": {
+          "label": ""
+        },
+        "pods": {
+          "label": ""
+        },
+        "operatingSystem": {
+          "label": ""
+        },
+        "architecture": {
+          "label": ""
+        },
+        "kubernetesVersion": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "namespaces": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "state": {
+          "label": "",
+          "option": {
+            "active": "",
+            "terminating": ""
+          }
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "ingresses": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "className": {
+          "label": ""
+        },
+        "rulesAndPaths": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "services": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "ports": {
+          "label": ""
+        },
+        "targetPorts": {
+          "label": ""
+        },
+        "clusterIP": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "pods": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "image": {
+          "label": ""
+        },
+        "applicationType": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "secrets": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "type": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "configmaps": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "volumes": {
+      "label": "",
+      "field": {
+        "name": {
+          "label": ""
+        },
+        "namespace": {
+          "label": ""
+        },
+        "accessModes": {
+          "label": ""
+        },
+        "storage": {
+          "label": ""
+        },
+        "storageClassName": {
+          "label": ""
+        },
+        "volumeMode": {
+          "label": ""
+        },
+        "volumeName": {
+          "label": ""
+        },
+        "status": {
+          "label": ""
+        },
+        "creationTimestamp": {
+          "label": ""
+        }
+      },
+      "table": {
+        "search": ""
+      }
+    },
+    "error": {
+      "internalServerError": ""
+    }
+  },
+  "permission": {
+    "title": "",
+    "userSelect": {
+      "title": ""
+    },
+    "groupSelect": {
+      "title": ""
+    },
+    "tab": {
+      "user": "Usuários",
+      "group": "",
+      "inherited": ""
+    },
+    "field": {
+      "user": {
+        "label": "Usuário"
+      },
+      "group": {
+        "label": ""
+      },
+      "permission": {
+        "label": ""
+      }
+    },
+    "action": {
+      "saveUser": "",
+      "saveGroup": ""
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "Gerenciar",
+      "boards": {
+        "label": "Placas"
+      },
+      "integrations": {
+        "label": "",
+        "edit": {
+          "label": "Editar"
+        },
+        "new": {
+          "label": ""
+        }
+      },
+      "search-engines": {
+        "label": "",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Editar"
+        }
+      },
+      "medias": {
+        "label": ""
+      },
+      "apps": {
+        "label": "Aplicativos",
+        "new": {
+          "label": ""
+        },
+        "edit": {
+          "label": "Editar"
+        }
+      },
+      "users": {
+        "label": "Usuários",
+        "create": {
+          "label": "Criar"
+        },
+        "general": "Geral",
+        "security": "Segurança",
+        "board": "Placas",
+        "groups": {
+          "label": ""
+        },
+        "invites": {
+          "label": "Convites"
+        }
+      },
+      "tools": {
+        "label": "Ferramentas",
+        "tasks": {
+          "label": ""
+        },
+        "docker": {
+          "label": ""
+        },
+        "kubernetes": {
+          "label": "",
+          "nodes": {
+            "label": ""
+          },
+          "namespaces": {
+            "label": ""
+          },
+          "ingresses": {
+            "label": ""
+          },
+          "services": {
+            "label": ""
+          },
+          "pods": {
+            "label": ""
+          },
+          "configmaps": {
+            "label": ""
+          },
+          "secrets": {
+            "label": ""
+          },
+          "volumes": {
+            "label": ""
+          }
+        },
+        "logs": {
+          "label": ""
+        },
+        "certificates": {
+          "label": "",
+          "hostnames": {
+            "label": ""
+          }
+        }
+      },
+      "settings": {
+        "label": "Configurações"
+      },
+      "about": {
+        "label": "Sobre"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "",
+    "nothingFound": "",
+    "error": {
+      "fetch": ""
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "",
+        "group": {
+          "app": {
+            "title": "Aplicativos",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "edit": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "board": {
+            "title": "Placas",
+            "children": {
+              "action": {
+                "open": {
+                  "label": ""
+                },
+                "homeBoard": {
+                  "label": ""
+                },
+                "mobileBoard": {
+                  "label": ""
+                },
+                "settings": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "integration": {
+            "title": ""
+          }
+        }
+      },
+      "command": {
+        "help": "",
+        "group": {
+          "localCommand": {
+            "title": ""
+          },
+          "globalCommand": {
+            "title": "",
+            "option": {
+              "colorScheme": {
+                "light": "",
+                "dark": ""
+              },
+              "language": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newBoard": {
+                "label": ""
+              },
+              "importBoard": {
+                "label": ""
+              },
+              "newApp": {
+                "label": "Criar aplicativo"
+              },
+              "newIntegration": {
+                "label": "",
+                "children": {
+                  "detail": {
+                    "title": ""
+                  }
+                }
+              },
+              "newUser": {
+                "label": ""
+              },
+              "newInvite": {
+                "label": ""
+              },
+              "newGroup": {
+                "label": ""
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "",
+        "requestSeries": "",
+        "openIn": ""
+      },
+      "external": {
+        "help": "",
+        "group": {
+          "searchEngine": {
+            "title": "",
+            "children": {
+              "action": {
+                "search": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              },
+              "searchResults": {
+                "title": ""
+              }
+            },
+            "option": {
+              "google": {
+                "name": "",
+                "description": ""
+              },
+              "bing": {
+                "name": "",
+                "description": ""
+              },
+              "duckduckgo": {
+                "name": "",
+                "description": ""
+              },
+              "torrent": {
+                "name": "Torrentes",
+                "description": ""
+              },
+              "youTube": {
+                "name": "",
+                "description": ""
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": ""
+          },
+          "help": {
+            "title": "Ajuda",
+            "option": {
+              "documentation": {
+                "label": "Documentação"
+              },
+              "submitIssue": {
+                "label": ""
+              },
+              "discord": {
+                "label": "Discórdia da comunidade"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "",
+            "option": {
+              "other": {
+                "label": ""
+              },
+              "no-default": {
+                "label": "",
+                "description": ""
+              },
+              "search": {
+                "label": ""
+              },
+              "from-integration": {
+                "description": ""
+              }
+            }
+          },
+          "local": {
+            "title": ""
+          }
+        }
+      },
+      "page": {
+        "help": "",
+        "group": {
+          "page": {
+            "title": "",
+            "option": {
+              "manageHome": {
+                "label": ""
+              },
+              "manageBoard": {
+                "label": ""
+              },
+              "manageApp": {
+                "label": ""
+              },
+              "manageIntegration": {
+                "label": ""
+              },
+              "manageSearchEngine": {
+                "label": ""
+              },
+              "manageMedia": {
+                "label": ""
+              },
+              "manageUser": {
+                "label": "Gerenciar usuários"
+              },
+              "manageInvite": {
+                "label": ""
+              },
+              "manageGroup": {
+                "label": ""
+              },
+              "manageDocker": {
+                "label": ""
+              },
+              "manageApi": {
+                "label": ""
+              },
+              "manageLog": {
+                "label": ""
+              },
+              "manageTask": {
+                "label": ""
+              },
+              "manageSettings": {
+                "label": ""
+              },
+              "about": {
+                "label": "Sobre"
+              },
+              "homeBoard": {
+                "label": ""
+              },
+              "preferences": {
+                "label": "Suas preferências"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "",
+        "group": {
+          "user": {
+            "title": "Usuários",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          },
+          "group": {
+            "title": "",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": ""
+                },
+                "manageMember": {
+                  "label": ""
+                },
+                "managePermission": {
+                  "label": ""
+                }
+              },
+              "detail": {
+                "title": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "",
+      "field": {
+        "name": {
+          "label": "Nome"
+        },
+        "short": {
+          "label": ""
+        },
+        "urlTemplate": {
+          "label": ""
+        },
+        "description": {
+          "label": ""
+        }
+      },
+      "page": {
+        "list": {
+          "title": "",
+          "noResults": {
+            "title": "",
+            "action": ""
+          },
+          "interactive": ""
+        },
+        "create": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        },
+        "edit": {
+          "title": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          },
+          "configControl": "",
+          "searchEngineType": {
+            "generic": "",
+            "fromIntegration": ""
+          }
+        },
+        "delete": {
+          "title": "",
+          "message": "",
+          "notification": {
+            "success": {
+              "title": "",
+              "message": ""
+            },
+            "error": {
+              "title": "",
+              "message": ""
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "",
+            "table": {
+              "header": {
+                "season": "",
+                "episodes": ""
+              }
+            },
+            "button": {
+              "send": ""
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": ""
+      },
+      "subject": {
+        "label": ""
+      },
+      "issuer": {
+        "label": ""
+      },
+      "validFrom": {
+        "label": ""
+      },
+      "validTo": {
+        "label": ""
+      },
+      "serialNumber": {
+        "label": ""
+      },
+      "fingerprint": {
+        "label": ""
+      }
+    },
+    "page": {
+      "list": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "invalid": {
+          "title": "",
+          "description": ""
+        },
+        "expires": "",
+        "toHostnames": ""
+      },
+      "hostnames": {
+        "title": "",
+        "description": "",
+        "noResults": {
+          "title": ""
+        },
+        "toCertificates": ""
+      }
+    },
+    "action": {
+      "create": {
+        "label": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "remove": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "",
+        "confirm": "",
+        "notification": {
+          "success": {
+            "title": "",
+            "message": ""
+          },
+          "error": {
+            "title": "",
+            "message": ""
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "",
+        "info": "",
+        "warn": "",
+        "error": ""
+      }
+    }
+  }
+}

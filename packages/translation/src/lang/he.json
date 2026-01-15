@@ -1,0 +1,4535 @@
+{
+  "init": {
+    "step": {
+      "start": {
+        "title": "ברוכים הבאים ל- Homarr",
+        "subtitle": "בוא נתחיל בהגדרת ה-Homarr שלך.",
+        "description": "כדי להתחיל, בחר כיצד ברצונך להגדיר את ה-Homarr שלך.",
+        "action": {
+          "scratch": "התחל מאפס",
+          "importOldmarr": "יבוא מ-Homarr לפני 1.0"
+        }
+      },
+      "import": {
+        "title": "ייבוא נתונים",
+        "subtitle": "אתה יכול לייבא נתונים מ- Homarr קיים.",
+        "dropzone": {
+          "title": "גרור את קובץ ה-zip לכאן או לחץ כדי לחפש",
+          "description": "ה-zip שהועלה יעובד ותוכל לבחור מה אתה רוצה לייבא"
+        },
+        "fileInfo": {
+          "action": {
+            "change": "שנה קובץ"
+          }
+        },
+        "importSettings": {
+          "title": "הגדרות ייבוא",
+          "description": "הגדר את התנהגות הייבוא"
+        },
+        "boardSelection": {
+          "title": "נמצאו {count} לוחות",
+          "description": "בחר את כל הלוחות עם הגודל שברצונך לייבא",
+          "action": {
+            "selectAll": "בחר הכל",
+            "unselectAll": "בטל את הבחירה בכולם"
+          }
+        },
+        "summary": {
+          "title": "סיכום ייבוא",
+          "description": "בסיכום למטה תוכלו לראות מה ייבא",
+          "action": {
+            "import": "אשר את הייבוא והמשך"
+          },
+          "entities": {
+            "apps": "אפליקציות",
+            "boards": "לוחות",
+            "integrations": "אינטגרציות",
+            "credentialUsers": "משתמשים מאושרים"
+          }
+        },
+        "tokenModal": {
+          "title": "הזן אסימון ייבוא",
+          "field": {
+            "token": {
+              "label": "טוקן",
+              "description": "הזן את אסימון הייבוא המוצג ב- Homarr הקודם שלך"
+            }
+          },
+          "notification": {
+            "error": {
+              "title": "אסימון לא חוקי",
+              "message": "האסימון שהזנת אינו חוקי"
+            }
+          }
+        }
+      },
+      "user": {
+        "title": "משתמש מנהל",
+        "subtitle": "ציין את האישורים עבור משתמש המנהל שלך.",
+        "notification": {
+          "success": {
+            "title": "המשתמש נוצר",
+            "message": "המשתמש נוצר בהצלחה"
+          },
+          "error": {
+            "title": "יצירת המשתמש נכשלה"
+          }
+        }
+      },
+      "group": {
+        "title": "קבוצה חיצונית",
+        "subtitle": "ציין את הקבוצה שבה יש להשתמש עבור משתמשים חיצוניים.",
+        "form": {
+          "name": {
+            "label": "שם הקבוצה",
+            "description": "השם צריך להתאים לקבוצת הניהול של הספק החיצוני"
+          }
+        }
+      },
+      "settings": {
+        "title": "הגדרות",
+        "subtitle": "קבע את הגדרות השרת."
+      },
+      "finish": {
+        "title": "סיים את ההגדרה",
+        "subtitle": "המערכת מוכנה לפעולה!",
+        "description": "השלמת בהצלחה את תהליך ההגדרה. כעת תוכל להתחיל להשתמש ב-Homarr. בחר את הפעולה הבאה שלך:",
+        "action": {
+          "goToBoard": "עבור ללוח {name}",
+          "createBoard": "צור את הלוח הראשון שלך",
+          "inviteUser": "הזמן משתמשים אחרים",
+          "docs": "קרא את הדוקומנטציה"
+        }
+      }
+    },
+    "backToStart": "חזרה להתחלה"
+  },
+  "user": {
+    "title": "משתמשים",
+    "name": "משתמש",
+    "page": {
+      "login": {
+        "title": "היכנס לחשבון שלך",
+        "subtitle": "ברוך שובך! אנא הזן את שם המשתמש והסיסמה שלך"
+      },
+      "invite": {
+        "title": "הצטרף ל- Homarr",
+        "subtitle": "ברוכים הבאים ל- Homarr! נא ליצור את החשבון שלך",
+        "description": "הוזמנת על ידי {username}"
+      },
+      "init": {
+        "title": "התקנת Homarr חדשה",
+        "subtitle": "נא ליצור את משתמש המנהל הראשוני"
+      }
+    },
+    "field": {
+      "email": {
+        "label": "אימייל",
+        "verified": "מאומת"
+      },
+      "username": {
+        "label": "שם משתמש"
+      },
+      "password": {
+        "label": "סיסמה",
+        "requirement": {
+          "length": "כולל לפחות 8 תווים",
+          "lowercase": "אפשר אותיות קטנות",
+          "uppercase": "אפשר אותיות גדולות",
+          "number": "אפשר מספרים",
+          "special": "כולל סמל מיוחד"
+        }
+      },
+      "passwordConfirm": {
+        "label": "אימות סיסמא"
+      },
+      "previousPassword": {
+        "label": "סיסמה קודמת"
+      },
+      "homeBoard": {
+        "label": "לוח בית"
+      },
+      "pingIconsEnabled": {
+        "label": "השתמש בסמלים עבור פינגים"
+      },
+      "defaultSearchEngine": {
+        "label": "מנוע חיפוש ברירת מחדל"
+      },
+      "openSearchInNewTab": {
+        "label": "פתיחת תוצאות חיפוש בכרטיסיה חדשה"
+      }
+    },
+    "error": {
+      "usernameTaken": "שם המשתמש תפוס"
+    },
+    "action": {
+      "login": {
+        "label": "התחבר/י",
+        "labelWith": "התחבר עם {provider}",
+        "notification": {
+          "success": {
+            "title": "התחברת בהצלחה",
+            "message": "אתה כעת מחובר"
+          },
+          "error": {
+            "title": "התחברות נכשלה",
+            "message": "הכניסה נכשלה"
+          }
+        },
+        "forgotPassword": {
+          "label": "שכחת את הסיסמה שלך?",
+          "description": "מנהל מערכת יכול להשתמש בפקודה הבאה כדי לאפס את הסיסמה שלך:"
+        }
+      },
+      "register": {
+        "label": "צור חשבון",
+        "notification": {
+          "success": {
+            "title": "החשבון נוצר",
+            "message": "אנא היכנס כדי להמשיך"
+          },
+          "error": {
+            "title": "יצירת החשבון נכשלה",
+            "message": "לא ניתן ליצור את החשבון שלך"
+          }
+        }
+      },
+      "create": "צור משתמש",
+      "changePassword": {
+        "label": "שינוי סיסמה",
+        "notification": {
+          "success": {
+            "message": "הסיסמה שונתה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות סיסמה"
+          }
+        }
+      },
+      "changeHomeBoard": {
+        "notification": {
+          "success": {
+            "message": "לוח הבית השתנה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות לוח בית"
+          }
+        }
+      },
+      "changeSearchPreferences": {
+        "notification": {
+          "success": {
+            "message": "העדפות חיפוש השתנו בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות העדפות חיפוש"
+          }
+        }
+      },
+      "changeFirstDayOfWeek": {
+        "notification": {
+          "success": {
+            "message": "היום הראשון בשבוע השתנה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות את היום הראשון בשבוע"
+          }
+        }
+      },
+      "changePingIconsEnabled": {
+        "notification": {
+          "success": {
+            "message": "סמלי פינג הוחלפו בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות את סמלי הפינג"
+          }
+        }
+      },
+      "manageAvatar": {
+        "changeImage": {
+          "label": "שנה תמונה",
+          "notification": {
+            "success": {
+              "message": "התמונה השתנתה בהצלחה"
+            },
+            "error": {
+              "message": "לא ניתן לשנות תמונה"
+            },
+            "toLarge": {
+              "title": "התמונה גדולה מדי",
+              "message": "גודל התמונה המרבי הוא {size}"
+            }
+          }
+        },
+        "removeImage": {
+          "label": "הסר תמונה",
+          "confirm": "האם אתה בטוח שברצונך להסיר את התמונה?",
+          "notification": {
+            "success": {
+              "message": "התמונה הוסרה בהצלחה"
+            },
+            "error": {
+              "message": "לא ניתן להסיר תמונה"
+            }
+          }
+        }
+      },
+      "editProfile": {
+        "notification": {
+          "success": {
+            "message": "הפרופיל עודכן בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לעדכן את הפרופיל"
+          }
+        }
+      },
+      "delete": {
+        "label": "מחק משתמש לצמיתות",
+        "description": "מוחק משתמש זה כולל העדפותיו. לא ימחק אף לוח. המשתמש לא יקבל הודעה.",
+        "confirm": "האם אתה בטוח שאתה רוצה למחוק את המשתמש {username} עם ההעדפות שלו?"
+      },
+      "select": {
+        "label": "בחר משתמש",
+        "notFound": "לא נמצא משתמש"
+      },
+      "transfer": {
+        "label": "בחר בעלים חדש"
+      }
+    }
+  },
+  "group": {
+    "title": "קבוצות",
+    "name": "קבוצה",
+    "search": "מצא קבוצה",
+    "field": {
+      "name": "שם",
+      "members": "חברים",
+      "homeBoard": {
+        "label": "לוח בית",
+        "description": "ניתן לבחור רק לוחות נגישים לקבוצה"
+      },
+      "mobileBoard": {
+        "label": "לוח למכשירים ניידים",
+        "description": "ניתן לבחור רק לוחות נגישים לקבוצה"
+      }
+    },
+    "permission": {
+      "admin": {
+        "title": "מנהל מערכת",
+        "item": {
+          "admin": {
+            "label": "מנהל",
+            "description": "לחברים עם הרשאה זו יש גישה מלאה לכל התכונות וההגדרות"
+          }
+        }
+      },
+      "app": {
+        "title": "אפליקציות",
+        "item": {
+          "create": {
+            "label": "יצירת אפליקציות",
+            "description": "מאפשר לחברים ליצור אפליקציות"
+          },
+          "use-all": {
+            "label": "שימוש בכל האפליקציות",
+            "description": "מאפשר לחברים להוסיף כל אפליקציות ללוחות שלהם"
+          },
+          "modify-all": {
+            "label": "משנה את כל האפליקציות",
+            "description": "מאפשר לחברים לשנות את כל האפליקציות"
+          },
+          "full-all": {
+            "label": "גישה מלאה לאפליקציה",
+            "description": "מאפשר לחברים לנהל, להשתמש ולמחוק כל אפליקציה"
+          }
+        }
+      },
+      "board": {
+        "title": "לוחות",
+        "item": {
+          "create": {
+            "label": "יצירת לוחות",
+            "description": "מאפשר לחברים ליצור לוחות"
+          },
+          "view-all": {
+            "label": "הצגת כל הלוחות",
+            "description": "מאפשר לחברים לצפות בכל הלוחות"
+          },
+          "modify-all": {
+            "label": "משנה את כל הלוחות",
+            "description": "מאפשר לחברים לשנות את כל הלוחות (לא כולל בקרת גישה ואזור סכנה)"
+          },
+          "full-all": {
+            "label": "גישה מלאה ללוח",
+            "description": "אפשר לחברים להציג, לשנות ולמחוק את כל הלוחות (כולל בקרת גישה ואזור סכנה)"
+          }
+        }
+      },
+      "integration": {
+        "title": "אינטגרציות",
+        "item": {
+          "create": {
+            "label": "יצירת אינטגרציות",
+            "description": "אפשר לחברים ליצור אינטגרציות"
+          },
+          "use-all": {
+            "label": "שימוש בכל האינטגרציות",
+            "description": "מאפשר לחברים להוסיף כל אינטגרציה ללוחות שלהם"
+          },
+          "interact-all": {
+            "label": "אינטראקציה עם כל אינטגרציה",
+            "description": "אפשר לחברים לקיים אינטראקציה עם כל אינטגרציה"
+          },
+          "full-all": {
+            "label": "גישת אינטגרציה מלאה",
+            "description": "אפשר לחברים לנהל, להשתמש ולקיים אינטראקציה עם כל אינטגרציה"
+          }
+        }
+      },
+      "media": {
+        "title": "מדיה",
+        "item": {
+          "upload": {
+            "label": "העלה מדיה",
+            "description": "אפשר לחברים להעלות מדיה"
+          },
+          "view-all": {
+            "label": "הצג את כל המדיה",
+            "description": "אפשר לחברים להציג את כל המדיה"
+          },
+          "full-all": {
+            "label": "גישה מלאה למדיה",
+            "description": "אפשר לחברים לנהל ולמחוק כל מדיה"
+          }
+        }
+      },
+      "other": {
+        "title": "אחר",
+        "item": {
+          "view-logs": {
+            "label": "הצג לוגים",
+            "description": "אפשר לחברים לצפות בלוגים"
+          }
+        }
+      },
+      "search-engine": {
+        "title": "מנועי חיפוש",
+        "item": {
+          "create": {
+            "label": "צור מנועי חיפוש",
+            "description": "אפשר לחברים ליצור מנועי חיפוש"
+          },
+          "modify-all": {
+            "label": "שנה את כל מנועי החיפוש",
+            "description": "אפשר לחברים לשנות את כל מנועי החיפוש"
+          },
+          "full-all": {
+            "label": "גישה מלאה למנועי חיפוש",
+            "description": "אפשר לחברים לנהל ולמחוק כל מנוע חיפוש"
+          }
+        }
+      }
+    },
+    "memberNotice": {
+      "mixed": "חלק מהחברים הם מספקים חיצוניים ולא ניתן לנהל אותם כאן",
+      "external": "כל החברים הם מספקים חיצוניים ולא ניתן לנהל אותם כאן"
+    },
+    "reservedNotice": {
+      "message": "קבוצה זו שמורה לשימוש במערכת ומגבילה חלק מהפעולות. <checkoutDocs></checkoutDocs>"
+    },
+    "action": {
+      "create": {
+        "label": "קבוצה חדשה",
+        "notification": {
+          "success": {
+            "message": "הקבוצה נוצרה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן ליצור את הקבוצה"
+          }
+        }
+      },
+      "transfer": {
+        "label": "העברת בעלות",
+        "description": "העבר את הבעלות על הקבוצה הזו למשתמש אחר.",
+        "confirm": "האם אתה בטוח שברצונך להעביר בעלות על הקבוצה {name} ל- {username}?",
+        "notification": {
+          "success": {
+            "message": "הקבוצה {group} הועברה בהצלחה ל {user}"
+          },
+          "error": {
+            "message": "לא ניתן להעביר בעלות"
+          }
+        }
+      },
+      "addMember": {
+        "label": "הוסף חבר"
+      },
+      "removeMember": {
+        "label": "הסר חבר",
+        "confirm": "האם אתה בטוח שברצונך להסיר את {user} מהקבוצה הזו?"
+      },
+      "delete": {
+        "label": "מחק קבוצה",
+        "description": "ברגע שתמחק/י קבוצה, לא ניתן יהיה לחזור אחורה. אנא ודא/י זאת בוודאות.",
+        "confirm": "האם אתה בטוח שברצונך למחוק את הקבוצה {name}?",
+        "notification": {
+          "success": {
+            "message": "הקבוצה {name} נמחקה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן למחוק את הקבוצה {name}"
+          }
+        }
+      },
+      "changePermissions": {
+        "notification": {
+          "success": {
+            "title": "ההרשאות נשמרו",
+            "message": "ההרשאות נשמרו בהצלחה"
+          },
+          "error": {
+            "title": "ההרשאות לא נשמרו",
+            "message": "ההרשאות לא נשמרו"
+          }
+        }
+      },
+      "update": {
+        "notification": {
+          "success": {
+            "message": "הקבוצה {name} נשמרה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשמור את הקבוצה {name}"
+          }
+        }
+      },
+      "select": {
+        "label": "בחר קבוצה",
+        "notFound": "לא נמצאה קבוצה"
+      },
+      "settings": {
+        "board": {
+          "notification": {
+            "success": {
+              "title": "ההגדרות נשמרו",
+              "message": "הגדרות הלוח נשמרו בהצלחה"
+            },
+            "error": {
+              "title": "נכשל בשמירת הגדרות",
+              "message": "לא ניתן לשמור הגדרות לוח"
+            }
+          }
+        }
+      },
+      "changePosition": {
+        "notification": {
+          "success": {
+            "message": "המיקום השתנה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן לשנות מיקום"
+          }
+        }
+      }
+    },
+    "defaultGroup": {
+      "name": "קבוצת ברירת מחדל",
+      "description": "{name} - כולם מחוברים"
+    }
+  },
+  "app": {
+    "search": "חיפוש אפליקציה",
+    "page": {
+      "list": {
+        "title": "אפליקציות",
+        "noResults": {
+          "title": "עדיין אין אפליקציות",
+          "action": "צור את האפליקציה הראשונה שלך"
+        }
+      },
+      "create": {
+        "title": "אפליקציה חדשה",
+        "notification": {
+          "success": {
+            "title": "היצירה הצליחה",
+            "message": "האפליקציה נוצרה בהצלחה"
+          },
+          "error": {
+            "title": "היצירה נכשלה",
+            "message": "לא ניתן ליצור את האפליקציה"
+          }
+        }
+      },
+      "edit": {
+        "title": "ערוך אפליקציה",
+        "notification": {
+          "success": {
+            "title": "השינויים הוחלו בהצלחה",
+            "message": "האפליקציה נשמרה בהצלחה"
+          },
+          "error": {
+            "title": "לא ניתן להחיל שינויים",
+            "message": "לא ניתן היה לשמור את האפליקציה"
+          }
+        }
+      },
+      "delete": {
+        "title": "מחק אפליקציה",
+        "message": "האם אתה בטוח שברצונך למחוק את האפליקציה {name}?",
+        "notification": {
+          "success": {
+            "title": "המחיקה הצליחה",
+            "message": "האפליקציה נמחקה בהצלחה"
+          },
+          "error": {
+            "title": "המחיקה נכשלה",
+            "message": "לא ניתן למחוק את האפליקציה"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "שם"
+      },
+      "description": {
+        "label": "תיאור"
+      },
+      "url": {
+        "label": "כתובת אתר"
+      },
+      "useDifferentUrlForPing": {
+        "checkbox": {
+          "label": "השתמש בקישור שונה עבור פינג",
+          "description": "שימושי אם Homarr יכול לגשת ישירות באמצעות שם מארח פנימי או רשת כדי למנוע שימוש ברוחב פס של ספק שירותי האינטרנט"
+        }
+      }
+    },
+    "action": {
+      "select": {
+        "label": "בחר אפליקציה",
+        "notFound": "לא נמצאה אפליקציה",
+        "search": "חפש אפליקציה",
+        "noResults": "אין תוצאות",
+        "action": "בחר {app}",
+        "title": "בחר אפליקציה להוספה ללוח זה"
+      },
+      "create": {
+        "title": "צור אפליקציה חדשה",
+        "description": "צור אפליקציה חדשה",
+        "action": "פתח את יצירת האפליקציה"
+      },
+      "add": "הוסף אפליקציה"
+    }
+  },
+  "integration": {
+    "page": {
+      "list": {
+        "title": "אינטגרציות",
+        "search": "חיפוש אינטגרציות",
+        "noResults": {
+          "title": "עדיין אין אינטגרציות"
+        }
+      },
+      "create": {
+        "title": "אינטגרציה {name} חדשה",
+        "notification": {
+          "success": {
+            "title": "היצירה הצליחה",
+            "message": "האינטגרציה נוצרה בהצלחה"
+          },
+          "error": {
+            "title": "היצירה נכשלה",
+            "message": "לא ניתן ליצור את האינטגרציה"
+          }
+        },
+        "app": {
+          "option": {
+            "existing": {
+              "title": "קיים",
+              "label": "בחירת אפליקציה קיימת"
+            },
+            "new": {
+              "title": "חדש",
+              "url": {
+                "label": "כתובת אתר של אפליקציה",
+                "description": "כתובת האתר שהאפליקציה תפתח בעת גישה אליה מלוח המחוונים"
+              }
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "ערוך אינטגרציה {name}",
+        "notification": {
+          "success": {
+            "title": "השינויים הוחלו בהצלחה",
+            "message": "האינטגרציה נשמרה בהצלחה"
+          },
+          "error": {
+            "title": "לא ניתן להחיל שינויים",
+            "message": "לא ניתן היה לשמור את האינטגרציה"
+          }
+        },
+        "app": {
+          "action": {
+            "add": "קישור אפליקציה",
+            "remove": "בטל קישור",
+            "select": "בחר אפליקציה לקישור"
+          }
+        }
+      },
+      "delete": {
+        "title": "מחק אינטגרציה",
+        "message": "האם אתה בטוח שברצונך למחוק את האינטגרציה {name}?",
+        "notification": {
+          "success": {
+            "title": "המחיקה הצליחה",
+            "message": "האינטגרציה נמחקה בהצלחה"
+          },
+          "error": {
+            "title": "המחיקה נכשלה",
+            "message": "לא ניתן למחוק את האינטגרציה"
+          }
+        }
+      }
+    },
+    "field": {
+      "name": {
+        "label": "שם"
+      },
+      "url": {
+        "label": "כתובת אתר"
+      },
+      "attemptSearchEngineCreation": {
+        "label": "יצירת מנוע חיפוש",
+        "description": "אינטגרציה {kind} יכולה לשמש עם מנועי חיפוש. סמן עבור הגדרה אוטומטית של מנוע חיפוש."
+      },
+      "app": {
+        "sectionTitle": "אפליקציה מקושרת"
+      },
+      "createApp": {
+        "label": "יצירת אפליקציה",
+        "description": "יצירת אפליקציה עם אותו שם וסמל כמו האינטגרציה. יש להשאיר את שדה הקלט למטה ריק כדי ליצור את האפליקציה עם כתובת האתר לאינטגרציה."
+      },
+      "appHref": {
+        "placeholder": "כתובת אתר מותאמת אישית של אפליקציה"
+      }
+    },
+    "action": {
+      "create": "אינטגרציה חדשה"
+    },
+    "testConnection": {
+      "action": {
+        "create": "בדוק חיבור וצור",
+        "edit": "בדוק את החיבור ושמור"
+      },
+      "error": {
+        "common": {
+          "cause": {
+            "title": "סיבה עם פרטים נוספים"
+          }
+        },
+        "unknown": {
+          "title": "שגיאה לא ידועה",
+          "description": "אירעה שגיאה לא ידועה, פתח את הסיבה למטה כדי לראות פרטים נוספים"
+        },
+        "parse": {
+          "title": "שגיאת ניתוח",
+          "description": "לא ניתן היה לנתח את התגובה. אנא ודא שכתובת האתר מפנה לכתובת האתר הבסיסית של השירות."
+        },
+        "authorization": {
+          "title": "שגיאת הרשאה",
+          "description": "הבקשה לא אושרה. אנא ודא שהאישורים נכונים ושהוגדרו לך הרשאות מספיקות."
+        },
+        "statusCode": {
+          "title": "שגיאת תגובה",
+          "description": "התקבלה תגובה בלתי צפויה של {statusCode} ({reason}) מ-<url></url>. אנא ודא שכתובת האתר מפנה לכתובת האתר הבסיסית של האינטגרציה.",
+          "otherDescription": "התקבלה תגובה בלתי צפויה של {statusCode} מ-<url></url>. אנא ודא שכתובת האתר מפנה לכתובת האתר הבסיסית של האינטגרציה.",
+          "reason": {
+            "badRequest": "בקשה שגויה",
+            "notFound": "לא נמצא",
+            "tooManyRequests": "בקשות רבות מדי",
+            "internalServerError": "שגיאת שרת פנימית",
+            "serviceUnavailable": "השירות אינו זמין",
+            "gatewayTimeout": "פסק זמן של השער"
+          }
+        },
+        "certificate": {
+          "title": "שגיאת תעודה",
+          "description": {
+            "expired": "פג תוקפה של תעודה זו.",
+            "notYetValid": "התעודה עדיין אינה בתוקף.",
+            "untrusted": "התעודה אינה מהימנה.",
+            "hostnameMismatch": "שם המארח של האישור אינו תואם לכתובת ה-URL."
+          },
+          "alert": {
+            "permission": {
+              "title": "אין מספיק הרשאות",
+              "message": "אינך רשאי לתת אמון באישורים או להעלות אותם. אנא צור קשר עם מנהל המערכת שלך כדי להעלות את אישור הבסיס הדרוש."
+            },
+            "hostnameMismatch": {
+              "title": "שם השרת לא תואם",
+              "message": "שם המארח בתעודה אינו תואם לשם המארח שאליו אתה מתחבר. זה יכול להצביע על סיכון אבטחה, אך עדיין תוכל לבחור לתת אמון בתעודה זו."
+            },
+            "extract": {
+              "title": "חילוץ תעודת CA נכשל",
+              "message": "ניתן לאחזר באופן אוטומטי רק אישורים חתומים עצמית ללא שרשרת. אם אתם משתמשים באישור חתום עצמית, אנא ודאו שאתם מעלים את אישור רשות האישור באופן ידני. תוכלו למצוא הוראות כיצד לעשות זאת <docsLink></docsLink>."
+            }
+          },
+          "action": {
+            "retry": {
+              "label": "נסה ליצור שוב"
+            },
+            "trust": {
+              "label": "תעודה מהימנה"
+            },
+            "upload": {
+              "label": "העלאת תעודת אבטחה"
+            }
+          },
+          "hostnameMismatch": {
+            "confirm": {
+              "title": "אי התאמה בשם המארח",
+              "message": "האם אתה בטוח שאתה רוצה לסמוך על האישור עם אי התאמה בשם המארח?"
+            },
+            "notification": {
+              "success": {
+                "title": "תעודה מהימנה",
+                "message": "נוסף שם מארח לרשימת האישורים המהימנים"
+              },
+              "error": {
+                "title": "נכשל בהוספת תעודת אבטחה",
+                "message": "לא ניתן היה לסמוך על האישור עם אי-התאמה בשם המארח"
+              }
+            }
+          },
+          "selfSigned": {
+            "confirm": {
+              "title": "תעודת אמון חתומה עצמית",
+              "message": "האם אתה בטוח שאתה רוצה לסמוך על אישור חתום עצמי זה?"
+            },
+            "notification": {
+              "success": {
+                "title": "תעודה מהימנה",
+                "message": "נוסף שם מארח לרשימת האישורים המהימנים"
+              },
+              "error": {
+                "title": "נכשל בהוספת תעודת אבטחה",
+                "message": "נכשל בהוספת האישור לרשימת האישורים המהימנים"
+              }
+            }
+          },
+          "details": {
+            "title": "פרטים",
+            "description": "בדוק את פרטי האישור לפני שתחליט לסמוך עליו.",
+            "content": {
+              "action": "הצג תוכן",
+              "title": "תעודת PEM"
+            }
+          }
+        },
+        "request": {
+          "title": "שגיאת בקשה",
+          "description": {
+            "connection": {
+              "hostUnreachable": "לא ניתן היה להגיע לשרת. משמעות הדבר בדרך כלל היא שהמארח לא מקוון או שאינו ניתן להשגה מהרשת שלך.",
+              "networkUnreachable": "הרשת אינה נגישה. אנא בדוק את חיבור האינטרנט או את תצורת הרשת שלך.",
+              "refused": "השרת דחה את החיבור. ייתכן שהוא אינו פועל או דוחה בקשות בפורט שצוין.",
+              "reset": "החיבור נסגר באופן בלתי צפוי על ידי השרת. זה יכול לקרות אם השרת אינו יציב או שהופעל מחדש."
+            },
+            "dns": {
+              "notFound": "לא ניתן היה למצוא את כתובת השרת. אנא בדוק את כתובת ה-URL עבור שגיאות הקלדה או שמות דומיין לא חוקיים.",
+              "timeout": "בדיקת DNS הסתיימה. ייתכן שמדובר בבעיה זמנית - אנא נסה שוב בעוד מספר רגעים.",
+              "noAnswer": "שרת ה-DNS לא החזיר תגובה תקפה. ייתכן שהדומיין קיים אך אין לו רשומות תקפות."
+            },
+            "timeout": {
+              "aborted": "הבקשה בוטלה לפני שהספיקה להשלים אותה. ייתכן שהדבר נובע מפעולת משתמש או מפסק זמן של המערכת.",
+              "timeout": "הבקשה ארכה זמן רב מדי להשלמה ופג תוקפו. בדוק את הרשת שלך או נסה שוב מאוחר יותר."
+            }
+          }
+        }
+      },
+      "alertNotice": "הלחצן שמור מופעל לאחר יצירת חיבור מוצלח",
+      "notification": {
+        "success": {
+          "title": "החיבור הצליח",
+          "message": "החיבור נוצר בהצלחה"
+        },
+        "invalidUrl": {
+          "title": "קישור לא תקין",
+          "message": "כתובת האתר אינה חוקית"
+        },
+        "secretNotDefined": {
+          "title": "חסרים פרטי התחברות",
+          "message": "לא סופקו כל פרטי ההתחברות"
+        },
+        "invalidCredentials": {
+          "title": "פרטי התחברות שגויים",
+          "message": "פרטי ההתחברות אינם חוקיים"
+        },
+        "commonError": {
+          "title": "החיבור נכשל",
+          "message": "לא ניתן היה ליצור את החיבור"
+        },
+        "badRequest": {
+          "title": "בקשה שגויה",
+          "message": "הבקשה הייתה שגויה"
+        },
+        "unauthorized": {
+          "title": "לא מורשה",
+          "message": "כנראה פרטי התחברות שגויים"
+        },
+        "forbidden": {
+          "title": "אסור",
+          "message": "כנראה חסרות הרשאות"
+        },
+        "notFound": {
+          "title": "לא נמצא",
+          "message": "כנראה כתובת אתר או נתיב שגויים"
+        },
+        "internalServerError": {
+          "title": "שגיאת שרת פנימית",
+          "message": "השרת נתקל בשגיאה"
+        },
+        "serviceUnavailable": {
+          "title": "השירות אינו זמין",
+          "message": "השרת אינו זמין כרגע"
+        },
+        "connectionAborted": {
+          "title": "החיבור הופסק",
+          "message": "החיבור בוטל"
+        },
+        "domainNotFound": {
+          "title": "הדומיין לא נמצא",
+          "message": "לא ניתן למצוא את הדומיין"
+        },
+        "connectionRefused": {
+          "title": "החיבור נדחה",
+          "message": "החיבור נדחה"
+        },
+        "invalidJson": {
+          "title": "JSON לא חוקי",
+          "message": "התגובה לא הייתה JSON חוקי"
+        },
+        "wrongPath": {
+          "title": "נתיב שגוי",
+          "message": "כנראה שהנתיב שגוי"
+        },
+        "tooManyRequests": {
+          "title": "יותר מדי בקשות בזמן נתון",
+          "message": "היו יותר מדי בקשות. סביר להניח שמערכת היעד מגבילה את הבקשות או דחתה אותך"
+        }
+      }
+    },
+    "secrets": {
+      "title": "נתוני גישה",
+      "lastUpdated": "עדכון אחרון {date}",
+      "notSet": {
+        "label": "לא הוגדר ערך",
+        "tooltip": "נתון הגישה הנדרש עדיין לא נקבע"
+      },
+      "secureNotice": "לא ניתן לאחזר את נתון הגישה לאחר היצירה",
+      "reset": {
+        "title": "איפוס נתון גישה",
+        "message": "האם את/ה בטוח/ה שברצונך למחוק את נתון הגישה הזה?"
+      },
+      "noSecretsRequired": {
+        "segmentTitle": "אין נתוני גישה",
+        "text": "לא נדרשים נתוני גישה לאינטגרציה זו"
+      },
+      "kind": {
+        "username": {
+          "label": "שם משתמש",
+          "newLabel": "שם משתמש חדש"
+        },
+        "apiKey": {
+          "label": "מפתח API",
+          "newLabel": "מפתח API חדש"
+        },
+        "password": {
+          "label": "סיסמה",
+          "newLabel": "סיסמה חדשה"
+        },
+        "tokenId": {
+          "label": "מזהה אסימון",
+          "newLabel": "מזהה אסימון חדש"
+        },
+        "realm": {
+          "label": "תחום",
+          "newLabel": "תחום חדש"
+        },
+        "personalAccessToken": {
+          "label": "טוקן גישה אישי",
+          "newLabel": "טוקן גישה אישי חדש"
+        },
+        "topic": {
+          "label": "נושא",
+          "newLabel": "נושא חדש"
+        },
+        "url": {
+          "label": "כתובת אתר",
+          "newLabel": "כתובת אתר חדשה"
+        },
+        "opnsenseApiKey": {
+          "label": "מפתח API (מפתח)",
+          "newLabel": "מפתח API חדש (מפתח)"
+        },
+        "opnsenseApiSecret": {
+          "label": "מפתח API (סודי)",
+          "newLabel": "מפתח API חדש (סודי)"
+        },
+        "githubAppId": {
+          "label": "מזהה אפליקציה",
+          "newLabel": "מזהה אפליקציה חדש"
+        },
+        "githubInstallationId": {
+          "label": "מזהה התקנה",
+          "newLabel": "מזהה התקנה חדש"
+        },
+        "privateKey": {
+          "label": "מפתח פרטי",
+          "newLabel": "מפתח פרטי חדש"
+        }
+      }
+    },
+    "permission": {
+      "use": "בחר אינטגרציות בפריטים",
+      "interact": "אינטראקציה עם אינטגרציות",
+      "full": "גישת אינטגרציה מלאה"
+    }
+  },
+  "media": {
+    "plural": "מדיה",
+    "search": "מצא מדיה",
+    "field": {
+      "name": "שם",
+      "size": "גודל",
+      "creator": "יוצר"
+    },
+    "action": {
+      "upload": {
+        "label": "העלה מדיה",
+        "file": "בחר קובץ",
+        "notification": {
+          "success": {
+            "message": "המדיה הועלתה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן היה להעלות את המדיה"
+          }
+        }
+      },
+      "delete": {
+        "label": "מחק מדיה",
+        "description": "האם אתה בטוח שברצונך למחוק את המדיה <bName></bName>?",
+        "notification": {
+          "success": {
+            "message": "המדיה נמחקה בהצלחה"
+          },
+          "error": {
+            "message": "לא ניתן למחוק את המדיה"
+          }
+        }
+      },
+      "copy": {
+        "label": "העתק קישור"
+      },
+      "open": {
+        "label": "פתיחת מדיה"
+      }
+    }
+  },
+  "common": {
+    "success": "הצלחה",
+    "beta": "בטא",
+    "error": "שגיאה",
+    "action": {
+      "add": "הוסף",
+      "apply": "החל",
+      "backToOverview": "חזרה לסקירה כללית",
+      "change": "לשנות",
+      "create": "צור",
+      "createAnother": "צור והתחל מחדש",
+      "edit": "עריכה",
+      "import": "ייבוא",
+      "insert": "הוספה",
+      "remove": "הסר",
+      "save": "שמור",
+      "saveChanges": "שמור שינויים",
+      "cancel": "בטל",
+      "delete": "מחיקה",
+      "discard": "ביטול",
+      "close": "סגור",
+      "confirm": "לאשר",
+      "continue": "המשך",
+      "previous": "הקודם",
+      "next": "הבא",
+      "checkoutDocs": "בדוק את התיעוד",
+      "checkLogs": "בדוק לוגים לפרטים נוספים",
+      "tryAgain": "נא לנסות שוב",
+      "loading": "טוען"
+    },
+    "here": "כאן",
+    "iconPicker": {
+      "label": "קישור של הסמל",
+      "header": "הקלד שם או אובייקטים לסינון עבור אייקונים... Homarr יחפש עבורך סמלים של {countIcons} ."
+    },
+    "colorScheme": {
+      "options": {
+        "light": "בהיר",
+        "dark": "כהה"
+      }
+    },
+    "information": {
+      "min": "מינימום",
+      "max": "מקסימום",
+      "days": "ימים",
+      "hours": "שעות",
+      "minutes": "דקות"
+    },
+    "notification": {
+      "create": {
+        "success": "היצירה הצליחה",
+        "error": "היצירה נכשלה"
+      },
+      "delete": {
+        "success": "המחיקה הצליחה",
+        "error": "המחיקה נכשלה"
+      },
+      "update": {
+        "success": "השינויים הוחלו בהצלחה",
+        "error": "לא ניתן להחיל שינויים"
+      },
+      "transfer": {
+        "success": "הועבר בהצלחה",
+        "error": "ההעברה נכשלה"
+      }
+    },
+    "multiSelect": {
+      "placeholder": "בחר ערך אחד או יותר"
+    },
+    "multiText": {
+      "placeholder": "הוסף עוד ערכים",
+      "addLabel": "הוסף {value}"
+    },
+    "select": {
+      "placeholder": "בחר ערך",
+      "badge": {
+        "recommended": "מומלץ"
+      }
+    },
+    "userAvatar": {
+      "menu": {
+        "switchToDarkMode": "עבור למצב כהה",
+        "switchToLightMode": "עבור למצב בהיר",
+        "management": "ניהול",
+        "preferences": "העדפות שלך",
+        "logout": "התנתק/י",
+        "login": "התחבר/י",
+        "homeBoard": "לוח הבית שלך",
+        "loggedOut": "נותקת מהמערכת",
+        "updateAvailable": "{countUpdates} עדכונים זמינים: {tag}"
+      }
+    },
+    "dangerZone": "אזור מסוכן",
+    "noResults": "לא נמצאו תוצאות",
+    "unsavedChanges": "ישנם שינויים שלא נשמרו!",
+    "preview": {
+      "show": "הצג תצוגה מקדימה",
+      "hide": "הסתר תצוגה המקדימה"
+    },
+    "zod": {
+      "errors": {
+        "default": "שדה זה אינו חוקי",
+        "required": "זהו שדה חובה",
+        "string": {
+          "startsWith": "שדה זה חייב להתחיל עם {startsWith}",
+          "endsWith": "שדה זה חייב להסתיים עם {endsWith}",
+          "includes": "שדה זה חייב להכיל {includes}",
+          "invalidEmail": "שדה זה חייב להיות דוא\"ל חוקי"
+        },
+        "tooSmall": {
+          "string": "שדה זה חייב להיות באורך של {minimum} תווים לפחות",
+          "number": "שדה זה חייב להיות גדול או שווה ל {minimum}"
+        },
+        "tooBig": {
+          "string": "שדה זה חייב להיות באורך של {maximum} תווים לכל היותר",
+          "number": "שדה זה חייב להיות קטן או שווה ל {maximum}"
+        },
+        "custom": {
+          "passwordsDoNotMatch": "סיסמאות לא תואמות",
+          "passwordRequirements": "הסיסמה אינה עומדת בדרישות",
+          "boardAlreadyExists": "לוח בשם זה כבר קיים",
+          "invalidFileType": "סוג קובץ לא חוקי, צפוי {expected}",
+          "invalidFileName": "שם קובץ לא חוקי",
+          "fileTooLarge": "הקובץ גדול מדי, הגודל המרבי הוא {maxSize}",
+          "invalidConfiguration": "תצורה לא חוקית",
+          "groupNameTaken": "שם הקבוצה כבר תפוס"
+        }
+      }
+    },
+    "unit": {
+      "speed": {
+        "kilometersPerHour": "קמ\"ש",
+        "milesPerHour": "מייל/שעה"
+      }
+    }
+  },
+  "section": {
+    "dynamic": {
+      "action": {
+        "create": "מדור דינמי חדש",
+        "remove": "הסר קטע דינמי"
+      },
+      "option": {
+        "title": {
+          "label": "כותרת"
+        },
+        "customCssClasses": {
+          "label": "מחלקות עיצוב מותאמות אישית"
+        },
+        "borderColor": {
+          "label": "צבע מסגרת"
+        }
+      },
+      "remove": {
+        "title": "הסר קטע דינמי",
+        "message": "האם אתה בטוח שברצונך להסיר את הקטע הדינמי הזה? פריטים יועברו לאותו מיקום במדור האב."
+      }
+    },
+    "category": {
+      "field": {
+        "name": {
+          "label": "שם"
+        }
+      },
+      "action": {
+        "create": "קטגוריה חדשה",
+        "edit": "שנה את שם הקטגוריה",
+        "remove": "הסר קטגוריה",
+        "moveUp": "הזזה למעלה",
+        "moveDown": "הזזה למטה",
+        "createAbove": "קטגוריה חדשה למעלה",
+        "createBelow": "קטגוריה חדשה למטה",
+        "openAllInNewTabs": "פתח הכל בכרטיסיות"
+      },
+      "create": {
+        "title": "קטגוריה חדשה",
+        "submit": "הוסף קטגוריה"
+      },
+      "remove": {
+        "title": "הסר קטגוריה",
+        "message": "האם אתה בטוח שברצונך להסיר את הקטגוריה {name}?"
+      },
+      "edit": {
+        "title": "שנה את שם הקטגוריה",
+        "submit": "שנה את שם הקטגוריה"
+      },
+      "menu": {
+        "label": {
+          "create": "קטגוריה חדשה",
+          "changePosition": "שנה מיקום"
+        }
+      },
+      "openAllInNewTabs": {
+        "title": "פתח הכל בכרטיסיות",
+        "text": "דפדפנים מסוימים עשויים לחסום פתיחה בכמות גדולה של כרטיסיות מסיבות אבטחה. Homarr לא הצליח לפתוח את כל החלונות, מכיוון שהדפדפן שלך חסם את הפעולה הזו. אפשר \"פתח חלונות קופצים\" ונסה שוב."
+      }
+    }
+  },
+  "item": {
+    "action": {
+      "create": "פריט חדש",
+      "import": "ייבוא פריט",
+      "edit": "ערוך פריט",
+      "moveResize": "הזז/שנה גודל פריט",
+      "duplicate": "שכפול פריט",
+      "remove": "הסרת פריט"
+    },
+    "menu": {
+      "label": {
+        "settings": "הגדרות"
+      }
+    },
+    "create": {
+      "title": "בחירת פריט להוספה",
+      "search": "סנן פריטים",
+      "addToBoard": "הוספה ללוח"
+    },
+    "moveResize": {
+      "title": "הזז/שנה גודל פריט",
+      "field": {
+        "width": {
+          "label": "רוחב"
+        },
+        "height": {
+          "label": "גובה"
+        },
+        "xOffset": {
+          "label": "היסט X"
+        },
+        "yOffset": {
+          "label": "היסט Y"
+        }
+      }
+    },
+    "edit": {
+      "title": "ערוך פריט",
+      "advancedOptions": {
+        "label": "אפשרויות מתקדמות",
+        "title": "אפשרויות פריט מתקדמות"
+      },
+      "field": {
+        "integrations": {
+          "label": "אינטגרציות"
+        },
+        "title": {
+          "label": "כותרת"
+        },
+        "customCssClasses": {
+          "label": "מחלקות עיצוב מותאמות אישית"
+        },
+        "borderColor": {
+          "label": "צבע מסגרת"
+        }
+      }
+    },
+    "remove": {
+      "title": "הסרת פריט",
+      "message": "האם אתה בטוח שברצונך להסיר פריט זה?"
+    }
+  },
+  "widget": {
+    "app": {
+      "name": "אפליקציה",
+      "description": "הטמעת אפליקציה בלוח.",
+      "option": {
+        "appId": {
+          "label": "בחר אפליקציה"
+        },
+        "openInNewTab": {
+          "label": "פתיחה בכרטיסיה חדשה"
+        },
+        "showTitle": {
+          "label": "הצג את שם האפליקציה"
+        },
+        "pingEnabled": {
+          "label": "אפשר בדיקת מצב"
+        },
+        "layout": {
+          "label": "פריסה",
+          "option": {
+            "row": "אופקי",
+            "row-reverse": "אופקי (היפוך)",
+            "column": "אנכי",
+            "column-reverse": "אנכי (היפוך)"
+          }
+        },
+        "descriptionDisplayMode": {
+          "label": "מצב תצוגת תיאור",
+          "description": "בחר כיצד להציג את תיאור האפליקציה",
+          "option": {
+            "normal": "בתוך הווידג'ט",
+            "tooltip": "כתיאור כלים",
+            "hidden": "מוסתר"
+          }
+        }
+      },
+      "error": {
+        "notFound": {
+          "label": "אין אפליקציה",
+          "tooltip": "לא נבחרה אפליקציה חוקית"
+        }
+      }
+    },
+    "bookmarks": {
+      "name": "סימניות",
+      "description": "מציג קישורי אפליקציות מרובים",
+      "option": {
+        "title": {
+          "label": "כותרת"
+        },
+        "layout": {
+          "label": "פריסה",
+          "option": {
+            "row": {
+              "label": "אופקי"
+            },
+            "column": {
+              "label": "אנכי"
+            },
+            "grid": {
+              "label": "רשת"
+            },
+            "gridHorizontal": {
+              "label": "רשת אופקית"
+            }
+          }
+        },
+        "hideTitle": {
+          "label": "הסתר כותרת"
+        },
+        "hideIcon": {
+          "label": "הסתרת אייקונים"
+        },
+        "hideHostname": {
+          "label": "הסתרת כתובת רשת"
+        },
+        "openNewTab": {
+          "label": "פתיחה בכרטיסיה חדשה"
+        },
+        "items": {
+          "label": "סימניות",
+          "add": "הוסף סימניה"
+        }
+      }
+    },
+    "dnsHoleSummary": {
+      "name": "סיכום חור אבטחה DNS",
+      "description": "מציג את הסיכום חור אבטחת DNS שלך",
+      "option": {
+        "layout": {
+          "label": "פריסה",
+          "option": {
+            "row": {
+              "label": "אופקי"
+            },
+            "column": {
+              "label": "אנכי"
+            },
+            "grid": {
+              "label": "רשת"
+            }
+          }
+        },
+        "usePiHoleColors": {
+          "label": "השתמש בצבעי Pi-Hole"
+        }
+      },
+      "error": {
+        "internalServerError": "אחזור סיכום החור אבטחת DNS נכשל",
+        "integrationsDisconnected": "אין נתונים זמינים, כל האינטגרציות מנותקות"
+      },
+      "data": {
+        "adsBlockedToday": "נחסמו היום",
+        "adsBlockedTodayPercentage": "נחסמו היום",
+        "dnsQueriesToday": "שאילתות היום",
+        "domainsBeingBlocked": "דומיינים ברשימת החסימה"
+      },
+      "domainsTooltip": "בגלל ריבוי אינטגרציות Homarr לא יכול לחשב במדיוק את כמות הדומיינים שנחסמו"
+    },
+    "dnsHoleControls": {
+      "name": "בקרות חור אבטחת DNS",
+      "description": "שלוט ב-PiHole או ב-AdGuard מלוח המחוונים שלך",
+      "option": {
+        "layout": {
+          "label": "פריסה",
+          "option": {
+            "row": {
+              "label": "אופקי"
+            },
+            "column": {
+              "label": "אנכי"
+            },
+            "grid": {
+              "label": "רשת"
+            }
+          }
+        },
+        "showToggleAllButtons": {
+          "label": "הצג את כל הלחצנים"
+        }
+      },
+      "error": {
+        "internalServerError": "השליטה בחור אבטחת DNS נכשלה"
+      },
+      "controls": {
+        "enableAll": "אפשר הכל",
+        "disableAll": "השבת הכל",
+        "setTimer": "הגדר טיימר",
+        "set": "הגדר",
+        "enabled": "מאופשר",
+        "disabled": "מושבת",
+        "processing": "מעבד",
+        "disconnected": "מנותק",
+        "hours": "שעות",
+        "minutes": "דקות",
+        "unlimited": "השאר ריק עבור ללא הגבלה"
+      }
+    },
+    "clock": {
+      "name": "תאריך ושעה",
+      "description": "מציג את התאריך והשעה הנוכחיים.",
+      "option": {
+        "customTitleToggle": {
+          "label": "תצוגת כותרת/עיר מותאמת אישית",
+          "description": "הצג כותרת מותאמת אישית או שם העיר/המדינה על גבי השעון."
+        },
+        "customTitle": {
+          "label": "כותרת"
+        },
+        "is24HourFormat": {
+          "label": "פורמט 24 שעות",
+          "description": "השתמש בפורמט של 24 שעות במקום בפורמט של 12 שעות"
+        },
+        "showSeconds": {
+          "label": "הצג שניות"
+        },
+        "useCustomTimezone": {
+          "label": "השתמש באזור זמן קבוע"
+        },
+        "timezone": {
+          "label": "אזור זמן",
+          "description": "בחר את אזור הזמן בהתאם לתקן IANA"
+        },
+        "showDate": {
+          "label": "הצג את התאריך"
+        },
+        "dateFormat": {
+          "label": "פורמט תאריך",
+          "description": "איך צריך להיראות התאריך"
+        },
+        "customTimeFormat": {
+          "label": "פורמט זמן מותאם אישית",
+          "description": "השתמש ב-ISO 8601 כדי לעצב תצוגת זמן (זה ידרוס אפשרויות אחרות)"
+        },
+        "customDateFormat": {
+          "label": "פורמט זמן מותאם אישית",
+          "description": "השתמש ב-ISO 8601 כדי לעצב תצוגת זמן (זה ידרוס אפשרויות אחרות)"
+        }
+      }
+    },
+    "minecraftServerStatus": {
+      "name": "סטטוס שרת מיינקראפט",
+      "description": "מציג את סטטוס שרת מיינקראפט",
+      "option": {
+        "title": {
+          "label": "כותרת"
+        },
+        "domain": {
+          "label": "כתובת השרת"
+        },
+        "isBedrockServer": {
+          "label": "שרת Bedrock"
+        }
+      },
+      "status": {
+        "online": "מקוון",
+        "offline": "לא מקוון"
+      }
+    },
+    "notebook": {
+      "name": "פנקס רשימות",
+      "description": "ווידג'ט פשוט של מחברת התומך ב-markdown",
+      "option": {
+        "showToolbar": {
+          "label": "הצג את סרגל הכלים לסיוע כתיבת סימון"
+        },
+        "allowReadOnlyCheck": {
+          "label": "אפשר בדיקה במצב קריאה בלבד"
+        },
+        "content": {
+          "label": "תוכן פנקס הרשימות"
+        }
+      },
+      "controls": {
+        "bold": "מודגש",
+        "italic": "נטוי",
+        "strikethrough": "קו חוצה",
+        "underline": "קו תחתון",
+        "colorText": "טקסט צבעוני",
+        "colorHighlight": "טקסט סימון צבעוני",
+        "code": "קוד",
+        "clear": "נקה עיצוב",
+        "heading": "כותרת {level}",
+        "align": "יישור טקסט: {position}",
+        "blockquote": "ציטוט",
+        "horizontalLine": "קו אופקי",
+        "bulletList": "רשימת תבליט",
+        "orderedList": "רשימה מסודרת",
+        "checkList": "צ'ק ליסט",
+        "increaseIndent": "הגדלת הזחה",
+        "decreaseIndent": "הקטנת הזחה",
+        "link": "קישור",
+        "unlink": "הסרת קישור",
+        "image": "הטמעת תמונה",
+        "addTable": "הוספת טבלה",
+        "deleteTable": "מחיקת טבלה",
+        "colorCell": "טקסט צבעוני",
+        "mergeCell": "החלפת מיזוג התא",
+        "addColumnLeft": "הוספת עמודה לפני",
+        "addColumnRight": "הוספת עמודה אחרי",
+        "deleteColumn": "מחיקת עמודה",
+        "addRowTop": "הוספת שורה לפני",
+        "addRowBelow": "הוספת שורה אחרי",
+        "deleteRow": "מחיקת שורה"
+      },
+      "align": {
+        "left": "שמאל",
+        "center": "מרכז",
+        "right": "ימין"
+      },
+      "popover": {
+        "clearColor": "ניקוי צבע",
+        "source": "מקור",
+        "widthPlaceholder": "ערך באחוזים או בפיקסלים",
+        "columns": "עמודות",
+        "rows": "שורות",
+        "width": "רוחב",
+        "height": "גובה"
+      },
+      "placeholder": "התחל לכתוב את ההערות שלך",
+      "dismiss": {
+        "title": "לבטל שינויים?",
+        "message": "יש לך שינויים שלא נשמרו במחברת שלך. האם אתה בטוח שברצונך למחוק אותם?",
+        "action": {
+          "discard": "בטל שינויים",
+          "keepEditing": "המשך לערוך"
+        }
+      }
+    },
+    "iframe": {
+      "name": "iFrame",
+      "description": "הטמע כל תוכן מהאינטרנט. חלק מהאתרים עשויים להגביל את הגישה.",
+      "option": {
+        "embedUrl": {
+          "label": "הטמע כתובת אתר"
+        },
+        "allowFullScreen": {
+          "label": "הרשאה למסך מלא"
+        },
+        "allowTransparency": {
+          "label": "אפשר שקיפות"
+        },
+        "allowScrolling": {
+          "label": "אפשר גלילה"
+        },
+        "allowPayment": {
+          "label": "אפשר תשלום"
+        },
+        "allowAutoPlay": {
+          "label": "אפשר הפעלה אוטומטית"
+        },
+        "allowMicrophone": {
+          "label": "אפשר מיקרופון"
+        },
+        "allowCamera": {
+          "label": "אפשר מצלמה"
+        },
+        "allowGeolocation": {
+          "label": "אפשר מיקום גיאוגרפי"
+        }
+      },
+      "error": {
+        "noUrl": "לא סופק קישור של iFrame",
+        "unsupportedProtocol": "כתובת הרשת שסופקה בפרוטוקול שגוי. בבקשה להשתמש באחד מ- {supportedProtocols}",
+        "noBrowerSupport": "הדפדפן שלך אינו תומך ב-iframes. נא עדכן את הדפדפן שלך."
+      }
+    },
+    "smartHome-entityState": {
+      "name": "מצב ישות",
+      "description": "הצג את המצב של ישות והחלף אותו באופן אופציונלי",
+      "option": {
+        "entityId": {
+          "label": "מזהה ישות"
+        },
+        "displayName": {
+          "label": "שם תצוגה"
+        },
+        "entityUnit": {
+          "label": "יחידת ישות"
+        },
+        "clickable": {
+          "label": "ניתן ללחיצה"
+        }
+      }
+    },
+    "smartHome-executeAutomation": {
+      "name": "הפעל אוטומציה",
+      "description": "הפעל אוטומציה בלחיצה אחת",
+      "option": {
+        "displayName": {
+          "label": "הצג שם"
+        },
+        "automationId": {
+          "label": "מזהה אוטומציה"
+        }
+      },
+      "spotlightAction": {
+        "run": "הפעל {name}"
+      }
+    },
+    "stockPrice": {
+      "name": "מחיר המניה",
+      "description": "מציג את מחיר המניה הנוכחי של חברה",
+      "option": {
+        "stock": {
+          "label": "סמל מניה"
+        },
+        "timeRange": {
+          "label": "טווח זמן",
+          "option": {
+            "1d": {
+              "label": "יום אחד"
+            },
+            "5d": {
+              "label": "חמישה ימים"
+            },
+            "1mo": {
+              "label": "חודש אחד"
+            },
+            "3mo": {
+              "label": "שלושה חודשים"
+            },
+            "6mo": {
+              "label": "שישה חודשים"
+            },
+            "ytd": {
+              "label": "שנה עד היום"
+            },
+            "1y": {
+              "label": "שנה אחת"
+            },
+            "2y": {
+              "label": "שנתיים"
+            },
+            "5y": {
+              "label": "חמש שנים"
+            },
+            "10y": {
+              "label": "עשר שנים"
+            },
+            "max": {
+              "label": "מקסימום"
+            }
+          }
+        },
+        "timeInterval": {
+          "label": "מרווח זמן",
+          "option": {
+            "5m": {
+              "label": "5 דקות"
+            },
+            "15m": {
+              "label": "15 דקות"
+            },
+            "30m": {
+              "label": "30 דקות"
+            },
+            "1h": {
+              "label": "שעה אחת"
+            },
+            "1d": {
+              "label": "יום אחד"
+            },
+            "5d": {
+              "label": "חמישה ימים"
+            },
+            "1wk": {
+              "label": "שבוע אחד"
+            },
+            "1mo": {
+              "label": "חודש אחד"
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "name": "לוח שנה",
+      "description": "הצג אירועים מהאינטגרציות שלך בתצוגת לוח שנה בתוך פרק זמן יחסי מסוים",
+      "duration": {
+        "allDay": "כל היום"
+      },
+      "option": {
+        "releaseType": {
+          "label": "סוג שחרור של Radarr",
+          "options": {
+            "inCinemas": "בבתי קולנוע",
+            "digitalRelease": "שחרור דיגיטלי",
+            "physicalRelease": "שחרור פיזי"
+          }
+        },
+        "filterPastMonths": {
+          "label": "התחל מ"
+        },
+        "filterFutureMonths": {
+          "label": "סיים ב"
+        },
+        "showUnmonitored": {
+          "label": "הצג ללא פיקוח"
+        }
+      }
+    },
+    "weather": {
+      "name": "מזג אוויר",
+      "description": "מציג את מידע מזג האוויר הנוכחי של מיקום מוגדר.",
+      "option": {
+        "isFormatFahrenheit": {
+          "label": "טמפרטורה בפרנהייט"
+        },
+        "disableTemperatureDecimals": {
+          "label": "ביטול טמפרטורה עשרונית"
+        },
+        "showCurrentWindSpeed": {
+          "label": "הצגת מהירות רוח נוכחית",
+          "description": "רק במזג אוויר נוכחי"
+        },
+        "useImperialSpeed": {
+          "label": "השתמש במייל לשעה עבור מהירות הרוח"
+        },
+        "location": {
+          "label": "מיקום מזג האוויר"
+        },
+        "showCity": {
+          "label": "הצג עיר"
+        },
+        "hasForecast": {
+          "label": "הצג תחזית"
+        },
+        "forecastDayCount": {
+          "label": "כמות ימי התחזית",
+          "description": "כאשר הווידג'ט אינו רחב מספיק, פחות ימים מוצגים"
+        },
+        "dateFormat": {
+          "label": "פורמט תאריך",
+          "description": "איך צריך להיראות התאריך"
+        }
+      },
+      "currentWindSpeed": "{currentWindSpeed} קמ״ש",
+      "dailyForecast": {
+        "sunrise": "זריחה",
+        "sunset": "שקיעה",
+        "maxWindSpeed": "מהירות רוח מקסימלית: {maxWindSpeed} קמ״ש",
+        "maxWindGusts": "משבי רוח מקסימלים: {maxWindGusts} קמ״ש"
+      },
+      "kind": {
+        "clear": "בהיר",
+        "mainlyClear": "בהיר בעיקר",
+        "fog": "ערפל",
+        "drizzle": "טפטוף",
+        "freezingDrizzle": "טפטוף מקפיא",
+        "rain": "גשום",
+        "freezingRain": "גשם מקפיא",
+        "snowFall": "שלג יורד",
+        "snowGrains": "פתיתי שלג",
+        "rainShowers": "ממטרי גשם",
+        "snowShowers": "ממטרי שלג",
+        "thunderstorm": "סופת רעמים",
+        "thunderstormWithHail": "סופת רעמים עם ברד",
+        "unknown": "לא ידוע"
+      }
+    },
+    "indexerManager": {
+      "name": "סטטוס מנהל אינדקס",
+      "description": "מצב האינדקסים שלך",
+      "option": {
+        "openIndexerSiteInNewTab": {
+          "label": "פתח את אתר האינדקס בכרטיסייה חדשה"
+        }
+      },
+      "title": "מנהל אינדקס",
+      "testAll": "בדוק הכל",
+      "error": {
+        "internalServerError": "נכשל באחזור סטטוס האינדקסים"
+      }
+    },
+    "healthMonitoring": {
+      "name": "ניטור בריאות המערכת",
+      "description": "מציג מידע המציג את התקינות והסטטוס של המערכות שלך.",
+      "tab": {
+        "system": "מערכת",
+        "cluster": "אשכול"
+      },
+      "option": {
+        "fahrenheit": {
+          "label": "טמפרטורת המעבד בפרנהייט"
+        },
+        "cpu": {
+          "label": "הצג מידע על המעבד"
+        },
+        "memory": {
+          "label": "הצג מידע זיכרון"
+        },
+        "showUptime": {
+          "label": "הצג זמן פעולה"
+        },
+        "fileSystem": {
+          "label": "הצג מידע על מערכת הקבצים"
+        },
+        "defaultTab": {
+          "label": "כרטיסיית ברירת מחדל"
+        },
+        "visibleClusterSections": {
+          "label": "מקטעי אשכול גלויים"
+        },
+        "sectionIndicatorRequirement": {
+          "label": "דרישת מציין מקטע"
+        }
+      },
+      "popover": {
+        "information": "מידע",
+        "processor": "מעבד: {cpuModelName}",
+        "memory": "זיכרון: {memory}GiB",
+        "memoryAvailable": "זמין: {memoryAvailable}GiB ({percent}%)",
+        "version": "גרסה: {version}",
+        "uptime": "זמן פעילות: {months} חודשים, {days} ימים, {hours} שעות, {minutes} דקות",
+        "loadAverage": "ממוצע עומס:",
+        "minute": "דקה אחת",
+        "minutes": "{count} דקות",
+        "used": "בשימוש",
+        "available": "זמין",
+        "lastSeen": "עדכון סטטוס אחרון: {lastSeen}"
+      },
+      "memory": {},
+      "error": {
+        "internalServerError": "נכשל בעדכון סטטוס בריאות המערכת"
+      },
+      "cluster": {
+        "summary": {
+          "cpu": "מעבד",
+          "memory": "זכרון פנימי"
+        },
+        "resource": {
+          "node": {
+            "name": "צמתים"
+          },
+          "qemu": {
+            "name": "מכונות וירטואליות"
+          },
+          "lxc": {
+            "name": "קונטיינרים של לינוקס"
+          },
+          "storage": {
+            "name": "אחסון"
+          }
+        },
+        "popover": {
+          "rightSection": {
+            "node": "צומת",
+            "vmId": "מזהה מכונה ורטואלית",
+            "plugin": "תוסף"
+          },
+          "detail": {
+            "cpu": "ליבות",
+            "memory": "זיכרון",
+            "storage": "אחסון",
+            "uptime": "זמן ריצה",
+            "haState": "מצב זמינות גבוהה",
+            "storageType": {
+              "local": "אחסון מקומי",
+              "shared": "אחסון משותף"
+            }
+          }
+        },
+        "table": {
+          "header": {
+            "name": "שם",
+            "cpu": "מעבד",
+            "memory": "זכרון פנימי",
+            "node": "צומת"
+          }
+        }
+      }
+    },
+    "dockerContainers": {
+      "name": "סטטיסטיקות דוקר",
+      "description": "סטטיסטיקות של המכולות שלך (ניתן להוסיף ווידג'ט זה רק עם הרשאות מנהל)",
+      "option": {
+        "enableRowSorting": {
+          "label": "אפשר מיון פריטים"
+        },
+        "defaultSort": {
+          "label": "עמודה המשמשת למיון כברירת מחדל",
+          "option": {
+            "name": "שם",
+            "state": "מצב",
+            "cpuUsage": "ניצול מעבד",
+            "memoryUsage": "ניצול זיכרון"
+          }
+        },
+        "descendingDefaultSort": {
+          "label": "מיון הפוך"
+        }
+      },
+      "error": {
+        "internalServerError": "נכשל באחזור סטטיסטיקות המכולות"
+      }
+    },
+    "common": {
+      "location": {
+        "query": "עיר / מיקוד",
+        "latitude": "קו רוחב",
+        "longitude": "קו אורך",
+        "disabledTooltip": "אנא הזן עיר או מיקוד",
+        "unknownLocation": "מיקום לא ידוע",
+        "search": "חיפוש",
+        "table": {
+          "header": {
+            "city": "עיר",
+            "country": "מדינה",
+            "coordinates": "קואורדינטות",
+            "population": "אוכלוסיה"
+          },
+          "action": {
+            "select": "בחר {city}, {countryCode}"
+          },
+          "population": {
+            "fallback": "לא ידוע"
+          }
+        }
+      },
+      "integration": {
+        "noData": "לא נמצא אינטגרציה",
+        "description": "לחץ על <here></here> כדי ליצור אינטגרציה חדשה"
+      },
+      "app": {
+        "noData": "לא נמצאה אפליקציה",
+        "description": "לחץ על <here></here> כדי ליצור אפליקציה חדשה",
+        "quickCreate": "צור אפליקציה תוך כדי תנועה"
+      },
+      "error": {
+        "noIntegration": "לא נבחרה אינטגרציה",
+        "noData": "אין נתוני אינטגרציה זמינים"
+      },
+      "option": {}
+    },
+    "video": {
+      "name": "זרם וידאו",
+      "description": "הטמע זרם וידאו או וידאו ממצלמה או אתר אינטרנט",
+      "option": {
+        "feedUrl": {
+          "label": "כתובת הזנה"
+        },
+        "hasAutoPlay": {
+          "label": "הפעלה אוטומטית",
+          "description": "הפעלה אוטומטית פועלת רק כשהיא מושתקת בגלל הגבלות הדפדפן"
+        },
+        "isMuted": {
+          "label": "מושתק"
+        },
+        "hasControls": {
+          "label": "הצג פקדים"
+        }
+      },
+      "error": {
+        "noUrl": "לא סופק קישור של סרטון",
+        "forYoutubeUseIframe": "עבור סרטוני YouTube השתמש באפשרות iframe"
+      }
+    },
+    "mediaServer": {
+      "name": "זרמי שרת מדיה נוכחיים",
+      "description": "הצג את הזרמים הנוכחיים בשרתי המדיה שלך",
+      "option": {
+        "showOnlyPlaying": {
+          "label": "הצג רק את ההפעלה הנוכחית",
+          "description": "השבתת אפשרות זו לא תעבוד עבור פלקס"
+        }
+      },
+      "items": {
+        "currentlyPlaying": "מתנגן כרגע",
+        "user": "משתמש",
+        "name": "שם",
+        "id": "מזהה",
+        "metadata": {
+          "title": "סטטיסטיקות לחנונים",
+          "video": {
+            "title": "וידאו",
+            "resolution": "רזולוציה"
+          },
+          "audio": {
+            "title": "אודיו",
+            "channelCount": "ערוצי אודיו",
+            "codec": "מקודדי אודיו"
+          },
+          "transcoding": {
+            "title": "המרה",
+            "container": "מיכל",
+            "resolution": "רזולוציה",
+            "target": "קידוד יעד"
+          }
+        }
+      }
+    },
+    "downloads": {
+      "name": "הורדת לקוח",
+      "description": "מאפשר לך להציג ולנהל את ההורדות שלך הן מלקוחות Torrent והן מלקוחות Usenet.",
+      "option": {
+        "columns": {
+          "label": "עמודות להצגה"
+        },
+        "enableRowSorting": {
+          "label": "אפשר מיון פריטים"
+        },
+        "defaultSort": {
+          "label": "עמודה המשמשת למיון כברירת מחדל"
+        },
+        "descendingDefaultSort": {
+          "label": "מיון הפוך"
+        },
+        "showCompletedUsenet": {
+          "label": "הצג ערכי usenet שסומנו כהשלמה"
+        },
+        "showCompletedTorrent": {
+          "label": "הצג ערכי טורנט שסומנו כהשלמה"
+        },
+        "showCompletedHttp": {
+          "label": "הצג ערכים שונים שסומנו כהשלמה"
+        },
+        "activeTorrentThreshold": {
+          "label": "הסתר טורנט שהושלם מתחת לסף הזה (בקיB/s)"
+        },
+        "categoryFilter": {
+          "label": "קטגוריות/תוויות לסינון"
+        },
+        "filterIsWhitelist": {
+          "label": "סנן כרשימת היתרים"
+        },
+        "applyFilterToRatio": {
+          "label": "השתמש במסנן כדי לחשב יחס"
+        },
+        "limitPerIntegration": {
+          "label": "הגבלת פריטים לכל אינטגרציה",
+          "description": "פעולה זו תגביל את מספר הפריטים המוצגים בכל אינטגרציה, לא באופן גלובלי"
+        }
+      },
+      "errors": {
+        "noColumns": "בחר עמודות בפריטים",
+        "noCommunications": "לא ניתן לטעון נתונים מהאינטגרציה"
+      },
+      "items": {
+        "actions": {
+          "columnTitle": "פקדים"
+        },
+        "added": {
+          "columnTitle": "נוסף",
+          "detailsTitle": "נוסף בתאריך"
+        },
+        "category": {
+          "columnTitle": "תוספות",
+          "detailsTitle": "קטגוריות (או מידע נוסף)"
+        },
+        "downSpeed": {
+          "columnTitle": "הורדה",
+          "detailsTitle": "מהירות הורדה"
+        },
+        "index": {
+          "columnTitle": "#",
+          "detailsTitle": "מדד נוכחי בתוך הלקוח"
+        },
+        "id": {
+          "columnTitle": "מזהה"
+        },
+        "integration": {
+          "columnTitle": "אינטגרציה"
+        },
+        "name": {
+          "columnTitle": "שם המשימה"
+        },
+        "progress": {
+          "columnTitle": "התקדמות",
+          "detailsTitle": "התקדמות ההורדה"
+        },
+        "ratio": {
+          "columnTitle": "יחס",
+          "detailsTitle": "יחס טורנט (התקבל/נשלח)"
+        },
+        "received": {
+          "columnTitle": "סך הכל הורדה",
+          "detailsTitle": "הורדה כוללת"
+        },
+        "sent": {
+          "columnTitle": "סך הכל העלאה",
+          "detailsTitle": "העלאה כוללת"
+        },
+        "size": {
+          "columnTitle": "גודל קובץ",
+          "detailsTitle": "גודל כולל של בחירה/קבצים"
+        },
+        "state": {
+          "columnTitle": "מצב",
+          "detailsTitle": "מצב המשימה"
+        },
+        "time": {
+          "columnTitle": "זמן סיום",
+          "detailsTitle": "זמן מאז/עד סיום"
+        },
+        "type": {
+          "columnTitle": "סוּג",
+          "detailsTitle": "סוג לקוח הורדה"
+        },
+        "upSpeed": {
+          "columnTitle": "העלאה",
+          "detailsTitle": "קצב העלאה"
+        }
+      },
+      "states": {
+        "downloading": "מוריד",
+        "queued": "בתור",
+        "paused": "מושהה",
+        "completed": "הושלם",
+        "failed": "נכשל",
+        "processing": "מעבד",
+        "leeching": "בשיתוף",
+        "stalled": "נתקע",
+        "unknown": "לא ידוע",
+        "seeding": "זריעה"
+      },
+      "actions": {
+        "clients": {
+          "modalTitle": "רשימת לקוחות הורדה",
+          "pause": "השהה את כל הלקוחות/פריטים",
+          "resume": "המשך כל הלקוחות/פריטים"
+        },
+        "client": {
+          "pause": "השהה לקוח",
+          "resume": "המשך לקוח"
+        },
+        "item": {
+          "pause": "השהה פריט",
+          "resume": "המשך פריט",
+          "delete": {
+            "title": "מחק פריט",
+            "modalTitle": "האם את/ה בטוח/ה שברצונך למחוק את העבודה הזו?",
+            "entry": "מחיקת רשומה",
+            "entryAndFiles": "מחיקת רשומה וקבצים"
+          }
+        }
+      },
+      "globalRatio": "יחס גלובלי"
+    },
+    "mediaReleases": {
+      "name": "מדיה משוחררת",
+      "description": "הצגת מדיה שנוספה לאחרונה או מהדורות עתידיות מאינטגרציות שונות",
+      "option": {
+        "layout": {
+          "label": "פריסה",
+          "option": {
+            "backdrop": {
+              "label": "רקע"
+            },
+            "poster": {
+              "label": "פוסטר"
+            }
+          }
+        },
+        "showDescriptionTooltip": {
+          "label": "הצג תיאור קצר"
+        },
+        "showType": {
+          "label": "הצג תג סוג מדיה"
+        },
+        "showSource": {
+          "label": "הצג שילוב מקורות"
+        }
+      },
+      "length": {
+        "duration": "דקות {length}"
+      }
+    },
+    "mediaRequests-requestList": {
+      "name": "רשימת בקשות מדיה",
+      "description": "ראה רשימה של כל בקשות המדיה ממופע Overseerr או Jellyseerr שלך",
+      "option": {
+        "linksTargetNewTab": {
+          "label": "פתח לינק בלשונית חדשה"
+        }
+      },
+      "pending": {
+        "approve": "אשר בקשה",
+        "approving": "מאשר את הבקשה...",
+        "decline": "דחה בקשה"
+      },
+      "availability": {
+        "unknown": "לא ידוע",
+        "pending": "בהמתנה",
+        "processing": "מעבד",
+        "requested": "נדרש",
+        "partiallyAvailable": "חלקי",
+        "available": "זמין",
+        "blacklisted": "ברשימה השחורה",
+        "deleted": "נמחק"
+      },
+      "status": {
+        "pending": "ממתין",
+        "approved": "אושר",
+        "declined": "נדחה",
+        "failed": "נכשל",
+        "completed": "הושלם"
+      },
+      "toBeDetermined": "ייקבע בהמשך"
+    },
+    "mediaRequests-requestStats": {
+      "name": "מצב בקשות מדיה",
+      "description": "סטטיסטיקה לגבי בקשות המדיה",
+      "option": {},
+      "titles": {
+        "stats": {
+          "main": "סטטיסטיקות מדיה",
+          "approved": "כבר אושר",
+          "pending": "ממתין לאישור",
+          "processing": "בעיבוד",
+          "declined": "נדחה כבר",
+          "available": "כבר זמין",
+          "tv": "בקשות סדרות",
+          "movie": "בקשות סרטים",
+          "total": "סך הכל"
+        },
+        "users": {
+          "main": "משתמשים מובילים",
+          "requests": "בקשות"
+        }
+      }
+    },
+    "mediaTranscoding": {
+      "name": "המרת קידוד מדיה",
+      "description": "סטטיסטיקה, תור נוכחי וסטטוס עיבוד של המרת המדיה שלך",
+      "option": {
+        "defaultView": {
+          "label": "תצוגת ברירת מחדל"
+        },
+        "queuePageSize": {
+          "label": "גודל העמוד בתור"
+        }
+      },
+      "tab": {
+        "workers": "עובדים",
+        "queue": "תור",
+        "statistics": "סטָטִיסטִיקָה"
+      },
+      "currentIndex": "{start}-{end} מתוך {total}",
+      "healthCheck": {
+        "title": "בדיקת תקינות",
+        "queued": "בתור",
+        "status": {
+          "healthy": "בָּרִיא",
+          "unhealthy": "לא בריא"
+        }
+      },
+      "panel": {
+        "statistics": {
+          "empty": "ריק",
+          "transcodes": "קידודים",
+          "transcodesCount": "קידודים",
+          "healthChecksCount": "בדיקות בריאות",
+          "filesCount": "קבצים",
+          "savedSpace": "שטח שמור",
+          "healthChecks": "בדיקות בריאות",
+          "videoCodecs": "קודקים",
+          "videoContainers": "מיכלים",
+          "videoResolutions": "רזולוציות"
+        },
+        "workers": {
+          "empty": "ריק",
+          "table": {
+            "file": "קוֹבֶץ",
+            "eta": "זמן סיום משוער",
+            "progress": "התקדמות",
+            "transcode": "קידוד",
+            "healthCheck": "בדיקת תקינות"
+          }
+        },
+        "queue": {
+          "empty": "ריק",
+          "table": {
+            "file": "קוֹבֶץ",
+            "size": "גודל",
+            "transcode": "קידוד",
+            "healthCheck": "בדיקת תקינות"
+          }
+        }
+      }
+    },
+    "rssFeed": {
+      "name": "הזנות RSS",
+      "description": "מעקב והצג עדכוני RSS, ATOM או JSON גנרי אחד או יותר",
+      "option": {
+        "feedUrls": {
+          "label": "כתובות אתרים של הזנה"
+        },
+        "enableRtl": {
+          "label": "אפשר RTL"
+        },
+        "textLinesClamp": {
+          "label": "חיתוך שורות טקסט"
+        },
+        "maximumAmountPosts": {
+          "label": "הגבלת כמות הודעות"
+        },
+        "hideDescription": {
+          "label": "הסתר תיאור"
+        }
+      }
+    },
+    "releases": {
+      "name": "מהדורות",
+      "description": "מציג רשימה של הגרסה הנוכחית של המאגרים הנתונים עם הקוד הרגולרי של הגרסה הנתון.",
+      "option": {
+        "newReleaseWithin": {
+          "label": "מהדורה חדשה בתוך",
+          "description": "דוגמת שימוש: שבוע אחד (1), חודש אחד (10 חודשים). סוגי יחידות מקובלים: h (שעות), d (ימים), w (שבועות), M (חודשים), y (שנים). השאר ריק כדי לא להדגיש מהדורות חדשות."
+        },
+        "staleReleaseWithin": {
+          "label": "מהדורה חדשה בתוך",
+          "description": "דוגמת שימוש: 1w (שבוע אחד), 10M (10 חודשים). סוגי יחידות מקובלים h (שעות), d (ימים), w (שבועות), M (חודשים), y (שנים). השאר ריק כדי לא להדגיש גרסאות ישנות."
+        },
+        "showOnlyHighlighted": {
+          "label": "הצג רק את המודגשים",
+          "description": "הצג רק מהדורות חדשות או ישנות. בהתאם לאמור לעיל."
+        },
+        "showDetails": {
+          "label": "הצג פרטים"
+        },
+        "showOnlyIcon": {
+          "label": "הצג רק אייקון"
+        },
+        "topReleases": {
+          "label": "מהדורות מובילות",
+          "description": "המספר המרבי של מהדורות אחרונות להצגה. אפס פירושו שאין הגבלה."
+        },
+        "repositories": {
+          "label": "מאגרים",
+          "addRepository": {
+            "label": "הוסף מאגר"
+          },
+          "importRepositories": {
+            "label": "ייבוא מדוקר",
+            "loading": "טוען תמונות דוקר",
+            "noImagesFound": "לא נמצאו תמונות דוקר",
+            "listFoundImages": "רשימת התמונות שנמצאו",
+            "listAlreadyImportedImages": "רשימת התמונות שכבר יובאו",
+            "allImagesAlreadyImported": "כל התמונות כבר יובאו",
+            "onlyAdminCanImport": "רק מנהלים יכולים לייבא מדוקר",
+            "selectAll": "בחר הכל",
+            "deselectAll": "בטל בחירה של הכל"
+          },
+          "provider": {
+            "label": "ספק"
+          },
+          "identifier": {
+            "label": "מזהה",
+            "placeholder": "שם או בעלים/שם"
+          },
+          "name": {
+            "label": "שם"
+          },
+          "versionFilter": {
+            "label": "מסנן גירסאות",
+            "prefix": {
+              "label": "קידומת"
+            },
+            "precision": {
+              "label": "דיוק",
+              "options": {
+                "none": "ללא"
+              }
+            },
+            "suffix": {
+              "label": "סיומת"
+            },
+            "regex": {
+              "label": "ביטויים רגילים"
+            }
+          },
+          "edit": {
+            "label": "עריכה"
+          },
+          "editForm": {
+            "title": "ערוך מאגר",
+            "cancel": {
+              "label": "בטל"
+            },
+            "confirm": {
+              "label": "אשר"
+            }
+          },
+          "importForm": {
+            "title": "ייבוא מדוקר"
+          },
+          "example": {
+            "label": "דוגמא"
+          },
+          "invalid": "הגדרת מאגר לא חוקית, אנא בדוק את הערכים",
+          "noProvider": {
+            "label": "ללא ספק",
+            "tooltip": "לא ניתן היה לנתח את הספק, אנא הגדר אותו ידנית לאחר ייבוא ​​התמונות"
+          }
+        }
+      },
+      "not-found": "לא נמצא",
+      "pre-release": "קדם-הפצה",
+      "archived": "בארכיון",
+      "forked": "מפוצל",
+      "starsCount": "כוכבים",
+      "forksCount": "פיצולים",
+      "issuesCount": "תקלות פתוחות",
+      "markViewed": "סמן כנצפה",
+      "openProjectPage": "פתח את דף הפרויקט",
+      "openReleasePage": "פתח את דף הגרסאות",
+      "releaseDescription": "תיאור הגרסה",
+      "projectDescription": "תיאור הפרויקט",
+      "created": "נוצר",
+      "error": {
+        "label": "שגיאה",
+        "messages": {
+          "invalidIdentifier": "מזהה לא חוקי",
+          "noMatchingVersion": "לא נמצאה גרסה תואמת",
+          "noReleasesFound": "לא נמצאו שיחרורים",
+          "noProviderSeleceted": "לא נבחר ספק",
+          "noProviderResponse": "אין תשובה מהספק"
+        }
+      }
+    },
+    "networkControllerSummary": {
+      "option": {},
+      "card": {
+        "vpn": {
+          "countConnected": "{count} מחובר"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "אין נתונים זמינים, כל האינטגרציות מנותקות",
+        "unknownContentOption": "אפשרות תוכן לא ידוע עבור ווידג'ט סיכום בקר רשת: "
+      },
+      "name": "סיכום בקר רשת",
+      "description": "מציג את הסיכום של בקר רשת (כמו בקר UniFi)"
+    },
+    "networkControllerStatus": {
+      "card": {
+        "variants": {
+          "wired": {
+            "name": "חוטי"
+          },
+          "wifi": {
+            "name": "אלחוטי"
+          }
+        },
+        "users": {
+          "label": "משתמשים"
+        },
+        "guests": {
+          "label": "אורחים"
+        }
+      },
+      "option": {
+        "content": {
+          "option": {
+            "wifi": {
+              "label": "אלחוטי"
+            },
+            "wired": {
+              "label": "חוטי"
+            }
+          },
+          "label": "תוכן יישומון"
+        }
+      },
+      "error": {
+        "integrationsDisconnected": "אין נתונים זמינים, כל האינטגרציות מנותקות",
+        "unknownContentOption": "אפשרות תוכן לא ידוע עבור ווידג'ט סיכום בקר רשת: "
+      },
+      "name": "סטטוס רשת",
+      "description": "הצג מכשירים מחוברים ברשת"
+    },
+    "networkController": {
+      "error": {
+        "internalServerError": "אחזור תקציר בקר הרשת נכשל"
+      }
+    },
+    "firewall": {
+      "name": "ניטור חומת אש",
+      "description": "מציג סיכום של חומות אש",
+      "tab": {
+        "system": "מערכת",
+        "interfaces": "ממשקים"
+      },
+      "error": {
+        "internalServerError": "לא ניתן לקבל נתונים מחומת האש"
+      },
+      "option": {
+        "interfaces": "ממשקי רשת לתצוגה"
+      },
+      "widget": {
+        "fwname": "שם",
+        "version": "גרסה",
+        "versiontitle": "גרסאות",
+        "cputitle": "ניצול מעבד",
+        "memorytitle": "ניצול זיכרון",
+        "cpu": "מעבד",
+        "memory": "זיכרון",
+        "interfaces": {
+          "name": "שם",
+          "trans": "משודר",
+          "recv": "התקבל",
+          "title": "ממשקי רשת"
+        }
+      }
+    },
+    "notifications": {
+      "name": "התראות",
+      "description": "הצגת היסטוריית התראות מאינטגרציה",
+      "noItems": "אין התראות להצגה.",
+      "option": {}
+    },
+    "systemResources": {
+      "name": "משאבי מערכת",
+      "description": "שימוש במעבד, זיכרון, דיסק וחומרה אחרת של המערכת שלך",
+      "option": {
+        "hasShadow": {
+          "label": "הפעלת הצללת תרשים"
+        },
+        "visibleCharts": {
+          "label": "תרשימים גלויים",
+          "description": "בחר את התרשימים שברצונך שיהיו גלויים.",
+          "option": {
+            "cpu": "מעבד",
+            "memory": "זיכרון",
+            "network": "רשת"
+          }
+        },
+        "labelDisplayMode": {
+          "label": "מצב תצוגת תוויות",
+          "option": {
+            "textWithIcon": "הצג טקסט עם סמל",
+            "text": "הצג רק טקסט",
+            "icon": "הצג רק אייקון",
+            "hidden": "הסתר תוויות"
+          }
+        }
+      },
+      "card": {
+        "cpu": "מעבד",
+        "memory": "זיכרון",
+        "network": "רשת",
+        "up": "העלאה",
+        "down": "הורדה"
+      }
+    }
+  },
+  "widgetPreview": {
+    "toggle": {
+      "enabled": "מצב עריכה מופעל",
+      "disabled": "מצב עריכה מושבת"
+    },
+    "dimensions": {
+      "title": "שנה מידות"
+    }
+  },
+  "board": {
+    "action": {
+      "duplicate": {
+        "title": "שכפול לוח",
+        "message": "פעולה זו תשכפל את הלוח {name} עם כל התוכן שלו. אם ווידג'טים מתייחסים לאינטגרציות שאינך מורשה להשתמש בהן, הם יוסרו.",
+        "notification": {
+          "success": {
+            "title": "הלוח שוכפל",
+            "message": "הלוח שוכפל בהצלחה"
+          },
+          "error": {
+            "title": "לא ניתן לשכפל את הלוח",
+            "message": "לא ניתן לשכפל את הלוח"
+          }
+        }
+      },
+      "edit": {
+        "notification": {
+          "success": {
+            "title": "השינויים הוחלו בהצלחה",
+            "message": "הלוח נשמר בהצלחה"
+          },
+          "error": {
+            "title": "לא ניתן להחיל שינויים",
+            "message": "לא ניתן היה לשמור את הלוח"
+          }
+        },
+        "confirmLeave": {
+          "title": "שינויים שלא נשמרו",
+          "message": "יש לך שינויים שלא נשמרו, האם אתה בטוח שברצונך לעזוב?"
+        }
+      },
+      "oldImport": {
+        "label": "יבוא מ- homarr לפני 1.0.0",
+        "notification": {
+          "success": {
+            "title": "הייבוא הצליח",
+            "message": "הלוח יובא בהצלחה"
+          },
+          "error": {
+            "title": "הייבוא נכשל",
+            "message": "לא ניתן לייבא את הלוח, בדוק את לוגים לפרטים נוספים"
+          }
+        },
+        "form": {
+          "file": {
+            "label": "בחר קובץ JSON",
+            "invalidError": "קובץ תצורה לא חוקי"
+          },
+          "apps": {
+            "label": "אפליקציות",
+            "avoidDuplicates": {
+              "label": "הימנע מכפילויות",
+              "description": "מתעלם מאפליקציות שבהן כבר קיימת אפליקציה עם אותה כתובת רשת"
+            },
+            "onlyImportApps": {
+              "label": "ייבוא רק אפליקציות",
+              "description": "רק מוסיף את האפליקציות, יש ליצור מחדש את הלוח באופן ידני"
+            }
+          },
+          "name": {
+            "label": "שם הלוח"
+          },
+          "screenSize": {
+            "label": "גודל מסך",
+            "description": "בגרסאות שלפני 1.0 היו קיימים שלושה מצבים שונים, כך שניתן היה לבחור את כמות העמודות עבור כל גודל מסך.",
+            "option": {
+              "sm": "קטן",
+              "md": "בינוני",
+              "lg": "גדול"
+            }
+          },
+          "sidebarBehavior": {
+            "label": "התנהגות סרגל הצד",
+            "description": "סרגלי צד הוסרו ב- 1.0, אתה יכול לבחור מה צריך לקרות עם הפריטים שבתוכם.",
+            "option": {
+              "lastSection": {
+                "label": "החלק האחרון",
+                "description": "סרגל צד יוצג מתחת לקטע האחרון"
+              },
+              "removeItems": {
+                "label": "הסרת פריטים",
+                "description": "פריטים הכלולים בסרגל הצד יוסרו"
+              }
+            }
+          }
+        }
+      },
+      "quickCreateApp": {
+        "modal": {
+          "title": "צור אפליקציה תוך כדי תנועה",
+          "createAndUse": "צור והשתמש"
+        }
+      }
+    },
+    "field": {
+      "pageTitle": {
+        "label": "כותרת העמוד"
+      },
+      "metaTitle": {
+        "label": "כותרת מטא"
+      },
+      "logoImageUrl": {
+        "label": "כתובת אתר של תמונת לוגו"
+      },
+      "faviconImageUrl": {
+        "label": "כתובת אתר של תמונת Favicon"
+      },
+      "backgroundImageUrl": {
+        "label": "כתובת אתר של תמונת רקע",
+        "placeholder": "התחל להקליד כדי לחפש תמונות מקומיות",
+        "group": {
+          "your": "התמונות שלך",
+          "other": "תמונות אחרות"
+        }
+      },
+      "backgroundImageAttachment": {
+        "label": "צירוף תמונת רקע",
+        "option": {
+          "fixed": {
+            "label": "קבוע",
+            "description": "הרקע נשאר באותו מיקום."
+          },
+          "scroll": {
+            "label": "גלילה",
+            "description": "גלילה ברקע עם העכבר."
+          }
+        }
+      },
+      "backgroundImageRepeat": {
+        "label": "חזרה על תמונת רקע",
+        "option": {
+          "repeat": {
+            "label": "חזור",
+            "description": "התמונה חוזרת על עצמה ככל הנדרש כדי לכסות את כל אזור ציור תמונת הרקע."
+          },
+          "no-repeat": {
+            "label": "ללא חזרה",
+            "description": "התמונה אינה חוזרת על עצמה וייתכן שלא תמלא את כל החלל."
+          },
+          "repeat-x": {
+            "label": "חזור על ציר X",
+            "description": "זהה ל'חזרה' אבל רק על הציר האופקי."
+          },
+          "repeat-y": {
+            "label": "חזור על ציר Y",
+            "description": "זהה ל'חזרה' אבל רק על הציר האנכי."
+          }
+        }
+      },
+      "backgroundImageSize": {
+        "label": "גודל תמונת רקע",
+        "option": {
+          "cover": {
+            "label": "כיסוי",
+            "description": "קנה קנה מידה קטן ככל האפשר של התמונה כדי לכסות את כל החלון על ידי חיתוך שטח מוגזם."
+          },
+          "contain": {
+            "label": "מכיל",
+            "description": "קנה מידה גדול ככל האפשר של התמונה בתוך המיכל שלה מבלי לחתוך או למתוח את התמונה."
+          }
+        }
+      },
+      "primaryColor": {
+        "label": "צבע ראשי"
+      },
+      "secondaryColor": {
+        "label": "צבע משני"
+      },
+      "opacity": {
+        "label": "אטימות"
+      },
+      "iconColor": {
+        "label": "צבע סמל"
+      },
+      "clearColor": {
+        "label": "ניקוי צבע"
+      },
+      "customCss": {
+        "label": "עיצוב מותאם אישית עבור הלוח הזה",
+        "description": "יתר על כן, התאם את לוח המחוונים שלך באמצעות CSS, מומלץ רק למשתמשים מנוסים",
+        "customClassesAlert": {
+          "title": "מחלקות מתאמות אישית",
+          "description": "אתה יכול להוסיף מחלקות מותאמות אישית לפריטי הלוח שלך באפשרויות המתקדמות של כל פריט ולהשתמש בהן בעיצוב המותאם אישית למעלה."
+        }
+      },
+      "disableStatus": {
+        "label": "ביטול סטטוס אפליקציה",
+        "description": "ביטול סטטוס לכל האפליקציות בלוח זה"
+      },
+      "columnCount": {
+        "label": "ספירת עמודות"
+      },
+      "itemRadius": {
+        "label": "רדיוס פריט",
+        "description": "משנה את העגלגלות של האריחים על הלוח שלך",
+        "option": {
+          "xs": "קטן מאוד",
+          "sm": "קטן",
+          "md": "בינוני",
+          "lg": "גדול",
+          "xl": "גדול מאוד"
+        }
+      },
+      "name": {
+        "label": "שם"
+      },
+      "isPublic": {
+        "label": "ציבורי",
+        "description": "לוחות ציבוריים נגישים לכולם, גם ללא חשבון."
+      }
+    },
+    "content": {
+      "metaTitle": "לוח {boardName}"
+    },
+    "setting": {
+      "title": "הגדרות עבור לוח {boardName}",
+      "section": {
+        "general": {
+          "title": "כללי",
+          "unrecognizedLink": "הקישור שסופק אינו מזוהה ולא יוצג בתצוגה מקדימה, ייתכן שהוא עדיין יעבוד."
+        },
+        "layout": {
+          "title": "פריסה",
+          "responsive": {
+            "title": "פריסות רספונסיביות",
+            "action": {
+              "add": "הוסף פריסה"
+            }
+          }
+        },
+        "background": {
+          "title": "רקע"
+        },
+        "appearance": {
+          "title": "מראה"
+        },
+        "customCss": {
+          "title": "עיצוב מותאם אישית"
+        },
+        "behavior": {
+          "title": "אופן הפעולה"
+        },
+        "access": {
+          "title": "בקרת גישה",
+          "permission": {
+            "item": {
+              "view": {
+                "label": "צפייה בלוח"
+              },
+              "modify": {
+                "label": "שנה לוח"
+              },
+              "full": {
+                "label": "גישה מלאה"
+              }
+            }
+          }
+        },
+        "dangerZone": {
+          "title": "אזור מסוכן",
+          "action": {
+            "rename": {
+              "label": "שנה את שם הלוח",
+              "description": "שינוי השם ישבור כל קישור ללוח זה.",
+              "button": "שנה שם",
+              "modal": {
+                "title": "שנה את שם הלוח"
+              }
+            },
+            "visibility": {
+              "label": "שנה את נראות הלוח",
+              "description": {
+                "public": "הלוח הזה כרגע ציבורי.",
+                "private": "הלוח הזה כרגע פרטי."
+              },
+              "button": {
+                "public": "הפוך לפרטי",
+                "private": "הפוך לציבורי"
+              },
+              "confirm": {
+                "public": {
+                  "title": "הפיכת לוח לפרטי",
+                  "description": "האם את/ה בטוח/ה להפוך את הלוח הזה לפרטי? פעולה זו תסתיר את הלוח מציבורי. קישורים למשתמשים אורחים יוסרו."
+                },
+                "private": {
+                  "title": "הפיכת לוח לציבורי",
+                  "description": "האם את/ה בטוח/ה להפוך את הלוח הזה לציבורי? הפעולה תהפוך את הלוח נגיש לכולם."
+                }
+              }
+            },
+            "delete": {
+              "label": "מחיקת לוח זה",
+              "description": "ברגע שהלוח נמחק, אין דרך חזרה. אנא וודא/י זאת בוודאות.",
+              "button": "מחיקת לוח זה",
+              "confirm": {
+                "title": "מחיקת לוח",
+                "description": "האם את/ה בטוח/ה שברצונך למחוק לוח זה? הלוח ותוכנו יימחקו לצמיתות."
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "noBoard": {
+        "title": "ברוכים הבאים ל- Homarr",
+        "description": "לוח בקרה מעוצב ומודרני שמביא את כל האפליקציות והשירותים שלך בהישג יד.",
+        "link": "צור את הלוח הראשון שלך",
+        "notice": "כדי להעלים דף זה, יש ליצור לוח ולקבוע אותו כלוח בית"
+      },
+      "notFound": {
+        "title": "לא נמצא לוח",
+        "description": "הלוח לא נמצא או שאין לך הרשאה לגשת אליו.",
+        "link": "הצגת כל הלוחות",
+        "notice": "בדוק את הקישור או צור קשר עם מנהל אם אתה סבור שהוא אמור להיות נגיש"
+      },
+      "homeBoard": {
+        "title": "אין לוח בית",
+        "admin": {
+          "description": "לא הוגדר לוח בית לשרת עדיין.",
+          "link": "הגדר לוח בית לשרת",
+          "notice": "כדי לגרום לדף זה להעלם עבור כל המשתמש, יש להגדיר לוח בית עבור השרת"
+        },
+        "user": {
+          "description": "לא הגדרת עדיין לוח בית.",
+          "link": "הגדר/י את לוח הבית שלך",
+          "notice": "על מנת לגרום לדף זה להיעלם, יש לציין לוח בית בהעדפות שלך"
+        },
+        "anonymous": {
+          "description": "מנהל השרת לא הגדיר עדיין לוח בית.",
+          "link": "הצגת לוחות ציבוריים",
+          "notice": "על מנת לגרום לדף זה להיעלם, בקש ממנהל השרת להגדיר לוח בית עבור השרת"
+        }
+      }
+    }
+  },
+  "layout": {
+    "field": {
+      "name": {
+        "label": "שם"
+      },
+      "columnCount": {
+        "label": "ספירת עמודות"
+      },
+      "breakpoint": {
+        "label": "נקודת עצירה",
+        "description": "הפריסה תשמש בכל המסכים הגדולים מנקודת העצירה הזו עד לנקודת העצירה הגדולה הבאה."
+      }
+    }
+  },
+  "management": {
+    "metaTitle": "ניהול",
+    "title": {
+      "morning": "בוקר טוב, {username}",
+      "afternoon": "צהריים טובים, {username}",
+      "evening": "ערב טוב, {username}"
+    },
+    "notFound": {
+      "title": "לא נמצא",
+      "text": "לא ניתן לאתר את המשאב המבוקש"
+    },
+    "navbar": {
+      "items": {
+        "home": "מסך הבית",
+        "boards": "לוחות",
+        "apps": "אפליקציות",
+        "integrations": "אינטגרציות",
+        "searchEngies": "מנועי חיפוש",
+        "medias": "מדיה",
+        "users": {
+          "label": "משתמשים",
+          "items": {
+            "manage": "ניהול",
+            "invites": "הזמנות",
+            "groups": "קבוצות"
+          }
+        },
+        "tools": {
+          "label": "כלים",
+          "items": {
+            "docker": "דוקר",
+            "kubernetes": "Kubernetes",
+            "logs": "קובצי לוג",
+            "api": "ממשק API",
+            "certificates": "אישורי אבטחה",
+            "tasks": "משימות"
+          }
+        },
+        "settings": "הגדרות",
+        "help": {
+          "label": "עזרה",
+          "items": {
+            "documentation": "תיעוד",
+            "submitIssue": "שלח בעיה",
+            "discord": "קהילת דיסקורד",
+            "sourceCode": "קוד מקור"
+          }
+        },
+        "about": "אודות"
+      }
+    },
+    "page": {
+      "home": {
+        "statistic": {
+          "board": "לוחות",
+          "user": "משתמשים",
+          "invite": "הזמנות",
+          "integration": "אינטגרציות",
+          "app": "אפליקציות",
+          "group": "קבוצות",
+          "searchEngine": "מנועי חיפוש",
+          "media": "מדיה"
+        },
+        "statisticLabel": {
+          "boards": "לוחות",
+          "resources": "מקורות",
+          "authentication": "אימות",
+          "authorization": "הרשאה"
+        },
+        "heroBanner": {
+          "title": "ברוך שובך ל-",
+          "subtitle": "לוח {app}"
+        }
+      },
+      "board": {
+        "title": "הלוחות שלך",
+        "action": {
+          "new": {
+            "label": "לוח חדש"
+          },
+          "open": {
+            "label": "פתיחת לוח"
+          },
+          "settings": {
+            "label": "הגדרות"
+          },
+          "setHomeBoard": {
+            "label": "קביעה כלוח בית",
+            "badge": {
+              "label": "מסך הבית",
+              "tooltip": "הלוח הזה יוצג כלוח הבית שלך"
+            }
+          },
+          "setMobileHomeBoard": {
+            "label": "הגדרה כלוח שלך בנייד",
+            "badge": {
+              "label": "מכשיר נייד",
+              "tooltip": "לוח זה יופיע כלוח הנייד שלך"
+            }
+          },
+          "duplicate": {
+            "label": "שכפול לוח"
+          },
+          "delete": {
+            "label": "מחיקה לצמיתות",
+            "confirm": {
+              "title": "מחיקת לוח",
+              "description": "האם את/ה בטוח/ה שברצונך למחוק את הלוח {name}?"
+            }
+          }
+        },
+        "visibility": {
+          "public": "הלוח הזה ציבורי",
+          "private": "הלוח הזה פרטי"
+        },
+        "modal": {
+          "createBoard": {
+            "field": {
+              "name": {
+                "label": "שם"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "includeFromAllUsers": "כלול מדיה מכל המשתמשים"
+      },
+      "user": {
+        "back": "חזרה למשתמשים",
+        "fieldsDisabledExternalProvider": "שדות מסוימים מושבתים מכיוון שהם מנוהלים על ידי ספק אימות חיצוני.",
+        "setting": {
+          "general": {
+            "title": "כללי",
+            "item": {
+              "language": "שפה ואיזור",
+              "board": {
+                "title": "לוח בית",
+                "type": {
+                  "general": "כללי",
+                  "mobile": "מכשיר נייד"
+                }
+              },
+              "search": "חיפוש",
+              "firstDayOfWeek": "היום הראשון בשבוע",
+              "accessibility": "נגישות"
+            }
+          },
+          "security": {
+            "title": "אבטחה"
+          },
+          "board": {
+            "title": "לוחות"
+          }
+        },
+        "list": {
+          "metaTitle": "ניהול משתמשים",
+          "title": "משתמשים"
+        },
+        "edit": {
+          "metaTitle": "עריכת משתמש {username}"
+        },
+        "create": {
+          "metaTitle": "צור משתמש",
+          "title": "יצירת משתמש חדש",
+          "step": {
+            "personalInformation": {
+              "label": "פרטים אישיים"
+            },
+            "security": {
+              "label": "אבטחה"
+            },
+            "groups": {
+              "label": "קבוצות",
+              "title": "בחירת כל הקבוצות שהמשתמש יהיה חבר בהם",
+              "description": "הקבוצה {everyoneGroup} מוקצת עבור כל המשתמשים ולא ניתנת להסרה."
+            },
+            "review": {
+              "label": "סקירה"
+            },
+            "completed": {
+              "title": "המשתמש נוצר"
+            },
+            "error": {
+              "title": "יצירת המשתמש נכשלה"
+            }
+          },
+          "action": {
+            "createAnother": "יצירת משתמש נוסף",
+            "back": "חזרה לרשימת משתמשים"
+          }
+        },
+        "invite": {
+          "title": "נהל הזמנות משתמש",
+          "action": {
+            "new": {
+              "title": "הזמנה חדשה",
+              "description": "לאחר התפוגה, הזמנה לא תהיה תקפה יותר ומקבל ההזמנה לא יוכל ליצור חשבון."
+            },
+            "copy": {
+              "title": "העתקת הזמנה",
+              "description": "ההזמנה שלך נוצרה. לאחר שחלון זה ייסגר, <b>לא תוכל להעתיק את הקישור הזה יותר.</b> אם אינך מעוניין להזמין את האדם הנ\"ל, תוכל למחוק את ההזמנה בכל זמן.",
+              "link": "קישור הזמנה",
+              "button": "העתקה וסגירה"
+            },
+            "delete": {
+              "title": "מחיקת הזמנה",
+              "description": "האם אתה בטוח שברצונך למחוק את ההזמנה הזו? משתמשים עם קישור זה לא יוכלו עוד ליצור חשבון באמצעות קישור זה."
+            }
+          },
+          "field": {
+            "id": {
+              "label": "מספר מזהה"
+            },
+            "creator": {
+              "label": "יוצר"
+            },
+            "expirationDate": {
+              "label": "תאריך תפוגה"
+            },
+            "token": {
+              "label": "טוקן"
+            }
+          }
+        }
+      },
+      "group": {
+        "back": "חזרה לקבוצות",
+        "setting": {
+          "general": {
+            "title": "כללי",
+            "owner": "בעלים",
+            "ownerOfGroup": "בעלים של קבוצה זו",
+            "ownerOfGroupDeleted": "הבעלים של קבוצה זו נמחק. כרגע אין בעלים."
+          },
+          "setting": {
+            "title": "הגדרות",
+            "alert": "הגדרות קבוצה מסודרות לפי סדר הקבוצות ברשימה. ההגדרות העליונות מחליפות את ההגדרות התחתונות.",
+            "board": {
+              "title": "לוחות"
+            }
+          },
+          "members": {
+            "title": "חברים",
+            "search": "חיפוש חבר בקבוצה",
+            "notFound": "לא נמצא חברים בקבוצה"
+          },
+          "permissions": {
+            "title": "הרשאות",
+            "form": {
+              "unsavedChanges": "ישנם שינויים שלא נשמרו!"
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "הגדרות",
+        "notification": {
+          "success": {
+            "message": "ההגדרות נשמרו בהצלחה"
+          },
+          "error": {
+            "message": "נכשל בשמירת הגדרות"
+          }
+        },
+        "section": {
+          "analytics": {
+            "title": "ניתוחים",
+            "general": {
+              "title": "שליחת ניתוח נתונים אנונימי",
+              "text": "Homarr ישלח ניתוחים אנונימיים באמצעות התוכנה בקוד פתוח Umami. הוא לעולם אינו אוסף מידע אישי ולכן תואם לחלוטין לדרישות ה-GDPR וה-CCPA. אנו מעודדים אותך להפעיל ניתוחים, כיוון שזה מסייע לצוות הקוד הפתוח שלנו לזהות בעיות ולהעניק עדיפות למשימות שברשימת העדיפויות שלנו."
+            },
+            "widgetData": {
+              "title": "נתוני ווידג׳ט",
+              "text": "שלח אילו ווידג'טים (וכמותם) הוגדרו. אינו כולל כתובות רשת, שמות או כל מידע נוסף אחר."
+            },
+            "integrationData": {
+              "title": "נתוני אינטגרציה",
+              "text": "שלח אילו אינטגרציות (וכמותם) הוגדרו. לא כולל כתובות רשת, שמות או כל מידע נוסף אחר."
+            },
+            "usersData": {
+              "title": "נתוני משתמשים",
+              "text": "שלח את כמות המשתמשים והאם הופעל SSO"
+            }
+          },
+          "crawlingAndIndexing": {
+            "title": "סריקה והוספה לאינדקס",
+            "warning": "הפעלה או השבתה של הגדרות כלשהן כאן תשפיע קשות על האופן שבו מנועי החיפוש יכנסו לאינדקס ויסרקו את הדף שלך. כל הגדרה היא בקשה ותלוית הסורק להחיל את ההגדרות הללו. היישום של כל שינוי עשוי להימשך עד מספר ימים או שבועות. הגדרות מסוימות עשויות להיות ספציפיות למנועי חיפוש.",
+            "noIndex": {
+              "title": "ללא אינדקס",
+              "text": "אל תוסיף את האתר לאינדקס במנועי חיפוש ואל תציג אותו בתוצאות חיפוש"
+            },
+            "noFollow": {
+              "title": "ללא מעקב",
+              "text": "אל תעקבו אחר קישורים בזמן ההוספה לאינדקס. השבתה זו תוביל לסורקים שינסו לעקוב אחר כל הקישורים ב-Homarr."
+            },
+            "noTranslate": {
+              "title": "ללא תרגום",
+              "text": "כאשר סביר להניח ששפת האתר אינה השפת שהמשתמש ירצה לקרוא, גוגל יציג קישור תרגום בתוצאות החיפוש"
+            },
+            "noSiteLinksSearchBox": {
+              "title": "אין תיבת חיפוש של קישורי אתרים",
+              "text": "גוגל תבנה תיבת חיפוש עם הקישורים שנסרקו יחד עם קישורים ישירים אחרים. הפעלה זו תבקש מגוגל להשבית את התיבה הזו."
+            }
+          },
+          "board": {
+            "title": "לוחות",
+            "homeBoard": {
+              "label": "לוח בית גלובלי",
+              "mobileLabel": "לוח גלובלי למכשיר נייד",
+              "description": "רק לוחות ציבוריים זמינים לבחירה"
+            },
+            "status": {
+              "title": "סטטוס אפליקציה",
+              "enableStatusByDefault": {
+                "label": "אפשר סטטוס כברירת מחדל",
+                "description": "בעת הוספת פריט אפליקציה, הסטטוס יופעל כברירת מחדל"
+              },
+              "forceDisableStatus": {
+                "label": "כפה על סטטוס השבתה",
+                "description": "סטטוס אפליקציות יושבת עבור כל המשתמשים ולא ניתן להפעיל אותו"
+              }
+            }
+          },
+          "search": {
+            "title": "חיפוש",
+            "defaultSearchEngine": {
+              "label": "מנוע חיפוש ברירת מחדל גלובלי",
+              "description": "אינטגרציות מנוע חיפוש לא ניתנות לסימון כאן"
+            }
+          },
+          "appearance": {
+            "title": "מראה",
+            "defaultColorScheme": {
+              "label": "סכמת צבעים ברירת מחדל",
+              "options": {
+                "light": "בהיר",
+                "dark": "כהה"
+              }
+            }
+          },
+          "culture": {
+            "title": "תרבות",
+            "defaultLocale": {
+              "label": "שפת ברירת מחדל"
+            }
+          }
+        }
+      },
+      "tool": {
+        "tasks": {
+          "title": "משימות",
+          "status": {
+            "idle": "ממתין",
+            "running": "פועל",
+            "error": "שגיאה",
+            "disabled": "מושבת"
+          },
+          "job": {
+            "minecraftServerStatus": {
+              "label": "סטטוס שרת מיינקראפט"
+            },
+            "iconsUpdater": {
+              "label": "עדכון אייקונים"
+            },
+            "analytics": {
+              "label": "ניתוחים"
+            },
+            "smartHomeEntityState": {
+              "label": "סטטוס יישות בית חכם"
+            },
+            "ping": {
+              "label": "פינגים"
+            },
+            "mediaServer": {
+              "label": "שרת מדיה"
+            },
+            "mediaOrganizer": {
+              "label": "מארגני מדיה"
+            },
+            "downloads": {
+              "label": "הורדות"
+            },
+            "mediaRequestStats": {
+              "label": "סטטוס בקשות מדיה"
+            },
+            "mediaRequestList": {
+              "label": "רשימת בקשות מדיה"
+            },
+            "rssFeeds": {
+              "label": "הזנות RSS"
+            },
+            "indexerManager": {
+              "label": "מנהל אינדקסים"
+            },
+            "healthMonitoring": {
+              "label": "ניטור בריאות המערכת"
+            },
+            "dnsHole": {
+              "label": "נתוני חור DNS"
+            },
+            "updateChecker": {
+              "label": "בודק עדכונים"
+            },
+            "mediaTranscoding": {
+              "label": "המרת קידוד מדיה"
+            },
+            "networkController": {
+              "label": "בקר רשת"
+            },
+            "refreshNotifications": {
+              "label": "עדכון התראות"
+            },
+            "dockerContainers": {
+              "label": "מכולות דוקר"
+            },
+            "firewallCpu": {
+              "label": "מעבד חומת האש"
+            },
+            "firewallMemory": {
+              "label": "זיכרון חומת אש"
+            },
+            "firewallVersion": {
+              "label": "גרסת חומת אש"
+            },
+            "firewallInterfaces": {
+              "label": "ממשקי חומת אש"
+            },
+            "weather": {
+              "label": "מזג אוויר"
+            }
+          },
+          "interval": {
+            "seconds": "כל {interval, plural, =1 {second} other {# seconds}}",
+            "minutes": "כל {interval, plural, =1 {minute} other {# minutes}}",
+            "hours": "כל {interval, plural, =1 {hour} other {# hours}}",
+            "midnight": "כל יום בחצות",
+            "weeklyMonday": "כל שבוע ביום שני",
+            "update": {
+              "success": {
+                "message": "המרווח עודכן בהצלחה"
+              },
+              "error": {
+                "message": "נכשל בעדכון מרווח"
+              }
+            }
+          },
+          "settings": {
+            "title": "הגדרות משימה עבור {jobName}"
+          },
+          "field": {
+            "name": {
+              "label": "שם"
+            },
+            "interval": {
+              "label": "מרווח זמן לתזמון"
+            },
+            "lastExecution": {
+              "label": "הרצה אחרונה"
+            },
+            "actions": {
+              "label": "פעולות"
+            }
+          },
+          "table": {
+            "search": "חפש {count} משימות..."
+          },
+          "action": {
+            "refresh": {
+              "label": "רענן"
+            }
+          },
+          "refresh": {
+            "success": {
+              "message": "המשימות רעננו בהצלחה"
+            },
+            "error": {
+              "message": "רענון המשימות נכשל"
+            }
+          },
+          "trigger": {
+            "success": {
+              "message": "המשימה הופעלה בהצלחה"
+            },
+            "error": {
+              "message": "הפעלת המשימה נכשלה"
+            }
+          },
+          "enable": {
+            "success": {
+              "message": "המשימה הופעלה בהצלחה"
+            }
+          },
+          "disable": {
+            "success": {
+              "message": "המשימה הושבתה בהצלחה"
+            }
+          },
+          "toggle": {
+            "error": {
+              "message": "נכשל בהחלפת סטטוס המשימה"
+            }
+          }
+        },
+        "api": {
+          "title": "ממשק API",
+          "modal": {
+            "createApiToken": {
+              "title": "נוצר אסימון API",
+              "description": "האסימון API נוצר. היזהר, אסימון זה מוצפן בבסיס הנתונים ולא יישלח אליך שוב. אם תאבד את האסימון הזה, לא תוכל לשחזר אותו בשנית.",
+              "button": "העתקה וסגירה"
+            }
+          },
+          "tab": {
+            "documentation": {
+              "label": "תיעוד"
+            },
+            "apiKey": {
+              "label": "אימות",
+              "title": "מפתח API",
+              "button": {
+                "createApiToken": "יצירת מפתח  API"
+              },
+              "modal": {
+                "delete": {
+                  "title": "מחיקת מפתח API",
+                  "text": "פעולה זו תמחק לצמיתות את אסימון ה-API. לקוחות API המשתמשים באסימון זה אינם יכולים עוד לאמת ולבצע בקשות API. לא ניתן לבטל פעולה זו."
+                }
+              },
+              "table": {
+                "header": {
+                  "id": "מספר מזהה",
+                  "createdBy": "נוצר על ידי",
+                  "actions": "פעולות"
+                }
+              }
+            }
+          }
+        }
+      },
+      "about": {
+        "version": "גרסה {version}",
+        "text": "Homarr הוא פרויקט קוד פתוח מונחה קהילה שמתוחזק על ידי מתנדבים. בזכות האנשים האלה, Homarr הוא פרויקט שצומח מאז 2021. הצוות שלנו עובד מרחוק ממדינות שונות בזמן הפנוי שלהם, ללא תמורה.",
+        "accordion": {
+          "contributors": {
+            "title": "תורמים",
+            "subtitle": "{count} מתחזקי קוד & Homarr"
+          },
+          "translators": {
+            "title": "מתרגמים",
+            "subtitle": "{count} תורמים בתרגום לשפות שונות"
+          },
+          "libraries": {
+            "title": "ספריות",
+            "subtitle": "{count} בשימוש בקוד של Homarr"
+          },
+          "hotkeys": {
+            "title": "מקשי קיצור",
+            "subtitle": "קיצורי מקלדת לשיפור זרימת העבודה שלך",
+            "field": {
+              "shortcut": "קיצור דרך",
+              "action": "פעולה"
+            },
+            "action": {
+              "toggleBoardEdit": "הפעל/י מצב עריכת לוח",
+              "toggleColorScheme": "החלפת מצב בהיר/כהה",
+              "saveNotebook": "שמירת מחברת (רק בתוך ווידג'ט המחברת)",
+              "openSpotlight": "פתח חיפוש"
+            },
+            "note": "טיפ: Mod מתייחס גם למקש Ctrl וגם למקש ⌘ ב-macOS"
+          }
+        }
+      }
+    }
+  },
+  "docker": {
+    "title": "מיכלים",
+    "table": {
+      "updated": "עודכן ב- {when}",
+      "search": "חפש {count} קונטיינרים",
+      "selected": "{selectCount} מ- {totalCount} קונטיינרים נבחרו",
+      "footer": "סה״כ {count} קונטיינרים"
+    },
+    "field": {
+      "name": {
+        "label": "שם"
+      },
+      "state": {
+        "label": "מצב",
+        "option": {
+          "created": "נוצר",
+          "running": "פועל",
+          "paused": "מושהה",
+          "restarting": "מפעיל מחדש",
+          "exited": "נסגר",
+          "removing": "מסיר",
+          "dead": "מת"
+        }
+      },
+      "stats": {
+        "cpu": {
+          "label": "מעבד"
+        },
+        "memory": {
+          "label": "זיכרון"
+        }
+      },
+      "containerImage": {
+        "label": "קובץ תמונה"
+      },
+      "ports": {
+        "label": "יציאות"
+      }
+    },
+    "action": {
+      "title": "פעולות",
+      "start": {
+        "label": "התחל",
+        "notification": {
+          "success": {
+            "title": "קונטיינרים הופעלו",
+            "message": "הקונטיינרים הופעלו בהצלחה"
+          },
+          "error": {
+            "title": "הקונטיינרים לא הופעלו",
+            "message": "לא היה ניתן להפעיל את הקונטיינרים"
+          }
+        }
+      },
+      "stop": {
+        "label": "עצור",
+        "notification": {
+          "success": {
+            "title": "הקונטיינרים נעצרו",
+            "message": "הקונטיינרים נעצרו בהצלחה"
+          },
+          "error": {
+            "title": "הקונטיינרים לא נעצרו",
+            "message": "לא היה ניתן לעצור את הקונטיינרים"
+          }
+        }
+      },
+      "restart": {
+        "label": "אתחל",
+        "notification": {
+          "success": {
+            "title": "הקונטיינרים הופעלו מחדש",
+            "message": "הקונטיינרים הופעלו מחדש בהצלחה"
+          },
+          "error": {
+            "title": "הקונטיינרים לא הופעלו מחדש",
+            "message": "לא היה ניתן להפעיל את הקונטיינרים מחדש"
+          }
+        }
+      },
+      "remove": {
+        "label": "הסר",
+        "notification": {
+          "success": {
+            "title": "הקונטיינרים הוסרו",
+            "message": "הקונטיינרים הוסרו בהצלחה"
+          },
+          "error": {
+            "title": "הקונטיינרים לא הוסרו",
+            "message": "לא היה ניתן להסיר את הקונטיינרים"
+          }
+        }
+      },
+      "refresh": {
+        "label": "רענון",
+        "notification": {
+          "success": {
+            "title": "הקונטיינרים התרעננו",
+            "message": "כעת את/ה צופה בנתונים העדכניים ביותר"
+          },
+          "error": {
+            "title": "הקונטיינרים לא התרעננו",
+            "message": "משהו השתבש בזמן רענון הקונטיינרים"
+          }
+        }
+      },
+      "addToHomarr": {
+        "label": "הוסף ל- Homarr",
+        "notification": {
+          "success": {
+            "title": "הוסף ל- Homarr",
+            "message": "האפליקציות שנבחרו הוספו ל- Homarr"
+          },
+          "error": {
+            "title": "לא היה ניתן להוסיף ל- Homarr",
+            "message": "לא היה ניתן להוסיף את האפליקציות שנבחרו ל- Homarr"
+          }
+        },
+        "modal": {
+          "title": "הוספת דוקר קונטיינר/ים ל- Homarr"
+        }
+      }
+    },
+    "error": {
+      "internalServerError": "נכשל בקבלת קונטיינרי דוקר"
+    }
+  },
+  "kubernetes": {
+    "cluster": {
+      "title": "לוח המחוונים של אשכול",
+      "label": "אשכול",
+      "providers": "ספקים",
+      "version": "גרסה",
+      "architecture": "ארכיטקטורה",
+      "capacity": {
+        "title": "קיבולת",
+        "resource": {
+          "reserved": "שמור",
+          "used": "בשימוש"
+        }
+      },
+      "resources": {
+        "title": "מקורות",
+        "nodes": "קונטיינרים",
+        "namespaces": "מרחב שמות",
+        "ingresses": "כרטיסים",
+        "services": "שירותים",
+        "pods": "תרמילים",
+        "configmaps": "ConfigMaps",
+        "secrets": "נתוני גישה",
+        "volumes": "כוננים"
+      }
+    },
+    "nodes": {
+      "label": "קונטיינרים",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "state": {
+          "label": "מצב",
+          "option": {
+            "ready": "מוכן",
+            "NotReady": "לא מוכן"
+          }
+        },
+        "cpu": {
+          "label": "מעבד"
+        },
+        "memory": {
+          "label": "זכרון פנימי"
+        },
+        "pods": {
+          "label": "תרמילים"
+        },
+        "operatingSystem": {
+          "label": "מערכת הפעלה"
+        },
+        "architecture": {
+          "label": "ארכיטקטורה"
+        },
+        "kubernetesVersion": {
+          "label": "גרסת Kubernetes"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} קונטיינרים"
+      }
+    },
+    "namespaces": {
+      "label": "מרחב שמות",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "state": {
+          "label": "מצב",
+          "option": {
+            "active": "פעיל",
+            "terminating": "מסתיים"
+          }
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש ב-{count} מרחבי שמות"
+      }
+    },
+    "ingresses": {
+      "label": "כרטיסים",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "className": {
+          "label": "שם קלאס"
+        },
+        "rulesAndPaths": {
+          "label": "כללים ונתיבים"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} כניסות"
+      }
+    },
+    "services": {
+      "label": "שירותים",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "type": {
+          "label": "סוג"
+        },
+        "ports": {
+          "label": "יציאות"
+        },
+        "targetPorts": {
+          "label": "יציאות יעד"
+        },
+        "clusterIP": {
+          "label": "כתובת אשכול"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} שירותים"
+      }
+    },
+    "pods": {
+      "label": "תרמילים",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "image": {
+          "label": "תמונה"
+        },
+        "applicationType": {
+          "label": "סוג יישום"
+        },
+        "status": {
+          "label": "מצב"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} תרמילים"
+      }
+    },
+    "secrets": {
+      "label": "נתוני גישה",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "type": {
+          "label": "סוג"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} נתוני גישה"
+      }
+    },
+    "configmaps": {
+      "label": "configMaps",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} configMaps"
+      }
+    },
+    "volumes": {
+      "label": "כרכים",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "namespace": {
+          "label": "מרחב שמות"
+        },
+        "accessModes": {
+          "label": "מצבי גישה"
+        },
+        "storage": {
+          "label": "אחסון"
+        },
+        "storageClassName": {
+          "label": "שם מחלקת אחסון"
+        },
+        "volumeMode": {
+          "label": "מצב כרך"
+        },
+        "volumeName": {
+          "label": "שם כרך"
+        },
+        "status": {
+          "label": "מצב"
+        },
+        "creationTimestamp": {
+          "label": "נוצר"
+        }
+      },
+      "table": {
+        "search": "חפש {count} כרכים"
+      }
+    },
+    "error": {
+      "internalServerError": "אחזור נתוני Kubernetes נכשל"
+    }
+  },
+  "permission": {
+    "title": "הרשאות",
+    "userSelect": {
+      "title": "הוספת הרשאת משתמש"
+    },
+    "groupSelect": {
+      "title": "הוספת הרשאת קבוצה"
+    },
+    "tab": {
+      "user": "משתמשים",
+      "group": "קבוצות",
+      "inherited": "קבוצות בירושה"
+    },
+    "field": {
+      "user": {
+        "label": "משתמש"
+      },
+      "group": {
+        "label": "קבוצה"
+      },
+      "permission": {
+        "label": "הרשאה"
+      }
+    },
+    "action": {
+      "saveUser": "שמירת הרשאות משתמש",
+      "saveGroup": "שמירת הרשאת קבוצה"
+    }
+  },
+  "navigationStructure": {
+    "manage": {
+      "label": "ניהול",
+      "boards": {
+        "label": "לוחות"
+      },
+      "integrations": {
+        "label": "אינטגרציות",
+        "edit": {
+          "label": "עריכה"
+        },
+        "new": {
+          "label": "חדש"
+        }
+      },
+      "search-engines": {
+        "label": "מנועי חיפוש",
+        "new": {
+          "label": "חדש"
+        },
+        "edit": {
+          "label": "עריכה"
+        }
+      },
+      "medias": {
+        "label": "מדיה"
+      },
+      "apps": {
+        "label": "אפליקציות",
+        "new": {
+          "label": "חדש"
+        },
+        "edit": {
+          "label": "עריכה"
+        }
+      },
+      "users": {
+        "label": "משתמשים",
+        "create": {
+          "label": "צור"
+        },
+        "general": "כללי",
+        "security": "אבטחה",
+        "board": "לוחות",
+        "groups": {
+          "label": "קבוצות"
+        },
+        "invites": {
+          "label": "הזמנות"
+        }
+      },
+      "tools": {
+        "label": "כלים",
+        "tasks": {
+          "label": "משימות"
+        },
+        "docker": {
+          "label": "דוקר"
+        },
+        "kubernetes": {
+          "label": "Kubernetes",
+          "nodes": {
+            "label": "צמתים"
+          },
+          "namespaces": {
+            "label": "מרחב שמות"
+          },
+          "ingresses": {
+            "label": "כרטיסים"
+          },
+          "services": {
+            "label": "שירותים"
+          },
+          "pods": {
+            "label": "תרמילים"
+          },
+          "configmaps": {
+            "label": "ConfigMaps"
+          },
+          "secrets": {
+            "label": "נתוני גישה"
+          },
+          "volumes": {
+            "label": "כוננים"
+          }
+        },
+        "logs": {
+          "label": "קבצי לוג"
+        },
+        "certificates": {
+          "label": "אישורי אבטחה",
+          "hostnames": {
+            "label": "שמות מארחים"
+          }
+        }
+      },
+      "settings": {
+        "label": "הגדרות"
+      },
+      "about": {
+        "label": "אודות"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "חפש משהו",
+    "nothingFound": "לא נמצאו תוצאות",
+    "error": {
+      "fetch": "ארעה שגיאה בעת איסוף נתונים"
+    },
+    "mode": {
+      "appIntegrationBoard": {
+        "help": "חיפוש אפליקציות, אינטגרציות או לוחות",
+        "group": {
+          "app": {
+            "title": "אפליקציות",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "פתיחת קישור אפליקציה"
+                },
+                "edit": {
+                  "label": "ערוך אפליקציה"
+                }
+              },
+              "detail": {
+                "title": "בחירת פעולה עבור האפליקציה"
+              }
+            }
+          },
+          "board": {
+            "title": "לוחות",
+            "children": {
+              "action": {
+                "open": {
+                  "label": "פתיחת לוח"
+                },
+                "homeBoard": {
+                  "label": "קביעה כלוח הבית"
+                },
+                "mobileBoard": {
+                  "label": "הגדרה כלוח שלך בנייד"
+                },
+                "settings": {
+                  "label": "פתיחת הגדרות"
+                }
+              },
+              "detail": {
+                "title": "בחירת פעולה עבור הלוח"
+              }
+            }
+          },
+          "integration": {
+            "title": "אינטגרציות"
+          }
+        }
+      },
+      "command": {
+        "help": "הפעלת מצב פקודות",
+        "group": {
+          "localCommand": {
+            "title": "פקודות מקומיות"
+          },
+          "globalCommand": {
+            "title": "פקודות גלובליות",
+            "option": {
+              "colorScheme": {
+                "light": "עבור למצב בהיר",
+                "dark": "עבור למצב כהה"
+              },
+              "language": {
+                "label": "שינוי שפה",
+                "children": {
+                  "detail": {
+                    "title": "בחירת שפה מועודפת"
+                  }
+                }
+              },
+              "newBoard": {
+                "label": "יצירת לוח חדש"
+              },
+              "importBoard": {
+                "label": "ייבוא לוח"
+              },
+              "newApp": {
+                "label": "יצירת אפליקציה חדשה"
+              },
+              "newIntegration": {
+                "label": "יצירת אינטגרציה חדשה",
+                "children": {
+                  "detail": {
+                    "title": "בחירת סוג האינטגרציה שברצונך ליצור"
+                  }
+                }
+              },
+              "newUser": {
+                "label": "יצירת משתמש חדש"
+              },
+              "newInvite": {
+                "label": "יצירת הזמנה חדשה"
+              },
+              "newGroup": {
+                "label": "יצירת קבוצה חדשה"
+              }
+            }
+          }
+        }
+      },
+      "media": {
+        "requestMovie": "בקשת סרט",
+        "requestSeries": "בקשת סדרה",
+        "openIn": "פתיחה ב- {kind}"
+      },
+      "external": {
+        "help": "שימוש במנוע חיפוש חיצוני",
+        "group": {
+          "searchEngine": {
+            "title": "מנועי חיפוש",
+            "children": {
+              "action": {
+                "search": {
+                  "label": "חיפוש עם {name}"
+                }
+              },
+              "detail": {
+                "title": "בחירת פעולה עבור מנוע חיפוש"
+              },
+              "searchResults": {
+                "title": "בחירת תוצאה בחיפוש לביצוע פעולות"
+              }
+            },
+            "option": {
+              "google": {
+                "name": "גוגל",
+                "description": "חיפוש באינטרנט עם גוגל"
+              },
+              "bing": {
+                "name": "בינג",
+                "description": "חיפוש באינטרנט עם בינג"
+              },
+              "duckduckgo": {
+                "name": "DuckDuckGo",
+                "description": "חיפוש באינטרנט עם DuckDuckGo"
+              },
+              "torrent": {
+                "name": "טורנטים",
+                "description": "חיפוש טורנטים באמצעות torrentdownloads.pro"
+              },
+              "youTube": {
+                "name": "יוטיוב",
+                "description": "חיפוש וידאו ביוטיוב"
+              }
+            }
+          }
+        }
+      },
+      "help": {
+        "group": {
+          "mode": {
+            "title": "מצבים"
+          },
+          "help": {
+            "title": "עזרה",
+            "option": {
+              "documentation": {
+                "label": "תיעוד"
+              },
+              "submitIssue": {
+                "label": "שליחת בעיה"
+              },
+              "discord": {
+                "label": "קהילת דיסקורד"
+              }
+            }
+          }
+        }
+      },
+      "home": {
+        "group": {
+          "search": {
+            "title": "חיפוש",
+            "option": {
+              "other": {
+                "label": "חיפוש באמצעות מנוע חיפוש אחר"
+              },
+              "no-default": {
+                "label": "אין מנוע חיפוש ברירת מחדל",
+                "description": "הגדרת מנוע חיפוש ברירת מחדל בהעדפות"
+              },
+              "search": {
+                "label": "חיפוש {query} עם {name}"
+              },
+              "from-integration": {
+                "description": "התחל/י להקליד כדי לחפש"
+              }
+            }
+          },
+          "local": {
+            "title": "תוצאות מקומיות"
+          }
+        }
+      },
+      "page": {
+        "help": "חיפוש עבור דפים",
+        "group": {
+          "page": {
+            "title": "דפים",
+            "option": {
+              "manageHome": {
+                "label": "ניהול דף בית"
+              },
+              "manageBoard": {
+                "label": "ניהול לוחות"
+              },
+              "manageApp": {
+                "label": "ניהול אפליקציות"
+              },
+              "manageIntegration": {
+                "label": "ניהול אינטגרציות"
+              },
+              "manageSearchEngine": {
+                "label": "ניהול מנועי חיפוש"
+              },
+              "manageMedia": {
+                "label": "ניהול מדיה"
+              },
+              "manageUser": {
+                "label": "ניהול משתמשים"
+              },
+              "manageInvite": {
+                "label": "ניהול הזמנות"
+              },
+              "manageGroup": {
+                "label": "ניהול קבוצות"
+              },
+              "manageDocker": {
+                "label": "ניהול דוקר"
+              },
+              "manageApi": {
+                "label": "Swagger API"
+              },
+              "manageLog": {
+                "label": "הצג לוגים"
+              },
+              "manageTask": {
+                "label": "ניהול משימות"
+              },
+              "manageSettings": {
+                "label": "הגדרות כלליות"
+              },
+              "about": {
+                "label": "אודות"
+              },
+              "homeBoard": {
+                "label": "לוח בית"
+              },
+              "preferences": {
+                "label": "העדפות שלך"
+              }
+            }
+          }
+        }
+      },
+      "userGroup": {
+        "help": "חיפוש משתמשים או קבוצות",
+        "group": {
+          "user": {
+            "title": "משתמשים",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "הצגת נתוני משתמש"
+                }
+              },
+              "detail": {
+                "title": "בחירת פעולה עבור משתנש"
+              }
+            }
+          },
+          "group": {
+            "title": "קבוצות",
+            "children": {
+              "action": {
+                "detail": {
+                  "label": "הצגת נתוני קבוצה"
+                },
+                "manageMember": {
+                  "label": "ניהול חברים"
+                },
+                "managePermission": {
+                  "label": "ניהול הרשאות"
+                }
+              },
+              "detail": {
+                "title": "בחירת פעולה עבור הקבוצה"
+              }
+            }
+          }
+        }
+      }
+    },
+    "engine": {
+      "search": "חיפוש מנוע חיפוש",
+      "field": {
+        "name": {
+          "label": "שם"
+        },
+        "short": {
+          "label": "קצר"
+        },
+        "urlTemplate": {
+          "label": "תבנית חיפוש קישור אינטרנט"
+        },
+        "description": {
+          "label": "תיאור"
+        }
+      },
+      "page": {
+        "list": {
+          "title": "מנועי חיפוש",
+          "noResults": {
+            "title": "עדיין אין מנוע חיפוש",
+            "action": "צור את מנוע החיפוש הראשון שלך"
+          },
+          "interactive": "אינטראקטיבי, עושה שימוש באינטגרציה"
+        },
+        "create": {
+          "title": "מנוע חיפוש חדש",
+          "notification": {
+            "success": {
+              "title": "מנוע חיפוש נוצר",
+              "message": "מנוע חיפוש נוצר בהצלחה"
+            },
+            "error": {
+              "title": "מנוע חיפוש לא נוצר",
+              "message": "לא היה ניתן ליצור את מנוע החיפוש"
+            }
+          }
+        },
+        "edit": {
+          "title": "עריכת מנוע חיפוש",
+          "notification": {
+            "success": {
+              "title": "השינויים הוחלו בהצלחה",
+              "message": "מנוע החיפוש נשמר בהצלחה"
+            },
+            "error": {
+              "title": "לא ניתן להחיל שינויים",
+              "message": "לא היה ניתן לשמור את מנוע החיפוש"
+            }
+          },
+          "configControl": "הגדרות",
+          "searchEngineType": {
+            "generic": "כללי",
+            "fromIntegration": "מאינטגרציה"
+          }
+        },
+        "delete": {
+          "title": "מחיקת מנוע חיפוש",
+          "message": "האם אתה בטוח/ה שברצונך למחוק את מנוע החיפוש {name}?",
+          "notification": {
+            "success": {
+              "title": "מנוע החיפוש נמחק",
+              "message": "מנוע החיפוש נמחק בהצלחה"
+            },
+            "error": {
+              "title": "מנוע החיפוש לא נמחק",
+              "message": "לא היה ניתן למחוק את מנוע החיפוש"
+            }
+          }
+        }
+      },
+      "media": {
+        "request": {
+          "modal": {
+            "title": "בקשה {name}",
+            "table": {
+              "header": {
+                "season": "עונה",
+                "episodes": "פרקים"
+              }
+            },
+            "button": {
+              "send": "שליחת בקשה"
+            }
+          }
+        }
+      }
+    }
+  },
+  "certificate": {
+    "field": {
+      "hostname": {
+        "label": "שם מארח"
+      },
+      "subject": {
+        "label": "נושא"
+      },
+      "issuer": {
+        "label": "מנפיק"
+      },
+      "validFrom": {
+        "label": "בתוקף מ: "
+      },
+      "validTo": {
+        "label": "בתוקף מ: "
+      },
+      "serialNumber": {
+        "label": "מספר סידורי"
+      },
+      "fingerprint": {
+        "label": "טביעת אצבע"
+      }
+    },
+    "page": {
+      "list": {
+        "title": "תעודות מהימנות",
+        "description": "נעשה שימוש ב-Homarr כדי לבקש נתונים מאינטגרציות.",
+        "noResults": {
+          "title": "אין עדיין תעודות אבטחה"
+        },
+        "invalid": {
+          "title": "אישור לא חוקי",
+          "description": "נכשל בהוספת תעודת אבטחה"
+        },
+        "expires": "פג ב- {when}",
+        "toHostnames": "שמות מארחים מאושרים"
+      },
+      "hostnames": {
+        "title": "שמות מארחים של תעודות מהימנות",
+        "description": "חלק מהאישורים אינם מאפשרים לדומיין הספציפי בו Homarr משתמש לבקש אותם, מסיבה זו כל שמות המארח המהימנים עם טביעות האצבע של האישור שלהם משמשים כדי לעקוף את ההגבלות הללו.",
+        "noResults": {
+          "title": "אין עדיין שמות מארחים"
+        },
+        "toCertificates": "אישורי אבטחה"
+      }
+    },
+    "action": {
+      "create": {
+        "label": "הוספת תעודת אבטחה",
+        "notification": {
+          "success": {
+            "title": "תעודת האבטחה הוספה",
+            "message": "תעודת האבטחה נוספה בהצלחה"
+          },
+          "error": {
+            "title": "נכשל בהוספת תעודת אבטחה",
+            "message": "לא היה ניתן להוסיף תעודת אבטחה"
+          }
+        }
+      },
+      "remove": {
+        "label": "הסרת תעודת אבטחה",
+        "confirm": "האם את/ה בטוח/ה שברצונך להסיר את תעודת האבטחה?",
+        "notification": {
+          "success": {
+            "title": "תעודת האבטחה הוסרה",
+            "message": "תעודת האבטחה הוסרה בהצלחה"
+          },
+          "error": {
+            "title": "תעודת אבטחה לא הוסרה",
+            "message": "לא היה ניתן להסיר את תעודת האבטחה"
+          }
+        }
+      },
+      "removeHostname": {
+        "label": "הסר שם מארח מהימן",
+        "confirm": "האם אתה בטוח שברצונך להסיר את שם המארח המהימן הזה? זה עלול לגרום לחלק מהאינטגרציות להפסיק לפעול.",
+        "notification": {
+          "success": {
+            "title": "שם המארח הוסר",
+            "message": "שם המארח הוסר בהצלחה"
+          },
+          "error": {
+            "title": "שם המארח לא הוסר",
+            "message": "לא היה ניתן להסיר את שם המארח"
+          }
+        }
+      }
+    }
+  },
+  "log": {
+    "level": {
+      "option": {
+        "debug": "ניפוי באגים",
+        "info": "מידע",
+        "warn": "אזהרה",
+        "error": "שגיאה"
+      }
+    }
+  }
+}

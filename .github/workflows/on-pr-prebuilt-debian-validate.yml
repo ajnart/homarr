@@ -1,0 +1,45 @@
+name: "[Deployments] Validate prebuilt debian dependencies"
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches: ["*"]
+    paths: [".github/actions/prebuilt-debian/**", "deployments/prebuilt-debian/**"]
+
+jobs:
+  prebuilt-debian-validate-amd64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate prebuilt dependencies for amd64
+        id: validate-amd64
+        uses: ./.github/actions/prebuilt-debian
+        with:
+          architecture: amd64
+
+      - name: Check extracted files for amd64
+        run: |
+          if [ ! -f "${{ steps.validate-amd64.outputs.path }}/better_sqlite3.node" ]; then
+            echo "better_sqlite3.node not found for amd64!"
+            exit 1
+          fi
+  prebuilt-debian-validate-arm64:
+    runs-on: ubuntu-24.04-
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate prebuilt dependencies for arm64
+        id: validate-arm64
+        uses: ./.github/actions/prebuilt-debian
+        with:
+          architecture: arm64
+
+      - name: Check extracted files for arm64
+        run: |
+          if [ ! -f "${{ steps.validate-arm64.outputs.path }}/better_sqlite3.node" ]; then
+            echo "better_sqlite3.node not found for arm64!"
+            exit 1
+          fi

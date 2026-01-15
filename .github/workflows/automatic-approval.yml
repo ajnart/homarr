@@ -1,0 +1,30 @@
+name: "[Dependency Updates] Auto Approve"
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions: {}
+
+jobs:
+  approve-automatic-prs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    if: github.actor_id == 158783068 || github.actor_id == 190541745 || github.actor_id == 210161987 # Id of renovate bot and crowdin bot see https://api.github.com/users/homarr-renovate%5Bbot%5D and https://api.github.com/users/homarr-crowdin%5Bbot%5D and https://api.github.com/users/homarr-update-contributors%5Bbot%5D
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Obtain token
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.RENOVATE_APPROVE_PRIVATE_KEY }}
+          app-id: ${{ secrets.RENOVATE_APPROVE_APP_ID }}
+          permission-pull-requests: write # required to approve pull request
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+      - name: Approve automatic PRs
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          gh pr review ${{github.event.pull_request.number}} --approve --body "Automatically approved by GitHub Action"

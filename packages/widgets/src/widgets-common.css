@@ -1,0 +1,27 @@
+/*Make background of component different on hover, depending on base var*/
+.hoverable-component {
+  &:hover {
+    background-color: rgb(from var(--background-color) calc(r + 10) calc(g + 10) calc(b + 10) / var(--opacity));
+  }
+}
+
+/*Make background of component different on click, depending on base var, inverse of hover*/
+.clickable-component {
+  &:active {
+    background-color: rgb(from var(--background-color) calc(r - 10) calc(g - 10) calc(b - 10) / var(--opacity));
+  }
+}
+
+/*FadingGlowing effect for text that updates, add className and put the updating value as key*/
+@keyframes glow {
+  from {
+    text-shadow: 0 0 var(--glow-size) var(--mantine-color-text);
+  }
+  to {
+    text-shadow: none;
+  }
+}
+
+.text-flash {
+  animation: glow 1s ease-in-out;
+}

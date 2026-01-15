@@ -1,0 +1,51 @@
+{
+  "name": "@homarr/modals-collection",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@homarr/api": "workspace:^0.1.0",
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/form": "workspace:^0.1.0",
+    "@homarr/forms-collection": "workspace:^0.1.0",
+    "@homarr/modals": "workspace:^0.1.0",
+    "@homarr/notifications": "workspace:^0.1.0",
+    "@homarr/old-import": "workspace:^0.1.0",
+    "@homarr/old-schema": "workspace:^0.1.0",
+    "@homarr/translation": "workspace:^0.1.0",
+    "@homarr/ui": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "@mantine/core": "^8.3.10",
+    "@tabler/icons-react": "^3.36.1",
+    "dayjs": "^1.11.19",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,42 @@
+name: Prebuilt dependencies for debian
+description: Provides prebuilt dependencies for debian based docker images
+inputs:
+  architecture:
+    description: Name of architecture, will be used to build docker image (e.g. amd64, arm64)
+    required: true
+outputs:
+  path:
+    description: Path to extracted prebuilt dependencies
+    value: ${{ runner.temp }}/prebuilts
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build docker image for ${{ inputs.architecture }}
+      id: build
+      uses: docker/build-push-action@v6
+      with:
+        push: false
+        load: true
+        context: ./deployments/prebuilt-debian
+        platforms: linux/${{ inputs.architecture }}
+        tags: prebuilt-debian
+    - name: Start docker container for ${{ inputs.architecture }}
+      run: |
+        docker run --name prebuilt-debian \
+          --detach --rm prebuilt-debian
+      shell: bash
+    - name: Extract prebuilt dependencies from ${{ inputs.architecture }} container
+      run: |
+        mkdir -p ${{ runner.temp }}/prebuilts && \
+        docker cp prebuilt-debian:/app/node_modules/better-sqlite3/build/Release/better_sqlite3.node ${{ runner.temp }}/prebuilts/better_sqlite3.node
+      shell: bash
+    - name: Stop ${{ inputs.architecture }} container
+      if: always()
+      run: docker container remove --force --volumes prebuilt-debian
+      shell: bash

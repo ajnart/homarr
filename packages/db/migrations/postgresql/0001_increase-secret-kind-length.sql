@@ -1,0 +1,1 @@
+ALTER TABLE "integrationSecret" ALTER COLUMN "kind" SET DATA TYPE varchar(64);

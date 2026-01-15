@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `colorScheme` varchar(5) DEFAULT 'auto' NOT NULL;

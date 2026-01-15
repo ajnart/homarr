@@ -1,0 +1,26 @@
+.desktopSearch {
+  @mixin smaller-than $mantine-breakpoint-sm {
+    display: none;
+  }
+
+  > div {
+    --_input-bd-override: var(--_input-bd);
+
+    button:focus-within {
+      border-color: var(--_input-bd-override);
+    }
+
+    button {
+      cursor: pointer;
+      color: var(--mantine-color-placeholder);
+    }
+  }
+
+  cursor: pointer;
+}
+
+.mobileSearch {
+  @mixin larger-than $mantine-breakpoint-sm {
+    display: none;
+  }
+}

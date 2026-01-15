@@ -1,21 +1,44 @@
 {
-	"i18n-ally.localesPaths": "public/locales",
-	"i18n-ally.enabledFrameworks": [
-		"react-i18next"
-	],
-	"i18n-ally.namespace": true,
-	"i18n-ally.pathMatcher": "{locale}/{namespaces}.json",
-	"i18n-ally.keystyle": "nested",
-	"i18n-ally.keysInUse": [
-		"modules.**",
-		"layout.manage.navigation.**",
-	],
-	"editor.codeActionsOnSave": {
-		"source.organizeImports": "explicit"
-	},
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"explorer.fileNesting.patterns": {
-		"package.json": "pnpm-lock.yaml, yarn.lock, package-lock.json",
-		"*.tsx": "${capture}.module.css"
-	},
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "eslint.experimental.useFlatConfig": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "prettier.configPath": "./tooling/prettier/index.mjs",
+  "cSpell.words": [
+    "ajnart",
+    "cqmin",
+    "gridstack",
+    "homarr",
+    "jellyfin",
+    "llen",
+    "lpop",
+    "lpush",
+    "lrange",
+    "ltrim",
+    "mantine",
+    "manuel-rw",
+    "Meierschlumpf",
+    "overseerr",
+    "Sabnzbd",
+    "SeDemal",
+    "Sonarr",
+    "sslverify",
+    "superjson",
+    "tabler",
+    "trpc",
+    "Umami"
+  ],
+  "i18n-ally.dirStructure": "auto",
+  "i18n-ally.displayLanguage": "en",
+  "i18n-ally.enabledFrameworks": [
+    "custom"
+  ],
+  "i18n-ally.localesPaths": [
+    "packages/translation/src/lang",
+  ],
+  "i18n-ally.keystyle": "nested",
 }

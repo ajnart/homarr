@@ -1,0 +1,58 @@
+{
+  "name": "@homarr/tasks",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "main": "./src/main.ts",
+  "types": "./src/main.ts",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --platform=node --loader:.scss=text --external:*.node --external:@opentelemetry/api --external:deasync --external:bcrypt --outfile=tasks.cjs",
+    "clean": "rm -rf .turbo node_modules",
+    "dev": "pnpm with-env tsx ./src/main.ts",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@homarr/analytics": "workspace:^0.1.0",
+    "@homarr/auth": "workspace:^0.1.0",
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/core": "workspace:^",
+    "@homarr/cron-job-api": "workspace:^0.1.0",
+    "@homarr/cron-jobs": "workspace:^0.1.0",
+    "@homarr/cron-jobs-core": "workspace:^0.1.0",
+    "@homarr/db": "workspace:^0.1.0",
+    "@homarr/definitions": "workspace:^0.1.0",
+    "@homarr/icons": "workspace:^0.1.0",
+    "@homarr/integrations": "workspace:^0.1.0",
+    "@homarr/ping": "workspace:^0.1.0",
+    "@homarr/redis": "workspace:^0.1.0",
+    "@homarr/request-handler": "workspace:^0.1.0",
+    "@homarr/server-settings": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "@homarr/widgets": "workspace:^0.1.0",
+    "dayjs": "^1.11.19",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "superjson": "2.2.6",
+    "undici": "7.16.0"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "@types/node": "^24.10.4",
+    "dotenv-cli": "^11.0.0",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4",
+    "tsx": "4.20.4",
+    "typescript": "^5.9.3"
+  }
+}

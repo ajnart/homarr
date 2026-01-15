@@ -1,0 +1,20 @@
+.paper {
+  position: relative;
+  overflow: visible;
+  padding: var(--mantine-spacing-xl);
+  padding-top: calc(var(--mantine-spacing-xl) * 1.5 + 20px);
+}
+
+.icon {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 30px);
+  border: groove white;
+}
+
+.title {
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  line-height: 1;
+}

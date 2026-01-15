@@ -1,0 +1,36 @@
+diff --git a/index.d.ts b/index.d.ts
+index 04d9340306707b7d9c028bc692a6884c28e5a975..7c15a97c398fc5c41528803822f4e7bd1a27b36e 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -1,4 +1,6 @@
+ import { EventEmitter2 as EventEmitter } from "eventemitter2";
++import {CookieAgentOptions} from 'http-cookie-agent/http'
++import { AxiosInstance } from "axios";
+ 
+ declare namespace nodeUnifi {
+     interface SiteSysinfo {
+@@ -176,6 +178,8 @@ declare namespace nodeUnifi {
+     }
+ }
+ 
++type CreateAxiosInstance = (options: Required<CookieAgentOptions>) => AxiosInstance;
++
+ declare class Controller extends EventEmitter {
+     /**
+      * Initialize a new Controller instance
+@@ -187,6 +191,7 @@ declare class Controller extends EventEmitter {
+      * @param {boolean} [options.sslverify] - Enable SSL verification
+      * @param {number} [options.timeout] - Request timeout in milliseconds
+      * @param {boolean} [options.rememberMe] - Remember login session
++     * @param {CreateAxiosInstance} [options.createAxiosInstance] - Custom Axios instance
+      */
+     constructor(options?: {
+         host?: string;
+@@ -198,6 +203,7 @@ declare class Controller extends EventEmitter {
+         sslverify?: boolean;
+         timeout?: number;
+         rememberMe?: boolean;
++        createAxiosInstance?: CreateAxiosInstance;
+     });
+ 
+     /**

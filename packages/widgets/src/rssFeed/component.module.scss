@@ -1,0 +1,11 @@
+.backgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  transform: scaleX(-1.05) scaleZ(-1.05);
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}

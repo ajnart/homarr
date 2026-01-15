@@ -1,0 +1,46 @@
+.bannerContainer {
+  border-radius: 16px;
+  overflow: hidden;
+  @mixin dark {
+    background: linear-gradient(
+      130deg,
+      #fa52521f 0%,
+      var(--mantine-color-dark-6) 35%,
+      var(--mantine-color-dark-6) 100%
+    ) !important;
+  }
+  @mixin light {
+    background: linear-gradient(
+      130deg,
+      #fa52521f 0%,
+      var(--mantine-color-gray-3) 35%,
+      var(--mantine-color-gray-3) 100%
+    ) !important;
+  }
+}
+
+.scrollContainer {
+  height: 100%;
+  transform: rotateZ(10deg);
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50.8%);
+  }
+}
+
+.scrollAnimationContainer {
+  animation: scrolling;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollAnimationContainer {
+    animation: none !important;
+  }
+}

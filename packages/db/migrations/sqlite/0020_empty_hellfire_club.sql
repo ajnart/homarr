@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `mobile_home_board_id` text REFERENCES board(id);

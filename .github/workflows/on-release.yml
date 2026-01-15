@@ -1,0 +1,89 @@
+permissions: {}
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  trigger-docs-release:
+    name: Trigger Documentation Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Obtain token
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.HOMARR_DOCS_RELEASE_APP_PRIVATE_KEY }}
+          app-id: ${{ vars.HOMARR_DOCS_RELEASE_APP_ID }}
+          owner: homarr-labs
+          repositories: |
+            documentation
+          permission-contents: write # required to dispatch repository workflow
+      - name: Trigger documentation release
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+          SOURCE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          curl -X POST \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/homarr-labs/documentation/dispatches \
+            -d @- <<EOF
+          {
+            "event_type": "trigger-release",
+            "client_payload": {
+              "tag": "${SOURCE_TAG}"
+            }
+          }
+          EOF
+  update-bug-report-template:
+    name: Update Bug Report Template
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Obtain token
+        id: obtainToken
+        uses: actions/create-github-app-token@v2
+        with:
+          private-key: ${{ secrets.RENOVATE_MERGE_PRIVATE_KEY }}
+          app-id: ${{ secrets.RENOVATE_MERGE_APP_ID }}
+          permission-contents: write # required to commit to branch
+          permission-pull-requests: write # required to create pr & enable automerge
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          token: ${{ steps.obtainToken.outputs.token }}
+      - name: Setup
+        uses: ./tooling/github/setup
+      - run: pnpm run scripts:update-bug-report-template
+        env:
+          NEXT_VERSION: ${{ github.event.release.tag_name }}
+      - name: Commit changes
+        run: |
+          git config --global user.email "175486441+homarr-releases[bot]@users.noreply.github.com"
+          git config --global user.name "Releases Homarr"
+          git checkout -b update-bug-report-template
+          git add .
+          git commit -m "chore: update bug report template"
+
+      - name: Create Pull Request
+        id: create-pull-request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ steps.obtainToken.outputs.token }}
+          branch: update-bug-report-template
+          base: dev
+          title: "chore: update bug report template"
+          delete-branch: true
+          body: |
+            This PR automatically updates the bug report template of Homarr in the .github/ISSUE_TEMPLATE/bug_report.yml
+
+      - name: Install GitHub CLI
+        run: sudo apt-get install -y gh
+
+      - name: Enable auto-merge
+        env:
+          GITHUB_TOKEN: ${{ steps.obtainToken.outputs.token }}
+        run: |
+          gh pr merge ${{steps.create-pull-request.outputs.pull-request-number}} --auto --squash

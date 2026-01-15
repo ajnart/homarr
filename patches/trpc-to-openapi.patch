@@ -1,0 +1,13 @@
+diff --git a/dist/esm/utils/zod.mjs b/dist/esm/utils/zod.mjs
+index a3fda1a5b5403a659bfc70653a94102e607f8b80..070d9728f9b41add50e5d30d3aa559be91018ccd 100644
+--- a/dist/esm/utils/zod.mjs
++++ b/dist/esm/utils/zod.mjs
+@@ -62,7 +62,7 @@ export const instanceofZodTypeLikeString = (_type) => {
+     }
+     return instanceofZodTypeKind(type, 'string');
+ };
+-export const zodSupportsCoerce = 'coerce' in z;
++export const zodSupportsCoerce = true //'coerce' in z;
+ export const instanceofZodTypeCoercible = (_type) => {
+     const type = unwrapZodType(_type, false);
+     return (instanceofZodTypeKind(type, 'number') ||

@@ -1,0 +1,62 @@
+{
+  "name": "@homarr/integrations",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./test-connection": "./src/base/test-connection/index.ts",
+    "./client": "./src/client.ts",
+    "./types": "./src/types.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@ctrl/deluge": "^7.5.0",
+    "@ctrl/qbittorrent": "^9.11.0",
+    "@ctrl/transmission": "^7.4.0",
+    "@gitbeaker/rest": "^43.8.0",
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/core": "workspace:^0.1.0",
+    "@homarr/db": "workspace:^0.1.0",
+    "@homarr/definitions": "workspace:^0.1.0",
+    "@homarr/image-proxy": "workspace:^0.1.0",
+    "@homarr/node-unifi": "^2.6.0",
+    "@homarr/redis": "workspace:^0.1.0",
+    "@homarr/translation": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "@jellyfin/sdk": "^0.13.0",
+    "@octokit/auth-app": "^8.1.2",
+    "ical.js": "^2.2.1",
+    "maria2": "^0.4.1",
+    "node-ical": "^0.22.1",
+    "octokit": "^5.0.5",
+    "proxmox-api": "1.1.1",
+    "tsdav": "^2.1.6",
+    "undici": "7.16.0",
+    "xml2js": "^0.6.2",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "@types/node-unifi": "^2.5.1",
+    "@types/xml2js": "^0.4.14",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,5 @@
+@media (min-width: 36em) {
+  .dangerZoneGroup {
+    --group-wrap: nowrap !important;
+  }
+}

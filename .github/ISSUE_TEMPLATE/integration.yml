@@ -1,0 +1,40 @@
+name: 🛠 Integration request
+description: Request support for a new integration (eg. Sonarr, Radarr)
+title: "feat: "
+labels: ["needs triage"]
+body:
+  - type: input
+    attributes:
+      label: Project Website
+      description: Post the link to the website of the application. Paste the official link.
+      placeholder: ex. https://sonarr.tv/
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe what data should be consumed by Homarr
+      description: Please describe what data Homarr should fetch from the integration. Specify in what interval data should be fetched and whether the user can also perform write operations (eg. deleting a movie or adding a user).
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Add any other information related to the integration.
+  - type: dropdown
+    attributes:
+      label: Public API available?
+      description: Is there a public API available, that we can consume in Homarr?
+      options:
+        - Yes, available on a website
+        - Yes, available in the application itself
+        - No
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Are you willing to contribute this yourself?
+      options:
+      - Yes
+      - No
+    validations:
+      required: true

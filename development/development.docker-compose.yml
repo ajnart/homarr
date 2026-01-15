@@ -1,0 +1,54 @@
+############################
+#
+#  This compose file is only for development.
+#  Do not use this in production.
+#
+############################
+
+name: development-docker-compose
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: homarr
+      MYSQL_DATABASE: homarrdb
+      MYSQL_USER: homarr
+      MYSQL_PASSWORD: homarr
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  postgresql:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_PASSWORD: homarr
+      POSTGRES_USER: homarr
+      POSTGRES_DB: homarrdb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    # if already run PostgreSQL, change port number to use container's service
+    #  - 2345:5432
+
+volumes:
+  mysql_data:
+  postgresql_data:

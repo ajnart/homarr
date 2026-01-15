@@ -1,0 +1,12 @@
+.badge {
+  @mixin dark {
+    --background-color: rgb(from var(--mantine-color-dark-6) r g b / var(--opacity));
+    --border-color: rgb(from var(--mantine-color-dark-4) r g b / var(--opacity));
+  }
+  @mixin light {
+    --background-color: rgb(from var(--mantine-color-white) r g b / var(--opacity));
+    --border-color: rgb(from var(--mantine-color-gray-3) r g b / var(--opacity));
+  }
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}

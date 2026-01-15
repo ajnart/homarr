@@ -1,0 +1,42 @@
+{
+  "name": "@homarr/websocket",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/main.ts",
+  "types": "./src/main.ts",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --platform=node --outfile=wssServer.cjs --external:bcrypt --external:@opentelemetry/api --external:deasync --external:cpu-features --loader:.html=text --loader:.scss=text --loader:.node=text",
+    "clean": "rm -rf .turbo node_modules",
+    "dev": "pnpm with-env tsx ./src/main.ts",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prettier": "@homarr/prettier-config",
+  "dependencies": {
+    "@homarr/api": "workspace:^0.1.0",
+    "@homarr/auth": "workspace:^0.1.0",
+    "@homarr/common": "workspace:^0.1.0",
+    "@homarr/core": "workspace:^",
+    "@homarr/db": "workspace:^0.1.0",
+    "@homarr/definitions": "workspace:^0.1.0",
+    "@homarr/redis": "workspace:^0.1.0",
+    "@homarr/validation": "workspace:^0.1.0",
+    "dotenv": "^17.2.3",
+    "tsx": "4.20.4",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@homarr/eslint-config": "workspace:^0.2.0",
+    "@homarr/prettier-config": "workspace:^0.1.0",
+    "@homarr/tsconfig": "workspace:^0.1.0",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.2",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
+  }
+}

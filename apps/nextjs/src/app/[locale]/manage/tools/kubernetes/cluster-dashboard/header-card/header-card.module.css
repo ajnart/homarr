@@ -1,0 +1,31 @@
+.header {
+  direction: inherit;
+  position: relative;
+  overflow: hidden;
+  padding: var(--mantine-spacing-xs);
+  padding-left: calc(var(--mantine-spacing-xs) * 2);
+
+  @mixin hover {
+    box-shadow: var(--mantine-shadow-md);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    background-image: linear-gradient(0, var(--mantine-color-blue-4), var(--mantine-color-blue-9));
+  }
+
+  @mixin rtl {
+    padding-left: var(--mantine-spacing-xs);
+    padding-right: calc(var(--mantine-spacing-xs) * 2);
+
+    &::before {
+      left: unset;
+      right: 0;
+    }
+  }
+}

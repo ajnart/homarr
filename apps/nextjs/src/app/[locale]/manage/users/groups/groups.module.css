@@ -1,0 +1,7 @@
+.everyoneGroup {
+  background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+}
+
+.everyoneGroup:hover {
+  background-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+}

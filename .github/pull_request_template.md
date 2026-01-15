@@ -1,16 +1,13 @@
-*Thank you for contributing to Homarr! So that your Pull Request can be handled effectively, please populate the following fields (delete sections that are not applicable)*
+<br/>
+<div align="center">
+  <img src="https://homarr.dev/img/logo.png" height="80" alt="" />
+  <h3>Homarr</h3>
+</div>
 
-### Category
-> One of: Bugfix / Feature / Code style update / Refactoring Only / Build related changes /  Documentation / Other (Please specify!)
+**Thank you for your contribution. Please ensure that your pull request meets the following pull request:**
 
-### Overview
-> Briefly outline your new changes...
-
-### Issue Number _(if applicable)_
-> Related issue: #00
-
-### New Vars _(if applicable)_
-> If you've added any new build scripts, environmental variables, config file options, dependency please outline here.
-
-### Screenshot _(if applicable)_
-> If you've introduced any significant UI changes, please include a screenshot.
+- [ ] Builds without warnings or errors (`pnpm build`, autofix with `pnpm format:fix`)
+- [ ] Pull request targets `dev` branch
+- [ ] Commits follow the [conventional commits guideline](https://www.conventionalcommits.org/en/v1.0.0/)
+- [ ] No shorthand variable names are used (eg. `x`, `y`, `i` or any abbrevation)
+- [ ] Documentation is up to date. Create a pull request [here](https://github.com/homarr-labs/documentation/).

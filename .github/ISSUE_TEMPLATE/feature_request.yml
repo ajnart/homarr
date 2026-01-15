@@ -1,0 +1,18 @@
+# This template is heavily inspired by the Next.js's template:
+# See here: https://github.com/vercel/next.js/blob/canary/.github/ISSUE_TEMPLATE/3.feature_request.yml
+
+name: 🛠 Feature Request
+description: Request a new feature that you would like to have implemented
+title: "feat: "
+labels: ["needs triage"]
+body:
+  - type: textarea
+    attributes:
+      label: Describe the feature you'd like to request
+      description: Please describe the feature as clear and concise as possible. Remember to add context as to why you believe this feature is needed.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Add any other information related to the feature here. If your feature request is related to any issues or discussions, link them here.
